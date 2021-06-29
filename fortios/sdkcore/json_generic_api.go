@@ -7,7 +7,7 @@ import (
 	"io/ioutil"
 	"log"
 
-	"github.com/fortinetdev/forti-sdk-go/fortios/request"
+	"github.com/poroping/forti-sdk-go/fortios/request"
 )
 
 // JSONJSONGenericAPI contains the parameters for Create API function

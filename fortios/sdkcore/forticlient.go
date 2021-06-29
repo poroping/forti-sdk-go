@@ -10,9 +10,9 @@ import (
 	"strings"
 	"time"
 
-	"github.com/fortinetdev/forti-sdk-go/fortios/auth"
-	"github.com/fortinetdev/forti-sdk-go/fortios/config"
-	"github.com/fortinetdev/forti-sdk-go/fortios/request"
+	"github.com/poroping/forti-sdk-go/fortios/auth"
+	"github.com/poroping/forti-sdk-go/fortios/config"
+	"github.com/poroping/forti-sdk-go/fortios/request"
 )
 
 // MultValue describes the nested structure in the results
