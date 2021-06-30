@@ -14,14 +14,14 @@ type policySort struct {
 	name     string
 }
 
-func getPolicyList(c *FortiSDKClient, vdomparam string) (idlist []policySort, err error) {
+func getPolicyList(c *FortiSDKClient, vdomparam string, batch int) (idlist []policySort, err error) {
 	HTTPMethod := "GET"
 	path := "/api/v2/cmdb/firewall/policy/"
 
 	params := make(map[string][]string)
 	params["format"] = []string{"policy|name"}
 
-	req := c.NewRequest(HTTPMethod, path, &params, nil)
+	req := c.NewRequest(HTTPMethod, path, &params, nil, batch)
 	err = req.Send3(vdomparam)
 	if err != nil || req.HTTPResponse == nil {
 		err = fmt.Errorf("cannot send request %s", err)
@@ -100,7 +100,7 @@ func bPolicyListSorted(idlist []policySort, sortby, sortdirection string) (bsort
 	return
 }
 
-func moveAfter(idbefore, idafter int, c *FortiSDKClient, vdomparam string) (err error) {
+func moveAfter(idbefore, idafter int, c *FortiSDKClient, vdomparam string, batch int) (err error) {
 	idbefores := strconv.Itoa(idbefore)
 	idafters := strconv.Itoa(idafter)
 
@@ -112,7 +112,7 @@ func moveAfter(idbefore, idafter int, c *FortiSDKClient, vdomparam string) (err 
 	params["action"] = []string{"move"}
 	params["after"] = []string{idafters}
 
-	req := c.NewRequest(HTTPMethod, path, &params, nil)
+	req := c.NewRequest(HTTPMethod, path, &params, nil, batch)
 	err = req.Send3(vdomparam)
 	if err != nil || req.HTTPResponse == nil {
 		err = fmt.Errorf("cannot send request %s", err)
@@ -135,7 +135,7 @@ func moveAfter(idbefore, idafter int, c *FortiSDKClient, vdomparam string) (err 
 	return
 }
 
-func sortPolicyList(idlist []policySort, sortby, sortdirection string, c *FortiSDKClient, vdomparam string) (err error) {
+func sortPolicyList(idlist []policySort, sortby, sortdirection string, c *FortiSDKClient, vdomparam string, batch int) (err error) {
 	if sortby == "policyid" {
 		if sortdirection == "ascending" {
 			sort.Slice(idlist, func(i, j int) bool {
@@ -148,7 +148,7 @@ func sortPolicyList(idlist []policySort, sortby, sortdirection string, c *FortiS
 		}
 
 		for i := 0; i < len(idlist)-1; i++ {
-			err = moveAfter(idlist[i+1].policyid, idlist[i].policyid, c, vdomparam)
+			err = moveAfter(idlist[i+1].policyid, idlist[i].policyid, c, vdomparam, batch)
 			if err != nil {
 				err = fmt.Errorf("sort err %s", err)
 				return
@@ -166,7 +166,7 @@ func sortPolicyList(idlist []policySort, sortby, sortdirection string, c *FortiS
 		}
 
 		for i := 0; i < len(idlist)-1; i++ {
-			err = moveAfter(idlist[i+1].policyid, idlist[i].policyid, c, vdomparam)
+			err = moveAfter(idlist[i+1].policyid, idlist[i].policyid, c, vdomparam, batch)
 			if err != nil {
 				err = fmt.Errorf("sort err %s", err)
 				return
@@ -179,8 +179,8 @@ func sortPolicyList(idlist []policySort, sortby, sortdirection string, c *FortiS
 
 // CreateUpdateFirewallSecurityPolicySort API operation for FortiOS to sort the firewall policies.
 // Returns error for service API and SDK errors.
-func (c *FortiSDKClient) CreateUpdateFirewallSecurityPolicySort(sortby, sortdirection, vdomparam string) (err error) {
-	idlist, err := getPolicyList(c, vdomparam)
+func (c *FortiSDKClient) CreateUpdateFirewallSecurityPolicySort(sortby, sortdirection, vdomparam string, batch int) (err error) {
+	idlist, err := getPolicyList(c, vdomparam, batch)
 	log.Printf("shengh: %v", idlist)
 	if err != nil {
 		err = fmt.Errorf("sort err %s", err)
@@ -192,7 +192,7 @@ func (c *FortiSDKClient) CreateUpdateFirewallSecurityPolicySort(sortby, sortdire
 		return
 	}
 
-	err = sortPolicyList(idlist, sortby, sortdirection, c, vdomparam)
+	err = sortPolicyList(idlist, sortby, sortdirection, c, vdomparam, batch)
 	if err != nil {
 		err = fmt.Errorf("sort err %s", err)
 		return
@@ -204,8 +204,8 @@ func (c *FortiSDKClient) CreateUpdateFirewallSecurityPolicySort(sortby, sortdire
 // ReadFirewallSecurityPolicySort API operation for FortiOS to read the firewall policies sort results
 // Returns sort status
 // Returns error for service API and SDK errors.
-func (c *FortiSDKClient) ReadFirewallSecurityPolicySort(sortby, sortdirection, vdomparam string) (sorted bool, err error) {
-	idlist, err := getPolicyList(c, vdomparam)
+func (c *FortiSDKClient) ReadFirewallSecurityPolicySort(sortby, sortdirection, vdomparam string, batch int) (sorted bool, err error) {
+	idlist, err := getPolicyList(c, vdomparam, batch)
 	if err != nil {
 		err = fmt.Errorf("sort err %s", err)
 		return

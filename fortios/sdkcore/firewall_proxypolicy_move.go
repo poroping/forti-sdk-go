@@ -10,7 +10,7 @@ import (
 
 // CreateUpdateFirewallProxypolicyMove API operation for FortiOS moves the specified item.
 // Returns error for service API and SDK errors.
-func (c *FortiSDKClient) CreateUpdateFirewallProxypolicyMove(srcId, dstId, mv, vdomparam string) (err error) {
+func (c *FortiSDKClient) CreateUpdateFirewallProxypolicyMove(srcId, dstId, mv, vdomparam string, batch int) (err error) {
 	HTTPMethod := "PUT"
 	path := "/api/v2/cmdb/firewall/proxy-policy"
 	path += "/" + srcId
@@ -19,7 +19,7 @@ func (c *FortiSDKClient) CreateUpdateFirewallProxypolicyMove(srcId, dstId, mv, v
 	params["action"] = []string{"move"}
 	params[mv] = []string{dstId}
 
-	req := c.NewRequest(HTTPMethod, path, &params, nil)
+	req := c.NewRequest(HTTPMethod, path, &params, nil, batch)
 	err = req.Send3(vdomparam)
 	if err != nil || req.HTTPResponse == nil {
 		err = fmt.Errorf("cannot send request %s", err)
@@ -51,7 +51,7 @@ type JSONFirewallProxypolicyItem struct {
 // GetFirewallProxypolicyList API operation for FortiOS gets the list
 // Returns the requested API user value when the request executes successfully.
 // Returns error for service API and SDK errors.
-func (c *FortiSDKClient) GetFirewallProxypolicyList(vdomparam string) (out []JSONFirewallProxypolicyItem, err error) {
+func (c *FortiSDKClient) GetFirewallProxypolicyList(vdomparam string, batch int) (out []JSONFirewallProxypolicyItem, err error) {
 
 	HTTPMethod := "GET"
 	path := "/api/v2/cmdb/firewall/proxy-policy/"
@@ -59,7 +59,7 @@ func (c *FortiSDKClient) GetFirewallProxypolicyList(vdomparam string) (out []JSO
 	params := make(map[string][]string)
 	params["format"] = []string{"policyid"}
 
-	req := c.NewRequest(HTTPMethod, path, &params, nil)
+	req := c.NewRequest(HTTPMethod, path, &params, nil, batch)
 	err = req.Send3(vdomparam)
 	if err != nil || req.HTTPResponse == nil {
 		err = fmt.Errorf("cannot send request %s", err)

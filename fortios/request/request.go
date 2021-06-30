@@ -7,6 +7,7 @@ import (
 	"net/http"
 	"net/url"
 	"regexp"
+	"strconv"
 	"strings"
 	"time"
 
@@ -28,7 +29,7 @@ type Request struct {
 // It will save the http request, path, etc. for the next operations
 // such as sending data, getting response, etc.
 // It returns the created request object to the gobal plugin client.
-func New(c config.Config, method string, path string, params *map[string][]string, data *bytes.Buffer) *Request {
+func New(c config.Config, method string, path string, params *map[string][]string, data *bytes.Buffer, batch int) *Request {
 	var h *http.Request
 
 	if data == nil {
@@ -46,6 +47,10 @@ func New(c config.Config, method string, path string, params *map[string][]strin
 	}
 
 	head := make(map[string][]string)
+	if batch != 0 {
+		head["X-TRANSACTION-ID"] = []string{strconv.Itoa(batch)}
+	}
+
 	r = buildHeaders(r, &head)
 
 	return r
@@ -199,7 +204,7 @@ func buildHeaders(r *Request, h *map[string][]string) *Request {
 
 // SendWithSpecialParams sends request data to FortiOS with special URL paramaters.
 // If errors are encountered, it returns the error.
-// func (r *Request) SendWithSpecialParams(s, vdomparam string) error {
+// func (r *Request) SendWithSpecialParams(s, vdomparam string, batch int) error {
 // 	r = buildURL(r, false, vdomparam)
 
 // 	if s != "" {

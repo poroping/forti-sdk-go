@@ -10,7 +10,7 @@ import (
 
 // CreateUpdateFirewallCentralsnatmapMove API operation for FortiOS moves the specified item.
 // Returns error for service API and SDK errors.
-func (c *FortiSDKClient) CreateUpdateFirewallCentralsnatmapMove(srcId, dstId, mv, vdomparam string) (err error) {
+func (c *FortiSDKClient) CreateUpdateFirewallCentralsnatmapMove(srcId, dstId, mv, vdomparam string, batch int) (err error) {
 	HTTPMethod := "PUT"
 	path := "/api/v2/cmdb/firewall/central-snat-map"
 	path += "/" + srcId
@@ -19,7 +19,7 @@ func (c *FortiSDKClient) CreateUpdateFirewallCentralsnatmapMove(srcId, dstId, mv
 	params["action"] = []string{"move"}
 	params[mv] = []string{dstId}
 
-	req := c.NewRequest(HTTPMethod, path, &params, nil)
+	req := c.NewRequest(HTTPMethod, path, &params, nil, batch)
 	err = req.Send3(vdomparam)
 	if err != nil || req.HTTPResponse == nil {
 		err = fmt.Errorf("cannot send request %s", err)
@@ -51,7 +51,7 @@ type JSONFirewallCentralsnatmapItem struct {
 // GetFirewallCentralsnatmapList API operation for FortiOS gets the list
 // Returns the requested API user value when the request executes successfully.
 // Returns error for service API and SDK errors.
-func (c *FortiSDKClient) GetFirewallCentralsnatmapList(vdomparam string) (out []JSONFirewallCentralsnatmapItem, err error) {
+func (c *FortiSDKClient) GetFirewallCentralsnatmapList(vdomparam string, batch int) (out []JSONFirewallCentralsnatmapItem, err error) {
 
 	HTTPMethod := "GET"
 	path := "/api/v2/cmdb/firewall/central-snat-map/"
@@ -59,7 +59,7 @@ func (c *FortiSDKClient) GetFirewallCentralsnatmapList(vdomparam string) (out []
 	params := make(map[string][]string)
 	params["format"] = []string{"policyid"}
 
-	req := c.NewRequest(HTTPMethod, path, &params, nil)
+	req := c.NewRequest(HTTPMethod, path, &params, nil, batch)
 	err = req.Send3(vdomparam)
 	if err != nil || req.HTTPResponse == nil {
 		err = fmt.Errorf("cannot send request %s", err)

@@ -23,7 +23,7 @@ func (c *FortiSDKClient) ReadSystemCertificateDownload(data *JSONSystemCertifica
 	params["mkey"] = []string{mkey}
 	params["type"] = []string{cert_type}
 
-	req := c.NewRequest(HTTPMethod, path, &params, nil)
+	req := c.NewRequest(HTTPMethod, path, &params, nil, 0)
 	err = req.Send3(vdomparam)
 	if err != nil || req.HTTPResponse == nil {
 		err = fmt.Errorf("cannot send request %s", err)

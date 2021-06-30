@@ -10,7 +10,7 @@ import (
 
 // CreateUpdateFirewallSecurityPolicySeq API operation for FortiOS alters the specified firewall policy sequence.
 // Returns error for service API and SDK errors.
-func (c *FortiSDKClient) CreateUpdateFirewallSecurityPolicySeq(srcId, dstId, alterPos, vdomparam string) (err error) {
+func (c *FortiSDKClient) CreateUpdateFirewallSecurityPolicySeq(srcId, dstId, alterPos, vdomparam string, batch int) (err error) {
 	HTTPMethod := "PUT"
 	path := "/api/v2/cmdb/firewall/policy"
 	path += "/" + srcId
@@ -19,7 +19,7 @@ func (c *FortiSDKClient) CreateUpdateFirewallSecurityPolicySeq(srcId, dstId, alt
 	params["action"] = []string{"move"}
 	params[alterPos] = []string{dstId}
 
-	req := c.NewRequest(HTTPMethod, path, &params, nil)
+	req := c.NewRequest(HTTPMethod, path, &params, nil, batch)
 	err = req.Send3(vdomparam)
 	if err != nil || req.HTTPResponse == nil {
 		err = fmt.Errorf("cannot send request %s", err)
@@ -65,7 +65,7 @@ type JSONSecurityPolicyItem struct {
 // GetSecurityPolicyList API operation for FortiOS gets the Security Policy list
 // Returns the requested API user value when the request executes successfully.
 // Returns error for service API and SDK errors.
-func (c *FortiSDKClient) GetSecurityPolicyList(vdomparam string) (out []JSONSecurityPolicyItem, err error) {
+func (c *FortiSDKClient) GetSecurityPolicyList(vdomparam string, batch int) (out []JSONSecurityPolicyItem, err error) {
 
 	HTTPMethod := "GET"
 	path := "/api/v2/cmdb/firewall/policy/"
@@ -73,7 +73,7 @@ func (c *FortiSDKClient) GetSecurityPolicyList(vdomparam string) (out []JSONSecu
 	params := make(map[string][]string)
 	params["format"] = []string{"policyid|action|name"}
 
-	req := c.NewRequest(HTTPMethod, path, &params, nil)
+	req := c.NewRequest(HTTPMethod, path, &params, nil, batch)
 	err = req.Send3(vdomparam)
 	if err != nil || req.HTTPResponse == nil {
 		err = fmt.Errorf("cannot send request %s", err)
