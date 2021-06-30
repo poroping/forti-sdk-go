@@ -4,42 +4,42 @@ import (
 	"fmt"
 	"strconv"
 
-	"github.com/fortinetdev/forti-sdk-go/fortimanager/util"
+	"github.com/poroping/forti-sdk-go/fortimanager/util"
 )
 
 // JSONFirewallSecurityPolicy contains the params for creating firewall security policy
 type JSONFirewallSecurityPolicy struct {
-	Name                 string   `json:"name"`
-	Action               string   `json:"action"`
-	PolicyId             string   `json:"policyid"`
-	SrcAddr              []string `json:"srcaddr"`
-	SrcIntf              []string `json:"srcintf"`
-	DstAddr              []string `json:"dstaddr"`
-	DstIntf              []string `json:"dstintf"`
-	Service              []string `json:"service"`
-	Schedule             []string `json:"schedule"`
-	InternetService      string   `json:"internet-service,omitempty"`
-	InternetServiceID    []string `json:"internet-service-id,omitempty"`
+	Name                   string   `json:"name"`
+	Action                 string   `json:"action"`
+	PolicyId               string   `json:"policyid"`
+	SrcAddr                []string `json:"srcaddr"`
+	SrcIntf                []string `json:"srcintf"`
+	DstAddr                []string `json:"dstaddr"`
+	DstIntf                []string `json:"dstintf"`
+	Service                []string `json:"service"`
+	Schedule               []string `json:"schedule"`
+	InternetService        string   `json:"internet-service,omitempty"`
+	InternetServiceID      []string `json:"internet-service-id,omitempty"`
 	InternetServiceName    []string `json:"internet-service-name,omitempty"`
-	InternetServiceSrc   string   `json:"internet-service-src,omitempty"`
-	InternetServiceSrcID []string `json:"internet-service-src-id,omitempty"`
+	InternetServiceSrc     string   `json:"internet-service-src,omitempty"`
+	InternetServiceSrcID   []string `json:"internet-service-src-id,omitempty"`
 	InternetServiceSrcName []string `json:"internet-service-src-name,omitempty"`
-	Users                []string `json:"users"`
-	Groups               []string `json:"groups"`
-	Fsso                 string   `json:"fsso,omitempty"`
-	Rsso                 string   `json:"rsso,omitempty"`
-	Logtraffic           string   `json:"logtraffic"`
-	LogtrafficStart      string   `json:"logtraffic-start"`
-	CapturePacket        string   `json:"capture-packet"`
-	Comments             string   `json:"comments"`
-	NAT                  string   `json:"nat"`
-	IpPool               string   `json:"ippool"`
-	PoolName             []string `json:"poolname"`
-	FixedPort            string   `json:"fixedport"`
-	VpnTunnel            []string `json:"vpntunnel"`
-	Inbound              string   `json:"inbound"`
-	UTMStatus            string   `json:"utm-status"`
-	ProfileType          string   `json:"profile-type"`
+	Users                  []string `json:"users"`
+	Groups                 []string `json:"groups"`
+	Fsso                   string   `json:"fsso,omitempty"`
+	Rsso                   string   `json:"rsso,omitempty"`
+	Logtraffic             string   `json:"logtraffic"`
+	LogtrafficStart        string   `json:"logtraffic-start"`
+	CapturePacket          string   `json:"capture-packet"`
+	Comments               string   `json:"comments"`
+	NAT                    string   `json:"nat"`
+	IpPool                 string   `json:"ippool"`
+	PoolName               []string `json:"poolname"`
+	FixedPort              string   `json:"fixedport"`
+	VpnTunnel              []string `json:"vpntunnel"`
+	Inbound                string   `json:"inbound"`
+	UTMStatus              string   `json:"utm-status"`
+	ProfileType            string   `json:"profile-type"`
 	// profile_type: single
 	AvProfile              []string `json:"av-profile"`
 	WebFilterProfile       []string `json:"webfilter-profile"`

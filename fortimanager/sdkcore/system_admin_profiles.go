@@ -3,7 +3,7 @@ package fmgclient
 import (
 	"fmt"
 
-	"github.com/fortinetdev/forti-sdk-go/fortimanager/util"
+	"github.com/poroping/forti-sdk-go/fortimanager/util"
 )
 
 // JSONSysAdminProfileGenernal contains the params for creating system admin profiles with genernal part

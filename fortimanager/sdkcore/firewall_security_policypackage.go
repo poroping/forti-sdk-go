@@ -3,7 +3,7 @@ package fmgclient
 import (
 	"fmt"
 
-	"github.com/fortinetdev/forti-sdk-go/fortimanager/util"
+	"github.com/poroping/forti-sdk-go/fortimanager/util"
 )
 
 // JSONFirewallSecurityPolicyPackage contains the params for creating firewall policy package
@@ -23,7 +23,6 @@ type JSONFirewallSecurityPolicyPackage struct {
 //   @err: error details if failure, and nil if success
 func (c *FmgSDKClient) CreateUpdateFirewallSecurityPolicyPackage(params *JSONFirewallSecurityPolicyPackage, method, adom string) (err error) {
 	defer c.Trace("CreateUpdateFirewallSecurityPolicyPackage")()
-
 
 	d := map[string]interface{}{
 		"name": params.Name,
