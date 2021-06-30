@@ -254,7 +254,7 @@ func (c *FortiSDKClient) ReadSystemLicenseFortiCare(mkey string) (output *JSONSy
 			}
 		}
 
-		if bFind == false {
+		if !bFind {
 			err = fmt.Errorf("cannot get forticare property from the response")
 			return
 		}

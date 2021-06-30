@@ -39,7 +39,7 @@ func getPolicyListFirewallCentralsnatmap(c *FortiSDKClient, vdomparam string, ba
 	var result map[string]interface{}
 	json.Unmarshal([]byte(string(body)), &result)
 
-	if fortiAPIHttpStatus404Checking(result) == true {
+	if fortiAPIHttpStatus404Checking(result) {
 		return
 	}
 
@@ -155,7 +155,7 @@ func (c *FortiSDKClient) CreateUpdateFirewallCentralsnatmapSort(sortby, sortdire
 	}
 
 	bsorted := bPolicyListSortedFirewallCentralsnatmap(idlist, sortby, sortdirection)
-	if bsorted == true {
+	if bsorted {
 		return
 	}
 
@@ -180,7 +180,7 @@ func (c *FortiSDKClient) ReadFirewallCentralsnatmapSort(sortby, sortdirection st
 
 	bsorted := bPolicyListSortedFirewallCentralsnatmap(idlist, sortby, sortdirection)
 	log.Printf("shengh: %v", bsorted)
-	if bsorted == true {
+	if bsorted {
 		sorted = true
 		return
 	}

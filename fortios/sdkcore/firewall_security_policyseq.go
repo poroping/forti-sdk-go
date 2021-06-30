@@ -92,7 +92,7 @@ func (c *FortiSDKClient) GetSecurityPolicyList(vdomparam string, batch int) (out
 	var result map[string]interface{}
 	json.Unmarshal([]byte(string(body)), &result)
 
-	if fortiAPIHttpStatus404Checking(result) == true {
+	if fortiAPIHttpStatus404Checking(result) {
 		return
 	}
 

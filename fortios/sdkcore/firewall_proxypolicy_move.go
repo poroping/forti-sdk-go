@@ -78,7 +78,7 @@ func (c *FortiSDKClient) GetFirewallProxypolicyList(vdomparam string, batch int)
 	var result map[string]interface{}
 	json.Unmarshal([]byte(string(body)), &result)
 
-	if fortiAPIHttpStatus404Checking(result) == true {
+	if fortiAPIHttpStatus404Checking(result) {
 		return
 	}
 

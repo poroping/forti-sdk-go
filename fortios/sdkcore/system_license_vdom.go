@@ -247,7 +247,7 @@ func (c *FortiSDKClient) ReadSystemLicenseVDOM(mkey string) (output *JSONSystemL
 			}
 		}
 
-		if bFind == false {
+		if !bFind {
 			err = fmt.Errorf("cannot get vdom property from the response")
 			return
 		}

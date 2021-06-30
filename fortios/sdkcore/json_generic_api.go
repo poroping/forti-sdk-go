@@ -103,7 +103,7 @@ func (c *FortiSDKClient) GenericGroupRead(path, specialparams, vdomparam string,
 	var result map[string]interface{}
 	json.Unmarshal([]byte(string(body)), &result)
 
-	if fortiAPIHttpStatus404Checking(result) == true {
+	if fortiAPIHttpStatus404Checking(result) {
 		mapTmp = nil
 		return
 	}

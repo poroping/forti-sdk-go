@@ -78,7 +78,7 @@ func (c *FortiSDKClient) GetFirewallCentralsnatmapList(vdomparam string, batch i
 	var result map[string]interface{}
 	json.Unmarshal([]byte(string(body)), &result)
 
-	if fortiAPIHttpStatus404Checking(result) == true {
+	if fortiAPIHttpStatus404Checking(result) {
 		return
 	}
 

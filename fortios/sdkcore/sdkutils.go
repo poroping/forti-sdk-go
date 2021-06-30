@@ -95,7 +95,7 @@ func read(c *FortiSDKClient, method string, path string, bcomplex bool, vdompara
 	var result map[string]interface{}
 	json.Unmarshal([]byte(string(body)), &result)
 
-	if fortiAPIHttpStatus404Checking(result) == true {
+	if fortiAPIHttpStatus404Checking(result) {
 		mapTmp = nil
 		return
 	}

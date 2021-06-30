@@ -40,7 +40,7 @@ func getPolicyList(c *FortiSDKClient, vdomparam string, batch int) (idlist []pol
 	var result map[string]interface{}
 	json.Unmarshal([]byte(string(body)), &result)
 
-	if fortiAPIHttpStatus404Checking(result) == true {
+	if fortiAPIHttpStatus404Checking(result) {
 		return
 	}
 
@@ -188,7 +188,7 @@ func (c *FortiSDKClient) CreateUpdateFirewallSecurityPolicySort(sortby, sortdire
 	}
 
 	bsorted := bPolicyListSorted(idlist, sortby, sortdirection)
-	if bsorted == true {
+	if bsorted {
 		return
 	}
 
@@ -213,7 +213,7 @@ func (c *FortiSDKClient) ReadFirewallSecurityPolicySort(sortby, sortdirection, v
 
 	bsorted := bPolicyListSorted(idlist, sortby, sortdirection)
 	log.Printf("shengh: %v", bsorted)
-	if bsorted == true {
+	if bsorted {
 		sorted = true
 		return
 	}
