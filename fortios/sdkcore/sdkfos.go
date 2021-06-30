@@ -22897,6 +22897,7 @@ func (c *FortiSDKClient) ReadVpnIpsecPhase1Interface(mkey string, vdomparam stri
 	path += "/" + escapeURLString(mkey)
 
 	urlparams := make(map[string][]string)
+	urlparams["plain-text-password"] = []string{"1"}
 
 	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, batch, urlparams)
 	return
