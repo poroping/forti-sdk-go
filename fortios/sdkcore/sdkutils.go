@@ -8,7 +8,7 @@ import (
 	"log"
 )
 
-func createUpdate(c *FortiSDKClient, method string, path string, data *map[string]interface{}, output map[string]interface{}, vdomparam string) (err error) {
+func createUpdate(c *FortiSDKClient, method string, path string, data *map[string]interface{}, output map[string]interface{}, vdomparam string, url_params map[string][]string) (err error) {
 	locJSON, err := json.Marshal(data)
 	if err != nil {
 		log.Fatal(err)
@@ -17,7 +17,7 @@ func createUpdate(c *FortiSDKClient, method string, path string, data *map[strin
 
 	bytes := bytes.NewBuffer(locJSON)
 
-	req := c.NewRequest(method, path, nil, bytes)
+	req := c.NewRequest(method, path, &url_params, bytes)
 	err = req.Send3(vdomparam)
 	if err != nil || req.HTTPResponse == nil {
 		err = fmt.Errorf("cannot send request %v", err)
@@ -75,8 +75,8 @@ func delete(c *FortiSDKClient, method string, path string, vdomparam string) (er
 	return
 }
 
-func read(c *FortiSDKClient, method string, path string, bcomplex bool, vdomparam string) (mapTmp map[string]interface{}, err error) {
-	req := c.NewRequest(method, path, nil, nil)
+func read(c *FortiSDKClient, method string, path string, bcomplex bool, vdomparam string, url_params map[string][]string) (mapTmp map[string]interface{}, err error) {
+	req := c.NewRequest(method, path, &url_params, nil)
 	err = req.Send3(vdomparam)
 	if err != nil || req.HTTPResponse == nil {
 		err = fmt.Errorf("cannot send request %v", err)

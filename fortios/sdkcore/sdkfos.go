@@ -23,8 +23,9 @@ func (c *FortiSDKClient) UpdateAlertemailSetting(data *map[string]interface{}, m
 	HTTPMethod := "PUT"
 	path := "/api/v2/cmdb/alertemail/setting"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -45,8 +46,9 @@ func (c *FortiSDKClient) DeleteAlertemailSetting(mkey string, vdomparam string) 
 func (c *FortiSDKClient) ReadAlertemailSetting(mkey string, vdomparam string) (mapTmp map[string]interface{}, err error) {
 	HTTPMethod := "GET"
 	path := "/api/v2/cmdb/alertemail/setting"
+	url_params := make(map[string][]string)
 
-	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam)
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -58,8 +60,9 @@ func (c *FortiSDKClient) UpdateAntivirusHeuristic(data *map[string]interface{}, 
 	HTTPMethod := "PUT"
 	path := "/api/v2/cmdb/antivirus/heuristic"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -80,8 +83,9 @@ func (c *FortiSDKClient) DeleteAntivirusHeuristic(mkey string, vdomparam string)
 func (c *FortiSDKClient) ReadAntivirusHeuristic(mkey string, vdomparam string) (mapTmp map[string]interface{}, err error) {
 	HTTPMethod := "GET"
 	path := "/api/v2/cmdb/antivirus/heuristic"
+	url_params := make(map[string][]string)
 
-	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam)
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -94,8 +98,9 @@ func (c *FortiSDKClient) CreateAntivirusProfile(data *map[string]interface{}, vd
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/antivirus/profile"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -108,8 +113,9 @@ func (c *FortiSDKClient) UpdateAntivirusProfile(data *map[string]interface{}, mk
 	path := "/api/v2/cmdb/antivirus/profile"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -135,7 +141,9 @@ func (c *FortiSDKClient) ReadAntivirusProfile(mkey string, vdomparam string) (ma
 	path := "/api/v2/cmdb/antivirus/profile"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -147,8 +155,9 @@ func (c *FortiSDKClient) UpdateAntivirusQuarantine(data *map[string]interface{},
 	HTTPMethod := "PUT"
 	path := "/api/v2/cmdb/antivirus/quarantine"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -169,8 +178,9 @@ func (c *FortiSDKClient) DeleteAntivirusQuarantine(mkey string, vdomparam string
 func (c *FortiSDKClient) ReadAntivirusQuarantine(mkey string, vdomparam string) (mapTmp map[string]interface{}, err error) {
 	HTTPMethod := "GET"
 	path := "/api/v2/cmdb/antivirus/quarantine"
+	url_params := make(map[string][]string)
 
-	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam)
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -182,8 +192,9 @@ func (c *FortiSDKClient) UpdateAntivirusSettings(data *map[string]interface{}, m
 	HTTPMethod := "PUT"
 	path := "/api/v2/cmdb/antivirus/settings"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -204,8 +215,9 @@ func (c *FortiSDKClient) DeleteAntivirusSettings(mkey string, vdomparam string) 
 func (c *FortiSDKClient) ReadAntivirusSettings(mkey string, vdomparam string) (mapTmp map[string]interface{}, err error) {
 	HTTPMethod := "GET"
 	path := "/api/v2/cmdb/antivirus/settings"
+	url_params := make(map[string][]string)
 
-	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam)
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -218,8 +230,9 @@ func (c *FortiSDKClient) CreateApplicationCustom(data *map[string]interface{}, v
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/application/custom"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -232,8 +245,9 @@ func (c *FortiSDKClient) UpdateApplicationCustom(data *map[string]interface{}, m
 	path := "/api/v2/cmdb/application/custom"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -259,7 +273,9 @@ func (c *FortiSDKClient) ReadApplicationCustom(mkey string, vdomparam string) (m
 	path := "/api/v2/cmdb/application/custom"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -272,8 +288,9 @@ func (c *FortiSDKClient) CreateApplicationGroup(data *map[string]interface{}, vd
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/application/group"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -286,8 +303,9 @@ func (c *FortiSDKClient) UpdateApplicationGroup(data *map[string]interface{}, mk
 	path := "/api/v2/cmdb/application/group"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -313,7 +331,9 @@ func (c *FortiSDKClient) ReadApplicationGroup(mkey string, vdomparam string) (ma
 	path := "/api/v2/cmdb/application/group"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -326,8 +346,9 @@ func (c *FortiSDKClient) CreateApplicationList(data *map[string]interface{}, vdo
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/application/list"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -340,8 +361,9 @@ func (c *FortiSDKClient) UpdateApplicationList(data *map[string]interface{}, mke
 	path := "/api/v2/cmdb/application/list"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -367,7 +389,9 @@ func (c *FortiSDKClient) ReadApplicationList(mkey string, vdomparam string) (map
 	path := "/api/v2/cmdb/application/list"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -380,8 +404,9 @@ func (c *FortiSDKClient) CreateApplicationName(data *map[string]interface{}, vdo
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/application/name"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -394,8 +419,9 @@ func (c *FortiSDKClient) UpdateApplicationName(data *map[string]interface{}, mke
 	path := "/api/v2/cmdb/application/name"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -421,7 +447,9 @@ func (c *FortiSDKClient) ReadApplicationName(mkey string, vdomparam string) (map
 	path := "/api/v2/cmdb/application/name"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -434,8 +462,9 @@ func (c *FortiSDKClient) CreateApplicationRuleSettings(data *map[string]interfac
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/application/rule-settings"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -448,8 +477,9 @@ func (c *FortiSDKClient) UpdateApplicationRuleSettings(data *map[string]interfac
 	path := "/api/v2/cmdb/application/rule-settings"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -475,7 +505,9 @@ func (c *FortiSDKClient) ReadApplicationRuleSettings(mkey string, vdomparam stri
 	path := "/api/v2/cmdb/application/rule-settings"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -488,8 +520,9 @@ func (c *FortiSDKClient) CreateAuthenticationRule(data *map[string]interface{}, 
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/authentication/rule"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -502,8 +535,9 @@ func (c *FortiSDKClient) UpdateAuthenticationRule(data *map[string]interface{}, 
 	path := "/api/v2/cmdb/authentication/rule"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -529,7 +563,9 @@ func (c *FortiSDKClient) ReadAuthenticationRule(mkey string, vdomparam string) (
 	path := "/api/v2/cmdb/authentication/rule"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -542,8 +578,9 @@ func (c *FortiSDKClient) CreateAuthenticationScheme(data *map[string]interface{}
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/authentication/scheme"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -556,8 +593,9 @@ func (c *FortiSDKClient) UpdateAuthenticationScheme(data *map[string]interface{}
 	path := "/api/v2/cmdb/authentication/scheme"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -583,7 +621,9 @@ func (c *FortiSDKClient) ReadAuthenticationScheme(mkey string, vdomparam string)
 	path := "/api/v2/cmdb/authentication/scheme"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -595,8 +635,9 @@ func (c *FortiSDKClient) UpdateAuthenticationSetting(data *map[string]interface{
 	HTTPMethod := "PUT"
 	path := "/api/v2/cmdb/authentication/setting"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -617,8 +658,9 @@ func (c *FortiSDKClient) DeleteAuthenticationSetting(mkey string, vdomparam stri
 func (c *FortiSDKClient) ReadAuthenticationSetting(mkey string, vdomparam string) (mapTmp map[string]interface{}, err error) {
 	HTTPMethod := "GET"
 	path := "/api/v2/cmdb/authentication/setting"
+	url_params := make(map[string][]string)
 
-	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam)
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -631,8 +673,9 @@ func (c *FortiSDKClient) CreateCertificateCa(data *map[string]interface{}, vdomp
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/certificate/ca"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -645,8 +688,9 @@ func (c *FortiSDKClient) UpdateCertificateCa(data *map[string]interface{}, mkey 
 	path := "/api/v2/cmdb/certificate/ca"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -672,7 +716,9 @@ func (c *FortiSDKClient) ReadCertificateCa(mkey string, vdomparam string) (mapTm
 	path := "/api/v2/cmdb/certificate/ca"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -685,8 +731,9 @@ func (c *FortiSDKClient) CreateCertificateCrl(data *map[string]interface{}, vdom
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/certificate/crl"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -699,8 +746,9 @@ func (c *FortiSDKClient) UpdateCertificateCrl(data *map[string]interface{}, mkey
 	path := "/api/v2/cmdb/certificate/crl"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -726,7 +774,9 @@ func (c *FortiSDKClient) ReadCertificateCrl(mkey string, vdomparam string) (mapT
 	path := "/api/v2/cmdb/certificate/crl"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -739,8 +789,9 @@ func (c *FortiSDKClient) CreateCertificateLocal(data *map[string]interface{}, vd
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/certificate/local"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -753,8 +804,9 @@ func (c *FortiSDKClient) UpdateCertificateLocal(data *map[string]interface{}, mk
 	path := "/api/v2/cmdb/certificate/local"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -780,7 +832,9 @@ func (c *FortiSDKClient) ReadCertificateLocal(mkey string, vdomparam string) (ma
 	path := "/api/v2/cmdb/certificate/local"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -793,8 +847,9 @@ func (c *FortiSDKClient) CreateCertificateRemote(data *map[string]interface{}, v
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/certificate/remote"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -807,8 +862,9 @@ func (c *FortiSDKClient) UpdateCertificateRemote(data *map[string]interface{}, m
 	path := "/api/v2/cmdb/certificate/remote"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -834,7 +890,9 @@ func (c *FortiSDKClient) ReadCertificateRemote(mkey string, vdomparam string) (m
 	path := "/api/v2/cmdb/certificate/remote"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -847,8 +905,9 @@ func (c *FortiSDKClient) CreateCifsDomainController(data *map[string]interface{}
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/cifs/domain-controller"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -861,8 +920,9 @@ func (c *FortiSDKClient) UpdateCifsDomainController(data *map[string]interface{}
 	path := "/api/v2/cmdb/cifs/domain-controller"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -888,7 +948,9 @@ func (c *FortiSDKClient) ReadCifsDomainController(mkey string, vdomparam string)
 	path := "/api/v2/cmdb/cifs/domain-controller"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -901,8 +963,9 @@ func (c *FortiSDKClient) CreateCifsProfile(data *map[string]interface{}, vdompar
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/cifs/profile"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -915,8 +978,9 @@ func (c *FortiSDKClient) UpdateCifsProfile(data *map[string]interface{}, mkey st
 	path := "/api/v2/cmdb/cifs/profile"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -942,7 +1006,9 @@ func (c *FortiSDKClient) ReadCifsProfile(mkey string, vdomparam string) (mapTmp 
 	path := "/api/v2/cmdb/cifs/profile"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -955,8 +1021,9 @@ func (c *FortiSDKClient) CreateCredentialStoreDomainController(data *map[string]
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/credential-store/domain-controller"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -969,8 +1036,9 @@ func (c *FortiSDKClient) UpdateCredentialStoreDomainController(data *map[string]
 	path := "/api/v2/cmdb/credential-store/domain-controller"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -996,7 +1064,9 @@ func (c *FortiSDKClient) ReadCredentialStoreDomainController(mkey string, vdompa
 	path := "/api/v2/cmdb/credential-store/domain-controller"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -1009,8 +1079,9 @@ func (c *FortiSDKClient) CreateDlpFilepattern(data *map[string]interface{}, vdom
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/dlp/filepattern"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -1023,8 +1094,9 @@ func (c *FortiSDKClient) UpdateDlpFilepattern(data *map[string]interface{}, mkey
 	path := "/api/v2/cmdb/dlp/filepattern"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -1050,7 +1122,9 @@ func (c *FortiSDKClient) ReadDlpFilepattern(mkey string, vdomparam string) (mapT
 	path := "/api/v2/cmdb/dlp/filepattern"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -1063,8 +1137,9 @@ func (c *FortiSDKClient) CreateDlpFpDocSource(data *map[string]interface{}, vdom
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/dlp/fp-doc-source"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -1077,8 +1152,9 @@ func (c *FortiSDKClient) UpdateDlpFpDocSource(data *map[string]interface{}, mkey
 	path := "/api/v2/cmdb/dlp/fp-doc-source"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -1104,7 +1180,9 @@ func (c *FortiSDKClient) ReadDlpFpDocSource(mkey string, vdomparam string) (mapT
 	path := "/api/v2/cmdb/dlp/fp-doc-source"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -1117,8 +1195,9 @@ func (c *FortiSDKClient) CreateDlpFpSensitivity(data *map[string]interface{}, vd
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/dlp/fp-sensitivity"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -1131,8 +1210,9 @@ func (c *FortiSDKClient) UpdateDlpFpSensitivity(data *map[string]interface{}, mk
 	path := "/api/v2/cmdb/dlp/fp-sensitivity"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -1158,7 +1238,9 @@ func (c *FortiSDKClient) ReadDlpFpSensitivity(mkey string, vdomparam string) (ma
 	path := "/api/v2/cmdb/dlp/fp-sensitivity"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -1171,8 +1253,9 @@ func (c *FortiSDKClient) CreateDlpSensitivity(data *map[string]interface{}, vdom
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/dlp/sensitivity"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -1185,8 +1268,9 @@ func (c *FortiSDKClient) UpdateDlpSensitivity(data *map[string]interface{}, mkey
 	path := "/api/v2/cmdb/dlp/sensitivity"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -1212,7 +1296,9 @@ func (c *FortiSDKClient) ReadDlpSensitivity(mkey string, vdomparam string) (mapT
 	path := "/api/v2/cmdb/dlp/sensitivity"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -1225,8 +1311,9 @@ func (c *FortiSDKClient) CreateDlpSensor(data *map[string]interface{}, vdomparam
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/dlp/sensor"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -1239,8 +1326,9 @@ func (c *FortiSDKClient) UpdateDlpSensor(data *map[string]interface{}, mkey stri
 	path := "/api/v2/cmdb/dlp/sensor"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -1266,7 +1354,9 @@ func (c *FortiSDKClient) ReadDlpSensor(mkey string, vdomparam string) (mapTmp ma
 	path := "/api/v2/cmdb/dlp/sensor"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -1278,8 +1368,9 @@ func (c *FortiSDKClient) UpdateDlpSettings(data *map[string]interface{}, mkey st
 	HTTPMethod := "PUT"
 	path := "/api/v2/cmdb/dlp/settings"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -1300,8 +1391,9 @@ func (c *FortiSDKClient) DeleteDlpSettings(mkey string, vdomparam string) (err e
 func (c *FortiSDKClient) ReadDlpSettings(mkey string, vdomparam string) (mapTmp map[string]interface{}, err error) {
 	HTTPMethod := "GET"
 	path := "/api/v2/cmdb/dlp/settings"
+	url_params := make(map[string][]string)
 
-	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam)
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -1314,8 +1406,9 @@ func (c *FortiSDKClient) CreateDnsfilterDomainFilter(data *map[string]interface{
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/dnsfilter/domain-filter"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -1328,8 +1421,9 @@ func (c *FortiSDKClient) UpdateDnsfilterDomainFilter(data *map[string]interface{
 	path := "/api/v2/cmdb/dnsfilter/domain-filter"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -1355,7 +1449,9 @@ func (c *FortiSDKClient) ReadDnsfilterDomainFilter(mkey string, vdomparam string
 	path := "/api/v2/cmdb/dnsfilter/domain-filter"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -1368,8 +1464,9 @@ func (c *FortiSDKClient) CreateDnsfilterProfile(data *map[string]interface{}, vd
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/dnsfilter/profile"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -1382,8 +1479,9 @@ func (c *FortiSDKClient) UpdateDnsfilterProfile(data *map[string]interface{}, mk
 	path := "/api/v2/cmdb/dnsfilter/profile"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -1409,7 +1507,9 @@ func (c *FortiSDKClient) ReadDnsfilterProfile(mkey string, vdomparam string) (ma
 	path := "/api/v2/cmdb/dnsfilter/profile"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -1422,8 +1522,9 @@ func (c *FortiSDKClient) CreateEmailfilterBlockAllowList(data *map[string]interf
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/emailfilter/block-allow-list"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -1436,8 +1537,9 @@ func (c *FortiSDKClient) UpdateEmailfilterBlockAllowList(data *map[string]interf
 	path := "/api/v2/cmdb/emailfilter/block-allow-list"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -1463,7 +1565,9 @@ func (c *FortiSDKClient) ReadEmailfilterBlockAllowList(mkey string, vdomparam st
 	path := "/api/v2/cmdb/emailfilter/block-allow-list"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -1475,8 +1579,9 @@ func (c *FortiSDKClient) UpdateDpdkCpus(data *map[string]interface{}, mkey strin
 	HTTPMethod := "PUT"
 	path := "/api/v2/cmdb/dpdk/cpus"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -1497,8 +1602,9 @@ func (c *FortiSDKClient) DeleteDpdkCpus(mkey string, vdomparam string) (err erro
 func (c *FortiSDKClient) ReadDpdkCpus(mkey string, vdomparam string) (mapTmp map[string]interface{}, err error) {
 	HTTPMethod := "GET"
 	path := "/api/v2/cmdb/dpdk/cpus"
+	url_params := make(map[string][]string)
 
-	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam)
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -1510,8 +1616,9 @@ func (c *FortiSDKClient) UpdateDpdkGlobal(data *map[string]interface{}, mkey str
 	HTTPMethod := "PUT"
 	path := "/api/v2/cmdb/dpdk/global"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -1532,8 +1639,9 @@ func (c *FortiSDKClient) DeleteDpdkGlobal(mkey string, vdomparam string) (err er
 func (c *FortiSDKClient) ReadDpdkGlobal(mkey string, vdomparam string) (mapTmp map[string]interface{}, err error) {
 	HTTPMethod := "GET"
 	path := "/api/v2/cmdb/dpdk/global"
+	url_params := make(map[string][]string)
 
-	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam)
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -1546,8 +1654,9 @@ func (c *FortiSDKClient) CreateEmailfilterBwl(data *map[string]interface{}, vdom
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/emailfilter/bwl"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -1560,8 +1669,9 @@ func (c *FortiSDKClient) UpdateEmailfilterBwl(data *map[string]interface{}, mkey
 	path := "/api/v2/cmdb/emailfilter/bwl"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -1587,7 +1697,9 @@ func (c *FortiSDKClient) ReadEmailfilterBwl(mkey string, vdomparam string) (mapT
 	path := "/api/v2/cmdb/emailfilter/bwl"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -1600,8 +1712,9 @@ func (c *FortiSDKClient) CreateEmailfilterBword(data *map[string]interface{}, vd
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/emailfilter/bword"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -1614,8 +1727,9 @@ func (c *FortiSDKClient) UpdateEmailfilterBword(data *map[string]interface{}, mk
 	path := "/api/v2/cmdb/emailfilter/bword"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -1641,7 +1755,9 @@ func (c *FortiSDKClient) ReadEmailfilterBword(mkey string, vdomparam string) (ma
 	path := "/api/v2/cmdb/emailfilter/bword"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -1654,8 +1770,9 @@ func (c *FortiSDKClient) CreateEmailfilterDnsbl(data *map[string]interface{}, vd
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/emailfilter/dnsbl"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -1668,8 +1785,9 @@ func (c *FortiSDKClient) UpdateEmailfilterDnsbl(data *map[string]interface{}, mk
 	path := "/api/v2/cmdb/emailfilter/dnsbl"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -1695,7 +1813,9 @@ func (c *FortiSDKClient) ReadEmailfilterDnsbl(mkey string, vdomparam string) (ma
 	path := "/api/v2/cmdb/emailfilter/dnsbl"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -1707,8 +1827,9 @@ func (c *FortiSDKClient) UpdateEmailfilterFortishield(data *map[string]interface
 	HTTPMethod := "PUT"
 	path := "/api/v2/cmdb/emailfilter/fortishield"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -1729,8 +1850,9 @@ func (c *FortiSDKClient) DeleteEmailfilterFortishield(mkey string, vdomparam str
 func (c *FortiSDKClient) ReadEmailfilterFortishield(mkey string, vdomparam string) (mapTmp map[string]interface{}, err error) {
 	HTTPMethod := "GET"
 	path := "/api/v2/cmdb/emailfilter/fortishield"
+	url_params := make(map[string][]string)
 
-	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam)
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -1743,8 +1865,9 @@ func (c *FortiSDKClient) CreateEmailfilterIptrust(data *map[string]interface{}, 
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/emailfilter/iptrust"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -1757,8 +1880,9 @@ func (c *FortiSDKClient) UpdateEmailfilterIptrust(data *map[string]interface{}, 
 	path := "/api/v2/cmdb/emailfilter/iptrust"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -1784,7 +1908,9 @@ func (c *FortiSDKClient) ReadEmailfilterIptrust(mkey string, vdomparam string) (
 	path := "/api/v2/cmdb/emailfilter/iptrust"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -1797,8 +1923,9 @@ func (c *FortiSDKClient) CreateEmailfilterMheader(data *map[string]interface{}, 
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/emailfilter/mheader"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -1811,8 +1938,9 @@ func (c *FortiSDKClient) UpdateEmailfilterMheader(data *map[string]interface{}, 
 	path := "/api/v2/cmdb/emailfilter/mheader"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -1838,7 +1966,9 @@ func (c *FortiSDKClient) ReadEmailfilterMheader(mkey string, vdomparam string) (
 	path := "/api/v2/cmdb/emailfilter/mheader"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -1850,8 +1980,9 @@ func (c *FortiSDKClient) UpdateEmailfilterOptions(data *map[string]interface{}, 
 	HTTPMethod := "PUT"
 	path := "/api/v2/cmdb/emailfilter/options"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -1872,8 +2003,9 @@ func (c *FortiSDKClient) DeleteEmailfilterOptions(mkey string, vdomparam string)
 func (c *FortiSDKClient) ReadEmailfilterOptions(mkey string, vdomparam string) (mapTmp map[string]interface{}, err error) {
 	HTTPMethod := "GET"
 	path := "/api/v2/cmdb/emailfilter/options"
+	url_params := make(map[string][]string)
 
-	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam)
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -1886,8 +2018,9 @@ func (c *FortiSDKClient) CreateEmailfilterProfile(data *map[string]interface{}, 
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/emailfilter/profile"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -1900,8 +2033,9 @@ func (c *FortiSDKClient) UpdateEmailfilterProfile(data *map[string]interface{}, 
 	path := "/api/v2/cmdb/emailfilter/profile"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -1927,7 +2061,9 @@ func (c *FortiSDKClient) ReadEmailfilterProfile(mkey string, vdomparam string) (
 	path := "/api/v2/cmdb/emailfilter/profile"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -1940,8 +2076,9 @@ func (c *FortiSDKClient) CreateEndpointControlClient(data *map[string]interface{
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/endpoint-control/client"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -1954,8 +2091,9 @@ func (c *FortiSDKClient) UpdateEndpointControlClient(data *map[string]interface{
 	path := "/api/v2/cmdb/endpoint-control/client"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -1981,7 +2119,9 @@ func (c *FortiSDKClient) ReadEndpointControlClient(mkey string, vdomparam string
 	path := "/api/v2/cmdb/endpoint-control/client"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -1994,8 +2134,9 @@ func (c *FortiSDKClient) CreateEndpointControlFctems(data *map[string]interface{
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/endpoint-control/fctems"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -2008,8 +2149,9 @@ func (c *FortiSDKClient) UpdateEndpointControlFctems(data *map[string]interface{
 	path := "/api/v2/cmdb/endpoint-control/fctems"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -2035,7 +2177,9 @@ func (c *FortiSDKClient) ReadEndpointControlFctems(mkey string, vdomparam string
 	path := "/api/v2/cmdb/endpoint-control/fctems"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -2048,8 +2192,9 @@ func (c *FortiSDKClient) CreateEndpointControlForticlientEms(data *map[string]in
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/endpoint-control/forticlient-ems"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -2062,8 +2207,9 @@ func (c *FortiSDKClient) UpdateEndpointControlForticlientEms(data *map[string]in
 	path := "/api/v2/cmdb/endpoint-control/forticlient-ems"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -2089,7 +2235,9 @@ func (c *FortiSDKClient) ReadEndpointControlForticlientEms(mkey string, vdompara
 	path := "/api/v2/cmdb/endpoint-control/forticlient-ems"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -2102,8 +2250,9 @@ func (c *FortiSDKClient) CreateEndpointControlForticlientRegistrationSync(data *
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/endpoint-control/forticlient-registration-sync"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -2116,8 +2265,9 @@ func (c *FortiSDKClient) UpdateEndpointControlForticlientRegistrationSync(data *
 	path := "/api/v2/cmdb/endpoint-control/forticlient-registration-sync"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -2143,7 +2293,9 @@ func (c *FortiSDKClient) ReadEndpointControlForticlientRegistrationSync(mkey str
 	path := "/api/v2/cmdb/endpoint-control/forticlient-registration-sync"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -2156,8 +2308,9 @@ func (c *FortiSDKClient) CreateEndpointControlProfile(data *map[string]interface
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/endpoint-control/profile"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -2170,8 +2323,9 @@ func (c *FortiSDKClient) UpdateEndpointControlProfile(data *map[string]interface
 	path := "/api/v2/cmdb/endpoint-control/profile"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -2197,7 +2351,9 @@ func (c *FortiSDKClient) ReadEndpointControlProfile(mkey string, vdomparam strin
 	path := "/api/v2/cmdb/endpoint-control/profile"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -2210,8 +2366,9 @@ func (c *FortiSDKClient) CreateEndpointControlRegisteredForticlient(data *map[st
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/endpoint-control/registered-forticlient"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -2224,8 +2381,9 @@ func (c *FortiSDKClient) UpdateEndpointControlRegisteredForticlient(data *map[st
 	path := "/api/v2/cmdb/endpoint-control/registered-forticlient"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -2251,7 +2409,9 @@ func (c *FortiSDKClient) ReadEndpointControlRegisteredForticlient(mkey string, v
 	path := "/api/v2/cmdb/endpoint-control/registered-forticlient"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -2263,8 +2423,9 @@ func (c *FortiSDKClient) UpdateEndpointControlSettings(data *map[string]interfac
 	HTTPMethod := "PUT"
 	path := "/api/v2/cmdb/endpoint-control/settings"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -2285,8 +2446,9 @@ func (c *FortiSDKClient) DeleteEndpointControlSettings(mkey string, vdomparam st
 func (c *FortiSDKClient) ReadEndpointControlSettings(mkey string, vdomparam string) (mapTmp map[string]interface{}, err error) {
 	HTTPMethod := "GET"
 	path := "/api/v2/cmdb/endpoint-control/settings"
+	url_params := make(map[string][]string)
 
-	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam)
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -2299,8 +2461,9 @@ func (c *FortiSDKClient) CreateExtenderControllerDataplan(data *map[string]inter
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/extender-controller/dataplan"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -2313,8 +2476,9 @@ func (c *FortiSDKClient) UpdateExtenderControllerDataplan(data *map[string]inter
 	path := "/api/v2/cmdb/extender-controller/dataplan"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -2340,7 +2504,9 @@ func (c *FortiSDKClient) ReadExtenderControllerDataplan(mkey string, vdomparam s
 	path := "/api/v2/cmdb/extender-controller/dataplan"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -2353,8 +2519,9 @@ func (c *FortiSDKClient) CreateExtenderControllerExtender(data *map[string]inter
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/extender-controller/extender"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -2367,8 +2534,9 @@ func (c *FortiSDKClient) UpdateExtenderControllerExtender(data *map[string]inter
 	path := "/api/v2/cmdb/extender-controller/extender"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -2394,7 +2562,9 @@ func (c *FortiSDKClient) ReadExtenderControllerExtender(mkey string, vdomparam s
 	path := "/api/v2/cmdb/extender-controller/extender"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -2407,8 +2577,9 @@ func (c *FortiSDKClient) CreateExtenderControllerExtender1(data *map[string]inte
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/extender-controller/extender"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -2421,8 +2592,9 @@ func (c *FortiSDKClient) UpdateExtenderControllerExtender1(data *map[string]inte
 	path := "/api/v2/cmdb/extender-controller/extender"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -2448,7 +2620,9 @@ func (c *FortiSDKClient) ReadExtenderControllerExtender1(mkey string, vdomparam 
 	path := "/api/v2/cmdb/extender-controller/extender"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -2461,8 +2635,9 @@ func (c *FortiSDKClient) CreateFileFilterProfile(data *map[string]interface{}, v
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/file-filter/profile"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -2475,8 +2650,9 @@ func (c *FortiSDKClient) UpdateFileFilterProfile(data *map[string]interface{}, m
 	path := "/api/v2/cmdb/file-filter/profile"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -2502,7 +2678,9 @@ func (c *FortiSDKClient) ReadFileFilterProfile(mkey string, vdomparam string) (m
 	path := "/api/v2/cmdb/file-filter/profile"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -2515,8 +2693,9 @@ func (c *FortiSDKClient) CreateFirewallDosPolicy(data *map[string]interface{}, v
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/firewall/DoS-policy"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -2529,8 +2708,9 @@ func (c *FortiSDKClient) UpdateFirewallDosPolicy(data *map[string]interface{}, m
 	path := "/api/v2/cmdb/firewall/DoS-policy"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -2556,7 +2736,9 @@ func (c *FortiSDKClient) ReadFirewallDosPolicy(mkey string, vdomparam string) (m
 	path := "/api/v2/cmdb/firewall/DoS-policy"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -2569,8 +2751,9 @@ func (c *FortiSDKClient) CreateFirewallDosPolicy6(data *map[string]interface{}, 
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/firewall/DoS-policy6"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -2583,8 +2766,9 @@ func (c *FortiSDKClient) UpdateFirewallDosPolicy6(data *map[string]interface{}, 
 	path := "/api/v2/cmdb/firewall/DoS-policy6"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -2610,7 +2794,9 @@ func (c *FortiSDKClient) ReadFirewallDosPolicy6(mkey string, vdomparam string) (
 	path := "/api/v2/cmdb/firewall/DoS-policy6"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -2623,8 +2809,9 @@ func (c *FortiSDKClient) CreateFirewallAddress(data *map[string]interface{}, vdo
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/firewall/address"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -2637,8 +2824,9 @@ func (c *FortiSDKClient) UpdateFirewallAddress(data *map[string]interface{}, mke
 	path := "/api/v2/cmdb/firewall/address"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -2664,7 +2852,9 @@ func (c *FortiSDKClient) ReadFirewallAddress(mkey string, vdomparam string) (map
 	path := "/api/v2/cmdb/firewall/address"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -2677,8 +2867,9 @@ func (c *FortiSDKClient) CreateFirewallAddress6(data *map[string]interface{}, vd
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/firewall/address6"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -2691,8 +2882,9 @@ func (c *FortiSDKClient) UpdateFirewallAddress6(data *map[string]interface{}, mk
 	path := "/api/v2/cmdb/firewall/address6"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -2718,7 +2910,9 @@ func (c *FortiSDKClient) ReadFirewallAddress6(mkey string, vdomparam string) (ma
 	path := "/api/v2/cmdb/firewall/address6"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -2731,8 +2925,9 @@ func (c *FortiSDKClient) CreateFirewallAddress6Template(data *map[string]interfa
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/firewall/address6-template"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -2745,8 +2940,9 @@ func (c *FortiSDKClient) UpdateFirewallAddress6Template(data *map[string]interfa
 	path := "/api/v2/cmdb/firewall/address6-template"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -2772,7 +2968,9 @@ func (c *FortiSDKClient) ReadFirewallAddress6Template(mkey string, vdomparam str
 	path := "/api/v2/cmdb/firewall/address6-template"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -2785,8 +2983,9 @@ func (c *FortiSDKClient) CreateFirewallAddrgrp(data *map[string]interface{}, vdo
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/firewall/addrgrp"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -2799,8 +2998,9 @@ func (c *FortiSDKClient) UpdateFirewallAddrgrp(data *map[string]interface{}, mke
 	path := "/api/v2/cmdb/firewall/addrgrp"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -2826,7 +3026,9 @@ func (c *FortiSDKClient) ReadFirewallAddrgrp(mkey string, vdomparam string) (map
 	path := "/api/v2/cmdb/firewall/addrgrp"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -2839,8 +3041,9 @@ func (c *FortiSDKClient) CreateFirewallAddrgrp6(data *map[string]interface{}, vd
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/firewall/addrgrp6"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -2853,8 +3056,9 @@ func (c *FortiSDKClient) UpdateFirewallAddrgrp6(data *map[string]interface{}, mk
 	path := "/api/v2/cmdb/firewall/addrgrp6"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -2880,7 +3084,9 @@ func (c *FortiSDKClient) ReadFirewallAddrgrp6(mkey string, vdomparam string) (ma
 	path := "/api/v2/cmdb/firewall/addrgrp6"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -2892,8 +3098,9 @@ func (c *FortiSDKClient) UpdateFirewallAuthPortal(data *map[string]interface{}, 
 	HTTPMethod := "PUT"
 	path := "/api/v2/cmdb/firewall/auth-portal"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -2914,8 +3121,9 @@ func (c *FortiSDKClient) DeleteFirewallAuthPortal(mkey string, vdomparam string)
 func (c *FortiSDKClient) ReadFirewallAuthPortal(mkey string, vdomparam string) (mapTmp map[string]interface{}, err error) {
 	HTTPMethod := "GET"
 	path := "/api/v2/cmdb/firewall/auth-portal"
+	url_params := make(map[string][]string)
 
-	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam)
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -2928,8 +3136,9 @@ func (c *FortiSDKClient) CreateFirewallCentralSnatMap(data *map[string]interface
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/firewall/central-snat-map"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -2942,8 +3151,9 @@ func (c *FortiSDKClient) UpdateFirewallCentralSnatMap(data *map[string]interface
 	path := "/api/v2/cmdb/firewall/central-snat-map"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -2969,7 +3179,9 @@ func (c *FortiSDKClient) ReadFirewallCentralSnatMap(mkey string, vdomparam strin
 	path := "/api/v2/cmdb/firewall/central-snat-map"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -2982,8 +3194,9 @@ func (c *FortiSDKClient) CreateFirewallCity(data *map[string]interface{}, vdompa
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/firewall/city"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -2996,8 +3209,9 @@ func (c *FortiSDKClient) UpdateFirewallCity(data *map[string]interface{}, mkey s
 	path := "/api/v2/cmdb/firewall/city"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -3023,7 +3237,9 @@ func (c *FortiSDKClient) ReadFirewallCity(mkey string, vdomparam string) (mapTmp
 	path := "/api/v2/cmdb/firewall/city"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -3036,8 +3252,9 @@ func (c *FortiSDKClient) CreateFirewallCountry(data *map[string]interface{}, vdo
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/firewall/country"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -3050,8 +3267,9 @@ func (c *FortiSDKClient) UpdateFirewallCountry(data *map[string]interface{}, mke
 	path := "/api/v2/cmdb/firewall/country"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -3077,7 +3295,9 @@ func (c *FortiSDKClient) ReadFirewallCountry(mkey string, vdomparam string) (map
 	path := "/api/v2/cmdb/firewall/country"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -3090,8 +3310,9 @@ func (c *FortiSDKClient) CreateFirewallDecryptedTrafficMirror(data *map[string]i
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/firewall/decrypted-traffic-mirror"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -3104,8 +3325,9 @@ func (c *FortiSDKClient) UpdateFirewallDecryptedTrafficMirror(data *map[string]i
 	path := "/api/v2/cmdb/firewall/decrypted-traffic-mirror"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -3131,7 +3353,9 @@ func (c *FortiSDKClient) ReadFirewallDecryptedTrafficMirror(mkey string, vdompar
 	path := "/api/v2/cmdb/firewall/decrypted-traffic-mirror"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -3144,8 +3368,9 @@ func (c *FortiSDKClient) CreateFirewallDnstranslation(data *map[string]interface
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/firewall/dnstranslation"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -3158,8 +3383,9 @@ func (c *FortiSDKClient) UpdateFirewallDnstranslation(data *map[string]interface
 	path := "/api/v2/cmdb/firewall/dnstranslation"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -3185,7 +3411,9 @@ func (c *FortiSDKClient) ReadFirewallDnstranslation(mkey string, vdomparam strin
 	path := "/api/v2/cmdb/firewall/dnstranslation"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -3198,8 +3426,9 @@ func (c *FortiSDKClient) CreateFirewallIdentityBasedRoute(data *map[string]inter
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/firewall/identity-based-route"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -3212,8 +3441,9 @@ func (c *FortiSDKClient) UpdateFirewallIdentityBasedRoute(data *map[string]inter
 	path := "/api/v2/cmdb/firewall/identity-based-route"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -3239,7 +3469,9 @@ func (c *FortiSDKClient) ReadFirewallIdentityBasedRoute(mkey string, vdomparam s
 	path := "/api/v2/cmdb/firewall/identity-based-route"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -3252,8 +3484,9 @@ func (c *FortiSDKClient) CreateFirewallInterfacePolicy(data *map[string]interfac
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/firewall/interface-policy"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -3266,8 +3499,9 @@ func (c *FortiSDKClient) UpdateFirewallInterfacePolicy(data *map[string]interfac
 	path := "/api/v2/cmdb/firewall/interface-policy"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -3293,7 +3527,9 @@ func (c *FortiSDKClient) ReadFirewallInterfacePolicy(mkey string, vdomparam stri
 	path := "/api/v2/cmdb/firewall/interface-policy"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -3306,8 +3542,9 @@ func (c *FortiSDKClient) CreateFirewallInterfacePolicy6(data *map[string]interfa
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/firewall/interface-policy6"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -3320,8 +3557,9 @@ func (c *FortiSDKClient) UpdateFirewallInterfacePolicy6(data *map[string]interfa
 	path := "/api/v2/cmdb/firewall/interface-policy6"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -3347,7 +3585,9 @@ func (c *FortiSDKClient) ReadFirewallInterfacePolicy6(mkey string, vdomparam str
 	path := "/api/v2/cmdb/firewall/interface-policy6"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -3360,8 +3600,9 @@ func (c *FortiSDKClient) CreateFirewallInternetService(data *map[string]interfac
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/firewall/internet-service"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -3374,8 +3615,9 @@ func (c *FortiSDKClient) UpdateFirewallInternetService(data *map[string]interfac
 	path := "/api/v2/cmdb/firewall/internet-service"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -3401,7 +3643,9 @@ func (c *FortiSDKClient) ReadFirewallInternetService(mkey string, vdomparam stri
 	path := "/api/v2/cmdb/firewall/internet-service"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -3414,8 +3658,9 @@ func (c *FortiSDKClient) CreateFirewallInternetServiceAddition(data *map[string]
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/firewall/internet-service-addition"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -3428,8 +3673,9 @@ func (c *FortiSDKClient) UpdateFirewallInternetServiceAddition(data *map[string]
 	path := "/api/v2/cmdb/firewall/internet-service-addition"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -3455,7 +3701,9 @@ func (c *FortiSDKClient) ReadFirewallInternetServiceAddition(mkey string, vdompa
 	path := "/api/v2/cmdb/firewall/internet-service-addition"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -3467,8 +3715,9 @@ func (c *FortiSDKClient) UpdateFirewallInternetServiceAppend(data *map[string]in
 	HTTPMethod := "PUT"
 	path := "/api/v2/cmdb/firewall/internet-service-append"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -3489,8 +3738,9 @@ func (c *FortiSDKClient) DeleteFirewallInternetServiceAppend(mkey string, vdompa
 func (c *FortiSDKClient) ReadFirewallInternetServiceAppend(mkey string, vdomparam string) (mapTmp map[string]interface{}, err error) {
 	HTTPMethod := "GET"
 	path := "/api/v2/cmdb/firewall/internet-service-append"
+	url_params := make(map[string][]string)
 
-	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam)
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -3503,8 +3753,9 @@ func (c *FortiSDKClient) CreateFirewallInternetServiceBotnet(data *map[string]in
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/firewall/internet-service-botnet"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -3517,8 +3768,9 @@ func (c *FortiSDKClient) UpdateFirewallInternetServiceBotnet(data *map[string]in
 	path := "/api/v2/cmdb/firewall/internet-service-botnet"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -3544,7 +3796,9 @@ func (c *FortiSDKClient) ReadFirewallInternetServiceBotnet(mkey string, vdompara
 	path := "/api/v2/cmdb/firewall/internet-service-botnet"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -3557,8 +3811,9 @@ func (c *FortiSDKClient) CreateFirewallInternetServiceCustom(data *map[string]in
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/firewall/internet-service-custom"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -3571,8 +3826,9 @@ func (c *FortiSDKClient) UpdateFirewallInternetServiceCustom(data *map[string]in
 	path := "/api/v2/cmdb/firewall/internet-service-custom"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -3598,7 +3854,9 @@ func (c *FortiSDKClient) ReadFirewallInternetServiceCustom(mkey string, vdompara
 	path := "/api/v2/cmdb/firewall/internet-service-custom"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -3611,8 +3869,9 @@ func (c *FortiSDKClient) CreateFirewallInternetServiceCustomGroup(data *map[stri
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/firewall/internet-service-custom-group"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -3625,8 +3884,9 @@ func (c *FortiSDKClient) UpdateFirewallInternetServiceCustomGroup(data *map[stri
 	path := "/api/v2/cmdb/firewall/internet-service-custom-group"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -3652,7 +3912,9 @@ func (c *FortiSDKClient) ReadFirewallInternetServiceCustomGroup(mkey string, vdo
 	path := "/api/v2/cmdb/firewall/internet-service-custom-group"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -3665,8 +3927,9 @@ func (c *FortiSDKClient) CreateFirewallInternetServiceDefinition(data *map[strin
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/firewall/internet-service-definition"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -3679,8 +3942,9 @@ func (c *FortiSDKClient) UpdateFirewallInternetServiceDefinition(data *map[strin
 	path := "/api/v2/cmdb/firewall/internet-service-definition"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -3706,7 +3970,9 @@ func (c *FortiSDKClient) ReadFirewallInternetServiceDefinition(mkey string, vdom
 	path := "/api/v2/cmdb/firewall/internet-service-definition"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -3719,8 +3985,9 @@ func (c *FortiSDKClient) CreateFirewallInternetServiceExtension(data *map[string
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/firewall/internet-service-extension"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -3733,8 +4000,9 @@ func (c *FortiSDKClient) UpdateFirewallInternetServiceExtension(data *map[string
 	path := "/api/v2/cmdb/firewall/internet-service-extension"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -3760,7 +4028,9 @@ func (c *FortiSDKClient) ReadFirewallInternetServiceExtension(mkey string, vdomp
 	path := "/api/v2/cmdb/firewall/internet-service-extension"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -3773,8 +4043,9 @@ func (c *FortiSDKClient) CreateFirewallInternetServiceGroup(data *map[string]int
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/firewall/internet-service-group"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -3787,8 +4058,9 @@ func (c *FortiSDKClient) UpdateFirewallInternetServiceGroup(data *map[string]int
 	path := "/api/v2/cmdb/firewall/internet-service-group"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -3814,7 +4086,9 @@ func (c *FortiSDKClient) ReadFirewallInternetServiceGroup(mkey string, vdomparam
 	path := "/api/v2/cmdb/firewall/internet-service-group"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -3827,8 +4101,9 @@ func (c *FortiSDKClient) CreateFirewallInternetServiceIpblReason(data *map[strin
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/firewall/internet-service-ipbl-reason"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -3841,8 +4116,9 @@ func (c *FortiSDKClient) UpdateFirewallInternetServiceIpblReason(data *map[strin
 	path := "/api/v2/cmdb/firewall/internet-service-ipbl-reason"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -3868,7 +4144,9 @@ func (c *FortiSDKClient) ReadFirewallInternetServiceIpblReason(mkey string, vdom
 	path := "/api/v2/cmdb/firewall/internet-service-ipbl-reason"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -3881,8 +4159,9 @@ func (c *FortiSDKClient) CreateFirewallInternetServiceIpblVendor(data *map[strin
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/firewall/internet-service-ipbl-vendor"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -3895,8 +4174,9 @@ func (c *FortiSDKClient) UpdateFirewallInternetServiceIpblVendor(data *map[strin
 	path := "/api/v2/cmdb/firewall/internet-service-ipbl-vendor"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -3922,7 +4202,9 @@ func (c *FortiSDKClient) ReadFirewallInternetServiceIpblVendor(mkey string, vdom
 	path := "/api/v2/cmdb/firewall/internet-service-ipbl-vendor"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -3935,8 +4217,9 @@ func (c *FortiSDKClient) CreateFirewallInternetServiceList(data *map[string]inte
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/firewall/internet-service-list"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -3949,8 +4232,9 @@ func (c *FortiSDKClient) UpdateFirewallInternetServiceList(data *map[string]inte
 	path := "/api/v2/cmdb/firewall/internet-service-list"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -3976,7 +4260,9 @@ func (c *FortiSDKClient) ReadFirewallInternetServiceList(mkey string, vdomparam 
 	path := "/api/v2/cmdb/firewall/internet-service-list"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -3989,8 +4275,9 @@ func (c *FortiSDKClient) CreateFirewallInternetServiceName(data *map[string]inte
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/firewall/internet-service-name"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -4003,8 +4290,9 @@ func (c *FortiSDKClient) UpdateFirewallInternetServiceName(data *map[string]inte
 	path := "/api/v2/cmdb/firewall/internet-service-name"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -4030,7 +4318,9 @@ func (c *FortiSDKClient) ReadFirewallInternetServiceName(mkey string, vdomparam 
 	path := "/api/v2/cmdb/firewall/internet-service-name"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -4043,8 +4333,9 @@ func (c *FortiSDKClient) CreateFirewallInternetServiceOwner(data *map[string]int
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/firewall/internet-service-owner"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -4057,8 +4348,9 @@ func (c *FortiSDKClient) UpdateFirewallInternetServiceOwner(data *map[string]int
 	path := "/api/v2/cmdb/firewall/internet-service-owner"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -4084,7 +4376,9 @@ func (c *FortiSDKClient) ReadFirewallInternetServiceOwner(mkey string, vdomparam
 	path := "/api/v2/cmdb/firewall/internet-service-owner"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -4097,8 +4391,9 @@ func (c *FortiSDKClient) CreateFirewallInternetServiceReputation(data *map[strin
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/firewall/internet-service-reputation"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -4111,8 +4406,9 @@ func (c *FortiSDKClient) UpdateFirewallInternetServiceReputation(data *map[strin
 	path := "/api/v2/cmdb/firewall/internet-service-reputation"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -4138,7 +4434,9 @@ func (c *FortiSDKClient) ReadFirewallInternetServiceReputation(mkey string, vdom
 	path := "/api/v2/cmdb/firewall/internet-service-reputation"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -4151,8 +4449,9 @@ func (c *FortiSDKClient) CreateFirewallIpTranslation(data *map[string]interface{
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/firewall/ip-translation"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -4165,8 +4464,9 @@ func (c *FortiSDKClient) UpdateFirewallIpTranslation(data *map[string]interface{
 	path := "/api/v2/cmdb/firewall/ip-translation"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -4192,7 +4492,9 @@ func (c *FortiSDKClient) ReadFirewallIpTranslation(mkey string, vdomparam string
 	path := "/api/v2/cmdb/firewall/ip-translation"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -4205,8 +4507,9 @@ func (c *FortiSDKClient) CreateFirewallIppool(data *map[string]interface{}, vdom
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/firewall/ippool"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -4219,8 +4522,9 @@ func (c *FortiSDKClient) UpdateFirewallIppool(data *map[string]interface{}, mkey
 	path := "/api/v2/cmdb/firewall/ippool"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -4246,7 +4550,9 @@ func (c *FortiSDKClient) ReadFirewallIppool(mkey string, vdomparam string) (mapT
 	path := "/api/v2/cmdb/firewall/ippool"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -4259,8 +4565,9 @@ func (c *FortiSDKClient) CreateFirewallIppool6(data *map[string]interface{}, vdo
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/firewall/ippool6"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -4273,8 +4580,9 @@ func (c *FortiSDKClient) UpdateFirewallIppool6(data *map[string]interface{}, mke
 	path := "/api/v2/cmdb/firewall/ippool6"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -4300,7 +4608,9 @@ func (c *FortiSDKClient) ReadFirewallIppool6(mkey string, vdomparam string) (map
 	path := "/api/v2/cmdb/firewall/ippool6"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -4312,8 +4622,9 @@ func (c *FortiSDKClient) UpdateFirewallIpv6EhFilter(data *map[string]interface{}
 	HTTPMethod := "PUT"
 	path := "/api/v2/cmdb/firewall/ipv6-eh-filter"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -4334,8 +4645,9 @@ func (c *FortiSDKClient) DeleteFirewallIpv6EhFilter(mkey string, vdomparam strin
 func (c *FortiSDKClient) ReadFirewallIpv6EhFilter(mkey string, vdomparam string) (mapTmp map[string]interface{}, err error) {
 	HTTPMethod := "GET"
 	path := "/api/v2/cmdb/firewall/ipv6-eh-filter"
+	url_params := make(map[string][]string)
 
-	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam)
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -4348,8 +4660,9 @@ func (c *FortiSDKClient) CreateFirewallLdbMonitor(data *map[string]interface{}, 
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/firewall/ldb-monitor"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -4362,8 +4675,9 @@ func (c *FortiSDKClient) UpdateFirewallLdbMonitor(data *map[string]interface{}, 
 	path := "/api/v2/cmdb/firewall/ldb-monitor"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -4389,7 +4703,9 @@ func (c *FortiSDKClient) ReadFirewallLdbMonitor(mkey string, vdomparam string) (
 	path := "/api/v2/cmdb/firewall/ldb-monitor"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -4402,8 +4718,9 @@ func (c *FortiSDKClient) CreateFirewallLocalInPolicy(data *map[string]interface{
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/firewall/local-in-policy"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -4416,8 +4733,9 @@ func (c *FortiSDKClient) UpdateFirewallLocalInPolicy(data *map[string]interface{
 	path := "/api/v2/cmdb/firewall/local-in-policy"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -4443,7 +4761,9 @@ func (c *FortiSDKClient) ReadFirewallLocalInPolicy(mkey string, vdomparam string
 	path := "/api/v2/cmdb/firewall/local-in-policy"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -4456,8 +4776,9 @@ func (c *FortiSDKClient) CreateFirewallLocalInPolicy6(data *map[string]interface
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/firewall/local-in-policy6"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -4470,8 +4791,9 @@ func (c *FortiSDKClient) UpdateFirewallLocalInPolicy6(data *map[string]interface
 	path := "/api/v2/cmdb/firewall/local-in-policy6"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -4497,7 +4819,9 @@ func (c *FortiSDKClient) ReadFirewallLocalInPolicy6(mkey string, vdomparam strin
 	path := "/api/v2/cmdb/firewall/local-in-policy6"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -4510,8 +4834,9 @@ func (c *FortiSDKClient) CreateFirewallMulticastAddress(data *map[string]interfa
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/firewall/multicast-address"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -4524,8 +4849,9 @@ func (c *FortiSDKClient) UpdateFirewallMulticastAddress(data *map[string]interfa
 	path := "/api/v2/cmdb/firewall/multicast-address"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -4551,7 +4877,9 @@ func (c *FortiSDKClient) ReadFirewallMulticastAddress(mkey string, vdomparam str
 	path := "/api/v2/cmdb/firewall/multicast-address"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -4564,8 +4892,9 @@ func (c *FortiSDKClient) CreateFirewallMulticastAddress6(data *map[string]interf
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/firewall/multicast-address6"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -4578,8 +4907,9 @@ func (c *FortiSDKClient) UpdateFirewallMulticastAddress6(data *map[string]interf
 	path := "/api/v2/cmdb/firewall/multicast-address6"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -4605,7 +4935,9 @@ func (c *FortiSDKClient) ReadFirewallMulticastAddress6(mkey string, vdomparam st
 	path := "/api/v2/cmdb/firewall/multicast-address6"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -4618,8 +4950,9 @@ func (c *FortiSDKClient) CreateFirewallMulticastPolicy(data *map[string]interfac
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/firewall/multicast-policy"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -4632,8 +4965,9 @@ func (c *FortiSDKClient) UpdateFirewallMulticastPolicy(data *map[string]interfac
 	path := "/api/v2/cmdb/firewall/multicast-policy"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -4659,7 +4993,9 @@ func (c *FortiSDKClient) ReadFirewallMulticastPolicy(mkey string, vdomparam stri
 	path := "/api/v2/cmdb/firewall/multicast-policy"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -4672,8 +5008,9 @@ func (c *FortiSDKClient) CreateFirewallMulticastPolicy6(data *map[string]interfa
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/firewall/multicast-policy6"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -4686,8 +5023,9 @@ func (c *FortiSDKClient) UpdateFirewallMulticastPolicy6(data *map[string]interfa
 	path := "/api/v2/cmdb/firewall/multicast-policy6"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -4713,7 +5051,9 @@ func (c *FortiSDKClient) ReadFirewallMulticastPolicy6(mkey string, vdomparam str
 	path := "/api/v2/cmdb/firewall/multicast-policy6"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -4726,8 +5066,9 @@ func (c *FortiSDKClient) CreateFirewallPolicy(data *map[string]interface{}, vdom
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/firewall/policy"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -4740,8 +5081,9 @@ func (c *FortiSDKClient) UpdateFirewallPolicy(data *map[string]interface{}, mkey
 	path := "/api/v2/cmdb/firewall/policy"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -4767,7 +5109,9 @@ func (c *FortiSDKClient) ReadFirewallPolicy(mkey string, vdomparam string) (mapT
 	path := "/api/v2/cmdb/firewall/policy"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -4780,8 +5124,9 @@ func (c *FortiSDKClient) CreateFirewallPolicy46(data *map[string]interface{}, vd
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/firewall/policy46"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -4794,8 +5139,9 @@ func (c *FortiSDKClient) UpdateFirewallPolicy46(data *map[string]interface{}, mk
 	path := "/api/v2/cmdb/firewall/policy46"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -4821,7 +5167,9 @@ func (c *FortiSDKClient) ReadFirewallPolicy46(mkey string, vdomparam string) (ma
 	path := "/api/v2/cmdb/firewall/policy46"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -4834,8 +5182,9 @@ func (c *FortiSDKClient) CreateFirewallPolicy6(data *map[string]interface{}, vdo
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/firewall/policy6"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -4848,8 +5197,9 @@ func (c *FortiSDKClient) UpdateFirewallPolicy6(data *map[string]interface{}, mke
 	path := "/api/v2/cmdb/firewall/policy6"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -4875,7 +5225,9 @@ func (c *FortiSDKClient) ReadFirewallPolicy6(mkey string, vdomparam string) (map
 	path := "/api/v2/cmdb/firewall/policy6"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -4888,8 +5240,9 @@ func (c *FortiSDKClient) CreateFirewallPolicy64(data *map[string]interface{}, vd
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/firewall/policy64"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -4902,8 +5255,9 @@ func (c *FortiSDKClient) UpdateFirewallPolicy64(data *map[string]interface{}, mk
 	path := "/api/v2/cmdb/firewall/policy64"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -4929,7 +5283,9 @@ func (c *FortiSDKClient) ReadFirewallPolicy64(mkey string, vdomparam string) (ma
 	path := "/api/v2/cmdb/firewall/policy64"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -4942,8 +5298,9 @@ func (c *FortiSDKClient) CreateFirewallProfileGroup(data *map[string]interface{}
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/firewall/profile-group"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -4956,8 +5313,9 @@ func (c *FortiSDKClient) UpdateFirewallProfileGroup(data *map[string]interface{}
 	path := "/api/v2/cmdb/firewall/profile-group"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -4983,7 +5341,9 @@ func (c *FortiSDKClient) ReadFirewallProfileGroup(mkey string, vdomparam string)
 	path := "/api/v2/cmdb/firewall/profile-group"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -4996,8 +5356,9 @@ func (c *FortiSDKClient) CreateFirewallProfileProtocolOptions(data *map[string]i
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/firewall/profile-protocol-options"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -5010,8 +5371,9 @@ func (c *FortiSDKClient) UpdateFirewallProfileProtocolOptions(data *map[string]i
 	path := "/api/v2/cmdb/firewall/profile-protocol-options"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -5037,7 +5399,9 @@ func (c *FortiSDKClient) ReadFirewallProfileProtocolOptions(mkey string, vdompar
 	path := "/api/v2/cmdb/firewall/profile-protocol-options"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -5050,8 +5414,9 @@ func (c *FortiSDKClient) CreateFirewallProxyAddress(data *map[string]interface{}
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/firewall/proxy-address"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -5064,8 +5429,9 @@ func (c *FortiSDKClient) UpdateFirewallProxyAddress(data *map[string]interface{}
 	path := "/api/v2/cmdb/firewall/proxy-address"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -5091,7 +5457,9 @@ func (c *FortiSDKClient) ReadFirewallProxyAddress(mkey string, vdomparam string)
 	path := "/api/v2/cmdb/firewall/proxy-address"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -5104,8 +5472,9 @@ func (c *FortiSDKClient) CreateFirewallProxyAddrgrp(data *map[string]interface{}
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/firewall/proxy-addrgrp"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -5118,8 +5487,9 @@ func (c *FortiSDKClient) UpdateFirewallProxyAddrgrp(data *map[string]interface{}
 	path := "/api/v2/cmdb/firewall/proxy-addrgrp"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -5145,7 +5515,9 @@ func (c *FortiSDKClient) ReadFirewallProxyAddrgrp(mkey string, vdomparam string)
 	path := "/api/v2/cmdb/firewall/proxy-addrgrp"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -5158,8 +5530,9 @@ func (c *FortiSDKClient) CreateFirewallProxyPolicy(data *map[string]interface{},
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/firewall/proxy-policy"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -5172,8 +5545,9 @@ func (c *FortiSDKClient) UpdateFirewallProxyPolicy(data *map[string]interface{},
 	path := "/api/v2/cmdb/firewall/proxy-policy"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -5199,7 +5573,9 @@ func (c *FortiSDKClient) ReadFirewallProxyPolicy(mkey string, vdomparam string) 
 	path := "/api/v2/cmdb/firewall/proxy-policy"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -5212,8 +5588,9 @@ func (c *FortiSDKClient) CreateFirewallRegion(data *map[string]interface{}, vdom
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/firewall/region"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -5226,8 +5603,9 @@ func (c *FortiSDKClient) UpdateFirewallRegion(data *map[string]interface{}, mkey
 	path := "/api/v2/cmdb/firewall/region"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -5253,7 +5631,9 @@ func (c *FortiSDKClient) ReadFirewallRegion(mkey string, vdomparam string) (mapT
 	path := "/api/v2/cmdb/firewall/region"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -5266,8 +5646,9 @@ func (c *FortiSDKClient) CreateFirewallSecurityPolicy(data *map[string]interface
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/firewall/security-policy"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -5280,8 +5661,9 @@ func (c *FortiSDKClient) UpdateFirewallSecurityPolicy(data *map[string]interface
 	path := "/api/v2/cmdb/firewall/security-policy"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -5307,7 +5689,9 @@ func (c *FortiSDKClient) ReadFirewallSecurityPolicy(mkey string, vdomparam strin
 	path := "/api/v2/cmdb/firewall/security-policy"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -5320,8 +5704,9 @@ func (c *FortiSDKClient) CreateFirewallShapingPolicy(data *map[string]interface{
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/firewall/shaping-policy"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -5334,8 +5719,9 @@ func (c *FortiSDKClient) UpdateFirewallShapingPolicy(data *map[string]interface{
 	path := "/api/v2/cmdb/firewall/shaping-policy"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -5361,7 +5747,9 @@ func (c *FortiSDKClient) ReadFirewallShapingPolicy(mkey string, vdomparam string
 	path := "/api/v2/cmdb/firewall/shaping-policy"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -5374,8 +5762,9 @@ func (c *FortiSDKClient) CreateFirewallShapingProfile(data *map[string]interface
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/firewall/shaping-profile"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -5388,8 +5777,9 @@ func (c *FortiSDKClient) UpdateFirewallShapingProfile(data *map[string]interface
 	path := "/api/v2/cmdb/firewall/shaping-profile"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -5415,7 +5805,9 @@ func (c *FortiSDKClient) ReadFirewallShapingProfile(mkey string, vdomparam strin
 	path := "/api/v2/cmdb/firewall/shaping-profile"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -5428,8 +5820,9 @@ func (c *FortiSDKClient) CreateFirewallSniffer(data *map[string]interface{}, vdo
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/firewall/sniffer"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -5442,8 +5835,9 @@ func (c *FortiSDKClient) UpdateFirewallSniffer(data *map[string]interface{}, mke
 	path := "/api/v2/cmdb/firewall/sniffer"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -5469,7 +5863,9 @@ func (c *FortiSDKClient) ReadFirewallSniffer(mkey string, vdomparam string) (map
 	path := "/api/v2/cmdb/firewall/sniffer"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -5482,8 +5878,9 @@ func (c *FortiSDKClient) CreateFirewallSslServer(data *map[string]interface{}, v
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/firewall/ssl-server"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -5496,8 +5893,9 @@ func (c *FortiSDKClient) UpdateFirewallSslServer(data *map[string]interface{}, m
 	path := "/api/v2/cmdb/firewall/ssl-server"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -5523,7 +5921,9 @@ func (c *FortiSDKClient) ReadFirewallSslServer(mkey string, vdomparam string) (m
 	path := "/api/v2/cmdb/firewall/ssl-server"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -5536,8 +5936,9 @@ func (c *FortiSDKClient) CreateFirewallSslSshProfile(data *map[string]interface{
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/firewall/ssl-ssh-profile"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -5550,8 +5951,9 @@ func (c *FortiSDKClient) UpdateFirewallSslSshProfile(data *map[string]interface{
 	path := "/api/v2/cmdb/firewall/ssl-ssh-profile"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -5577,7 +5979,9 @@ func (c *FortiSDKClient) ReadFirewallSslSshProfile(mkey string, vdomparam string
 	path := "/api/v2/cmdb/firewall/ssl-ssh-profile"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -5590,8 +5994,9 @@ func (c *FortiSDKClient) CreateFirewallTrafficClass(data *map[string]interface{}
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/firewall/traffic-class"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -5604,8 +6009,9 @@ func (c *FortiSDKClient) UpdateFirewallTrafficClass(data *map[string]interface{}
 	path := "/api/v2/cmdb/firewall/traffic-class"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -5631,7 +6037,9 @@ func (c *FortiSDKClient) ReadFirewallTrafficClass(mkey string, vdomparam string)
 	path := "/api/v2/cmdb/firewall/traffic-class"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -5644,8 +6052,9 @@ func (c *FortiSDKClient) CreateFirewallTtlPolicy(data *map[string]interface{}, v
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/firewall/ttl-policy"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -5658,8 +6067,9 @@ func (c *FortiSDKClient) UpdateFirewallTtlPolicy(data *map[string]interface{}, m
 	path := "/api/v2/cmdb/firewall/ttl-policy"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -5685,7 +6095,9 @@ func (c *FortiSDKClient) ReadFirewallTtlPolicy(mkey string, vdomparam string) (m
 	path := "/api/v2/cmdb/firewall/ttl-policy"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -5698,8 +6110,9 @@ func (c *FortiSDKClient) CreateFirewallVendorMac(data *map[string]interface{}, v
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/firewall/vendor-mac"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -5712,8 +6125,9 @@ func (c *FortiSDKClient) UpdateFirewallVendorMac(data *map[string]interface{}, m
 	path := "/api/v2/cmdb/firewall/vendor-mac"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -5739,7 +6153,9 @@ func (c *FortiSDKClient) ReadFirewallVendorMac(mkey string, vdomparam string) (m
 	path := "/api/v2/cmdb/firewall/vendor-mac"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -5752,8 +6168,9 @@ func (c *FortiSDKClient) CreateFirewallVip(data *map[string]interface{}, vdompar
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/firewall/vip"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -5766,8 +6183,9 @@ func (c *FortiSDKClient) UpdateFirewallVip(data *map[string]interface{}, mkey st
 	path := "/api/v2/cmdb/firewall/vip"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -5793,7 +6211,9 @@ func (c *FortiSDKClient) ReadFirewallVip(mkey string, vdomparam string) (mapTmp 
 	path := "/api/v2/cmdb/firewall/vip"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -5806,8 +6226,9 @@ func (c *FortiSDKClient) CreateFirewallVip46(data *map[string]interface{}, vdomp
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/firewall/vip46"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -5820,8 +6241,9 @@ func (c *FortiSDKClient) UpdateFirewallVip46(data *map[string]interface{}, mkey 
 	path := "/api/v2/cmdb/firewall/vip46"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -5847,7 +6269,9 @@ func (c *FortiSDKClient) ReadFirewallVip46(mkey string, vdomparam string) (mapTm
 	path := "/api/v2/cmdb/firewall/vip46"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -5860,8 +6284,9 @@ func (c *FortiSDKClient) CreateFirewallVip6(data *map[string]interface{}, vdompa
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/firewall/vip6"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -5874,8 +6299,9 @@ func (c *FortiSDKClient) UpdateFirewallVip6(data *map[string]interface{}, mkey s
 	path := "/api/v2/cmdb/firewall/vip6"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -5901,7 +6327,9 @@ func (c *FortiSDKClient) ReadFirewallVip6(mkey string, vdomparam string) (mapTmp
 	path := "/api/v2/cmdb/firewall/vip6"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -5914,8 +6342,9 @@ func (c *FortiSDKClient) CreateFirewallVip64(data *map[string]interface{}, vdomp
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/firewall/vip64"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -5928,8 +6357,9 @@ func (c *FortiSDKClient) UpdateFirewallVip64(data *map[string]interface{}, mkey 
 	path := "/api/v2/cmdb/firewall/vip64"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -5955,7 +6385,9 @@ func (c *FortiSDKClient) ReadFirewallVip64(mkey string, vdomparam string) (mapTm
 	path := "/api/v2/cmdb/firewall/vip64"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -5968,8 +6400,9 @@ func (c *FortiSDKClient) CreateFirewallVipgrp(data *map[string]interface{}, vdom
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/firewall/vipgrp"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -5982,8 +6415,9 @@ func (c *FortiSDKClient) UpdateFirewallVipgrp(data *map[string]interface{}, mkey
 	path := "/api/v2/cmdb/firewall/vipgrp"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -6009,7 +6443,9 @@ func (c *FortiSDKClient) ReadFirewallVipgrp(mkey string, vdomparam string) (mapT
 	path := "/api/v2/cmdb/firewall/vipgrp"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -6022,8 +6458,9 @@ func (c *FortiSDKClient) CreateFirewallVipgrp46(data *map[string]interface{}, vd
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/firewall/vipgrp46"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -6036,8 +6473,9 @@ func (c *FortiSDKClient) UpdateFirewallVipgrp46(data *map[string]interface{}, mk
 	path := "/api/v2/cmdb/firewall/vipgrp46"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -6063,7 +6501,9 @@ func (c *FortiSDKClient) ReadFirewallVipgrp46(mkey string, vdomparam string) (ma
 	path := "/api/v2/cmdb/firewall/vipgrp46"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -6076,8 +6516,9 @@ func (c *FortiSDKClient) CreateFirewallVipgrp6(data *map[string]interface{}, vdo
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/firewall/vipgrp6"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -6090,8 +6531,9 @@ func (c *FortiSDKClient) UpdateFirewallVipgrp6(data *map[string]interface{}, mke
 	path := "/api/v2/cmdb/firewall/vipgrp6"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -6117,7 +6559,9 @@ func (c *FortiSDKClient) ReadFirewallVipgrp6(mkey string, vdomparam string) (map
 	path := "/api/v2/cmdb/firewall/vipgrp6"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -6130,8 +6574,9 @@ func (c *FortiSDKClient) CreateFirewallVipgrp64(data *map[string]interface{}, vd
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/firewall/vipgrp64"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -6144,8 +6589,9 @@ func (c *FortiSDKClient) UpdateFirewallVipgrp64(data *map[string]interface{}, mk
 	path := "/api/v2/cmdb/firewall/vipgrp64"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -6171,7 +6617,9 @@ func (c *FortiSDKClient) ReadFirewallVipgrp64(mkey string, vdomparam string) (ma
 	path := "/api/v2/cmdb/firewall/vipgrp64"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -6184,8 +6632,9 @@ func (c *FortiSDKClient) CreateFirewallConsolidatedPolicy(data *map[string]inter
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/firewall.consolidated/policy"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -6198,8 +6647,9 @@ func (c *FortiSDKClient) UpdateFirewallConsolidatedPolicy(data *map[string]inter
 	path := "/api/v2/cmdb/firewall.consolidated/policy"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -6225,7 +6675,9 @@ func (c *FortiSDKClient) ReadFirewallConsolidatedPolicy(mkey string, vdomparam s
 	path := "/api/v2/cmdb/firewall.consolidated/policy"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -6237,8 +6689,9 @@ func (c *FortiSDKClient) UpdateFirewallIpmacbindingSetting(data *map[string]inte
 	HTTPMethod := "PUT"
 	path := "/api/v2/cmdb/firewall.ipmacbinding/setting"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -6259,8 +6712,9 @@ func (c *FortiSDKClient) DeleteFirewallIpmacbindingSetting(mkey string, vdompara
 func (c *FortiSDKClient) ReadFirewallIpmacbindingSetting(mkey string, vdomparam string) (mapTmp map[string]interface{}, err error) {
 	HTTPMethod := "GET"
 	path := "/api/v2/cmdb/firewall.ipmacbinding/setting"
+	url_params := make(map[string][]string)
 
-	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam)
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -6273,8 +6727,9 @@ func (c *FortiSDKClient) CreateFirewallIpmacbindingTable(data *map[string]interf
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/firewall.ipmacbinding/table"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -6287,8 +6742,9 @@ func (c *FortiSDKClient) UpdateFirewallIpmacbindingTable(data *map[string]interf
 	path := "/api/v2/cmdb/firewall.ipmacbinding/table"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -6314,7 +6770,9 @@ func (c *FortiSDKClient) ReadFirewallIpmacbindingTable(mkey string, vdomparam st
 	path := "/api/v2/cmdb/firewall.ipmacbinding/table"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -6327,8 +6785,9 @@ func (c *FortiSDKClient) CreateFirewallScheduleGroup(data *map[string]interface{
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/firewall.schedule/group"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -6341,8 +6800,9 @@ func (c *FortiSDKClient) UpdateFirewallScheduleGroup(data *map[string]interface{
 	path := "/api/v2/cmdb/firewall.schedule/group"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -6368,7 +6828,9 @@ func (c *FortiSDKClient) ReadFirewallScheduleGroup(mkey string, vdomparam string
 	path := "/api/v2/cmdb/firewall.schedule/group"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -6381,8 +6843,9 @@ func (c *FortiSDKClient) CreateFirewallScheduleOnetime(data *map[string]interfac
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/firewall.schedule/onetime"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -6395,8 +6858,9 @@ func (c *FortiSDKClient) UpdateFirewallScheduleOnetime(data *map[string]interfac
 	path := "/api/v2/cmdb/firewall.schedule/onetime"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -6422,7 +6886,9 @@ func (c *FortiSDKClient) ReadFirewallScheduleOnetime(mkey string, vdomparam stri
 	path := "/api/v2/cmdb/firewall.schedule/onetime"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -6435,8 +6901,9 @@ func (c *FortiSDKClient) CreateFirewallScheduleRecurring(data *map[string]interf
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/firewall.schedule/recurring"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -6449,8 +6916,9 @@ func (c *FortiSDKClient) UpdateFirewallScheduleRecurring(data *map[string]interf
 	path := "/api/v2/cmdb/firewall.schedule/recurring"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -6476,7 +6944,9 @@ func (c *FortiSDKClient) ReadFirewallScheduleRecurring(mkey string, vdomparam st
 	path := "/api/v2/cmdb/firewall.schedule/recurring"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -6489,8 +6959,9 @@ func (c *FortiSDKClient) CreateFirewallServiceCategory(data *map[string]interfac
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/firewall.service/category"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -6503,8 +6974,9 @@ func (c *FortiSDKClient) UpdateFirewallServiceCategory(data *map[string]interfac
 	path := "/api/v2/cmdb/firewall.service/category"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -6530,7 +7002,9 @@ func (c *FortiSDKClient) ReadFirewallServiceCategory(mkey string, vdomparam stri
 	path := "/api/v2/cmdb/firewall.service/category"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -6543,8 +7017,9 @@ func (c *FortiSDKClient) CreateFirewallServiceCustom(data *map[string]interface{
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/firewall.service/custom"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -6557,8 +7032,9 @@ func (c *FortiSDKClient) UpdateFirewallServiceCustom(data *map[string]interface{
 	path := "/api/v2/cmdb/firewall.service/custom"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -6584,7 +7060,9 @@ func (c *FortiSDKClient) ReadFirewallServiceCustom(mkey string, vdomparam string
 	path := "/api/v2/cmdb/firewall.service/custom"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -6597,8 +7075,9 @@ func (c *FortiSDKClient) CreateFirewallServiceGroup(data *map[string]interface{}
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/firewall.service/group"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -6611,8 +7090,9 @@ func (c *FortiSDKClient) UpdateFirewallServiceGroup(data *map[string]interface{}
 	path := "/api/v2/cmdb/firewall.service/group"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -6638,7 +7118,9 @@ func (c *FortiSDKClient) ReadFirewallServiceGroup(mkey string, vdomparam string)
 	path := "/api/v2/cmdb/firewall.service/group"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -6651,8 +7133,9 @@ func (c *FortiSDKClient) CreateFirewallShaperPerIpShaper(data *map[string]interf
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/firewall.shaper/per-ip-shaper"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -6665,8 +7148,9 @@ func (c *FortiSDKClient) UpdateFirewallShaperPerIpShaper(data *map[string]interf
 	path := "/api/v2/cmdb/firewall.shaper/per-ip-shaper"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -6692,7 +7176,9 @@ func (c *FortiSDKClient) ReadFirewallShaperPerIpShaper(mkey string, vdomparam st
 	path := "/api/v2/cmdb/firewall.shaper/per-ip-shaper"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -6705,8 +7191,9 @@ func (c *FortiSDKClient) CreateFirewallShaperTrafficShaper(data *map[string]inte
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/firewall.shaper/traffic-shaper"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -6719,8 +7206,9 @@ func (c *FortiSDKClient) UpdateFirewallShaperTrafficShaper(data *map[string]inte
 	path := "/api/v2/cmdb/firewall.shaper/traffic-shaper"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -6746,7 +7234,9 @@ func (c *FortiSDKClient) ReadFirewallShaperTrafficShaper(mkey string, vdomparam 
 	path := "/api/v2/cmdb/firewall.shaper/traffic-shaper"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -6759,8 +7249,9 @@ func (c *FortiSDKClient) CreateFirewallSshHostKey(data *map[string]interface{}, 
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/firewall.ssh/host-key"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -6773,8 +7264,9 @@ func (c *FortiSDKClient) UpdateFirewallSshHostKey(data *map[string]interface{}, 
 	path := "/api/v2/cmdb/firewall.ssh/host-key"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -6800,7 +7292,9 @@ func (c *FortiSDKClient) ReadFirewallSshHostKey(mkey string, vdomparam string) (
 	path := "/api/v2/cmdb/firewall.ssh/host-key"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -6813,8 +7307,9 @@ func (c *FortiSDKClient) CreateFirewallSshLocalCa(data *map[string]interface{}, 
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/firewall.ssh/local-ca"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -6827,8 +7322,9 @@ func (c *FortiSDKClient) UpdateFirewallSshLocalCa(data *map[string]interface{}, 
 	path := "/api/v2/cmdb/firewall.ssh/local-ca"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -6854,7 +7350,9 @@ func (c *FortiSDKClient) ReadFirewallSshLocalCa(mkey string, vdomparam string) (
 	path := "/api/v2/cmdb/firewall.ssh/local-ca"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -6867,8 +7365,9 @@ func (c *FortiSDKClient) CreateFirewallSshLocalKey(data *map[string]interface{},
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/firewall.ssh/local-key"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -6881,8 +7380,9 @@ func (c *FortiSDKClient) UpdateFirewallSshLocalKey(data *map[string]interface{},
 	path := "/api/v2/cmdb/firewall.ssh/local-key"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -6908,7 +7408,9 @@ func (c *FortiSDKClient) ReadFirewallSshLocalKey(mkey string, vdomparam string) 
 	path := "/api/v2/cmdb/firewall.ssh/local-key"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -6920,8 +7422,9 @@ func (c *FortiSDKClient) UpdateFirewallSshSetting(data *map[string]interface{}, 
 	HTTPMethod := "PUT"
 	path := "/api/v2/cmdb/firewall.ssh/setting"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -6942,8 +7445,9 @@ func (c *FortiSDKClient) DeleteFirewallSshSetting(mkey string, vdomparam string)
 func (c *FortiSDKClient) ReadFirewallSshSetting(mkey string, vdomparam string) (mapTmp map[string]interface{}, err error) {
 	HTTPMethod := "GET"
 	path := "/api/v2/cmdb/firewall.ssh/setting"
+	url_params := make(map[string][]string)
 
-	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam)
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -6955,8 +7459,9 @@ func (c *FortiSDKClient) UpdateFirewallSslSetting(data *map[string]interface{}, 
 	HTTPMethod := "PUT"
 	path := "/api/v2/cmdb/firewall.ssl/setting"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -6977,8 +7482,9 @@ func (c *FortiSDKClient) DeleteFirewallSslSetting(mkey string, vdomparam string)
 func (c *FortiSDKClient) ReadFirewallSslSetting(mkey string, vdomparam string) (mapTmp map[string]interface{}, err error) {
 	HTTPMethod := "GET"
 	path := "/api/v2/cmdb/firewall.ssl/setting"
+	url_params := make(map[string][]string)
 
-	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam)
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -6991,8 +7497,9 @@ func (c *FortiSDKClient) CreateFirewallWildcardFqdnCustom(data *map[string]inter
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/firewall.wildcard-fqdn/custom"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -7005,8 +7512,9 @@ func (c *FortiSDKClient) UpdateFirewallWildcardFqdnCustom(data *map[string]inter
 	path := "/api/v2/cmdb/firewall.wildcard-fqdn/custom"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -7032,7 +7540,9 @@ func (c *FortiSDKClient) ReadFirewallWildcardFqdnCustom(mkey string, vdomparam s
 	path := "/api/v2/cmdb/firewall.wildcard-fqdn/custom"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -7045,8 +7555,9 @@ func (c *FortiSDKClient) CreateFirewallWildcardFqdnGroup(data *map[string]interf
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/firewall.wildcard-fqdn/group"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -7059,8 +7570,9 @@ func (c *FortiSDKClient) UpdateFirewallWildcardFqdnGroup(data *map[string]interf
 	path := "/api/v2/cmdb/firewall.wildcard-fqdn/group"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -7086,7 +7598,9 @@ func (c *FortiSDKClient) ReadFirewallWildcardFqdnGroup(mkey string, vdomparam st
 	path := "/api/v2/cmdb/firewall.wildcard-fqdn/group"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -7098,8 +7612,9 @@ func (c *FortiSDKClient) UpdateFtpProxyExplicit(data *map[string]interface{}, mk
 	HTTPMethod := "PUT"
 	path := "/api/v2/cmdb/ftp-proxy/explicit"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -7120,8 +7635,9 @@ func (c *FortiSDKClient) DeleteFtpProxyExplicit(mkey string, vdomparam string) (
 func (c *FortiSDKClient) ReadFtpProxyExplicit(mkey string, vdomparam string) (mapTmp map[string]interface{}, err error) {
 	HTTPMethod := "GET"
 	path := "/api/v2/cmdb/ftp-proxy/explicit"
+	url_params := make(map[string][]string)
 
-	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam)
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -7134,8 +7650,9 @@ func (c *FortiSDKClient) CreateIcapProfile(data *map[string]interface{}, vdompar
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/icap/profile"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -7148,8 +7665,9 @@ func (c *FortiSDKClient) UpdateIcapProfile(data *map[string]interface{}, mkey st
 	path := "/api/v2/cmdb/icap/profile"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -7175,7 +7693,9 @@ func (c *FortiSDKClient) ReadIcapProfile(mkey string, vdomparam string) (mapTmp 
 	path := "/api/v2/cmdb/icap/profile"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -7188,8 +7708,9 @@ func (c *FortiSDKClient) CreateIcapServer(data *map[string]interface{}, vdompara
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/icap/server"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -7202,8 +7723,9 @@ func (c *FortiSDKClient) UpdateIcapServer(data *map[string]interface{}, mkey str
 	path := "/api/v2/cmdb/icap/server"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -7229,7 +7751,9 @@ func (c *FortiSDKClient) ReadIcapServer(mkey string, vdomparam string) (mapTmp m
 	path := "/api/v2/cmdb/icap/server"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -7242,8 +7766,9 @@ func (c *FortiSDKClient) CreateIpsCustom(data *map[string]interface{}, vdomparam
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/ips/custom"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -7256,8 +7781,9 @@ func (c *FortiSDKClient) UpdateIpsCustom(data *map[string]interface{}, mkey stri
 	path := "/api/v2/cmdb/ips/custom"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -7283,7 +7809,9 @@ func (c *FortiSDKClient) ReadIpsCustom(mkey string, vdomparam string) (mapTmp ma
 	path := "/api/v2/cmdb/ips/custom"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -7296,8 +7824,9 @@ func (c *FortiSDKClient) CreateIpsDecoder(data *map[string]interface{}, vdompara
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/ips/decoder"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -7310,8 +7839,9 @@ func (c *FortiSDKClient) UpdateIpsDecoder(data *map[string]interface{}, mkey str
 	path := "/api/v2/cmdb/ips/decoder"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -7337,7 +7867,9 @@ func (c *FortiSDKClient) ReadIpsDecoder(mkey string, vdomparam string) (mapTmp m
 	path := "/api/v2/cmdb/ips/decoder"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -7349,8 +7881,9 @@ func (c *FortiSDKClient) UpdateIpsGlobal(data *map[string]interface{}, mkey stri
 	HTTPMethod := "PUT"
 	path := "/api/v2/cmdb/ips/global"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -7371,8 +7904,9 @@ func (c *FortiSDKClient) DeleteIpsGlobal(mkey string, vdomparam string) (err err
 func (c *FortiSDKClient) ReadIpsGlobal(mkey string, vdomparam string) (mapTmp map[string]interface{}, err error) {
 	HTTPMethod := "GET"
 	path := "/api/v2/cmdb/ips/global"
+	url_params := make(map[string][]string)
 
-	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam)
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -7385,8 +7919,9 @@ func (c *FortiSDKClient) CreateIpsRule(data *map[string]interface{}, vdomparam s
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/ips/rule"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -7399,8 +7934,9 @@ func (c *FortiSDKClient) UpdateIpsRule(data *map[string]interface{}, mkey string
 	path := "/api/v2/cmdb/ips/rule"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -7426,7 +7962,9 @@ func (c *FortiSDKClient) ReadIpsRule(mkey string, vdomparam string) (mapTmp map[
 	path := "/api/v2/cmdb/ips/rule"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -7439,8 +7977,9 @@ func (c *FortiSDKClient) CreateIpsRuleSettings(data *map[string]interface{}, vdo
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/ips/rule-settings"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -7453,8 +7992,9 @@ func (c *FortiSDKClient) UpdateIpsRuleSettings(data *map[string]interface{}, mke
 	path := "/api/v2/cmdb/ips/rule-settings"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -7480,7 +8020,9 @@ func (c *FortiSDKClient) ReadIpsRuleSettings(mkey string, vdomparam string) (map
 	path := "/api/v2/cmdb/ips/rule-settings"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -7493,8 +8035,9 @@ func (c *FortiSDKClient) CreateIpsSensor(data *map[string]interface{}, vdomparam
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/ips/sensor"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -7507,8 +8050,9 @@ func (c *FortiSDKClient) UpdateIpsSensor(data *map[string]interface{}, mkey stri
 	path := "/api/v2/cmdb/ips/sensor"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -7534,7 +8078,9 @@ func (c *FortiSDKClient) ReadIpsSensor(mkey string, vdomparam string) (mapTmp ma
 	path := "/api/v2/cmdb/ips/sensor"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -7546,8 +8092,9 @@ func (c *FortiSDKClient) UpdateIpsSettings(data *map[string]interface{}, mkey st
 	HTTPMethod := "PUT"
 	path := "/api/v2/cmdb/ips/settings"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -7568,8 +8115,9 @@ func (c *FortiSDKClient) DeleteIpsSettings(mkey string, vdomparam string) (err e
 func (c *FortiSDKClient) ReadIpsSettings(mkey string, vdomparam string) (mapTmp map[string]interface{}, err error) {
 	HTTPMethod := "GET"
 	path := "/api/v2/cmdb/ips/settings"
+	url_params := make(map[string][]string)
 
-	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam)
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -7582,8 +8130,9 @@ func (c *FortiSDKClient) CreateIpsViewMap(data *map[string]interface{}, vdompara
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/ips/view-map"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -7596,8 +8145,9 @@ func (c *FortiSDKClient) UpdateIpsViewMap(data *map[string]interface{}, mkey str
 	path := "/api/v2/cmdb/ips/view-map"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -7623,7 +8173,9 @@ func (c *FortiSDKClient) ReadIpsViewMap(mkey string, vdomparam string) (mapTmp m
 	path := "/api/v2/cmdb/ips/view-map"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -7636,8 +8188,9 @@ func (c *FortiSDKClient) CreateLogCustomField(data *map[string]interface{}, vdom
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/log/custom-field"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -7650,8 +8203,9 @@ func (c *FortiSDKClient) UpdateLogCustomField(data *map[string]interface{}, mkey
 	path := "/api/v2/cmdb/log/custom-field"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -7677,7 +8231,9 @@ func (c *FortiSDKClient) ReadLogCustomField(mkey string, vdomparam string) (mapT
 	path := "/api/v2/cmdb/log/custom-field"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -7689,8 +8245,9 @@ func (c *FortiSDKClient) UpdateLogEventfilter(data *map[string]interface{}, mkey
 	HTTPMethod := "PUT"
 	path := "/api/v2/cmdb/log/eventfilter"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -7711,8 +8268,9 @@ func (c *FortiSDKClient) DeleteLogEventfilter(mkey string, vdomparam string) (er
 func (c *FortiSDKClient) ReadLogEventfilter(mkey string, vdomparam string) (mapTmp map[string]interface{}, err error) {
 	HTTPMethod := "GET"
 	path := "/api/v2/cmdb/log/eventfilter"
+	url_params := make(map[string][]string)
 
-	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam)
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -7724,8 +8282,9 @@ func (c *FortiSDKClient) UpdateLogGuiDisplay(data *map[string]interface{}, mkey 
 	HTTPMethod := "PUT"
 	path := "/api/v2/cmdb/log/gui-display"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -7746,8 +8305,9 @@ func (c *FortiSDKClient) DeleteLogGuiDisplay(mkey string, vdomparam string) (err
 func (c *FortiSDKClient) ReadLogGuiDisplay(mkey string, vdomparam string) (mapTmp map[string]interface{}, err error) {
 	HTTPMethod := "GET"
 	path := "/api/v2/cmdb/log/gui-display"
+	url_params := make(map[string][]string)
 
-	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam)
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -7759,8 +8319,9 @@ func (c *FortiSDKClient) UpdateLogSetting(data *map[string]interface{}, mkey str
 	HTTPMethod := "PUT"
 	path := "/api/v2/cmdb/log/setting"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -7781,8 +8342,9 @@ func (c *FortiSDKClient) DeleteLogSetting(mkey string, vdomparam string) (err er
 func (c *FortiSDKClient) ReadLogSetting(mkey string, vdomparam string) (mapTmp map[string]interface{}, err error) {
 	HTTPMethod := "GET"
 	path := "/api/v2/cmdb/log/setting"
+	url_params := make(map[string][]string)
 
-	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam)
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -7794,8 +8356,9 @@ func (c *FortiSDKClient) UpdateLogThreatWeight(data *map[string]interface{}, mke
 	HTTPMethod := "PUT"
 	path := "/api/v2/cmdb/log/threat-weight"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -7816,8 +8379,9 @@ func (c *FortiSDKClient) DeleteLogThreatWeight(mkey string, vdomparam string) (e
 func (c *FortiSDKClient) ReadLogThreatWeight(mkey string, vdomparam string) (mapTmp map[string]interface{}, err error) {
 	HTTPMethod := "GET"
 	path := "/api/v2/cmdb/log/threat-weight"
+	url_params := make(map[string][]string)
 
-	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam)
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -7829,8 +8393,9 @@ func (c *FortiSDKClient) UpdateLogDiskFilter(data *map[string]interface{}, mkey 
 	HTTPMethod := "PUT"
 	path := "/api/v2/cmdb/log.disk/filter"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -7851,8 +8416,9 @@ func (c *FortiSDKClient) DeleteLogDiskFilter(mkey string, vdomparam string) (err
 func (c *FortiSDKClient) ReadLogDiskFilter(mkey string, vdomparam string) (mapTmp map[string]interface{}, err error) {
 	HTTPMethod := "GET"
 	path := "/api/v2/cmdb/log.disk/filter"
+	url_params := make(map[string][]string)
 
-	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam)
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -7864,8 +8430,9 @@ func (c *FortiSDKClient) UpdateLogDiskSetting(data *map[string]interface{}, mkey
 	HTTPMethod := "PUT"
 	path := "/api/v2/cmdb/log.disk/setting"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -7886,8 +8453,9 @@ func (c *FortiSDKClient) DeleteLogDiskSetting(mkey string, vdomparam string) (er
 func (c *FortiSDKClient) ReadLogDiskSetting(mkey string, vdomparam string) (mapTmp map[string]interface{}, err error) {
 	HTTPMethod := "GET"
 	path := "/api/v2/cmdb/log.disk/setting"
+	url_params := make(map[string][]string)
 
-	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam)
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -7899,8 +8467,9 @@ func (c *FortiSDKClient) UpdateLogFortianalyzerFilter(data *map[string]interface
 	HTTPMethod := "PUT"
 	path := "/api/v2/cmdb/log.fortianalyzer/filter"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -7921,8 +8490,9 @@ func (c *FortiSDKClient) DeleteLogFortianalyzerFilter(mkey string, vdomparam str
 func (c *FortiSDKClient) ReadLogFortianalyzerFilter(mkey string, vdomparam string) (mapTmp map[string]interface{}, err error) {
 	HTTPMethod := "GET"
 	path := "/api/v2/cmdb/log.fortianalyzer/filter"
+	url_params := make(map[string][]string)
 
-	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam)
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -7934,8 +8504,9 @@ func (c *FortiSDKClient) UpdateLogFortianalyzerOverrideFilter(data *map[string]i
 	HTTPMethod := "PUT"
 	path := "/api/v2/cmdb/log.fortianalyzer/override-filter"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -7956,8 +8527,9 @@ func (c *FortiSDKClient) DeleteLogFortianalyzerOverrideFilter(mkey string, vdomp
 func (c *FortiSDKClient) ReadLogFortianalyzerOverrideFilter(mkey string, vdomparam string) (mapTmp map[string]interface{}, err error) {
 	HTTPMethod := "GET"
 	path := "/api/v2/cmdb/log.fortianalyzer/override-filter"
+	url_params := make(map[string][]string)
 
-	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam)
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -7969,8 +8541,9 @@ func (c *FortiSDKClient) UpdateLogFortianalyzerOverrideSetting(data *map[string]
 	HTTPMethod := "PUT"
 	path := "/api/v2/cmdb/log.fortianalyzer/override-setting"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -7991,8 +8564,9 @@ func (c *FortiSDKClient) DeleteLogFortianalyzerOverrideSetting(mkey string, vdom
 func (c *FortiSDKClient) ReadLogFortianalyzerOverrideSetting(mkey string, vdomparam string) (mapTmp map[string]interface{}, err error) {
 	HTTPMethod := "GET"
 	path := "/api/v2/cmdb/log.fortianalyzer/override-setting"
+	url_params := make(map[string][]string)
 
-	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam)
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -8004,8 +8578,9 @@ func (c *FortiSDKClient) UpdateLogFortianalyzerSetting(data *map[string]interfac
 	HTTPMethod := "PUT"
 	path := "/api/v2/cmdb/log.fortianalyzer/setting"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -8026,8 +8601,9 @@ func (c *FortiSDKClient) DeleteLogFortianalyzerSetting(mkey string, vdomparam st
 func (c *FortiSDKClient) ReadLogFortianalyzerSetting(mkey string, vdomparam string) (mapTmp map[string]interface{}, err error) {
 	HTTPMethod := "GET"
 	path := "/api/v2/cmdb/log.fortianalyzer/setting"
+	url_params := make(map[string][]string)
 
-	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam)
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -8039,8 +8615,9 @@ func (c *FortiSDKClient) UpdateLogFortianalyzerCloudFilter(data *map[string]inte
 	HTTPMethod := "PUT"
 	path := "/api/v2/cmdb/log.fortianalyzer-cloud/filter"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -8061,8 +8638,9 @@ func (c *FortiSDKClient) DeleteLogFortianalyzerCloudFilter(mkey string, vdompara
 func (c *FortiSDKClient) ReadLogFortianalyzerCloudFilter(mkey string, vdomparam string) (mapTmp map[string]interface{}, err error) {
 	HTTPMethod := "GET"
 	path := "/api/v2/cmdb/log.fortianalyzer-cloud/filter"
+	url_params := make(map[string][]string)
 
-	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam)
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -8074,8 +8652,9 @@ func (c *FortiSDKClient) UpdateLogFortianalyzerCloudOverrideFilter(data *map[str
 	HTTPMethod := "PUT"
 	path := "/api/v2/cmdb/log.fortianalyzer-cloud/override-filter"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -8096,8 +8675,9 @@ func (c *FortiSDKClient) DeleteLogFortianalyzerCloudOverrideFilter(mkey string, 
 func (c *FortiSDKClient) ReadLogFortianalyzerCloudOverrideFilter(mkey string, vdomparam string) (mapTmp map[string]interface{}, err error) {
 	HTTPMethod := "GET"
 	path := "/api/v2/cmdb/log.fortianalyzer-cloud/override-filter"
+	url_params := make(map[string][]string)
 
-	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam)
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -8109,8 +8689,9 @@ func (c *FortiSDKClient) UpdateLogFortianalyzerCloudOverrideSetting(data *map[st
 	HTTPMethod := "PUT"
 	path := "/api/v2/cmdb/log.fortianalyzer-cloud/override-setting"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -8131,8 +8712,9 @@ func (c *FortiSDKClient) DeleteLogFortianalyzerCloudOverrideSetting(mkey string,
 func (c *FortiSDKClient) ReadLogFortianalyzerCloudOverrideSetting(mkey string, vdomparam string) (mapTmp map[string]interface{}, err error) {
 	HTTPMethod := "GET"
 	path := "/api/v2/cmdb/log.fortianalyzer-cloud/override-setting"
+	url_params := make(map[string][]string)
 
-	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam)
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -8144,8 +8726,9 @@ func (c *FortiSDKClient) UpdateLogFortianalyzerCloudSetting(data *map[string]int
 	HTTPMethod := "PUT"
 	path := "/api/v2/cmdb/log.fortianalyzer-cloud/setting"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -8166,8 +8749,9 @@ func (c *FortiSDKClient) DeleteLogFortianalyzerCloudSetting(mkey string, vdompar
 func (c *FortiSDKClient) ReadLogFortianalyzerCloudSetting(mkey string, vdomparam string) (mapTmp map[string]interface{}, err error) {
 	HTTPMethod := "GET"
 	path := "/api/v2/cmdb/log.fortianalyzer-cloud/setting"
+	url_params := make(map[string][]string)
 
-	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam)
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -8179,8 +8763,9 @@ func (c *FortiSDKClient) UpdateLogFortianalyzer2Filter(data *map[string]interfac
 	HTTPMethod := "PUT"
 	path := "/api/v2/cmdb/log.fortianalyzer2/filter"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -8201,8 +8786,9 @@ func (c *FortiSDKClient) DeleteLogFortianalyzer2Filter(mkey string, vdomparam st
 func (c *FortiSDKClient) ReadLogFortianalyzer2Filter(mkey string, vdomparam string) (mapTmp map[string]interface{}, err error) {
 	HTTPMethod := "GET"
 	path := "/api/v2/cmdb/log.fortianalyzer2/filter"
+	url_params := make(map[string][]string)
 
-	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam)
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -8214,8 +8800,9 @@ func (c *FortiSDKClient) UpdateLogFortianalyzer2OverrideFilter(data *map[string]
 	HTTPMethod := "PUT"
 	path := "/api/v2/cmdb/log.fortianalyzer2/override-filter"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -8236,8 +8823,9 @@ func (c *FortiSDKClient) DeleteLogFortianalyzer2OverrideFilter(mkey string, vdom
 func (c *FortiSDKClient) ReadLogFortianalyzer2OverrideFilter(mkey string, vdomparam string) (mapTmp map[string]interface{}, err error) {
 	HTTPMethod := "GET"
 	path := "/api/v2/cmdb/log.fortianalyzer2/override-filter"
+	url_params := make(map[string][]string)
 
-	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam)
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -8249,8 +8837,9 @@ func (c *FortiSDKClient) UpdateLogFortianalyzer2OverrideSetting(data *map[string
 	HTTPMethod := "PUT"
 	path := "/api/v2/cmdb/log.fortianalyzer2/override-setting"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -8271,8 +8860,9 @@ func (c *FortiSDKClient) DeleteLogFortianalyzer2OverrideSetting(mkey string, vdo
 func (c *FortiSDKClient) ReadLogFortianalyzer2OverrideSetting(mkey string, vdomparam string) (mapTmp map[string]interface{}, err error) {
 	HTTPMethod := "GET"
 	path := "/api/v2/cmdb/log.fortianalyzer2/override-setting"
+	url_params := make(map[string][]string)
 
-	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam)
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -8284,8 +8874,9 @@ func (c *FortiSDKClient) UpdateLogFortianalyzer2Setting(data *map[string]interfa
 	HTTPMethod := "PUT"
 	path := "/api/v2/cmdb/log.fortianalyzer2/setting"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -8306,8 +8897,9 @@ func (c *FortiSDKClient) DeleteLogFortianalyzer2Setting(mkey string, vdomparam s
 func (c *FortiSDKClient) ReadLogFortianalyzer2Setting(mkey string, vdomparam string) (mapTmp map[string]interface{}, err error) {
 	HTTPMethod := "GET"
 	path := "/api/v2/cmdb/log.fortianalyzer2/setting"
+	url_params := make(map[string][]string)
 
-	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam)
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -8319,8 +8911,9 @@ func (c *FortiSDKClient) UpdateLogFortianalyzer3Filter(data *map[string]interfac
 	HTTPMethod := "PUT"
 	path := "/api/v2/cmdb/log.fortianalyzer3/filter"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -8341,8 +8934,9 @@ func (c *FortiSDKClient) DeleteLogFortianalyzer3Filter(mkey string, vdomparam st
 func (c *FortiSDKClient) ReadLogFortianalyzer3Filter(mkey string, vdomparam string) (mapTmp map[string]interface{}, err error) {
 	HTTPMethod := "GET"
 	path := "/api/v2/cmdb/log.fortianalyzer3/filter"
+	url_params := make(map[string][]string)
 
-	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam)
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -8354,8 +8948,9 @@ func (c *FortiSDKClient) UpdateLogFortianalyzer3OverrideFilter(data *map[string]
 	HTTPMethod := "PUT"
 	path := "/api/v2/cmdb/log.fortianalyzer3/override-filter"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -8376,8 +8971,9 @@ func (c *FortiSDKClient) DeleteLogFortianalyzer3OverrideFilter(mkey string, vdom
 func (c *FortiSDKClient) ReadLogFortianalyzer3OverrideFilter(mkey string, vdomparam string) (mapTmp map[string]interface{}, err error) {
 	HTTPMethod := "GET"
 	path := "/api/v2/cmdb/log.fortianalyzer3/override-filter"
+	url_params := make(map[string][]string)
 
-	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam)
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -8389,8 +8985,9 @@ func (c *FortiSDKClient) UpdateLogFortianalyzer3OverrideSetting(data *map[string
 	HTTPMethod := "PUT"
 	path := "/api/v2/cmdb/log.fortianalyzer3/override-setting"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -8411,8 +9008,9 @@ func (c *FortiSDKClient) DeleteLogFortianalyzer3OverrideSetting(mkey string, vdo
 func (c *FortiSDKClient) ReadLogFortianalyzer3OverrideSetting(mkey string, vdomparam string) (mapTmp map[string]interface{}, err error) {
 	HTTPMethod := "GET"
 	path := "/api/v2/cmdb/log.fortianalyzer3/override-setting"
+	url_params := make(map[string][]string)
 
-	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam)
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -8424,8 +9022,9 @@ func (c *FortiSDKClient) UpdateLogFortianalyzer3Setting(data *map[string]interfa
 	HTTPMethod := "PUT"
 	path := "/api/v2/cmdb/log.fortianalyzer3/setting"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -8446,8 +9045,9 @@ func (c *FortiSDKClient) DeleteLogFortianalyzer3Setting(mkey string, vdomparam s
 func (c *FortiSDKClient) ReadLogFortianalyzer3Setting(mkey string, vdomparam string) (mapTmp map[string]interface{}, err error) {
 	HTTPMethod := "GET"
 	path := "/api/v2/cmdb/log.fortianalyzer3/setting"
+	url_params := make(map[string][]string)
 
-	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam)
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -8459,8 +9059,9 @@ func (c *FortiSDKClient) UpdateLogFortiguardFilter(data *map[string]interface{},
 	HTTPMethod := "PUT"
 	path := "/api/v2/cmdb/log.fortiguard/filter"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -8481,8 +9082,9 @@ func (c *FortiSDKClient) DeleteLogFortiguardFilter(mkey string, vdomparam string
 func (c *FortiSDKClient) ReadLogFortiguardFilter(mkey string, vdomparam string) (mapTmp map[string]interface{}, err error) {
 	HTTPMethod := "GET"
 	path := "/api/v2/cmdb/log.fortiguard/filter"
+	url_params := make(map[string][]string)
 
-	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam)
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -8494,8 +9096,9 @@ func (c *FortiSDKClient) UpdateLogFortiguardOverrideFilter(data *map[string]inte
 	HTTPMethod := "PUT"
 	path := "/api/v2/cmdb/log.fortiguard/override-filter"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -8516,8 +9119,9 @@ func (c *FortiSDKClient) DeleteLogFortiguardOverrideFilter(mkey string, vdompara
 func (c *FortiSDKClient) ReadLogFortiguardOverrideFilter(mkey string, vdomparam string) (mapTmp map[string]interface{}, err error) {
 	HTTPMethod := "GET"
 	path := "/api/v2/cmdb/log.fortiguard/override-filter"
+	url_params := make(map[string][]string)
 
-	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam)
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -8529,8 +9133,9 @@ func (c *FortiSDKClient) UpdateLogFortiguardOverrideSetting(data *map[string]int
 	HTTPMethod := "PUT"
 	path := "/api/v2/cmdb/log.fortiguard/override-setting"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -8551,8 +9156,9 @@ func (c *FortiSDKClient) DeleteLogFortiguardOverrideSetting(mkey string, vdompar
 func (c *FortiSDKClient) ReadLogFortiguardOverrideSetting(mkey string, vdomparam string) (mapTmp map[string]interface{}, err error) {
 	HTTPMethod := "GET"
 	path := "/api/v2/cmdb/log.fortiguard/override-setting"
+	url_params := make(map[string][]string)
 
-	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam)
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -8564,8 +9170,9 @@ func (c *FortiSDKClient) UpdateLogFortiguardSetting(data *map[string]interface{}
 	HTTPMethod := "PUT"
 	path := "/api/v2/cmdb/log.fortiguard/setting"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -8586,8 +9193,9 @@ func (c *FortiSDKClient) DeleteLogFortiguardSetting(mkey string, vdomparam strin
 func (c *FortiSDKClient) ReadLogFortiguardSetting(mkey string, vdomparam string) (mapTmp map[string]interface{}, err error) {
 	HTTPMethod := "GET"
 	path := "/api/v2/cmdb/log.fortiguard/setting"
+	url_params := make(map[string][]string)
 
-	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam)
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -8599,8 +9207,9 @@ func (c *FortiSDKClient) UpdateLogMemoryFilter(data *map[string]interface{}, mke
 	HTTPMethod := "PUT"
 	path := "/api/v2/cmdb/log.memory/filter"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -8621,8 +9230,9 @@ func (c *FortiSDKClient) DeleteLogMemoryFilter(mkey string, vdomparam string) (e
 func (c *FortiSDKClient) ReadLogMemoryFilter(mkey string, vdomparam string) (mapTmp map[string]interface{}, err error) {
 	HTTPMethod := "GET"
 	path := "/api/v2/cmdb/log.memory/filter"
+	url_params := make(map[string][]string)
 
-	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam)
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -8634,8 +9244,9 @@ func (c *FortiSDKClient) UpdateLogMemoryGlobalSetting(data *map[string]interface
 	HTTPMethod := "PUT"
 	path := "/api/v2/cmdb/log.memory/global-setting"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -8656,8 +9267,9 @@ func (c *FortiSDKClient) DeleteLogMemoryGlobalSetting(mkey string, vdomparam str
 func (c *FortiSDKClient) ReadLogMemoryGlobalSetting(mkey string, vdomparam string) (mapTmp map[string]interface{}, err error) {
 	HTTPMethod := "GET"
 	path := "/api/v2/cmdb/log.memory/global-setting"
+	url_params := make(map[string][]string)
 
-	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam)
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -8669,8 +9281,9 @@ func (c *FortiSDKClient) UpdateLogMemorySetting(data *map[string]interface{}, mk
 	HTTPMethod := "PUT"
 	path := "/api/v2/cmdb/log.memory/setting"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -8691,8 +9304,9 @@ func (c *FortiSDKClient) DeleteLogMemorySetting(mkey string, vdomparam string) (
 func (c *FortiSDKClient) ReadLogMemorySetting(mkey string, vdomparam string) (mapTmp map[string]interface{}, err error) {
 	HTTPMethod := "GET"
 	path := "/api/v2/cmdb/log.memory/setting"
+	url_params := make(map[string][]string)
 
-	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam)
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -8704,8 +9318,9 @@ func (c *FortiSDKClient) UpdateLogNullDeviceFilter(data *map[string]interface{},
 	HTTPMethod := "PUT"
 	path := "/api/v2/cmdb/log.null-device/filter"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -8726,8 +9341,9 @@ func (c *FortiSDKClient) DeleteLogNullDeviceFilter(mkey string, vdomparam string
 func (c *FortiSDKClient) ReadLogNullDeviceFilter(mkey string, vdomparam string) (mapTmp map[string]interface{}, err error) {
 	HTTPMethod := "GET"
 	path := "/api/v2/cmdb/log.null-device/filter"
+	url_params := make(map[string][]string)
 
-	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam)
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -8739,8 +9355,9 @@ func (c *FortiSDKClient) UpdateLogNullDeviceSetting(data *map[string]interface{}
 	HTTPMethod := "PUT"
 	path := "/api/v2/cmdb/log.null-device/setting"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -8761,8 +9378,9 @@ func (c *FortiSDKClient) DeleteLogNullDeviceSetting(mkey string, vdomparam strin
 func (c *FortiSDKClient) ReadLogNullDeviceSetting(mkey string, vdomparam string) (mapTmp map[string]interface{}, err error) {
 	HTTPMethod := "GET"
 	path := "/api/v2/cmdb/log.null-device/setting"
+	url_params := make(map[string][]string)
 
-	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam)
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -8774,8 +9392,9 @@ func (c *FortiSDKClient) UpdateLogSyslogdFilter(data *map[string]interface{}, mk
 	HTTPMethod := "PUT"
 	path := "/api/v2/cmdb/log.syslogd/filter"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -8796,8 +9415,9 @@ func (c *FortiSDKClient) DeleteLogSyslogdFilter(mkey string, vdomparam string) (
 func (c *FortiSDKClient) ReadLogSyslogdFilter(mkey string, vdomparam string) (mapTmp map[string]interface{}, err error) {
 	HTTPMethod := "GET"
 	path := "/api/v2/cmdb/log.syslogd/filter"
+	url_params := make(map[string][]string)
 
-	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam)
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -8809,8 +9429,9 @@ func (c *FortiSDKClient) UpdateLogSyslogdOverrideFilter(data *map[string]interfa
 	HTTPMethod := "PUT"
 	path := "/api/v2/cmdb/log.syslogd/override-filter"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -8831,8 +9452,9 @@ func (c *FortiSDKClient) DeleteLogSyslogdOverrideFilter(mkey string, vdomparam s
 func (c *FortiSDKClient) ReadLogSyslogdOverrideFilter(mkey string, vdomparam string) (mapTmp map[string]interface{}, err error) {
 	HTTPMethod := "GET"
 	path := "/api/v2/cmdb/log.syslogd/override-filter"
+	url_params := make(map[string][]string)
 
-	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam)
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -8844,8 +9466,9 @@ func (c *FortiSDKClient) UpdateLogSyslogdOverrideSetting(data *map[string]interf
 	HTTPMethod := "PUT"
 	path := "/api/v2/cmdb/log.syslogd/override-setting"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -8866,8 +9489,9 @@ func (c *FortiSDKClient) DeleteLogSyslogdOverrideSetting(mkey string, vdomparam 
 func (c *FortiSDKClient) ReadLogSyslogdOverrideSetting(mkey string, vdomparam string) (mapTmp map[string]interface{}, err error) {
 	HTTPMethod := "GET"
 	path := "/api/v2/cmdb/log.syslogd/override-setting"
+	url_params := make(map[string][]string)
 
-	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam)
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -8879,8 +9503,9 @@ func (c *FortiSDKClient) UpdateLogSyslogdSetting(data *map[string]interface{}, m
 	HTTPMethod := "PUT"
 	path := "/api/v2/cmdb/log.syslogd/setting"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -8901,8 +9526,9 @@ func (c *FortiSDKClient) DeleteLogSyslogdSetting(mkey string, vdomparam string) 
 func (c *FortiSDKClient) ReadLogSyslogdSetting(mkey string, vdomparam string) (mapTmp map[string]interface{}, err error) {
 	HTTPMethod := "GET"
 	path := "/api/v2/cmdb/log.syslogd/setting"
+	url_params := make(map[string][]string)
 
-	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam)
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -8914,8 +9540,9 @@ func (c *FortiSDKClient) UpdateLogSyslogd2Filter(data *map[string]interface{}, m
 	HTTPMethod := "PUT"
 	path := "/api/v2/cmdb/log.syslogd2/filter"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -8936,8 +9563,9 @@ func (c *FortiSDKClient) DeleteLogSyslogd2Filter(mkey string, vdomparam string) 
 func (c *FortiSDKClient) ReadLogSyslogd2Filter(mkey string, vdomparam string) (mapTmp map[string]interface{}, err error) {
 	HTTPMethod := "GET"
 	path := "/api/v2/cmdb/log.syslogd2/filter"
+	url_params := make(map[string][]string)
 
-	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam)
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -8949,8 +9577,9 @@ func (c *FortiSDKClient) UpdateLogSyslogd2OverrideFilter(data *map[string]interf
 	HTTPMethod := "PUT"
 	path := "/api/v2/cmdb/log.syslogd2/override-filter"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -8971,8 +9600,9 @@ func (c *FortiSDKClient) DeleteLogSyslogd2OverrideFilter(mkey string, vdomparam 
 func (c *FortiSDKClient) ReadLogSyslogd2OverrideFilter(mkey string, vdomparam string) (mapTmp map[string]interface{}, err error) {
 	HTTPMethod := "GET"
 	path := "/api/v2/cmdb/log.syslogd2/override-filter"
+	url_params := make(map[string][]string)
 
-	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam)
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -8984,8 +9614,9 @@ func (c *FortiSDKClient) UpdateLogSyslogd2OverrideSetting(data *map[string]inter
 	HTTPMethod := "PUT"
 	path := "/api/v2/cmdb/log.syslogd2/override-setting"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -9006,8 +9637,9 @@ func (c *FortiSDKClient) DeleteLogSyslogd2OverrideSetting(mkey string, vdomparam
 func (c *FortiSDKClient) ReadLogSyslogd2OverrideSetting(mkey string, vdomparam string) (mapTmp map[string]interface{}, err error) {
 	HTTPMethod := "GET"
 	path := "/api/v2/cmdb/log.syslogd2/override-setting"
+	url_params := make(map[string][]string)
 
-	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam)
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -9019,8 +9651,9 @@ func (c *FortiSDKClient) UpdateLogSyslogd2Setting(data *map[string]interface{}, 
 	HTTPMethod := "PUT"
 	path := "/api/v2/cmdb/log.syslogd2/setting"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -9041,8 +9674,9 @@ func (c *FortiSDKClient) DeleteLogSyslogd2Setting(mkey string, vdomparam string)
 func (c *FortiSDKClient) ReadLogSyslogd2Setting(mkey string, vdomparam string) (mapTmp map[string]interface{}, err error) {
 	HTTPMethod := "GET"
 	path := "/api/v2/cmdb/log.syslogd2/setting"
+	url_params := make(map[string][]string)
 
-	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam)
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -9054,8 +9688,9 @@ func (c *FortiSDKClient) UpdateLogSyslogd3Filter(data *map[string]interface{}, m
 	HTTPMethod := "PUT"
 	path := "/api/v2/cmdb/log.syslogd3/filter"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -9076,8 +9711,9 @@ func (c *FortiSDKClient) DeleteLogSyslogd3Filter(mkey string, vdomparam string) 
 func (c *FortiSDKClient) ReadLogSyslogd3Filter(mkey string, vdomparam string) (mapTmp map[string]interface{}, err error) {
 	HTTPMethod := "GET"
 	path := "/api/v2/cmdb/log.syslogd3/filter"
+	url_params := make(map[string][]string)
 
-	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam)
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -9089,8 +9725,9 @@ func (c *FortiSDKClient) UpdateLogSyslogd3OverrideFilter(data *map[string]interf
 	HTTPMethod := "PUT"
 	path := "/api/v2/cmdb/log.syslogd3/override-filter"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -9111,8 +9748,9 @@ func (c *FortiSDKClient) DeleteLogSyslogd3OverrideFilter(mkey string, vdomparam 
 func (c *FortiSDKClient) ReadLogSyslogd3OverrideFilter(mkey string, vdomparam string) (mapTmp map[string]interface{}, err error) {
 	HTTPMethod := "GET"
 	path := "/api/v2/cmdb/log.syslogd3/override-filter"
+	url_params := make(map[string][]string)
 
-	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam)
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -9124,8 +9762,9 @@ func (c *FortiSDKClient) UpdateLogSyslogd3OverrideSetting(data *map[string]inter
 	HTTPMethod := "PUT"
 	path := "/api/v2/cmdb/log.syslogd3/override-setting"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -9146,8 +9785,9 @@ func (c *FortiSDKClient) DeleteLogSyslogd3OverrideSetting(mkey string, vdomparam
 func (c *FortiSDKClient) ReadLogSyslogd3OverrideSetting(mkey string, vdomparam string) (mapTmp map[string]interface{}, err error) {
 	HTTPMethod := "GET"
 	path := "/api/v2/cmdb/log.syslogd3/override-setting"
+	url_params := make(map[string][]string)
 
-	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam)
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -9159,8 +9799,9 @@ func (c *FortiSDKClient) UpdateLogSyslogd3Setting(data *map[string]interface{}, 
 	HTTPMethod := "PUT"
 	path := "/api/v2/cmdb/log.syslogd3/setting"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -9181,8 +9822,9 @@ func (c *FortiSDKClient) DeleteLogSyslogd3Setting(mkey string, vdomparam string)
 func (c *FortiSDKClient) ReadLogSyslogd3Setting(mkey string, vdomparam string) (mapTmp map[string]interface{}, err error) {
 	HTTPMethod := "GET"
 	path := "/api/v2/cmdb/log.syslogd3/setting"
+	url_params := make(map[string][]string)
 
-	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam)
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -9194,8 +9836,9 @@ func (c *FortiSDKClient) UpdateLogSyslogd4Filter(data *map[string]interface{}, m
 	HTTPMethod := "PUT"
 	path := "/api/v2/cmdb/log.syslogd4/filter"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -9216,8 +9859,9 @@ func (c *FortiSDKClient) DeleteLogSyslogd4Filter(mkey string, vdomparam string) 
 func (c *FortiSDKClient) ReadLogSyslogd4Filter(mkey string, vdomparam string) (mapTmp map[string]interface{}, err error) {
 	HTTPMethod := "GET"
 	path := "/api/v2/cmdb/log.syslogd4/filter"
+	url_params := make(map[string][]string)
 
-	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam)
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -9229,8 +9873,9 @@ func (c *FortiSDKClient) UpdateLogSyslogd4OverrideFilter(data *map[string]interf
 	HTTPMethod := "PUT"
 	path := "/api/v2/cmdb/log.syslogd4/override-filter"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -9251,8 +9896,9 @@ func (c *FortiSDKClient) DeleteLogSyslogd4OverrideFilter(mkey string, vdomparam 
 func (c *FortiSDKClient) ReadLogSyslogd4OverrideFilter(mkey string, vdomparam string) (mapTmp map[string]interface{}, err error) {
 	HTTPMethod := "GET"
 	path := "/api/v2/cmdb/log.syslogd4/override-filter"
+	url_params := make(map[string][]string)
 
-	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam)
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -9264,8 +9910,9 @@ func (c *FortiSDKClient) UpdateLogSyslogd4OverrideSetting(data *map[string]inter
 	HTTPMethod := "PUT"
 	path := "/api/v2/cmdb/log.syslogd4/override-setting"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -9286,8 +9933,9 @@ func (c *FortiSDKClient) DeleteLogSyslogd4OverrideSetting(mkey string, vdomparam
 func (c *FortiSDKClient) ReadLogSyslogd4OverrideSetting(mkey string, vdomparam string) (mapTmp map[string]interface{}, err error) {
 	HTTPMethod := "GET"
 	path := "/api/v2/cmdb/log.syslogd4/override-setting"
+	url_params := make(map[string][]string)
 
-	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam)
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -9299,8 +9947,9 @@ func (c *FortiSDKClient) UpdateNsxtSetting(data *map[string]interface{}, mkey st
 	HTTPMethod := "PUT"
 	path := "/api/v2/cmdb/nsxt/setting"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -9321,8 +9970,9 @@ func (c *FortiSDKClient) DeleteNsxtSetting(mkey string, vdomparam string) (err e
 func (c *FortiSDKClient) ReadNsxtSetting(mkey string, vdomparam string) (mapTmp map[string]interface{}, err error) {
 	HTTPMethod := "GET"
 	path := "/api/v2/cmdb/nsxt/setting"
+	url_params := make(map[string][]string)
 
-	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam)
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -9334,8 +9984,9 @@ func (c *FortiSDKClient) UpdateLogSyslogd4Setting(data *map[string]interface{}, 
 	HTTPMethod := "PUT"
 	path := "/api/v2/cmdb/log.syslogd4/setting"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -9356,8 +10007,9 @@ func (c *FortiSDKClient) DeleteLogSyslogd4Setting(mkey string, vdomparam string)
 func (c *FortiSDKClient) ReadLogSyslogd4Setting(mkey string, vdomparam string) (mapTmp map[string]interface{}, err error) {
 	HTTPMethod := "GET"
 	path := "/api/v2/cmdb/log.syslogd4/setting"
+	url_params := make(map[string][]string)
 
-	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam)
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -9370,8 +10022,9 @@ func (c *FortiSDKClient) CreateNsxtServiceChain(data *map[string]interface{}, vd
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/nsxt/service-chain"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -9384,8 +10037,9 @@ func (c *FortiSDKClient) UpdateNsxtServiceChain(data *map[string]interface{}, mk
 	path := "/api/v2/cmdb/nsxt/service-chain"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -9411,7 +10065,9 @@ func (c *FortiSDKClient) ReadNsxtServiceChain(mkey string, vdomparam string) (ma
 	path := "/api/v2/cmdb/nsxt/service-chain"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -9423,8 +10079,9 @@ func (c *FortiSDKClient) UpdateLogWebtrendsFilter(data *map[string]interface{}, 
 	HTTPMethod := "PUT"
 	path := "/api/v2/cmdb/log.webtrends/filter"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -9445,8 +10102,9 @@ func (c *FortiSDKClient) DeleteLogWebtrendsFilter(mkey string, vdomparam string)
 func (c *FortiSDKClient) ReadLogWebtrendsFilter(mkey string, vdomparam string) (mapTmp map[string]interface{}, err error) {
 	HTTPMethod := "GET"
 	path := "/api/v2/cmdb/log.webtrends/filter"
+	url_params := make(map[string][]string)
 
-	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam)
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -9458,8 +10116,9 @@ func (c *FortiSDKClient) UpdateLogWebtrendsSetting(data *map[string]interface{},
 	HTTPMethod := "PUT"
 	path := "/api/v2/cmdb/log.webtrends/setting"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -9480,8 +10139,9 @@ func (c *FortiSDKClient) DeleteLogWebtrendsSetting(mkey string, vdomparam string
 func (c *FortiSDKClient) ReadLogWebtrendsSetting(mkey string, vdomparam string) (mapTmp map[string]interface{}, err error) {
 	HTTPMethod := "GET"
 	path := "/api/v2/cmdb/log.webtrends/setting"
+	url_params := make(map[string][]string)
 
-	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam)
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -9494,8 +10154,9 @@ func (c *FortiSDKClient) CreateReportChart(data *map[string]interface{}, vdompar
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/report/chart"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -9508,8 +10169,9 @@ func (c *FortiSDKClient) UpdateReportChart(data *map[string]interface{}, mkey st
 	path := "/api/v2/cmdb/report/chart"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -9535,7 +10197,9 @@ func (c *FortiSDKClient) ReadReportChart(mkey string, vdomparam string) (mapTmp 
 	path := "/api/v2/cmdb/report/chart"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -9548,8 +10212,9 @@ func (c *FortiSDKClient) CreateReportDataset(data *map[string]interface{}, vdomp
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/report/dataset"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -9562,8 +10227,9 @@ func (c *FortiSDKClient) UpdateReportDataset(data *map[string]interface{}, mkey 
 	path := "/api/v2/cmdb/report/dataset"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -9589,7 +10255,9 @@ func (c *FortiSDKClient) ReadReportDataset(mkey string, vdomparam string) (mapTm
 	path := "/api/v2/cmdb/report/dataset"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -9602,8 +10270,9 @@ func (c *FortiSDKClient) CreateReportLayout(data *map[string]interface{}, vdompa
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/report/layout"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -9616,8 +10285,9 @@ func (c *FortiSDKClient) UpdateReportLayout(data *map[string]interface{}, mkey s
 	path := "/api/v2/cmdb/report/layout"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -9643,7 +10313,9 @@ func (c *FortiSDKClient) ReadReportLayout(mkey string, vdomparam string) (mapTmp
 	path := "/api/v2/cmdb/report/layout"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -9655,8 +10327,9 @@ func (c *FortiSDKClient) UpdateReportSetting(data *map[string]interface{}, mkey 
 	HTTPMethod := "PUT"
 	path := "/api/v2/cmdb/report/setting"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -9677,8 +10350,9 @@ func (c *FortiSDKClient) DeleteReportSetting(mkey string, vdomparam string) (err
 func (c *FortiSDKClient) ReadReportSetting(mkey string, vdomparam string) (mapTmp map[string]interface{}, err error) {
 	HTTPMethod := "GET"
 	path := "/api/v2/cmdb/report/setting"
+	url_params := make(map[string][]string)
 
-	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam)
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -9691,8 +10365,9 @@ func (c *FortiSDKClient) CreateReportStyle(data *map[string]interface{}, vdompar
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/report/style"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -9705,8 +10380,9 @@ func (c *FortiSDKClient) UpdateReportStyle(data *map[string]interface{}, mkey st
 	path := "/api/v2/cmdb/report/style"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -9732,7 +10408,9 @@ func (c *FortiSDKClient) ReadReportStyle(mkey string, vdomparam string) (mapTmp 
 	path := "/api/v2/cmdb/report/style"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -9745,8 +10423,9 @@ func (c *FortiSDKClient) CreateReportTheme(data *map[string]interface{}, vdompar
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/report/theme"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -9759,8 +10438,9 @@ func (c *FortiSDKClient) UpdateReportTheme(data *map[string]interface{}, mkey st
 	path := "/api/v2/cmdb/report/theme"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -9786,7 +10466,9 @@ func (c *FortiSDKClient) ReadReportTheme(mkey string, vdomparam string) (mapTmp 
 	path := "/api/v2/cmdb/report/theme"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -9799,8 +10481,9 @@ func (c *FortiSDKClient) CreateRouterAccessList(data *map[string]interface{}, vd
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/router/access-list"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -9813,8 +10496,9 @@ func (c *FortiSDKClient) UpdateRouterAccessList(data *map[string]interface{}, mk
 	path := "/api/v2/cmdb/router/access-list"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -9840,7 +10524,9 @@ func (c *FortiSDKClient) ReadRouterAccessList(mkey string, vdomparam string) (ma
 	path := "/api/v2/cmdb/router/access-list"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -9853,8 +10539,9 @@ func (c *FortiSDKClient) CreateRouterAccessList6(data *map[string]interface{}, v
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/router/access-list6"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -9867,8 +10554,9 @@ func (c *FortiSDKClient) UpdateRouterAccessList6(data *map[string]interface{}, m
 	path := "/api/v2/cmdb/router/access-list6"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -9894,7 +10582,9 @@ func (c *FortiSDKClient) ReadRouterAccessList6(mkey string, vdomparam string) (m
 	path := "/api/v2/cmdb/router/access-list6"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -9907,8 +10597,9 @@ func (c *FortiSDKClient) CreateRouterAspathList(data *map[string]interface{}, vd
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/router/aspath-list"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -9921,8 +10612,9 @@ func (c *FortiSDKClient) UpdateRouterAspathList(data *map[string]interface{}, mk
 	path := "/api/v2/cmdb/router/aspath-list"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -9948,7 +10640,9 @@ func (c *FortiSDKClient) ReadRouterAspathList(mkey string, vdomparam string) (ma
 	path := "/api/v2/cmdb/router/aspath-list"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -9961,8 +10655,9 @@ func (c *FortiSDKClient) CreateRouterAuthPath(data *map[string]interface{}, vdom
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/router/auth-path"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -9975,8 +10670,9 @@ func (c *FortiSDKClient) UpdateRouterAuthPath(data *map[string]interface{}, mkey
 	path := "/api/v2/cmdb/router/auth-path"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -10002,7 +10698,9 @@ func (c *FortiSDKClient) ReadRouterAuthPath(mkey string, vdomparam string) (mapT
 	path := "/api/v2/cmdb/router/auth-path"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -10014,8 +10712,9 @@ func (c *FortiSDKClient) UpdateRouterBfd(data *map[string]interface{}, mkey stri
 	HTTPMethod := "PUT"
 	path := "/api/v2/cmdb/router/bfd"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -10036,8 +10735,9 @@ func (c *FortiSDKClient) DeleteRouterBfd(mkey string, vdomparam string) (err err
 func (c *FortiSDKClient) ReadRouterBfd(mkey string, vdomparam string) (mapTmp map[string]interface{}, err error) {
 	HTTPMethod := "GET"
 	path := "/api/v2/cmdb/router/bfd"
+	url_params := make(map[string][]string)
 
-	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam)
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -10049,8 +10749,9 @@ func (c *FortiSDKClient) UpdateRouterBfd6(data *map[string]interface{}, mkey str
 	HTTPMethod := "PUT"
 	path := "/api/v2/cmdb/router/bfd6"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -10071,8 +10772,9 @@ func (c *FortiSDKClient) DeleteRouterBfd6(mkey string, vdomparam string) (err er
 func (c *FortiSDKClient) ReadRouterBfd6(mkey string, vdomparam string) (mapTmp map[string]interface{}, err error) {
 	HTTPMethod := "GET"
 	path := "/api/v2/cmdb/router/bfd6"
+	url_params := make(map[string][]string)
 
-	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam)
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -10084,8 +10786,9 @@ func (c *FortiSDKClient) UpdateRouterBgp(data *map[string]interface{}, mkey stri
 	HTTPMethod := "PUT"
 	path := "/api/v2/cmdb/router/bgp"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -10106,8 +10809,9 @@ func (c *FortiSDKClient) DeleteRouterBgp(mkey string, vdomparam string) (err err
 func (c *FortiSDKClient) ReadRouterBgp(mkey string, vdomparam string) (mapTmp map[string]interface{}, err error) {
 	HTTPMethod := "GET"
 	path := "/api/v2/cmdb/router/bgp"
+	url_params := make(map[string][]string)
 
-	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam)
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -10120,8 +10824,9 @@ func (c *FortiSDKClient) CreateRouterCommunityList(data *map[string]interface{},
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/router/community-list"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -10134,8 +10839,9 @@ func (c *FortiSDKClient) UpdateRouterCommunityList(data *map[string]interface{},
 	path := "/api/v2/cmdb/router/community-list"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -10161,7 +10867,9 @@ func (c *FortiSDKClient) ReadRouterCommunityList(mkey string, vdomparam string) 
 	path := "/api/v2/cmdb/router/community-list"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -10173,8 +10881,9 @@ func (c *FortiSDKClient) UpdateRouterIsis(data *map[string]interface{}, mkey str
 	HTTPMethod := "PUT"
 	path := "/api/v2/cmdb/router/isis"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -10195,8 +10904,9 @@ func (c *FortiSDKClient) DeleteRouterIsis(mkey string, vdomparam string) (err er
 func (c *FortiSDKClient) ReadRouterIsis(mkey string, vdomparam string) (mapTmp map[string]interface{}, err error) {
 	HTTPMethod := "GET"
 	path := "/api/v2/cmdb/router/isis"
+	url_params := make(map[string][]string)
 
-	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam)
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -10209,8 +10919,9 @@ func (c *FortiSDKClient) CreateRouterKeyChain(data *map[string]interface{}, vdom
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/router/key-chain"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -10223,8 +10934,9 @@ func (c *FortiSDKClient) UpdateRouterKeyChain(data *map[string]interface{}, mkey
 	path := "/api/v2/cmdb/router/key-chain"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -10250,7 +10962,9 @@ func (c *FortiSDKClient) ReadRouterKeyChain(mkey string, vdomparam string) (mapT
 	path := "/api/v2/cmdb/router/key-chain"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -10262,8 +10976,9 @@ func (c *FortiSDKClient) UpdateRouterMulticast(data *map[string]interface{}, mke
 	HTTPMethod := "PUT"
 	path := "/api/v2/cmdb/router/multicast"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -10284,8 +10999,9 @@ func (c *FortiSDKClient) DeleteRouterMulticast(mkey string, vdomparam string) (e
 func (c *FortiSDKClient) ReadRouterMulticast(mkey string, vdomparam string) (mapTmp map[string]interface{}, err error) {
 	HTTPMethod := "GET"
 	path := "/api/v2/cmdb/router/multicast"
+	url_params := make(map[string][]string)
 
-	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam)
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -10298,8 +11014,9 @@ func (c *FortiSDKClient) CreateRouterMulticastFlow(data *map[string]interface{},
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/router/multicast-flow"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -10312,8 +11029,9 @@ func (c *FortiSDKClient) UpdateRouterMulticastFlow(data *map[string]interface{},
 	path := "/api/v2/cmdb/router/multicast-flow"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -10339,7 +11057,9 @@ func (c *FortiSDKClient) ReadRouterMulticastFlow(mkey string, vdomparam string) 
 	path := "/api/v2/cmdb/router/multicast-flow"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -10351,8 +11071,9 @@ func (c *FortiSDKClient) UpdateRouterMulticast6(data *map[string]interface{}, mk
 	HTTPMethod := "PUT"
 	path := "/api/v2/cmdb/router/multicast6"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -10373,8 +11094,9 @@ func (c *FortiSDKClient) DeleteRouterMulticast6(mkey string, vdomparam string) (
 func (c *FortiSDKClient) ReadRouterMulticast6(mkey string, vdomparam string) (mapTmp map[string]interface{}, err error) {
 	HTTPMethod := "GET"
 	path := "/api/v2/cmdb/router/multicast6"
+	url_params := make(map[string][]string)
 
-	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam)
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -10386,8 +11108,9 @@ func (c *FortiSDKClient) UpdateRouterOspf(data *map[string]interface{}, mkey str
 	HTTPMethod := "PUT"
 	path := "/api/v2/cmdb/router/ospf"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -10408,8 +11131,9 @@ func (c *FortiSDKClient) DeleteRouterOspf(mkey string, vdomparam string) (err er
 func (c *FortiSDKClient) ReadRouterOspf(mkey string, vdomparam string) (mapTmp map[string]interface{}, err error) {
 	HTTPMethod := "GET"
 	path := "/api/v2/cmdb/router/ospf"
+	url_params := make(map[string][]string)
 
-	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam)
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -10421,8 +11145,9 @@ func (c *FortiSDKClient) UpdateRouterOspf6(data *map[string]interface{}, mkey st
 	HTTPMethod := "PUT"
 	path := "/api/v2/cmdb/router/ospf6"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -10443,8 +11168,9 @@ func (c *FortiSDKClient) DeleteRouterOspf6(mkey string, vdomparam string) (err e
 func (c *FortiSDKClient) ReadRouterOspf6(mkey string, vdomparam string) (mapTmp map[string]interface{}, err error) {
 	HTTPMethod := "GET"
 	path := "/api/v2/cmdb/router/ospf6"
+	url_params := make(map[string][]string)
 
-	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam)
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -10457,8 +11183,9 @@ func (c *FortiSDKClient) CreateRouterPolicy(data *map[string]interface{}, vdompa
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/router/policy"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -10471,8 +11198,9 @@ func (c *FortiSDKClient) UpdateRouterPolicy(data *map[string]interface{}, mkey s
 	path := "/api/v2/cmdb/router/policy"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -10498,7 +11226,9 @@ func (c *FortiSDKClient) ReadRouterPolicy(mkey string, vdomparam string) (mapTmp
 	path := "/api/v2/cmdb/router/policy"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -10511,8 +11241,9 @@ func (c *FortiSDKClient) CreateRouterPolicy6(data *map[string]interface{}, vdomp
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/router/policy6"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -10525,8 +11256,9 @@ func (c *FortiSDKClient) UpdateRouterPolicy6(data *map[string]interface{}, mkey 
 	path := "/api/v2/cmdb/router/policy6"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -10552,7 +11284,9 @@ func (c *FortiSDKClient) ReadRouterPolicy6(mkey string, vdomparam string) (mapTm
 	path := "/api/v2/cmdb/router/policy6"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -10565,8 +11299,9 @@ func (c *FortiSDKClient) CreateRouterPrefixList(data *map[string]interface{}, vd
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/router/prefix-list"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -10579,8 +11314,9 @@ func (c *FortiSDKClient) UpdateRouterPrefixList(data *map[string]interface{}, mk
 	path := "/api/v2/cmdb/router/prefix-list"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -10606,7 +11342,9 @@ func (c *FortiSDKClient) ReadRouterPrefixList(mkey string, vdomparam string) (ma
 	path := "/api/v2/cmdb/router/prefix-list"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -10619,8 +11357,9 @@ func (c *FortiSDKClient) CreateRouterPrefixList6(data *map[string]interface{}, v
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/router/prefix-list6"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -10633,8 +11372,9 @@ func (c *FortiSDKClient) UpdateRouterPrefixList6(data *map[string]interface{}, m
 	path := "/api/v2/cmdb/router/prefix-list6"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -10660,7 +11400,9 @@ func (c *FortiSDKClient) ReadRouterPrefixList6(mkey string, vdomparam string) (m
 	path := "/api/v2/cmdb/router/prefix-list6"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -10672,8 +11414,9 @@ func (c *FortiSDKClient) UpdateRouterRip(data *map[string]interface{}, mkey stri
 	HTTPMethod := "PUT"
 	path := "/api/v2/cmdb/router/rip"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -10694,8 +11437,9 @@ func (c *FortiSDKClient) DeleteRouterRip(mkey string, vdomparam string) (err err
 func (c *FortiSDKClient) ReadRouterRip(mkey string, vdomparam string) (mapTmp map[string]interface{}, err error) {
 	HTTPMethod := "GET"
 	path := "/api/v2/cmdb/router/rip"
+	url_params := make(map[string][]string)
 
-	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam)
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -10707,8 +11451,9 @@ func (c *FortiSDKClient) UpdateRouterRipng(data *map[string]interface{}, mkey st
 	HTTPMethod := "PUT"
 	path := "/api/v2/cmdb/router/ripng"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -10729,8 +11474,9 @@ func (c *FortiSDKClient) DeleteRouterRipng(mkey string, vdomparam string) (err e
 func (c *FortiSDKClient) ReadRouterRipng(mkey string, vdomparam string) (mapTmp map[string]interface{}, err error) {
 	HTTPMethod := "GET"
 	path := "/api/v2/cmdb/router/ripng"
+	url_params := make(map[string][]string)
 
-	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam)
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -10743,8 +11489,9 @@ func (c *FortiSDKClient) CreateRouterRouteMap(data *map[string]interface{}, vdom
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/router/route-map"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -10757,8 +11504,9 @@ func (c *FortiSDKClient) UpdateRouterRouteMap(data *map[string]interface{}, mkey
 	path := "/api/v2/cmdb/router/route-map"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -10784,7 +11532,9 @@ func (c *FortiSDKClient) ReadRouterRouteMap(mkey string, vdomparam string) (mapT
 	path := "/api/v2/cmdb/router/route-map"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -10796,8 +11546,9 @@ func (c *FortiSDKClient) UpdateRouterSetting(data *map[string]interface{}, mkey 
 	HTTPMethod := "PUT"
 	path := "/api/v2/cmdb/router/setting"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -10818,8 +11569,9 @@ func (c *FortiSDKClient) DeleteRouterSetting(mkey string, vdomparam string) (err
 func (c *FortiSDKClient) ReadRouterSetting(mkey string, vdomparam string) (mapTmp map[string]interface{}, err error) {
 	HTTPMethod := "GET"
 	path := "/api/v2/cmdb/router/setting"
+	url_params := make(map[string][]string)
 
-	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam)
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -10832,8 +11584,9 @@ func (c *FortiSDKClient) CreateRouterStatic(data *map[string]interface{}, vdompa
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/router/static"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -10846,8 +11599,9 @@ func (c *FortiSDKClient) UpdateRouterStatic(data *map[string]interface{}, mkey s
 	path := "/api/v2/cmdb/router/static"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -10873,7 +11627,9 @@ func (c *FortiSDKClient) ReadRouterStatic(mkey string, vdomparam string) (mapTmp
 	path := "/api/v2/cmdb/router/static"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -10886,8 +11642,9 @@ func (c *FortiSDKClient) CreateRouterStatic6(data *map[string]interface{}, vdomp
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/router/static6"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -10900,8 +11657,9 @@ func (c *FortiSDKClient) UpdateRouterStatic6(data *map[string]interface{}, mkey 
 	path := "/api/v2/cmdb/router/static6"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -10927,7 +11685,9 @@ func (c *FortiSDKClient) ReadRouterStatic6(mkey string, vdomparam string) (mapTm
 	path := "/api/v2/cmdb/router/static6"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -10940,8 +11700,9 @@ func (c *FortiSDKClient) CreateSpamfilterBwl(data *map[string]interface{}, vdomp
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/spamfilter/bwl"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -10954,8 +11715,9 @@ func (c *FortiSDKClient) UpdateSpamfilterBwl(data *map[string]interface{}, mkey 
 	path := "/api/v2/cmdb/spamfilter/bwl"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -10981,7 +11743,9 @@ func (c *FortiSDKClient) ReadSpamfilterBwl(mkey string, vdomparam string) (mapTm
 	path := "/api/v2/cmdb/spamfilter/bwl"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -10994,8 +11758,9 @@ func (c *FortiSDKClient) CreateSpamfilterBword(data *map[string]interface{}, vdo
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/spamfilter/bword"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -11008,8 +11773,9 @@ func (c *FortiSDKClient) UpdateSpamfilterBword(data *map[string]interface{}, mke
 	path := "/api/v2/cmdb/spamfilter/bword"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -11035,7 +11801,9 @@ func (c *FortiSDKClient) ReadSpamfilterBword(mkey string, vdomparam string) (map
 	path := "/api/v2/cmdb/spamfilter/bword"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -11048,8 +11816,9 @@ func (c *FortiSDKClient) CreateSpamfilterDnsbl(data *map[string]interface{}, vdo
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/spamfilter/dnsbl"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -11062,8 +11831,9 @@ func (c *FortiSDKClient) UpdateSpamfilterDnsbl(data *map[string]interface{}, mke
 	path := "/api/v2/cmdb/spamfilter/dnsbl"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -11089,7 +11859,9 @@ func (c *FortiSDKClient) ReadSpamfilterDnsbl(mkey string, vdomparam string) (map
 	path := "/api/v2/cmdb/spamfilter/dnsbl"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -11101,8 +11873,9 @@ func (c *FortiSDKClient) UpdateSpamfilterFortishield(data *map[string]interface{
 	HTTPMethod := "PUT"
 	path := "/api/v2/cmdb/spamfilter/fortishield"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -11123,8 +11896,9 @@ func (c *FortiSDKClient) DeleteSpamfilterFortishield(mkey string, vdomparam stri
 func (c *FortiSDKClient) ReadSpamfilterFortishield(mkey string, vdomparam string) (mapTmp map[string]interface{}, err error) {
 	HTTPMethod := "GET"
 	path := "/api/v2/cmdb/spamfilter/fortishield"
+	url_params := make(map[string][]string)
 
-	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam)
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -11137,8 +11911,9 @@ func (c *FortiSDKClient) CreateSpamfilterIptrust(data *map[string]interface{}, v
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/spamfilter/iptrust"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -11151,8 +11926,9 @@ func (c *FortiSDKClient) UpdateSpamfilterIptrust(data *map[string]interface{}, m
 	path := "/api/v2/cmdb/spamfilter/iptrust"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -11178,7 +11954,9 @@ func (c *FortiSDKClient) ReadSpamfilterIptrust(mkey string, vdomparam string) (m
 	path := "/api/v2/cmdb/spamfilter/iptrust"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -11191,8 +11969,9 @@ func (c *FortiSDKClient) CreateSpamfilterMheader(data *map[string]interface{}, v
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/spamfilter/mheader"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -11205,8 +11984,9 @@ func (c *FortiSDKClient) UpdateSpamfilterMheader(data *map[string]interface{}, m
 	path := "/api/v2/cmdb/spamfilter/mheader"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -11232,7 +12012,9 @@ func (c *FortiSDKClient) ReadSpamfilterMheader(mkey string, vdomparam string) (m
 	path := "/api/v2/cmdb/spamfilter/mheader"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -11244,8 +12026,9 @@ func (c *FortiSDKClient) UpdateSpamfilterOptions(data *map[string]interface{}, m
 	HTTPMethod := "PUT"
 	path := "/api/v2/cmdb/spamfilter/options"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -11266,8 +12049,9 @@ func (c *FortiSDKClient) DeleteSpamfilterOptions(mkey string, vdomparam string) 
 func (c *FortiSDKClient) ReadSpamfilterOptions(mkey string, vdomparam string) (mapTmp map[string]interface{}, err error) {
 	HTTPMethod := "GET"
 	path := "/api/v2/cmdb/spamfilter/options"
+	url_params := make(map[string][]string)
 
-	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam)
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -11280,8 +12064,9 @@ func (c *FortiSDKClient) CreateSpamfilterProfile(data *map[string]interface{}, v
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/spamfilter/profile"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -11294,8 +12079,9 @@ func (c *FortiSDKClient) UpdateSpamfilterProfile(data *map[string]interface{}, m
 	path := "/api/v2/cmdb/spamfilter/profile"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -11321,7 +12107,9 @@ func (c *FortiSDKClient) ReadSpamfilterProfile(mkey string, vdomparam string) (m
 	path := "/api/v2/cmdb/spamfilter/profile"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -11334,8 +12122,9 @@ func (c *FortiSDKClient) CreateSshFilterProfile(data *map[string]interface{}, vd
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/ssh-filter/profile"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -11348,8 +12137,9 @@ func (c *FortiSDKClient) UpdateSshFilterProfile(data *map[string]interface{}, mk
 	path := "/api/v2/cmdb/ssh-filter/profile"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -11375,7 +12165,9 @@ func (c *FortiSDKClient) ReadSshFilterProfile(mkey string, vdomparam string) (ma
 	path := "/api/v2/cmdb/ssh-filter/profile"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -11387,8 +12179,9 @@ func (c *FortiSDKClient) UpdateSwitchController8021XSettings(data *map[string]in
 	HTTPMethod := "PUT"
 	path := "/api/v2/cmdb/switch-controller/802-1X-settings"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -11409,8 +12202,9 @@ func (c *FortiSDKClient) DeleteSwitchController8021XSettings(mkey string, vdompa
 func (c *FortiSDKClient) ReadSwitchController8021XSettings(mkey string, vdomparam string) (mapTmp map[string]interface{}, err error) {
 	HTTPMethod := "GET"
 	path := "/api/v2/cmdb/switch-controller/802-1X-settings"
+	url_params := make(map[string][]string)
 
-	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam)
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -11423,8 +12217,9 @@ func (c *FortiSDKClient) CreateSwitchControllerCustomCommand(data *map[string]in
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/switch-controller/custom-command"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -11437,8 +12232,9 @@ func (c *FortiSDKClient) UpdateSwitchControllerCustomCommand(data *map[string]in
 	path := "/api/v2/cmdb/switch-controller/custom-command"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -11464,7 +12260,9 @@ func (c *FortiSDKClient) ReadSwitchControllerCustomCommand(mkey string, vdompara
 	path := "/api/v2/cmdb/switch-controller/custom-command"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -11476,8 +12274,9 @@ func (c *FortiSDKClient) UpdateSwitchControllerFlowTracking(data *map[string]int
 	HTTPMethod := "PUT"
 	path := "/api/v2/cmdb/switch-controller/flow-tracking"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -11498,8 +12297,9 @@ func (c *FortiSDKClient) DeleteSwitchControllerFlowTracking(mkey string, vdompar
 func (c *FortiSDKClient) ReadSwitchControllerFlowTracking(mkey string, vdomparam string) (mapTmp map[string]interface{}, err error) {
 	HTTPMethod := "GET"
 	path := "/api/v2/cmdb/switch-controller/flow-tracking"
+	url_params := make(map[string][]string)
 
-	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam)
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -11511,8 +12311,9 @@ func (c *FortiSDKClient) UpdateSwitchControllerGlobal(data *map[string]interface
 	HTTPMethod := "PUT"
 	path := "/api/v2/cmdb/switch-controller/global"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -11533,8 +12334,9 @@ func (c *FortiSDKClient) DeleteSwitchControllerGlobal(mkey string, vdomparam str
 func (c *FortiSDKClient) ReadSwitchControllerGlobal(mkey string, vdomparam string) (mapTmp map[string]interface{}, err error) {
 	HTTPMethod := "GET"
 	path := "/api/v2/cmdb/switch-controller/global"
+	url_params := make(map[string][]string)
 
-	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam)
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -11546,8 +12348,9 @@ func (c *FortiSDKClient) UpdateSwitchControllerIgmpSnooping(data *map[string]int
 	HTTPMethod := "PUT"
 	path := "/api/v2/cmdb/switch-controller/igmp-snooping"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -11568,8 +12371,9 @@ func (c *FortiSDKClient) DeleteSwitchControllerIgmpSnooping(mkey string, vdompar
 func (c *FortiSDKClient) ReadSwitchControllerIgmpSnooping(mkey string, vdomparam string) (mapTmp map[string]interface{}, err error) {
 	HTTPMethod := "GET"
 	path := "/api/v2/cmdb/switch-controller/igmp-snooping"
+	url_params := make(map[string][]string)
 
-	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam)
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -11582,8 +12386,9 @@ func (c *FortiSDKClient) CreateSwitchControllerLldpProfile(data *map[string]inte
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/switch-controller/lldp-profile"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -11596,8 +12401,9 @@ func (c *FortiSDKClient) UpdateSwitchControllerLldpProfile(data *map[string]inte
 	path := "/api/v2/cmdb/switch-controller/lldp-profile"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -11623,7 +12429,9 @@ func (c *FortiSDKClient) ReadSwitchControllerLldpProfile(mkey string, vdomparam 
 	path := "/api/v2/cmdb/switch-controller/lldp-profile"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -11635,8 +12443,9 @@ func (c *FortiSDKClient) UpdateSwitchControllerLldpSettings(data *map[string]int
 	HTTPMethod := "PUT"
 	path := "/api/v2/cmdb/switch-controller/lldp-settings"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -11657,8 +12466,9 @@ func (c *FortiSDKClient) DeleteSwitchControllerLldpSettings(mkey string, vdompar
 func (c *FortiSDKClient) ReadSwitchControllerLldpSettings(mkey string, vdomparam string) (mapTmp map[string]interface{}, err error) {
 	HTTPMethod := "GET"
 	path := "/api/v2/cmdb/switch-controller/lldp-settings"
+	url_params := make(map[string][]string)
 
-	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam)
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -11671,8 +12481,9 @@ func (c *FortiSDKClient) CreateSwitchControllerLocation(data *map[string]interfa
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/switch-controller/location"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -11685,8 +12496,9 @@ func (c *FortiSDKClient) UpdateSwitchControllerLocation(data *map[string]interfa
 	path := "/api/v2/cmdb/switch-controller/location"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -11712,7 +12524,9 @@ func (c *FortiSDKClient) ReadSwitchControllerLocation(mkey string, vdomparam str
 	path := "/api/v2/cmdb/switch-controller/location"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -11724,8 +12538,9 @@ func (c *FortiSDKClient) UpdateSwitchControllerMacSyncSettings(data *map[string]
 	HTTPMethod := "PUT"
 	path := "/api/v2/cmdb/switch-controller/mac-sync-settings"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -11746,8 +12561,9 @@ func (c *FortiSDKClient) DeleteSwitchControllerMacSyncSettings(mkey string, vdom
 func (c *FortiSDKClient) ReadSwitchControllerMacSyncSettings(mkey string, vdomparam string) (mapTmp map[string]interface{}, err error) {
 	HTTPMethod := "GET"
 	path := "/api/v2/cmdb/switch-controller/mac-sync-settings"
+	url_params := make(map[string][]string)
 
-	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam)
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -11760,8 +12576,9 @@ func (c *FortiSDKClient) CreateSwitchControllerManagedSwitch(data *map[string]in
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/switch-controller/managed-switch"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -11774,8 +12591,9 @@ func (c *FortiSDKClient) UpdateSwitchControllerManagedSwitch(data *map[string]in
 	path := "/api/v2/cmdb/switch-controller/managed-switch"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -11801,7 +12619,9 @@ func (c *FortiSDKClient) ReadSwitchControllerManagedSwitch(mkey string, vdompara
 	path := "/api/v2/cmdb/switch-controller/managed-switch"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -11814,8 +12634,9 @@ func (c *FortiSDKClient) CreateSwitchControllerNacDevice(data *map[string]interf
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/switch-controller/nac-device"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -11828,8 +12649,9 @@ func (c *FortiSDKClient) UpdateSwitchControllerNacDevice(data *map[string]interf
 	path := "/api/v2/cmdb/switch-controller/nac-device"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -11855,7 +12677,9 @@ func (c *FortiSDKClient) ReadSwitchControllerNacDevice(mkey string, vdomparam st
 	path := "/api/v2/cmdb/switch-controller/nac-device"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -11868,8 +12692,9 @@ func (c *FortiSDKClient) CreateSwitchControllerNacSettings(data *map[string]inte
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/switch-controller/nac-settings"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -11882,8 +12707,9 @@ func (c *FortiSDKClient) UpdateSwitchControllerNacSettings(data *map[string]inte
 	path := "/api/v2/cmdb/switch-controller/nac-settings"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -11909,7 +12735,9 @@ func (c *FortiSDKClient) ReadSwitchControllerNacSettings(mkey string, vdomparam 
 	path := "/api/v2/cmdb/switch-controller/nac-settings"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -11921,8 +12749,9 @@ func (c *FortiSDKClient) UpdateSwitchControllerNetworkMonitorSettings(data *map[
 	HTTPMethod := "PUT"
 	path := "/api/v2/cmdb/switch-controller/network-monitor-settings"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -11943,8 +12772,9 @@ func (c *FortiSDKClient) DeleteSwitchControllerNetworkMonitorSettings(mkey strin
 func (c *FortiSDKClient) ReadSwitchControllerNetworkMonitorSettings(mkey string, vdomparam string) (mapTmp map[string]interface{}, err error) {
 	HTTPMethod := "GET"
 	path := "/api/v2/cmdb/switch-controller/network-monitor-settings"
+	url_params := make(map[string][]string)
 
-	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam)
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -11957,8 +12787,9 @@ func (c *FortiSDKClient) CreateSwitchControllerPortPolicy(data *map[string]inter
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/switch-controller/port-policy"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -11971,8 +12802,9 @@ func (c *FortiSDKClient) UpdateSwitchControllerPortPolicy(data *map[string]inter
 	path := "/api/v2/cmdb/switch-controller/port-policy"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -11998,7 +12830,9 @@ func (c *FortiSDKClient) ReadSwitchControllerPortPolicy(mkey string, vdomparam s
 	path := "/api/v2/cmdb/switch-controller/port-policy"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -12010,8 +12844,9 @@ func (c *FortiSDKClient) UpdateSwitchControllerQuarantine(data *map[string]inter
 	HTTPMethod := "PUT"
 	path := "/api/v2/cmdb/switch-controller/quarantine"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -12032,8 +12867,9 @@ func (c *FortiSDKClient) DeleteSwitchControllerQuarantine(mkey string, vdomparam
 func (c *FortiSDKClient) ReadSwitchControllerQuarantine(mkey string, vdomparam string) (mapTmp map[string]interface{}, err error) {
 	HTTPMethod := "GET"
 	path := "/api/v2/cmdb/switch-controller/quarantine"
+	url_params := make(map[string][]string)
 
-	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam)
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -12046,8 +12882,9 @@ func (c *FortiSDKClient) CreateSwitchControllerRemoteLog(data *map[string]interf
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/switch-controller/remote-log"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -12060,8 +12897,9 @@ func (c *FortiSDKClient) UpdateSwitchControllerRemoteLog(data *map[string]interf
 	path := "/api/v2/cmdb/switch-controller/remote-log"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -12087,7 +12925,9 @@ func (c *FortiSDKClient) ReadSwitchControllerRemoteLog(mkey string, vdomparam st
 	path := "/api/v2/cmdb/switch-controller/remote-log"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -12099,8 +12939,9 @@ func (c *FortiSDKClient) UpdateSwitchControllerSflow(data *map[string]interface{
 	HTTPMethod := "PUT"
 	path := "/api/v2/cmdb/switch-controller/sflow"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -12121,8 +12962,9 @@ func (c *FortiSDKClient) DeleteSwitchControllerSflow(mkey string, vdomparam stri
 func (c *FortiSDKClient) ReadSwitchControllerSflow(mkey string, vdomparam string) (mapTmp map[string]interface{}, err error) {
 	HTTPMethod := "GET"
 	path := "/api/v2/cmdb/switch-controller/sflow"
+	url_params := make(map[string][]string)
 
-	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam)
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -12135,8 +12977,9 @@ func (c *FortiSDKClient) CreateSwitchControllerSnmpCommunity(data *map[string]in
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/switch-controller/snmp-community"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -12149,8 +12992,9 @@ func (c *FortiSDKClient) UpdateSwitchControllerSnmpCommunity(data *map[string]in
 	path := "/api/v2/cmdb/switch-controller/snmp-community"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -12176,7 +13020,9 @@ func (c *FortiSDKClient) ReadSwitchControllerSnmpCommunity(mkey string, vdompara
 	path := "/api/v2/cmdb/switch-controller/snmp-community"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -12188,8 +13034,9 @@ func (c *FortiSDKClient) UpdateSwitchControllerSnmpSysinfo(data *map[string]inte
 	HTTPMethod := "PUT"
 	path := "/api/v2/cmdb/switch-controller/snmp-sysinfo"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -12210,8 +13057,9 @@ func (c *FortiSDKClient) DeleteSwitchControllerSnmpSysinfo(mkey string, vdompara
 func (c *FortiSDKClient) ReadSwitchControllerSnmpSysinfo(mkey string, vdomparam string) (mapTmp map[string]interface{}, err error) {
 	HTTPMethod := "GET"
 	path := "/api/v2/cmdb/switch-controller/snmp-sysinfo"
+	url_params := make(map[string][]string)
 
-	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam)
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -12223,8 +13071,9 @@ func (c *FortiSDKClient) UpdateSwitchControllerSnmpTrapThreshold(data *map[strin
 	HTTPMethod := "PUT"
 	path := "/api/v2/cmdb/switch-controller/snmp-trap-threshold"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -12245,8 +13094,9 @@ func (c *FortiSDKClient) DeleteSwitchControllerSnmpTrapThreshold(mkey string, vd
 func (c *FortiSDKClient) ReadSwitchControllerSnmpTrapThreshold(mkey string, vdomparam string) (mapTmp map[string]interface{}, err error) {
 	HTTPMethod := "GET"
 	path := "/api/v2/cmdb/switch-controller/snmp-trap-threshold"
+	url_params := make(map[string][]string)
 
-	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam)
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -12259,8 +13109,9 @@ func (c *FortiSDKClient) CreateSwitchControllerSnmpUser(data *map[string]interfa
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/switch-controller/snmp-user"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -12273,8 +13124,9 @@ func (c *FortiSDKClient) UpdateSwitchControllerSnmpUser(data *map[string]interfa
 	path := "/api/v2/cmdb/switch-controller/snmp-user"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -12300,7 +13152,9 @@ func (c *FortiSDKClient) ReadSwitchControllerSnmpUser(mkey string, vdomparam str
 	path := "/api/v2/cmdb/switch-controller/snmp-user"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -12312,8 +13166,9 @@ func (c *FortiSDKClient) UpdateSwitchControllerStormControl(data *map[string]int
 	HTTPMethod := "PUT"
 	path := "/api/v2/cmdb/switch-controller/storm-control"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -12334,8 +13189,9 @@ func (c *FortiSDKClient) DeleteSwitchControllerStormControl(mkey string, vdompar
 func (c *FortiSDKClient) ReadSwitchControllerStormControl(mkey string, vdomparam string) (mapTmp map[string]interface{}, err error) {
 	HTTPMethod := "GET"
 	path := "/api/v2/cmdb/switch-controller/storm-control"
+	url_params := make(map[string][]string)
 
-	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam)
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -12348,8 +13204,9 @@ func (c *FortiSDKClient) CreateSwitchControllerStormControlPolicy(data *map[stri
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/switch-controller/storm-control-policy"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -12362,8 +13219,9 @@ func (c *FortiSDKClient) UpdateSwitchControllerStormControlPolicy(data *map[stri
 	path := "/api/v2/cmdb/switch-controller/storm-control-policy"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -12389,7 +13247,9 @@ func (c *FortiSDKClient) ReadSwitchControllerStormControlPolicy(mkey string, vdo
 	path := "/api/v2/cmdb/switch-controller/storm-control-policy"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -12402,8 +13262,9 @@ func (c *FortiSDKClient) CreateSwitchControllerStpInstance(data *map[string]inte
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/switch-controller/stp-instance"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -12416,8 +13277,9 @@ func (c *FortiSDKClient) UpdateSwitchControllerStpInstance(data *map[string]inte
 	path := "/api/v2/cmdb/switch-controller/stp-instance"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -12443,7 +13305,9 @@ func (c *FortiSDKClient) ReadSwitchControllerStpInstance(mkey string, vdomparam 
 	path := "/api/v2/cmdb/switch-controller/stp-instance"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -12455,8 +13319,9 @@ func (c *FortiSDKClient) UpdateSwitchControllerStpSettings(data *map[string]inte
 	HTTPMethod := "PUT"
 	path := "/api/v2/cmdb/switch-controller/stp-settings"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -12477,8 +13342,9 @@ func (c *FortiSDKClient) DeleteSwitchControllerStpSettings(mkey string, vdompara
 func (c *FortiSDKClient) ReadSwitchControllerStpSettings(mkey string, vdomparam string) (mapTmp map[string]interface{}, err error) {
 	HTTPMethod := "GET"
 	path := "/api/v2/cmdb/switch-controller/stp-settings"
+	url_params := make(map[string][]string)
 
-	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam)
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -12491,8 +13357,9 @@ func (c *FortiSDKClient) CreateSwitchControllerSwitchGroup(data *map[string]inte
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/switch-controller/switch-group"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -12505,8 +13372,9 @@ func (c *FortiSDKClient) UpdateSwitchControllerSwitchGroup(data *map[string]inte
 	path := "/api/v2/cmdb/switch-controller/switch-group"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -12532,7 +13400,9 @@ func (c *FortiSDKClient) ReadSwitchControllerSwitchGroup(mkey string, vdomparam 
 	path := "/api/v2/cmdb/switch-controller/switch-group"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -12545,8 +13415,9 @@ func (c *FortiSDKClient) CreateSwitchControllerSwitchInterfaceTag(data *map[stri
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/switch-controller/switch-interface-tag"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -12559,8 +13430,9 @@ func (c *FortiSDKClient) UpdateSwitchControllerSwitchInterfaceTag(data *map[stri
 	path := "/api/v2/cmdb/switch-controller/switch-interface-tag"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -12586,7 +13458,9 @@ func (c *FortiSDKClient) ReadSwitchControllerSwitchInterfaceTag(mkey string, vdo
 	path := "/api/v2/cmdb/switch-controller/switch-interface-tag"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -12598,8 +13472,9 @@ func (c *FortiSDKClient) UpdateSwitchControllerSwitchLog(data *map[string]interf
 	HTTPMethod := "PUT"
 	path := "/api/v2/cmdb/switch-controller/switch-log"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -12620,8 +13495,9 @@ func (c *FortiSDKClient) DeleteSwitchControllerSwitchLog(mkey string, vdomparam 
 func (c *FortiSDKClient) ReadSwitchControllerSwitchLog(mkey string, vdomparam string) (mapTmp map[string]interface{}, err error) {
 	HTTPMethod := "GET"
 	path := "/api/v2/cmdb/switch-controller/switch-log"
+	url_params := make(map[string][]string)
 
-	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam)
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -12634,8 +13510,9 @@ func (c *FortiSDKClient) CreateSwitchControllerSwitchProfile(data *map[string]in
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/switch-controller/switch-profile"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -12648,8 +13525,9 @@ func (c *FortiSDKClient) UpdateSwitchControllerSwitchProfile(data *map[string]in
 	path := "/api/v2/cmdb/switch-controller/switch-profile"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -12675,7 +13553,9 @@ func (c *FortiSDKClient) ReadSwitchControllerSwitchProfile(mkey string, vdompara
 	path := "/api/v2/cmdb/switch-controller/switch-profile"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -12687,8 +13567,9 @@ func (c *FortiSDKClient) UpdateSwitchControllerSystem(data *map[string]interface
 	HTTPMethod := "PUT"
 	path := "/api/v2/cmdb/switch-controller/system"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -12709,8 +13590,9 @@ func (c *FortiSDKClient) DeleteSwitchControllerSystem(mkey string, vdomparam str
 func (c *FortiSDKClient) ReadSwitchControllerSystem(mkey string, vdomparam string) (mapTmp map[string]interface{}, err error) {
 	HTTPMethod := "GET"
 	path := "/api/v2/cmdb/switch-controller/system"
+	url_params := make(map[string][]string)
 
-	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam)
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -12723,8 +13605,9 @@ func (c *FortiSDKClient) CreateSwitchControllerTrafficPolicy(data *map[string]in
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/switch-controller/traffic-policy"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -12737,8 +13620,9 @@ func (c *FortiSDKClient) UpdateSwitchControllerTrafficPolicy(data *map[string]in
 	path := "/api/v2/cmdb/switch-controller/traffic-policy"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -12764,7 +13648,9 @@ func (c *FortiSDKClient) ReadSwitchControllerTrafficPolicy(mkey string, vdompara
 	path := "/api/v2/cmdb/switch-controller/traffic-policy"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -12776,8 +13662,9 @@ func (c *FortiSDKClient) UpdateSwitchControllerTrafficSniffer(data *map[string]i
 	HTTPMethod := "PUT"
 	path := "/api/v2/cmdb/switch-controller/traffic-sniffer"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -12798,8 +13685,9 @@ func (c *FortiSDKClient) DeleteSwitchControllerTrafficSniffer(mkey string, vdomp
 func (c *FortiSDKClient) ReadSwitchControllerTrafficSniffer(mkey string, vdomparam string) (mapTmp map[string]interface{}, err error) {
 	HTTPMethod := "GET"
 	path := "/api/v2/cmdb/switch-controller/traffic-sniffer"
+	url_params := make(map[string][]string)
 
-	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam)
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -12812,8 +13700,9 @@ func (c *FortiSDKClient) CreateSwitchControllerVirtualPortPool(data *map[string]
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/switch-controller/virtual-port-pool"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -12826,8 +13715,9 @@ func (c *FortiSDKClient) UpdateSwitchControllerVirtualPortPool(data *map[string]
 	path := "/api/v2/cmdb/switch-controller/virtual-port-pool"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -12853,7 +13743,9 @@ func (c *FortiSDKClient) ReadSwitchControllerVirtualPortPool(mkey string, vdompa
 	path := "/api/v2/cmdb/switch-controller/virtual-port-pool"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -12866,8 +13758,9 @@ func (c *FortiSDKClient) CreateSwitchControllerVlan(data *map[string]interface{}
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/switch-controller/vlan"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -12880,8 +13773,9 @@ func (c *FortiSDKClient) UpdateSwitchControllerVlan(data *map[string]interface{}
 	path := "/api/v2/cmdb/switch-controller/vlan"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -12907,7 +13801,9 @@ func (c *FortiSDKClient) ReadSwitchControllerVlan(mkey string, vdomparam string)
 	path := "/api/v2/cmdb/switch-controller/vlan"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -12920,8 +13816,9 @@ func (c *FortiSDKClient) CreateSwitchControllerVlanPolicy(data *map[string]inter
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/switch-controller/vlan-policy"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -12934,8 +13831,9 @@ func (c *FortiSDKClient) UpdateSwitchControllerVlanPolicy(data *map[string]inter
 	path := "/api/v2/cmdb/switch-controller/vlan-policy"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -12961,7 +13859,9 @@ func (c *FortiSDKClient) ReadSwitchControllerVlanPolicy(mkey string, vdomparam s
 	path := "/api/v2/cmdb/switch-controller/vlan-policy"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -12974,8 +13874,9 @@ func (c *FortiSDKClient) CreateSwitchControllerAutoConfigCustom(data *map[string
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/switch-controller.auto-config/custom"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -12988,8 +13889,9 @@ func (c *FortiSDKClient) UpdateSwitchControllerAutoConfigCustom(data *map[string
 	path := "/api/v2/cmdb/switch-controller.auto-config/custom"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -13015,7 +13917,9 @@ func (c *FortiSDKClient) ReadSwitchControllerAutoConfigCustom(mkey string, vdomp
 	path := "/api/v2/cmdb/switch-controller.auto-config/custom"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -13027,8 +13931,9 @@ func (c *FortiSDKClient) UpdateSwitchControllerAutoConfigDefault(data *map[strin
 	HTTPMethod := "PUT"
 	path := "/api/v2/cmdb/switch-controller.auto-config/default"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -13049,8 +13954,9 @@ func (c *FortiSDKClient) DeleteSwitchControllerAutoConfigDefault(mkey string, vd
 func (c *FortiSDKClient) ReadSwitchControllerAutoConfigDefault(mkey string, vdomparam string) (mapTmp map[string]interface{}, err error) {
 	HTTPMethod := "GET"
 	path := "/api/v2/cmdb/switch-controller.auto-config/default"
+	url_params := make(map[string][]string)
 
-	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam)
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -13063,8 +13969,9 @@ func (c *FortiSDKClient) CreateSwitchControllerAutoConfigPolicy(data *map[string
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/switch-controller.auto-config/policy"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -13077,8 +13984,9 @@ func (c *FortiSDKClient) UpdateSwitchControllerAutoConfigPolicy(data *map[string
 	path := "/api/v2/cmdb/switch-controller.auto-config/policy"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -13104,7 +14012,9 @@ func (c *FortiSDKClient) ReadSwitchControllerAutoConfigPolicy(mkey string, vdomp
 	path := "/api/v2/cmdb/switch-controller.auto-config/policy"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -13117,8 +14027,9 @@ func (c *FortiSDKClient) CreateSwitchControllerInitialConfigTemplate(data *map[s
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/switch-controller.initial-config/template"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -13131,8 +14042,9 @@ func (c *FortiSDKClient) UpdateSwitchControllerInitialConfigTemplate(data *map[s
 	path := "/api/v2/cmdb/switch-controller.initial-config/template"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -13158,7 +14070,9 @@ func (c *FortiSDKClient) ReadSwitchControllerInitialConfigTemplate(mkey string, 
 	path := "/api/v2/cmdb/switch-controller.initial-config/template"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -13170,8 +14084,9 @@ func (c *FortiSDKClient) UpdateSwitchControllerInitialConfigVlans(data *map[stri
 	HTTPMethod := "PUT"
 	path := "/api/v2/cmdb/switch-controller.initial-config/vlans"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -13192,8 +14107,9 @@ func (c *FortiSDKClient) DeleteSwitchControllerInitialConfigVlans(mkey string, v
 func (c *FortiSDKClient) ReadSwitchControllerInitialConfigVlans(mkey string, vdomparam string) (mapTmp map[string]interface{}, err error) {
 	HTTPMethod := "GET"
 	path := "/api/v2/cmdb/switch-controller.initial-config/vlans"
+	url_params := make(map[string][]string)
 
-	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam)
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -13206,8 +14122,9 @@ func (c *FortiSDKClient) CreateSwitchControllerPtpPolicy(data *map[string]interf
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/switch-controller.ptp/policy"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -13220,8 +14137,9 @@ func (c *FortiSDKClient) UpdateSwitchControllerPtpPolicy(data *map[string]interf
 	path := "/api/v2/cmdb/switch-controller.ptp/policy"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -13247,7 +14165,9 @@ func (c *FortiSDKClient) ReadSwitchControllerPtpPolicy(mkey string, vdomparam st
 	path := "/api/v2/cmdb/switch-controller.ptp/policy"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -13259,8 +14179,9 @@ func (c *FortiSDKClient) UpdateSwitchControllerPtpSettings(data *map[string]inte
 	HTTPMethod := "PUT"
 	path := "/api/v2/cmdb/switch-controller.ptp/settings"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -13281,8 +14202,9 @@ func (c *FortiSDKClient) DeleteSwitchControllerPtpSettings(mkey string, vdompara
 func (c *FortiSDKClient) ReadSwitchControllerPtpSettings(mkey string, vdomparam string) (mapTmp map[string]interface{}, err error) {
 	HTTPMethod := "GET"
 	path := "/api/v2/cmdb/switch-controller.ptp/settings"
+	url_params := make(map[string][]string)
 
-	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam)
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -13295,8 +14217,9 @@ func (c *FortiSDKClient) CreateSwitchControllerQosDot1PMap(data *map[string]inte
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/switch-controller.qos/dot1p-map"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -13309,8 +14232,9 @@ func (c *FortiSDKClient) UpdateSwitchControllerQosDot1PMap(data *map[string]inte
 	path := "/api/v2/cmdb/switch-controller.qos/dot1p-map"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -13336,7 +14260,9 @@ func (c *FortiSDKClient) ReadSwitchControllerQosDot1PMap(mkey string, vdomparam 
 	path := "/api/v2/cmdb/switch-controller.qos/dot1p-map"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -13349,8 +14275,9 @@ func (c *FortiSDKClient) CreateSwitchControllerQosIpDscpMap(data *map[string]int
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/switch-controller.qos/ip-dscp-map"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -13363,8 +14290,9 @@ func (c *FortiSDKClient) UpdateSwitchControllerQosIpDscpMap(data *map[string]int
 	path := "/api/v2/cmdb/switch-controller.qos/ip-dscp-map"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -13390,7 +14318,9 @@ func (c *FortiSDKClient) ReadSwitchControllerQosIpDscpMap(mkey string, vdomparam
 	path := "/api/v2/cmdb/switch-controller.qos/ip-dscp-map"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -13403,8 +14333,9 @@ func (c *FortiSDKClient) CreateSwitchControllerQosQosPolicy(data *map[string]int
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/switch-controller.qos/qos-policy"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -13417,8 +14348,9 @@ func (c *FortiSDKClient) UpdateSwitchControllerQosQosPolicy(data *map[string]int
 	path := "/api/v2/cmdb/switch-controller.qos/qos-policy"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -13444,7 +14376,9 @@ func (c *FortiSDKClient) ReadSwitchControllerQosQosPolicy(mkey string, vdomparam
 	path := "/api/v2/cmdb/switch-controller.qos/qos-policy"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -13457,8 +14391,9 @@ func (c *FortiSDKClient) CreateSwitchControllerQosQueuePolicy(data *map[string]i
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/switch-controller.qos/queue-policy"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -13471,8 +14406,9 @@ func (c *FortiSDKClient) UpdateSwitchControllerQosQueuePolicy(data *map[string]i
 	path := "/api/v2/cmdb/switch-controller.qos/queue-policy"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -13498,7 +14434,9 @@ func (c *FortiSDKClient) ReadSwitchControllerQosQueuePolicy(mkey string, vdompar
 	path := "/api/v2/cmdb/switch-controller.qos/queue-policy"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -13511,8 +14449,9 @@ func (c *FortiSDKClient) CreateSwitchControllerSecurityPolicy8021X(data *map[str
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/switch-controller.security-policy/802-1X"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -13525,8 +14464,9 @@ func (c *FortiSDKClient) UpdateSwitchControllerSecurityPolicy8021X(data *map[str
 	path := "/api/v2/cmdb/switch-controller.security-policy/802-1X"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -13552,7 +14492,9 @@ func (c *FortiSDKClient) ReadSwitchControllerSecurityPolicy8021X(mkey string, vd
 	path := "/api/v2/cmdb/switch-controller.security-policy/802-1X"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -13565,8 +14507,9 @@ func (c *FortiSDKClient) CreateSwitchControllerSecurityPolicyCaptivePortal(data 
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/switch-controller.security-policy/captive-portal"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -13579,8 +14522,9 @@ func (c *FortiSDKClient) UpdateSwitchControllerSecurityPolicyCaptivePortal(data 
 	path := "/api/v2/cmdb/switch-controller.security-policy/captive-portal"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -13606,7 +14550,9 @@ func (c *FortiSDKClient) ReadSwitchControllerSecurityPolicyCaptivePortal(mkey st
 	path := "/api/v2/cmdb/switch-controller.security-policy/captive-portal"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -13619,8 +14565,9 @@ func (c *FortiSDKClient) CreateSwitchControllerSecurityPolicyLocalAccess(data *m
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/switch-controller.security-policy/local-access"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -13633,8 +14580,9 @@ func (c *FortiSDKClient) UpdateSwitchControllerSecurityPolicyLocalAccess(data *m
 	path := "/api/v2/cmdb/switch-controller.security-policy/local-access"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -13660,7 +14608,9 @@ func (c *FortiSDKClient) ReadSwitchControllerSecurityPolicyLocalAccess(mkey stri
 	path := "/api/v2/cmdb/switch-controller.security-policy/local-access"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -13673,8 +14623,9 @@ func (c *FortiSDKClient) CreateSystemAccprofile(data *map[string]interface{}, vd
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/system/accprofile"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -13687,8 +14638,9 @@ func (c *FortiSDKClient) UpdateSystemAccprofile(data *map[string]interface{}, mk
 	path := "/api/v2/cmdb/system/accprofile"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -13714,7 +14666,9 @@ func (c *FortiSDKClient) ReadSystemAccprofile(mkey string, vdomparam string) (ma
 	path := "/api/v2/cmdb/system/accprofile"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -13727,8 +14681,9 @@ func (c *FortiSDKClient) CreateSystemAdmin(data *map[string]interface{}, vdompar
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/system/admin"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -13741,8 +14696,9 @@ func (c *FortiSDKClient) UpdateSystemAdmin(data *map[string]interface{}, mkey st
 	path := "/api/v2/cmdb/system/admin"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -13768,7 +14724,9 @@ func (c *FortiSDKClient) ReadSystemAdmin(mkey string, vdomparam string) (mapTmp 
 	path := "/api/v2/cmdb/system/admin"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -13781,8 +14739,9 @@ func (c *FortiSDKClient) CreateSystemAffinityInterrupt(data *map[string]interfac
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/system/affinity-interrupt"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -13795,8 +14754,9 @@ func (c *FortiSDKClient) UpdateSystemAffinityInterrupt(data *map[string]interfac
 	path := "/api/v2/cmdb/system/affinity-interrupt"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -13822,7 +14782,9 @@ func (c *FortiSDKClient) ReadSystemAffinityInterrupt(mkey string, vdomparam stri
 	path := "/api/v2/cmdb/system/affinity-interrupt"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -13835,8 +14797,9 @@ func (c *FortiSDKClient) CreateSystemAffinityPacketRedistribution(data *map[stri
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/system/affinity-packet-redistribution"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -13849,8 +14812,9 @@ func (c *FortiSDKClient) UpdateSystemAffinityPacketRedistribution(data *map[stri
 	path := "/api/v2/cmdb/system/affinity-packet-redistribution"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -13876,7 +14840,9 @@ func (c *FortiSDKClient) ReadSystemAffinityPacketRedistribution(mkey string, vdo
 	path := "/api/v2/cmdb/system/affinity-packet-redistribution"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -13888,8 +14854,9 @@ func (c *FortiSDKClient) UpdateSystemAlarm(data *map[string]interface{}, mkey st
 	HTTPMethod := "PUT"
 	path := "/api/v2/cmdb/system/alarm"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -13910,8 +14877,9 @@ func (c *FortiSDKClient) DeleteSystemAlarm(mkey string, vdomparam string) (err e
 func (c *FortiSDKClient) ReadSystemAlarm(mkey string, vdomparam string) (mapTmp map[string]interface{}, err error) {
 	HTTPMethod := "GET"
 	path := "/api/v2/cmdb/system/alarm"
+	url_params := make(map[string][]string)
 
-	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam)
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -13924,8 +14892,9 @@ func (c *FortiSDKClient) CreateSystemAlias(data *map[string]interface{}, vdompar
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/system/alias"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -13938,8 +14907,9 @@ func (c *FortiSDKClient) UpdateSystemAlias(data *map[string]interface{}, mkey st
 	path := "/api/v2/cmdb/system/alias"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -13965,7 +14935,9 @@ func (c *FortiSDKClient) ReadSystemAlias(mkey string, vdomparam string) (mapTmp 
 	path := "/api/v2/cmdb/system/alias"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -13978,8 +14950,9 @@ func (c *FortiSDKClient) CreateSystemApiUser(data *map[string]interface{}, vdomp
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/system/api-user"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -13992,8 +14965,9 @@ func (c *FortiSDKClient) UpdateSystemApiUser(data *map[string]interface{}, mkey 
 	path := "/api/v2/cmdb/system/api-user"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -14019,7 +14993,9 @@ func (c *FortiSDKClient) ReadSystemApiUser(mkey string, vdomparam string) (mapTm
 	path := "/api/v2/cmdb/system/api-user"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -14032,8 +15008,9 @@ func (c *FortiSDKClient) CreateSystemArpTable(data *map[string]interface{}, vdom
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/system/arp-table"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -14046,8 +15023,9 @@ func (c *FortiSDKClient) UpdateSystemArpTable(data *map[string]interface{}, mkey
 	path := "/api/v2/cmdb/system/arp-table"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -14073,7 +15051,9 @@ func (c *FortiSDKClient) ReadSystemArpTable(mkey string, vdomparam string) (mapT
 	path := "/api/v2/cmdb/system/arp-table"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -14085,8 +15065,9 @@ func (c *FortiSDKClient) UpdateSystemAutoInstall(data *map[string]interface{}, m
 	HTTPMethod := "PUT"
 	path := "/api/v2/cmdb/system/auto-install"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -14107,8 +15088,9 @@ func (c *FortiSDKClient) DeleteSystemAutoInstall(mkey string, vdomparam string) 
 func (c *FortiSDKClient) ReadSystemAutoInstall(mkey string, vdomparam string) (mapTmp map[string]interface{}, err error) {
 	HTTPMethod := "GET"
 	path := "/api/v2/cmdb/system/auto-install"
+	url_params := make(map[string][]string)
 
-	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam)
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -14121,8 +15103,9 @@ func (c *FortiSDKClient) CreateSystemAutoScript(data *map[string]interface{}, vd
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/system/auto-script"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -14135,8 +15118,9 @@ func (c *FortiSDKClient) UpdateSystemAutoScript(data *map[string]interface{}, mk
 	path := "/api/v2/cmdb/system/auto-script"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -14162,7 +15146,9 @@ func (c *FortiSDKClient) ReadSystemAutoScript(mkey string, vdomparam string) (ma
 	path := "/api/v2/cmdb/system/auto-script"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -14175,8 +15161,9 @@ func (c *FortiSDKClient) CreateSystemAutomationAction(data *map[string]interface
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/system/automation-action"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -14189,8 +15176,9 @@ func (c *FortiSDKClient) UpdateSystemAutomationAction(data *map[string]interface
 	path := "/api/v2/cmdb/system/automation-action"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -14216,7 +15204,9 @@ func (c *FortiSDKClient) ReadSystemAutomationAction(mkey string, vdomparam strin
 	path := "/api/v2/cmdb/system/automation-action"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -14229,8 +15219,9 @@ func (c *FortiSDKClient) CreateSystemAutomationDestination(data *map[string]inte
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/system/automation-destination"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -14243,8 +15234,9 @@ func (c *FortiSDKClient) UpdateSystemAutomationDestination(data *map[string]inte
 	path := "/api/v2/cmdb/system/automation-destination"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -14270,7 +15262,9 @@ func (c *FortiSDKClient) ReadSystemAutomationDestination(mkey string, vdomparam 
 	path := "/api/v2/cmdb/system/automation-destination"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -14283,8 +15277,9 @@ func (c *FortiSDKClient) CreateSystemAutomationStitch(data *map[string]interface
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/system/automation-stitch"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -14297,8 +15292,9 @@ func (c *FortiSDKClient) UpdateSystemAutomationStitch(data *map[string]interface
 	path := "/api/v2/cmdb/system/automation-stitch"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -14324,7 +15320,9 @@ func (c *FortiSDKClient) ReadSystemAutomationStitch(mkey string, vdomparam strin
 	path := "/api/v2/cmdb/system/automation-stitch"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -14337,8 +15335,9 @@ func (c *FortiSDKClient) CreateSystemAutomationTrigger(data *map[string]interfac
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/system/automation-trigger"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -14351,8 +15350,9 @@ func (c *FortiSDKClient) UpdateSystemAutomationTrigger(data *map[string]interfac
 	path := "/api/v2/cmdb/system/automation-trigger"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -14378,7 +15378,9 @@ func (c *FortiSDKClient) ReadSystemAutomationTrigger(mkey string, vdomparam stri
 	path := "/api/v2/cmdb/system/automation-trigger"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -14390,8 +15392,9 @@ func (c *FortiSDKClient) UpdateSystemCentralManagement(data *map[string]interfac
 	HTTPMethod := "PUT"
 	path := "/api/v2/cmdb/system/central-management"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -14412,8 +15415,9 @@ func (c *FortiSDKClient) DeleteSystemCentralManagement(mkey string, vdomparam st
 func (c *FortiSDKClient) ReadSystemCentralManagement(mkey string, vdomparam string) (mapTmp map[string]interface{}, err error) {
 	HTTPMethod := "GET"
 	path := "/api/v2/cmdb/system/central-management"
+	url_params := make(map[string][]string)
 
-	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam)
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -14426,8 +15430,9 @@ func (c *FortiSDKClient) CreateSystemClusterSync(data *map[string]interface{}, v
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/system/cluster-sync"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -14440,8 +15445,9 @@ func (c *FortiSDKClient) UpdateSystemClusterSync(data *map[string]interface{}, m
 	path := "/api/v2/cmdb/system/cluster-sync"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -14467,7 +15473,9 @@ func (c *FortiSDKClient) ReadSystemClusterSync(mkey string, vdomparam string) (m
 	path := "/api/v2/cmdb/system/cluster-sync"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -14479,8 +15487,9 @@ func (c *FortiSDKClient) UpdateSystemConsole(data *map[string]interface{}, mkey 
 	HTTPMethod := "PUT"
 	path := "/api/v2/cmdb/system/console"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -14501,8 +15510,9 @@ func (c *FortiSDKClient) DeleteSystemConsole(mkey string, vdomparam string) (err
 func (c *FortiSDKClient) ReadSystemConsole(mkey string, vdomparam string) (mapTmp map[string]interface{}, err error) {
 	HTTPMethod := "GET"
 	path := "/api/v2/cmdb/system/console"
+	url_params := make(map[string][]string)
 
-	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam)
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -14514,8 +15524,9 @@ func (c *FortiSDKClient) UpdateSystemCsf(data *map[string]interface{}, mkey stri
 	HTTPMethod := "PUT"
 	path := "/api/v2/cmdb/system/csf"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -14536,8 +15547,9 @@ func (c *FortiSDKClient) DeleteSystemCsf(mkey string, vdomparam string) (err err
 func (c *FortiSDKClient) ReadSystemCsf(mkey string, vdomparam string) (mapTmp map[string]interface{}, err error) {
 	HTTPMethod := "GET"
 	path := "/api/v2/cmdb/system/csf"
+	url_params := make(map[string][]string)
 
-	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam)
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -14550,8 +15562,9 @@ func (c *FortiSDKClient) CreateSystemCustomLanguage(data *map[string]interface{}
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/system/custom-language"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -14564,8 +15577,9 @@ func (c *FortiSDKClient) UpdateSystemCustomLanguage(data *map[string]interface{}
 	path := "/api/v2/cmdb/system/custom-language"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -14591,7 +15605,9 @@ func (c *FortiSDKClient) ReadSystemCustomLanguage(mkey string, vdomparam string)
 	path := "/api/v2/cmdb/system/custom-language"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -14604,8 +15620,9 @@ func (c *FortiSDKClient) CreateSystemDdns(data *map[string]interface{}, vdompara
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/system/ddns"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -14618,8 +15635,9 @@ func (c *FortiSDKClient) UpdateSystemDdns(data *map[string]interface{}, mkey str
 	path := "/api/v2/cmdb/system/ddns"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -14645,7 +15663,9 @@ func (c *FortiSDKClient) ReadSystemDdns(mkey string, vdomparam string) (mapTmp m
 	path := "/api/v2/cmdb/system/ddns"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -14657,8 +15677,9 @@ func (c *FortiSDKClient) UpdateSystemDedicatedMgmt(data *map[string]interface{},
 	HTTPMethod := "PUT"
 	path := "/api/v2/cmdb/system/dedicated-mgmt"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -14679,8 +15700,9 @@ func (c *FortiSDKClient) DeleteSystemDedicatedMgmt(mkey string, vdomparam string
 func (c *FortiSDKClient) ReadSystemDedicatedMgmt(mkey string, vdomparam string) (mapTmp map[string]interface{}, err error) {
 	HTTPMethod := "GET"
 	path := "/api/v2/cmdb/system/dedicated-mgmt"
+	url_params := make(map[string][]string)
 
-	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam)
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -14692,8 +15714,9 @@ func (c *FortiSDKClient) UpdateSystemDns(data *map[string]interface{}, mkey stri
 	HTTPMethod := "PUT"
 	path := "/api/v2/cmdb/system/dns"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -14714,8 +15737,9 @@ func (c *FortiSDKClient) DeleteSystemDns(mkey string, vdomparam string) (err err
 func (c *FortiSDKClient) ReadSystemDns(mkey string, vdomparam string) (mapTmp map[string]interface{}, err error) {
 	HTTPMethod := "GET"
 	path := "/api/v2/cmdb/system/dns"
+	url_params := make(map[string][]string)
 
-	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam)
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -14728,8 +15752,9 @@ func (c *FortiSDKClient) CreateSystemDnsDatabase(data *map[string]interface{}, v
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/system/dns-database"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -14742,8 +15767,9 @@ func (c *FortiSDKClient) UpdateSystemDnsDatabase(data *map[string]interface{}, m
 	path := "/api/v2/cmdb/system/dns-database"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -14769,7 +15795,9 @@ func (c *FortiSDKClient) ReadSystemDnsDatabase(mkey string, vdomparam string) (m
 	path := "/api/v2/cmdb/system/dns-database"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -14782,8 +15810,9 @@ func (c *FortiSDKClient) CreateSystemDnsServer(data *map[string]interface{}, vdo
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/system/dns-server"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -14796,8 +15825,9 @@ func (c *FortiSDKClient) UpdateSystemDnsServer(data *map[string]interface{}, mke
 	path := "/api/v2/cmdb/system/dns-server"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -14823,7 +15853,9 @@ func (c *FortiSDKClient) ReadSystemDnsServer(mkey string, vdomparam string) (map
 	path := "/api/v2/cmdb/system/dns-server"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -14836,8 +15868,9 @@ func (c *FortiSDKClient) CreateSystemDscpBasedPriority(data *map[string]interfac
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/system/dscp-based-priority"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -14850,8 +15883,9 @@ func (c *FortiSDKClient) UpdateSystemDscpBasedPriority(data *map[string]interfac
 	path := "/api/v2/cmdb/system/dscp-based-priority"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -14877,7 +15911,9 @@ func (c *FortiSDKClient) ReadSystemDscpBasedPriority(mkey string, vdomparam stri
 	path := "/api/v2/cmdb/system/dscp-based-priority"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -14889,8 +15925,9 @@ func (c *FortiSDKClient) UpdateSystemFederatedUpgrade(data *map[string]interface
 	HTTPMethod := "PUT"
 	path := "/api/v2/cmdb/system/federated-upgrade"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -14911,8 +15948,9 @@ func (c *FortiSDKClient) DeleteSystemFederatedUpgrade(mkey string, vdomparam str
 func (c *FortiSDKClient) ReadSystemFederatedUpgrade(mkey string, vdomparam string) (mapTmp map[string]interface{}, err error) {
 	HTTPMethod := "GET"
 	path := "/api/v2/cmdb/system/federated-upgrade"
+	url_params := make(map[string][]string)
 
-	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam)
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -14924,8 +15962,9 @@ func (c *FortiSDKClient) UpdateSystemEmailServer(data *map[string]interface{}, m
 	HTTPMethod := "PUT"
 	path := "/api/v2/cmdb/system/email-server"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -14946,8 +15985,9 @@ func (c *FortiSDKClient) DeleteSystemEmailServer(mkey string, vdomparam string) 
 func (c *FortiSDKClient) ReadSystemEmailServer(mkey string, vdomparam string) (mapTmp map[string]interface{}, err error) {
 	HTTPMethod := "GET"
 	path := "/api/v2/cmdb/system/email-server"
+	url_params := make(map[string][]string)
 
-	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam)
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -14960,8 +16000,9 @@ func (c *FortiSDKClient) CreateSystemExternalResource(data *map[string]interface
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/system/external-resource"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -14974,8 +16015,9 @@ func (c *FortiSDKClient) UpdateSystemExternalResource(data *map[string]interface
 	path := "/api/v2/cmdb/system/external-resource"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -15001,7 +16043,9 @@ func (c *FortiSDKClient) ReadSystemExternalResource(mkey string, vdomparam strin
 	path := "/api/v2/cmdb/system/external-resource"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -15013,8 +16057,9 @@ func (c *FortiSDKClient) UpdateSystemFipsCc(data *map[string]interface{}, mkey s
 	HTTPMethod := "PUT"
 	path := "/api/v2/cmdb/system/fips-cc"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -15035,8 +16080,9 @@ func (c *FortiSDKClient) DeleteSystemFipsCc(mkey string, vdomparam string) (err 
 func (c *FortiSDKClient) ReadSystemFipsCc(mkey string, vdomparam string) (mapTmp map[string]interface{}, err error) {
 	HTTPMethod := "GET"
 	path := "/api/v2/cmdb/system/fips-cc"
+	url_params := make(map[string][]string)
 
-	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam)
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -15048,8 +16094,9 @@ func (c *FortiSDKClient) UpdateSystemFm(data *map[string]interface{}, mkey strin
 	HTTPMethod := "PUT"
 	path := "/api/v2/cmdb/system/fm"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -15070,8 +16117,9 @@ func (c *FortiSDKClient) DeleteSystemFm(mkey string, vdomparam string) (err erro
 func (c *FortiSDKClient) ReadSystemFm(mkey string, vdomparam string) (mapTmp map[string]interface{}, err error) {
 	HTTPMethod := "GET"
 	path := "/api/v2/cmdb/system/fm"
+	url_params := make(map[string][]string)
 
-	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam)
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -15083,8 +16131,9 @@ func (c *FortiSDKClient) UpdateSystemFortiguard(data *map[string]interface{}, mk
 	HTTPMethod := "PUT"
 	path := "/api/v2/cmdb/system/fortiguard"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -15105,8 +16154,9 @@ func (c *FortiSDKClient) DeleteSystemFortiguard(mkey string, vdomparam string) (
 func (c *FortiSDKClient) ReadSystemFortiguard(mkey string, vdomparam string) (mapTmp map[string]interface{}, err error) {
 	HTTPMethod := "GET"
 	path := "/api/v2/cmdb/system/fortiguard"
+	url_params := make(map[string][]string)
 
-	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam)
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -15118,8 +16168,9 @@ func (c *FortiSDKClient) UpdateSystemFortimanager(data *map[string]interface{}, 
 	HTTPMethod := "PUT"
 	path := "/api/v2/cmdb/system/fortimanager"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -15140,8 +16191,9 @@ func (c *FortiSDKClient) DeleteSystemFortimanager(mkey string, vdomparam string)
 func (c *FortiSDKClient) ReadSystemFortimanager(mkey string, vdomparam string) (mapTmp map[string]interface{}, err error) {
 	HTTPMethod := "GET"
 	path := "/api/v2/cmdb/system/fortimanager"
+	url_params := make(map[string][]string)
 
-	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam)
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -15153,8 +16205,9 @@ func (c *FortiSDKClient) UpdateSystemFortisandbox(data *map[string]interface{}, 
 	HTTPMethod := "PUT"
 	path := "/api/v2/cmdb/system/fortisandbox"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -15175,8 +16228,9 @@ func (c *FortiSDKClient) DeleteSystemFortisandbox(mkey string, vdomparam string)
 func (c *FortiSDKClient) ReadSystemFortisandbox(mkey string, vdomparam string) (mapTmp map[string]interface{}, err error) {
 	HTTPMethod := "GET"
 	path := "/api/v2/cmdb/system/fortisandbox"
+	url_params := make(map[string][]string)
 
-	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam)
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -15188,8 +16242,9 @@ func (c *FortiSDKClient) UpdateSystemFssoPolling(data *map[string]interface{}, m
 	HTTPMethod := "PUT"
 	path := "/api/v2/cmdb/system/fsso-polling"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -15210,8 +16265,9 @@ func (c *FortiSDKClient) DeleteSystemFssoPolling(mkey string, vdomparam string) 
 func (c *FortiSDKClient) ReadSystemFssoPolling(mkey string, vdomparam string) (mapTmp map[string]interface{}, err error) {
 	HTTPMethod := "GET"
 	path := "/api/v2/cmdb/system/fsso-polling"
+	url_params := make(map[string][]string)
 
-	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam)
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -15223,8 +16279,9 @@ func (c *FortiSDKClient) UpdateSystemFtmPush(data *map[string]interface{}, mkey 
 	HTTPMethod := "PUT"
 	path := "/api/v2/cmdb/system/ftm-push"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -15245,8 +16302,9 @@ func (c *FortiSDKClient) DeleteSystemFtmPush(mkey string, vdomparam string) (err
 func (c *FortiSDKClient) ReadSystemFtmPush(mkey string, vdomparam string) (mapTmp map[string]interface{}, err error) {
 	HTTPMethod := "GET"
 	path := "/api/v2/cmdb/system/ftm-push"
+	url_params := make(map[string][]string)
 
-	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam)
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -15259,8 +16317,9 @@ func (c *FortiSDKClient) CreateSystemGeneve(data *map[string]interface{}, vdompa
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/system/geneve"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -15273,8 +16332,9 @@ func (c *FortiSDKClient) UpdateSystemGeneve(data *map[string]interface{}, mkey s
 	path := "/api/v2/cmdb/system/geneve"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -15300,7 +16360,9 @@ func (c *FortiSDKClient) ReadSystemGeneve(mkey string, vdomparam string) (mapTmp
 	path := "/api/v2/cmdb/system/geneve"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -15313,8 +16375,9 @@ func (c *FortiSDKClient) CreateSystemGeoipCountry(data *map[string]interface{}, 
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/system/geoip-country"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -15327,8 +16390,9 @@ func (c *FortiSDKClient) UpdateSystemGeoipCountry(data *map[string]interface{}, 
 	path := "/api/v2/cmdb/system/geoip-country"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -15354,7 +16418,9 @@ func (c *FortiSDKClient) ReadSystemGeoipCountry(mkey string, vdomparam string) (
 	path := "/api/v2/cmdb/system/geoip-country"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -15367,8 +16433,9 @@ func (c *FortiSDKClient) CreateSystemGeoipOverride(data *map[string]interface{},
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/system/geoip-override"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -15381,8 +16448,9 @@ func (c *FortiSDKClient) UpdateSystemGeoipOverride(data *map[string]interface{},
 	path := "/api/v2/cmdb/system/geoip-override"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -15408,7 +16476,9 @@ func (c *FortiSDKClient) ReadSystemGeoipOverride(mkey string, vdomparam string) 
 	path := "/api/v2/cmdb/system/geoip-override"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -15420,8 +16490,9 @@ func (c *FortiSDKClient) UpdateSystemGlobal(data *map[string]interface{}, mkey s
 	HTTPMethod := "PUT"
 	path := "/api/v2/cmdb/system/global"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -15442,8 +16513,9 @@ func (c *FortiSDKClient) DeleteSystemGlobal(mkey string, vdomparam string) (err 
 func (c *FortiSDKClient) ReadSystemGlobal(mkey string, vdomparam string) (mapTmp map[string]interface{}, err error) {
 	HTTPMethod := "GET"
 	path := "/api/v2/cmdb/system/global"
+	url_params := make(map[string][]string)
 
-	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam)
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -15456,8 +16528,9 @@ func (c *FortiSDKClient) CreateSystemGreTunnel(data *map[string]interface{}, vdo
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/system/gre-tunnel"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -15470,8 +16543,9 @@ func (c *FortiSDKClient) UpdateSystemGreTunnel(data *map[string]interface{}, mke
 	path := "/api/v2/cmdb/system/gre-tunnel"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -15497,7 +16571,9 @@ func (c *FortiSDKClient) ReadSystemGreTunnel(mkey string, vdomparam string) (map
 	path := "/api/v2/cmdb/system/gre-tunnel"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -15509,8 +16585,9 @@ func (c *FortiSDKClient) UpdateSystemHa(data *map[string]interface{}, mkey strin
 	HTTPMethod := "PUT"
 	path := "/api/v2/cmdb/system/ha"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -15531,8 +16608,9 @@ func (c *FortiSDKClient) DeleteSystemHa(mkey string, vdomparam string) (err erro
 func (c *FortiSDKClient) ReadSystemHa(mkey string, vdomparam string) (mapTmp map[string]interface{}, err error) {
 	HTTPMethod := "GET"
 	path := "/api/v2/cmdb/system/ha"
+	url_params := make(map[string][]string)
 
-	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam)
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -15544,8 +16622,9 @@ func (c *FortiSDKClient) UpdateSystemHaMonitor(data *map[string]interface{}, mke
 	HTTPMethod := "PUT"
 	path := "/api/v2/cmdb/system/ha-monitor"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -15566,8 +16645,9 @@ func (c *FortiSDKClient) DeleteSystemHaMonitor(mkey string, vdomparam string) (e
 func (c *FortiSDKClient) ReadSystemHaMonitor(mkey string, vdomparam string) (mapTmp map[string]interface{}, err error) {
 	HTTPMethod := "GET"
 	path := "/api/v2/cmdb/system/ha-monitor"
+	url_params := make(map[string][]string)
 
-	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam)
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -15580,8 +16660,9 @@ func (c *FortiSDKClient) CreateSystemInterface(data *map[string]interface{}, vdo
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/system/interface"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -15594,8 +16675,9 @@ func (c *FortiSDKClient) UpdateSystemInterface(data *map[string]interface{}, mke
 	path := "/api/v2/cmdb/system/interface"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -15621,7 +16703,9 @@ func (c *FortiSDKClient) ReadSystemInterface(mkey string, vdomparam string) (map
 	path := "/api/v2/cmdb/system/interface"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -15634,8 +16718,9 @@ func (c *FortiSDKClient) CreateSystemIpipTunnel(data *map[string]interface{}, vd
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/system/ipip-tunnel"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -15648,8 +16733,9 @@ func (c *FortiSDKClient) UpdateSystemIpipTunnel(data *map[string]interface{}, mk
 	path := "/api/v2/cmdb/system/ipip-tunnel"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -15675,7 +16761,9 @@ func (c *FortiSDKClient) ReadSystemIpipTunnel(mkey string, vdomparam string) (ma
 	path := "/api/v2/cmdb/system/ipip-tunnel"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -15687,8 +16775,9 @@ func (c *FortiSDKClient) UpdateSystemIps(data *map[string]interface{}, mkey stri
 	HTTPMethod := "PUT"
 	path := "/api/v2/cmdb/system/ips"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -15709,8 +16798,9 @@ func (c *FortiSDKClient) DeleteSystemIps(mkey string, vdomparam string) (err err
 func (c *FortiSDKClient) ReadSystemIps(mkey string, vdomparam string) (mapTmp map[string]interface{}, err error) {
 	HTTPMethod := "GET"
 	path := "/api/v2/cmdb/system/ips"
+	url_params := make(map[string][]string)
 
-	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam)
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -15723,8 +16813,9 @@ func (c *FortiSDKClient) CreateSystemIpsUrlfilterDns(data *map[string]interface{
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/system/ips-urlfilter-dns"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -15737,8 +16828,9 @@ func (c *FortiSDKClient) UpdateSystemIpsUrlfilterDns(data *map[string]interface{
 	path := "/api/v2/cmdb/system/ips-urlfilter-dns"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -15764,7 +16856,9 @@ func (c *FortiSDKClient) ReadSystemIpsUrlfilterDns(mkey string, vdomparam string
 	path := "/api/v2/cmdb/system/ips-urlfilter-dns"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -15777,8 +16871,9 @@ func (c *FortiSDKClient) CreateSystemIpsUrlfilterDns6(data *map[string]interface
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/system/ips-urlfilter-dns6"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -15791,8 +16886,9 @@ func (c *FortiSDKClient) UpdateSystemIpsUrlfilterDns6(data *map[string]interface
 	path := "/api/v2/cmdb/system/ips-urlfilter-dns6"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -15818,7 +16914,9 @@ func (c *FortiSDKClient) ReadSystemIpsUrlfilterDns6(mkey string, vdomparam strin
 	path := "/api/v2/cmdb/system/ips-urlfilter-dns6"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -15831,8 +16929,9 @@ func (c *FortiSDKClient) CreateSystemIpsecAggregate(data *map[string]interface{}
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/system/ipsec-aggregate"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -15845,8 +16944,9 @@ func (c *FortiSDKClient) UpdateSystemIpsecAggregate(data *map[string]interface{}
 	path := "/api/v2/cmdb/system/ipsec-aggregate"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -15872,7 +16972,9 @@ func (c *FortiSDKClient) ReadSystemIpsecAggregate(mkey string, vdomparam string)
 	path := "/api/v2/cmdb/system/ipsec-aggregate"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -15885,8 +16987,9 @@ func (c *FortiSDKClient) CreateSystemIpv6NeighborCache(data *map[string]interfac
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/system/ipv6-neighbor-cache"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -15899,8 +17002,9 @@ func (c *FortiSDKClient) UpdateSystemIpv6NeighborCache(data *map[string]interfac
 	path := "/api/v2/cmdb/system/ipv6-neighbor-cache"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -15926,7 +17030,9 @@ func (c *FortiSDKClient) ReadSystemIpv6NeighborCache(mkey string, vdomparam stri
 	path := "/api/v2/cmdb/system/ipv6-neighbor-cache"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -15939,8 +17045,9 @@ func (c *FortiSDKClient) CreateSystemIpv6Tunnel(data *map[string]interface{}, vd
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/system/ipv6-tunnel"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -15953,8 +17060,9 @@ func (c *FortiSDKClient) UpdateSystemIpv6Tunnel(data *map[string]interface{}, mk
 	path := "/api/v2/cmdb/system/ipv6-tunnel"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -15980,7 +17088,9 @@ func (c *FortiSDKClient) ReadSystemIpv6Tunnel(mkey string, vdomparam string) (ma
 	path := "/api/v2/cmdb/system/ipv6-tunnel"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -15993,8 +17103,9 @@ func (c *FortiSDKClient) CreateSystemLinkMonitor(data *map[string]interface{}, v
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/system/link-monitor"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -16007,8 +17118,9 @@ func (c *FortiSDKClient) UpdateSystemLinkMonitor(data *map[string]interface{}, m
 	path := "/api/v2/cmdb/system/link-monitor"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -16034,7 +17146,9 @@ func (c *FortiSDKClient) ReadSystemLinkMonitor(mkey string, vdomparam string) (m
 	path := "/api/v2/cmdb/system/link-monitor"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -16047,8 +17161,9 @@ func (c *FortiSDKClient) CreateSystemMacAddressTable(data *map[string]interface{
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/system/mac-address-table"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -16061,8 +17176,9 @@ func (c *FortiSDKClient) UpdateSystemMacAddressTable(data *map[string]interface{
 	path := "/api/v2/cmdb/system/mac-address-table"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -16088,7 +17204,9 @@ func (c *FortiSDKClient) ReadSystemMacAddressTable(mkey string, vdomparam string
 	path := "/api/v2/cmdb/system/mac-address-table"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -16100,8 +17218,9 @@ func (c *FortiSDKClient) UpdateSystemManagementTunnel(data *map[string]interface
 	HTTPMethod := "PUT"
 	path := "/api/v2/cmdb/system/management-tunnel"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -16122,8 +17241,9 @@ func (c *FortiSDKClient) DeleteSystemManagementTunnel(mkey string, vdomparam str
 func (c *FortiSDKClient) ReadSystemManagementTunnel(mkey string, vdomparam string) (mapTmp map[string]interface{}, err error) {
 	HTTPMethod := "GET"
 	path := "/api/v2/cmdb/system/management-tunnel"
+	url_params := make(map[string][]string)
 
-	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam)
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -16136,8 +17256,9 @@ func (c *FortiSDKClient) CreateSystemMobileTunnel(data *map[string]interface{}, 
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/system/mobile-tunnel"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -16150,8 +17271,9 @@ func (c *FortiSDKClient) UpdateSystemMobileTunnel(data *map[string]interface{}, 
 	path := "/api/v2/cmdb/system/mobile-tunnel"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -16177,7 +17299,9 @@ func (c *FortiSDKClient) ReadSystemMobileTunnel(mkey string, vdomparam string) (
 	path := "/api/v2/cmdb/system/mobile-tunnel"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -16189,8 +17313,9 @@ func (c *FortiSDKClient) UpdateSystemNat64(data *map[string]interface{}, mkey st
 	HTTPMethod := "PUT"
 	path := "/api/v2/cmdb/system/nat64"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -16211,8 +17336,9 @@ func (c *FortiSDKClient) DeleteSystemNat64(mkey string, vdomparam string) (err e
 func (c *FortiSDKClient) ReadSystemNat64(mkey string, vdomparam string) (mapTmp map[string]interface{}, err error) {
 	HTTPMethod := "GET"
 	path := "/api/v2/cmdb/system/nat64"
+	url_params := make(map[string][]string)
 
-	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam)
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -16224,8 +17350,9 @@ func (c *FortiSDKClient) UpdateSystemNdProxy(data *map[string]interface{}, mkey 
 	HTTPMethod := "PUT"
 	path := "/api/v2/cmdb/system/nd-proxy"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -16246,8 +17373,9 @@ func (c *FortiSDKClient) DeleteSystemNdProxy(mkey string, vdomparam string) (err
 func (c *FortiSDKClient) ReadSystemNdProxy(mkey string, vdomparam string) (mapTmp map[string]interface{}, err error) {
 	HTTPMethod := "GET"
 	path := "/api/v2/cmdb/system/nd-proxy"
+	url_params := make(map[string][]string)
 
-	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam)
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -16259,8 +17387,9 @@ func (c *FortiSDKClient) UpdateSystemNetflow(data *map[string]interface{}, mkey 
 	HTTPMethod := "PUT"
 	path := "/api/v2/cmdb/system/netflow"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -16281,8 +17410,9 @@ func (c *FortiSDKClient) DeleteSystemNetflow(mkey string, vdomparam string) (err
 func (c *FortiSDKClient) ReadSystemNetflow(mkey string, vdomparam string) (mapTmp map[string]interface{}, err error) {
 	HTTPMethod := "GET"
 	path := "/api/v2/cmdb/system/netflow"
+	url_params := make(map[string][]string)
 
-	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam)
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -16294,8 +17424,9 @@ func (c *FortiSDKClient) UpdateSystemNetworkVisibility(data *map[string]interfac
 	HTTPMethod := "PUT"
 	path := "/api/v2/cmdb/system/network-visibility"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -16316,8 +17447,9 @@ func (c *FortiSDKClient) DeleteSystemNetworkVisibility(mkey string, vdomparam st
 func (c *FortiSDKClient) ReadSystemNetworkVisibility(mkey string, vdomparam string) (mapTmp map[string]interface{}, err error) {
 	HTTPMethod := "GET"
 	path := "/api/v2/cmdb/system/network-visibility"
+	url_params := make(map[string][]string)
 
-	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam)
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -16329,8 +17461,9 @@ func (c *FortiSDKClient) UpdateSystemNtp(data *map[string]interface{}, mkey stri
 	HTTPMethod := "PUT"
 	path := "/api/v2/cmdb/system/ntp"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -16351,8 +17484,9 @@ func (c *FortiSDKClient) DeleteSystemNtp(mkey string, vdomparam string) (err err
 func (c *FortiSDKClient) ReadSystemNtp(mkey string, vdomparam string) (mapTmp map[string]interface{}, err error) {
 	HTTPMethod := "GET"
 	path := "/api/v2/cmdb/system/ntp"
+	url_params := make(map[string][]string)
 
-	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam)
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -16365,8 +17499,9 @@ func (c *FortiSDKClient) CreateSystemObjectTagging(data *map[string]interface{},
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/system/object-tagging"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -16379,8 +17514,9 @@ func (c *FortiSDKClient) UpdateSystemObjectTagging(data *map[string]interface{},
 	path := "/api/v2/cmdb/system/object-tagging"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -16406,7 +17542,9 @@ func (c *FortiSDKClient) ReadSystemObjectTagging(mkey string, vdomparam string) 
 	path := "/api/v2/cmdb/system/object-tagging"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -16418,8 +17556,9 @@ func (c *FortiSDKClient) UpdateSystemPasswordPolicy(data *map[string]interface{}
 	HTTPMethod := "PUT"
 	path := "/api/v2/cmdb/system/password-policy"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -16440,8 +17579,9 @@ func (c *FortiSDKClient) DeleteSystemPasswordPolicy(mkey string, vdomparam strin
 func (c *FortiSDKClient) ReadSystemPasswordPolicy(mkey string, vdomparam string) (mapTmp map[string]interface{}, err error) {
 	HTTPMethod := "GET"
 	path := "/api/v2/cmdb/system/password-policy"
+	url_params := make(map[string][]string)
 
-	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam)
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -16453,8 +17593,9 @@ func (c *FortiSDKClient) UpdateSystemPasswordPolicyGuestAdmin(data *map[string]i
 	HTTPMethod := "PUT"
 	path := "/api/v2/cmdb/system/password-policy-guest-admin"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -16475,8 +17616,9 @@ func (c *FortiSDKClient) DeleteSystemPasswordPolicyGuestAdmin(mkey string, vdomp
 func (c *FortiSDKClient) ReadSystemPasswordPolicyGuestAdmin(mkey string, vdomparam string) (mapTmp map[string]interface{}, err error) {
 	HTTPMethod := "GET"
 	path := "/api/v2/cmdb/system/password-policy-guest-admin"
+	url_params := make(map[string][]string)
 
-	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam)
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -16489,8 +17631,9 @@ func (c *FortiSDKClient) CreateSystemPppoeInterface(data *map[string]interface{}
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/system/pppoe-interface"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -16503,8 +17646,9 @@ func (c *FortiSDKClient) UpdateSystemPppoeInterface(data *map[string]interface{}
 	path := "/api/v2/cmdb/system/pppoe-interface"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -16530,7 +17674,9 @@ func (c *FortiSDKClient) ReadSystemPppoeInterface(mkey string, vdomparam string)
 	path := "/api/v2/cmdb/system/pppoe-interface"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -16542,8 +17688,9 @@ func (c *FortiSDKClient) UpdateSystemProbeResponse(data *map[string]interface{},
 	HTTPMethod := "PUT"
 	path := "/api/v2/cmdb/system/probe-response"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -16564,8 +17711,9 @@ func (c *FortiSDKClient) DeleteSystemProbeResponse(mkey string, vdomparam string
 func (c *FortiSDKClient) ReadSystemProbeResponse(mkey string, vdomparam string) (mapTmp map[string]interface{}, err error) {
 	HTTPMethod := "GET"
 	path := "/api/v2/cmdb/system/probe-response"
+	url_params := make(map[string][]string)
 
-	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam)
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -16578,8 +17726,9 @@ func (c *FortiSDKClient) CreateSystemProxyArp(data *map[string]interface{}, vdom
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/system/proxy-arp"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -16592,8 +17741,9 @@ func (c *FortiSDKClient) UpdateSystemProxyArp(data *map[string]interface{}, mkey
 	path := "/api/v2/cmdb/system/proxy-arp"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -16619,7 +17769,9 @@ func (c *FortiSDKClient) ReadSystemProxyArp(mkey string, vdomparam string) (mapT
 	path := "/api/v2/cmdb/system/proxy-arp"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -16631,8 +17783,9 @@ func (c *FortiSDKClient) UpdateSystemPtp(data *map[string]interface{}, mkey stri
 	HTTPMethod := "PUT"
 	path := "/api/v2/cmdb/system/ptp"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -16653,8 +17806,9 @@ func (c *FortiSDKClient) DeleteSystemPtp(mkey string, vdomparam string) (err err
 func (c *FortiSDKClient) ReadSystemPtp(mkey string, vdomparam string) (mapTmp map[string]interface{}, err error) {
 	HTTPMethod := "GET"
 	path := "/api/v2/cmdb/system/ptp"
+	url_params := make(map[string][]string)
 
-	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam)
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -16667,8 +17821,9 @@ func (c *FortiSDKClient) CreateSystemReplacemsgGroup(data *map[string]interface{
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/system/replacemsg-group"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -16681,8 +17836,9 @@ func (c *FortiSDKClient) UpdateSystemReplacemsgGroup(data *map[string]interface{
 	path := "/api/v2/cmdb/system/replacemsg-group"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -16708,7 +17864,9 @@ func (c *FortiSDKClient) ReadSystemReplacemsgGroup(mkey string, vdomparam string
 	path := "/api/v2/cmdb/system/replacemsg-group"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -16721,8 +17879,9 @@ func (c *FortiSDKClient) CreateSystemReplacemsgImage(data *map[string]interface{
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/system/replacemsg-image"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -16735,8 +17894,9 @@ func (c *FortiSDKClient) UpdateSystemReplacemsgImage(data *map[string]interface{
 	path := "/api/v2/cmdb/system/replacemsg-image"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -16762,7 +17922,9 @@ func (c *FortiSDKClient) ReadSystemReplacemsgImage(mkey string, vdomparam string
 	path := "/api/v2/cmdb/system/replacemsg-image"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -16774,8 +17936,9 @@ func (c *FortiSDKClient) UpdateSystemResourceLimits(data *map[string]interface{}
 	HTTPMethod := "PUT"
 	path := "/api/v2/cmdb/system/resource-limits"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -16796,8 +17959,9 @@ func (c *FortiSDKClient) DeleteSystemResourceLimits(mkey string, vdomparam strin
 func (c *FortiSDKClient) ReadSystemResourceLimits(mkey string, vdomparam string) (mapTmp map[string]interface{}, err error) {
 	HTTPMethod := "GET"
 	path := "/api/v2/cmdb/system/resource-limits"
+	url_params := make(map[string][]string)
 
-	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam)
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -16809,8 +17973,9 @@ func (c *FortiSDKClient) UpdateSystemSaml(data *map[string]interface{}, mkey str
 	HTTPMethod := "PUT"
 	path := "/api/v2/cmdb/system/saml"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -16831,8 +17996,9 @@ func (c *FortiSDKClient) DeleteSystemSaml(mkey string, vdomparam string) (err er
 func (c *FortiSDKClient) ReadSystemSaml(mkey string, vdomparam string) (mapTmp map[string]interface{}, err error) {
 	HTTPMethod := "GET"
 	path := "/api/v2/cmdb/system/saml"
+	url_params := make(map[string][]string)
 
-	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam)
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -16845,8 +18011,9 @@ func (c *FortiSDKClient) CreateSystemSdnConnector(data *map[string]interface{}, 
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/system/sdn-connector"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -16859,8 +18026,9 @@ func (c *FortiSDKClient) UpdateSystemSdnConnector(data *map[string]interface{}, 
 	path := "/api/v2/cmdb/system/sdn-connector"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -16886,7 +18054,9 @@ func (c *FortiSDKClient) ReadSystemSdnConnector(mkey string, vdomparam string) (
 	path := "/api/v2/cmdb/system/sdn-connector"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -16898,8 +18068,9 @@ func (c *FortiSDKClient) UpdateSystemSdwan(data *map[string]interface{}, mkey st
 	HTTPMethod := "PUT"
 	path := "/api/v2/cmdb/system/sdwan"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -16920,8 +18091,9 @@ func (c *FortiSDKClient) DeleteSystemSdwan(mkey string, vdomparam string) (err e
 func (c *FortiSDKClient) ReadSystemSdwan(mkey string, vdomparam string) (mapTmp map[string]interface{}, err error) {
 	HTTPMethod := "GET"
 	path := "/api/v2/cmdb/system/sdwan"
+	url_params := make(map[string][]string)
 
-	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam)
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -16934,8 +18106,9 @@ func (c *FortiSDKClient) CreateSystemSessionHelper(data *map[string]interface{},
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/system/session-helper"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -16948,8 +18121,9 @@ func (c *FortiSDKClient) UpdateSystemSessionHelper(data *map[string]interface{},
 	path := "/api/v2/cmdb/system/session-helper"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -16975,7 +18149,9 @@ func (c *FortiSDKClient) ReadSystemSessionHelper(mkey string, vdomparam string) 
 	path := "/api/v2/cmdb/system/session-helper"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -16987,8 +18163,9 @@ func (c *FortiSDKClient) UpdateSystemSessionTtl(data *map[string]interface{}, mk
 	HTTPMethod := "PUT"
 	path := "/api/v2/cmdb/system/session-ttl"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -17009,8 +18186,9 @@ func (c *FortiSDKClient) DeleteSystemSessionTtl(mkey string, vdomparam string) (
 func (c *FortiSDKClient) ReadSystemSessionTtl(mkey string, vdomparam string) (mapTmp map[string]interface{}, err error) {
 	HTTPMethod := "GET"
 	path := "/api/v2/cmdb/system/session-ttl"
+	url_params := make(map[string][]string)
 
-	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam)
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -17022,8 +18200,9 @@ func (c *FortiSDKClient) UpdateSystemSettings(data *map[string]interface{}, mkey
 	HTTPMethod := "PUT"
 	path := "/api/v2/cmdb/system/settings"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -17044,8 +18223,9 @@ func (c *FortiSDKClient) DeleteSystemSettings(mkey string, vdomparam string) (er
 func (c *FortiSDKClient) ReadSystemSettings(mkey string, vdomparam string) (mapTmp map[string]interface{}, err error) {
 	HTTPMethod := "GET"
 	path := "/api/v2/cmdb/system/settings"
+	url_params := make(map[string][]string)
 
-	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam)
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -17057,8 +18237,9 @@ func (c *FortiSDKClient) UpdateSystemSflow(data *map[string]interface{}, mkey st
 	HTTPMethod := "PUT"
 	path := "/api/v2/cmdb/system/sflow"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -17079,8 +18260,9 @@ func (c *FortiSDKClient) DeleteSystemSflow(mkey string, vdomparam string) (err e
 func (c *FortiSDKClient) ReadSystemSflow(mkey string, vdomparam string) (mapTmp map[string]interface{}, err error) {
 	HTTPMethod := "GET"
 	path := "/api/v2/cmdb/system/sflow"
+	url_params := make(map[string][]string)
 
-	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam)
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -17093,8 +18275,9 @@ func (c *FortiSDKClient) CreateSystemSpeedTestSchedule(data *map[string]interfac
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/system/speed-test-schedule"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -17107,8 +18290,9 @@ func (c *FortiSDKClient) UpdateSystemSpeedTestSchedule(data *map[string]interfac
 	path := "/api/v2/cmdb/system/speed-test-schedule"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -17134,7 +18318,9 @@ func (c *FortiSDKClient) ReadSystemSpeedTestSchedule(mkey string, vdomparam stri
 	path := "/api/v2/cmdb/system/speed-test-schedule"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -17147,8 +18333,9 @@ func (c *FortiSDKClient) CreateSystemSitTunnel(data *map[string]interface{}, vdo
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/system/sit-tunnel"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -17161,8 +18348,9 @@ func (c *FortiSDKClient) UpdateSystemSitTunnel(data *map[string]interface{}, mke
 	path := "/api/v2/cmdb/system/sit-tunnel"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -17188,7 +18376,9 @@ func (c *FortiSDKClient) ReadSystemSitTunnel(mkey string, vdomparam string) (map
 	path := "/api/v2/cmdb/system/sit-tunnel"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -17201,8 +18391,9 @@ func (c *FortiSDKClient) CreateSystemSmsServer(data *map[string]interface{}, vdo
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/system/sms-server"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -17215,8 +18406,9 @@ func (c *FortiSDKClient) UpdateSystemSmsServer(data *map[string]interface{}, mke
 	path := "/api/v2/cmdb/system/sms-server"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -17242,7 +18434,9 @@ func (c *FortiSDKClient) ReadSystemSmsServer(mkey string, vdomparam string) (map
 	path := "/api/v2/cmdb/system/sms-server"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -17255,8 +18449,9 @@ func (c *FortiSDKClient) CreateSystemSpeedTestServer(data *map[string]interface{
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/system/speed-test-server"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -17269,8 +18464,9 @@ func (c *FortiSDKClient) UpdateSystemSpeedTestServer(data *map[string]interface{
 	path := "/api/v2/cmdb/system/speed-test-server"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -17296,7 +18492,9 @@ func (c *FortiSDKClient) ReadSystemSpeedTestServer(mkey string, vdomparam string
 	path := "/api/v2/cmdb/system/speed-test-server"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -17309,8 +18507,9 @@ func (c *FortiSDKClient) CreateSystemSsoAdmin(data *map[string]interface{}, vdom
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/system/sso-admin"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -17323,8 +18522,9 @@ func (c *FortiSDKClient) UpdateSystemSsoAdmin(data *map[string]interface{}, mkey
 	path := "/api/v2/cmdb/system/sso-admin"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -17350,7 +18550,9 @@ func (c *FortiSDKClient) ReadSystemSsoAdmin(mkey string, vdomparam string) (mapT
 	path := "/api/v2/cmdb/system/sso-admin"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -17362,8 +18564,9 @@ func (c *FortiSDKClient) UpdateSystemStandaloneCluster(data *map[string]interfac
 	HTTPMethod := "PUT"
 	path := "/api/v2/cmdb/system/standalone-cluster"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -17384,8 +18587,9 @@ func (c *FortiSDKClient) DeleteSystemStandaloneCluster(mkey string, vdomparam st
 func (c *FortiSDKClient) ReadSystemStandaloneCluster(mkey string, vdomparam string) (mapTmp map[string]interface{}, err error) {
 	HTTPMethod := "GET"
 	path := "/api/v2/cmdb/system/standalone-cluster"
+	url_params := make(map[string][]string)
 
-	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam)
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -17398,8 +18602,9 @@ func (c *FortiSDKClient) CreateSystemStorage(data *map[string]interface{}, vdomp
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/system/storage"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -17412,8 +18617,9 @@ func (c *FortiSDKClient) UpdateSystemStorage(data *map[string]interface{}, mkey 
 	path := "/api/v2/cmdb/system/storage"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -17439,7 +18645,9 @@ func (c *FortiSDKClient) ReadSystemStorage(mkey string, vdomparam string) (mapTm
 	path := "/api/v2/cmdb/system/storage"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -17452,8 +18660,9 @@ func (c *FortiSDKClient) CreateSystemSwitchInterface(data *map[string]interface{
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/system/switch-interface"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -17466,8 +18675,9 @@ func (c *FortiSDKClient) UpdateSystemSwitchInterface(data *map[string]interface{
 	path := "/api/v2/cmdb/system/switch-interface"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -17493,7 +18703,9 @@ func (c *FortiSDKClient) ReadSystemSwitchInterface(mkey string, vdomparam string
 	path := "/api/v2/cmdb/system/switch-interface"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -17506,8 +18718,9 @@ func (c *FortiSDKClient) CreateSystemTosBasedPriority(data *map[string]interface
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/system/tos-based-priority"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -17520,8 +18733,9 @@ func (c *FortiSDKClient) UpdateSystemTosBasedPriority(data *map[string]interface
 	path := "/api/v2/cmdb/system/tos-based-priority"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -17547,7 +18761,9 @@ func (c *FortiSDKClient) ReadSystemTosBasedPriority(mkey string, vdomparam strin
 	path := "/api/v2/cmdb/system/tos-based-priority"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -17560,8 +18776,9 @@ func (c *FortiSDKClient) CreateSystemVdom(data *map[string]interface{}, vdompara
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/system/vdom"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -17574,8 +18791,9 @@ func (c *FortiSDKClient) UpdateSystemVdom(data *map[string]interface{}, mkey str
 	path := "/api/v2/cmdb/system/vdom"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -17601,7 +18819,9 @@ func (c *FortiSDKClient) ReadSystemVdom(mkey string, vdomparam string) (mapTmp m
 	path := "/api/v2/cmdb/system/vdom"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -17613,8 +18833,9 @@ func (c *FortiSDKClient) UpdateSystemVdomDns(data *map[string]interface{}, mkey 
 	HTTPMethod := "PUT"
 	path := "/api/v2/cmdb/system/vdom-dns"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -17635,8 +18856,9 @@ func (c *FortiSDKClient) DeleteSystemVdomDns(mkey string, vdomparam string) (err
 func (c *FortiSDKClient) ReadSystemVdomDns(mkey string, vdomparam string) (mapTmp map[string]interface{}, err error) {
 	HTTPMethod := "GET"
 	path := "/api/v2/cmdb/system/vdom-dns"
+	url_params := make(map[string][]string)
 
-	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam)
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -17649,8 +18871,9 @@ func (c *FortiSDKClient) CreateSystemVdomException(data *map[string]interface{},
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/system/vdom-exception"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -17663,8 +18886,9 @@ func (c *FortiSDKClient) UpdateSystemVdomException(data *map[string]interface{},
 	path := "/api/v2/cmdb/system/vdom-exception"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -17690,7 +18914,9 @@ func (c *FortiSDKClient) ReadSystemVdomException(mkey string, vdomparam string) 
 	path := "/api/v2/cmdb/system/vdom-exception"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -17703,8 +18929,9 @@ func (c *FortiSDKClient) CreateSystemVdomLink(data *map[string]interface{}, vdom
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/system/vdom-link"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -17717,8 +18944,9 @@ func (c *FortiSDKClient) UpdateSystemVdomLink(data *map[string]interface{}, mkey
 	path := "/api/v2/cmdb/system/vdom-link"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -17744,7 +18972,9 @@ func (c *FortiSDKClient) ReadSystemVdomLink(mkey string, vdomparam string) (mapT
 	path := "/api/v2/cmdb/system/vdom-link"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -17756,8 +18986,9 @@ func (c *FortiSDKClient) UpdateSystemVdomNetflow(data *map[string]interface{}, m
 	HTTPMethod := "PUT"
 	path := "/api/v2/cmdb/system/vdom-netflow"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -17778,8 +19009,9 @@ func (c *FortiSDKClient) DeleteSystemVdomNetflow(mkey string, vdomparam string) 
 func (c *FortiSDKClient) ReadSystemVdomNetflow(mkey string, vdomparam string) (mapTmp map[string]interface{}, err error) {
 	HTTPMethod := "GET"
 	path := "/api/v2/cmdb/system/vdom-netflow"
+	url_params := make(map[string][]string)
 
-	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam)
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -17792,8 +19024,9 @@ func (c *FortiSDKClient) CreateSystemVdomProperty(data *map[string]interface{}, 
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/system/vdom-property"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -17806,8 +19039,9 @@ func (c *FortiSDKClient) UpdateSystemVdomProperty(data *map[string]interface{}, 
 	path := "/api/v2/cmdb/system/vdom-property"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -17833,7 +19067,9 @@ func (c *FortiSDKClient) ReadSystemVdomProperty(mkey string, vdomparam string) (
 	path := "/api/v2/cmdb/system/vdom-property"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -17846,8 +19082,9 @@ func (c *FortiSDKClient) CreateSystemVdomRadiusServer(data *map[string]interface
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/system/vdom-radius-server"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -17860,8 +19097,9 @@ func (c *FortiSDKClient) UpdateSystemVdomRadiusServer(data *map[string]interface
 	path := "/api/v2/cmdb/system/vdom-radius-server"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -17887,7 +19125,9 @@ func (c *FortiSDKClient) ReadSystemVdomRadiusServer(mkey string, vdomparam strin
 	path := "/api/v2/cmdb/system/vdom-radius-server"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -17899,8 +19139,9 @@ func (c *FortiSDKClient) UpdateSystemVdomSflow(data *map[string]interface{}, mke
 	HTTPMethod := "PUT"
 	path := "/api/v2/cmdb/system/vdom-sflow"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -17921,8 +19162,9 @@ func (c *FortiSDKClient) DeleteSystemVdomSflow(mkey string, vdomparam string) (e
 func (c *FortiSDKClient) ReadSystemVdomSflow(mkey string, vdomparam string) (mapTmp map[string]interface{}, err error) {
 	HTTPMethod := "GET"
 	path := "/api/v2/cmdb/system/vdom-sflow"
+	url_params := make(map[string][]string)
 
-	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam)
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -17934,8 +19176,9 @@ func (c *FortiSDKClient) UpdateSystemVirtualWanLink(data *map[string]interface{}
 	HTTPMethod := "PUT"
 	path := "/api/v2/cmdb/system/virtual-wan-link"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -17956,8 +19199,9 @@ func (c *FortiSDKClient) DeleteSystemVirtualWanLink(mkey string, vdomparam strin
 func (c *FortiSDKClient) ReadSystemVirtualWanLink(mkey string, vdomparam string) (mapTmp map[string]interface{}, err error) {
 	HTTPMethod := "GET"
 	path := "/api/v2/cmdb/system/virtual-wan-link"
+	url_params := make(map[string][]string)
 
-	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam)
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -17970,8 +19214,9 @@ func (c *FortiSDKClient) CreateSystemVirtualWirePair(data *map[string]interface{
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/system/virtual-wire-pair"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -17984,8 +19229,9 @@ func (c *FortiSDKClient) UpdateSystemVirtualWirePair(data *map[string]interface{
 	path := "/api/v2/cmdb/system/virtual-wire-pair"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -18011,7 +19257,9 @@ func (c *FortiSDKClient) ReadSystemVirtualWirePair(mkey string, vdomparam string
 	path := "/api/v2/cmdb/system/virtual-wire-pair"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -18023,8 +19271,9 @@ func (c *FortiSDKClient) UpdateSystemVneTunnel(data *map[string]interface{}, mke
 	HTTPMethod := "PUT"
 	path := "/api/v2/cmdb/system/vne-tunnel"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -18045,8 +19294,9 @@ func (c *FortiSDKClient) DeleteSystemVneTunnel(mkey string, vdomparam string) (e
 func (c *FortiSDKClient) ReadSystemVneTunnel(mkey string, vdomparam string) (mapTmp map[string]interface{}, err error) {
 	HTTPMethod := "GET"
 	path := "/api/v2/cmdb/system/vne-tunnel"
+	url_params := make(map[string][]string)
 
-	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam)
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -18059,8 +19309,9 @@ func (c *FortiSDKClient) CreateSystemVxlan(data *map[string]interface{}, vdompar
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/system/vxlan"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -18073,8 +19324,9 @@ func (c *FortiSDKClient) UpdateSystemVxlan(data *map[string]interface{}, mkey st
 	path := "/api/v2/cmdb/system/vxlan"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -18100,7 +19352,9 @@ func (c *FortiSDKClient) ReadSystemVxlan(mkey string, vdomparam string) (mapTmp 
 	path := "/api/v2/cmdb/system/vxlan"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -18113,8 +19367,9 @@ func (c *FortiSDKClient) CreateSystemWccp(data *map[string]interface{}, vdompara
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/system/wccp"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -18127,8 +19382,9 @@ func (c *FortiSDKClient) UpdateSystemWccp(data *map[string]interface{}, mkey str
 	path := "/api/v2/cmdb/system/wccp"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -18154,7 +19410,9 @@ func (c *FortiSDKClient) ReadSystemWccp(mkey string, vdomparam string) (mapTmp m
 	path := "/api/v2/cmdb/system/wccp"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -18167,8 +19425,9 @@ func (c *FortiSDKClient) CreateSystemZone(data *map[string]interface{}, vdompara
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/system/zone"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -18181,8 +19440,9 @@ func (c *FortiSDKClient) UpdateSystemZone(data *map[string]interface{}, mkey str
 	path := "/api/v2/cmdb/system/zone"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -18208,7 +19468,9 @@ func (c *FortiSDKClient) ReadSystemZone(mkey string, vdomparam string) (mapTmp m
 	path := "/api/v2/cmdb/system/zone"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -18220,8 +19482,9 @@ func (c *FortiSDKClient) UpdateSystemAutoupdatePushUpdate(data *map[string]inter
 	HTTPMethod := "PUT"
 	path := "/api/v2/cmdb/system.autoupdate/push-update"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -18242,8 +19505,9 @@ func (c *FortiSDKClient) DeleteSystemAutoupdatePushUpdate(mkey string, vdomparam
 func (c *FortiSDKClient) ReadSystemAutoupdatePushUpdate(mkey string, vdomparam string) (mapTmp map[string]interface{}, err error) {
 	HTTPMethod := "GET"
 	path := "/api/v2/cmdb/system.autoupdate/push-update"
+	url_params := make(map[string][]string)
 
-	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam)
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -18255,8 +19519,9 @@ func (c *FortiSDKClient) UpdateSystemAutoupdateSchedule(data *map[string]interfa
 	HTTPMethod := "PUT"
 	path := "/api/v2/cmdb/system.autoupdate/schedule"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -18277,8 +19542,9 @@ func (c *FortiSDKClient) DeleteSystemAutoupdateSchedule(mkey string, vdomparam s
 func (c *FortiSDKClient) ReadSystemAutoupdateSchedule(mkey string, vdomparam string) (mapTmp map[string]interface{}, err error) {
 	HTTPMethod := "GET"
 	path := "/api/v2/cmdb/system.autoupdate/schedule"
+	url_params := make(map[string][]string)
 
-	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam)
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -18290,8 +19556,9 @@ func (c *FortiSDKClient) UpdateSystemAutoupdateTunneling(data *map[string]interf
 	HTTPMethod := "PUT"
 	path := "/api/v2/cmdb/system.autoupdate/tunneling"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -18312,8 +19579,9 @@ func (c *FortiSDKClient) DeleteSystemAutoupdateTunneling(mkey string, vdomparam 
 func (c *FortiSDKClient) ReadSystemAutoupdateTunneling(mkey string, vdomparam string) (mapTmp map[string]interface{}, err error) {
 	HTTPMethod := "GET"
 	path := "/api/v2/cmdb/system.autoupdate/tunneling"
+	url_params := make(map[string][]string)
 
-	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam)
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -18326,8 +19594,9 @@ func (c *FortiSDKClient) CreateSystemDhcpServer(data *map[string]interface{}, vd
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/system.dhcp/server"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -18340,8 +19609,9 @@ func (c *FortiSDKClient) UpdateSystemDhcpServer(data *map[string]interface{}, mk
 	path := "/api/v2/cmdb/system.dhcp/server"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -18367,7 +19637,9 @@ func (c *FortiSDKClient) ReadSystemDhcpServer(mkey string, vdomparam string) (ma
 	path := "/api/v2/cmdb/system.dhcp/server"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -18380,8 +19652,9 @@ func (c *FortiSDKClient) CreateSystemDhcp6Server(data *map[string]interface{}, v
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/system.dhcp6/server"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -18394,8 +19667,9 @@ func (c *FortiSDKClient) UpdateSystemDhcp6Server(data *map[string]interface{}, m
 	path := "/api/v2/cmdb/system.dhcp6/server"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -18421,7 +19695,9 @@ func (c *FortiSDKClient) ReadSystemDhcp6Server(mkey string, vdomparam string) (m
 	path := "/api/v2/cmdb/system.dhcp6/server"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -18434,8 +19710,9 @@ func (c *FortiSDKClient) CreateSystemLldpNetworkPolicy(data *map[string]interfac
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/system.lldp/network-policy"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -18448,8 +19725,9 @@ func (c *FortiSDKClient) UpdateSystemLldpNetworkPolicy(data *map[string]interfac
 	path := "/api/v2/cmdb/system.lldp/network-policy"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -18475,7 +19753,9 @@ func (c *FortiSDKClient) ReadSystemLldpNetworkPolicy(mkey string, vdomparam stri
 	path := "/api/v2/cmdb/system.lldp/network-policy"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -18488,8 +19768,9 @@ func (c *FortiSDKClient) UpdateSystemReplacemsgAdmin(data *map[string]interface{
 	path := "/api/v2/cmdb/system.replacemsg/admin"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -18512,7 +19793,9 @@ func (c *FortiSDKClient) ReadSystemReplacemsgAdmin(mkey string, vdomparam string
 	path := "/api/v2/cmdb/system.replacemsg/admin"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -18525,8 +19808,9 @@ func (c *FortiSDKClient) CreateSystemReplacemsgAutomation(data *map[string]inter
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/system.replacemsg/automation"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -18539,8 +19823,9 @@ func (c *FortiSDKClient) UpdateSystemReplacemsgAutomation(data *map[string]inter
 	path := "/api/v2/cmdb/system.replacemsg/automation"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -18566,7 +19851,9 @@ func (c *FortiSDKClient) ReadSystemReplacemsgAutomation(mkey string, vdomparam s
 	path := "/api/v2/cmdb/system.replacemsg/automation"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -18579,8 +19866,9 @@ func (c *FortiSDKClient) UpdateSystemReplacemsgAlertmail(data *map[string]interf
 	path := "/api/v2/cmdb/system.replacemsg/alertmail"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -18603,7 +19891,9 @@ func (c *FortiSDKClient) ReadSystemReplacemsgAlertmail(mkey string, vdomparam st
 	path := "/api/v2/cmdb/system.replacemsg/alertmail"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -18616,8 +19906,9 @@ func (c *FortiSDKClient) UpdateSystemReplacemsgAuth(data *map[string]interface{}
 	path := "/api/v2/cmdb/system.replacemsg/auth"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -18640,7 +19931,9 @@ func (c *FortiSDKClient) ReadSystemReplacemsgAuth(mkey string, vdomparam string)
 	path := "/api/v2/cmdb/system.replacemsg/auth"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -18653,8 +19946,9 @@ func (c *FortiSDKClient) UpdateSystemReplacemsgDeviceDetectionPortal(data *map[s
 	path := "/api/v2/cmdb/system.replacemsg/device-detection-portal"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -18677,7 +19971,9 @@ func (c *FortiSDKClient) ReadSystemReplacemsgDeviceDetectionPortal(mkey string, 
 	path := "/api/v2/cmdb/system.replacemsg/device-detection-portal"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -18690,8 +19986,9 @@ func (c *FortiSDKClient) UpdateSystemReplacemsgEc(data *map[string]interface{}, 
 	path := "/api/v2/cmdb/system.replacemsg/ec"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -18714,7 +20011,9 @@ func (c *FortiSDKClient) ReadSystemReplacemsgEc(mkey string, vdomparam string) (
 	path := "/api/v2/cmdb/system.replacemsg/ec"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -18727,8 +20026,9 @@ func (c *FortiSDKClient) UpdateSystemReplacemsgFortiguardWf(data *map[string]int
 	path := "/api/v2/cmdb/system.replacemsg/fortiguard-wf"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -18751,7 +20051,9 @@ func (c *FortiSDKClient) ReadSystemReplacemsgFortiguardWf(mkey string, vdomparam
 	path := "/api/v2/cmdb/system.replacemsg/fortiguard-wf"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -18764,8 +20066,9 @@ func (c *FortiSDKClient) UpdateSystemReplacemsgFtp(data *map[string]interface{},
 	path := "/api/v2/cmdb/system.replacemsg/ftp"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -18788,7 +20091,9 @@ func (c *FortiSDKClient) ReadSystemReplacemsgFtp(mkey string, vdomparam string) 
 	path := "/api/v2/cmdb/system.replacemsg/ftp"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -18801,8 +20106,9 @@ func (c *FortiSDKClient) UpdateSystemReplacemsgHttp(data *map[string]interface{}
 	path := "/api/v2/cmdb/system.replacemsg/http"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -18825,7 +20131,9 @@ func (c *FortiSDKClient) ReadSystemReplacemsgHttp(mkey string, vdomparam string)
 	path := "/api/v2/cmdb/system.replacemsg/http"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -18838,8 +20146,9 @@ func (c *FortiSDKClient) UpdateSystemReplacemsgIcap(data *map[string]interface{}
 	path := "/api/v2/cmdb/system.replacemsg/icap"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -18862,7 +20171,9 @@ func (c *FortiSDKClient) ReadSystemReplacemsgIcap(mkey string, vdomparam string)
 	path := "/api/v2/cmdb/system.replacemsg/icap"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -18875,8 +20186,9 @@ func (c *FortiSDKClient) UpdateSystemReplacemsgMail(data *map[string]interface{}
 	path := "/api/v2/cmdb/system.replacemsg/mail"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -18899,7 +20211,9 @@ func (c *FortiSDKClient) ReadSystemReplacemsgMail(mkey string, vdomparam string)
 	path := "/api/v2/cmdb/system.replacemsg/mail"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -18912,8 +20226,9 @@ func (c *FortiSDKClient) UpdateSystemReplacemsgNacQuar(data *map[string]interfac
 	path := "/api/v2/cmdb/system.replacemsg/nac-quar"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -18936,7 +20251,9 @@ func (c *FortiSDKClient) ReadSystemReplacemsgNacQuar(mkey string, vdomparam stri
 	path := "/api/v2/cmdb/system.replacemsg/nac-quar"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -18949,8 +20266,9 @@ func (c *FortiSDKClient) UpdateSystemReplacemsgNntp(data *map[string]interface{}
 	path := "/api/v2/cmdb/system.replacemsg/nntp"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -18973,7 +20291,9 @@ func (c *FortiSDKClient) ReadSystemReplacemsgNntp(mkey string, vdomparam string)
 	path := "/api/v2/cmdb/system.replacemsg/nntp"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -18986,8 +20306,9 @@ func (c *FortiSDKClient) UpdateSystemReplacemsgSpam(data *map[string]interface{}
 	path := "/api/v2/cmdb/system.replacemsg/spam"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -19010,7 +20331,9 @@ func (c *FortiSDKClient) ReadSystemReplacemsgSpam(mkey string, vdomparam string)
 	path := "/api/v2/cmdb/system.replacemsg/spam"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -19023,8 +20346,9 @@ func (c *FortiSDKClient) UpdateSystemReplacemsgSslvpn(data *map[string]interface
 	path := "/api/v2/cmdb/system.replacemsg/sslvpn"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -19047,7 +20371,9 @@ func (c *FortiSDKClient) ReadSystemReplacemsgSslvpn(mkey string, vdomparam strin
 	path := "/api/v2/cmdb/system.replacemsg/sslvpn"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -19060,8 +20386,9 @@ func (c *FortiSDKClient) UpdateSystemReplacemsgTrafficQuota(data *map[string]int
 	path := "/api/v2/cmdb/system.replacemsg/traffic-quota"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -19084,7 +20411,9 @@ func (c *FortiSDKClient) ReadSystemReplacemsgTrafficQuota(mkey string, vdomparam
 	path := "/api/v2/cmdb/system.replacemsg/traffic-quota"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -19097,8 +20426,9 @@ func (c *FortiSDKClient) UpdateSystemReplacemsgUtm(data *map[string]interface{},
 	path := "/api/v2/cmdb/system.replacemsg/utm"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -19121,7 +20451,9 @@ func (c *FortiSDKClient) ReadSystemReplacemsgUtm(mkey string, vdomparam string) 
 	path := "/api/v2/cmdb/system.replacemsg/utm"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -19134,8 +20466,9 @@ func (c *FortiSDKClient) UpdateSystemReplacemsgWebproxy(data *map[string]interfa
 	path := "/api/v2/cmdb/system.replacemsg/webproxy"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -19158,7 +20491,9 @@ func (c *FortiSDKClient) ReadSystemReplacemsgWebproxy(mkey string, vdomparam str
 	path := "/api/v2/cmdb/system.replacemsg/webproxy"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -19171,8 +20506,9 @@ func (c *FortiSDKClient) CreateSystemSnmpCommunity(data *map[string]interface{},
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/system.snmp/community"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -19185,8 +20521,9 @@ func (c *FortiSDKClient) UpdateSystemSnmpCommunity(data *map[string]interface{},
 	path := "/api/v2/cmdb/system.snmp/community"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -19212,7 +20549,9 @@ func (c *FortiSDKClient) ReadSystemSnmpCommunity(mkey string, vdomparam string) 
 	path := "/api/v2/cmdb/system.snmp/community"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -19224,8 +20563,9 @@ func (c *FortiSDKClient) UpdateSystemSnmpSysinfo(data *map[string]interface{}, m
 	HTTPMethod := "PUT"
 	path := "/api/v2/cmdb/system.snmp/sysinfo"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -19246,8 +20586,9 @@ func (c *FortiSDKClient) DeleteSystemSnmpSysinfo(mkey string, vdomparam string) 
 func (c *FortiSDKClient) ReadSystemSnmpSysinfo(mkey string, vdomparam string) (mapTmp map[string]interface{}, err error) {
 	HTTPMethod := "GET"
 	path := "/api/v2/cmdb/system.snmp/sysinfo"
+	url_params := make(map[string][]string)
 
-	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam)
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -19260,8 +20601,9 @@ func (c *FortiSDKClient) CreateSystemSnmpUser(data *map[string]interface{}, vdom
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/system.snmp/user"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -19274,8 +20616,9 @@ func (c *FortiSDKClient) UpdateSystemSnmpUser(data *map[string]interface{}, mkey
 	path := "/api/v2/cmdb/system.snmp/user"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -19301,7 +20644,9 @@ func (c *FortiSDKClient) ReadSystemSnmpUser(mkey string, vdomparam string) (mapT
 	path := "/api/v2/cmdb/system.snmp/user"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -19314,8 +20659,9 @@ func (c *FortiSDKClient) CreateUserAdgrp(data *map[string]interface{}, vdomparam
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/user/adgrp"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -19328,8 +20674,9 @@ func (c *FortiSDKClient) UpdateUserAdgrp(data *map[string]interface{}, mkey stri
 	path := "/api/v2/cmdb/user/adgrp"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -19355,7 +20702,9 @@ func (c *FortiSDKClient) ReadUserAdgrp(mkey string, vdomparam string) (mapTmp ma
 	path := "/api/v2/cmdb/user/adgrp"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -19368,8 +20717,9 @@ func (c *FortiSDKClient) CreateUserDevice(data *map[string]interface{}, vdompara
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/user/device"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -19382,8 +20732,9 @@ func (c *FortiSDKClient) UpdateUserDevice(data *map[string]interface{}, mkey str
 	path := "/api/v2/cmdb/user/device"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -19409,7 +20760,9 @@ func (c *FortiSDKClient) ReadUserDevice(mkey string, vdomparam string) (mapTmp m
 	path := "/api/v2/cmdb/user/device"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -19422,8 +20775,9 @@ func (c *FortiSDKClient) CreateUserDeviceAccessList(data *map[string]interface{}
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/user/device-access-list"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -19436,8 +20790,9 @@ func (c *FortiSDKClient) UpdateUserDeviceAccessList(data *map[string]interface{}
 	path := "/api/v2/cmdb/user/device-access-list"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -19463,7 +20818,9 @@ func (c *FortiSDKClient) ReadUserDeviceAccessList(mkey string, vdomparam string)
 	path := "/api/v2/cmdb/user/device-access-list"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -19476,8 +20833,9 @@ func (c *FortiSDKClient) CreateUserDeviceCategory(data *map[string]interface{}, 
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/user/device-category"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -19490,8 +20848,9 @@ func (c *FortiSDKClient) UpdateUserDeviceCategory(data *map[string]interface{}, 
 	path := "/api/v2/cmdb/user/device-category"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -19517,7 +20876,9 @@ func (c *FortiSDKClient) ReadUserDeviceCategory(mkey string, vdomparam string) (
 	path := "/api/v2/cmdb/user/device-category"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -19530,8 +20891,9 @@ func (c *FortiSDKClient) CreateUserDeviceGroup(data *map[string]interface{}, vdo
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/user/device-group"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -19544,8 +20906,9 @@ func (c *FortiSDKClient) UpdateUserDeviceGroup(data *map[string]interface{}, mke
 	path := "/api/v2/cmdb/user/device-group"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -19571,7 +20934,9 @@ func (c *FortiSDKClient) ReadUserDeviceGroup(mkey string, vdomparam string) (map
 	path := "/api/v2/cmdb/user/device-group"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -19584,8 +20949,9 @@ func (c *FortiSDKClient) CreateUserDomainController(data *map[string]interface{}
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/user/domain-controller"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -19598,8 +20964,9 @@ func (c *FortiSDKClient) UpdateUserDomainController(data *map[string]interface{}
 	path := "/api/v2/cmdb/user/domain-controller"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -19625,7 +20992,9 @@ func (c *FortiSDKClient) ReadUserDomainController(mkey string, vdomparam string)
 	path := "/api/v2/cmdb/user/domain-controller"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -19638,8 +21007,9 @@ func (c *FortiSDKClient) CreateUserExchange(data *map[string]interface{}, vdompa
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/user/exchange"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -19652,8 +21022,9 @@ func (c *FortiSDKClient) UpdateUserExchange(data *map[string]interface{}, mkey s
 	path := "/api/v2/cmdb/user/exchange"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -19679,7 +21050,9 @@ func (c *FortiSDKClient) ReadUserExchange(mkey string, vdomparam string) (mapTmp
 	path := "/api/v2/cmdb/user/exchange"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -19692,8 +21065,9 @@ func (c *FortiSDKClient) CreateUserFortitoken(data *map[string]interface{}, vdom
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/user/fortitoken"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -19706,8 +21080,9 @@ func (c *FortiSDKClient) UpdateUserFortitoken(data *map[string]interface{}, mkey
 	path := "/api/v2/cmdb/user/fortitoken"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -19733,7 +21108,9 @@ func (c *FortiSDKClient) ReadUserFortitoken(mkey string, vdomparam string) (mapT
 	path := "/api/v2/cmdb/user/fortitoken"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -19746,8 +21123,9 @@ func (c *FortiSDKClient) CreateUserFsso(data *map[string]interface{}, vdomparam 
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/user/fsso"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -19760,8 +21138,9 @@ func (c *FortiSDKClient) UpdateUserFsso(data *map[string]interface{}, mkey strin
 	path := "/api/v2/cmdb/user/fsso"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -19787,7 +21166,9 @@ func (c *FortiSDKClient) ReadUserFsso(mkey string, vdomparam string) (mapTmp map
 	path := "/api/v2/cmdb/user/fsso"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -19800,8 +21181,9 @@ func (c *FortiSDKClient) CreateUserFssoPolling(data *map[string]interface{}, vdo
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/user/fsso-polling"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -19814,8 +21196,9 @@ func (c *FortiSDKClient) UpdateUserFssoPolling(data *map[string]interface{}, mke
 	path := "/api/v2/cmdb/user/fsso-polling"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -19841,7 +21224,9 @@ func (c *FortiSDKClient) ReadUserFssoPolling(mkey string, vdomparam string) (map
 	path := "/api/v2/cmdb/user/fsso-polling"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -19854,8 +21239,9 @@ func (c *FortiSDKClient) CreateUserGroup(data *map[string]interface{}, vdomparam
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/user/group"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -19868,8 +21254,9 @@ func (c *FortiSDKClient) UpdateUserGroup(data *map[string]interface{}, mkey stri
 	path := "/api/v2/cmdb/user/group"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -19895,7 +21282,9 @@ func (c *FortiSDKClient) ReadUserGroup(mkey string, vdomparam string) (mapTmp ma
 	path := "/api/v2/cmdb/user/group"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -19908,8 +21297,9 @@ func (c *FortiSDKClient) CreateUserKrbKeytab(data *map[string]interface{}, vdomp
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/user/krb-keytab"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -19922,8 +21312,9 @@ func (c *FortiSDKClient) UpdateUserKrbKeytab(data *map[string]interface{}, mkey 
 	path := "/api/v2/cmdb/user/krb-keytab"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -19949,7 +21340,9 @@ func (c *FortiSDKClient) ReadUserKrbKeytab(mkey string, vdomparam string) (mapTm
 	path := "/api/v2/cmdb/user/krb-keytab"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -19962,8 +21355,9 @@ func (c *FortiSDKClient) CreateUserLdap(data *map[string]interface{}, vdomparam 
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/user/ldap"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -19976,8 +21370,9 @@ func (c *FortiSDKClient) UpdateUserLdap(data *map[string]interface{}, mkey strin
 	path := "/api/v2/cmdb/user/ldap"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -20003,7 +21398,9 @@ func (c *FortiSDKClient) ReadUserLdap(mkey string, vdomparam string) (mapTmp map
 	path := "/api/v2/cmdb/user/ldap"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -20016,8 +21413,9 @@ func (c *FortiSDKClient) CreateUserLocal(data *map[string]interface{}, vdomparam
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/user/local"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -20030,8 +21428,9 @@ func (c *FortiSDKClient) UpdateUserLocal(data *map[string]interface{}, mkey stri
 	path := "/api/v2/cmdb/user/local"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -20057,7 +21456,9 @@ func (c *FortiSDKClient) ReadUserLocal(mkey string, vdomparam string) (mapTmp ma
 	path := "/api/v2/cmdb/user/local"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -20070,8 +21471,9 @@ func (c *FortiSDKClient) CreateUserNacPolicy(data *map[string]interface{}, vdomp
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/user/nac-policy"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -20084,8 +21486,9 @@ func (c *FortiSDKClient) UpdateUserNacPolicy(data *map[string]interface{}, mkey 
 	path := "/api/v2/cmdb/user/nac-policy"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -20111,7 +21514,9 @@ func (c *FortiSDKClient) ReadUserNacPolicy(mkey string, vdomparam string) (mapTm
 	path := "/api/v2/cmdb/user/nac-policy"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -20124,8 +21529,9 @@ func (c *FortiSDKClient) CreateUserPasswordPolicy(data *map[string]interface{}, 
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/user/password-policy"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -20138,8 +21544,9 @@ func (c *FortiSDKClient) UpdateUserPasswordPolicy(data *map[string]interface{}, 
 	path := "/api/v2/cmdb/user/password-policy"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -20165,7 +21572,9 @@ func (c *FortiSDKClient) ReadUserPasswordPolicy(mkey string, vdomparam string) (
 	path := "/api/v2/cmdb/user/password-policy"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -20178,8 +21587,9 @@ func (c *FortiSDKClient) CreateUserPeer(data *map[string]interface{}, vdomparam 
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/user/peer"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -20192,8 +21602,9 @@ func (c *FortiSDKClient) UpdateUserPeer(data *map[string]interface{}, mkey strin
 	path := "/api/v2/cmdb/user/peer"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -20219,7 +21630,9 @@ func (c *FortiSDKClient) ReadUserPeer(mkey string, vdomparam string) (mapTmp map
 	path := "/api/v2/cmdb/user/peer"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -20232,8 +21645,9 @@ func (c *FortiSDKClient) CreateUserPeergrp(data *map[string]interface{}, vdompar
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/user/peergrp"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -20246,8 +21660,9 @@ func (c *FortiSDKClient) UpdateUserPeergrp(data *map[string]interface{}, mkey st
 	path := "/api/v2/cmdb/user/peergrp"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -20273,7 +21688,9 @@ func (c *FortiSDKClient) ReadUserPeergrp(mkey string, vdomparam string) (mapTmp 
 	path := "/api/v2/cmdb/user/peergrp"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -20286,8 +21703,9 @@ func (c *FortiSDKClient) CreateUserPop3(data *map[string]interface{}, vdomparam 
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/user/pop3"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -20300,8 +21718,9 @@ func (c *FortiSDKClient) UpdateUserPop3(data *map[string]interface{}, mkey strin
 	path := "/api/v2/cmdb/user/pop3"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -20327,7 +21746,9 @@ func (c *FortiSDKClient) ReadUserPop3(mkey string, vdomparam string) (mapTmp map
 	path := "/api/v2/cmdb/user/pop3"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -20339,8 +21760,9 @@ func (c *FortiSDKClient) UpdateUserQuarantine(data *map[string]interface{}, mkey
 	HTTPMethod := "PUT"
 	path := "/api/v2/cmdb/user/quarantine"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -20361,8 +21783,9 @@ func (c *FortiSDKClient) DeleteUserQuarantine(mkey string, vdomparam string) (er
 func (c *FortiSDKClient) ReadUserQuarantine(mkey string, vdomparam string) (mapTmp map[string]interface{}, err error) {
 	HTTPMethod := "GET"
 	path := "/api/v2/cmdb/user/quarantine"
+	url_params := make(map[string][]string)
 
-	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam)
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -20375,8 +21798,9 @@ func (c *FortiSDKClient) CreateUserRadius(data *map[string]interface{}, vdompara
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/user/radius"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -20389,8 +21813,9 @@ func (c *FortiSDKClient) UpdateUserRadius(data *map[string]interface{}, mkey str
 	path := "/api/v2/cmdb/user/radius"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -20416,7 +21841,9 @@ func (c *FortiSDKClient) ReadUserRadius(mkey string, vdomparam string) (mapTmp m
 	path := "/api/v2/cmdb/user/radius"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -20429,8 +21856,9 @@ func (c *FortiSDKClient) CreateUserSaml(data *map[string]interface{}, vdomparam 
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/user/saml"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -20443,8 +21871,9 @@ func (c *FortiSDKClient) UpdateUserSaml(data *map[string]interface{}, mkey strin
 	path := "/api/v2/cmdb/user/saml"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -20470,7 +21899,9 @@ func (c *FortiSDKClient) ReadUserSaml(mkey string, vdomparam string) (mapTmp map
 	path := "/api/v2/cmdb/user/saml"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -20483,8 +21914,9 @@ func (c *FortiSDKClient) CreateUserSecurityExemptList(data *map[string]interface
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/user/security-exempt-list"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -20497,8 +21929,9 @@ func (c *FortiSDKClient) UpdateUserSecurityExemptList(data *map[string]interface
 	path := "/api/v2/cmdb/user/security-exempt-list"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -20524,7 +21957,9 @@ func (c *FortiSDKClient) ReadUserSecurityExemptList(mkey string, vdomparam strin
 	path := "/api/v2/cmdb/user/security-exempt-list"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -20536,8 +21971,9 @@ func (c *FortiSDKClient) UpdateUserSetting(data *map[string]interface{}, mkey st
 	HTTPMethod := "PUT"
 	path := "/api/v2/cmdb/user/setting"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -20558,8 +21994,9 @@ func (c *FortiSDKClient) DeleteUserSetting(mkey string, vdomparam string) (err e
 func (c *FortiSDKClient) ReadUserSetting(mkey string, vdomparam string) (mapTmp map[string]interface{}, err error) {
 	HTTPMethod := "GET"
 	path := "/api/v2/cmdb/user/setting"
+	url_params := make(map[string][]string)
 
-	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam)
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -20572,8 +22009,9 @@ func (c *FortiSDKClient) CreateUserTacacs(data *map[string]interface{}, vdompara
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/user/tacacs+"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -20586,8 +22024,9 @@ func (c *FortiSDKClient) UpdateUserTacacs(data *map[string]interface{}, mkey str
 	path := "/api/v2/cmdb/user/tacacs+"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -20613,7 +22052,9 @@ func (c *FortiSDKClient) ReadUserTacacs(mkey string, vdomparam string) (mapTmp m
 	path := "/api/v2/cmdb/user/tacacs+"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -20626,8 +22067,9 @@ func (c *FortiSDKClient) CreateVoipProfile(data *map[string]interface{}, vdompar
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/voip/profile"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -20640,8 +22082,9 @@ func (c *FortiSDKClient) UpdateVoipProfile(data *map[string]interface{}, mkey st
 	path := "/api/v2/cmdb/voip/profile"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -20667,7 +22110,9 @@ func (c *FortiSDKClient) ReadVoipProfile(mkey string, vdomparam string) (mapTmp 
 	path := "/api/v2/cmdb/voip/profile"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -20679,8 +22124,9 @@ func (c *FortiSDKClient) UpdateVpnL2Tp(data *map[string]interface{}, mkey string
 	HTTPMethod := "PUT"
 	path := "/api/v2/cmdb/vpn/l2tp"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -20701,8 +22147,9 @@ func (c *FortiSDKClient) DeleteVpnL2Tp(mkey string, vdomparam string) (err error
 func (c *FortiSDKClient) ReadVpnL2Tp(mkey string, vdomparam string) (mapTmp map[string]interface{}, err error) {
 	HTTPMethod := "GET"
 	path := "/api/v2/cmdb/vpn/l2tp"
+	url_params := make(map[string][]string)
 
-	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam)
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -20714,8 +22161,9 @@ func (c *FortiSDKClient) UpdateVpnOcvpn(data *map[string]interface{}, mkey strin
 	HTTPMethod := "PUT"
 	path := "/api/v2/cmdb/vpn/ocvpn"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -20736,8 +22184,9 @@ func (c *FortiSDKClient) DeleteVpnOcvpn(mkey string, vdomparam string) (err erro
 func (c *FortiSDKClient) ReadVpnOcvpn(mkey string, vdomparam string) (mapTmp map[string]interface{}, err error) {
 	HTTPMethod := "GET"
 	path := "/api/v2/cmdb/vpn/ocvpn"
+	url_params := make(map[string][]string)
 
-	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam)
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -20749,8 +22198,9 @@ func (c *FortiSDKClient) UpdateVpnPptp(data *map[string]interface{}, mkey string
 	HTTPMethod := "PUT"
 	path := "/api/v2/cmdb/vpn/pptp"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -20771,8 +22221,9 @@ func (c *FortiSDKClient) DeleteVpnPptp(mkey string, vdomparam string) (err error
 func (c *FortiSDKClient) ReadVpnPptp(mkey string, vdomparam string) (mapTmp map[string]interface{}, err error) {
 	HTTPMethod := "GET"
 	path := "/api/v2/cmdb/vpn/pptp"
+	url_params := make(map[string][]string)
 
-	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam)
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -20785,8 +22236,9 @@ func (c *FortiSDKClient) CreateVpnCertificateCa(data *map[string]interface{}, vd
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/vpn.certificate/ca"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -20799,8 +22251,9 @@ func (c *FortiSDKClient) UpdateVpnCertificateCa(data *map[string]interface{}, mk
 	path := "/api/v2/cmdb/vpn.certificate/ca"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -20826,7 +22279,9 @@ func (c *FortiSDKClient) ReadVpnCertificateCa(mkey string, vdomparam string) (ma
 	path := "/api/v2/cmdb/vpn.certificate/ca"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -20839,8 +22294,9 @@ func (c *FortiSDKClient) CreateVpnCertificateCrl(data *map[string]interface{}, v
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/vpn.certificate/crl"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -20853,8 +22309,9 @@ func (c *FortiSDKClient) UpdateVpnCertificateCrl(data *map[string]interface{}, m
 	path := "/api/v2/cmdb/vpn.certificate/crl"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -20880,7 +22337,9 @@ func (c *FortiSDKClient) ReadVpnCertificateCrl(mkey string, vdomparam string) (m
 	path := "/api/v2/cmdb/vpn.certificate/crl"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -20893,8 +22352,9 @@ func (c *FortiSDKClient) CreateVpnCertificateLocal(data *map[string]interface{},
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/vpn.certificate/local"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -20907,8 +22367,9 @@ func (c *FortiSDKClient) UpdateVpnCertificateLocal(data *map[string]interface{},
 	path := "/api/v2/cmdb/vpn.certificate/local"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -20934,7 +22395,9 @@ func (c *FortiSDKClient) ReadVpnCertificateLocal(mkey string, vdomparam string) 
 	path := "/api/v2/cmdb/vpn.certificate/local"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -20947,8 +22410,9 @@ func (c *FortiSDKClient) CreateVpnCertificateOcspServer(data *map[string]interfa
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/vpn.certificate/ocsp-server"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -20961,8 +22425,9 @@ func (c *FortiSDKClient) UpdateVpnCertificateOcspServer(data *map[string]interfa
 	path := "/api/v2/cmdb/vpn.certificate/ocsp-server"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -20988,7 +22453,9 @@ func (c *FortiSDKClient) ReadVpnCertificateOcspServer(mkey string, vdomparam str
 	path := "/api/v2/cmdb/vpn.certificate/ocsp-server"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -21001,8 +22468,9 @@ func (c *FortiSDKClient) CreateVpnCertificateRemote(data *map[string]interface{}
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/vpn.certificate/remote"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -21015,8 +22483,9 @@ func (c *FortiSDKClient) UpdateVpnCertificateRemote(data *map[string]interface{}
 	path := "/api/v2/cmdb/vpn.certificate/remote"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -21042,7 +22511,9 @@ func (c *FortiSDKClient) ReadVpnCertificateRemote(mkey string, vdomparam string)
 	path := "/api/v2/cmdb/vpn.certificate/remote"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -21054,8 +22525,9 @@ func (c *FortiSDKClient) UpdateVpnCertificateSetting(data *map[string]interface{
 	HTTPMethod := "PUT"
 	path := "/api/v2/cmdb/vpn.certificate/setting"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -21076,8 +22548,9 @@ func (c *FortiSDKClient) DeleteVpnCertificateSetting(mkey string, vdomparam stri
 func (c *FortiSDKClient) ReadVpnCertificateSetting(mkey string, vdomparam string) (mapTmp map[string]interface{}, err error) {
 	HTTPMethod := "GET"
 	path := "/api/v2/cmdb/vpn.certificate/setting"
+	url_params := make(map[string][]string)
 
-	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam)
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -21090,8 +22563,9 @@ func (c *FortiSDKClient) CreateVpnIpsecConcentrator(data *map[string]interface{}
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/vpn.ipsec/concentrator"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -21104,8 +22578,9 @@ func (c *FortiSDKClient) UpdateVpnIpsecConcentrator(data *map[string]interface{}
 	path := "/api/v2/cmdb/vpn.ipsec/concentrator"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -21131,7 +22606,9 @@ func (c *FortiSDKClient) ReadVpnIpsecConcentrator(mkey string, vdomparam string)
 	path := "/api/v2/cmdb/vpn.ipsec/concentrator"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -21144,8 +22621,9 @@ func (c *FortiSDKClient) CreateVpnIpsecForticlient(data *map[string]interface{},
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/vpn.ipsec/forticlient"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -21158,8 +22636,9 @@ func (c *FortiSDKClient) UpdateVpnIpsecForticlient(data *map[string]interface{},
 	path := "/api/v2/cmdb/vpn.ipsec/forticlient"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -21185,7 +22664,9 @@ func (c *FortiSDKClient) ReadVpnIpsecForticlient(mkey string, vdomparam string) 
 	path := "/api/v2/cmdb/vpn.ipsec/forticlient"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -21198,8 +22679,9 @@ func (c *FortiSDKClient) CreateVpnIpsecManualkey(data *map[string]interface{}, v
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/vpn.ipsec/manualkey"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -21212,8 +22694,9 @@ func (c *FortiSDKClient) UpdateVpnIpsecManualkey(data *map[string]interface{}, m
 	path := "/api/v2/cmdb/vpn.ipsec/manualkey"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -21239,7 +22722,9 @@ func (c *FortiSDKClient) ReadVpnIpsecManualkey(mkey string, vdomparam string) (m
 	path := "/api/v2/cmdb/vpn.ipsec/manualkey"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -21252,8 +22737,9 @@ func (c *FortiSDKClient) CreateVpnIpsecManualkeyInterface(data *map[string]inter
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/vpn.ipsec/manualkey-interface"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -21266,8 +22752,9 @@ func (c *FortiSDKClient) UpdateVpnIpsecManualkeyInterface(data *map[string]inter
 	path := "/api/v2/cmdb/vpn.ipsec/manualkey-interface"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -21293,7 +22780,9 @@ func (c *FortiSDKClient) ReadVpnIpsecManualkeyInterface(mkey string, vdomparam s
 	path := "/api/v2/cmdb/vpn.ipsec/manualkey-interface"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -21306,8 +22795,9 @@ func (c *FortiSDKClient) CreateVpnIpsecPhase1(data *map[string]interface{}, vdom
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/vpn.ipsec/phase1"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -21320,8 +22810,9 @@ func (c *FortiSDKClient) UpdateVpnIpsecPhase1(data *map[string]interface{}, mkey
 	path := "/api/v2/cmdb/vpn.ipsec/phase1"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -21347,7 +22838,9 @@ func (c *FortiSDKClient) ReadVpnIpsecPhase1(mkey string, vdomparam string) (mapT
 	path := "/api/v2/cmdb/vpn.ipsec/phase1"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -21360,8 +22853,9 @@ func (c *FortiSDKClient) CreateVpnIpsecPhase1Interface(data *map[string]interfac
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/vpn.ipsec/phase1-interface"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -21374,8 +22868,9 @@ func (c *FortiSDKClient) UpdateVpnIpsecPhase1Interface(data *map[string]interfac
 	path := "/api/v2/cmdb/vpn.ipsec/phase1-interface"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -21401,7 +22896,9 @@ func (c *FortiSDKClient) ReadVpnIpsecPhase1Interface(mkey string, vdomparam stri
 	path := "/api/v2/cmdb/vpn.ipsec/phase1-interface"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -21414,8 +22911,9 @@ func (c *FortiSDKClient) CreateVpnIpsecPhase2(data *map[string]interface{}, vdom
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/vpn.ipsec/phase2"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -21428,8 +22926,9 @@ func (c *FortiSDKClient) UpdateVpnIpsecPhase2(data *map[string]interface{}, mkey
 	path := "/api/v2/cmdb/vpn.ipsec/phase2"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -21455,7 +22954,9 @@ func (c *FortiSDKClient) ReadVpnIpsecPhase2(mkey string, vdomparam string) (mapT
 	path := "/api/v2/cmdb/vpn.ipsec/phase2"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -21468,8 +22969,9 @@ func (c *FortiSDKClient) CreateVpnIpsecPhase2Interface(data *map[string]interfac
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/vpn.ipsec/phase2-interface"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -21482,8 +22984,9 @@ func (c *FortiSDKClient) UpdateVpnIpsecPhase2Interface(data *map[string]interfac
 	path := "/api/v2/cmdb/vpn.ipsec/phase2-interface"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -21509,7 +23012,9 @@ func (c *FortiSDKClient) ReadVpnIpsecPhase2Interface(mkey string, vdomparam stri
 	path := "/api/v2/cmdb/vpn.ipsec/phase2-interface"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -21521,8 +23026,9 @@ func (c *FortiSDKClient) UpdateVpnSslSettings(data *map[string]interface{}, mkey
 	HTTPMethod := "PUT"
 	path := "/api/v2/cmdb/vpn.ssl/settings"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -21543,8 +23049,9 @@ func (c *FortiSDKClient) DeleteVpnSslSettings(mkey string, vdomparam string) (er
 func (c *FortiSDKClient) ReadVpnSslSettings(mkey string, vdomparam string) (mapTmp map[string]interface{}, err error) {
 	HTTPMethod := "GET"
 	path := "/api/v2/cmdb/vpn.ssl/settings"
+	url_params := make(map[string][]string)
 
-	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam)
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -21557,8 +23064,9 @@ func (c *FortiSDKClient) CreateVpnSslWebHostCheckSoftware(data *map[string]inter
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/vpn.ssl.web/host-check-software"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -21571,8 +23079,9 @@ func (c *FortiSDKClient) UpdateVpnSslWebHostCheckSoftware(data *map[string]inter
 	path := "/api/v2/cmdb/vpn.ssl.web/host-check-software"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -21598,7 +23107,9 @@ func (c *FortiSDKClient) ReadVpnSslWebHostCheckSoftware(mkey string, vdomparam s
 	path := "/api/v2/cmdb/vpn.ssl.web/host-check-software"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -21611,8 +23122,9 @@ func (c *FortiSDKClient) CreateVpnSslWebPortal(data *map[string]interface{}, vdo
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/vpn.ssl.web/portal"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -21625,8 +23137,9 @@ func (c *FortiSDKClient) UpdateVpnSslWebPortal(data *map[string]interface{}, mke
 	path := "/api/v2/cmdb/vpn.ssl.web/portal"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -21652,7 +23165,9 @@ func (c *FortiSDKClient) ReadVpnSslWebPortal(mkey string, vdomparam string) (map
 	path := "/api/v2/cmdb/vpn.ssl.web/portal"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -21665,8 +23180,9 @@ func (c *FortiSDKClient) CreateVpnSslWebRealm(data *map[string]interface{}, vdom
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/vpn.ssl.web/realm"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -21679,8 +23195,9 @@ func (c *FortiSDKClient) UpdateVpnSslWebRealm(data *map[string]interface{}, mkey
 	path := "/api/v2/cmdb/vpn.ssl.web/realm"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -21706,7 +23223,9 @@ func (c *FortiSDKClient) ReadVpnSslWebRealm(mkey string, vdomparam string) (mapT
 	path := "/api/v2/cmdb/vpn.ssl.web/realm"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -21719,8 +23238,9 @@ func (c *FortiSDKClient) CreateVpnSslWebUserBookmark(data *map[string]interface{
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/vpn.ssl.web/user-bookmark"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -21733,8 +23253,9 @@ func (c *FortiSDKClient) UpdateVpnSslWebUserBookmark(data *map[string]interface{
 	path := "/api/v2/cmdb/vpn.ssl.web/user-bookmark"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -21760,7 +23281,9 @@ func (c *FortiSDKClient) ReadVpnSslWebUserBookmark(mkey string, vdomparam string
 	path := "/api/v2/cmdb/vpn.ssl.web/user-bookmark"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -21773,8 +23296,9 @@ func (c *FortiSDKClient) CreateVpnSslWebUserGroupBookmark(data *map[string]inter
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/vpn.ssl.web/user-group-bookmark"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -21787,8 +23311,9 @@ func (c *FortiSDKClient) UpdateVpnSslWebUserGroupBookmark(data *map[string]inter
 	path := "/api/v2/cmdb/vpn.ssl.web/user-group-bookmark"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -21814,7 +23339,9 @@ func (c *FortiSDKClient) ReadVpnSslWebUserGroupBookmark(mkey string, vdomparam s
 	path := "/api/v2/cmdb/vpn.ssl.web/user-group-bookmark"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -21827,8 +23354,9 @@ func (c *FortiSDKClient) CreateWafMainClass(data *map[string]interface{}, vdompa
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/waf/main-class"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -21841,8 +23369,9 @@ func (c *FortiSDKClient) UpdateWafMainClass(data *map[string]interface{}, mkey s
 	path := "/api/v2/cmdb/waf/main-class"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -21868,7 +23397,9 @@ func (c *FortiSDKClient) ReadWafMainClass(mkey string, vdomparam string) (mapTmp
 	path := "/api/v2/cmdb/waf/main-class"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -21881,8 +23412,9 @@ func (c *FortiSDKClient) CreateWafProfile(data *map[string]interface{}, vdompara
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/waf/profile"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -21895,8 +23427,9 @@ func (c *FortiSDKClient) UpdateWafProfile(data *map[string]interface{}, mkey str
 	path := "/api/v2/cmdb/waf/profile"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -21922,7 +23455,9 @@ func (c *FortiSDKClient) ReadWafProfile(mkey string, vdomparam string) (mapTmp m
 	path := "/api/v2/cmdb/waf/profile"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -21935,8 +23470,9 @@ func (c *FortiSDKClient) CreateWafSignature(data *map[string]interface{}, vdompa
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/waf/signature"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -21949,8 +23485,9 @@ func (c *FortiSDKClient) UpdateWafSignature(data *map[string]interface{}, mkey s
 	path := "/api/v2/cmdb/waf/signature"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -21976,7 +23513,9 @@ func (c *FortiSDKClient) ReadWafSignature(mkey string, vdomparam string) (mapTmp
 	path := "/api/v2/cmdb/waf/signature"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -21989,8 +23528,9 @@ func (c *FortiSDKClient) CreateWafSubClass(data *map[string]interface{}, vdompar
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/waf/sub-class"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -22003,8 +23543,9 @@ func (c *FortiSDKClient) UpdateWafSubClass(data *map[string]interface{}, mkey st
 	path := "/api/v2/cmdb/waf/sub-class"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -22030,7 +23571,9 @@ func (c *FortiSDKClient) ReadWafSubClass(mkey string, vdomparam string) (mapTmp 
 	path := "/api/v2/cmdb/waf/sub-class"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -22043,8 +23586,9 @@ func (c *FortiSDKClient) CreateWanoptAuthGroup(data *map[string]interface{}, vdo
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/wanopt/auth-group"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -22057,8 +23601,9 @@ func (c *FortiSDKClient) UpdateWanoptAuthGroup(data *map[string]interface{}, mke
 	path := "/api/v2/cmdb/wanopt/auth-group"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -22084,7 +23629,9 @@ func (c *FortiSDKClient) ReadWanoptAuthGroup(mkey string, vdomparam string) (map
 	path := "/api/v2/cmdb/wanopt/auth-group"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -22096,8 +23643,9 @@ func (c *FortiSDKClient) UpdateWanoptCacheService(data *map[string]interface{}, 
 	HTTPMethod := "PUT"
 	path := "/api/v2/cmdb/wanopt/cache-service"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -22118,8 +23666,9 @@ func (c *FortiSDKClient) DeleteWanoptCacheService(mkey string, vdomparam string)
 func (c *FortiSDKClient) ReadWanoptCacheService(mkey string, vdomparam string) (mapTmp map[string]interface{}, err error) {
 	HTTPMethod := "GET"
 	path := "/api/v2/cmdb/wanopt/cache-service"
+	url_params := make(map[string][]string)
 
-	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam)
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -22132,8 +23681,9 @@ func (c *FortiSDKClient) CreateWanoptContentDeliveryNetworkRule(data *map[string
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/wanopt/content-delivery-network-rule"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -22146,8 +23696,9 @@ func (c *FortiSDKClient) UpdateWanoptContentDeliveryNetworkRule(data *map[string
 	path := "/api/v2/cmdb/wanopt/content-delivery-network-rule"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -22173,7 +23724,9 @@ func (c *FortiSDKClient) ReadWanoptContentDeliveryNetworkRule(mkey string, vdomp
 	path := "/api/v2/cmdb/wanopt/content-delivery-network-rule"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -22186,8 +23739,9 @@ func (c *FortiSDKClient) CreateWanoptPeer(data *map[string]interface{}, vdompara
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/wanopt/peer"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -22200,8 +23754,9 @@ func (c *FortiSDKClient) UpdateWanoptPeer(data *map[string]interface{}, mkey str
 	path := "/api/v2/cmdb/wanopt/peer"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -22227,7 +23782,9 @@ func (c *FortiSDKClient) ReadWanoptPeer(mkey string, vdomparam string) (mapTmp m
 	path := "/api/v2/cmdb/wanopt/peer"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -22240,8 +23797,9 @@ func (c *FortiSDKClient) CreateWanoptProfile(data *map[string]interface{}, vdomp
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/wanopt/profile"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -22254,8 +23812,9 @@ func (c *FortiSDKClient) UpdateWanoptProfile(data *map[string]interface{}, mkey 
 	path := "/api/v2/cmdb/wanopt/profile"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -22281,7 +23840,9 @@ func (c *FortiSDKClient) ReadWanoptProfile(mkey string, vdomparam string) (mapTm
 	path := "/api/v2/cmdb/wanopt/profile"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -22293,8 +23854,9 @@ func (c *FortiSDKClient) UpdateWanoptRemoteStorage(data *map[string]interface{},
 	HTTPMethod := "PUT"
 	path := "/api/v2/cmdb/wanopt/remote-storage"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -22315,8 +23877,9 @@ func (c *FortiSDKClient) DeleteWanoptRemoteStorage(mkey string, vdomparam string
 func (c *FortiSDKClient) ReadWanoptRemoteStorage(mkey string, vdomparam string) (mapTmp map[string]interface{}, err error) {
 	HTTPMethod := "GET"
 	path := "/api/v2/cmdb/wanopt/remote-storage"
+	url_params := make(map[string][]string)
 
-	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam)
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -22328,8 +23891,9 @@ func (c *FortiSDKClient) UpdateWanoptSettings(data *map[string]interface{}, mkey
 	HTTPMethod := "PUT"
 	path := "/api/v2/cmdb/wanopt/settings"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -22350,8 +23914,9 @@ func (c *FortiSDKClient) DeleteWanoptSettings(mkey string, vdomparam string) (er
 func (c *FortiSDKClient) ReadWanoptSettings(mkey string, vdomparam string) (mapTmp map[string]interface{}, err error) {
 	HTTPMethod := "GET"
 	path := "/api/v2/cmdb/wanopt/settings"
+	url_params := make(map[string][]string)
 
-	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam)
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -22363,8 +23928,9 @@ func (c *FortiSDKClient) UpdateWanoptWebcache(data *map[string]interface{}, mkey
 	HTTPMethod := "PUT"
 	path := "/api/v2/cmdb/wanopt/webcache"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -22385,8 +23951,9 @@ func (c *FortiSDKClient) DeleteWanoptWebcache(mkey string, vdomparam string) (er
 func (c *FortiSDKClient) ReadWanoptWebcache(mkey string, vdomparam string) (mapTmp map[string]interface{}, err error) {
 	HTTPMethod := "GET"
 	path := "/api/v2/cmdb/wanopt/webcache"
+	url_params := make(map[string][]string)
 
-	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam)
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -22399,8 +23966,9 @@ func (c *FortiSDKClient) CreateWebProxyDebugUrl(data *map[string]interface{}, vd
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/web-proxy/debug-url"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -22413,8 +23981,9 @@ func (c *FortiSDKClient) UpdateWebProxyDebugUrl(data *map[string]interface{}, mk
 	path := "/api/v2/cmdb/web-proxy/debug-url"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -22440,7 +24009,9 @@ func (c *FortiSDKClient) ReadWebProxyDebugUrl(mkey string, vdomparam string) (ma
 	path := "/api/v2/cmdb/web-proxy/debug-url"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -22452,8 +24023,9 @@ func (c *FortiSDKClient) UpdateWebProxyExplicit(data *map[string]interface{}, mk
 	HTTPMethod := "PUT"
 	path := "/api/v2/cmdb/web-proxy/explicit"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -22474,8 +24046,9 @@ func (c *FortiSDKClient) DeleteWebProxyExplicit(mkey string, vdomparam string) (
 func (c *FortiSDKClient) ReadWebProxyExplicit(mkey string, vdomparam string) (mapTmp map[string]interface{}, err error) {
 	HTTPMethod := "GET"
 	path := "/api/v2/cmdb/web-proxy/explicit"
+	url_params := make(map[string][]string)
 
-	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam)
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -22488,8 +24061,9 @@ func (c *FortiSDKClient) CreateWebProxyForwardServer(data *map[string]interface{
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/web-proxy/forward-server"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -22502,8 +24076,9 @@ func (c *FortiSDKClient) UpdateWebProxyForwardServer(data *map[string]interface{
 	path := "/api/v2/cmdb/web-proxy/forward-server"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -22529,7 +24104,9 @@ func (c *FortiSDKClient) ReadWebProxyForwardServer(mkey string, vdomparam string
 	path := "/api/v2/cmdb/web-proxy/forward-server"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -22542,8 +24119,9 @@ func (c *FortiSDKClient) CreateWebProxyForwardServerGroup(data *map[string]inter
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/web-proxy/forward-server-group"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -22556,8 +24134,9 @@ func (c *FortiSDKClient) UpdateWebProxyForwardServerGroup(data *map[string]inter
 	path := "/api/v2/cmdb/web-proxy/forward-server-group"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -22583,7 +24162,9 @@ func (c *FortiSDKClient) ReadWebProxyForwardServerGroup(mkey string, vdomparam s
 	path := "/api/v2/cmdb/web-proxy/forward-server-group"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -22595,8 +24176,9 @@ func (c *FortiSDKClient) UpdateWebProxyGlobal(data *map[string]interface{}, mkey
 	HTTPMethod := "PUT"
 	path := "/api/v2/cmdb/web-proxy/global"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -22617,8 +24199,9 @@ func (c *FortiSDKClient) DeleteWebProxyGlobal(mkey string, vdomparam string) (er
 func (c *FortiSDKClient) ReadWebProxyGlobal(mkey string, vdomparam string) (mapTmp map[string]interface{}, err error) {
 	HTTPMethod := "GET"
 	path := "/api/v2/cmdb/web-proxy/global"
+	url_params := make(map[string][]string)
 
-	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam)
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -22631,8 +24214,9 @@ func (c *FortiSDKClient) CreateWebProxyProfile(data *map[string]interface{}, vdo
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/web-proxy/profile"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -22645,8 +24229,9 @@ func (c *FortiSDKClient) UpdateWebProxyProfile(data *map[string]interface{}, mke
 	path := "/api/v2/cmdb/web-proxy/profile"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -22672,7 +24257,9 @@ func (c *FortiSDKClient) ReadWebProxyProfile(mkey string, vdomparam string) (map
 	path := "/api/v2/cmdb/web-proxy/profile"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -22685,8 +24272,9 @@ func (c *FortiSDKClient) CreateWebProxyUrlMatch(data *map[string]interface{}, vd
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/web-proxy/url-match"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -22699,8 +24287,9 @@ func (c *FortiSDKClient) UpdateWebProxyUrlMatch(data *map[string]interface{}, mk
 	path := "/api/v2/cmdb/web-proxy/url-match"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -22726,7 +24315,9 @@ func (c *FortiSDKClient) ReadWebProxyUrlMatch(mkey string, vdomparam string) (ma
 	path := "/api/v2/cmdb/web-proxy/url-match"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -22739,8 +24330,9 @@ func (c *FortiSDKClient) CreateWebProxyWisp(data *map[string]interface{}, vdompa
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/web-proxy/wisp"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -22753,8 +24345,9 @@ func (c *FortiSDKClient) UpdateWebProxyWisp(data *map[string]interface{}, mkey s
 	path := "/api/v2/cmdb/web-proxy/wisp"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -22780,7 +24373,9 @@ func (c *FortiSDKClient) ReadWebProxyWisp(mkey string, vdomparam string) (mapTmp
 	path := "/api/v2/cmdb/web-proxy/wisp"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -22793,8 +24388,9 @@ func (c *FortiSDKClient) CreateWebfilterContent(data *map[string]interface{}, vd
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/webfilter/content"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -22807,8 +24403,9 @@ func (c *FortiSDKClient) UpdateWebfilterContent(data *map[string]interface{}, mk
 	path := "/api/v2/cmdb/webfilter/content"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -22834,7 +24431,9 @@ func (c *FortiSDKClient) ReadWebfilterContent(mkey string, vdomparam string) (ma
 	path := "/api/v2/cmdb/webfilter/content"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -22847,8 +24446,9 @@ func (c *FortiSDKClient) CreateWebfilterContentHeader(data *map[string]interface
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/webfilter/content-header"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -22861,8 +24461,9 @@ func (c *FortiSDKClient) UpdateWebfilterContentHeader(data *map[string]interface
 	path := "/api/v2/cmdb/webfilter/content-header"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -22888,7 +24489,9 @@ func (c *FortiSDKClient) ReadWebfilterContentHeader(mkey string, vdomparam strin
 	path := "/api/v2/cmdb/webfilter/content-header"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -22900,8 +24503,9 @@ func (c *FortiSDKClient) UpdateWebfilterFortiguard(data *map[string]interface{},
 	HTTPMethod := "PUT"
 	path := "/api/v2/cmdb/webfilter/fortiguard"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -22922,8 +24526,9 @@ func (c *FortiSDKClient) DeleteWebfilterFortiguard(mkey string, vdomparam string
 func (c *FortiSDKClient) ReadWebfilterFortiguard(mkey string, vdomparam string) (mapTmp map[string]interface{}, err error) {
 	HTTPMethod := "GET"
 	path := "/api/v2/cmdb/webfilter/fortiguard"
+	url_params := make(map[string][]string)
 
-	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam)
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -22936,8 +24541,9 @@ func (c *FortiSDKClient) CreateWebfilterFtgdLocalCat(data *map[string]interface{
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/webfilter/ftgd-local-cat"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -22950,8 +24556,9 @@ func (c *FortiSDKClient) UpdateWebfilterFtgdLocalCat(data *map[string]interface{
 	path := "/api/v2/cmdb/webfilter/ftgd-local-cat"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -22977,7 +24584,9 @@ func (c *FortiSDKClient) ReadWebfilterFtgdLocalCat(mkey string, vdomparam string
 	path := "/api/v2/cmdb/webfilter/ftgd-local-cat"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -22990,8 +24599,9 @@ func (c *FortiSDKClient) CreateWebfilterFtgdLocalRating(data *map[string]interfa
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/webfilter/ftgd-local-rating"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -23004,8 +24614,9 @@ func (c *FortiSDKClient) UpdateWebfilterFtgdLocalRating(data *map[string]interfa
 	path := "/api/v2/cmdb/webfilter/ftgd-local-rating"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -23031,7 +24642,9 @@ func (c *FortiSDKClient) ReadWebfilterFtgdLocalRating(mkey string, vdomparam str
 	path := "/api/v2/cmdb/webfilter/ftgd-local-rating"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -23043,8 +24656,9 @@ func (c *FortiSDKClient) UpdateWebfilterIpsUrlfilterCacheSetting(data *map[strin
 	HTTPMethod := "PUT"
 	path := "/api/v2/cmdb/webfilter/ips-urlfilter-cache-setting"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -23065,8 +24679,9 @@ func (c *FortiSDKClient) DeleteWebfilterIpsUrlfilterCacheSetting(mkey string, vd
 func (c *FortiSDKClient) ReadWebfilterIpsUrlfilterCacheSetting(mkey string, vdomparam string) (mapTmp map[string]interface{}, err error) {
 	HTTPMethod := "GET"
 	path := "/api/v2/cmdb/webfilter/ips-urlfilter-cache-setting"
+	url_params := make(map[string][]string)
 
-	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam)
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -23078,8 +24693,9 @@ func (c *FortiSDKClient) UpdateWebfilterIpsUrlfilterSetting(data *map[string]int
 	HTTPMethod := "PUT"
 	path := "/api/v2/cmdb/webfilter/ips-urlfilter-setting"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -23100,8 +24716,9 @@ func (c *FortiSDKClient) DeleteWebfilterIpsUrlfilterSetting(mkey string, vdompar
 func (c *FortiSDKClient) ReadWebfilterIpsUrlfilterSetting(mkey string, vdomparam string) (mapTmp map[string]interface{}, err error) {
 	HTTPMethod := "GET"
 	path := "/api/v2/cmdb/webfilter/ips-urlfilter-setting"
+	url_params := make(map[string][]string)
 
-	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam)
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -23113,8 +24730,9 @@ func (c *FortiSDKClient) UpdateWebfilterIpsUrlfilterSetting6(data *map[string]in
 	HTTPMethod := "PUT"
 	path := "/api/v2/cmdb/webfilter/ips-urlfilter-setting6"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -23135,8 +24753,9 @@ func (c *FortiSDKClient) DeleteWebfilterIpsUrlfilterSetting6(mkey string, vdompa
 func (c *FortiSDKClient) ReadWebfilterIpsUrlfilterSetting6(mkey string, vdomparam string) (mapTmp map[string]interface{}, err error) {
 	HTTPMethod := "GET"
 	path := "/api/v2/cmdb/webfilter/ips-urlfilter-setting6"
+	url_params := make(map[string][]string)
 
-	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam)
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -23149,8 +24768,9 @@ func (c *FortiSDKClient) CreateWebfilterOverride(data *map[string]interface{}, v
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/webfilter/override"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -23163,8 +24783,9 @@ func (c *FortiSDKClient) UpdateWebfilterOverride(data *map[string]interface{}, m
 	path := "/api/v2/cmdb/webfilter/override"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -23190,7 +24811,9 @@ func (c *FortiSDKClient) ReadWebfilterOverride(mkey string, vdomparam string) (m
 	path := "/api/v2/cmdb/webfilter/override"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -23203,8 +24826,9 @@ func (c *FortiSDKClient) CreateWebfilterProfile(data *map[string]interface{}, vd
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/webfilter/profile"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -23217,8 +24841,9 @@ func (c *FortiSDKClient) UpdateWebfilterProfile(data *map[string]interface{}, mk
 	path := "/api/v2/cmdb/webfilter/profile"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -23244,7 +24869,9 @@ func (c *FortiSDKClient) ReadWebfilterProfile(mkey string, vdomparam string) (ma
 	path := "/api/v2/cmdb/webfilter/profile"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -23257,8 +24884,9 @@ func (c *FortiSDKClient) CreateWebfilterSearchEngine(data *map[string]interface{
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/webfilter/search-engine"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -23271,8 +24899,9 @@ func (c *FortiSDKClient) UpdateWebfilterSearchEngine(data *map[string]interface{
 	path := "/api/v2/cmdb/webfilter/search-engine"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -23298,7 +24927,9 @@ func (c *FortiSDKClient) ReadWebfilterSearchEngine(mkey string, vdomparam string
 	path := "/api/v2/cmdb/webfilter/search-engine"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -23311,8 +24942,9 @@ func (c *FortiSDKClient) CreateWebfilterUrlfilter(data *map[string]interface{}, 
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/webfilter/urlfilter"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -23325,8 +24957,9 @@ func (c *FortiSDKClient) UpdateWebfilterUrlfilter(data *map[string]interface{}, 
 	path := "/api/v2/cmdb/webfilter/urlfilter"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -23352,7 +24985,9 @@ func (c *FortiSDKClient) ReadWebfilterUrlfilter(mkey string, vdomparam string) (
 	path := "/api/v2/cmdb/webfilter/urlfilter"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -23365,8 +25000,9 @@ func (c *FortiSDKClient) CreateWirelessControllerAccessControlList(data *map[str
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/wireless-controller/access-control-list"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -23379,8 +25015,9 @@ func (c *FortiSDKClient) UpdateWirelessControllerAccessControlList(data *map[str
 	path := "/api/v2/cmdb/wireless-controller/access-control-list"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -23406,7 +25043,9 @@ func (c *FortiSDKClient) ReadWirelessControllerAccessControlList(mkey string, vd
 	path := "/api/v2/cmdb/wireless-controller/access-control-list"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -23419,8 +25058,9 @@ func (c *FortiSDKClient) CreateWirelessControllerAddress(data *map[string]interf
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/wireless-controller/address"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -23433,8 +25073,9 @@ func (c *FortiSDKClient) UpdateWirelessControllerAddress(data *map[string]interf
 	path := "/api/v2/cmdb/wireless-controller/address"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -23460,7 +25101,9 @@ func (c *FortiSDKClient) ReadWirelessControllerAddress(mkey string, vdomparam st
 	path := "/api/v2/cmdb/wireless-controller/address"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -23473,8 +25116,9 @@ func (c *FortiSDKClient) CreateWirelessControllerAddrgrp(data *map[string]interf
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/wireless-controller/addrgrp"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -23487,8 +25131,9 @@ func (c *FortiSDKClient) UpdateWirelessControllerAddrgrp(data *map[string]interf
 	path := "/api/v2/cmdb/wireless-controller/addrgrp"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -23514,7 +25159,9 @@ func (c *FortiSDKClient) ReadWirelessControllerAddrgrp(mkey string, vdomparam st
 	path := "/api/v2/cmdb/wireless-controller/addrgrp"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -23527,8 +25174,9 @@ func (c *FortiSDKClient) CreateWirelessControllerApStatus(data *map[string]inter
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/wireless-controller/ap-status"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -23541,8 +25189,9 @@ func (c *FortiSDKClient) UpdateWirelessControllerApStatus(data *map[string]inter
 	path := "/api/v2/cmdb/wireless-controller/ap-status"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -23568,7 +25217,9 @@ func (c *FortiSDKClient) ReadWirelessControllerApStatus(mkey string, vdomparam s
 	path := "/api/v2/cmdb/wireless-controller/ap-status"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -23581,8 +25232,9 @@ func (c *FortiSDKClient) CreateWirelessControllerApcfgProfile(data *map[string]i
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/wireless-controller/apcfg-profile"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -23595,8 +25247,9 @@ func (c *FortiSDKClient) UpdateWirelessControllerApcfgProfile(data *map[string]i
 	path := "/api/v2/cmdb/wireless-controller/apcfg-profile"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -23622,7 +25275,9 @@ func (c *FortiSDKClient) ReadWirelessControllerApcfgProfile(mkey string, vdompar
 	path := "/api/v2/cmdb/wireless-controller/apcfg-profile"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -23635,8 +25290,9 @@ func (c *FortiSDKClient) CreateWirelessControllerArrpProfile(data *map[string]in
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/wireless-controller/arrp-profile"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -23649,8 +25305,9 @@ func (c *FortiSDKClient) UpdateWirelessControllerArrpProfile(data *map[string]in
 	path := "/api/v2/cmdb/wireless-controller/arrp-profile"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -23676,7 +25333,9 @@ func (c *FortiSDKClient) ReadWirelessControllerArrpProfile(mkey string, vdompara
 	path := "/api/v2/cmdb/wireless-controller/arrp-profile"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -23689,8 +25348,9 @@ func (c *FortiSDKClient) CreateWirelessControllerBleProfile(data *map[string]int
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/wireless-controller/ble-profile"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -23703,8 +25363,9 @@ func (c *FortiSDKClient) UpdateWirelessControllerBleProfile(data *map[string]int
 	path := "/api/v2/cmdb/wireless-controller/ble-profile"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -23730,7 +25391,9 @@ func (c *FortiSDKClient) ReadWirelessControllerBleProfile(mkey string, vdomparam
 	path := "/api/v2/cmdb/wireless-controller/ble-profile"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -23743,8 +25406,9 @@ func (c *FortiSDKClient) CreateWirelessControllerBonjourProfile(data *map[string
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/wireless-controller/bonjour-profile"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -23757,8 +25421,9 @@ func (c *FortiSDKClient) UpdateWirelessControllerBonjourProfile(data *map[string
 	path := "/api/v2/cmdb/wireless-controller/bonjour-profile"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -23784,7 +25449,9 @@ func (c *FortiSDKClient) ReadWirelessControllerBonjourProfile(mkey string, vdomp
 	path := "/api/v2/cmdb/wireless-controller/bonjour-profile"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -23796,8 +25463,9 @@ func (c *FortiSDKClient) UpdateWirelessControllerGlobal(data *map[string]interfa
 	HTTPMethod := "PUT"
 	path := "/api/v2/cmdb/wireless-controller/global"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -23818,8 +25486,9 @@ func (c *FortiSDKClient) DeleteWirelessControllerGlobal(mkey string, vdomparam s
 func (c *FortiSDKClient) ReadWirelessControllerGlobal(mkey string, vdomparam string) (mapTmp map[string]interface{}, err error) {
 	HTTPMethod := "GET"
 	path := "/api/v2/cmdb/wireless-controller/global"
+	url_params := make(map[string][]string)
 
-	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam)
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -23831,8 +25500,9 @@ func (c *FortiSDKClient) UpdateWirelessControllerInterController(data *map[strin
 	HTTPMethod := "PUT"
 	path := "/api/v2/cmdb/wireless-controller/inter-controller"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -23853,8 +25523,9 @@ func (c *FortiSDKClient) DeleteWirelessControllerInterController(mkey string, vd
 func (c *FortiSDKClient) ReadWirelessControllerInterController(mkey string, vdomparam string) (mapTmp map[string]interface{}, err error) {
 	HTTPMethod := "GET"
 	path := "/api/v2/cmdb/wireless-controller/inter-controller"
+	url_params := make(map[string][]string)
 
-	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam)
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -23866,8 +25537,9 @@ func (c *FortiSDKClient) UpdateWirelessControllerLog(data *map[string]interface{
 	HTTPMethod := "PUT"
 	path := "/api/v2/cmdb/wireless-controller/log"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -23888,8 +25560,9 @@ func (c *FortiSDKClient) DeleteWirelessControllerLog(mkey string, vdomparam stri
 func (c *FortiSDKClient) ReadWirelessControllerLog(mkey string, vdomparam string) (mapTmp map[string]interface{}, err error) {
 	HTTPMethod := "GET"
 	path := "/api/v2/cmdb/wireless-controller/log"
+	url_params := make(map[string][]string)
 
-	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam)
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -23902,8 +25575,9 @@ func (c *FortiSDKClient) CreateWirelessControllerMpskProfile(data *map[string]in
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/wireless-controller/mpsk-profile"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -23916,8 +25590,9 @@ func (c *FortiSDKClient) UpdateWirelessControllerMpskProfile(data *map[string]in
 	path := "/api/v2/cmdb/wireless-controller/mpsk-profile"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -23943,7 +25618,9 @@ func (c *FortiSDKClient) ReadWirelessControllerMpskProfile(mkey string, vdompara
 	path := "/api/v2/cmdb/wireless-controller/mpsk-profile"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -23956,8 +25633,9 @@ func (c *FortiSDKClient) CreateWirelessControllerQosProfile(data *map[string]int
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/wireless-controller/qos-profile"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -23970,8 +25648,9 @@ func (c *FortiSDKClient) UpdateWirelessControllerQosProfile(data *map[string]int
 	path := "/api/v2/cmdb/wireless-controller/qos-profile"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -23997,7 +25676,9 @@ func (c *FortiSDKClient) ReadWirelessControllerQosProfile(mkey string, vdomparam
 	path := "/api/v2/cmdb/wireless-controller/qos-profile"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -24010,8 +25691,9 @@ func (c *FortiSDKClient) CreateWirelessControllerRegion(data *map[string]interfa
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/wireless-controller/region"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -24024,8 +25706,9 @@ func (c *FortiSDKClient) UpdateWirelessControllerRegion(data *map[string]interfa
 	path := "/api/v2/cmdb/wireless-controller/region"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -24051,7 +25734,9 @@ func (c *FortiSDKClient) ReadWirelessControllerRegion(mkey string, vdomparam str
 	path := "/api/v2/cmdb/wireless-controller/region"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -24063,8 +25748,9 @@ func (c *FortiSDKClient) UpdateWirelessControllerSetting(data *map[string]interf
 	HTTPMethod := "PUT"
 	path := "/api/v2/cmdb/wireless-controller/setting"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -24085,8 +25771,9 @@ func (c *FortiSDKClient) DeleteWirelessControllerSetting(mkey string, vdomparam 
 func (c *FortiSDKClient) ReadWirelessControllerSetting(mkey string, vdomparam string) (mapTmp map[string]interface{}, err error) {
 	HTTPMethod := "GET"
 	path := "/api/v2/cmdb/wireless-controller/setting"
+	url_params := make(map[string][]string)
 
-	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam)
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -24098,8 +25785,9 @@ func (c *FortiSDKClient) UpdateWirelessControllerSnmp(data *map[string]interface
 	HTTPMethod := "PUT"
 	path := "/api/v2/cmdb/wireless-controller/snmp"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -24120,8 +25808,9 @@ func (c *FortiSDKClient) DeleteWirelessControllerSnmp(mkey string, vdomparam str
 func (c *FortiSDKClient) ReadWirelessControllerSnmp(mkey string, vdomparam string) (mapTmp map[string]interface{}, err error) {
 	HTTPMethod := "GET"
 	path := "/api/v2/cmdb/wireless-controller/snmp"
+	url_params := make(map[string][]string)
 
-	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam)
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -24133,8 +25822,9 @@ func (c *FortiSDKClient) UpdateWirelessControllerTimers(data *map[string]interfa
 	HTTPMethod := "PUT"
 	path := "/api/v2/cmdb/wireless-controller/timers"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -24155,8 +25845,9 @@ func (c *FortiSDKClient) DeleteWirelessControllerTimers(mkey string, vdomparam s
 func (c *FortiSDKClient) ReadWirelessControllerTimers(mkey string, vdomparam string) (mapTmp map[string]interface{}, err error) {
 	HTTPMethod := "GET"
 	path := "/api/v2/cmdb/wireless-controller/timers"
+	url_params := make(map[string][]string)
 
-	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam)
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -24169,8 +25860,9 @@ func (c *FortiSDKClient) CreateWirelessControllerUtmProfile(data *map[string]int
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/wireless-controller/utm-profile"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -24183,8 +25875,9 @@ func (c *FortiSDKClient) UpdateWirelessControllerUtmProfile(data *map[string]int
 	path := "/api/v2/cmdb/wireless-controller/utm-profile"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -24210,7 +25903,9 @@ func (c *FortiSDKClient) ReadWirelessControllerUtmProfile(mkey string, vdomparam
 	path := "/api/v2/cmdb/wireless-controller/utm-profile"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -24223,8 +25918,9 @@ func (c *FortiSDKClient) CreateWirelessControllerVap(data *map[string]interface{
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/wireless-controller/vap"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -24237,8 +25933,9 @@ func (c *FortiSDKClient) UpdateWirelessControllerVap(data *map[string]interface{
 	path := "/api/v2/cmdb/wireless-controller/vap"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -24264,7 +25961,9 @@ func (c *FortiSDKClient) ReadWirelessControllerVap(mkey string, vdomparam string
 	path := "/api/v2/cmdb/wireless-controller/vap"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -24277,8 +25976,9 @@ func (c *FortiSDKClient) CreateWirelessControllerVapGroup(data *map[string]inter
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/wireless-controller/vap-group"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -24291,8 +25991,9 @@ func (c *FortiSDKClient) UpdateWirelessControllerVapGroup(data *map[string]inter
 	path := "/api/v2/cmdb/wireless-controller/vap-group"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -24318,7 +26019,9 @@ func (c *FortiSDKClient) ReadWirelessControllerVapGroup(mkey string, vdomparam s
 	path := "/api/v2/cmdb/wireless-controller/vap-group"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -24331,8 +26034,9 @@ func (c *FortiSDKClient) CreateWirelessControllerWagProfile(data *map[string]int
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/wireless-controller/wag-profile"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -24345,8 +26049,9 @@ func (c *FortiSDKClient) UpdateWirelessControllerWagProfile(data *map[string]int
 	path := "/api/v2/cmdb/wireless-controller/wag-profile"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -24372,7 +26077,9 @@ func (c *FortiSDKClient) ReadWirelessControllerWagProfile(mkey string, vdomparam
 	path := "/api/v2/cmdb/wireless-controller/wag-profile"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -24385,8 +26092,9 @@ func (c *FortiSDKClient) CreateWirelessControllerWidsProfile(data *map[string]in
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/wireless-controller/wids-profile"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -24399,8 +26107,9 @@ func (c *FortiSDKClient) UpdateWirelessControllerWidsProfile(data *map[string]in
 	path := "/api/v2/cmdb/wireless-controller/wids-profile"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -24426,7 +26135,9 @@ func (c *FortiSDKClient) ReadWirelessControllerWidsProfile(mkey string, vdompara
 	path := "/api/v2/cmdb/wireless-controller/wids-profile"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -24439,8 +26150,9 @@ func (c *FortiSDKClient) CreateWirelessControllerWtp(data *map[string]interface{
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/wireless-controller/wtp"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -24453,8 +26165,9 @@ func (c *FortiSDKClient) UpdateWirelessControllerWtp(data *map[string]interface{
 	path := "/api/v2/cmdb/wireless-controller/wtp"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -24480,7 +26193,9 @@ func (c *FortiSDKClient) ReadWirelessControllerWtp(mkey string, vdomparam string
 	path := "/api/v2/cmdb/wireless-controller/wtp"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -24493,8 +26208,9 @@ func (c *FortiSDKClient) CreateWirelessControllerWtpGroup(data *map[string]inter
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/wireless-controller/wtp-group"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -24507,8 +26223,9 @@ func (c *FortiSDKClient) UpdateWirelessControllerWtpGroup(data *map[string]inter
 	path := "/api/v2/cmdb/wireless-controller/wtp-group"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -24534,7 +26251,9 @@ func (c *FortiSDKClient) ReadWirelessControllerWtpGroup(mkey string, vdomparam s
 	path := "/api/v2/cmdb/wireless-controller/wtp-group"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -24547,8 +26266,9 @@ func (c *FortiSDKClient) CreateWirelessControllerWtpProfile(data *map[string]int
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/wireless-controller/wtp-profile"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -24561,8 +26281,9 @@ func (c *FortiSDKClient) UpdateWirelessControllerWtpProfile(data *map[string]int
 	path := "/api/v2/cmdb/wireless-controller/wtp-profile"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -24588,7 +26309,9 @@ func (c *FortiSDKClient) ReadWirelessControllerWtpProfile(mkey string, vdomparam
 	path := "/api/v2/cmdb/wireless-controller/wtp-profile"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -24601,8 +26324,9 @@ func (c *FortiSDKClient) CreateWirelessControllerHotspot20Anqp3GppCellular(data 
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/wireless-controller.hotspot20/anqp-3gpp-cellular"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -24615,8 +26339,9 @@ func (c *FortiSDKClient) UpdateWirelessControllerHotspot20Anqp3GppCellular(data 
 	path := "/api/v2/cmdb/wireless-controller.hotspot20/anqp-3gpp-cellular"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -24642,7 +26367,9 @@ func (c *FortiSDKClient) ReadWirelessControllerHotspot20Anqp3GppCellular(mkey st
 	path := "/api/v2/cmdb/wireless-controller.hotspot20/anqp-3gpp-cellular"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -24655,8 +26382,9 @@ func (c *FortiSDKClient) CreateWirelessControllerHotspot20AnqpIpAddressType(data
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/wireless-controller.hotspot20/anqp-ip-address-type"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -24669,8 +26397,9 @@ func (c *FortiSDKClient) UpdateWirelessControllerHotspot20AnqpIpAddressType(data
 	path := "/api/v2/cmdb/wireless-controller.hotspot20/anqp-ip-address-type"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -24696,7 +26425,9 @@ func (c *FortiSDKClient) ReadWirelessControllerHotspot20AnqpIpAddressType(mkey s
 	path := "/api/v2/cmdb/wireless-controller.hotspot20/anqp-ip-address-type"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -24709,8 +26440,9 @@ func (c *FortiSDKClient) CreateWirelessControllerHotspot20AnqpNaiRealm(data *map
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/wireless-controller.hotspot20/anqp-nai-realm"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -24723,8 +26455,9 @@ func (c *FortiSDKClient) UpdateWirelessControllerHotspot20AnqpNaiRealm(data *map
 	path := "/api/v2/cmdb/wireless-controller.hotspot20/anqp-nai-realm"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -24750,7 +26483,9 @@ func (c *FortiSDKClient) ReadWirelessControllerHotspot20AnqpNaiRealm(mkey string
 	path := "/api/v2/cmdb/wireless-controller.hotspot20/anqp-nai-realm"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -24763,8 +26498,9 @@ func (c *FortiSDKClient) CreateWirelessControllerHotspot20AnqpNetworkAuthType(da
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/wireless-controller.hotspot20/anqp-network-auth-type"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -24777,8 +26513,9 @@ func (c *FortiSDKClient) UpdateWirelessControllerHotspot20AnqpNetworkAuthType(da
 	path := "/api/v2/cmdb/wireless-controller.hotspot20/anqp-network-auth-type"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -24804,7 +26541,9 @@ func (c *FortiSDKClient) ReadWirelessControllerHotspot20AnqpNetworkAuthType(mkey
 	path := "/api/v2/cmdb/wireless-controller.hotspot20/anqp-network-auth-type"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -24817,8 +26556,9 @@ func (c *FortiSDKClient) CreateWirelessControllerHotspot20AnqpRoamingConsortium(
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/wireless-controller.hotspot20/anqp-roaming-consortium"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -24831,8 +26571,9 @@ func (c *FortiSDKClient) UpdateWirelessControllerHotspot20AnqpRoamingConsortium(
 	path := "/api/v2/cmdb/wireless-controller.hotspot20/anqp-roaming-consortium"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -24858,7 +26599,9 @@ func (c *FortiSDKClient) ReadWirelessControllerHotspot20AnqpRoamingConsortium(mk
 	path := "/api/v2/cmdb/wireless-controller.hotspot20/anqp-roaming-consortium"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -24871,8 +26614,9 @@ func (c *FortiSDKClient) CreateWirelessControllerHotspot20AnqpVenueName(data *ma
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/wireless-controller.hotspot20/anqp-venue-name"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -24885,8 +26629,9 @@ func (c *FortiSDKClient) UpdateWirelessControllerHotspot20AnqpVenueName(data *ma
 	path := "/api/v2/cmdb/wireless-controller.hotspot20/anqp-venue-name"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -24912,7 +26657,9 @@ func (c *FortiSDKClient) ReadWirelessControllerHotspot20AnqpVenueName(mkey strin
 	path := "/api/v2/cmdb/wireless-controller.hotspot20/anqp-venue-name"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -24925,8 +26672,9 @@ func (c *FortiSDKClient) CreateWirelessControllerHotspot20H2QpConnCapability(dat
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/wireless-controller.hotspot20/h2qp-conn-capability"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -24939,8 +26687,9 @@ func (c *FortiSDKClient) UpdateWirelessControllerHotspot20H2QpConnCapability(dat
 	path := "/api/v2/cmdb/wireless-controller.hotspot20/h2qp-conn-capability"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -24966,7 +26715,9 @@ func (c *FortiSDKClient) ReadWirelessControllerHotspot20H2QpConnCapability(mkey 
 	path := "/api/v2/cmdb/wireless-controller.hotspot20/h2qp-conn-capability"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -24979,8 +26730,9 @@ func (c *FortiSDKClient) CreateWirelessControllerHotspot20H2QpOperatorName(data 
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/wireless-controller.hotspot20/h2qp-operator-name"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -24993,8 +26745,9 @@ func (c *FortiSDKClient) UpdateWirelessControllerHotspot20H2QpOperatorName(data 
 	path := "/api/v2/cmdb/wireless-controller.hotspot20/h2qp-operator-name"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -25020,7 +26773,9 @@ func (c *FortiSDKClient) ReadWirelessControllerHotspot20H2QpOperatorName(mkey st
 	path := "/api/v2/cmdb/wireless-controller.hotspot20/h2qp-operator-name"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -25033,8 +26788,9 @@ func (c *FortiSDKClient) CreateWirelessControllerHotspot20H2QpOsuProvider(data *
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/wireless-controller.hotspot20/h2qp-osu-provider"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -25047,8 +26803,9 @@ func (c *FortiSDKClient) UpdateWirelessControllerHotspot20H2QpOsuProvider(data *
 	path := "/api/v2/cmdb/wireless-controller.hotspot20/h2qp-osu-provider"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -25074,7 +26831,9 @@ func (c *FortiSDKClient) ReadWirelessControllerHotspot20H2QpOsuProvider(mkey str
 	path := "/api/v2/cmdb/wireless-controller.hotspot20/h2qp-osu-provider"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -25087,8 +26846,9 @@ func (c *FortiSDKClient) CreateWirelessControllerHotspot20H2QpWanMetric(data *ma
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/wireless-controller.hotspot20/h2qp-wan-metric"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -25101,8 +26861,9 @@ func (c *FortiSDKClient) UpdateWirelessControllerHotspot20H2QpWanMetric(data *ma
 	path := "/api/v2/cmdb/wireless-controller.hotspot20/h2qp-wan-metric"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -25128,7 +26889,9 @@ func (c *FortiSDKClient) ReadWirelessControllerHotspot20H2QpWanMetric(mkey strin
 	path := "/api/v2/cmdb/wireless-controller.hotspot20/h2qp-wan-metric"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -25141,8 +26904,9 @@ func (c *FortiSDKClient) CreateWirelessControllerHotspot20HsProfile(data *map[st
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/wireless-controller.hotspot20/hs-profile"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -25155,8 +26919,9 @@ func (c *FortiSDKClient) UpdateWirelessControllerHotspot20HsProfile(data *map[st
 	path := "/api/v2/cmdb/wireless-controller.hotspot20/hs-profile"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -25182,7 +26947,9 @@ func (c *FortiSDKClient) ReadWirelessControllerHotspot20HsProfile(mkey string, v
 	path := "/api/v2/cmdb/wireless-controller.hotspot20/hs-profile"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -25195,8 +26962,9 @@ func (c *FortiSDKClient) CreateWirelessControllerHotspot20Icon(data *map[string]
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/wireless-controller.hotspot20/icon"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -25209,8 +26977,9 @@ func (c *FortiSDKClient) UpdateWirelessControllerHotspot20Icon(data *map[string]
 	path := "/api/v2/cmdb/wireless-controller.hotspot20/icon"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -25236,7 +27005,9 @@ func (c *FortiSDKClient) ReadWirelessControllerHotspot20Icon(mkey string, vdompa
 	path := "/api/v2/cmdb/wireless-controller.hotspot20/icon"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -25249,8 +27020,9 @@ func (c *FortiSDKClient) CreateWirelessControllerHotspot20QosMap(data *map[strin
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/wireless-controller.hotspot20/qos-map"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -25263,8 +27035,9 @@ func (c *FortiSDKClient) UpdateWirelessControllerHotspot20QosMap(data *map[strin
 	path := "/api/v2/cmdb/wireless-controller.hotspot20/qos-map"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -25290,7 +27063,9 @@ func (c *FortiSDKClient) ReadWirelessControllerHotspot20QosMap(mkey string, vdom
 	path := "/api/v2/cmdb/wireless-controller.hotspot20/qos-map"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -25303,8 +27078,9 @@ func (c *FortiSDKClient) CreateSystemVirtualSwitch(data *map[string]interface{},
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/system/virtual-switch"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -25317,8 +27093,9 @@ func (c *FortiSDKClient) UpdateSystemVirtualSwitch(data *map[string]interface{},
 	path := "/api/v2/cmdb/system/virtual-switch"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -25344,7 +27121,9 @@ func (c *FortiSDKClient) ReadSystemVirtualSwitch(mkey string, vdomparam string) 
 	path := "/api/v2/cmdb/system/virtual-switch"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -25357,8 +27136,9 @@ func (c *FortiSDKClient) CreateRouterbgpNeighbor(data *map[string]interface{}, v
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/router/bgp/neighbor"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -25371,8 +27151,9 @@ func (c *FortiSDKClient) UpdateRouterbgpNeighbor(data *map[string]interface{}, m
 	path := "/api/v2/cmdb/router/bgp/neighbor"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -25398,7 +27179,9 @@ func (c *FortiSDKClient) ReadRouterbgpNeighbor(mkey string, vdomparam string) (m
 	path := "/api/v2/cmdb/router/bgp/neighbor"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -25411,8 +27194,9 @@ func (c *FortiSDKClient) CreateRouterbgpNetwork(data *map[string]interface{}, vd
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/router/bgp/network"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -25425,8 +27209,9 @@ func (c *FortiSDKClient) UpdateRouterbgpNetwork(data *map[string]interface{}, mk
 	path := "/api/v2/cmdb/router/bgp/network"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -25452,7 +27237,9 @@ func (c *FortiSDKClient) ReadRouterbgpNetwork(mkey string, vdomparam string) (ma
 	path := "/api/v2/cmdb/router/bgp/network"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -25465,8 +27252,9 @@ func (c *FortiSDKClient) CreateRouterbgpNetwork6(data *map[string]interface{}, v
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/router/bgp/network6"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -25479,8 +27267,9 @@ func (c *FortiSDKClient) UpdateRouterbgpNetwork6(data *map[string]interface{}, m
 	path := "/api/v2/cmdb/router/bgp/network6"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -25506,7 +27295,9 @@ func (c *FortiSDKClient) ReadRouterbgpNetwork6(mkey string, vdomparam string) (m
 	path := "/api/v2/cmdb/router/bgp/network6"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -25519,8 +27310,9 @@ func (c *FortiSDKClient) CreateRouterospfOspfInterface(data *map[string]interfac
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/router/ospf/ospf-interface"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -25533,8 +27325,9 @@ func (c *FortiSDKClient) UpdateRouterospfOspfInterface(data *map[string]interfac
 	path := "/api/v2/cmdb/router/ospf/ospf-interface"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -25560,7 +27353,9 @@ func (c *FortiSDKClient) ReadRouterospfOspfInterface(mkey string, vdomparam stri
 	path := "/api/v2/cmdb/router/ospf/ospf-interface"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -25573,8 +27368,9 @@ func (c *FortiSDKClient) CreateRouterospfNetwork(data *map[string]interface{}, v
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/router/ospf/network"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -25587,8 +27383,9 @@ func (c *FortiSDKClient) UpdateRouterospfNetwork(data *map[string]interface{}, m
 	path := "/api/v2/cmdb/router/ospf/network"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -25614,7 +27411,9 @@ func (c *FortiSDKClient) ReadRouterospfNetwork(mkey string, vdomparam string) (m
 	path := "/api/v2/cmdb/router/ospf/network"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -25627,8 +27426,9 @@ func (c *FortiSDKClient) CreateRouterospfNeighbor(data *map[string]interface{}, 
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/router/ospf/neighbor"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -25641,8 +27441,9 @@ func (c *FortiSDKClient) UpdateRouterospfNeighbor(data *map[string]interface{}, 
 	path := "/api/v2/cmdb/router/ospf/neighbor"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -25668,7 +27469,9 @@ func (c *FortiSDKClient) ReadRouterospfNeighbor(mkey string, vdomparam string) (
 	path := "/api/v2/cmdb/router/ospf/neighbor"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
 
@@ -25681,8 +27484,9 @@ func (c *FortiSDKClient) CreateRouterospf6Ospf6Interface(data *map[string]interf
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/router/ospf6/ospf6-interface"
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -25695,8 +27499,9 @@ func (c *FortiSDKClient) UpdateRouterospf6Ospf6Interface(data *map[string]interf
 	path := "/api/v2/cmdb/router/ospf6/ospf6-interface"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
+	url_params := make(map[string][]string)
 
-	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam)
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, url_params)
 	return
 }
 
@@ -25722,6 +27527,8 @@ func (c *FortiSDKClient) ReadRouterospf6Ospf6Interface(mkey string, vdomparam st
 	path := "/api/v2/cmdb/router/ospf6/ospf6-interface"
 	path += "/" + escapeURLString(mkey)
 
-	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam)
+	url_params := make(map[string][]string)
+
+	mapTmp, err = read(c, HTTPMethod, path, true, vdomparam, url_params)
 	return
 }
