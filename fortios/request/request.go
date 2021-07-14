@@ -90,7 +90,7 @@ func (r *Request) Send2(retries int, ignvdom bool) error {
 		r.HTTPResponse = rsp
 		if errdo != nil {
 			if strings.Contains(errdo.Error(), "x509: ") {
-				err = fmt.Errorf("Error found: %v", filterapikey(errdo.Error()))
+				err = fmt.Errorf("error found: %v", filterapikey(errdo.Error()))
 				break
 			}
 
@@ -160,7 +160,7 @@ func (r *Request) Send3(vdomparam string) error {
 		r.HTTPResponse = rsp
 		if errdo != nil {
 			if strings.Contains(errdo.Error(), "x509: ") {
-				err = fmt.Errorf("Error found: %v", filterapikey(errdo.Error()))
+				err = fmt.Errorf("error found: %v", filterapikey(errdo.Error()))
 				break
 			}
 
@@ -226,12 +226,12 @@ func buildHeaders(r *Request, h *map[string][]string) *Request {
 // 		r.HTTPResponse = rsp
 // 		if errdo != nil {
 // 			if strings.Contains(errdo.Error(), "x509: ") {
-// 				err = fmt.Errorf("Error found: %v", filterapikey(errdo.Error()))
+// 				err = fmt.Errorf("error found: %v", filterapikey(errdo.Error()))
 // 				break
 // 			}
 
 // 			if retry > 15 {
-// 				err = fmt.Errorf("Error found: %v", filterapikey(errdo.Error()))
+// 				err = fmt.Errorf("error found: %v", filterapikey(errdo.Error()))
 // 				break
 // 			}
 // 			time.Sleep(time.Duration(1) * time.Second)
