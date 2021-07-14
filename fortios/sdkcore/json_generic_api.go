@@ -6,6 +6,7 @@ import (
 	"fmt"
 	"io/ioutil"
 	"log"
+	"net/url"
 
 	"github.com/poroping/forti-sdk-go/fortios/request"
 )
@@ -24,8 +25,14 @@ type JSONJSONGenericAPI struct {
 func (c *FortiSDKClient) CreateJSONGenericAPI(params *JSONJSONGenericAPI, vdomparam string, batch int) (res string, err error) {
 	HTTPMethod := params.Method
 	path := params.Path
-	path += "?"
-	path += params.Specialparams
+	urlparams := make(map[string][]string)
+	if params.Specialparams != "" {
+		urlparams, err = url.ParseQuery(params.Specialparams)
+		if err != nil {
+			err = fmt.Errorf("error parsing url parameters %q", params.Specialparams)
+			return
+		}
+	}
 
 	var req *request.Request
 
@@ -41,9 +48,9 @@ func (c *FortiSDKClient) CreateJSONGenericAPI(params *JSONJSONGenericAPI, vdompa
 		log.Printf("FOS-fortios resquest1: %s", locJSON)
 		bytes := bytes.NewBuffer(locJSON)
 
-		req = c.NewRequest(HTTPMethod, path, nil, bytes, batch)
+		req = c.NewRequest(HTTPMethod, path, &urlparams, bytes, batch)
 	} else {
-		req = c.NewRequest(HTTPMethod, path, nil, nil, batch)
+		req = c.NewRequest(HTTPMethod, path, &urlparams, nil, batch)
 	}
 
 	err = req.Send3(vdomparam)
@@ -83,8 +90,15 @@ func (c *FortiSDKClient) ReadJSONGenericAPI(mkey string) (output *JSONJSONGeneri
 
 // GenericGroupRead API operation for FortiOS, Read Generic Group
 func (c *FortiSDKClient) GenericGroupRead(path, specialparams, vdomparam string, batch int) (mapTmp []interface{}, err error) {
-	path += specialparams
-	req := c.NewRequest("GET", path, nil, nil, batch)
+	urlparams := make(map[string][]string)
+	if specialparams != "" {
+		urlparams, err = url.ParseQuery(specialparams)
+		if err != nil {
+			err = fmt.Errorf("error parsing url parameters %q", specialparams)
+			return
+		}
+	}
+	req := c.NewRequest("GET", path, &urlparams, nil, batch)
 	err = req.Send3(vdomparam)
 	if err != nil || req.HTTPResponse == nil {
 		err = fmt.Errorf("cannot send request %v", err)
