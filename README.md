@@ -3,5 +3,3 @@
 ## Features
 
 * FortiOS
-* FortiManager
-* FortiManager2

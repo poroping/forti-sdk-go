@@ -54,7 +54,7 @@ func (c *FortiSDKClient) CreateSystemLicenseVDOM(params *JSONSystemLicenseVDOM) 
 	// }
 
 	bytes := bytes.NewBuffer(locJSON)
-	req := c.NewRequest(HTTPMethod, path, nil, bytes)
+	req := c.NewRequest(HTTPMethod, path, nil, bytes, 0)
 	err = req.Send()
 	if err != nil || req.HTTPResponse == nil {
 		err = fmt.Errorf("cannot send request %s", err)
@@ -191,7 +191,7 @@ func (c *FortiSDKClient) ReadSystemLicenseVDOM(mkey string) (output *JSONSystemL
 
 	output = &JSONSystemLicenseVDOM{}
 
-	req := c.NewRequest(HTTPMethod, path, nil, nil)
+	req := c.NewRequest(HTTPMethod, path, nil, nil, 0)
 	err = req.Send()
 	if err != nil || req.HTTPResponse == nil {
 		err = fmt.Errorf("cannot send request %s", err)
@@ -247,7 +247,7 @@ func (c *FortiSDKClient) ReadSystemLicenseVDOM(mkey string) (output *JSONSystemL
 			}
 		}
 
-		if bFind == false {
+		if !bFind {
 			err = fmt.Errorf("cannot get vdom property from the response")
 			return
 		}

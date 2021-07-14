@@ -53,7 +53,7 @@ func (c *FortiSDKClient) CreateSystemLicenseFortiCare(params *JSONSystemLicenseF
 	// }
 
 	bytes := bytes.NewBuffer(locJSON)
-	req := c.NewRequest(HTTPMethod, path, nil, bytes)
+	req := c.NewRequest(HTTPMethod, path, nil, bytes, 0)
 	err = req.Send()
 	if err != nil || req.HTTPResponse == nil {
 		err = fmt.Errorf("cannot send request %s", err)
@@ -199,7 +199,7 @@ func (c *FortiSDKClient) ReadSystemLicenseFortiCare(mkey string) (output *JSONSy
 
 	output = &JSONSystemLicenseFortiCare{}
 
-	req := c.NewRequest(HTTPMethod, path, nil, nil)
+	req := c.NewRequest(HTTPMethod, path, nil, nil, 0)
 	err = req.Send()
 	if err != nil || req.HTTPResponse == nil {
 		err = fmt.Errorf("cannot send request %s", err)
@@ -254,7 +254,7 @@ func (c *FortiSDKClient) ReadSystemLicenseFortiCare(mkey string) (output *JSONSy
 			}
 		}
 
-		if bFind == false {
+		if !bFind {
 			err = fmt.Errorf("cannot get forticare property from the response")
 			return
 		}

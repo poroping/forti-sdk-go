@@ -45,7 +45,7 @@ func (c *FortiSDKClient) CreateSystemLicenseVM(params *JSONSystemLicenseVM) (out
 
 	log.Printf("FOS-fortios resquest1: %s", locJSON)
 	bytes := bytes.NewBuffer(locJSON)
-	req := c.NewRequest(HTTPMethod, path, nil, bytes)
+	req := c.NewRequest(HTTPMethod, path, nil, bytes, 0)
 	err = req.Send()
 	if err != nil || req.HTTPResponse == nil {
 		err = fmt.Errorf("cannot send request %s", err)

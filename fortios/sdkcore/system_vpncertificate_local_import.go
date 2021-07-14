@@ -19,21 +19,21 @@ type JSONSystemVpnCertificateLocalImport struct {
 }
 
 // Uploads certificate to Fortigate
-func (c *FortiSDKClient) CreateSystemVpnCertificateLocalImport(params *JSONSystemVpnCertificateLocalImport, vdomparam string) (res string, err error) {
+func (c *FortiSDKClient) CreateSystemVpnCertificateLocalImport(data *JSONSystemVpnCertificateLocalImport, vdomparam string, batch int) (res string, err error) {
 	HTTPMethod := "POST"
 	path := "/api/v2/monitor/vpn-certificate/local/import"
-	params.Certificate = base64.StdEncoding.EncodeToString([]byte(params.Certificate))
-	if params.PrivateKey != "" {
-		params.PrivateKey = base64.StdEncoding.EncodeToString([]byte(params.PrivateKey))
+	data.Certificate = base64.StdEncoding.EncodeToString([]byte(data.Certificate))
+	if data.PrivateKey != "" {
+		data.PrivateKey = base64.StdEncoding.EncodeToString([]byte(data.PrivateKey))
 	}
-	locJSON, err := json.Marshal(params)
+	locJSON, err := json.Marshal(data)
 	if err != nil {
 		log.Fatal(err)
 		return
 	}
 
 	bytes := bytes.NewBuffer(locJSON)
-	req := c.NewRequest(HTTPMethod, path, nil, bytes)
+	req := c.NewRequest(HTTPMethod, path, nil, bytes, batch)
 	err = req.Send3(vdomparam)
 	if err != nil || req.HTTPResponse == nil {
 		err = fmt.Errorf("cannot send request %s", err)

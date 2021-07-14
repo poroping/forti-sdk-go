@@ -73,8 +73,8 @@ func NewClient(auth *auth.Auth, client *http.Client) (*FortiSDKClient, error) {
 
 // NewRequest creates the request to FortiOS for the client
 // and return it to the client
-func (c *FortiSDKClient) NewRequest(method string, path string, params *map[string][]string, data *bytes.Buffer) *request.Request {
-	return request.New(c.Config, method, path, params, data)
+func (c *FortiSDKClient) NewRequest(method string, path string, params *map[string][]string, data *bytes.Buffer, batch int) *request.Request {
+	return request.New(c.Config, method, path, params, data, batch)
 }
 
 // GetDeviceVersion gets the version of FortiOS
@@ -83,7 +83,7 @@ func (c *FortiSDKClient) GetDeviceVersion() (version string, err error) {
 	HTTPMethod := "GET"
 	path := "/api/v2/cmdb/system/global"
 
-	req := c.NewRequest(HTTPMethod, path, nil, nil)
+	req := c.NewRequest(HTTPMethod, path, nil, nil, 0)
 	err = req.Send2(2, true)
 	if err != nil || req.HTTPResponse == nil {
 		err = fmt.Errorf("cannot send request, %s", err)

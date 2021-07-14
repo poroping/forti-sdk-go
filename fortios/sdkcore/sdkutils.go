@@ -8,7 +8,7 @@ import (
 	"log"
 )
 
-func createUpdate(c *FortiSDKClient, method string, path string, data *map[string]interface{}, output map[string]interface{}, vdomparam string, url_params map[string][]string) (err error) {
+func createUpdate(c *FortiSDKClient, method string, path string, data *map[string]interface{}, output map[string]interface{}, vdomparam string, urlparams map[string][]string, batch int) (err error) {
 	locJSON, err := json.Marshal(data)
 	if err != nil {
 		log.Fatal(err)
@@ -17,7 +17,7 @@ func createUpdate(c *FortiSDKClient, method string, path string, data *map[strin
 
 	bytes := bytes.NewBuffer(locJSON)
 
-	req := c.NewRequest(method, path, &url_params, bytes)
+	req := c.NewRequest(method, path, &urlparams, bytes, batch)
 	err = req.Send3(vdomparam)
 	if err != nil || req.HTTPResponse == nil {
 		err = fmt.Errorf("cannot send request %v", err)
@@ -49,9 +49,9 @@ func createUpdate(c *FortiSDKClient, method string, path string, data *map[strin
 	return
 }
 
-func delete(c *FortiSDKClient, method string, path string, vdomparam string) (err error) {
+func delete(c *FortiSDKClient, method string, path string, vdomparam string, batch int) (err error) {
 
-	req := c.NewRequest(method, path, nil, nil)
+	req := c.NewRequest(method, path, nil, nil, batch)
 	err = req.Send3(vdomparam)
 	if err != nil || req.HTTPResponse == nil {
 		err = fmt.Errorf("cannot send request %v", err)
@@ -75,8 +75,8 @@ func delete(c *FortiSDKClient, method string, path string, vdomparam string) (er
 	return
 }
 
-func read(c *FortiSDKClient, method string, path string, bcomplex bool, vdomparam string, url_params map[string][]string) (mapTmp map[string]interface{}, err error) {
-	req := c.NewRequest(method, path, &url_params, nil)
+func read(c *FortiSDKClient, method string, path string, bcomplex bool, vdomparam string, urlparams map[string][]string, batch int) (mapTmp map[string]interface{}, err error) {
+	req := c.NewRequest(method, path, &urlparams, nil, batch)
 	err = req.Send3(vdomparam)
 	if err != nil || req.HTTPResponse == nil {
 		err = fmt.Errorf("cannot send request %v", err)
@@ -95,7 +95,7 @@ func read(c *FortiSDKClient, method string, path string, bcomplex bool, vdompara
 	var result map[string]interface{}
 	json.Unmarshal([]byte(string(body)), &result)
 
-	if fortiAPIHttpStatus404Checking(result) == true {
+	if fortiAPIHttpStatus404Checking(result) {
 		mapTmp = nil
 		return
 	}
