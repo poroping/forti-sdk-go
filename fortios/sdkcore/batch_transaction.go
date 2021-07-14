@@ -8,16 +8,15 @@ import (
 	"log"
 )
 
-func (c *FortiSDKClient) StartBatch(timeout int, vdomparam string) (err error) {
+func (c *FortiSDKClient) StartBatch(timeout int, vdomparam string) (batchid int, err error) {
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb"
 
 	params := make(map[string][]string)
 	params["action"] = []string{"transaction-start"}
 
-	data := map[string]int{
-		"timeout": timeout,
-	}
+	data := make(map[string]interface{})
+	data["timeout"] = timeout
 
 	locJSON, err := json.Marshal(data)
 	if err != nil {
@@ -48,6 +47,12 @@ func (c *FortiSDKClient) StartBatch(timeout int, vdomparam string) (err error) {
 
 	err = fortiAPIErrorFormat(result, string(body))
 
+	if result != nil {
+		if result["results"] != nil {
+			batchid = int(result["results"].(map[string]interface{})["transaction-id"].(float64))
+		}
+	}
+
 	return
 }
 
@@ -58,9 +63,8 @@ func (c *FortiSDKClient) CommitBatch(vdomparam string, batch int) (err error) {
 	params := make(map[string][]string)
 	params["action"] = []string{"transaction-commit"}
 
-	data := map[string]int{
-		"transaction-id": batch,
-	}
+	data := make(map[string]interface{})
+	data["transaction-id"] = batch
 
 	locJSON, err := json.Marshal(data)
 	if err != nil {
@@ -101,9 +105,8 @@ func (c *FortiSDKClient) AbortBatch(vdomparam string, batch int) (err error) {
 	params := make(map[string][]string)
 	params["action"] = []string{"transaction-abort"}
 
-	data := map[string]int{
-		"transaction-id": batch,
-	}
+	data := make(map[string]interface{})
+	data["transaction-id"] = batch
 
 	locJSON, err := json.Marshal(data)
 	if err != nil {
