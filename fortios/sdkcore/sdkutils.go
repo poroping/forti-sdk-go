@@ -8,7 +8,7 @@ import (
 	"log"
 )
 
-func createUpdate(c *FortiSDKClient, method string, path string, data *map[string]interface{}, output map[string]interface{}, vdomparam string, batch int, urlparams map[string][]string) (err error) {
+func createUpdate(c *FortiSDKClient, method string, path string, data *map[string]interface{}, output map[string]interface{}, vdomparam string, urlparams map[string][]string, batch int) (err error) {
 	locJSON, err := json.Marshal(data)
 	if err != nil {
 		log.Fatal(err)
@@ -75,7 +75,7 @@ func delete(c *FortiSDKClient, method string, path string, vdomparam string, bat
 	return
 }
 
-func read(c *FortiSDKClient, method string, path string, bcomplex bool, vdomparam string, batch int, urlparams map[string][]string) (mapTmp map[string]interface{}, err error) {
+func read(c *FortiSDKClient, method string, path string, bcomplex bool, vdomparam string, urlparams map[string][]string, batch int) (mapTmp map[string]interface{}, err error) {
 	req := c.NewRequest(method, path, &urlparams, nil, batch)
 	err = req.Send3(vdomparam)
 	if err != nil || req.HTTPResponse == nil {
