@@ -25842,7 +25842,7 @@ func (c *FortiSDKClient) ReadFirewallAccessProxyVirtualHost(mkey string, vdompar
 func (c *FortiSDKClient) CreateVpnsslAuthenticationRule(data *map[string]interface{}, vdomparam string, urlparams map[string][]string, batchid int) (output map[string]interface{}, err error) {
 
 	HTTPMethod := "POST"
-	path := "/api/v2/cmdb/firewall/vpn.ssl/settings/authentication-rule"
+	path := "/api/v2/cmdb/vpn.ssl/settings/authentication-rule"
 	output = make(map[string]interface{})
 
 	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, urlparams, batchid)
@@ -25855,7 +25855,7 @@ func (c *FortiSDKClient) CreateVpnsslAuthenticationRule(data *map[string]interfa
 // See the vpn.ssl settings chapter in the FortiOS Handbook - CLI Reference.
 func (c *FortiSDKClient) UpdateVpnsslAuthenticationRule(data *map[string]interface{}, mkey string, vdomparam string, urlparams map[string][]string, batchid int) (output map[string]interface{}, err error) {
 	HTTPMethod := "PUT"
-	path := "/api/v2/cmdb/firewall/vpn.ssl/settings/authentication-rule"
+	path := "/api/v2/cmdb/vpn.ssl/settings/authentication-rule"
 	path += "/" + escapeURLString(mkey)
 	output = make(map[string]interface{})
 
@@ -25868,7 +25868,7 @@ func (c *FortiSDKClient) UpdateVpnsslAuthenticationRule(data *map[string]interfa
 // See the vpn.ssl settings chapter in the FortiOS Handbook - CLI Reference.
 func (c *FortiSDKClient) DeleteVpnsslAuthenticationRule(mkey string, vdomparam string, batchid int) (err error) {
 	HTTPMethod := "DELETE"
-	path := "/api/v2/cmdb/firewall/vpn.ssl/settings/authentication-rule"
+	path := "/api/v2/cmdb/vpn.ssl/settings/authentication-rule"
 	path += "/" + escapeURLString(mkey)
 
 	err = delete(c, HTTPMethod, path, vdomparam, batchid)
@@ -25882,7 +25882,7 @@ func (c *FortiSDKClient) DeleteVpnsslAuthenticationRule(mkey string, vdomparam s
 // See the vpn.ssl settings chapter in the FortiOS Handbook - CLI Reference.
 func (c *FortiSDKClient) ReadVpnsslAuthenticationRule(mkey string, vdomparam string, urlparams map[string][]string, batchid int) (mapTmp map[string]interface{}, err error) {
 	HTTPMethod := "GET"
-	path := "/api/v2/cmdb/firewall/vpn.ssl/settings/authentication-rule"
+	path := "/api/v2/cmdb/vpn.ssl/settings/authentication-rule"
 	path += "/" + escapeURLString(mkey)
 
 	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam, urlparams, batchid)
