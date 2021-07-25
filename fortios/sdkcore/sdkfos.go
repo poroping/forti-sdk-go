@@ -25835,11 +25835,11 @@ func (c *FortiSDKClient) ReadFirewallAccessProxyVirtualHost(mkey string, vdompar
 	return
 }
 
-// CreateVpnsslsettingsuthenticationRule API operation for FortiOS creates a new SSL VPN Authentication Rule.
+// CreateVpnsslsettingsAuthenticationRule API operation for FortiOS creates a new SSL VPN Authentication Rule.
 // Returns the index value of the SSL VPN Authentication Rule and execution result when the request executes successfully.
 // Returns error for service API and SDK errors.
 // See the vpn.ssl settings chapter in the FortiOS Handbook - CLI Reference.
-func (c *FortiSDKClient) CreateVpnsslsettingsuthenticationRule(data *map[string]interface{}, vdomparam string, urlparams map[string][]string, batchid int) (output map[string]interface{}, err error) {
+func (c *FortiSDKClient) CreateVpnsslsettingsAuthenticationRule(data *map[string]interface{}, vdomparam string, urlparams map[string][]string, batchid int) (output map[string]interface{}, err error) {
 
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/vpn.ssl/settings/authentication-rule"
@@ -25849,11 +25849,11 @@ func (c *FortiSDKClient) CreateVpnsslsettingsuthenticationRule(data *map[string]
 	return
 }
 
-// UpdateVpnsslsettingsuthenticationRule API operation for FortiOS updates the specified SSL VPN Authentication Rule.
+// UpdateVpnsslsettingsAuthenticationRule API operation for FortiOS updates the specified SSL VPN Authentication Rule.
 // Returns the index value of the SSL VPN Authentication Rule and execution result when the request executes successfully.
 // Returns error for service API and SDK errors.
 // See the vpn.ssl settings chapter in the FortiOS Handbook - CLI Reference.
-func (c *FortiSDKClient) UpdateVpnsslsettingsuthenticationRule(data *map[string]interface{}, mkey string, vdomparam string, urlparams map[string][]string, batchid int) (output map[string]interface{}, err error) {
+func (c *FortiSDKClient) UpdateVpnsslsettingsAuthenticationRule(data *map[string]interface{}, mkey string, vdomparam string, urlparams map[string][]string, batchid int) (output map[string]interface{}, err error) {
 	HTTPMethod := "PUT"
 	path := "/api/v2/cmdb/vpn.ssl/settings/authentication-rule"
 	path += "/" + escapeURLString(mkey)
@@ -25863,10 +25863,10 @@ func (c *FortiSDKClient) UpdateVpnsslsettingsuthenticationRule(data *map[string]
 	return
 }
 
-// DeleteVpnsslsettingsuthenticationRule API operation for FortiOS deletes the specified SSL VPN Authentication Rule.
+// DeleteVpnsslsettingsAuthenticationRule API operation for FortiOS deletes the specified SSL VPN Authentication Rule.
 // Returns error for service API and SDK errors.
 // See the vpn.ssl settings chapter in the FortiOS Handbook - CLI Reference.
-func (c *FortiSDKClient) DeleteVpnsslsettingsuthenticationRule(mkey string, vdomparam string, batchid int) (err error) {
+func (c *FortiSDKClient) DeleteVpnsslsettingsAuthenticationRule(mkey string, vdomparam string, batchid int) (err error) {
 	HTTPMethod := "DELETE"
 	path := "/api/v2/cmdb/vpn.ssl/settings/authentication-rule"
 	path += "/" + escapeURLString(mkey)
@@ -25875,12 +25875,12 @@ func (c *FortiSDKClient) DeleteVpnsslsettingsuthenticationRule(mkey string, vdom
 	return
 }
 
-// ReadVpnsslsettingsuthenticationRule API operation for FortiOS gets the SSL VPN Authentication Rule
+// ReadVpnsslsettingsAuthenticationRule API operation for FortiOS gets the SSL VPN Authentication Rule
 // with the specified index value.
 // Returns the requested SSL VPN Authentication Rule value when the request executes successfully.
 // Returns error for service API and SDK errors.
 // See the vpn.ssl settings chapter in the FortiOS Handbook - CLI Reference.
-func (c *FortiSDKClient) ReadVpnsslsettingsuthenticationRule(mkey string, vdomparam string, urlparams map[string][]string, batchid int) (mapTmp map[string]interface{}, err error) {
+func (c *FortiSDKClient) ReadVpnsslsettingsAuthenticationRule(mkey string, vdomparam string, urlparams map[string][]string, batchid int) (mapTmp map[string]interface{}, err error) {
 	HTTPMethod := "GET"
 	path := "/api/v2/cmdb/vpn.ssl/settings/authentication-rule"
 	path += "/" + escapeURLString(mkey)
