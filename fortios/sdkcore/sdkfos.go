@@ -25835,11 +25835,11 @@ func (c *FortiSDKClient) ReadFirewallAccessProxyVirtualHost(mkey string, vdompar
 	return
 }
 
-// CreateVpnsslAuthenticationRule API operation for FortiOS creates a new SSL VPN Authentication Rule.
+// CreateVpnsslsettingsuthenticationRule API operation for FortiOS creates a new SSL VPN Authentication Rule.
 // Returns the index value of the SSL VPN Authentication Rule and execution result when the request executes successfully.
 // Returns error for service API and SDK errors.
 // See the vpn.ssl settings chapter in the FortiOS Handbook - CLI Reference.
-func (c *FortiSDKClient) CreateVpnsslAuthenticationRule(data *map[string]interface{}, vdomparam string, urlparams map[string][]string, batchid int) (output map[string]interface{}, err error) {
+func (c *FortiSDKClient) CreateVpnsslsettingsuthenticationRule(data *map[string]interface{}, vdomparam string, urlparams map[string][]string, batchid int) (output map[string]interface{}, err error) {
 
 	HTTPMethod := "POST"
 	path := "/api/v2/cmdb/vpn.ssl/settings/authentication-rule"
@@ -25849,11 +25849,11 @@ func (c *FortiSDKClient) CreateVpnsslAuthenticationRule(data *map[string]interfa
 	return
 }
 
-// UpdateVpnsslAuthenticationRule API operation for FortiOS updates the specified SSL VPN Authentication Rule.
+// UpdateVpnsslsettingsuthenticationRule API operation for FortiOS updates the specified SSL VPN Authentication Rule.
 // Returns the index value of the SSL VPN Authentication Rule and execution result when the request executes successfully.
 // Returns error for service API and SDK errors.
 // See the vpn.ssl settings chapter in the FortiOS Handbook - CLI Reference.
-func (c *FortiSDKClient) UpdateVpnsslAuthenticationRule(data *map[string]interface{}, mkey string, vdomparam string, urlparams map[string][]string, batchid int) (output map[string]interface{}, err error) {
+func (c *FortiSDKClient) UpdateVpnsslsettingsuthenticationRule(data *map[string]interface{}, mkey string, vdomparam string, urlparams map[string][]string, batchid int) (output map[string]interface{}, err error) {
 	HTTPMethod := "PUT"
 	path := "/api/v2/cmdb/vpn.ssl/settings/authentication-rule"
 	path += "/" + escapeURLString(mkey)
@@ -25863,10 +25863,10 @@ func (c *FortiSDKClient) UpdateVpnsslAuthenticationRule(data *map[string]interfa
 	return
 }
 
-// DeleteVpnsslAuthenticationRule API operation for FortiOS deletes the specified SSL VPN Authentication Rule.
+// DeleteVpnsslsettingsuthenticationRule API operation for FortiOS deletes the specified SSL VPN Authentication Rule.
 // Returns error for service API and SDK errors.
 // See the vpn.ssl settings chapter in the FortiOS Handbook - CLI Reference.
-func (c *FortiSDKClient) DeleteVpnsslAuthenticationRule(mkey string, vdomparam string, batchid int) (err error) {
+func (c *FortiSDKClient) DeleteVpnsslsettingsuthenticationRule(mkey string, vdomparam string, batchid int) (err error) {
 	HTTPMethod := "DELETE"
 	path := "/api/v2/cmdb/vpn.ssl/settings/authentication-rule"
 	path += "/" + escapeURLString(mkey)
@@ -25875,14 +25875,122 @@ func (c *FortiSDKClient) DeleteVpnsslAuthenticationRule(mkey string, vdomparam s
 	return
 }
 
-// ReadVpnsslAuthenticationRule API operation for FortiOS gets the SSL VPN Authentication Rule
+// ReadVpnsslsettingsuthenticationRule API operation for FortiOS gets the SSL VPN Authentication Rule
 // with the specified index value.
 // Returns the requested SSL VPN Authentication Rule value when the request executes successfully.
 // Returns error for service API and SDK errors.
 // See the vpn.ssl settings chapter in the FortiOS Handbook - CLI Reference.
-func (c *FortiSDKClient) ReadVpnsslAuthenticationRule(mkey string, vdomparam string, urlparams map[string][]string, batchid int) (mapTmp map[string]interface{}, err error) {
+func (c *FortiSDKClient) ReadVpnsslsettingsuthenticationRule(mkey string, vdomparam string, urlparams map[string][]string, batchid int) (mapTmp map[string]interface{}, err error) {
 	HTTPMethod := "GET"
 	path := "/api/v2/cmdb/vpn.ssl/settings/authentication-rule"
+	path += "/" + escapeURLString(mkey)
+
+	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam, urlparams, batchid)
+	return
+}
+
+// CreateRouterbgpNeighborRange API operation for FortiOS creates a new Neighbor.
+// Returns the index value of the Neighbor and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the router/bgp - neighbor chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) CreateRouterbgpNeighborRange(data *map[string]interface{}, vdomparam string, urlparams map[string][]string, batchid int) (output map[string]interface{}, err error) {
+
+	HTTPMethod := "POST"
+	path := "/api/v2/cmdb/router/bgp/neighbor-range"
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, urlparams, batchid)
+	return
+}
+
+// UpdateRouterbgpNeighborRange API operation for FortiOS updates the specified Neighbor.
+// Returns the index value of the Neighbor and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the router/bgp - neighbor chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) UpdateRouterbgpNeighborRange(data *map[string]interface{}, mkey string, vdomparam string, urlparams map[string][]string, batchid int) (output map[string]interface{}, err error) {
+	HTTPMethod := "PUT"
+	path := "/api/v2/cmdb/router/bgp/neighbor-range"
+	path += "/" + escapeURLString(mkey)
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, urlparams, batchid)
+	return
+}
+
+// DeleteRouterbgpNeighborRange API operation for FortiOS deletes the specified Neighbor.
+// Returns error for service API and SDK errors.
+// See the router/bgp - neighbor chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) DeleteRouterbgpNeighborRange(mkey string, vdomparam string, batchid int) (err error) {
+	HTTPMethod := "DELETE"
+	path := "/api/v2/cmdb/router/bgp/neighbor-range"
+	path += "/" + escapeURLString(mkey)
+
+	err = delete(c, HTTPMethod, path, vdomparam, batchid)
+	return
+}
+
+// ReadRouterbgpNeighborRange API operation for FortiOS gets the Neighbor
+// with the specified index value.
+// Returns the requested Neighbor value when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the router/bgp - neighbor chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) ReadRouterbgpNeighborRange(mkey string, vdomparam string, urlparams map[string][]string, batchid int) (mapTmp map[string]interface{}, err error) {
+	HTTPMethod := "GET"
+	path := "/api/v2/cmdb/router/bgp/neighbor-range"
+	path += "/" + escapeURLString(mkey)
+
+	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam, urlparams, batchid)
+	return
+}
+
+// CreateRouterbgpNeighborGroup API operation for FortiOS creates a new Neighbor.
+// Returns the index value of the Neighbor and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the router/bgp - neighbor chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) CreateRouterbgpNeighborGroup(data *map[string]interface{}, vdomparam string, urlparams map[string][]string, batchid int) (output map[string]interface{}, err error) {
+
+	HTTPMethod := "POST"
+	path := "/api/v2/cmdb/router/bgp/neighbor-group"
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, urlparams, batchid)
+	return
+}
+
+// UpdateRouterbgpNeighborGroup API operation for FortiOS updates the specified Neighbor.
+// Returns the index value of the Neighbor and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the router/bgp - neighbor chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) UpdateRouterbgpNeighborGroup(data *map[string]interface{}, mkey string, vdomparam string, urlparams map[string][]string, batchid int) (output map[string]interface{}, err error) {
+	HTTPMethod := "PUT"
+	path := "/api/v2/cmdb/router/bgp/neighbor-group"
+	path += "/" + escapeURLString(mkey)
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, urlparams, batchid)
+	return
+}
+
+// DeleteRouterbgpNeighborGroup API operation for FortiOS deletes the specified Neighbor.
+// Returns error for service API and SDK errors.
+// See the router/bgp - neighbor chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) DeleteRouterbgpNeighborGroup(mkey string, vdomparam string, batchid int) (err error) {
+	HTTPMethod := "DELETE"
+	path := "/api/v2/cmdb/router/bgp/neighbor-group"
+	path += "/" + escapeURLString(mkey)
+
+	err = delete(c, HTTPMethod, path, vdomparam, batchid)
+	return
+}
+
+// ReadRouterbgpNeighborGroup API operation for FortiOS gets the Neighbor
+// with the specified index value.
+// Returns the requested Neighbor value when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the router/bgp - neighbor chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) ReadRouterbgpNeighborGroup(mkey string, vdomparam string, urlparams map[string][]string, batchid int) (mapTmp map[string]interface{}, err error) {
+	HTTPMethod := "GET"
+	path := "/api/v2/cmdb/router/bgp/neighbor-group"
 	path += "/" + escapeURLString(mkey)
 
 	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam, urlparams, batchid)
