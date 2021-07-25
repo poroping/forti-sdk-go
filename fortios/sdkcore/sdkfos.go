@@ -25996,3 +25996,327 @@ func (c *FortiSDKClient) ReadRouterbgpNeighborGroup(mkey string, vdomparam strin
 	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam, urlparams, batchid)
 	return
 }
+
+// CreateSystemsdwanDuplication API operation for FortiOS updates the specified Sdwan Duplication.
+// Returns the index value of the Sdwan and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the system - sdwan chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) CreateSystemsdwanDuplication(data *map[string]interface{}, vdomparam string, urlparams map[string][]string, batchid int) (output map[string]interface{}, err error) {
+
+	HTTPMethod := "POST"
+	path := "/api/v2/cmdb/system/sdwan/duplication"
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, urlparams, batchid)
+	return
+}
+
+// UpdateSystemsdwanDuplication API operation for FortiOS updates the specified Sdwan Duplication.
+// Returns the index value of the Sdwan and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the system - sdwan chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) UpdateSystemsdwanDuplication(data *map[string]interface{}, mkey string, vdomparam string, urlparams map[string][]string, batchid int) (output map[string]interface{}, err error) {
+	HTTPMethod := "PUT"
+	path := "/api/v2/cmdb/system/sdwan/duplication"
+	path += "/" + escapeURLString(mkey)
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, urlparams, batchid)
+	return
+}
+
+// DeleteSystemsdwanDuplication API operation for FortiOS deletes the specified Sdwan Duplication.
+// Returns error for service API and SDK errors.
+// See the system - sdwan chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) DeleteSystemsdwanDuplication(mkey string, vdomparam string, batchid int) (err error) {
+	HTTPMethod := "DELETE"
+	path := "/api/v2/cmdb/system/sdwan/duplication"
+	path += "/" + escapeURLString(mkey)
+
+	err = delete(c, HTTPMethod, path, vdomparam, batchid)
+	return
+}
+
+// ReadSystemsdwanDuplication API operation for FortiOS gets the Sdwan Duplication
+// with the specified index value.
+// Returns the requested Sdwan Duplication value when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the system - sdwan chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) ReadSystemsdwanDuplication(mkey string, vdomparam string, urlparams map[string][]string, batchid int) (mapTmp map[string]interface{}, err error) {
+	HTTPMethod := "GET"
+	path := "/api/v2/cmdb/system/sdwan/duplication"
+	path += "/" + escapeURLString(mkey)
+
+	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam, urlparams, batchid)
+	return
+}
+
+// CreateSystemsdwanHealthCheck API operation for FortiOS updates the specified Sdwan HealthCheck.
+// Returns the index value of the Sdwan and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the system - sdwan chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) CreateSystemsdwanHealthCheck(data *map[string]interface{}, vdomparam string, urlparams map[string][]string, batchid int) (output map[string]interface{}, err error) {
+
+	HTTPMethod := "POST"
+	path := "/api/v2/cmdb/system/sdwan/health-check"
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, urlparams, batchid)
+	return
+}
+
+// UpdateSystemsdwanHealthCheck API operation for FortiOS updates the specified Sdwan HealthCheck.
+// Returns the index value of the Sdwan and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the system - sdwan chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) UpdateSystemsdwanHealthCheck(data *map[string]interface{}, mkey string, vdomparam string, urlparams map[string][]string, batchid int) (output map[string]interface{}, err error) {
+	HTTPMethod := "PUT"
+	path := "/api/v2/cmdb/system/sdwan/health-check"
+	path += "/" + escapeURLString(mkey)
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, urlparams, batchid)
+	return
+}
+
+// DeleteSystemsdwanHealthCheck API operation for FortiOS deletes the specified Sdwan HealthCheck.
+// Returns error for service API and SDK errors.
+// See the system - sdwan chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) DeleteSystemsdwanHealthCheck(mkey string, vdomparam string, batchid int) (err error) {
+	HTTPMethod := "DELETE"
+	path := "/api/v2/cmdb/system/sdwan/health-check"
+	path += "/" + escapeURLString(mkey)
+
+	err = delete(c, HTTPMethod, path, vdomparam, batchid)
+	return
+}
+
+// ReadSystemsdwanHealthCheck API operation for FortiOS gets the Sdwan HealthCheck
+// with the specified index value.
+// Returns the requested Sdwan HealthCheck value when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the system - sdwan chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) ReadSystemsdwanHealthCheck(mkey string, vdomparam string, urlparams map[string][]string, batchid int) (mapTmp map[string]interface{}, err error) {
+	HTTPMethod := "GET"
+	path := "/api/v2/cmdb/system/sdwan/health-check"
+	path += "/" + escapeURLString(mkey)
+
+	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam, urlparams, batchid)
+	return
+}
+
+// CreateSystemsdwanMembers API operation for FortiOS updates the specified Sdwan Members.
+// Returns the index value of the Sdwan and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the system - sdwan chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) CreateSystemsdwanMembers(data *map[string]interface{}, vdomparam string, urlparams map[string][]string, batchid int) (output map[string]interface{}, err error) {
+
+	HTTPMethod := "POST"
+	path := "/api/v2/cmdb/system/sdwan/members"
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, urlparams, batchid)
+	return
+}
+
+// UpdateSystemsdwanMembers API operation for FortiOS updates the specified Sdwan Members.
+// Returns the index value of the Sdwan and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the system - sdwan chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) UpdateSystemsdwanMembers(data *map[string]interface{}, mkey string, vdomparam string, urlparams map[string][]string, batchid int) (output map[string]interface{}, err error) {
+	HTTPMethod := "PUT"
+	path := "/api/v2/cmdb/system/sdwan/members"
+	path += "/" + escapeURLString(mkey)
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, urlparams, batchid)
+	return
+}
+
+// DeleteSystemsdwanMembers API operation for FortiOS deletes the specified Sdwan Members.
+// Returns error for service API and SDK errors.
+// See the system - sdwan chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) DeleteSystemsdwanMembers(mkey string, vdomparam string, batchid int) (err error) {
+	HTTPMethod := "DELETE"
+	path := "/api/v2/cmdb/system/sdwan/members"
+	path += "/" + escapeURLString(mkey)
+
+	err = delete(c, HTTPMethod, path, vdomparam, batchid)
+	return
+}
+
+// ReadSystemsdwanMembers API operation for FortiOS gets the Sdwan Members
+// with the specified index value.
+// Returns the requested Sdwan Members value when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the system - sdwan chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) ReadSystemsdwanMembers(mkey string, vdomparam string, urlparams map[string][]string, batchid int) (mapTmp map[string]interface{}, err error) {
+	HTTPMethod := "GET"
+	path := "/api/v2/cmdb/system/sdwan/members"
+	path += "/" + escapeURLString(mkey)
+
+	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam, urlparams, batchid)
+	return
+}
+
+// CreateSystemsdwanNeighbor API operation for FortiOS updates the specified Sdwan Neighbor.
+// Returns the index value of the Sdwan and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the system - sdwan chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) CreateSystemsdwanNeighbor(data *map[string]interface{}, vdomparam string, urlparams map[string][]string, batchid int) (output map[string]interface{}, err error) {
+
+	HTTPMethod := "POST"
+	path := "/api/v2/cmdb/system/sdwan/neighbor"
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, urlparams, batchid)
+	return
+}
+
+// UpdateSystemsdwanNeighbor API operation for FortiOS updates the specified Sdwan Neighbor.
+// Returns the index value of the Sdwan and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the system - sdwan chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) UpdateSystemsdwanNeighbor(data *map[string]interface{}, mkey string, vdomparam string, urlparams map[string][]string, batchid int) (output map[string]interface{}, err error) {
+	HTTPMethod := "PUT"
+	path := "/api/v2/cmdb/system/sdwan/neighbor"
+	path += "/" + escapeURLString(mkey)
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, urlparams, batchid)
+	return
+}
+
+// DeleteSystemsdwanNeighbor API operation for FortiOS deletes the specified Sdwan Neighbor.
+// Returns error for service API and SDK errors.
+// See the system - sdwan chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) DeleteSystemsdwanNeighbor(mkey string, vdomparam string, batchid int) (err error) {
+	HTTPMethod := "DELETE"
+	path := "/api/v2/cmdb/system/sdwan/neighbor"
+	path += "/" + escapeURLString(mkey)
+
+	err = delete(c, HTTPMethod, path, vdomparam, batchid)
+	return
+}
+
+// ReadSystemsdwanNeighbor API operation for FortiOS gets the Sdwan Neighbor
+// with the specified index value.
+// Returns the requested Sdwan Neighbor value when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the system - sdwan chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) ReadSystemsdwanNeighbor(mkey string, vdomparam string, urlparams map[string][]string, batchid int) (mapTmp map[string]interface{}, err error) {
+	HTTPMethod := "GET"
+	path := "/api/v2/cmdb/system/sdwan/neighbor"
+	path += "/" + escapeURLString(mkey)
+
+	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam, urlparams, batchid)
+	return
+}
+
+// CreateSystemsdwanService API operation for FortiOS updates the specified Sdwan Service.
+// Returns the index value of the Sdwan and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the system - sdwan chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) CreateSystemsdwanService(data *map[string]interface{}, vdomparam string, urlparams map[string][]string, batchid int) (output map[string]interface{}, err error) {
+
+	HTTPMethod := "POST"
+	path := "/api/v2/cmdb/system/sdwan/service"
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, urlparams, batchid)
+	return
+}
+
+// UpdateSystemsdwanService API operation for FortiOS updates the specified Sdwan Service.
+// Returns the index value of the Sdwan and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the system - sdwan chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) UpdateSystemsdwanService(data *map[string]interface{}, mkey string, vdomparam string, urlparams map[string][]string, batchid int) (output map[string]interface{}, err error) {
+	HTTPMethod := "PUT"
+	path := "/api/v2/cmdb/system/sdwan/service"
+	path += "/" + escapeURLString(mkey)
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, urlparams, batchid)
+	return
+}
+
+// DeleteSystemsdwanService API operation for FortiOS deletes the specified Sdwan Service.
+// Returns error for service API and SDK errors.
+// See the system - sdwan chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) DeleteSystemsdwanService(mkey string, vdomparam string, batchid int) (err error) {
+	HTTPMethod := "DELETE"
+	path := "/api/v2/cmdb/system/sdwan/service"
+	path += "/" + escapeURLString(mkey)
+
+	err = delete(c, HTTPMethod, path, vdomparam, batchid)
+	return
+}
+
+// ReadSystemsdwanService API operation for FortiOS gets the Sdwan Service
+// with the specified index value.
+// Returns the requested Sdwan Service value when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the system - sdwan chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) ReadSystemsdwanService(mkey string, vdomparam string, urlparams map[string][]string, batchid int) (mapTmp map[string]interface{}, err error) {
+	HTTPMethod := "GET"
+	path := "/api/v2/cmdb/system/sdwan/service"
+	path += "/" + escapeURLString(mkey)
+
+	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam, urlparams, batchid)
+	return
+}
+
+// CreateSystemsdwanZone API operation for FortiOS updates the specified Sdwan Zone.
+// Returns the index value of the Sdwan and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the system - sdwan chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) CreateSystemsdwanZone(data *map[string]interface{}, vdomparam string, urlparams map[string][]string, batchid int) (output map[string]interface{}, err error) {
+
+	HTTPMethod := "POST"
+	path := "/api/v2/cmdb/system/sdwan/zone"
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, urlparams, batchid)
+	return
+}
+
+// UpdateSystemsdwanZone API operation for FortiOS updates the specified Sdwan Zone.
+// Returns the index value of the Sdwan and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the system - sdwan chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) UpdateSystemsdwanZone(data *map[string]interface{}, mkey string, vdomparam string, urlparams map[string][]string, batchid int) (output map[string]interface{}, err error) {
+	HTTPMethod := "PUT"
+	path := "/api/v2/cmdb/system/sdwan/zone"
+	path += "/" + escapeURLString(mkey)
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, urlparams, batchid)
+	return
+}
+
+// DeleteSystemsdwanZone API operation for FortiOS deletes the specified Sdwan Zone.
+// Returns error for service API and SDK errors.
+// See the system - sdwan chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) DeleteSystemsdwanZone(mkey string, vdomparam string, batchid int) (err error) {
+	HTTPMethod := "DELETE"
+	path := "/api/v2/cmdb/system/sdwan/zone"
+	path += "/" + escapeURLString(mkey)
+
+	err = delete(c, HTTPMethod, path, vdomparam, batchid)
+	return
+}
+
+// ReadSystemsdwanZone API operation for FortiOS gets the Sdwan Zone
+// with the specified index value.
+// Returns the requested Sdwan Zone value when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the system - sdwan chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) ReadSystemsdwanZone(mkey string, vdomparam string, urlparams map[string][]string, batchid int) (mapTmp map[string]interface{}, err error) {
+	HTTPMethod := "GET"
+	path := "/api/v2/cmdb/system/sdwan/zone"
+	path += "/" + escapeURLString(mkey)
+
+	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam, urlparams, batchid)
+	return
+}
