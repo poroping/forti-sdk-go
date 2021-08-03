@@ -26320,3 +26320,57 @@ func (c *FortiSDKClient) ReadSystemsdwanZone(mkey string, vdomparam string, urlp
 	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam, urlparams, batchid)
 	return
 }
+
+// CreateRouterospfOspfArea API operation for FortiOS creates a new Ospf Area.
+// Returns the index value of the Ospf Area and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the router/ospf - area chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) CreateRouterospfOspfArea(data *map[string]interface{}, vdomparam string, urlparams map[string][]string, batchid int) (output map[string]interface{}, err error) {
+
+	HTTPMethod := "POST"
+	path := "/api/v2/cmdb/router/ospf/area"
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, urlparams, batchid)
+	return
+}
+
+// UpdateRouterospfOspfArea API operation for FortiOS updates the specified Ospf Area.
+// Returns the index value of the Ospf Area and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the router/ospf - area chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) UpdateRouterospfOspfArea(data *map[string]interface{}, mkey string, vdomparam string, urlparams map[string][]string, batchid int) (output map[string]interface{}, err error) {
+	HTTPMethod := "PUT"
+	path := "/api/v2/cmdb/router/ospf/area"
+	path += "/" + escapeURLString(mkey)
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, data, output, vdomparam, urlparams, batchid)
+	return
+}
+
+// DeleteRouterospfOspfArea API operation for FortiOS deletes the specified Ospf Area.
+// Returns error for service API and SDK errors.
+// See the router/ospf - area chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) DeleteRouterospfOspfArea(mkey string, vdomparam string, batchid int) (err error) {
+	HTTPMethod := "DELETE"
+	path := "/api/v2/cmdb/router/ospf/area"
+	path += "/" + escapeURLString(mkey)
+
+	err = delete(c, HTTPMethod, path, vdomparam, batchid)
+	return
+}
+
+// ReadRouterospfOspfArea API operation for FortiOS gets the Ospf Area
+// with the specified index value.
+// Returns the requested Ospf Area value when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the router/ospf - area chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) ReadRouterospfOspfArea(mkey string, vdomparam string, urlparams map[string][]string, batchid int) (mapTmp map[string]interface{}, err error) {
+	HTTPMethod := "GET"
+	path := "/api/v2/cmdb/router/ospf/area"
+	path += "/" + escapeURLString(mkey)
+
+	mapTmp, err = read(c, HTTPMethod, path, false, vdomparam, urlparams, batchid)
+	return
+}
