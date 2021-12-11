@@ -1,0 +1,13 @@
+{{define "cmdb_delete"}}
+func (c *Client) Delete{{.fpath}}(mkey string, params *models.CmdbRequestParams) error {
+	req := &models.CmdbRequest{}
+	req.HTTPMethod = "DELETE"
+	req.Mkey = &mkey
+	req.Payload = nil
+	req.Path = models.CmdbBasePath + models.{{.fpath}}Path + mkey + "/"
+	req.Params = *params
+
+	err := request.Delete(c.config, req)
+	return err
+}
+{{end}}

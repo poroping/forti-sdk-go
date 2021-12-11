@@ -1,0 +1,311 @@
+{
+    "http_method": "GET",
+    "revision": "d550d5d6947b4b9a183e45f38635f24c",
+    "results": {
+        "name": "authentication-rule",
+        "category": "table",
+        "help": "Authentication rule for SSL-VPN.",
+        "mkey": "id",
+        "mkey_type": "integer",
+        "children": {
+            "id": {
+                "name": "id",
+                "category": "unitary",
+                "type": "integer",
+                "help": "ID (0 - 4294967295).",
+                "min-value": 0,
+                "max-value": 4294967295,
+                "default": 0
+            },
+            "source-interface": {
+                "name": "source-interface",
+                "category": "table",
+                "help": "SSL-VPN source interface of incoming traffic.",
+                "member_table": true,
+                "mkey": "name",
+                "mkey_type": "string",
+                "children": {
+                    "name": {
+                        "name": "name",
+                        "category": "unitary",
+                        "type": "string",
+                        "help": "Interface name.",
+                        "required": true,
+                        "datasource": [
+                            "system.interface.name",
+                            "system.zone.name"
+                        ],
+                        "size": 35,
+                        "default": ""
+                    }
+                },
+                "max_table_size_vdom": 0,
+                "max_table_size_global": 0,
+                "max_table_size_item": 0
+            },
+            "source-address": {
+                "name": "source-address",
+                "category": "table",
+                "help": "Source address of incoming traffic.",
+                "member_table": true,
+                "mkey": "name",
+                "mkey_type": "string",
+                "children": {
+                    "name": {
+                        "name": "name",
+                        "category": "unitary",
+                        "type": "string",
+                        "help": "Address name.",
+                        "required": true,
+                        "datasource": [
+                            "firewall.address.name",
+                            "firewall.addrgrp.name",
+                            "system.external-resource.name"
+                        ],
+                        "size": 79,
+                        "default": ""
+                    }
+                },
+                "max_table_size_vdom": 0,
+                "max_table_size_global": 0,
+                "max_table_size_item": 0
+            },
+            "source-address-negate": {
+                "name": "source-address-negate",
+                "category": "unitary",
+                "type": "option",
+                "help": "Enable/disable negated source address match.",
+                "multiple_values": false,
+                "options": [
+                    {
+                        "name": "enable",
+                        "help": "Enable setting."
+                    },
+                    {
+                        "name": "disable",
+                        "help": "Disable setting."
+                    }
+                ],
+                "default": "disable"
+            },
+            "source-address6": {
+                "name": "source-address6",
+                "category": "table",
+                "help": "IPv6 source address of incoming traffic.",
+                "member_table": true,
+                "mkey": "name",
+                "mkey_type": "string",
+                "children": {
+                    "name": {
+                        "name": "name",
+                        "category": "unitary",
+                        "type": "string",
+                        "help": "IPv6 address name.",
+                        "required": true,
+                        "datasource": [
+                            "firewall.address6.name",
+                            "firewall.addrgrp6.name",
+                            "system.external-resource.name"
+                        ],
+                        "size": 79,
+                        "default": ""
+                    }
+                },
+                "max_table_size_vdom": 0,
+                "max_table_size_global": 0,
+                "max_table_size_item": 0
+            },
+            "source-address6-negate": {
+                "name": "source-address6-negate",
+                "category": "unitary",
+                "type": "option",
+                "help": "Enable/disable negated source IPv6 address match.",
+                "multiple_values": false,
+                "options": [
+                    {
+                        "name": "enable",
+                        "help": "Enable setting."
+                    },
+                    {
+                        "name": "disable",
+                        "help": "Disable setting."
+                    }
+                ],
+                "default": "disable"
+            },
+            "users": {
+                "name": "users",
+                "category": "table",
+                "help": "User name.",
+                "member_table": true,
+                "mkey": "name",
+                "mkey_type": "string",
+                "children": {
+                    "name": {
+                        "name": "name",
+                        "category": "unitary",
+                        "type": "string",
+                        "help": "User name.",
+                        "required": true,
+                        "datasource": [
+                            "user.local.name"
+                        ],
+                        "size": 79,
+                        "default": ""
+                    }
+                },
+                "max_table_size_vdom": 0,
+                "max_table_size_global": 0,
+                "max_table_size_item": 0
+            },
+            "groups": {
+                "name": "groups",
+                "category": "table",
+                "help": "User groups.",
+                "member_table": true,
+                "mkey": "name",
+                "mkey_type": "string",
+                "children": {
+                    "name": {
+                        "name": "name",
+                        "category": "unitary",
+                        "type": "string",
+                        "help": "Group name.",
+                        "required": true,
+                        "datasource": [
+                            "user.group.name"
+                        ],
+                        "size": 79,
+                        "default": ""
+                    }
+                },
+                "max_table_size_vdom": 0,
+                "max_table_size_global": 0,
+                "max_table_size_item": 0
+            },
+            "portal": {
+                "name": "portal",
+                "category": "unitary",
+                "type": "string",
+                "help": "SSL-VPN portal.",
+                "datasource": [
+                    "vpn.ssl.web.portal.name"
+                ],
+                "size": 35,
+                "default": ""
+            },
+            "realm": {
+                "name": "realm",
+                "category": "unitary",
+                "type": "string",
+                "help": "SSL-VPN realm.",
+                "datasource": [
+                    "vpn.ssl.web.realm.url-path"
+                ],
+                "size": 35,
+                "default": ""
+            },
+            "client-cert": {
+                "name": "client-cert",
+                "category": "unitary",
+                "type": "option",
+                "help": "Enable/disable SSL-VPN client certificate restrictive.",
+                "multiple_values": false,
+                "options": [
+                    {
+                        "name": "enable",
+                        "help": "Enable setting."
+                    },
+                    {
+                        "name": "disable",
+                        "help": "Disable setting."
+                    }
+                ],
+                "default": "disable"
+            },
+            "user-peer": {
+                "name": "user-peer",
+                "category": "unitary",
+                "type": "string",
+                "help": "Name of user peer.",
+                "datasource": [
+                    "user.peer.name"
+                ],
+                "size": 35,
+                "default": ""
+            },
+            "cipher": {
+                "name": "cipher",
+                "category": "unitary",
+                "type": "option",
+                "help": "SSL-VPN cipher strength.",
+                "multiple_values": false,
+                "options": [
+                    {
+                        "name": "any",
+                        "help": "Any cipher strength."
+                    },
+                    {
+                        "name": "high",
+                        "help": "High cipher strength (>= 168 bits)."
+                    },
+                    {
+                        "name": "medium",
+                        "help": "Medium cipher strength (>= 128 bits)."
+                    }
+                ],
+                "default": "high"
+            },
+            "auth": {
+                "name": "auth",
+                "category": "unitary",
+                "type": "option",
+                "help": "SSL-VPN authentication method restriction.",
+                "multiple_values": false,
+                "options": [
+                    {
+                        "name": "any",
+                        "help": "Any"
+                    },
+                    {
+                        "name": "local",
+                        "help": "Local"
+                    },
+                    {
+                        "name": "radius",
+                        "help": "RADIUS"
+                    },
+                    {
+                        "name": "tacacs+",
+                        "help": "TACACS+"
+                    },
+                    {
+                        "name": "ldap",
+                        "help": "LDAP"
+                    },
+                    {
+                        "name": "peer",
+                        "help": "PEER"
+                    }
+                ],
+                "default": "any"
+            }
+        },
+        "max_table_size_vdom": 5000,
+        "max_table_size_global": 5000,
+        "max_table_size_item": 0,
+        "path": "vpn.ssl",
+        "q_type": 144,
+        "access_group": "vpngrp"
+    },
+    "vdom": "root",
+    "path": "vpn.ssl",
+    "name": "settings",
+    "action": "schema",
+    "child_path": "authentication-rule",
+    "status": "success",
+    "http_status": 200,
+    "serial": "FGT60FTK20028507",
+    "version": "v7.0.2",
+    "build": 234
+}

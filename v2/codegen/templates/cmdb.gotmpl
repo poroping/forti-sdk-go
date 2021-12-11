@@ -1,0 +1,20 @@
+{{define "cmdb"}}
+package cmdb
+
+import (
+	"encoding/json"
+	"errors"
+
+	"github.com/poroping/forti-sdk-go/v2/models"
+	"github.com/poroping/forti-sdk-go/v2/request"
+)
+
+{{if not (eq .results.category "complex")}}{{template "cmdb_create" .}}{{end}}
+
+{{template "cmdb_read" .}}
+
+{{template "cmdb_update" .}}
+
+{{template "cmdb_delete" .}}
+
+{{end}}

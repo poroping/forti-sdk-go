@@ -1,0 +1,20 @@
+{{define "cmdb_create"}}
+func (c *Client) Create{{.fpath}}(payload *models.{{(mixedCase .path)}}{{(mixedCase .name)}}{{with .child_path}}{{(mixedCase .)}}{{end}}, params *models.CmdbRequestParams) (*models.CmdbResponse, error) {
+	body, err := json.Marshal(payload)
+	if err != nil {
+		return nil, err
+	}
+
+	req := &models.CmdbRequest{}
+	req.HTTPMethod = "POST"
+	req.Payload = body
+	req.Path = models.CmdbBasePath + models.{{.fpath}}Path
+	req.Params = *params
+
+	res, err := request.CreateUpdate(c.config, req)
+	if err != nil {
+		return nil, err
+	}
+	return res, nil
+}
+{{end}}

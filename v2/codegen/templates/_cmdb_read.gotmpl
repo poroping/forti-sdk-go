@@ -1,0 +1,41 @@
+{{define "cmdb_read"}}
+func (c *Client) Read{{.fpath}}(mkey string, params *models.CmdbRequestParams) (*models.{{(mixedCase .path)}}{{(mixedCase .name)}}{{with .child_path}}{{(mixedCase .)}}{{end}}, error) {
+	req := &models.CmdbRequest{}
+	req.HTTPMethod = "GET"
+	req.Mkey = &mkey
+	req.Payload = nil
+	req.Path = models.CmdbBasePath + models.{{.fpath}}Path + mkey + "/"
+	req.Params = *params
+
+	res, err := request.Read(c.config, req)
+	if err != nil {
+		return nil, err
+	}
+
+	// marshal/unmarshal results
+	{{if eq .results.category "complex"}}
+	if tmp, ok := res.Results.(interface{}); ok {
+		jsontmp, err := json.Marshal(tmp)
+		if err != nil {
+			return nil, err
+		}
+		v := models.{{.fpath}}{}
+		json.Unmarshal(jsontmp, &v)
+		return &v, nil
+	}
+	{{else}}
+	if tmp, ok := res.Results.([]interface{}); ok {
+		jsontmp, err := json.Marshal(tmp[0])
+		if err != nil {
+			return nil, err
+		}
+		v := models.{{(mixedCase .path)}}{{(mixedCase .name)}}{{with .child_path}}{{(mixedCase .)}}{{end}}{}
+		json.Unmarshal(jsontmp, &v)
+		return &v, nil
+	}
+	{{end}}
+	err = errors.New("unable to parse API response results")
+
+	return nil, err
+}
+{{end}}

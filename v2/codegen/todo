@@ -1,0 +1,6 @@
+short:
+generate cmdb.go
+medium:
+refactor template.go
+long:
+???

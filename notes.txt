@@ -1,0 +1,20 @@
+TODO:
+Build models from schemas
+Support for 'empty' groups:
+    Create functions for 'emptying' groups (empty grp = dummy object). Resolves issue w/ TF getting 'stuck'.
+Maybe use association resources instead? Like Azure
+
+Build out support for monitor endpoints
+    Can use for tests eg. default route exists, bgp peering up
+
+Checking objects exist / handling exists or not exists more gracefully
+
+Checking on delete if object is referenced and handle gracefully (maybe option to remove references)
+
+Support for multiple versions of FortiOS
+    Don't fail on global call on client setup (allows provider to use resources not spun up yet)
+
+Rebuild client
+    user/pass auth
+    backoffs
+    

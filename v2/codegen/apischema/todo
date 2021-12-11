@@ -1,0 +1,7 @@
+short:
+pull multiple versions and merge
+find easier way to get paths
+medium:
+make diffs
+long:
+separate to own repo? allows for cicd to spin up azure instance and automate new releases
