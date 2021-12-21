@@ -22,7 +22,7 @@ type VpnsslwebPortal struct {
 	Heading                          *string                                            `json:"heading,omitempty"`
 	HideSsoCredential                *string                                            `json:"hide-sso-credential,omitempty"`
 	HostCheck                        *string                                            `json:"host-check,omitempty"`
-	HostCheckInterval                *int64                                             `json:"host-check-interval,omitempty"`
+	HostCheckInterval                *float64                                           `json:"host-check-interval,omitempty"`
 	HostCheckPolicy                  *[]VpnsslwebPortalHostCheckPolicy                  `json:"host-check-policy,omitempty"`
 	IpMode                           *string                                            `json:"ip-mode,omitempty"`
 	IpPools                          *[]VpnsslwebPortalIpPools                          `json:"ip-pools,omitempty"`
@@ -88,15 +88,15 @@ type VpnsslwebPortalBookmarkGroupBookmarks struct {
 	FormData              *[]VpnsslwebPortalBookmarkGroupBookmarksFormData `json:"form-data,omitempty"`
 	Host                  *string                                          `json:"host,omitempty"`
 	KeyboardLayout        *string                                          `json:"keyboard-layout,omitempty"`
-	ListeningPort         *int64                                           `json:"listening-port,omitempty"`
+	ListeningPort         *float64                                         `json:"listening-port,omitempty"`
 	LoadBalancingInfo     *string                                          `json:"load-balancing-info,omitempty"`
 	LogonPassword         *string                                          `json:"logon-password,omitempty"`
 	LogonUser             *string                                          `json:"logon-user,omitempty"`
 	Name                  *string                                          `json:"name,omitempty"`
-	Port                  *int64                                           `json:"port,omitempty"`
+	Port                  *float64                                         `json:"port,omitempty"`
 	PreconnectionBlob     *string                                          `json:"preconnection-blob,omitempty"`
-	PreconnectionId       *int64                                           `json:"preconnection-id,omitempty"`
-	RemotePort            *int64                                           `json:"remote-port,omitempty"`
+	PreconnectionId       *float64                                         `json:"preconnection-id,omitempty"`
+	RemotePort            *float64                                         `json:"remote-port,omitempty"`
 	RestrictedAdmin       *string                                          `json:"restricted-admin,omitempty"`
 	Security              *string                                          `json:"security,omitempty"`
 	SendPreconnectionId   *string                                          `json:"send-preconnection-id,omitempty"`
@@ -133,7 +133,7 @@ type VpnsslwebPortalIpv6SplitTunnelingRoutingAddress struct {
 
 type VpnsslwebPortalMacAddrCheckRule struct {
 	MacAddrList *[]VpnsslwebPortalMacAddrCheckRuleMacAddrList `json:"mac-addr-list,omitempty"`
-	MacAddrMask *int64                                        `json:"mac-addr-mask,omitempty"`
+	MacAddrMask *float64                                      `json:"mac-addr-mask,omitempty"`
 	Name        *string                                       `json:"name,omitempty"`
 }
 
@@ -142,19 +142,19 @@ type VpnsslwebPortalMacAddrCheckRuleMacAddrList struct {
 }
 
 type VpnsslwebPortalOsCheckList struct {
-	Action           *string `json:"action,omitempty"`
-	LatestPatchLevel *string `json:"latest-patch-level,omitempty"`
-	Name             *string `json:"name,omitempty"`
-	Tolerance        *int64  `json:"tolerance,omitempty"`
+	Action           *string  `json:"action,omitempty"`
+	LatestPatchLevel *string  `json:"latest-patch-level,omitempty"`
+	Name             *string  `json:"name,omitempty"`
+	Tolerance        *float64 `json:"tolerance,omitempty"`
 }
 
 type VpnsslwebPortalSplitDns struct {
-	DnsServer1     *string `json:"dns-server1,omitempty"`
-	DnsServer2     *string `json:"dns-server2,omitempty"`
-	Domains        *string `json:"domains,omitempty"`
-	Id             *int64  `json:"id,omitempty"`
-	Ipv6DnsServer1 *string `json:"ipv6-dns-server1,omitempty"`
-	Ipv6DnsServer2 *string `json:"ipv6-dns-server2,omitempty"`
+	DnsServer1     *string  `json:"dns-server1,omitempty"`
+	DnsServer2     *string  `json:"dns-server2,omitempty"`
+	Domains        *string  `json:"domains,omitempty"`
+	Id             *float64 `json:"id,omitempty"`
+	Ipv6DnsServer1 *string  `json:"ipv6-dns-server1,omitempty"`
+	Ipv6DnsServer2 *string  `json:"ipv6-dns-server2,omitempty"`
 }
 
 type VpnsslwebPortalSplitTunnelingRoutingAddress struct {

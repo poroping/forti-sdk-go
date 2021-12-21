@@ -11,7 +11,7 @@ type ReportLayout struct {
 	EmailRecipients *string                 `json:"email-recipients,omitempty"`
 	EmailSend       *string                 `json:"email-send,omitempty"`
 	Format          *string                 `json:"format,omitempty"`
-	MaxPdfReport    *int64                  `json:"max-pdf-report,omitempty"`
+	MaxPdfReport    *float64                `json:"max-pdf-report,omitempty"`
 	Name            *string                 `json:"name,omitempty"`
 	Options         *string                 `json:"options,omitempty"`
 	Page            *[]ReportLayoutPage     `json:"page,omitempty"`
@@ -25,13 +25,13 @@ type ReportLayout struct {
 type ReportLayoutBodyItem struct {
 	Chart             *string                           `json:"chart,omitempty"`
 	ChartOptions      *string                           `json:"chart-options,omitempty"`
-	Column            *int64                            `json:"column,omitempty"`
+	Column            *float64                          `json:"column,omitempty"`
 	Content           *string                           `json:"content,omitempty"`
 	Description       *string                           `json:"description,omitempty"`
 	DrillDownItems    *string                           `json:"drill-down-items,omitempty"`
 	DrillDownTypes    *string                           `json:"drill-down-types,omitempty"`
 	Hide              *string                           `json:"hide,omitempty"`
-	Id                *int64                            `json:"id,omitempty"`
+	Id                *float64                          `json:"id,omitempty"`
 	ImgSrc            *string                           `json:"img-src,omitempty"`
 	List              *[]ReportLayoutBodyItemList       `json:"list,omitempty"`
 	ListComponent     *string                           `json:"list-component,omitempty"`
@@ -45,19 +45,19 @@ type ReportLayoutBodyItem struct {
 	TableOddRowStyle  *string                           `json:"table-odd-row-style,omitempty"`
 	TextComponent     *string                           `json:"text-component,omitempty"`
 	Title             *string                           `json:"title,omitempty"`
-	TopN              *int64                            `json:"top-n,omitempty"`
+	TopN              *float64                          `json:"top-n,omitempty"`
 	Type              *string                           `json:"type,omitempty"`
 }
 
 type ReportLayoutBodyItemList struct {
-	Content *string `json:"content,omitempty"`
-	Id      *int64  `json:"id,omitempty"`
+	Content *string  `json:"content,omitempty"`
+	Id      *float64 `json:"id,omitempty"`
 }
 
 type ReportLayoutBodyItemParameters struct {
-	Id    *int64  `json:"id,omitempty"`
-	Name  *string `json:"name,omitempty"`
-	Value *string `json:"value,omitempty"`
+	Id    *float64 `json:"id,omitempty"`
+	Name  *string  `json:"name,omitempty"`
+	Value *string  `json:"value,omitempty"`
 }
 
 type ReportLayoutPage struct {
@@ -75,12 +75,12 @@ type ReportLayoutPageFooter struct {
 }
 
 type ReportLayoutPageFooterFooterItem struct {
-	Content     *string `json:"content,omitempty"`
-	Description *string `json:"description,omitempty"`
-	Id          *int64  `json:"id,omitempty"`
-	ImgSrc      *string `json:"img-src,omitempty"`
-	Style       *string `json:"style,omitempty"`
-	Type        *string `json:"type,omitempty"`
+	Content     *string  `json:"content,omitempty"`
+	Description *string  `json:"description,omitempty"`
+	Id          *float64 `json:"id,omitempty"`
+	ImgSrc      *string  `json:"img-src,omitempty"`
+	Style       *string  `json:"style,omitempty"`
+	Type        *string  `json:"type,omitempty"`
 }
 
 type ReportLayoutPageHeader struct {
@@ -89,10 +89,10 @@ type ReportLayoutPageHeader struct {
 }
 
 type ReportLayoutPageHeaderHeaderItem struct {
-	Content     *string `json:"content,omitempty"`
-	Description *string `json:"description,omitempty"`
-	Id          *int64  `json:"id,omitempty"`
-	ImgSrc      *string `json:"img-src,omitempty"`
-	Style       *string `json:"style,omitempty"`
-	Type        *string `json:"type,omitempty"`
+	Content     *string  `json:"content,omitempty"`
+	Description *string  `json:"description,omitempty"`
+	Id          *float64 `json:"id,omitempty"`
+	ImgSrc      *string  `json:"img-src,omitempty"`
+	Style       *string  `json:"style,omitempty"`
+	Type        *string  `json:"type,omitempty"`
 }

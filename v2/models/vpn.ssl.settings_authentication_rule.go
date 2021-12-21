@@ -7,7 +7,7 @@ type VpnsslsettingsAuthenticationRule struct {
 	Cipher               *string                                            `json:"cipher,omitempty"`
 	ClientCert           *string                                            `json:"client-cert,omitempty"`
 	Groups               *[]VpnsslsettingsAuthenticationRuleGroups          `json:"groups,omitempty"`
-	Fosid                *int64                                             `json:"fosid,omitempty"`
+	Fosid                *float64                                           `json:"fosid,omitempty"`
 	Portal               *string                                            `json:"portal,omitempty"`
 	Realm                *string                                            `json:"realm,omitempty"`
 	SourceAddress        *[]VpnsslsettingsAuthenticationRuleSourceAddress   `json:"source-address,omitempty"`

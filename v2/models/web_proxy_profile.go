@@ -24,7 +24,7 @@ type WebProxyProfileHeaders struct {
 	Content        *string                           `json:"content,omitempty"`
 	Dstaddr        *[]WebProxyProfileHeadersDstaddr  `json:"dstaddr,omitempty"`
 	Dstaddr6       *[]WebProxyProfileHeadersDstaddr6 `json:"dstaddr6,omitempty"`
-	Id             *int64                            `json:"id,omitempty"`
+	Id             *float64                          `json:"id,omitempty"`
 	Name           *string                           `json:"name,omitempty"`
 	Protocol       *string                           `json:"protocol,omitempty"`
 }

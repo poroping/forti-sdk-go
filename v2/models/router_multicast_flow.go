@@ -9,7 +9,7 @@ type RouterMulticastFlow struct {
 }
 
 type RouterMulticastFlowFlows struct {
-	GroupAddr  *string `json:"group-addr,omitempty"`
-	Id         *int64  `json:"id,omitempty"`
-	SourceAddr *string `json:"source-addr,omitempty"`
+	GroupAddr  *string  `json:"group-addr,omitempty"`
+	Id         *float64 `json:"id,omitempty"`
+	SourceAddr *string  `json:"source-addr,omitempty"`
 }

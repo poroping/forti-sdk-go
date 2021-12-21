@@ -6,15 +6,15 @@ type LogfortianalyzerSetting struct {
 	AccessConfig              *string                          `json:"access-config,omitempty"`
 	Certificate               *string                          `json:"certificate,omitempty"`
 	CertificateVerification   *string                          `json:"certificate-verification,omitempty"`
-	ConnTimeout               *int64                           `json:"conn-timeout,omitempty"`
+	ConnTimeout               *float64                         `json:"conn-timeout,omitempty"`
 	EncAlgorithm              *string                          `json:"enc-algorithm,omitempty"`
 	HmacAlgorithm             *string                          `json:"hmac-algorithm,omitempty"`
 	Interface                 *string                          `json:"interface,omitempty"`
 	InterfaceSelectMethod     *string                          `json:"interface-select-method,omitempty"`
 	IpsArchive                *string                          `json:"ips-archive,omitempty"`
-	MaxLogRate                *int64                           `json:"max-log-rate,omitempty"`
-	MonitorFailureRetryPeriod *int64                           `json:"monitor-failure-retry-period,omitempty"`
-	MonitorKeepalivePeriod    *int64                           `json:"monitor-keepalive-period,omitempty"`
+	MaxLogRate                *float64                         `json:"max-log-rate,omitempty"`
+	MonitorFailureRetryPeriod *float64                         `json:"monitor-failure-retry-period,omitempty"`
+	MonitorKeepalivePeriod    *float64                         `json:"monitor-keepalive-period,omitempty"`
 	PresharedKey              *string                          `json:"preshared-key,omitempty"`
 	Priority                  *string                          `json:"priority,omitempty"`
 	Reliable                  *string                          `json:"reliable,omitempty"`

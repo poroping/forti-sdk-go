@@ -9,9 +9,9 @@ type WirelessControllerBonjourProfile struct {
 }
 
 type WirelessControllerBonjourProfilePolicyList struct {
-	Description *string `json:"description,omitempty"`
-	FromVlan    *string `json:"from-vlan,omitempty"`
-	PolicyId    *int64  `json:"policy-id,omitempty"`
-	Services    *string `json:"services,omitempty"`
-	ToVlan      *string `json:"to-vlan,omitempty"`
+	Description *string  `json:"description,omitempty"`
+	FromVlan    *string  `json:"from-vlan,omitempty"`
+	PolicyId    *float64 `json:"policy-id,omitempty"`
+	Services    *string  `json:"services,omitempty"`
+	ToVlan      *string  `json:"to-vlan,omitempty"`
 }

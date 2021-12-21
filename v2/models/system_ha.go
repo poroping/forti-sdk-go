@@ -3,27 +3,27 @@ package models
 const SystemHaPath = "system/ha/"
 
 type SystemHa struct {
-	Arps                          *int64                       `json:"arps,omitempty"`
-	ArpsInterval                  *int64                       `json:"arps-interval,omitempty"`
+	Arps                          *float64                     `json:"arps,omitempty"`
+	ArpsInterval                  *float64                     `json:"arps-interval,omitempty"`
 	Authentication                *string                      `json:"authentication,omitempty"`
 	CpuThreshold                  *string                      `json:"cpu-threshold,omitempty"`
 	Encryption                    *string                      `json:"encryption,omitempty"`
-	FailoverHoldTime              *int64                       `json:"failover-hold-time,omitempty"`
+	FailoverHoldTime              *float64                     `json:"failover-hold-time,omitempty"`
 	FtpProxyThreshold             *string                      `json:"ftp-proxy-threshold,omitempty"`
 	GratuitousArps                *string                      `json:"gratuitous-arps,omitempty"`
-	GroupId                       *int64                       `json:"group-id,omitempty"`
+	GroupId                       *float64                     `json:"group-id,omitempty"`
 	GroupName                     *string                      `json:"group-name,omitempty"`
 	HaDirect                      *string                      `json:"ha-direct,omitempty"`
 	HaEthType                     *string                      `json:"ha-eth-type,omitempty"`
 	HaMgmtInterfaces              *[]SystemHaHaMgmtInterfaces  `json:"ha-mgmt-interfaces,omitempty"`
 	HaMgmtStatus                  *string                      `json:"ha-mgmt-status,omitempty"`
-	HaUptimeDiffMargin            *int64                       `json:"ha-uptime-diff-margin,omitempty"`
-	HbInterval                    *int64                       `json:"hb-interval,omitempty"`
+	HaUptimeDiffMargin            *float64                     `json:"ha-uptime-diff-margin,omitempty"`
+	HbInterval                    *float64                     `json:"hb-interval,omitempty"`
 	HbIntervalInMilliseconds      *string                      `json:"hb-interval-in-milliseconds,omitempty"`
-	HbLostThreshold               *int64                       `json:"hb-lost-threshold,omitempty"`
+	HbLostThreshold               *float64                     `json:"hb-lost-threshold,omitempty"`
 	Hbdev                         *string                      `json:"hbdev,omitempty"`
 	HcEthType                     *string                      `json:"hc-eth-type,omitempty"`
-	HelloHolddown                 *int64                       `json:"hello-holddown,omitempty"`
+	HelloHolddown                 *float64                     `json:"hello-holddown,omitempty"`
 	HttpProxyThreshold            *string                      `json:"http-proxy-threshold,omitempty"`
 	ImapProxyThreshold            *string                      `json:"imap-proxy-threshold,omitempty"`
 	InterClusterSessionSync       *string                      `json:"inter-cluster-session-sync,omitempty"`
@@ -34,28 +34,28 @@ type SystemHa struct {
 	LogicalSn                     *string                      `json:"logical-sn,omitempty"`
 	MemoryBasedFailover           *string                      `json:"memory-based-failover,omitempty"`
 	MemoryCompatibleMode          *string                      `json:"memory-compatible-mode,omitempty"`
-	MemoryFailoverFlipTimeout     *int64                       `json:"memory-failover-flip-timeout,omitempty"`
-	MemoryFailoverMonitorPeriod   *int64                       `json:"memory-failover-monitor-period,omitempty"`
-	MemoryFailoverSampleRate      *int64                       `json:"memory-failover-sample-rate,omitempty"`
-	MemoryFailoverThreshold       *int64                       `json:"memory-failover-threshold,omitempty"`
+	MemoryFailoverFlipTimeout     *float64                     `json:"memory-failover-flip-timeout,omitempty"`
+	MemoryFailoverMonitorPeriod   *float64                     `json:"memory-failover-monitor-period,omitempty"`
+	MemoryFailoverSampleRate      *float64                     `json:"memory-failover-sample-rate,omitempty"`
+	MemoryFailoverThreshold       *float64                     `json:"memory-failover-threshold,omitempty"`
 	MemoryThreshold               *string                      `json:"memory-threshold,omitempty"`
 	Mode                          *string                      `json:"mode,omitempty"`
 	Monitor                       *string                      `json:"monitor,omitempty"`
-	MulticastTtl                  *int64                       `json:"multicast-ttl,omitempty"`
+	MulticastTtl                  *float64                     `json:"multicast-ttl,omitempty"`
 	NntpProxyThreshold            *string                      `json:"nntp-proxy-threshold,omitempty"`
 	Override                      *string                      `json:"override,omitempty"`
-	OverrideWaitTime              *int64                       `json:"override-wait-time,omitempty"`
+	OverrideWaitTime              *float64                     `json:"override-wait-time,omitempty"`
 	Password                      *string                      `json:"password,omitempty"`
-	PingserverFailoverThreshold   *int64                       `json:"pingserver-failover-threshold,omitempty"`
-	PingserverFlipTimeout         *int64                       `json:"pingserver-flip-timeout,omitempty"`
+	PingserverFailoverThreshold   *float64                     `json:"pingserver-failover-threshold,omitempty"`
+	PingserverFlipTimeout         *float64                     `json:"pingserver-flip-timeout,omitempty"`
 	PingserverMonitorInterface    *string                      `json:"pingserver-monitor-interface,omitempty"`
 	PingserverSecondaryForceReset *string                      `json:"pingserver-secondary-force-reset,omitempty"`
 	PingserverSlaveForceReset     *string                      `json:"pingserver-slave-force-reset,omitempty"`
 	Pop3ProxyThreshold            *string                      `json:"pop3-proxy-threshold,omitempty"`
-	Priority                      *int64                       `json:"priority,omitempty"`
-	RouteHold                     *int64                       `json:"route-hold,omitempty"`
-	RouteTtl                      *int64                       `json:"route-ttl,omitempty"`
-	RouteWait                     *int64                       `json:"route-wait,omitempty"`
+	Priority                      *float64                     `json:"priority,omitempty"`
+	RouteHold                     *float64                     `json:"route-hold,omitempty"`
+	RouteTtl                      *float64                     `json:"route-ttl,omitempty"`
+	RouteWait                     *float64                     `json:"route-wait,omitempty"`
 	Schedule                      *string                      `json:"schedule,omitempty"`
 	SecondaryVcluster             *[]SystemHaSecondaryVcluster `json:"secondary-vcluster,omitempty"`
 	SessionPickup                 *string                      `json:"session-pickup,omitempty"`
@@ -76,36 +76,36 @@ type SystemHa struct {
 	UnicastHbPeerip               *string                      `json:"unicast-hb-peerip,omitempty"`
 	UnicastPeers                  *[]SystemHaUnicastPeers      `json:"unicast-peers,omitempty"`
 	UnicastStatus                 *string                      `json:"unicast-status,omitempty"`
-	UninterruptiblePrimaryWait    *int64                       `json:"uninterruptible-primary-wait,omitempty"`
+	UninterruptiblePrimaryWait    *float64                     `json:"uninterruptible-primary-wait,omitempty"`
 	UninterruptibleUpgrade        *string                      `json:"uninterruptible-upgrade,omitempty"`
-	VclusterId                    *int64                       `json:"vcluster-id,omitempty"`
+	VclusterId                    *float64                     `json:"vcluster-id,omitempty"`
 	Vcluster2                     *string                      `json:"vcluster2,omitempty"`
 	Vdom                          *string                      `json:"vdom,omitempty"`
 	Weight                        *string                      `json:"weight,omitempty"`
 }
 
 type SystemHaHaMgmtInterfaces struct {
-	Dst       *string `json:"dst,omitempty"`
-	Gateway   *string `json:"gateway,omitempty"`
-	Gateway6  *string `json:"gateway6,omitempty"`
-	Id        *int64  `json:"id,omitempty"`
-	Interface *string `json:"interface,omitempty"`
+	Dst       *string  `json:"dst,omitempty"`
+	Gateway   *string  `json:"gateway,omitempty"`
+	Gateway6  *string  `json:"gateway6,omitempty"`
+	Id        *float64 `json:"id,omitempty"`
+	Interface *string  `json:"interface,omitempty"`
 }
 
 type SystemHaSecondaryVcluster struct {
-	Monitor                       *string `json:"monitor,omitempty"`
-	Override                      *string `json:"override,omitempty"`
-	OverrideWaitTime              *int64  `json:"override-wait-time,omitempty"`
-	PingserverFailoverThreshold   *int64  `json:"pingserver-failover-threshold,omitempty"`
-	PingserverMonitorInterface    *string `json:"pingserver-monitor-interface,omitempty"`
-	PingserverSecondaryForceReset *string `json:"pingserver-secondary-force-reset,omitempty"`
-	PingserverSlaveForceReset     *string `json:"pingserver-slave-force-reset,omitempty"`
-	Priority                      *int64  `json:"priority,omitempty"`
-	VclusterId                    *int64  `json:"vcluster-id,omitempty"`
-	Vdom                          *string `json:"vdom,omitempty"`
+	Monitor                       *string  `json:"monitor,omitempty"`
+	Override                      *string  `json:"override,omitempty"`
+	OverrideWaitTime              *float64 `json:"override-wait-time,omitempty"`
+	PingserverFailoverThreshold   *float64 `json:"pingserver-failover-threshold,omitempty"`
+	PingserverMonitorInterface    *string  `json:"pingserver-monitor-interface,omitempty"`
+	PingserverSecondaryForceReset *string  `json:"pingserver-secondary-force-reset,omitempty"`
+	PingserverSlaveForceReset     *string  `json:"pingserver-slave-force-reset,omitempty"`
+	Priority                      *float64 `json:"priority,omitempty"`
+	VclusterId                    *float64 `json:"vcluster-id,omitempty"`
+	Vdom                          *string  `json:"vdom,omitempty"`
 }
 
 type SystemHaUnicastPeers struct {
-	Id     *int64  `json:"id,omitempty"`
-	PeerIp *string `json:"peer-ip,omitempty"`
+	Id     *float64 `json:"id,omitempty"`
+	PeerIp *string  `json:"peer-ip,omitempty"`
 }

@@ -3,11 +3,11 @@ package models
 const SystemAutoScriptPath = "system/auto-script/"
 
 type SystemAutoScript struct {
-	Interval   *int64  `json:"interval,omitempty"`
-	Name       *string `json:"name,omitempty"`
-	OutputSize *int64  `json:"output-size,omitempty"`
-	Repeat     *int64  `json:"repeat,omitempty"`
-	Script     *string `json:"script,omitempty"`
-	Start      *string `json:"start,omitempty"`
-	Timeout    *int64  `json:"timeout,omitempty"`
+	Interval   *float64 `json:"interval,omitempty"`
+	Name       *string  `json:"name,omitempty"`
+	OutputSize *float64 `json:"output-size,omitempty"`
+	Repeat     *float64 `json:"repeat,omitempty"`
+	Script     *string  `json:"script,omitempty"`
+	Start      *string  `json:"start,omitempty"`
+	Timeout    *float64 `json:"timeout,omitempty"`
 }

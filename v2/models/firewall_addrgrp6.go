@@ -3,7 +3,7 @@ package models
 const FirewallAddrgrp6Path = "firewall/addrgrp6/"
 
 type FirewallAddrgrp6 struct {
-	Color        *int64                     `json:"color,omitempty"`
+	Color        *float64                   `json:"color,omitempty"`
 	Comment      *string                    `json:"comment,omitempty"`
 	FabricObject *string                    `json:"fabric-object,omitempty"`
 	Member       *[]FirewallAddrgrp6Member  `json:"member,omitempty"`

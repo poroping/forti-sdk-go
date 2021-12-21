@@ -34,7 +34,7 @@ type FirewallProxyPolicy struct {
 	Logtraffic                 *string                                          `json:"logtraffic,omitempty"`
 	LogtrafficStart            *string                                          `json:"logtraffic-start,omitempty"`
 	Name                       *string                                          `json:"name,omitempty"`
-	Policyid                   *int64                                           `json:"policyid,omitempty"`
+	Policyid                   *float64                                         `json:"policyid,omitempty"`
 	Poolname                   *[]FirewallProxyPolicyPoolname                   `json:"poolname,omitempty"`
 	ProfileGroup               *string                                          `json:"profile-group,omitempty"`
 	ProfileProtocolOptions     *string                                          `json:"profile-protocol-options,omitempty"`
@@ -46,7 +46,7 @@ type FirewallProxyPolicy struct {
 	SctpFilterProfile          *string                                          `json:"sctp-filter-profile,omitempty"`
 	Service                    *[]FirewallProxyPolicyService                    `json:"service,omitempty"`
 	ServiceNegate              *string                                          `json:"service-negate,omitempty"`
-	SessionTtl                 *int64                                           `json:"session-ttl,omitempty"`
+	SessionTtl                 *float64                                         `json:"session-ttl,omitempty"`
 	Srcaddr                    *[]FirewallProxyPolicySrcaddr                    `json:"srcaddr,omitempty"`
 	SrcaddrNegate              *string                                          `json:"srcaddr-negate,omitempty"`
 	Srcaddr6                   *[]FirewallProxyPolicySrcaddr6                   `json:"srcaddr6,omitempty"`
@@ -108,7 +108,7 @@ type FirewallProxyPolicyInternetServiceGroup struct {
 }
 
 type FirewallProxyPolicyInternetServiceId struct {
-	Id *int64 `json:"id,omitempty"`
+	Id *float64 `json:"id,omitempty"`
 }
 
 type FirewallProxyPolicyInternetServiceName struct {

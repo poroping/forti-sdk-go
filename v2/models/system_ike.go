@@ -21,112 +21,112 @@ type SystemIke struct {
 	DhGroup32         *[]SystemIkeDhGroup32 `json:"dh-group-32,omitempty"`
 	DhGroup5          *[]SystemIkeDhGroup5  `json:"dh-group-5,omitempty"`
 	DhKeypairCache    *string               `json:"dh-keypair-cache,omitempty"`
-	DhKeypairCount    *int64                `json:"dh-keypair-count,omitempty"`
+	DhKeypairCount    *float64              `json:"dh-keypair-count,omitempty"`
 	DhKeypairThrottle *string               `json:"dh-keypair-throttle,omitempty"`
 	DhMode            *string               `json:"dh-mode,omitempty"`
 	DhMultiprocess    *string               `json:"dh-multiprocess,omitempty"`
-	DhWorkerCount     *int64                `json:"dh-worker-count,omitempty"`
-	EmbryonicLimit    *int64                `json:"embryonic-limit,omitempty"`
+	DhWorkerCount     *float64              `json:"dh-worker-count,omitempty"`
+	EmbryonicLimit    *float64              `json:"embryonic-limit,omitempty"`
 }
 
 type SystemIkeDhGroup1 struct {
-	KeypairCache *string `json:"keypair-cache,omitempty"`
-	KeypairCount *int64  `json:"keypair-count,omitempty"`
-	Mode         *string `json:"mode,omitempty"`
+	KeypairCache *string  `json:"keypair-cache,omitempty"`
+	KeypairCount *float64 `json:"keypair-count,omitempty"`
+	Mode         *string  `json:"mode,omitempty"`
 }
 
 type SystemIkeDhGroup14 struct {
-	KeypairCache *string `json:"keypair-cache,omitempty"`
-	KeypairCount *int64  `json:"keypair-count,omitempty"`
-	Mode         *string `json:"mode,omitempty"`
+	KeypairCache *string  `json:"keypair-cache,omitempty"`
+	KeypairCount *float64 `json:"keypair-count,omitempty"`
+	Mode         *string  `json:"mode,omitempty"`
 }
 
 type SystemIkeDhGroup15 struct {
-	KeypairCache *string `json:"keypair-cache,omitempty"`
-	KeypairCount *int64  `json:"keypair-count,omitempty"`
-	Mode         *string `json:"mode,omitempty"`
+	KeypairCache *string  `json:"keypair-cache,omitempty"`
+	KeypairCount *float64 `json:"keypair-count,omitempty"`
+	Mode         *string  `json:"mode,omitempty"`
 }
 
 type SystemIkeDhGroup16 struct {
-	KeypairCache *string `json:"keypair-cache,omitempty"`
-	KeypairCount *int64  `json:"keypair-count,omitempty"`
-	Mode         *string `json:"mode,omitempty"`
+	KeypairCache *string  `json:"keypair-cache,omitempty"`
+	KeypairCount *float64 `json:"keypair-count,omitempty"`
+	Mode         *string  `json:"mode,omitempty"`
 }
 
 type SystemIkeDhGroup17 struct {
-	KeypairCache *string `json:"keypair-cache,omitempty"`
-	KeypairCount *int64  `json:"keypair-count,omitempty"`
-	Mode         *string `json:"mode,omitempty"`
+	KeypairCache *string  `json:"keypair-cache,omitempty"`
+	KeypairCount *float64 `json:"keypair-count,omitempty"`
+	Mode         *string  `json:"mode,omitempty"`
 }
 
 type SystemIkeDhGroup18 struct {
-	KeypairCache *string `json:"keypair-cache,omitempty"`
-	KeypairCount *int64  `json:"keypair-count,omitempty"`
-	Mode         *string `json:"mode,omitempty"`
+	KeypairCache *string  `json:"keypair-cache,omitempty"`
+	KeypairCount *float64 `json:"keypair-count,omitempty"`
+	Mode         *string  `json:"mode,omitempty"`
 }
 
 type SystemIkeDhGroup19 struct {
-	KeypairCache *string `json:"keypair-cache,omitempty"`
-	KeypairCount *int64  `json:"keypair-count,omitempty"`
-	Mode         *string `json:"mode,omitempty"`
+	KeypairCache *string  `json:"keypair-cache,omitempty"`
+	KeypairCount *float64 `json:"keypair-count,omitempty"`
+	Mode         *string  `json:"mode,omitempty"`
 }
 
 type SystemIkeDhGroup2 struct {
-	KeypairCache *string `json:"keypair-cache,omitempty"`
-	KeypairCount *int64  `json:"keypair-count,omitempty"`
-	Mode         *string `json:"mode,omitempty"`
+	KeypairCache *string  `json:"keypair-cache,omitempty"`
+	KeypairCount *float64 `json:"keypair-count,omitempty"`
+	Mode         *string  `json:"mode,omitempty"`
 }
 
 type SystemIkeDhGroup20 struct {
-	KeypairCache *string `json:"keypair-cache,omitempty"`
-	KeypairCount *int64  `json:"keypair-count,omitempty"`
-	Mode         *string `json:"mode,omitempty"`
+	KeypairCache *string  `json:"keypair-cache,omitempty"`
+	KeypairCount *float64 `json:"keypair-count,omitempty"`
+	Mode         *string  `json:"mode,omitempty"`
 }
 
 type SystemIkeDhGroup21 struct {
-	KeypairCache *string `json:"keypair-cache,omitempty"`
-	KeypairCount *int64  `json:"keypair-count,omitempty"`
-	Mode         *string `json:"mode,omitempty"`
+	KeypairCache *string  `json:"keypair-cache,omitempty"`
+	KeypairCount *float64 `json:"keypair-count,omitempty"`
+	Mode         *string  `json:"mode,omitempty"`
 }
 
 type SystemIkeDhGroup27 struct {
-	KeypairCache *string `json:"keypair-cache,omitempty"`
-	KeypairCount *int64  `json:"keypair-count,omitempty"`
-	Mode         *string `json:"mode,omitempty"`
+	KeypairCache *string  `json:"keypair-cache,omitempty"`
+	KeypairCount *float64 `json:"keypair-count,omitempty"`
+	Mode         *string  `json:"mode,omitempty"`
 }
 
 type SystemIkeDhGroup28 struct {
-	KeypairCache *string `json:"keypair-cache,omitempty"`
-	KeypairCount *int64  `json:"keypair-count,omitempty"`
-	Mode         *string `json:"mode,omitempty"`
+	KeypairCache *string  `json:"keypair-cache,omitempty"`
+	KeypairCount *float64 `json:"keypair-count,omitempty"`
+	Mode         *string  `json:"mode,omitempty"`
 }
 
 type SystemIkeDhGroup29 struct {
-	KeypairCache *string `json:"keypair-cache,omitempty"`
-	KeypairCount *int64  `json:"keypair-count,omitempty"`
-	Mode         *string `json:"mode,omitempty"`
+	KeypairCache *string  `json:"keypair-cache,omitempty"`
+	KeypairCount *float64 `json:"keypair-count,omitempty"`
+	Mode         *string  `json:"mode,omitempty"`
 }
 
 type SystemIkeDhGroup30 struct {
-	KeypairCache *string `json:"keypair-cache,omitempty"`
-	KeypairCount *int64  `json:"keypair-count,omitempty"`
-	Mode         *string `json:"mode,omitempty"`
+	KeypairCache *string  `json:"keypair-cache,omitempty"`
+	KeypairCount *float64 `json:"keypair-count,omitempty"`
+	Mode         *string  `json:"mode,omitempty"`
 }
 
 type SystemIkeDhGroup31 struct {
-	KeypairCache *string `json:"keypair-cache,omitempty"`
-	KeypairCount *int64  `json:"keypair-count,omitempty"`
-	Mode         *string `json:"mode,omitempty"`
+	KeypairCache *string  `json:"keypair-cache,omitempty"`
+	KeypairCount *float64 `json:"keypair-count,omitempty"`
+	Mode         *string  `json:"mode,omitempty"`
 }
 
 type SystemIkeDhGroup32 struct {
-	KeypairCache *string `json:"keypair-cache,omitempty"`
-	KeypairCount *int64  `json:"keypair-count,omitempty"`
-	Mode         *string `json:"mode,omitempty"`
+	KeypairCache *string  `json:"keypair-cache,omitempty"`
+	KeypairCount *float64 `json:"keypair-count,omitempty"`
+	Mode         *string  `json:"mode,omitempty"`
 }
 
 type SystemIkeDhGroup5 struct {
-	KeypairCache *string `json:"keypair-cache,omitempty"`
-	KeypairCount *int64  `json:"keypair-count,omitempty"`
-	Mode         *string `json:"mode,omitempty"`
+	KeypairCache *string  `json:"keypair-cache,omitempty"`
+	KeypairCount *float64 `json:"keypair-count,omitempty"`
+	Mode         *string  `json:"mode,omitempty"`
 }

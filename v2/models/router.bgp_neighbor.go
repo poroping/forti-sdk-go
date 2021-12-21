@@ -7,13 +7,13 @@ type RouterbgpNeighbor struct {
 	Activate6                   *string                                   `json:"activate6,omitempty"`
 	AdditionalPath              *string                                   `json:"additional-path,omitempty"`
 	AdditionalPath6             *string                                   `json:"additional-path6,omitempty"`
-	AdvAdditionalPath           *int64                                    `json:"adv-additional-path,omitempty"`
-	AdvAdditionalPath6          *int64                                    `json:"adv-additional-path6,omitempty"`
-	AdvertisementInterval       *int64                                    `json:"advertisement-interval,omitempty"`
-	AllowasIn                   *int64                                    `json:"allowas-in,omitempty"`
+	AdvAdditionalPath           *float64                                  `json:"adv-additional-path,omitempty"`
+	AdvAdditionalPath6          *float64                                  `json:"adv-additional-path6,omitempty"`
+	AdvertisementInterval       *float64                                  `json:"advertisement-interval,omitempty"`
+	AllowasIn                   *float64                                  `json:"allowas-in,omitempty"`
 	AllowasInEnable             *string                                   `json:"allowas-in-enable,omitempty"`
 	AllowasInEnable6            *string                                   `json:"allowas-in-enable6,omitempty"`
-	AllowasIn6                  *int64                                    `json:"allowas-in6,omitempty"`
+	AllowasIn6                  *float64                                  `json:"allowas-in6,omitempty"`
 	AsOverride                  *string                                   `json:"as-override,omitempty"`
 	AsOverride6                 *string                                   `json:"as-override6,omitempty"`
 	AttributeUnchanged          *string                                   `json:"attribute-unchanged,omitempty"`
@@ -29,7 +29,7 @@ type RouterbgpNeighbor struct {
 	CapabilityRouteRefresh      *string                                   `json:"capability-route-refresh,omitempty"`
 	ConditionalAdvertise        *[]RouterbgpNeighborConditionalAdvertise  `json:"conditional-advertise,omitempty"`
 	ConditionalAdvertise6       *[]RouterbgpNeighborConditionalAdvertise6 `json:"conditional-advertise6,omitempty"`
-	ConnectTimer                *int64                                    `json:"connect-timer,omitempty"`
+	ConnectTimer                *float64                                  `json:"connect-timer,omitempty"`
 	DefaultOriginateRoutemap    *string                                   `json:"default-originate-routemap,omitempty"`
 	DefaultOriginateRoutemap6   *string                                   `json:"default-originate-routemap6,omitempty"`
 	Description                 *string                                   `json:"description,omitempty"`
@@ -39,25 +39,25 @@ type RouterbgpNeighbor struct {
 	DistributeListOut6          *string                                   `json:"distribute-list-out6,omitempty"`
 	DontCapabilityNegotiate     *string                                   `json:"dont-capability-negotiate,omitempty"`
 	EbgpEnforceMultihop         *string                                   `json:"ebgp-enforce-multihop,omitempty"`
-	EbgpMultihopTtl             *int64                                    `json:"ebgp-multihop-ttl,omitempty"`
+	EbgpMultihopTtl             *float64                                  `json:"ebgp-multihop-ttl,omitempty"`
 	FilterListIn                *string                                   `json:"filter-list-in,omitempty"`
 	FilterListIn6               *string                                   `json:"filter-list-in6,omitempty"`
 	FilterListOut               *string                                   `json:"filter-list-out,omitempty"`
 	FilterListOut6              *string                                   `json:"filter-list-out6,omitempty"`
-	HoldtimeTimer               *int64                                    `json:"holdtime-timer,omitempty"`
+	HoldtimeTimer               *float64                                  `json:"holdtime-timer,omitempty"`
 	Interface                   *string                                   `json:"interface,omitempty"`
 	Ip                          *string                                   `json:"ip,omitempty"`
-	KeepAliveTimer              *int64                                    `json:"keep-alive-timer,omitempty"`
+	KeepAliveTimer              *float64                                  `json:"keep-alive-timer,omitempty"`
 	LinkDownFailover            *string                                   `json:"link-down-failover,omitempty"`
-	LocalAs                     *int64                                    `json:"local-as,omitempty"`
+	LocalAs                     *float64                                  `json:"local-as,omitempty"`
 	LocalAsNoPrepend            *string                                   `json:"local-as-no-prepend,omitempty"`
 	LocalAsReplaceAs            *string                                   `json:"local-as-replace-as,omitempty"`
-	MaximumPrefix               *int64                                    `json:"maximum-prefix,omitempty"`
-	MaximumPrefixThreshold      *int64                                    `json:"maximum-prefix-threshold,omitempty"`
-	MaximumPrefixThreshold6     *int64                                    `json:"maximum-prefix-threshold6,omitempty"`
+	MaximumPrefix               *float64                                  `json:"maximum-prefix,omitempty"`
+	MaximumPrefixThreshold      *float64                                  `json:"maximum-prefix-threshold,omitempty"`
+	MaximumPrefixThreshold6     *float64                                  `json:"maximum-prefix-threshold6,omitempty"`
 	MaximumPrefixWarningOnly    *string                                   `json:"maximum-prefix-warning-only,omitempty"`
 	MaximumPrefixWarningOnly6   *string                                   `json:"maximum-prefix-warning-only6,omitempty"`
-	MaximumPrefix6              *int64                                    `json:"maximum-prefix6,omitempty"`
+	MaximumPrefix6              *float64                                  `json:"maximum-prefix6,omitempty"`
 	NextHopSelf                 *string                                   `json:"next-hop-self,omitempty"`
 	NextHopSelfRr               *string                                   `json:"next-hop-self-rr,omitempty"`
 	NextHopSelfRr6              *string                                   `json:"next-hop-self-rr6,omitempty"`
@@ -69,11 +69,11 @@ type RouterbgpNeighbor struct {
 	PrefixListIn6               *string                                   `json:"prefix-list-in6,omitempty"`
 	PrefixListOut               *string                                   `json:"prefix-list-out,omitempty"`
 	PrefixListOut6              *string                                   `json:"prefix-list-out6,omitempty"`
-	RemoteAs                    *int64                                    `json:"remote-as,omitempty"`
+	RemoteAs                    *float64                                  `json:"remote-as,omitempty"`
 	RemovePrivateAs             *string                                   `json:"remove-private-as,omitempty"`
 	RemovePrivateAs6            *string                                   `json:"remove-private-as6,omitempty"`
-	RestartTime                 *int64                                    `json:"restart-time,omitempty"`
-	RetainStaleTime             *int64                                    `json:"retain-stale-time,omitempty"`
+	RestartTime                 *float64                                  `json:"restart-time,omitempty"`
+	RetainStaleTime             *float64                                  `json:"retain-stale-time,omitempty"`
 	RouteMapIn                  *string                                   `json:"route-map-in,omitempty"`
 	RouteMapIn6                 *string                                   `json:"route-map-in6,omitempty"`
 	RouteMapOut                 *string                                   `json:"route-map-out,omitempty"`
@@ -94,7 +94,7 @@ type RouterbgpNeighbor struct {
 	UnsuppressMap               *string                                   `json:"unsuppress-map,omitempty"`
 	UnsuppressMap6              *string                                   `json:"unsuppress-map6,omitempty"`
 	UpdateSource                *string                                   `json:"update-source,omitempty"`
-	Weight                      *int64                                    `json:"weight,omitempty"`
+	Weight                      *float64                                  `json:"weight,omitempty"`
 }
 
 type RouterbgpNeighborConditionalAdvertise struct {

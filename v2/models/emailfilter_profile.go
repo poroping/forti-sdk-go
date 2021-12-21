@@ -17,16 +17,16 @@ type EmailfilterProfile struct {
 	Pop3                      *[]EmailfilterProfilePop3          `json:"pop3,omitempty"`
 	ReplacemsgGroup           *string                            `json:"replacemsg-group,omitempty"`
 	Smtp                      *[]EmailfilterProfileSmtp          `json:"smtp,omitempty"`
-	SpamBalTable              *int64                             `json:"spam-bal-table,omitempty"`
-	SpamBwlTable              *int64                             `json:"spam-bwl-table,omitempty"`
-	SpamBwordTable            *int64                             `json:"spam-bword-table,omitempty"`
-	SpamBwordThreshold        *int64                             `json:"spam-bword-threshold,omitempty"`
+	SpamBalTable              *float64                           `json:"spam-bal-table,omitempty"`
+	SpamBwlTable              *float64                           `json:"spam-bwl-table,omitempty"`
+	SpamBwordTable            *float64                           `json:"spam-bword-table,omitempty"`
+	SpamBwordThreshold        *float64                           `json:"spam-bword-threshold,omitempty"`
 	SpamFiltering             *string                            `json:"spam-filtering,omitempty"`
-	SpamIptrustTable          *int64                             `json:"spam-iptrust-table,omitempty"`
+	SpamIptrustTable          *float64                           `json:"spam-iptrust-table,omitempty"`
 	SpamLog                   *string                            `json:"spam-log,omitempty"`
 	SpamLogFortiguardResponse *string                            `json:"spam-log-fortiguard-response,omitempty"`
-	SpamMheaderTable          *int64                             `json:"spam-mheader-table,omitempty"`
-	SpamRblTable              *int64                             `json:"spam-rbl-table,omitempty"`
+	SpamMheaderTable          *float64                           `json:"spam-mheader-table,omitempty"`
+	SpamRblTable              *float64                           `json:"spam-rbl-table,omitempty"`
 	YahooMail                 *[]EmailfilterProfileYahooMail     `json:"yahoo-mail,omitempty"`
 }
 

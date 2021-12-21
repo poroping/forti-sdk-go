@@ -17,15 +17,15 @@ type LogThreatWeight struct {
 }
 
 type LogThreatWeightApplication struct {
-	Category *int64  `json:"category,omitempty"`
-	Id       *int64  `json:"id,omitempty"`
-	Level    *string `json:"level,omitempty"`
+	Category *float64 `json:"category,omitempty"`
+	Id       *float64 `json:"id,omitempty"`
+	Level    *string  `json:"level,omitempty"`
 }
 
 type LogThreatWeightGeolocation struct {
-	Country *string `json:"country,omitempty"`
-	Id      *int64  `json:"id,omitempty"`
-	Level   *string `json:"level,omitempty"`
+	Country *string  `json:"country,omitempty"`
+	Id      *float64 `json:"id,omitempty"`
+	Level   *string  `json:"level,omitempty"`
 }
 
 type LogThreatWeightIps struct {
@@ -37,10 +37,10 @@ type LogThreatWeightIps struct {
 }
 
 type LogThreatWeightLevel struct {
-	Critical *int64 `json:"critical,omitempty"`
-	High     *int64 `json:"high,omitempty"`
-	Low      *int64 `json:"low,omitempty"`
-	Medium   *int64 `json:"medium,omitempty"`
+	Critical *float64 `json:"critical,omitempty"`
+	High     *float64 `json:"high,omitempty"`
+	Low      *float64 `json:"low,omitempty"`
+	Medium   *float64 `json:"medium,omitempty"`
 }
 
 type LogThreatWeightMalware struct {
@@ -63,7 +63,7 @@ type LogThreatWeightMalware struct {
 }
 
 type LogThreatWeightWeb struct {
-	Category *int64  `json:"category,omitempty"`
-	Id       *int64  `json:"id,omitempty"`
-	Level    *string `json:"level,omitempty"`
+	Category *float64 `json:"category,omitempty"`
+	Id       *float64 `json:"id,omitempty"`
+	Level    *string  `json:"level,omitempty"`
 }

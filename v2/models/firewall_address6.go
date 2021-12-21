@@ -3,8 +3,8 @@ package models
 const FirewallAddress6Path = "firewall/address6/"
 
 type FirewallAddress6 struct {
-	CacheTtl      *int64                           `json:"cache-ttl,omitempty"`
-	Color         *int64                           `json:"color,omitempty"`
+	CacheTtl      *float64                         `json:"cache-ttl,omitempty"`
+	Color         *float64                         `json:"color,omitempty"`
 	Comment       *string                          `json:"comment,omitempty"`
 	Country       *string                          `json:"country,omitempty"`
 	EndIp         *string                          `json:"end-ip,omitempty"`

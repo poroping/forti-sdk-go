@@ -10,9 +10,9 @@ type Logsyslogd2Setting struct {
 	Format                *string                              `json:"format,omitempty"`
 	Interface             *string                              `json:"interface,omitempty"`
 	InterfaceSelectMethod *string                              `json:"interface-select-method,omitempty"`
-	MaxLogRate            *int64                               `json:"max-log-rate,omitempty"`
+	MaxLogRate            *float64                             `json:"max-log-rate,omitempty"`
 	Mode                  *string                              `json:"mode,omitempty"`
-	Port                  *int64                               `json:"port,omitempty"`
+	Port                  *float64                             `json:"port,omitempty"`
 	Priority              *string                              `json:"priority,omitempty"`
 	Server                *string                              `json:"server,omitempty"`
 	SourceIp              *string                              `json:"source-ip,omitempty"`
@@ -21,7 +21,7 @@ type Logsyslogd2Setting struct {
 }
 
 type Logsyslogd2SettingCustomFieldName struct {
-	Custom *string `json:"custom,omitempty"`
-	Id     *int64  `json:"id,omitempty"`
-	Name   *string `json:"name,omitempty"`
+	Custom *string  `json:"custom,omitempty"`
+	Id     *float64 `json:"id,omitempty"`
+	Name   *string  `json:"name,omitempty"`
 }

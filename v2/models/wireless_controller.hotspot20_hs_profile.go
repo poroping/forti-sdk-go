@@ -10,14 +10,14 @@ type WirelessControllerhotspot20HsProfile struct {
 	AccessNetworkType     *string                                            `json:"access-network-type,omitempty"`
 	AccessNetworkUesa     *string                                            `json:"access-network-uesa,omitempty"`
 	AdviceOfCharge        *string                                            `json:"advice-of-charge,omitempty"`
-	AnqpDomainId          *int64                                             `json:"anqp-domain-id,omitempty"`
+	AnqpDomainId          *float64                                           `json:"anqp-domain-id,omitempty"`
 	BssTransition         *string                                            `json:"bss-transition,omitempty"`
 	ConnCap               *string                                            `json:"conn-cap,omitempty"`
-	DeauthRequestTimeout  *int64                                             `json:"deauth-request-timeout,omitempty"`
+	DeauthRequestTimeout  *float64                                           `json:"deauth-request-timeout,omitempty"`
 	Dgaf                  *string                                            `json:"dgaf,omitempty"`
 	DomainName            *string                                            `json:"domain-name,omitempty"`
-	GasComebackDelay      *int64                                             `json:"gas-comeback-delay,omitempty"`
-	GasFragmentationLimit *int64                                             `json:"gas-fragmentation-limit,omitempty"`
+	GasComebackDelay      *float64                                           `json:"gas-comeback-delay,omitempty"`
+	GasFragmentationLimit *float64                                           `json:"gas-fragmentation-limit,omitempty"`
 	Hessid                *string                                            `json:"hessid,omitempty"`
 	IpAddrType            *string                                            `json:"ip-addr-type,omitempty"`
 	L2tif                 *string                                            `json:"l2tif,omitempty"`
@@ -32,7 +32,7 @@ type WirelessControllerhotspot20HsProfile struct {
 	PameBi                *string                                            `json:"pame-bi,omitempty"`
 	ProxyArp              *string                                            `json:"proxy-arp,omitempty"`
 	QosMap                *string                                            `json:"qos-map,omitempty"`
-	Release               *int64                                             `json:"release,omitempty"`
+	Release               *float64                                           `json:"release,omitempty"`
 	RoamingConsortium     *string                                            `json:"roaming-consortium,omitempty"`
 	TermsAndConditions    *string                                            `json:"terms-and-conditions,omitempty"`
 	VenueGroup            *string                                            `json:"venue-group,omitempty"`

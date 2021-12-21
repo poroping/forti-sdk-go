@@ -16,7 +16,7 @@ type FirewallSniffer struct {
 	FileFilterProfile        *string                        `json:"file-filter-profile,omitempty"`
 	FileFilterProfileStatus  *string                        `json:"file-filter-profile-status,omitempty"`
 	Host                     *string                        `json:"host,omitempty"`
-	Fosid                    *int64                         `json:"fosid,omitempty"`
+	Fosid                    *float64                       `json:"fosid,omitempty"`
 	Interface                *string                        `json:"interface,omitempty"`
 	IpThreatfeed             *[]FirewallSnifferIpThreatfeed `json:"ip-threatfeed,omitempty"`
 	IpThreatfeedStatus       *string                        `json:"ip-threatfeed-status,omitempty"`
@@ -25,7 +25,7 @@ type FirewallSniffer struct {
 	IpsSensorStatus          *string                        `json:"ips-sensor-status,omitempty"`
 	Ipv6                     *string                        `json:"ipv6,omitempty"`
 	Logtraffic               *string                        `json:"logtraffic,omitempty"`
-	MaxPacketCount           *int64                         `json:"max-packet-count,omitempty"`
+	MaxPacketCount           *float64                       `json:"max-packet-count,omitempty"`
 	NonIp                    *string                        `json:"non-ip,omitempty"`
 	Port                     *string                        `json:"port,omitempty"`
 	Protocol                 *string                        `json:"protocol,omitempty"`
@@ -36,15 +36,15 @@ type FirewallSniffer struct {
 }
 
 type FirewallSnifferAnomaly struct {
-	Action           *string `json:"action,omitempty"`
-	Log              *string `json:"log,omitempty"`
-	Name             *string `json:"name,omitempty"`
-	Quarantine       *string `json:"quarantine,omitempty"`
-	QuarantineExpiry *string `json:"quarantine-expiry,omitempty"`
-	QuarantineLog    *string `json:"quarantine-log,omitempty"`
-	Status           *string `json:"status,omitempty"`
-	Threshold        *int64  `json:"threshold,omitempty"`
-	Thresholddefault *int64  `json:"threshold(default),omitempty"`
+	Action           *string  `json:"action,omitempty"`
+	Log              *string  `json:"log,omitempty"`
+	Name             *string  `json:"name,omitempty"`
+	Quarantine       *string  `json:"quarantine,omitempty"`
+	QuarantineExpiry *string  `json:"quarantine-expiry,omitempty"`
+	QuarantineLog    *string  `json:"quarantine-log,omitempty"`
+	Status           *string  `json:"status,omitempty"`
+	Threshold        *float64 `json:"threshold,omitempty"`
+	Thresholddefault *float64 `json:"threshold(default),omitempty"`
 }
 
 type FirewallSnifferIpThreatfeed struct {

@@ -10,7 +10,7 @@ type IcapProfile struct {
 	Methods                *string                           `json:"methods,omitempty"`
 	Name                   *string                           `json:"name,omitempty"`
 	Preview                *string                           `json:"preview,omitempty"`
-	PreviewDataLength      *int64                            `json:"preview-data-length,omitempty"`
+	PreviewDataLength      *float64                          `json:"preview-data-length,omitempty"`
 	ReplacemsgGroup        *string                           `json:"replacemsg-group,omitempty"`
 	Request                *string                           `json:"request,omitempty"`
 	RequestFailure         *string                           `json:"request-failure,omitempty"`
@@ -23,15 +23,15 @@ type IcapProfile struct {
 	ResponsePath           *string                           `json:"response-path,omitempty"`
 	ResponseReqHdr         *string                           `json:"response-req-hdr,omitempty"`
 	ResponseServer         *string                           `json:"response-server,omitempty"`
-	ScanProgressInterval   *int64                            `json:"scan-progress-interval,omitempty"`
+	ScanProgressInterval   *float64                          `json:"scan-progress-interval,omitempty"`
 	StreamingContentBypass *string                           `json:"streaming-content-bypass,omitempty"`
 }
 
 type IcapProfileIcapHeaders struct {
-	Base64Encoding *string `json:"base64-encoding,omitempty"`
-	Content        *string `json:"content,omitempty"`
-	Id             *int64  `json:"id,omitempty"`
-	Name           *string `json:"name,omitempty"`
+	Base64Encoding *string  `json:"base64-encoding,omitempty"`
+	Content        *string  `json:"content,omitempty"`
+	Id             *float64 `json:"id,omitempty"`
+	Name           *string  `json:"name,omitempty"`
 }
 
 type IcapProfileRespmodForwardRules struct {
@@ -43,12 +43,12 @@ type IcapProfileRespmodForwardRules struct {
 }
 
 type IcapProfileRespmodForwardRulesHeaderGroup struct {
-	CaseSensitivity *string `json:"case-sensitivity,omitempty"`
-	Header          *string `json:"header,omitempty"`
-	HeaderName      *string `json:"header-name,omitempty"`
-	Id              *int64  `json:"id,omitempty"`
+	CaseSensitivity *string  `json:"case-sensitivity,omitempty"`
+	Header          *string  `json:"header,omitempty"`
+	HeaderName      *string  `json:"header-name,omitempty"`
+	Id              *float64 `json:"id,omitempty"`
 }
 
 type IcapProfileRespmodForwardRulesHttpRespStatusCode struct {
-	Code *int64 `json:"code,omitempty"`
+	Code *float64 `json:"code,omitempty"`
 }

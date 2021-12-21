@@ -32,11 +32,11 @@ type SshFilterProfileFileFilterEntriesFileType struct {
 }
 
 type SshFilterProfileShellCommands struct {
-	Action   *string `json:"action,omitempty"`
-	Alert    *string `json:"alert,omitempty"`
-	Id       *int64  `json:"id,omitempty"`
-	Log      *string `json:"log,omitempty"`
-	Pattern  *string `json:"pattern,omitempty"`
-	Severity *string `json:"severity,omitempty"`
-	Type     *string `json:"type,omitempty"`
+	Action   *string  `json:"action,omitempty"`
+	Alert    *string  `json:"alert,omitempty"`
+	Id       *float64 `json:"id,omitempty"`
+	Log      *string  `json:"log,omitempty"`
+	Pattern  *string  `json:"pattern,omitempty"`
+	Severity *string  `json:"severity,omitempty"`
+	Type     *string  `json:"type,omitempty"`
 }

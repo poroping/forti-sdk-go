@@ -8,7 +8,7 @@ type WirelessControllerhotspot20Anqp3gppCellular struct {
 }
 
 type WirelessControllerhotspot20Anqp3gppCellularMccMncList struct {
-	Id  *int64  `json:"id,omitempty"`
-	Mcc *string `json:"mcc,omitempty"`
-	Mnc *string `json:"mnc,omitempty"`
+	Id  *float64 `json:"id,omitempty"`
+	Mcc *string  `json:"mcc,omitempty"`
+	Mnc *string  `json:"mnc,omitempty"`
 }

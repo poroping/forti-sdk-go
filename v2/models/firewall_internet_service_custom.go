@@ -6,14 +6,14 @@ type FirewallInternetServiceCustom struct {
 	Comment    *string                               `json:"comment,omitempty"`
 	Entry      *[]FirewallInternetServiceCustomEntry `json:"entry,omitempty"`
 	Name       *string                               `json:"name,omitempty"`
-	Reputation *int64                                `json:"reputation,omitempty"`
+	Reputation *float64                              `json:"reputation,omitempty"`
 }
 
 type FirewallInternetServiceCustomEntry struct {
 	Dst       *[]FirewallInternetServiceCustomEntryDst       `json:"dst,omitempty"`
-	Id        *int64                                         `json:"id,omitempty"`
+	Id        *float64                                       `json:"id,omitempty"`
 	PortRange *[]FirewallInternetServiceCustomEntryPortRange `json:"port-range,omitempty"`
-	Protocol  *int64                                         `json:"protocol,omitempty"`
+	Protocol  *float64                                       `json:"protocol,omitempty"`
 }
 
 type FirewallInternetServiceCustomEntryDst struct {
@@ -21,7 +21,7 @@ type FirewallInternetServiceCustomEntryDst struct {
 }
 
 type FirewallInternetServiceCustomEntryPortRange struct {
-	EndPort   *int64 `json:"end-port,omitempty"`
-	Id        *int64 `json:"id,omitempty"`
-	StartPort *int64 `json:"start-port,omitempty"`
+	EndPort   *float64 `json:"end-port,omitempty"`
+	Id        *float64 `json:"id,omitempty"`
+	StartPort *float64 `json:"start-port,omitempty"`
 }

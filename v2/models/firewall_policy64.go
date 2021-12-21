@@ -14,15 +14,15 @@ type FirewallPolicy64 struct {
 	Name                 *string                     `json:"name,omitempty"`
 	PerIpShaper          *string                     `json:"per-ip-shaper,omitempty"`
 	PermitAnyHost        *string                     `json:"permit-any-host,omitempty"`
-	Policyid             *int64                      `json:"policyid,omitempty"`
+	Policyid             *float64                    `json:"policyid,omitempty"`
 	Poolname             *[]FirewallPolicy64Poolname `json:"poolname,omitempty"`
 	Schedule             *string                     `json:"schedule,omitempty"`
 	Service              *[]FirewallPolicy64Service  `json:"service,omitempty"`
 	Srcaddr              *[]FirewallPolicy64Srcaddr  `json:"srcaddr,omitempty"`
 	Srcintf              *string                     `json:"srcintf,omitempty"`
 	Status               *string                     `json:"status,omitempty"`
-	TcpMssReceiver       *int64                      `json:"tcp-mss-receiver,omitempty"`
-	TcpMssSender         *int64                      `json:"tcp-mss-sender,omitempty"`
+	TcpMssReceiver       *float64                    `json:"tcp-mss-receiver,omitempty"`
+	TcpMssSender         *float64                    `json:"tcp-mss-sender,omitempty"`
 	TrafficShaper        *string                     `json:"traffic-shaper,omitempty"`
 	TrafficShaperReverse *string                     `json:"traffic-shaper-reverse,omitempty"`
 	Uuid                 *string                     `json:"uuid,omitempty"`

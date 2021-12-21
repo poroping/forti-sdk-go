@@ -9,8 +9,8 @@ type SctpFilterProfile struct {
 }
 
 type SctpFilterProfilePpidFilters struct {
-	Action  *string `json:"action,omitempty"`
-	Comment *string `json:"comment,omitempty"`
-	Id      *int64  `json:"id,omitempty"`
-	Ppid    *int64  `json:"ppid,omitempty"`
+	Action  *string  `json:"action,omitempty"`
+	Comment *string  `json:"comment,omitempty"`
+	Id      *float64 `json:"id,omitempty"`
+	Ppid    *float64 `json:"ppid,omitempty"`
 }

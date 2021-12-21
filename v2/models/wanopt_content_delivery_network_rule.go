@@ -29,18 +29,18 @@ type WanoptContentDeliveryNetworkRuleRules struct {
 }
 
 type WanoptContentDeliveryNetworkRuleRulesContentId struct {
-	EndDirection   *string `json:"end-direction,omitempty"`
-	EndSkip        *int64  `json:"end-skip,omitempty"`
-	EndStr         *string `json:"end-str,omitempty"`
-	RangeStr       *string `json:"range-str,omitempty"`
-	StartDirection *string `json:"start-direction,omitempty"`
-	StartSkip      *int64  `json:"start-skip,omitempty"`
-	StartStr       *string `json:"start-str,omitempty"`
-	Target         *string `json:"target,omitempty"`
+	EndDirection   *string  `json:"end-direction,omitempty"`
+	EndSkip        *float64 `json:"end-skip,omitempty"`
+	EndStr         *string  `json:"end-str,omitempty"`
+	RangeStr       *string  `json:"range-str,omitempty"`
+	StartDirection *string  `json:"start-direction,omitempty"`
+	StartSkip      *float64 `json:"start-skip,omitempty"`
+	StartStr       *string  `json:"start-str,omitempty"`
+	Target         *string  `json:"target,omitempty"`
 }
 
 type WanoptContentDeliveryNetworkRuleRulesMatchEntries struct {
-	Id      *int64                                                      `json:"id,omitempty"`
+	Id      *float64                                                    `json:"id,omitempty"`
 	Pattern *[]WanoptContentDeliveryNetworkRuleRulesMatchEntriesPattern `json:"pattern,omitempty"`
 	Target  *string                                                     `json:"target,omitempty"`
 }
@@ -50,7 +50,7 @@ type WanoptContentDeliveryNetworkRuleRulesMatchEntriesPattern struct {
 }
 
 type WanoptContentDeliveryNetworkRuleRulesSkipEntries struct {
-	Id      *int64                                                     `json:"id,omitempty"`
+	Id      *float64                                                   `json:"id,omitempty"`
 	Pattern *[]WanoptContentDeliveryNetworkRuleRulesSkipEntriesPattern `json:"pattern,omitempty"`
 	Target  *string                                                    `json:"target,omitempty"`
 }

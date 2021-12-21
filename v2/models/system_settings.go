@@ -12,10 +12,10 @@ type SystemSettings struct {
 	Asymroute6Icmp                 *string                                  `json:"asymroute6-icmp,omitempty"`
 	AuxiliarySession               *string                                  `json:"auxiliary-session,omitempty"`
 	Bfd                            *string                                  `json:"bfd,omitempty"`
-	BfdDesiredMinTx                *int64                                   `json:"bfd-desired-min-tx,omitempty"`
-	BfdDetectMult                  *int64                                   `json:"bfd-detect-mult,omitempty"`
+	BfdDesiredMinTx                *float64                                 `json:"bfd-desired-min-tx,omitempty"`
+	BfdDetectMult                  *float64                                 `json:"bfd-detect-mult,omitempty"`
 	BfdDontEnforceSrcPort          *string                                  `json:"bfd-dont-enforce-src-port,omitempty"`
-	BfdRequiredMinRx               *int64                                   `json:"bfd-required-min-rx,omitempty"`
+	BfdRequiredMinRx               *float64                                 `json:"bfd-required-min-rx,omitempty"`
 	BlockLandAttack                *string                                  `json:"block-land-attack,omitempty"`
 	CentralNat                     *string                                  `json:"central-nat,omitempty"`
 	Comments                       *string                                  `json:"comments,omitempty"`
@@ -28,8 +28,8 @@ type SystemSettings struct {
 	DhcpProxyInterfaceSelectMethod *string                                  `json:"dhcp-proxy-interface-select-method,omitempty"`
 	DhcpServerIp                   *string                                  `json:"dhcp-server-ip,omitempty"`
 	Dhcp6ServerIp                  *string                                  `json:"dhcp6-server-ip,omitempty"`
-	DiscoveredDeviceTimeout        *int64                                   `json:"discovered-device-timeout,omitempty"`
-	EcmpMaxPaths                   *int64                                   `json:"ecmp-max-paths,omitempty"`
+	DiscoveredDeviceTimeout        *float64                                 `json:"discovered-device-timeout,omitempty"`
+	EcmpMaxPaths                   *float64                                 `json:"ecmp-max-paths,omitempty"`
 	EmailPortalCheckDns            *string                                  `json:"email-portal-check-dns,omitempty"`
 	FirewallSessionDirty           *string                                  `json:"firewall-session-dirty,omitempty"`
 	FwSessionHairpin               *string                                  `json:"fw-session-hairpin,omitempty"`
@@ -90,7 +90,7 @@ type SystemSettings struct {
 	HttpExternalDest               *string                                  `json:"http-external-dest,omitempty"`
 	IkeDnFormat                    *string                                  `json:"ike-dn-format,omitempty"`
 	IkePolicyRoute                 *string                                  `json:"ike-policy-route,omitempty"`
-	IkePort                        *int64                                   `json:"ike-port,omitempty"`
+	IkePort                        *float64                                 `json:"ike-port,omitempty"`
 	IkeQuickCrashDetect            *string                                  `json:"ike-quick-crash-detect,omitempty"`
 	IkeSessionResume               *string                                  `json:"ike-session-resume,omitempty"`
 	ImplicitAllowDns               *string                                  `json:"implicit-allow-dns,omitempty"`
@@ -100,7 +100,7 @@ type SystemSettings struct {
 	LldpReception                  *string                                  `json:"lldp-reception,omitempty"`
 	LldpTransmission               *string                                  `json:"lldp-transmission,omitempty"`
 	LocationId                     *string                                  `json:"location-id,omitempty"`
-	MacTtl                         *int64                                   `json:"mac-ttl,omitempty"`
+	MacTtl                         *float64                                 `json:"mac-ttl,omitempty"`
 	Manageip                       *string                                  `json:"manageip,omitempty"`
 	Manageip6                      *string                                  `json:"manageip6,omitempty"`
 	MulticastForward               *string                                  `json:"multicast-forward,omitempty"`
@@ -109,14 +109,14 @@ type SystemSettings struct {
 	NgfwMode                       *string                                  `json:"ngfw-mode,omitempty"`
 	Opmode                         *string                                  `json:"opmode,omitempty"`
 	PrpTrailerAction               *string                                  `json:"prp-trailer-action,omitempty"`
-	SccpPort                       *int64                                   `json:"sccp-port,omitempty"`
+	SccpPort                       *float64                                 `json:"sccp-port,omitempty"`
 	SctpSessionWithoutInit         *string                                  `json:"sctp-session-without-init,omitempty"`
 	SesDeniedTraffic               *string                                  `json:"ses-denied-traffic,omitempty"`
 	SipExpectation                 *string                                  `json:"sip-expectation,omitempty"`
 	SipNatTrace                    *string                                  `json:"sip-nat-trace,omitempty"`
-	SipSslPort                     *int64                                   `json:"sip-ssl-port,omitempty"`
-	SipTcpPort                     *int64                                   `json:"sip-tcp-port,omitempty"`
-	SipUdpPort                     *int64                                   `json:"sip-udp-port,omitempty"`
+	SipSslPort                     *float64                                 `json:"sip-ssl-port,omitempty"`
+	SipTcpPort                     *float64                                 `json:"sip-tcp-port,omitempty"`
+	SipUdpPort                     *float64                                 `json:"sip-udp-port,omitempty"`
 	SnatHairpinTraffic             *string                                  `json:"snat-hairpin-traffic,omitempty"`
 	Status                         *string                                  `json:"status,omitempty"`
 	StrictSrcCheck                 *string                                  `json:"strict-src-check,omitempty"`
@@ -124,7 +124,7 @@ type SystemSettings struct {
 	Utf8SpamTagging                *string                                  `json:"utf8-spam-tagging,omitempty"`
 	V4EcmpMode                     *string                                  `json:"v4-ecmp-mode,omitempty"`
 	VpnStatsLog                    *string                                  `json:"vpn-stats-log,omitempty"`
-	VpnStatsPeriod                 *int64                                   `json:"vpn-stats-period,omitempty"`
+	VpnStatsPeriod                 *float64                                 `json:"vpn-stats-period,omitempty"`
 	WccpCacheEngine                *string                                  `json:"wccp-cache-engine,omitempty"`
 }
 

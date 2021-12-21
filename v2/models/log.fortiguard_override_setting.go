@@ -3,13 +3,13 @@ package models
 const LogfortiguardOverrideSettingPath = "log.fortiguard/override-setting/"
 
 type LogfortiguardOverrideSetting struct {
-	AccessConfig   *string `json:"access-config,omitempty"`
-	MaxLogRate     *int64  `json:"max-log-rate,omitempty"`
-	Override       *string `json:"override,omitempty"`
-	Priority       *string `json:"priority,omitempty"`
-	Status         *string `json:"status,omitempty"`
-	UploadDay      *string `json:"upload-day,omitempty"`
-	UploadInterval *string `json:"upload-interval,omitempty"`
-	UploadOption   *string `json:"upload-option,omitempty"`
-	UploadTime     *string `json:"upload-time,omitempty"`
+	AccessConfig   *string  `json:"access-config,omitempty"`
+	MaxLogRate     *float64 `json:"max-log-rate,omitempty"`
+	Override       *string  `json:"override,omitempty"`
+	Priority       *string  `json:"priority,omitempty"`
+	Status         *string  `json:"status,omitempty"`
+	UploadDay      *string  `json:"upload-day,omitempty"`
+	UploadInterval *string  `json:"upload-interval,omitempty"`
+	UploadOption   *string  `json:"upload-option,omitempty"`
+	UploadTime     *string  `json:"upload-time,omitempty"`
 }

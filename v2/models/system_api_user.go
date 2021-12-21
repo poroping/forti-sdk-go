@@ -16,10 +16,10 @@ type SystemApiUser struct {
 }
 
 type SystemApiUserTrusthost struct {
-	Id            *int64  `json:"id,omitempty"`
-	Ipv4Trusthost *string `json:"ipv4-trusthost,omitempty"`
-	Ipv6Trusthost *string `json:"ipv6-trusthost,omitempty"`
-	Type          *string `json:"type,omitempty"`
+	Id            *float64 `json:"id,omitempty"`
+	Ipv4Trusthost *string  `json:"ipv4-trusthost,omitempty"`
+	Ipv6Trusthost *string  `json:"ipv6-trusthost,omitempty"`
+	Type          *string  `json:"type,omitempty"`
 }
 
 type SystemApiUserVdom struct {

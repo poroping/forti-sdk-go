@@ -17,13 +17,13 @@ type ApplicationGroup struct {
 }
 
 type ApplicationGroupApplication struct {
-	Id *int64 `json:"id,omitempty"`
+	Id *float64 `json:"id,omitempty"`
 }
 
 type ApplicationGroupCategory struct {
-	Id *int64 `json:"id,omitempty"`
+	Id *float64 `json:"id,omitempty"`
 }
 
 type ApplicationGroupRisk struct {
-	Level *int64 `json:"level,omitempty"`
+	Level *float64 `json:"level,omitempty"`
 }

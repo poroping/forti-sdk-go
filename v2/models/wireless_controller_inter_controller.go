@@ -3,8 +3,8 @@ package models
 const WirelessControllerInterControllerPath = "wireless-controller/inter-controller/"
 
 type WirelessControllerInterController struct {
-	FastFailoverMax     *int64                                                  `json:"fast-failover-max,omitempty"`
-	FastFailoverWait    *int64                                                  `json:"fast-failover-wait,omitempty"`
+	FastFailoverMax     *float64                                                `json:"fast-failover-max,omitempty"`
+	FastFailoverWait    *float64                                                `json:"fast-failover-wait,omitempty"`
 	InterControllerKey  *string                                                 `json:"inter-controller-key,omitempty"`
 	InterControllerMode *string                                                 `json:"inter-controller-mode,omitempty"`
 	InterControllerPeer *[]WirelessControllerInterControllerInterControllerPeer `json:"inter-controller-peer,omitempty"`
@@ -12,8 +12,8 @@ type WirelessControllerInterController struct {
 }
 
 type WirelessControllerInterControllerInterControllerPeer struct {
-	Id           *int64  `json:"id,omitempty"`
-	PeerIp       *string `json:"peer-ip,omitempty"`
-	PeerPort     *int64  `json:"peer-port,omitempty"`
-	PeerPriority *string `json:"peer-priority,omitempty"`
+	Id           *float64 `json:"id,omitempty"`
+	PeerIp       *string  `json:"peer-ip,omitempty"`
+	PeerPort     *float64 `json:"peer-port,omitempty"`
+	PeerPriority *string  `json:"peer-priority,omitempty"`
 }

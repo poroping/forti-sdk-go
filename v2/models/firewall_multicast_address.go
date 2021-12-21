@@ -4,7 +4,7 @@ const FirewallMulticastAddressPath = "firewall/multicast-address/"
 
 type FirewallMulticastAddress struct {
 	AssociatedInterface *string                            `json:"associated-interface,omitempty"`
-	Color               *int64                             `json:"color,omitempty"`
+	Color               *float64                           `json:"color,omitempty"`
 	Comment             *string                            `json:"comment,omitempty"`
 	EndIp               *string                            `json:"end-ip,omitempty"`
 	Name                *string                            `json:"name,omitempty"`

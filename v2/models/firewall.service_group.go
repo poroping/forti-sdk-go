@@ -3,7 +3,7 @@ package models
 const FirewallserviceGroupPath = "firewall.service/group/"
 
 type FirewallserviceGroup struct {
-	Color        *int64                        `json:"color,omitempty"`
+	Color        *float64                      `json:"color,omitempty"`
 	Comment      *string                       `json:"comment,omitempty"`
 	FabricObject *string                       `json:"fabric-object,omitempty"`
 	Member       *[]FirewallserviceGroupMember `json:"member,omitempty"`

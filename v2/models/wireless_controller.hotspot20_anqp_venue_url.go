@@ -8,7 +8,7 @@ type WirelessControllerhotspot20AnqpVenueUrl struct {
 }
 
 type WirelessControllerhotspot20AnqpVenueUrlValueList struct {
-	Index  *int64  `json:"index,omitempty"`
-	Number *int64  `json:"number,omitempty"`
-	Value  *string `json:"value,omitempty"`
+	Index  *float64 `json:"index,omitempty"`
+	Number *float64 `json:"number,omitempty"`
+	Value  *string  `json:"value,omitempty"`
 }

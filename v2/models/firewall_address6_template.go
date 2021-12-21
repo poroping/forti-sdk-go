@@ -7,13 +7,13 @@ type FirewallAddress6Template struct {
 	Ip6                *string                                  `json:"ip6,omitempty"`
 	Name               *string                                  `json:"name,omitempty"`
 	SubnetSegment      *[]FirewallAddress6TemplateSubnetSegment `json:"subnet-segment,omitempty"`
-	SubnetSegmentCount *int64                                   `json:"subnet-segment-count,omitempty"`
+	SubnetSegmentCount *float64                                 `json:"subnet-segment-count,omitempty"`
 }
 
 type FirewallAddress6TemplateSubnetSegment struct {
-	Bits      *int64                                         `json:"bits,omitempty"`
+	Bits      *float64                                       `json:"bits,omitempty"`
 	Exclusive *string                                        `json:"exclusive,omitempty"`
-	Id        *int64                                         `json:"id,omitempty"`
+	Id        *float64                                       `json:"id,omitempty"`
 	Name      *string                                        `json:"name,omitempty"`
 	Values    *[]FirewallAddress6TemplateSubnetSegmentValues `json:"values,omitempty"`
 }

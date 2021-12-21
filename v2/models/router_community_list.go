@@ -9,8 +9,8 @@ type RouterCommunityList struct {
 }
 
 type RouterCommunityListRule struct {
-	Action *string `json:"action,omitempty"`
-	Id     *int64  `json:"id,omitempty"`
-	Match  *string `json:"match,omitempty"`
-	Regexp *string `json:"regexp,omitempty"`
+	Action *string  `json:"action,omitempty"`
+	Id     *float64 `json:"id,omitempty"`
+	Match  *string  `json:"match,omitempty"`
+	Regexp *string  `json:"regexp,omitempty"`
 }

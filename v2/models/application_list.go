@@ -24,10 +24,10 @@ type ApplicationList struct {
 }
 
 type ApplicationListDefaultNetworkServices struct {
-	Id              *int64  `json:"id,omitempty"`
-	Port            *int64  `json:"port,omitempty"`
-	Services        *string `json:"services,omitempty"`
-	ViolationAction *string `json:"violation-action,omitempty"`
+	Id              *float64 `json:"id,omitempty"`
+	Port            *float64 `json:"port,omitempty"`
+	Services        *string  `json:"services,omitempty"`
+	ViolationAction *string  `json:"violation-action,omitempty"`
 }
 
 type ApplicationListEntries struct {
@@ -36,7 +36,7 @@ type ApplicationListEntries struct {
 	Behavior         *string                              `json:"behavior,omitempty"`
 	Category         *[]ApplicationListEntriesCategory    `json:"category,omitempty"`
 	Exclusion        *[]ApplicationListEntriesExclusion   `json:"exclusion,omitempty"`
-	Id               *int64                               `json:"id,omitempty"`
+	Id               *float64                             `json:"id,omitempty"`
 	Log              *string                              `json:"log,omitempty"`
 	LogPacket        *string                              `json:"log-packet,omitempty"`
 	Parameters       *[]ApplicationListEntriesParameters  `json:"parameters,omitempty"`
@@ -46,12 +46,12 @@ type ApplicationListEntries struct {
 	Quarantine       *string                              `json:"quarantine,omitempty"`
 	QuarantineExpiry *string                              `json:"quarantine-expiry,omitempty"`
 	QuarantineLog    *string                              `json:"quarantine-log,omitempty"`
-	RateCount        *int64                               `json:"rate-count,omitempty"`
-	RateDuration     *int64                               `json:"rate-duration,omitempty"`
+	RateCount        *float64                             `json:"rate-count,omitempty"`
+	RateDuration     *float64                             `json:"rate-duration,omitempty"`
 	RateMode         *string                              `json:"rate-mode,omitempty"`
 	RateTrack        *string                              `json:"rate-track,omitempty"`
 	Risk             *[]ApplicationListEntriesRisk        `json:"risk,omitempty"`
-	SessionTtl       *int64                               `json:"session-ttl,omitempty"`
+	SessionTtl       *float64                             `json:"session-ttl,omitempty"`
 	Shaper           *string                              `json:"shaper,omitempty"`
 	ShaperReverse    *string                              `json:"shaper-reverse,omitempty"`
 	SubCategory      *[]ApplicationListEntriesSubCategory `json:"sub-category,omitempty"`
@@ -60,33 +60,33 @@ type ApplicationListEntries struct {
 }
 
 type ApplicationListEntriesApplication struct {
-	Id *int64 `json:"id,omitempty"`
+	Id *float64 `json:"id,omitempty"`
 }
 
 type ApplicationListEntriesCategory struct {
-	Id *int64 `json:"id,omitempty"`
+	Id *float64 `json:"id,omitempty"`
 }
 
 type ApplicationListEntriesExclusion struct {
-	Id *int64 `json:"id,omitempty"`
+	Id *float64 `json:"id,omitempty"`
 }
 
 type ApplicationListEntriesParameters struct {
-	Id      *int64                                     `json:"id,omitempty"`
+	Id      *float64                                   `json:"id,omitempty"`
 	Members *[]ApplicationListEntriesParametersMembers `json:"members,omitempty"`
 	Value   *string                                    `json:"value,omitempty"`
 }
 
 type ApplicationListEntriesParametersMembers struct {
-	Id    *int64  `json:"id,omitempty"`
-	Name  *string `json:"name,omitempty"`
-	Value *string `json:"value,omitempty"`
+	Id    *float64 `json:"id,omitempty"`
+	Name  *string  `json:"name,omitempty"`
+	Value *string  `json:"value,omitempty"`
 }
 
 type ApplicationListEntriesRisk struct {
-	Level *int64 `json:"level,omitempty"`
+	Level *float64 `json:"level,omitempty"`
 }
 
 type ApplicationListEntriesSubCategory struct {
-	Id *int64 `json:"id,omitempty"`
+	Id *float64 `json:"id,omitempty"`
 }

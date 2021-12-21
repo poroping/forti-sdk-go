@@ -8,7 +8,7 @@ type WirelessControllerhotspot20H2qpOperatorName struct {
 }
 
 type WirelessControllerhotspot20H2qpOperatorNameValueList struct {
-	Index *int64  `json:"index,omitempty"`
-	Lang  *string `json:"lang,omitempty"`
-	Value *string `json:"value,omitempty"`
+	Index *float64 `json:"index,omitempty"`
+	Lang  *string  `json:"lang,omitempty"`
+	Value *string  `json:"value,omitempty"`
 }

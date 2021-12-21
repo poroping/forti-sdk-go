@@ -9,14 +9,14 @@ type WirelessControllerhotspot20QosMap struct {
 }
 
 type WirelessControllerhotspot20QosMapDscpExcept struct {
-	Dscp  *int64 `json:"dscp,omitempty"`
-	Index *int64 `json:"index,omitempty"`
-	Up    *int64 `json:"up,omitempty"`
+	Dscp  *float64 `json:"dscp,omitempty"`
+	Index *float64 `json:"index,omitempty"`
+	Up    *float64 `json:"up,omitempty"`
 }
 
 type WirelessControllerhotspot20QosMapDscpRange struct {
-	High  *int64 `json:"high,omitempty"`
-	Index *int64 `json:"index,omitempty"`
-	Low   *int64 `json:"low,omitempty"`
-	Up    *int64 `json:"up,omitempty"`
+	High  *float64 `json:"high,omitempty"`
+	Index *float64 `json:"index,omitempty"`
+	Low   *float64 `json:"low,omitempty"`
+	Up    *float64 `json:"up,omitempty"`
 }

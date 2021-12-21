@@ -3,6 +3,6 @@ package models
 const FirewallInternetServiceAppendPath = "firewall/internet-service-append/"
 
 type FirewallInternetServiceAppend struct {
-	AppendPort *int64 `json:"append-port,omitempty"`
-	MatchPort  *int64 `json:"match-port,omitempty"`
+	AppendPort *float64 `json:"append-port,omitempty"`
+	MatchPort  *float64 `json:"match-port,omitempty"`
 }

@@ -11,13 +11,13 @@ type SystemGeoipOverride struct {
 }
 
 type SystemGeoipOverrideIpRange struct {
-	EndIp   *string `json:"end-ip,omitempty"`
-	Id      *int64  `json:"id,omitempty"`
-	StartIp *string `json:"start-ip,omitempty"`
+	EndIp   *string  `json:"end-ip,omitempty"`
+	Id      *float64 `json:"id,omitempty"`
+	StartIp *string  `json:"start-ip,omitempty"`
 }
 
 type SystemGeoipOverrideIp6Range struct {
-	EndIp   *string `json:"end-ip,omitempty"`
-	Id      *int64  `json:"id,omitempty"`
-	StartIp *string `json:"start-ip,omitempty"`
+	EndIp   *string  `json:"end-ip,omitempty"`
+	Id      *float64 `json:"id,omitempty"`
+	StartIp *string  `json:"start-ip,omitempty"`
 }

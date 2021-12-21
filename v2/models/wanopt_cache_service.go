@@ -12,17 +12,17 @@ type WanoptCacheService struct {
 }
 
 type WanoptCacheServiceDstPeer struct {
-	AuthType   *int64  `json:"auth-type,omitempty"`
-	DeviceId   *string `json:"device-id,omitempty"`
-	EncodeType *int64  `json:"encode-type,omitempty"`
-	Ip         *string `json:"ip,omitempty"`
-	Priority   *int64  `json:"priority,omitempty"`
+	AuthType   *float64 `json:"auth-type,omitempty"`
+	DeviceId   *string  `json:"device-id,omitempty"`
+	EncodeType *float64 `json:"encode-type,omitempty"`
+	Ip         *string  `json:"ip,omitempty"`
+	Priority   *float64 `json:"priority,omitempty"`
 }
 
 type WanoptCacheServiceSrcPeer struct {
-	AuthType   *int64  `json:"auth-type,omitempty"`
-	DeviceId   *string `json:"device-id,omitempty"`
-	EncodeType *int64  `json:"encode-type,omitempty"`
-	Ip         *string `json:"ip,omitempty"`
-	Priority   *int64  `json:"priority,omitempty"`
+	AuthType   *float64 `json:"auth-type,omitempty"`
+	DeviceId   *string  `json:"device-id,omitempty"`
+	EncodeType *float64 `json:"encode-type,omitempty"`
+	Ip         *string  `json:"ip,omitempty"`
+	Priority   *float64 `json:"priority,omitempty"`
 }

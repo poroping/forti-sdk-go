@@ -7,23 +7,23 @@ type RouterStatic struct {
 	Blackhole             *string                  `json:"blackhole,omitempty"`
 	Comment               *string                  `json:"comment,omitempty"`
 	Device                *string                  `json:"device,omitempty"`
-	Distance              *int64                   `json:"distance,omitempty"`
+	Distance              *float64                 `json:"distance,omitempty"`
 	Dst                   *string                  `json:"dst,omitempty"`
 	Dstaddr               *string                  `json:"dstaddr,omitempty"`
 	DynamicGateway        *string                  `json:"dynamic-gateway,omitempty"`
 	Gateway               *string                  `json:"gateway,omitempty"`
-	InternetService       *int64                   `json:"internet-service,omitempty"`
+	InternetService       *float64                 `json:"internet-service,omitempty"`
 	InternetServiceCustom *string                  `json:"internet-service-custom,omitempty"`
 	LinkMonitorExempt     *string                  `json:"link-monitor-exempt,omitempty"`
-	Priority              *int64                   `json:"priority,omitempty"`
+	Priority              *float64                 `json:"priority,omitempty"`
 	Sdwan                 *string                  `json:"sdwan,omitempty"`
 	SdwanZone             *[]RouterStaticSdwanZone `json:"sdwan-zone,omitempty"`
-	SeqNum                *int64                   `json:"seq-num,omitempty"`
+	SeqNum                *float64                 `json:"seq-num,omitempty"`
 	Src                   *string                  `json:"src,omitempty"`
 	Status                *string                  `json:"status,omitempty"`
 	VirtualWanLink        *string                  `json:"virtual-wan-link,omitempty"`
-	Vrf                   *int64                   `json:"vrf,omitempty"`
-	Weight                *int64                   `json:"weight,omitempty"`
+	Vrf                   *float64                 `json:"vrf,omitempty"`
+	Weight                *float64                 `json:"weight,omitempty"`
 }
 
 type RouterStaticSdwanZone struct {

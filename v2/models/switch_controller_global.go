@@ -12,10 +12,10 @@ type SwitchControllerGlobal struct {
 	FipsEnforce              *string                                   `json:"fips-enforce,omitempty"`
 	HttpsImagePush           *string                                   `json:"https-image-push,omitempty"`
 	LogMacLimitViolations    *string                                   `json:"log-mac-limit-violations,omitempty"`
-	MacAgingInterval         *int64                                    `json:"mac-aging-interval,omitempty"`
+	MacAgingInterval         *float64                                  `json:"mac-aging-interval,omitempty"`
 	MacEventLogging          *string                                   `json:"mac-event-logging,omitempty"`
-	MacRetentionPeriod       *int64                                    `json:"mac-retention-period,omitempty"`
-	MacViolationTimer        *int64                                    `json:"mac-violation-timer,omitempty"`
+	MacRetentionPeriod       *float64                                  `json:"mac-retention-period,omitempty"`
+	MacViolationTimer        *float64                                  `json:"mac-violation-timer,omitempty"`
 	QuarantineMode           *string                                   `json:"quarantine-mode,omitempty"`
 	SnDnsResolution          *string                                   `json:"sn-dns-resolution,omitempty"`
 	UpdateUserDevice         *string                                   `json:"update-user-device,omitempty"`

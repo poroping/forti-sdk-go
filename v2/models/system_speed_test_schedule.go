@@ -10,11 +10,11 @@ type SystemSpeedTestSchedule struct {
 	ServerName                *string                             `json:"server-name,omitempty"`
 	Status                    *string                             `json:"status,omitempty"`
 	UpdateInbandwidth         *string                             `json:"update-inbandwidth,omitempty"`
-	UpdateInbandwidthMaximum  *int64                              `json:"update-inbandwidth-maximum,omitempty"`
-	UpdateInbandwidthMinimum  *int64                              `json:"update-inbandwidth-minimum,omitempty"`
+	UpdateInbandwidthMaximum  *float64                            `json:"update-inbandwidth-maximum,omitempty"`
+	UpdateInbandwidthMinimum  *float64                            `json:"update-inbandwidth-minimum,omitempty"`
 	UpdateOutbandwidth        *string                             `json:"update-outbandwidth,omitempty"`
-	UpdateOutbandwidthMaximum *int64                              `json:"update-outbandwidth-maximum,omitempty"`
-	UpdateOutbandwidthMinimum *int64                              `json:"update-outbandwidth-minimum,omitempty"`
+	UpdateOutbandwidthMaximum *float64                            `json:"update-outbandwidth-maximum,omitempty"`
+	UpdateOutbandwidthMinimum *float64                            `json:"update-outbandwidth-minimum,omitempty"`
 }
 
 type SystemSpeedTestScheduleSchedules struct {

@@ -6,12 +6,12 @@ type SwitchControllerManagedSwitch struct {
 	The8021XSettings          *[]SwitchControllerManagedSwitch8021XSettings     `json:"802-1X-settings,omitempty"`
 	AccessProfile             *string                                           `json:"access-profile,omitempty"`
 	CustomCommand             *[]SwitchControllerManagedSwitchCustomCommand     `json:"custom-command,omitempty"`
-	DelayedRestartTrigger     *int64                                            `json:"delayed-restart-trigger,omitempty"`
+	DelayedRestartTrigger     *float64                                          `json:"delayed-restart-trigger,omitempty"`
 	Description               *string                                           `json:"description,omitempty"`
 	DhcpServerAccessList      *string                                           `json:"dhcp-server-access-list,omitempty"`
-	DirectlyConnected         *int64                                            `json:"directly-connected,omitempty"`
+	DirectlyConnected         *float64                                          `json:"directly-connected,omitempty"`
 	DynamicCapability         *string                                           `json:"dynamic-capability,omitempty"`
-	DynamicallyDiscovered     *int64                                            `json:"dynamically-discovered,omitempty"`
+	DynamicallyDiscovered     *float64                                          `json:"dynamically-discovered,omitempty"`
 	FirmwareProvision         *string                                           `json:"firmware-provision,omitempty"`
 	FirmwareProvisionVersion  *string                                           `json:"firmware-provision-version,omitempty"`
 	FlowIdentity              *string                                           `json:"flow-identity,omitempty"`
@@ -19,8 +19,8 @@ type SwitchControllerManagedSwitch struct {
 	FswWan1Peer               *string                                           `json:"fsw-wan1-peer,omitempty"`
 	IgmpSnooping              *[]SwitchControllerManagedSwitchIgmpSnooping      `json:"igmp-snooping,omitempty"`
 	IpSourceGuard             *[]SwitchControllerManagedSwitchIpSourceGuard     `json:"ip-source-guard,omitempty"`
-	L3Discovered              *int64                                            `json:"l3-discovered,omitempty"`
-	MaxAllowedTrunkMembers    *int64                                            `json:"max-allowed-trunk-members,omitempty"`
+	L3Discovered              *float64                                          `json:"l3-discovered,omitempty"`
+	MaxAllowedTrunkMembers    *float64                                          `json:"max-allowed-trunk-members,omitempty"`
 	MclagIgmpSnoopingAware    *string                                           `json:"mclag-igmp-snooping-aware,omitempty"`
 	Mirror                    *[]SwitchControllerManagedSwitchMirror            `json:"mirror,omitempty"`
 	Name                      *string                                           `json:"name,omitempty"`
@@ -29,13 +29,13 @@ type SwitchControllerManagedSwitch struct {
 	OverrideSnmpTrapThreshold *string                                           `json:"override-snmp-trap-threshold,omitempty"`
 	OverrideSnmpUser          *string                                           `json:"override-snmp-user,omitempty"`
 	OwnerVdom                 *string                                           `json:"owner-vdom,omitempty"`
-	PoeDetectionType          *int64                                            `json:"poe-detection-type,omitempty"`
+	PoeDetectionType          *float64                                          `json:"poe-detection-type,omitempty"`
 	PoeLldpDetection          *string                                           `json:"poe-lldp-detection,omitempty"`
 	PoePreStandardDetection   *string                                           `json:"poe-pre-standard-detection,omitempty"`
 	Ports                     *[]SwitchControllerManagedSwitchPorts             `json:"ports,omitempty"`
-	PreProvisioned            *int64                                            `json:"pre-provisioned,omitempty"`
+	PreProvisioned            *float64                                          `json:"pre-provisioned,omitempty"`
 	QosDropPolicy             *string                                           `json:"qos-drop-policy,omitempty"`
-	QosRedProbability         *int64                                            `json:"qos-red-probability,omitempty"`
+	QosRedProbability         *float64                                          `json:"qos-red-probability,omitempty"`
 	RemoteLog                 *[]SwitchControllerManagedSwitchRemoteLog         `json:"remote-log,omitempty"`
 	SnmpCommunity             *[]SwitchControllerManagedSwitchSnmpCommunity     `json:"snmp-community,omitempty"`
 	SnmpSysinfo               *[]SwitchControllerManagedSwitchSnmpSysinfo       `json:"snmp-sysinfo,omitempty"`
@@ -53,15 +53,15 @@ type SwitchControllerManagedSwitch struct {
 	SwitchProfile             *string                                           `json:"switch-profile,omitempty"`
 	TdrSupported              *string                                           `json:"tdr-supported,omitempty"`
 	Type                      *string                                           `json:"type,omitempty"`
-	Version                   *int64                                            `json:"version,omitempty"`
+	Version                   *float64                                          `json:"version,omitempty"`
 }
 
 type SwitchControllerManagedSwitch8021XSettings struct {
-	LinkDownAuth     *string `json:"link-down-auth,omitempty"`
-	LocalOverride    *string `json:"local-override,omitempty"`
-	MaxReauthAttempt *int64  `json:"max-reauth-attempt,omitempty"`
-	ReauthPeriod     *int64  `json:"reauth-period,omitempty"`
-	TxPeriod         *int64  `json:"tx-period,omitempty"`
+	LinkDownAuth     *string  `json:"link-down-auth,omitempty"`
+	LocalOverride    *string  `json:"local-override,omitempty"`
+	MaxReauthAttempt *float64 `json:"max-reauth-attempt,omitempty"`
+	ReauthPeriod     *float64 `json:"reauth-period,omitempty"`
+	TxPeriod         *float64 `json:"tx-period,omitempty"`
 }
 
 type SwitchControllerManagedSwitchCustomCommand struct {
@@ -70,18 +70,18 @@ type SwitchControllerManagedSwitchCustomCommand struct {
 }
 
 type SwitchControllerManagedSwitchIgmpSnooping struct {
-	AgingTime             *int64                                            `json:"aging-time,omitempty"`
+	AgingTime             *float64                                          `json:"aging-time,omitempty"`
 	FloodUnknownMulticast *string                                           `json:"flood-unknown-multicast,omitempty"`
 	LocalOverride         *string                                           `json:"local-override,omitempty"`
 	Vlans                 *[]SwitchControllerManagedSwitchIgmpSnoopingVlans `json:"vlans,omitempty"`
 }
 
 type SwitchControllerManagedSwitchIgmpSnoopingVlans struct {
-	Proxy       *string `json:"proxy,omitempty"`
-	Querier     *string `json:"querier,omitempty"`
-	QuerierAddr *string `json:"querier-addr,omitempty"`
-	Version     *int64  `json:"version,omitempty"`
-	VlanName    *string `json:"vlan-name,omitempty"`
+	Proxy       *string  `json:"proxy,omitempty"`
+	Querier     *string  `json:"querier,omitempty"`
+	QuerierAddr *string  `json:"querier-addr,omitempty"`
+	Version     *float64 `json:"version,omitempty"`
+	VlanName    *string  `json:"vlan-name,omitempty"`
 }
 
 type SwitchControllerManagedSwitchIpSourceGuard struct {
@@ -128,14 +128,14 @@ type SwitchControllerManagedSwitchPorts struct {
 	ExportTags               *[]SwitchControllerManagedSwitchPortsExportTags    `json:"export-tags,omitempty"`
 	ExportTo                 *string                                            `json:"export-to,omitempty"`
 	ExportToPool             *string                                            `json:"export-to-pool,omitempty"`
-	FecCapable               *int64                                             `json:"fec-capable,omitempty"`
+	FecCapable               *float64                                           `json:"fec-capable,omitempty"`
 	FecState                 *string                                            `json:"fec-state,omitempty"`
 	FgtPeerDeviceName        *string                                            `json:"fgt-peer-device-name,omitempty"`
 	FgtPeerPortName          *string                                            `json:"fgt-peer-port-name,omitempty"`
-	FiberPort                *int64                                             `json:"fiber-port,omitempty"`
-	Flags                    *int64                                             `json:"flags,omitempty"`
+	FiberPort                *float64                                           `json:"fiber-port,omitempty"`
+	Flags                    *float64                                           `json:"flags,omitempty"`
 	FlowControl              *string                                            `json:"flow-control,omitempty"`
-	FortilinkPort            *int64                                             `json:"fortilink-port,omitempty"`
+	FortilinkPort            *float64                                           `json:"fortilink-port,omitempty"`
 	IgmpSnooping             *string                                            `json:"igmp-snooping,omitempty"`
 	IgmpsFloodReports        *string                                            `json:"igmps-flood-reports,omitempty"`
 	IgmpsFloodTraffic        *string                                            `json:"igmps-flood-traffic,omitempty"`
@@ -145,51 +145,51 @@ type SwitchControllerManagedSwitchPorts struct {
 	IslPeerDeviceName        *string                                            `json:"isl-peer-device-name,omitempty"`
 	IslPeerPortName          *string                                            `json:"isl-peer-port-name,omitempty"`
 	LacpSpeed                *string                                            `json:"lacp-speed,omitempty"`
-	LearningLimit            *int64                                             `json:"learning-limit,omitempty"`
+	LearningLimit            *float64                                           `json:"learning-limit,omitempty"`
 	LldpProfile              *string                                            `json:"lldp-profile,omitempty"`
 	LldpStatus               *string                                            `json:"lldp-status,omitempty"`
 	LoopGuard                *string                                            `json:"loop-guard,omitempty"`
-	LoopGuardTimeout         *int64                                             `json:"loop-guard-timeout,omitempty"`
+	LoopGuardTimeout         *float64                                           `json:"loop-guard-timeout,omitempty"`
 	MacAddr                  *string                                            `json:"mac-addr,omitempty"`
 	MatchedDppIntfTags       *string                                            `json:"matched-dpp-intf-tags,omitempty"`
 	MatchedDppPolicy         *string                                            `json:"matched-dpp-policy,omitempty"`
-	MaxBundle                *int64                                             `json:"max-bundle,omitempty"`
+	MaxBundle                *float64                                           `json:"max-bundle,omitempty"`
 	Mclag                    *string                                            `json:"mclag,omitempty"`
-	MclagIclPort             *int64                                             `json:"mclag-icl-port,omitempty"`
+	MclagIclPort             *float64                                           `json:"mclag-icl-port,omitempty"`
 	MediaType                *string                                            `json:"media-type,omitempty"`
 	MemberWithdrawalBehavior *string                                            `json:"member-withdrawal-behavior,omitempty"`
 	Members                  *[]SwitchControllerManagedSwitchPortsMembers       `json:"members,omitempty"`
-	MinBundle                *int64                                             `json:"min-bundle,omitempty"`
+	MinBundle                *float64                                           `json:"min-bundle,omitempty"`
 	Mode                     *string                                            `json:"mode,omitempty"`
-	P2pPort                  *int64                                             `json:"p2p-port,omitempty"`
-	PacketSampleRate         *int64                                             `json:"packet-sample-rate,omitempty"`
+	P2pPort                  *float64                                           `json:"p2p-port,omitempty"`
+	PacketSampleRate         *float64                                           `json:"packet-sample-rate,omitempty"`
 	PacketSampler            *string                                            `json:"packet-sampler,omitempty"`
-	PauseMeter               *int64                                             `json:"pause-meter,omitempty"`
+	PauseMeter               *float64                                           `json:"pause-meter,omitempty"`
 	PauseMeterResume         *string                                            `json:"pause-meter-resume,omitempty"`
-	PoeCapable               *int64                                             `json:"poe-capable,omitempty"`
+	PoeCapable               *float64                                           `json:"poe-capable,omitempty"`
 	PoeMaxPower              *string                                            `json:"poe-max-power,omitempty"`
 	PoePreStandardDetection  *string                                            `json:"poe-pre-standard-detection,omitempty"`
 	PoeStandard              *string                                            `json:"poe-standard,omitempty"`
 	PoeStatus                *string                                            `json:"poe-status,omitempty"`
 	PortName                 *string                                            `json:"port-name,omitempty"`
-	PortNumber               *int64                                             `json:"port-number,omitempty"`
+	PortNumber               *float64                                           `json:"port-number,omitempty"`
 	PortOwner                *string                                            `json:"port-owner,omitempty"`
 	PortPolicy               *string                                            `json:"port-policy,omitempty"`
-	PortPrefixType           *int64                                             `json:"port-prefix-type,omitempty"`
+	PortPrefixType           *float64                                           `json:"port-prefix-type,omitempty"`
 	PortSecurityPolicy       *string                                            `json:"port-security-policy,omitempty"`
 	PortSelectionCriteria    *string                                            `json:"port-selection-criteria,omitempty"`
 	PtpPolicy                *string                                            `json:"ptp-policy,omitempty"`
 	QosPolicy                *string                                            `json:"qos-policy,omitempty"`
 	RpvstPort                *string                                            `json:"rpvst-port,omitempty"`
 	SampleDirection          *string                                            `json:"sample-direction,omitempty"`
-	SflowCounterInterval     *int64                                             `json:"sflow-counter-interval,omitempty"`
+	SflowCounterInterval     *float64                                           `json:"sflow-counter-interval,omitempty"`
 	Speed                    *string                                            `json:"speed,omitempty"`
-	StackingPort             *int64                                             `json:"stacking-port,omitempty"`
+	StackingPort             *float64                                           `json:"stacking-port,omitempty"`
 	Status                   *string                                            `json:"status,omitempty"`
 	StickyMac                *string                                            `json:"sticky-mac,omitempty"`
 	StormControlPolicy       *string                                            `json:"storm-control-policy,omitempty"`
 	StpBpduGuard             *string                                            `json:"stp-bpdu-guard,omitempty"`
-	StpBpduGuardTimeout      *int64                                             `json:"stp-bpdu-guard-timeout,omitempty"`
+	StpBpduGuardTimeout      *float64                                           `json:"stp-bpdu-guard-timeout,omitempty"`
 	StpRootGuard             *string                                            `json:"stp-root-guard,omitempty"`
 	StpState                 *string                                            `json:"stp-state,omitempty"`
 	SwitchId                 *string                                            `json:"switch-id,omitempty"`
@@ -219,36 +219,36 @@ type SwitchControllerManagedSwitchPortsUntaggedVlans struct {
 }
 
 type SwitchControllerManagedSwitchRemoteLog struct {
-	Csv      *string `json:"csv,omitempty"`
-	Facility *string `json:"facility,omitempty"`
-	Name     *string `json:"name,omitempty"`
-	Port     *int64  `json:"port,omitempty"`
-	Server   *string `json:"server,omitempty"`
-	Severity *string `json:"severity,omitempty"`
-	Status   *string `json:"status,omitempty"`
+	Csv      *string  `json:"csv,omitempty"`
+	Facility *string  `json:"facility,omitempty"`
+	Name     *string  `json:"name,omitempty"`
+	Port     *float64 `json:"port,omitempty"`
+	Server   *string  `json:"server,omitempty"`
+	Severity *string  `json:"severity,omitempty"`
+	Status   *string  `json:"status,omitempty"`
 }
 
 type SwitchControllerManagedSwitchSnmpCommunity struct {
 	Events         *string                                            `json:"events,omitempty"`
 	Hosts          *[]SwitchControllerManagedSwitchSnmpCommunityHosts `json:"hosts,omitempty"`
-	Id             *int64                                             `json:"id,omitempty"`
+	Id             *float64                                           `json:"id,omitempty"`
 	Name           *string                                            `json:"name,omitempty"`
-	QueryV1Port    *int64                                             `json:"query-v1-port,omitempty"`
+	QueryV1Port    *float64                                           `json:"query-v1-port,omitempty"`
 	QueryV1Status  *string                                            `json:"query-v1-status,omitempty"`
-	QueryV2cPort   *int64                                             `json:"query-v2c-port,omitempty"`
+	QueryV2cPort   *float64                                           `json:"query-v2c-port,omitempty"`
 	QueryV2cStatus *string                                            `json:"query-v2c-status,omitempty"`
 	Status         *string                                            `json:"status,omitempty"`
-	TrapV1Lport    *int64                                             `json:"trap-v1-lport,omitempty"`
-	TrapV1Rport    *int64                                             `json:"trap-v1-rport,omitempty"`
+	TrapV1Lport    *float64                                           `json:"trap-v1-lport,omitempty"`
+	TrapV1Rport    *float64                                           `json:"trap-v1-rport,omitempty"`
 	TrapV1Status   *string                                            `json:"trap-v1-status,omitempty"`
-	TrapV2cLport   *int64                                             `json:"trap-v2c-lport,omitempty"`
-	TrapV2cRport   *int64                                             `json:"trap-v2c-rport,omitempty"`
+	TrapV2cLport   *float64                                           `json:"trap-v2c-lport,omitempty"`
+	TrapV2cRport   *float64                                           `json:"trap-v2c-rport,omitempty"`
 	TrapV2cStatus  *string                                            `json:"trap-v2c-status,omitempty"`
 }
 
 type SwitchControllerManagedSwitchSnmpCommunityHosts struct {
-	Id *int64  `json:"id,omitempty"`
-	Ip *string `json:"ip,omitempty"`
+	Id *float64 `json:"id,omitempty"`
+	Ip *string  `json:"ip,omitempty"`
 }
 
 type SwitchControllerManagedSwitchSnmpSysinfo struct {
@@ -260,37 +260,37 @@ type SwitchControllerManagedSwitchSnmpSysinfo struct {
 }
 
 type SwitchControllerManagedSwitchSnmpTrapThreshold struct {
-	TrapHighCpuThreshold   *int64 `json:"trap-high-cpu-threshold,omitempty"`
-	TrapLogFullThreshold   *int64 `json:"trap-log-full-threshold,omitempty"`
-	TrapLowMemoryThreshold *int64 `json:"trap-low-memory-threshold,omitempty"`
+	TrapHighCpuThreshold   *float64 `json:"trap-high-cpu-threshold,omitempty"`
+	TrapLogFullThreshold   *float64 `json:"trap-log-full-threshold,omitempty"`
+	TrapLowMemoryThreshold *float64 `json:"trap-low-memory-threshold,omitempty"`
 }
 
 type SwitchControllerManagedSwitchSnmpUser struct {
-	AuthProto     *string `json:"auth-proto,omitempty"`
-	AuthPwd       *string `json:"auth-pwd,omitempty"`
-	Name          *string `json:"name,omitempty"`
-	PrivProto     *string `json:"priv-proto,omitempty"`
-	PrivPwd       *string `json:"priv-pwd,omitempty"`
-	Queries       *string `json:"queries,omitempty"`
-	QueryPort     *int64  `json:"query-port,omitempty"`
-	SecurityLevel *string `json:"security-level,omitempty"`
+	AuthProto     *string  `json:"auth-proto,omitempty"`
+	AuthPwd       *string  `json:"auth-pwd,omitempty"`
+	Name          *string  `json:"name,omitempty"`
+	PrivProto     *string  `json:"priv-proto,omitempty"`
+	PrivPwd       *string  `json:"priv-pwd,omitempty"`
+	Queries       *string  `json:"queries,omitempty"`
+	QueryPort     *float64 `json:"query-port,omitempty"`
+	SecurityLevel *string  `json:"security-level,omitempty"`
 }
 
 type SwitchControllerManagedSwitchStaticMac struct {
-	Description *string `json:"description,omitempty"`
-	Id          *int64  `json:"id,omitempty"`
-	Interface   *string `json:"interface,omitempty"`
-	Mac         *string `json:"mac,omitempty"`
-	Type        *string `json:"type,omitempty"`
-	Vlan        *string `json:"vlan,omitempty"`
+	Description *string  `json:"description,omitempty"`
+	Id          *float64 `json:"id,omitempty"`
+	Interface   *string  `json:"interface,omitempty"`
+	Mac         *string  `json:"mac,omitempty"`
+	Type        *string  `json:"type,omitempty"`
+	Vlan        *string  `json:"vlan,omitempty"`
 }
 
 type SwitchControllerManagedSwitchStormControl struct {
-	Broadcast        *string `json:"broadcast,omitempty"`
-	LocalOverride    *string `json:"local-override,omitempty"`
-	Rate             *int64  `json:"rate,omitempty"`
-	UnknownMulticast *string `json:"unknown-multicast,omitempty"`
-	UnknownUnicast   *string `json:"unknown-unicast,omitempty"`
+	Broadcast        *string  `json:"broadcast,omitempty"`
+	LocalOverride    *string  `json:"local-override,omitempty"`
+	Rate             *float64 `json:"rate,omitempty"`
+	UnknownMulticast *string  `json:"unknown-multicast,omitempty"`
+	UnknownUnicast   *string  `json:"unknown-unicast,omitempty"`
 }
 
 type SwitchControllerManagedSwitchStpInstance struct {
@@ -299,14 +299,14 @@ type SwitchControllerManagedSwitchStpInstance struct {
 }
 
 type SwitchControllerManagedSwitchStpSettings struct {
-	ForwardTime   *int64  `json:"forward-time,omitempty"`
-	HelloTime     *int64  `json:"hello-time,omitempty"`
-	LocalOverride *string `json:"local-override,omitempty"`
-	MaxAge        *int64  `json:"max-age,omitempty"`
-	MaxHops       *int64  `json:"max-hops,omitempty"`
-	Name          *string `json:"name,omitempty"`
-	PendingTimer  *int64  `json:"pending-timer,omitempty"`
-	Revision      *int64  `json:"revision,omitempty"`
+	ForwardTime   *float64 `json:"forward-time,omitempty"`
+	HelloTime     *float64 `json:"hello-time,omitempty"`
+	LocalOverride *string  `json:"local-override,omitempty"`
+	MaxAge        *float64 `json:"max-age,omitempty"`
+	MaxHops       *float64 `json:"max-hops,omitempty"`
+	Name          *string  `json:"name,omitempty"`
+	PendingTimer  *float64 `json:"pending-timer,omitempty"`
+	Revision      *float64 `json:"revision,omitempty"`
 }
 
 type SwitchControllerManagedSwitchSwitchLog struct {

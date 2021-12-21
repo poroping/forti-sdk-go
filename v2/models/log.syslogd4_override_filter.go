@@ -17,8 +17,8 @@ type Logsyslogd4OverrideFilter struct {
 }
 
 type Logsyslogd4OverrideFilterFreeStyle struct {
-	Category   *string `json:"category,omitempty"`
-	Filter     *string `json:"filter,omitempty"`
-	FilterType *string `json:"filter-type,omitempty"`
-	Id         *int64  `json:"id,omitempty"`
+	Category   *string  `json:"category,omitempty"`
+	Filter     *string  `json:"filter,omitempty"`
+	FilterType *string  `json:"filter-type,omitempty"`
+	Id         *float64 `json:"id,omitempty"`
 }

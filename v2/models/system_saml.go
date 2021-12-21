@@ -12,7 +12,7 @@ type SystemSaml struct {
 	IdpEntityId        *string                       `json:"idp-entity-id,omitempty"`
 	IdpSingleLogoutUrl *string                       `json:"idp-single-logout-url,omitempty"`
 	IdpSingleSignOnUrl *string                       `json:"idp-single-sign-on-url,omitempty"`
-	Life               *int64                        `json:"life,omitempty"`
+	Life               *float64                      `json:"life,omitempty"`
 	PortalUrl          *string                       `json:"portal-url,omitempty"`
 	Role               *string                       `json:"role,omitempty"`
 	ServerAddress      *string                       `json:"server-address,omitempty"`
@@ -20,7 +20,7 @@ type SystemSaml struct {
 	SingleLogoutUrl    *string                       `json:"single-logout-url,omitempty"`
 	SingleSignOnUrl    *string                       `json:"single-sign-on-url,omitempty"`
 	Status             *string                       `json:"status,omitempty"`
-	Tolerance          *int64                        `json:"tolerance,omitempty"`
+	Tolerance          *float64                      `json:"tolerance,omitempty"`
 }
 
 type SystemSamlServiceProviders struct {

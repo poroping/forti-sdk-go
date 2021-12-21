@@ -25,18 +25,18 @@ type FirewallProfileProtocolOptions struct {
 type FirewallProfileProtocolOptionsCifs struct {
 	DomainController          *string                                           `json:"domain-controller,omitempty"`
 	Options                   *string                                           `json:"options,omitempty"`
-	OversizeLimit             *int64                                            `json:"oversize-limit,omitempty"`
-	Ports                     *int64                                            `json:"ports,omitempty"`
+	OversizeLimit             *float64                                          `json:"oversize-limit,omitempty"`
+	Ports                     *float64                                          `json:"ports,omitempty"`
 	ScanBzip2                 *string                                           `json:"scan-bzip2,omitempty"`
 	ServerCredentialType      *string                                           `json:"server-credential-type,omitempty"`
 	ServerKeytab              *[]FirewallProfileProtocolOptionsCifsServerKeytab `json:"server-keytab,omitempty"`
 	Status                    *string                                           `json:"status,omitempty"`
-	TcpWindowMaximum          *int64                                            `json:"tcp-window-maximum,omitempty"`
-	TcpWindowMinimum          *int64                                            `json:"tcp-window-minimum,omitempty"`
-	TcpWindowSize             *int64                                            `json:"tcp-window-size,omitempty"`
+	TcpWindowMaximum          *float64                                          `json:"tcp-window-maximum,omitempty"`
+	TcpWindowMinimum          *float64                                          `json:"tcp-window-minimum,omitempty"`
+	TcpWindowSize             *float64                                          `json:"tcp-window-size,omitempty"`
 	TcpWindowType             *string                                           `json:"tcp-window-type,omitempty"`
-	UncompressedNestLimit     *int64                                            `json:"uncompressed-nest-limit,omitempty"`
-	UncompressedOversizeLimit *int64                                            `json:"uncompressed-oversize-limit,omitempty"`
+	UncompressedNestLimit     *float64                                          `json:"uncompressed-nest-limit,omitempty"`
+	UncompressedOversizeLimit *float64                                          `json:"uncompressed-oversize-limit,omitempty"`
 }
 
 type FirewallProfileProtocolOptionsCifsServerKeytab struct {
@@ -45,71 +45,71 @@ type FirewallProfileProtocolOptionsCifsServerKeytab struct {
 }
 
 type FirewallProfileProtocolOptionsDns struct {
-	Ports  *int64  `json:"ports,omitempty"`
-	Status *string `json:"status,omitempty"`
+	Ports  *float64 `json:"ports,omitempty"`
+	Status *string  `json:"status,omitempty"`
 }
 
 type FirewallProfileProtocolOptionsFtp struct {
-	ComfortAmount                *int64  `json:"comfort-amount,omitempty"`
-	ComfortInterval              *int64  `json:"comfort-interval,omitempty"`
-	InspectAll                   *string `json:"inspect-all,omitempty"`
-	Options                      *string `json:"options,omitempty"`
-	OversizeLimit                *int64  `json:"oversize-limit,omitempty"`
-	Ports                        *int64  `json:"ports,omitempty"`
-	ScanBzip2                    *string `json:"scan-bzip2,omitempty"`
-	SslOffloaded                 *string `json:"ssl-offloaded,omitempty"`
-	Status                       *string `json:"status,omitempty"`
-	StreamBasedUncompressedLimit *int64  `json:"stream-based-uncompressed-limit,omitempty"`
-	TcpWindowMaximum             *int64  `json:"tcp-window-maximum,omitempty"`
-	TcpWindowMinimum             *int64  `json:"tcp-window-minimum,omitempty"`
-	TcpWindowSize                *int64  `json:"tcp-window-size,omitempty"`
-	TcpWindowType                *string `json:"tcp-window-type,omitempty"`
-	UncompressedNestLimit        *int64  `json:"uncompressed-nest-limit,omitempty"`
-	UncompressedOversizeLimit    *int64  `json:"uncompressed-oversize-limit,omitempty"`
+	ComfortAmount                *float64 `json:"comfort-amount,omitempty"`
+	ComfortInterval              *float64 `json:"comfort-interval,omitempty"`
+	InspectAll                   *string  `json:"inspect-all,omitempty"`
+	Options                      *string  `json:"options,omitempty"`
+	OversizeLimit                *float64 `json:"oversize-limit,omitempty"`
+	Ports                        *float64 `json:"ports,omitempty"`
+	ScanBzip2                    *string  `json:"scan-bzip2,omitempty"`
+	SslOffloaded                 *string  `json:"ssl-offloaded,omitempty"`
+	Status                       *string  `json:"status,omitempty"`
+	StreamBasedUncompressedLimit *float64 `json:"stream-based-uncompressed-limit,omitempty"`
+	TcpWindowMaximum             *float64 `json:"tcp-window-maximum,omitempty"`
+	TcpWindowMinimum             *float64 `json:"tcp-window-minimum,omitempty"`
+	TcpWindowSize                *float64 `json:"tcp-window-size,omitempty"`
+	TcpWindowType                *string  `json:"tcp-window-type,omitempty"`
+	UncompressedNestLimit        *float64 `json:"uncompressed-nest-limit,omitempty"`
+	UncompressedOversizeLimit    *float64 `json:"uncompressed-oversize-limit,omitempty"`
 }
 
 type FirewallProfileProtocolOptionsHttp struct {
-	BlockPageStatusCode          *int64  `json:"block-page-status-code,omitempty"`
-	ComfortAmount                *int64  `json:"comfort-amount,omitempty"`
-	ComfortInterval              *int64  `json:"comfort-interval,omitempty"`
-	FortinetBar                  *string `json:"fortinet-bar,omitempty"`
-	FortinetBarPort              *int64  `json:"fortinet-bar-port,omitempty"`
-	InspectAll                   *string `json:"inspect-all,omitempty"`
-	Options                      *string `json:"options,omitempty"`
-	OversizeLimit                *int64  `json:"oversize-limit,omitempty"`
-	Ports                        *int64  `json:"ports,omitempty"`
-	PostLang                     *string `json:"post-lang,omitempty"`
-	ProxyAfterTcpHandshake       *string `json:"proxy-after-tcp-handshake,omitempty"`
-	RangeBlock                   *string `json:"range-block,omitempty"`
-	RetryCount                   *int64  `json:"retry-count,omitempty"`
-	ScanBzip2                    *string `json:"scan-bzip2,omitempty"`
-	SslOffloaded                 *string `json:"ssl-offloaded,omitempty"`
-	Status                       *string `json:"status,omitempty"`
-	StreamBasedUncompressedLimit *int64  `json:"stream-based-uncompressed-limit,omitempty"`
-	StreamingContentBypass       *string `json:"streaming-content-bypass,omitempty"`
-	StripXForwardedFor           *string `json:"strip-x-forwarded-for,omitempty"`
-	SwitchingProtocols           *string `json:"switching-protocols,omitempty"`
-	TcpWindowMaximum             *int64  `json:"tcp-window-maximum,omitempty"`
-	TcpWindowMinimum             *int64  `json:"tcp-window-minimum,omitempty"`
-	TcpWindowSize                *int64  `json:"tcp-window-size,omitempty"`
-	TcpWindowType                *string `json:"tcp-window-type,omitempty"`
-	TunnelNonHttp                *string `json:"tunnel-non-http,omitempty"`
-	UncompressedNestLimit        *int64  `json:"uncompressed-nest-limit,omitempty"`
-	UncompressedOversizeLimit    *int64  `json:"uncompressed-oversize-limit,omitempty"`
-	UnknownHttpVersion           *string `json:"unknown-http-version,omitempty"`
+	BlockPageStatusCode          *float64 `json:"block-page-status-code,omitempty"`
+	ComfortAmount                *float64 `json:"comfort-amount,omitempty"`
+	ComfortInterval              *float64 `json:"comfort-interval,omitempty"`
+	FortinetBar                  *string  `json:"fortinet-bar,omitempty"`
+	FortinetBarPort              *float64 `json:"fortinet-bar-port,omitempty"`
+	InspectAll                   *string  `json:"inspect-all,omitempty"`
+	Options                      *string  `json:"options,omitempty"`
+	OversizeLimit                *float64 `json:"oversize-limit,omitempty"`
+	Ports                        *float64 `json:"ports,omitempty"`
+	PostLang                     *string  `json:"post-lang,omitempty"`
+	ProxyAfterTcpHandshake       *string  `json:"proxy-after-tcp-handshake,omitempty"`
+	RangeBlock                   *string  `json:"range-block,omitempty"`
+	RetryCount                   *float64 `json:"retry-count,omitempty"`
+	ScanBzip2                    *string  `json:"scan-bzip2,omitempty"`
+	SslOffloaded                 *string  `json:"ssl-offloaded,omitempty"`
+	Status                       *string  `json:"status,omitempty"`
+	StreamBasedUncompressedLimit *float64 `json:"stream-based-uncompressed-limit,omitempty"`
+	StreamingContentBypass       *string  `json:"streaming-content-bypass,omitempty"`
+	StripXForwardedFor           *string  `json:"strip-x-forwarded-for,omitempty"`
+	SwitchingProtocols           *string  `json:"switching-protocols,omitempty"`
+	TcpWindowMaximum             *float64 `json:"tcp-window-maximum,omitempty"`
+	TcpWindowMinimum             *float64 `json:"tcp-window-minimum,omitempty"`
+	TcpWindowSize                *float64 `json:"tcp-window-size,omitempty"`
+	TcpWindowType                *string  `json:"tcp-window-type,omitempty"`
+	TunnelNonHttp                *string  `json:"tunnel-non-http,omitempty"`
+	UncompressedNestLimit        *float64 `json:"uncompressed-nest-limit,omitempty"`
+	UncompressedOversizeLimit    *float64 `json:"uncompressed-oversize-limit,omitempty"`
+	UnknownHttpVersion           *string  `json:"unknown-http-version,omitempty"`
 }
 
 type FirewallProfileProtocolOptionsImap struct {
-	InspectAll                *string `json:"inspect-all,omitempty"`
-	Options                   *string `json:"options,omitempty"`
-	OversizeLimit             *int64  `json:"oversize-limit,omitempty"`
-	Ports                     *int64  `json:"ports,omitempty"`
-	ProxyAfterTcpHandshake    *string `json:"proxy-after-tcp-handshake,omitempty"`
-	ScanBzip2                 *string `json:"scan-bzip2,omitempty"`
-	SslOffloaded              *string `json:"ssl-offloaded,omitempty"`
-	Status                    *string `json:"status,omitempty"`
-	UncompressedNestLimit     *int64  `json:"uncompressed-nest-limit,omitempty"`
-	UncompressedOversizeLimit *int64  `json:"uncompressed-oversize-limit,omitempty"`
+	InspectAll                *string  `json:"inspect-all,omitempty"`
+	Options                   *string  `json:"options,omitempty"`
+	OversizeLimit             *float64 `json:"oversize-limit,omitempty"`
+	Ports                     *float64 `json:"ports,omitempty"`
+	ProxyAfterTcpHandshake    *string  `json:"proxy-after-tcp-handshake,omitempty"`
+	ScanBzip2                 *string  `json:"scan-bzip2,omitempty"`
+	SslOffloaded              *string  `json:"ssl-offloaded,omitempty"`
+	Status                    *string  `json:"status,omitempty"`
+	UncompressedNestLimit     *float64 `json:"uncompressed-nest-limit,omitempty"`
+	UncompressedOversizeLimit *float64 `json:"uncompressed-oversize-limit,omitempty"`
 }
 
 type FirewallProfileProtocolOptionsMailSignature struct {
@@ -118,66 +118,66 @@ type FirewallProfileProtocolOptionsMailSignature struct {
 }
 
 type FirewallProfileProtocolOptionsMapi struct {
-	Options                   *string `json:"options,omitempty"`
-	OversizeLimit             *int64  `json:"oversize-limit,omitempty"`
-	Ports                     *int64  `json:"ports,omitempty"`
-	ScanBzip2                 *string `json:"scan-bzip2,omitempty"`
-	Status                    *string `json:"status,omitempty"`
-	UncompressedNestLimit     *int64  `json:"uncompressed-nest-limit,omitempty"`
-	UncompressedOversizeLimit *int64  `json:"uncompressed-oversize-limit,omitempty"`
+	Options                   *string  `json:"options,omitempty"`
+	OversizeLimit             *float64 `json:"oversize-limit,omitempty"`
+	Ports                     *float64 `json:"ports,omitempty"`
+	ScanBzip2                 *string  `json:"scan-bzip2,omitempty"`
+	Status                    *string  `json:"status,omitempty"`
+	UncompressedNestLimit     *float64 `json:"uncompressed-nest-limit,omitempty"`
+	UncompressedOversizeLimit *float64 `json:"uncompressed-oversize-limit,omitempty"`
 }
 
 type FirewallProfileProtocolOptionsNntp struct {
-	InspectAll                *string `json:"inspect-all,omitempty"`
-	Options                   *string `json:"options,omitempty"`
-	OversizeLimit             *int64  `json:"oversize-limit,omitempty"`
-	Ports                     *int64  `json:"ports,omitempty"`
-	ProxyAfterTcpHandshake    *string `json:"proxy-after-tcp-handshake,omitempty"`
-	ScanBzip2                 *string `json:"scan-bzip2,omitempty"`
-	Status                    *string `json:"status,omitempty"`
-	UncompressedNestLimit     *int64  `json:"uncompressed-nest-limit,omitempty"`
-	UncompressedOversizeLimit *int64  `json:"uncompressed-oversize-limit,omitempty"`
+	InspectAll                *string  `json:"inspect-all,omitempty"`
+	Options                   *string  `json:"options,omitempty"`
+	OversizeLimit             *float64 `json:"oversize-limit,omitempty"`
+	Ports                     *float64 `json:"ports,omitempty"`
+	ProxyAfterTcpHandshake    *string  `json:"proxy-after-tcp-handshake,omitempty"`
+	ScanBzip2                 *string  `json:"scan-bzip2,omitempty"`
+	Status                    *string  `json:"status,omitempty"`
+	UncompressedNestLimit     *float64 `json:"uncompressed-nest-limit,omitempty"`
+	UncompressedOversizeLimit *float64 `json:"uncompressed-oversize-limit,omitempty"`
 }
 
 type FirewallProfileProtocolOptionsPop3 struct {
-	InspectAll                *string `json:"inspect-all,omitempty"`
-	Options                   *string `json:"options,omitempty"`
-	OversizeLimit             *int64  `json:"oversize-limit,omitempty"`
-	Ports                     *int64  `json:"ports,omitempty"`
-	ProxyAfterTcpHandshake    *string `json:"proxy-after-tcp-handshake,omitempty"`
-	ScanBzip2                 *string `json:"scan-bzip2,omitempty"`
-	SslOffloaded              *string `json:"ssl-offloaded,omitempty"`
-	Status                    *string `json:"status,omitempty"`
-	UncompressedNestLimit     *int64  `json:"uncompressed-nest-limit,omitempty"`
-	UncompressedOversizeLimit *int64  `json:"uncompressed-oversize-limit,omitempty"`
+	InspectAll                *string  `json:"inspect-all,omitempty"`
+	Options                   *string  `json:"options,omitempty"`
+	OversizeLimit             *float64 `json:"oversize-limit,omitempty"`
+	Ports                     *float64 `json:"ports,omitempty"`
+	ProxyAfterTcpHandshake    *string  `json:"proxy-after-tcp-handshake,omitempty"`
+	ScanBzip2                 *string  `json:"scan-bzip2,omitempty"`
+	SslOffloaded              *string  `json:"ssl-offloaded,omitempty"`
+	Status                    *string  `json:"status,omitempty"`
+	UncompressedNestLimit     *float64 `json:"uncompressed-nest-limit,omitempty"`
+	UncompressedOversizeLimit *float64 `json:"uncompressed-oversize-limit,omitempty"`
 }
 
 type FirewallProfileProtocolOptionsSmtp struct {
-	InspectAll                *string `json:"inspect-all,omitempty"`
-	Options                   *string `json:"options,omitempty"`
-	OversizeLimit             *int64  `json:"oversize-limit,omitempty"`
-	Ports                     *int64  `json:"ports,omitempty"`
-	ProxyAfterTcpHandshake    *string `json:"proxy-after-tcp-handshake,omitempty"`
-	ScanBzip2                 *string `json:"scan-bzip2,omitempty"`
-	ServerBusy                *string `json:"server-busy,omitempty"`
-	SslOffloaded              *string `json:"ssl-offloaded,omitempty"`
-	Status                    *string `json:"status,omitempty"`
-	UncompressedNestLimit     *int64  `json:"uncompressed-nest-limit,omitempty"`
-	UncompressedOversizeLimit *int64  `json:"uncompressed-oversize-limit,omitempty"`
+	InspectAll                *string  `json:"inspect-all,omitempty"`
+	Options                   *string  `json:"options,omitempty"`
+	OversizeLimit             *float64 `json:"oversize-limit,omitempty"`
+	Ports                     *float64 `json:"ports,omitempty"`
+	ProxyAfterTcpHandshake    *string  `json:"proxy-after-tcp-handshake,omitempty"`
+	ScanBzip2                 *string  `json:"scan-bzip2,omitempty"`
+	ServerBusy                *string  `json:"server-busy,omitempty"`
+	SslOffloaded              *string  `json:"ssl-offloaded,omitempty"`
+	Status                    *string  `json:"status,omitempty"`
+	UncompressedNestLimit     *float64 `json:"uncompressed-nest-limit,omitempty"`
+	UncompressedOversizeLimit *float64 `json:"uncompressed-oversize-limit,omitempty"`
 }
 
 type FirewallProfileProtocolOptionsSsh struct {
-	ComfortAmount                *int64  `json:"comfort-amount,omitempty"`
-	ComfortInterval              *int64  `json:"comfort-interval,omitempty"`
-	Options                      *string `json:"options,omitempty"`
-	OversizeLimit                *int64  `json:"oversize-limit,omitempty"`
-	ScanBzip2                    *string `json:"scan-bzip2,omitempty"`
-	SslOffloaded                 *string `json:"ssl-offloaded,omitempty"`
-	StreamBasedUncompressedLimit *int64  `json:"stream-based-uncompressed-limit,omitempty"`
-	TcpWindowMaximum             *int64  `json:"tcp-window-maximum,omitempty"`
-	TcpWindowMinimum             *int64  `json:"tcp-window-minimum,omitempty"`
-	TcpWindowSize                *int64  `json:"tcp-window-size,omitempty"`
-	TcpWindowType                *string `json:"tcp-window-type,omitempty"`
-	UncompressedNestLimit        *int64  `json:"uncompressed-nest-limit,omitempty"`
-	UncompressedOversizeLimit    *int64  `json:"uncompressed-oversize-limit,omitempty"`
+	ComfortAmount                *float64 `json:"comfort-amount,omitempty"`
+	ComfortInterval              *float64 `json:"comfort-interval,omitempty"`
+	Options                      *string  `json:"options,omitempty"`
+	OversizeLimit                *float64 `json:"oversize-limit,omitempty"`
+	ScanBzip2                    *string  `json:"scan-bzip2,omitempty"`
+	SslOffloaded                 *string  `json:"ssl-offloaded,omitempty"`
+	StreamBasedUncompressedLimit *float64 `json:"stream-based-uncompressed-limit,omitempty"`
+	TcpWindowMaximum             *float64 `json:"tcp-window-maximum,omitempty"`
+	TcpWindowMinimum             *float64 `json:"tcp-window-minimum,omitempty"`
+	TcpWindowSize                *float64 `json:"tcp-window-size,omitempty"`
+	TcpWindowType                *string  `json:"tcp-window-type,omitempty"`
+	UncompressedNestLimit        *float64 `json:"uncompressed-nest-limit,omitempty"`
+	UncompressedOversizeLimit    *float64 `json:"uncompressed-oversize-limit,omitempty"`
 }

@@ -5,7 +5,7 @@ const WebfilterContentHeaderPath = "webfilter/content-header/"
 type WebfilterContentHeader struct {
 	Comment *string                          `json:"comment,omitempty"`
 	Entries *[]WebfilterContentHeaderEntries `json:"entries,omitempty"`
-	Fosid   *int64                           `json:"fosid,omitempty"`
+	Fosid   *float64                         `json:"fosid,omitempty"`
 	Name    *string                          `json:"name,omitempty"`
 }
 

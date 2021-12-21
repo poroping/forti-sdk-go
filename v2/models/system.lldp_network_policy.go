@@ -16,65 +16,65 @@ type SystemlldpNetworkPolicy struct {
 }
 
 type SystemlldpNetworkPolicyGuest struct {
-	Dscp     *int64  `json:"dscp,omitempty"`
-	Priority *int64  `json:"priority,omitempty"`
-	Status   *string `json:"status,omitempty"`
-	Tag      *string `json:"tag,omitempty"`
-	Vlan     *int64  `json:"vlan,omitempty"`
+	Dscp     *float64 `json:"dscp,omitempty"`
+	Priority *float64 `json:"priority,omitempty"`
+	Status   *string  `json:"status,omitempty"`
+	Tag      *string  `json:"tag,omitempty"`
+	Vlan     *float64 `json:"vlan,omitempty"`
 }
 
 type SystemlldpNetworkPolicyGuestVoiceSignaling struct {
-	Dscp     *int64  `json:"dscp,omitempty"`
-	Priority *int64  `json:"priority,omitempty"`
-	Status   *string `json:"status,omitempty"`
-	Tag      *string `json:"tag,omitempty"`
-	Vlan     *int64  `json:"vlan,omitempty"`
+	Dscp     *float64 `json:"dscp,omitempty"`
+	Priority *float64 `json:"priority,omitempty"`
+	Status   *string  `json:"status,omitempty"`
+	Tag      *string  `json:"tag,omitempty"`
+	Vlan     *float64 `json:"vlan,omitempty"`
 }
 
 type SystemlldpNetworkPolicySoftphone struct {
-	Dscp     *int64  `json:"dscp,omitempty"`
-	Priority *int64  `json:"priority,omitempty"`
-	Status   *string `json:"status,omitempty"`
-	Tag      *string `json:"tag,omitempty"`
-	Vlan     *int64  `json:"vlan,omitempty"`
+	Dscp     *float64 `json:"dscp,omitempty"`
+	Priority *float64 `json:"priority,omitempty"`
+	Status   *string  `json:"status,omitempty"`
+	Tag      *string  `json:"tag,omitempty"`
+	Vlan     *float64 `json:"vlan,omitempty"`
 }
 
 type SystemlldpNetworkPolicyStreamingVideo struct {
-	Dscp     *int64  `json:"dscp,omitempty"`
-	Priority *int64  `json:"priority,omitempty"`
-	Status   *string `json:"status,omitempty"`
-	Tag      *string `json:"tag,omitempty"`
-	Vlan     *int64  `json:"vlan,omitempty"`
+	Dscp     *float64 `json:"dscp,omitempty"`
+	Priority *float64 `json:"priority,omitempty"`
+	Status   *string  `json:"status,omitempty"`
+	Tag      *string  `json:"tag,omitempty"`
+	Vlan     *float64 `json:"vlan,omitempty"`
 }
 
 type SystemlldpNetworkPolicyVideoConferencing struct {
-	Dscp     *int64  `json:"dscp,omitempty"`
-	Priority *int64  `json:"priority,omitempty"`
-	Status   *string `json:"status,omitempty"`
-	Tag      *string `json:"tag,omitempty"`
-	Vlan     *int64  `json:"vlan,omitempty"`
+	Dscp     *float64 `json:"dscp,omitempty"`
+	Priority *float64 `json:"priority,omitempty"`
+	Status   *string  `json:"status,omitempty"`
+	Tag      *string  `json:"tag,omitempty"`
+	Vlan     *float64 `json:"vlan,omitempty"`
 }
 
 type SystemlldpNetworkPolicyVideoSignaling struct {
-	Dscp     *int64  `json:"dscp,omitempty"`
-	Priority *int64  `json:"priority,omitempty"`
-	Status   *string `json:"status,omitempty"`
-	Tag      *string `json:"tag,omitempty"`
-	Vlan     *int64  `json:"vlan,omitempty"`
+	Dscp     *float64 `json:"dscp,omitempty"`
+	Priority *float64 `json:"priority,omitempty"`
+	Status   *string  `json:"status,omitempty"`
+	Tag      *string  `json:"tag,omitempty"`
+	Vlan     *float64 `json:"vlan,omitempty"`
 }
 
 type SystemlldpNetworkPolicyVoice struct {
-	Dscp     *int64  `json:"dscp,omitempty"`
-	Priority *int64  `json:"priority,omitempty"`
-	Status   *string `json:"status,omitempty"`
-	Tag      *string `json:"tag,omitempty"`
-	Vlan     *int64  `json:"vlan,omitempty"`
+	Dscp     *float64 `json:"dscp,omitempty"`
+	Priority *float64 `json:"priority,omitempty"`
+	Status   *string  `json:"status,omitempty"`
+	Tag      *string  `json:"tag,omitempty"`
+	Vlan     *float64 `json:"vlan,omitempty"`
 }
 
 type SystemlldpNetworkPolicyVoiceSignaling struct {
-	Dscp     *int64  `json:"dscp,omitempty"`
-	Priority *int64  `json:"priority,omitempty"`
-	Status   *string `json:"status,omitempty"`
-	Tag      *string `json:"tag,omitempty"`
-	Vlan     *int64  `json:"vlan,omitempty"`
+	Dscp     *float64 `json:"dscp,omitempty"`
+	Priority *float64 `json:"priority,omitempty"`
+	Status   *string  `json:"status,omitempty"`
+	Tag      *string  `json:"tag,omitempty"`
+	Vlan     *float64 `json:"vlan,omitempty"`
 }

@@ -3,7 +3,7 @@ package models
 const FirewallVipgrpPath = "firewall/vipgrp/"
 
 type FirewallVipgrp struct {
-	Color     *int64                  `json:"color,omitempty"`
+	Color     *float64                `json:"color,omitempty"`
 	Comments  *string                 `json:"comments,omitempty"`
 	Interface *string                 `json:"interface,omitempty"`
 	Member    *[]FirewallVipgrpMember `json:"member,omitempty"`

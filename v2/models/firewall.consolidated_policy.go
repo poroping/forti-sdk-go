@@ -51,7 +51,7 @@ type FirewallconsolidatedPolicy struct {
 	Nat                           *string                                                    `json:"nat,omitempty"`
 	Outbound                      *string                                                    `json:"outbound,omitempty"`
 	PerIpShaper                   *string                                                    `json:"per-ip-shaper,omitempty"`
-	Policyid                      *int64                                                     `json:"policyid,omitempty"`
+	Policyid                      *float64                                                   `json:"policyid,omitempty"`
 	Poolname4                     *[]FirewallconsolidatedPolicyPoolname4                     `json:"poolname4,omitempty"`
 	Poolname6                     *[]FirewallconsolidatedPolicyPoolname6                     `json:"poolname6,omitempty"`
 	ProfileGroup                  *string                                                    `json:"profile-group,omitempty"`
@@ -60,7 +60,7 @@ type FirewallconsolidatedPolicy struct {
 	Schedule                      *string                                                    `json:"schedule,omitempty"`
 	Service                       *[]FirewallconsolidatedPolicyService                       `json:"service,omitempty"`
 	ServiceNegate                 *string                                                    `json:"service-negate,omitempty"`
-	SessionTtl                    *int64                                                     `json:"session-ttl,omitempty"`
+	SessionTtl                    *float64                                                   `json:"session-ttl,omitempty"`
 	SrcaddrNegate                 *string                                                    `json:"srcaddr-negate,omitempty"`
 	Srcaddr4                      *[]FirewallconsolidatedPolicySrcaddr4                      `json:"srcaddr4,omitempty"`
 	Srcaddr6                      *[]FirewallconsolidatedPolicySrcaddr6                      `json:"srcaddr6,omitempty"`
@@ -69,8 +69,8 @@ type FirewallconsolidatedPolicy struct {
 	SshPolicyRedirect             *string                                                    `json:"ssh-policy-redirect,omitempty"`
 	SslSshProfile                 *string                                                    `json:"ssl-ssh-profile,omitempty"`
 	Status                        *string                                                    `json:"status,omitempty"`
-	TcpMssReceiver                *int64                                                     `json:"tcp-mss-receiver,omitempty"`
-	TcpMssSender                  *int64                                                     `json:"tcp-mss-sender,omitempty"`
+	TcpMssReceiver                *float64                                                   `json:"tcp-mss-receiver,omitempty"`
+	TcpMssSender                  *float64                                                   `json:"tcp-mss-sender,omitempty"`
 	TrafficShaper                 *string                                                    `json:"traffic-shaper,omitempty"`
 	TrafficShaperReverse          *string                                                    `json:"traffic-shaper-reverse,omitempty"`
 	Users                         *[]FirewallconsolidatedPolicyUsers                         `json:"users,omitempty"`
@@ -124,7 +124,7 @@ type FirewallconsolidatedPolicyInternetServiceGroup struct {
 }
 
 type FirewallconsolidatedPolicyInternetServiceId struct {
-	Id *int64 `json:"id,omitempty"`
+	Id *float64 `json:"id,omitempty"`
 }
 
 type FirewallconsolidatedPolicyInternetServiceName struct {
@@ -144,7 +144,7 @@ type FirewallconsolidatedPolicyInternetServiceSrcGroup struct {
 }
 
 type FirewallconsolidatedPolicyInternetServiceSrcId struct {
-	Id *int64 `json:"id,omitempty"`
+	Id *float64 `json:"id,omitempty"`
 }
 
 type FirewallconsolidatedPolicyInternetServiceSrcName struct {

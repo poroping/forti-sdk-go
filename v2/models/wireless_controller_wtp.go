@@ -12,7 +12,7 @@ type WirelessControllerWtp struct {
 	FirmwareProvision              *string                                   `json:"firmware-provision,omitempty"`
 	FirmwareProvisionLatest        *string                                   `json:"firmware-provision-latest,omitempty"`
 	ImageDownload                  *string                                   `json:"image-download,omitempty"`
-	Index                          *int64                                    `json:"index,omitempty"`
+	Index                          *float64                                  `json:"index,omitempty"`
 	IpFragmentPreventing           *string                                   `json:"ip-fragment-preventing,omitempty"`
 	Lan                            *[]WirelessControllerWtpLan               `json:"lan,omitempty"`
 	LedState                       *string                                   `json:"led-state,omitempty"`
@@ -38,8 +38,8 @@ type WirelessControllerWtp struct {
 	SplitTunnelingAcl              *[]WirelessControllerWtpSplitTunnelingAcl `json:"split-tunneling-acl,omitempty"`
 	SplitTunnelingAclLocalApSubnet *string                                   `json:"split-tunneling-acl-local-ap-subnet,omitempty"`
 	SplitTunnelingAclPath          *string                                   `json:"split-tunneling-acl-path,omitempty"`
-	TunMtuDownlink                 *int64                                    `json:"tun-mtu-downlink,omitempty"`
-	TunMtuUplink                   *int64                                    `json:"tun-mtu-uplink,omitempty"`
+	TunMtuDownlink                 *float64                                  `json:"tun-mtu-downlink,omitempty"`
+	TunMtuUplink                   *float64                                  `json:"tun-mtu-uplink,omitempty"`
 	Uuid                           *string                                   `json:"uuid,omitempty"`
 	WanPortMode                    *string                                   `json:"wan-port-mode,omitempty"`
 	WtpId                          *string                                   `json:"wtp-id,omitempty"`
@@ -71,9 +71,9 @@ type WirelessControllerWtpLan struct {
 }
 
 type WirelessControllerWtpRadio1 struct {
-	AutoPowerHigh    *int64                                `json:"auto-power-high,omitempty"`
+	AutoPowerHigh    *float64                              `json:"auto-power-high,omitempty"`
 	AutoPowerLevel   *string                               `json:"auto-power-level,omitempty"`
-	AutoPowerLow     *int64                                `json:"auto-power-low,omitempty"`
+	AutoPowerLow     *float64                              `json:"auto-power-low,omitempty"`
 	AutoPowerTarget  *string                               `json:"auto-power-target,omitempty"`
 	Band             *string                               `json:"band,omitempty"`
 	Channel          *[]WirelessControllerWtpRadio1Channel `json:"channel,omitempty"`
@@ -83,9 +83,9 @@ type WirelessControllerWtpRadio1 struct {
 	OverrideChannel  *string                               `json:"override-channel,omitempty"`
 	OverrideTxpower  *string                               `json:"override-txpower,omitempty"`
 	OverrideVaps     *string                               `json:"override-vaps,omitempty"`
-	PowerLevel       *int64                                `json:"power-level,omitempty"`
+	PowerLevel       *float64                              `json:"power-level,omitempty"`
 	PowerMode        *string                               `json:"power-mode,omitempty"`
-	PowerValue       *int64                                `json:"power-value,omitempty"`
+	PowerValue       *float64                              `json:"power-value,omitempty"`
 	SpectrumAnalysis *string                               `json:"spectrum-analysis,omitempty"`
 	VapAll           *string                               `json:"vap-all,omitempty"`
 	Vaps             *[]WirelessControllerWtpRadio1Vaps    `json:"vaps,omitempty"`
@@ -100,9 +100,9 @@ type WirelessControllerWtpRadio1Vaps struct {
 }
 
 type WirelessControllerWtpRadio2 struct {
-	AutoPowerHigh    *int64                                `json:"auto-power-high,omitempty"`
+	AutoPowerHigh    *float64                              `json:"auto-power-high,omitempty"`
 	AutoPowerLevel   *string                               `json:"auto-power-level,omitempty"`
-	AutoPowerLow     *int64                                `json:"auto-power-low,omitempty"`
+	AutoPowerLow     *float64                              `json:"auto-power-low,omitempty"`
 	AutoPowerTarget  *string                               `json:"auto-power-target,omitempty"`
 	Band             *string                               `json:"band,omitempty"`
 	Channel          *[]WirelessControllerWtpRadio2Channel `json:"channel,omitempty"`
@@ -112,9 +112,9 @@ type WirelessControllerWtpRadio2 struct {
 	OverrideChannel  *string                               `json:"override-channel,omitempty"`
 	OverrideTxpower  *string                               `json:"override-txpower,omitempty"`
 	OverrideVaps     *string                               `json:"override-vaps,omitempty"`
-	PowerLevel       *int64                                `json:"power-level,omitempty"`
+	PowerLevel       *float64                              `json:"power-level,omitempty"`
 	PowerMode        *string                               `json:"power-mode,omitempty"`
-	PowerValue       *int64                                `json:"power-value,omitempty"`
+	PowerValue       *float64                              `json:"power-value,omitempty"`
 	SpectrumAnalysis *string                               `json:"spectrum-analysis,omitempty"`
 	VapAll           *string                               `json:"vap-all,omitempty"`
 	Vaps             *[]WirelessControllerWtpRadio2Vaps    `json:"vaps,omitempty"`
@@ -129,9 +129,9 @@ type WirelessControllerWtpRadio2Vaps struct {
 }
 
 type WirelessControllerWtpRadio3 struct {
-	AutoPowerHigh    *int64                                `json:"auto-power-high,omitempty"`
+	AutoPowerHigh    *float64                              `json:"auto-power-high,omitempty"`
 	AutoPowerLevel   *string                               `json:"auto-power-level,omitempty"`
-	AutoPowerLow     *int64                                `json:"auto-power-low,omitempty"`
+	AutoPowerLow     *float64                              `json:"auto-power-low,omitempty"`
 	AutoPowerTarget  *string                               `json:"auto-power-target,omitempty"`
 	Band             *string                               `json:"band,omitempty"`
 	Channel          *[]WirelessControllerWtpRadio3Channel `json:"channel,omitempty"`
@@ -141,9 +141,9 @@ type WirelessControllerWtpRadio3 struct {
 	OverrideChannel  *string                               `json:"override-channel,omitempty"`
 	OverrideTxpower  *string                               `json:"override-txpower,omitempty"`
 	OverrideVaps     *string                               `json:"override-vaps,omitempty"`
-	PowerLevel       *int64                                `json:"power-level,omitempty"`
+	PowerLevel       *float64                              `json:"power-level,omitempty"`
 	PowerMode        *string                               `json:"power-mode,omitempty"`
-	PowerValue       *int64                                `json:"power-value,omitempty"`
+	PowerValue       *float64                              `json:"power-value,omitempty"`
 	SpectrumAnalysis *string                               `json:"spectrum-analysis,omitempty"`
 	VapAll           *string                               `json:"vap-all,omitempty"`
 	Vaps             *[]WirelessControllerWtpRadio3Vaps    `json:"vaps,omitempty"`
@@ -158,9 +158,9 @@ type WirelessControllerWtpRadio3Vaps struct {
 }
 
 type WirelessControllerWtpRadio4 struct {
-	AutoPowerHigh    *int64                                `json:"auto-power-high,omitempty"`
+	AutoPowerHigh    *float64                              `json:"auto-power-high,omitempty"`
 	AutoPowerLevel   *string                               `json:"auto-power-level,omitempty"`
-	AutoPowerLow     *int64                                `json:"auto-power-low,omitempty"`
+	AutoPowerLow     *float64                              `json:"auto-power-low,omitempty"`
 	AutoPowerTarget  *string                               `json:"auto-power-target,omitempty"`
 	Band             *string                               `json:"band,omitempty"`
 	Channel          *[]WirelessControllerWtpRadio4Channel `json:"channel,omitempty"`
@@ -170,9 +170,9 @@ type WirelessControllerWtpRadio4 struct {
 	OverrideChannel  *string                               `json:"override-channel,omitempty"`
 	OverrideTxpower  *string                               `json:"override-txpower,omitempty"`
 	OverrideVaps     *string                               `json:"override-vaps,omitempty"`
-	PowerLevel       *int64                                `json:"power-level,omitempty"`
+	PowerLevel       *float64                              `json:"power-level,omitempty"`
 	PowerMode        *string                               `json:"power-mode,omitempty"`
-	PowerValue       *int64                                `json:"power-value,omitempty"`
+	PowerValue       *float64                              `json:"power-value,omitempty"`
 	SpectrumAnalysis *string                               `json:"spectrum-analysis,omitempty"`
 	VapAll           *string                               `json:"vap-all,omitempty"`
 	Vaps             *[]WirelessControllerWtpRadio4Vaps    `json:"vaps,omitempty"`
@@ -187,6 +187,6 @@ type WirelessControllerWtpRadio4Vaps struct {
 }
 
 type WirelessControllerWtpSplitTunnelingAcl struct {
-	DestIp *string `json:"dest-ip,omitempty"`
-	Id     *int64  `json:"id,omitempty"`
+	DestIp *string  `json:"dest-ip,omitempty"`
+	Id     *float64 `json:"id,omitempty"`
 }

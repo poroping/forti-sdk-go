@@ -12,7 +12,7 @@ type VpnOcvpn struct {
 	Multipath                 *string                      `json:"multipath,omitempty"`
 	Nat                       *string                      `json:"nat,omitempty"`
 	Overlays                  *[]VpnOcvpnOverlays          `json:"overlays,omitempty"`
-	PollInterval              *int64                       `json:"poll-interval,omitempty"`
+	PollInterval              *float64                     `json:"poll-interval,omitempty"`
 	Role                      *string                      `json:"role,omitempty"`
 	Sdwan                     *string                      `json:"sdwan,omitempty"`
 	SdwanZone                 *string                      `json:"sdwan-zone,omitempty"`
@@ -38,7 +38,7 @@ type VpnOcvpnForticlientAccessAuthGroupsOverlays struct {
 
 type VpnOcvpnOverlays struct {
 	AssignIp     *string                    `json:"assign-ip,omitempty"`
-	Id           *int64                     `json:"id,omitempty"`
+	Id           *float64                   `json:"id,omitempty"`
 	InterOverlay *string                    `json:"inter-overlay,omitempty"`
 	Ipv4EndIp    *string                    `json:"ipv4-end-ip,omitempty"`
 	Ipv4StartIp  *string                    `json:"ipv4-start-ip,omitempty"`
@@ -48,10 +48,10 @@ type VpnOcvpnOverlays struct {
 }
 
 type VpnOcvpnOverlaysSubnets struct {
-	Id        *int64  `json:"id,omitempty"`
-	Interface *string `json:"interface,omitempty"`
-	Subnet    *string `json:"subnet,omitempty"`
-	Type      *string `json:"type,omitempty"`
+	Id        *float64 `json:"id,omitempty"`
+	Interface *string  `json:"interface,omitempty"`
+	Subnet    *string  `json:"subnet,omitempty"`
+	Type      *string  `json:"type,omitempty"`
 }
 
 type VpnOcvpnWanInterface struct {
