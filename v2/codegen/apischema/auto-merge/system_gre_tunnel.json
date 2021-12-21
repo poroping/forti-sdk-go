@@ -1,0 +1,251 @@
+{
+	"FullPath": null,
+	"addedIn": "v6.2.7",
+	"build": 237,
+	"http_method": "GET",
+	"http_status": 200,
+	"mergedVersions": "v6.2.7,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3",
+	"name": "gre-tunnel",
+	"path": "system",
+	"results": {
+		"access_group": "netgrp",
+		"category": "table",
+		"children": {
+			"checksum-reception": {
+				"category": "unitary",
+				"default": "disable",
+				"help": "Enable/disable validating checksums in received GRE packets.",
+				"multiple_values": false,
+				"name": "checksum-reception",
+				"options": [
+					{
+						"help": "Do not validate checksums in received GRE packets.",
+						"name": "disable"
+					},
+					{
+						"help": "Validate checksums in received GRE packets.",
+						"name": "enable"
+					}
+				],
+				"type": "option"
+			},
+			"checksum-transmission": {
+				"category": "unitary",
+				"default": "disable",
+				"help": "Enable/disable including checksums in transmitted GRE packets.",
+				"multiple_values": false,
+				"name": "checksum-transmission",
+				"options": [
+					{
+						"help": "Do not include checksums in transmitted GRE packets.",
+						"name": "disable"
+					},
+					{
+						"help": "Include checksums in transmitted GRE packets.",
+						"name": "enable"
+					}
+				],
+				"type": "option"
+			},
+			"diffservcode": {
+				"category": "unitary",
+				"default": "",
+				"help": "DiffServ setting to be applied to GRE tunnel outer IP header.",
+				"name": "diffservcode",
+				"type": "user"
+			},
+			"dscp-copying": {
+				"category": "unitary",
+				"default": "disable",
+				"help": "Enable/disable DSCP copying.",
+				"multiple_values": false,
+				"name": "dscp-copying",
+				"options": [
+					{
+						"help": "Disable DSCP copying.",
+						"name": "disable"
+					},
+					{
+						"help": "Enable DSCP copying.",
+						"name": "enable"
+					}
+				],
+				"type": "option"
+			},
+			"interface": {
+				"category": "unitary",
+				"datasource": [
+					"system.interface.name"
+				],
+				"default": "",
+				"help": "Interface name.",
+				"name": "interface",
+				"size": 15,
+				"type": "string"
+			},
+			"ip-version": {
+				"category": "unitary",
+				"default": "4",
+				"help": "IP version to use for VPN interface.",
+				"multiple_values": false,
+				"name": "ip-version",
+				"options": [
+					{
+						"help": "Use IPv4 addressing for gateways.",
+						"name": "4"
+					},
+					{
+						"help": "Use IPv6 addressing for gateways.",
+						"name": "6"
+					}
+				],
+				"type": "option"
+			},
+			"keepalive-failtimes": {
+				"category": "unitary",
+				"default": 10,
+				"help": "Number of consecutive unreturned keepalive messages before a GRE connection is considered down (1 - 255).",
+				"max-value": 255,
+				"min-value": 1,
+				"name": "keepalive-failtimes",
+				"type": "integer"
+			},
+			"keepalive-interval": {
+				"category": "unitary",
+				"default": 0,
+				"help": "Keepalive message interval (0 - 32767, 0 = disabled).",
+				"max-value": 32767,
+				"min-value": 0,
+				"name": "keepalive-interval",
+				"type": "integer"
+			},
+			"key-inbound": {
+				"category": "unitary",
+				"default": 0,
+				"help": "Require received GRE packets contain this key (0 - 4294967295).",
+				"max-value": 4294967295,
+				"min-value": 0,
+				"name": "key-inbound",
+				"type": "integer"
+			},
+			"key-outbound": {
+				"category": "unitary",
+				"default": 0,
+				"help": "Include this key in transmitted GRE packets (0 - 4294967295).",
+				"max-value": 4294967295,
+				"min-value": 0,
+				"name": "key-outbound",
+				"type": "integer"
+			},
+			"local-gw": {
+				"category": "unitary",
+				"default": "0.0.0.0",
+				"help": "IP address of the local gateway.",
+				"name": "local-gw",
+				"required": true,
+				"type": "ipv4-address-any"
+			},
+			"local-gw6": {
+				"category": "unitary",
+				"default": "::",
+				"help": "IPv6 address of the local gateway.",
+				"name": "local-gw6",
+				"required": true,
+				"type": "ipv6-address"
+			},
+			"name": {
+				"category": "unitary",
+				"default": "",
+				"help": "Tunnel name.",
+				"name": "name",
+				"size": 15,
+				"type": "string"
+			},
+			"remote-gw": {
+				"category": "unitary",
+				"default": "0.0.0.0",
+				"help": "IP address of the remote gateway.",
+				"name": "remote-gw",
+				"required": true,
+				"type": "ipv4-address"
+			},
+			"remote-gw6": {
+				"category": "unitary",
+				"default": "::",
+				"help": "IPv6 address of the remote gateway.",
+				"name": "remote-gw6",
+				"required": true,
+				"type": "ipv6-address"
+			},
+			"sequence-number-reception": {
+				"category": "unitary",
+				"default": "disable",
+				"help": "Enable/disable validating sequence numbers in received GRE packets.",
+				"multiple_values": false,
+				"name": "sequence-number-reception",
+				"options": [
+					{
+						"help": "Do not validate sequence number in received GRE packets.",
+						"name": "disable"
+					},
+					{
+						"help": "Validate sequence numbers in received GRE packets.",
+						"name": "enable"
+					}
+				],
+				"type": "option"
+			},
+			"sequence-number-transmission": {
+				"category": "unitary",
+				"default": "disable",
+				"help": "Enable/disable including of sequence numbers in transmitted GRE packets.",
+				"multiple_values": false,
+				"name": "sequence-number-transmission",
+				"options": [
+					{
+						"help": "Include sequence numbers in transmitted GRE packets.",
+						"name": "disable"
+					},
+					{
+						"help": "Do not  include sequence numbers in transmitted GRE packets.",
+						"name": "enable"
+					}
+				],
+				"type": "option"
+			},
+			"use-sdwan": {
+				"addedIn": "v7.0.0",
+				"category": "unitary",
+				"default": "disable",
+				"help": "Enable/disable use of SD-WAN to reach remote gateway.",
+				"multiple_values": false,
+				"name": "use-sdwan",
+				"options": [
+					{
+						"help": "Disable use of SD-WAN to reach remote gateway.",
+						"name": "disable"
+					},
+					{
+						"help": "Enable use of SD-WAN to reach remote gateway.",
+						"name": "enable"
+					}
+				],
+				"type": "option"
+			}
+		},
+		"help": "Configure GRE tunnel.",
+		"max_table_size_global": 0,
+		"max_table_size_item": 0,
+		"max_table_size_vdom": 0,
+		"mkey": "name",
+		"mkey_type": "string",
+		"name": "gre-tunnel",
+		"path": "system",
+		"q_type": 175
+	},
+	"revision": "0f5eb597fa8ac37d5f819e2b64bf7e6e",
+	"serial": "FGTAZRKKLFZKT347",
+	"status": "success",
+	"vdom": "root",
+	"version": "v7.0.3"
+}

@@ -1,0 +1,223 @@
+{
+	"FullPath": null,
+	"addedIn": "v7.0.1",
+	"build": 237,
+	"http_method": "GET",
+	"http_status": 200,
+	"mergedVersions": "v7.0.1,v7.0.2,v7.0.3",
+	"name": "access-proxy-ssh-client-cert",
+	"path": "firewall",
+	"results": {
+		"access_group": "fwgrp",
+		"category": "table",
+		"children": {
+			"auth-ca": {
+				"category": "unitary",
+				"datasource": [
+					"firewall.ssh.local-ca.name"
+				],
+				"default": "",
+				"help": "Name of the SSH server public key authentication CA.",
+				"name": "auth-ca",
+				"required": true,
+				"size": 79,
+				"type": "string"
+			},
+			"cert-extension": {
+				"category": "table",
+				"children": {
+					"critical": {
+						"category": "unitary",
+						"default": "no",
+						"help": "Critical option.",
+						"multiple_values": false,
+						"name": "critical",
+						"options": [
+							{
+								"help": "Certificate extension, server ignores the unsupported certificate extension.",
+								"name": "no"
+							},
+							{
+								"help": "Critical option, server refuses to authorize if it cannnot recognize the critical option.",
+								"name": "yes"
+							}
+						],
+						"type": "option"
+					},
+					"data": {
+						"category": "unitary",
+						"default": "",
+						"help": "Data of certificate extension.",
+						"name": "data",
+						"size": 127,
+						"type": "string"
+					},
+					"name": {
+						"category": "unitary",
+						"default": "",
+						"help": "Name of certificate extension.",
+						"name": "name",
+						"required": true,
+						"size": 127,
+						"type": "string"
+					},
+					"type": {
+						"category": "unitary",
+						"default": "fixed",
+						"help": "Type of certificate extension.",
+						"multiple_values": false,
+						"name": "type",
+						"options": [
+							{
+								"help": "Fixed certificate extension entry.",
+								"name": "fixed"
+							},
+							{
+								"help": "Certificate extension entry filled with authenticated username.",
+								"name": "user"
+							}
+						],
+						"type": "option"
+					}
+				},
+				"help": "Configure certificate extension for user certificate.",
+				"max_table_size_global": 0,
+				"max_table_size_item": 0,
+				"max_table_size_vdom": 0,
+				"mkey": "name",
+				"mkey_type": "string",
+				"name": "cert-extension"
+			},
+			"name": {
+				"category": "unitary",
+				"default": "",
+				"help": "SSH client certificate name.",
+				"name": "name",
+				"size": 79,
+				"type": "string"
+			},
+			"permit-agent-forwarding": {
+				"category": "unitary",
+				"default": "enable",
+				"help": "Enable/disable appending permit-agent-forwarding certificate extension.",
+				"multiple_values": false,
+				"name": "permit-agent-forwarding",
+				"options": [
+					{
+						"help": "Enable setting.",
+						"name": "enable"
+					},
+					{
+						"help": "Disable setting.",
+						"name": "disable"
+					}
+				],
+				"type": "option"
+			},
+			"permit-port-forwarding": {
+				"category": "unitary",
+				"default": "enable",
+				"help": "Enable/disable appending permit-port-forwarding certificate extension.",
+				"multiple_values": false,
+				"name": "permit-port-forwarding",
+				"options": [
+					{
+						"help": "Enable setting.",
+						"name": "enable"
+					},
+					{
+						"help": "Disable setting.",
+						"name": "disable"
+					}
+				],
+				"type": "option"
+			},
+			"permit-pty": {
+				"category": "unitary",
+				"default": "enable",
+				"help": "Enable/disable appending permit-pty certificate extension.",
+				"multiple_values": false,
+				"name": "permit-pty",
+				"options": [
+					{
+						"help": "Enable setting.",
+						"name": "enable"
+					},
+					{
+						"help": "Disable setting.",
+						"name": "disable"
+					}
+				],
+				"type": "option"
+			},
+			"permit-user-rc": {
+				"category": "unitary",
+				"default": "enable",
+				"help": "Enable/disable appending permit-user-rc certificate extension.",
+				"multiple_values": false,
+				"name": "permit-user-rc",
+				"options": [
+					{
+						"help": "Enable setting.",
+						"name": "enable"
+					},
+					{
+						"help": "Disable setting.",
+						"name": "disable"
+					}
+				],
+				"type": "option"
+			},
+			"permit-x11-forwarding": {
+				"category": "unitary",
+				"default": "enable",
+				"help": "Enable/disable appending permit-x11-forwarding certificate extension.",
+				"multiple_values": false,
+				"name": "permit-x11-forwarding",
+				"options": [
+					{
+						"help": "Enable setting.",
+						"name": "enable"
+					},
+					{
+						"help": "Disable setting.",
+						"name": "disable"
+					}
+				],
+				"type": "option"
+			},
+			"source-address": {
+				"category": "unitary",
+				"default": "disable",
+				"help": "Enable/disable appending source-address certificate critical option. This option ensure certificate only accepted from FortiGate source address.",
+				"multiple_values": false,
+				"name": "source-address",
+				"options": [
+					{
+						"help": "Enable setting.",
+						"name": "enable"
+					},
+					{
+						"help": "Disable setting.",
+						"name": "disable"
+					}
+				],
+				"type": "option"
+			}
+		},
+		"help": "Configure Access Proxy SSH client certificate.",
+		"max_table_size_global": 512,
+		"max_table_size_item": 0,
+		"max_table_size_vdom": 256,
+		"mkey": "name",
+		"mkey_type": "string",
+		"name": "access-proxy-ssh-client-cert",
+		"path": "firewall",
+		"q_type": 47
+	},
+	"revision": "0f5eb597fa8ac37d5f819e2b64bf7e6e",
+	"serial": "FGTAZRKKLFZKT347",
+	"status": "success",
+	"vdom": "root",
+	"version": "v7.0.3"
+}

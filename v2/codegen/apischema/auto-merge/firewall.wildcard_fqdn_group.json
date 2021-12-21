@@ -1,0 +1,104 @@
+{
+	"FullPath": null,
+	"addedIn": "v6.2.7",
+	"build": 237,
+	"http_method": "GET",
+	"http_status": 200,
+	"mergedVersions": "v6.2.7,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3",
+	"name": "group",
+	"path": "firewall.wildcard-fqdn",
+	"results": {
+		"access_group": "fwgrp",
+		"category": "table",
+		"children": {
+			"color": {
+				"category": "unitary",
+				"default": 0,
+				"help": "GUI icon color.",
+				"max-value": 32,
+				"min-value": 0,
+				"name": "color",
+				"type": "integer"
+			},
+			"comment": {
+				"category": "unitary",
+				"help": "Comment.",
+				"name": "comment",
+				"size": 255,
+				"type": "var-string"
+			},
+			"member": {
+				"category": "table",
+				"children": {
+					"name": {
+						"category": "unitary",
+						"datasource": [
+							"firewall.wildcard-fqdn.custom.name"
+						],
+						"default": "",
+						"help": "Address name.",
+						"name": "name",
+						"size": 79,
+						"type": "string"
+					}
+				},
+				"help": "Address group members.",
+				"max_table_size_global": 0,
+				"max_table_size_item": 0,
+				"max_table_size_vdom": 0,
+				"member_table": true,
+				"mkey": "name",
+				"mkey_type": "string",
+				"name": "member",
+				"required": true
+			},
+			"name": {
+				"category": "unitary",
+				"default": "",
+				"help": "Address group name.",
+				"name": "name",
+				"size": 79,
+				"type": "string"
+			},
+			"uuid": {
+				"category": "unitary",
+				"default": "00000000-0000-0000-0000-000000000000",
+				"help": "Universally Unique Identifier (UUID; automatically assigned but can be manually reset).",
+				"name": "uuid",
+				"type": "uuid"
+			},
+			"visibility": {
+				"category": "unitary",
+				"help": "Enable/disable address visibility.",
+				"multiple_values": false,
+				"name": "visibility",
+				"options": [
+					{
+						"help": "Enable setting.",
+						"name": "enable"
+					},
+					{
+						"help": "Disable setting.",
+						"name": "disable"
+					}
+				],
+				"removedIn": "v6.4.2",
+				"type": "option"
+			}
+		},
+		"help": "Config global Wildcard FQDN address groups.",
+		"max_table_size_global": 100000,
+		"max_table_size_item": 0,
+		"max_table_size_vdom": 100000,
+		"mkey": "name",
+		"mkey_type": "string",
+		"name": "group",
+		"path": "firewall.wildcard-fqdn",
+		"q_type": 49
+	},
+	"revision": "e65e53be6c0514a795ea25e5133ea692",
+	"serial": "FGTAZRKKLFZKT347",
+	"status": "success",
+	"vdom": "root",
+	"version": "v7.0.3"
+}

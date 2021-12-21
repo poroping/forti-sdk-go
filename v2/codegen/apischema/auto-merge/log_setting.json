@@ -1,0 +1,418 @@
+{
+	"FullPath": null,
+	"addedIn": "v6.2.7",
+	"build": 237,
+	"http_method": "GET",
+	"http_status": 200,
+	"mergedVersions": "v6.2.7,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3",
+	"name": "setting",
+	"path": "log",
+	"results": {
+		"access_group": "loggrp",
+		"category": "complex",
+		"children": {
+			"anonymization-hash": {
+				"addedIn": "v7.0.2",
+				"category": "unitary",
+				"default": "",
+				"help": "User name anonymization hash salt.",
+				"name": "anonymization-hash",
+				"size": 32,
+				"type": "string"
+			},
+			"brief-traffic-format": {
+				"category": "unitary",
+				"default": "disable",
+				"help": "Enable/disable brief format traffic logging.",
+				"multiple_values": false,
+				"name": "brief-traffic-format",
+				"options": [
+					{
+						"help": "Enable brief format traffic logging.",
+						"name": "enable"
+					},
+					{
+						"help": "Disable brief format traffic logging.",
+						"name": "disable"
+					}
+				],
+				"type": "option"
+			},
+			"custom-log-fields": {
+				"category": "table",
+				"children": {
+					"field-id": {
+						"category": "unitary",
+						"datasource": [
+							"log.custom-field.id"
+						],
+						"default": "",
+						"help": "Custom log field.",
+						"name": "field-id",
+						"size": 35,
+						"type": "string"
+					}
+				},
+				"help": "Custom fields to append to all log messages.",
+				"max_table_size_global": 0,
+				"max_table_size_item": 5,
+				"max_table_size_vdom": 0,
+				"member_table": true,
+				"mkey": "field-id",
+				"mkey_type": "string",
+				"name": "custom-log-fields"
+			},
+			"daemon-log": {
+				"category": "unitary",
+				"default": "disable",
+				"help": "Enable/disable daemon logging.",
+				"multiple_values": false,
+				"name": "daemon-log",
+				"options": [
+					{
+						"help": "Enable daemon logging.",
+						"name": "enable"
+					},
+					{
+						"help": "Disable daemon logging.",
+						"name": "disable"
+					}
+				],
+				"type": "option"
+			},
+			"expolicy-implicit-log": {
+				"category": "unitary",
+				"default": "disable",
+				"help": "Enable/disable explicit proxy firewall implicit policy logging.",
+				"multiple_values": false,
+				"name": "expolicy-implicit-log",
+				"options": [
+					{
+						"help": "Enable explicit proxy firewall implicit policy logging.",
+						"name": "enable"
+					},
+					{
+						"help": "Disable explicit proxy firewall implicit policy logging.",
+						"name": "disable"
+					}
+				],
+				"type": "option"
+			},
+			"faz-override": {
+				"category": "unitary",
+				"default": "disable",
+				"help": "Enable/disable override FortiAnalyzer settings.",
+				"multiple_values": false,
+				"name": "faz-override",
+				"options": [
+					{
+						"help": "Enable override FortiAnalyzer settings.",
+						"name": "enable"
+					},
+					{
+						"help": "Disable override FortiAnalyzer settings.",
+						"name": "disable"
+					}
+				],
+				"type": "option"
+			},
+			"fortiview-weekly-data": {
+				"category": "unitary",
+				"help": "Enable/disable FortiView weekly data.",
+				"multiple_values": false,
+				"name": "fortiview-weekly-data",
+				"options": [
+					{
+						"help": "Enable FortiView weekly data.",
+						"name": "enable"
+					},
+					{
+						"help": "Disable FortiView weekly data.",
+						"name": "disable"
+					}
+				],
+				"removedIn": "v6.4.2",
+				"type": "option"
+			},
+			"fwpolicy-implicit-log": {
+				"category": "unitary",
+				"default": "disable",
+				"help": "Enable/disable implicit firewall policy logging.",
+				"multiple_values": false,
+				"name": "fwpolicy-implicit-log",
+				"options": [
+					{
+						"help": "Enable implicit firewall policy logging.",
+						"name": "enable"
+					},
+					{
+						"help": "Disable implicit firewall policy logging.",
+						"name": "disable"
+					}
+				],
+				"type": "option"
+			},
+			"fwpolicy6-implicit-log": {
+				"category": "unitary",
+				"default": "disable",
+				"help": "Enable/disable implicit firewall policy6 logging.",
+				"multiple_values": false,
+				"name": "fwpolicy6-implicit-log",
+				"options": [
+					{
+						"help": "Enable implicit firewall policy6 logging.",
+						"name": "enable"
+					},
+					{
+						"help": "Disable implicit firewall policy6 logging.",
+						"name": "disable"
+					}
+				],
+				"type": "option"
+			},
+			"local-in-allow": {
+				"category": "unitary",
+				"default": "disable",
+				"help": "Enable/disable local-in-allow logging.",
+				"multiple_values": false,
+				"name": "local-in-allow",
+				"options": [
+					{
+						"help": "Enable local-in-allow logging.",
+						"name": "enable"
+					},
+					{
+						"help": "Disable local-in-allow logging.",
+						"name": "disable"
+					}
+				],
+				"type": "option"
+			},
+			"local-in-deny-broadcast": {
+				"category": "unitary",
+				"default": "disable",
+				"help": "Enable/disable local-in-deny-broadcast logging.",
+				"multiple_values": false,
+				"name": "local-in-deny-broadcast",
+				"options": [
+					{
+						"help": "Enable local-in-deny-broadcast logging.",
+						"name": "enable"
+					},
+					{
+						"help": "Disable local-in-deny-broadcast logging.",
+						"name": "disable"
+					}
+				],
+				"type": "option"
+			},
+			"local-in-deny-unicast": {
+				"category": "unitary",
+				"default": "disable",
+				"help": "Enable/disable local-in-deny-unicast logging.",
+				"multiple_values": false,
+				"name": "local-in-deny-unicast",
+				"options": [
+					{
+						"help": "Enable local-in-deny-unicast logging.",
+						"name": "enable"
+					},
+					{
+						"help": "Disable local-in-deny-unicast logging.",
+						"name": "disable"
+					}
+				],
+				"type": "option"
+			},
+			"local-out": {
+				"category": "unitary",
+				"default": "disable",
+				"help": "Enable/disable local-out logging.",
+				"multiple_values": false,
+				"name": "local-out",
+				"options": [
+					{
+						"help": "Enable local-out logging.",
+						"name": "enable"
+					},
+					{
+						"help": "Disable local-out logging.",
+						"name": "disable"
+					}
+				],
+				"type": "option"
+			},
+			"log-invalid-packet": {
+				"category": "unitary",
+				"default": "disable",
+				"help": "Enable/disable invalid packet traffic logging.",
+				"multiple_values": false,
+				"name": "log-invalid-packet",
+				"options": [
+					{
+						"help": "Enable invalid packet traffic logging.",
+						"name": "enable"
+					},
+					{
+						"help": "Disable invalid packet traffic logging.",
+						"name": "disable"
+					}
+				],
+				"type": "option"
+			},
+			"log-policy-comment": {
+				"category": "unitary",
+				"default": "disable",
+				"help": "Enable/disable inserting policy comments into traffic logs.",
+				"multiple_values": false,
+				"name": "log-policy-comment",
+				"options": [
+					{
+						"help": "Enable inserting policy comments into traffic logs.",
+						"name": "enable"
+					},
+					{
+						"help": "Disable inserting policy comments into traffic logs.",
+						"name": "disable"
+					}
+				],
+				"type": "option"
+			},
+			"log-policy-name": {
+				"category": "unitary",
+				"help": "Enable/disable inserting policy name into traffic logs.",
+				"multiple_values": false,
+				"name": "log-policy-name",
+				"options": [
+					{
+						"help": "Enable inserting policy name into traffic logs.",
+						"name": "enable"
+					},
+					{
+						"help": "Disable inserting policy name into traffic logs.",
+						"name": "disable"
+					}
+				],
+				"removedIn": "v6.4.2",
+				"type": "option"
+			},
+			"log-user-in-upper": {
+				"category": "unitary",
+				"default": "disable",
+				"help": "Enable/disable logs with user-in-upper.",
+				"multiple_values": false,
+				"name": "log-user-in-upper",
+				"options": [
+					{
+						"help": "Enable logs with user-in-upper.",
+						"name": "enable"
+					},
+					{
+						"help": "Disable logs with user-in-upper.",
+						"name": "disable"
+					}
+				],
+				"type": "option"
+			},
+			"neighbor-event": {
+				"category": "unitary",
+				"default": "disable",
+				"help": "Enable/disable neighbor event logging.",
+				"multiple_values": false,
+				"name": "neighbor-event",
+				"options": [
+					{
+						"help": "Enable neighbor event logging.",
+						"name": "enable"
+					},
+					{
+						"help": "Disable neighbor event logging.",
+						"name": "disable"
+					}
+				],
+				"type": "option"
+			},
+			"resolve-ip": {
+				"category": "unitary",
+				"default": "disable",
+				"help": "Enable/disable adding resolved domain names to traffic logs if possible.",
+				"multiple_values": false,
+				"name": "resolve-ip",
+				"options": [
+					{
+						"help": "Enable adding resolved domain names to traffic logs.",
+						"name": "enable"
+					},
+					{
+						"help": "Disable adding resolved domain names to traffic logs.",
+						"name": "disable"
+					}
+				],
+				"type": "option"
+			},
+			"resolve-port": {
+				"category": "unitary",
+				"default": "enable",
+				"help": "Enable/disable adding resolved service names to traffic logs.",
+				"multiple_values": false,
+				"name": "resolve-port",
+				"options": [
+					{
+						"help": "Enable adding resolved service names to traffic logs.",
+						"name": "enable"
+					},
+					{
+						"help": "Disable adding resolved service names to traffic logs.",
+						"name": "disable"
+					}
+				],
+				"type": "option"
+			},
+			"syslog-override": {
+				"category": "unitary",
+				"default": "disable",
+				"help": "Enable/disable override Syslog settings.",
+				"multiple_values": false,
+				"name": "syslog-override",
+				"options": [
+					{
+						"help": "Enable override Syslog settings.",
+						"name": "enable"
+					},
+					{
+						"help": "Disable override Syslog settings.",
+						"name": "disable"
+					}
+				],
+				"type": "option"
+			},
+			"user-anonymize": {
+				"category": "unitary",
+				"default": "disable",
+				"help": "Enable/disable anonymizing user names in log messages.",
+				"multiple_values": false,
+				"name": "user-anonymize",
+				"options": [
+					{
+						"help": "Enable anonymizing user names in log messages.",
+						"name": "enable"
+					},
+					{
+						"help": "Disable anonymizing user names in log messages.",
+						"name": "disable"
+					}
+				],
+				"type": "option"
+			}
+		},
+		"help": "Configure general log settings.",
+		"name": "setting",
+		"path": "log",
+		"q_type": 64
+	},
+	"revision": "0f5eb597fa8ac37d5f819e2b64bf7e6e",
+	"serial": "FGTAZRKKLFZKT347",
+	"status": "success",
+	"vdom": "root",
+	"version": "v7.0.3"
+}

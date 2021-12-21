@@ -12,10 +12,15 @@ import (
 	"text/template"
 )
 
+const (
+	schemaLoc = "./apischema/auto-merge/"
+)
+
 func main() {
-	schemas, _ := ioutil.ReadDir("./apischema/v7.0.2/")
+	schemas, _ := ioutil.ReadDir(schemaLoc)
 	for _, schema := range schemas {
 		fileName := schema.Name()
+		log.Printf("[DEBUG] processing: %s", fileName)
 		funcMap := template.FuncMap{
 			"replace":     replace,
 			"mixedCase":   mixedCase,
@@ -26,6 +31,7 @@ func main() {
 			"subcategory": subcategory,
 			"difflookup":  diffLookup,
 			"readExample": readExample,
+			"debug":       debugx,
 		}
 		t := template.Must(template.New("main").Funcs(funcMap).ParseGlob("./templates/*.gotmpl"))
 
@@ -91,6 +97,11 @@ func main() {
 	}
 }
 
+func debugx(v interface{}) string {
+	fmt.Println(v)
+	return ""
+}
+
 func render(templateName, fileName string, t *template.Template, m map[string]interface{}) {
 	var buf bytes.Buffer
 	if err := t.ExecuteTemplate(&buf, templateName, m); err != nil {
@@ -110,7 +121,7 @@ func render(templateName, fileName string, t *template.Template, m map[string]in
 	perm := int(0755)
 	resname := strings.TrimSuffix(fileName, ".json")
 	resname += ".go"
-	os.WriteFile("./output/"+templateName+"/"+resname, f, os.FileMode(perm))
+	os.WriteFile("../"+templateName+"/"+resname, f, os.FileMode(perm))
 }
 
 func addPaths(m map[string]interface{}) map[string]interface{} {
@@ -131,9 +142,11 @@ func recursePaths(v interface{}, pre string) interface{} {
 	child, ok := v.(map[string]interface{})["children"].(map[string]interface{})
 	if ok {
 		for _, v := range child {
-			name := mixedCase(v.(map[string]interface{})["name"].(string))
-			v.(map[string]interface{})["fpath"] = pre + name
-			recursePaths(v, pre+name)
+			if v2, ok := v.(map[string]interface{}); ok {
+				name := mixedCase(v2["name"].(string))
+				v2["fpath"] = pre + name
+				recursePaths(v, pre+name)
+			}
 		}
 	} else {
 		return v
@@ -148,15 +161,16 @@ func addSensitive(m map[string]interface{}) map[string]interface{} {
 }
 
 func recurseSensitive(m map[string]interface{}) map[string]interface{} {
-	child, ok := m["children"].(map[string]interface{})
-	if ok {
+	if child, ok := m["children"].(map[string]interface{}); ok {
 		for _, v := range child {
-			if s, ok := v.(map[string]interface{})["type"].(string); ok {
-				if strings.Contains(s, "password") {
-					v.(map[string]interface{})["sensitive"] = true
+			if v2, ok := v.(map[string]interface{}); ok {
+				if s, ok := v2["type"].(string); ok {
+					if strings.Contains(s, "password") {
+						v2["sensitive"] = true
+					}
 				}
+				recurseSensitive(v2)
 			}
-			recurseSensitive(v.(map[string]interface{}))
 		}
 	} else {
 		return m
@@ -172,15 +186,16 @@ func addNumberName(m map[string]interface{}) map[string]interface{} {
 }
 
 func recurseNumberName(m map[string]interface{}) map[string]interface{} {
-	child, ok := m["children"].(map[string]interface{})
-	if ok {
+	if child, ok := m["children"].(map[string]interface{}); ok {
 		for _, v := range child {
-			if s, ok := v.(map[string]interface{})["name"].(string); ok {
-				if s[0] >= '0' && s[0] <= '9' {
-					v.(map[string]interface{})["name_begin_with_int"] = true
+			if v2, ok := v.(map[string]interface{}); ok {
+				if s, ok := v2["name"].(string); ok {
+					if s[0] >= '0' && s[0] <= '9' {
+						v2["name_begin_with_int"] = true
+					}
 				}
+				recurseNumberName(v2)
 			}
-			recurseNumberName(v.(map[string]interface{}))
 		}
 	} else {
 		return m
@@ -294,7 +309,7 @@ func complexEmptyOnDestroy(m map[string]interface{}) map[string]interface{} {
 }
 
 func getSchema(name string) (content []byte) {
-	file := "./apischema/v7.0.2/"
+	file := schemaLoc
 	file += name
 	content, err := ioutil.ReadFile(file)
 	if err != nil {
@@ -338,6 +353,7 @@ func typeLookup(s string) string {
 		"mac-address":            "*string",
 		"password_aes256":        "*string",
 		"uuid":                   "*string",
+		"ether-type":             "*string",
 	}
 	s, ok := m[s]
 	if !ok {
@@ -372,6 +388,8 @@ func valilookup(values map[string]interface{}) string {
 		"password-3":         "",
 		"mac-address":        "",
 		"password_aes256":    "",
+		"uuid":               "",
+		"ether-type":         "",
 	}
 	s, ok := m[vtype]
 	if !ok {
@@ -406,6 +424,8 @@ func diffLookup(values map[string]interface{}) string {
 		"password-3":         "",
 		"mac-address":        "",
 		"password_aes256":    "",
+		"uuid":               "",
+		"ether-type":         "",
 	}
 	s, ok := m[vtype]
 	if !ok {
@@ -484,4 +504,4 @@ func readExample(name, typ string) string {
 }
 
 // Entire swagger schema
-// https://fndn.fortinet.net/index.php?/fortiapi/1-fortios/&do=downloadApiJSONFile&handlerId=1390&path=&productId=1&csrfKey=c10ec59a59015e6c2538adec6796f1ca
+// https://fndn.fortinet.net/index.php?/fortiapi/1-fortios/&do=downloadApiJSONFile&handlerId=974&path=&productId=1&csrfKey=c10ec59a59015e6c2538adec6796f1ca

@@ -1,0 +1,56 @@
+{
+	"FullPath": null,
+	"addedIn": "v7.0.0",
+	"build": 237,
+	"http_method": "GET",
+	"http_status": 200,
+	"mergedVersions": "v7.0.0,v7.0.1,v7.0.2,v7.0.3",
+	"name": "ssid-policy",
+	"path": "wireless-controller",
+	"results": {
+		"access_group": "wifi",
+		"category": "table",
+		"children": {
+			"description": {
+				"category": "unitary",
+				"help": "Description.",
+				"name": "description",
+				"size": 255,
+				"type": "var-string"
+			},
+			"name": {
+				"category": "unitary",
+				"default": "",
+				"help": "Name.",
+				"name": "name",
+				"size": 35,
+				"type": "string"
+			},
+			"vlan": {
+				"category": "unitary",
+				"datasource": [
+					"system.interface.name"
+				],
+				"default": "",
+				"help": "VLAN interface name.",
+				"name": "vlan",
+				"size": 35,
+				"type": "string"
+			}
+		},
+		"help": "Configure WiFi SSID policies.",
+		"max_table_size_global": 512,
+		"max_table_size_item": 0,
+		"max_table_size_vdom": 256,
+		"mkey": "name",
+		"mkey_type": "string",
+		"name": "ssid-policy",
+		"path": "wireless-controller",
+		"q_type": 306
+	},
+	"revision": "0f5eb597fa8ac37d5f819e2b64bf7e6e",
+	"serial": "FGTAZRKKLFZKT347",
+	"status": "success",
+	"vdom": "root",
+	"version": "v7.0.3"
+}

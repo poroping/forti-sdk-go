@@ -1,0 +1,106 @@
+{
+	"FullPath": null,
+	"addedIn": "v6.2.7",
+	"build": 237,
+	"http_method": "GET",
+	"http_status": 200,
+	"mergedVersions": "v6.2.7,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3",
+	"name": "view-map",
+	"path": "ips",
+	"results": {
+		"access_group": "utmgrp",
+		"category": "table",
+		"children": {
+			"id": {
+				"category": "unitary",
+				"default": 0,
+				"help": "View ID.",
+				"max-value": 4294967295,
+				"min-value": 0,
+				"name": "id",
+				"readonly": true,
+				"type": "integer"
+			},
+			"id-policy-id": {
+				"category": "unitary",
+				"default": 0,
+				"help": "ID-based policy ID.",
+				"max-value": 4294967295,
+				"min-value": 0,
+				"name": "id-policy-id",
+				"readonly": true,
+				"type": "integer"
+			},
+			"policy-id": {
+				"category": "unitary",
+				"default": 0,
+				"help": "Policy ID.",
+				"max-value": 4294967295,
+				"min-value": 0,
+				"name": "policy-id",
+				"readonly": true,
+				"type": "integer"
+			},
+			"vdom-id": {
+				"category": "unitary",
+				"default": 0,
+				"help": "VDOM ID.",
+				"max-value": 4294967295,
+				"min-value": 0,
+				"name": "vdom-id",
+				"readonly": true,
+				"type": "integer"
+			},
+			"which": {
+				"category": "unitary",
+				"default": "firewall",
+				"help": "Policy.",
+				"multiple_values": false,
+				"name": "which",
+				"options": [
+					{
+						"help": "Firewall policy.",
+						"name": "firewall"
+					},
+					{
+						"help": "Interface policy.",
+						"name": "interface"
+					},
+					{
+						"help": "Interface policy6.",
+						"name": "interface6"
+					},
+					{
+						"help": "Sniffer policy.",
+						"name": "sniffer"
+					},
+					{
+						"help": "Sniffer policy6.",
+						"name": "sniffer6"
+					},
+					{
+						"help": "explicit proxy policy.",
+						"name": "explicit"
+					}
+				],
+				"readonly": true,
+				"type": "option"
+			}
+		},
+		"help": "configure ips view-map",
+		"max_table_size_global": 0,
+		"max_table_size_item": 0,
+		"max_table_size_vdom": 0,
+		"mkey": "id",
+		"mkey_type": "integer",
+		"name": "view-map",
+		"path": "ips",
+		"q_type": 238,
+		"readonly": true
+	},
+	"revision": "0f5eb597fa8ac37d5f819e2b64bf7e6e",
+	"serial": "FGTAZRKKLFZKT347",
+	"status": "success",
+	"vdom": "root",
+	"version": "v7.0.3"
+}

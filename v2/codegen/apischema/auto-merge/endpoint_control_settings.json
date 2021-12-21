@@ -1,0 +1,76 @@
+{
+	"FullPath": null,
+	"addedIn": "v6.2.7",
+	"build": 1190,
+	"http_method": "GET",
+	"http_status": 200,
+	"mergedVersions": "v6.2.7",
+	"name": "settings",
+	"path": "endpoint-control",
+	"removedIn": "v6.4.2",
+	"results": {
+		"access_group": "utmgrp",
+		"category": "complex",
+		"children": {
+			"forticlient-disconnect-unsupported-client": {
+				"category": "unitary",
+				"help": "Enable/disable disconnecting of unsupported FortiClient endpoints.",
+				"multiple_values": false,
+				"name": "forticlient-disconnect-unsupported-client",
+				"options": [
+					{
+						"help": "Enable disconnection of clients on unsupported routes.",
+						"name": "enable"
+					},
+					{
+						"help": "Disable disconnection of clients on unsupported routes.",
+						"name": "disable"
+					}
+				],
+				"type": "option"
+			},
+			"forticlient-keepalive-interval": {
+				"category": "unitary",
+				"help": "Interval between two KeepAlive messages from FortiClient (20 - 300 sec, default = 60).",
+				"max-value": 300,
+				"min-value": 20,
+				"name": "forticlient-keepalive-interval",
+				"type": "integer"
+			},
+			"forticlient-sys-update-interval": {
+				"category": "unitary",
+				"help": "Interval between two system update messages from FortiClient (30 - 1440 min, default = 720).",
+				"max-value": 1440,
+				"min-value": 30,
+				"name": "forticlient-sys-update-interval",
+				"type": "integer"
+			},
+			"forticlient-user-avatar": {
+				"category": "unitary",
+				"help": "Enable/disable uploading FortiClient user avatars.",
+				"multiple_values": false,
+				"name": "forticlient-user-avatar",
+				"options": [
+					{
+						"help": "Allow uploading FortiClient user avatars.",
+						"name": "enable"
+					},
+					{
+						"help": "Disable uploading FortiClient user avatars.",
+						"name": "disable"
+					}
+				],
+				"type": "option"
+			}
+		},
+		"help": "Configure endpoint control settings.",
+		"name": "settings",
+		"path": "endpoint-control",
+		"q_type": 241
+	},
+	"revision": "93b29e0464bb2a18bdccbc29e37a7b09",
+	"serial": "FG1K5D3I14802539",
+	"status": "success",
+	"vdom": "root",
+	"version": "v6.2.7"
+}

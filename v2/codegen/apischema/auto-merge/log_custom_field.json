@@ -1,0 +1,56 @@
+{
+	"FullPath": null,
+	"addedIn": "v6.2.7",
+	"build": 237,
+	"http_method": "GET",
+	"http_status": 200,
+	"mergedVersions": "v6.2.7,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3",
+	"name": "custom-field",
+	"path": "log",
+	"results": {
+		"access_group": "loggrp",
+		"category": "table",
+		"children": {
+			"id": {
+				"category": "unitary",
+				"default": "",
+				"help": "field ID \u003cstring\u003e.",
+				"name": "id",
+				"size": 35,
+				"type": "string"
+			},
+			"name": {
+				"category": "unitary",
+				"default": "",
+				"help": "Field name (max: 15 characters).",
+				"name": "name",
+				"required": true,
+				"size": 15,
+				"type": "string"
+			},
+			"value": {
+				"category": "unitary",
+				"default": "",
+				"help": "Field value (max: 15 characters).",
+				"name": "value",
+				"required": true,
+				"size": 15,
+				"type": "string"
+			}
+		},
+		"help": "Configure custom log fields.",
+		"max_table_size_global": 0,
+		"max_table_size_item": 0,
+		"max_table_size_vdom": 1000,
+		"mkey": "id",
+		"mkey_type": "string",
+		"name": "custom-field",
+		"path": "log",
+		"q_type": 223
+	},
+	"revision": "0f5eb597fa8ac37d5f819e2b64bf7e6e",
+	"serial": "FGTAZRKKLFZKT347",
+	"status": "success",
+	"vdom": "root",
+	"version": "v7.0.3"
+}

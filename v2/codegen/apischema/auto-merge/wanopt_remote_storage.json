@@ -1,0 +1,66 @@
+{
+	"FullPath": null,
+	"addedIn": "v6.2.7",
+	"build": 237,
+	"http_method": "GET",
+	"http_status": 200,
+	"mergedVersions": "v6.2.7,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3",
+	"name": "remote-storage",
+	"path": "wanopt",
+	"results": {
+		"access_group": "wanoptgrp",
+		"category": "complex",
+		"children": {
+			"local-cache-id": {
+				"category": "unitary",
+				"default": "",
+				"help": "ID that this device uses to connect to the remote device.",
+				"name": "local-cache-id",
+				"size": 35,
+				"type": "string"
+			},
+			"remote-cache-id": {
+				"category": "unitary",
+				"default": "",
+				"help": "ID of the remote device to which the device connects.",
+				"name": "remote-cache-id",
+				"size": 35,
+				"type": "string"
+			},
+			"remote-cache-ip": {
+				"category": "unitary",
+				"default": "0.0.0.0",
+				"help": "IP address of the remote device to which the device connects.",
+				"name": "remote-cache-ip",
+				"type": "ipv4-address-any"
+			},
+			"status": {
+				"category": "unitary",
+				"default": "disable",
+				"help": "Enable/disable using remote device as Web cache storage.",
+				"multiple_values": false,
+				"name": "status",
+				"options": [
+					{
+						"help": "Use local disks as Web cache storage.",
+						"name": "disable"
+					},
+					{
+						"help": "Use a remote device as Web cache storage.",
+						"name": "enable"
+					}
+				],
+				"type": "option"
+			}
+		},
+		"help": "Configure a remote cache device as Web cache storage.",
+		"name": "remote-storage",
+		"path": "wanopt",
+		"q_type": 341
+	},
+	"revision": "0f5eb597fa8ac37d5f819e2b64bf7e6e",
+	"serial": "FGTAZRKKLFZKT347",
+	"status": "success",
+	"vdom": "root",
+	"version": "v7.0.3"
+}

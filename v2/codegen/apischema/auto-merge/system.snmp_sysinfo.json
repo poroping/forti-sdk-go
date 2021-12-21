@@ -1,0 +1,122 @@
+{
+	"FullPath": null,
+	"addedIn": "v6.2.7",
+	"build": 237,
+	"http_method": "GET",
+	"http_status": 200,
+	"mergedVersions": "v6.2.7,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3",
+	"name": "sysinfo",
+	"path": "system.snmp",
+	"results": {
+		"access_group": "sysgrp",
+		"category": "complex",
+		"children": {
+			"contact-info": {
+				"category": "unitary",
+				"help": "Contact information.",
+				"name": "contact-info",
+				"size": 255,
+				"type": "var-string"
+			},
+			"description": {
+				"category": "unitary",
+				"help": "System description.",
+				"name": "description",
+				"size": 255,
+				"type": "var-string"
+			},
+			"engine-id": {
+				"category": "unitary",
+				"default": "",
+				"help": "Local SNMP engineID string (maximum 27 characters).",
+				"name": "engine-id",
+				"size": 54,
+				"type": "string"
+			},
+			"engine-id-type": {
+				"addedIn": "v7.0.1",
+				"category": "unitary",
+				"default": "text",
+				"help": "Local SNMP engineID type (text/hex/mac).",
+				"multiple_values": false,
+				"name": "engine-id-type",
+				"options": [
+					{
+						"help": "Text format.",
+						"name": "text"
+					},
+					{
+						"help": "Octets format.",
+						"name": "hex"
+					},
+					{
+						"help": "MAC address format.",
+						"name": "mac"
+					}
+				],
+				"type": "option"
+			},
+			"location": {
+				"category": "unitary",
+				"help": "System location.",
+				"name": "location",
+				"size": 255,
+				"type": "var-string"
+			},
+			"status": {
+				"category": "unitary",
+				"default": "disable",
+				"help": "Enable/disable SNMP.",
+				"multiple_values": false,
+				"name": "status",
+				"options": [
+					{
+						"help": "Enable setting.",
+						"name": "enable"
+					},
+					{
+						"help": "Disable setting.",
+						"name": "disable"
+					}
+				],
+				"type": "option"
+			},
+			"trap-high-cpu-threshold": {
+				"category": "unitary",
+				"default": 80,
+				"help": "CPU usage when trap is sent.",
+				"max-value": 100,
+				"min-value": 1,
+				"name": "trap-high-cpu-threshold",
+				"type": "integer"
+			},
+			"trap-log-full-threshold": {
+				"category": "unitary",
+				"default": 90,
+				"help": "Log disk usage when trap is sent.",
+				"max-value": 100,
+				"min-value": 1,
+				"name": "trap-log-full-threshold",
+				"type": "integer"
+			},
+			"trap-low-memory-threshold": {
+				"category": "unitary",
+				"default": 80,
+				"help": "Memory usage when trap is sent.",
+				"max-value": 100,
+				"min-value": 1,
+				"name": "trap-low-memory-threshold",
+				"type": "integer"
+			}
+		},
+		"help": "SNMP system info configuration.",
+		"name": "sysinfo",
+		"path": "system.snmp",
+		"q_type": 6
+	},
+	"revision": "0f5eb597fa8ac37d5f819e2b64bf7e6e",
+	"serial": "FGTAZRKKLFZKT347",
+	"status": "success",
+	"vdom": "root",
+	"version": "v7.0.3"
+}

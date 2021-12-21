@@ -1,0 +1,107 @@
+{
+	"FullPath": null,
+	"addedIn": "v6.2.7",
+	"build": 237,
+	"http_method": "GET",
+	"http_status": 200,
+	"mergedVersions": "v6.2.7,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3",
+	"name": "content-header",
+	"path": "webfilter",
+	"results": {
+		"access_group": "utmgrp",
+		"category": "table",
+		"children": {
+			"comment": {
+				"category": "unitary",
+				"help": "Optional comments.",
+				"name": "comment",
+				"size": 255,
+				"type": "var-string"
+			},
+			"entries": {
+				"category": "table",
+				"children": {
+					"action": {
+						"category": "unitary",
+						"default": "allow",
+						"help": "Action to take for this content type.",
+						"multiple_values": false,
+						"name": "action",
+						"options": [
+							{
+								"help": "Block content type.",
+								"name": "block"
+							},
+							{
+								"help": "Allow content type.",
+								"name": "allow"
+							},
+							{
+								"help": "Exempt content type.",
+								"name": "exempt"
+							}
+						],
+						"required": true,
+						"type": "option"
+					},
+					"category": {
+						"category": "unitary",
+						"default": "all",
+						"help": "Categories that this content type applies to.",
+						"name": "category",
+						"required": true,
+						"type": "user"
+					},
+					"pattern": {
+						"category": "unitary",
+						"default": "",
+						"help": "Content type (regular expression).",
+						"name": "pattern",
+						"size": 31,
+						"type": "string"
+					}
+				},
+				"help": "Configure content types used by web filter.",
+				"max_table_size_global": 0,
+				"max_table_size_item": 0,
+				"max_table_size_vdom": 0,
+				"mkey": "pattern",
+				"mkey_type": "string",
+				"name": "entries"
+			},
+			"id": {
+				"category": "unitary",
+				"default": 0,
+				"help": "ID.",
+				"max-value": 4294967295,
+				"min-value": 0,
+				"name": "id",
+				"required": true,
+				"type": "integer"
+			},
+			"name": {
+				"category": "unitary",
+				"default": "",
+				"help": "Name of table.",
+				"name": "name",
+				"required": true,
+				"size": 63,
+				"type": "string"
+			}
+		},
+		"help": "Configure content types used by Web filter.",
+		"max_table_size_global": 512,
+		"max_table_size_item": 0,
+		"max_table_size_vdom": 256,
+		"mkey": "id",
+		"mkey_type": "integer",
+		"name": "content-header",
+		"path": "webfilter",
+		"q_type": 400
+	},
+	"revision": "0f5eb597fa8ac37d5f819e2b64bf7e6e",
+	"serial": "FGTAZRKKLFZKT347",
+	"status": "success",
+	"vdom": "root",
+	"version": "v7.0.3"
+}

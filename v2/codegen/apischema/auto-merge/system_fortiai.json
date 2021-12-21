@@ -1,0 +1,43 @@
+{
+	"FullPath": null,
+	"addedIn": "v7.0.1",
+	"build": 237,
+	"http_method": "GET",
+	"http_status": 200,
+	"mergedVersions": "v7.0.1,v7.0.2,v7.0.3",
+	"name": "fortiai",
+	"path": "system",
+	"results": {
+		"access_group": "secfabgrp",
+		"category": "complex",
+		"children": {
+			"status": {
+				"category": "unitary",
+				"default": "disable",
+				"help": "Enable/disable FortiAI.",
+				"multiple_values": false,
+				"name": "status",
+				"options": [
+					{
+						"help": "Disable FortiAI.",
+						"name": "disable"
+					},
+					{
+						"help": "Enable FortiAI.",
+						"name": "enable"
+					}
+				],
+				"type": "option"
+			}
+		},
+		"help": "Configure FortiAI.",
+		"name": "fortiai",
+		"path": "system",
+		"q_type": 474
+	},
+	"revision": "0f5eb597fa8ac37d5f819e2b64bf7e6e",
+	"serial": "FGTAZRKKLFZKT347",
+	"status": "success",
+	"vdom": "root",
+	"version": "v7.0.3"
+}

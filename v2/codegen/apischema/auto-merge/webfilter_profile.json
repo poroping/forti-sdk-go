@@ -1,0 +1,1988 @@
+{
+	"FullPath": null,
+	"addedIn": "v6.2.7",
+	"build": 237,
+	"http_method": "GET",
+	"http_status": 200,
+	"mergedVersions": "v6.2.7,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3",
+	"name": "profile",
+	"path": "webfilter",
+	"results": {
+		"access_group": "utmgrp",
+		"category": "table",
+		"children": {
+			"antiphish": {
+				"addedIn": "v6.4.2",
+				"category": "complex",
+				"children": {
+					"authentication": {
+						"addedIn": "v7.0.0",
+						"category": "unitary",
+						"default": "domain-controller",
+						"help": "Authentication methods.",
+						"multiple_values": false,
+						"name": "authentication",
+						"options": [
+							{
+								"help": "Domain Controller to verify user credential.",
+								"name": "domain-controller"
+							},
+							{
+								"help": "LDAP to verify user credential.",
+								"name": "ldap"
+							}
+						],
+						"required": true,
+						"type": "option"
+					},
+					"check-basic-auth": {
+						"category": "unitary",
+						"default": "disable",
+						"help": "Enable/disable checking of HTTP Basic Auth field for known credentials.",
+						"multiple_values": false,
+						"name": "check-basic-auth",
+						"options": [
+							{
+								"help": "Enable checking of HTTP Basic Auth field for known credentials.",
+								"name": "enable"
+							},
+							{
+								"help": "Disable checking of HTTP Basic Auth field for known credentials.",
+								"name": "disable"
+							}
+						],
+						"type": "option"
+					},
+					"check-uri": {
+						"category": "unitary",
+						"default": "disable",
+						"help": "Enable/disable checking of GET URI parameters for known credentials.",
+						"multiple_values": false,
+						"name": "check-uri",
+						"options": [
+							{
+								"help": "Enable checking of GET URI for username and password fields.",
+								"name": "enable"
+							},
+							{
+								"help": "Disable checking of GET URI for username and password fields.",
+								"name": "disable"
+							}
+						],
+						"type": "option"
+					},
+					"check-username-only": {
+						"addedIn": "v6.4.3",
+						"category": "unitary",
+						"default": "disable",
+						"help": "Enable/disable username only matching of credentials. Action will be taken for valid usernames regardless of password validity.",
+						"multiple_values": false,
+						"name": "check-username-only",
+						"options": [
+							{
+								"help": "Enable username only credential matches.",
+								"name": "enable"
+							},
+							{
+								"help": "Disable username only credential matches.",
+								"name": "disable"
+							}
+						],
+						"type": "option"
+					},
+					"custom-patterns": {
+						"category": "table",
+						"children": {
+							"category": {
+								"category": "unitary",
+								"default": "username",
+								"help": "Category that the pattern matches.",
+								"multiple_values": false,
+								"name": "category",
+								"options": [
+									{
+										"help": "Pattern matches username fields.",
+										"name": "username"
+									},
+									{
+										"help": "Pattern matches password fields.",
+										"name": "password"
+									}
+								],
+								"required": true,
+								"type": "option"
+							},
+							"pattern": {
+								"category": "unitary",
+								"default": "",
+								"help": "Target pattern.",
+								"name": "pattern",
+								"required": true,
+								"size": 255,
+								"type": "string"
+							},
+							"type": {
+								"addedIn": "v7.0.0",
+								"category": "unitary",
+								"default": "regex",
+								"help": "Pattern will be treated either as a regex pattern or literal string.",
+								"multiple_values": false,
+								"name": "type",
+								"options": [
+									{
+										"help": "Pattern will be treated as a regex pattern.",
+										"name": "regex"
+									},
+									{
+										"help": "Pattern will be treated as a literal string.",
+										"name": "literal"
+									}
+								],
+								"required": true,
+								"type": "option"
+							}
+						},
+						"help": "Custom username and password regex patterns.",
+						"max_table_size_global": 0,
+						"max_table_size_item": 0,
+						"max_table_size_vdom": 0,
+						"mkey": "pattern",
+						"mkey_type": "string",
+						"name": "custom-patterns"
+					},
+					"default-action": {
+						"category": "unitary",
+						"default": "exempt",
+						"help": "Action to be taken when there is no matching rule.",
+						"multiple_values": false,
+						"name": "default-action",
+						"options": [
+							{
+								"help": "Exempt requests from matching.",
+								"name": "exempt"
+							},
+							{
+								"help": "Log all matched requests.",
+								"name": "log"
+							},
+							{
+								"help": "Block all matched requests.",
+								"name": "block"
+							}
+						],
+						"type": "option"
+					},
+					"domain-controller": {
+						"category": "unitary",
+						"datasource": [
+							"user.domain-controller.name",
+							"credential-store.domain-controller.server-name"
+						],
+						"default": "",
+						"help": "Domain for which to verify received credentials against.",
+						"name": "domain-controller",
+						"size": 63,
+						"type": "string"
+					},
+					"inspection-entries": {
+						"category": "table",
+						"children": {
+							"action": {
+								"category": "unitary",
+								"default": "exempt",
+								"help": "Action to be taken upon an AntiPhishing match.",
+								"multiple_values": false,
+								"name": "action",
+								"options": [
+									{
+										"help": "Exempt requests from matching.",
+										"name": "exempt"
+									},
+									{
+										"help": "Log all matched requests.",
+										"name": "log"
+									},
+									{
+										"help": "Block all matched requests.",
+										"name": "block"
+									}
+								],
+								"required": true,
+								"type": "option"
+							},
+							"fortiguard-category": {
+								"category": "unitary",
+								"default": "0 ",
+								"help": "FortiGuard category to match.",
+								"name": "fortiguard-category",
+								"required": true,
+								"type": "user"
+							},
+							"name": {
+								"category": "unitary",
+								"default": "",
+								"help": "Inspection target name.",
+								"name": "name",
+								"required": true,
+								"size": 63,
+								"type": "string"
+							}
+						},
+						"help": "AntiPhishing entries.",
+						"max_table_size_global": 0,
+						"max_table_size_item": 0,
+						"max_table_size_vdom": 0,
+						"mkey": "name",
+						"mkey_type": "string",
+						"name": "inspection-entries"
+					},
+					"ldap": {
+						"addedIn": "v7.0.0",
+						"category": "unitary",
+						"datasource": [
+							"user.ldap.name"
+						],
+						"default": "",
+						"help": "LDAP server for which to verify received credentials against.",
+						"name": "ldap",
+						"size": 63,
+						"type": "string"
+					},
+					"max-body-len": {
+						"category": "unitary",
+						"default": 65536,
+						"help": "Maximum size of a POST body to check for credentials.",
+						"max-value": 4294967295,
+						"min-value": 0,
+						"name": "max-body-len",
+						"type": "integer"
+					},
+					"status": {
+						"category": "unitary",
+						"default": "disable",
+						"help": "Toggle AntiPhishing functionality.",
+						"multiple_values": false,
+						"name": "status",
+						"options": [
+							{
+								"help": "Enable AntiPhishing functionality.",
+								"name": "enable"
+							},
+							{
+								"help": "Disable AntiPhishing functionality.",
+								"name": "disable"
+							}
+						],
+						"type": "option"
+					}
+				},
+				"help": "AntiPhishing profile.",
+				"name": "antiphish"
+			},
+			"comment": {
+				"category": "unitary",
+				"help": "Optional comments.",
+				"name": "comment",
+				"size": 255,
+				"type": "var-string"
+			},
+			"extended-log": {
+				"category": "unitary",
+				"default": "disable",
+				"help": "Enable/disable extended logging for web filtering.",
+				"multiple_values": false,
+				"name": "extended-log",
+				"options": [
+					{
+						"help": "Enable setting.",
+						"name": "enable"
+					},
+					{
+						"help": "Disable setting.",
+						"name": "disable"
+					}
+				],
+				"type": "option"
+			},
+			"feature-set": {
+				"addedIn": "v6.4.2",
+				"category": "unitary",
+				"default": "flow",
+				"help": "Flow/proxy feature set.",
+				"multiple_values": false,
+				"name": "feature-set",
+				"options": [
+					{
+						"help": "Flow feature set.",
+						"name": "flow"
+					},
+					{
+						"help": "Proxy feature set.",
+						"name": "proxy"
+					}
+				],
+				"type": "option"
+			},
+			"file-filter": {
+				"category": "complex",
+				"children": {
+					"entries": {
+						"category": "table",
+						"children": {
+							"action": {
+								"category": "unitary",
+								"help": "Action taken for matched file.",
+								"multiple_values": false,
+								"name": "action",
+								"options": [
+									{
+										"help": "Allow the content and write a log message.",
+										"name": "log"
+									},
+									{
+										"help": "Block the content and write a log message.",
+										"name": "block"
+									}
+								],
+								"type": "option"
+							},
+							"comment": {
+								"category": "unitary",
+								"help": "Comment.",
+								"name": "comment",
+								"size": 255,
+								"type": "var-string"
+							},
+							"direction": {
+								"category": "unitary",
+								"help": "Match files transmitted in the session's originating or reply direction.",
+								"multiple_values": false,
+								"name": "direction",
+								"options": [
+									{
+										"help": "Match files transmitted in the session's originating direction.",
+										"name": "incoming"
+									},
+									{
+										"help": "Match files transmitted in the session's reply direction.",
+										"name": "outgoing"
+									},
+									{
+										"help": "Match files transmitted in the session's originating and reply direction.",
+										"name": "any"
+									}
+								],
+								"type": "option"
+							},
+							"file-type": {
+								"category": "table",
+								"children": {
+									"name": {
+										"category": "unitary",
+										"datasource": [
+											"antivirus.filetype.name"
+										],
+										"help": "File type name.",
+										"name": "name",
+										"size": 39,
+										"type": "string"
+									}
+								},
+								"help": "Select file type.",
+								"max_table_size_global": 0,
+								"max_table_size_item": 0,
+								"max_table_size_vdom": 0,
+								"member_table": true,
+								"mkey": "name",
+								"mkey_type": "string",
+								"name": "file-type"
+							},
+							"filter": {
+								"category": "unitary",
+								"help": "Add a file filter.",
+								"name": "filter",
+								"size": 35,
+								"type": "string"
+							},
+							"password-protected": {
+								"category": "unitary",
+								"help": "Match password-protected files.",
+								"multiple_values": false,
+								"name": "password-protected",
+								"options": [
+									{
+										"help": "Match only password-protected files.",
+										"name": "yes"
+									},
+									{
+										"help": "Match any file.",
+										"name": "any"
+									}
+								],
+								"type": "option"
+							},
+							"protocol": {
+								"category": "unitary",
+								"help": "Protocols to apply with.",
+								"multiple_values": true,
+								"name": "protocol",
+								"options": [
+									{
+										"help": "Enable/disable HTTP.",
+										"name": "http"
+									},
+									{
+										"help": "Enable/disable FTP.",
+										"name": "ftp"
+									}
+								],
+								"type": "option"
+							}
+						},
+						"help": "File filter entries.",
+						"max_table_size_global": 0,
+						"max_table_size_item": 0,
+						"max_table_size_vdom": 0,
+						"mkey": "filter",
+						"mkey_type": "string",
+						"name": "entries"
+					},
+					"log": {
+						"category": "unitary",
+						"help": "Enable/disable file filter logging.",
+						"multiple_values": false,
+						"name": "log",
+						"options": [
+							{
+								"help": "Enable file filter logging.",
+								"name": "enable"
+							},
+							{
+								"help": "Disable file filter logging.",
+								"name": "disable"
+							}
+						],
+						"type": "option"
+					},
+					"scan-archive-contents": {
+						"category": "unitary",
+						"help": "Enable/disable file filter archive contents scan.",
+						"multiple_values": false,
+						"name": "scan-archive-contents",
+						"options": [
+							{
+								"help": "Enable file filter archive contents scan.",
+								"name": "enable"
+							},
+							{
+								"help": "Disable file filter archive contents scan.",
+								"name": "disable"
+							}
+						],
+						"type": "option"
+					},
+					"status": {
+						"category": "unitary",
+						"help": "Enable/disable file filter.",
+						"multiple_values": false,
+						"name": "status",
+						"options": [
+							{
+								"help": "Enable file filter.",
+								"name": "enable"
+							},
+							{
+								"help": "Disable file filter.",
+								"name": "disable"
+							}
+						],
+						"type": "option"
+					}
+				},
+				"help": "File filter.",
+				"name": "file-filter",
+				"removedIn": "v6.4.2"
+			},
+			"ftgd-wf": {
+				"category": "complex",
+				"children": {
+					"exempt-quota": {
+						"category": "unitary",
+						"default": "17",
+						"help": "Do not stop quota for these categories.",
+						"name": "exempt-quota",
+						"type": "user"
+					},
+					"filters": {
+						"category": "table",
+						"children": {
+							"action": {
+								"category": "unitary",
+								"default": "monitor",
+								"help": "Action to take for matches.",
+								"multiple_values": false,
+								"name": "action",
+								"options": [
+									{
+										"help": "Block access.",
+										"name": "block"
+									},
+									{
+										"help": "Authenticate user before allowing access.",
+										"name": "authenticate"
+									},
+									{
+										"help": "Allow access while logging the action.",
+										"name": "monitor"
+									},
+									{
+										"help": "Allow access after warning the user.",
+										"name": "warning"
+									}
+								],
+								"type": "option"
+							},
+							"auth-usr-grp": {
+								"category": "table",
+								"children": {
+									"name": {
+										"category": "unitary",
+										"datasource": [
+											"user.group.name"
+										],
+										"default": "",
+										"help": "User group name.",
+										"name": "name",
+										"size": 79,
+										"type": "string"
+									}
+								},
+								"default": "",
+								"help": "Groups with permission to authenticate.",
+								"max_table_size_global": 0,
+								"max_table_size_item": 0,
+								"max_table_size_vdom": 0,
+								"member_table": true,
+								"mkey": "name",
+								"mkey_type": "string",
+								"name": "auth-usr-grp",
+								"size": 79,
+								"type": "string"
+							},
+							"category": {
+								"category": "unitary",
+								"default": 0,
+								"help": "Categories and groups the filter examines.",
+								"max-value": 255,
+								"min-value": 0,
+								"name": "category",
+								"type": "integer"
+							},
+							"id": {
+								"category": "unitary",
+								"default": 0,
+								"help": "ID number.",
+								"max-value": 255,
+								"min-value": 0,
+								"name": "id",
+								"type": "integer"
+							},
+							"log": {
+								"category": "unitary",
+								"default": "enable",
+								"help": "Enable/disable logging.",
+								"multiple_values": false,
+								"name": "log",
+								"options": [
+									{
+										"help": "Enable setting.",
+										"name": "enable"
+									},
+									{
+										"help": "Disable setting.",
+										"name": "disable"
+									}
+								],
+								"type": "option"
+							},
+							"override-replacemsg": {
+								"category": "unitary",
+								"default": "",
+								"help": "Override replacement message.",
+								"name": "override-replacemsg",
+								"size": 28,
+								"type": "string"
+							},
+							"warn-duration": {
+								"category": "unitary",
+								"default": "5m",
+								"help": "Duration of warnings.",
+								"name": "warn-duration",
+								"type": "user"
+							},
+							"warning-duration-type": {
+								"category": "unitary",
+								"default": "timeout",
+								"help": "Re-display warning after closing browser or after a timeout.",
+								"multiple_values": false,
+								"name": "warning-duration-type",
+								"options": [
+									{
+										"help": "After session ends.",
+										"name": "session"
+									},
+									{
+										"help": "After timeout occurs.",
+										"name": "timeout"
+									}
+								],
+								"type": "option"
+							},
+							"warning-prompt": {
+								"category": "unitary",
+								"default": "per-category",
+								"help": "Warning prompts in each category or each domain.",
+								"multiple_values": false,
+								"name": "warning-prompt",
+								"options": [
+									{
+										"help": "Per-domain warnings.",
+										"name": "per-domain"
+									},
+									{
+										"help": "Per-category warnings.",
+										"name": "per-category"
+									}
+								],
+								"type": "option"
+							}
+						},
+						"help": "FortiGuard filters.",
+						"max_table_size_global": 0,
+						"max_table_size_item": 0,
+						"max_table_size_vdom": 0,
+						"mkey": "id",
+						"mkey_type": "integer",
+						"name": "filters"
+					},
+					"max-quota-timeout": {
+						"category": "unitary",
+						"default": 300,
+						"help": "Maximum FortiGuard quota used by single page view in seconds (excludes streams).",
+						"max-value": 86400,
+						"min-value": 1,
+						"name": "max-quota-timeout",
+						"type": "integer"
+					},
+					"options": {
+						"category": "unitary",
+						"default": "ftgd-disable",
+						"help": "Options for FortiGuard Web Filter.",
+						"multiple_values": true,
+						"name": "options",
+						"options": [
+							{
+								"help": "Allow web pages with a rating error to pass through.",
+								"name": "error-allow"
+							},
+							{
+								"help": "Rate the server IP in addition to the domain name.",
+								"name": "rate-server-ip"
+							},
+							{
+								"help": "Bypass connection which has CONNECT request.",
+								"name": "connect-request-bypass"
+							},
+							{
+								"help": "Disable FortiGuard scanning.",
+								"name": "ftgd-disable"
+							}
+						],
+						"type": "option"
+					},
+					"ovrd": {
+						"category": "unitary",
+						"default": "",
+						"help": "Allow web filter profile overrides.",
+						"name": "ovrd",
+						"type": "user"
+					},
+					"quota": {
+						"category": "table",
+						"children": {
+							"category": {
+								"category": "unitary",
+								"default": "",
+								"help": "FortiGuard categories to apply quota to (category action must be set to monitor).",
+								"name": "category",
+								"type": "user"
+							},
+							"duration": {
+								"category": "unitary",
+								"default": "5m",
+								"help": "Duration of quota.",
+								"name": "duration",
+								"type": "user"
+							},
+							"id": {
+								"category": "unitary",
+								"default": 0,
+								"help": "ID number.",
+								"max-value": 4294967295,
+								"min-value": 0,
+								"name": "id",
+								"type": "integer"
+							},
+							"override-replacemsg": {
+								"category": "unitary",
+								"default": "",
+								"help": "Override replacement message.",
+								"name": "override-replacemsg",
+								"size": 28,
+								"type": "string"
+							},
+							"type": {
+								"category": "unitary",
+								"default": "time",
+								"help": "Quota type.",
+								"multiple_values": false,
+								"name": "type",
+								"options": [
+									{
+										"help": "Use a time-based quota.",
+										"name": "time"
+									},
+									{
+										"help": "Use a traffic-based quota.",
+										"name": "traffic"
+									}
+								],
+								"type": "option"
+							},
+							"unit": {
+								"category": "unitary",
+								"default": "MB",
+								"help": "Traffic quota unit of measurement.",
+								"multiple_values": false,
+								"name": "unit",
+								"options": [
+									{
+										"help": "Quota in bytes.",
+										"name": "B"
+									},
+									{
+										"help": "Quota in kilobytes.",
+										"name": "KB"
+									},
+									{
+										"help": "Quota in megabytes.",
+										"name": "MB"
+									},
+									{
+										"help": "Quota in gigabytes.",
+										"name": "GB"
+									}
+								],
+								"type": "option"
+							},
+							"value": {
+								"category": "unitary",
+								"default": 1024,
+								"help": "Traffic quota value.",
+								"max-value": 4294967295,
+								"min-value": 1,
+								"name": "value",
+								"type": "integer"
+							}
+						},
+						"help": "FortiGuard traffic quota settings.",
+						"max_table_size_global": 0,
+						"max_table_size_item": 0,
+						"max_table_size_vdom": 0,
+						"mkey": "id",
+						"mkey_type": "integer",
+						"name": "quota"
+					},
+					"rate-crl-urls": {
+						"category": "unitary",
+						"default": "enable",
+						"help": "Enable/disable rating CRL by URL.",
+						"multiple_values": false,
+						"name": "rate-crl-urls",
+						"options": [
+							{
+								"help": "Disable rating CRL by URL.",
+								"name": "disable"
+							},
+							{
+								"help": "Enable rating CRL by URL.",
+								"name": "enable"
+							}
+						],
+						"type": "option"
+					},
+					"rate-css-urls": {
+						"category": "unitary",
+						"default": "enable",
+						"help": "Enable/disable rating CSS by URL.",
+						"multiple_values": false,
+						"name": "rate-css-urls",
+						"options": [
+							{
+								"help": "Disable rating CSS by URL.",
+								"name": "disable"
+							},
+							{
+								"help": "Enable rating CSS by URL.",
+								"name": "enable"
+							}
+						],
+						"type": "option"
+					},
+					"rate-image-urls": {
+						"category": "unitary",
+						"help": "Enable/disable rating images by URL.",
+						"multiple_values": false,
+						"name": "rate-image-urls",
+						"options": [
+							{
+								"help": "Disable rating images by URL (blocked images are replaced with blanks).",
+								"name": "disable"
+							},
+							{
+								"help": "Enable rating images by URL (blocked images are replaced with blanks).",
+								"name": "enable"
+							}
+						],
+						"removedIn": "v6.4.3",
+						"type": "option"
+					},
+					"rate-javascript-urls": {
+						"category": "unitary",
+						"default": "enable",
+						"help": "Enable/disable rating JavaScript by URL.",
+						"multiple_values": false,
+						"name": "rate-javascript-urls",
+						"options": [
+							{
+								"help": "Disable rating JavaScript by URL.",
+								"name": "disable"
+							},
+							{
+								"help": "Enable rating JavaScript by URL.",
+								"name": "enable"
+							}
+						],
+						"type": "option"
+					}
+				},
+				"help": "FortiGuard Web Filter settings.",
+				"name": "ftgd-wf"
+			},
+			"https-replacemsg": {
+				"category": "unitary",
+				"default": "enable",
+				"help": "Enable replacement messages for HTTPS.",
+				"multiple_values": false,
+				"name": "https-replacemsg",
+				"options": [
+					{
+						"help": "Enable setting.",
+						"name": "enable"
+					},
+					{
+						"help": "Disable setting.",
+						"name": "disable"
+					}
+				],
+				"type": "option"
+			},
+			"log-all-url": {
+				"category": "unitary",
+				"default": "disable",
+				"help": "Enable/disable logging all URLs visited.",
+				"multiple_values": false,
+				"name": "log-all-url",
+				"options": [
+					{
+						"help": "Enable setting.",
+						"name": "enable"
+					},
+					{
+						"help": "Disable setting.",
+						"name": "disable"
+					}
+				],
+				"type": "option"
+			},
+			"name": {
+				"category": "unitary",
+				"default": "",
+				"help": "Profile name.",
+				"name": "name",
+				"required": true,
+				"size": 35,
+				"type": "string"
+			},
+			"options": {
+				"category": "unitary",
+				"default": "",
+				"help": "Options.",
+				"multiple_values": true,
+				"name": "options",
+				"options": [
+					{
+						"help": "ActiveX filter.",
+						"name": "activexfilter"
+					},
+					{
+						"help": "Cookie filter.",
+						"name": "cookiefilter"
+					},
+					{
+						"help": "Java applet filter.",
+						"name": "javafilter"
+					},
+					{
+						"help": "Block sessions contained an invalid domain name.",
+						"name": "block-invalid-url"
+					},
+					{
+						"help": "Javascript block.",
+						"name": "jscript"
+					},
+					{
+						"help": "JS block.",
+						"name": "js"
+					},
+					{
+						"help": "VB script block.",
+						"name": "vbs"
+					},
+					{
+						"help": "Unknown script block.",
+						"name": "unknown"
+					},
+					{
+						"help": "Intrinsic script block.",
+						"name": "intrinsic"
+					},
+					{
+						"help": "Referring block.",
+						"name": "wf-referer"
+					},
+					{
+						"help": "Cookie block.",
+						"name": "wf-cookie"
+					},
+					{
+						"help": "Per-user block/allow list filter",
+						"name": "per-user-bal"
+					}
+				],
+				"type": "option"
+			},
+			"override": {
+				"category": "complex",
+				"children": {
+					"ovrd-cookie": {
+						"category": "unitary",
+						"default": "deny",
+						"help": "Allow/deny browser-based (cookie) overrides.",
+						"multiple_values": false,
+						"name": "ovrd-cookie",
+						"options": [
+							{
+								"help": "Allow browser-based (cookie) override.",
+								"name": "allow"
+							},
+							{
+								"help": "Deny browser-based (cookie) override.",
+								"name": "deny"
+							}
+						],
+						"type": "option"
+					},
+					"ovrd-dur": {
+						"category": "unitary",
+						"default": "15m",
+						"help": "Override duration.",
+						"name": "ovrd-dur",
+						"type": "user"
+					},
+					"ovrd-dur-mode": {
+						"category": "unitary",
+						"default": "constant",
+						"help": "Override duration mode.",
+						"multiple_values": false,
+						"name": "ovrd-dur-mode",
+						"options": [
+							{
+								"help": "Constant mode.",
+								"name": "constant"
+							},
+							{
+								"help": "Prompt for duration when initiating an override.",
+								"name": "ask"
+							}
+						],
+						"type": "option"
+					},
+					"ovrd-scope": {
+						"category": "unitary",
+						"default": "user",
+						"help": "Override scope.",
+						"multiple_values": false,
+						"name": "ovrd-scope",
+						"options": [
+							{
+								"help": "Override for the user.",
+								"name": "user"
+							},
+							{
+								"help": "Override for the user's group.",
+								"name": "user-group"
+							},
+							{
+								"help": "Override for the initiating IP.",
+								"name": "ip"
+							},
+							{
+								"help": "Create browser-based (cookie) override.",
+								"name": "browser"
+							},
+							{
+								"help": "Prompt for scope when initiating an override.",
+								"name": "ask"
+							}
+						],
+						"type": "option"
+					},
+					"ovrd-user-group": {
+						"category": "table",
+						"children": {
+							"name": {
+								"category": "unitary",
+								"datasource": [
+									"user.group.name"
+								],
+								"default": "",
+								"help": "User group name.",
+								"name": "name",
+								"size": 79,
+								"type": "string"
+							}
+						},
+						"default": "",
+						"help": "User groups with permission to use the override.",
+						"max_table_size_global": 0,
+						"max_table_size_item": 0,
+						"max_table_size_vdom": 0,
+						"member_table": true,
+						"mkey": "name",
+						"mkey_type": "string",
+						"name": "ovrd-user-group",
+						"size": 79,
+						"type": "string"
+					},
+					"profile": {
+						"category": "table",
+						"children": {
+							"name": {
+								"category": "unitary",
+								"datasource": [
+									"webfilter.profile.name"
+								],
+								"default": "",
+								"help": "Web profile.",
+								"name": "name",
+								"size": 79,
+								"type": "string"
+							}
+						},
+						"help": "Web filter profile with permission to create overrides.",
+						"max_table_size_global": 0,
+						"max_table_size_item": 0,
+						"max_table_size_vdom": 0,
+						"member_table": true,
+						"mkey": "name",
+						"mkey_type": "string",
+						"name": "profile"
+					},
+					"profile-attribute": {
+						"category": "unitary",
+						"default": "Login-LAT-Service",
+						"help": "Profile attribute to retrieve from the RADIUS server.",
+						"multiple_values": false,
+						"name": "profile-attribute",
+						"options": [
+							{
+								"help": "Use this attribute.",
+								"name": "User-Name"
+							},
+							{
+								"help": "Use this attribute.",
+								"name": "NAS-IP-Address"
+							},
+							{
+								"help": "Use this attribute.",
+								"name": "Framed-IP-Address"
+							},
+							{
+								"help": "Use this attribute.",
+								"name": "Framed-IP-Netmask"
+							},
+							{
+								"help": "Use this attribute.",
+								"name": "Filter-Id"
+							},
+							{
+								"help": "Use this attribute.",
+								"name": "Login-IP-Host"
+							},
+							{
+								"help": "Use this attribute.",
+								"name": "Reply-Message"
+							},
+							{
+								"help": "Use this attribute.",
+								"name": "Callback-Number"
+							},
+							{
+								"help": "Use this attribute.",
+								"name": "Callback-Id"
+							},
+							{
+								"help": "Use this attribute.",
+								"name": "Framed-Route"
+							},
+							{
+								"help": "Use this attribute.",
+								"name": "Framed-IPX-Network"
+							},
+							{
+								"help": "Use this attribute.",
+								"name": "Class"
+							},
+							{
+								"help": "Use this attribute.",
+								"name": "Called-Station-Id"
+							},
+							{
+								"help": "Use this attribute.",
+								"name": "Calling-Station-Id"
+							},
+							{
+								"help": "Use this attribute.",
+								"name": "NAS-Identifier"
+							},
+							{
+								"help": "Use this attribute.",
+								"name": "Proxy-State"
+							},
+							{
+								"help": "Use this attribute.",
+								"name": "Login-LAT-Service"
+							},
+							{
+								"help": "Use this attribute.",
+								"name": "Login-LAT-Node"
+							},
+							{
+								"help": "Use this attribute.",
+								"name": "Login-LAT-Group"
+							},
+							{
+								"help": "Use this attribute.",
+								"name": "Framed-AppleTalk-Zone"
+							},
+							{
+								"help": "Use this attribute.",
+								"name": "Acct-Session-Id"
+							},
+							{
+								"help": "Use this attribute.",
+								"name": "Acct-Multi-Session-Id"
+							}
+						],
+						"type": "option"
+					},
+					"profile-type": {
+						"category": "unitary",
+						"default": "list",
+						"help": "Override profile type.",
+						"multiple_values": false,
+						"name": "profile-type",
+						"options": [
+							{
+								"help": "Profile chosen from list.",
+								"name": "list"
+							},
+							{
+								"help": "Profile determined by RADIUS server.",
+								"name": "radius"
+							}
+						],
+						"type": "option"
+					}
+				},
+				"help": "Web Filter override settings.",
+				"name": "override"
+			},
+			"ovrd-perm": {
+				"category": "unitary",
+				"default": "",
+				"help": "Permitted override types.",
+				"multiple_values": true,
+				"name": "ovrd-perm",
+				"options": [
+					{
+						"help": "Banned word override.",
+						"name": "bannedword-override"
+					},
+					{
+						"help": "URL filter override.",
+						"name": "urlfilter-override"
+					},
+					{
+						"help": "FortiGuard Web Filter override.",
+						"name": "fortiguard-wf-override"
+					},
+					{
+						"help": "Content-type header override.",
+						"name": "contenttype-check-override"
+					}
+				],
+				"type": "option"
+			},
+			"post-action": {
+				"category": "unitary",
+				"default": "normal",
+				"help": "Action taken for HTTP POST traffic.",
+				"multiple_values": false,
+				"name": "post-action",
+				"options": [
+					{
+						"help": "Normal, POST requests are allowed.",
+						"name": "normal"
+					},
+					{
+						"help": "POST requests are blocked.",
+						"name": "block"
+					}
+				],
+				"type": "option"
+			},
+			"replacemsg-group": {
+				"category": "unitary",
+				"datasource": [
+					"system.replacemsg-group.name"
+				],
+				"default": "",
+				"help": "Replacement message group.",
+				"name": "replacemsg-group",
+				"size": 35,
+				"type": "string"
+			},
+			"web": {
+				"category": "complex",
+				"children": {
+					"allowlist": {
+						"addedIn": "v7.0.0",
+						"category": "unitary",
+						"default": "",
+						"help": "FortiGuard allowlist settings.",
+						"multiple_values": true,
+						"name": "allowlist",
+						"options": [
+							{
+								"help": "Exempt antivirus.",
+								"name": "exempt-av"
+							},
+							{
+								"help": "Exempt web content.",
+								"name": "exempt-webcontent"
+							},
+							{
+								"help": "Exempt ActiveX-JAVA-Cookie.",
+								"name": "exempt-activex-java-cookie"
+							},
+							{
+								"help": "Exempt DLP.",
+								"name": "exempt-dlp"
+							},
+							{
+								"help": "Exempt RangeBlock.",
+								"name": "exempt-rangeblock"
+							},
+							{
+								"help": "Support extended log.",
+								"name": "extended-log-others"
+							}
+						],
+						"type": "option"
+					},
+					"blacklist": {
+						"category": "unitary",
+						"default": "disable",
+						"help": "Enable/disable automatic addition of URLs detected by FortiSandbox to blacklist.",
+						"multiple_values": false,
+						"name": "blacklist",
+						"options": [
+							{
+								"help": "Enable setting.",
+								"name": "enable"
+							},
+							{
+								"help": "Disable setting.",
+								"name": "disable"
+							}
+						],
+						"removedIn": "v7.0.0",
+						"type": "option"
+					},
+					"blocklist": {
+						"addedIn": "v7.0.0",
+						"category": "unitary",
+						"default": "disable",
+						"help": "Enable/disable automatic addition of URLs detected by FortiSandbox to blocklist.",
+						"multiple_values": false,
+						"name": "blocklist",
+						"options": [
+							{
+								"help": "Enable setting.",
+								"name": "enable"
+							},
+							{
+								"help": "Disable setting.",
+								"name": "disable"
+							}
+						],
+						"type": "option"
+					},
+					"bword-table": {
+						"category": "unitary",
+						"datasource": [
+							"webfilter.content.id"
+						],
+						"default": 0,
+						"help": "Banned word table ID.",
+						"max-value": 4294967295,
+						"min-value": 0,
+						"name": "bword-table",
+						"type": "integer"
+					},
+					"bword-threshold": {
+						"category": "unitary",
+						"default": 10,
+						"help": "Banned word score threshold.",
+						"max-value": 2147483647,
+						"min-value": 0,
+						"name": "bword-threshold",
+						"type": "integer"
+					},
+					"content-header-list": {
+						"category": "unitary",
+						"datasource": [
+							"webfilter.content-header.id"
+						],
+						"default": 0,
+						"help": "Content header list.",
+						"max-value": 4294967295,
+						"min-value": 0,
+						"name": "content-header-list",
+						"type": "integer"
+					},
+					"keyword-match": {
+						"category": "table",
+						"children": {
+							"pattern": {
+								"category": "unitary",
+								"default": "",
+								"help": "Pattern/keyword to search for.",
+								"name": "pattern",
+								"size": 79,
+								"type": "string"
+							}
+						},
+						"default": "Configure Web filter profiles.",
+						"help": "Search keywords to log when match is found.",
+						"max_table_size_global": 0,
+						"max_table_size_item": 0,
+						"max_table_size_vdom": 64,
+						"member_table": true,
+						"mkey": "pattern",
+						"mkey_type": "string",
+						"name": "keyword-match",
+						"size": 79,
+						"type": "string"
+					},
+					"log-search": {
+						"category": "unitary",
+						"default": "disable",
+						"help": "Enable/disable logging all search phrases.",
+						"multiple_values": false,
+						"name": "log-search",
+						"options": [
+							{
+								"help": "Enable setting.",
+								"name": "enable"
+							},
+							{
+								"help": "Disable setting.",
+								"name": "disable"
+							}
+						],
+						"type": "option"
+					},
+					"safe-search": {
+						"category": "unitary",
+						"default": "",
+						"help": "Safe search type.",
+						"multiple_values": true,
+						"name": "safe-search",
+						"options": [
+							{
+								"help": "Insert safe search string into URL.",
+								"name": "url"
+							},
+							{
+								"help": "Insert safe search header.",
+								"name": "header"
+							}
+						],
+						"type": "option"
+					},
+					"urlfilter-table": {
+						"category": "unitary",
+						"datasource": [
+							"webfilter.urlfilter.id"
+						],
+						"default": 0,
+						"help": "URL filter table ID.",
+						"max-value": 4294967295,
+						"min-value": 0,
+						"name": "urlfilter-table",
+						"type": "integer"
+					},
+					"vimeo-restrict": {
+						"addedIn": "v7.0.1",
+						"category": "unitary",
+						"default": "",
+						"help": "Set Vimeo-restrict (\"7\" = don't show mature content, \"134\" = don't show unrated and mature content). A value of cookie \"content_rating\".",
+						"name": "vimeo-restrict",
+						"size": 63,
+						"type": "string"
+					},
+					"whitelist": {
+						"category": "unitary",
+						"default": "",
+						"help": "FortiGuard whitelist settings.",
+						"multiple_values": true,
+						"name": "whitelist",
+						"options": [
+							{
+								"help": "Exempt antivirus.",
+								"name": "exempt-av"
+							},
+							{
+								"help": "Exempt web content.",
+								"name": "exempt-webcontent"
+							},
+							{
+								"help": "Exempt ActiveX-JAVA-Cookie.",
+								"name": "exempt-activex-java-cookie"
+							},
+							{
+								"help": "Exempt DLP.",
+								"name": "exempt-dlp"
+							},
+							{
+								"help": "Exempt RangeBlock.",
+								"name": "exempt-rangeblock"
+							},
+							{
+								"help": "Support extended log.",
+								"name": "extended-log-others"
+							}
+						],
+						"removedIn": "v7.0.0",
+						"type": "option"
+					},
+					"youtube-restrict": {
+						"category": "unitary",
+						"default": "none",
+						"help": "YouTube EDU filter level.",
+						"multiple_values": false,
+						"name": "youtube-restrict",
+						"options": [
+							{
+								"help": "Full access for YouTube.",
+								"name": "none"
+							},
+							{
+								"help": "Strict access for YouTube.",
+								"name": "strict"
+							},
+							{
+								"help": "Moderate access for YouTube.",
+								"name": "moderate"
+							}
+						],
+						"removedIn": "v7.0.0",
+						"type": "option"
+					}
+				},
+				"help": "Web content filtering settings.",
+				"name": "web"
+			},
+			"web-antiphishing-log": {
+				"addedIn": "v6.4.2",
+				"category": "unitary",
+				"default": "enable",
+				"help": "Enable/disable logging of AntiPhishing checks.",
+				"multiple_values": false,
+				"name": "web-antiphishing-log",
+				"options": [
+					{
+						"help": "Enable setting.",
+						"name": "enable"
+					},
+					{
+						"help": "Disable setting.",
+						"name": "disable"
+					}
+				],
+				"type": "option"
+			},
+			"web-content-log": {
+				"category": "unitary",
+				"default": "enable",
+				"help": "Enable/disable logging logging blocked web content.",
+				"multiple_values": false,
+				"name": "web-content-log",
+				"options": [
+					{
+						"help": "Enable setting.",
+						"name": "enable"
+					},
+					{
+						"help": "Disable setting.",
+						"name": "disable"
+					}
+				],
+				"type": "option"
+			},
+			"web-extended-all-action-log": {
+				"category": "unitary",
+				"default": "disable",
+				"help": "Enable/disable extended any filter action logging for web filtering.",
+				"multiple_values": false,
+				"name": "web-extended-all-action-log",
+				"options": [
+					{
+						"help": "Enable setting.",
+						"name": "enable"
+					},
+					{
+						"help": "Disable setting.",
+						"name": "disable"
+					}
+				],
+				"type": "option"
+			},
+			"web-filter-activex-log": {
+				"category": "unitary",
+				"default": "enable",
+				"help": "Enable/disable logging ActiveX.",
+				"multiple_values": false,
+				"name": "web-filter-activex-log",
+				"options": [
+					{
+						"help": "Enable setting.",
+						"name": "enable"
+					},
+					{
+						"help": "Disable setting.",
+						"name": "disable"
+					}
+				],
+				"type": "option"
+			},
+			"web-filter-applet-log": {
+				"category": "unitary",
+				"default": "enable",
+				"help": "Enable/disable logging Java applets.",
+				"multiple_values": false,
+				"name": "web-filter-applet-log",
+				"options": [
+					{
+						"help": "Enable setting.",
+						"name": "enable"
+					},
+					{
+						"help": "Disable setting.",
+						"name": "disable"
+					}
+				],
+				"type": "option"
+			},
+			"web-filter-command-block-log": {
+				"category": "unitary",
+				"default": "enable",
+				"help": "Enable/disable logging blocked commands.",
+				"multiple_values": false,
+				"name": "web-filter-command-block-log",
+				"options": [
+					{
+						"help": "Enable setting.",
+						"name": "enable"
+					},
+					{
+						"help": "Disable setting.",
+						"name": "disable"
+					}
+				],
+				"type": "option"
+			},
+			"web-filter-cookie-log": {
+				"category": "unitary",
+				"default": "enable",
+				"help": "Enable/disable logging cookie filtering.",
+				"multiple_values": false,
+				"name": "web-filter-cookie-log",
+				"options": [
+					{
+						"help": "Enable setting.",
+						"name": "enable"
+					},
+					{
+						"help": "Disable setting.",
+						"name": "disable"
+					}
+				],
+				"type": "option"
+			},
+			"web-filter-cookie-removal-log": {
+				"category": "unitary",
+				"default": "enable",
+				"help": "Enable/disable logging blocked cookies.",
+				"multiple_values": false,
+				"name": "web-filter-cookie-removal-log",
+				"options": [
+					{
+						"help": "Enable setting.",
+						"name": "enable"
+					},
+					{
+						"help": "Disable setting.",
+						"name": "disable"
+					}
+				],
+				"type": "option"
+			},
+			"web-filter-js-log": {
+				"category": "unitary",
+				"default": "enable",
+				"help": "Enable/disable logging Java scripts.",
+				"multiple_values": false,
+				"name": "web-filter-js-log",
+				"options": [
+					{
+						"help": "Enable setting.",
+						"name": "enable"
+					},
+					{
+						"help": "Disable setting.",
+						"name": "disable"
+					}
+				],
+				"type": "option"
+			},
+			"web-filter-jscript-log": {
+				"category": "unitary",
+				"default": "enable",
+				"help": "Enable/disable logging JScripts.",
+				"multiple_values": false,
+				"name": "web-filter-jscript-log",
+				"options": [
+					{
+						"help": "Enable setting.",
+						"name": "enable"
+					},
+					{
+						"help": "Disable setting.",
+						"name": "disable"
+					}
+				],
+				"type": "option"
+			},
+			"web-filter-referer-log": {
+				"category": "unitary",
+				"default": "enable",
+				"help": "Enable/disable logging referrers.",
+				"multiple_values": false,
+				"name": "web-filter-referer-log",
+				"options": [
+					{
+						"help": "Enable setting.",
+						"name": "enable"
+					},
+					{
+						"help": "Disable setting.",
+						"name": "disable"
+					}
+				],
+				"type": "option"
+			},
+			"web-filter-unknown-log": {
+				"category": "unitary",
+				"default": "enable",
+				"help": "Enable/disable logging unknown scripts.",
+				"multiple_values": false,
+				"name": "web-filter-unknown-log",
+				"options": [
+					{
+						"help": "Enable setting.",
+						"name": "enable"
+					},
+					{
+						"help": "Disable setting.",
+						"name": "disable"
+					}
+				],
+				"type": "option"
+			},
+			"web-filter-vbs-log": {
+				"category": "unitary",
+				"default": "enable",
+				"help": "Enable/disable logging VBS scripts.",
+				"multiple_values": false,
+				"name": "web-filter-vbs-log",
+				"options": [
+					{
+						"help": "Enable setting.",
+						"name": "enable"
+					},
+					{
+						"help": "Disable setting.",
+						"name": "disable"
+					}
+				],
+				"type": "option"
+			},
+			"web-ftgd-err-log": {
+				"category": "unitary",
+				"default": "enable",
+				"help": "Enable/disable logging rating errors.",
+				"multiple_values": false,
+				"name": "web-ftgd-err-log",
+				"options": [
+					{
+						"help": "Enable setting.",
+						"name": "enable"
+					},
+					{
+						"help": "Disable setting.",
+						"name": "disable"
+					}
+				],
+				"type": "option"
+			},
+			"web-ftgd-quota-usage": {
+				"category": "unitary",
+				"default": "enable",
+				"help": "Enable/disable logging daily quota usage.",
+				"multiple_values": false,
+				"name": "web-ftgd-quota-usage",
+				"options": [
+					{
+						"help": "Enable setting.",
+						"name": "enable"
+					},
+					{
+						"help": "Disable setting.",
+						"name": "disable"
+					}
+				],
+				"type": "option"
+			},
+			"web-invalid-domain-log": {
+				"category": "unitary",
+				"default": "enable",
+				"help": "Enable/disable logging invalid domain names.",
+				"multiple_values": false,
+				"name": "web-invalid-domain-log",
+				"options": [
+					{
+						"help": "Enable setting.",
+						"name": "enable"
+					},
+					{
+						"help": "Disable setting.",
+						"name": "disable"
+					}
+				],
+				"type": "option"
+			},
+			"web-url-log": {
+				"category": "unitary",
+				"default": "enable",
+				"help": "Enable/disable logging URL filtering.",
+				"multiple_values": false,
+				"name": "web-url-log",
+				"options": [
+					{
+						"help": "Enable setting.",
+						"name": "enable"
+					},
+					{
+						"help": "Disable setting.",
+						"name": "disable"
+					}
+				],
+				"type": "option"
+			},
+			"wisp": {
+				"category": "unitary",
+				"default": "disable",
+				"help": "Enable/disable web proxy WISP.",
+				"multiple_values": false,
+				"name": "wisp",
+				"options": [
+					{
+						"help": "Enable web proxy WISP.",
+						"name": "enable"
+					},
+					{
+						"help": "Disable web proxy WISP.",
+						"name": "disable"
+					}
+				],
+				"type": "option"
+			},
+			"wisp-algorithm": {
+				"category": "unitary",
+				"default": "auto-learning",
+				"help": "WISP server selection algorithm.",
+				"multiple_values": false,
+				"name": "wisp-algorithm",
+				"options": [
+					{
+						"help": "Select the first healthy server in order.",
+						"name": "primary-secondary"
+					},
+					{
+						"help": "Select the next healthy server.",
+						"name": "round-robin"
+					},
+					{
+						"help": "Select the lightest loading healthy server.",
+						"name": "auto-learning"
+					}
+				],
+				"type": "option"
+			},
+			"wisp-servers": {
+				"category": "table",
+				"children": {
+					"name": {
+						"category": "unitary",
+						"datasource": [
+							"web-proxy.wisp.name"
+						],
+						"default": "",
+						"help": "Server name.",
+						"name": "name",
+						"required": true,
+						"size": 79,
+						"type": "string"
+					}
+				},
+				"help": "WISP servers.",
+				"max_table_size_global": 0,
+				"max_table_size_item": 0,
+				"max_table_size_vdom": 0,
+				"member_table": true,
+				"mkey": "name",
+				"mkey_type": "string",
+				"name": "wisp-servers"
+			},
+			"youtube-channel-filter": {
+				"category": "table",
+				"children": {
+					"channel-id": {
+						"category": "unitary",
+						"default": "",
+						"help": "YouTube channel ID to be filtered.",
+						"name": "channel-id",
+						"required": true,
+						"size": 255,
+						"type": "string"
+					},
+					"comment": {
+						"category": "unitary",
+						"help": "Comment.",
+						"name": "comment",
+						"size": 255,
+						"type": "var-string"
+					},
+					"id": {
+						"category": "unitary",
+						"default": 0,
+						"help": "ID.",
+						"max-value": 4294967295,
+						"min-value": 0,
+						"name": "id",
+						"type": "integer"
+					}
+				},
+				"help": "YouTube channel filter.",
+				"max_table_size_global": 0,
+				"max_table_size_item": 0,
+				"max_table_size_vdom": 0,
+				"mkey": "id",
+				"mkey_type": "integer",
+				"name": "youtube-channel-filter",
+				"removedIn": "v7.0.0"
+			},
+			"youtube-channel-status": {
+				"category": "unitary",
+				"default": "disable",
+				"help": "YouTube channel filter status.",
+				"multiple_values": false,
+				"name": "youtube-channel-status",
+				"options": [
+					{
+						"help": "Disable YouTube channel filter.",
+						"name": "disable"
+					},
+					{
+						"help": "Block matches.",
+						"name": "blacklist"
+					},
+					{
+						"help": "Allow matches.",
+						"name": "whitelist"
+					}
+				],
+				"removedIn": "v7.0.0",
+				"type": "option"
+			}
+		},
+		"help": "Configure Web filter profiles.",
+		"max_table_size_global": 20000,
+		"max_table_size_item": 0,
+		"max_table_size_vdom": 20000,
+		"mkey": "name",
+		"mkey_type": "string",
+		"name": "profile",
+		"path": "webfilter",
+		"q_type": 435
+	},
+	"revision": "9fc20e3d58ec433f6fcee1f1afa74a6e",
+	"serial": "FGTAZRKKLFZKT347",
+	"status": "success",
+	"vdom": "root",
+	"version": "v7.0.3"
+}

@@ -1,0 +1,59 @@
+{
+	"FullPath": null,
+	"addedIn": "v6.2.7",
+	"build": 237,
+	"http_method": "GET",
+	"http_status": 200,
+	"mergedVersions": "v6.2.7,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3",
+	"name": "ips-urlfilter-setting",
+	"path": "webfilter",
+	"results": {
+		"access_group": "utmgrp",
+		"category": "complex",
+		"children": {
+			"device": {
+				"category": "unitary",
+				"datasource": [
+					"system.interface.name"
+				],
+				"default": "",
+				"help": "Interface for this route.",
+				"name": "device",
+				"size": 35,
+				"type": "string"
+			},
+			"distance": {
+				"category": "unitary",
+				"default": 1,
+				"help": "Administrative distance (1 - 255) for this route.",
+				"max-value": 255,
+				"min-value": 1,
+				"name": "distance",
+				"type": "integer"
+			},
+			"gateway": {
+				"category": "unitary",
+				"default": "0.0.0.0",
+				"help": "Gateway IP address for this route.",
+				"name": "gateway",
+				"type": "ipv4-address"
+			},
+			"geo-filter": {
+				"category": "unitary",
+				"help": "Filter based on geographical location. Route will NOT be installed if the resolved IP address belongs to the country in the filter.",
+				"name": "geo-filter",
+				"size": 255,
+				"type": "var-string"
+			}
+		},
+		"help": "Configure IPS URL filter settings.",
+		"name": "ips-urlfilter-setting",
+		"path": "webfilter",
+		"q_type": 456
+	},
+	"revision": "0f5eb597fa8ac37d5f819e2b64bf7e6e",
+	"serial": "FGTAZRKKLFZKT347",
+	"status": "success",
+	"vdom": "root",
+	"version": "v7.0.3"
+}

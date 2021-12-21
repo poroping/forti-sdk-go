@@ -1,0 +1,63 @@
+{
+	"FullPath": null,
+	"addedIn": "v7.0.0",
+	"build": 237,
+	"http_method": "GET",
+	"http_status": 200,
+	"mergedVersions": "v7.0.0,v7.0.1,v7.0.2,v7.0.3",
+	"name": "sso-forticloud-admin",
+	"path": "system",
+	"results": {
+		"access_group": "sysgrp",
+		"category": "table",
+		"children": {
+			"name": {
+				"category": "unitary",
+				"default": "",
+				"help": "FortiCloud SSO admin name.",
+				"name": "name",
+				"size": 64,
+				"type": "string"
+			},
+			"vdom": {
+				"category": "table",
+				"children": {
+					"name": {
+						"category": "unitary",
+						"datasource": [
+							"system.vdom.name"
+						],
+						"default": "",
+						"help": "Virtual domain name.",
+						"name": "name",
+						"required": true,
+						"size": 79,
+						"type": "string"
+					}
+				},
+				"help": "Virtual domain(s) that the administrator can access.",
+				"max_table_size_global": 0,
+				"max_table_size_item": 0,
+				"max_table_size_vdom": 0,
+				"member_table": true,
+				"mkey": "name",
+				"mkey_type": "string",
+				"name": "vdom"
+			}
+		},
+		"help": "Configure FortiCloud SSO admin users.",
+		"max_table_size_global": 550,
+		"max_table_size_item": 0,
+		"max_table_size_vdom": 0,
+		"mkey": "name",
+		"mkey_type": "string",
+		"name": "sso-forticloud-admin",
+		"path": "system",
+		"q_type": 528
+	},
+	"revision": "0f5eb597fa8ac37d5f819e2b64bf7e6e",
+	"serial": "FGTAZRKKLFZKT347",
+	"status": "success",
+	"vdom": "root",
+	"version": "v7.0.3"
+}

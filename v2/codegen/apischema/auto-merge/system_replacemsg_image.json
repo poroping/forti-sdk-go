@@ -1,0 +1,71 @@
+{
+	"FullPath": null,
+	"addedIn": "v6.2.7",
+	"build": 237,
+	"http_method": "GET",
+	"http_status": 200,
+	"mergedVersions": "v6.2.7,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3",
+	"name": "replacemsg-image",
+	"path": "system",
+	"results": {
+		"access_group": "sysgrp",
+		"category": "table",
+		"children": {
+			"image-base64": {
+				"category": "unitary",
+				"help": "Image data.",
+				"name": "image-base64",
+				"size": 32768,
+				"type": "var-string"
+			},
+			"image-type": {
+				"category": "unitary",
+				"default": "png",
+				"help": "Image type.",
+				"multiple_values": false,
+				"name": "image-type",
+				"options": [
+					{
+						"help": "GIF image.",
+						"name": "gif"
+					},
+					{
+						"help": "JPEG image.",
+						"name": "jpg"
+					},
+					{
+						"help": "TIFF image.",
+						"name": "tiff"
+					},
+					{
+						"help": "PNG image.",
+						"name": "png"
+					}
+				],
+				"type": "option"
+			},
+			"name": {
+				"category": "unitary",
+				"default": "",
+				"help": "Image name.",
+				"name": "name",
+				"size": 23,
+				"type": "string"
+			}
+		},
+		"help": "Configure replacement message images.",
+		"max_table_size_global": 32,
+		"max_table_size_item": 0,
+		"max_table_size_vdom": 0,
+		"mkey": "name",
+		"mkey_type": "string",
+		"name": "replacemsg-image",
+		"path": "system",
+		"q_type": 376
+	},
+	"revision": "412a79c627c69cebc5501fd8536a04f1",
+	"serial": "FGTAZRKKLFZKT347",
+	"status": "success",
+	"vdom": "root",
+	"version": "v7.0.3"
+}

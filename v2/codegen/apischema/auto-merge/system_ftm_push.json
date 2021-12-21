@@ -1,0 +1,80 @@
+{
+	"FullPath": null,
+	"addedIn": "v6.2.7",
+	"build": 237,
+	"http_method": "GET",
+	"http_status": 200,
+	"mergedVersions": "v6.2.7,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3",
+	"name": "ftm-push",
+	"path": "system",
+	"results": {
+		"access_group": "sysgrp",
+		"category": "complex",
+		"children": {
+			"server": {
+				"addedIn": "v7.0.0",
+				"category": "unitary",
+				"default": "",
+				"help": "IPv4 address or domain name of FortiToken Mobile push services server.",
+				"name": "server",
+				"size": 127,
+				"type": "string"
+			},
+			"server-cert": {
+				"addedIn": "v6.4.2",
+				"category": "unitary",
+				"datasource": [
+					"certificate.local.name"
+				],
+				"default": "self-sign",
+				"help": "Name of the server certificate to be used for SSL (default = Fortinet_Factory).",
+				"name": "server-cert",
+				"size": 35,
+				"type": "string"
+			},
+			"server-ip": {
+				"category": "unitary",
+				"default": "0.0.0.0",
+				"help": "IPv4 address of FortiToken Mobile push services server (format: xxx.xxx.xxx.xxx).",
+				"name": "server-ip",
+				"type": "ipv4-address"
+			},
+			"server-port": {
+				"category": "unitary",
+				"default": 4433,
+				"help": "Port to communicate with FortiToken Mobile push services server (1 - 65535, default = 4433).",
+				"max-value": 65535,
+				"min-value": 1,
+				"name": "server-port",
+				"type": "integer"
+			},
+			"status": {
+				"category": "unitary",
+				"default": "disable",
+				"help": "Enable/disable the use of FortiToken Mobile push services.",
+				"multiple_values": false,
+				"name": "status",
+				"options": [
+					{
+						"help": "Enable FortiToken Mobile push services.",
+						"name": "enable"
+					},
+					{
+						"help": "Disable FortiToken Mobile push services.",
+						"name": "disable"
+					}
+				],
+				"type": "option"
+			}
+		},
+		"help": "Configure FortiToken Mobile push services.",
+		"name": "ftm-push",
+		"path": "system",
+		"q_type": 480
+	},
+	"revision": "65b0094afc98e0f1fe1ad9769af77335",
+	"serial": "FGTAZRKKLFZKT347",
+	"status": "success",
+	"vdom": "root",
+	"version": "v7.0.3"
+}

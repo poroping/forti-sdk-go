@@ -1,0 +1,68 @@
+{
+	"FullPath": null,
+	"addedIn": "v6.2.7",
+	"build": 237,
+	"http_method": "GET",
+	"http_status": 200,
+	"mergedVersions": "v6.2.7,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3",
+	"name": "decoder",
+	"path": "ips",
+	"results": {
+		"access_group": "utmgrp",
+		"category": "table",
+		"children": {
+			"name": {
+				"category": "unitary",
+				"default": "",
+				"help": "Decoder name.",
+				"name": "name",
+				"size": 63,
+				"type": "string"
+			},
+			"parameter": {
+				"category": "table",
+				"children": {
+					"name": {
+						"category": "unitary",
+						"default": "",
+						"help": "Parameter name.",
+						"name": "name",
+						"size": 31,
+						"type": "string"
+					},
+					"value": {
+						"category": "unitary",
+						"default": "",
+						"help": "Parameter value.",
+						"name": "value",
+						"size": 199,
+						"type": "string"
+					}
+				},
+				"help": "IPS group parameters.",
+				"max_table_size_global": 0,
+				"max_table_size_item": 0,
+				"max_table_size_vdom": 0,
+				"mkey": "name",
+				"mkey_type": "string",
+				"name": "parameter",
+				"readonly": true
+			}
+		},
+		"help": "Configure IPS decoder.",
+		"max_table_size_global": 0,
+		"max_table_size_item": 0,
+		"max_table_size_vdom": 0,
+		"mkey": "name",
+		"mkey_type": "string",
+		"name": "decoder",
+		"path": "ips",
+		"q_type": 236,
+		"readonly": true
+	},
+	"revision": "6faf968d64d8a6747856ff8e5977a3d6",
+	"serial": "FGTAZRKKLFZKT347",
+	"status": "success",
+	"vdom": "root",
+	"version": "v7.0.3"
+}

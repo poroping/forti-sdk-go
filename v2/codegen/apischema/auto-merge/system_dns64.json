@@ -1,0 +1,69 @@
+{
+	"FullPath": null,
+	"addedIn": "v7.0.1",
+	"build": 237,
+	"http_method": "GET",
+	"http_status": 200,
+	"mergedVersions": "v7.0.1,v7.0.2,v7.0.3",
+	"name": "dns64",
+	"path": "system",
+	"results": {
+		"access_group": "sysgrp",
+		"category": "complex",
+		"children": {
+			"always-synthesize-aaaa-record": {
+				"category": "unitary",
+				"default": "enable",
+				"help": "Enable/disable AAAA record synthesis (default = enable).",
+				"multiple_values": false,
+				"name": "always-synthesize-aaaa-record",
+				"options": [
+					{
+						"help": "Enable AAAA record synthesis.",
+						"name": "enable"
+					},
+					{
+						"help": "Disable AAAA record synthesis.",
+						"name": "disable"
+					}
+				],
+				"type": "option"
+			},
+			"dns64-prefix": {
+				"category": "unitary",
+				"default": "64:ff9b::/96",
+				"help": "DNS64 prefix must be ::/96 (default = 64:ff9b::/96).",
+				"name": "dns64-prefix",
+				"required": true,
+				"type": "ipv6-prefix"
+			},
+			"status": {
+				"category": "unitary",
+				"default": "disable",
+				"help": "Enable/disable DNS64 (default = disable).",
+				"multiple_values": false,
+				"name": "status",
+				"options": [
+					{
+						"help": "Enable DNS64.",
+						"name": "enable"
+					},
+					{
+						"help": "Disable DNS64.",
+						"name": "disable"
+					}
+				],
+				"type": "option"
+			}
+		},
+		"help": "Configure DNS64.",
+		"name": "dns64",
+		"path": "system",
+		"q_type": 429
+	},
+	"revision": "0f5eb597fa8ac37d5f819e2b64bf7e6e",
+	"serial": "FGTAZRKKLFZKT347",
+	"status": "success",
+	"vdom": "root",
+	"version": "v7.0.3"
+}

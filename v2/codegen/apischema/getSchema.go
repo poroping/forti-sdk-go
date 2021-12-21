@@ -20,7 +20,7 @@ func main() {
 		fmt.Print(err)
 
 	}
-	paths := getPaths("./paths.json")
+	paths := getPaths("./paths")
 
 	for _, v := range paths {
 		version, filePath, schema, err := getSchema(c, v)
@@ -30,6 +30,7 @@ func main() {
 		jsonSchema, err := json.Marshal(schema)
 		if err != nil {
 			fmt.Print(err)
+			continue
 		}
 		os.MkdirAll(fmt.Sprintf("./%s", version), os.FileMode(int(0755)))
 		os.WriteFile(fmt.Sprintf("./%s/%s.json", version, filePath), jsonSchema, os.FileMode(int(0755)))
@@ -41,7 +42,6 @@ func fclient() (*client.FortiSDKClient, error) {
 	godotenv.Load()
 	hostname := os.Getenv("HOSTNAME")
 	token := os.Getenv("TOKEN")
-	print(token)
 	if hostname == "" || token == "" {
 		return nil, errors.New("hostname and token must be set")
 	}
@@ -58,17 +58,43 @@ func fclient() (*client.FortiSDKClient, error) {
 	return fc, nil
 }
 
-func getPaths(file string) []string {
-	data, err := os.ReadFile(file)
-	if err != nil {
-		fmt.Print(err)
+func getPaths(directory string) []string {
+	d, _ := os.ReadDir(directory)
+	var dir []string
+	for _, v := range d {
+		if strings.HasSuffix(v.Name(), ".json") {
+			dir = append(dir, v.Name())
+		}
 	}
-	paths := &[]string{}
-	err = json.Unmarshal(data, paths)
-	if err != nil {
-		fmt.Print(err)
+
+	paths := []string{}
+	fmt.Println(dir)
+	for _, file := range dir {
+		data, err := os.ReadFile(fmt.Sprintf("%s/%s", directory, file))
+		if err != nil {
+			fmt.Print(err)
+		}
+		tmp := &[]string{}
+		err = json.Unmarshal(data, tmp)
+		if err != nil {
+			fmt.Print(err)
+		}
+		paths = append(paths, *tmp...)
 	}
-	return *paths
+
+	return removeDuplicateStr(paths)
+}
+
+func removeDuplicateStr(strSlice []string) []string {
+	allKeys := make(map[string]bool)
+	list := []string{}
+	for _, item := range strSlice {
+		if _, value := allKeys[item]; !value {
+			allKeys[item] = true
+			list = append(list, item)
+		}
+	}
+	return list
 }
 
 func getSchema(c *client.FortiSDKClient, path string) (string, string, interface{}, error) {

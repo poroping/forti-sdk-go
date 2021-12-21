@@ -1,0 +1,77 @@
+{
+	"FullPath": null,
+	"addedIn": "v6.2.7",
+	"build": 237,
+	"http_method": "GET",
+	"http_status": 200,
+	"mergedVersions": "v6.2.7,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3",
+	"name": "anqp-venue-name",
+	"path": "wireless-controller.hotspot20",
+	"results": {
+		"access_group": "wifi",
+		"category": "table",
+		"children": {
+			"name": {
+				"category": "unitary",
+				"default": "",
+				"help": "Name of venue name duple.",
+				"name": "name",
+				"size": 35,
+				"type": "string"
+			},
+			"value-list": {
+				"category": "table",
+				"children": {
+					"index": {
+						"category": "unitary",
+						"default": 0,
+						"help": "Value index.",
+						"max-value": 10,
+						"min-value": 1,
+						"name": "index",
+						"type": "integer"
+					},
+					"lang": {
+						"category": "unitary",
+						"default": "eng",
+						"help": "Language code.",
+						"name": "lang",
+						"required": true,
+						"size": 3,
+						"type": "string"
+					},
+					"value": {
+						"category": "unitary",
+						"default": "",
+						"help": "Venue name value.",
+						"name": "value",
+						"required": true,
+						"size": 252,
+						"type": "string"
+					}
+				},
+				"help": "Name list.",
+				"max_table_size_global": 0,
+				"max_table_size_item": 0,
+				"max_table_size_vdom": 0,
+				"mkey": "index",
+				"mkey_type": "integer",
+				"name": "value-list"
+			}
+		},
+		"help": "Configure venue name duple.",
+		"max_table_size_global": 0,
+		"max_table_size_item": 0,
+		"max_table_size_vdom": 16,
+		"mkey": "name",
+		"mkey_type": "string",
+		"name": "anqp-venue-name",
+		"path": "wireless-controller.hotspot20",
+		"q_type": 284
+	},
+	"revision": "0f5eb597fa8ac37d5f819e2b64bf7e6e",
+	"serial": "FGTAZRKKLFZKT347",
+	"status": "success",
+	"vdom": "root",
+	"version": "v7.0.3"
+}

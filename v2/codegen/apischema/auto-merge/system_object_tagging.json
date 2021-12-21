@@ -1,0 +1,152 @@
+{
+	"FullPath": null,
+	"addedIn": "v6.2.7",
+	"build": 237,
+	"http_method": "GET",
+	"http_status": 200,
+	"mergedVersions": "v6.2.7,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3",
+	"name": "object-tagging",
+	"path": "system",
+	"results": {
+		"access_group": "sysgrp",
+		"category": "table",
+		"children": {
+			"address": {
+				"category": "unitary",
+				"default": "optional",
+				"help": "Address.",
+				"multiple_values": false,
+				"name": "address",
+				"options": [
+					{
+						"help": "Disable.",
+						"name": "disable"
+					},
+					{
+						"help": "Mandatory.",
+						"name": "mandatory"
+					},
+					{
+						"help": "Optional.",
+						"name": "optional"
+					}
+				],
+				"type": "option"
+			},
+			"category": {
+				"category": "unitary",
+				"default": "",
+				"help": "Tag Category.",
+				"name": "category",
+				"size": 63,
+				"type": "string"
+			},
+			"color": {
+				"category": "unitary",
+				"default": 0,
+				"help": "Color of icon on the GUI.",
+				"max-value": 32,
+				"min-value": 0,
+				"name": "color",
+				"type": "integer"
+			},
+			"device": {
+				"category": "unitary",
+				"default": "optional",
+				"help": "Device.",
+				"multiple_values": false,
+				"name": "device",
+				"options": [
+					{
+						"help": "Disable.",
+						"name": "disable"
+					},
+					{
+						"help": "Mandatory.",
+						"name": "mandatory"
+					},
+					{
+						"help": "Optional.",
+						"name": "optional"
+					}
+				],
+				"type": "option"
+			},
+			"interface": {
+				"category": "unitary",
+				"default": "optional",
+				"help": "Interface.",
+				"multiple_values": false,
+				"name": "interface",
+				"options": [
+					{
+						"help": "Disable.",
+						"name": "disable"
+					},
+					{
+						"help": "Mandatory.",
+						"name": "mandatory"
+					},
+					{
+						"help": "Optional.",
+						"name": "optional"
+					}
+				],
+				"type": "option"
+			},
+			"multiple": {
+				"category": "unitary",
+				"default": "enable",
+				"help": "Allow multiple tag selection.",
+				"multiple_values": false,
+				"name": "multiple",
+				"options": [
+					{
+						"help": "Enable multi-tagging.",
+						"name": "enable"
+					},
+					{
+						"help": "Disable multi-tagging.",
+						"name": "disable"
+					}
+				],
+				"type": "option"
+			},
+			"tags": {
+				"category": "table",
+				"children": {
+					"name": {
+						"category": "unitary",
+						"default": "",
+						"help": "Tag name.",
+						"name": "name",
+						"size": 79,
+						"type": "string"
+					}
+				},
+				"help": "Tags.",
+				"max_table_size_global": 0,
+				"max_table_size_item": 0,
+				"max_table_size_vdom": 0,
+				"member_table": true,
+				"mkey": "name",
+				"mkey_type": "string",
+				"name": "tags"
+			}
+		},
+		"help": "Configure object tagging.",
+		"max_table_size_global": 4096,
+		"max_table_size_item": 0,
+		"max_table_size_vdom": 4096,
+		"mkey": "category",
+		"mkey_type": "string",
+		"name": "object-tagging",
+		"path": "system",
+		"q_type": 448
+	},
+	"revision": "ea254f7157d5368bb4e29bdb427c43b2",
+	"serial": "FGTAZRKKLFZKT347",
+	"status": "success",
+	"vdom": "root",
+	"version": "v7.0.3"
+}

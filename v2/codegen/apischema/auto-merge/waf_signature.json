@@ -1,0 +1,47 @@
+{
+	"FullPath": null,
+	"addedIn": "v6.2.7",
+	"build": 237,
+	"http_method": "GET",
+	"http_status": 200,
+	"mergedVersions": "v6.2.7,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3",
+	"name": "signature",
+	"path": "waf",
+	"results": {
+		"access_group": "utmgrp",
+		"category": "table",
+		"children": {
+			"desc": {
+				"category": "unitary",
+				"default": "",
+				"help": "Signature description.",
+				"name": "desc",
+				"size": 511,
+				"type": "string"
+			},
+			"id": {
+				"category": "unitary",
+				"default": 0,
+				"help": "Signature ID.",
+				"max-value": 4294967295,
+				"min-value": 0,
+				"name": "id",
+				"type": "integer"
+			}
+		},
+		"help": "Hidden table for datasource.",
+		"max_table_size_global": 4096,
+		"max_table_size_item": 0,
+		"max_table_size_vdom": 0,
+		"mkey": "id",
+		"mkey_type": "integer",
+		"name": "signature",
+		"path": "waf",
+		"q_type": 485
+	},
+	"revision": "a35bf55beecb5d9a48170e2d77a5ae72",
+	"serial": "FGTAZRKKLFZKT347",
+	"status": "success",
+	"vdom": "root",
+	"version": "v7.0.3"
+}

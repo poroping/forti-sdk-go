@@ -1,0 +1,295 @@
+{
+	"FullPath": null,
+	"addedIn": "v6.2.7",
+	"build": 237,
+	"http_method": "GET",
+	"http_status": 200,
+	"mergedVersions": "v6.2.7,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3",
+	"name": "urlfilter",
+	"path": "webfilter",
+	"results": {
+		"access_group": "utmgrp",
+		"category": "table",
+		"children": {
+			"comment": {
+				"category": "unitary",
+				"help": "Optional comments.",
+				"name": "comment",
+				"size": 255,
+				"type": "var-string"
+			},
+			"entries": {
+				"category": "table",
+				"children": {
+					"action": {
+						"category": "unitary",
+						"default": "exempt",
+						"help": "Action to take for URL filter matches.",
+						"multiple_values": false,
+						"name": "action",
+						"options": [
+							{
+								"help": "Exempt matches.",
+								"name": "exempt"
+							},
+							{
+								"help": "Block matches.",
+								"name": "block"
+							},
+							{
+								"help": "Allow matches (no log).",
+								"name": "allow"
+							},
+							{
+								"help": "Allow matches (with log).",
+								"name": "monitor"
+							}
+						],
+						"type": "option"
+					},
+					"antiphish-action": {
+						"addedIn": "v6.4.2",
+						"category": "unitary",
+						"default": "block",
+						"help": "Action to take for AntiPhishing matches.",
+						"multiple_values": false,
+						"name": "antiphish-action",
+						"options": [
+							{
+								"help": "Block matches.",
+								"name": "block"
+							},
+							{
+								"help": "Allow matches with log.",
+								"name": "log"
+							}
+						],
+						"type": "option"
+					},
+					"dns-address-family": {
+						"category": "unitary",
+						"default": "ipv4",
+						"help": "Resolve IPv4 address, IPv6 address, or both from DNS server.",
+						"multiple_values": false,
+						"name": "dns-address-family",
+						"options": [
+							{
+								"help": "Resolve IPv4 address from DNS server.",
+								"name": "ipv4"
+							},
+							{
+								"help": "Resolve IPv6 address from DNS server.",
+								"name": "ipv6"
+							},
+							{
+								"help": "Resolve both IPv4 and IPv6 addresses from DNS server.",
+								"name": "both"
+							}
+						],
+						"type": "option"
+					},
+					"exempt": {
+						"category": "unitary",
+						"default": "av web-content activex-java-cookie dlp fortiguard range-block antiphish all",
+						"help": "If action is set to exempt, select the security profile operations that exempt URLs skip. Separate multiple options with a space.",
+						"multiple_values": true,
+						"name": "exempt",
+						"options": [
+							{
+								"help": "AntiVirus scanning.",
+								"name": "av"
+							},
+							{
+								"help": "Web filter content matching.",
+								"name": "web-content"
+							},
+							{
+								"help": "ActiveX, Java, and cookie filtering.",
+								"name": "activex-java-cookie"
+							},
+							{
+								"help": "DLP scanning.",
+								"name": "dlp"
+							},
+							{
+								"help": "FortiGuard web filtering.",
+								"name": "fortiguard"
+							},
+							{
+								"help": "Range block feature.",
+								"name": "range-block"
+							},
+							{
+								"help": "Pass single connection from all.",
+								"name": "pass"
+							},
+							{
+								"help": "AntiPhish credential checking.",
+								"name": "antiphish"
+							},
+							{
+								"help": "Exempt from all security profiles.",
+								"name": "all"
+							}
+						],
+						"type": "option"
+					},
+					"id": {
+						"category": "unitary",
+						"default": 0,
+						"help": "Id.",
+						"max-value": 4294967295,
+						"min-value": 0,
+						"name": "id",
+						"required": true,
+						"type": "integer"
+					},
+					"referrer-host": {
+						"category": "unitary",
+						"default": "",
+						"help": "Referrer host name.",
+						"name": "referrer-host",
+						"size": 255,
+						"type": "string"
+					},
+					"status": {
+						"category": "unitary",
+						"default": "enable",
+						"help": "Enable/disable this URL filter.",
+						"multiple_values": false,
+						"name": "status",
+						"options": [
+							{
+								"help": "Enable this URL filter.",
+								"name": "enable"
+							},
+							{
+								"help": "Disable this URL filter.",
+								"name": "disable"
+							}
+						],
+						"type": "option"
+					},
+					"type": {
+						"category": "unitary",
+						"default": "simple",
+						"help": "Filter type (simple, regex, or wildcard).",
+						"multiple_values": false,
+						"name": "type",
+						"options": [
+							{
+								"help": "Simple URL string.",
+								"name": "simple"
+							},
+							{
+								"help": "Regular expression URL string.",
+								"name": "regex"
+							},
+							{
+								"help": "Wildcard URL string.",
+								"name": "wildcard"
+							}
+						],
+						"type": "option"
+					},
+					"url": {
+						"category": "unitary",
+						"default": "",
+						"help": "URL to be filtered.",
+						"name": "url",
+						"size": 511,
+						"type": "string"
+					},
+					"web-proxy-profile": {
+						"category": "unitary",
+						"datasource": [
+							"web-proxy.profile.name"
+						],
+						"default": "",
+						"help": "Web proxy profile.",
+						"name": "web-proxy-profile",
+						"size": 63,
+						"type": "string"
+					}
+				},
+				"help": "URL filter entries.",
+				"max_table_size_global": 500000,
+				"max_table_size_item": 0,
+				"max_table_size_vdom": 250000,
+				"mkey": "id",
+				"mkey_type": "integer",
+				"name": "entries",
+				"required": true
+			},
+			"id": {
+				"category": "unitary",
+				"default": 0,
+				"help": "ID.",
+				"max-value": 4294967295,
+				"min-value": 0,
+				"name": "id",
+				"required": true,
+				"type": "integer"
+			},
+			"ip-addr-block": {
+				"category": "unitary",
+				"default": "disable",
+				"help": "Enable/disable blocking URLs when the hostname appears as an IP address.",
+				"multiple_values": false,
+				"name": "ip-addr-block",
+				"options": [
+					{
+						"help": "Enable blocking URLs when the hostname appears as an IP address.",
+						"name": "enable"
+					},
+					{
+						"help": "Disable blocking URLs when the hostname appears as an IP address.",
+						"name": "disable"
+					}
+				],
+				"type": "option"
+			},
+			"name": {
+				"category": "unitary",
+				"default": "",
+				"help": "Name of URL filter list.",
+				"name": "name",
+				"required": true,
+				"size": 63,
+				"type": "string"
+			},
+			"one-arm-ips-urlfilter": {
+				"category": "unitary",
+				"default": "disable",
+				"help": "Enable/disable DNS resolver for one-arm IPS URL filter operation.",
+				"multiple_values": false,
+				"name": "one-arm-ips-urlfilter",
+				"options": [
+					{
+						"help": "Enable DNS resolver for one-arm IPS URL filter operation.",
+						"name": "enable"
+					},
+					{
+						"help": "Disable DNS resolver for one-arm IPS URL filter operation.",
+						"name": "disable"
+					}
+				],
+				"type": "option"
+			}
+		},
+		"help": "Configure URL filter lists.",
+		"max_table_size_global": 1000,
+		"max_table_size_item": 0,
+		"max_table_size_vdom": 1000,
+		"mkey": "id",
+		"mkey_type": "integer",
+		"name": "urlfilter",
+		"path": "webfilter",
+		"q_type": 90
+	},
+	"revision": "0f5eb597fa8ac37d5f819e2b64bf7e6e",
+	"serial": "FGTAZRKKLFZKT347",
+	"status": "success",
+	"vdom": "root",
+	"version": "v7.0.3"
+}

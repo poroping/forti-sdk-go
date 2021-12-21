@@ -1,5 +1,6 @@
 short:
 generate cmdb.go
+generate functions for data sources with filters
 medium:
 refactor template.go
 long:

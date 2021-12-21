@@ -1,0 +1,354 @@
+{
+	"FullPath": null,
+	"addedIn": "v6.2.7",
+	"build": 237,
+	"http_method": "GET",
+	"http_status": 200,
+	"mergedVersions": "v6.2.7,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3",
+	"name": "override-filter",
+	"path": "log.syslogd2",
+	"results": {
+		"access_group": "loggrp",
+		"category": "complex",
+		"children": {
+			"anomaly": {
+				"category": "unitary",
+				"default": "enable",
+				"help": "Enable/disable anomaly logging.",
+				"multiple_values": false,
+				"name": "anomaly",
+				"options": [
+					{
+						"help": "Enable anomaly logging.",
+						"name": "enable"
+					},
+					{
+						"help": "Disable anomaly logging.",
+						"name": "disable"
+					}
+				],
+				"type": "option"
+			},
+			"filter": {
+				"category": "unitary",
+				"default": "",
+				"help": "Syslog 2 filter.",
+				"name": "filter",
+				"removedIn": "v7.0.0",
+				"size": 1023,
+				"type": "string"
+			},
+			"filter-type": {
+				"category": "unitary",
+				"default": "include",
+				"help": "Include/exclude logs that match the filter.",
+				"multiple_values": false,
+				"name": "filter-type",
+				"options": [
+					{
+						"help": "Include logs that match the filter.",
+						"name": "include"
+					},
+					{
+						"help": "Exclude logs that match the filter.",
+						"name": "exclude"
+					}
+				],
+				"removedIn": "v7.0.0",
+				"type": "option"
+			},
+			"forward-traffic": {
+				"category": "unitary",
+				"default": "enable",
+				"help": "Enable/disable forward traffic logging.",
+				"multiple_values": false,
+				"name": "forward-traffic",
+				"options": [
+					{
+						"help": "Enable forward traffic logging.",
+						"name": "enable"
+					},
+					{
+						"help": "Disable forward traffic logging.",
+						"name": "disable"
+					}
+				],
+				"type": "option"
+			},
+			"free-style": {
+				"addedIn": "v7.0.0",
+				"category": "table",
+				"children": {
+					"category": {
+						"category": "unitary",
+						"default": "traffic",
+						"help": "Log category.",
+						"multiple_values": false,
+						"name": "category",
+						"options": [
+							{
+								"help": "Traffic log.",
+								"name": "traffic"
+							},
+							{
+								"help": "Event log.",
+								"name": "event"
+							},
+							{
+								"help": "Antivirus log.",
+								"name": "virus"
+							},
+							{
+								"help": "Web filter log.",
+								"name": "webfilter"
+							},
+							{
+								"help": "Attack log.",
+								"name": "attack"
+							},
+							{
+								"help": "Antispam log.",
+								"name": "spam"
+							},
+							{
+								"help": "Anomaly log.",
+								"name": "anomaly"
+							},
+							{
+								"help": "VoIP log.",
+								"name": "voip"
+							},
+							{
+								"help": "DLP log.",
+								"name": "dlp"
+							},
+							{
+								"help": "Application control log.",
+								"name": "app-ctrl"
+							},
+							{
+								"help": "Web application firewall log.",
+								"name": "waf"
+							},
+							{
+								"help": "GTP log.",
+								"name": "gtp"
+							},
+							{
+								"help": "DNS detail log.",
+								"name": "dns"
+							},
+							{
+								"help": "SSH log.",
+								"name": "ssh"
+							},
+							{
+								"help": "SSL log.",
+								"name": "ssl"
+							},
+							{
+								"help": "File filter log.",
+								"name": "file-filter"
+							},
+							{
+								"help": "ICAP log.",
+								"name": "icap"
+							},
+							{
+								"help": "Zero trust network access log.",
+								"name": "ztna"
+							}
+						],
+						"required": true,
+						"type": "option"
+					},
+					"filter": {
+						"category": "unitary",
+						"default": "",
+						"help": "Free style filter string.",
+						"name": "filter",
+						"required": true,
+						"size": 1023,
+						"type": "string"
+					},
+					"filter-type": {
+						"category": "unitary",
+						"default": "include",
+						"help": "Include/exclude logs that match the filter.",
+						"multiple_values": false,
+						"name": "filter-type",
+						"options": [
+							{
+								"help": "Include logs that match the filter.",
+								"name": "include"
+							},
+							{
+								"help": "Exclude logs that match the filter.",
+								"name": "exclude"
+							}
+						],
+						"type": "option"
+					},
+					"id": {
+						"category": "unitary",
+						"default": 0,
+						"help": "Entry ID.",
+						"max-value": 4294967295,
+						"min-value": 0,
+						"name": "id",
+						"type": "integer"
+					}
+				},
+				"help": "Free Style Filters",
+				"max_table_size_global": 512,
+				"max_table_size_item": 0,
+				"max_table_size_vdom": 256,
+				"mkey": "id",
+				"mkey_type": "integer",
+				"name": "free-style"
+			},
+			"gtp": {
+				"addedIn": "v6.4.2",
+				"category": "unitary",
+				"default": "enable",
+				"help": "Enable/disable GTP messages logging.",
+				"multiple_values": false,
+				"name": "gtp",
+				"options": [
+					{
+						"help": "Enable GTP messages logging.",
+						"name": "enable"
+					},
+					{
+						"help": "Disable GTP messages logging.",
+						"name": "disable"
+					}
+				],
+				"type": "option"
+			},
+			"local-traffic": {
+				"category": "unitary",
+				"default": "enable",
+				"help": "Enable/disable local in or out traffic logging.",
+				"multiple_values": false,
+				"name": "local-traffic",
+				"options": [
+					{
+						"help": "Enable local in or out traffic logging.",
+						"name": "enable"
+					},
+					{
+						"help": "Disable local in or out traffic logging.",
+						"name": "disable"
+					}
+				],
+				"type": "option"
+			},
+			"multicast-traffic": {
+				"category": "unitary",
+				"default": "enable",
+				"help": "Enable/disable multicast traffic logging.",
+				"multiple_values": false,
+				"name": "multicast-traffic",
+				"options": [
+					{
+						"help": "Enable multicast traffic logging.",
+						"name": "enable"
+					},
+					{
+						"help": "Disable multicast traffic logging.",
+						"name": "disable"
+					}
+				],
+				"type": "option"
+			},
+			"severity": {
+				"category": "unitary",
+				"default": "information",
+				"help": "Lowest severity level to log.",
+				"multiple_values": false,
+				"name": "severity",
+				"options": [
+					{
+						"help": "Emergency level.",
+						"name": "emergency"
+					},
+					{
+						"help": "Alert level.",
+						"name": "alert"
+					},
+					{
+						"help": "Critical level.",
+						"name": "critical"
+					},
+					{
+						"help": "Error level.",
+						"name": "error"
+					},
+					{
+						"help": "Warning level.",
+						"name": "warning"
+					},
+					{
+						"help": "Notification level.",
+						"name": "notification"
+					},
+					{
+						"help": "Information level.",
+						"name": "information"
+					},
+					{
+						"help": "Debug level.",
+						"name": "debug"
+					}
+				],
+				"type": "option"
+			},
+			"sniffer-traffic": {
+				"category": "unitary",
+				"default": "enable",
+				"help": "Enable/disable sniffer traffic logging.",
+				"multiple_values": false,
+				"name": "sniffer-traffic",
+				"options": [
+					{
+						"help": "Enable sniffer traffic logging.",
+						"name": "enable"
+					},
+					{
+						"help": "Disable sniffer traffic logging.",
+						"name": "disable"
+					}
+				],
+				"type": "option"
+			},
+			"voip": {
+				"category": "unitary",
+				"default": "enable",
+				"help": "Enable/disable VoIP logging.",
+				"multiple_values": false,
+				"name": "voip",
+				"options": [
+					{
+						"help": "Enable VoIP logging.",
+						"name": "enable"
+					},
+					{
+						"help": "Disable VoIP logging.",
+						"name": "disable"
+					}
+				],
+				"type": "option"
+			}
+		},
+		"help": "Override filters for remote system server.",
+		"name": "override-filter",
+		"path": "log.syslogd2",
+		"q_type": 413
+	},
+	"revision": "0f5eb597fa8ac37d5f819e2b64bf7e6e",
+	"serial": "FGTAZRKKLFZKT347",
+	"status": "success",
+	"vdom": "root",
+	"version": "v7.0.3"
+}

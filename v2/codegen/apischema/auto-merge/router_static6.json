@@ -1,0 +1,264 @@
+{
+	"FullPath": null,
+	"addedIn": "v6.2.7",
+	"build": 237,
+	"http_method": "GET",
+	"http_status": 200,
+	"mergedVersions": "v6.2.7,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3",
+	"name": "static6",
+	"path": "router",
+	"results": {
+		"access_group": "netgrp",
+		"category": "table",
+		"children": {
+			"bfd": {
+				"category": "unitary",
+				"default": "disable",
+				"help": "Enable/disable Bidirectional Forwarding Detection (BFD).",
+				"multiple_values": false,
+				"name": "bfd",
+				"options": [
+					{
+						"help": "Enable Bidirectional Forwarding Detection (BFD).",
+						"name": "enable"
+					},
+					{
+						"help": "Disable Bidirectional Forwarding Detection (BFD).",
+						"name": "disable"
+					}
+				],
+				"type": "option"
+			},
+			"blackhole": {
+				"category": "unitary",
+				"default": "disable",
+				"help": "Enable/disable black hole.",
+				"multiple_values": false,
+				"name": "blackhole",
+				"options": [
+					{
+						"help": "Enable black hole.",
+						"name": "enable"
+					},
+					{
+						"help": "Disable black hole.",
+						"name": "disable"
+					}
+				],
+				"type": "option"
+			},
+			"comment": {
+				"category": "unitary",
+				"help": "Optional comments.",
+				"name": "comment",
+				"size": 255,
+				"type": "var-string"
+			},
+			"device": {
+				"category": "unitary",
+				"datasource": [
+					"system.interface.name"
+				],
+				"default": "",
+				"help": "Gateway out interface or tunnel.",
+				"name": "device",
+				"required": true,
+				"size": 35,
+				"type": "string"
+			},
+			"devindex": {
+				"category": "unitary",
+				"default": 0,
+				"help": "Device index (0 - 4294967295).",
+				"max-value": 4294967295,
+				"min-value": 0,
+				"name": "devindex",
+				"type": "integer"
+			},
+			"distance": {
+				"category": "unitary",
+				"default": 10,
+				"help": "Administrative distance (1 - 255).",
+				"max-value": 255,
+				"min-value": 1,
+				"name": "distance",
+				"type": "integer"
+			},
+			"dst": {
+				"category": "unitary",
+				"default": "::/0",
+				"help": "Destination IPv6 prefix.",
+				"name": "dst",
+				"required": true,
+				"type": "ipv6-network"
+			},
+			"dynamic-gateway": {
+				"addedIn": "v7.0.0",
+				"category": "unitary",
+				"default": "disable",
+				"help": "Enable use of dynamic gateway retrieved from Router Advertisement (RA).",
+				"multiple_values": false,
+				"name": "dynamic-gateway",
+				"options": [
+					{
+						"help": "Enable dynamic gateway.",
+						"name": "enable"
+					},
+					{
+						"help": "Disable dynamic gateway.",
+						"name": "disable"
+					}
+				],
+				"type": "option"
+			},
+			"gateway": {
+				"category": "unitary",
+				"default": "::",
+				"help": "IPv6 address of the gateway.",
+				"name": "gateway",
+				"type": "ipv6-address"
+			},
+			"link-monitor-exempt": {
+				"category": "unitary",
+				"default": "disable",
+				"help": "Enable/disable withdrawal of this static route when link monitor or health check is down.",
+				"multiple_values": false,
+				"name": "link-monitor-exempt",
+				"options": [
+					{
+						"help": "Keep this static route when link monitor or health check is down.",
+						"name": "enable"
+					},
+					{
+						"help": "Withdraw this static route when link monitor or health check is down. (default)",
+						"name": "disable"
+					}
+				],
+				"type": "option"
+			},
+			"priority": {
+				"category": "unitary",
+				"default": 1024,
+				"help": "Administrative priority (1 - 65535).",
+				"max-value": 65535,
+				"min-value": 1,
+				"name": "priority",
+				"type": "integer"
+			},
+			"sdwan": {
+				"addedIn": "v6.4.2",
+				"category": "unitary",
+				"default": "disable",
+				"help": "Enable/disable egress through the SD-WAN.",
+				"multiple_values": false,
+				"name": "sdwan",
+				"options": [
+					{
+						"help": "Enable setting.",
+						"name": "enable"
+					},
+					{
+						"help": "Disable setting.",
+						"name": "disable"
+					}
+				],
+				"removedIn": "v7.0.1",
+				"type": "option"
+			},
+			"sdwan-zone": {
+				"addedIn": "v7.0.1",
+				"category": "table",
+				"children": {
+					"name": {
+						"category": "unitary",
+						"datasource": [
+							"system.sdwan.zone.name"
+						],
+						"default": "",
+						"help": "SD-WAN zone name.",
+						"name": "name",
+						"size": 79,
+						"type": "string"
+					}
+				},
+				"help": "Choose SD-WAN Zone.",
+				"max_table_size_global": 0,
+				"max_table_size_item": 0,
+				"max_table_size_vdom": 0,
+				"member_table": true,
+				"mkey": "name",
+				"mkey_type": "string",
+				"name": "sdwan-zone"
+			},
+			"seq-num": {
+				"category": "unitary",
+				"default": 0,
+				"help": "Sequence number.",
+				"max-value": 4294967295,
+				"min-value": 0,
+				"name": "seq-num",
+				"type": "integer"
+			},
+			"status": {
+				"category": "unitary",
+				"default": "enable",
+				"help": "Enable/disable this static route.",
+				"multiple_values": false,
+				"name": "status",
+				"options": [
+					{
+						"help": "Enable static route.",
+						"name": "enable"
+					},
+					{
+						"help": "Disable static route.",
+						"name": "disable"
+					}
+				],
+				"type": "option"
+			},
+			"virtual-wan-link": {
+				"category": "unitary",
+				"help": "Enable/disable egress through the virtual-wan-link.",
+				"multiple_values": false,
+				"name": "virtual-wan-link",
+				"options": [
+					{
+						"help": "Enable setting.",
+						"name": "enable"
+					},
+					{
+						"help": "Disable setting.",
+						"name": "disable"
+					}
+				],
+				"removedIn": "v6.4.2",
+				"type": "option"
+			},
+			"vrf": {
+				"addedIn": "v7.0.1",
+				"category": "unitary",
+				"default": 0,
+				"help": "Virtual Routing Forwarding ID.",
+				"max-value": 31,
+				"min-value": 0,
+				"name": "vrf",
+				"type": "integer"
+			}
+		},
+		"help": "Configure IPv6 static routing tables.",
+		"max_table_size_global": 0,
+		"max_table_size_item": 0,
+		"max_table_size_vdom": 2000,
+		"mkey": "seq-num",
+		"mkey_type": "integer",
+		"name": "static6",
+		"path": "router",
+		"q_type": 3
+	},
+	"revision": "0f5eb597fa8ac37d5f819e2b64bf7e6e",
+	"serial": "FGTAZRKKLFZKT347",
+	"status": "success",
+	"vdom": "root",
+	"version": "v7.0.3"
+}

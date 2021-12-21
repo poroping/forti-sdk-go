@@ -1,0 +1,59 @@
+{
+	"FullPath": null,
+	"addedIn": "v7.0.2",
+	"build": 237,
+	"http_method": "GET",
+	"http_status": 200,
+	"mergedVersions": "v7.0.2,v7.0.3",
+	"name": "setting",
+	"path": "log.tacacs+accounting3",
+	"results": {
+		"access_group": "loggrp",
+		"category": "complex",
+		"children": {
+			"server": {
+				"category": "unitary",
+				"default": "",
+				"help": "Address of TACACS+ server.",
+				"name": "server",
+				"required": true,
+				"size": 63,
+				"type": "string"
+			},
+			"server-key": {
+				"category": "unitary",
+				"help": "Key to access the TACACS+ server.",
+				"name": "server-key",
+				"size": 128,
+				"type": "password"
+			},
+			"status": {
+				"category": "unitary",
+				"default": "disable",
+				"help": "Enable/disable TACACS+ accounting.",
+				"multiple_values": false,
+				"name": "status",
+				"options": [
+					{
+						"help": "Enable TACACS+ accounting.",
+						"name": "enable"
+					},
+					{
+						"help": "Disable TACACS+ accounting.",
+						"name": "disable"
+					}
+				],
+				"type": "option"
+			}
+		},
+		"help": "Settings for TACACS+ accounting.",
+		"name": "setting",
+		"path": "log.tacacs+accounting3",
+		"q_type": 77
+	},
+	"revision": "0f5eb597fa8ac37d5f819e2b64bf7e6e",
+	"serial": "FGTAZRKKLFZKT347",
+	"status": "success",
+	"vdom": "root",
+	"version": "v7.0.3"
+}

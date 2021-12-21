@@ -1,0 +1,154 @@
+{
+	"FullPath": null,
+	"addedIn": "v6.2.7",
+	"build": 237,
+	"http_method": "GET",
+	"http_status": 200,
+	"mergedVersions": "v6.2.7,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3",
+	"name": "settings",
+	"path": "antivirus",
+	"results": {
+		"access_group": "utmgrp",
+		"category": "complex",
+		"children": {
+			"cache-clean-result": {
+				"addedIn": "v7.0.2",
+				"category": "unitary",
+				"default": "enable",
+				"help": "Enable/disable cache of clean scan results (default = enable).",
+				"multiple_values": false,
+				"name": "cache-clean-result",
+				"options": [
+					{
+						"help": "Enable cache of clean scan results.",
+						"name": "enable"
+					},
+					{
+						"help": "Disable cache of clean scan results.",
+						"name": "disable"
+					}
+				],
+				"type": "option"
+			},
+			"cache-infected-result": {
+				"addedIn": "v7.0.2",
+				"category": "unitary",
+				"default": "enable",
+				"help": "Enable/disable cache of infected scan results (default = enable).",
+				"multiple_values": false,
+				"name": "cache-infected-result",
+				"options": [
+					{
+						"help": "Enable cache of infected scan results.",
+						"name": "enable"
+					},
+					{
+						"help": "Disable cache of infected scan results.",
+						"name": "disable"
+					}
+				],
+				"type": "option"
+			},
+			"default-db": {
+				"category": "unitary",
+				"help": "Select the AV database to be used for AV scanning.",
+				"multiple_values": false,
+				"name": "default-db",
+				"options": [
+					{
+						"help": "Use the normal AntiVirus database.",
+						"name": "normal"
+					},
+					{
+						"help": "Use the extended AntiVirus database.",
+						"name": "extended"
+					},
+					{
+						"help": "Use all available AntiVirus databases",
+						"name": "extreme"
+					}
+				],
+				"removedIn": "v6.4.2",
+				"type": "option"
+			},
+			"grayware": {
+				"category": "unitary",
+				"default": "disable",
+				"help": "Enable/disable grayware detection when an AntiVirus profile is applied to traffic.",
+				"multiple_values": false,
+				"name": "grayware",
+				"options": [
+					{
+						"help": "Enable grayware detection.",
+						"name": "enable"
+					},
+					{
+						"help": "Disable grayware detection.",
+						"name": "disable"
+					}
+				],
+				"type": "option"
+			},
+			"machine-learning-detection": {
+				"addedIn": "v7.0.0",
+				"category": "unitary",
+				"default": "enable",
+				"help": "Use machine learning based malware detection.",
+				"multiple_values": false,
+				"name": "machine-learning-detection",
+				"options": [
+					{
+						"help": "Enable machine learning based malware detection.",
+						"name": "enable"
+					},
+					{
+						"help": "Enable machine learning based malware detection for monitoring only.",
+						"name": "monitor"
+					},
+					{
+						"help": "Disable machine learning based malware detection.",
+						"name": "disable"
+					}
+				],
+				"type": "option"
+			},
+			"override-timeout": {
+				"category": "unitary",
+				"default": 0,
+				"help": "Override the large file scan timeout value in seconds (30 - 3600). Zero is the default value and is used to disable this command. When disabled, the daemon adjusts the large file scan timeout based on the file size.",
+				"max-value": 3600,
+				"min-value": 30,
+				"name": "override-timeout",
+				"type": "integer"
+			},
+			"use-extreme-db": {
+				"addedIn": "v6.4.2",
+				"category": "unitary",
+				"default": "disable",
+				"help": "Enable/disable the use of Extreme AVDB.",
+				"multiple_values": false,
+				"name": "use-extreme-db",
+				"options": [
+					{
+						"help": "Enable extreme AVDB.",
+						"name": "enable"
+					},
+					{
+						"help": "Disable extreme AVDB.",
+						"name": "disable"
+					}
+				],
+				"type": "option"
+			}
+		},
+		"help": "Configure AntiVirus settings.",
+		"name": "settings",
+		"path": "antivirus",
+		"q_type": 120
+	},
+	"revision": "65b0094afc98e0f1fe1ad9769af77335",
+	"serial": "FGTAZRKKLFZKT347",
+	"status": "success",
+	"vdom": "root",
+	"version": "v7.0.3"
+}

@@ -1,0 +1,316 @@
+{
+	"FullPath": null,
+	"addedIn": "v6.2.7",
+	"build": 237,
+	"http_method": "GET",
+	"http_status": 200,
+	"mergedVersions": "v6.2.7,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3",
+	"name": "802-1X",
+	"path": "switch-controller.security-policy",
+	"results": {
+		"access_group": "wifi",
+		"category": "table",
+		"children": {
+			"auth-fail-vlan": {
+				"category": "unitary",
+				"default": "disable",
+				"help": "Enable to allow limited access to clients that cannot authenticate.",
+				"multiple_values": false,
+				"name": "auth-fail-vlan",
+				"options": [
+					{
+						"help": "Disable authentication fail VLAN on this interface.",
+						"name": "disable"
+					},
+					{
+						"help": "Enable authentication fail VLAN on this interface.",
+						"name": "enable"
+					}
+				],
+				"type": "option"
+			},
+			"auth-fail-vlan-id": {
+				"category": "unitary",
+				"datasource": [
+					"system.interface.name"
+				],
+				"default": "",
+				"help": "VLAN ID on which authentication failed.",
+				"name": "auth-fail-vlan-id",
+				"required": true,
+				"size": 15,
+				"type": "string"
+			},
+			"authserver-timeout-period": {
+				"addedIn": "v6.4.3",
+				"category": "unitary",
+				"default": 3,
+				"help": "Authentication server timeout period (3 - 15 sec, default = 3).",
+				"max-value": 15,
+				"min-value": 3,
+				"name": "authserver-timeout-period",
+				"type": "integer"
+			},
+			"authserver-timeout-vlan": {
+				"addedIn": "v6.4.3",
+				"category": "unitary",
+				"default": "disable",
+				"help": "Enable/disable the authentication server timeout VLAN to allow limited access when RADIUS is unavailable. ",
+				"multiple_values": false,
+				"name": "authserver-timeout-vlan",
+				"options": [
+					{
+						"help": "Disable authentication server timeout VLAN on this interface.",
+						"name": "disable"
+					},
+					{
+						"help": "Enable authentication server timeout VLAN on this interface.",
+						"name": "enable"
+					}
+				],
+				"type": "option"
+			},
+			"authserver-timeout-vlanid": {
+				"addedIn": "v6.4.3",
+				"category": "unitary",
+				"datasource": [
+					"system.interface.name"
+				],
+				"default": "",
+				"help": "Authentication server timeout VLAN name.",
+				"name": "authserver-timeout-vlanid",
+				"required": true,
+				"size": 15,
+				"type": "string"
+			},
+			"eap-auto-untagged-vlans": {
+				"addedIn": "v6.4.2",
+				"category": "unitary",
+				"default": "enable",
+				"help": "Enable/disable automatic inclusion of untagged VLANs.",
+				"multiple_values": false,
+				"name": "eap-auto-untagged-vlans",
+				"options": [
+					{
+						"help": "Disable automatic inclusion of untagged VLANs.",
+						"name": "disable"
+					},
+					{
+						"help": "Enable automatic inclusion of untagged VLANs.",
+						"name": "enable"
+					}
+				],
+				"type": "option"
+			},
+			"eap-passthru": {
+				"category": "unitary",
+				"default": "enable",
+				"help": "Enable/disable EAP pass-through mode, allowing protocols (such as LLDP) to pass through ports for more flexible authentication.",
+				"multiple_values": false,
+				"name": "eap-passthru",
+				"options": [
+					{
+						"help": "Disable EAP pass-through mode on this interface.",
+						"name": "disable"
+					},
+					{
+						"help": "Enable EAP pass-through mode on this interface.",
+						"name": "enable"
+					}
+				],
+				"type": "option"
+			},
+			"framevid-apply": {
+				"category": "unitary",
+				"default": "enable",
+				"help": "Enable/disable the capability to apply the EAP/MAB frame VLAN to the port native VLAN.",
+				"multiple_values": false,
+				"name": "framevid-apply",
+				"options": [
+					{
+						"help": "Disable the capability to apply the EAP/MAB frame VLAN to the port native VLAN.",
+						"name": "disable"
+					},
+					{
+						"help": "Enable the capability to apply the EAP/MAB frame VLAN to the port native VLAN.",
+						"name": "enable"
+					}
+				],
+				"type": "option"
+			},
+			"guest-auth-delay": {
+				"category": "unitary",
+				"default": 30,
+				"help": "Guest authentication delay (1 - 900  sec, default = 30).",
+				"max-value": 900,
+				"min-value": 1,
+				"name": "guest-auth-delay",
+				"type": "integer"
+			},
+			"guest-vlan": {
+				"category": "unitary",
+				"default": "disable",
+				"help": "Enable the guest VLAN feature to allow limited access to non-802.1X-compliant clients.",
+				"multiple_values": false,
+				"name": "guest-vlan",
+				"options": [
+					{
+						"help": "Disable guest VLAN on this interface.",
+						"name": "disable"
+					},
+					{
+						"help": "Enable guest VLAN on this interface.",
+						"name": "enable"
+					}
+				],
+				"type": "option"
+			},
+			"guest-vlan-id": {
+				"category": "unitary",
+				"datasource": [
+					"system.interface.name"
+				],
+				"default": "",
+				"help": "Guest VLAN name.",
+				"name": "guest-vlan-id",
+				"required": true,
+				"size": 15,
+				"type": "string"
+			},
+			"mac-auth-bypass": {
+				"category": "unitary",
+				"default": "disable",
+				"help": "Enable/disable MAB for this policy.",
+				"multiple_values": false,
+				"name": "mac-auth-bypass",
+				"options": [
+					{
+						"help": "Disable MAB.",
+						"name": "disable"
+					},
+					{
+						"help": "Enable MAB.",
+						"name": "enable"
+					}
+				],
+				"type": "option"
+			},
+			"name": {
+				"category": "unitary",
+				"default": "",
+				"help": "Policy name.",
+				"name": "name",
+				"size": 31,
+				"type": "string"
+			},
+			"open-auth": {
+				"category": "unitary",
+				"default": "disable",
+				"help": "Enable/disable open authentication for this policy.",
+				"multiple_values": false,
+				"name": "open-auth",
+				"options": [
+					{
+						"help": "Disable open authentication.",
+						"name": "disable"
+					},
+					{
+						"help": "Enable open authentication.",
+						"name": "enable"
+					}
+				],
+				"type": "option"
+			},
+			"policy-type": {
+				"category": "unitary",
+				"default": "802.1X",
+				"help": "Policy type.",
+				"multiple_values": false,
+				"name": "policy-type",
+				"options": [
+					{
+						"help": "802.1X security policy.",
+						"name": "802.1X"
+					}
+				],
+				"type": "option"
+			},
+			"radius-timeout-overwrite": {
+				"category": "unitary",
+				"default": "disable",
+				"help": "Enable to override the global RADIUS session timeout.",
+				"multiple_values": false,
+				"name": "radius-timeout-overwrite",
+				"options": [
+					{
+						"help": "Override the global RADIUS session timeout.",
+						"name": "disable"
+					},
+					{
+						"help": "Use the global RADIUS session timeout.",
+						"name": "enable"
+					}
+				],
+				"type": "option"
+			},
+			"security-mode": {
+				"category": "unitary",
+				"default": "802.1X",
+				"help": "Port or MAC based 802.1X security mode.",
+				"multiple_values": false,
+				"name": "security-mode",
+				"options": [
+					{
+						"help": "802.1X port based authentication.",
+						"name": "802.1X"
+					},
+					{
+						"help": "802.1X MAC based authentication.",
+						"name": "802.1X-mac-based"
+					}
+				],
+				"type": "option"
+			},
+			"user-group": {
+				"category": "table",
+				"children": {
+					"name": {
+						"category": "unitary",
+						"datasource": [
+							"user.group.name"
+						],
+						"default": "",
+						"help": "Group name.",
+						"name": "name",
+						"required": true,
+						"size": 79,
+						"type": "string"
+					}
+				},
+				"help": "Name of user-group to assign to this MAC Authentication Bypass (MAB) policy.",
+				"max_table_size_global": 0,
+				"max_table_size_item": 0,
+				"max_table_size_vdom": 0,
+				"member_table": true,
+				"mkey": "name",
+				"mkey_type": "string",
+				"name": "user-group",
+				"required": true
+			}
+		},
+		"help": "Configure 802.1x MAC Authentication Bypass (MAB) policies.",
+		"max_table_size_global": 0,
+		"max_table_size_item": 0,
+		"max_table_size_vdom": 256,
+		"mkey": "name",
+		"mkey_type": "string",
+		"name": "802-1X",
+		"path": "switch-controller.security-policy",
+		"q_type": 314
+	},
+	"revision": "2db150cf86f4f5b7a859450fb7969363",
+	"serial": "FGTAZRKKLFZKT347",
+	"status": "success",
+	"vdom": "root",
+	"version": "v7.0.3"
+}

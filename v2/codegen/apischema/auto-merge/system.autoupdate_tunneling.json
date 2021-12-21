@@ -1,0 +1,75 @@
+{
+	"FullPath": null,
+	"addedIn": "v6.2.7",
+	"build": 237,
+	"http_method": "GET",
+	"http_status": 200,
+	"mergedVersions": "v6.2.7,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3",
+	"name": "tunneling",
+	"path": "system.autoupdate",
+	"results": {
+		"access_group": "sysgrp",
+		"category": "complex",
+		"children": {
+			"address": {
+				"category": "unitary",
+				"default": "",
+				"help": "Web proxy IP address or FQDN.",
+				"name": "address",
+				"size": 63,
+				"type": "string"
+			},
+			"password": {
+				"category": "unitary",
+				"help": "Web proxy password.",
+				"name": "password",
+				"size": 128,
+				"type": "password"
+			},
+			"port": {
+				"category": "unitary",
+				"default": 0,
+				"help": "Web proxy port.",
+				"max-value": 65535,
+				"min-value": 0,
+				"name": "port",
+				"type": "integer"
+			},
+			"status": {
+				"category": "unitary",
+				"default": "disable",
+				"help": "Enable/disable web proxy tunnelling.",
+				"multiple_values": false,
+				"name": "status",
+				"options": [
+					{
+						"help": "Enable setting.",
+						"name": "enable"
+					},
+					{
+						"help": "Disable setting.",
+						"name": "disable"
+					}
+				],
+				"type": "option"
+			},
+			"username": {
+				"category": "unitary",
+				"default": "",
+				"help": "Web proxy username.",
+				"name": "username",
+				"size": 49,
+				"type": "string"
+			}
+		},
+		"help": "Configure web proxy tunnelling for the FDN.",
+		"name": "tunneling",
+		"path": "system.autoupdate",
+		"q_type": 15
+	},
+	"revision": "0f5eb597fa8ac37d5f819e2b64bf7e6e",
+	"serial": "FGTAZRKKLFZKT347",
+	"status": "success",
+	"vdom": "root",
+	"version": "v7.0.3"
+}
