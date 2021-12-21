@@ -345,7 +345,7 @@ func typeLookup(s string) string {
 		"ipv6-network":           "*string",
 		"var-string":             "*string",
 		"password":               "*string",
-		"integer":                "*int64",
+		"integer":                "*float64",
 		"user":                   "*string",
 		"password-2":             "*string",
 		"password-3":             "*string",
