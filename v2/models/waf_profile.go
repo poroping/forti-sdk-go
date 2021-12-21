@@ -3,23 +3,23 @@ package models
 const WafProfilePath = "waf/profile/"
 
 type WafProfile struct {
-	AddressList []WafProfileAddressList `json:"address-list,omitempty"`
-	Comment     *string                 `json:"comment,omitempty"`
-	Constraint  []WafProfileConstraint  `json:"constraint,omitempty"`
-	ExtendedLog *string                 `json:"extended-log,omitempty"`
-	External    *string                 `json:"external,omitempty"`
-	Method      []WafProfileMethod      `json:"method,omitempty"`
-	Name        *string                 `json:"name,omitempty"`
-	Signature   []WafProfileSignature   `json:"signature,omitempty"`
-	UrlAccess   []WafProfileUrlAccess   `json:"url-access,omitempty"`
+	AddressList *[]WafProfileAddressList `json:"address-list,omitempty"`
+	Comment     *string                  `json:"comment,omitempty"`
+	Constraint  *[]WafProfileConstraint  `json:"constraint,omitempty"`
+	ExtendedLog *string                  `json:"extended-log,omitempty"`
+	External    *string                  `json:"external,omitempty"`
+	Method      *[]WafProfileMethod      `json:"method,omitempty"`
+	Name        *string                  `json:"name,omitempty"`
+	Signature   *[]WafProfileSignature   `json:"signature,omitempty"`
+	UrlAccess   *[]WafProfileUrlAccess   `json:"url-access,omitempty"`
 }
 
 type WafProfileAddressList struct {
-	BlockedAddress []WafProfileAddressListBlockedAddress `json:"blocked-address,omitempty"`
-	BlockedLog     *string                               `json:"blocked-log,omitempty"`
-	Severity       *string                               `json:"severity,omitempty"`
-	Status         *string                               `json:"status,omitempty"`
-	TrustedAddress []WafProfileAddressListTrustedAddress `json:"trusted-address,omitempty"`
+	BlockedAddress *[]WafProfileAddressListBlockedAddress `json:"blocked-address,omitempty"`
+	BlockedLog     *string                                `json:"blocked-log,omitempty"`
+	Severity       *string                                `json:"severity,omitempty"`
+	Status         *string                                `json:"status,omitempty"`
+	TrustedAddress *[]WafProfileAddressListTrustedAddress `json:"trusted-address,omitempty"`
 }
 
 type WafProfileAddressListBlockedAddress struct {
@@ -31,20 +31,20 @@ type WafProfileAddressListTrustedAddress struct {
 }
 
 type WafProfileConstraint struct {
-	ContentLength   []WafProfileConstraintContentLength   `json:"content-length,omitempty"`
-	Exception       []WafProfileConstraintException       `json:"exception,omitempty"`
-	HeaderLength    []WafProfileConstraintHeaderLength    `json:"header-length,omitempty"`
-	Hostname        []WafProfileConstraintHostname        `json:"hostname,omitempty"`
-	LineLength      []WafProfileConstraintLineLength      `json:"line-length,omitempty"`
-	Malformed       []WafProfileConstraintMalformed       `json:"malformed,omitempty"`
-	MaxCookie       []WafProfileConstraintMaxCookie       `json:"max-cookie,omitempty"`
-	MaxHeaderLine   []WafProfileConstraintMaxHeaderLine   `json:"max-header-line,omitempty"`
-	MaxRangeSegment []WafProfileConstraintMaxRangeSegment `json:"max-range-segment,omitempty"`
-	MaxUrlParam     []WafProfileConstraintMaxUrlParam     `json:"max-url-param,omitempty"`
-	Method          []WafProfileConstraintMethod          `json:"method,omitempty"`
-	ParamLength     []WafProfileConstraintParamLength     `json:"param-length,omitempty"`
-	UrlParamLength  []WafProfileConstraintUrlParamLength  `json:"url-param-length,omitempty"`
-	Version         []WafProfileConstraintVersion         `json:"version,omitempty"`
+	ContentLength   *[]WafProfileConstraintContentLength   `json:"content-length,omitempty"`
+	Exception       *[]WafProfileConstraintException       `json:"exception,omitempty"`
+	HeaderLength    *[]WafProfileConstraintHeaderLength    `json:"header-length,omitempty"`
+	Hostname        *[]WafProfileConstraintHostname        `json:"hostname,omitempty"`
+	LineLength      *[]WafProfileConstraintLineLength      `json:"line-length,omitempty"`
+	Malformed       *[]WafProfileConstraintMalformed       `json:"malformed,omitempty"`
+	MaxCookie       *[]WafProfileConstraintMaxCookie       `json:"max-cookie,omitempty"`
+	MaxHeaderLine   *[]WafProfileConstraintMaxHeaderLine   `json:"max-header-line,omitempty"`
+	MaxRangeSegment *[]WafProfileConstraintMaxRangeSegment `json:"max-range-segment,omitempty"`
+	MaxUrlParam     *[]WafProfileConstraintMaxUrlParam     `json:"max-url-param,omitempty"`
+	Method          *[]WafProfileConstraintMethod          `json:"method,omitempty"`
+	ParamLength     *[]WafProfileConstraintParamLength     `json:"param-length,omitempty"`
+	UrlParamLength  *[]WafProfileConstraintUrlParamLength  `json:"url-param-length,omitempty"`
+	Version         *[]WafProfileConstraintVersion         `json:"version,omitempty"`
 }
 
 type WafProfileConstraintContentLength struct {
@@ -168,11 +168,11 @@ type WafProfileConstraintVersion struct {
 }
 
 type WafProfileMethod struct {
-	DefaultAllowedMethods *string                        `json:"default-allowed-methods,omitempty"`
-	Log                   *string                        `json:"log,omitempty"`
-	MethodPolicy          []WafProfileMethodMethodPolicy `json:"method-policy,omitempty"`
-	Severity              *string                        `json:"severity,omitempty"`
-	Status                *string                        `json:"status,omitempty"`
+	DefaultAllowedMethods *string                         `json:"default-allowed-methods,omitempty"`
+	Log                   *string                         `json:"log,omitempty"`
+	MethodPolicy          *[]WafProfileMethodMethodPolicy `json:"method-policy,omitempty"`
+	Severity              *string                         `json:"severity,omitempty"`
+	Status                *string                         `json:"status,omitempty"`
 }
 
 type WafProfileMethodMethodPolicy struct {
@@ -184,11 +184,11 @@ type WafProfileMethodMethodPolicy struct {
 }
 
 type WafProfileSignature struct {
-	CreditCardDetectionThreshold *int64                                 `json:"credit-card-detection-threshold,omitempty"`
-	CustomSignature              []WafProfileSignatureCustomSignature   `json:"custom-signature,omitempty"`
-	DisabledSignature            []WafProfileSignatureDisabledSignature `json:"disabled-signature,omitempty"`
-	DisabledSubClass             []WafProfileSignatureDisabledSubClass  `json:"disabled-sub-class,omitempty"`
-	MainClass                    []WafProfileSignatureMainClass         `json:"main-class,omitempty"`
+	CreditCardDetectionThreshold *int64                                  `json:"credit-card-detection-threshold,omitempty"`
+	CustomSignature              *[]WafProfileSignatureCustomSignature   `json:"custom-signature,omitempty"`
+	DisabledSignature            *[]WafProfileSignatureDisabledSignature `json:"disabled-signature,omitempty"`
+	DisabledSubClass             *[]WafProfileSignatureDisabledSubClass  `json:"disabled-sub-class,omitempty"`
+	MainClass                    *[]WafProfileSignatureMainClass         `json:"main-class,omitempty"`
 }
 
 type WafProfileSignatureCustomSignature struct {
@@ -220,12 +220,12 @@ type WafProfileSignatureMainClass struct {
 }
 
 type WafProfileUrlAccess struct {
-	AccessPattern []WafProfileUrlAccessAccessPattern `json:"access-pattern,omitempty"`
-	Action        *string                            `json:"action,omitempty"`
-	Address       *string                            `json:"address,omitempty"`
-	Id            *int64                             `json:"id,omitempty"`
-	Log           *string                            `json:"log,omitempty"`
-	Severity      *string                            `json:"severity,omitempty"`
+	AccessPattern *[]WafProfileUrlAccessAccessPattern `json:"access-pattern,omitempty"`
+	Action        *string                             `json:"action,omitempty"`
+	Address       *string                             `json:"address,omitempty"`
+	Id            *int64                              `json:"id,omitempty"`
+	Log           *string                             `json:"log,omitempty"`
+	Severity      *string                             `json:"severity,omitempty"`
 }
 
 type WafProfileUrlAccessAccessPattern struct {

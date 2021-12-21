@@ -40,7 +40,7 @@ type CmdbResponse struct {
 	Serial          *string     `json:"serial,omitempty"`
 	Version         *string     `json:"version,omitempty"`
 	Build           *int64      `json:"build,omitempty"`
-	FullPath        *string
+	FullPath        *string     `json:"FullPath,omitempty"`
 }
 
 type CmdbError500 struct {

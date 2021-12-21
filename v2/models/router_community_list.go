@@ -3,9 +3,9 @@ package models
 const RouterCommunityListPath = "router/community-list/"
 
 type RouterCommunityList struct {
-	Name *string                   `json:"name,omitempty"`
-	Rule []RouterCommunityListRule `json:"rule,omitempty"`
-	Type *string                   `json:"type,omitempty"`
+	Name *string                    `json:"name,omitempty"`
+	Rule *[]RouterCommunityListRule `json:"rule,omitempty"`
+	Type *string                    `json:"type,omitempty"`
 }
 
 type RouterCommunityListRule struct {

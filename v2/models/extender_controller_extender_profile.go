@@ -3,25 +3,25 @@ package models
 const ExtenderControllerExtenderProfilePath = "extender-controller/extender-profile/"
 
 type ExtenderControllerExtenderProfile struct {
-	Allowaccess         *string                                         `json:"allowaccess,omitempty"`
-	BandwidthLimit      *int64                                          `json:"bandwidth-limit,omitempty"`
-	Cellular            []ExtenderControllerExtenderProfileCellular     `json:"cellular,omitempty"`
-	EnforceBandwidth    *string                                         `json:"enforce-bandwidth,omitempty"`
-	Extension           *string                                         `json:"extension,omitempty"`
-	Fosid               *int64                                          `json:"fosid,omitempty"`
-	LanExtension        []ExtenderControllerExtenderProfileLanExtension `json:"lan-extension,omitempty"`
-	LoginPassword       *string                                         `json:"login-password,omitempty"`
-	LoginPasswordChange *string                                         `json:"login-password-change,omitempty"`
-	Model               *string                                         `json:"model,omitempty"`
-	Name                *string                                         `json:"name,omitempty"`
+	Allowaccess         *string                                          `json:"allowaccess,omitempty"`
+	BandwidthLimit      *int64                                           `json:"bandwidth-limit,omitempty"`
+	Cellular            *[]ExtenderControllerExtenderProfileCellular     `json:"cellular,omitempty"`
+	EnforceBandwidth    *string                                          `json:"enforce-bandwidth,omitempty"`
+	Extension           *string                                          `json:"extension,omitempty"`
+	Fosid               *int64                                           `json:"fosid,omitempty"`
+	LanExtension        *[]ExtenderControllerExtenderProfileLanExtension `json:"lan-extension,omitempty"`
+	LoginPassword       *string                                          `json:"login-password,omitempty"`
+	LoginPasswordChange *string                                          `json:"login-password-change,omitempty"`
+	Model               *string                                          `json:"model,omitempty"`
+	Name                *string                                          `json:"name,omitempty"`
 }
 
 type ExtenderControllerExtenderProfileCellular struct {
-	ControllerReport []ExtenderControllerExtenderProfileCellularControllerReport `json:"controller-report,omitempty"`
-	Dataplan         []ExtenderControllerExtenderProfileCellularDataplan         `json:"dataplan,omitempty"`
-	Modem1           []ExtenderControllerExtenderProfileCellularModem1           `json:"modem1,omitempty"`
-	Modem2           []ExtenderControllerExtenderProfileCellularModem2           `json:"modem2,omitempty"`
-	SmsNotification  []ExtenderControllerExtenderProfileCellularSmsNotification  `json:"sms-notification,omitempty"`
+	ControllerReport *[]ExtenderControllerExtenderProfileCellularControllerReport `json:"controller-report,omitempty"`
+	Dataplan         *[]ExtenderControllerExtenderProfileCellularDataplan         `json:"dataplan,omitempty"`
+	Modem1           *[]ExtenderControllerExtenderProfileCellularModem1           `json:"modem1,omitempty"`
+	Modem2           *[]ExtenderControllerExtenderProfileCellularModem2           `json:"modem2,omitempty"`
+	SmsNotification  *[]ExtenderControllerExtenderProfileCellularSmsNotification  `json:"sms-notification,omitempty"`
 }
 
 type ExtenderControllerExtenderProfileCellularControllerReport struct {
@@ -35,17 +35,17 @@ type ExtenderControllerExtenderProfileCellularDataplan struct {
 }
 
 type ExtenderControllerExtenderProfileCellularModem1 struct {
-	AutoSwitch       []ExtenderControllerExtenderProfileCellularModem1AutoSwitch `json:"auto-switch,omitempty"`
-	ConnStatus       *int64                                                      `json:"conn-status,omitempty"`
-	DefaultSim       *string                                                     `json:"default-sim,omitempty"`
-	Gps              *string                                                     `json:"gps,omitempty"`
-	PreferredCarrier *string                                                     `json:"preferred-carrier,omitempty"`
-	RedundantIntf    *string                                                     `json:"redundant-intf,omitempty"`
-	RedundantMode    *string                                                     `json:"redundant-mode,omitempty"`
-	Sim1Pin          *string                                                     `json:"sim1-pin,omitempty"`
-	Sim1PinCode      *string                                                     `json:"sim1-pin-code,omitempty"`
-	Sim2Pin          *string                                                     `json:"sim2-pin,omitempty"`
-	Sim2PinCode      *string                                                     `json:"sim2-pin-code,omitempty"`
+	AutoSwitch       *[]ExtenderControllerExtenderProfileCellularModem1AutoSwitch `json:"auto-switch,omitempty"`
+	ConnStatus       *int64                                                       `json:"conn-status,omitempty"`
+	DefaultSim       *string                                                      `json:"default-sim,omitempty"`
+	Gps              *string                                                      `json:"gps,omitempty"`
+	PreferredCarrier *string                                                      `json:"preferred-carrier,omitempty"`
+	RedundantIntf    *string                                                      `json:"redundant-intf,omitempty"`
+	RedundantMode    *string                                                      `json:"redundant-mode,omitempty"`
+	Sim1Pin          *string                                                      `json:"sim1-pin,omitempty"`
+	Sim1PinCode      *string                                                      `json:"sim1-pin-code,omitempty"`
+	Sim2Pin          *string                                                      `json:"sim2-pin,omitempty"`
+	Sim2PinCode      *string                                                      `json:"sim2-pin-code,omitempty"`
 }
 
 type ExtenderControllerExtenderProfileCellularModem1AutoSwitch struct {
@@ -60,17 +60,17 @@ type ExtenderControllerExtenderProfileCellularModem1AutoSwitch struct {
 }
 
 type ExtenderControllerExtenderProfileCellularModem2 struct {
-	AutoSwitch       []ExtenderControllerExtenderProfileCellularModem2AutoSwitch `json:"auto-switch,omitempty"`
-	ConnStatus       *int64                                                      `json:"conn-status,omitempty"`
-	DefaultSim       *string                                                     `json:"default-sim,omitempty"`
-	Gps              *string                                                     `json:"gps,omitempty"`
-	PreferredCarrier *string                                                     `json:"preferred-carrier,omitempty"`
-	RedundantIntf    *string                                                     `json:"redundant-intf,omitempty"`
-	RedundantMode    *string                                                     `json:"redundant-mode,omitempty"`
-	Sim1Pin          *string                                                     `json:"sim1-pin,omitempty"`
-	Sim1PinCode      *string                                                     `json:"sim1-pin-code,omitempty"`
-	Sim2Pin          *string                                                     `json:"sim2-pin,omitempty"`
-	Sim2PinCode      *string                                                     `json:"sim2-pin-code,omitempty"`
+	AutoSwitch       *[]ExtenderControllerExtenderProfileCellularModem2AutoSwitch `json:"auto-switch,omitempty"`
+	ConnStatus       *int64                                                       `json:"conn-status,omitempty"`
+	DefaultSim       *string                                                      `json:"default-sim,omitempty"`
+	Gps              *string                                                      `json:"gps,omitempty"`
+	PreferredCarrier *string                                                      `json:"preferred-carrier,omitempty"`
+	RedundantIntf    *string                                                      `json:"redundant-intf,omitempty"`
+	RedundantMode    *string                                                      `json:"redundant-mode,omitempty"`
+	Sim1Pin          *string                                                      `json:"sim1-pin,omitempty"`
+	Sim1PinCode      *string                                                      `json:"sim1-pin-code,omitempty"`
+	Sim2Pin          *string                                                      `json:"sim2-pin,omitempty"`
+	Sim2PinCode      *string                                                      `json:"sim2-pin-code,omitempty"`
 }
 
 type ExtenderControllerExtenderProfileCellularModem2AutoSwitch struct {
@@ -85,9 +85,9 @@ type ExtenderControllerExtenderProfileCellularModem2AutoSwitch struct {
 }
 
 type ExtenderControllerExtenderProfileCellularSmsNotification struct {
-	Alert    []ExtenderControllerExtenderProfileCellularSmsNotificationAlert    `json:"alert,omitempty"`
-	Receiver []ExtenderControllerExtenderProfileCellularSmsNotificationReceiver `json:"receiver,omitempty"`
-	Status   *string                                                            `json:"status,omitempty"`
+	Alert    *[]ExtenderControllerExtenderProfileCellularSmsNotificationAlert    `json:"alert,omitempty"`
+	Receiver *[]ExtenderControllerExtenderProfileCellularSmsNotificationReceiver `json:"receiver,omitempty"`
+	Status   *string                                                             `json:"status,omitempty"`
 }
 
 type ExtenderControllerExtenderProfileCellularSmsNotificationAlert struct {
@@ -108,11 +108,11 @@ type ExtenderControllerExtenderProfileCellularSmsNotificationReceiver struct {
 }
 
 type ExtenderControllerExtenderProfileLanExtension struct {
-	Backhaul          []ExtenderControllerExtenderProfileLanExtensionBackhaul `json:"backhaul,omitempty"`
-	BackhaulInterface *string                                                 `json:"backhaul-interface,omitempty"`
-	BackhaulIp        *string                                                 `json:"backhaul-ip,omitempty"`
-	IpsecTunnel       *string                                                 `json:"ipsec-tunnel,omitempty"`
-	LinkLoadbalance   *string                                                 `json:"link-loadbalance,omitempty"`
+	Backhaul          *[]ExtenderControllerExtenderProfileLanExtensionBackhaul `json:"backhaul,omitempty"`
+	BackhaulInterface *string                                                  `json:"backhaul-interface,omitempty"`
+	BackhaulIp        *string                                                  `json:"backhaul-ip,omitempty"`
+	IpsecTunnel       *string                                                  `json:"ipsec-tunnel,omitempty"`
+	LinkLoadbalance   *string                                                  `json:"link-loadbalance,omitempty"`
 }
 
 type ExtenderControllerExtenderProfileLanExtensionBackhaul struct {

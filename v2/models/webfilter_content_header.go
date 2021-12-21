@@ -3,10 +3,10 @@ package models
 const WebfilterContentHeaderPath = "webfilter/content-header/"
 
 type WebfilterContentHeader struct {
-	Comment *string                         `json:"comment,omitempty"`
-	Entries []WebfilterContentHeaderEntries `json:"entries,omitempty"`
-	Fosid   *int64                          `json:"fosid,omitempty"`
-	Name    *string                         `json:"name,omitempty"`
+	Comment *string                          `json:"comment,omitempty"`
+	Entries *[]WebfilterContentHeaderEntries `json:"entries,omitempty"`
+	Fosid   *int64                           `json:"fosid,omitempty"`
+	Name    *string                          `json:"name,omitempty"`
 }
 
 type WebfilterContentHeaderEntries struct {

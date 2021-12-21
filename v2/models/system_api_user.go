@@ -3,16 +3,16 @@ package models
 const SystemApiUserPath = "system/api-user/"
 
 type SystemApiUser struct {
-	Accprofile      *string                  `json:"accprofile,omitempty"`
-	ApiKey          *string                  `json:"api-key,omitempty"`
-	Comments        *string                  `json:"comments,omitempty"`
-	CorsAllowOrigin *string                  `json:"cors-allow-origin,omitempty"`
-	Name            *string                  `json:"name,omitempty"`
-	PeerAuth        *string                  `json:"peer-auth,omitempty"`
-	PeerGroup       *string                  `json:"peer-group,omitempty"`
-	Schedule        *string                  `json:"schedule,omitempty"`
-	Trusthost       []SystemApiUserTrusthost `json:"trusthost,omitempty"`
-	Vdom            []SystemApiUserVdom      `json:"vdom,omitempty"`
+	Accprofile      *string                   `json:"accprofile,omitempty"`
+	ApiKey          *string                   `json:"api-key,omitempty"`
+	Comments        *string                   `json:"comments,omitempty"`
+	CorsAllowOrigin *string                   `json:"cors-allow-origin,omitempty"`
+	Name            *string                   `json:"name,omitempty"`
+	PeerAuth        *string                   `json:"peer-auth,omitempty"`
+	PeerGroup       *string                   `json:"peer-group,omitempty"`
+	Schedule        *string                   `json:"schedule,omitempty"`
+	Trusthost       *[]SystemApiUserTrusthost `json:"trusthost,omitempty"`
+	Vdom            *[]SystemApiUserVdom      `json:"vdom,omitempty"`
 }
 
 type SystemApiUserTrusthost struct {

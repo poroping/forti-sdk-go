@@ -3,12 +3,12 @@ package models
 const VoipProfilePath = "voip/profile/"
 
 type VoipProfile struct {
-	Comment    *string           `json:"comment,omitempty"`
-	FeatureSet *string           `json:"feature-set,omitempty"`
-	Msrp       []VoipProfileMsrp `json:"msrp,omitempty"`
-	Name       *string           `json:"name,omitempty"`
-	Sccp       []VoipProfileSccp `json:"sccp,omitempty"`
-	Sip        []VoipProfileSip  `json:"sip,omitempty"`
+	Comment    *string            `json:"comment,omitempty"`
+	FeatureSet *string            `json:"feature-set,omitempty"`
+	Msrp       *[]VoipProfileMsrp `json:"msrp,omitempty"`
+	Name       *string            `json:"name,omitempty"`
+	Sccp       *[]VoipProfileSccp `json:"sccp,omitempty"`
+	Sip        *[]VoipProfileSip  `json:"sip,omitempty"`
 }
 
 type VoipProfileMsrp struct {

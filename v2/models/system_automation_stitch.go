@@ -3,12 +3,17 @@ package models
 const SystemAutomationStitchPath = "system/automation-stitch/"
 
 type SystemAutomationStitch struct {
-	Actions     []SystemAutomationStitchActions     `json:"actions,omitempty"`
-	Description *string                             `json:"description,omitempty"`
-	Destination []SystemAutomationStitchDestination `json:"destination,omitempty"`
-	Name        *string                             `json:"name,omitempty"`
-	Status      *string                             `json:"status,omitempty"`
-	Trigger     *string                             `json:"trigger,omitempty"`
+	Action      *[]SystemAutomationStitchAction      `json:"action,omitempty"`
+	Actions     *[]SystemAutomationStitchActions     `json:"actions,omitempty"`
+	Description *string                              `json:"description,omitempty"`
+	Destination *[]SystemAutomationStitchDestination `json:"destination,omitempty"`
+	Name        *string                              `json:"name,omitempty"`
+	Status      *string                              `json:"status,omitempty"`
+	Trigger     *string                              `json:"trigger,omitempty"`
+}
+
+type SystemAutomationStitchAction struct {
+	Name *string `json:"name,omitempty"`
 }
 
 type SystemAutomationStitchActions struct {

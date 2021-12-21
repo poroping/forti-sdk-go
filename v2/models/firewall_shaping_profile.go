@@ -3,11 +3,11 @@ package models
 const FirewallShapingProfilePath = "firewall/shaping-profile/"
 
 type FirewallShapingProfile struct {
-	Comment        *string                                `json:"comment,omitempty"`
-	DefaultClassId *int64                                 `json:"default-class-id,omitempty"`
-	ProfileName    *string                                `json:"profile-name,omitempty"`
-	ShapingEntries []FirewallShapingProfileShapingEntries `json:"shaping-entries,omitempty"`
-	Type           *string                                `json:"type,omitempty"`
+	Comment        *string                                 `json:"comment,omitempty"`
+	DefaultClassId *int64                                  `json:"default-class-id,omitempty"`
+	ProfileName    *string                                 `json:"profile-name,omitempty"`
+	ShapingEntries *[]FirewallShapingProfileShapingEntries `json:"shaping-entries,omitempty"`
+	Type           *string                                 `json:"type,omitempty"`
 }
 
 type FirewallShapingProfileShapingEntries struct {

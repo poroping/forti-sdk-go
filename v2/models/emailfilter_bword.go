@@ -3,10 +3,10 @@ package models
 const EmailfilterBwordPath = "emailfilter/bword/"
 
 type EmailfilterBword struct {
-	Comment *string                   `json:"comment,omitempty"`
-	Entries []EmailfilterBwordEntries `json:"entries,omitempty"`
-	Fosid   *int64                    `json:"fosid,omitempty"`
-	Name    *string                   `json:"name,omitempty"`
+	Comment *string                    `json:"comment,omitempty"`
+	Entries *[]EmailfilterBwordEntries `json:"entries,omitempty"`
+	Fosid   *int64                     `json:"fosid,omitempty"`
+	Name    *string                    `json:"name,omitempty"`
 }
 
 type EmailfilterBwordEntries struct {

@@ -3,10 +3,10 @@ package models
 const EmailfilterBlockAllowListPath = "emailfilter/block-allow-list/"
 
 type EmailfilterBlockAllowList struct {
-	Comment *string                            `json:"comment,omitempty"`
-	Entries []EmailfilterBlockAllowListEntries `json:"entries,omitempty"`
-	Fosid   *int64                             `json:"fosid,omitempty"`
-	Name    *string                            `json:"name,omitempty"`
+	Comment *string                             `json:"comment,omitempty"`
+	Entries *[]EmailfilterBlockAllowListEntries `json:"entries,omitempty"`
+	Fosid   *int64                              `json:"fosid,omitempty"`
+	Name    *string                             `json:"name,omitempty"`
 }
 
 type EmailfilterBlockAllowListEntries struct {

@@ -3,13 +3,14 @@ package models
 const FirewallAddrgrp6Path = "firewall/addrgrp6/"
 
 type FirewallAddrgrp6 struct {
-	Color        *int64                    `json:"color,omitempty"`
-	Comment      *string                   `json:"comment,omitempty"`
-	FabricObject *string                   `json:"fabric-object,omitempty"`
-	Member       []FirewallAddrgrp6Member  `json:"member,omitempty"`
-	Name         *string                   `json:"name,omitempty"`
-	Tagging      []FirewallAddrgrp6Tagging `json:"tagging,omitempty"`
-	Uuid         *string                   `json:"uuid,omitempty"`
+	Color        *int64                     `json:"color,omitempty"`
+	Comment      *string                    `json:"comment,omitempty"`
+	FabricObject *string                    `json:"fabric-object,omitempty"`
+	Member       *[]FirewallAddrgrp6Member  `json:"member,omitempty"`
+	Name         *string                    `json:"name,omitempty"`
+	Tagging      *[]FirewallAddrgrp6Tagging `json:"tagging,omitempty"`
+	Uuid         *string                    `json:"uuid,omitempty"`
+	Visibility   *string                    `json:"visibility,omitempty"`
 }
 
 type FirewallAddrgrp6Member struct {
@@ -17,9 +18,9 @@ type FirewallAddrgrp6Member struct {
 }
 
 type FirewallAddrgrp6Tagging struct {
-	Category *string                       `json:"category,omitempty"`
-	Name     *string                       `json:"name,omitempty"`
-	Tags     []FirewallAddrgrp6TaggingTags `json:"tags,omitempty"`
+	Category *string                        `json:"category,omitempty"`
+	Name     *string                        `json:"name,omitempty"`
+	Tags     *[]FirewallAddrgrp6TaggingTags `json:"tags,omitempty"`
 }
 
 type FirewallAddrgrp6TaggingTags struct {

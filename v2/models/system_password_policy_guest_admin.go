@@ -4,6 +4,7 @@ const SystemPasswordPolicyGuestAdminPath = "system/password-policy-guest-admin/"
 
 type SystemPasswordPolicyGuestAdmin struct {
 	ApplyTo             *string `json:"apply-to,omitempty"`
+	Change4Characters   *string `json:"change-4-characters,omitempty"`
 	ExpireDay           *int64  `json:"expire-day,omitempty"`
 	ExpireStatus        *string `json:"expire-status,omitempty"`
 	MinChangeCharacters *int64  `json:"min-change-characters,omitempty"`

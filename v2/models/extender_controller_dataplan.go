@@ -3,6 +3,8 @@ package models
 const ExtenderControllerDataplanPath = "extender-controller/dataplan/"
 
 type ExtenderControllerDataplan struct {
+	APN             *string `json:"APN,omitempty"`
+	PDN             *string `json:"PDN,omitempty"`
 	Apn             *string `json:"apn,omitempty"`
 	AuthType        *string `json:"auth-type,omitempty"`
 	BillingDate     *int64  `json:"billing-date,omitempty"`

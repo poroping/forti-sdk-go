@@ -3,40 +3,40 @@ package models
 const FirewallProfileProtocolOptionsPath = "firewall/profile-protocol-options/"
 
 type FirewallProfileProtocolOptions struct {
-	Cifs                  []FirewallProfileProtocolOptionsCifs          `json:"cifs,omitempty"`
-	Comment               *string                                       `json:"comment,omitempty"`
-	Dns                   []FirewallProfileProtocolOptionsDns           `json:"dns,omitempty"`
-	Ftp                   []FirewallProfileProtocolOptionsFtp           `json:"ftp,omitempty"`
-	Http                  []FirewallProfileProtocolOptionsHttp          `json:"http,omitempty"`
-	Imap                  []FirewallProfileProtocolOptionsImap          `json:"imap,omitempty"`
-	MailSignature         []FirewallProfileProtocolOptionsMailSignature `json:"mail-signature,omitempty"`
-	Mapi                  []FirewallProfileProtocolOptionsMapi          `json:"mapi,omitempty"`
-	Name                  *string                                       `json:"name,omitempty"`
-	Nntp                  []FirewallProfileProtocolOptionsNntp          `json:"nntp,omitempty"`
-	OversizeLog           *string                                       `json:"oversize-log,omitempty"`
-	Pop3                  []FirewallProfileProtocolOptionsPop3          `json:"pop3,omitempty"`
-	ReplacemsgGroup       *string                                       `json:"replacemsg-group,omitempty"`
-	RpcOverHttp           *string                                       `json:"rpc-over-http,omitempty"`
-	Smtp                  []FirewallProfileProtocolOptionsSmtp          `json:"smtp,omitempty"`
-	Ssh                   []FirewallProfileProtocolOptionsSsh           `json:"ssh,omitempty"`
-	SwitchingProtocolsLog *string                                       `json:"switching-protocols-log,omitempty"`
+	Cifs                  *[]FirewallProfileProtocolOptionsCifs          `json:"cifs,omitempty"`
+	Comment               *string                                        `json:"comment,omitempty"`
+	Dns                   *[]FirewallProfileProtocolOptionsDns           `json:"dns,omitempty"`
+	Ftp                   *[]FirewallProfileProtocolOptionsFtp           `json:"ftp,omitempty"`
+	Http                  *[]FirewallProfileProtocolOptionsHttp          `json:"http,omitempty"`
+	Imap                  *[]FirewallProfileProtocolOptionsImap          `json:"imap,omitempty"`
+	MailSignature         *[]FirewallProfileProtocolOptionsMailSignature `json:"mail-signature,omitempty"`
+	Mapi                  *[]FirewallProfileProtocolOptionsMapi          `json:"mapi,omitempty"`
+	Name                  *string                                        `json:"name,omitempty"`
+	Nntp                  *[]FirewallProfileProtocolOptionsNntp          `json:"nntp,omitempty"`
+	OversizeLog           *string                                        `json:"oversize-log,omitempty"`
+	Pop3                  *[]FirewallProfileProtocolOptionsPop3          `json:"pop3,omitempty"`
+	ReplacemsgGroup       *string                                        `json:"replacemsg-group,omitempty"`
+	RpcOverHttp           *string                                        `json:"rpc-over-http,omitempty"`
+	Smtp                  *[]FirewallProfileProtocolOptionsSmtp          `json:"smtp,omitempty"`
+	Ssh                   *[]FirewallProfileProtocolOptionsSsh           `json:"ssh,omitempty"`
+	SwitchingProtocolsLog *string                                        `json:"switching-protocols-log,omitempty"`
 }
 
 type FirewallProfileProtocolOptionsCifs struct {
-	DomainController          *string                                          `json:"domain-controller,omitempty"`
-	Options                   *string                                          `json:"options,omitempty"`
-	OversizeLimit             *int64                                           `json:"oversize-limit,omitempty"`
-	Ports                     *int64                                           `json:"ports,omitempty"`
-	ScanBzip2                 *string                                          `json:"scan-bzip2,omitempty"`
-	ServerCredentialType      *string                                          `json:"server-credential-type,omitempty"`
-	ServerKeytab              []FirewallProfileProtocolOptionsCifsServerKeytab `json:"server-keytab,omitempty"`
-	Status                    *string                                          `json:"status,omitempty"`
-	TcpWindowMaximum          *int64                                           `json:"tcp-window-maximum,omitempty"`
-	TcpWindowMinimum          *int64                                           `json:"tcp-window-minimum,omitempty"`
-	TcpWindowSize             *int64                                           `json:"tcp-window-size,omitempty"`
-	TcpWindowType             *string                                          `json:"tcp-window-type,omitempty"`
-	UncompressedNestLimit     *int64                                           `json:"uncompressed-nest-limit,omitempty"`
-	UncompressedOversizeLimit *int64                                           `json:"uncompressed-oversize-limit,omitempty"`
+	DomainController          *string                                           `json:"domain-controller,omitempty"`
+	Options                   *string                                           `json:"options,omitempty"`
+	OversizeLimit             *int64                                            `json:"oversize-limit,omitempty"`
+	Ports                     *int64                                            `json:"ports,omitempty"`
+	ScanBzip2                 *string                                           `json:"scan-bzip2,omitempty"`
+	ServerCredentialType      *string                                           `json:"server-credential-type,omitempty"`
+	ServerKeytab              *[]FirewallProfileProtocolOptionsCifsServerKeytab `json:"server-keytab,omitempty"`
+	Status                    *string                                           `json:"status,omitempty"`
+	TcpWindowMaximum          *int64                                            `json:"tcp-window-maximum,omitempty"`
+	TcpWindowMinimum          *int64                                            `json:"tcp-window-minimum,omitempty"`
+	TcpWindowSize             *int64                                            `json:"tcp-window-size,omitempty"`
+	TcpWindowType             *string                                           `json:"tcp-window-type,omitempty"`
+	UncompressedNestLimit     *int64                                            `json:"uncompressed-nest-limit,omitempty"`
+	UncompressedOversizeLimit *int64                                            `json:"uncompressed-oversize-limit,omitempty"`
 }
 
 type FirewallProfileProtocolOptionsCifsServerKeytab struct {
@@ -72,6 +72,8 @@ type FirewallProfileProtocolOptionsHttp struct {
 	BlockPageStatusCode          *int64  `json:"block-page-status-code,omitempty"`
 	ComfortAmount                *int64  `json:"comfort-amount,omitempty"`
 	ComfortInterval              *int64  `json:"comfort-interval,omitempty"`
+	FortinetBar                  *string `json:"fortinet-bar,omitempty"`
+	FortinetBarPort              *int64  `json:"fortinet-bar-port,omitempty"`
 	InspectAll                   *string `json:"inspect-all,omitempty"`
 	Options                      *string `json:"options,omitempty"`
 	OversizeLimit                *int64  `json:"oversize-limit,omitempty"`

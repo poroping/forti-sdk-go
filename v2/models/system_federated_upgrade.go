@@ -3,11 +3,11 @@ package models
 const SystemFederatedUpgradePath = "system/federated-upgrade/"
 
 type SystemFederatedUpgrade struct {
-	FailureDevice *string                          `json:"failure-device,omitempty"`
-	FailureReason *string                          `json:"failure-reason,omitempty"`
-	NodeList      []SystemFederatedUpgradeNodeList `json:"node-list,omitempty"`
-	Status        *string                          `json:"status,omitempty"`
-	UpgradeId     *int64                           `json:"upgrade-id,omitempty"`
+	FailureDevice *string                           `json:"failure-device,omitempty"`
+	FailureReason *string                           `json:"failure-reason,omitempty"`
+	NodeList      *[]SystemFederatedUpgradeNodeList `json:"node-list,omitempty"`
+	Status        *string                           `json:"status,omitempty"`
+	UpgradeId     *int64                            `json:"upgrade-id,omitempty"`
 }
 
 type SystemFederatedUpgradeNodeList struct {

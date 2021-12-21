@@ -3,10 +3,10 @@ package models
 const SwitchControllerLocationPath = "switch-controller/location/"
 
 type SwitchControllerLocation struct {
-	AddressCivic []SwitchControllerLocationAddressCivic `json:"address-civic,omitempty"`
-	Coordinates  []SwitchControllerLocationCoordinates  `json:"coordinates,omitempty"`
-	ElinNumber   []SwitchControllerLocationElinNumber   `json:"elin-number,omitempty"`
-	Name         *string                                `json:"name,omitempty"`
+	AddressCivic *[]SwitchControllerLocationAddressCivic `json:"address-civic,omitempty"`
+	Coordinates  *[]SwitchControllerLocationCoordinates  `json:"coordinates,omitempty"`
+	ElinNumber   *[]SwitchControllerLocationElinNumber   `json:"elin-number,omitempty"`
+	Name         *string                                 `json:"name,omitempty"`
 }
 
 type SwitchControllerLocationAddressCivic struct {

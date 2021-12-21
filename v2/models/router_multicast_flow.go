@@ -3,9 +3,9 @@ package models
 const RouterMulticastFlowPath = "router/multicast-flow/"
 
 type RouterMulticastFlow struct {
-	Comments *string                    `json:"comments,omitempty"`
-	Flows    []RouterMulticastFlowFlows `json:"flows,omitempty"`
-	Name     *string                    `json:"name,omitempty"`
+	Comments *string                     `json:"comments,omitempty"`
+	Flows    *[]RouterMulticastFlowFlows `json:"flows,omitempty"`
+	Name     *string                     `json:"name,omitempty"`
 }
 
 type RouterMulticastFlowFlows struct {

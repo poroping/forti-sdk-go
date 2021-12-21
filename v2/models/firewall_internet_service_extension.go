@@ -3,17 +3,17 @@ package models
 const FirewallInternetServiceExtensionPath = "firewall/internet-service-extension/"
 
 type FirewallInternetServiceExtension struct {
-	Comment      *string                                        `json:"comment,omitempty"`
-	DisableEntry []FirewallInternetServiceExtensionDisableEntry `json:"disable-entry,omitempty"`
-	Entry        []FirewallInternetServiceExtensionEntry        `json:"entry,omitempty"`
-	Fosid        *int64                                         `json:"fosid,omitempty"`
+	Comment      *string                                         `json:"comment,omitempty"`
+	DisableEntry *[]FirewallInternetServiceExtensionDisableEntry `json:"disable-entry,omitempty"`
+	Entry        *[]FirewallInternetServiceExtensionEntry        `json:"entry,omitempty"`
+	Fosid        *int64                                          `json:"fosid,omitempty"`
 }
 
 type FirewallInternetServiceExtensionDisableEntry struct {
-	Id        *int64                                                  `json:"id,omitempty"`
-	IpRange   []FirewallInternetServiceExtensionDisableEntryIpRange   `json:"ip-range,omitempty"`
-	PortRange []FirewallInternetServiceExtensionDisableEntryPortRange `json:"port-range,omitempty"`
-	Protocol  *int64                                                  `json:"protocol,omitempty"`
+	Id        *int64                                                   `json:"id,omitempty"`
+	IpRange   *[]FirewallInternetServiceExtensionDisableEntryIpRange   `json:"ip-range,omitempty"`
+	PortRange *[]FirewallInternetServiceExtensionDisableEntryPortRange `json:"port-range,omitempty"`
+	Protocol  *int64                                                   `json:"protocol,omitempty"`
 }
 
 type FirewallInternetServiceExtensionDisableEntryIpRange struct {
@@ -29,10 +29,10 @@ type FirewallInternetServiceExtensionDisableEntryPortRange struct {
 }
 
 type FirewallInternetServiceExtensionEntry struct {
-	Dst       []FirewallInternetServiceExtensionEntryDst       `json:"dst,omitempty"`
-	Id        *int64                                           `json:"id,omitempty"`
-	PortRange []FirewallInternetServiceExtensionEntryPortRange `json:"port-range,omitempty"`
-	Protocol  *int64                                           `json:"protocol,omitempty"`
+	Dst       *[]FirewallInternetServiceExtensionEntryDst       `json:"dst,omitempty"`
+	Id        *int64                                            `json:"id,omitempty"`
+	PortRange *[]FirewallInternetServiceExtensionEntryPortRange `json:"port-range,omitempty"`
+	Protocol  *int64                                            `json:"protocol,omitempty"`
 }
 
 type FirewallInternetServiceExtensionEntryDst struct {

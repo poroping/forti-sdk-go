@@ -3,7 +3,7 @@ package models
 const RouterBfdPath = "router/bfd/"
 
 type RouterBfd struct {
-	Neighbor []RouterBfdNeighbor `json:"neighbor,omitempty"`
+	Neighbor *[]RouterBfdNeighbor `json:"neighbor,omitempty"`
 }
 
 type RouterBfdNeighbor struct {

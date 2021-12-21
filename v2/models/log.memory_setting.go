@@ -3,5 +3,6 @@ package models
 const LogmemorySettingPath = "log.memory/setting/"
 
 type LogmemorySetting struct {
-	Status *string `json:"status,omitempty"`
+	Diskfull *string `json:"diskfull,omitempty"`
+	Status   *string `json:"status,omitempty"`
 }

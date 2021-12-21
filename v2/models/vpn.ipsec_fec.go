@@ -3,8 +3,8 @@ package models
 const VpnipsecFecPath = "vpn.ipsec/fec/"
 
 type VpnipsecFec struct {
-	Mappings []VpnipsecFecMappings `json:"mappings,omitempty"`
-	Name     *string               `json:"name,omitempty"`
+	Mappings *[]VpnipsecFecMappings `json:"mappings,omitempty"`
+	Name     *string                `json:"name,omitempty"`
 }
 
 type VpnipsecFecMappings struct {

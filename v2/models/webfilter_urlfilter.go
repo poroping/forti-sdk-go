@@ -3,12 +3,12 @@ package models
 const WebfilterUrlfilterPath = "webfilter/urlfilter/"
 
 type WebfilterUrlfilter struct {
-	Comment            *string                     `json:"comment,omitempty"`
-	Entries            []WebfilterUrlfilterEntries `json:"entries,omitempty"`
-	Fosid              *int64                      `json:"fosid,omitempty"`
-	IpAddrBlock        *string                     `json:"ip-addr-block,omitempty"`
-	Name               *string                     `json:"name,omitempty"`
-	OneArmIpsUrlfilter *string                     `json:"one-arm-ips-urlfilter,omitempty"`
+	Comment            *string                      `json:"comment,omitempty"`
+	Entries            *[]WebfilterUrlfilterEntries `json:"entries,omitempty"`
+	Fosid              *int64                       `json:"fosid,omitempty"`
+	IpAddrBlock        *string                      `json:"ip-addr-block,omitempty"`
+	Name               *string                      `json:"name,omitempty"`
+	OneArmIpsUrlfilter *string                      `json:"one-arm-ips-urlfilter,omitempty"`
 }
 
 type WebfilterUrlfilterEntries struct {

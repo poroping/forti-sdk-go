@@ -3,9 +3,9 @@ package models
 const RouterPrefixList6Path = "router/prefix-list6/"
 
 type RouterPrefixList6 struct {
-	Comments *string                 `json:"comments,omitempty"`
-	Name     *string                 `json:"name,omitempty"`
-	Rule     []RouterPrefixList6Rule `json:"rule,omitempty"`
+	Comments *string                  `json:"comments,omitempty"`
+	Name     *string                  `json:"name,omitempty"`
+	Rule     *[]RouterPrefixList6Rule `json:"rule,omitempty"`
 }
 
 type RouterPrefixList6Rule struct {

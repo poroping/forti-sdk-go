@@ -3,46 +3,48 @@ package models
 const FirewallShapingPolicyPath = "firewall/shaping-policy/"
 
 type FirewallShapingPolicy struct {
-	AppCategory                   []FirewallShapingPolicyAppCategory                   `json:"app-category,omitempty"`
-	AppGroup                      []FirewallShapingPolicyAppGroup                      `json:"app-group,omitempty"`
-	Application                   []FirewallShapingPolicyApplication                   `json:"application,omitempty"`
-	ClassId                       *int64                                               `json:"class-id,omitempty"`
-	Comment                       *string                                              `json:"comment,omitempty"`
-	DiffservForward               *string                                              `json:"diffserv-forward,omitempty"`
-	DiffservReverse               *string                                              `json:"diffserv-reverse,omitempty"`
-	DiffservcodeForward           *string                                              `json:"diffservcode-forward,omitempty"`
-	DiffservcodeRev               *string                                              `json:"diffservcode-rev,omitempty"`
-	Dstaddr                       []FirewallShapingPolicyDstaddr                       `json:"dstaddr,omitempty"`
-	Dstaddr6                      []FirewallShapingPolicyDstaddr6                      `json:"dstaddr6,omitempty"`
-	Dstintf                       []FirewallShapingPolicyDstintf                       `json:"dstintf,omitempty"`
-	Groups                        []FirewallShapingPolicyGroups                        `json:"groups,omitempty"`
-	Fosid                         *int64                                               `json:"fosid,omitempty"`
-	InternetService               *string                                              `json:"internet-service,omitempty"`
-	InternetServiceCustom         []FirewallShapingPolicyInternetServiceCustom         `json:"internet-service-custom,omitempty"`
-	InternetServiceCustomGroup    []FirewallShapingPolicyInternetServiceCustomGroup    `json:"internet-service-custom-group,omitempty"`
-	InternetServiceGroup          []FirewallShapingPolicyInternetServiceGroup          `json:"internet-service-group,omitempty"`
-	InternetServiceName           []FirewallShapingPolicyInternetServiceName           `json:"internet-service-name,omitempty"`
-	InternetServiceSrc            *string                                              `json:"internet-service-src,omitempty"`
-	InternetServiceSrcCustom      []FirewallShapingPolicyInternetServiceSrcCustom      `json:"internet-service-src-custom,omitempty"`
-	InternetServiceSrcCustomGroup []FirewallShapingPolicyInternetServiceSrcCustomGroup `json:"internet-service-src-custom-group,omitempty"`
-	InternetServiceSrcGroup       []FirewallShapingPolicyInternetServiceSrcGroup       `json:"internet-service-src-group,omitempty"`
-	InternetServiceSrcName        []FirewallShapingPolicyInternetServiceSrcName        `json:"internet-service-src-name,omitempty"`
-	IpVersion                     *string                                              `json:"ip-version,omitempty"`
-	Name                          *string                                              `json:"name,omitempty"`
-	PerIpShaper                   *string                                              `json:"per-ip-shaper,omitempty"`
-	Schedule                      *string                                              `json:"schedule,omitempty"`
-	Service                       []FirewallShapingPolicyService                       `json:"service,omitempty"`
-	Srcaddr                       []FirewallShapingPolicySrcaddr                       `json:"srcaddr,omitempty"`
-	Srcaddr6                      []FirewallShapingPolicySrcaddr6                      `json:"srcaddr6,omitempty"`
-	Srcintf                       []FirewallShapingPolicySrcintf                       `json:"srcintf,omitempty"`
-	Status                        *string                                              `json:"status,omitempty"`
-	Tos                           *string                                              `json:"tos,omitempty"`
-	TosMask                       *string                                              `json:"tos-mask,omitempty"`
-	TosNegate                     *string                                              `json:"tos-negate,omitempty"`
-	TrafficShaper                 *string                                              `json:"traffic-shaper,omitempty"`
-	TrafficShaperReverse          *string                                              `json:"traffic-shaper-reverse,omitempty"`
-	UrlCategory                   []FirewallShapingPolicyUrlCategory                   `json:"url-category,omitempty"`
-	Users                         []FirewallShapingPolicyUsers                         `json:"users,omitempty"`
+	AppCategory                   *[]FirewallShapingPolicyAppCategory                   `json:"app-category,omitempty"`
+	AppGroup                      *[]FirewallShapingPolicyAppGroup                      `json:"app-group,omitempty"`
+	Application                   *[]FirewallShapingPolicyApplication                   `json:"application,omitempty"`
+	ClassId                       *int64                                                `json:"class-id,omitempty"`
+	Comment                       *string                                               `json:"comment,omitempty"`
+	DiffservForward               *string                                               `json:"diffserv-forward,omitempty"`
+	DiffservReverse               *string                                               `json:"diffserv-reverse,omitempty"`
+	DiffservcodeForward           *string                                               `json:"diffservcode-forward,omitempty"`
+	DiffservcodeRev               *string                                               `json:"diffservcode-rev,omitempty"`
+	Dstaddr                       *[]FirewallShapingPolicyDstaddr                       `json:"dstaddr,omitempty"`
+	Dstaddr6                      *[]FirewallShapingPolicyDstaddr6                      `json:"dstaddr6,omitempty"`
+	Dstintf                       *[]FirewallShapingPolicyDstintf                       `json:"dstintf,omitempty"`
+	Groups                        *[]FirewallShapingPolicyGroups                        `json:"groups,omitempty"`
+	Fosid                         *int64                                                `json:"fosid,omitempty"`
+	InternetService               *string                                               `json:"internet-service,omitempty"`
+	InternetServiceCustom         *[]FirewallShapingPolicyInternetServiceCustom         `json:"internet-service-custom,omitempty"`
+	InternetServiceCustomGroup    *[]FirewallShapingPolicyInternetServiceCustomGroup    `json:"internet-service-custom-group,omitempty"`
+	InternetServiceGroup          *[]FirewallShapingPolicyInternetServiceGroup          `json:"internet-service-group,omitempty"`
+	InternetServiceId             *[]FirewallShapingPolicyInternetServiceId             `json:"internet-service-id,omitempty"`
+	InternetServiceName           *[]FirewallShapingPolicyInternetServiceName           `json:"internet-service-name,omitempty"`
+	InternetServiceSrc            *string                                               `json:"internet-service-src,omitempty"`
+	InternetServiceSrcCustom      *[]FirewallShapingPolicyInternetServiceSrcCustom      `json:"internet-service-src-custom,omitempty"`
+	InternetServiceSrcCustomGroup *[]FirewallShapingPolicyInternetServiceSrcCustomGroup `json:"internet-service-src-custom-group,omitempty"`
+	InternetServiceSrcGroup       *[]FirewallShapingPolicyInternetServiceSrcGroup       `json:"internet-service-src-group,omitempty"`
+	InternetServiceSrcId          *[]FirewallShapingPolicyInternetServiceSrcId          `json:"internet-service-src-id,omitempty"`
+	InternetServiceSrcName        *[]FirewallShapingPolicyInternetServiceSrcName        `json:"internet-service-src-name,omitempty"`
+	IpVersion                     *string                                               `json:"ip-version,omitempty"`
+	Name                          *string                                               `json:"name,omitempty"`
+	PerIpShaper                   *string                                               `json:"per-ip-shaper,omitempty"`
+	Schedule                      *string                                               `json:"schedule,omitempty"`
+	Service                       *[]FirewallShapingPolicyService                       `json:"service,omitempty"`
+	Srcaddr                       *[]FirewallShapingPolicySrcaddr                       `json:"srcaddr,omitempty"`
+	Srcaddr6                      *[]FirewallShapingPolicySrcaddr6                      `json:"srcaddr6,omitempty"`
+	Srcintf                       *[]FirewallShapingPolicySrcintf                       `json:"srcintf,omitempty"`
+	Status                        *string                                               `json:"status,omitempty"`
+	Tos                           *string                                               `json:"tos,omitempty"`
+	TosMask                       *string                                               `json:"tos-mask,omitempty"`
+	TosNegate                     *string                                               `json:"tos-negate,omitempty"`
+	TrafficShaper                 *string                                               `json:"traffic-shaper,omitempty"`
+	TrafficShaperReverse          *string                                               `json:"traffic-shaper-reverse,omitempty"`
+	UrlCategory                   *[]FirewallShapingPolicyUrlCategory                   `json:"url-category,omitempty"`
+	Users                         *[]FirewallShapingPolicyUsers                         `json:"users,omitempty"`
 }
 
 type FirewallShapingPolicyAppCategory struct {
@@ -85,6 +87,10 @@ type FirewallShapingPolicyInternetServiceGroup struct {
 	Name *string `json:"name,omitempty"`
 }
 
+type FirewallShapingPolicyInternetServiceId struct {
+	Id *int64 `json:"id,omitempty"`
+}
+
 type FirewallShapingPolicyInternetServiceName struct {
 	Name *string `json:"name,omitempty"`
 }
@@ -99,6 +105,10 @@ type FirewallShapingPolicyInternetServiceSrcCustomGroup struct {
 
 type FirewallShapingPolicyInternetServiceSrcGroup struct {
 	Name *string `json:"name,omitempty"`
+}
+
+type FirewallShapingPolicyInternetServiceSrcId struct {
+	Id *int64 `json:"id,omitempty"`
 }
 
 type FirewallShapingPolicyInternetServiceSrcName struct {

@@ -3,9 +3,9 @@ package models
 const RouterAccessList6Path = "router/access-list6/"
 
 type RouterAccessList6 struct {
-	Comments *string                 `json:"comments,omitempty"`
-	Name     *string                 `json:"name,omitempty"`
-	Rule     []RouterAccessList6Rule `json:"rule,omitempty"`
+	Comments *string                  `json:"comments,omitempty"`
+	Name     *string                  `json:"name,omitempty"`
+	Rule     *[]RouterAccessList6Rule `json:"rule,omitempty"`
 }
 
 type RouterAccessList6Rule struct {

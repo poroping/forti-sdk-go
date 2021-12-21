@@ -3,21 +3,21 @@ package models
 const RouterRipngPath = "router/ripng/"
 
 type RouterRipng struct {
-	AggregateAddress            []RouterRipngAggregateAddress `json:"aggregate-address,omitempty"`
-	DefaultInformationOriginate *string                       `json:"default-information-originate,omitempty"`
-	DefaultMetric               *int64                        `json:"default-metric,omitempty"`
-	Distance                    []RouterRipngDistance         `json:"distance,omitempty"`
-	DistributeList              []RouterRipngDistributeList   `json:"distribute-list,omitempty"`
-	GarbageTimer                *int64                        `json:"garbage-timer,omitempty"`
-	Interface                   []RouterRipngInterface        `json:"interface,omitempty"`
-	MaxOutMetric                *int64                        `json:"max-out-metric,omitempty"`
-	Neighbor                    []RouterRipngNeighbor         `json:"neighbor,omitempty"`
-	Network                     []RouterRipngNetwork          `json:"network,omitempty"`
-	OffsetList                  []RouterRipngOffsetList       `json:"offset-list,omitempty"`
-	PassiveInterface            []RouterRipngPassiveInterface `json:"passive-interface,omitempty"`
-	Redistribute                []RouterRipngRedistribute     `json:"redistribute,omitempty"`
-	TimeoutTimer                *int64                        `json:"timeout-timer,omitempty"`
-	UpdateTimer                 *int64                        `json:"update-timer,omitempty"`
+	AggregateAddress            *[]RouterRipngAggregateAddress `json:"aggregate-address,omitempty"`
+	DefaultInformationOriginate *string                        `json:"default-information-originate,omitempty"`
+	DefaultMetric               *int64                         `json:"default-metric,omitempty"`
+	Distance                    *[]RouterRipngDistance         `json:"distance,omitempty"`
+	DistributeList              *[]RouterRipngDistributeList   `json:"distribute-list,omitempty"`
+	GarbageTimer                *int64                         `json:"garbage-timer,omitempty"`
+	Interface                   *[]RouterRipngInterface        `json:"interface,omitempty"`
+	MaxOutMetric                *int64                         `json:"max-out-metric,omitempty"`
+	Neighbor                    *[]RouterRipngNeighbor         `json:"neighbor,omitempty"`
+	Network                     *[]RouterRipngNetwork          `json:"network,omitempty"`
+	OffsetList                  *[]RouterRipngOffsetList       `json:"offset-list,omitempty"`
+	PassiveInterface            *[]RouterRipngPassiveInterface `json:"passive-interface,omitempty"`
+	Redistribute                *[]RouterRipngRedistribute     `json:"redistribute,omitempty"`
+	TimeoutTimer                *int64                         `json:"timeout-timer,omitempty"`
+	UpdateTimer                 *int64                         `json:"update-timer,omitempty"`
 }
 
 type RouterRipngAggregateAddress struct {

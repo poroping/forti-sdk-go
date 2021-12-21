@@ -3,14 +3,14 @@ package models
 const SystemVxlanPath = "system/vxlan/"
 
 type SystemVxlan struct {
-	Dstport      *int64                 `json:"dstport,omitempty"`
-	Interface    *string                `json:"interface,omitempty"`
-	IpVersion    *string                `json:"ip-version,omitempty"`
-	MulticastTtl *int64                 `json:"multicast-ttl,omitempty"`
-	Name         *string                `json:"name,omitempty"`
-	RemoteIp     []SystemVxlanRemoteIp  `json:"remote-ip,omitempty"`
-	RemoteIp6    []SystemVxlanRemoteIp6 `json:"remote-ip6,omitempty"`
-	Vni          *int64                 `json:"vni,omitempty"`
+	Dstport      *int64                  `json:"dstport,omitempty"`
+	Interface    *string                 `json:"interface,omitempty"`
+	IpVersion    *string                 `json:"ip-version,omitempty"`
+	MulticastTtl *int64                  `json:"multicast-ttl,omitempty"`
+	Name         *string                 `json:"name,omitempty"`
+	RemoteIp     *[]SystemVxlanRemoteIp  `json:"remote-ip,omitempty"`
+	RemoteIp6    *[]SystemVxlanRemoteIp6 `json:"remote-ip6,omitempty"`
+	Vni          *int64                  `json:"vni,omitempty"`
 }
 
 type SystemVxlanRemoteIp struct {

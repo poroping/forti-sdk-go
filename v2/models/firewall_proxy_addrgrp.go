@@ -3,13 +3,14 @@ package models
 const FirewallProxyAddrgrpPath = "firewall/proxy-addrgrp/"
 
 type FirewallProxyAddrgrp struct {
-	Color   *int64                        `json:"color,omitempty"`
-	Comment *string                       `json:"comment,omitempty"`
-	Member  []FirewallProxyAddrgrpMember  `json:"member,omitempty"`
-	Name    *string                       `json:"name,omitempty"`
-	Tagging []FirewallProxyAddrgrpTagging `json:"tagging,omitempty"`
-	Type    *string                       `json:"type,omitempty"`
-	Uuid    *string                       `json:"uuid,omitempty"`
+	Color      *int64                         `json:"color,omitempty"`
+	Comment    *string                        `json:"comment,omitempty"`
+	Member     *[]FirewallProxyAddrgrpMember  `json:"member,omitempty"`
+	Name       *string                        `json:"name,omitempty"`
+	Tagging    *[]FirewallProxyAddrgrpTagging `json:"tagging,omitempty"`
+	Type       *string                        `json:"type,omitempty"`
+	Uuid       *string                        `json:"uuid,omitempty"`
+	Visibility *string                        `json:"visibility,omitempty"`
 }
 
 type FirewallProxyAddrgrpMember struct {
@@ -17,9 +18,9 @@ type FirewallProxyAddrgrpMember struct {
 }
 
 type FirewallProxyAddrgrpTagging struct {
-	Category *string                           `json:"category,omitempty"`
-	Name     *string                           `json:"name,omitempty"`
-	Tags     []FirewallProxyAddrgrpTaggingTags `json:"tags,omitempty"`
+	Category *string                            `json:"category,omitempty"`
+	Name     *string                            `json:"name,omitempty"`
+	Tags     *[]FirewallProxyAddrgrpTaggingTags `json:"tags,omitempty"`
 }
 
 type FirewallProxyAddrgrpTaggingTags struct {

@@ -3,37 +3,41 @@ package models
 const AntivirusProfilePath = "antivirus/profile/"
 
 type AntivirusProfile struct {
-	AnalyticsAcceptFiletype       *int64                              `json:"analytics-accept-filetype,omitempty"`
-	AnalyticsDb                   *string                             `json:"analytics-db,omitempty"`
-	AnalyticsIgnoreFiletype       *int64                              `json:"analytics-ignore-filetype,omitempty"`
-	AnalyticsMaxUpload            *int64                              `json:"analytics-max-upload,omitempty"`
-	AvBlockLog                    *string                             `json:"av-block-log,omitempty"`
-	AvVirusLog                    *string                             `json:"av-virus-log,omitempty"`
-	Cifs                          []AntivirusProfileCifs              `json:"cifs,omitempty"`
-	Comment                       *string                             `json:"comment,omitempty"`
-	ContentDisarm                 []AntivirusProfileContentDisarm     `json:"content-disarm,omitempty"`
-	EmsThreatFeed                 *string                             `json:"ems-threat-feed,omitempty"`
-	ExtendedLog                   *string                             `json:"extended-log,omitempty"`
-	ExternalBlocklist             []AntivirusProfileExternalBlocklist `json:"external-blocklist,omitempty"`
-	ExternalBlocklistEnableAll    *string                             `json:"external-blocklist-enable-all,omitempty"`
-	FeatureSet                    *string                             `json:"feature-set,omitempty"`
-	FortiaiErrorAction            *string                             `json:"fortiai-error-action,omitempty"`
-	FortiaiTimeoutAction          *string                             `json:"fortiai-timeout-action,omitempty"`
-	FtgdAnalytics                 *string                             `json:"ftgd-analytics,omitempty"`
-	Ftp                           []AntivirusProfileFtp               `json:"ftp,omitempty"`
-	Http                          []AntivirusProfileHttp              `json:"http,omitempty"`
-	Imap                          []AntivirusProfileImap              `json:"imap,omitempty"`
-	Mapi                          []AntivirusProfileMapi              `json:"mapi,omitempty"`
-	MobileMalwareDb               *string                             `json:"mobile-malware-db,omitempty"`
-	NacQuar                       []AntivirusProfileNacQuar           `json:"nac-quar,omitempty"`
-	Name                          *string                             `json:"name,omitempty"`
-	Nntp                          []AntivirusProfileNntp              `json:"nntp,omitempty"`
-	OutbreakPreventionArchiveScan *string                             `json:"outbreak-prevention-archive-scan,omitempty"`
-	Pop3                          []AntivirusProfilePop3              `json:"pop3,omitempty"`
-	ReplacemsgGroup               *string                             `json:"replacemsg-group,omitempty"`
-	ScanMode                      *string                             `json:"scan-mode,omitempty"`
-	Smtp                          []AntivirusProfileSmtp              `json:"smtp,omitempty"`
-	Ssh                           []AntivirusProfileSsh               `json:"ssh,omitempty"`
+	AnalyticsAcceptFiletype       *int64                                `json:"analytics-accept-filetype,omitempty"`
+	AnalyticsBlFiletype           *int64                                `json:"analytics-bl-filetype,omitempty"`
+	AnalyticsDb                   *string                               `json:"analytics-db,omitempty"`
+	AnalyticsIgnoreFiletype       *int64                                `json:"analytics-ignore-filetype,omitempty"`
+	AnalyticsMaxUpload            *int64                                `json:"analytics-max-upload,omitempty"`
+	AnalyticsWlFiletype           *int64                                `json:"analytics-wl-filetype,omitempty"`
+	AvBlockLog                    *string                               `json:"av-block-log,omitempty"`
+	AvVirusLog                    *string                               `json:"av-virus-log,omitempty"`
+	Cifs                          *[]AntivirusProfileCifs               `json:"cifs,omitempty"`
+	Comment                       *string                               `json:"comment,omitempty"`
+	ContentDisarm                 *[]AntivirusProfileContentDisarm      `json:"content-disarm,omitempty"`
+	EmsThreatFeed                 *string                               `json:"ems-threat-feed,omitempty"`
+	ExtendedLog                   *string                               `json:"extended-log,omitempty"`
+	ExternalBlocklist             *[]AntivirusProfileExternalBlocklist  `json:"external-blocklist,omitempty"`
+	ExternalBlocklistArchiveScan  *string                               `json:"external-blocklist-archive-scan,omitempty"`
+	ExternalBlocklistEnableAll    *string                               `json:"external-blocklist-enable-all,omitempty"`
+	FeatureSet                    *string                               `json:"feature-set,omitempty"`
+	FortiaiErrorAction            *string                               `json:"fortiai-error-action,omitempty"`
+	FortiaiTimeoutAction          *string                               `json:"fortiai-timeout-action,omitempty"`
+	FtgdAnalytics                 *string                               `json:"ftgd-analytics,omitempty"`
+	Ftp                           *[]AntivirusProfileFtp                `json:"ftp,omitempty"`
+	Http                          *[]AntivirusProfileHttp               `json:"http,omitempty"`
+	Imap                          *[]AntivirusProfileImap               `json:"imap,omitempty"`
+	Mapi                          *[]AntivirusProfileMapi               `json:"mapi,omitempty"`
+	MobileMalwareDb               *string                               `json:"mobile-malware-db,omitempty"`
+	NacQuar                       *[]AntivirusProfileNacQuar            `json:"nac-quar,omitempty"`
+	Name                          *string                               `json:"name,omitempty"`
+	Nntp                          *[]AntivirusProfileNntp               `json:"nntp,omitempty"`
+	OutbreakPrevention            *[]AntivirusProfileOutbreakPrevention `json:"outbreak-prevention,omitempty"`
+	OutbreakPreventionArchiveScan *string                               `json:"outbreak-prevention-archive-scan,omitempty"`
+	Pop3                          *[]AntivirusProfilePop3               `json:"pop3,omitempty"`
+	ReplacemsgGroup               *string                               `json:"replacemsg-group,omitempty"`
+	ScanMode                      *string                               `json:"scan-mode,omitempty"`
+	Smtp                          *[]AntivirusProfileSmtp               `json:"smtp,omitempty"`
+	Ssh                           *[]AntivirusProfileSsh                `json:"ssh,omitempty"`
 }
 
 type AntivirusProfileCifs struct {
@@ -43,6 +47,7 @@ type AntivirusProfileCifs struct {
 	Emulator           *string `json:"emulator,omitempty"`
 	ExternalBlocklist  *string `json:"external-blocklist,omitempty"`
 	Fortiai            *string `json:"fortiai,omitempty"`
+	Options            *string `json:"options,omitempty"`
 	OutbreakPrevention *string `json:"outbreak-prevention,omitempty"`
 	Quarantine         *string `json:"quarantine,omitempty"`
 }
@@ -80,6 +85,7 @@ type AntivirusProfileFtp struct {
 	Emulator           *string `json:"emulator,omitempty"`
 	ExternalBlocklist  *string `json:"external-blocklist,omitempty"`
 	Fortiai            *string `json:"fortiai,omitempty"`
+	Options            *string `json:"options,omitempty"`
 	OutbreakPrevention *string `json:"outbreak-prevention,omitempty"`
 	Quarantine         *string `json:"quarantine,omitempty"`
 }
@@ -92,6 +98,7 @@ type AntivirusProfileHttp struct {
 	Emulator           *string `json:"emulator,omitempty"`
 	ExternalBlocklist  *string `json:"external-blocklist,omitempty"`
 	Fortiai            *string `json:"fortiai,omitempty"`
+	Options            *string `json:"options,omitempty"`
 	OutbreakPrevention *string `json:"outbreak-prevention,omitempty"`
 	Quarantine         *string `json:"quarantine,omitempty"`
 }
@@ -105,6 +112,7 @@ type AntivirusProfileImap struct {
 	Executables        *string `json:"executables,omitempty"`
 	ExternalBlocklist  *string `json:"external-blocklist,omitempty"`
 	Fortiai            *string `json:"fortiai,omitempty"`
+	Options            *string `json:"options,omitempty"`
 	OutbreakPrevention *string `json:"outbreak-prevention,omitempty"`
 	Quarantine         *string `json:"quarantine,omitempty"`
 }
@@ -117,6 +125,7 @@ type AntivirusProfileMapi struct {
 	Executables        *string `json:"executables,omitempty"`
 	ExternalBlocklist  *string `json:"external-blocklist,omitempty"`
 	Fortiai            *string `json:"fortiai,omitempty"`
+	Options            *string `json:"options,omitempty"`
 	OutbreakPrevention *string `json:"outbreak-prevention,omitempty"`
 	Quarantine         *string `json:"quarantine,omitempty"`
 }
@@ -134,8 +143,14 @@ type AntivirusProfileNntp struct {
 	Emulator           *string `json:"emulator,omitempty"`
 	ExternalBlocklist  *string `json:"external-blocklist,omitempty"`
 	Fortiai            *string `json:"fortiai,omitempty"`
+	Options            *string `json:"options,omitempty"`
 	OutbreakPrevention *string `json:"outbreak-prevention,omitempty"`
 	Quarantine         *string `json:"quarantine,omitempty"`
+}
+
+type AntivirusProfileOutbreakPrevention struct {
+	ExternalBlocklist *string `json:"external-blocklist,omitempty"`
+	FtgdService       *string `json:"ftgd-service,omitempty"`
 }
 
 type AntivirusProfilePop3 struct {
@@ -147,6 +162,7 @@ type AntivirusProfilePop3 struct {
 	Executables        *string `json:"executables,omitempty"`
 	ExternalBlocklist  *string `json:"external-blocklist,omitempty"`
 	Fortiai            *string `json:"fortiai,omitempty"`
+	Options            *string `json:"options,omitempty"`
 	OutbreakPrevention *string `json:"outbreak-prevention,omitempty"`
 	Quarantine         *string `json:"quarantine,omitempty"`
 }
@@ -160,6 +176,7 @@ type AntivirusProfileSmtp struct {
 	Executables        *string `json:"executables,omitempty"`
 	ExternalBlocklist  *string `json:"external-blocklist,omitempty"`
 	Fortiai            *string `json:"fortiai,omitempty"`
+	Options            *string `json:"options,omitempty"`
 	OutbreakPrevention *string `json:"outbreak-prevention,omitempty"`
 	Quarantine         *string `json:"quarantine,omitempty"`
 }
@@ -171,6 +188,7 @@ type AntivirusProfileSsh struct {
 	Emulator           *string `json:"emulator,omitempty"`
 	ExternalBlocklist  *string `json:"external-blocklist,omitempty"`
 	Fortiai            *string `json:"fortiai,omitempty"`
+	Options            *string `json:"options,omitempty"`
 	OutbreakPrevention *string `json:"outbreak-prevention,omitempty"`
 	Quarantine         *string `json:"quarantine,omitempty"`
 }

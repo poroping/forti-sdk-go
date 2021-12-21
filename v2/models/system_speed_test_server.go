@@ -3,9 +3,9 @@ package models
 const SystemSpeedTestServerPath = "system/speed-test-server/"
 
 type SystemSpeedTestServer struct {
-	Host      []SystemSpeedTestServerHost `json:"host,omitempty"`
-	Name      *string                     `json:"name,omitempty"`
-	Timestamp *int64                      `json:"timestamp,omitempty"`
+	Host      *[]SystemSpeedTestServerHost `json:"host,omitempty"`
+	Name      *string                      `json:"name,omitempty"`
+	Timestamp *int64                       `json:"timestamp,omitempty"`
 }
 
 type SystemSpeedTestServerHost struct {

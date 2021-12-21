@@ -3,10 +3,10 @@ package models
 const EmailfilterDnsblPath = "emailfilter/dnsbl/"
 
 type EmailfilterDnsbl struct {
-	Comment *string                   `json:"comment,omitempty"`
-	Entries []EmailfilterDnsblEntries `json:"entries,omitempty"`
-	Fosid   *int64                    `json:"fosid,omitempty"`
-	Name    *string                   `json:"name,omitempty"`
+	Comment *string                    `json:"comment,omitempty"`
+	Entries *[]EmailfilterDnsblEntries `json:"entries,omitempty"`
+	Fosid   *int64                     `json:"fosid,omitempty"`
+	Name    *string                    `json:"name,omitempty"`
 }
 
 type EmailfilterDnsblEntries struct {

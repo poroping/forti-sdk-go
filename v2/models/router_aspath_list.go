@@ -3,8 +3,8 @@ package models
 const RouterAspathListPath = "router/aspath-list/"
 
 type RouterAspathList struct {
-	Name *string                `json:"name,omitempty"`
-	Rule []RouterAspathListRule `json:"rule,omitempty"`
+	Name *string                 `json:"name,omitempty"`
+	Rule *[]RouterAspathListRule `json:"rule,omitempty"`
 }
 
 type RouterAspathListRule struct {

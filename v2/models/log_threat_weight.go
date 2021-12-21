@@ -3,17 +3,17 @@ package models
 const LogThreatWeightPath = "log/threat-weight/"
 
 type LogThreatWeight struct {
-	Application              []LogThreatWeightApplication `json:"application,omitempty"`
-	BlockedConnection        *string                      `json:"blocked-connection,omitempty"`
-	BotnetConnectionDetected *string                      `json:"botnet-connection-detected,omitempty"`
-	FailedConnection         *string                      `json:"failed-connection,omitempty"`
-	Geolocation              []LogThreatWeightGeolocation `json:"geolocation,omitempty"`
-	Ips                      []LogThreatWeightIps         `json:"ips,omitempty"`
-	Level                    []LogThreatWeightLevel       `json:"level,omitempty"`
-	Malware                  []LogThreatWeightMalware     `json:"malware,omitempty"`
-	Status                   *string                      `json:"status,omitempty"`
-	UrlBlockDetected         *string                      `json:"url-block-detected,omitempty"`
-	Web                      []LogThreatWeightWeb         `json:"web,omitempty"`
+	Application              *[]LogThreatWeightApplication `json:"application,omitempty"`
+	BlockedConnection        *string                       `json:"blocked-connection,omitempty"`
+	BotnetConnectionDetected *string                       `json:"botnet-connection-detected,omitempty"`
+	FailedConnection         *string                       `json:"failed-connection,omitempty"`
+	Geolocation              *[]LogThreatWeightGeolocation `json:"geolocation,omitempty"`
+	Ips                      *[]LogThreatWeightIps         `json:"ips,omitempty"`
+	Level                    *[]LogThreatWeightLevel       `json:"level,omitempty"`
+	Malware                  *[]LogThreatWeightMalware     `json:"malware,omitempty"`
+	Status                   *string                       `json:"status,omitempty"`
+	UrlBlockDetected         *string                       `json:"url-block-detected,omitempty"`
+	Web                      *[]LogThreatWeightWeb         `json:"web,omitempty"`
 }
 
 type LogThreatWeightApplication struct {

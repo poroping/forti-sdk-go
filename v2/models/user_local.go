@@ -26,6 +26,7 @@ type UserLocal struct {
 	TwoFactorAuthentication *string `json:"two-factor-authentication,omitempty"`
 	TwoFactorNotification   *string `json:"two-factor-notification,omitempty"`
 	Type                    *string `json:"type,omitempty"`
+	UsernameCaseSensitivity *string `json:"username-case-sensitivity,omitempty"`
 	UsernameSensitivity     *string `json:"username-sensitivity,omitempty"`
 	Workstation             *string `json:"workstation,omitempty"`
 }

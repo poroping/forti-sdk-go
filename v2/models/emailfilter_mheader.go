@@ -3,10 +3,10 @@ package models
 const EmailfilterMheaderPath = "emailfilter/mheader/"
 
 type EmailfilterMheader struct {
-	Comment *string                     `json:"comment,omitempty"`
-	Entries []EmailfilterMheaderEntries `json:"entries,omitempty"`
-	Fosid   *int64                      `json:"fosid,omitempty"`
-	Name    *string                     `json:"name,omitempty"`
+	Comment *string                      `json:"comment,omitempty"`
+	Entries *[]EmailfilterMheaderEntries `json:"entries,omitempty"`
+	Fosid   *int64                       `json:"fosid,omitempty"`
+	Name    *string                      `json:"name,omitempty"`
 }
 
 type EmailfilterMheaderEntries struct {

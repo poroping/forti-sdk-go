@@ -3,10 +3,10 @@ package models
 const WirelessControllerAccessControlListPath = "wireless-controller/access-control-list/"
 
 type WirelessControllerAccessControlList struct {
-	Comment         *string                                              `json:"comment,omitempty"`
-	Layer3Ipv4Rules []WirelessControllerAccessControlListLayer3Ipv4Rules `json:"layer3-ipv4-rules,omitempty"`
-	Layer3Ipv6Rules []WirelessControllerAccessControlListLayer3Ipv6Rules `json:"layer3-ipv6-rules,omitempty"`
-	Name            *string                                              `json:"name,omitempty"`
+	Comment         *string                                               `json:"comment,omitempty"`
+	Layer3Ipv4Rules *[]WirelessControllerAccessControlListLayer3Ipv4Rules `json:"layer3-ipv4-rules,omitempty"`
+	Layer3Ipv6Rules *[]WirelessControllerAccessControlListLayer3Ipv6Rules `json:"layer3-ipv6-rules,omitempty"`
+	Name            *string                                               `json:"name,omitempty"`
 }
 
 type WirelessControllerAccessControlListLayer3Ipv4Rules struct {

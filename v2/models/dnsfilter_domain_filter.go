@@ -3,10 +3,10 @@ package models
 const DnsfilterDomainFilterPath = "dnsfilter/domain-filter/"
 
 type DnsfilterDomainFilter struct {
-	Comment *string                        `json:"comment,omitempty"`
-	Entries []DnsfilterDomainFilterEntries `json:"entries,omitempty"`
-	Fosid   *int64                         `json:"fosid,omitempty"`
-	Name    *string                        `json:"name,omitempty"`
+	Comment *string                         `json:"comment,omitempty"`
+	Entries *[]DnsfilterDomainFilterEntries `json:"entries,omitempty"`
+	Fosid   *int64                          `json:"fosid,omitempty"`
+	Name    *string                         `json:"name,omitempty"`
 }
 
 type DnsfilterDomainFilterEntries struct {

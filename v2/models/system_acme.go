@@ -3,8 +3,8 @@ package models
 const SystemAcmePath = "system/acme/"
 
 type SystemAcme struct {
-	Accounts  []SystemAcmeAccounts  `json:"accounts,omitempty"`
-	Interface []SystemAcmeInterface `json:"interface,omitempty"`
+	Accounts  *[]SystemAcmeAccounts  `json:"accounts,omitempty"`
+	Interface *[]SystemAcmeInterface `json:"interface,omitempty"`
 }
 
 type SystemAcmeAccounts struct {

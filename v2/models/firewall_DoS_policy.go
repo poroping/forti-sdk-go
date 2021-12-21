@@ -3,15 +3,15 @@ package models
 const FirewallDoSPolicyPath = "firewall/DoS-policy/"
 
 type FirewallDoSPolicy struct {
-	Anomaly   []FirewallDoSPolicyAnomaly `json:"anomaly,omitempty"`
-	Comments  *string                    `json:"comments,omitempty"`
-	Dstaddr   []FirewallDoSPolicyDstaddr `json:"dstaddr,omitempty"`
-	Interface *string                    `json:"interface,omitempty"`
-	Name      *string                    `json:"name,omitempty"`
-	Policyid  *int64                     `json:"policyid,omitempty"`
-	Service   []FirewallDoSPolicyService `json:"service,omitempty"`
-	Srcaddr   []FirewallDoSPolicySrcaddr `json:"srcaddr,omitempty"`
-	Status    *string                    `json:"status,omitempty"`
+	Anomaly   *[]FirewallDoSPolicyAnomaly `json:"anomaly,omitempty"`
+	Comments  *string                     `json:"comments,omitempty"`
+	Dstaddr   *[]FirewallDoSPolicyDstaddr `json:"dstaddr,omitempty"`
+	Interface *string                     `json:"interface,omitempty"`
+	Name      *string                     `json:"name,omitempty"`
+	Policyid  *int64                      `json:"policyid,omitempty"`
+	Service   *[]FirewallDoSPolicyService `json:"service,omitempty"`
+	Srcaddr   *[]FirewallDoSPolicySrcaddr `json:"srcaddr,omitempty"`
+	Status    *string                     `json:"status,omitempty"`
 }
 
 type FirewallDoSPolicyAnomaly struct {

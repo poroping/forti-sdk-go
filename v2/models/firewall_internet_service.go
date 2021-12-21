@@ -12,5 +12,7 @@ type FirewallInternetService struct {
 	IpRangeNumber      *int64  `json:"ip-range-number,omitempty"`
 	Name               *string `json:"name,omitempty"`
 	Obsolete           *int64  `json:"obsolete,omitempty"`
+	Reputation         *int64  `json:"reputation,omitempty"`
 	Singularity        *int64  `json:"singularity,omitempty"`
+	SldId              *int64  `json:"sld-id,omitempty"`
 }

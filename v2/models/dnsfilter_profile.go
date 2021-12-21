@@ -3,21 +3,21 @@ package models
 const DnsfilterProfilePath = "dnsfilter/profile/"
 
 type DnsfilterProfile struct {
-	BlockAction         *string                               `json:"block-action,omitempty"`
-	BlockBotnet         *string                               `json:"block-botnet,omitempty"`
-	Comment             *string                               `json:"comment,omitempty"`
-	DnsTranslation      []DnsfilterProfileDnsTranslation      `json:"dns-translation,omitempty"`
-	DomainFilter        []DnsfilterProfileDomainFilter        `json:"domain-filter,omitempty"`
-	ExternalIpBlocklist []DnsfilterProfileExternalIpBlocklist `json:"external-ip-blocklist,omitempty"`
-	FtgdDns             []DnsfilterProfileFtgdDns             `json:"ftgd-dns,omitempty"`
-	LogAllDomain        *string                               `json:"log-all-domain,omitempty"`
-	Name                *string                               `json:"name,omitempty"`
-	RedirectPortal      *string                               `json:"redirect-portal,omitempty"`
-	RedirectPortal6     *string                               `json:"redirect-portal6,omitempty"`
-	SafeSearch          *string                               `json:"safe-search,omitempty"`
-	SdnsDomainLog       *string                               `json:"sdns-domain-log,omitempty"`
-	SdnsFtgdErrLog      *string                               `json:"sdns-ftgd-err-log,omitempty"`
-	YoutubeRestrict     *string                               `json:"youtube-restrict,omitempty"`
+	BlockAction         *string                                `json:"block-action,omitempty"`
+	BlockBotnet         *string                                `json:"block-botnet,omitempty"`
+	Comment             *string                                `json:"comment,omitempty"`
+	DnsTranslation      *[]DnsfilterProfileDnsTranslation      `json:"dns-translation,omitempty"`
+	DomainFilter        *[]DnsfilterProfileDomainFilter        `json:"domain-filter,omitempty"`
+	ExternalIpBlocklist *[]DnsfilterProfileExternalIpBlocklist `json:"external-ip-blocklist,omitempty"`
+	FtgdDns             *[]DnsfilterProfileFtgdDns             `json:"ftgd-dns,omitempty"`
+	LogAllDomain        *string                                `json:"log-all-domain,omitempty"`
+	Name                *string                                `json:"name,omitempty"`
+	RedirectPortal      *string                                `json:"redirect-portal,omitempty"`
+	RedirectPortal6     *string                                `json:"redirect-portal6,omitempty"`
+	SafeSearch          *string                                `json:"safe-search,omitempty"`
+	SdnsDomainLog       *string                                `json:"sdns-domain-log,omitempty"`
+	SdnsFtgdErrLog      *string                                `json:"sdns-ftgd-err-log,omitempty"`
+	YoutubeRestrict     *string                                `json:"youtube-restrict,omitempty"`
 }
 
 type DnsfilterProfileDnsTranslation struct {
@@ -41,8 +41,8 @@ type DnsfilterProfileExternalIpBlocklist struct {
 }
 
 type DnsfilterProfileFtgdDns struct {
-	Filters []DnsfilterProfileFtgdDnsFilters `json:"filters,omitempty"`
-	Options *string                          `json:"options,omitempty"`
+	Filters *[]DnsfilterProfileFtgdDnsFilters `json:"filters,omitempty"`
+	Options *string                           `json:"options,omitempty"`
 }
 
 type DnsfilterProfileFtgdDnsFilters struct {

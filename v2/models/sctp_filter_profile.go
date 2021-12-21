@@ -3,9 +3,9 @@ package models
 const SctpFilterProfilePath = "sctp-filter/profile/"
 
 type SctpFilterProfile struct {
-	Comment     *string                        `json:"comment,omitempty"`
-	Name        *string                        `json:"name,omitempty"`
-	PpidFilters []SctpFilterProfilePpidFilters `json:"ppid-filters,omitempty"`
+	Comment     *string                         `json:"comment,omitempty"`
+	Name        *string                         `json:"name,omitempty"`
+	PpidFilters *[]SctpFilterProfilePpidFilters `json:"ppid-filters,omitempty"`
 }
 
 type SctpFilterProfilePpidFilters struct {

@@ -3,8 +3,8 @@ package models
 const RouterKeyChainPath = "router/key-chain/"
 
 type RouterKeyChain struct {
-	Key  []RouterKeyChainKey `json:"key,omitempty"`
-	Name *string             `json:"name,omitempty"`
+	Key  *[]RouterKeyChainKey `json:"key,omitempty"`
+	Name *string              `json:"name,omitempty"`
 }
 
 type RouterKeyChainKey struct {

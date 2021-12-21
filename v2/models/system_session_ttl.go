@@ -3,8 +3,8 @@ package models
 const SystemSessionTtlPath = "system/session-ttl/"
 
 type SystemSessionTtl struct {
-	Default *string                `json:"default,omitempty"`
-	Port    []SystemSessionTtlPort `json:"port,omitempty"`
+	Default *string                 `json:"default,omitempty"`
+	Port    *[]SystemSessionTtlPort `json:"port,omitempty"`
 }
 
 type SystemSessionTtlPort struct {
