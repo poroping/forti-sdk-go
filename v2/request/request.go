@@ -14,8 +14,8 @@ import (
 	"github.com/poroping/forti-sdk-go/v2/models"
 )
 
-func CreateUpdate(c config.Config, r *models.CmdbRequest) (*models.CmdbResponse, error) {
-	req, err := newRequest(c, r)
+func CreateUpdate(c *config.Config, r *models.CmdbRequest) (*models.CmdbResponse, error) {
+	req, err := newRequest(*c, r)
 	if err != nil {
 		return nil, err
 	}
@@ -65,8 +65,8 @@ func CreateUpdate(c config.Config, r *models.CmdbRequest) (*models.CmdbResponse,
 	return response, err
 }
 
-func Read(c config.Config, r *models.CmdbRequest) (*models.CmdbResponse, error) {
-	req, err := newRequest(c, r)
+func Read(c *config.Config, r *models.CmdbRequest) (*models.CmdbResponse, error) {
+	req, err := newRequest(*c, r)
 	if err != nil {
 		return nil, err
 	}
@@ -101,8 +101,8 @@ func Read(c config.Config, r *models.CmdbRequest) (*models.CmdbResponse, error) 
 	return response, err
 }
 
-func Delete(c config.Config, r *models.CmdbRequest) (err error) {
-	req, err := newRequest(c, r)
+func Delete(c *config.Config, r *models.CmdbRequest) (err error) {
+	req, err := newRequest(*c, r)
 	if err != nil {
 		return err
 	}
@@ -130,14 +130,29 @@ func Delete(c config.Config, r *models.CmdbRequest) (err error) {
 
 	err = fortiErrorCheck(body, &response)
 	if err != nil {
-		if res.StatusCode == 404 {
-			log.Printf("[WARN] Resource not found")
-			return nil
-		}
+		// if res.StatusCode == 404 {
+		// 	log.Printf("[WARN] Resource not found, assumed DELETE succeeded")
+		// 	return nil
+		// }
 		return err
 	}
 
 	return nil
+}
+
+// Currently only checks for errors, don't trust false, needs work.
+func Exists(c *config.Config, r *models.CmdbRequest) bool {
+	_, err := Read(c, r)
+	return err == nil
+}
+
+// Currently only checks for errors, don't trust false, needs work.
+func ExistsWithResponse(c *config.Config, r *models.CmdbRequest) (*models.CmdbResponse, bool) {
+	resp, err := Read(c, r)
+	if err != nil {
+		return resp, false
+	}
+	return resp, true
 }
 
 func fortiErrorCheck(body []byte, res *models.CmdbResponse) (err error) {
@@ -153,7 +168,8 @@ func fortiErrorCheck(body []byte, res *models.CmdbResponse) (err error) {
 	case int64(403):
 		err = fmt.Errorf("forbidden - Request is missing CSRF token or administrator is missing access profile permissions (%d)", res.HTTPStatus)
 	case int64(404):
-		err = fmt.Errorf("resource Not Found - Unable to find the specified resource (%d)", res.HTTPStatus)
+		// err = fmt.Errorf("resource Not Found - Unable to find the specified resource (%d)", res.HTTPStatus)
+		err = parseError404(body)
 	case int64(405):
 		err = fmt.Errorf("method Not Allowed - Specified HTTP method is not allowed for this resource (%d)", res.HTTPStatus)
 	case int64(413):
@@ -169,6 +185,23 @@ func fortiErrorCheck(body []byte, res *models.CmdbResponse) (err error) {
 	}
 
 	return
+}
+
+func parseError404(body []byte) error {
+	fortiError := &models.CmdbError404{}
+	err := json.Unmarshal(body, &fortiError)
+	if err != nil {
+		log.Printf("[ERROR] Failed to parse error 404 response")
+		return err
+	}
+	if *fortiError.HTTPStatus == int64(404) && (*fortiError.HTTPMethod == "GET" || *fortiError.HTTPMethod == "DELETE") {
+		// FortiOS returns 404 for non-existant resource. If the results unmarshal and status is 404 then resource non existant.
+		// Generally return an empty resource struct/nil upstream
+		log.Print("[INFO] 404 response seen with GET or DELETE but unmarshalled successfully, not returning error as most likely a non-existant resource")
+		return nil
+	}
+
+	return nil
 }
 
 func parseError500(body []byte) error {
@@ -187,6 +220,8 @@ func parseError500(body []byte) error {
 
 func parseErrorCode(errorCode int64) string {
 	switch e := errorCode; e {
+	case int64(-5):
+		return "Mkey already exists"
 	case int64(-8):
 		return "Invalid IP"
 	case int64(-9):
@@ -200,6 +235,7 @@ func parseErrorCode(errorCode int64) string {
 	}
 }
 
+// -5 mkey already exists
 // -8 invalid IP
 // -9 invalid mask /33
 // -15 duplicate entry
