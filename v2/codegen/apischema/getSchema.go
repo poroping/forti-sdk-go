@@ -104,7 +104,7 @@ func getSchema(c *client.FortiSDKClient, path string) (string, string, interface
 	req.HTTPMethod = "GET"
 	req.Path = models.CmdbBasePath + path
 	req.Params = *params
-	resp, err := request.Read(c.Config, req)
+	resp, err := request.Read(&c.Config, req)
 	if err != nil {
 		return "", "", err, nil
 	}

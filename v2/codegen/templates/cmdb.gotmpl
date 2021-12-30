@@ -3,13 +3,15 @@ package cmdb
 
 import (
 	"encoding/json"
+	"log"
 	"errors"
+	{{if eq .results.mkey_type "integer"}}"strconv"{{end}}
 
 	"github.com/poroping/forti-sdk-go/v2/models"
 	"github.com/poroping/forti-sdk-go/v2/request"
 )
 
-{{if not (eq .results.category "complex")}}{{template "cmdb_create" .}}{{end}}
+{{template "cmdb_create" .}}
 
 {{template "cmdb_read" .}}
 

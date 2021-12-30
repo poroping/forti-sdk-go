@@ -5,7 +5,7 @@
 {{define "modelfile"}}
 package models
 
-const {{.fpath}}Path = "{{.path}}/{{.name}}/{{if .child_path}}{{.child_path}}/{{end}}"
+const {{.fpath}}Path = "{{(replace .path "." "/")}}/{{(replace .name "." "/")}}/{{if .child_path}}{{(replace .child_path "." "/")}}/{{end}}"
 
 {{if not .child_path}}{{template "generatetype" .results}}{{end}}
 {{end}}

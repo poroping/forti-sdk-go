@@ -16,8 +16,14 @@ const (
 	schemaLoc = "./apischema/auto-merge/"
 )
 
+type cmdbRes struct {
+	Path    string
+	Complex bool
+}
+
 func main() {
 	schemas, _ := ioutil.ReadDir(schemaLoc)
+	cmdbResources := []cmdbRes{}
 	for _, schema := range schemas {
 		fileName := schema.Name()
 		log.Printf("[DEBUG] processing: %s", fileName)
@@ -45,56 +51,34 @@ func main() {
 		// Add extra values to use in templates.
 		r := addResourceInfo(n)
 
+		tmp := cmdbRes{
+			Path:    r["fpath"].(string),
+			Complex: isComplex(r["results"].(map[string]interface{})["category"].(string)),
+		}
+		cmdbResources = append(cmdbResources, tmp)
+
 		render("models", fileName, t, r)
 		render("cmdb", fileName, t, r)
-		// d := addDataSourceInfo(n)
-
-		// var buf2 bytes.Buffer
-		// sname = "data_source"
-		// if err := t.ExecuteTemplate(&buf2, sname, d); err != nil {
-		// 	panic(err)
-		// }
-
-		// // lint
-		// f, err = format.Source(buf2.Bytes())
-		// if err != nil {
-		// 	panic(err)
-		// }
-
-		// dsname := fname
-		// dsname = sname + "_" + dsname
-		// dsname = strings.TrimSuffix(dsname, ".json")
-		// dsname += ".go"
-		// os.WriteFile("./output/"+dsname, f, os.FileMode(perm))
-
-		// var buf3 bytes.Buffer
-		// sname = "data_source_docs"
-		// if err := t.ExecuteTemplate(&buf3, sname, d); err != nil {
-		// 	panic(err)
-		// }
-
-		// f = buf3.Bytes()
-
-		// dsdocsname := fname
-		// dsdocsname = "fortios_" + dsdocsname
-		// dsdocsname = strings.TrimSuffix(dsdocsname, ".json")
-		// dsdocsname += ".html.markdown"
-		// os.WriteFile("./output/d/"+dsdocsname, f, os.FileMode(perm))
-
-		// var buf4 bytes.Buffer
-		// sname = "resource_docs"
-		// if err := t.ExecuteTemplate(&buf4, sname, d); err != nil {
-		// 	panic(err)
-		// }
-
-		// f = buf4.Bytes()
-
-		// resdocsname := fname
-		// resdocsname = "fortios_" + resdocsname
-		// resdocsname = strings.TrimSuffix(resdocsname, ".json")
-		// resdocsname += ".html.markdown"
-		// os.WriteFile("./output/r/"+resdocsname, f, os.FileMode(perm))
 	}
+	cmdbRender(cmdbResources)
+}
+
+func isComplex(category string) bool {
+	return category == "complex"
+}
+
+func cmdbRender(resources []cmdbRes) {
+	t := template.Must(template.New("main").ParseGlob("./templates/cmdbClient.gotmpl"))
+	var buf bytes.Buffer
+	if err := t.ExecuteTemplate(&buf, "cmdbClient", resources); err != nil {
+		panic(err)
+	}
+	f, err := format.Source(buf.Bytes())
+	if err != nil {
+		panic(err)
+	}
+	perm := int(0755)
+	os.WriteFile("../cmdb/cmdb.go", f, os.FileMode(perm))
 }
 
 func debugx(v interface{}) string {
@@ -212,12 +196,11 @@ func addDataSourceInfo(m map[string]interface{}) map[string]interface{} {
 }
 
 func addDataSourceSchemaRequired(m map[string]interface{}) map[string]interface{} {
-	mkey, ok := m["results"].(map[string]interface{})["mkey"].(string)
-	if !ok {
+	mkey, exists := m["results"].(map[string]interface{})["mkey"].(string)
+	if !exists {
 		return m
 	}
-	child, ok := m["results"].(map[string]interface{})["children"].(map[string]interface{})
-	if ok {
+	if child, ok := m["results"].(map[string]interface{})["children"].(map[string]interface{}); ok {
 		for _, v := range child {
 			name := v.(map[string]interface{})["name"].(string)
 			if name == mkey {
@@ -234,8 +217,7 @@ func addResourceSchemaRequired(m map[string]interface{}) map[string]interface{} 
 	if !ok {
 		return m
 	}
-	child, ok := m["results"].(map[string]interface{})["children"].(map[string]interface{})
-	if ok {
+	if child, ok := m["results"].(map[string]interface{})["children"].(map[string]interface{}); ok {
 		for _, v := range child {
 			name := v.(map[string]interface{})["name"].(string)
 			if name == "seq-num" || name == "id" {
@@ -264,11 +246,16 @@ func replaceTopLevelId(m map[string]interface{}) map[string]interface{} {
 	if ok {
 		for _, v := range child {
 			name := v.(map[string]interface{})["name"].(string)
+			// id is reserved in TF
 			if name == "id" {
 				v.(map[string]interface{})["fosid"] = true
 				v.(map[string]interface{})["name"] = "fosid"
 			}
-
+			// count is reserved in TF
+			if name == "count" {
+				v.(map[string]interface{})["foscount"] = true
+				v.(map[string]interface{})["name"] = "foscount"
+			}
 		}
 	}
 	return m
@@ -345,7 +332,7 @@ func typeLookup(s string) string {
 		"ipv6-network":           "*string",
 		"var-string":             "*string",
 		"password":               "*string",
-		"integer":                "*float64",
+		"integer":                "*int64",
 		"user":                   "*string",
 		"password-2":             "*string",
 		"password-3":             "*string",
@@ -467,10 +454,7 @@ func valiOptions(opts []interface{}, multi_val bool) string {
 		l = append(l, fmt.Sprintf("%q", v.(map[string]interface{})["name"].(string)))
 	}
 	s := strings.Join(l, ", ")
-	if s == `"enable", "disable"` || s == `"disable", "enable"` {
-		return "fortiValidateEnableDisable()"
-	}
-	return fmt.Sprintf("fortiValidateEnum([]string{%s})", s)
+	return fmt.Sprintf("validation.StringInSlice([]string{%s})", s)
 }
 
 func mixedCase(v string) string {

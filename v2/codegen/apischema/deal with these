@@ -47,3 +47,8 @@ category change
 				"size": 35,
 				"type": "string"
 			},
+
+data fortiextender plan <6.4.5 has caps for 2 attributes >.<
+
+
+"readonly": true for redist table = no delete

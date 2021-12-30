@@ -1,8 +1,28 @@
 {{define "cmdb_create"}}
+{{if (eq .results.category "complex")}}
+{{template "_cmdb_create_complex" .}}{{else}}{{template "_cmdb_create" .}}
+{{end}}
+{{end}}
+
+
+{{define "_cmdb_create"}}
 func (c *Client) Create{{.fpath}}(payload *models.{{(mixedCase .path)}}{{(mixedCase .name)}}{{with .child_path}}{{(mixedCase .)}}{{end}}, params *models.CmdbRequestParams) (*models.CmdbResponse, error) {
 	body, err := json.Marshal(payload)
 	if err != nil {
 		return nil, err
+	}
+
+	mkey := ""
+	if payload.{{if eq (mixedCase .results.mkey) "Id"}}Fosid{{else}}{{(mixedCase .results.mkey)}}{{end}} != nil && *params.AllowAppend {
+		mkey = {{if eq .results.mkey_type "integer"}}strconv.Itoa(int(*payload.{{if eq (mixedCase .results.mkey) "Id"}}Fosid{{else}}{{(mixedCase .results.mkey)}}{{end}})){{else}}*payload.{{if eq (mixedCase .results.mkey) "Id"}}Fosid{{else}}{{(mixedCase .results.mkey)}}{{end}}{{end}}
+		read, err := c.Read{{.fpath}}(mkey, params)
+		if err != nil {
+			return nil, err
+		}
+		if read != nil {
+			log.Printf("[WARN] Resource at path %q with mkey %q detected upon CREATE with flag set to to overwrite. Changing to UPDATE.", models.{{.fpath}}Path, mkey)
+			return c.Update{{.fpath}}(mkey, payload, params)
+		}
 	}
 
 	req := &models.CmdbRequest{}
@@ -16,5 +36,12 @@ func (c *Client) Create{{.fpath}}(payload *models.{{(mixedCase .path)}}{{(mixedC
 		return nil, err
 	}
 	return res, nil
+}
+{{end}}
+
+{{define "_cmdb_create_complex"}}
+func (c *Client) Create{{.fpath}}(payload *models.{{(mixedCase .path)}}{{(mixedCase .name)}}{{with .child_path}}{{(mixedCase .)}}{{end}}, params *models.CmdbRequestParams) (*models.CmdbResponse, error) {
+	log.Printf("[INFO] Resource at path %q is complex type. Changing to UPDATE.", models.{{.fpath}}Path)
+	return c.Update{{.fpath}}("", payload, params)
 }
 {{end}}
