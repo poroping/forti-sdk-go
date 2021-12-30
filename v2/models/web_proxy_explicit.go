@@ -37,7 +37,7 @@ type WebProxyExplicitPacPolicy struct {
 	Dstaddr     *[]WebProxyExplicitPacPolicyDstaddr  `json:"dstaddr,omitempty"`
 	PacFileData *string                              `json:"pac-file-data,omitempty"`
 	PacFileName *string                              `json:"pac-file-name,omitempty"`
-	Policyid    *float64                             `json:"policyid,omitempty"`
+	Policyid    *int64                               `json:"policyid,omitempty"`
 	Srcaddr     *[]WebProxyExplicitPacPolicySrcaddr  `json:"srcaddr,omitempty"`
 	Srcaddr6    *[]WebProxyExplicitPacPolicySrcaddr6 `json:"srcaddr6,omitempty"`
 	Status      *string                              `json:"status,omitempty"`

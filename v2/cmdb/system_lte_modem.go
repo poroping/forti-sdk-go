@@ -3,10 +3,16 @@ package cmdb
 import (
 	"encoding/json"
 	"errors"
+	"log"
 
 	"github.com/poroping/forti-sdk-go/v2/models"
 	"github.com/poroping/forti-sdk-go/v2/request"
 )
+
+func (c *Client) CreateSystemLteModem(payload *models.SystemLteModem, params *models.CmdbRequestParams) (*models.CmdbResponse, error) {
+	log.Printf("[INFO] Resource at path %q is complex type. Changing to UPDATE.", models.SystemLteModemPath)
+	return c.UpdateSystemLteModem("", payload, params)
+}
 
 func (c *Client) ReadSystemLteModem(mkey string, params *models.CmdbRequestParams) (*models.SystemLteModem, error) {
 	req := &models.CmdbRequest{}
@@ -59,13 +65,7 @@ func (c *Client) UpdateSystemLteModem(mkey string, payload *models.SystemLteMode
 }
 
 func (c *Client) DeleteSystemLteModem(mkey string, params *models.CmdbRequestParams) error {
-	req := &models.CmdbRequest{}
-	req.HTTPMethod = "DELETE"
-	req.Mkey = &mkey
-	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.SystemLteModemPath + mkey + "/"
-	req.Params = *params
-
-	err := request.Delete(c.config, req)
+	payload := &models.SystemLteModem{}
+	_, err := c.UpdateSystemLteModem("", payload, params)
 	return err
 }

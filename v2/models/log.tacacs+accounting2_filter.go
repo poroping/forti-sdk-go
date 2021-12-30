@@ -1,6 +1,6 @@
 package models
 
-const Logtacacsaccounting2FilterPath = "log.tacacs+accounting2/filter/"
+const Logtacacsaccounting2FilterPath = "log/tacacs+accounting2/filter/"
 
 type Logtacacsaccounting2Filter struct {
 	CliCmdAudit       *string `json:"cli-cmd-audit,omitempty"`

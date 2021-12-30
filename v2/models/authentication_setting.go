@@ -8,14 +8,14 @@ type AuthenticationSetting struct {
 	CaptivePortal         *string                            `json:"captive-portal,omitempty"`
 	CaptivePortalIp       *string                            `json:"captive-portal-ip,omitempty"`
 	CaptivePortalIp6      *string                            `json:"captive-portal-ip6,omitempty"`
-	CaptivePortalPort     *float64                           `json:"captive-portal-port,omitempty"`
-	CaptivePortalSslPort  *float64                           `json:"captive-portal-ssl-port,omitempty"`
+	CaptivePortalPort     *int64                             `json:"captive-portal-port,omitempty"`
+	CaptivePortalSslPort  *int64                             `json:"captive-portal-ssl-port,omitempty"`
 	CaptivePortalType     *string                            `json:"captive-portal-type,omitempty"`
 	CaptivePortal6        *string                            `json:"captive-portal6,omitempty"`
 	CertAuth              *string                            `json:"cert-auth,omitempty"`
 	CertCaptivePortal     *string                            `json:"cert-captive-portal,omitempty"`
 	CertCaptivePortalIp   *string                            `json:"cert-captive-portal-ip,omitempty"`
-	CertCaptivePortalPort *float64                           `json:"cert-captive-portal-port,omitempty"`
+	CertCaptivePortalPort *int64                             `json:"cert-captive-portal-port,omitempty"`
 	DevRange              *[]AuthenticationSettingDevRange   `json:"dev-range,omitempty"`
 	SsoAuthScheme         *string                            `json:"sso-auth-scheme,omitempty"`
 	UserCertCa            *[]AuthenticationSettingUserCertCa `json:"user-cert-ca,omitempty"`

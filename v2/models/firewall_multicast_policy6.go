@@ -8,14 +8,14 @@ type FirewallMulticastPolicy6 struct {
 	Comments        *string                            `json:"comments,omitempty"`
 	Dstaddr         *[]FirewallMulticastPolicy6Dstaddr `json:"dstaddr,omitempty"`
 	Dstintf         *string                            `json:"dstintf,omitempty"`
-	EndPort         *float64                           `json:"end-port,omitempty"`
-	Fosid           *float64                           `json:"fosid,omitempty"`
+	EndPort         *int64                             `json:"end-port,omitempty"`
+	Fosid           *int64                             `json:"fosid,omitempty"`
 	Logtraffic      *string                            `json:"logtraffic,omitempty"`
 	Name            *string                            `json:"name,omitempty"`
-	Protocol        *float64                           `json:"protocol,omitempty"`
+	Protocol        *int64                             `json:"protocol,omitempty"`
 	Srcaddr         *[]FirewallMulticastPolicy6Srcaddr `json:"srcaddr,omitempty"`
 	Srcintf         *string                            `json:"srcintf,omitempty"`
-	StartPort       *float64                           `json:"start-port,omitempty"`
+	StartPort       *int64                             `json:"start-port,omitempty"`
 	Status          *string                            `json:"status,omitempty"`
 	Uuid            *string                            `json:"uuid,omitempty"`
 }

@@ -1,6 +1,6 @@
 package models
 
-const RouterbgpRedistributePath = "router.bgp/redistribute/"
+const RouterbgpRedistributePath = "router/bgp/redistribute/"
 
 type RouterbgpRedistribute struct {
 	Name     *string `json:"name,omitempty"`

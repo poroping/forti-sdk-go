@@ -12,18 +12,18 @@ type SystemCsf struct {
 	FabricConnector          *[]SystemCsfFabricConnector `json:"fabric-connector,omitempty"`
 	FabricDevice             *[]SystemCsfFabricDevice    `json:"fabric-device,omitempty"`
 	FabricObjectUnification  *string                     `json:"fabric-object-unification,omitempty"`
-	FabricWorkers            *float64                    `json:"fabric-workers,omitempty"`
+	FabricWorkers            *int64                      `json:"fabric-workers,omitempty"`
 	GroupName                *string                     `json:"group-name,omitempty"`
 	GroupPassword            *string                     `json:"group-password,omitempty"`
 	LogUnification           *string                     `json:"log-unification,omitempty"`
 	ManagementIp             *string                     `json:"management-ip,omitempty"`
-	ManagementPort           *float64                    `json:"management-port,omitempty"`
+	ManagementPort           *int64                      `json:"management-port,omitempty"`
 	SamlConfigurationSync    *string                     `json:"saml-configuration-sync,omitempty"`
 	Status                   *string                     `json:"status,omitempty"`
 	TrustedList              *[]SystemCsfTrustedList     `json:"trusted-list,omitempty"`
 	Upstream                 *string                     `json:"upstream,omitempty"`
 	UpstreamIp               *string                     `json:"upstream-ip,omitempty"`
-	UpstreamPort             *float64                    `json:"upstream-port,omitempty"`
+	UpstreamPort             *int64                      `json:"upstream-port,omitempty"`
 }
 
 type SystemCsfFabricConnector struct {
@@ -33,10 +33,10 @@ type SystemCsfFabricConnector struct {
 }
 
 type SystemCsfFabricDevice struct {
-	AccessToken *string  `json:"access-token,omitempty"`
-	DeviceIp    *string  `json:"device-ip,omitempty"`
-	HttpsPort   *float64 `json:"https-port,omitempty"`
-	Name        *string  `json:"name,omitempty"`
+	AccessToken *string `json:"access-token,omitempty"`
+	DeviceIp    *string `json:"device-ip,omitempty"`
+	HttpsPort   *int64  `json:"https-port,omitempty"`
+	Name        *string `json:"name,omitempty"`
 }
 
 type SystemCsfTrustedList struct {

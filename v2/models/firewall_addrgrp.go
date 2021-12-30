@@ -5,7 +5,7 @@ const FirewallAddrgrpPath = "firewall/addrgrp/"
 type FirewallAddrgrp struct {
 	AllowRouting  *string                         `json:"allow-routing,omitempty"`
 	Category      *string                         `json:"category,omitempty"`
-	Color         *float64                        `json:"color,omitempty"`
+	Color         *int64                          `json:"color,omitempty"`
 	Comment       *string                         `json:"comment,omitempty"`
 	Exclude       *string                         `json:"exclude,omitempty"`
 	ExcludeMember *[]FirewallAddrgrpExcludeMember `json:"exclude-member,omitempty"`

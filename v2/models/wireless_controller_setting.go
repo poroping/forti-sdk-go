@@ -5,11 +5,11 @@ const WirelessControllerSettingPath = "wireless-controller/setting/"
 type WirelessControllerSetting struct {
 	AccountId                        *string                                            `json:"account-id,omitempty"`
 	Country                          *string                                            `json:"country,omitempty"`
-	DarrpOptimize                    *float64                                           `json:"darrp-optimize,omitempty"`
+	DarrpOptimize                    *int64                                             `json:"darrp-optimize,omitempty"`
 	DarrpOptimizeSchedules           *[]WirelessControllerSettingDarrpOptimizeSchedules `json:"darrp-optimize-schedules,omitempty"`
-	DeviceHoldoff                    *float64                                           `json:"device-holdoff,omitempty"`
-	DeviceIdle                       *float64                                           `json:"device-idle,omitempty"`
-	DeviceWeight                     *float64                                           `json:"device-weight,omitempty"`
+	DeviceHoldoff                    *int64                                             `json:"device-holdoff,omitempty"`
+	DeviceIdle                       *int64                                             `json:"device-idle,omitempty"`
+	DeviceWeight                     *int64                                             `json:"device-weight,omitempty"`
 	DuplicateSsid                    *string                                            `json:"duplicate-ssid,omitempty"`
 	FakeSsidAction                   *string                                            `json:"fake-ssid-action,omitempty"`
 	FapcCompatibility                *string                                            `json:"fapc-compatibility,omitempty"`
@@ -24,7 +24,7 @@ type WirelessControllerSettingDarrpOptimizeSchedules struct {
 }
 
 type WirelessControllerSettingOffendingSsid struct {
-	Action      *string  `json:"action,omitempty"`
-	Id          *float64 `json:"id,omitempty"`
-	SsidPattern *string  `json:"ssid-pattern,omitempty"`
+	Action      *string `json:"action,omitempty"`
+	Id          *int64  `json:"id,omitempty"`
+	SsidPattern *string `json:"ssid-pattern,omitempty"`
 }

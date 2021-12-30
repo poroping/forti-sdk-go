@@ -3,10 +3,16 @@ package cmdb
 import (
 	"encoding/json"
 	"errors"
+	"log"
 
 	"github.com/poroping/forti-sdk-go/v2/models"
 	"github.com/poroping/forti-sdk-go/v2/request"
 )
+
+func (c *Client) CreateRouterSetting(payload *models.RouterSetting, params *models.CmdbRequestParams) (*models.CmdbResponse, error) {
+	log.Printf("[INFO] Resource at path %q is complex type. Changing to UPDATE.", models.RouterSettingPath)
+	return c.UpdateRouterSetting("", payload, params)
+}
 
 func (c *Client) ReadRouterSetting(mkey string, params *models.CmdbRequestParams) (*models.RouterSetting, error) {
 	req := &models.CmdbRequest{}
@@ -59,13 +65,7 @@ func (c *Client) UpdateRouterSetting(mkey string, payload *models.RouterSetting,
 }
 
 func (c *Client) DeleteRouterSetting(mkey string, params *models.CmdbRequestParams) error {
-	req := &models.CmdbRequest{}
-	req.HTTPMethod = "DELETE"
-	req.Mkey = &mkey
-	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.RouterSettingPath + mkey + "/"
-	req.Params = *params
-
-	err := request.Delete(c.config, req)
+	payload := &models.RouterSetting{}
+	_, err := c.UpdateRouterSetting("", payload, params)
 	return err
 }

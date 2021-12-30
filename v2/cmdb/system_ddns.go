@@ -3,6 +3,8 @@ package cmdb
 import (
 	"encoding/json"
 	"errors"
+	"log"
+	"strconv"
 
 	"github.com/poroping/forti-sdk-go/v2/models"
 	"github.com/poroping/forti-sdk-go/v2/request"
@@ -12,6 +14,19 @@ func (c *Client) CreateSystemDdns(payload *models.SystemDdns, params *models.Cmd
 	body, err := json.Marshal(payload)
 	if err != nil {
 		return nil, err
+	}
+
+	mkey := ""
+	if payload.Ddnsid != nil && *params.AllowAppend {
+		mkey = strconv.Itoa(int(*payload.Ddnsid))
+		read, err := c.ReadSystemDdns(mkey, params)
+		if err != nil {
+			return nil, err
+		}
+		if read != nil {
+			log.Printf("[WARN] Resource at path %q with mkey %q detected upon CREATE with flag set to to overwrite. Changing to UPDATE.", models.SystemDdnsPath, mkey)
+			return c.UpdateSystemDdns(mkey, payload, params)
+		}
 	}
 
 	req := &models.CmdbRequest{}

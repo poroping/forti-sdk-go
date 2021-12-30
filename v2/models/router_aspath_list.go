@@ -8,7 +8,7 @@ type RouterAspathList struct {
 }
 
 type RouterAspathListRule struct {
-	Action *string  `json:"action,omitempty"`
-	Id     *float64 `json:"id,omitempty"`
-	Regexp *string  `json:"regexp,omitempty"`
+	Action *string `json:"action,omitempty"`
+	Id     *int64  `json:"id,omitempty"`
+	Regexp *string `json:"regexp,omitempty"`
 }

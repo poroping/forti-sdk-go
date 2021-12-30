@@ -8,7 +8,7 @@ type FirewallLocalInPolicy6 struct {
 	Dstaddr       *[]FirewallLocalInPolicy6Dstaddr `json:"dstaddr,omitempty"`
 	DstaddrNegate *string                          `json:"dstaddr-negate,omitempty"`
 	Intf          *string                          `json:"intf,omitempty"`
-	Policyid      *float64                         `json:"policyid,omitempty"`
+	Policyid      *int64                           `json:"policyid,omitempty"`
 	Schedule      *string                          `json:"schedule,omitempty"`
 	Service       *[]FirewallLocalInPolicy6Service `json:"service,omitempty"`
 	ServiceNegate *string                          `json:"service-negate,omitempty"`

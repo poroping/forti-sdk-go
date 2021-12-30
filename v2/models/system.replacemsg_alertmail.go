@@ -1,6 +1,6 @@
 package models
 
-const SystemreplacemsgAlertmailPath = "system.replacemsg/alertmail/"
+const SystemreplacemsgAlertmailPath = "system/replacemsg/alertmail/"
 
 type SystemreplacemsgAlertmail struct {
 	Buffer  *string `json:"buffer,omitempty"`

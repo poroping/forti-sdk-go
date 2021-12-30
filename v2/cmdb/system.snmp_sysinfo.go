@@ -3,10 +3,16 @@ package cmdb
 import (
 	"encoding/json"
 	"errors"
+	"log"
 
 	"github.com/poroping/forti-sdk-go/v2/models"
 	"github.com/poroping/forti-sdk-go/v2/request"
 )
+
+func (c *Client) CreateSystemsnmpSysinfo(payload *models.SystemsnmpSysinfo, params *models.CmdbRequestParams) (*models.CmdbResponse, error) {
+	log.Printf("[INFO] Resource at path %q is complex type. Changing to UPDATE.", models.SystemsnmpSysinfoPath)
+	return c.UpdateSystemsnmpSysinfo("", payload, params)
+}
 
 func (c *Client) ReadSystemsnmpSysinfo(mkey string, params *models.CmdbRequestParams) (*models.SystemsnmpSysinfo, error) {
 	req := &models.CmdbRequest{}
@@ -59,13 +65,7 @@ func (c *Client) UpdateSystemsnmpSysinfo(mkey string, payload *models.Systemsnmp
 }
 
 func (c *Client) DeleteSystemsnmpSysinfo(mkey string, params *models.CmdbRequestParams) error {
-	req := &models.CmdbRequest{}
-	req.HTTPMethod = "DELETE"
-	req.Mkey = &mkey
-	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.SystemsnmpSysinfoPath + mkey + "/"
-	req.Params = *params
-
-	err := request.Delete(c.config, req)
+	payload := &models.SystemsnmpSysinfo{}
+	_, err := c.UpdateSystemsnmpSysinfo("", payload, params)
 	return err
 }

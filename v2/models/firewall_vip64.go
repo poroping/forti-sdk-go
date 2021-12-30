@@ -4,11 +4,11 @@ const FirewallVip64Path = "firewall/vip64/"
 
 type FirewallVip64 struct {
 	ArpReply    *string                     `json:"arp-reply,omitempty"`
-	Color       *float64                    `json:"color,omitempty"`
+	Color       *int64                      `json:"color,omitempty"`
 	Comment     *string                     `json:"comment,omitempty"`
 	Extip       *string                     `json:"extip,omitempty"`
 	Extport     *string                     `json:"extport,omitempty"`
-	Fosid       *float64                    `json:"fosid,omitempty"`
+	Fosid       *int64                      `json:"fosid,omitempty"`
 	LdbMethod   *string                     `json:"ldb-method,omitempty"`
 	Mappedip    *string                     `json:"mappedip,omitempty"`
 	Mappedport  *string                     `json:"mappedport,omitempty"`
@@ -30,14 +30,14 @@ type FirewallVip64Monitor struct {
 type FirewallVip64Realservers struct {
 	ClientIp         *string                            `json:"client-ip,omitempty"`
 	Healthcheck      *string                            `json:"healthcheck,omitempty"`
-	HolddownInterval *float64                           `json:"holddown-interval,omitempty"`
-	Id               *float64                           `json:"id,omitempty"`
+	HolddownInterval *int64                             `json:"holddown-interval,omitempty"`
+	Id               *int64                             `json:"id,omitempty"`
 	Ip               *string                            `json:"ip,omitempty"`
-	MaxConnections   *float64                           `json:"max-connections,omitempty"`
+	MaxConnections   *int64                             `json:"max-connections,omitempty"`
 	Monitor          *[]FirewallVip64RealserversMonitor `json:"monitor,omitempty"`
-	Port             *float64                           `json:"port,omitempty"`
+	Port             *int64                             `json:"port,omitempty"`
 	Status           *string                            `json:"status,omitempty"`
-	Weight           *float64                           `json:"weight,omitempty"`
+	Weight           *int64                             `json:"weight,omitempty"`
 }
 
 type FirewallVip64RealserversMonitor struct {

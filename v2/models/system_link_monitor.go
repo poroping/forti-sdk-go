@@ -4,25 +4,25 @@ const SystemLinkMonitorPath = "system/link-monitor/"
 
 type SystemLinkMonitor struct {
 	AddrMode               *string                        `json:"addr-mode,omitempty"`
-	ClassId                *float64                       `json:"class-id,omitempty"`
+	ClassId                *int64                         `json:"class-id,omitempty"`
 	Diffservcode           *string                        `json:"diffservcode,omitempty"`
-	FailWeight             *float64                       `json:"fail-weight,omitempty"`
-	Failtime               *float64                       `json:"failtime,omitempty"`
+	FailWeight             *int64                         `json:"fail-weight,omitempty"`
+	Failtime               *int64                         `json:"failtime,omitempty"`
 	GatewayIp              *string                        `json:"gateway-ip,omitempty"`
 	GatewayIp6             *string                        `json:"gateway-ip6,omitempty"`
-	HaPriority             *float64                       `json:"ha-priority,omitempty"`
+	HaPriority             *int64                         `json:"ha-priority,omitempty"`
 	HttpAgent              *string                        `json:"http-agent,omitempty"`
 	HttpGet                *string                        `json:"http-get,omitempty"`
 	HttpMatch              *string                        `json:"http-match,omitempty"`
-	Interval               *float64                       `json:"interval,omitempty"`
+	Interval               *int64                         `json:"interval,omitempty"`
 	Name                   *string                        `json:"name,omitempty"`
-	PacketSize             *float64                       `json:"packet-size,omitempty"`
+	PacketSize             *int64                         `json:"packet-size,omitempty"`
 	Password               *string                        `json:"password,omitempty"`
-	Port                   *float64                       `json:"port,omitempty"`
-	ProbeCount             *float64                       `json:"probe-count,omitempty"`
-	ProbeTimeout           *float64                       `json:"probe-timeout,omitempty"`
+	Port                   *int64                         `json:"port,omitempty"`
+	ProbeCount             *int64                         `json:"probe-count,omitempty"`
+	ProbeTimeout           *int64                         `json:"probe-timeout,omitempty"`
 	Protocol               *string                        `json:"protocol,omitempty"`
-	Recoverytime           *float64                       `json:"recoverytime,omitempty"`
+	Recoverytime           *int64                         `json:"recoverytime,omitempty"`
 	Route                  *[]SystemLinkMonitorRoute      `json:"route,omitempty"`
 	SecurityMode           *string                        `json:"security-mode,omitempty"`
 	Server                 *[]SystemLinkMonitorServer     `json:"server,omitempty"`
@@ -47,9 +47,9 @@ type SystemLinkMonitorServer struct {
 }
 
 type SystemLinkMonitorServerList struct {
-	Dst      *string  `json:"dst,omitempty"`
-	Id       *float64 `json:"id,omitempty"`
-	Port     *float64 `json:"port,omitempty"`
-	Protocol *string  `json:"protocol,omitempty"`
-	Weight   *float64 `json:"weight,omitempty"`
+	Dst      *string `json:"dst,omitempty"`
+	Id       *int64  `json:"id,omitempty"`
+	Port     *int64  `json:"port,omitempty"`
+	Protocol *string `json:"protocol,omitempty"`
+	Weight   *int64  `json:"weight,omitempty"`
 }

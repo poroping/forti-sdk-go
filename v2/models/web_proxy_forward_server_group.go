@@ -11,6 +11,6 @@ type WebProxyForwardServerGroup struct {
 }
 
 type WebProxyForwardServerGroupServerList struct {
-	Name   *string  `json:"name,omitempty"`
-	Weight *float64 `json:"weight,omitempty"`
+	Name   *string `json:"name,omitempty"`
+	Weight *int64  `json:"weight,omitempty"`
 }

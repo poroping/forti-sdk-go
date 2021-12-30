@@ -3,10 +3,16 @@ package cmdb
 import (
 	"encoding/json"
 	"errors"
+	"log"
 
 	"github.com/poroping/forti-sdk-go/v2/models"
 	"github.com/poroping/forti-sdk-go/v2/request"
 )
+
+func (c *Client) CreateWebfilterIpsUrlfilterSetting(payload *models.WebfilterIpsUrlfilterSetting, params *models.CmdbRequestParams) (*models.CmdbResponse, error) {
+	log.Printf("[INFO] Resource at path %q is complex type. Changing to UPDATE.", models.WebfilterIpsUrlfilterSettingPath)
+	return c.UpdateWebfilterIpsUrlfilterSetting("", payload, params)
+}
 
 func (c *Client) ReadWebfilterIpsUrlfilterSetting(mkey string, params *models.CmdbRequestParams) (*models.WebfilterIpsUrlfilterSetting, error) {
 	req := &models.CmdbRequest{}
@@ -59,13 +65,7 @@ func (c *Client) UpdateWebfilterIpsUrlfilterSetting(mkey string, payload *models
 }
 
 func (c *Client) DeleteWebfilterIpsUrlfilterSetting(mkey string, params *models.CmdbRequestParams) error {
-	req := &models.CmdbRequest{}
-	req.HTTPMethod = "DELETE"
-	req.Mkey = &mkey
-	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.WebfilterIpsUrlfilterSettingPath + mkey + "/"
-	req.Params = *params
-
-	err := request.Delete(c.config, req)
+	payload := &models.WebfilterIpsUrlfilterSetting{}
+	_, err := c.UpdateWebfilterIpsUrlfilterSetting("", payload, params)
 	return err
 }

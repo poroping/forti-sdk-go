@@ -1,6 +1,6 @@
 package models
 
-const LognullDeviceFilterPath = "log.null-device/filter/"
+const LognullDeviceFilterPath = "log/null-device/filter/"
 
 type LognullDeviceFilter struct {
 	Anomaly          *string                         `json:"anomaly,omitempty"`
@@ -17,8 +17,8 @@ type LognullDeviceFilter struct {
 }
 
 type LognullDeviceFilterFreeStyle struct {
-	Category   *string  `json:"category,omitempty"`
-	Filter     *string  `json:"filter,omitempty"`
-	FilterType *string  `json:"filter-type,omitempty"`
-	Id         *float64 `json:"id,omitempty"`
+	Category   *string `json:"category,omitempty"`
+	Filter     *string `json:"filter,omitempty"`
+	FilterType *string `json:"filter-type,omitempty"`
+	Id         *int64  `json:"id,omitempty"`
 }

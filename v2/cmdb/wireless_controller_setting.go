@@ -3,10 +3,16 @@ package cmdb
 import (
 	"encoding/json"
 	"errors"
+	"log"
 
 	"github.com/poroping/forti-sdk-go/v2/models"
 	"github.com/poroping/forti-sdk-go/v2/request"
 )
+
+func (c *Client) CreateWirelessControllerSetting(payload *models.WirelessControllerSetting, params *models.CmdbRequestParams) (*models.CmdbResponse, error) {
+	log.Printf("[INFO] Resource at path %q is complex type. Changing to UPDATE.", models.WirelessControllerSettingPath)
+	return c.UpdateWirelessControllerSetting("", payload, params)
+}
 
 func (c *Client) ReadWirelessControllerSetting(mkey string, params *models.CmdbRequestParams) (*models.WirelessControllerSetting, error) {
 	req := &models.CmdbRequest{}
@@ -59,13 +65,7 @@ func (c *Client) UpdateWirelessControllerSetting(mkey string, payload *models.Wi
 }
 
 func (c *Client) DeleteWirelessControllerSetting(mkey string, params *models.CmdbRequestParams) error {
-	req := &models.CmdbRequest{}
-	req.HTTPMethod = "DELETE"
-	req.Mkey = &mkey
-	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.WirelessControllerSettingPath + mkey + "/"
-	req.Params = *params
-
-	err := request.Delete(c.config, req)
+	payload := &models.WirelessControllerSetting{}
+	_, err := c.UpdateWirelessControllerSetting("", payload, params)
 	return err
 }

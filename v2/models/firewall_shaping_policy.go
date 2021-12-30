@@ -6,7 +6,7 @@ type FirewallShapingPolicy struct {
 	AppCategory                   *[]FirewallShapingPolicyAppCategory                   `json:"app-category,omitempty"`
 	AppGroup                      *[]FirewallShapingPolicyAppGroup                      `json:"app-group,omitempty"`
 	Application                   *[]FirewallShapingPolicyApplication                   `json:"application,omitempty"`
-	ClassId                       *float64                                              `json:"class-id,omitempty"`
+	ClassId                       *int64                                                `json:"class-id,omitempty"`
 	Comment                       *string                                               `json:"comment,omitempty"`
 	DiffservForward               *string                                               `json:"diffserv-forward,omitempty"`
 	DiffservReverse               *string                                               `json:"diffserv-reverse,omitempty"`
@@ -16,7 +16,7 @@ type FirewallShapingPolicy struct {
 	Dstaddr6                      *[]FirewallShapingPolicyDstaddr6                      `json:"dstaddr6,omitempty"`
 	Dstintf                       *[]FirewallShapingPolicyDstintf                       `json:"dstintf,omitempty"`
 	Groups                        *[]FirewallShapingPolicyGroups                        `json:"groups,omitempty"`
-	Fosid                         *float64                                              `json:"fosid,omitempty"`
+	Fosid                         *int64                                                `json:"fosid,omitempty"`
 	InternetService               *string                                               `json:"internet-service,omitempty"`
 	InternetServiceCustom         *[]FirewallShapingPolicyInternetServiceCustom         `json:"internet-service-custom,omitempty"`
 	InternetServiceCustomGroup    *[]FirewallShapingPolicyInternetServiceCustomGroup    `json:"internet-service-custom-group,omitempty"`
@@ -48,7 +48,7 @@ type FirewallShapingPolicy struct {
 }
 
 type FirewallShapingPolicyAppCategory struct {
-	Id *float64 `json:"id,omitempty"`
+	Id *int64 `json:"id,omitempty"`
 }
 
 type FirewallShapingPolicyAppGroup struct {
@@ -56,7 +56,7 @@ type FirewallShapingPolicyAppGroup struct {
 }
 
 type FirewallShapingPolicyApplication struct {
-	Id *float64 `json:"id,omitempty"`
+	Id *int64 `json:"id,omitempty"`
 }
 
 type FirewallShapingPolicyDstaddr struct {
@@ -88,7 +88,7 @@ type FirewallShapingPolicyInternetServiceGroup struct {
 }
 
 type FirewallShapingPolicyInternetServiceId struct {
-	Id *float64 `json:"id,omitempty"`
+	Id *int64 `json:"id,omitempty"`
 }
 
 type FirewallShapingPolicyInternetServiceName struct {
@@ -108,7 +108,7 @@ type FirewallShapingPolicyInternetServiceSrcGroup struct {
 }
 
 type FirewallShapingPolicyInternetServiceSrcId struct {
-	Id *float64 `json:"id,omitempty"`
+	Id *int64 `json:"id,omitempty"`
 }
 
 type FirewallShapingPolicyInternetServiceSrcName struct {
@@ -132,7 +132,7 @@ type FirewallShapingPolicySrcintf struct {
 }
 
 type FirewallShapingPolicyUrlCategory struct {
-	Id *float64 `json:"id,omitempty"`
+	Id *int64 `json:"id,omitempty"`
 }
 
 type FirewallShapingPolicyUsers struct {

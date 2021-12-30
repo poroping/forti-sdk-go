@@ -3,6 +3,8 @@ package cmdb
 import (
 	"encoding/json"
 	"errors"
+	"log"
+	"strconv"
 
 	"github.com/poroping/forti-sdk-go/v2/models"
 	"github.com/poroping/forti-sdk-go/v2/request"
@@ -12,6 +14,19 @@ func (c *Client) CreateEmailfilterBlockAllowList(payload *models.EmailfilterBloc
 	body, err := json.Marshal(payload)
 	if err != nil {
 		return nil, err
+	}
+
+	mkey := ""
+	if payload.Fosid != nil && *params.AllowAppend {
+		mkey = strconv.Itoa(int(*payload.Fosid))
+		read, err := c.ReadEmailfilterBlockAllowList(mkey, params)
+		if err != nil {
+			return nil, err
+		}
+		if read != nil {
+			log.Printf("[WARN] Resource at path %q with mkey %q detected upon CREATE with flag set to to overwrite. Changing to UPDATE.", models.EmailfilterBlockAllowListPath, mkey)
+			return c.UpdateEmailfilterBlockAllowList(mkey, payload, params)
+		}
 	}
 
 	req := &models.CmdbRequest{}

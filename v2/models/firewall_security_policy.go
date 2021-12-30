@@ -45,7 +45,7 @@ type FirewallSecurityPolicy struct {
 	Name                          *string                                                `json:"name,omitempty"`
 	Nat46                         *string                                                `json:"nat46,omitempty"`
 	Nat64                         *string                                                `json:"nat64,omitempty"`
-	Policyid                      *float64                                               `json:"policyid,omitempty"`
+	Policyid                      *int64                                                 `json:"policyid,omitempty"`
 	ProfileGroup                  *string                                                `json:"profile-group,omitempty"`
 	ProfileProtocolOptions        *string                                                `json:"profile-protocol-options,omitempty"`
 	ProfileType                   *string                                                `json:"profile-type,omitempty"`
@@ -71,7 +71,7 @@ type FirewallSecurityPolicy struct {
 }
 
 type FirewallSecurityPolicyAppCategory struct {
-	Id *float64 `json:"id,omitempty"`
+	Id *int64 `json:"id,omitempty"`
 }
 
 type FirewallSecurityPolicyAppGroup struct {
@@ -79,7 +79,7 @@ type FirewallSecurityPolicyAppGroup struct {
 }
 
 type FirewallSecurityPolicyApplication struct {
-	Id *float64 `json:"id,omitempty"`
+	Id *int64 `json:"id,omitempty"`
 }
 
 type FirewallSecurityPolicyDstaddr struct {
@@ -119,7 +119,7 @@ type FirewallSecurityPolicyInternetServiceGroup struct {
 }
 
 type FirewallSecurityPolicyInternetServiceId struct {
-	Id *float64 `json:"id,omitempty"`
+	Id *int64 `json:"id,omitempty"`
 }
 
 type FirewallSecurityPolicyInternetServiceName struct {
@@ -139,7 +139,7 @@ type FirewallSecurityPolicyInternetServiceSrcGroup struct {
 }
 
 type FirewallSecurityPolicyInternetServiceSrcId struct {
-	Id *float64 `json:"id,omitempty"`
+	Id *int64 `json:"id,omitempty"`
 }
 
 type FirewallSecurityPolicyInternetServiceSrcName struct {
@@ -167,7 +167,7 @@ type FirewallSecurityPolicySrcintf struct {
 }
 
 type FirewallSecurityPolicyUrlCategory struct {
-	Id *float64 `json:"id,omitempty"`
+	Id *int64 `json:"id,omitempty"`
 }
 
 type FirewallSecurityPolicyUsers struct {

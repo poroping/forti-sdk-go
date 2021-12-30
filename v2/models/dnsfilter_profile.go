@@ -21,19 +21,19 @@ type DnsfilterProfile struct {
 }
 
 type DnsfilterProfileDnsTranslation struct {
-	AddrType *string  `json:"addr-type,omitempty"`
-	Dst      *string  `json:"dst,omitempty"`
-	Dst6     *string  `json:"dst6,omitempty"`
-	Id       *float64 `json:"id,omitempty"`
-	Netmask  *string  `json:"netmask,omitempty"`
-	Prefix   *float64 `json:"prefix,omitempty"`
-	Src      *string  `json:"src,omitempty"`
-	Src6     *string  `json:"src6,omitempty"`
-	Status   *string  `json:"status,omitempty"`
+	AddrType *string `json:"addr-type,omitempty"`
+	Dst      *string `json:"dst,omitempty"`
+	Dst6     *string `json:"dst6,omitempty"`
+	Id       *int64  `json:"id,omitempty"`
+	Netmask  *string `json:"netmask,omitempty"`
+	Prefix   *int64  `json:"prefix,omitempty"`
+	Src      *string `json:"src,omitempty"`
+	Src6     *string `json:"src6,omitempty"`
+	Status   *string `json:"status,omitempty"`
 }
 
 type DnsfilterProfileDomainFilter struct {
-	DomainFilterTable *float64 `json:"domain-filter-table,omitempty"`
+	DomainFilterTable *int64 `json:"domain-filter-table,omitempty"`
 }
 
 type DnsfilterProfileExternalIpBlocklist struct {
@@ -46,8 +46,8 @@ type DnsfilterProfileFtgdDns struct {
 }
 
 type DnsfilterProfileFtgdDnsFilters struct {
-	Action   *string  `json:"action,omitempty"`
-	Category *float64 `json:"category,omitempty"`
-	Id       *float64 `json:"id,omitempty"`
-	Log      *string  `json:"log,omitempty"`
+	Action   *string `json:"action,omitempty"`
+	Category *int64  `json:"category,omitempty"`
+	Id       *int64  `json:"id,omitempty"`
+	Log      *string `json:"log,omitempty"`
 }

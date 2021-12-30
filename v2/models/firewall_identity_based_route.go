@@ -12,7 +12,7 @@ type FirewallIdentityBasedRouteRule struct {
 	Device  *string                                 `json:"device,omitempty"`
 	Gateway *string                                 `json:"gateway,omitempty"`
 	Groups  *[]FirewallIdentityBasedRouteRuleGroups `json:"groups,omitempty"`
-	Id      *float64                                `json:"id,omitempty"`
+	Id      *int64                                  `json:"id,omitempty"`
 }
 
 type FirewallIdentityBasedRouteRuleGroups struct {

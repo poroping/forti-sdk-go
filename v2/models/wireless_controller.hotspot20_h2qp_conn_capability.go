@@ -1,6 +1,6 @@
 package models
 
-const WirelessControllerhotspot20H2qpConnCapabilityPath = "wireless-controller.hotspot20/h2qp-conn-capability/"
+const WirelessControllerhotspot20H2qpConnCapabilityPath = "wireless-controller/hotspot20/h2qp-conn-capability/"
 
 type WirelessControllerhotspot20H2qpConnCapability struct {
 	EspPort     *string `json:"esp-port,omitempty"`

@@ -5,7 +5,7 @@ const FirewallProxyAddressPath = "firewall/proxy-address/"
 type FirewallProxyAddress struct {
 	CaseSensitivity *string                            `json:"case-sensitivity,omitempty"`
 	Category        *[]FirewallProxyAddressCategory    `json:"category,omitempty"`
-	Color           *float64                           `json:"color,omitempty"`
+	Color           *int64                             `json:"color,omitempty"`
 	Comment         *string                            `json:"comment,omitempty"`
 	Header          *string                            `json:"header,omitempty"`
 	HeaderGroup     *[]FirewallProxyAddressHeaderGroup `json:"header-group,omitempty"`
@@ -25,14 +25,14 @@ type FirewallProxyAddress struct {
 }
 
 type FirewallProxyAddressCategory struct {
-	Id *float64 `json:"id,omitempty"`
+	Id *int64 `json:"id,omitempty"`
 }
 
 type FirewallProxyAddressHeaderGroup struct {
-	CaseSensitivity *string  `json:"case-sensitivity,omitempty"`
-	Header          *string  `json:"header,omitempty"`
-	HeaderName      *string  `json:"header-name,omitempty"`
-	Id              *float64 `json:"id,omitempty"`
+	CaseSensitivity *string `json:"case-sensitivity,omitempty"`
+	Header          *string `json:"header,omitempty"`
+	HeaderName      *string `json:"header-name,omitempty"`
+	Id              *int64  `json:"id,omitempty"`
 }
 
 type FirewallProxyAddressTagging struct {

@@ -1,6 +1,6 @@
 package models
 
-const LogfortianalyzerCloudOverrideFilterPath = "log.fortianalyzer-cloud/override-filter/"
+const LogfortianalyzerCloudOverrideFilterPath = "log/fortianalyzer-cloud/override-filter/"
 
 type LogfortianalyzerCloudOverrideFilter struct {
 	Anomaly          *string                                         `json:"anomaly,omitempty"`
@@ -18,8 +18,8 @@ type LogfortianalyzerCloudOverrideFilter struct {
 }
 
 type LogfortianalyzerCloudOverrideFilterFreeStyle struct {
-	Category   *string  `json:"category,omitempty"`
-	Filter     *string  `json:"filter,omitempty"`
-	FilterType *string  `json:"filter-type,omitempty"`
-	Id         *float64 `json:"id,omitempty"`
+	Category   *string `json:"category,omitempty"`
+	Filter     *string `json:"filter,omitempty"`
+	FilterType *string `json:"filter-type,omitempty"`
+	Id         *int64  `json:"id,omitempty"`
 }

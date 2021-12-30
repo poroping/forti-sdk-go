@@ -3,10 +3,16 @@ package cmdb
 import (
 	"encoding/json"
 	"errors"
+	"log"
 
 	"github.com/poroping/forti-sdk-go/v2/models"
 	"github.com/poroping/forti-sdk-go/v2/request"
 )
+
+func (c *Client) CreateSystemVdomSflow(payload *models.SystemVdomSflow, params *models.CmdbRequestParams) (*models.CmdbResponse, error) {
+	log.Printf("[INFO] Resource at path %q is complex type. Changing to UPDATE.", models.SystemVdomSflowPath)
+	return c.UpdateSystemVdomSflow("", payload, params)
+}
 
 func (c *Client) ReadSystemVdomSflow(mkey string, params *models.CmdbRequestParams) (*models.SystemVdomSflow, error) {
 	req := &models.CmdbRequest{}
@@ -59,13 +65,7 @@ func (c *Client) UpdateSystemVdomSflow(mkey string, payload *models.SystemVdomSf
 }
 
 func (c *Client) DeleteSystemVdomSflow(mkey string, params *models.CmdbRequestParams) error {
-	req := &models.CmdbRequest{}
-	req.HTTPMethod = "DELETE"
-	req.Mkey = &mkey
-	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.SystemVdomSflowPath + mkey + "/"
-	req.Params = *params
-
-	err := request.Delete(c.config, req)
+	payload := &models.SystemVdomSflow{}
+	_, err := c.UpdateSystemVdomSflow("", payload, params)
 	return err
 }

@@ -1,6 +1,6 @@
 package models
 
-const FirewallserviceCategoryPath = "firewall.service/category/"
+const FirewallserviceCategoryPath = "firewall/service/category/"
 
 type FirewallserviceCategory struct {
 	Comment      *string `json:"comment,omitempty"`

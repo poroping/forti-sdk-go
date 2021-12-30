@@ -13,7 +13,7 @@ type AuthenticationScheme struct {
 	NegotiateNtlm    *string                             `json:"negotiate-ntlm,omitempty"`
 	RequireTfa       *string                             `json:"require-tfa,omitempty"`
 	SamlServer       *string                             `json:"saml-server,omitempty"`
-	SamlTimeout      *float64                            `json:"saml-timeout,omitempty"`
+	SamlTimeout      *int64                              `json:"saml-timeout,omitempty"`
 	SshCa            *string                             `json:"ssh-ca,omitempty"`
 	UserCert         *string                             `json:"user-cert,omitempty"`
 	UserDatabase     *[]AuthenticationSchemeUserDatabase `json:"user-database,omitempty"`

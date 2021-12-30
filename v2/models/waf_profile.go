@@ -48,39 +48,39 @@ type WafProfileConstraint struct {
 }
 
 type WafProfileConstraintContentLength struct {
-	Action   *string  `json:"action,omitempty"`
-	Length   *float64 `json:"length,omitempty"`
-	Log      *string  `json:"log,omitempty"`
-	Severity *string  `json:"severity,omitempty"`
-	Status   *string  `json:"status,omitempty"`
+	Action   *string `json:"action,omitempty"`
+	Length   *int64  `json:"length,omitempty"`
+	Log      *string `json:"log,omitempty"`
+	Severity *string `json:"severity,omitempty"`
+	Status   *string `json:"status,omitempty"`
 }
 
 type WafProfileConstraintException struct {
-	Address         *string  `json:"address,omitempty"`
-	ContentLength   *string  `json:"content-length,omitempty"`
-	HeaderLength    *string  `json:"header-length,omitempty"`
-	Hostname        *string  `json:"hostname,omitempty"`
-	Id              *float64 `json:"id,omitempty"`
-	LineLength      *string  `json:"line-length,omitempty"`
-	Malformed       *string  `json:"malformed,omitempty"`
-	MaxCookie       *string  `json:"max-cookie,omitempty"`
-	MaxHeaderLine   *string  `json:"max-header-line,omitempty"`
-	MaxRangeSegment *string  `json:"max-range-segment,omitempty"`
-	MaxUrlParam     *string  `json:"max-url-param,omitempty"`
-	Method          *string  `json:"method,omitempty"`
-	ParamLength     *string  `json:"param-length,omitempty"`
-	Pattern         *string  `json:"pattern,omitempty"`
-	Regex           *string  `json:"regex,omitempty"`
-	UrlParamLength  *string  `json:"url-param-length,omitempty"`
-	Version         *string  `json:"version,omitempty"`
+	Address         *string `json:"address,omitempty"`
+	ContentLength   *string `json:"content-length,omitempty"`
+	HeaderLength    *string `json:"header-length,omitempty"`
+	Hostname        *string `json:"hostname,omitempty"`
+	Id              *int64  `json:"id,omitempty"`
+	LineLength      *string `json:"line-length,omitempty"`
+	Malformed       *string `json:"malformed,omitempty"`
+	MaxCookie       *string `json:"max-cookie,omitempty"`
+	MaxHeaderLine   *string `json:"max-header-line,omitempty"`
+	MaxRangeSegment *string `json:"max-range-segment,omitempty"`
+	MaxUrlParam     *string `json:"max-url-param,omitempty"`
+	Method          *string `json:"method,omitempty"`
+	ParamLength     *string `json:"param-length,omitempty"`
+	Pattern         *string `json:"pattern,omitempty"`
+	Regex           *string `json:"regex,omitempty"`
+	UrlParamLength  *string `json:"url-param-length,omitempty"`
+	Version         *string `json:"version,omitempty"`
 }
 
 type WafProfileConstraintHeaderLength struct {
-	Action   *string  `json:"action,omitempty"`
-	Length   *float64 `json:"length,omitempty"`
-	Log      *string  `json:"log,omitempty"`
-	Severity *string  `json:"severity,omitempty"`
-	Status   *string  `json:"status,omitempty"`
+	Action   *string `json:"action,omitempty"`
+	Length   *int64  `json:"length,omitempty"`
+	Log      *string `json:"log,omitempty"`
+	Severity *string `json:"severity,omitempty"`
+	Status   *string `json:"status,omitempty"`
 }
 
 type WafProfileConstraintHostname struct {
@@ -91,11 +91,11 @@ type WafProfileConstraintHostname struct {
 }
 
 type WafProfileConstraintLineLength struct {
-	Action   *string  `json:"action,omitempty"`
-	Length   *float64 `json:"length,omitempty"`
-	Log      *string  `json:"log,omitempty"`
-	Severity *string  `json:"severity,omitempty"`
-	Status   *string  `json:"status,omitempty"`
+	Action   *string `json:"action,omitempty"`
+	Length   *int64  `json:"length,omitempty"`
+	Log      *string `json:"log,omitempty"`
+	Severity *string `json:"severity,omitempty"`
+	Status   *string `json:"status,omitempty"`
 }
 
 type WafProfileConstraintMalformed struct {
@@ -106,35 +106,35 @@ type WafProfileConstraintMalformed struct {
 }
 
 type WafProfileConstraintMaxCookie struct {
-	Action    *string  `json:"action,omitempty"`
-	Log       *string  `json:"log,omitempty"`
-	MaxCookie *float64 `json:"max-cookie,omitempty"`
-	Severity  *string  `json:"severity,omitempty"`
-	Status    *string  `json:"status,omitempty"`
+	Action    *string `json:"action,omitempty"`
+	Log       *string `json:"log,omitempty"`
+	MaxCookie *int64  `json:"max-cookie,omitempty"`
+	Severity  *string `json:"severity,omitempty"`
+	Status    *string `json:"status,omitempty"`
 }
 
 type WafProfileConstraintMaxHeaderLine struct {
-	Action        *string  `json:"action,omitempty"`
-	Log           *string  `json:"log,omitempty"`
-	MaxHeaderLine *float64 `json:"max-header-line,omitempty"`
-	Severity      *string  `json:"severity,omitempty"`
-	Status        *string  `json:"status,omitempty"`
+	Action        *string `json:"action,omitempty"`
+	Log           *string `json:"log,omitempty"`
+	MaxHeaderLine *int64  `json:"max-header-line,omitempty"`
+	Severity      *string `json:"severity,omitempty"`
+	Status        *string `json:"status,omitempty"`
 }
 
 type WafProfileConstraintMaxRangeSegment struct {
-	Action          *string  `json:"action,omitempty"`
-	Log             *string  `json:"log,omitempty"`
-	MaxRangeSegment *float64 `json:"max-range-segment,omitempty"`
-	Severity        *string  `json:"severity,omitempty"`
-	Status          *string  `json:"status,omitempty"`
+	Action          *string `json:"action,omitempty"`
+	Log             *string `json:"log,omitempty"`
+	MaxRangeSegment *int64  `json:"max-range-segment,omitempty"`
+	Severity        *string `json:"severity,omitempty"`
+	Status          *string `json:"status,omitempty"`
 }
 
 type WafProfileConstraintMaxUrlParam struct {
-	Action      *string  `json:"action,omitempty"`
-	Log         *string  `json:"log,omitempty"`
-	MaxUrlParam *float64 `json:"max-url-param,omitempty"`
-	Severity    *string  `json:"severity,omitempty"`
-	Status      *string  `json:"status,omitempty"`
+	Action      *string `json:"action,omitempty"`
+	Log         *string `json:"log,omitempty"`
+	MaxUrlParam *int64  `json:"max-url-param,omitempty"`
+	Severity    *string `json:"severity,omitempty"`
+	Status      *string `json:"status,omitempty"`
 }
 
 type WafProfileConstraintMethod struct {
@@ -145,19 +145,19 @@ type WafProfileConstraintMethod struct {
 }
 
 type WafProfileConstraintParamLength struct {
-	Action   *string  `json:"action,omitempty"`
-	Length   *float64 `json:"length,omitempty"`
-	Log      *string  `json:"log,omitempty"`
-	Severity *string  `json:"severity,omitempty"`
-	Status   *string  `json:"status,omitempty"`
+	Action   *string `json:"action,omitempty"`
+	Length   *int64  `json:"length,omitempty"`
+	Log      *string `json:"log,omitempty"`
+	Severity *string `json:"severity,omitempty"`
+	Status   *string `json:"status,omitempty"`
 }
 
 type WafProfileConstraintUrlParamLength struct {
-	Action   *string  `json:"action,omitempty"`
-	Length   *float64 `json:"length,omitempty"`
-	Log      *string  `json:"log,omitempty"`
-	Severity *string  `json:"severity,omitempty"`
-	Status   *string  `json:"status,omitempty"`
+	Action   *string `json:"action,omitempty"`
+	Length   *int64  `json:"length,omitempty"`
+	Log      *string `json:"log,omitempty"`
+	Severity *string `json:"severity,omitempty"`
+	Status   *string `json:"status,omitempty"`
 }
 
 type WafProfileConstraintVersion struct {
@@ -176,15 +176,15 @@ type WafProfileMethod struct {
 }
 
 type WafProfileMethodMethodPolicy struct {
-	Address        *string  `json:"address,omitempty"`
-	AllowedMethods *string  `json:"allowed-methods,omitempty"`
-	Id             *float64 `json:"id,omitempty"`
-	Pattern        *string  `json:"pattern,omitempty"`
-	Regex          *string  `json:"regex,omitempty"`
+	Address        *string `json:"address,omitempty"`
+	AllowedMethods *string `json:"allowed-methods,omitempty"`
+	Id             *int64  `json:"id,omitempty"`
+	Pattern        *string `json:"pattern,omitempty"`
+	Regex          *string `json:"regex,omitempty"`
 }
 
 type WafProfileSignature struct {
-	CreditCardDetectionThreshold *float64                                `json:"credit-card-detection-threshold,omitempty"`
+	CreditCardDetectionThreshold *int64                                  `json:"credit-card-detection-threshold,omitempty"`
 	CustomSignature              *[]WafProfileSignatureCustomSignature   `json:"custom-signature,omitempty"`
 	DisabledSignature            *[]WafProfileSignatureDisabledSignature `json:"disabled-signature,omitempty"`
 	DisabledSubClass             *[]WafProfileSignatureDisabledSubClass  `json:"disabled-sub-class,omitempty"`
@@ -204,34 +204,34 @@ type WafProfileSignatureCustomSignature struct {
 }
 
 type WafProfileSignatureDisabledSignature struct {
-	Id *float64 `json:"id,omitempty"`
+	Id *int64 `json:"id,omitempty"`
 }
 
 type WafProfileSignatureDisabledSubClass struct {
-	Id *float64 `json:"id,omitempty"`
+	Id *int64 `json:"id,omitempty"`
 }
 
 type WafProfileSignatureMainClass struct {
-	Action   *string  `json:"action,omitempty"`
-	Id       *float64 `json:"id,omitempty"`
-	Log      *string  `json:"log,omitempty"`
-	Severity *string  `json:"severity,omitempty"`
-	Status   *string  `json:"status,omitempty"`
+	Action   *string `json:"action,omitempty"`
+	Id       *int64  `json:"id,omitempty"`
+	Log      *string `json:"log,omitempty"`
+	Severity *string `json:"severity,omitempty"`
+	Status   *string `json:"status,omitempty"`
 }
 
 type WafProfileUrlAccess struct {
 	AccessPattern *[]WafProfileUrlAccessAccessPattern `json:"access-pattern,omitempty"`
 	Action        *string                             `json:"action,omitempty"`
 	Address       *string                             `json:"address,omitempty"`
-	Id            *float64                            `json:"id,omitempty"`
+	Id            *int64                              `json:"id,omitempty"`
 	Log           *string                             `json:"log,omitempty"`
 	Severity      *string                             `json:"severity,omitempty"`
 }
 
 type WafProfileUrlAccessAccessPattern struct {
-	Id      *float64 `json:"id,omitempty"`
-	Negate  *string  `json:"negate,omitempty"`
-	Pattern *string  `json:"pattern,omitempty"`
-	Regex   *string  `json:"regex,omitempty"`
-	Srcaddr *string  `json:"srcaddr,omitempty"`
+	Id      *int64  `json:"id,omitempty"`
+	Negate  *string `json:"negate,omitempty"`
+	Pattern *string `json:"pattern,omitempty"`
+	Regex   *string `json:"regex,omitempty"`
+	Srcaddr *string `json:"srcaddr,omitempty"`
 }

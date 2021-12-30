@@ -3,10 +3,16 @@ package cmdb
 import (
 	"encoding/json"
 	"errors"
+	"log"
 
 	"github.com/poroping/forti-sdk-go/v2/models"
 	"github.com/poroping/forti-sdk-go/v2/request"
 )
+
+func (c *Client) CreateEndpointControlSettings(payload *models.EndpointControlSettings, params *models.CmdbRequestParams) (*models.CmdbResponse, error) {
+	log.Printf("[INFO] Resource at path %q is complex type. Changing to UPDATE.", models.EndpointControlSettingsPath)
+	return c.UpdateEndpointControlSettings("", payload, params)
+}
 
 func (c *Client) ReadEndpointControlSettings(mkey string, params *models.CmdbRequestParams) (*models.EndpointControlSettings, error) {
 	req := &models.CmdbRequest{}
@@ -59,13 +65,7 @@ func (c *Client) UpdateEndpointControlSettings(mkey string, payload *models.Endp
 }
 
 func (c *Client) DeleteEndpointControlSettings(mkey string, params *models.CmdbRequestParams) error {
-	req := &models.CmdbRequest{}
-	req.HTTPMethod = "DELETE"
-	req.Mkey = &mkey
-	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.EndpointControlSettingsPath + mkey + "/"
-	req.Params = *params
-
-	err := request.Delete(c.config, req)
+	payload := &models.EndpointControlSettings{}
+	_, err := c.UpdateEndpointControlSettings("", payload, params)
 	return err
 }

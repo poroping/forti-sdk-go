@@ -1,6 +1,6 @@
 package models
 
-const SystemreplacemsgAuthPath = "system.replacemsg/auth/"
+const SystemreplacemsgAuthPath = "system/replacemsg/auth/"
 
 type SystemreplacemsgAuth struct {
 	Buffer  *string `json:"buffer,omitempty"`

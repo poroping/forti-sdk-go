@@ -27,10 +27,10 @@ type SystemCentralManagement struct {
 }
 
 type SystemCentralManagementServerList struct {
-	AddrType       *string  `json:"addr-type,omitempty"`
-	Fqdn           *string  `json:"fqdn,omitempty"`
-	Id             *float64 `json:"id,omitempty"`
-	ServerAddress  *string  `json:"server-address,omitempty"`
-	ServerAddress6 *string  `json:"server-address6,omitempty"`
-	ServerType     *string  `json:"server-type,omitempty"`
+	AddrType       *string `json:"addr-type,omitempty"`
+	Fqdn           *string `json:"fqdn,omitempty"`
+	Id             *int64  `json:"id,omitempty"`
+	ServerAddress  *string `json:"server-address,omitempty"`
+	ServerAddress6 *string `json:"server-address6,omitempty"`
+	ServerType     *string `json:"server-type,omitempty"`
 }

@@ -3,10 +3,16 @@ package cmdb
 import (
 	"encoding/json"
 	"errors"
+	"log"
 
 	"github.com/poroping/forti-sdk-go/v2/models"
 	"github.com/poroping/forti-sdk-go/v2/request"
 )
+
+func (c *Client) CreateSystemautoupdateSchedule(payload *models.SystemautoupdateSchedule, params *models.CmdbRequestParams) (*models.CmdbResponse, error) {
+	log.Printf("[INFO] Resource at path %q is complex type. Changing to UPDATE.", models.SystemautoupdateSchedulePath)
+	return c.UpdateSystemautoupdateSchedule("", payload, params)
+}
 
 func (c *Client) ReadSystemautoupdateSchedule(mkey string, params *models.CmdbRequestParams) (*models.SystemautoupdateSchedule, error) {
 	req := &models.CmdbRequest{}
@@ -59,13 +65,7 @@ func (c *Client) UpdateSystemautoupdateSchedule(mkey string, payload *models.Sys
 }
 
 func (c *Client) DeleteSystemautoupdateSchedule(mkey string, params *models.CmdbRequestParams) error {
-	req := &models.CmdbRequest{}
-	req.HTTPMethod = "DELETE"
-	req.Mkey = &mkey
-	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.SystemautoupdateSchedulePath + mkey + "/"
-	req.Params = *params
-
-	err := request.Delete(c.config, req)
+	payload := &models.SystemautoupdateSchedule{}
+	_, err := c.UpdateSystemautoupdateSchedule("", payload, params)
 	return err
 }

@@ -1,6 +1,6 @@
 package models
 
-const LogsyslogdSettingPath = "log.syslogd/setting/"
+const LogsyslogdSettingPath = "log/syslogd/setting/"
 
 type LogsyslogdSetting struct {
 	Certificate           *string                             `json:"certificate,omitempty"`
@@ -10,9 +10,9 @@ type LogsyslogdSetting struct {
 	Format                *string                             `json:"format,omitempty"`
 	Interface             *string                             `json:"interface,omitempty"`
 	InterfaceSelectMethod *string                             `json:"interface-select-method,omitempty"`
-	MaxLogRate            *float64                            `json:"max-log-rate,omitempty"`
+	MaxLogRate            *int64                              `json:"max-log-rate,omitempty"`
 	Mode                  *string                             `json:"mode,omitempty"`
-	Port                  *float64                            `json:"port,omitempty"`
+	Port                  *int64                              `json:"port,omitempty"`
 	Priority              *string                             `json:"priority,omitempty"`
 	Server                *string                             `json:"server,omitempty"`
 	SourceIp              *string                             `json:"source-ip,omitempty"`
@@ -21,7 +21,7 @@ type LogsyslogdSetting struct {
 }
 
 type LogsyslogdSettingCustomFieldName struct {
-	Custom *string  `json:"custom,omitempty"`
-	Id     *float64 `json:"id,omitempty"`
-	Name   *string  `json:"name,omitempty"`
+	Custom *string `json:"custom,omitempty"`
+	Id     *int64  `json:"id,omitempty"`
+	Name   *string `json:"name,omitempty"`
 }

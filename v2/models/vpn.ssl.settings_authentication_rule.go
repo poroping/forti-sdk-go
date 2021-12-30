@@ -1,13 +1,13 @@
 package models
 
-const VpnsslsettingsAuthenticationRulePath = "vpn.ssl.settings/authentication-rule/"
+const VpnsslsettingsAuthenticationRulePath = "vpn/ssl/settings/authentication-rule/"
 
 type VpnsslsettingsAuthenticationRule struct {
 	Auth                 *string                                            `json:"auth,omitempty"`
 	Cipher               *string                                            `json:"cipher,omitempty"`
 	ClientCert           *string                                            `json:"client-cert,omitempty"`
 	Groups               *[]VpnsslsettingsAuthenticationRuleGroups          `json:"groups,omitempty"`
-	Fosid                *float64                                           `json:"fosid,omitempty"`
+	Fosid                *int64                                             `json:"fosid,omitempty"`
 	Portal               *string                                            `json:"portal,omitempty"`
 	Realm                *string                                            `json:"realm,omitempty"`
 	SourceAddress        *[]VpnsslsettingsAuthenticationRuleSourceAddress   `json:"source-address,omitempty"`

@@ -19,8 +19,8 @@ type WirelessControllerWtpProfile struct {
 	ExtInfoEnable                  *string                                          `json:"ext-info-enable,omitempty"`
 	FrequencyHandoff               *string                                          `json:"frequency-handoff,omitempty"`
 	HandoffRoaming                 *string                                          `json:"handoff-roaming,omitempty"`
-	HandoffRssi                    *float64                                         `json:"handoff-rssi,omitempty"`
-	HandoffStaThresh               *float64                                         `json:"handoff-sta-thresh,omitempty"`
+	HandoffRssi                    *int64                                           `json:"handoff-rssi,omitempty"`
+	HandoffStaThresh               *int64                                           `json:"handoff-sta-thresh,omitempty"`
 	IndoorOutdoorDeployment        *string                                          `json:"indoor-outdoor-deployment,omitempty"`
 	IpFragmentPreventing           *string                                          `json:"ip-fragment-preventing,omitempty"`
 	Lan                            *[]WirelessControllerWtpProfileLan               `json:"lan,omitempty"`
@@ -30,7 +30,7 @@ type WirelessControllerWtpProfile struct {
 	Lldp                           *string                                          `json:"lldp,omitempty"`
 	LoginPasswd                    *string                                          `json:"login-passwd,omitempty"`
 	LoginPasswdChange              *string                                          `json:"login-passwd-change,omitempty"`
-	MaxClients                     *float64                                         `json:"max-clients,omitempty"`
+	MaxClients                     *int64                                           `json:"max-clients,omitempty"`
 	Name                           *string                                          `json:"name,omitempty"`
 	Platform                       *[]WirelessControllerWtpProfilePlatform          `json:"platform,omitempty"`
 	PoeMode                        *string                                          `json:"poe-mode,omitempty"`
@@ -42,8 +42,8 @@ type WirelessControllerWtpProfile struct {
 	SplitTunnelingAclLocalApSubnet *string                                          `json:"split-tunneling-acl-local-ap-subnet,omitempty"`
 	SplitTunnelingAclPath          *string                                          `json:"split-tunneling-acl-path,omitempty"`
 	SyslogProfile                  *string                                          `json:"syslog-profile,omitempty"`
-	TunMtuDownlink                 *float64                                         `json:"tun-mtu-downlink,omitempty"`
-	TunMtuUplink                   *float64                                         `json:"tun-mtu-uplink,omitempty"`
+	TunMtuDownlink                 *int64                                           `json:"tun-mtu-downlink,omitempty"`
+	TunMtuUplink                   *int64                                           `json:"tun-mtu-uplink,omitempty"`
 	WanPortAuth                    *string                                          `json:"wan-port-auth,omitempty"`
 	WanPortAuthMethods             *string                                          `json:"wan-port-auth-methods,omitempty"`
 	WanPortAuthPassword            *string                                          `json:"wan-port-auth-password,omitempty"`
@@ -52,22 +52,22 @@ type WirelessControllerWtpProfile struct {
 }
 
 type WirelessControllerWtpProfileDenyMacList struct {
-	Id  *float64 `json:"id,omitempty"`
-	Mac *string  `json:"mac,omitempty"`
+	Id  *int64  `json:"id,omitempty"`
+	Mac *string `json:"mac,omitempty"`
 }
 
 type WirelessControllerWtpProfileEslSesDongle struct {
-	ApcAddrType         *string  `json:"apc-addr-type,omitempty"`
-	ApcFqdn             *string  `json:"apc-fqdn,omitempty"`
-	ApcIp               *string  `json:"apc-ip,omitempty"`
-	ApcPort             *float64 `json:"apc-port,omitempty"`
-	CoexLevel           *string  `json:"coex-level,omitempty"`
-	ComplianceLevel     *string  `json:"compliance-level,omitempty"`
-	EslChannel          *string  `json:"esl-channel,omitempty"`
-	OutputPower         *string  `json:"output-power,omitempty"`
-	ScdEnable           *string  `json:"scd-enable,omitempty"`
-	TlsCertVerification *string  `json:"tls-cert-verification,omitempty"`
-	TlsFqdnVerification *string  `json:"tls-fqdn-verification,omitempty"`
+	ApcAddrType         *string `json:"apc-addr-type,omitempty"`
+	ApcFqdn             *string `json:"apc-fqdn,omitempty"`
+	ApcIp               *string `json:"apc-ip,omitempty"`
+	ApcPort             *int64  `json:"apc-port,omitempty"`
+	CoexLevel           *string `json:"coex-level,omitempty"`
+	ComplianceLevel     *string `json:"compliance-level,omitempty"`
+	EslChannel          *string `json:"esl-channel,omitempty"`
+	OutputPower         *string `json:"output-power,omitempty"`
+	ScdEnable           *string `json:"scd-enable,omitempty"`
+	TlsCertVerification *string `json:"tls-cert-verification,omitempty"`
+	TlsFqdnVerification *string `json:"tls-fqdn-verification,omitempty"`
 }
 
 type WirelessControllerWtpProfileLan struct {
@@ -94,30 +94,30 @@ type WirelessControllerWtpProfileLan struct {
 }
 
 type WirelessControllerWtpProfileLbs struct {
-	Aeroscout                   *string  `json:"aeroscout,omitempty"`
-	AeroscoutApMac              *string  `json:"aeroscout-ap-mac,omitempty"`
-	AeroscoutMmuReport          *string  `json:"aeroscout-mmu-report,omitempty"`
-	AeroscoutMu                 *string  `json:"aeroscout-mu,omitempty"`
-	AeroscoutMuFactor           *float64 `json:"aeroscout-mu-factor,omitempty"`
-	AeroscoutMuTimeout          *float64 `json:"aeroscout-mu-timeout,omitempty"`
-	AeroscoutServerIp           *string  `json:"aeroscout-server-ip,omitempty"`
-	AeroscoutServerPort         *float64 `json:"aeroscout-server-port,omitempty"`
-	EkahauBlinkMode             *string  `json:"ekahau-blink-mode,omitempty"`
-	EkahauTag                   *string  `json:"ekahau-tag,omitempty"`
-	ErcServerIp                 *string  `json:"erc-server-ip,omitempty"`
-	ErcServerPort               *float64 `json:"erc-server-port,omitempty"`
-	Fortipresence               *string  `json:"fortipresence,omitempty"`
-	FortipresenceBle            *string  `json:"fortipresence-ble,omitempty"`
-	FortipresenceFrequency      *float64 `json:"fortipresence-frequency,omitempty"`
-	FortipresencePort           *float64 `json:"fortipresence-port,omitempty"`
-	FortipresenceProject        *string  `json:"fortipresence-project,omitempty"`
-	FortipresenceRogue          *string  `json:"fortipresence-rogue,omitempty"`
-	FortipresenceSecret         *string  `json:"fortipresence-secret,omitempty"`
-	FortipresenceServer         *string  `json:"fortipresence-server,omitempty"`
-	FortipresenceServerAddrType *string  `json:"fortipresence-server-addr-type,omitempty"`
-	FortipresenceServerFqdn     *string  `json:"fortipresence-server-fqdn,omitempty"`
-	FortipresenceUnassoc        *string  `json:"fortipresence-unassoc,omitempty"`
-	StationLocate               *string  `json:"station-locate,omitempty"`
+	Aeroscout                   *string `json:"aeroscout,omitempty"`
+	AeroscoutApMac              *string `json:"aeroscout-ap-mac,omitempty"`
+	AeroscoutMmuReport          *string `json:"aeroscout-mmu-report,omitempty"`
+	AeroscoutMu                 *string `json:"aeroscout-mu,omitempty"`
+	AeroscoutMuFactor           *int64  `json:"aeroscout-mu-factor,omitempty"`
+	AeroscoutMuTimeout          *int64  `json:"aeroscout-mu-timeout,omitempty"`
+	AeroscoutServerIp           *string `json:"aeroscout-server-ip,omitempty"`
+	AeroscoutServerPort         *int64  `json:"aeroscout-server-port,omitempty"`
+	EkahauBlinkMode             *string `json:"ekahau-blink-mode,omitempty"`
+	EkahauTag                   *string `json:"ekahau-tag,omitempty"`
+	ErcServerIp                 *string `json:"erc-server-ip,omitempty"`
+	ErcServerPort               *int64  `json:"erc-server-port,omitempty"`
+	Fortipresence               *string `json:"fortipresence,omitempty"`
+	FortipresenceBle            *string `json:"fortipresence-ble,omitempty"`
+	FortipresenceFrequency      *int64  `json:"fortipresence-frequency,omitempty"`
+	FortipresencePort           *int64  `json:"fortipresence-port,omitempty"`
+	FortipresenceProject        *string `json:"fortipresence-project,omitempty"`
+	FortipresenceRogue          *string `json:"fortipresence-rogue,omitempty"`
+	FortipresenceSecret         *string `json:"fortipresence-secret,omitempty"`
+	FortipresenceServer         *string `json:"fortipresence-server,omitempty"`
+	FortipresenceServerAddrType *string `json:"fortipresence-server-addr-type,omitempty"`
+	FortipresenceServerFqdn     *string `json:"fortipresence-server-fqdn,omitempty"`
+	FortipresenceUnassoc        *string `json:"fortipresence-unassoc,omitempty"`
+	StationLocate               *string `json:"station-locate,omitempty"`
 }
 
 type WirelessControllerWtpProfileLedSchedules struct {
@@ -135,26 +135,26 @@ type WirelessControllerWtpProfileRadio1 struct {
 	Amsdu                     *string                                      `json:"amsdu,omitempty"`
 	ApHandoff                 *string                                      `json:"ap-handoff,omitempty"`
 	ApSnifferAddr             *string                                      `json:"ap-sniffer-addr,omitempty"`
-	ApSnifferBufsize          *float64                                     `json:"ap-sniffer-bufsize,omitempty"`
-	ApSnifferChan             *float64                                     `json:"ap-sniffer-chan,omitempty"`
+	ApSnifferBufsize          *int64                                       `json:"ap-sniffer-bufsize,omitempty"`
+	ApSnifferChan             *int64                                       `json:"ap-sniffer-chan,omitempty"`
 	ApSnifferCtl              *string                                      `json:"ap-sniffer-ctl,omitempty"`
 	ApSnifferData             *string                                      `json:"ap-sniffer-data,omitempty"`
 	ApSnifferMgmtBeacon       *string                                      `json:"ap-sniffer-mgmt-beacon,omitempty"`
 	ApSnifferMgmtOther        *string                                      `json:"ap-sniffer-mgmt-other,omitempty"`
 	ApSnifferMgmtProbe        *string                                      `json:"ap-sniffer-mgmt-probe,omitempty"`
-	AutoPowerHigh             *float64                                     `json:"auto-power-high,omitempty"`
+	AutoPowerHigh             *int64                                       `json:"auto-power-high,omitempty"`
 	AutoPowerLevel            *string                                      `json:"auto-power-level,omitempty"`
-	AutoPowerLow              *float64                                     `json:"auto-power-low,omitempty"`
+	AutoPowerLow              *int64                                       `json:"auto-power-low,omitempty"`
 	AutoPowerTarget           *string                                      `json:"auto-power-target,omitempty"`
 	Band                      *string                                      `json:"band,omitempty"`
 	Band5gType                *string                                      `json:"band-5g-type,omitempty"`
 	BandwidthAdmissionControl *string                                      `json:"bandwidth-admission-control,omitempty"`
-	BandwidthCapacity         *float64                                     `json:"bandwidth-capacity,omitempty"`
-	BeaconInterval            *float64                                     `json:"beacon-interval,omitempty"`
-	BssColor                  *float64                                     `json:"bss-color,omitempty"`
+	BandwidthCapacity         *int64                                       `json:"bandwidth-capacity,omitempty"`
+	BeaconInterval            *int64                                       `json:"beacon-interval,omitempty"`
+	BssColor                  *int64                                       `json:"bss-color,omitempty"`
 	BssColorMode              *string                                      `json:"bss-color-mode,omitempty"`
 	CallAdmissionControl      *string                                      `json:"call-admission-control,omitempty"`
-	CallCapacity              *float64                                     `json:"call-capacity,omitempty"`
+	CallCapacity              *int64                                       `json:"call-capacity,omitempty"`
 	Channel                   *[]WirelessControllerWtpProfileRadio1Channel `json:"channel,omitempty"`
 	ChannelBonding            *string                                      `json:"channel-bonding,omitempty"`
 	ChannelUtilization        *string                                      `json:"channel-utilization,omitempty"`
@@ -162,20 +162,20 @@ type WirelessControllerWtpProfileRadio1 struct {
 	Darrp                     *string                                      `json:"darrp,omitempty"`
 	Drma                      *string                                      `json:"drma,omitempty"`
 	DrmaSensitivity           *string                                      `json:"drma-sensitivity,omitempty"`
-	Dtim                      *float64                                     `json:"dtim,omitempty"`
-	FragThreshold             *float64                                     `json:"frag-threshold,omitempty"`
+	Dtim                      *int64                                       `json:"dtim,omitempty"`
+	FragThreshold             *int64                                       `json:"frag-threshold,omitempty"`
 	FrequencyHandoff          *string                                      `json:"frequency-handoff,omitempty"`
 	IperfProtocol             *string                                      `json:"iperf-protocol,omitempty"`
-	IperfServerPort           *float64                                     `json:"iperf-server-port,omitempty"`
-	MaxClients                *float64                                     `json:"max-clients,omitempty"`
-	MaxDistance               *float64                                     `json:"max-distance,omitempty"`
+	IperfServerPort           *int64                                       `json:"iperf-server-port,omitempty"`
+	MaxClients                *int64                                       `json:"max-clients,omitempty"`
+	MaxDistance               *int64                                       `json:"max-distance,omitempty"`
 	Mode                      *string                                      `json:"mode,omitempty"`
-	PowerLevel                *float64                                     `json:"power-level,omitempty"`
+	PowerLevel                *int64                                       `json:"power-level,omitempty"`
 	PowerMode                 *string                                      `json:"power-mode,omitempty"`
-	PowerValue                *float64                                     `json:"power-value,omitempty"`
+	PowerValue                *int64                                       `json:"power-value,omitempty"`
 	PowersaveOptimize         *string                                      `json:"powersave-optimize,omitempty"`
 	ProtectionMode            *string                                      `json:"protection-mode,omitempty"`
-	RtsThreshold              *float64                                     `json:"rts-threshold,omitempty"`
+	RtsThreshold              *int64                                       `json:"rts-threshold,omitempty"`
 	SamBssid                  *string                                      `json:"sam-bssid,omitempty"`
 	SamCaptivePortal          *string                                      `json:"sam-captive-portal,omitempty"`
 	SamCwpFailureString       *string                                      `json:"sam-cwp-failure-string,omitempty"`
@@ -185,7 +185,7 @@ type WirelessControllerWtpProfileRadio1 struct {
 	SamCwpTestUrl             *string                                      `json:"sam-cwp-test-url,omitempty"`
 	SamCwpUsername            *string                                      `json:"sam-cwp-username,omitempty"`
 	SamPassword               *string                                      `json:"sam-password,omitempty"`
-	SamReportIntv             *float64                                     `json:"sam-report-intv,omitempty"`
+	SamReportIntv             *int64                                       `json:"sam-report-intv,omitempty"`
 	SamSecurityType           *string                                      `json:"sam-security-type,omitempty"`
 	SamServer                 *string                                      `json:"sam-server,omitempty"`
 	SamServerFqdn             *string                                      `json:"sam-server-fqdn,omitempty"`
@@ -216,26 +216,26 @@ type WirelessControllerWtpProfileRadio2 struct {
 	Amsdu                     *string                                      `json:"amsdu,omitempty"`
 	ApHandoff                 *string                                      `json:"ap-handoff,omitempty"`
 	ApSnifferAddr             *string                                      `json:"ap-sniffer-addr,omitempty"`
-	ApSnifferBufsize          *float64                                     `json:"ap-sniffer-bufsize,omitempty"`
-	ApSnifferChan             *float64                                     `json:"ap-sniffer-chan,omitempty"`
+	ApSnifferBufsize          *int64                                       `json:"ap-sniffer-bufsize,omitempty"`
+	ApSnifferChan             *int64                                       `json:"ap-sniffer-chan,omitempty"`
 	ApSnifferCtl              *string                                      `json:"ap-sniffer-ctl,omitempty"`
 	ApSnifferData             *string                                      `json:"ap-sniffer-data,omitempty"`
 	ApSnifferMgmtBeacon       *string                                      `json:"ap-sniffer-mgmt-beacon,omitempty"`
 	ApSnifferMgmtOther        *string                                      `json:"ap-sniffer-mgmt-other,omitempty"`
 	ApSnifferMgmtProbe        *string                                      `json:"ap-sniffer-mgmt-probe,omitempty"`
-	AutoPowerHigh             *float64                                     `json:"auto-power-high,omitempty"`
+	AutoPowerHigh             *int64                                       `json:"auto-power-high,omitempty"`
 	AutoPowerLevel            *string                                      `json:"auto-power-level,omitempty"`
-	AutoPowerLow              *float64                                     `json:"auto-power-low,omitempty"`
+	AutoPowerLow              *int64                                       `json:"auto-power-low,omitempty"`
 	AutoPowerTarget           *string                                      `json:"auto-power-target,omitempty"`
 	Band                      *string                                      `json:"band,omitempty"`
 	Band5gType                *string                                      `json:"band-5g-type,omitempty"`
 	BandwidthAdmissionControl *string                                      `json:"bandwidth-admission-control,omitempty"`
-	BandwidthCapacity         *float64                                     `json:"bandwidth-capacity,omitempty"`
-	BeaconInterval            *float64                                     `json:"beacon-interval,omitempty"`
-	BssColor                  *float64                                     `json:"bss-color,omitempty"`
+	BandwidthCapacity         *int64                                       `json:"bandwidth-capacity,omitempty"`
+	BeaconInterval            *int64                                       `json:"beacon-interval,omitempty"`
+	BssColor                  *int64                                       `json:"bss-color,omitempty"`
 	BssColorMode              *string                                      `json:"bss-color-mode,omitempty"`
 	CallAdmissionControl      *string                                      `json:"call-admission-control,omitempty"`
-	CallCapacity              *float64                                     `json:"call-capacity,omitempty"`
+	CallCapacity              *int64                                       `json:"call-capacity,omitempty"`
 	Channel                   *[]WirelessControllerWtpProfileRadio2Channel `json:"channel,omitempty"`
 	ChannelBonding            *string                                      `json:"channel-bonding,omitempty"`
 	ChannelUtilization        *string                                      `json:"channel-utilization,omitempty"`
@@ -243,20 +243,20 @@ type WirelessControllerWtpProfileRadio2 struct {
 	Darrp                     *string                                      `json:"darrp,omitempty"`
 	Drma                      *string                                      `json:"drma,omitempty"`
 	DrmaSensitivity           *string                                      `json:"drma-sensitivity,omitempty"`
-	Dtim                      *float64                                     `json:"dtim,omitempty"`
-	FragThreshold             *float64                                     `json:"frag-threshold,omitempty"`
+	Dtim                      *int64                                       `json:"dtim,omitempty"`
+	FragThreshold             *int64                                       `json:"frag-threshold,omitempty"`
 	FrequencyHandoff          *string                                      `json:"frequency-handoff,omitempty"`
 	IperfProtocol             *string                                      `json:"iperf-protocol,omitempty"`
-	IperfServerPort           *float64                                     `json:"iperf-server-port,omitempty"`
-	MaxClients                *float64                                     `json:"max-clients,omitempty"`
-	MaxDistance               *float64                                     `json:"max-distance,omitempty"`
+	IperfServerPort           *int64                                       `json:"iperf-server-port,omitempty"`
+	MaxClients                *int64                                       `json:"max-clients,omitempty"`
+	MaxDistance               *int64                                       `json:"max-distance,omitempty"`
 	Mode                      *string                                      `json:"mode,omitempty"`
-	PowerLevel                *float64                                     `json:"power-level,omitempty"`
+	PowerLevel                *int64                                       `json:"power-level,omitempty"`
 	PowerMode                 *string                                      `json:"power-mode,omitempty"`
-	PowerValue                *float64                                     `json:"power-value,omitempty"`
+	PowerValue                *int64                                       `json:"power-value,omitempty"`
 	PowersaveOptimize         *string                                      `json:"powersave-optimize,omitempty"`
 	ProtectionMode            *string                                      `json:"protection-mode,omitempty"`
-	RtsThreshold              *float64                                     `json:"rts-threshold,omitempty"`
+	RtsThreshold              *int64                                       `json:"rts-threshold,omitempty"`
 	SamBssid                  *string                                      `json:"sam-bssid,omitempty"`
 	SamCaptivePortal          *string                                      `json:"sam-captive-portal,omitempty"`
 	SamCwpFailureString       *string                                      `json:"sam-cwp-failure-string,omitempty"`
@@ -266,7 +266,7 @@ type WirelessControllerWtpProfileRadio2 struct {
 	SamCwpTestUrl             *string                                      `json:"sam-cwp-test-url,omitempty"`
 	SamCwpUsername            *string                                      `json:"sam-cwp-username,omitempty"`
 	SamPassword               *string                                      `json:"sam-password,omitempty"`
-	SamReportIntv             *float64                                     `json:"sam-report-intv,omitempty"`
+	SamReportIntv             *int64                                       `json:"sam-report-intv,omitempty"`
 	SamSecurityType           *string                                      `json:"sam-security-type,omitempty"`
 	SamServer                 *string                                      `json:"sam-server,omitempty"`
 	SamServerFqdn             *string                                      `json:"sam-server-fqdn,omitempty"`
@@ -297,26 +297,26 @@ type WirelessControllerWtpProfileRadio3 struct {
 	Amsdu                     *string                                      `json:"amsdu,omitempty"`
 	ApHandoff                 *string                                      `json:"ap-handoff,omitempty"`
 	ApSnifferAddr             *string                                      `json:"ap-sniffer-addr,omitempty"`
-	ApSnifferBufsize          *float64                                     `json:"ap-sniffer-bufsize,omitempty"`
-	ApSnifferChan             *float64                                     `json:"ap-sniffer-chan,omitempty"`
+	ApSnifferBufsize          *int64                                       `json:"ap-sniffer-bufsize,omitempty"`
+	ApSnifferChan             *int64                                       `json:"ap-sniffer-chan,omitempty"`
 	ApSnifferCtl              *string                                      `json:"ap-sniffer-ctl,omitempty"`
 	ApSnifferData             *string                                      `json:"ap-sniffer-data,omitempty"`
 	ApSnifferMgmtBeacon       *string                                      `json:"ap-sniffer-mgmt-beacon,omitempty"`
 	ApSnifferMgmtOther        *string                                      `json:"ap-sniffer-mgmt-other,omitempty"`
 	ApSnifferMgmtProbe        *string                                      `json:"ap-sniffer-mgmt-probe,omitempty"`
-	AutoPowerHigh             *float64                                     `json:"auto-power-high,omitempty"`
+	AutoPowerHigh             *int64                                       `json:"auto-power-high,omitempty"`
 	AutoPowerLevel            *string                                      `json:"auto-power-level,omitempty"`
-	AutoPowerLow              *float64                                     `json:"auto-power-low,omitempty"`
+	AutoPowerLow              *int64                                       `json:"auto-power-low,omitempty"`
 	AutoPowerTarget           *string                                      `json:"auto-power-target,omitempty"`
 	Band                      *string                                      `json:"band,omitempty"`
 	Band5gType                *string                                      `json:"band-5g-type,omitempty"`
 	BandwidthAdmissionControl *string                                      `json:"bandwidth-admission-control,omitempty"`
-	BandwidthCapacity         *float64                                     `json:"bandwidth-capacity,omitempty"`
-	BeaconInterval            *float64                                     `json:"beacon-interval,omitempty"`
-	BssColor                  *float64                                     `json:"bss-color,omitempty"`
+	BandwidthCapacity         *int64                                       `json:"bandwidth-capacity,omitempty"`
+	BeaconInterval            *int64                                       `json:"beacon-interval,omitempty"`
+	BssColor                  *int64                                       `json:"bss-color,omitempty"`
 	BssColorMode              *string                                      `json:"bss-color-mode,omitempty"`
 	CallAdmissionControl      *string                                      `json:"call-admission-control,omitempty"`
-	CallCapacity              *float64                                     `json:"call-capacity,omitempty"`
+	CallCapacity              *int64                                       `json:"call-capacity,omitempty"`
 	Channel                   *[]WirelessControllerWtpProfileRadio3Channel `json:"channel,omitempty"`
 	ChannelBonding            *string                                      `json:"channel-bonding,omitempty"`
 	ChannelUtilization        *string                                      `json:"channel-utilization,omitempty"`
@@ -324,20 +324,20 @@ type WirelessControllerWtpProfileRadio3 struct {
 	Darrp                     *string                                      `json:"darrp,omitempty"`
 	Drma                      *string                                      `json:"drma,omitempty"`
 	DrmaSensitivity           *string                                      `json:"drma-sensitivity,omitempty"`
-	Dtim                      *float64                                     `json:"dtim,omitempty"`
-	FragThreshold             *float64                                     `json:"frag-threshold,omitempty"`
+	Dtim                      *int64                                       `json:"dtim,omitempty"`
+	FragThreshold             *int64                                       `json:"frag-threshold,omitempty"`
 	FrequencyHandoff          *string                                      `json:"frequency-handoff,omitempty"`
 	IperfProtocol             *string                                      `json:"iperf-protocol,omitempty"`
-	IperfServerPort           *float64                                     `json:"iperf-server-port,omitempty"`
-	MaxClients                *float64                                     `json:"max-clients,omitempty"`
-	MaxDistance               *float64                                     `json:"max-distance,omitempty"`
+	IperfServerPort           *int64                                       `json:"iperf-server-port,omitempty"`
+	MaxClients                *int64                                       `json:"max-clients,omitempty"`
+	MaxDistance               *int64                                       `json:"max-distance,omitempty"`
 	Mode                      *string                                      `json:"mode,omitempty"`
-	PowerLevel                *float64                                     `json:"power-level,omitempty"`
+	PowerLevel                *int64                                       `json:"power-level,omitempty"`
 	PowerMode                 *string                                      `json:"power-mode,omitempty"`
-	PowerValue                *float64                                     `json:"power-value,omitempty"`
+	PowerValue                *int64                                       `json:"power-value,omitempty"`
 	PowersaveOptimize         *string                                      `json:"powersave-optimize,omitempty"`
 	ProtectionMode            *string                                      `json:"protection-mode,omitempty"`
-	RtsThreshold              *float64                                     `json:"rts-threshold,omitempty"`
+	RtsThreshold              *int64                                       `json:"rts-threshold,omitempty"`
 	SamBssid                  *string                                      `json:"sam-bssid,omitempty"`
 	SamCaptivePortal          *string                                      `json:"sam-captive-portal,omitempty"`
 	SamCwpFailureString       *string                                      `json:"sam-cwp-failure-string,omitempty"`
@@ -347,7 +347,7 @@ type WirelessControllerWtpProfileRadio3 struct {
 	SamCwpTestUrl             *string                                      `json:"sam-cwp-test-url,omitempty"`
 	SamCwpUsername            *string                                      `json:"sam-cwp-username,omitempty"`
 	SamPassword               *string                                      `json:"sam-password,omitempty"`
-	SamReportIntv             *float64                                     `json:"sam-report-intv,omitempty"`
+	SamReportIntv             *int64                                       `json:"sam-report-intv,omitempty"`
 	SamSecurityType           *string                                      `json:"sam-security-type,omitempty"`
 	SamServer                 *string                                      `json:"sam-server,omitempty"`
 	SamServerFqdn             *string                                      `json:"sam-server-fqdn,omitempty"`
@@ -378,26 +378,26 @@ type WirelessControllerWtpProfileRadio4 struct {
 	Amsdu                     *string                                      `json:"amsdu,omitempty"`
 	ApHandoff                 *string                                      `json:"ap-handoff,omitempty"`
 	ApSnifferAddr             *string                                      `json:"ap-sniffer-addr,omitempty"`
-	ApSnifferBufsize          *float64                                     `json:"ap-sniffer-bufsize,omitempty"`
-	ApSnifferChan             *float64                                     `json:"ap-sniffer-chan,omitempty"`
+	ApSnifferBufsize          *int64                                       `json:"ap-sniffer-bufsize,omitempty"`
+	ApSnifferChan             *int64                                       `json:"ap-sniffer-chan,omitempty"`
 	ApSnifferCtl              *string                                      `json:"ap-sniffer-ctl,omitempty"`
 	ApSnifferData             *string                                      `json:"ap-sniffer-data,omitempty"`
 	ApSnifferMgmtBeacon       *string                                      `json:"ap-sniffer-mgmt-beacon,omitempty"`
 	ApSnifferMgmtOther        *string                                      `json:"ap-sniffer-mgmt-other,omitempty"`
 	ApSnifferMgmtProbe        *string                                      `json:"ap-sniffer-mgmt-probe,omitempty"`
-	AutoPowerHigh             *float64                                     `json:"auto-power-high,omitempty"`
+	AutoPowerHigh             *int64                                       `json:"auto-power-high,omitempty"`
 	AutoPowerLevel            *string                                      `json:"auto-power-level,omitempty"`
-	AutoPowerLow              *float64                                     `json:"auto-power-low,omitempty"`
+	AutoPowerLow              *int64                                       `json:"auto-power-low,omitempty"`
 	AutoPowerTarget           *string                                      `json:"auto-power-target,omitempty"`
 	Band                      *string                                      `json:"band,omitempty"`
 	Band5gType                *string                                      `json:"band-5g-type,omitempty"`
 	BandwidthAdmissionControl *string                                      `json:"bandwidth-admission-control,omitempty"`
-	BandwidthCapacity         *float64                                     `json:"bandwidth-capacity,omitempty"`
-	BeaconInterval            *float64                                     `json:"beacon-interval,omitempty"`
-	BssColor                  *float64                                     `json:"bss-color,omitempty"`
+	BandwidthCapacity         *int64                                       `json:"bandwidth-capacity,omitempty"`
+	BeaconInterval            *int64                                       `json:"beacon-interval,omitempty"`
+	BssColor                  *int64                                       `json:"bss-color,omitempty"`
 	BssColorMode              *string                                      `json:"bss-color-mode,omitempty"`
 	CallAdmissionControl      *string                                      `json:"call-admission-control,omitempty"`
-	CallCapacity              *float64                                     `json:"call-capacity,omitempty"`
+	CallCapacity              *int64                                       `json:"call-capacity,omitempty"`
 	Channel                   *[]WirelessControllerWtpProfileRadio4Channel `json:"channel,omitempty"`
 	ChannelBonding            *string                                      `json:"channel-bonding,omitempty"`
 	ChannelUtilization        *string                                      `json:"channel-utilization,omitempty"`
@@ -405,20 +405,20 @@ type WirelessControllerWtpProfileRadio4 struct {
 	Darrp                     *string                                      `json:"darrp,omitempty"`
 	Drma                      *string                                      `json:"drma,omitempty"`
 	DrmaSensitivity           *string                                      `json:"drma-sensitivity,omitempty"`
-	Dtim                      *float64                                     `json:"dtim,omitempty"`
-	FragThreshold             *float64                                     `json:"frag-threshold,omitempty"`
+	Dtim                      *int64                                       `json:"dtim,omitempty"`
+	FragThreshold             *int64                                       `json:"frag-threshold,omitempty"`
 	FrequencyHandoff          *string                                      `json:"frequency-handoff,omitempty"`
 	IperfProtocol             *string                                      `json:"iperf-protocol,omitempty"`
-	IperfServerPort           *float64                                     `json:"iperf-server-port,omitempty"`
-	MaxClients                *float64                                     `json:"max-clients,omitempty"`
-	MaxDistance               *float64                                     `json:"max-distance,omitempty"`
+	IperfServerPort           *int64                                       `json:"iperf-server-port,omitempty"`
+	MaxClients                *int64                                       `json:"max-clients,omitempty"`
+	MaxDistance               *int64                                       `json:"max-distance,omitempty"`
 	Mode                      *string                                      `json:"mode,omitempty"`
-	PowerLevel                *float64                                     `json:"power-level,omitempty"`
+	PowerLevel                *int64                                       `json:"power-level,omitempty"`
 	PowerMode                 *string                                      `json:"power-mode,omitempty"`
-	PowerValue                *float64                                     `json:"power-value,omitempty"`
+	PowerValue                *int64                                       `json:"power-value,omitempty"`
 	PowersaveOptimize         *string                                      `json:"powersave-optimize,omitempty"`
 	ProtectionMode            *string                                      `json:"protection-mode,omitempty"`
-	RtsThreshold              *float64                                     `json:"rts-threshold,omitempty"`
+	RtsThreshold              *int64                                       `json:"rts-threshold,omitempty"`
 	SamBssid                  *string                                      `json:"sam-bssid,omitempty"`
 	SamCaptivePortal          *string                                      `json:"sam-captive-portal,omitempty"`
 	SamCwpFailureString       *string                                      `json:"sam-cwp-failure-string,omitempty"`
@@ -428,7 +428,7 @@ type WirelessControllerWtpProfileRadio4 struct {
 	SamCwpTestUrl             *string                                      `json:"sam-cwp-test-url,omitempty"`
 	SamCwpUsername            *string                                      `json:"sam-cwp-username,omitempty"`
 	SamPassword               *string                                      `json:"sam-password,omitempty"`
-	SamReportIntv             *float64                                     `json:"sam-report-intv,omitempty"`
+	SamReportIntv             *int64                                       `json:"sam-report-intv,omitempty"`
 	SamSecurityType           *string                                      `json:"sam-security-type,omitempty"`
 	SamServer                 *string                                      `json:"sam-server,omitempty"`
 	SamServerFqdn             *string                                      `json:"sam-server-fqdn,omitempty"`
@@ -455,6 +455,6 @@ type WirelessControllerWtpProfileRadio4Vaps struct {
 }
 
 type WirelessControllerWtpProfileSplitTunnelingAcl struct {
-	DestIp *string  `json:"dest-ip,omitempty"`
-	Id     *float64 `json:"id,omitempty"`
+	DestIp *string `json:"dest-ip,omitempty"`
+	Id     *int64  `json:"id,omitempty"`
 }

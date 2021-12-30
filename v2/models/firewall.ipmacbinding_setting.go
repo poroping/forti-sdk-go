@@ -1,6 +1,6 @@
 package models
 
-const FirewallipmacbindingSettingPath = "firewall.ipmacbinding/setting/"
+const FirewallipmacbindingSettingPath = "firewall/ipmacbinding/setting/"
 
 type FirewallipmacbindingSetting struct {
 	Bindthroughfw *string `json:"bindthroughfw,omitempty"`

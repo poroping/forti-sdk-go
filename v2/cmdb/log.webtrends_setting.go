@@ -3,10 +3,16 @@ package cmdb
 import (
 	"encoding/json"
 	"errors"
+	"log"
 
 	"github.com/poroping/forti-sdk-go/v2/models"
 	"github.com/poroping/forti-sdk-go/v2/request"
 )
+
+func (c *Client) CreateLogwebtrendsSetting(payload *models.LogwebtrendsSetting, params *models.CmdbRequestParams) (*models.CmdbResponse, error) {
+	log.Printf("[INFO] Resource at path %q is complex type. Changing to UPDATE.", models.LogwebtrendsSettingPath)
+	return c.UpdateLogwebtrendsSetting("", payload, params)
+}
 
 func (c *Client) ReadLogwebtrendsSetting(mkey string, params *models.CmdbRequestParams) (*models.LogwebtrendsSetting, error) {
 	req := &models.CmdbRequest{}
@@ -59,13 +65,7 @@ func (c *Client) UpdateLogwebtrendsSetting(mkey string, payload *models.Logwebtr
 }
 
 func (c *Client) DeleteLogwebtrendsSetting(mkey string, params *models.CmdbRequestParams) error {
-	req := &models.CmdbRequest{}
-	req.HTTPMethod = "DELETE"
-	req.Mkey = &mkey
-	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.LogwebtrendsSettingPath + mkey + "/"
-	req.Params = *params
-
-	err := request.Delete(c.config, req)
+	payload := &models.LogwebtrendsSetting{}
+	_, err := c.UpdateLogwebtrendsSetting("", payload, params)
 	return err
 }

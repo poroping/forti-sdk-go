@@ -1,12 +1,12 @@
 package models
 
-const SystemsdwanDuplicationPath = "system.sdwan/duplication/"
+const SystemsdwanDuplicationPath = "system/sdwan/duplication/"
 
 type SystemsdwanDuplication struct {
 	Dstaddr             *[]SystemsdwanDuplicationDstaddr   `json:"dstaddr,omitempty"`
 	Dstaddr6            *[]SystemsdwanDuplicationDstaddr6  `json:"dstaddr6,omitempty"`
 	Dstintf             *[]SystemsdwanDuplicationDstintf   `json:"dstintf,omitempty"`
-	Fosid               *float64                           `json:"fosid,omitempty"`
+	Fosid               *int64                             `json:"fosid,omitempty"`
 	PacketDeDuplication *string                            `json:"packet-de-duplication,omitempty"`
 	PacketDuplication   *string                            `json:"packet-duplication,omitempty"`
 	Service             *[]SystemsdwanDuplicationService   `json:"service,omitempty"`
@@ -33,7 +33,7 @@ type SystemsdwanDuplicationService struct {
 }
 
 type SystemsdwanDuplicationServiceId struct {
-	Id *float64 `json:"id,omitempty"`
+	Id *int64 `json:"id,omitempty"`
 }
 
 type SystemsdwanDuplicationSrcaddr struct {

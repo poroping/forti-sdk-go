@@ -10,7 +10,7 @@ type SystemVirtualSwitch struct {
 	SpanDestPort   *string                    `json:"span-dest-port,omitempty"`
 	SpanDirection  *string                    `json:"span-direction,omitempty"`
 	SpanSourcePort *string                    `json:"span-source-port,omitempty"`
-	Vlan           *float64                   `json:"vlan,omitempty"`
+	Vlan           *int64                     `json:"vlan,omitempty"`
 }
 
 type SystemVirtualSwitchPort struct {

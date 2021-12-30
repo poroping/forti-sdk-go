@@ -1,6 +1,6 @@
 package models
 
-const SystemreplacemsgAdminPath = "system.replacemsg/admin/"
+const SystemreplacemsgAdminPath = "system/replacemsg/admin/"
 
 type SystemreplacemsgAdmin struct {
 	Buffer  *string `json:"buffer,omitempty"`

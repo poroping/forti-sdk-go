@@ -3,10 +3,16 @@ package cmdb
 import (
 	"encoding/json"
 	"errors"
+	"log"
 
 	"github.com/poroping/forti-sdk-go/v2/models"
 	"github.com/poroping/forti-sdk-go/v2/request"
 )
+
+func (c *Client) CreateRouterRip(payload *models.RouterRip, params *models.CmdbRequestParams) (*models.CmdbResponse, error) {
+	log.Printf("[INFO] Resource at path %q is complex type. Changing to UPDATE.", models.RouterRipPath)
+	return c.UpdateRouterRip("", payload, params)
+}
 
 func (c *Client) ReadRouterRip(mkey string, params *models.CmdbRequestParams) (*models.RouterRip, error) {
 	req := &models.CmdbRequest{}
@@ -59,13 +65,7 @@ func (c *Client) UpdateRouterRip(mkey string, payload *models.RouterRip, params 
 }
 
 func (c *Client) DeleteRouterRip(mkey string, params *models.CmdbRequestParams) error {
-	req := &models.CmdbRequest{}
-	req.HTTPMethod = "DELETE"
-	req.Mkey = &mkey
-	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.RouterRipPath + mkey + "/"
-	req.Params = *params
-
-	err := request.Delete(c.config, req)
+	payload := &models.RouterRip{}
+	_, err := c.UpdateRouterRip("", payload, params)
 	return err
 }

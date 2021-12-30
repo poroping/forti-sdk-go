@@ -1,6 +1,6 @@
 package models
 
-const SystemreplacemsgSslvpnPath = "system.replacemsg/sslvpn/"
+const SystemreplacemsgSslvpnPath = "system/replacemsg/sslvpn/"
 
 type SystemreplacemsgSslvpn struct {
 	Buffer  *string `json:"buffer,omitempty"`

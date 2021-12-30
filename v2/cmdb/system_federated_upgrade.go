@@ -3,10 +3,16 @@ package cmdb
 import (
 	"encoding/json"
 	"errors"
+	"log"
 
 	"github.com/poroping/forti-sdk-go/v2/models"
 	"github.com/poroping/forti-sdk-go/v2/request"
 )
+
+func (c *Client) CreateSystemFederatedUpgrade(payload *models.SystemFederatedUpgrade, params *models.CmdbRequestParams) (*models.CmdbResponse, error) {
+	log.Printf("[INFO] Resource at path %q is complex type. Changing to UPDATE.", models.SystemFederatedUpgradePath)
+	return c.UpdateSystemFederatedUpgrade("", payload, params)
+}
 
 func (c *Client) ReadSystemFederatedUpgrade(mkey string, params *models.CmdbRequestParams) (*models.SystemFederatedUpgrade, error) {
 	req := &models.CmdbRequest{}
@@ -59,13 +65,7 @@ func (c *Client) UpdateSystemFederatedUpgrade(mkey string, payload *models.Syste
 }
 
 func (c *Client) DeleteSystemFederatedUpgrade(mkey string, params *models.CmdbRequestParams) error {
-	req := &models.CmdbRequest{}
-	req.HTTPMethod = "DELETE"
-	req.Mkey = &mkey
-	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.SystemFederatedUpgradePath + mkey + "/"
-	req.Params = *params
-
-	err := request.Delete(c.config, req)
+	payload := &models.SystemFederatedUpgrade{}
+	_, err := c.UpdateSystemFederatedUpgrade("", payload, params)
 	return err
 }

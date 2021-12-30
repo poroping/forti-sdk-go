@@ -1,6 +1,6 @@
 package models
 
-const SystemreplacemsgHttpPath = "system.replacemsg/http/"
+const SystemreplacemsgHttpPath = "system/replacemsg/http/"
 
 type SystemreplacemsgHttp struct {
 	Buffer  *string `json:"buffer,omitempty"`

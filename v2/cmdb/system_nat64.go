@@ -3,10 +3,16 @@ package cmdb
 import (
 	"encoding/json"
 	"errors"
+	"log"
 
 	"github.com/poroping/forti-sdk-go/v2/models"
 	"github.com/poroping/forti-sdk-go/v2/request"
 )
+
+func (c *Client) CreateSystemNat64(payload *models.SystemNat64, params *models.CmdbRequestParams) (*models.CmdbResponse, error) {
+	log.Printf("[INFO] Resource at path %q is complex type. Changing to UPDATE.", models.SystemNat64Path)
+	return c.UpdateSystemNat64("", payload, params)
+}
 
 func (c *Client) ReadSystemNat64(mkey string, params *models.CmdbRequestParams) (*models.SystemNat64, error) {
 	req := &models.CmdbRequest{}
@@ -59,13 +65,7 @@ func (c *Client) UpdateSystemNat64(mkey string, payload *models.SystemNat64, par
 }
 
 func (c *Client) DeleteSystemNat64(mkey string, params *models.CmdbRequestParams) error {
-	req := &models.CmdbRequest{}
-	req.HTTPMethod = "DELETE"
-	req.Mkey = &mkey
-	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.SystemNat64Path + mkey + "/"
-	req.Params = *params
-
-	err := request.Delete(c.config, req)
+	payload := &models.SystemNat64{}
+	_, err := c.UpdateSystemNat64("", payload, params)
 	return err
 }

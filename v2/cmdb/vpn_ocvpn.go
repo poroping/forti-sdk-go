@@ -3,10 +3,16 @@ package cmdb
 import (
 	"encoding/json"
 	"errors"
+	"log"
 
 	"github.com/poroping/forti-sdk-go/v2/models"
 	"github.com/poroping/forti-sdk-go/v2/request"
 )
+
+func (c *Client) CreateVpnOcvpn(payload *models.VpnOcvpn, params *models.CmdbRequestParams) (*models.CmdbResponse, error) {
+	log.Printf("[INFO] Resource at path %q is complex type. Changing to UPDATE.", models.VpnOcvpnPath)
+	return c.UpdateVpnOcvpn("", payload, params)
+}
 
 func (c *Client) ReadVpnOcvpn(mkey string, params *models.CmdbRequestParams) (*models.VpnOcvpn, error) {
 	req := &models.CmdbRequest{}
@@ -59,13 +65,7 @@ func (c *Client) UpdateVpnOcvpn(mkey string, payload *models.VpnOcvpn, params *m
 }
 
 func (c *Client) DeleteVpnOcvpn(mkey string, params *models.CmdbRequestParams) error {
-	req := &models.CmdbRequest{}
-	req.HTTPMethod = "DELETE"
-	req.Mkey = &mkey
-	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.VpnOcvpnPath + mkey + "/"
-	req.Params = *params
-
-	err := request.Delete(c.config, req)
+	payload := &models.VpnOcvpn{}
+	_, err := c.UpdateVpnOcvpn("", payload, params)
 	return err
 }

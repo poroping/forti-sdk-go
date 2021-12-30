@@ -3,10 +3,16 @@ package cmdb
 import (
 	"encoding/json"
 	"errors"
+	"log"
 
 	"github.com/poroping/forti-sdk-go/v2/models"
 	"github.com/poroping/forti-sdk-go/v2/request"
 )
+
+func (c *Client) CreateLogmemoryGlobalSetting(payload *models.LogmemoryGlobalSetting, params *models.CmdbRequestParams) (*models.CmdbResponse, error) {
+	log.Printf("[INFO] Resource at path %q is complex type. Changing to UPDATE.", models.LogmemoryGlobalSettingPath)
+	return c.UpdateLogmemoryGlobalSetting("", payload, params)
+}
 
 func (c *Client) ReadLogmemoryGlobalSetting(mkey string, params *models.CmdbRequestParams) (*models.LogmemoryGlobalSetting, error) {
 	req := &models.CmdbRequest{}
@@ -59,13 +65,7 @@ func (c *Client) UpdateLogmemoryGlobalSetting(mkey string, payload *models.Logme
 }
 
 func (c *Client) DeleteLogmemoryGlobalSetting(mkey string, params *models.CmdbRequestParams) error {
-	req := &models.CmdbRequest{}
-	req.HTTPMethod = "DELETE"
-	req.Mkey = &mkey
-	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.LogmemoryGlobalSettingPath + mkey + "/"
-	req.Params = *params
-
-	err := request.Delete(c.config, req)
+	payload := &models.LogmemoryGlobalSetting{}
+	_, err := c.UpdateLogmemoryGlobalSetting("", payload, params)
 	return err
 }

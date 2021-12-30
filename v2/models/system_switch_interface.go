@@ -4,7 +4,7 @@ const SystemSwitchInterfacePath = "system/switch-interface/"
 
 type SystemSwitchInterface struct {
 	IntraSwitchPolicy *string                                `json:"intra-switch-policy,omitempty"`
-	MacTtl            *float64                               `json:"mac-ttl,omitempty"`
+	MacTtl            *int64                                 `json:"mac-ttl,omitempty"`
 	Member            *[]SystemSwitchInterfaceMember         `json:"member,omitempty"`
 	Name              *string                                `json:"name,omitempty"`
 	Span              *string                                `json:"span,omitempty"`

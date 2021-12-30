@@ -11,7 +11,7 @@ type VideofilterProfile struct {
 	Vimeo                *string                                 `json:"vimeo,omitempty"`
 	VimeoRestrict        *string                                 `json:"vimeo-restrict,omitempty"`
 	Youtube              *string                                 `json:"youtube,omitempty"`
-	YoutubeChannelFilter *float64                                `json:"youtube-channel-filter,omitempty"`
+	YoutubeChannelFilter *int64                                  `json:"youtube-channel-filter,omitempty"`
 	YoutubeRestrict      *string                                 `json:"youtube-restrict,omitempty"`
 }
 
@@ -20,8 +20,8 @@ type VideofilterProfileFortiguardCategory struct {
 }
 
 type VideofilterProfileFortiguardCategoryFilters struct {
-	Action     *string  `json:"action,omitempty"`
-	CategoryId *float64 `json:"category-id,omitempty"`
-	Id         *float64 `json:"id,omitempty"`
-	Log        *string  `json:"log,omitempty"`
+	Action     *string `json:"action,omitempty"`
+	CategoryId *int64  `json:"category-id,omitempty"`
+	Id         *int64  `json:"id,omitempty"`
+	Log        *string `json:"log,omitempty"`
 }

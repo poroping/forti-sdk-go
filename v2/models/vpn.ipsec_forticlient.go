@@ -1,6 +1,6 @@
 package models
 
-const VpnipsecForticlientPath = "vpn.ipsec/forticlient/"
+const VpnipsecForticlientPath = "vpn/ipsec/forticlient/"
 
 type VpnipsecForticlient struct {
 	Phase2name    *string `json:"phase2name,omitempty"`

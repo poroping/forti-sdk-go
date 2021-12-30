@@ -3,10 +3,16 @@ package cmdb
 import (
 	"encoding/json"
 	"errors"
+	"log"
 
 	"github.com/poroping/forti-sdk-go/v2/models"
 	"github.com/poroping/forti-sdk-go/v2/request"
 )
+
+func (c *Client) CreateLogThreatWeight(payload *models.LogThreatWeight, params *models.CmdbRequestParams) (*models.CmdbResponse, error) {
+	log.Printf("[INFO] Resource at path %q is complex type. Changing to UPDATE.", models.LogThreatWeightPath)
+	return c.UpdateLogThreatWeight("", payload, params)
+}
 
 func (c *Client) ReadLogThreatWeight(mkey string, params *models.CmdbRequestParams) (*models.LogThreatWeight, error) {
 	req := &models.CmdbRequest{}
@@ -59,13 +65,7 @@ func (c *Client) UpdateLogThreatWeight(mkey string, payload *models.LogThreatWei
 }
 
 func (c *Client) DeleteLogThreatWeight(mkey string, params *models.CmdbRequestParams) error {
-	req := &models.CmdbRequest{}
-	req.HTTPMethod = "DELETE"
-	req.Mkey = &mkey
-	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.LogThreatWeightPath + mkey + "/"
-	req.Params = *params
-
-	err := request.Delete(c.config, req)
+	payload := &models.LogThreatWeight{}
+	_, err := c.UpdateLogThreatWeight("", payload, params)
 	return err
 }

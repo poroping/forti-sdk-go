@@ -3,10 +3,16 @@ package cmdb
 import (
 	"encoding/json"
 	"errors"
+	"log"
 
 	"github.com/poroping/forti-sdk-go/v2/models"
 	"github.com/poroping/forti-sdk-go/v2/request"
 )
+
+func (c *Client) CreateLogfortianalyzer3Filter(payload *models.Logfortianalyzer3Filter, params *models.CmdbRequestParams) (*models.CmdbResponse, error) {
+	log.Printf("[INFO] Resource at path %q is complex type. Changing to UPDATE.", models.Logfortianalyzer3FilterPath)
+	return c.UpdateLogfortianalyzer3Filter("", payload, params)
+}
 
 func (c *Client) ReadLogfortianalyzer3Filter(mkey string, params *models.CmdbRequestParams) (*models.Logfortianalyzer3Filter, error) {
 	req := &models.CmdbRequest{}
@@ -59,13 +65,7 @@ func (c *Client) UpdateLogfortianalyzer3Filter(mkey string, payload *models.Logf
 }
 
 func (c *Client) DeleteLogfortianalyzer3Filter(mkey string, params *models.CmdbRequestParams) error {
-	req := &models.CmdbRequest{}
-	req.HTTPMethod = "DELETE"
-	req.Mkey = &mkey
-	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.Logfortianalyzer3FilterPath + mkey + "/"
-	req.Params = *params
-
-	err := request.Delete(c.config, req)
+	payload := &models.Logfortianalyzer3Filter{}
+	_, err := c.UpdateLogfortianalyzer3Filter("", payload, params)
 	return err
 }

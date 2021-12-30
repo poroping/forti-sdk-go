@@ -1,6 +1,6 @@
 package models
 
-const VpncertificateSettingPath = "vpn.certificate/setting/"
+const VpncertificateSettingPath = "vpn/certificate/setting/"
 
 type VpncertificateSetting struct {
 	CertnameDsa1024       *string                                 `json:"certname-dsa1024,omitempty"`

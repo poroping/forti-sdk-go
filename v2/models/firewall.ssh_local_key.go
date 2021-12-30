@@ -1,6 +1,6 @@
 package models
 
-const FirewallsshLocalKeyPath = "firewall.ssh/local-key/"
+const FirewallsshLocalKeyPath = "firewall/ssh/local-key/"
 
 type FirewallsshLocalKey struct {
 	Name       *string `json:"name,omitempty"`

@@ -1,11 +1,11 @@
 package models
 
-const VpnsslSettingsPath = "vpn.ssl/settings/"
+const VpnsslSettingsPath = "vpn/ssl/settings/"
 
 type VpnsslSettings struct {
 	Algorithm                  *string                             `json:"algorithm,omitempty"`
 	AuthSessionCheckSourceIp   *string                             `json:"auth-session-check-source-ip,omitempty"`
-	AuthTimeout                *float64                            `json:"auth-timeout,omitempty"`
+	AuthTimeout                *int64                              `json:"auth-timeout,omitempty"`
 	AuthenticationRule         *[]VpnsslSettingsAuthenticationRule `json:"authentication-rule,omitempty"`
 	AutoTunnelStaticRoute      *string                             `json:"auto-tunnel-static-route,omitempty"`
 	BannedCipher               *string                             `json:"banned-cipher,omitempty"`
@@ -13,12 +13,12 @@ type VpnsslSettings struct {
 	Ciphersuite                *string                             `json:"ciphersuite,omitempty"`
 	ClientSigalgs              *string                             `json:"client-sigalgs,omitempty"`
 	DefaultPortal              *string                             `json:"default-portal,omitempty"`
-	DeflateCompressionLevel    *float64                            `json:"deflate-compression-level,omitempty"`
-	DeflateMinDataSize         *float64                            `json:"deflate-min-data-size,omitempty"`
+	DeflateCompressionLevel    *int64                              `json:"deflate-compression-level,omitempty"`
+	DeflateMinDataSize         *int64                              `json:"deflate-min-data-size,omitempty"`
 	DnsServer1                 *string                             `json:"dns-server1,omitempty"`
 	DnsServer2                 *string                             `json:"dns-server2,omitempty"`
 	DnsSuffix                  *string                             `json:"dns-suffix,omitempty"`
-	DtlsHelloTimeout           *float64                            `json:"dtls-hello-timeout,omitempty"`
+	DtlsHelloTimeout           *int64                              `json:"dtls-hello-timeout,omitempty"`
 	DtlsMaxProtoVer            *string                             `json:"dtls-max-proto-ver,omitempty"`
 	DtlsMinProtoVer            *string                             `json:"dtls-min-proto-ver,omitempty"`
 	DtlsTunnel                 *string                             `json:"dtls-tunnel,omitempty"`
@@ -30,22 +30,22 @@ type VpnsslSettings struct {
 	HstsIncludeSubdomains      *string                             `json:"hsts-include-subdomains,omitempty"`
 	HttpCompression            *string                             `json:"http-compression,omitempty"`
 	HttpOnlyCookie             *string                             `json:"http-only-cookie,omitempty"`
-	HttpRequestBodyTimeout     *float64                            `json:"http-request-body-timeout,omitempty"`
-	HttpRequestHeaderTimeout   *float64                            `json:"http-request-header-timeout,omitempty"`
+	HttpRequestBodyTimeout     *int64                              `json:"http-request-body-timeout,omitempty"`
+	HttpRequestHeaderTimeout   *int64                              `json:"http-request-header-timeout,omitempty"`
 	HttpsRedirect              *string                             `json:"https-redirect,omitempty"`
-	IdleTimeout                *float64                            `json:"idle-timeout,omitempty"`
+	IdleTimeout                *int64                              `json:"idle-timeout,omitempty"`
 	Ipv6DnsServer1             *string                             `json:"ipv6-dns-server1,omitempty"`
 	Ipv6DnsServer2             *string                             `json:"ipv6-dns-server2,omitempty"`
 	Ipv6WinsServer1            *string                             `json:"ipv6-wins-server1,omitempty"`
 	Ipv6WinsServer2            *string                             `json:"ipv6-wins-server2,omitempty"`
-	LoginAttemptLimit          *float64                            `json:"login-attempt-limit,omitempty"`
-	LoginBlockTime             *float64                            `json:"login-block-time,omitempty"`
-	LoginTimeout               *float64                            `json:"login-timeout,omitempty"`
-	Port                       *float64                            `json:"port,omitempty"`
+	LoginAttemptLimit          *int64                              `json:"login-attempt-limit,omitempty"`
+	LoginBlockTime             *int64                              `json:"login-block-time,omitempty"`
+	LoginTimeout               *int64                              `json:"login-timeout,omitempty"`
+	Port                       *int64                              `json:"port,omitempty"`
 	PortPrecedence             *string                             `json:"port-precedence,omitempty"`
 	Reqclientcert              *string                             `json:"reqclientcert,omitempty"`
 	RouteSourceInterface       *string                             `json:"route-source-interface,omitempty"`
-	SamlRedirectPort           *float64                            `json:"saml-redirect-port,omitempty"`
+	SamlRedirectPort           *int64                              `json:"saml-redirect-port,omitempty"`
 	Servercert                 *string                             `json:"servercert,omitempty"`
 	SourceAddress              *[]VpnsslSettingsSourceAddress      `json:"source-address,omitempty"`
 	SourceAddressNegate        *string                             `json:"source-address-negate,omitempty"`
@@ -66,7 +66,7 @@ type VpnsslSettings struct {
 	TunnelConnectWithoutReauth *string                             `json:"tunnel-connect-without-reauth,omitempty"`
 	TunnelIpPools              *[]VpnsslSettingsTunnelIpPools      `json:"tunnel-ip-pools,omitempty"`
 	TunnelIpv6Pools            *[]VpnsslSettingsTunnelIpv6Pools    `json:"tunnel-ipv6-pools,omitempty"`
-	TunnelUserSessionTimeout   *float64                            `json:"tunnel-user-session-timeout,omitempty"`
+	TunnelUserSessionTimeout   *int64                              `json:"tunnel-user-session-timeout,omitempty"`
 	UnsafeLegacyRenegotiation  *string                             `json:"unsafe-legacy-renegotiation,omitempty"`
 	UrlObscuration             *string                             `json:"url-obscuration,omitempty"`
 	UserPeer                   *string                             `json:"user-peer,omitempty"`
@@ -80,7 +80,7 @@ type VpnsslSettingsAuthenticationRule struct {
 	Cipher               *string                                            `json:"cipher,omitempty"`
 	ClientCert           *string                                            `json:"client-cert,omitempty"`
 	Groups               *[]VpnsslSettingsAuthenticationRuleGroups          `json:"groups,omitempty"`
-	Id                   *float64                                           `json:"id,omitempty"`
+	Id                   *int64                                             `json:"id,omitempty"`
 	Portal               *string                                            `json:"portal,omitempty"`
 	Realm                *string                                            `json:"realm,omitempty"`
 	SourceAddress        *[]VpnsslSettingsAuthenticationRuleSourceAddress   `json:"source-address,omitempty"`

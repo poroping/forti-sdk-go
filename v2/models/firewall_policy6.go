@@ -46,7 +46,7 @@ type FirewallPolicy6 struct {
 	NpAcceleration          *string                           `json:"np-acceleration,omitempty"`
 	Outbound                *string                           `json:"outbound,omitempty"`
 	PerIpShaper             *string                           `json:"per-ip-shaper,omitempty"`
-	Policyid                *float64                          `json:"policyid,omitempty"`
+	Policyid                *int64                            `json:"policyid,omitempty"`
 	Poolname                *[]FirewallPolicy6Poolname        `json:"poolname,omitempty"`
 	ProfileGroup            *string                           `json:"profile-group,omitempty"`
 	ProfileProtocolOptions  *string                           `json:"profile-protocol-options,omitempty"`
@@ -67,8 +67,8 @@ type FirewallPolicy6 struct {
 	SslMirrorIntf           *[]FirewallPolicy6SslMirrorIntf   `json:"ssl-mirror-intf,omitempty"`
 	SslSshProfile           *string                           `json:"ssl-ssh-profile,omitempty"`
 	Status                  *string                           `json:"status,omitempty"`
-	TcpMssReceiver          *float64                          `json:"tcp-mss-receiver,omitempty"`
-	TcpMssSender            *float64                          `json:"tcp-mss-sender,omitempty"`
+	TcpMssReceiver          *int64                            `json:"tcp-mss-receiver,omitempty"`
+	TcpMssSender            *int64                            `json:"tcp-mss-sender,omitempty"`
 	TcpSessionWithoutSyn    *string                           `json:"tcp-session-without-syn,omitempty"`
 	TimeoutSendRst          *string                           `json:"timeout-send-rst,omitempty"`
 	Tos                     *string                           `json:"tos,omitempty"`
@@ -80,8 +80,8 @@ type FirewallPolicy6 struct {
 	Users                   *[]FirewallPolicy6Users           `json:"users,omitempty"`
 	UtmStatus               *string                           `json:"utm-status,omitempty"`
 	Uuid                    *string                           `json:"uuid,omitempty"`
-	VlanCosFwd              *float64                          `json:"vlan-cos-fwd,omitempty"`
-	VlanCosRev              *float64                          `json:"vlan-cos-rev,omitempty"`
+	VlanCosFwd              *int64                            `json:"vlan-cos-fwd,omitempty"`
+	VlanCosRev              *int64                            `json:"vlan-cos-rev,omitempty"`
 	VlanFilter              *string                           `json:"vlan-filter,omitempty"`
 	VoipProfile             *string                           `json:"voip-profile,omitempty"`
 	Vpntunnel               *string                           `json:"vpntunnel,omitempty"`
@@ -94,7 +94,7 @@ type FirewallPolicy6 struct {
 }
 
 type FirewallPolicy6AppCategory struct {
-	Id *float64 `json:"id,omitempty"`
+	Id *int64 `json:"id,omitempty"`
 }
 
 type FirewallPolicy6AppGroup struct {
@@ -102,7 +102,7 @@ type FirewallPolicy6AppGroup struct {
 }
 
 type FirewallPolicy6Application struct {
-	Id *float64 `json:"id,omitempty"`
+	Id *int64 `json:"id,omitempty"`
 }
 
 type FirewallPolicy6CustomLogFields struct {
@@ -146,7 +146,7 @@ type FirewallPolicy6SslMirrorIntf struct {
 }
 
 type FirewallPolicy6UrlCategory struct {
-	Id *float64 `json:"id,omitempty"`
+	Id *int64 `json:"id,omitempty"`
 }
 
 type FirewallPolicy6Users struct {

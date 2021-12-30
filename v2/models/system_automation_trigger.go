@@ -17,20 +17,20 @@ type SystemAutomationTrigger struct {
 	Name                *string                          `json:"name,omitempty"`
 	ReportType          *string                          `json:"report-type,omitempty"`
 	Serial              *string                          `json:"serial,omitempty"`
-	TriggerDay          *float64                         `json:"trigger-day,omitempty"`
+	TriggerDay          *int64                           `json:"trigger-day,omitempty"`
 	TriggerFrequency    *string                          `json:"trigger-frequency,omitempty"`
-	TriggerHour         *float64                         `json:"trigger-hour,omitempty"`
-	TriggerMinute       *float64                         `json:"trigger-minute,omitempty"`
+	TriggerHour         *int64                           `json:"trigger-hour,omitempty"`
+	TriggerMinute       *int64                           `json:"trigger-minute,omitempty"`
 	TriggerType         *string                          `json:"trigger-type,omitempty"`
 	TriggerWeekday      *string                          `json:"trigger-weekday,omitempty"`
 }
 
 type SystemAutomationTriggerFields struct {
-	Id    *float64 `json:"id,omitempty"`
-	Name  *string  `json:"name,omitempty"`
-	Value *string  `json:"value,omitempty"`
+	Id    *int64  `json:"id,omitempty"`
+	Name  *string `json:"name,omitempty"`
+	Value *string `json:"value,omitempty"`
 }
 
 type SystemAutomationTriggerLogid struct {
-	Id *float64 `json:"id,omitempty"`
+	Id *int64 `json:"id,omitempty"`
 }

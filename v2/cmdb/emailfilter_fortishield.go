@@ -3,10 +3,16 @@ package cmdb
 import (
 	"encoding/json"
 	"errors"
+	"log"
 
 	"github.com/poroping/forti-sdk-go/v2/models"
 	"github.com/poroping/forti-sdk-go/v2/request"
 )
+
+func (c *Client) CreateEmailfilterFortishield(payload *models.EmailfilterFortishield, params *models.CmdbRequestParams) (*models.CmdbResponse, error) {
+	log.Printf("[INFO] Resource at path %q is complex type. Changing to UPDATE.", models.EmailfilterFortishieldPath)
+	return c.UpdateEmailfilterFortishield("", payload, params)
+}
 
 func (c *Client) ReadEmailfilterFortishield(mkey string, params *models.CmdbRequestParams) (*models.EmailfilterFortishield, error) {
 	req := &models.CmdbRequest{}
@@ -59,13 +65,7 @@ func (c *Client) UpdateEmailfilterFortishield(mkey string, payload *models.Email
 }
 
 func (c *Client) DeleteEmailfilterFortishield(mkey string, params *models.CmdbRequestParams) error {
-	req := &models.CmdbRequest{}
-	req.HTTPMethod = "DELETE"
-	req.Mkey = &mkey
-	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.EmailfilterFortishieldPath + mkey + "/"
-	req.Params = *params
-
-	err := request.Delete(c.config, req)
+	payload := &models.EmailfilterFortishield{}
+	_, err := c.UpdateEmailfilterFortishield("", payload, params)
 	return err
 }

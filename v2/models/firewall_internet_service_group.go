@@ -10,6 +10,6 @@ type FirewallInternetServiceGroup struct {
 }
 
 type FirewallInternetServiceGroupMember struct {
-	Id   *float64 `json:"id,omitempty"`
-	Name *string  `json:"name,omitempty"`
+	Id   *int64  `json:"id,omitempty"`
+	Name *string `json:"name,omitempty"`
 }

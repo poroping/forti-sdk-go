@@ -1,6 +1,6 @@
 package models
 
-const SystemreplacemsgUtmPath = "system.replacemsg/utm/"
+const SystemreplacemsgUtmPath = "system/replacemsg/utm/"
 
 type SystemreplacemsgUtm struct {
 	Buffer  *string `json:"buffer,omitempty"`

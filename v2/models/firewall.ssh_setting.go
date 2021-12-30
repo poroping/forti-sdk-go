@@ -1,6 +1,6 @@
 package models
 
-const FirewallsshSettingPath = "firewall.ssh/setting/"
+const FirewallsshSettingPath = "firewall/ssh/setting/"
 
 type FirewallsshSetting struct {
 	Caname              *string `json:"caname,omitempty"`

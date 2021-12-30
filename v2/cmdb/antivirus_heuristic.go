@@ -3,10 +3,16 @@ package cmdb
 import (
 	"encoding/json"
 	"errors"
+	"log"
 
 	"github.com/poroping/forti-sdk-go/v2/models"
 	"github.com/poroping/forti-sdk-go/v2/request"
 )
+
+func (c *Client) CreateAntivirusHeuristic(payload *models.AntivirusHeuristic, params *models.CmdbRequestParams) (*models.CmdbResponse, error) {
+	log.Printf("[INFO] Resource at path %q is complex type. Changing to UPDATE.", models.AntivirusHeuristicPath)
+	return c.UpdateAntivirusHeuristic("", payload, params)
+}
 
 func (c *Client) ReadAntivirusHeuristic(mkey string, params *models.CmdbRequestParams) (*models.AntivirusHeuristic, error) {
 	req := &models.CmdbRequest{}
@@ -59,13 +65,7 @@ func (c *Client) UpdateAntivirusHeuristic(mkey string, payload *models.Antivirus
 }
 
 func (c *Client) DeleteAntivirusHeuristic(mkey string, params *models.CmdbRequestParams) error {
-	req := &models.CmdbRequest{}
-	req.HTTPMethod = "DELETE"
-	req.Mkey = &mkey
-	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.AntivirusHeuristicPath + mkey + "/"
-	req.Params = *params
-
-	err := request.Delete(c.config, req)
+	payload := &models.AntivirusHeuristic{}
+	_, err := c.UpdateAntivirusHeuristic("", payload, params)
 	return err
 }

@@ -3,10 +3,16 @@ package cmdb
 import (
 	"encoding/json"
 	"errors"
+	"log"
 
 	"github.com/poroping/forti-sdk-go/v2/models"
 	"github.com/poroping/forti-sdk-go/v2/request"
 )
+
+func (c *Client) CreateSystemSdwan(payload *models.SystemSdwan, params *models.CmdbRequestParams) (*models.CmdbResponse, error) {
+	log.Printf("[INFO] Resource at path %q is complex type. Changing to UPDATE.", models.SystemSdwanPath)
+	return c.UpdateSystemSdwan("", payload, params)
+}
 
 func (c *Client) ReadSystemSdwan(mkey string, params *models.CmdbRequestParams) (*models.SystemSdwan, error) {
 	req := &models.CmdbRequest{}
@@ -59,13 +65,7 @@ func (c *Client) UpdateSystemSdwan(mkey string, payload *models.SystemSdwan, par
 }
 
 func (c *Client) DeleteSystemSdwan(mkey string, params *models.CmdbRequestParams) error {
-	req := &models.CmdbRequest{}
-	req.HTTPMethod = "DELETE"
-	req.Mkey = &mkey
-	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.SystemSdwanPath + mkey + "/"
-	req.Params = *params
-
-	err := request.Delete(c.config, req)
+	payload := &models.SystemSdwan{}
+	_, err := c.UpdateSystemSdwan("", payload, params)
 	return err
 }

@@ -7,19 +7,19 @@ type RouterStatic6 struct {
 	Blackhole         *string                   `json:"blackhole,omitempty"`
 	Comment           *string                   `json:"comment,omitempty"`
 	Device            *string                   `json:"device,omitempty"`
-	Devindex          *float64                  `json:"devindex,omitempty"`
-	Distance          *float64                  `json:"distance,omitempty"`
+	Devindex          *int64                    `json:"devindex,omitempty"`
+	Distance          *int64                    `json:"distance,omitempty"`
 	Dst               *string                   `json:"dst,omitempty"`
 	DynamicGateway    *string                   `json:"dynamic-gateway,omitempty"`
 	Gateway           *string                   `json:"gateway,omitempty"`
 	LinkMonitorExempt *string                   `json:"link-monitor-exempt,omitempty"`
-	Priority          *float64                  `json:"priority,omitempty"`
+	Priority          *int64                    `json:"priority,omitempty"`
 	Sdwan             *string                   `json:"sdwan,omitempty"`
 	SdwanZone         *[]RouterStatic6SdwanZone `json:"sdwan-zone,omitempty"`
-	SeqNum            *float64                  `json:"seq-num,omitempty"`
+	SeqNum            *int64                    `json:"seq-num,omitempty"`
 	Status            *string                   `json:"status,omitempty"`
 	VirtualWanLink    *string                   `json:"virtual-wan-link,omitempty"`
-	Vrf               *float64                  `json:"vrf,omitempty"`
+	Vrf               *int64                    `json:"vrf,omitempty"`
 }
 
 type RouterStatic6SdwanZone struct {

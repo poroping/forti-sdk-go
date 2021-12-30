@@ -5,9 +5,9 @@ const FirewallAddressPath = "firewall/address/"
 type FirewallAddress struct {
 	AllowRouting        *string                     `json:"allow-routing,omitempty"`
 	AssociatedInterface *string                     `json:"associated-interface,omitempty"`
-	CacheTtl            *float64                    `json:"cache-ttl,omitempty"`
+	CacheTtl            *int64                      `json:"cache-ttl,omitempty"`
 	ClearpassSpt        *string                     `json:"clearpass-spt,omitempty"`
-	Color               *float64                    `json:"color,omitempty"`
+	Color               *int64                      `json:"color,omitempty"`
 	Comment             *string                     `json:"comment,omitempty"`
 	Country             *string                     `json:"country,omitempty"`
 	EndIp               *string                     `json:"end-ip,omitempty"`

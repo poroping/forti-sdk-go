@@ -3,6 +3,7 @@ package cmdb
 import (
 	"encoding/json"
 	"errors"
+	"log"
 
 	"github.com/poroping/forti-sdk-go/v2/models"
 	"github.com/poroping/forti-sdk-go/v2/request"
@@ -12,6 +13,19 @@ func (c *Client) CreateSystemAdmin(payload *models.SystemAdmin, params *models.C
 	body, err := json.Marshal(payload)
 	if err != nil {
 		return nil, err
+	}
+
+	mkey := ""
+	if payload.Name != nil && *params.AllowAppend {
+		mkey = *payload.Name
+		read, err := c.ReadSystemAdmin(mkey, params)
+		if err != nil {
+			return nil, err
+		}
+		if read != nil {
+			log.Printf("[WARN] Resource at path %q with mkey %q detected upon CREATE with flag set to to overwrite. Changing to UPDATE.", models.SystemAdminPath, mkey)
+			return c.UpdateSystemAdmin(mkey, payload, params)
+		}
 	}
 
 	req := &models.CmdbRequest{}

@@ -3,6 +3,7 @@ package cmdb
 import (
 	"encoding/json"
 	"errors"
+	"log"
 
 	"github.com/poroping/forti-sdk-go/v2/models"
 	"github.com/poroping/forti-sdk-go/v2/request"
@@ -12,6 +13,19 @@ func (c *Client) CreateRouterbgpNeighbor(payload *models.RouterbgpNeighbor, para
 	body, err := json.Marshal(payload)
 	if err != nil {
 		return nil, err
+	}
+
+	mkey := ""
+	if payload.Ip != nil && *params.AllowAppend {
+		mkey = *payload.Ip
+		read, err := c.ReadRouterbgpNeighbor(mkey, params)
+		if err != nil {
+			return nil, err
+		}
+		if read != nil {
+			log.Printf("[WARN] Resource at path %q with mkey %q detected upon CREATE with flag set to to overwrite. Changing to UPDATE.", models.RouterbgpNeighborPath, mkey)
+			return c.UpdateRouterbgpNeighbor(mkey, payload, params)
+		}
 	}
 
 	req := &models.CmdbRequest{}

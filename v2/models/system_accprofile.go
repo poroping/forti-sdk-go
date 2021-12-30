@@ -3,7 +3,7 @@ package models
 const SystemAccprofilePath = "system/accprofile/"
 
 type SystemAccprofile struct {
-	Admintimeout         *float64                            `json:"admintimeout,omitempty"`
+	Admintimeout         *int64                              `json:"admintimeout,omitempty"`
 	AdmintimeoutOverride *string                             `json:"admintimeout-override,omitempty"`
 	Authgrp              *string                             `json:"authgrp,omitempty"`
 	Comments             *string                             `json:"comments,omitempty"`

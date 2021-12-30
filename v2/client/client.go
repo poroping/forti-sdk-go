@@ -20,8 +20,8 @@ type FortiSDKClient struct {
 func NewClient(auth *auth.Auth) (*FortiSDKClient, error) {
 	c, _ := NewClientBase(auth)
 
-	c.Cmdb = cmdb.New(c.Config)
-	c.Monitor = cmdb.New(c.Config)
+	c.Cmdb = cmdb.New(&c.Config)
+	c.Monitor = cmdb.New(&c.Config)
 
 	return c, nil
 }

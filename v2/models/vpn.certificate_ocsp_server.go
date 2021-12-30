@@ -1,6 +1,6 @@
 package models
 
-const VpncertificateOcspServerPath = "vpn.certificate/ocsp-server/"
+const VpncertificateOcspServerPath = "vpn/certificate/ocsp-server/"
 
 type VpncertificateOcspServer struct {
 	Cert          *string `json:"cert,omitempty"`

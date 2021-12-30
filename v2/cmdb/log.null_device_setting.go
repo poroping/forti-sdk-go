@@ -3,10 +3,16 @@ package cmdb
 import (
 	"encoding/json"
 	"errors"
+	"log"
 
 	"github.com/poroping/forti-sdk-go/v2/models"
 	"github.com/poroping/forti-sdk-go/v2/request"
 )
+
+func (c *Client) CreateLognullDeviceSetting(payload *models.LognullDeviceSetting, params *models.CmdbRequestParams) (*models.CmdbResponse, error) {
+	log.Printf("[INFO] Resource at path %q is complex type. Changing to UPDATE.", models.LognullDeviceSettingPath)
+	return c.UpdateLognullDeviceSetting("", payload, params)
+}
 
 func (c *Client) ReadLognullDeviceSetting(mkey string, params *models.CmdbRequestParams) (*models.LognullDeviceSetting, error) {
 	req := &models.CmdbRequest{}
@@ -59,13 +65,7 @@ func (c *Client) UpdateLognullDeviceSetting(mkey string, payload *models.Lognull
 }
 
 func (c *Client) DeleteLognullDeviceSetting(mkey string, params *models.CmdbRequestParams) error {
-	req := &models.CmdbRequest{}
-	req.HTTPMethod = "DELETE"
-	req.Mkey = &mkey
-	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.LognullDeviceSettingPath + mkey + "/"
-	req.Params = *params
-
-	err := request.Delete(c.config, req)
+	payload := &models.LognullDeviceSetting{}
+	_, err := c.UpdateLognullDeviceSetting("", payload, params)
 	return err
 }

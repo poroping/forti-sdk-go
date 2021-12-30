@@ -4,7 +4,7 @@ const SwitchControllerFortilinkSettingsPath = "switch-controller/fortilink-setti
 
 type SwitchControllerFortilinkSettings struct {
 	Fortilink     *string                                      `json:"fortilink,omitempty"`
-	InactiveTimer *float64                                     `json:"inactive-timer,omitempty"`
+	InactiveTimer *int64                                       `json:"inactive-timer,omitempty"`
 	LinkDownFlush *string                                      `json:"link-down-flush,omitempty"`
 	NacPorts      *[]SwitchControllerFortilinkSettingsNacPorts `json:"nac-ports,omitempty"`
 	Name          *string                                      `json:"name,omitempty"`
@@ -13,7 +13,7 @@ type SwitchControllerFortilinkSettings struct {
 type SwitchControllerFortilinkSettingsNacPorts struct {
 	BounceNacPort   *string                                                     `json:"bounce-nac-port,omitempty"`
 	LanSegment      *string                                                     `json:"lan-segment,omitempty"`
-	MemberChange    *float64                                                    `json:"member-change,omitempty"`
+	MemberChange    *int64                                                      `json:"member-change,omitempty"`
 	NacLanInterface *string                                                     `json:"nac-lan-interface,omitempty"`
 	NacSegmentVlans *[]SwitchControllerFortilinkSettingsNacPortsNacSegmentVlans `json:"nac-segment-vlans,omitempty"`
 	OnboardingVlan  *string                                                     `json:"onboarding-vlan,omitempty"`

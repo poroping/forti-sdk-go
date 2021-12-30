@@ -3,10 +3,16 @@ package cmdb
 import (
 	"encoding/json"
 	"errors"
+	"log"
 
 	"github.com/poroping/forti-sdk-go/v2/models"
 	"github.com/poroping/forti-sdk-go/v2/request"
 )
+
+func (c *Client) CreateWebProxyGlobal(payload *models.WebProxyGlobal, params *models.CmdbRequestParams) (*models.CmdbResponse, error) {
+	log.Printf("[INFO] Resource at path %q is complex type. Changing to UPDATE.", models.WebProxyGlobalPath)
+	return c.UpdateWebProxyGlobal("", payload, params)
+}
 
 func (c *Client) ReadWebProxyGlobal(mkey string, params *models.CmdbRequestParams) (*models.WebProxyGlobal, error) {
 	req := &models.CmdbRequest{}
@@ -59,13 +65,7 @@ func (c *Client) UpdateWebProxyGlobal(mkey string, payload *models.WebProxyGloba
 }
 
 func (c *Client) DeleteWebProxyGlobal(mkey string, params *models.CmdbRequestParams) error {
-	req := &models.CmdbRequest{}
-	req.HTTPMethod = "DELETE"
-	req.Mkey = &mkey
-	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.WebProxyGlobalPath + mkey + "/"
-	req.Params = *params
-
-	err := request.Delete(c.config, req)
+	payload := &models.WebProxyGlobal{}
+	_, err := c.UpdateWebProxyGlobal("", payload, params)
 	return err
 }

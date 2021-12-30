@@ -3,6 +3,8 @@ package cmdb
 import (
 	"encoding/json"
 	"errors"
+	"log"
+	"strconv"
 
 	"github.com/poroping/forti-sdk-go/v2/models"
 	"github.com/poroping/forti-sdk-go/v2/request"
@@ -12,6 +14,19 @@ func (c *Client) CreateFirewallTrafficClass(payload *models.FirewallTrafficClass
 	body, err := json.Marshal(payload)
 	if err != nil {
 		return nil, err
+	}
+
+	mkey := ""
+	if payload.ClassId != nil && *params.AllowAppend {
+		mkey = strconv.Itoa(int(*payload.ClassId))
+		read, err := c.ReadFirewallTrafficClass(mkey, params)
+		if err != nil {
+			return nil, err
+		}
+		if read != nil {
+			log.Printf("[WARN] Resource at path %q with mkey %q detected upon CREATE with flag set to to overwrite. Changing to UPDATE.", models.FirewallTrafficClassPath, mkey)
+			return c.UpdateFirewallTrafficClass(mkey, payload, params)
+		}
 	}
 
 	req := &models.CmdbRequest{}

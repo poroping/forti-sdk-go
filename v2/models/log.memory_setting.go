@@ -1,6 +1,6 @@
 package models
 
-const LogmemorySettingPath = "log.memory/setting/"
+const LogmemorySettingPath = "log/memory/setting/"
 
 type LogmemorySetting struct {
 	Diskfull *string `json:"diskfull,omitempty"`

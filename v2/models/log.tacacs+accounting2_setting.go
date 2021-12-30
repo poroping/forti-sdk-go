@@ -1,6 +1,6 @@
 package models
 
-const Logtacacsaccounting2SettingPath = "log.tacacs+accounting2/setting/"
+const Logtacacsaccounting2SettingPath = "log/tacacs+accounting2/setting/"
 
 type Logtacacsaccounting2Setting struct {
 	Server    *string `json:"server,omitempty"`

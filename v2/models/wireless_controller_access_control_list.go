@@ -10,23 +10,23 @@ type WirelessControllerAccessControlList struct {
 }
 
 type WirelessControllerAccessControlListLayer3Ipv4Rules struct {
-	Action   *string  `json:"action,omitempty"`
-	Comment  *string  `json:"comment,omitempty"`
-	Dstaddr  *string  `json:"dstaddr,omitempty"`
-	Dstport  *float64 `json:"dstport,omitempty"`
-	Protocol *float64 `json:"protocol,omitempty"`
-	RuleId   *float64 `json:"rule-id,omitempty"`
-	Srcaddr  *string  `json:"srcaddr,omitempty"`
-	Srcport  *float64 `json:"srcport,omitempty"`
+	Action   *string `json:"action,omitempty"`
+	Comment  *string `json:"comment,omitempty"`
+	Dstaddr  *string `json:"dstaddr,omitempty"`
+	Dstport  *int64  `json:"dstport,omitempty"`
+	Protocol *int64  `json:"protocol,omitempty"`
+	RuleId   *int64  `json:"rule-id,omitempty"`
+	Srcaddr  *string `json:"srcaddr,omitempty"`
+	Srcport  *int64  `json:"srcport,omitempty"`
 }
 
 type WirelessControllerAccessControlListLayer3Ipv6Rules struct {
-	Action   *string  `json:"action,omitempty"`
-	Comment  *string  `json:"comment,omitempty"`
-	Dstaddr  *string  `json:"dstaddr,omitempty"`
-	Dstport  *float64 `json:"dstport,omitempty"`
-	Protocol *float64 `json:"protocol,omitempty"`
-	RuleId   *float64 `json:"rule-id,omitempty"`
-	Srcaddr  *string  `json:"srcaddr,omitempty"`
-	Srcport  *float64 `json:"srcport,omitempty"`
+	Action   *string `json:"action,omitempty"`
+	Comment  *string `json:"comment,omitempty"`
+	Dstaddr  *string `json:"dstaddr,omitempty"`
+	Dstport  *int64  `json:"dstport,omitempty"`
+	Protocol *int64  `json:"protocol,omitempty"`
+	RuleId   *int64  `json:"rule-id,omitempty"`
+	Srcaddr  *string `json:"srcaddr,omitempty"`
+	Srcport  *int64  `json:"srcport,omitempty"`
 }

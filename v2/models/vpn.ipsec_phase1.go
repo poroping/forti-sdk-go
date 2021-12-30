@@ -1,6 +1,6 @@
 package models
 
-const VpnipsecPhase1Path = "vpn.ipsec/phase1/"
+const VpnipsecPhase1Path = "vpn/ipsec/phase1/"
 
 type VpnipsecPhase1 struct {
 	AcctVerify                *string                           `json:"acct-verify,omitempty"`
@@ -26,38 +26,38 @@ type VpnipsecPhase1 struct {
 	Dhcp6RaLinkaddr           *string                           `json:"dhcp6-ra-linkaddr,omitempty"`
 	Dhgrp                     *string                           `json:"dhgrp,omitempty"`
 	DigitalSignatureAuth      *string                           `json:"digital-signature-auth,omitempty"`
-	Distance                  *float64                          `json:"distance,omitempty"`
+	Distance                  *int64                            `json:"distance,omitempty"`
 	DnsMode                   *string                           `json:"dns-mode,omitempty"`
 	Domain                    *string                           `json:"domain,omitempty"`
 	Dpd                       *string                           `json:"dpd,omitempty"`
-	DpdRetrycount             *float64                          `json:"dpd-retrycount,omitempty"`
+	DpdRetrycount             *int64                            `json:"dpd-retrycount,omitempty"`
 	DpdRetryinterval          *string                           `json:"dpd-retryinterval,omitempty"`
 	Eap                       *string                           `json:"eap,omitempty"`
 	EapExcludePeergrp         *string                           `json:"eap-exclude-peergrp,omitempty"`
 	EapIdentity               *string                           `json:"eap-identity,omitempty"`
 	EnforceUniqueId           *string                           `json:"enforce-unique-id,omitempty"`
 	Esn                       *string                           `json:"esn,omitempty"`
-	FecBase                   *float64                          `json:"fec-base,omitempty"`
+	FecBase                   *int64                            `json:"fec-base,omitempty"`
 	FecCodec                  *string                           `json:"fec-codec,omitempty"`
 	FecEgress                 *string                           `json:"fec-egress,omitempty"`
 	FecHealthCheck            *string                           `json:"fec-health-check,omitempty"`
 	FecIngress                *string                           `json:"fec-ingress,omitempty"`
 	FecMappingProfile         *string                           `json:"fec-mapping-profile,omitempty"`
-	FecReceiveTimeout         *float64                          `json:"fec-receive-timeout,omitempty"`
-	FecRedundant              *float64                          `json:"fec-redundant,omitempty"`
-	FecSendTimeout            *float64                          `json:"fec-send-timeout,omitempty"`
+	FecReceiveTimeout         *int64                            `json:"fec-receive-timeout,omitempty"`
+	FecRedundant              *int64                            `json:"fec-redundant,omitempty"`
+	FecSendTimeout            *int64                            `json:"fec-send-timeout,omitempty"`
 	ForticlientEnforcement    *string                           `json:"forticlient-enforcement,omitempty"`
 	Fragmentation             *string                           `json:"fragmentation,omitempty"`
-	FragmentationMtu          *float64                          `json:"fragmentation-mtu,omitempty"`
+	FragmentationMtu          *int64                            `json:"fragmentation-mtu,omitempty"`
 	GroupAuthentication       *string                           `json:"group-authentication,omitempty"`
 	GroupAuthenticationSecret *string                           `json:"group-authentication-secret,omitempty"`
 	HaSyncEspSeqno            *string                           `json:"ha-sync-esp-seqno,omitempty"`
 	IdleTimeout               *string                           `json:"idle-timeout,omitempty"`
-	IdleTimeoutinterval       *float64                          `json:"idle-timeoutinterval,omitempty"`
+	IdleTimeoutinterval       *int64                            `json:"idle-timeoutinterval,omitempty"`
 	IkeVersion                *string                           `json:"ike-version,omitempty"`
 	IncludeLocalLan           *string                           `json:"include-local-lan,omitempty"`
 	Interface                 *string                           `json:"interface,omitempty"`
-	IpDelayInterval           *float64                          `json:"ip-delay-interval,omitempty"`
+	IpDelayInterval           *int64                            `json:"ip-delay-interval,omitempty"`
 	Ipv4DnsServer1            *string                           `json:"ipv4-dns-server1,omitempty"`
 	Ipv4DnsServer2            *string                           `json:"ipv4-dns-server2,omitempty"`
 	Ipv4DnsServer3            *string                           `json:"ipv4-dns-server3,omitempty"`
@@ -76,12 +76,12 @@ type VpnipsecPhase1 struct {
 	Ipv6EndIp                 *string                           `json:"ipv6-end-ip,omitempty"`
 	Ipv6ExcludeRange          *[]VpnipsecPhase1Ipv6ExcludeRange `json:"ipv6-exclude-range,omitempty"`
 	Ipv6Name                  *string                           `json:"ipv6-name,omitempty"`
-	Ipv6Prefix                *float64                          `json:"ipv6-prefix,omitempty"`
+	Ipv6Prefix                *int64                            `json:"ipv6-prefix,omitempty"`
 	Ipv6SplitExclude          *string                           `json:"ipv6-split-exclude,omitempty"`
 	Ipv6SplitInclude          *string                           `json:"ipv6-split-include,omitempty"`
 	Ipv6StartIp               *string                           `json:"ipv6-start-ip,omitempty"`
-	Keepalive                 *float64                          `json:"keepalive,omitempty"`
-	Keylife                   *float64                          `json:"keylife,omitempty"`
+	Keepalive                 *int64                            `json:"keepalive,omitempty"`
+	Keylife                   *int64                            `json:"keylife,omitempty"`
 	LocalGw                   *string                           `json:"local-gw,omitempty"`
 	Localid                   *string                           `json:"localid,omitempty"`
 	LocalidType               *string                           `json:"localid-type,omitempty"`
@@ -91,8 +91,8 @@ type VpnipsecPhase1 struct {
 	ModeCfg                   *string                           `json:"mode-cfg,omitempty"`
 	Name                      *string                           `json:"name,omitempty"`
 	Nattraversal              *string                           `json:"nattraversal,omitempty"`
-	NegotiateTimeout          *float64                          `json:"negotiate-timeout,omitempty"`
-	NetworkId                 *float64                          `json:"network-id,omitempty"`
+	NegotiateTimeout          *int64                            `json:"negotiate-timeout,omitempty"`
+	NetworkId                 *int64                            `json:"network-id,omitempty"`
 	NetworkOverlay            *string                           `json:"network-overlay,omitempty"`
 	NpuOffload                *string                           `json:"npu-offload,omitempty"`
 	Peer                      *string                           `json:"peer,omitempty"`
@@ -102,7 +102,7 @@ type VpnipsecPhase1 struct {
 	Ppk                       *string                           `json:"ppk,omitempty"`
 	PpkIdentity               *string                           `json:"ppk-identity,omitempty"`
 	PpkSecret                 *string                           `json:"ppk-secret,omitempty"`
-	Priority                  *float64                          `json:"priority,omitempty"`
+	Priority                  *int64                            `json:"priority,omitempty"`
 	Proposal                  *string                           `json:"proposal,omitempty"`
 	Psksecret                 *string                           `json:"psksecret,omitempty"`
 	PsksecretRemote           *string                           `json:"psksecret-remote,omitempty"`
@@ -132,13 +132,13 @@ type VpnipsecPhase1Certificate struct {
 }
 
 type VpnipsecPhase1Ipv4ExcludeRange struct {
-	EndIp   *string  `json:"end-ip,omitempty"`
-	Id      *float64 `json:"id,omitempty"`
-	StartIp *string  `json:"start-ip,omitempty"`
+	EndIp   *string `json:"end-ip,omitempty"`
+	Id      *int64  `json:"id,omitempty"`
+	StartIp *string `json:"start-ip,omitempty"`
 }
 
 type VpnipsecPhase1Ipv6ExcludeRange struct {
-	EndIp   *string  `json:"end-ip,omitempty"`
-	Id      *float64 `json:"id,omitempty"`
-	StartIp *string  `json:"start-ip,omitempty"`
+	EndIp   *string `json:"end-ip,omitempty"`
+	Id      *int64  `json:"id,omitempty"`
+	StartIp *string `json:"start-ip,omitempty"`
 }

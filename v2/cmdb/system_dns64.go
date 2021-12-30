@@ -3,10 +3,16 @@ package cmdb
 import (
 	"encoding/json"
 	"errors"
+	"log"
 
 	"github.com/poroping/forti-sdk-go/v2/models"
 	"github.com/poroping/forti-sdk-go/v2/request"
 )
+
+func (c *Client) CreateSystemDns64(payload *models.SystemDns64, params *models.CmdbRequestParams) (*models.CmdbResponse, error) {
+	log.Printf("[INFO] Resource at path %q is complex type. Changing to UPDATE.", models.SystemDns64Path)
+	return c.UpdateSystemDns64("", payload, params)
+}
 
 func (c *Client) ReadSystemDns64(mkey string, params *models.CmdbRequestParams) (*models.SystemDns64, error) {
 	req := &models.CmdbRequest{}
@@ -59,13 +65,7 @@ func (c *Client) UpdateSystemDns64(mkey string, payload *models.SystemDns64, par
 }
 
 func (c *Client) DeleteSystemDns64(mkey string, params *models.CmdbRequestParams) error {
-	req := &models.CmdbRequest{}
-	req.HTTPMethod = "DELETE"
-	req.Mkey = &mkey
-	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.SystemDns64Path + mkey + "/"
-	req.Params = *params
-
-	err := request.Delete(c.config, req)
+	payload := &models.SystemDns64{}
+	_, err := c.UpdateSystemDns64("", payload, params)
 	return err
 }

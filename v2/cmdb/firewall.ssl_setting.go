@@ -3,10 +3,16 @@ package cmdb
 import (
 	"encoding/json"
 	"errors"
+	"log"
 
 	"github.com/poroping/forti-sdk-go/v2/models"
 	"github.com/poroping/forti-sdk-go/v2/request"
 )
+
+func (c *Client) CreateFirewallsslSetting(payload *models.FirewallsslSetting, params *models.CmdbRequestParams) (*models.CmdbResponse, error) {
+	log.Printf("[INFO] Resource at path %q is complex type. Changing to UPDATE.", models.FirewallsslSettingPath)
+	return c.UpdateFirewallsslSetting("", payload, params)
+}
 
 func (c *Client) ReadFirewallsslSetting(mkey string, params *models.CmdbRequestParams) (*models.FirewallsslSetting, error) {
 	req := &models.CmdbRequest{}
@@ -59,13 +65,7 @@ func (c *Client) UpdateFirewallsslSetting(mkey string, payload *models.Firewalls
 }
 
 func (c *Client) DeleteFirewallsslSetting(mkey string, params *models.CmdbRequestParams) error {
-	req := &models.CmdbRequest{}
-	req.HTTPMethod = "DELETE"
-	req.Mkey = &mkey
-	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.FirewallsslSettingPath + mkey + "/"
-	req.Params = *params
-
-	err := request.Delete(c.config, req)
+	payload := &models.FirewallsslSetting{}
+	_, err := c.UpdateFirewallsslSetting("", payload, params)
 	return err
 }

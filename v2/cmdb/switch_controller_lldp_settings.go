@@ -3,10 +3,16 @@ package cmdb
 import (
 	"encoding/json"
 	"errors"
+	"log"
 
 	"github.com/poroping/forti-sdk-go/v2/models"
 	"github.com/poroping/forti-sdk-go/v2/request"
 )
+
+func (c *Client) CreateSwitchControllerLldpSettings(payload *models.SwitchControllerLldpSettings, params *models.CmdbRequestParams) (*models.CmdbResponse, error) {
+	log.Printf("[INFO] Resource at path %q is complex type. Changing to UPDATE.", models.SwitchControllerLldpSettingsPath)
+	return c.UpdateSwitchControllerLldpSettings("", payload, params)
+}
 
 func (c *Client) ReadSwitchControllerLldpSettings(mkey string, params *models.CmdbRequestParams) (*models.SwitchControllerLldpSettings, error) {
 	req := &models.CmdbRequest{}
@@ -59,13 +65,7 @@ func (c *Client) UpdateSwitchControllerLldpSettings(mkey string, payload *models
 }
 
 func (c *Client) DeleteSwitchControllerLldpSettings(mkey string, params *models.CmdbRequestParams) error {
-	req := &models.CmdbRequest{}
-	req.HTTPMethod = "DELETE"
-	req.Mkey = &mkey
-	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.SwitchControllerLldpSettingsPath + mkey + "/"
-	req.Params = *params
-
-	err := request.Delete(c.config, req)
+	payload := &models.SwitchControllerLldpSettings{}
+	_, err := c.UpdateSwitchControllerLldpSettings("", payload, params)
 	return err
 }

@@ -3,10 +3,16 @@ package cmdb
 import (
 	"encoding/json"
 	"errors"
+	"log"
 
 	"github.com/poroping/forti-sdk-go/v2/models"
 	"github.com/poroping/forti-sdk-go/v2/request"
 )
+
+func (c *Client) CreateSystemFtmPush(payload *models.SystemFtmPush, params *models.CmdbRequestParams) (*models.CmdbResponse, error) {
+	log.Printf("[INFO] Resource at path %q is complex type. Changing to UPDATE.", models.SystemFtmPushPath)
+	return c.UpdateSystemFtmPush("", payload, params)
+}
 
 func (c *Client) ReadSystemFtmPush(mkey string, params *models.CmdbRequestParams) (*models.SystemFtmPush, error) {
 	req := &models.CmdbRequest{}
@@ -59,13 +65,7 @@ func (c *Client) UpdateSystemFtmPush(mkey string, payload *models.SystemFtmPush,
 }
 
 func (c *Client) DeleteSystemFtmPush(mkey string, params *models.CmdbRequestParams) error {
-	req := &models.CmdbRequest{}
-	req.HTTPMethod = "DELETE"
-	req.Mkey = &mkey
-	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.SystemFtmPushPath + mkey + "/"
-	req.Params = *params
-
-	err := request.Delete(c.config, req)
+	payload := &models.SystemFtmPush{}
+	_, err := c.UpdateSystemFtmPush("", payload, params)
 	return err
 }

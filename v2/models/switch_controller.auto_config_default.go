@@ -1,6 +1,6 @@
 package models
 
-const SwitchControllerautoConfigDefaultPath = "switch-controller.auto-config/default/"
+const SwitchControllerautoConfigDefaultPath = "switch-controller/auto-config/default/"
 
 type SwitchControllerautoConfigDefault struct {
 	FgtPolicy *string `json:"fgt-policy,omitempty"`

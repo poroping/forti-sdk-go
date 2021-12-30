@@ -1,6 +1,6 @@
 package models
 
-const VpnsslwebUserGroupBookmarkPath = "vpn.ssl.web/user-group-bookmark/"
+const VpnsslwebUserGroupBookmarkPath = "vpn/ssl/web/user-group-bookmark/"
 
 type VpnsslwebUserGroupBookmark struct {
 	Bookmarks *[]VpnsslwebUserGroupBookmarkBookmarks `json:"bookmarks,omitempty"`
@@ -17,15 +17,15 @@ type VpnsslwebUserGroupBookmarkBookmarks struct {
 	FormData              *[]VpnsslwebUserGroupBookmarkBookmarksFormData `json:"form-data,omitempty"`
 	Host                  *string                                        `json:"host,omitempty"`
 	KeyboardLayout        *string                                        `json:"keyboard-layout,omitempty"`
-	ListeningPort         *float64                                       `json:"listening-port,omitempty"`
+	ListeningPort         *int64                                         `json:"listening-port,omitempty"`
 	LoadBalancingInfo     *string                                        `json:"load-balancing-info,omitempty"`
 	LogonPassword         *string                                        `json:"logon-password,omitempty"`
 	LogonUser             *string                                        `json:"logon-user,omitempty"`
 	Name                  *string                                        `json:"name,omitempty"`
-	Port                  *float64                                       `json:"port,omitempty"`
+	Port                  *int64                                         `json:"port,omitempty"`
 	PreconnectionBlob     *string                                        `json:"preconnection-blob,omitempty"`
-	PreconnectionId       *float64                                       `json:"preconnection-id,omitempty"`
-	RemotePort            *float64                                       `json:"remote-port,omitempty"`
+	PreconnectionId       *int64                                         `json:"preconnection-id,omitempty"`
+	RemotePort            *int64                                         `json:"remote-port,omitempty"`
 	RestrictedAdmin       *string                                        `json:"restricted-admin,omitempty"`
 	Security              *string                                        `json:"security,omitempty"`
 	SendPreconnectionId   *string                                        `json:"send-preconnection-id,omitempty"`

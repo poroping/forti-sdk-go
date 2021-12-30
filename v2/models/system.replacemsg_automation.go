@@ -1,6 +1,6 @@
 package models
 
-const SystemreplacemsgAutomationPath = "system.replacemsg/automation/"
+const SystemreplacemsgAutomationPath = "system/replacemsg/automation/"
 
 type SystemreplacemsgAutomation struct {
 	Buffer  *string `json:"buffer,omitempty"`

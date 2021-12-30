@@ -3,10 +3,16 @@ package cmdb
 import (
 	"encoding/json"
 	"errors"
+	"log"
 
 	"github.com/poroping/forti-sdk-go/v2/models"
 	"github.com/poroping/forti-sdk-go/v2/request"
 )
+
+func (c *Client) CreateSystemHaMonitor(payload *models.SystemHaMonitor, params *models.CmdbRequestParams) (*models.CmdbResponse, error) {
+	log.Printf("[INFO] Resource at path %q is complex type. Changing to UPDATE.", models.SystemHaMonitorPath)
+	return c.UpdateSystemHaMonitor("", payload, params)
+}
 
 func (c *Client) ReadSystemHaMonitor(mkey string, params *models.CmdbRequestParams) (*models.SystemHaMonitor, error) {
 	req := &models.CmdbRequest{}
@@ -59,13 +65,7 @@ func (c *Client) UpdateSystemHaMonitor(mkey string, payload *models.SystemHaMoni
 }
 
 func (c *Client) DeleteSystemHaMonitor(mkey string, params *models.CmdbRequestParams) error {
-	req := &models.CmdbRequest{}
-	req.HTTPMethod = "DELETE"
-	req.Mkey = &mkey
-	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.SystemHaMonitorPath + mkey + "/"
-	req.Params = *params
-
-	err := request.Delete(c.config, req)
+	payload := &models.SystemHaMonitor{}
+	_, err := c.UpdateSystemHaMonitor("", payload, params)
 	return err
 }

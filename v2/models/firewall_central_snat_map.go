@@ -16,8 +16,8 @@ type FirewallCentralSnatMap struct {
 	OrigAddr   *[]FirewallCentralSnatMapOrigAddr   `json:"orig-addr,omitempty"`
 	OrigAddr6  *[]FirewallCentralSnatMapOrigAddr6  `json:"orig-addr6,omitempty"`
 	OrigPort   *string                             `json:"orig-port,omitempty"`
-	Policyid   *float64                            `json:"policyid,omitempty"`
-	Protocol   *float64                            `json:"protocol,omitempty"`
+	Policyid   *int64                              `json:"policyid,omitempty"`
+	Protocol   *int64                              `json:"protocol,omitempty"`
 	Srcintf    *[]FirewallCentralSnatMapSrcintf    `json:"srcintf,omitempty"`
 	Status     *string                             `json:"status,omitempty"`
 	Type       *string                             `json:"type,omitempty"`

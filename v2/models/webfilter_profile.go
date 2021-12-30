@@ -52,7 +52,7 @@ type WebfilterProfileAntiphish struct {
 	DomainController  *string                                       `json:"domain-controller,omitempty"`
 	InspectionEntries *[]WebfilterProfileAntiphishInspectionEntries `json:"inspection-entries,omitempty"`
 	Ldap              *string                                       `json:"ldap,omitempty"`
-	MaxBodyLen        *float64                                      `json:"max-body-len,omitempty"`
+	MaxBodyLen        *int64                                        `json:"max-body-len,omitempty"`
 	Status            *string                                       `json:"status,omitempty"`
 }
 
@@ -92,7 +92,7 @@ type WebfilterProfileFileFilterEntriesFileType struct {
 type WebfilterProfileFtgdWf struct {
 	ExemptQuota        *string                          `json:"exempt-quota,omitempty"`
 	Filters            *[]WebfilterProfileFtgdWfFilters `json:"filters,omitempty"`
-	MaxQuotaTimeout    *float64                         `json:"max-quota-timeout,omitempty"`
+	MaxQuotaTimeout    *int64                           `json:"max-quota-timeout,omitempty"`
 	Options            *string                          `json:"options,omitempty"`
 	Ovrd               *string                          `json:"ovrd,omitempty"`
 	Quota              *[]WebfilterProfileFtgdWfQuota   `json:"quota,omitempty"`
@@ -105,8 +105,8 @@ type WebfilterProfileFtgdWf struct {
 type WebfilterProfileFtgdWfFilters struct {
 	Action              *string                                    `json:"action,omitempty"`
 	AuthUsrGrp          *[]WebfilterProfileFtgdWfFiltersAuthUsrGrp `json:"auth-usr-grp,omitempty"`
-	Category            *float64                                   `json:"category,omitempty"`
-	Id                  *float64                                   `json:"id,omitempty"`
+	Category            *int64                                     `json:"category,omitempty"`
+	Id                  *int64                                     `json:"id,omitempty"`
 	Log                 *string                                    `json:"log,omitempty"`
 	OverrideReplacemsg  *string                                    `json:"override-replacemsg,omitempty"`
 	WarnDuration        *string                                    `json:"warn-duration,omitempty"`
@@ -119,13 +119,13 @@ type WebfilterProfileFtgdWfFiltersAuthUsrGrp struct {
 }
 
 type WebfilterProfileFtgdWfQuota struct {
-	Category           *string  `json:"category,omitempty"`
-	Duration           *string  `json:"duration,omitempty"`
-	Id                 *float64 `json:"id,omitempty"`
-	OverrideReplacemsg *string  `json:"override-replacemsg,omitempty"`
-	Type               *string  `json:"type,omitempty"`
-	Unit               *string  `json:"unit,omitempty"`
-	Value              *float64 `json:"value,omitempty"`
+	Category           *string `json:"category,omitempty"`
+	Duration           *string `json:"duration,omitempty"`
+	Id                 *int64  `json:"id,omitempty"`
+	OverrideReplacemsg *string `json:"override-replacemsg,omitempty"`
+	Type               *string `json:"type,omitempty"`
+	Unit               *string `json:"unit,omitempty"`
+	Value              *int64  `json:"value,omitempty"`
 }
 
 type WebfilterProfileOverride struct {
@@ -151,13 +151,13 @@ type WebfilterProfileWeb struct {
 	Allowlist         *string                            `json:"allowlist,omitempty"`
 	Blacklist         *string                            `json:"blacklist,omitempty"`
 	Blocklist         *string                            `json:"blocklist,omitempty"`
-	BwordTable        *float64                           `json:"bword-table,omitempty"`
-	BwordThreshold    *float64                           `json:"bword-threshold,omitempty"`
-	ContentHeaderList *float64                           `json:"content-header-list,omitempty"`
+	BwordTable        *int64                             `json:"bword-table,omitempty"`
+	BwordThreshold    *int64                             `json:"bword-threshold,omitempty"`
+	ContentHeaderList *int64                             `json:"content-header-list,omitempty"`
 	KeywordMatch      *[]WebfilterProfileWebKeywordMatch `json:"keyword-match,omitempty"`
 	LogSearch         *string                            `json:"log-search,omitempty"`
 	SafeSearch        *string                            `json:"safe-search,omitempty"`
-	UrlfilterTable    *float64                           `json:"urlfilter-table,omitempty"`
+	UrlfilterTable    *int64                             `json:"urlfilter-table,omitempty"`
 	VimeoRestrict     *string                            `json:"vimeo-restrict,omitempty"`
 	Whitelist         *string                            `json:"whitelist,omitempty"`
 	YoutubeRestrict   *string                            `json:"youtube-restrict,omitempty"`
@@ -172,7 +172,7 @@ type WebfilterProfileWispServers struct {
 }
 
 type WebfilterProfileYoutubeChannelFilter struct {
-	ChannelId *string  `json:"channel-id,omitempty"`
-	Comment   *string  `json:"comment,omitempty"`
-	Id        *float64 `json:"id,omitempty"`
+	ChannelId *string `json:"channel-id,omitempty"`
+	Comment   *string `json:"comment,omitempty"`
+	Id        *int64  `json:"id,omitempty"`
 }

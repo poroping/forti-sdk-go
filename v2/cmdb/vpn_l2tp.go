@@ -3,10 +3,16 @@ package cmdb
 import (
 	"encoding/json"
 	"errors"
+	"log"
 
 	"github.com/poroping/forti-sdk-go/v2/models"
 	"github.com/poroping/forti-sdk-go/v2/request"
 )
+
+func (c *Client) CreateVpnL2tp(payload *models.VpnL2tp, params *models.CmdbRequestParams) (*models.CmdbResponse, error) {
+	log.Printf("[INFO] Resource at path %q is complex type. Changing to UPDATE.", models.VpnL2tpPath)
+	return c.UpdateVpnL2tp("", payload, params)
+}
 
 func (c *Client) ReadVpnL2tp(mkey string, params *models.CmdbRequestParams) (*models.VpnL2tp, error) {
 	req := &models.CmdbRequest{}
@@ -59,13 +65,7 @@ func (c *Client) UpdateVpnL2tp(mkey string, payload *models.VpnL2tp, params *mod
 }
 
 func (c *Client) DeleteVpnL2tp(mkey string, params *models.CmdbRequestParams) error {
-	req := &models.CmdbRequest{}
-	req.HTTPMethod = "DELETE"
-	req.Mkey = &mkey
-	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.VpnL2tpPath + mkey + "/"
-	req.Params = *params
-
-	err := request.Delete(c.config, req)
+	payload := &models.VpnL2tp{}
+	_, err := c.UpdateVpnL2tp("", payload, params)
 	return err
 }

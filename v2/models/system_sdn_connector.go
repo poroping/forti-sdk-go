@@ -9,7 +9,7 @@ type SystemSdnConnector struct {
 	ClientId          *string                             `json:"client-id,omitempty"`
 	ClientSecret      *string                             `json:"client-secret,omitempty"`
 	CompartmentId     *string                             `json:"compartment-id,omitempty"`
-	ComputeGeneration *float64                            `json:"compute-generation,omitempty"`
+	ComputeGeneration *int64                              `json:"compute-generation,omitempty"`
 	Domain            *string                             `json:"domain,omitempty"`
 	ExternalIp        *[]SystemSdnConnectorExternalIp     `json:"external-ip,omitempty"`
 	ForwardingRule    *[]SystemSdnConnectorForwardingRule `json:"forwarding-rule,omitempty"`
@@ -36,13 +36,13 @@ type SystemSdnConnector struct {
 	SecretToken       *string                             `json:"secret-token,omitempty"`
 	Server            *string                             `json:"server,omitempty"`
 	ServerList        *[]SystemSdnConnectorServerList     `json:"server-list,omitempty"`
-	ServerPort        *float64                            `json:"server-port,omitempty"`
+	ServerPort        *int64                              `json:"server-port,omitempty"`
 	ServiceAccount    *string                             `json:"service-account,omitempty"`
 	Status            *string                             `json:"status,omitempty"`
 	SubscriptionId    *string                             `json:"subscription-id,omitempty"`
 	TenantId          *string                             `json:"tenant-id,omitempty"`
 	Type              *string                             `json:"type,omitempty"`
-	UpdateInterval    *float64                            `json:"update-interval,omitempty"`
+	UpdateInterval    *int64                              `json:"update-interval,omitempty"`
 	UseMetadataIam    *string                             `json:"use-metadata-iam,omitempty"`
 	UserId            *string                             `json:"user-id,omitempty"`
 	Username          *string                             `json:"username,omitempty"`

@@ -22,13 +22,13 @@ type RouterIsis struct {
 	IsType               *string                      `json:"is-type,omitempty"`
 	IsisInterface        *[]RouterIsisIsisInterface   `json:"isis-interface,omitempty"`
 	IsisNet              *[]RouterIsisIsisNet         `json:"isis-net,omitempty"`
-	LspGenIntervalL1     *float64                     `json:"lsp-gen-interval-l1,omitempty"`
-	LspGenIntervalL2     *float64                     `json:"lsp-gen-interval-l2,omitempty"`
-	LspRefreshInterval   *float64                     `json:"lsp-refresh-interval,omitempty"`
-	MaxLspLifetime       *float64                     `json:"max-lsp-lifetime,omitempty"`
+	LspGenIntervalL1     *int64                       `json:"lsp-gen-interval-l1,omitempty"`
+	LspGenIntervalL2     *int64                       `json:"lsp-gen-interval-l2,omitempty"`
+	LspRefreshInterval   *int64                       `json:"lsp-refresh-interval,omitempty"`
+	MaxLspLifetime       *int64                       `json:"max-lsp-lifetime,omitempty"`
 	MetricStyle          *string                      `json:"metric-style,omitempty"`
 	OverloadBit          *string                      `json:"overload-bit,omitempty"`
-	OverloadBitOnStartup *float64                     `json:"overload-bit-on-startup,omitempty"`
+	OverloadBitOnStartup *int64                       `json:"overload-bit-on-startup,omitempty"`
 	OverloadBitSuppress  *string                      `json:"overload-bit-suppress,omitempty"`
 	Redistribute         *[]RouterIsisRedistribute    `json:"redistribute,omitempty"`
 	RedistributeL1       *string                      `json:"redistribute-l1,omitempty"`
@@ -47,69 +47,69 @@ type RouterIsis struct {
 }
 
 type RouterIsisIsisInterface struct {
-	AuthKeychainL1        *string  `json:"auth-keychain-l1,omitempty"`
-	AuthKeychainL2        *string  `json:"auth-keychain-l2,omitempty"`
-	AuthModeL1            *string  `json:"auth-mode-l1,omitempty"`
-	AuthModeL2            *string  `json:"auth-mode-l2,omitempty"`
-	AuthPasswordL1        *string  `json:"auth-password-l1,omitempty"`
-	AuthPasswordL2        *string  `json:"auth-password-l2,omitempty"`
-	AuthSendOnlyL1        *string  `json:"auth-send-only-l1,omitempty"`
-	AuthSendOnlyL2        *string  `json:"auth-send-only-l2,omitempty"`
-	CircuitType           *string  `json:"circuit-type,omitempty"`
-	CsnpIntervalL1        *float64 `json:"csnp-interval-l1,omitempty"`
-	CsnpIntervalL2        *float64 `json:"csnp-interval-l2,omitempty"`
-	HelloIntervalL1       *float64 `json:"hello-interval-l1,omitempty"`
-	HelloIntervalL2       *float64 `json:"hello-interval-l2,omitempty"`
-	HelloMultiplierL1     *float64 `json:"hello-multiplier-l1,omitempty"`
-	HelloMultiplierL2     *float64 `json:"hello-multiplier-l2,omitempty"`
-	HelloPadding          *string  `json:"hello-padding,omitempty"`
-	LspInterval           *float64 `json:"lsp-interval,omitempty"`
-	LspRetransmitInterval *float64 `json:"lsp-retransmit-interval,omitempty"`
-	MeshGroup             *string  `json:"mesh-group,omitempty"`
-	MeshGroupId           *float64 `json:"mesh-group-id,omitempty"`
-	MetricL1              *float64 `json:"metric-l1,omitempty"`
-	MetricL2              *float64 `json:"metric-l2,omitempty"`
-	Name                  *string  `json:"name,omitempty"`
-	NetworkType           *string  `json:"network-type,omitempty"`
-	PriorityL1            *float64 `json:"priority-l1,omitempty"`
-	PriorityL2            *float64 `json:"priority-l2,omitempty"`
-	Status                *string  `json:"status,omitempty"`
-	Status6               *string  `json:"status6,omitempty"`
-	WideMetricL1          *float64 `json:"wide-metric-l1,omitempty"`
-	WideMetricL2          *float64 `json:"wide-metric-l2,omitempty"`
+	AuthKeychainL1        *string `json:"auth-keychain-l1,omitempty"`
+	AuthKeychainL2        *string `json:"auth-keychain-l2,omitempty"`
+	AuthModeL1            *string `json:"auth-mode-l1,omitempty"`
+	AuthModeL2            *string `json:"auth-mode-l2,omitempty"`
+	AuthPasswordL1        *string `json:"auth-password-l1,omitempty"`
+	AuthPasswordL2        *string `json:"auth-password-l2,omitempty"`
+	AuthSendOnlyL1        *string `json:"auth-send-only-l1,omitempty"`
+	AuthSendOnlyL2        *string `json:"auth-send-only-l2,omitempty"`
+	CircuitType           *string `json:"circuit-type,omitempty"`
+	CsnpIntervalL1        *int64  `json:"csnp-interval-l1,omitempty"`
+	CsnpIntervalL2        *int64  `json:"csnp-interval-l2,omitempty"`
+	HelloIntervalL1       *int64  `json:"hello-interval-l1,omitempty"`
+	HelloIntervalL2       *int64  `json:"hello-interval-l2,omitempty"`
+	HelloMultiplierL1     *int64  `json:"hello-multiplier-l1,omitempty"`
+	HelloMultiplierL2     *int64  `json:"hello-multiplier-l2,omitempty"`
+	HelloPadding          *string `json:"hello-padding,omitempty"`
+	LspInterval           *int64  `json:"lsp-interval,omitempty"`
+	LspRetransmitInterval *int64  `json:"lsp-retransmit-interval,omitempty"`
+	MeshGroup             *string `json:"mesh-group,omitempty"`
+	MeshGroupId           *int64  `json:"mesh-group-id,omitempty"`
+	MetricL1              *int64  `json:"metric-l1,omitempty"`
+	MetricL2              *int64  `json:"metric-l2,omitempty"`
+	Name                  *string `json:"name,omitempty"`
+	NetworkType           *string `json:"network-type,omitempty"`
+	PriorityL1            *int64  `json:"priority-l1,omitempty"`
+	PriorityL2            *int64  `json:"priority-l2,omitempty"`
+	Status                *string `json:"status,omitempty"`
+	Status6               *string `json:"status6,omitempty"`
+	WideMetricL1          *int64  `json:"wide-metric-l1,omitempty"`
+	WideMetricL2          *int64  `json:"wide-metric-l2,omitempty"`
 }
 
 type RouterIsisIsisNet struct {
-	Id  *float64 `json:"id,omitempty"`
-	Net *string  `json:"net,omitempty"`
+	Id  *int64  `json:"id,omitempty"`
+	Net *string `json:"net,omitempty"`
 }
 
 type RouterIsisRedistribute struct {
-	Level      *string  `json:"level,omitempty"`
-	Metric     *float64 `json:"metric,omitempty"`
-	MetricType *string  `json:"metric-type,omitempty"`
-	Protocol   *string  `json:"protocol,omitempty"`
-	Routemap   *string  `json:"routemap,omitempty"`
-	Status     *string  `json:"status,omitempty"`
+	Level      *string `json:"level,omitempty"`
+	Metric     *int64  `json:"metric,omitempty"`
+	MetricType *string `json:"metric-type,omitempty"`
+	Protocol   *string `json:"protocol,omitempty"`
+	Routemap   *string `json:"routemap,omitempty"`
+	Status     *string `json:"status,omitempty"`
 }
 
 type RouterIsisRedistribute6 struct {
-	Level      *string  `json:"level,omitempty"`
-	Metric     *float64 `json:"metric,omitempty"`
-	MetricType *string  `json:"metric-type,omitempty"`
-	Protocol   *string  `json:"protocol,omitempty"`
-	Routemap   *string  `json:"routemap,omitempty"`
-	Status     *string  `json:"status,omitempty"`
+	Level      *string `json:"level,omitempty"`
+	Metric     *int64  `json:"metric,omitempty"`
+	MetricType *string `json:"metric-type,omitempty"`
+	Protocol   *string `json:"protocol,omitempty"`
+	Routemap   *string `json:"routemap,omitempty"`
+	Status     *string `json:"status,omitempty"`
 }
 
 type RouterIsisSummaryAddress struct {
-	Id     *float64 `json:"id,omitempty"`
-	Level  *string  `json:"level,omitempty"`
-	Prefix *string  `json:"prefix,omitempty"`
+	Id     *int64  `json:"id,omitempty"`
+	Level  *string `json:"level,omitempty"`
+	Prefix *string `json:"prefix,omitempty"`
 }
 
 type RouterIsisSummaryAddress6 struct {
-	Id      *float64 `json:"id,omitempty"`
-	Level   *string  `json:"level,omitempty"`
-	Prefix6 *string  `json:"prefix6,omitempty"`
+	Id      *int64  `json:"id,omitempty"`
+	Level   *string `json:"level,omitempty"`
+	Prefix6 *string `json:"prefix6,omitempty"`
 }

@@ -10,17 +10,17 @@ type RouterMulticast6 struct {
 }
 
 type RouterMulticast6Interface struct {
-	HelloHoldtime *float64 `json:"hello-holdtime,omitempty"`
-	HelloInterval *float64 `json:"hello-interval,omitempty"`
-	Name          *string  `json:"name,omitempty"`
+	HelloHoldtime *int64  `json:"hello-holdtime,omitempty"`
+	HelloInterval *int64  `json:"hello-interval,omitempty"`
+	Name          *string `json:"name,omitempty"`
 }
 
 type RouterMulticast6PimSmGlobal struct {
-	RegisterRateLimit *float64                                `json:"register-rate-limit,omitempty"`
+	RegisterRateLimit *int64                                  `json:"register-rate-limit,omitempty"`
 	RpAddress         *[]RouterMulticast6PimSmGlobalRpAddress `json:"rp-address,omitempty"`
 }
 
 type RouterMulticast6PimSmGlobalRpAddress struct {
-	Id         *float64 `json:"id,omitempty"`
-	Ip6Address *string  `json:"ip6-address,omitempty"`
+	Id         *int64  `json:"id,omitempty"`
+	Ip6Address *string `json:"ip6-address,omitempty"`
 }

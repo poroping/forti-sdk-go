@@ -1,6 +1,6 @@
 package models
 
-const SystemsdwanZonePath = "system.sdwan/zone/"
+const SystemsdwanZonePath = "system/sdwan/zone/"
 
 type SystemsdwanZone struct {
 	Name               *string `json:"name,omitempty"`

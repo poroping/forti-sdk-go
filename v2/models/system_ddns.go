@@ -15,14 +15,14 @@ type SystemDdns struct {
 	DdnsServerAddr   *[]SystemDdnsDdnsServerAddr   `json:"ddns-server-addr,omitempty"`
 	DdnsServerIp     *string                       `json:"ddns-server-ip,omitempty"`
 	DdnsSn           *string                       `json:"ddns-sn,omitempty"`
-	DdnsTtl          *float64                      `json:"ddns-ttl,omitempty"`
+	DdnsTtl          *int64                        `json:"ddns-ttl,omitempty"`
 	DdnsUsername     *string                       `json:"ddns-username,omitempty"`
 	DdnsZone         *string                       `json:"ddns-zone,omitempty"`
-	Ddnsid           *float64                      `json:"ddnsid,omitempty"`
+	Ddnsid           *int64                        `json:"ddnsid,omitempty"`
 	MonitorInterface *[]SystemDdnsMonitorInterface `json:"monitor-interface,omitempty"`
 	ServerType       *string                       `json:"server-type,omitempty"`
 	SslCertificate   *string                       `json:"ssl-certificate,omitempty"`
-	UpdateInterval   *float64                      `json:"update-interval,omitempty"`
+	UpdateInterval   *int64                        `json:"update-interval,omitempty"`
 	UsePublicIp      *string                       `json:"use-public-ip,omitempty"`
 }
 

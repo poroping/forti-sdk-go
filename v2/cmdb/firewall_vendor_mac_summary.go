@@ -3,10 +3,16 @@ package cmdb
 import (
 	"encoding/json"
 	"errors"
+	"log"
 
 	"github.com/poroping/forti-sdk-go/v2/models"
 	"github.com/poroping/forti-sdk-go/v2/request"
 )
+
+func (c *Client) CreateFirewallVendorMacSummary(payload *models.FirewallVendorMacSummary, params *models.CmdbRequestParams) (*models.CmdbResponse, error) {
+	log.Printf("[INFO] Resource at path %q is complex type. Changing to UPDATE.", models.FirewallVendorMacSummaryPath)
+	return c.UpdateFirewallVendorMacSummary("", payload, params)
+}
 
 func (c *Client) ReadFirewallVendorMacSummary(mkey string, params *models.CmdbRequestParams) (*models.FirewallVendorMacSummary, error) {
 	req := &models.CmdbRequest{}
@@ -59,13 +65,7 @@ func (c *Client) UpdateFirewallVendorMacSummary(mkey string, payload *models.Fir
 }
 
 func (c *Client) DeleteFirewallVendorMacSummary(mkey string, params *models.CmdbRequestParams) error {
-	req := &models.CmdbRequest{}
-	req.HTTPMethod = "DELETE"
-	req.Mkey = &mkey
-	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.FirewallVendorMacSummaryPath + mkey + "/"
-	req.Params = *params
-
-	err := request.Delete(c.config, req)
+	payload := &models.FirewallVendorMacSummary{}
+	_, err := c.UpdateFirewallVendorMacSummary("", payload, params)
 	return err
 }

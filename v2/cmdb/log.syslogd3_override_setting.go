@@ -3,10 +3,16 @@ package cmdb
 import (
 	"encoding/json"
 	"errors"
+	"log"
 
 	"github.com/poroping/forti-sdk-go/v2/models"
 	"github.com/poroping/forti-sdk-go/v2/request"
 )
+
+func (c *Client) CreateLogsyslogd3OverrideSetting(payload *models.Logsyslogd3OverrideSetting, params *models.CmdbRequestParams) (*models.CmdbResponse, error) {
+	log.Printf("[INFO] Resource at path %q is complex type. Changing to UPDATE.", models.Logsyslogd3OverrideSettingPath)
+	return c.UpdateLogsyslogd3OverrideSetting("", payload, params)
+}
 
 func (c *Client) ReadLogsyslogd3OverrideSetting(mkey string, params *models.CmdbRequestParams) (*models.Logsyslogd3OverrideSetting, error) {
 	req := &models.CmdbRequest{}
@@ -59,13 +65,7 @@ func (c *Client) UpdateLogsyslogd3OverrideSetting(mkey string, payload *models.L
 }
 
 func (c *Client) DeleteLogsyslogd3OverrideSetting(mkey string, params *models.CmdbRequestParams) error {
-	req := &models.CmdbRequest{}
-	req.HTTPMethod = "DELETE"
-	req.Mkey = &mkey
-	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.Logsyslogd3OverrideSettingPath + mkey + "/"
-	req.Params = *params
-
-	err := request.Delete(c.config, req)
+	payload := &models.Logsyslogd3OverrideSetting{}
+	_, err := c.UpdateLogsyslogd3OverrideSetting("", payload, params)
 	return err
 }

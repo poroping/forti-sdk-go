@@ -3,10 +3,16 @@ package cmdb
 import (
 	"encoding/json"
 	"errors"
+	"log"
 
 	"github.com/poroping/forti-sdk-go/v2/models"
 	"github.com/poroping/forti-sdk-go/v2/request"
 )
+
+func (c *Client) CreateLogfortianalyzer2OverrideFilter(payload *models.Logfortianalyzer2OverrideFilter, params *models.CmdbRequestParams) (*models.CmdbResponse, error) {
+	log.Printf("[INFO] Resource at path %q is complex type. Changing to UPDATE.", models.Logfortianalyzer2OverrideFilterPath)
+	return c.UpdateLogfortianalyzer2OverrideFilter("", payload, params)
+}
 
 func (c *Client) ReadLogfortianalyzer2OverrideFilter(mkey string, params *models.CmdbRequestParams) (*models.Logfortianalyzer2OverrideFilter, error) {
 	req := &models.CmdbRequest{}
@@ -59,13 +65,7 @@ func (c *Client) UpdateLogfortianalyzer2OverrideFilter(mkey string, payload *mod
 }
 
 func (c *Client) DeleteLogfortianalyzer2OverrideFilter(mkey string, params *models.CmdbRequestParams) error {
-	req := &models.CmdbRequest{}
-	req.HTTPMethod = "DELETE"
-	req.Mkey = &mkey
-	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.Logfortianalyzer2OverrideFilterPath + mkey + "/"
-	req.Params = *params
-
-	err := request.Delete(c.config, req)
+	payload := &models.Logfortianalyzer2OverrideFilter{}
+	_, err := c.UpdateLogfortianalyzer2OverrideFilter("", payload, params)
 	return err
 }

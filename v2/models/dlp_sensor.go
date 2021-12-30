@@ -21,11 +21,11 @@ type DlpSensorFilter struct {
 	Archive           *string                       `json:"archive,omitempty"`
 	CompanyIdentifier *string                       `json:"company-identifier,omitempty"`
 	Expiry            *string                       `json:"expiry,omitempty"`
-	FileSize          *float64                      `json:"file-size,omitempty"`
-	FileType          *float64                      `json:"file-type,omitempty"`
+	FileSize          *int64                        `json:"file-size,omitempty"`
+	FileType          *int64                        `json:"file-type,omitempty"`
 	FilterBy          *string                       `json:"filter-by,omitempty"`
-	Id                *float64                      `json:"id,omitempty"`
-	MatchPercentage   *float64                      `json:"match-percentage,omitempty"`
+	Id                *int64                        `json:"id,omitempty"`
+	MatchPercentage   *int64                        `json:"match-percentage,omitempty"`
 	Name              *string                       `json:"name,omitempty"`
 	Proto             *string                       `json:"proto,omitempty"`
 	Regexp            *string                       `json:"regexp,omitempty"`

@@ -17,10 +17,10 @@ type SystemAutomationStitchAction struct {
 }
 
 type SystemAutomationStitchActions struct {
-	Action   *string  `json:"action,omitempty"`
-	Delay    *float64 `json:"delay,omitempty"`
-	Id       *float64 `json:"id,omitempty"`
-	Required *string  `json:"required,omitempty"`
+	Action   *string `json:"action,omitempty"`
+	Delay    *int64  `json:"delay,omitempty"`
+	Id       *int64  `json:"id,omitempty"`
+	Required *string `json:"required,omitempty"`
 }
 
 type SystemAutomationStitchDestination struct {

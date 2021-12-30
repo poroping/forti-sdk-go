@@ -1,6 +1,6 @@
 package models
 
-const SystemreplacemsgNntpPath = "system.replacemsg/nntp/"
+const SystemreplacemsgNntpPath = "system/replacemsg/nntp/"
 
 type SystemreplacemsgNntp struct {
 	Buffer  *string `json:"buffer,omitempty"`

@@ -3,10 +3,16 @@ package cmdb
 import (
 	"encoding/json"
 	"errors"
+	"log"
 
 	"github.com/poroping/forti-sdk-go/v2/models"
 	"github.com/poroping/forti-sdk-go/v2/request"
 )
+
+func (c *Client) CreateSystemIke(payload *models.SystemIke, params *models.CmdbRequestParams) (*models.CmdbResponse, error) {
+	log.Printf("[INFO] Resource at path %q is complex type. Changing to UPDATE.", models.SystemIkePath)
+	return c.UpdateSystemIke("", payload, params)
+}
 
 func (c *Client) ReadSystemIke(mkey string, params *models.CmdbRequestParams) (*models.SystemIke, error) {
 	req := &models.CmdbRequest{}
@@ -59,13 +65,7 @@ func (c *Client) UpdateSystemIke(mkey string, payload *models.SystemIke, params 
 }
 
 func (c *Client) DeleteSystemIke(mkey string, params *models.CmdbRequestParams) error {
-	req := &models.CmdbRequest{}
-	req.HTTPMethod = "DELETE"
-	req.Mkey = &mkey
-	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.SystemIkePath + mkey + "/"
-	req.Params = *params
-
-	err := request.Delete(c.config, req)
+	payload := &models.SystemIke{}
+	_, err := c.UpdateSystemIke("", payload, params)
 	return err
 }

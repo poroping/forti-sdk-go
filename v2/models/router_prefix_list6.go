@@ -9,10 +9,10 @@ type RouterPrefixList6 struct {
 }
 
 type RouterPrefixList6Rule struct {
-	Action  *string  `json:"action,omitempty"`
-	Flags   *float64 `json:"flags,omitempty"`
-	Ge      *float64 `json:"ge,omitempty"`
-	Id      *float64 `json:"id,omitempty"`
-	Le      *float64 `json:"le,omitempty"`
-	Prefix6 *string  `json:"prefix6,omitempty"`
+	Action  *string `json:"action,omitempty"`
+	Flags   *int64  `json:"flags,omitempty"`
+	Ge      *int64  `json:"ge,omitempty"`
+	Id      *int64  `json:"id,omitempty"`
+	Le      *int64  `json:"le,omitempty"`
+	Prefix6 *string `json:"prefix6,omitempty"`
 }

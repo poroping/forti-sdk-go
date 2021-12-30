@@ -1,6 +1,6 @@
 package models
 
-const WirelessControllerhotspot20H2qpAdviceOfChargePath = "wireless-controller.hotspot20/h2qp-advice-of-charge/"
+const WirelessControllerhotspot20H2qpAdviceOfChargePath = "wireless-controller/hotspot20/h2qp-advice-of-charge/"
 
 type WirelessControllerhotspot20H2qpAdviceOfCharge struct {
 	AocList *[]WirelessControllerhotspot20H2qpAdviceOfChargeAocList `json:"aoc-list,omitempty"`

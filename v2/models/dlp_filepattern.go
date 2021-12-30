@@ -5,7 +5,7 @@ const DlpFilepatternPath = "dlp/filepattern/"
 type DlpFilepattern struct {
 	Comment *string                  `json:"comment,omitempty"`
 	Entries *[]DlpFilepatternEntries `json:"entries,omitempty"`
-	Fosid   *float64                 `json:"fosid,omitempty"`
+	Fosid   *int64                   `json:"fosid,omitempty"`
 	Name    *string                  `json:"name,omitempty"`
 }
 

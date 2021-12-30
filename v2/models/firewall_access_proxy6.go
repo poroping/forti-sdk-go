@@ -14,14 +14,14 @@ type FirewallAccessProxy6 struct {
 }
 
 type FirewallAccessProxy6ApiGateway struct {
-	HttpCookieAge            *float64                                         `json:"http-cookie-age,omitempty"`
+	HttpCookieAge            *int64                                           `json:"http-cookie-age,omitempty"`
 	HttpCookieDomain         *string                                          `json:"http-cookie-domain,omitempty"`
 	HttpCookieDomainFromHost *string                                          `json:"http-cookie-domain-from-host,omitempty"`
-	HttpCookieGeneration     *float64                                         `json:"http-cookie-generation,omitempty"`
+	HttpCookieGeneration     *int64                                           `json:"http-cookie-generation,omitempty"`
 	HttpCookiePath           *string                                          `json:"http-cookie-path,omitempty"`
 	HttpCookieShare          *string                                          `json:"http-cookie-share,omitempty"`
 	HttpsCookieSecure        *string                                          `json:"https-cookie-secure,omitempty"`
-	Id                       *float64                                         `json:"id,omitempty"`
+	Id                       *int64                                           `json:"id,omitempty"`
 	LdbMethod                *string                                          `json:"ldb-method,omitempty"`
 	Persistence              *string                                          `json:"persistence,omitempty"`
 	Realservers              *[]FirewallAccessProxy6ApiGatewayRealservers     `json:"realservers,omitempty"`
@@ -45,16 +45,16 @@ type FirewallAccessProxy6ApiGatewayRealservers struct {
 	HealthCheckProto     *string                                                `json:"health-check-proto,omitempty"`
 	HolddownInterval     *string                                                `json:"holddown-interval,omitempty"`
 	HttpHost             *string                                                `json:"http-host,omitempty"`
-	Id                   *float64                                               `json:"id,omitempty"`
+	Id                   *int64                                                 `json:"id,omitempty"`
 	Ip                   *string                                                `json:"ip,omitempty"`
 	Mappedport           *string                                                `json:"mappedport,omitempty"`
-	Port                 *float64                                               `json:"port,omitempty"`
+	Port                 *int64                                                 `json:"port,omitempty"`
 	SshClientCert        *string                                                `json:"ssh-client-cert,omitempty"`
 	SshHostKey           *[]FirewallAccessProxy6ApiGatewayRealserversSshHostKey `json:"ssh-host-key,omitempty"`
 	SshHostKeyValidation *string                                                `json:"ssh-host-key-validation,omitempty"`
 	Status               *string                                                `json:"status,omitempty"`
 	Type                 *string                                                `json:"type,omitempty"`
-	Weight               *float64                                               `json:"weight,omitempty"`
+	Weight               *int64                                                 `json:"weight,omitempty"`
 }
 
 type FirewallAccessProxy6ApiGatewayRealserversSshHostKey struct {
@@ -62,20 +62,20 @@ type FirewallAccessProxy6ApiGatewayRealserversSshHostKey struct {
 }
 
 type FirewallAccessProxy6ApiGatewaySslCipherSuites struct {
-	Cipher   *string  `json:"cipher,omitempty"`
-	Priority *float64 `json:"priority,omitempty"`
-	Versions *string  `json:"versions,omitempty"`
+	Cipher   *string `json:"cipher,omitempty"`
+	Priority *int64  `json:"priority,omitempty"`
+	Versions *string `json:"versions,omitempty"`
 }
 
 type FirewallAccessProxy6ApiGateway6 struct {
-	HttpCookieAge            *float64                                          `json:"http-cookie-age,omitempty"`
+	HttpCookieAge            *int64                                            `json:"http-cookie-age,omitempty"`
 	HttpCookieDomain         *string                                           `json:"http-cookie-domain,omitempty"`
 	HttpCookieDomainFromHost *string                                           `json:"http-cookie-domain-from-host,omitempty"`
-	HttpCookieGeneration     *float64                                          `json:"http-cookie-generation,omitempty"`
+	HttpCookieGeneration     *int64                                            `json:"http-cookie-generation,omitempty"`
 	HttpCookiePath           *string                                           `json:"http-cookie-path,omitempty"`
 	HttpCookieShare          *string                                           `json:"http-cookie-share,omitempty"`
 	HttpsCookieSecure        *string                                           `json:"https-cookie-secure,omitempty"`
-	Id                       *float64                                          `json:"id,omitempty"`
+	Id                       *int64                                            `json:"id,omitempty"`
 	LdbMethod                *string                                           `json:"ldb-method,omitempty"`
 	Persistence              *string                                           `json:"persistence,omitempty"`
 	Realservers              *[]FirewallAccessProxy6ApiGateway6Realservers     `json:"realservers,omitempty"`
@@ -99,16 +99,16 @@ type FirewallAccessProxy6ApiGateway6Realservers struct {
 	HealthCheckProto     *string                                                 `json:"health-check-proto,omitempty"`
 	HolddownInterval     *string                                                 `json:"holddown-interval,omitempty"`
 	HttpHost             *string                                                 `json:"http-host,omitempty"`
-	Id                   *float64                                                `json:"id,omitempty"`
+	Id                   *int64                                                  `json:"id,omitempty"`
 	Ip                   *string                                                 `json:"ip,omitempty"`
 	Mappedport           *string                                                 `json:"mappedport,omitempty"`
-	Port                 *float64                                                `json:"port,omitempty"`
+	Port                 *int64                                                  `json:"port,omitempty"`
 	SshClientCert        *string                                                 `json:"ssh-client-cert,omitempty"`
 	SshHostKey           *[]FirewallAccessProxy6ApiGateway6RealserversSshHostKey `json:"ssh-host-key,omitempty"`
 	SshHostKeyValidation *string                                                 `json:"ssh-host-key-validation,omitempty"`
 	Status               *string                                                 `json:"status,omitempty"`
 	Type                 *string                                                 `json:"type,omitempty"`
-	Weight               *float64                                                `json:"weight,omitempty"`
+	Weight               *int64                                                  `json:"weight,omitempty"`
 }
 
 type FirewallAccessProxy6ApiGateway6RealserversSshHostKey struct {
@@ -116,7 +116,7 @@ type FirewallAccessProxy6ApiGateway6RealserversSshHostKey struct {
 }
 
 type FirewallAccessProxy6ApiGateway6SslCipherSuites struct {
-	Cipher   *string  `json:"cipher,omitempty"`
-	Priority *float64 `json:"priority,omitempty"`
-	Versions *string  `json:"versions,omitempty"`
+	Cipher   *string `json:"cipher,omitempty"`
+	Priority *int64  `json:"priority,omitempty"`
+	Versions *string `json:"versions,omitempty"`
 }

@@ -4,16 +4,16 @@ const SystemSdwanPath = "system/sdwan/"
 
 type SystemSdwan struct {
 	Duplication            *[]SystemSdwanDuplication         `json:"duplication,omitempty"`
-	DuplicationMaxNum      *float64                          `json:"duplication-max-num,omitempty"`
+	DuplicationMaxNum      *int64                            `json:"duplication-max-num,omitempty"`
 	FailAlertInterfaces    *[]SystemSdwanFailAlertInterfaces `json:"fail-alert-interfaces,omitempty"`
 	FailDetect             *string                           `json:"fail-detect,omitempty"`
 	HealthCheck            *[]SystemSdwanHealthCheck         `json:"health-check,omitempty"`
 	LoadBalanceMode        *string                           `json:"load-balance-mode,omitempty"`
 	Members                *[]SystemSdwanMembers             `json:"members,omitempty"`
 	Neighbor               *[]SystemSdwanNeighbor            `json:"neighbor,omitempty"`
-	NeighborHoldBootTime   *float64                          `json:"neighbor-hold-boot-time,omitempty"`
+	NeighborHoldBootTime   *int64                            `json:"neighbor-hold-boot-time,omitempty"`
 	NeighborHoldDown       *string                           `json:"neighbor-hold-down,omitempty"`
-	NeighborHoldDownTime   *float64                          `json:"neighbor-hold-down-time,omitempty"`
+	NeighborHoldDownTime   *int64                            `json:"neighbor-hold-down-time,omitempty"`
 	Service                *[]SystemSdwanService             `json:"service,omitempty"`
 	SpeedtestBypassRouting *string                           `json:"speedtest-bypass-routing,omitempty"`
 	Status                 *string                           `json:"status,omitempty"`
@@ -24,7 +24,7 @@ type SystemSdwanDuplication struct {
 	Dstaddr             *[]SystemSdwanDuplicationDstaddr   `json:"dstaddr,omitempty"`
 	Dstaddr6            *[]SystemSdwanDuplicationDstaddr6  `json:"dstaddr6,omitempty"`
 	Dstintf             *[]SystemSdwanDuplicationDstintf   `json:"dstintf,omitempty"`
-	Id                  *float64                           `json:"id,omitempty"`
+	Id                  *int64                             `json:"id,omitempty"`
 	PacketDeDuplication *string                            `json:"packet-de-duplication,omitempty"`
 	PacketDuplication   *string                            `json:"packet-duplication,omitempty"`
 	Service             *[]SystemSdwanDuplicationService   `json:"service,omitempty"`
@@ -51,7 +51,7 @@ type SystemSdwanDuplicationService struct {
 }
 
 type SystemSdwanDuplicationServiceId struct {
-	Id *float64 `json:"id,omitempty"`
+	Id *int64 `json:"id,omitempty"`
 }
 
 type SystemSdwanDuplicationSrcaddr struct {
@@ -76,85 +76,85 @@ type SystemSdwanHealthCheck struct {
 	Diffservcode               *string                          `json:"diffservcode,omitempty"`
 	DnsMatchIp                 *string                          `json:"dns-match-ip,omitempty"`
 	DnsRequestDomain           *string                          `json:"dns-request-domain,omitempty"`
-	Failtime                   *float64                         `json:"failtime,omitempty"`
+	Failtime                   *int64                           `json:"failtime,omitempty"`
 	FtpFile                    *string                          `json:"ftp-file,omitempty"`
 	FtpMode                    *string                          `json:"ftp-mode,omitempty"`
-	HaPriority                 *float64                         `json:"ha-priority,omitempty"`
+	HaPriority                 *int64                           `json:"ha-priority,omitempty"`
 	HttpAgent                  *string                          `json:"http-agent,omitempty"`
 	HttpGet                    *string                          `json:"http-get,omitempty"`
 	HttpMatch                  *string                          `json:"http-match,omitempty"`
-	Interval                   *float64                         `json:"interval,omitempty"`
+	Interval                   *int64                           `json:"interval,omitempty"`
 	Members                    *[]SystemSdwanHealthCheckMembers `json:"members,omitempty"`
 	Name                       *string                          `json:"name,omitempty"`
-	PacketSize                 *float64                         `json:"packet-size,omitempty"`
+	PacketSize                 *int64                           `json:"packet-size,omitempty"`
 	Password                   *string                          `json:"password,omitempty"`
-	Port                       *float64                         `json:"port,omitempty"`
-	ProbeCount                 *float64                         `json:"probe-count,omitempty"`
+	Port                       *int64                           `json:"port,omitempty"`
+	ProbeCount                 *int64                           `json:"probe-count,omitempty"`
 	ProbePackets               *string                          `json:"probe-packets,omitempty"`
-	ProbeTimeout               *float64                         `json:"probe-timeout,omitempty"`
+	ProbeTimeout               *int64                           `json:"probe-timeout,omitempty"`
 	Protocol                   *string                          `json:"protocol,omitempty"`
 	QualityMeasuredMethod      *string                          `json:"quality-measured-method,omitempty"`
-	Recoverytime               *float64                         `json:"recoverytime,omitempty"`
+	Recoverytime               *int64                           `json:"recoverytime,omitempty"`
 	SecurityMode               *string                          `json:"security-mode,omitempty"`
 	Server                     *string                          `json:"server,omitempty"`
 	Sla                        *[]SystemSdwanHealthCheckSla     `json:"sla,omitempty"`
-	SlaFailLogPeriod           *float64                         `json:"sla-fail-log-period,omitempty"`
-	SlaPassLogPeriod           *float64                         `json:"sla-pass-log-period,omitempty"`
+	SlaFailLogPeriod           *int64                           `json:"sla-fail-log-period,omitempty"`
+	SlaPassLogPeriod           *int64                           `json:"sla-pass-log-period,omitempty"`
 	SystemDns                  *string                          `json:"system-dns,omitempty"`
-	ThresholdAlertJitter       *float64                         `json:"threshold-alert-jitter,omitempty"`
-	ThresholdAlertLatency      *float64                         `json:"threshold-alert-latency,omitempty"`
-	ThresholdAlertPacketloss   *float64                         `json:"threshold-alert-packetloss,omitempty"`
-	ThresholdWarningJitter     *float64                         `json:"threshold-warning-jitter,omitempty"`
-	ThresholdWarningLatency    *float64                         `json:"threshold-warning-latency,omitempty"`
-	ThresholdWarningPacketloss *float64                         `json:"threshold-warning-packetloss,omitempty"`
+	ThresholdAlertJitter       *int64                           `json:"threshold-alert-jitter,omitempty"`
+	ThresholdAlertLatency      *int64                           `json:"threshold-alert-latency,omitempty"`
+	ThresholdAlertPacketloss   *int64                           `json:"threshold-alert-packetloss,omitempty"`
+	ThresholdWarningJitter     *int64                           `json:"threshold-warning-jitter,omitempty"`
+	ThresholdWarningLatency    *int64                           `json:"threshold-warning-latency,omitempty"`
+	ThresholdWarningPacketloss *int64                           `json:"threshold-warning-packetloss,omitempty"`
 	UpdateCascadeInterface     *string                          `json:"update-cascade-interface,omitempty"`
 	UpdateStaticRoute          *string                          `json:"update-static-route,omitempty"`
 	User                       *string                          `json:"user,omitempty"`
 }
 
 type SystemSdwanHealthCheckMembers struct {
-	SeqNum *float64 `json:"seq-num,omitempty"`
+	SeqNum *int64 `json:"seq-num,omitempty"`
 }
 
 type SystemSdwanHealthCheckSla struct {
-	Id                  *float64 `json:"id,omitempty"`
-	JitterThreshold     *float64 `json:"jitter-threshold,omitempty"`
-	LatencyThreshold    *float64 `json:"latency-threshold,omitempty"`
-	LinkCostFactor      *string  `json:"link-cost-factor,omitempty"`
-	PacketlossThreshold *float64 `json:"packetloss-threshold,omitempty"`
+	Id                  *int64  `json:"id,omitempty"`
+	JitterThreshold     *int64  `json:"jitter-threshold,omitempty"`
+	LatencyThreshold    *int64  `json:"latency-threshold,omitempty"`
+	LinkCostFactor      *string `json:"link-cost-factor,omitempty"`
+	PacketlossThreshold *int64  `json:"packetloss-threshold,omitempty"`
 }
 
 type SystemSdwanMembers struct {
-	Comment                   *string  `json:"comment,omitempty"`
-	Cost                      *float64 `json:"cost,omitempty"`
-	Gateway                   *string  `json:"gateway,omitempty"`
-	Gateway6                  *string  `json:"gateway6,omitempty"`
-	IngressSpilloverThreshold *float64 `json:"ingress-spillover-threshold,omitempty"`
-	Interface                 *string  `json:"interface,omitempty"`
-	Priority                  *float64 `json:"priority,omitempty"`
-	Priority6                 *float64 `json:"priority6,omitempty"`
-	SeqNum                    *float64 `json:"seq-num,omitempty"`
-	Source                    *string  `json:"source,omitempty"`
-	Source6                   *string  `json:"source6,omitempty"`
-	SpilloverThreshold        *float64 `json:"spillover-threshold,omitempty"`
-	Status                    *string  `json:"status,omitempty"`
-	VolumeRatio               *float64 `json:"volume-ratio,omitempty"`
-	Weight                    *float64 `json:"weight,omitempty"`
-	Zone                      *string  `json:"zone,omitempty"`
+	Comment                   *string `json:"comment,omitempty"`
+	Cost                      *int64  `json:"cost,omitempty"`
+	Gateway                   *string `json:"gateway,omitempty"`
+	Gateway6                  *string `json:"gateway6,omitempty"`
+	IngressSpilloverThreshold *int64  `json:"ingress-spillover-threshold,omitempty"`
+	Interface                 *string `json:"interface,omitempty"`
+	Priority                  *int64  `json:"priority,omitempty"`
+	Priority6                 *int64  `json:"priority6,omitempty"`
+	SeqNum                    *int64  `json:"seq-num,omitempty"`
+	Source                    *string `json:"source,omitempty"`
+	Source6                   *string `json:"source6,omitempty"`
+	SpilloverThreshold        *int64  `json:"spillover-threshold,omitempty"`
+	Status                    *string `json:"status,omitempty"`
+	VolumeRatio               *int64  `json:"volume-ratio,omitempty"`
+	Weight                    *int64  `json:"weight,omitempty"`
+	Zone                      *string `json:"zone,omitempty"`
 }
 
 type SystemSdwanNeighbor struct {
-	HealthCheck *string  `json:"health-check,omitempty"`
-	Ip          *string  `json:"ip,omitempty"`
-	Member      *float64 `json:"member,omitempty"`
-	Mode        *string  `json:"mode,omitempty"`
-	Role        *string  `json:"role,omitempty"`
-	SlaId       *float64 `json:"sla-id,omitempty"`
+	HealthCheck *string `json:"health-check,omitempty"`
+	Ip          *string `json:"ip,omitempty"`
+	Member      *int64  `json:"member,omitempty"`
+	Mode        *string `json:"mode,omitempty"`
+	Role        *string `json:"role,omitempty"`
+	SlaId       *int64  `json:"sla-id,omitempty"`
 }
 
 type SystemSdwanService struct {
 	AddrMode                    *string                                          `json:"addr-mode,omitempty"`
-	BandwidthWeight             *float64                                         `json:"bandwidth-weight,omitempty"`
+	BandwidthWeight             *int64                                           `json:"bandwidth-weight,omitempty"`
 	Default                     *string                                          `json:"default,omitempty"`
 	DscpForward                 *string                                          `json:"dscp-forward,omitempty"`
 	DscpForwardTag              *string                                          `json:"dscp-forward-tag,omitempty"`
@@ -163,13 +163,13 @@ type SystemSdwanService struct {
 	Dst                         *[]SystemSdwanServiceDst                         `json:"dst,omitempty"`
 	DstNegate                   *string                                          `json:"dst-negate,omitempty"`
 	Dst6                        *[]SystemSdwanServiceDst6                        `json:"dst6,omitempty"`
-	EndPort                     *float64                                         `json:"end-port,omitempty"`
+	EndPort                     *int64                                           `json:"end-port,omitempty"`
 	Gateway                     *string                                          `json:"gateway,omitempty"`
 	Groups                      *[]SystemSdwanServiceGroups                      `json:"groups,omitempty"`
 	HashMode                    *string                                          `json:"hash-mode,omitempty"`
 	HealthCheck                 *[]SystemSdwanServiceHealthCheck                 `json:"health-check,omitempty"`
-	HoldDownTime                *float64                                         `json:"hold-down-time,omitempty"`
-	Id                          *float64                                         `json:"id,omitempty"`
+	HoldDownTime                *int64                                           `json:"hold-down-time,omitempty"`
+	Id                          *int64                                           `json:"id,omitempty"`
 	InputDevice                 *[]SystemSdwanServiceInputDevice                 `json:"input-device,omitempty"`
 	InputDeviceNegate           *string                                          `json:"input-device-negate,omitempty"`
 	InternetService             *string                                          `json:"internet-service,omitempty"`
@@ -179,28 +179,28 @@ type SystemSdwanService struct {
 	InternetServiceCustomGroup  *[]SystemSdwanServiceInternetServiceCustomGroup  `json:"internet-service-custom-group,omitempty"`
 	InternetServiceGroup        *[]SystemSdwanServiceInternetServiceGroup        `json:"internet-service-group,omitempty"`
 	InternetServiceName         *[]SystemSdwanServiceInternetServiceName         `json:"internet-service-name,omitempty"`
-	JitterWeight                *float64                                         `json:"jitter-weight,omitempty"`
-	LatencyWeight               *float64                                         `json:"latency-weight,omitempty"`
+	JitterWeight                *int64                                           `json:"jitter-weight,omitempty"`
+	LatencyWeight               *int64                                           `json:"latency-weight,omitempty"`
 	LinkCostFactor              *string                                          `json:"link-cost-factor,omitempty"`
-	LinkCostThreshold           *float64                                         `json:"link-cost-threshold,omitempty"`
-	MinimumSlaMeetMembers       *float64                                         `json:"minimum-sla-meet-members,omitempty"`
+	LinkCostThreshold           *int64                                           `json:"link-cost-threshold,omitempty"`
+	MinimumSlaMeetMembers       *int64                                           `json:"minimum-sla-meet-members,omitempty"`
 	Mode                        *string                                          `json:"mode,omitempty"`
 	Name                        *string                                          `json:"name,omitempty"`
-	PacketLossWeight            *float64                                         `json:"packet-loss-weight,omitempty"`
+	PacketLossWeight            *int64                                           `json:"packet-loss-weight,omitempty"`
 	PassiveMeasurement          *string                                          `json:"passive-measurement,omitempty"`
 	PriorityMembers             *[]SystemSdwanServicePriorityMembers             `json:"priority-members,omitempty"`
 	PriorityZone                *[]SystemSdwanServicePriorityZone                `json:"priority-zone,omitempty"`
-	Protocol                    *float64                                         `json:"protocol,omitempty"`
-	QualityLink                 *float64                                         `json:"quality-link,omitempty"`
+	Protocol                    *int64                                           `json:"protocol,omitempty"`
+	QualityLink                 *int64                                           `json:"quality-link,omitempty"`
 	Role                        *string                                          `json:"role,omitempty"`
-	RouteTag                    *float64                                         `json:"route-tag,omitempty"`
+	RouteTag                    *int64                                           `json:"route-tag,omitempty"`
 	Sla                         *[]SystemSdwanServiceSla                         `json:"sla,omitempty"`
 	SlaCompareMethod            *string                                          `json:"sla-compare-method,omitempty"`
 	Src                         *[]SystemSdwanServiceSrc                         `json:"src,omitempty"`
 	SrcNegate                   *string                                          `json:"src-negate,omitempty"`
 	Src6                        *[]SystemSdwanServiceSrc6                        `json:"src6,omitempty"`
 	StandaloneAction            *string                                          `json:"standalone-action,omitempty"`
-	StartPort                   *float64                                         `json:"start-port,omitempty"`
+	StartPort                   *int64                                           `json:"start-port,omitempty"`
 	Status                      *string                                          `json:"status,omitempty"`
 	TieBreak                    *string                                          `json:"tie-break,omitempty"`
 	Tos                         *string                                          `json:"tos,omitempty"`
@@ -230,7 +230,7 @@ type SystemSdwanServiceInputDevice struct {
 }
 
 type SystemSdwanServiceInternetServiceAppCtrl struct {
-	Id *float64 `json:"id,omitempty"`
+	Id *int64 `json:"id,omitempty"`
 }
 
 type SystemSdwanServiceInternetServiceAppCtrlGroup struct {
@@ -254,7 +254,7 @@ type SystemSdwanServiceInternetServiceName struct {
 }
 
 type SystemSdwanServicePriorityMembers struct {
-	SeqNum *float64 `json:"seq-num,omitempty"`
+	SeqNum *int64 `json:"seq-num,omitempty"`
 }
 
 type SystemSdwanServicePriorityZone struct {
@@ -262,8 +262,8 @@ type SystemSdwanServicePriorityZone struct {
 }
 
 type SystemSdwanServiceSla struct {
-	HealthCheck *string  `json:"health-check,omitempty"`
-	Id          *float64 `json:"id,omitempty"`
+	HealthCheck *string `json:"health-check,omitempty"`
+	Id          *int64  `json:"id,omitempty"`
 }
 
 type SystemSdwanServiceSrc struct {

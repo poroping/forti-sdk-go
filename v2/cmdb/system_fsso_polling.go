@@ -3,10 +3,16 @@ package cmdb
 import (
 	"encoding/json"
 	"errors"
+	"log"
 
 	"github.com/poroping/forti-sdk-go/v2/models"
 	"github.com/poroping/forti-sdk-go/v2/request"
 )
+
+func (c *Client) CreateSystemFssoPolling(payload *models.SystemFssoPolling, params *models.CmdbRequestParams) (*models.CmdbResponse, error) {
+	log.Printf("[INFO] Resource at path %q is complex type. Changing to UPDATE.", models.SystemFssoPollingPath)
+	return c.UpdateSystemFssoPolling("", payload, params)
+}
 
 func (c *Client) ReadSystemFssoPolling(mkey string, params *models.CmdbRequestParams) (*models.SystemFssoPolling, error) {
 	req := &models.CmdbRequest{}
@@ -59,13 +65,7 @@ func (c *Client) UpdateSystemFssoPolling(mkey string, payload *models.SystemFsso
 }
 
 func (c *Client) DeleteSystemFssoPolling(mkey string, params *models.CmdbRequestParams) error {
-	req := &models.CmdbRequest{}
-	req.HTTPMethod = "DELETE"
-	req.Mkey = &mkey
-	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.SystemFssoPollingPath + mkey + "/"
-	req.Params = *params
-
-	err := request.Delete(c.config, req)
+	payload := &models.SystemFssoPolling{}
+	_, err := c.UpdateSystemFssoPolling("", payload, params)
 	return err
 }

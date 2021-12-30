@@ -3,10 +3,16 @@ package cmdb
 import (
 	"encoding/json"
 	"errors"
+	"log"
 
 	"github.com/poroping/forti-sdk-go/v2/models"
 	"github.com/poroping/forti-sdk-go/v2/request"
 )
+
+func (c *Client) CreateAntivirusQuarantine(payload *models.AntivirusQuarantine, params *models.CmdbRequestParams) (*models.CmdbResponse, error) {
+	log.Printf("[INFO] Resource at path %q is complex type. Changing to UPDATE.", models.AntivirusQuarantinePath)
+	return c.UpdateAntivirusQuarantine("", payload, params)
+}
 
 func (c *Client) ReadAntivirusQuarantine(mkey string, params *models.CmdbRequestParams) (*models.AntivirusQuarantine, error) {
 	req := &models.CmdbRequest{}
@@ -59,13 +65,7 @@ func (c *Client) UpdateAntivirusQuarantine(mkey string, payload *models.Antiviru
 }
 
 func (c *Client) DeleteAntivirusQuarantine(mkey string, params *models.CmdbRequestParams) error {
-	req := &models.CmdbRequest{}
-	req.HTTPMethod = "DELETE"
-	req.Mkey = &mkey
-	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.AntivirusQuarantinePath + mkey + "/"
-	req.Params = *params
-
-	err := request.Delete(c.config, req)
+	payload := &models.AntivirusQuarantine{}
+	_, err := c.UpdateAntivirusQuarantine("", payload, params)
 	return err
 }

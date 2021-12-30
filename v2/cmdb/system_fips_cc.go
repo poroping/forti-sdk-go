@@ -3,10 +3,16 @@ package cmdb
 import (
 	"encoding/json"
 	"errors"
+	"log"
 
 	"github.com/poroping/forti-sdk-go/v2/models"
 	"github.com/poroping/forti-sdk-go/v2/request"
 )
+
+func (c *Client) CreateSystemFipsCc(payload *models.SystemFipsCc, params *models.CmdbRequestParams) (*models.CmdbResponse, error) {
+	log.Printf("[INFO] Resource at path %q is complex type. Changing to UPDATE.", models.SystemFipsCcPath)
+	return c.UpdateSystemFipsCc("", payload, params)
+}
 
 func (c *Client) ReadSystemFipsCc(mkey string, params *models.CmdbRequestParams) (*models.SystemFipsCc, error) {
 	req := &models.CmdbRequest{}
@@ -59,13 +65,7 @@ func (c *Client) UpdateSystemFipsCc(mkey string, payload *models.SystemFipsCc, p
 }
 
 func (c *Client) DeleteSystemFipsCc(mkey string, params *models.CmdbRequestParams) error {
-	req := &models.CmdbRequest{}
-	req.HTTPMethod = "DELETE"
-	req.Mkey = &mkey
-	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.SystemFipsCcPath + mkey + "/"
-	req.Params = *params
-
-	err := request.Delete(c.config, req)
+	payload := &models.SystemFipsCc{}
+	_, err := c.UpdateSystemFipsCc("", payload, params)
 	return err
 }

@@ -1,6 +1,6 @@
 package models
 
-const VpnsslwebHostCheckSoftwarePath = "vpn.ssl.web/host-check-software/"
+const VpnsslwebHostCheckSoftwarePath = "vpn/ssl/web/host-check-software/"
 
 type VpnsslwebHostCheckSoftware struct {
 	CheckItemList *[]VpnsslwebHostCheckSoftwareCheckItemList `json:"check-item-list,omitempty"`
@@ -13,7 +13,7 @@ type VpnsslwebHostCheckSoftware struct {
 
 type VpnsslwebHostCheckSoftwareCheckItemList struct {
 	Action  *string                                        `json:"action,omitempty"`
-	Id      *float64                                       `json:"id,omitempty"`
+	Id      *int64                                         `json:"id,omitempty"`
 	Md5s    *[]VpnsslwebHostCheckSoftwareCheckItemListMd5s `json:"md5s,omitempty"`
 	Target  *string                                        `json:"target,omitempty"`
 	Type    *string                                        `json:"type,omitempty"`

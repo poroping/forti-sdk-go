@@ -1,16 +1,16 @@
 package models
 
-const SystemdhcpServerPath = "system.dhcp/server/"
+const SystemdhcpServerPath = "system/dhcp/server/"
 
 type SystemdhcpServer struct {
 	AutoConfiguration         *string                            `json:"auto-configuration,omitempty"`
 	AutoManagedStatus         *string                            `json:"auto-managed-status,omitempty"`
-	ConflictedIpTimeout       *float64                           `json:"conflicted-ip-timeout,omitempty"`
+	ConflictedIpTimeout       *int64                             `json:"conflicted-ip-timeout,omitempty"`
 	DdnsAuth                  *string                            `json:"ddns-auth,omitempty"`
 	DdnsKey                   *string                            `json:"ddns-key,omitempty"`
 	DdnsKeyname               *string                            `json:"ddns-keyname,omitempty"`
 	DdnsServerIp              *string                            `json:"ddns-server-ip,omitempty"`
-	DdnsTtl                   *float64                           `json:"ddns-ttl,omitempty"`
+	DdnsTtl                   *int64                             `json:"ddns-ttl,omitempty"`
 	DdnsUpdate                *string                            `json:"ddns-update,omitempty"`
 	DdnsUpdateOverride        *string                            `json:"ddns-update-override,omitempty"`
 	DdnsZone                  *string                            `json:"ddns-zone,omitempty"`
@@ -25,12 +25,12 @@ type SystemdhcpServer struct {
 	ExcludeRange              *[]SystemdhcpServerExcludeRange    `json:"exclude-range,omitempty"`
 	Filename                  *string                            `json:"filename,omitempty"`
 	ForticlientOnNetStatus    *string                            `json:"forticlient-on-net-status,omitempty"`
-	Fosid                     *float64                           `json:"fosid,omitempty"`
+	Fosid                     *int64                             `json:"fosid,omitempty"`
 	Interface                 *string                            `json:"interface,omitempty"`
 	IpMode                    *string                            `json:"ip-mode,omitempty"`
 	IpRange                   *[]SystemdhcpServerIpRange         `json:"ip-range,omitempty"`
-	IpsecLeaseHold            *float64                           `json:"ipsec-lease-hold,omitempty"`
-	LeaseTime                 *float64                           `json:"lease-time,omitempty"`
+	IpsecLeaseHold            *int64                             `json:"ipsec-lease-hold,omitempty"`
+	LeaseTime                 *int64                             `json:"lease-time,omitempty"`
 	MacAclDefaultAction       *string                            `json:"mac-acl-default-action,omitempty"`
 	Netmask                   *string                            `json:"netmask,omitempty"`
 	NextServer                *string                            `json:"next-server,omitempty"`
@@ -56,36 +56,36 @@ type SystemdhcpServer struct {
 }
 
 type SystemdhcpServerExcludeRange struct {
-	EndIp   *string  `json:"end-ip,omitempty"`
-	Id      *float64 `json:"id,omitempty"`
-	StartIp *string  `json:"start-ip,omitempty"`
+	EndIp   *string `json:"end-ip,omitempty"`
+	Id      *int64  `json:"id,omitempty"`
+	StartIp *string `json:"start-ip,omitempty"`
 }
 
 type SystemdhcpServerIpRange struct {
-	EndIp   *string  `json:"end-ip,omitempty"`
-	Id      *float64 `json:"id,omitempty"`
-	StartIp *string  `json:"start-ip,omitempty"`
+	EndIp   *string `json:"end-ip,omitempty"`
+	Id      *int64  `json:"id,omitempty"`
+	StartIp *string `json:"start-ip,omitempty"`
 }
 
 type SystemdhcpServerOptions struct {
-	Code  *float64 `json:"code,omitempty"`
-	Id    *float64 `json:"id,omitempty"`
-	Ip    *string  `json:"ip,omitempty"`
-	Type  *string  `json:"type,omitempty"`
-	Value *string  `json:"value,omitempty"`
+	Code  *int64  `json:"code,omitempty"`
+	Id    *int64  `json:"id,omitempty"`
+	Ip    *string `json:"ip,omitempty"`
+	Type  *string `json:"type,omitempty"`
+	Value *string `json:"value,omitempty"`
 }
 
 type SystemdhcpServerReservedAddress struct {
-	Action        *string  `json:"action,omitempty"`
-	CircuitId     *string  `json:"circuit-id,omitempty"`
-	CircuitIdType *string  `json:"circuit-id-type,omitempty"`
-	Description   *string  `json:"description,omitempty"`
-	Id            *float64 `json:"id,omitempty"`
-	Ip            *string  `json:"ip,omitempty"`
-	Mac           *string  `json:"mac,omitempty"`
-	RemoteId      *string  `json:"remote-id,omitempty"`
-	RemoteIdType  *string  `json:"remote-id-type,omitempty"`
-	Type          *string  `json:"type,omitempty"`
+	Action        *string `json:"action,omitempty"`
+	CircuitId     *string `json:"circuit-id,omitempty"`
+	CircuitIdType *string `json:"circuit-id-type,omitempty"`
+	Description   *string `json:"description,omitempty"`
+	Id            *int64  `json:"id,omitempty"`
+	Ip            *string `json:"ip,omitempty"`
+	Mac           *string `json:"mac,omitempty"`
+	RemoteId      *string `json:"remote-id,omitempty"`
+	RemoteIdType  *string `json:"remote-id-type,omitempty"`
+	Type          *string `json:"type,omitempty"`
 }
 
 type SystemdhcpServerTftpServer struct {

@@ -10,7 +10,7 @@ type UserSecurityExemptList struct {
 
 type UserSecurityExemptListRule struct {
 	Dstaddr *[]UserSecurityExemptListRuleDstaddr `json:"dstaddr,omitempty"`
-	Id      *float64                             `json:"id,omitempty"`
+	Id      *int64                               `json:"id,omitempty"`
 	Service *[]UserSecurityExemptListRuleService `json:"service,omitempty"`
 	Srcaddr *[]UserSecurityExemptListRuleSrcaddr `json:"srcaddr,omitempty"`
 }

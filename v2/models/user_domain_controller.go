@@ -7,7 +7,7 @@ type UserDomainController struct {
 	AdldsDn               *string                            `json:"adlds-dn,omitempty"`
 	AdldsIpAddress        *string                            `json:"adlds-ip-address,omitempty"`
 	AdldsIp6              *string                            `json:"adlds-ip6,omitempty"`
-	AdldsPort             *float64                           `json:"adlds-port,omitempty"`
+	AdldsPort             *int64                             `json:"adlds-port,omitempty"`
 	DnsSrvLookup          *string                            `json:"dns-srv-lookup,omitempty"`
 	DomainName            *string                            `json:"domain-name,omitempty"`
 	ExtraServer           *[]UserDomainControllerExtraServer `json:"extra-server,omitempty"`
@@ -19,20 +19,20 @@ type UserDomainController struct {
 	LdapServer            *[]UserDomainControllerLdapServer  `json:"ldap-server,omitempty"`
 	Name                  *string                            `json:"name,omitempty"`
 	Password              *string                            `json:"password,omitempty"`
-	Port                  *float64                           `json:"port,omitempty"`
-	ReplicationPort       *float64                           `json:"replication-port,omitempty"`
+	Port                  *int64                             `json:"port,omitempty"`
+	ReplicationPort       *int64                             `json:"replication-port,omitempty"`
 	SourceIpAddress       *string                            `json:"source-ip-address,omitempty"`
 	SourceIp6             *string                            `json:"source-ip6,omitempty"`
-	SourcePort            *float64                           `json:"source-port,omitempty"`
+	SourcePort            *int64                             `json:"source-port,omitempty"`
 	Username              *string                            `json:"username,omitempty"`
 }
 
 type UserDomainControllerExtraServer struct {
-	Id              *float64 `json:"id,omitempty"`
-	IpAddress       *string  `json:"ip-address,omitempty"`
-	Port            *float64 `json:"port,omitempty"`
-	SourceIpAddress *string  `json:"source-ip-address,omitempty"`
-	SourcePort      *float64 `json:"source-port,omitempty"`
+	Id              *int64  `json:"id,omitempty"`
+	IpAddress       *string `json:"ip-address,omitempty"`
+	Port            *int64  `json:"port,omitempty"`
+	SourceIpAddress *string `json:"source-ip-address,omitempty"`
+	SourcePort      *int64  `json:"source-port,omitempty"`
 }
 
 type UserDomainControllerLdapServer struct {

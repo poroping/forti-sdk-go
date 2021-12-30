@@ -3,10 +3,16 @@ package cmdb
 import (
 	"encoding/json"
 	"errors"
+	"log"
 
 	"github.com/poroping/forti-sdk-go/v2/models"
 	"github.com/poroping/forti-sdk-go/v2/request"
 )
+
+func (c *Client) CreateDlpSettings(payload *models.DlpSettings, params *models.CmdbRequestParams) (*models.CmdbResponse, error) {
+	log.Printf("[INFO] Resource at path %q is complex type. Changing to UPDATE.", models.DlpSettingsPath)
+	return c.UpdateDlpSettings("", payload, params)
+}
 
 func (c *Client) ReadDlpSettings(mkey string, params *models.CmdbRequestParams) (*models.DlpSettings, error) {
 	req := &models.CmdbRequest{}
@@ -59,13 +65,7 @@ func (c *Client) UpdateDlpSettings(mkey string, payload *models.DlpSettings, par
 }
 
 func (c *Client) DeleteDlpSettings(mkey string, params *models.CmdbRequestParams) error {
-	req := &models.CmdbRequest{}
-	req.HTTPMethod = "DELETE"
-	req.Mkey = &mkey
-	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.DlpSettingsPath + mkey + "/"
-	req.Params = *params
-
-	err := request.Delete(c.config, req)
+	payload := &models.DlpSettings{}
+	_, err := c.UpdateDlpSettings("", payload, params)
 	return err
 }

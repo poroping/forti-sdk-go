@@ -1,6 +1,6 @@
 package models
 
-const Logfortianalyzer3FilterPath = "log.fortianalyzer3/filter/"
+const Logfortianalyzer3FilterPath = "log/fortianalyzer3/filter/"
 
 type Logfortianalyzer3Filter struct {
 	Anomaly          *string                             `json:"anomaly,omitempty"`
@@ -18,8 +18,8 @@ type Logfortianalyzer3Filter struct {
 }
 
 type Logfortianalyzer3FilterFreeStyle struct {
-	Category   *string  `json:"category,omitempty"`
-	Filter     *string  `json:"filter,omitempty"`
-	FilterType *string  `json:"filter-type,omitempty"`
-	Id         *float64 `json:"id,omitempty"`
+	Category   *string `json:"category,omitempty"`
+	Filter     *string `json:"filter,omitempty"`
+	FilterType *string `json:"filter-type,omitempty"`
+	Id         *int64  `json:"id,omitempty"`
 }

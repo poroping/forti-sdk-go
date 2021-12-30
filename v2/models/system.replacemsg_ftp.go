@@ -1,6 +1,6 @@
 package models
 
-const SystemreplacemsgFtpPath = "system.replacemsg/ftp/"
+const SystemreplacemsgFtpPath = "system/replacemsg/ftp/"
 
 type SystemreplacemsgFtp struct {
 	Buffer  *string `json:"buffer,omitempty"`

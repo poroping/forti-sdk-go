@@ -1,6 +1,6 @@
 package models
 
-const LogdiskFilterPath = "log.disk/filter/"
+const LogdiskFilterPath = "log/disk/filter/"
 
 type LogdiskFilter struct {
 	Admin            *string                   `json:"admin,omitempty"`
@@ -36,8 +36,8 @@ type LogdiskFilter struct {
 }
 
 type LogdiskFilterFreeStyle struct {
-	Category   *string  `json:"category,omitempty"`
-	Filter     *string  `json:"filter,omitempty"`
-	FilterType *string  `json:"filter-type,omitempty"`
-	Id         *float64 `json:"id,omitempty"`
+	Category   *string `json:"category,omitempty"`
+	Filter     *string `json:"filter,omitempty"`
+	FilterType *string `json:"filter-type,omitempty"`
+	Id         *int64  `json:"id,omitempty"`
 }

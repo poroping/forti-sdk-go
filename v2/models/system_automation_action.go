@@ -25,7 +25,7 @@ type SystemAutomationAction struct {
 	AzureDomain                   *string                               `json:"azure-domain,omitempty"`
 	AzureFunction                 *string                               `json:"azure-function,omitempty"`
 	AzureFunctionAuthorization    *string                               `json:"azure-function-authorization,omitempty"`
-	Delay                         *float64                              `json:"delay,omitempty"`
+	Delay                         *int64                                `json:"delay,omitempty"`
 	Description                   *string                               `json:"description,omitempty"`
 	EmailBody                     *string                               `json:"email-body,omitempty"`
 	EmailFrom                     *string                               `json:"email-from,omitempty"`
@@ -41,9 +41,9 @@ type SystemAutomationAction struct {
 	Message                       *string                               `json:"message,omitempty"`
 	MessageType                   *string                               `json:"message-type,omitempty"`
 	Method                        *string                               `json:"method,omitempty"`
-	MinimumInterval               *float64                              `json:"minimum-interval,omitempty"`
+	MinimumInterval               *int64                                `json:"minimum-interval,omitempty"`
 	Name                          *string                               `json:"name,omitempty"`
-	Port                          *float64                              `json:"port,omitempty"`
+	Port                          *int64                                `json:"port,omitempty"`
 	Protocol                      *string                               `json:"protocol,omitempty"`
 	ReplacementMessage            *string                               `json:"replacement-message,omitempty"`
 	ReplacemsgGroup               *string                               `json:"replacemsg-group,omitempty"`

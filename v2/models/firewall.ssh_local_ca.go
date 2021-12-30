@@ -1,6 +1,6 @@
 package models
 
-const FirewallsshLocalCaPath = "firewall.ssh/local-ca/"
+const FirewallsshLocalCaPath = "firewall/ssh/local-ca/"
 
 type FirewallsshLocalCa struct {
 	Name       *string `json:"name,omitempty"`

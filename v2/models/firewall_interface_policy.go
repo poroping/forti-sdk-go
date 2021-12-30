@@ -18,7 +18,7 @@ type FirewallInterfacePolicy struct {
 	IpsSensor                *string                           `json:"ips-sensor,omitempty"`
 	IpsSensorStatus          *string                           `json:"ips-sensor-status,omitempty"`
 	Logtraffic               *string                           `json:"logtraffic,omitempty"`
-	Policyid                 *float64                          `json:"policyid,omitempty"`
+	Policyid                 *int64                            `json:"policyid,omitempty"`
 	Service                  *[]FirewallInterfacePolicyService `json:"service,omitempty"`
 	Srcaddr                  *[]FirewallInterfacePolicySrcaddr `json:"srcaddr,omitempty"`
 	Status                   *string                           `json:"status,omitempty"`

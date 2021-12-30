@@ -3,10 +3,16 @@ package cmdb
 import (
 	"encoding/json"
 	"errors"
+	"log"
 
 	"github.com/poroping/forti-sdk-go/v2/models"
 	"github.com/poroping/forti-sdk-go/v2/request"
 )
+
+func (c *Client) CreateSystemStp(payload *models.SystemStp, params *models.CmdbRequestParams) (*models.CmdbResponse, error) {
+	log.Printf("[INFO] Resource at path %q is complex type. Changing to UPDATE.", models.SystemStpPath)
+	return c.UpdateSystemStp("", payload, params)
+}
 
 func (c *Client) ReadSystemStp(mkey string, params *models.CmdbRequestParams) (*models.SystemStp, error) {
 	req := &models.CmdbRequest{}
@@ -59,13 +65,7 @@ func (c *Client) UpdateSystemStp(mkey string, payload *models.SystemStp, params 
 }
 
 func (c *Client) DeleteSystemStp(mkey string, params *models.CmdbRequestParams) error {
-	req := &models.CmdbRequest{}
-	req.HTTPMethod = "DELETE"
-	req.Mkey = &mkey
-	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.SystemStpPath + mkey + "/"
-	req.Params = *params
-
-	err := request.Delete(c.config, req)
+	payload := &models.SystemStp{}
+	_, err := c.UpdateSystemStp("", payload, params)
 	return err
 }

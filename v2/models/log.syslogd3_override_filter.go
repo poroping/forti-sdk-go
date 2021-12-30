@@ -1,6 +1,6 @@
 package models
 
-const Logsyslogd3OverrideFilterPath = "log.syslogd3/override-filter/"
+const Logsyslogd3OverrideFilterPath = "log/syslogd3/override-filter/"
 
 type Logsyslogd3OverrideFilter struct {
 	Anomaly          *string                               `json:"anomaly,omitempty"`
@@ -17,8 +17,8 @@ type Logsyslogd3OverrideFilter struct {
 }
 
 type Logsyslogd3OverrideFilterFreeStyle struct {
-	Category   *string  `json:"category,omitempty"`
-	Filter     *string  `json:"filter,omitempty"`
-	FilterType *string  `json:"filter-type,omitempty"`
-	Id         *float64 `json:"id,omitempty"`
+	Category   *string `json:"category,omitempty"`
+	Filter     *string `json:"filter,omitempty"`
+	FilterType *string `json:"filter-type,omitempty"`
+	Id         *int64  `json:"id,omitempty"`
 }

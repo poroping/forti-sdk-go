@@ -1,6 +1,6 @@
 package models
 
-const SystemreplacemsgNacQuarPath = "system.replacemsg/nac-quar/"
+const SystemreplacemsgNacQuarPath = "system/replacemsg/nac-quar/"
 
 type SystemreplacemsgNacQuar struct {
 	Buffer  *string `json:"buffer,omitempty"`

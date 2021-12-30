@@ -3,6 +3,8 @@ package cmdb
 import (
 	"encoding/json"
 	"errors"
+	"log"
+	"strconv"
 
 	"github.com/poroping/forti-sdk-go/v2/models"
 	"github.com/poroping/forti-sdk-go/v2/request"
@@ -12,6 +14,19 @@ func (c *Client) CreateEmailfilterIptrust(payload *models.EmailfilterIptrust, pa
 	body, err := json.Marshal(payload)
 	if err != nil {
 		return nil, err
+	}
+
+	mkey := ""
+	if payload.Fosid != nil && *params.AllowAppend {
+		mkey = strconv.Itoa(int(*payload.Fosid))
+		read, err := c.ReadEmailfilterIptrust(mkey, params)
+		if err != nil {
+			return nil, err
+		}
+		if read != nil {
+			log.Printf("[WARN] Resource at path %q with mkey %q detected upon CREATE with flag set to to overwrite. Changing to UPDATE.", models.EmailfilterIptrustPath, mkey)
+			return c.UpdateEmailfilterIptrust(mkey, payload, params)
+		}
 	}
 
 	req := &models.CmdbRequest{}

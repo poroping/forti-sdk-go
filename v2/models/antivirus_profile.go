@@ -3,12 +3,12 @@ package models
 const AntivirusProfilePath = "antivirus/profile/"
 
 type AntivirusProfile struct {
-	AnalyticsAcceptFiletype       *float64                              `json:"analytics-accept-filetype,omitempty"`
-	AnalyticsBlFiletype           *float64                              `json:"analytics-bl-filetype,omitempty"`
+	AnalyticsAcceptFiletype       *int64                                `json:"analytics-accept-filetype,omitempty"`
+	AnalyticsBlFiletype           *int64                                `json:"analytics-bl-filetype,omitempty"`
 	AnalyticsDb                   *string                               `json:"analytics-db,omitempty"`
-	AnalyticsIgnoreFiletype       *float64                              `json:"analytics-ignore-filetype,omitempty"`
-	AnalyticsMaxUpload            *float64                              `json:"analytics-max-upload,omitempty"`
-	AnalyticsWlFiletype           *float64                              `json:"analytics-wl-filetype,omitempty"`
+	AnalyticsIgnoreFiletype       *int64                                `json:"analytics-ignore-filetype,omitempty"`
+	AnalyticsMaxUpload            *int64                                `json:"analytics-max-upload,omitempty"`
+	AnalyticsWlFiletype           *int64                                `json:"analytics-wl-filetype,omitempty"`
 	AvBlockLog                    *string                               `json:"av-block-log,omitempty"`
 	AvVirusLog                    *string                               `json:"av-virus-log,omitempty"`
 	Cifs                          *[]AntivirusProfileCifs               `json:"cifs,omitempty"`

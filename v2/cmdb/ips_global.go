@@ -3,10 +3,16 @@ package cmdb
 import (
 	"encoding/json"
 	"errors"
+	"log"
 
 	"github.com/poroping/forti-sdk-go/v2/models"
 	"github.com/poroping/forti-sdk-go/v2/request"
 )
+
+func (c *Client) CreateIpsGlobal(payload *models.IpsGlobal, params *models.CmdbRequestParams) (*models.CmdbResponse, error) {
+	log.Printf("[INFO] Resource at path %q is complex type. Changing to UPDATE.", models.IpsGlobalPath)
+	return c.UpdateIpsGlobal("", payload, params)
+}
 
 func (c *Client) ReadIpsGlobal(mkey string, params *models.CmdbRequestParams) (*models.IpsGlobal, error) {
 	req := &models.CmdbRequest{}
@@ -59,13 +65,7 @@ func (c *Client) UpdateIpsGlobal(mkey string, payload *models.IpsGlobal, params 
 }
 
 func (c *Client) DeleteIpsGlobal(mkey string, params *models.CmdbRequestParams) error {
-	req := &models.CmdbRequest{}
-	req.HTTPMethod = "DELETE"
-	req.Mkey = &mkey
-	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.IpsGlobalPath + mkey + "/"
-	req.Params = *params
-
-	err := request.Delete(c.config, req)
+	payload := &models.IpsGlobal{}
+	_, err := c.UpdateIpsGlobal("", payload, params)
 	return err
 }

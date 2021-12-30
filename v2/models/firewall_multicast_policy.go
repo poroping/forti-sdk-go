@@ -9,16 +9,16 @@ type FirewallMulticastPolicy struct {
 	Dnat            *string                           `json:"dnat,omitempty"`
 	Dstaddr         *[]FirewallMulticastPolicyDstaddr `json:"dstaddr,omitempty"`
 	Dstintf         *string                           `json:"dstintf,omitempty"`
-	EndPort         *float64                          `json:"end-port,omitempty"`
-	Fosid           *float64                          `json:"fosid,omitempty"`
+	EndPort         *int64                            `json:"end-port,omitempty"`
+	Fosid           *int64                            `json:"fosid,omitempty"`
 	Logtraffic      *string                           `json:"logtraffic,omitempty"`
 	Name            *string                           `json:"name,omitempty"`
-	Protocol        *float64                          `json:"protocol,omitempty"`
+	Protocol        *int64                            `json:"protocol,omitempty"`
 	Snat            *string                           `json:"snat,omitempty"`
 	SnatIp          *string                           `json:"snat-ip,omitempty"`
 	Srcaddr         *[]FirewallMulticastPolicySrcaddr `json:"srcaddr,omitempty"`
 	Srcintf         *string                           `json:"srcintf,omitempty"`
-	StartPort       *float64                          `json:"start-port,omitempty"`
+	StartPort       *int64                            `json:"start-port,omitempty"`
 	Status          *string                           `json:"status,omitempty"`
 	Uuid            *string                           `json:"uuid,omitempty"`
 }

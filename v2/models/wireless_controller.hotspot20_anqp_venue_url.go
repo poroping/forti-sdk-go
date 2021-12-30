@@ -1,6 +1,6 @@
 package models
 
-const WirelessControllerhotspot20AnqpVenueUrlPath = "wireless-controller.hotspot20/anqp-venue-url/"
+const WirelessControllerhotspot20AnqpVenueUrlPath = "wireless-controller/hotspot20/anqp-venue-url/"
 
 type WirelessControllerhotspot20AnqpVenueUrl struct {
 	Name      *string                                             `json:"name,omitempty"`
@@ -8,7 +8,7 @@ type WirelessControllerhotspot20AnqpVenueUrl struct {
 }
 
 type WirelessControllerhotspot20AnqpVenueUrlValueList struct {
-	Index  *float64 `json:"index,omitempty"`
-	Number *float64 `json:"number,omitempty"`
-	Value  *string  `json:"value,omitempty"`
+	Index  *int64  `json:"index,omitempty"`
+	Number *int64  `json:"number,omitempty"`
+	Value  *string `json:"value,omitempty"`
 }

@@ -58,3 +58,39 @@ type CmdbError500 struct {
 	Version         string `json:"version,omitempty"`
 	Build           int64  `json:"build,omitempty"`
 }
+
+type CmdbError404 struct {
+	HTTPMethod *string `json:"http_method,omitempty"`
+	Revision   *string `json:"revision,omitempty"`
+	Status     *string `json:"status,omitempty"`
+	HTTPStatus *int64  `json:"http_status,omitempty"`
+	Vdom       *string `json:"vdom,omitempty"`
+	Path       *string `json:"path,omitempty"`
+	Name       *string `json:"name,omitempty"`
+	Mkey       *string `json:"mkey,omitempty"`
+	Serial     *string `json:"serial,omitempty"`
+	Version    *string `json:"version,omitempty"`
+	Build      *int64  `json:"build,omitempty"`
+}
+
+type CmdbError403 struct {
+	Status     *string `json:"status,omitempty"`
+	HTTPStatus *int64  `json:"http_status,omitempty"`
+	Vdom       *string `json:"vdom,omitempty"`
+	Serial     *string `json:"serial,omitempty"`
+	Version    *string `json:"version,omitempty"`
+	Build      *int64  `json:"build,omitempty"`
+	HTTPMethod *string `json:"http_method,omitempty"`
+}
+
+type CmdbError400 struct {
+	Status     *string `json:"status,omitempty"`
+	HTTPStatus *int64  `json:"http_status,omitempty"`
+	Vdom       *string `json:"vdom,omitempty"`
+	Path       *string `json:"path,omitempty"`
+	Name       *string `json:"name,omitempty"`
+	Serial     *string `json:"serial,omitempty"`
+	Version    *string `json:"version,omitempty"`
+	Build      *int64  `json:"build,omitempty"`
+	HTTPMethod *string `json:"http_method,omitempty"`
+}

@@ -3,10 +3,16 @@ package cmdb
 import (
 	"encoding/json"
 	"errors"
+	"log"
 
 	"github.com/poroping/forti-sdk-go/v2/models"
 	"github.com/poroping/forti-sdk-go/v2/request"
 )
+
+func (c *Client) CreateSwitchControllerinitialConfigVlans(payload *models.SwitchControllerinitialConfigVlans, params *models.CmdbRequestParams) (*models.CmdbResponse, error) {
+	log.Printf("[INFO] Resource at path %q is complex type. Changing to UPDATE.", models.SwitchControllerinitialConfigVlansPath)
+	return c.UpdateSwitchControllerinitialConfigVlans("", payload, params)
+}
 
 func (c *Client) ReadSwitchControllerinitialConfigVlans(mkey string, params *models.CmdbRequestParams) (*models.SwitchControllerinitialConfigVlans, error) {
 	req := &models.CmdbRequest{}
@@ -59,13 +65,7 @@ func (c *Client) UpdateSwitchControllerinitialConfigVlans(mkey string, payload *
 }
 
 func (c *Client) DeleteSwitchControllerinitialConfigVlans(mkey string, params *models.CmdbRequestParams) error {
-	req := &models.CmdbRequest{}
-	req.HTTPMethod = "DELETE"
-	req.Mkey = &mkey
-	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.SwitchControllerinitialConfigVlansPath + mkey + "/"
-	req.Params = *params
-
-	err := request.Delete(c.config, req)
+	payload := &models.SwitchControllerinitialConfigVlans{}
+	_, err := c.UpdateSwitchControllerinitialConfigVlans("", payload, params)
 	return err
 }

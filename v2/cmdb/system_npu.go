@@ -3,10 +3,16 @@ package cmdb
 import (
 	"encoding/json"
 	"errors"
+	"log"
 
 	"github.com/poroping/forti-sdk-go/v2/models"
 	"github.com/poroping/forti-sdk-go/v2/request"
 )
+
+func (c *Client) CreateSystemNpu(payload *models.SystemNpu, params *models.CmdbRequestParams) (*models.CmdbResponse, error) {
+	log.Printf("[INFO] Resource at path %q is complex type. Changing to UPDATE.", models.SystemNpuPath)
+	return c.UpdateSystemNpu("", payload, params)
+}
 
 func (c *Client) ReadSystemNpu(mkey string, params *models.CmdbRequestParams) (*models.SystemNpu, error) {
 	req := &models.CmdbRequest{}
@@ -59,13 +65,7 @@ func (c *Client) UpdateSystemNpu(mkey string, payload *models.SystemNpu, params 
 }
 
 func (c *Client) DeleteSystemNpu(mkey string, params *models.CmdbRequestParams) error {
-	req := &models.CmdbRequest{}
-	req.HTTPMethod = "DELETE"
-	req.Mkey = &mkey
-	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.SystemNpuPath + mkey + "/"
-	req.Params = *params
-
-	err := request.Delete(c.config, req)
+	payload := &models.SystemNpu{}
+	_, err := c.UpdateSystemNpu("", payload, params)
 	return err
 }
