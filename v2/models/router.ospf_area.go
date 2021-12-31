@@ -7,7 +7,7 @@ type RouterospfArea struct {
 	Comments                                  *string                      `json:"comments,omitempty"`
 	DefaultCost                               *int64                       `json:"default-cost,omitempty"`
 	FilterList                                *[]RouterospfAreaFilterList  `json:"filter-list,omitempty"`
-	Fosid                                     *string                      `json:"fosid,omitempty"`
+	Id                                        *string                      `json:"id,omitempty"`
 	NssaDefaultInformationOriginate           *string                      `json:"nssa-default-information-originate,omitempty"`
 	NssaDefaultInformationOriginateMetric     *int64                       `json:"nssa-default-information-originate-metric,omitempty"`
 	NssaDefaultInformationOriginateMetricType *string                      `json:"nssa-default-information-originate-metric-type,omitempty"`

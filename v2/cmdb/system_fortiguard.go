@@ -19,7 +19,7 @@ func (c *Client) ReadSystemFortiguard(mkey string, params *models.CmdbRequestPar
 	req.HTTPMethod = "GET"
 	req.Mkey = &mkey
 	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.SystemFortiguardPath + mkey + "/"
+	req.Path = models.CmdbBasePath + models.SystemFortiguardPath
 	req.Params = *params
 
 	res, err := request.Read(c.config, req)

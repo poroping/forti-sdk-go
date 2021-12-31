@@ -19,7 +19,7 @@ type SystemsdwanService struct {
 	HashMode                    *string                                          `json:"hash-mode,omitempty"`
 	HealthCheck                 *[]SystemsdwanServiceHealthCheck                 `json:"health-check,omitempty"`
 	HoldDownTime                *int64                                           `json:"hold-down-time,omitempty"`
-	Fosid                       *int64                                           `json:"fosid,omitempty"`
+	Id                          *int64                                           `json:"id,omitempty"`
 	InputDevice                 *[]SystemsdwanServiceInputDevice                 `json:"input-device,omitempty"`
 	InputDeviceNegate           *string                                          `json:"input-device-negate,omitempty"`
 	InternetService             *string                                          `json:"internet-service,omitempty"`

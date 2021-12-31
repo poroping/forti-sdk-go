@@ -4,7 +4,7 @@ const FirewallInternetServiceDefinitionPath = "firewall/internet-service-definit
 
 type FirewallInternetServiceDefinition struct {
 	Entry *[]FirewallInternetServiceDefinitionEntry `json:"entry,omitempty"`
-	Fosid *int64                                    `json:"fosid,omitempty"`
+	Id    *int64                                    `json:"id,omitempty"`
 }
 
 type FirewallInternetServiceDefinitionEntry struct {

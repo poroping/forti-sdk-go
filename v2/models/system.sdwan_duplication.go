@@ -6,7 +6,7 @@ type SystemsdwanDuplication struct {
 	Dstaddr             *[]SystemsdwanDuplicationDstaddr   `json:"dstaddr,omitempty"`
 	Dstaddr6            *[]SystemsdwanDuplicationDstaddr6  `json:"dstaddr6,omitempty"`
 	Dstintf             *[]SystemsdwanDuplicationDstintf   `json:"dstintf,omitempty"`
-	Fosid               *int64                             `json:"fosid,omitempty"`
+	Id                  *int64                             `json:"id,omitempty"`
 	PacketDeDuplication *string                            `json:"packet-de-duplication,omitempty"`
 	PacketDuplication   *string                            `json:"packet-duplication,omitempty"`
 	Service             *[]SystemsdwanDuplicationService   `json:"service,omitempty"`

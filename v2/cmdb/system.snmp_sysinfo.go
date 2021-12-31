@@ -19,7 +19,7 @@ func (c *Client) ReadSystemsnmpSysinfo(mkey string, params *models.CmdbRequestPa
 	req.HTTPMethod = "GET"
 	req.Mkey = &mkey
 	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.SystemsnmpSysinfoPath + mkey + "/"
+	req.Path = models.CmdbBasePath + models.SystemsnmpSysinfoPath
 	req.Params = *params
 
 	res, err := request.Read(c.config, req)

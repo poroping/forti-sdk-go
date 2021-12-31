@@ -5,7 +5,7 @@ const DnsfilterDomainFilterPath = "dnsfilter/domain-filter/"
 type DnsfilterDomainFilter struct {
 	Comment *string                         `json:"comment,omitempty"`
 	Entries *[]DnsfilterDomainFilterEntries `json:"entries,omitempty"`
-	Fosid   *int64                          `json:"fosid,omitempty"`
+	Id      *int64                          `json:"id,omitempty"`
 	Name    *string                         `json:"name,omitempty"`
 }
 

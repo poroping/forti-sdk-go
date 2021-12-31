@@ -19,7 +19,7 @@ func (c *Client) ReadSystemDns(mkey string, params *models.CmdbRequestParams) (*
 	req.HTTPMethod = "GET"
 	req.Mkey = &mkey
 	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.SystemDnsPath + mkey + "/"
+	req.Path = models.CmdbBasePath + models.SystemDnsPath
 	req.Params = *params
 
 	res, err := request.Read(c.config, req)

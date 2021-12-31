@@ -17,8 +17,8 @@ func (c *Client) CreateSystemDscpBasedPriority(payload *models.SystemDscpBasedPr
 	}
 
 	mkey := ""
-	if payload.Fosid != nil && *params.AllowAppend {
-		mkey = strconv.Itoa(int(*payload.Fosid))
+	if payload.Id != nil && *params.AllowAppend {
+		mkey = strconv.Itoa(int(*payload.Id))
 		read, err := c.ReadSystemDscpBasedPriority(mkey, params)
 		if err != nil {
 			return nil, err

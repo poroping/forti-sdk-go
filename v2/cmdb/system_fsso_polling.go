@@ -19,7 +19,7 @@ func (c *Client) ReadSystemFssoPolling(mkey string, params *models.CmdbRequestPa
 	req.HTTPMethod = "GET"
 	req.Mkey = &mkey
 	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.SystemFssoPollingPath + mkey + "/"
+	req.Path = models.CmdbBasePath + models.SystemFssoPollingPath
 	req.Params = *params
 
 	res, err := request.Read(c.config, req)

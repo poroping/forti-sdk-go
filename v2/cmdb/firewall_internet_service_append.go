@@ -19,7 +19,7 @@ func (c *Client) ReadFirewallInternetServiceAppend(mkey string, params *models.C
 	req.HTTPMethod = "GET"
 	req.Mkey = &mkey
 	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.FirewallInternetServiceAppendPath + mkey + "/"
+	req.Path = models.CmdbBasePath + models.FirewallInternetServiceAppendPath
 	req.Params = *params
 
 	res, err := request.Read(c.config, req)

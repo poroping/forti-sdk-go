@@ -5,7 +5,7 @@ const EmailfilterBwordPath = "emailfilter/bword/"
 type EmailfilterBword struct {
 	Comment *string                    `json:"comment,omitempty"`
 	Entries *[]EmailfilterBwordEntries `json:"entries,omitempty"`
-	Fosid   *int64                     `json:"fosid,omitempty"`
+	Id      *int64                     `json:"id,omitempty"`
 	Name    *string                    `json:"name,omitempty"`
 }
 

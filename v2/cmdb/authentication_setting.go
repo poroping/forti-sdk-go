@@ -19,7 +19,7 @@ func (c *Client) ReadAuthenticationSetting(mkey string, params *models.CmdbReque
 	req.HTTPMethod = "GET"
 	req.Mkey = &mkey
 	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.AuthenticationSettingPath + mkey + "/"
+	req.Path = models.CmdbBasePath + models.AuthenticationSettingPath
 	req.Params = *params
 
 	res, err := request.Read(c.config, req)

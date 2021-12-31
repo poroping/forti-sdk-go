@@ -3,7 +3,7 @@ package models
 const SystemVdomExceptionPath = "system/vdom-exception/"
 
 type SystemVdomException struct {
-	Fosid  *int64                     `json:"fosid,omitempty"`
+	Id     *int64                     `json:"id,omitempty"`
 	Object *string                    `json:"object,omitempty"`
 	Scope  *string                    `json:"scope,omitempty"`
 	Vdom   *[]SystemVdomExceptionVdom `json:"vdom,omitempty"`

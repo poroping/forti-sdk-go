@@ -6,7 +6,7 @@ type VideofilterYoutubeChannelFilter struct {
 	Comment       *string                                   `json:"comment,omitempty"`
 	DefaultAction *string                                   `json:"default-action,omitempty"`
 	Entries       *[]VideofilterYoutubeChannelFilterEntries `json:"entries,omitempty"`
-	Fosid         *int64                                    `json:"fosid,omitempty"`
+	Id            *int64                                    `json:"id,omitempty"`
 	Log           *string                                   `json:"log,omitempty"`
 	Name          *string                                   `json:"name,omitempty"`
 }

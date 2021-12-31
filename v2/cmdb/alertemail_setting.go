@@ -19,7 +19,7 @@ func (c *Client) ReadAlertemailSetting(mkey string, params *models.CmdbRequestPa
 	req.HTTPMethod = "GET"
 	req.Mkey = &mkey
 	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.AlertemailSettingPath + mkey + "/"
+	req.Path = models.CmdbBasePath + models.AlertemailSettingPath
 	req.Params = *params
 
 	res, err := request.Read(c.config, req)

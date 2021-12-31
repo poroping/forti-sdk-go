@@ -7,7 +7,7 @@ type FirewallInternetService struct {
 	Direction          *string `json:"direction,omitempty"`
 	ExtraIpRangeNumber *int64  `json:"extra-ip-range-number,omitempty"`
 	IconId             *int64  `json:"icon-id,omitempty"`
-	Fosid              *int64  `json:"fosid,omitempty"`
+	Id                 *int64  `json:"id,omitempty"`
 	IpNumber           *int64  `json:"ip-number,omitempty"`
 	IpRangeNumber      *int64  `json:"ip-range-number,omitempty"`
 	Name               *string `json:"name,omitempty"`

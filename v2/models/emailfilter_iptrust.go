@@ -5,7 +5,7 @@ const EmailfilterIptrustPath = "emailfilter/iptrust/"
 type EmailfilterIptrust struct {
 	Comment *string                      `json:"comment,omitempty"`
 	Entries *[]EmailfilterIptrustEntries `json:"entries,omitempty"`
-	Fosid   *int64                       `json:"fosid,omitempty"`
+	Id      *int64                       `json:"id,omitempty"`
 	Name    *string                      `json:"name,omitempty"`
 }
 

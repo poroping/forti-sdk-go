@@ -4,7 +4,7 @@ const System3gModemCustomPath = "system/3g-modem/custom/"
 
 type System3gModemCustom struct {
 	ClassId          *string `json:"class-id,omitempty"`
-	Fosid            *int64  `json:"fosid,omitempty"`
+	Id               *int64  `json:"id,omitempty"`
 	InitString       *string `json:"init-string,omitempty"`
 	Model            *string `json:"model,omitempty"`
 	ModeswitchString *string `json:"modeswitch-string,omitempty"`

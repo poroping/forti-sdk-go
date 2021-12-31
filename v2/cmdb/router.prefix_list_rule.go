@@ -17,8 +17,8 @@ func (c *Client) CreateRouterprefixListRule(payload *models.RouterprefixListRule
 	}
 
 	mkey := ""
-	if payload.Fosid != nil && *params.AllowAppend {
-		mkey = strconv.Itoa(int(*payload.Fosid))
+	if payload.Id != nil && *params.AllowAppend {
+		mkey = strconv.Itoa(int(*payload.Id))
 		read, err := c.ReadRouterprefixListRule(mkey, params)
 		if err != nil {
 			return nil, err

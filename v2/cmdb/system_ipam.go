@@ -19,7 +19,7 @@ func (c *Client) ReadSystemIpam(mkey string, params *models.CmdbRequestParams) (
 	req.HTTPMethod = "GET"
 	req.Mkey = &mkey
 	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.SystemIpamPath + mkey + "/"
+	req.Path = models.CmdbBasePath + models.SystemIpamPath
 	req.Params = *params
 
 	res, err := request.Read(c.config, req)

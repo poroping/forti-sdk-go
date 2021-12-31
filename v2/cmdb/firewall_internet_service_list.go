@@ -17,8 +17,8 @@ func (c *Client) CreateFirewallInternetServiceList(payload *models.FirewallInter
 	}
 
 	mkey := ""
-	if payload.Fosid != nil && *params.AllowAppend {
-		mkey = strconv.Itoa(int(*payload.Fosid))
+	if payload.Id != nil && *params.AllowAppend {
+		mkey = strconv.Itoa(int(*payload.Id))
 		read, err := c.ReadFirewallInternetServiceList(mkey, params)
 		if err != nil {
 			return nil, err

@@ -19,7 +19,7 @@ func (c *Client) ReadIpsSettings(mkey string, params *models.CmdbRequestParams) 
 	req.HTTPMethod = "GET"
 	req.Mkey = &mkey
 	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.IpsSettingsPath + mkey + "/"
+	req.Path = models.CmdbBasePath + models.IpsSettingsPath
 	req.Params = *params
 
 	res, err := request.Read(c.config, req)

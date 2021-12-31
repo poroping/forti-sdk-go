@@ -17,8 +17,8 @@ func (c *Client) CreateWebfilterContentHeader(payload *models.WebfilterContentHe
 	}
 
 	mkey := ""
-	if payload.Fosid != nil && *params.AllowAppend {
-		mkey = strconv.Itoa(int(*payload.Fosid))
+	if payload.Id != nil && *params.AllowAppend {
+		mkey = strconv.Itoa(int(*payload.Id))
 		read, err := c.ReadWebfilterContentHeader(mkey, params)
 		if err != nil {
 			return nil, err

@@ -13,8 +13,8 @@ func (c *Client) Create{{.fpath}}(payload *models.{{(mixedCase .path)}}{{(mixedC
 	}
 
 	mkey := ""
-	if payload.{{if eq (mixedCase .results.mkey) "Id"}}Fosid{{else}}{{(mixedCase .results.mkey)}}{{end}} != nil && *params.AllowAppend {
-		mkey = {{if eq .results.mkey_type "integer"}}strconv.Itoa(int(*payload.{{if eq (mixedCase .results.mkey) "Id"}}Fosid{{else}}{{(mixedCase .results.mkey)}}{{end}})){{else}}*payload.{{if eq (mixedCase .results.mkey) "Id"}}Fosid{{else}}{{(mixedCase .results.mkey)}}{{end}}{{end}}
+	if payload.{{(mixedCase .results.mkey)}} != nil && *params.AllowAppend {
+		mkey = {{if eq .results.mkey_type "integer"}}strconv.Itoa(int(*payload.{{(mixedCase .results.mkey)}})){{else}}*payload.{{(mixedCase .results.mkey)}}{{end}}
 		read, err := c.Read{{.fpath}}(mkey, params)
 		if err != nil {
 			return nil, err

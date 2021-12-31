@@ -16,7 +16,7 @@ type FirewallSniffer struct {
 	FileFilterProfile        *string                        `json:"file-filter-profile,omitempty"`
 	FileFilterProfileStatus  *string                        `json:"file-filter-profile-status,omitempty"`
 	Host                     *string                        `json:"host,omitempty"`
-	Fosid                    *int64                         `json:"fosid,omitempty"`
+	Id                       *int64                         `json:"id,omitempty"`
 	Interface                *string                        `json:"interface,omitempty"`
 	IpThreatfeed             *[]FirewallSnifferIpThreatfeed `json:"ip-threatfeed,omitempty"`
 	IpThreatfeedStatus       *string                        `json:"ip-threatfeed-status,omitempty"`

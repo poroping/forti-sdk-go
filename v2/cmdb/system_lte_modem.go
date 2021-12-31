@@ -19,7 +19,7 @@ func (c *Client) ReadSystemLteModem(mkey string, params *models.CmdbRequestParam
 	req.HTTPMethod = "GET"
 	req.Mkey = &mkey
 	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.SystemLteModemPath + mkey + "/"
+	req.Path = models.CmdbBasePath + models.SystemLteModemPath
 	req.Params = *params
 
 	res, err := request.Read(c.config, req)

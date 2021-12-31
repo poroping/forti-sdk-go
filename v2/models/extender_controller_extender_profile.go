@@ -8,7 +8,7 @@ type ExtenderControllerExtenderProfile struct {
 	Cellular            *[]ExtenderControllerExtenderProfileCellular     `json:"cellular,omitempty"`
 	EnforceBandwidth    *string                                          `json:"enforce-bandwidth,omitempty"`
 	Extension           *string                                          `json:"extension,omitempty"`
-	Fosid               *int64                                           `json:"fosid,omitempty"`
+	Id                  *int64                                           `json:"id,omitempty"`
 	LanExtension        *[]ExtenderControllerExtenderProfileLanExtension `json:"lan-extension,omitempty"`
 	LoginPassword       *string                                          `json:"login-password,omitempty"`
 	LoginPasswordChange *string                                          `json:"login-password-change,omitempty"`

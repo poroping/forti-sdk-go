@@ -19,7 +19,7 @@ func (c *Client) ReadLogtacacsaccounting3Setting(mkey string, params *models.Cmd
 	req.HTTPMethod = "GET"
 	req.Mkey = &mkey
 	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.Logtacacsaccounting3SettingPath + mkey + "/"
+	req.Path = models.CmdbBasePath + models.Logtacacsaccounting3SettingPath
 	req.Params = *params
 
 	res, err := request.Read(c.config, req)

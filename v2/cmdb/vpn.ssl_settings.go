@@ -19,7 +19,7 @@ func (c *Client) ReadVpnsslSettings(mkey string, params *models.CmdbRequestParam
 	req.HTTPMethod = "GET"
 	req.Mkey = &mkey
 	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.VpnsslSettingsPath + mkey + "/"
+	req.Path = models.CmdbBasePath + models.VpnsslSettingsPath
 	req.Params = *params
 
 	res, err := request.Read(c.config, req)

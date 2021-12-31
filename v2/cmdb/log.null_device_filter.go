@@ -19,7 +19,7 @@ func (c *Client) ReadLognullDeviceFilter(mkey string, params *models.CmdbRequest
 	req.HTTPMethod = "GET"
 	req.Mkey = &mkey
 	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.LognullDeviceFilterPath + mkey + "/"
+	req.Path = models.CmdbBasePath + models.LognullDeviceFilterPath
 	req.Params = *params
 
 	res, err := request.Read(c.config, req)

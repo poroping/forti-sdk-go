@@ -19,7 +19,7 @@ func (c *Client) ReadLogwebtrendsFilter(mkey string, params *models.CmdbRequestP
 	req.HTTPMethod = "GET"
 	req.Mkey = &mkey
 	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.LogwebtrendsFilterPath + mkey + "/"
+	req.Path = models.CmdbBasePath + models.LogwebtrendsFilterPath
 	req.Params = *params
 
 	res, err := request.Read(c.config, req)

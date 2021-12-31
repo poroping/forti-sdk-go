@@ -19,7 +19,7 @@ func (c *Client) ReadLogwebtrendsSetting(mkey string, params *models.CmdbRequest
 	req.HTTPMethod = "GET"
 	req.Mkey = &mkey
 	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.LogwebtrendsSettingPath + mkey + "/"
+	req.Path = models.CmdbBasePath + models.LogwebtrendsSettingPath
 	req.Params = *params
 
 	res, err := request.Read(c.config, req)

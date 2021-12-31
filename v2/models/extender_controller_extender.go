@@ -24,7 +24,7 @@ type ExtenderControllerExtender struct {
 	ExtName                     *string                                       `json:"ext-name,omitempty"`
 	ExtensionType               *string                                       `json:"extension-type,omitempty"`
 	HaSharedSecret              *string                                       `json:"ha-shared-secret,omitempty"`
-	Fosid                       *string                                       `json:"fosid,omitempty"`
+	Id                          *string                                       `json:"id,omitempty"`
 	Ifname                      *string                                       `json:"ifname,omitempty"`
 	InitiatedUpdate             *string                                       `json:"initiated-update,omitempty"`
 	LoginPassword               *string                                       `json:"login-password,omitempty"`

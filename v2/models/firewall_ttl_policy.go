@@ -4,7 +4,7 @@ const FirewallTtlPolicyPath = "firewall/ttl-policy/"
 
 type FirewallTtlPolicy struct {
 	Action   *string                     `json:"action,omitempty"`
-	Fosid    *int64                      `json:"fosid,omitempty"`
+	Id       *int64                      `json:"id,omitempty"`
 	Schedule *string                     `json:"schedule,omitempty"`
 	Service  *[]FirewallTtlPolicyService `json:"service,omitempty"`
 	Srcaddr  *[]FirewallTtlPolicySrcaddr `json:"srcaddr,omitempty"`

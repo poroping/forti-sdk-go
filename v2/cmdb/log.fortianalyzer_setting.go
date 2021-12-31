@@ -19,7 +19,7 @@ func (c *Client) ReadLogfortianalyzerSetting(mkey string, params *models.CmdbReq
 	req.HTTPMethod = "GET"
 	req.Mkey = &mkey
 	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.LogfortianalyzerSettingPath + mkey + "/"
+	req.Path = models.CmdbBasePath + models.LogfortianalyzerSettingPath
 	req.Params = *params
 
 	res, err := request.Read(c.config, req)

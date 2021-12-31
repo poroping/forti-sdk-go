@@ -16,8 +16,8 @@ func (c *Client) CreateRouterospf6Area(payload *models.Routerospf6Area, params *
 	}
 
 	mkey := ""
-	if payload.Fosid != nil && *params.AllowAppend {
-		mkey = *payload.Fosid
+	if payload.Id != nil && *params.AllowAppend {
+		mkey = *payload.Id
 		read, err := c.ReadRouterospf6Area(mkey, params)
 		if err != nil {
 			return nil, err

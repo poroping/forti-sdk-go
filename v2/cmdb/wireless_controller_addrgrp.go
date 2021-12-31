@@ -16,8 +16,8 @@ func (c *Client) CreateWirelessControllerAddrgrp(payload *models.WirelessControl
 	}
 
 	mkey := ""
-	if payload.Fosid != nil && *params.AllowAppend {
-		mkey = *payload.Fosid
+	if payload.Id != nil && *params.AllowAppend {
+		mkey = *payload.Id
 		read, err := c.ReadWirelessControllerAddrgrp(mkey, params)
 		if err != nil {
 			return nil, err

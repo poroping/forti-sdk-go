@@ -19,7 +19,7 @@ func (c *Client) ReadSystemIke(mkey string, params *models.CmdbRequestParams) (*
 	req.HTTPMethod = "GET"
 	req.Mkey = &mkey
 	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.SystemIkePath + mkey + "/"
+	req.Path = models.CmdbBasePath + models.SystemIkePath
 	req.Params = *params
 
 	res, err := request.Read(c.config, req)

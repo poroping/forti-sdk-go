@@ -5,7 +5,7 @@ const WebfilterUrlfilterPath = "webfilter/urlfilter/"
 type WebfilterUrlfilter struct {
 	Comment            *string                      `json:"comment,omitempty"`
 	Entries            *[]WebfilterUrlfilterEntries `json:"entries,omitempty"`
-	Fosid              *int64                       `json:"fosid,omitempty"`
+	Id                 *int64                       `json:"id,omitempty"`
 	IpAddrBlock        *string                      `json:"ip-addr-block,omitempty"`
 	Name               *string                      `json:"name,omitempty"`
 	OneArmIpsUrlfilter *string                      `json:"one-arm-ips-urlfilter,omitempty"`

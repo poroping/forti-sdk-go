@@ -19,7 +19,7 @@ func (c *Client) ReadLogsyslogd3OverrideFilter(mkey string, params *models.CmdbR
 	req.HTTPMethod = "GET"
 	req.Mkey = &mkey
 	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.Logsyslogd3OverrideFilterPath + mkey + "/"
+	req.Path = models.CmdbBasePath + models.Logsyslogd3OverrideFilterPath
 	req.Params = *params
 
 	res, err := request.Read(c.config, req)

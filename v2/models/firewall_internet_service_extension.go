@@ -6,7 +6,7 @@ type FirewallInternetServiceExtension struct {
 	Comment      *string                                         `json:"comment,omitempty"`
 	DisableEntry *[]FirewallInternetServiceExtensionDisableEntry `json:"disable-entry,omitempty"`
 	Entry        *[]FirewallInternetServiceExtensionEntry        `json:"entry,omitempty"`
-	Fosid        *int64                                          `json:"fosid,omitempty"`
+	Id           *int64                                          `json:"id,omitempty"`
 }
 
 type FirewallInternetServiceExtensionDisableEntry struct {

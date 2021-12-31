@@ -19,7 +19,7 @@ func (c *Client) ReadWebfilterIpsUrlfilterSetting6(mkey string, params *models.C
 	req.HTTPMethod = "GET"
 	req.Mkey = &mkey
 	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.WebfilterIpsUrlfilterSetting6Path + mkey + "/"
+	req.Path = models.CmdbBasePath + models.WebfilterIpsUrlfilterSetting6Path
 	req.Params = *params
 
 	res, err := request.Read(c.config, req)

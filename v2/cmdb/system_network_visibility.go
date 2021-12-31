@@ -19,7 +19,7 @@ func (c *Client) ReadSystemNetworkVisibility(mkey string, params *models.CmdbReq
 	req.HTTPMethod = "GET"
 	req.Mkey = &mkey
 	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.SystemNetworkVisibilityPath + mkey + "/"
+	req.Path = models.CmdbBasePath + models.SystemNetworkVisibilityPath
 	req.Params = *params
 
 	res, err := request.Read(c.config, req)

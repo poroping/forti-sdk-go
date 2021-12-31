@@ -19,7 +19,7 @@ func (c *Client) ReadWirelessControllerTimers(mkey string, params *models.CmdbRe
 	req.HTTPMethod = "GET"
 	req.Mkey = &mkey
 	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.WirelessControllerTimersPath + mkey + "/"
+	req.Path = models.CmdbBasePath + models.WirelessControllerTimersPath
 	req.Params = *params
 
 	res, err := request.Read(c.config, req)

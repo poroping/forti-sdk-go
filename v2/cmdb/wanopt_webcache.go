@@ -19,7 +19,7 @@ func (c *Client) ReadWanoptWebcache(mkey string, params *models.CmdbRequestParam
 	req.HTTPMethod = "GET"
 	req.Mkey = &mkey
 	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.WanoptWebcachePath + mkey + "/"
+	req.Path = models.CmdbBasePath + models.WanoptWebcachePath
 	req.Params = *params
 
 	res, err := request.Read(c.config, req)

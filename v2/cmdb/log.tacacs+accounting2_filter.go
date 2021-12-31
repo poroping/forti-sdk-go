@@ -19,7 +19,7 @@ func (c *Client) ReadLogtacacsaccounting2Filter(mkey string, params *models.Cmdb
 	req.HTTPMethod = "GET"
 	req.Mkey = &mkey
 	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.Logtacacsaccounting2FilterPath + mkey + "/"
+	req.Path = models.CmdbBasePath + models.Logtacacsaccounting2FilterPath
 	req.Params = *params
 
 	res, err := request.Read(c.config, req)

@@ -3,7 +3,7 @@ package models
 const SwitchControllerStpInstancePath = "switch-controller/stp-instance/"
 
 type SwitchControllerStpInstance struct {
-	Fosid     *string                                 `json:"fosid,omitempty"`
+	Id        *string                                 `json:"id,omitempty"`
 	VlanRange *[]SwitchControllerStpInstanceVlanRange `json:"vlan-range,omitempty"`
 }
 

@@ -3,6 +3,6 @@ package models
 const WafSignaturePath = "waf/signature/"
 
 type WafSignature struct {
-	Desc  *string `json:"desc,omitempty"`
-	Fosid *int64  `json:"fosid,omitempty"`
+	Desc *string `json:"desc,omitempty"`
+	Id   *int64  `json:"id,omitempty"`
 }

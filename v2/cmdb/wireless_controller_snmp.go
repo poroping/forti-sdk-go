@@ -19,7 +19,7 @@ func (c *Client) ReadWirelessControllerSnmp(mkey string, params *models.CmdbRequ
 	req.HTTPMethod = "GET"
 	req.Mkey = &mkey
 	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.WirelessControllerSnmpPath + mkey + "/"
+	req.Path = models.CmdbBasePath + models.WirelessControllerSnmpPath
 	req.Params = *params
 
 	res, err := request.Read(c.config, req)

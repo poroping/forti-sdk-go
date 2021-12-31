@@ -17,8 +17,8 @@ func (c *Client) CreateEmailfilterBword(payload *models.EmailfilterBword, params
 	}
 
 	mkey := ""
-	if payload.Fosid != nil && *params.AllowAppend {
-		mkey = strconv.Itoa(int(*payload.Fosid))
+	if payload.Id != nil && *params.AllowAppend {
+		mkey = strconv.Itoa(int(*payload.Id))
 		read, err := c.ReadEmailfilterBword(mkey, params)
 		if err != nil {
 			return nil, err

@@ -5,7 +5,7 @@ const ApplicationNamePath = "application/name/"
 type ApplicationName struct {
 	Behavior    *string                      `json:"behavior,omitempty"`
 	Category    *int64                       `json:"category,omitempty"`
-	Fosid       *int64                       `json:"fosid,omitempty"`
+	Id          *int64                       `json:"id,omitempty"`
 	Metadata    *[]ApplicationNameMetadata   `json:"metadata,omitempty"`
 	Name        *string                      `json:"name,omitempty"`
 	Parameter   *string                      `json:"parameter,omitempty"`

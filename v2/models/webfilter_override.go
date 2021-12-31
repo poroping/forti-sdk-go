@@ -4,7 +4,7 @@ const WebfilterOverridePath = "webfilter/override/"
 
 type WebfilterOverride struct {
 	Expires    *string `json:"expires,omitempty"`
-	Fosid      *int64  `json:"fosid,omitempty"`
+	Id         *int64  `json:"id,omitempty"`
 	Initiator  *string `json:"initiator,omitempty"`
 	Ip         *string `json:"ip,omitempty"`
 	Ip6        *string `json:"ip6,omitempty"`

@@ -19,7 +19,7 @@ func (c *Client) ReadSystemSettings(mkey string, params *models.CmdbRequestParam
 	req.HTTPMethod = "GET"
 	req.Mkey = &mkey
 	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.SystemSettingsPath + mkey + "/"
+	req.Path = models.CmdbBasePath + models.SystemSettingsPath
 	req.Params = *params
 
 	res, err := request.Read(c.config, req)

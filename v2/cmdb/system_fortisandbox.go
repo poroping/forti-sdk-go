@@ -19,7 +19,7 @@ func (c *Client) ReadSystemFortisandbox(mkey string, params *models.CmdbRequestP
 	req.HTTPMethod = "GET"
 	req.Mkey = &mkey
 	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.SystemFortisandboxPath + mkey + "/"
+	req.Path = models.CmdbBasePath + models.SystemFortisandboxPath
 	req.Params = *params
 
 	res, err := request.Read(c.config, req)

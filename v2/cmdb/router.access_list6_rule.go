@@ -17,8 +17,8 @@ func (c *Client) CreateRouteraccessList6Rule(payload *models.RouteraccessList6Ru
 	}
 
 	mkey := ""
-	if payload.Fosid != nil && *params.AllowAppend {
-		mkey = strconv.Itoa(int(*payload.Fosid))
+	if payload.Id != nil && *params.AllowAppend {
+		mkey = strconv.Itoa(int(*payload.Id))
 		read, err := c.ReadRouteraccessList6Rule(mkey, params)
 		if err != nil {
 			return nil, err

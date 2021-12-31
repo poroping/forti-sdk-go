@@ -17,8 +17,8 @@ func (c *Client) CreateSystemsdwanDuplication(payload *models.SystemsdwanDuplica
 	}
 
 	mkey := ""
-	if payload.Fosid != nil && *params.AllowAppend {
-		mkey = strconv.Itoa(int(*payload.Fosid))
+	if payload.Id != nil && *params.AllowAppend {
+		mkey = strconv.Itoa(int(*payload.Id))
 		read, err := c.ReadSystemsdwanDuplication(mkey, params)
 		if err != nil {
 			return nil, err

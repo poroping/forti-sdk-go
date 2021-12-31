@@ -5,7 +5,7 @@ const UserFssoPollingPath = "user/fsso-polling/"
 type UserFssoPolling struct {
 	Adgrp            *[]UserFssoPollingAdgrp `json:"adgrp,omitempty"`
 	DefaultDomain    *string                 `json:"default-domain,omitempty"`
-	Fosid            *int64                  `json:"fosid,omitempty"`
+	Id               *int64                  `json:"id,omitempty"`
 	LdapServer       *string                 `json:"ldap-server,omitempty"`
 	LogonHistory     *int64                  `json:"logon-history,omitempty"`
 	Password         *string                 `json:"password,omitempty"`

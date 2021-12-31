@@ -19,7 +19,7 @@ func (c *Client) ReadWebProxyGlobal(mkey string, params *models.CmdbRequestParam
 	req.HTTPMethod = "GET"
 	req.Mkey = &mkey
 	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.WebProxyGlobalPath + mkey + "/"
+	req.Path = models.CmdbBasePath + models.WebProxyGlobalPath
 	req.Params = *params
 
 	res, err := request.Read(c.config, req)

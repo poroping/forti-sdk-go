@@ -16,7 +16,7 @@ type FirewallShapingPolicy struct {
 	Dstaddr6                      *[]FirewallShapingPolicyDstaddr6                      `json:"dstaddr6,omitempty"`
 	Dstintf                       *[]FirewallShapingPolicyDstintf                       `json:"dstintf,omitempty"`
 	Groups                        *[]FirewallShapingPolicyGroups                        `json:"groups,omitempty"`
-	Fosid                         *int64                                                `json:"fosid,omitempty"`
+	Id                            *int64                                                `json:"id,omitempty"`
 	InternetService               *string                                               `json:"internet-service,omitempty"`
 	InternetServiceCustom         *[]FirewallShapingPolicyInternetServiceCustom         `json:"internet-service-custom,omitempty"`
 	InternetServiceCustomGroup    *[]FirewallShapingPolicyInternetServiceCustomGroup    `json:"internet-service-custom-group,omitempty"`

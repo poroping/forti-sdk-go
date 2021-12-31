@@ -19,7 +19,7 @@ func (c *Client) ReadFirewallsslSetting(mkey string, params *models.CmdbRequestP
 	req.HTTPMethod = "GET"
 	req.Mkey = &mkey
 	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.FirewallsslSettingPath + mkey + "/"
+	req.Path = models.CmdbBasePath + models.FirewallsslSettingPath
 	req.Params = *params
 
 	res, err := request.Read(c.config, req)

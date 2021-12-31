@@ -19,7 +19,7 @@ func (c *Client) ReadSystemSflow(mkey string, params *models.CmdbRequestParams) 
 	req.HTTPMethod = "GET"
 	req.Mkey = &mkey
 	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.SystemSflowPath + mkey + "/"
+	req.Path = models.CmdbBasePath + models.SystemSflowPath
 	req.Params = *params
 
 	res, err := request.Read(c.config, req)

@@ -19,7 +19,7 @@ func (c *Client) ReadSystemPasswordPolicy(mkey string, params *models.CmdbReques
 	req.HTTPMethod = "GET"
 	req.Mkey = &mkey
 	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.SystemPasswordPolicyPath + mkey + "/"
+	req.Path = models.CmdbBasePath + models.SystemPasswordPolicyPath
 	req.Params = *params
 
 	res, err := request.Read(c.config, req)

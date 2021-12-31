@@ -5,7 +5,7 @@ const EmailfilterDnsblPath = "emailfilter/dnsbl/"
 type EmailfilterDnsbl struct {
 	Comment *string                    `json:"comment,omitempty"`
 	Entries *[]EmailfilterDnsblEntries `json:"entries,omitempty"`
-	Fosid   *int64                     `json:"fosid,omitempty"`
+	Id      *int64                     `json:"id,omitempty"`
 	Name    *string                    `json:"name,omitempty"`
 }
 

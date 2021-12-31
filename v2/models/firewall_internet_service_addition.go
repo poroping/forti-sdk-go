@@ -5,7 +5,7 @@ const FirewallInternetServiceAdditionPath = "firewall/internet-service-addition/
 type FirewallInternetServiceAddition struct {
 	Comment *string                                 `json:"comment,omitempty"`
 	Entry   *[]FirewallInternetServiceAdditionEntry `json:"entry,omitempty"`
-	Fosid   *int64                                  `json:"fosid,omitempty"`
+	Id      *int64                                  `json:"id,omitempty"`
 }
 
 type FirewallInternetServiceAdditionEntry struct {

@@ -5,7 +5,7 @@ const SwitchControllerSnmpCommunityPath = "switch-controller/snmp-community/"
 type SwitchControllerSnmpCommunity struct {
 	Events         *string                               `json:"events,omitempty"`
 	Hosts          *[]SwitchControllerSnmpCommunityHosts `json:"hosts,omitempty"`
-	Fosid          *int64                                `json:"fosid,omitempty"`
+	Id             *int64                                `json:"id,omitempty"`
 	Name           *string                               `json:"name,omitempty"`
 	QueryV1Port    *int64                                `json:"query-v1-port,omitempty"`
 	QueryV1Status  *string                               `json:"query-v1-status,omitempty"`

@@ -19,7 +19,7 @@ func (c *Client) ReadVpnL2tp(mkey string, params *models.CmdbRequestParams) (*mo
 	req.HTTPMethod = "GET"
 	req.Mkey = &mkey
 	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.VpnL2tpPath + mkey + "/"
+	req.Path = models.CmdbBasePath + models.VpnL2tpPath
 	req.Params = *params
 
 	res, err := request.Read(c.config, req)

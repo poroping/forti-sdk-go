@@ -13,7 +13,7 @@ type UserGroup struct {
 	GroupType              *string            `json:"group-type,omitempty"`
 	Guest                  *[]UserGroupGuest  `json:"guest,omitempty"`
 	HttpDigestRealm        *string            `json:"http-digest-realm,omitempty"`
-	Fosid                  *int64             `json:"fosid,omitempty"`
+	Id                     *int64             `json:"id,omitempty"`
 	Match                  *[]UserGroupMatch  `json:"match,omitempty"`
 	MaxAccounts            *int64             `json:"max-accounts,omitempty"`
 	Member                 *[]UserGroupMember `json:"member,omitempty"`

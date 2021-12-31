@@ -19,7 +19,7 @@ func (c *Client) ReadSystemFipsCc(mkey string, params *models.CmdbRequestParams)
 	req.HTTPMethod = "GET"
 	req.Mkey = &mkey
 	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.SystemFipsCcPath + mkey + "/"
+	req.Path = models.CmdbBasePath + models.SystemFipsCcPath
 	req.Params = *params
 
 	res, err := request.Read(c.config, req)

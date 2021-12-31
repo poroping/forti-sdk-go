@@ -24,7 +24,7 @@ type FirewallVip struct {
 	HttpMultiplex                *string                             `json:"http-multiplex,omitempty"`
 	HttpRedirect                 *string                             `json:"http-redirect,omitempty"`
 	HttpsCookieSecure            *string                             `json:"https-cookie-secure,omitempty"`
-	Fosid                        *int64                              `json:"fosid,omitempty"`
+	Id                           *int64                              `json:"id,omitempty"`
 	Ipv6Mappedip                 *string                             `json:"ipv6-mappedip,omitempty"`
 	Ipv6Mappedport               *string                             `json:"ipv6-mappedport,omitempty"`
 	LdbMethod                    *string                             `json:"ldb-method,omitempty"`

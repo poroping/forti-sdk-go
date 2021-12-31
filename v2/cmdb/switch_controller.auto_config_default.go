@@ -19,7 +19,7 @@ func (c *Client) ReadSwitchControllerautoConfigDefault(mkey string, params *mode
 	req.HTTPMethod = "GET"
 	req.Mkey = &mkey
 	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.SwitchControllerautoConfigDefaultPath + mkey + "/"
+	req.Path = models.CmdbBasePath + models.SwitchControllerautoConfigDefaultPath
 	req.Params = *params
 
 	res, err := request.Read(c.config, req)

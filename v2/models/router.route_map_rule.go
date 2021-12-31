@@ -4,7 +4,7 @@ const RouterrouteMapRulePath = "router/route-map/rule/"
 
 type RouterrouteMapRule struct {
 	Action                             *string                                 `json:"action,omitempty"`
-	Fosid                              *int64                                  `json:"fosid,omitempty"`
+	Id                                 *int64                                  `json:"id,omitempty"`
 	MatchAsPath                        *string                                 `json:"match-as-path,omitempty"`
 	MatchCommunity                     *string                                 `json:"match-community,omitempty"`
 	MatchCommunityExact                *string                                 `json:"match-community-exact,omitempty"`

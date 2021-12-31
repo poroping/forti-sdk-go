@@ -188,7 +188,7 @@ func recurseNumberName(m map[string]interface{}) map[string]interface{} {
 }
 
 func addDataSourceInfo(m map[string]interface{}) map[string]interface{} {
-	m = replaceTopLevelId(m)
+	// m = replaceTopLevelId(m)
 	m = addDataSourceSchemaRequired(m)
 	m = addSensitive(m)
 	m = addNumberName(m)
@@ -233,7 +233,7 @@ func addResourceSchemaRequired(m map[string]interface{}) map[string]interface{} 
 
 func addResourceInfo(m map[string]interface{}) map[string]interface{} {
 	m = addDynSortTable(m)
-	m = replaceTopLevelId(m)
+	// m = replaceTopLevelId(m)
 	m = addResourceSchemaRequired(m)
 	m = addSensitive(m)
 	m = complexEmptyOnDestroy(m)

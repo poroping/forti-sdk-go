@@ -17,8 +17,8 @@ func (c *Client) CreateSystemIpv6NeighborCache(payload *models.SystemIpv6Neighbo
 	}
 
 	mkey := ""
-	if payload.Fosid != nil && *params.AllowAppend {
-		mkey = strconv.Itoa(int(*payload.Fosid))
+	if payload.Id != nil && *params.AllowAppend {
+		mkey = strconv.Itoa(int(*payload.Id))
 		read, err := c.ReadSystemIpv6NeighborCache(mkey, params)
 		if err != nil {
 			return nil, err

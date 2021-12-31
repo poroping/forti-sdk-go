@@ -8,7 +8,7 @@ type UserLocal struct {
 	Authtimeout             *int64  `json:"authtimeout,omitempty"`
 	EmailTo                 *string `json:"email-to,omitempty"`
 	Fortitoken              *string `json:"fortitoken,omitempty"`
-	Fosid                   *int64  `json:"fosid,omitempty"`
+	Id                      *int64  `json:"id,omitempty"`
 	LdapServer              *string `json:"ldap-server,omitempty"`
 	Name                    *string `json:"name,omitempty"`
 	Passwd                  *string `json:"passwd,omitempty"`

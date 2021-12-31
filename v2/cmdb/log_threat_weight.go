@@ -19,7 +19,7 @@ func (c *Client) ReadLogThreatWeight(mkey string, params *models.CmdbRequestPara
 	req.HTTPMethod = "GET"
 	req.Mkey = &mkey
 	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.LogThreatWeightPath + mkey + "/"
+	req.Path = models.CmdbBasePath + models.LogThreatWeightPath
 	req.Params = *params
 
 	res, err := request.Read(c.config, req)

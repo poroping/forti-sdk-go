@@ -19,7 +19,7 @@ func (c *Client) ReadLogsyslogd2Filter(mkey string, params *models.CmdbRequestPa
 	req.HTTPMethod = "GET"
 	req.Mkey = &mkey
 	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.Logsyslogd2FilterPath + mkey + "/"
+	req.Path = models.CmdbBasePath + models.Logsyslogd2FilterPath
 	req.Params = *params
 
 	res, err := request.Read(c.config, req)

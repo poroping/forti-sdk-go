@@ -19,7 +19,7 @@ func (c *Client) ReadSystemSessionTtl(mkey string, params *models.CmdbRequestPar
 	req.HTTPMethod = "GET"
 	req.Mkey = &mkey
 	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.SystemSessionTtlPath + mkey + "/"
+	req.Path = models.CmdbBasePath + models.SystemSessionTtlPath
 	req.Params = *params
 
 	res, err := request.Read(c.config, req)

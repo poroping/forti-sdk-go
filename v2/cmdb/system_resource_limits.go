@@ -19,7 +19,7 @@ func (c *Client) ReadSystemResourceLimits(mkey string, params *models.CmdbReques
 	req.HTTPMethod = "GET"
 	req.Mkey = &mkey
 	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.SystemResourceLimitsPath + mkey + "/"
+	req.Path = models.CmdbBasePath + models.SystemResourceLimitsPath
 	req.Params = *params
 
 	res, err := request.Read(c.config, req)

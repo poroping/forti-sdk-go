@@ -4,5 +4,5 @@ const FirewallInternetServiceReputationPath = "firewall/internet-service-reputat
 
 type FirewallInternetServiceReputation struct {
 	Description *string `json:"description,omitempty"`
-	Fosid       *int64  `json:"fosid,omitempty"`
+	Id          *int64  `json:"id,omitempty"`
 }

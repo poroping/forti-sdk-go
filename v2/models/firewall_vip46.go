@@ -8,7 +8,7 @@ type FirewallVip46 struct {
 	Comment       *string                       `json:"comment,omitempty"`
 	Extip         *string                       `json:"extip,omitempty"`
 	Extport       *string                       `json:"extport,omitempty"`
-	Fosid         *int64                        `json:"fosid,omitempty"`
+	Id            *int64                        `json:"id,omitempty"`
 	LdbMethod     *string                       `json:"ldb-method,omitempty"`
 	Mappedip      *string                       `json:"mappedip,omitempty"`
 	Mappedport    *string                       `json:"mappedport,omitempty"`

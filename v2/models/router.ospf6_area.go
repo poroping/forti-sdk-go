@@ -5,7 +5,7 @@ const Routerospf6AreaPath = "router/ospf6/area/"
 type Routerospf6Area struct {
 	Authentication                            *string                       `json:"authentication,omitempty"`
 	DefaultCost                               *int64                        `json:"default-cost,omitempty"`
-	Fosid                                     *string                       `json:"fosid,omitempty"`
+	Id                                        *string                       `json:"id,omitempty"`
 	IpsecAuthAlg                              *string                       `json:"ipsec-auth-alg,omitempty"`
 	IpsecEncAlg                               *string                       `json:"ipsec-enc-alg,omitempty"`
 	IpsecKeys                                 *[]Routerospf6AreaIpsecKeys   `json:"ipsec-keys,omitempty"`

@@ -19,7 +19,7 @@ func (c *Client) ReadRouterMulticast6(mkey string, params *models.CmdbRequestPar
 	req.HTTPMethod = "GET"
 	req.Mkey = &mkey
 	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.RouterMulticast6Path + mkey + "/"
+	req.Path = models.CmdbBasePath + models.RouterMulticast6Path
 	req.Params = *params
 
 	res, err := request.Read(c.config, req)

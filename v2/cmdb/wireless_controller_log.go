@@ -19,7 +19,7 @@ func (c *Client) ReadWirelessControllerLog(mkey string, params *models.CmdbReque
 	req.HTTPMethod = "GET"
 	req.Mkey = &mkey
 	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.WirelessControllerLogPath + mkey + "/"
+	req.Path = models.CmdbBasePath + models.WirelessControllerLogPath
 	req.Params = *params
 
 	res, err := request.Read(c.config, req)

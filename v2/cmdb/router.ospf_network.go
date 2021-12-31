@@ -17,8 +17,8 @@ func (c *Client) CreateRouterospfNetwork(payload *models.RouterospfNetwork, para
 	}
 
 	mkey := ""
-	if payload.Fosid != nil && *params.AllowAppend {
-		mkey = strconv.Itoa(int(*payload.Fosid))
+	if payload.Id != nil && *params.AllowAppend {
+		mkey = strconv.Itoa(int(*payload.Id))
 		read, err := c.ReadRouterospfNetwork(mkey, params)
 		if err != nil {
 			return nil, err

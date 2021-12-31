@@ -4,7 +4,7 @@ const FirewallDnstranslationPath = "firewall/dnstranslation/"
 
 type FirewallDnstranslation struct {
 	Dst     *string `json:"dst,omitempty"`
-	Fosid   *int64  `json:"fosid,omitempty"`
+	Id      *int64  `json:"id,omitempty"`
 	Netmask *string `json:"netmask,omitempty"`
 	Src     *string `json:"src,omitempty"`
 }

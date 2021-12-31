@@ -25,7 +25,7 @@ type SystemdhcpServer struct {
 	ExcludeRange              *[]SystemdhcpServerExcludeRange    `json:"exclude-range,omitempty"`
 	Filename                  *string                            `json:"filename,omitempty"`
 	ForticlientOnNetStatus    *string                            `json:"forticlient-on-net-status,omitempty"`
-	Fosid                     *int64                             `json:"fosid,omitempty"`
+	Id                        *int64                             `json:"id,omitempty"`
 	Interface                 *string                            `json:"interface,omitempty"`
 	IpMode                    *string                            `json:"ip-mode,omitempty"`
 	IpRange                   *[]SystemdhcpServerIpRange         `json:"ip-range,omitempty"`

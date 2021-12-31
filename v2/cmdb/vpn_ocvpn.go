@@ -19,7 +19,7 @@ func (c *Client) ReadVpnOcvpn(mkey string, params *models.CmdbRequestParams) (*m
 	req.HTTPMethod = "GET"
 	req.Mkey = &mkey
 	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.VpnOcvpnPath + mkey + "/"
+	req.Path = models.CmdbBasePath + models.VpnOcvpnPath
 	req.Params = *params
 
 	res, err := request.Read(c.config, req)

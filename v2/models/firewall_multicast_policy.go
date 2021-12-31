@@ -10,7 +10,7 @@ type FirewallMulticastPolicy struct {
 	Dstaddr         *[]FirewallMulticastPolicyDstaddr `json:"dstaddr,omitempty"`
 	Dstintf         *string                           `json:"dstintf,omitempty"`
 	EndPort         *int64                            `json:"end-port,omitempty"`
-	Fosid           *int64                            `json:"fosid,omitempty"`
+	Id              *int64                            `json:"id,omitempty"`
 	Logtraffic      *string                           `json:"logtraffic,omitempty"`
 	Name            *string                           `json:"name,omitempty"`
 	Protocol        *int64                            `json:"protocol,omitempty"`

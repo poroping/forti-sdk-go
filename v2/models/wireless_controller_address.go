@@ -3,7 +3,7 @@ package models
 const WirelessControllerAddressPath = "wireless-controller/address/"
 
 type WirelessControllerAddress struct {
-	Fosid  *string `json:"fosid,omitempty"`
+	Id     *string `json:"id,omitempty"`
 	Mac    *string `json:"mac,omitempty"`
 	Policy *string `json:"policy,omitempty"`
 }

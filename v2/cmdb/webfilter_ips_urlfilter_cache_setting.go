@@ -19,7 +19,7 @@ func (c *Client) ReadWebfilterIpsUrlfilterCacheSetting(mkey string, params *mode
 	req.HTTPMethod = "GET"
 	req.Mkey = &mkey
 	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.WebfilterIpsUrlfilterCacheSettingPath + mkey + "/"
+	req.Path = models.CmdbBasePath + models.WebfilterIpsUrlfilterCacheSettingPath
 	req.Params = *params
 
 	res, err := request.Read(c.config, req)

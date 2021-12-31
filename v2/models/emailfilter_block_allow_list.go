@@ -5,7 +5,7 @@ const EmailfilterBlockAllowListPath = "emailfilter/block-allow-list/"
 type EmailfilterBlockAllowList struct {
 	Comment *string                             `json:"comment,omitempty"`
 	Entries *[]EmailfilterBlockAllowListEntries `json:"entries,omitempty"`
-	Fosid   *int64                              `json:"fosid,omitempty"`
+	Id      *int64                              `json:"id,omitempty"`
 	Name    *string                             `json:"name,omitempty"`
 }
 

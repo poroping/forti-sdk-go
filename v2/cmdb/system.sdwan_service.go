@@ -17,8 +17,8 @@ func (c *Client) CreateSystemsdwanService(payload *models.SystemsdwanService, pa
 	}
 
 	mkey := ""
-	if payload.Fosid != nil && *params.AllowAppend {
-		mkey = strconv.Itoa(int(*payload.Fosid))
+	if payload.Id != nil && *params.AllowAppend {
+		mkey = strconv.Itoa(int(*payload.Id))
 		read, err := c.ReadSystemsdwanService(mkey, params)
 		if err != nil {
 			return nil, err

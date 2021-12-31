@@ -11,7 +11,7 @@ type Systemdhcp6Server struct {
 	DnsServer4          *string                         `json:"dns-server4,omitempty"`
 	DnsService          *string                         `json:"dns-service,omitempty"`
 	Domain              *string                         `json:"domain,omitempty"`
-	Fosid               *int64                          `json:"fosid,omitempty"`
+	Id                  *int64                          `json:"id,omitempty"`
 	Interface           *string                         `json:"interface,omitempty"`
 	IpMode              *string                         `json:"ip-mode,omitempty"`
 	IpRange             *[]Systemdhcp6ServerIpRange     `json:"ip-range,omitempty"`

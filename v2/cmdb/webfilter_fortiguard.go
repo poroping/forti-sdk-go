@@ -19,7 +19,7 @@ func (c *Client) ReadWebfilterFortiguard(mkey string, params *models.CmdbRequest
 	req.HTTPMethod = "GET"
 	req.Mkey = &mkey
 	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.WebfilterFortiguardPath + mkey + "/"
+	req.Path = models.CmdbBasePath + models.WebfilterFortiguardPath
 	req.Params = *params
 
 	res, err := request.Read(c.config, req)

@@ -19,7 +19,7 @@ func (c *Client) ReadFirewallVendorMacSummary(mkey string, params *models.CmdbRe
 	req.HTTPMethod = "GET"
 	req.Mkey = &mkey
 	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.FirewallVendorMacSummaryPath + mkey + "/"
+	req.Path = models.CmdbBasePath + models.FirewallVendorMacSummaryPath
 	req.Params = *params
 
 	res, err := request.Read(c.config, req)

@@ -19,7 +19,7 @@ func (c *Client) ReadSwitchControllerStpSettings(mkey string, params *models.Cmd
 	req.HTTPMethod = "GET"
 	req.Mkey = &mkey
 	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.SwitchControllerStpSettingsPath + mkey + "/"
+	req.Path = models.CmdbBasePath + models.SwitchControllerStpSettingsPath
 	req.Params = *params
 
 	res, err := request.Read(c.config, req)

@@ -19,7 +19,7 @@ func (c *Client) ReadWirelessControllerInterController(mkey string, params *mode
 	req.HTTPMethod = "GET"
 	req.Mkey = &mkey
 	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.WirelessControllerInterControllerPath + mkey + "/"
+	req.Path = models.CmdbBasePath + models.WirelessControllerInterControllerPath
 	req.Params = *params
 
 	res, err := request.Read(c.config, req)

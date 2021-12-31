@@ -19,7 +19,7 @@ func (c *Client) ReadSystemSdwan(mkey string, params *models.CmdbRequestParams) 
 	req.HTTPMethod = "GET"
 	req.Mkey = &mkey
 	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.SystemSdwanPath + mkey + "/"
+	req.Path = models.CmdbBasePath + models.SystemSdwanPath
 	req.Params = *params
 
 	res, err := request.Read(c.config, req)

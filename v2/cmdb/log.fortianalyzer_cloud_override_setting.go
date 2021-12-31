@@ -19,7 +19,7 @@ func (c *Client) ReadLogfortianalyzerCloudOverrideSetting(mkey string, params *m
 	req.HTTPMethod = "GET"
 	req.Mkey = &mkey
 	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.LogfortianalyzerCloudOverrideSettingPath + mkey + "/"
+	req.Path = models.CmdbBasePath + models.LogfortianalyzerCloudOverrideSettingPath
 	req.Params = *params
 
 	res, err := request.Read(c.config, req)

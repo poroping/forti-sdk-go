@@ -4,7 +4,7 @@ const SwitchControllerNacDevicePath = "switch-controller/nac-device/"
 
 type SwitchControllerNacDevice struct {
 	Description      *string `json:"description,omitempty"`
-	Fosid            *int64  `json:"fosid,omitempty"`
+	Id               *int64  `json:"id,omitempty"`
 	LastKnownPort    *string `json:"last-known-port,omitempty"`
 	LastKnownSwitch  *string `json:"last-known-switch,omitempty"`
 	LastSeen         *int64  `json:"last-seen,omitempty"`
