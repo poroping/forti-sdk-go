@@ -1,10 +1,9 @@
 {
-	"FullPath": null,
 	"addedIn": "v6.2.7",
 	"build": 237,
 	"http_method": "GET",
 	"http_status": 200,
-	"mergedVersions": "v6.2.7,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3",
+	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3",
 	"name": "global",
 	"path": "system",
 	"results": {
@@ -956,7 +955,7 @@
 				"type": "integer"
 			},
 			"faz-disk-buffer-size": {
-				"addedIn": "v6.4.2",
+				"addedIn": "v6.4.0",
 				"category": "unitary",
 				"default": 0,
 				"help": "Maximum disk buffer size to temporarily store logs destined for FortiAnalyzer. To be used in the event that FortiAnalyzer is unavailalble.",
@@ -1268,6 +1267,25 @@
 				],
 				"type": "option"
 			},
+			"gui-firmware-upgrade-setup-warning": {
+				"addedIn": "v6.4.0",
+				"category": "unitary",
+				"help": "Enable/disable the firmware upgrade warning on GUI setup wizard.",
+				"multiple_values": false,
+				"name": "gui-firmware-upgrade-setup-warning",
+				"options": [
+					{
+						"help": "Display the feature in GUI.",
+						"name": "enable"
+					},
+					{
+						"help": "Do not display the feature in GUI.",
+						"name": "disable"
+					}
+				],
+				"removedIn": "v6.4.2",
+				"type": "option"
+			},
 			"gui-firmware-upgrade-warning": {
 				"addedIn": "v6.4.2",
 				"category": "unitary",
@@ -1576,7 +1594,7 @@
 						"name": "disable"
 					}
 				],
-				"removedIn": "v6.4.2",
+				"removedIn": "v6.4.0",
 				"type": "option"
 			},
 			"ipsec-ha-seqjump-rate": {
@@ -1604,7 +1622,7 @@
 						"name": "disable"
 					}
 				],
-				"removedIn": "v6.4.2",
+				"removedIn": "v6.4.0",
 				"type": "option"
 			},
 			"ipsec-soft-dec-async": {
@@ -1864,7 +1882,7 @@
 						"name": "disable"
 					}
 				],
-				"removedIn": "v6.4.2",
+				"removedIn": "v6.4.0",
 				"type": "option"
 			},
 			"management-ip": {
@@ -2175,7 +2193,7 @@
 						"name": "enable"
 					}
 				],
-				"removedIn": "v6.4.2",
+				"removedIn": "v6.4.0",
 				"type": "option"
 			},
 			"proxy-kxp-hardware-acceleration": {
@@ -2193,7 +2211,7 @@
 						"name": "enable"
 					}
 				],
-				"removedIn": "v6.4.2",
+				"removedIn": "v6.4.0",
 				"type": "option"
 			},
 			"proxy-re-authentication-mode": {
@@ -2902,7 +2920,7 @@
 						"name": "disable"
 					}
 				],
-				"removedIn": "v6.4.2",
+				"removedIn": "v6.4.0",
 				"type": "option"
 			},
 			"sslvpn-ems-sn-check": {
@@ -2939,7 +2957,7 @@
 						"name": "disable"
 					}
 				],
-				"removedIn": "v6.4.2",
+				"removedIn": "v6.4.0",
 				"type": "option"
 			},
 			"sslvpn-max-worker-count": {
@@ -3648,7 +3666,7 @@
 						"name": "multi-vdom"
 					}
 				],
-				"removedIn": "v6.4.2",
+				"removedIn": "v6.4.0",
 				"type": "option"
 			},
 			"vip-arp-range": {
@@ -3804,8 +3822,8 @@
 		"path": "system",
 		"q_type": 11
 	},
-	"revision": "ea254f7157d5368bb4e29bdb427c43b2",
-	"serial": "FGTAZRKKLFZKT347",
+	"revision": "0448b4bf37cda5ed31380db12be5b1d5",
+	"serial": "FGTAZRAQCG14L19D",
 	"status": "success",
 	"vdom": "root",
 	"version": "v7.0.3"

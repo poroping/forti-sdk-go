@@ -1,5 +1,4 @@
 {
-	"FullPath": null,
 	"addedIn": "v7.0.0",
 	"build": 237,
 	"http_method": "GET",
@@ -195,8 +194,8 @@
 		"path": "emailfilter",
 		"q_type": 96
 	},
-	"revision": "896e930afe27996f021b98c7278656e9",
-	"serial": "FGTAZRKKLFZKT347",
+	"revision": "83663ccb232ef404eaac5a256049cd0b",
+	"serial": "FGTAZRAQCG14L19D",
 	"status": "success",
 	"vdom": "root",
 	"version": "v7.0.3"

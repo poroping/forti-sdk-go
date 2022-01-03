@@ -1,10 +1,9 @@
 {
-	"FullPath": null,
 	"addedIn": "v6.2.7",
 	"build": 237,
 	"http_method": "GET",
 	"http_status": 200,
-	"mergedVersions": "v6.2.7,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3",
+	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3",
 	"name": "sdn-connector",
 	"path": "system",
 	"results": {
@@ -510,6 +509,7 @@
 						"default": "",
 						"help": "Subscription ID of Azure route table.",
 						"name": "subscription-id",
+						"removedIn": "v6.4.0",
 						"size": 63,
 						"type": "string"
 					}
@@ -804,8 +804,8 @@
 		"path": "system",
 		"q_type": 516
 	},
-	"revision": "8a7580b5742f1cb0235cc0f006d2ffb5",
-	"serial": "FGTAZRKKLFZKT347",
+	"revision": "3136967a4353c42d3b898036f1656c0c",
+	"serial": "FGTAZRAQCG14L19D",
 	"status": "success",
 	"vdom": "root",
 	"version": "v7.0.3"

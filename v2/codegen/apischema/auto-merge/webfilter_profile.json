@@ -1,10 +1,9 @@
 {
-	"FullPath": null,
 	"addedIn": "v6.2.7",
 	"build": 237,
 	"http_method": "GET",
 	"http_status": 200,
-	"mergedVersions": "v6.2.7,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3",
+	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3",
 	"name": "profile",
 	"path": "webfilter",
 	"results": {
@@ -12,7 +11,7 @@
 		"category": "table",
 		"children": {
 			"antiphish": {
-				"addedIn": "v6.4.2",
+				"addedIn": "v6.4.0",
 				"category": "complex",
 				"children": {
 					"authentication": {
@@ -305,7 +304,7 @@
 				"type": "option"
 			},
 			"feature-set": {
-				"addedIn": "v6.4.2",
+				"addedIn": "v6.4.0",
 				"category": "unitary",
 				"default": "flow",
 				"help": "Flow/proxy feature set.",
@@ -1405,7 +1404,7 @@
 								"type": "string"
 							}
 						},
-						"default": "Configure Web filter profiles.",
+						"default": "",
 						"help": "Search keywords to log when match is found.",
 						"max_table_size_global": 0,
 						"max_table_size_item": 0,
@@ -1537,7 +1536,7 @@
 				"name": "web"
 			},
 			"web-antiphishing-log": {
-				"addedIn": "v6.4.2",
+				"addedIn": "v6.4.0",
 				"category": "unitary",
 				"default": "enable",
 				"help": "Enable/disable logging of AntiPhishing checks.",
@@ -1980,8 +1979,8 @@
 		"path": "webfilter",
 		"q_type": 435
 	},
-	"revision": "9fc20e3d58ec433f6fcee1f1afa74a6e",
-	"serial": "FGTAZRKKLFZKT347",
+	"revision": "cc356c37ab7da32d48551790c7a939fe",
+	"serial": "FGTAZRAQCG14L19D",
 	"status": "success",
 	"vdom": "root",
 	"version": "v7.0.3"

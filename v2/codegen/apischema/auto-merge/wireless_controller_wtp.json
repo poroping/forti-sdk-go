@@ -1,10 +1,9 @@
 {
-	"FullPath": null,
 	"addedIn": "v6.2.7",
 	"build": 237,
 	"http_method": "GET",
 	"http_status": 200,
-	"mergedVersions": "v6.2.7,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3",
+	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3",
 	"name": "wtp",
 	"path": "wireless-controller",
 	"results": {
@@ -56,7 +55,7 @@
 				"type": "option"
 			},
 			"apcfg-profile": {
-				"addedIn": "v6.4.2",
+				"addedIn": "v6.4.0",
 				"category": "unitary",
 				"datasource": [
 					"wireless-controller.apcfg-profile.name"
@@ -95,7 +94,7 @@
 				"type": "string"
 			},
 			"firmware-provision": {
-				"addedIn": "v6.4.2",
+				"addedIn": "v6.4.0",
 				"category": "unitary",
 				"default": "",
 				"help": "Firmware version to provision to this FortiAP on bootup (major.minor.build, i.e. 6.2.1234).",
@@ -1084,8 +1083,12 @@
 						"name": "spectrum-analysis",
 						"options": [
 							{
-								"help": "Enable spectrum analysis.",
+								"help": "Enable spectrum scan and classification.",
 								"name": "enable"
+							},
+							{
+								"help": "Enable spectrum scan only",
+								"name": "scan-only"
 							},
 							{
 								"help": "Disable spectrum analysis.",
@@ -1473,8 +1476,12 @@
 						"name": "spectrum-analysis",
 						"options": [
 							{
-								"help": "Enable spectrum analysis.",
+								"help": "Enable spectrum scan and classification.",
 								"name": "enable"
+							},
+							{
+								"help": "Enable spectrum scan only",
+								"name": "scan-only"
 							},
 							{
 								"help": "Disable spectrum analysis.",
@@ -1862,8 +1869,12 @@
 						"name": "spectrum-analysis",
 						"options": [
 							{
-								"help": "Enable spectrum analysis.",
+								"help": "Enable spectrum scan and classification.",
 								"name": "enable"
+							},
+							{
+								"help": "Enable spectrum scan only",
+								"name": "scan-only"
 							},
 							{
 								"help": "Disable spectrum analysis.",
@@ -2251,8 +2262,12 @@
 						"name": "spectrum-analysis",
 						"options": [
 							{
-								"help": "Enable spectrum analysis.",
+								"help": "Enable spectrum scan and classification.",
 								"name": "enable"
+							},
+							{
+								"help": "Enable spectrum scan only",
+								"name": "scan-only"
 							},
 							{
 								"help": "Disable spectrum analysis.",
@@ -2500,8 +2515,8 @@
 		"path": "wireless-controller",
 		"q_type": 271
 	},
-	"revision": "0f5eb597fa8ac37d5f819e2b64bf7e6e",
-	"serial": "FGTAZRKKLFZKT347",
+	"revision": "78ee061304af9c5d17bcae6474808d97",
+	"serial": "FGTAZRAQCG14L19D",
 	"status": "success",
 	"vdom": "root",
 	"version": "v7.0.3"

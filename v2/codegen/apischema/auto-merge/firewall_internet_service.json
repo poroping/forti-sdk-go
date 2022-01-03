@@ -1,10 +1,9 @@
 {
-	"FullPath": null,
 	"addedIn": "v6.2.7",
 	"build": 237,
 	"http_method": "GET",
 	"http_status": 200,
-	"mergedVersions": "v6.2.7,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3",
+	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3",
 	"name": "internet-service",
 	"path": "firewall",
 	"results": {
@@ -129,7 +128,7 @@
 				"min-value": 0,
 				"name": "reputation",
 				"readonly": true,
-				"removedIn": "v6.4.2",
+				"removedIn": "v6.4.0",
 				"type": "integer"
 			},
 			"singularity": {
@@ -149,7 +148,7 @@
 				"min-value": 0,
 				"name": "sld-id",
 				"readonly": true,
-				"removedIn": "v6.4.2",
+				"removedIn": "v6.4.0",
 				"type": "integer"
 			}
 		},
@@ -164,8 +163,8 @@
 		"q_type": 343,
 		"readonly": true
 	},
-	"revision": "705293ca0c177a29fb9f5d2c7aa840e4",
-	"serial": "FGTAZRKKLFZKT347",
+	"revision": "36218ed8e0fd86a1d1fc372f6799270a",
+	"serial": "FGTAZRAQCG14L19D",
 	"status": "success",
 	"vdom": "root",
 	"version": "v7.0.3"

@@ -1,10 +1,9 @@
 {
-	"FullPath": null,
 	"addedIn": "v6.2.7",
 	"build": 237,
 	"http_method": "GET",
 	"http_status": 200,
-	"mergedVersions": "v6.2.7,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3",
+	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3",
 	"name": "main-class",
 	"path": "waf",
 	"results": {
@@ -39,8 +38,8 @@
 		"path": "waf",
 		"q_type": 484
 	},
-	"revision": "cef4ec86b7a854266665e094cb2bdc59",
-	"serial": "FGTAZRKKLFZKT347",
+	"revision": "c73f6ee2827a46aee19279ec5d96e01b",
+	"serial": "FGTAZRAQCG14L19D",
 	"status": "success",
 	"vdom": "root",
 	"version": "v7.0.3"

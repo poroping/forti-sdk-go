@@ -1,10 +1,9 @@
 {
-	"FullPath": null,
 	"addedIn": "v6.2.7",
 	"build": 237,
 	"http_method": "GET",
 	"http_status": 200,
-	"mergedVersions": "v6.2.7,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3",
+	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3",
 	"name": "local-key",
 	"path": "firewall.ssh",
 	"results": {
@@ -71,8 +70,8 @@
 		"path": "firewall.ssh",
 		"q_type": 172
 	},
-	"revision": "2dc6efb21eccaf65c5d558c30c6a0dde",
-	"serial": "FGTAZRKKLFZKT347",
+	"revision": "241c47afed3db5341a29e517fcfab800",
+	"serial": "FGTAZRAQCG14L19D",
 	"status": "success",
 	"vdom": "root",
 	"version": "v7.0.3"

@@ -1,10 +1,9 @@
 {
-	"FullPath": null,
 	"addedIn": "v6.2.7",
 	"build": 237,
 	"http_method": "GET",
 	"http_status": 200,
-	"mergedVersions": "v6.2.7,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3",
+	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3",
 	"name": "internet-service-group",
 	"path": "firewall",
 	"results": {
@@ -52,12 +51,12 @@
 						"max-value": 4294967295,
 						"min-value": 0,
 						"name": "id",
-						"removedIn": "v6.4.2",
+						"removedIn": "v6.4.0",
 						"required": true,
 						"type": "integer"
 					},
 					"name": {
-						"addedIn": "v6.4.2",
+						"addedIn": "v6.4.0",
 						"category": "unitary",
 						"datasource": [
 							"firewall.internet-service-name.name"
@@ -98,8 +97,8 @@
 		"path": "firewall",
 		"q_type": 349
 	},
-	"revision": "0f5eb597fa8ac37d5f819e2b64bf7e6e",
-	"serial": "FGTAZRKKLFZKT347",
+	"revision": "78ee061304af9c5d17bcae6474808d97",
+	"serial": "FGTAZRAQCG14L19D",
 	"status": "success",
 	"vdom": "root",
 	"version": "v7.0.3"

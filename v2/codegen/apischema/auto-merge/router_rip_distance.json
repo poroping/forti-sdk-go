@@ -1,0 +1,68 @@
+{
+	"addedIn": "v6.4.0",
+	"build": 237,
+	"child_path": "distance",
+	"http_method": "GET",
+	"http_status": 200,
+	"mergedVersions": "v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3",
+	"name": "rip",
+	"path": "router",
+	"results": {
+		"access_group": "netgrp",
+		"category": "table",
+		"children": {
+			"access-list": {
+				"category": "unitary",
+				"datasource": [
+					"router.access-list.name"
+				],
+				"default": "",
+				"help": "Access list for route destination.",
+				"name": "access-list",
+				"size": 35,
+				"type": "string"
+			},
+			"distance": {
+				"category": "unitary",
+				"default": 0,
+				"help": "Distance (1 - 255).",
+				"max-value": 255,
+				"min-value": 1,
+				"name": "distance",
+				"required": true,
+				"type": "integer"
+			},
+			"id": {
+				"category": "unitary",
+				"default": 0,
+				"help": "Distance ID.",
+				"max-value": 4294967295,
+				"min-value": 0,
+				"name": "id",
+				"required": true,
+				"type": "integer"
+			},
+			"prefix": {
+				"category": "unitary",
+				"default": "0.0.0.0 0.0.0.0",
+				"help": "Distance prefix.",
+				"name": "prefix",
+				"type": "ipv4-classnet-any"
+			}
+		},
+		"help": "distance",
+		"max_table_size_global": 0,
+		"max_table_size_item": 0,
+		"max_table_size_vdom": 100,
+		"mkey": "id",
+		"mkey_type": "integer",
+		"name": "distance",
+		"path": "router",
+		"q_type": 107
+	},
+	"revision": "6a99ecb7470ab13dcf58ec1bd9f5285f",
+	"serial": "FGTAZRAQCG14L19D",
+	"status": "success",
+	"vdom": "root",
+	"version": "v7.0.3"
+}

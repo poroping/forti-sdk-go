@@ -1,10 +1,9 @@
 {
-	"FullPath": null,
 	"addedIn": "v6.2.7",
-	"build": 1190,
+	"build": 1579,
 	"http_method": "GET",
 	"http_status": 200,
-	"mergedVersions": "v6.2.7",
+	"mergedVersions": "v6.2.7,v6.4.0",
 	"name": "nntp",
 	"path": "system.replacemsg",
 	"removedIn": "v6.4.2",
@@ -78,12 +77,12 @@
 		"mkey_type": "string",
 		"name": "nntp",
 		"path": "system.replacemsg",
-		"q_type": 98,
+		"q_type": 99,
 		"readonly": true
 	},
-	"revision": "8dd8c052b0b0f8ea3693c871f7ba93b2",
-	"serial": "FG1K5D3I14802539",
+	"revision": "9b7621e1601421d0e24c0fc5b3fa3763",
+	"serial": "FGTAZRGOMU6AHJ99",
 	"status": "success",
 	"vdom": "root",
-	"version": "v6.2.7"
+	"version": "v6.4.0"
 }

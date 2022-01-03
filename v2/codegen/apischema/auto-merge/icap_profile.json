@@ -1,10 +1,9 @@
 {
-	"FullPath": null,
 	"addedIn": "v6.2.7",
 	"build": 237,
 	"http_method": "GET",
 	"http_status": 200,
-	"mergedVersions": "v6.2.7,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3",
+	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3",
 	"name": "profile",
 	"path": "icap",
 	"results": {
@@ -264,7 +263,7 @@
 				"type": "string"
 			},
 			"respmod-default-action": {
-				"addedIn": "v6.4.2",
+				"addedIn": "v6.4.0",
 				"category": "unitary",
 				"default": "forward",
 				"help": "Default action to ICAP response modification (respmod) processing.",
@@ -283,7 +282,7 @@
 				"type": "option"
 			},
 			"respmod-forward-rules": {
-				"addedIn": "v6.4.2",
+				"addedIn": "v6.4.0",
 				"category": "table",
 				"children": {
 					"action": {
@@ -388,7 +387,7 @@
 								"type": "integer"
 							}
 						},
-						"default": 403571348,
+						"default": 3628638868,
 						"help": "HTTP response status code.",
 						"max_table_size_global": 0,
 						"max_table_size_item": 0,
@@ -529,8 +528,8 @@
 		"path": "icap",
 		"q_type": 453
 	},
-	"revision": "227e32e01e440f007324c8f32e5a084d",
-	"serial": "FGTAZRKKLFZKT347",
+	"revision": "e5866ad0a5702724ed08d68d9ab69251",
+	"serial": "FGTAZRAQCG14L19D",
 	"status": "success",
 	"vdom": "root",
 	"version": "v7.0.3"

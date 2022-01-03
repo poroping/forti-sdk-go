@@ -1,10 +1,9 @@
 {
-	"FullPath": null,
 	"addedIn": "v6.2.7",
 	"build": 237,
 	"http_method": "GET",
 	"http_status": 200,
-	"mergedVersions": "v6.2.7,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3",
+	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3",
 	"name": "route-map",
 	"path": "router",
 	"results": {
@@ -236,7 +235,7 @@
 						"type": "integer"
 					},
 					"match-vrf": {
-						"addedIn": "v6.4.2",
+						"addedIn": "v6.4.0",
 						"category": "unitary",
 						"default": "",
 						"help": "Match VRF ID.",
@@ -608,8 +607,8 @@
 		"path": "router",
 		"q_type": 106
 	},
-	"revision": "73d333520819a4f3ab0be683469aeab5",
-	"serial": "FGTAZRKKLFZKT347",
+	"revision": "1d8f000f88e29f1986eac39f36c69d17",
+	"serial": "FGTAZRAQCG14L19D",
 	"status": "success",
 	"vdom": "root",
 	"version": "v7.0.3"

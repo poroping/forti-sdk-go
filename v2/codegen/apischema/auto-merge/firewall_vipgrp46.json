@@ -1,10 +1,9 @@
 {
-	"FullPath": null,
 	"addedIn": "v6.2.7",
 	"build": 66,
 	"http_method": "GET",
 	"http_status": 200,
-	"mergedVersions": "v6.2.7,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0",
+	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0",
 	"name": "vipgrp46",
 	"path": "firewall",
 	"removedIn": "v7.0.1",
@@ -80,8 +79,8 @@
 		"path": "firewall",
 		"q_type": 208
 	},
-	"revision": "78037fea78cb7a6b20904a668ff35606",
-	"serial": "FGTAZRV0QWJQVBBB",
+	"revision": "5875273a07347ce8027f425ac310b307",
+	"serial": "FGTAZRCHLP9QP90A",
 	"status": "success",
 	"vdom": "root",
 	"version": "v7.0.0"

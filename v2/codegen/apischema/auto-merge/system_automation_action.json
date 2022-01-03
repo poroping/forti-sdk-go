@@ -1,10 +1,9 @@
 {
-	"FullPath": null,
 	"addedIn": "v6.2.7",
 	"build": 237,
 	"http_method": "GET",
 	"http_status": 200,
-	"mergedVersions": "v6.2.7,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3",
+	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3",
 	"name": "automation-action",
 	"path": "system",
 	"results": {
@@ -337,7 +336,7 @@
 				"category": "unitary",
 				"help": "Email body.",
 				"name": "email-body",
-				"removedIn": "v6.4.2",
+				"removedIn": "v6.4.0",
 				"size": 1023,
 				"type": "string"
 			},
@@ -465,7 +464,7 @@
 				"type": "var-string"
 			},
 			"message": {
-				"addedIn": "v6.4.2",
+				"addedIn": "v6.4.0",
 				"category": "unitary",
 				"default": "%%log%%",
 				"help": "Message content.",
@@ -711,8 +710,8 @@
 		"path": "system",
 		"q_type": 499
 	},
-	"revision": "26f281d505359cfc6ab365d6004fcb3e",
-	"serial": "FGTAZRKKLFZKT347",
+	"revision": "617c9d74be8c9b11acd4201d9e78286d",
+	"serial": "FGTAZRAQCG14L19D",
 	"status": "success",
 	"vdom": "root",
 	"version": "v7.0.3"

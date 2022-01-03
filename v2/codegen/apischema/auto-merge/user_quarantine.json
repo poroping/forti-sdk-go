@@ -1,10 +1,9 @@
 {
-	"FullPath": null,
 	"addedIn": "v6.2.7",
 	"build": 237,
 	"http_method": "GET",
 	"http_status": 200,
-	"mergedVersions": "v6.2.7,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3",
+	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3",
 	"name": "quarantine",
 	"path": "user",
 	"results": {
@@ -12,7 +11,7 @@
 		"category": "complex",
 		"children": {
 			"firewall-groups": {
-				"addedIn": "v6.4.2",
+				"addedIn": "v6.4.0",
 				"category": "unitary",
 				"datasource": [
 					"firewall.addrgrp.name"
@@ -73,7 +72,7 @@
 								"type": "string"
 							},
 							"drop": {
-								"addedIn": "v6.4.2",
+								"addedIn": "v6.4.0",
 								"category": "unitary",
 								"default": "disable",
 								"help": "Enable/Disable dropping of quarantined device traffic",
@@ -143,8 +142,8 @@
 		"path": "user",
 		"q_type": 127
 	},
-	"revision": "0f5eb597fa8ac37d5f819e2b64bf7e6e",
-	"serial": "FGTAZRKKLFZKT347",
+	"revision": "78ee061304af9c5d17bcae6474808d97",
+	"serial": "FGTAZRAQCG14L19D",
 	"status": "success",
 	"vdom": "root",
 	"version": "v7.0.3"

@@ -1,10 +1,9 @@
 {
-	"FullPath": null,
 	"addedIn": "v6.2.7",
-	"build": 1190,
+	"build": 1579,
 	"http_method": "GET",
 	"http_status": 200,
-	"mergedVersions": "v6.2.7",
+	"mergedVersions": "v6.2.7,v6.4.0",
 	"name": "virtual-wan-link",
 	"path": "system",
 	"removedIn": "v6.4.2",
@@ -78,6 +77,14 @@
 						"help": "Differentiated services code point (DSCP) in the IP header of the probe packet.",
 						"name": "diffservcode",
 						"type": "user"
+					},
+					"dns-request-domain": {
+						"addedIn": "v6.4.0",
+						"category": "unitary",
+						"help": "Fully qualified domain name to resolve for the DNS probe.",
+						"name": "dns-request-domain",
+						"size": 255,
+						"type": "string"
 					},
 					"failtime": {
 						"category": "unitary",
@@ -180,6 +187,15 @@
 						"name": "port",
 						"type": "integer"
 					},
+					"probe-count": {
+						"addedIn": "v6.4.0",
+						"category": "unitary",
+						"help": "Number of most recent probes that should be used to calculate latency and jitter (5 - 30, default = 30).",
+						"max-value": 30,
+						"min-value": 5,
+						"name": "probe-count",
+						"type": "integer"
+					},
 					"probe-packets": {
 						"category": "unitary",
 						"help": "Enable/disable transmission of probe packets.",
@@ -234,6 +250,10 @@
 							{
 								"help": "PING6 link monitor.",
 								"name": "ping6"
+							},
+							{
+								"help": "Use DNS query to test the link with the server.",
+								"name": "dns"
 							}
 						],
 						"type": "option"
@@ -351,6 +371,24 @@
 						"min-value": 0,
 						"name": "sla-pass-log-period",
 						"type": "integer"
+					},
+					"system-dns": {
+						"addedIn": "v6.4.0",
+						"category": "unitary",
+						"help": "Enable/disable system DNS as the probe server.",
+						"multiple_values": false,
+						"name": "system-dns",
+						"options": [
+							{
+								"help": "Disable system DNS as the probe server.",
+								"name": "disable"
+							},
+							{
+								"help": "Enable system DNS as the probe server.",
+								"name": "enable"
+							}
+						],
+						"type": "option"
 					},
 					"threshold-alert-jitter": {
 						"category": "unitary",
@@ -609,6 +647,7 @@
 						],
 						"help": "SD-WAN health-check name.",
 						"name": "health-check",
+						"required": true,
 						"size": 35,
 						"type": "string"
 					},
@@ -617,7 +656,7 @@
 						"datasource": [
 							"router.bgp.neighbor.ip"
 						],
-						"help": "IP address of neighbor.",
+						"help": "IP/IPv6 address of neighbor.",
 						"name": "ip",
 						"required": true,
 						"size": 45,
@@ -662,6 +701,7 @@
 						"max-value": 4294967295,
 						"min-value": 0,
 						"name": "sla-id",
+						"required": true,
 						"type": "integer"
 					}
 				},
@@ -913,11 +953,30 @@
 						"name": "groups"
 					},
 					"health-check": {
-						"category": "unitary",
+						"category": "table",
+						"children": {
+							"name": {
+								"category": "unitary",
+								"datasource": [
+									"system.virtual-wan-link.health-check.name"
+								],
+								"help": "Health check name.",
+								"name": "name",
+								"required": true,
+								"size": 79,
+								"type": "string"
+							}
+						},
 						"datasource": [
 							"system.virtual-wan-link.health-check.name"
 						],
-						"help": "Health check.",
+						"help": "Health check list.",
+						"max_table_size_global": 0,
+						"max_table_size_item": 0,
+						"max_table_size_vdom": 0,
+						"member_table": true,
+						"mkey": "name",
+						"mkey_type": "string",
 						"name": "health-check",
 						"size": 35,
 						"type": "string"
@@ -1138,7 +1197,33 @@
 						"member_table": true,
 						"mkey": "id",
 						"mkey_type": "integer",
-						"name": "internet-service-id"
+						"name": "internet-service-id",
+						"removedIn": "v6.4.0"
+					},
+					"internet-service-name": {
+						"addedIn": "v6.4.0",
+						"category": "table",
+						"children": {
+							"name": {
+								"category": "unitary",
+								"datasource": [
+									"firewall.internet-service-name.name"
+								],
+								"help": "Internet service name.",
+								"name": "name",
+								"required": true,
+								"size": 79,
+								"type": "string"
+							}
+						},
+						"help": "Internet service name list.",
+						"max_table_size_global": 0,
+						"max_table_size_item": 0,
+						"max_table_size_vdom": 0,
+						"member_table": true,
+						"mkey": "name",
+						"mkey_type": "string",
+						"name": "internet-service-name"
 					},
 					"jitter-weight": {
 						"category": "unitary",
@@ -1349,7 +1434,7 @@
 					},
 					"sla-compare-method": {
 						"category": "unitary",
-						"help": "Method to compare SLA value for sla and load balance mode. ",
+						"help": "Method to compare SLA value for SLA mode.",
 						"multiple_values": false,
 						"name": "sla-compare-method",
 						"options": [
@@ -1553,17 +1638,18 @@
 				"max_table_size_vdom": 256,
 				"mkey": "name",
 				"mkey_type": "string",
-				"name": "zone"
+				"name": "zone",
+				"removedIn": "v6.4.0"
 			}
 		},
 		"help": "Configure redundant internet connections using SD-WAN (formerly virtual WAN link).",
 		"name": "virtual-wan-link",
 		"path": "system",
-		"q_type": 442
+		"q_type": 449
 	},
-	"revision": "93b29e0464bb2a18bdccbc29e37a7b09",
-	"serial": "FG1K5D3I14802539",
+	"revision": "b5881adc97a069d10b59986425c385e6",
+	"serial": "FGTAZRGOMU6AHJ99",
 	"status": "success",
 	"vdom": "root",
-	"version": "v6.2.7"
+	"version": "v6.4.0"
 }

@@ -1,10 +1,9 @@
 {
-	"FullPath": null,
 	"addedIn": "v6.2.7",
 	"build": 237,
 	"http_method": "GET",
 	"http_status": 200,
-	"mergedVersions": "v6.2.7,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3",
+	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3",
 	"name": "network-policy",
 	"path": "system.lldp",
 	"results": {
@@ -638,8 +637,8 @@
 		"path": "system.lldp",
 		"q_type": 201
 	},
-	"revision": "8cb12e3d5423bbe1fdc53f053d58d267",
-	"serial": "FGTAZRKKLFZKT347",
+	"revision": "c63b3f15b6991a6ab02e05523690fd18",
+	"serial": "FGTAZRAQCG14L19D",
 	"status": "success",
 	"vdom": "root",
 	"version": "v7.0.3"

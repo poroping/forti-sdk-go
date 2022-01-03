@@ -1,5 +1,4 @@
 {
-	"FullPath": null,
 	"addedIn": "v6.2.7",
 	"build": 1190,
 	"http_method": "GET",
@@ -7,7 +6,7 @@
 	"mergedVersions": "v6.2.7",
 	"name": "settings",
 	"path": "endpoint-control",
-	"removedIn": "v6.4.2",
+	"removedIn": "v6.4.0",
 	"results": {
 		"access_group": "utmgrp",
 		"category": "complex",

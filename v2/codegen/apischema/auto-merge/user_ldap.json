@@ -1,10 +1,9 @@
 {
-	"FullPath": null,
 	"addedIn": "v6.2.7",
 	"build": 237,
 	"http_method": "GET",
 	"http_status": 200,
-	"mergedVersions": "v6.2.7,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3",
+	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3",
 	"name": "ldap",
 	"path": "user",
 	"results": {
@@ -138,6 +137,7 @@
 				"default": "",
 				"help": "Specify outgoing interface to reach server.",
 				"name": "interface",
+				"removedIn": "v6.4.0",
 				"required": true,
 				"size": 15,
 				"type": "string"
@@ -162,6 +162,7 @@
 						"name": "specify"
 					}
 				],
+				"removedIn": "v6.4.0",
 				"type": "option"
 			},
 			"member-attr": {
@@ -497,8 +498,8 @@
 		"path": "user",
 		"q_type": 24
 	},
-	"revision": "896e930afe27996f021b98c7278656e9",
-	"serial": "FGTAZRKKLFZKT347",
+	"revision": "83663ccb232ef404eaac5a256049cd0b",
+	"serial": "FGTAZRAQCG14L19D",
 	"status": "success",
 	"vdom": "root",
 	"version": "v7.0.3"

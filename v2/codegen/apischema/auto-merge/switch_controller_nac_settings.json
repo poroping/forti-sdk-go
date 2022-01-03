@@ -1,10 +1,9 @@
 {
-	"FullPath": null,
-	"addedIn": "v6.4.2",
+	"addedIn": "v6.4.0",
 	"build": 1914,
 	"http_method": "GET",
 	"http_status": 200,
-	"mergedVersions": "v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8",
+	"mergedVersions": "v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8",
 	"name": "nac-settings",
 	"path": "switch-controller",
 	"removedIn": "v7.0.0",
@@ -124,8 +123,8 @@
 		"path": "switch-controller",
 		"q_type": 308
 	},
-	"revision": "3e466b3e3e2bd8aa2a18735684a4b0e8",
-	"serial": "FGTAZRXCRDH4ACA4",
+	"revision": "54bfdd32188298d227fbe9791b095d28",
+	"serial": "FGTAZRUYA0WQUUD1",
 	"status": "success",
 	"vdom": "root",
 	"version": "v6.4.8"

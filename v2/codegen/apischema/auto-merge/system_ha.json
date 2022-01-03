@@ -1,10 +1,9 @@
 {
-	"FullPath": null,
 	"addedIn": "v6.2.7",
 	"build": 237,
 	"http_method": "GET",
 	"http_status": 200,
-	"mergedVersions": "v6.2.7,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3",
+	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3",
 	"name": "ha",
 	"path": "system",
 	"results": {
@@ -321,7 +320,7 @@
 						"name": "disable"
 					}
 				],
-				"removedIn": "v6.4.2",
+				"removedIn": "v6.4.0",
 				"type": "option"
 			},
 			"key": {
@@ -1041,7 +1040,7 @@
 				"type": "ipv4-address"
 			},
 			"unicast-hb": {
-				"addedIn": "v6.4.2",
+				"addedIn": "v6.4.0",
 				"category": "unitary",
 				"default": "disable",
 				"help": "Enable/disable unicast heartbeat.",
@@ -1060,7 +1059,7 @@
 				"type": "option"
 			},
 			"unicast-hb-netmask": {
-				"addedIn": "v6.4.2",
+				"addedIn": "v6.4.0",
 				"category": "unitary",
 				"default": "0.0.0.0",
 				"help": "Unicast heartbeat netmask.",
@@ -1068,7 +1067,7 @@
 				"type": "ipv4-netmask"
 			},
 			"unicast-hb-peerip": {
-				"addedIn": "v6.4.2",
+				"addedIn": "v6.4.0",
 				"category": "unitary",
 				"default": "0.0.0.0",
 				"help": "Unicast heartbeat peer IP.",
@@ -1199,8 +1198,8 @@
 		"path": "system",
 		"q_type": 5
 	},
-	"revision": "65b0094afc98e0f1fe1ad9769af77335",
-	"serial": "FGTAZRKKLFZKT347",
+	"revision": "5a78955211ebb1641b50c9360238cb5c",
+	"serial": "FGTAZRAQCG14L19D",
 	"status": "success",
 	"vdom": "root",
 	"version": "v7.0.3"

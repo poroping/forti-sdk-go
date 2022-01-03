@@ -1,10 +1,9 @@
 {
-	"FullPath": null,
 	"addedIn": "v6.2.7",
 	"build": 237,
 	"http_method": "GET",
 	"http_status": 200,
-	"mergedVersions": "v6.2.7,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3",
+	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3",
 	"name": "vap",
 	"path": "wireless-controller",
 	"results": {
@@ -12,7 +11,7 @@
 		"category": "table",
 		"children": {
 			"access-control-list": {
-				"addedIn": "v6.4.2",
+				"addedIn": "v6.4.0",
 				"category": "unitary",
 				"datasource": [
 					"wireless-controller.access-control-list.name"
@@ -29,7 +28,7 @@
 				"max-value": 86400,
 				"min-value": 60,
 				"name": "acct-interim-interval",
-				"removedIn": "v6.4.2",
+				"removedIn": "v6.4.0",
 				"type": "integer"
 			},
 			"additional-akms": {
@@ -288,7 +287,7 @@
 				"type": "string"
 			},
 			"captive-portal-auth-timeout": {
-				"addedIn": "v6.4.2",
+				"addedIn": "v6.4.0",
 				"category": "unitary",
 				"default": 0,
 				"help": "Hard timeout - AP will always clear the session after timeout regardless of traffic (0 - 864000 sec, default = 0).",
@@ -301,7 +300,7 @@
 				"category": "unitary",
 				"help": "Secret key to access the macauth RADIUS server.",
 				"name": "captive-portal-macauth-radius-secret",
-				"removedIn": "v6.4.2",
+				"removedIn": "v6.4.0",
 				"size": 128,
 				"type": "password"
 			},
@@ -309,7 +308,7 @@
 				"category": "unitary",
 				"help": "Captive portal external RADIUS server domain name or IP address.",
 				"name": "captive-portal-macauth-radius-server",
-				"removedIn": "v6.4.2",
+				"removedIn": "v6.4.0",
 				"size": 63,
 				"type": "string"
 			},
@@ -317,7 +316,7 @@
 				"category": "unitary",
 				"help": "Secret key to access the RADIUS server.",
 				"name": "captive-portal-radius-secret",
-				"removedIn": "v6.4.2",
+				"removedIn": "v6.4.0",
 				"size": 128,
 				"type": "password"
 			},
@@ -325,7 +324,7 @@
 				"category": "unitary",
 				"help": "Captive portal RADIUS server domain name or IP address.",
 				"name": "captive-portal-radius-server",
-				"removedIn": "v6.4.2",
+				"removedIn": "v6.4.0",
 				"size": 63,
 				"type": "string"
 			},
@@ -335,7 +334,7 @@
 				"max-value": 864000,
 				"min-value": 0,
 				"name": "captive-portal-session-timeout-interval",
-				"removedIn": "v6.4.2",
+				"removedIn": "v6.4.0",
 				"type": "integer"
 			},
 			"dhcp-address-enforcement": {
@@ -793,7 +792,7 @@
 				"type": "string"
 			},
 			"ipv6-rules": {
-				"addedIn": "v6.4.2",
+				"addedIn": "v6.4.0",
 				"category": "unitary",
 				"default": "drop-icmp6ra drop-icmp6rs drop-llmnr6 drop-icmp6mld2 drop-dhcp6s drop-dhcp6c ndp-proxy drop-ns-dad",
 				"help": "Optional rules of IPv6 packets. For example, you can keep RA, RS and so on off of the wireless network.",
@@ -1400,7 +1399,7 @@
 				},
 				"help": "List of multiple PSK entries.",
 				"max_table_size_global": 0,
-				"max_table_size_item": 64,
+				"max_table_size_item": 128,
 				"max_table_size_vdom": 0,
 				"mkey": "key-name",
 				"mkey_type": "string",
@@ -3068,7 +3067,7 @@
 				"type": "string"
 			},
 			"sticky-client-remove": {
-				"addedIn": "v6.4.2",
+				"addedIn": "v6.4.0",
 				"category": "unitary",
 				"default": "disable",
 				"help": "Enable/disable sticky client remove to maintain good signal level clients in SSID. (default = disable).",
@@ -3087,7 +3086,7 @@
 				"type": "option"
 			},
 			"sticky-client-threshold-2g": {
-				"addedIn": "v6.4.2",
+				"addedIn": "v6.4.0",
 				"category": "unitary",
 				"default": "-79",
 				"help": "Minimum signal level/threshold in dBm required for the 2G client to be serviced by the AP (-95 to -20, default = -79).",
@@ -3096,7 +3095,7 @@
 				"type": "string"
 			},
 			"sticky-client-threshold-5g": {
-				"addedIn": "v6.4.2",
+				"addedIn": "v6.4.0",
 				"category": "unitary",
 				"default": "-76",
 				"help": "Minimum signal level/threshold in dBm required for the 5G client to be serviced by the AP (-95 to -20, default = -76).",
@@ -3358,8 +3357,8 @@
 		"path": "wireless-controller",
 		"q_type": 274
 	},
-	"revision": "0f5eb597fa8ac37d5f819e2b64bf7e6e",
-	"serial": "FGTAZRKKLFZKT347",
+	"revision": "78ee061304af9c5d17bcae6474808d97",
+	"serial": "FGTAZRAQCG14L19D",
 	"status": "success",
 	"vdom": "root",
 	"version": "v7.0.3"

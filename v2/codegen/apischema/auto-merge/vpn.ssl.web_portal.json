@@ -1,10 +1,9 @@
 {
-	"FullPath": null,
 	"addedIn": "v6.2.7",
 	"build": 237,
 	"http_method": "GET",
 	"http_status": 200,
-	"mergedVersions": "v6.2.7,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3",
+	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3",
 	"name": "portal",
 	"path": "vpn.ssl.web",
 	"results": {
@@ -1236,7 +1235,7 @@
 				"name": "ipv6-split-tunneling-routing-address"
 			},
 			"ipv6-split-tunneling-routing-negate": {
-				"addedIn": "v6.4.2",
+				"addedIn": "v6.4.0",
 				"category": "unitary",
 				"default": "disable",
 				"help": "Enable to negate IPv6 split tunneling routing address.",
@@ -1802,7 +1801,7 @@
 				"name": "split-tunneling-routing-address"
 			},
 			"split-tunneling-routing-negate": {
-				"addedIn": "v6.4.2",
+				"addedIn": "v6.4.0",
 				"category": "unitary",
 				"default": "disable",
 				"help": "Enable to negate split tunneling routing address.",
@@ -1877,7 +1876,7 @@
 						"name": "disable"
 					}
 				],
-				"removedIn": "v6.4.2",
+				"removedIn": "v6.4.0",
 				"type": "option"
 			},
 			"tunnel-mode": {
@@ -1914,7 +1913,7 @@
 						"name": "disable"
 					}
 				],
-				"removedIn": "v6.4.2",
+				"removedIn": "v6.4.0",
 				"type": "option"
 			},
 			"user-bookmark": {
@@ -2003,8 +2002,8 @@
 		"path": "vpn.ssl.web",
 		"q_type": 153
 	},
-	"revision": "ea254f7157d5368bb4e29bdb427c43b2",
-	"serial": "FGTAZRKKLFZKT347",
+	"revision": "0448b4bf37cda5ed31380db12be5b1d5",
+	"serial": "FGTAZRAQCG14L19D",
 	"status": "success",
 	"vdom": "root",
 	"version": "v7.0.3"

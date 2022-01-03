@@ -1,10 +1,9 @@
 {
-	"FullPath": null,
 	"addedIn": "v6.2.7",
 	"build": 237,
 	"http_method": "GET",
 	"http_status": 200,
-	"mergedVersions": "v6.2.7,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3",
+	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3",
 	"name": "per-ip-shaper",
 	"path": "firewall.shaper",
 	"results": {
@@ -140,8 +139,8 @@
 		"path": "firewall.shaper",
 		"q_type": 257
 	},
-	"revision": "59cdc9fde9c567d6b113f8502bd17900",
-	"serial": "FGTAZRKKLFZKT347",
+	"revision": "1c067cf7e0ee35b5c990cdd8da16a0ff",
+	"serial": "FGTAZRAQCG14L19D",
 	"status": "success",
 	"vdom": "root",
 	"version": "v7.0.3"

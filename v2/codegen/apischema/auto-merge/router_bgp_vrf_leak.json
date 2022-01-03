@@ -1,0 +1,82 @@
+{
+	"addedIn": "v6.4.0",
+	"build": 237,
+	"child_path": "vrf-leak",
+	"http_method": "GET",
+	"http_status": 200,
+	"mergedVersions": "v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3",
+	"name": "bgp",
+	"path": "router",
+	"results": {
+		"access_group": "netgrp",
+		"category": "table",
+		"children": {
+			"target": {
+				"category": "table",
+				"children": {
+					"interface": {
+						"category": "unitary",
+						"datasource": [
+							"system.interface.name"
+						],
+						"default": "",
+						"help": "Interface which is used to leak routes to target VRF.",
+						"name": "interface",
+						"required": true,
+						"size": 15,
+						"type": "string"
+					},
+					"route-map": {
+						"category": "unitary",
+						"datasource": [
+							"router.route-map.name"
+						],
+						"default": "",
+						"help": "Route map of VRF leaking.",
+						"name": "route-map",
+						"required": true,
+						"size": 35,
+						"type": "string"
+					},
+					"vrf": {
+						"category": "unitary",
+						"default": "",
+						"help": "Target VRF ID \u003c0 - 31\u003e.",
+						"name": "vrf",
+						"size": 7,
+						"type": "string"
+					}
+				},
+				"help": "Target VRF table.",
+				"max_table_size_global": 0,
+				"max_table_size_item": 0,
+				"max_table_size_vdom": 0,
+				"mkey": "vrf",
+				"mkey_type": "string",
+				"name": "target"
+			},
+			"vrf": {
+				"category": "unitary",
+				"default": "",
+				"help": "Origin VRF ID \u003c0 - 31\u003e.",
+				"name": "vrf",
+				"size": 7,
+				"type": "string"
+			}
+		},
+		"help": "BGP VRF leaking table.",
+		"max_table_size_global": 512,
+		"max_table_size_item": 0,
+		"max_table_size_vdom": 256,
+		"mkey": "vrf",
+		"mkey_type": "string",
+		"name": "vrf-leak",
+		"path": "router",
+		"q_type": 131
+	},
+	"revision": "9243f71c30c6697d8deac29b80f5fede",
+	"serial": "FGTAZRAQCG14L19D",
+	"status": "success",
+	"vdom": "root",
+	"version": "v7.0.3"
+}

@@ -1,5 +1,4 @@
 {
-	"FullPath": null,
 	"addedIn": "v7.0.0",
 	"build": 237,
 	"http_method": "GET",
@@ -48,8 +47,8 @@
 		"path": "wireless-controller",
 		"q_type": 305
 	},
-	"revision": "0f5eb597fa8ac37d5f819e2b64bf7e6e",
-	"serial": "FGTAZRKKLFZKT347",
+	"revision": "78ee061304af9c5d17bcae6474808d97",
+	"serial": "FGTAZRAQCG14L19D",
 	"status": "success",
 	"vdom": "root",
 	"version": "v7.0.3"

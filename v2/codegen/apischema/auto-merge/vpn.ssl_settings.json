@@ -1,10 +1,9 @@
 {
-	"FullPath": null,
 	"addedIn": "v6.2.7",
 	"build": 237,
 	"http_method": "GET",
 	"http_status": 200,
-	"mergedVersions": "v6.2.7,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3",
+	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3",
 	"name": "settings",
 	"path": "vpn.ssl",
 	"results": {
@@ -670,7 +669,7 @@
 				"type": "option"
 			},
 			"encrypt-and-store-password": {
-				"addedIn": "v6.4.2",
+				"addedIn": "v6.4.0",
 				"category": "unitary",
 				"default": "disable",
 				"help": "Encrypt and store user passwords for SSL-VPN web sessions.",
@@ -1266,7 +1265,7 @@
 				"type": "option"
 			},
 			"transform-backward-slashes": {
-				"addedIn": "v6.4.2",
+				"addedIn": "v6.4.0",
 				"category": "unitary",
 				"default": "disable",
 				"help": "Transform backward slashes to forward slashes in URLs.",
@@ -1467,8 +1466,8 @@
 		"path": "vpn.ssl",
 		"q_type": 148
 	},
-	"revision": "65b0094afc98e0f1fe1ad9769af77335",
-	"serial": "FGTAZRKKLFZKT347",
+	"revision": "5a78955211ebb1641b50c9360238cb5c",
+	"serial": "FGTAZRAQCG14L19D",
 	"status": "success",
 	"vdom": "root",
 	"version": "v7.0.3"

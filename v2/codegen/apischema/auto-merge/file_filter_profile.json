@@ -1,5 +1,4 @@
 {
-	"FullPath": null,
 	"addedIn": "v6.4.2",
 	"build": 237,
 	"http_method": "GET",
@@ -274,8 +273,8 @@
 		"path": "file-filter",
 		"q_type": 437
 	},
-	"revision": "9ebcc787d55439ebd627a77e55ce1540",
-	"serial": "FGTAZRKKLFZKT347",
+	"revision": "9243f71c30c6697d8deac29b80f5fede",
+	"serial": "FGTAZRAQCG14L19D",
 	"status": "success",
 	"vdom": "root",
 	"version": "v7.0.3"

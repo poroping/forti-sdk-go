@@ -1,10 +1,9 @@
 {
-	"FullPath": null,
 	"addedIn": "v6.2.7",
 	"build": 237,
 	"http_method": "GET",
 	"http_status": 200,
-	"mergedVersions": "v6.2.7,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3",
+	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3",
 	"name": "cluster-sync",
 	"path": "system",
 	"results": {
@@ -314,8 +313,8 @@
 		"path": "system",
 		"q_type": 247
 	},
-	"revision": "dc5b5987de9d511074eaea00d56e0ee5",
-	"serial": "FGTAZRKKLFZKT347",
+	"revision": "dc2ff334d4ea43f3ce3ece5fb63bdf32",
+	"serial": "FGTAZRAQCG14L19D",
 	"status": "success",
 	"vdom": "root",
 	"version": "v7.0.3"

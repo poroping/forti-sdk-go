@@ -1,10 +1,9 @@
 {
-	"FullPath": null,
 	"addedIn": "v6.2.7",
 	"build": 237,
 	"http_method": "GET",
 	"http_status": 200,
-	"mergedVersions": "v6.2.7,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3",
+	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3",
 	"name": "interface",
 	"path": "system",
 	"results": {
@@ -201,7 +200,7 @@
 				"type": "option"
 			},
 			"bandwidth-measure-time": {
-				"addedIn": "v6.4.2",
+				"addedIn": "v6.4.0",
 				"category": "unitary",
 				"default": 0,
 				"help": "Bandwidth measure time ",
@@ -274,7 +273,7 @@
 						"name": "disable"
 					}
 				],
-				"removedIn": "v6.4.2",
+				"removedIn": "v6.4.0",
 				"type": "option"
 			},
 			"broadcast-forward": {
@@ -306,7 +305,7 @@
 				"type": "integer"
 			},
 			"client-options": {
-				"addedIn": "v6.4.2",
+				"addedIn": "v6.4.0",
 				"category": "table",
 				"children": {
 					"code": {
@@ -569,6 +568,7 @@
 				"default": "",
 				"help": "Specify outgoing interface to reach server.",
 				"name": "dhcp-relay-interface",
+				"removedIn": "v6.4.0",
 				"required": true,
 				"size": 15,
 				"type": "string"
@@ -593,6 +593,7 @@
 						"name": "specify"
 					}
 				],
+				"removedIn": "v6.4.0",
 				"type": "option"
 			},
 			"dhcp-relay-ip": {
@@ -818,7 +819,7 @@
 						"name": "cos7"
 					}
 				],
-				"removedIn": "v6.4.2",
+				"removedIn": "v6.4.0",
 				"type": "option"
 			},
 			"egress-queues": {
@@ -907,7 +908,7 @@
 				},
 				"help": "Configure queues of NP port on egress path.",
 				"name": "egress-queues",
-				"removedIn": "v6.4.2"
+				"removedIn": "v6.4.0"
 			},
 			"egress-shaping-profile": {
 				"category": "unitary",
@@ -921,7 +922,7 @@
 				"type": "string"
 			},
 			"eip": {
-				"addedIn": "v6.4.2",
+				"addedIn": "v6.4.0",
 				"category": "unitary",
 				"default": "0.0.0.0",
 				"help": "External IP.",
@@ -1336,7 +1337,7 @@
 						"name": "cos7"
 					}
 				],
-				"removedIn": "v6.4.2",
+				"removedIn": "v6.4.0",
 				"type": "option"
 			},
 			"ingress-shaping-profile": {
@@ -1388,7 +1389,7 @@
 				"type": "ipv4-classnet-host"
 			},
 			"ip-managed-by-fortiipam": {
-				"addedIn": "v6.4.2",
+				"addedIn": "v6.4.0",
 				"category": "unitary",
 				"default": "disable",
 				"help": "Enable/disable automatic IP address assignment of this interface by FortiIPAM.",
@@ -2605,7 +2606,7 @@
 				"type": "mac-address"
 			},
 			"managed-subnetwork-size": {
-				"addedIn": "v6.4.2",
+				"addedIn": "v6.4.0",
 				"category": "unitary",
 				"default": "256",
 				"help": "Number of IP addresses to be allocated by FortiIPAM and used by this FortiGate unit's DHCP server settings.",
@@ -2671,7 +2672,7 @@
 				"type": "ipv4-classnet-host"
 			},
 			"measured-downstream-bandwidth": {
-				"addedIn": "v6.4.2",
+				"addedIn": "v6.4.0",
 				"category": "unitary",
 				"default": 0,
 				"help": "Measured downstream bandwidth (kbps). ",
@@ -2681,7 +2682,7 @@
 				"type": "integer"
 			},
 			"measured-upstream-bandwidth": {
-				"addedIn": "v6.4.2",
+				"addedIn": "v6.4.0",
 				"category": "unitary",
 				"default": 0,
 				"help": "Measured upstream bandwidth (kbps). ",
@@ -2709,7 +2710,7 @@
 						"name": "serdes-copper-sfp"
 					}
 				],
-				"removedIn": "v6.4.2",
+				"removedIn": "v6.4.0",
 				"type": "option"
 			},
 			"member": {
@@ -2786,7 +2787,7 @@
 				"type": "option"
 			},
 			"monitor-bandwidth": {
-				"addedIn": "v6.4.2",
+				"addedIn": "v6.4.0",
 				"category": "unitary",
 				"default": "disable",
 				"help": "Enable monitoring bandwidth on this interface.",
@@ -3130,7 +3131,7 @@
 				"type": "string"
 			},
 			"ring-rx": {
-				"addedIn": "v6.4.2",
+				"addedIn": "v6.4.0",
 				"category": "unitary",
 				"default": 0,
 				"help": "RX ring size.",
@@ -3140,7 +3141,7 @@
 				"type": "integer"
 			},
 			"ring-tx": {
-				"addedIn": "v6.4.2",
+				"addedIn": "v6.4.0",
 				"category": "unitary",
 				"default": 0,
 				"help": "TX ring size.",
@@ -3675,7 +3676,7 @@
 				"type": "integer"
 			},
 			"swc-vlan": {
-				"addedIn": "v6.4.2",
+				"addedIn": "v6.4.0",
 				"category": "unitary",
 				"default": 0,
 				"help": "Creation status for switch-controller VLANs.",
@@ -3797,7 +3798,7 @@
 				"type": "string"
 			},
 			"switch-controller-feature": {
-				"addedIn": "v6.4.2",
+				"addedIn": "v6.4.0",
 				"category": "unitary",
 				"default": "none",
 				"help": "Interface's purpose when assigning traffic (read only).",
@@ -3922,7 +3923,7 @@
 				"type": "integer"
 			},
 			"switch-controller-mgmt-vlan": {
-				"addedIn": "v6.4.2",
+				"addedIn": "v6.4.0",
 				"category": "unitary",
 				"default": 4094,
 				"help": "VLAN to use for FortiLink management purposes.",
@@ -3932,7 +3933,7 @@
 				"type": "integer"
 			},
 			"switch-controller-nac": {
-				"addedIn": "v6.4.2",
+				"addedIn": "v6.4.0",
 				"category": "unitary",
 				"datasource": [
 					"switch-controller.fortilink-settings.name"
@@ -4240,7 +4241,7 @@
 				"type": "integer"
 			},
 			"vlan-protocol": {
-				"addedIn": "v6.4.2",
+				"addedIn": "v6.4.0",
 				"category": "unitary",
 				"default": "8021q",
 				"help": "Ethernet protocol of VLAN.",
@@ -4558,8 +4559,8 @@
 		"path": "system",
 		"q_type": 0
 	},
-	"revision": "1477292d6f9c8edbe78a1b48e1bd2226",
-	"serial": "FGTAZRKKLFZKT347",
+	"revision": "ec354a1e735ce884ee09ac99cc109d13",
+	"serial": "FGTAZRAQCG14L19D",
 	"status": "success",
 	"vdom": "root",
 	"version": "v7.0.3"

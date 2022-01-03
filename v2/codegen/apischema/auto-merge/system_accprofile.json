@@ -1,10 +1,9 @@
 {
-	"FullPath": null,
 	"addedIn": "v6.2.7",
 	"build": 237,
 	"http_method": "GET",
 	"http_status": 200,
-	"mergedVersions": "v6.2.7,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3",
+	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3",
 	"name": "accprofile",
 	"path": "system",
 	"results": {
@@ -625,7 +624,7 @@
 				"name": "sysgrp-permission"
 			},
 			"system-diagnostics": {
-				"addedIn": "v6.4.2",
+				"addedIn": "v6.4.0",
 				"category": "unitary",
 				"default": "enable",
 				"help": "Enable/disable permission to run system diagnostic commands.",
@@ -1018,8 +1017,8 @@
 		"path": "system",
 		"q_type": 10
 	},
-	"revision": "5616f8f7e7a1ac6c2ea34acf6ac930d1",
-	"serial": "FGTAZRKKLFZKT347",
+	"revision": "96d78d8baf95a52f39c90015406b3aa6",
+	"serial": "FGTAZRAQCG14L19D",
 	"status": "success",
 	"vdom": "root",
 	"version": "v7.0.3"

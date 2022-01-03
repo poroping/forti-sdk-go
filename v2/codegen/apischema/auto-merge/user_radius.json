@@ -1,10 +1,9 @@
 {
-	"FullPath": null,
 	"addedIn": "v6.2.7",
 	"build": 237,
 	"http_method": "GET",
 	"http_status": 200,
-	"mergedVersions": "v6.2.7,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3",
+	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3",
 	"name": "radius",
 	"path": "user",
 	"results": {
@@ -31,6 +30,7 @@
 						"default": "",
 						"help": "Specify outgoing interface to reach server.",
 						"name": "interface",
+						"removedIn": "v6.4.0",
 						"required": true,
 						"size": 15,
 						"type": "string"
@@ -55,6 +55,7 @@
 								"name": "specify"
 							}
 						],
+						"removedIn": "v6.4.0",
 						"type": "option"
 					},
 					"port": {
@@ -215,7 +216,7 @@
 				"name": "class"
 			},
 			"group-override-attr-type": {
-				"addedIn": "v6.4.2",
+				"addedIn": "v6.4.0",
 				"category": "unitary",
 				"default": "",
 				"help": "RADIUS attribute type to override user group information.",
@@ -259,6 +260,7 @@
 				"default": "",
 				"help": "Specify outgoing interface to reach server.",
 				"name": "interface",
+				"removedIn": "v6.4.0",
 				"required": true,
 				"size": 15,
 				"type": "string"
@@ -283,6 +285,7 @@
 						"name": "specify"
 					}
 				],
+				"removedIn": "v6.4.0",
 				"type": "option"
 			},
 			"name": {
@@ -897,7 +900,7 @@
 				"type": "option"
 			},
 			"switch-controller-acct-fast-framedip-detect": {
-				"addedIn": "v6.4.2",
+				"addedIn": "v6.4.0",
 				"category": "unitary",
 				"default": 2,
 				"help": "Switch controller accounting message Framed-IP detection from DHCP snooping (seconds, default=2).",
@@ -1032,8 +1035,8 @@
 		"path": "user",
 		"q_type": 27
 	},
-	"revision": "896e930afe27996f021b98c7278656e9",
-	"serial": "FGTAZRKKLFZKT347",
+	"revision": "83663ccb232ef404eaac5a256049cd0b",
+	"serial": "FGTAZRAQCG14L19D",
 	"status": "success",
 	"vdom": "root",
 	"version": "v7.0.3"

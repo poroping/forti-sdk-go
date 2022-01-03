@@ -1,5 +1,4 @@
 {
-	"FullPath": null,
 	"addedIn": "v6.4.2",
 	"build": 237,
 	"http_method": "GET",
@@ -2296,8 +2295,8 @@
 		"path": "system",
 		"q_type": 477
 	},
-	"revision": "eb47f0c719ac0fcc9ef15bde5d5d2fd5",
-	"serial": "FGTAZRKKLFZKT347",
+	"revision": "c47afc208e6922e7baa78a9c2702c673",
+	"serial": "FGTAZRAQCG14L19D",
 	"status": "success",
 	"vdom": "root",
 	"version": "v7.0.3"

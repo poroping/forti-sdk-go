@@ -1,10 +1,9 @@
 {
-	"FullPath": null,
 	"addedIn": "v6.2.7",
 	"build": 237,
 	"http_method": "GET",
 	"http_status": 200,
-	"mergedVersions": "v6.2.7,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3",
+	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3",
 	"name": "global",
 	"path": "ips",
 	"results": {
@@ -48,7 +47,7 @@
 						"name": "advanced"
 					}
 				],
-				"removedIn": "v6.4.2",
+				"removedIn": "v6.4.0",
 				"type": "option"
 			},
 			"database": {
@@ -165,7 +164,7 @@
 						"name": "enable"
 					}
 				],
-				"removedIn": "v6.4.2",
+				"removedIn": "v6.4.0",
 				"type": "option"
 			},
 			"ngfw-max-scan-range": {
@@ -193,7 +192,7 @@
 						"name": "basic"
 					}
 				],
-				"removedIn": "v6.4.2",
+				"removedIn": "v6.4.0",
 				"type": "option"
 			},
 			"packet-log-queue-depth": {
@@ -227,7 +226,7 @@
 				"category": "unitary",
 				"help": "Public IP addresses of your network that receive Skype sessions. Helps identify Skype sessions. Separate IP addresses with commas.",
 				"name": "skype-client-public-ipaddr",
-				"removedIn": "v6.4.2",
+				"removedIn": "v6.4.0",
 				"size": 255,
 				"type": "var-string"
 			},
@@ -324,7 +323,7 @@
 				},
 				"help": "TLS active probe configuration.",
 				"name": "tls-active-probe",
-				"removedIn": "v6.4.2"
+				"removedIn": "v6.4.0"
 			},
 			"traffic-submit": {
 				"category": "unitary",
@@ -350,8 +349,8 @@
 		"path": "ips",
 		"q_type": 147
 	},
-	"revision": "65b0094afc98e0f1fe1ad9769af77335",
-	"serial": "FGTAZRKKLFZKT347",
+	"revision": "5a78955211ebb1641b50c9360238cb5c",
+	"serial": "FGTAZRAQCG14L19D",
 	"status": "success",
 	"vdom": "root",
 	"version": "v7.0.3"

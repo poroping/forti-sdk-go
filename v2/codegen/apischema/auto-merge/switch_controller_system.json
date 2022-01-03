@@ -1,10 +1,9 @@
 {
-	"FullPath": null,
 	"addedIn": "v6.2.7",
 	"build": 237,
 	"http_method": "GET",
 	"http_status": 200,
-	"mergedVersions": "v6.2.7,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3",
+	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3",
 	"name": "system",
 	"path": "switch-controller",
 	"results": {
@@ -31,7 +30,7 @@
 				"type": "integer"
 			},
 			"iot-holdoff": {
-				"addedIn": "v6.4.2",
+				"addedIn": "v6.4.0",
 				"category": "unitary",
 				"default": 5,
 				"help": "MAC entry's creation time. Time must be greater than this value for an entry to be created (0 - 10080 mins, default = 5 mins).",
@@ -41,7 +40,7 @@
 				"type": "integer"
 			},
 			"iot-mac-idle": {
-				"addedIn": "v6.4.2",
+				"addedIn": "v6.4.0",
 				"category": "unitary",
 				"default": 1440,
 				"help": "MAC entry's idle time. MAC entry is removed after this value (0 - 10080 mins, default = 1440 mins).",
@@ -51,7 +50,7 @@
 				"type": "integer"
 			},
 			"iot-scan-interval": {
-				"addedIn": "v6.4.2",
+				"addedIn": "v6.4.0",
 				"category": "unitary",
 				"default": 60,
 				"help": "IoT scan interval (2 - 10080 mins, default = 60 mins, 0 = disable).",
@@ -61,7 +60,7 @@
 				"type": "integer"
 			},
 			"iot-weight-threshold": {
-				"addedIn": "v6.4.2",
+				"addedIn": "v6.4.0",
 				"category": "unitary",
 				"default": 1,
 				"help": "MAC entry's confidence value. Value is re-queried when below this value (default = 1, 0 = disable).",
@@ -132,8 +131,8 @@
 		"path": "switch-controller",
 		"q_type": 327
 	},
-	"revision": "0f5eb597fa8ac37d5f819e2b64bf7e6e",
-	"serial": "FGTAZRKKLFZKT347",
+	"revision": "78ee061304af9c5d17bcae6474808d97",
+	"serial": "FGTAZRAQCG14L19D",
 	"status": "success",
 	"vdom": "root",
 	"version": "v7.0.3"

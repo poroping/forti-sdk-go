@@ -1,10 +1,9 @@
 {
-	"FullPath": null,
 	"addedIn": "v6.2.7",
 	"build": 237,
 	"http_method": "GET",
 	"http_status": 200,
-	"mergedVersions": "v6.2.7,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3",
+	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3",
 	"name": "location",
 	"path": "switch-controller",
 	"results": {
@@ -157,7 +156,7 @@
 						"help": "Parent key name.",
 						"name": "parent-key",
 						"readonly": true,
-						"removedIn": "v6.4.2",
+						"removedIn": "v6.4.0",
 						"size": 63,
 						"type": "string"
 					},
@@ -371,7 +370,7 @@
 						"help": "Parent key name.",
 						"name": "parent-key",
 						"readonly": true,
-						"removedIn": "v6.4.2",
+						"removedIn": "v6.4.0",
 						"size": 63,
 						"type": "string"
 					}
@@ -396,7 +395,7 @@
 						"help": "Parent key name.",
 						"name": "parent-key",
 						"readonly": true,
-						"removedIn": "v6.4.2",
+						"removedIn": "v6.4.0",
 						"size": 63,
 						"type": "string"
 					}
@@ -423,8 +422,8 @@
 		"path": "switch-controller",
 		"q_type": 312
 	},
-	"revision": "efc293aa487938667045081f13d2fc17",
-	"serial": "FGTAZRKKLFZKT347",
+	"revision": "e20e57519e80bc2d839431552428fa29",
+	"serial": "FGTAZRAQCG14L19D",
 	"status": "success",
 	"vdom": "root",
 	"version": "v7.0.3"

@@ -1,10 +1,9 @@
 {
-	"FullPath": null,
 	"addedIn": "v6.2.7",
 	"build": 237,
 	"http_method": "GET",
 	"http_status": 200,
-	"mergedVersions": "v6.2.7,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3",
+	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3",
 	"name": "profile-protocol-options",
 	"path": "firewall",
 	"results": {
@@ -29,7 +28,7 @@
 						"type": "string"
 					},
 					"options": {
-						"addedIn": "v6.4.2",
+						"addedIn": "v6.4.0",
 						"category": "unitary",
 						"default": "",
 						"help": "One or more options that can be applied to the session.",
@@ -44,7 +43,7 @@
 						"type": "option"
 					},
 					"oversize-limit": {
-						"addedIn": "v6.4.2",
+						"addedIn": "v6.4.0",
 						"category": "unitary",
 						"default": 10,
 						"help": "Maximum in-memory file size that can be scanned (1 - 383 MB, default = 10).",
@@ -64,7 +63,7 @@
 						"type": "integer"
 					},
 					"scan-bzip2": {
-						"addedIn": "v6.4.2",
+						"addedIn": "v6.4.0",
 						"category": "unitary",
 						"default": "enable",
 						"help": "Enable/disable scanning of BZip2 compressed files.",
@@ -102,6 +101,7 @@
 								"name": "credential-keytab"
 							}
 						],
+						"removedIn": "v6.4.0",
 						"required": true,
 						"type": "option"
 					},
@@ -135,6 +135,7 @@
 						"mkey": "principal",
 						"mkey_type": "string",
 						"name": "server-keytab",
+						"removedIn": "v6.4.0",
 						"size": 8836,
 						"type": "string"
 					},
@@ -157,7 +158,7 @@
 						"type": "option"
 					},
 					"tcp-window-maximum": {
-						"addedIn": "v6.4.2",
+						"addedIn": "v6.4.0",
 						"category": "unitary",
 						"default": 8388608,
 						"help": "Maximum dynamic TCP window size.",
@@ -167,7 +168,7 @@
 						"type": "integer"
 					},
 					"tcp-window-minimum": {
-						"addedIn": "v6.4.2",
+						"addedIn": "v6.4.0",
 						"category": "unitary",
 						"default": 131072,
 						"help": "Minimum dynamic TCP window size.",
@@ -177,7 +178,7 @@
 						"type": "integer"
 					},
 					"tcp-window-size": {
-						"addedIn": "v6.4.2",
+						"addedIn": "v6.4.0",
 						"category": "unitary",
 						"default": 262144,
 						"help": "Set TCP static window size.",
@@ -187,7 +188,7 @@
 						"type": "integer"
 					},
 					"tcp-window-type": {
-						"addedIn": "v6.4.2",
+						"addedIn": "v6.4.0",
 						"category": "unitary",
 						"default": "system",
 						"help": "TCP window type to use for this protocol.",
@@ -210,7 +211,7 @@
 						"type": "option"
 					},
 					"uncompressed-nest-limit": {
-						"addedIn": "v6.4.2",
+						"addedIn": "v6.4.0",
 						"category": "unitary",
 						"default": 12,
 						"help": "Maximum nested levels of compression that can be uncompressed and scanned (2 - 100, default = 12).",
@@ -220,7 +221,7 @@
 						"type": "integer"
 					},
 					"uncompressed-oversize-limit": {
-						"addedIn": "v6.4.2",
+						"addedIn": "v6.4.0",
 						"category": "unitary",
 						"default": 10,
 						"help": "Maximum in-memory uncompressed file size that can be scanned (1 - 383 MB, default = 10).",
@@ -274,6 +275,25 @@
 				},
 				"help": "Configure DNS protocol options.",
 				"name": "dns"
+			},
+			"feature-set": {
+				"addedIn": "v6.4.0",
+				"category": "unitary",
+				"help": "Flow/proxy feature set.",
+				"multiple_values": false,
+				"name": "feature-set",
+				"options": [
+					{
+						"help": "Flow feature set.",
+						"name": "flow"
+					},
+					{
+						"help": "Proxy feature set.",
+						"name": "proxy"
+					}
+				],
+				"removedIn": "v6.4.2",
+				"type": "option"
 			},
 			"ftp": {
 				"category": "complex",
@@ -717,7 +737,7 @@
 						"type": "option"
 					},
 					"proxy-after-tcp-handshake": {
-						"addedIn": "v6.4.2",
+						"addedIn": "v6.4.0",
 						"category": "unitary",
 						"default": "disable",
 						"help": "Proxy traffic after the TCP 3-way handshake has been established (not before).",
@@ -929,7 +949,7 @@
 						"type": "option"
 					},
 					"tunnel-non-http": {
-						"addedIn": "v6.4.2",
+						"addedIn": "v6.4.0",
 						"category": "unitary",
 						"default": "enable",
 						"help": "Configure how to process non-HTTP traffic when a profile configured for HTTP traffic accepts a non-HTTP session. Can occur if an application sends non-HTTP traffic using an HTTP destination port.",
@@ -966,7 +986,7 @@
 						"type": "integer"
 					},
 					"unknown-http-version": {
-						"addedIn": "v6.4.2",
+						"addedIn": "v6.4.0",
 						"category": "unitary",
 						"default": "reject",
 						"help": "How to handle HTTP sessions that do not comply with HTTP 0.9, 1.0, or 1.1.",
@@ -1051,7 +1071,7 @@
 						"type": "integer"
 					},
 					"proxy-after-tcp-handshake": {
-						"addedIn": "v6.4.2",
+						"addedIn": "v6.4.0",
 						"category": "unitary",
 						"default": "disable",
 						"help": "Proxy traffic after the TCP 3-way handshake has been established (not before).",
@@ -1344,7 +1364,7 @@
 						"type": "integer"
 					},
 					"proxy-after-tcp-handshake": {
-						"addedIn": "v6.4.2",
+						"addedIn": "v6.4.0",
 						"category": "unitary",
 						"default": "disable",
 						"help": "Proxy traffic after the TCP 3-way handshake has been established (not before).",
@@ -1497,7 +1517,7 @@
 						"type": "integer"
 					},
 					"proxy-after-tcp-handshake": {
-						"addedIn": "v6.4.2",
+						"addedIn": "v6.4.0",
 						"category": "unitary",
 						"default": "disable",
 						"help": "Proxy traffic after the TCP 3-way handshake has been established (not before).",
@@ -1683,7 +1703,7 @@
 						"type": "integer"
 					},
 					"proxy-after-tcp-handshake": {
-						"addedIn": "v6.4.2",
+						"addedIn": "v6.4.0",
 						"category": "unitary",
 						"default": "disable",
 						"help": "Proxy traffic after the TCP 3-way handshake has been established (not before).",
@@ -1998,8 +2018,8 @@
 		"path": "firewall",
 		"q_type": 432
 	},
-	"revision": "82c82c653f273347b26ab0db7d939f94",
-	"serial": "FGTAZRKKLFZKT347",
+	"revision": "a6d7c47c9972d7dcbc9ed8eb570bbda3",
+	"serial": "FGTAZRAQCG14L19D",
 	"status": "success",
 	"vdom": "root",
 	"version": "v7.0.3"

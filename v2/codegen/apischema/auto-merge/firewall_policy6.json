@@ -1,10 +1,9 @@
 {
-	"FullPath": null,
 	"addedIn": "v6.2.7",
 	"build": 1914,
 	"http_method": "GET",
 	"http_status": 200,
-	"mergedVersions": "v6.2.7,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8",
+	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8",
 	"name": "policy6",
 	"path": "firewall",
 	"removedIn": "v7.0.0",
@@ -206,7 +205,7 @@
 				"name": "custom-log-fields"
 			},
 			"decrypted-traffic-mirror": {
-				"addedIn": "v6.4.2",
+				"addedIn": "v6.4.0",
 				"category": "unitary",
 				"datasource": [
 					"firewall.decrypted-traffic-mirror.name"
@@ -701,7 +700,7 @@
 						"name": "disable"
 					}
 				],
-				"removedIn": "v6.4.2",
+				"removedIn": "v6.4.0",
 				"type": "option"
 			},
 			"outbound": {
@@ -833,7 +832,7 @@
 						"name": "disable"
 					}
 				],
-				"removedIn": "v6.4.2",
+				"removedIn": "v6.4.0",
 				"type": "option"
 			},
 			"schedule": {
@@ -1036,7 +1035,7 @@
 						"name": "disable"
 					}
 				],
-				"removedIn": "v6.4.2",
+				"removedIn": "v6.4.0",
 				"type": "option"
 			},
 			"ssl-mirror-intf": {
@@ -1062,7 +1061,7 @@
 				"mkey": "name",
 				"mkey_type": "string",
 				"name": "ssl-mirror-intf",
-				"removedIn": "v6.4.2"
+				"removedIn": "v6.4.0"
 			},
 			"ssl-ssh-profile": {
 				"category": "unitary",
@@ -1419,8 +1418,8 @@
 		"path": "firewall",
 		"q_type": 186
 	},
-	"revision": "b3d2e29698cd228516220a44ebbe1a24",
-	"serial": "FGTAZRXCRDH4ACA4",
+	"revision": "d4fad935f0eabe1950c1f35e95563ae9",
+	"serial": "FGTAZRUYA0WQUUD1",
 	"status": "success",
 	"vdom": "root",
 	"version": "v6.4.8"
