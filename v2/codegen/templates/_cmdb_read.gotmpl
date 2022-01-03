@@ -34,8 +34,6 @@ func (c *Client) Read{{.fpath}}(mkey string, params *models.CmdbRequestParams) (
 		return &v, nil
 	}
 	{{end}}
-	err = errors.New("unable to parse API response results")
-
 	return nil, err
 }
 {{end}}

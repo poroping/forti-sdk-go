@@ -9,7 +9,7 @@ func (c *Client) Update{{.fpath}}(mkey string, payload *models.{{(mixedCase .pat
 	req.HTTPMethod = "PUT"
 	req.Mkey = &mkey
 	req.Payload = body
-	req.Path = models.CmdbBasePath + models.{{.fpath}}Path + mkey + "/"
+	req.Path = models.CmdbBasePath + models.{{.fpath}}Path{{if not (eq .results.category "complex")}} + mkey + "/"{{end}}
 	req.Params = *params
 
 	res, err := request.CreateUpdate(c.config, req)

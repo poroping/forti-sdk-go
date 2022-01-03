@@ -26,6 +26,10 @@ func main() {
 	cmdbResources := []cmdbRes{}
 	for _, schema := range schemas {
 		fileName := schema.Name()
+		if ignoreSchemas(fileName) {
+			log.Printf("[DEBUG] schema: %s marked for skipping", fileName)
+			continue
+		}
 		log.Printf("[DEBUG] processing: %s", fileName)
 		funcMap := template.FuncMap{
 			"replace":     replace,
@@ -52,7 +56,7 @@ func main() {
 		r := addResourceInfo(n)
 
 		tmp := cmdbRes{
-			Path:    r["fpath"].(string),
+			Path:    mixedCase(r["fpath"].(string)),
 			Complex: isComplex(r["results"].(map[string]interface{})["category"].(string)),
 		}
 		cmdbResources = append(cmdbResources, tmp)
@@ -61,6 +65,23 @@ func main() {
 		render("cmdb", fileName, t, r)
 	}
 	cmdbRender(cmdbResources)
+}
+
+// ignore these cause need work
+func ignoreSchemas(name string) bool {
+	ign := []string{
+		"router.access_list_rule.json",
+		"router.access_list6_rule.json",
+		"router.prefix_list_rule.json",
+		"router.prefix_list6_rule.json",
+		"router.route_map_rule.json",
+	}
+	for _, v := range ign {
+		if name == v {
+			return true
+		}
+	}
+	return false
 }
 
 func isComplex(category string) bool {
@@ -112,12 +133,12 @@ func addPaths(m map[string]interface{}) map[string]interface{} {
 	path := mixedCase(m["path"].(string))
 	if _, ok := m["child_path"].(string); ok {
 		name, _ := m["name"].(string)
-		path += name
+		path += mixedCase(name)
 	}
 	resource := mixedCase(m["results"].(map[string]interface{})["name"].(string))
 	tmp := m["results"]
-	m["fpath"] = path + resource
-	m["results"].(map[string]interface{})["fpath"] = path + resource
+	m["fpath"] = mixedCase(path + " " + resource)
+	m["results"].(map[string]interface{})["fpath"] = mixedCase(path + " " + resource)
 	recursePaths(tmp, path+resource)
 	return m
 }
@@ -128,8 +149,9 @@ func recursePaths(v interface{}, pre string) interface{} {
 		for _, v := range child {
 			if v2, ok := v.(map[string]interface{}); ok {
 				name := mixedCase(v2["name"].(string))
-				v2["fpath"] = pre + name
-				recursePaths(v, pre+name)
+				fpath := mixedCase(pre + " " + name)
+				v2["fpath"] = fpath
+				recursePaths(v, fpath)
 			}
 		}
 	} else {
@@ -458,7 +480,7 @@ func valiOptions(opts []interface{}, multi_val bool) string {
 }
 
 func mixedCase(v string) string {
-	v = strings.ReplaceAll(v, ".", "")
+	v = strings.ReplaceAll(v, ".", " ")
 	v = strings.ReplaceAll(v, "-", " ")
 	v = strings.ReplaceAll(v, "+", "")
 	v = strings.ReplaceAll(v, "(", "")
