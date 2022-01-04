@@ -316,9 +316,25 @@ func marshalParams(params *models.CmdbRequestParams) url.Values {
 		v := strconv.FormatBool(*params.AllowAppend)
 		urlQuery.Set("allow_append", v)
 	}
+	if params.Datasource != nil {
+		v := strconv.FormatBool(*params.Datasource)
+		urlQuery.Set("datasource", v)
+	}
+	if params.ExcludeDefaultValues != nil {
+		v := strconv.FormatBool(*params.ExcludeDefaultValues)
+		urlQuery.Set("exclude-default-values", v)
+	}
+	if params.Meta != nil {
+		v := strconv.FormatBool(*params.Meta)
+		urlQuery.Set("meta", v)
+	}
 	if params.PlainTextPassword != nil {
 		v := strconv.FormatBool(*params.PlainTextPassword)
 		urlQuery.Set("plain-text-password", v)
+	}
+	if params.WithMeta != nil {
+		v := strconv.FormatBool(*params.WithMeta)
+		urlQuery.Set("with_meta", v)
 	}
 	if params.Action != "" {
 		urlQuery.Add("action", params.Action)
@@ -328,6 +344,9 @@ func marshalParams(params *models.CmdbRequestParams) url.Values {
 	}
 	for _, v := range params.Format {
 		urlQuery.Add("format", v)
+	}
+	for _, v := range params.Sort {
+		urlQuery.Add("sort", v)
 	}
 	return urlQuery
 }

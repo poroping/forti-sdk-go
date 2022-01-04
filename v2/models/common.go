@@ -12,12 +12,17 @@ type CmdbRequest struct {
 }
 
 type CmdbRequestParams struct {
-	AllowAppend       *bool    `json:"allow_append,omitempty"`
-	Action            string   `json:"action,omitempty"`
-	Filter            []string `json:"filter,omitempty"`
-	Format            []string `json:"format,omitempty"`
-	PlainTextPassword *bool    `json:"plain-text-password,omitempty"`
-	Vdom              string   `json:"vdom,omitempty"`
+	AllowAppend          *bool    `json:"allow_append,omitempty"`
+	Action               string   `json:"action,omitempty"`
+	Datasource           *bool    `json:"datasource,omitempty"`
+	ExcludeDefaultValues *bool    `json:"exclude-default-values,omitempty"`
+	Filter               []string `json:"filter,omitempty"`
+	Format               []string `json:"format,omitempty"`
+	Meta                 *bool    `json:"meta,omitempty"`
+	PlainTextPassword    *bool    `json:"plain-text-password,omitempty"`
+	Sort                 []string `json:"sort,omitempty"`
+	Vdom                 string   `json:"vdom,omitempty"`
+	WithMeta             *bool    `json:"with_meta,omitempty"`
 }
 
 type CmdbResponse struct {
