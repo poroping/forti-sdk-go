@@ -10,6 +10,7 @@ import (
 	"net/url"
 	"regexp"
 	"strconv"
+	"strings"
 
 	"github.com/poroping/forti-sdk-go/v2/config"
 	"github.com/poroping/forti-sdk-go/v2/models"
@@ -339,14 +340,8 @@ func marshalParams(params *models.CmdbRequestParams) url.Values {
 	if params.Action != "" {
 		urlQuery.Add("action", params.Action)
 	}
-	for _, v := range params.Filter {
-		urlQuery.Add("filter", v)
-	}
-	for _, v := range params.Format {
-		urlQuery.Add("format", v)
-	}
-	for _, v := range params.Sort {
-		urlQuery.Add("sort", v)
-	}
+	urlQuery.Add("filter", strings.Join(params.Filter, ","))
+	urlQuery.Add("format", strings.Join(params.Format, "|"))
+	urlQuery.Add("sort", strings.Join(params.Sort, ","))
 	return urlQuery
 }
