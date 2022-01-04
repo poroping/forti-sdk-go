@@ -8,6 +8,7 @@ import (
 	"log"
 	"net/http"
 	"net/url"
+	"regexp"
 	"strconv"
 
 	"github.com/poroping/forti-sdk-go/v2/config"
@@ -211,34 +212,48 @@ func parseError500(body []byte) error {
 		log.Printf("[ERROR] Failed to parse error 500 response")
 		return err
 	}
-	errorCode := parseErrorCode(fortiError.Error)
+	errorCode := parseErrorCode(fortiError.Error, fortiError.CLIError)
 	log.Printf("[ERROR] Error code: %d context: %s", fortiError.Error, errorCode)
 	log.Printf("[DEBUG] cli_error: %s", fortiError.CLIError)
 	err = fmt.Errorf("error code: %d context: %s cli_error: %s (%d)", fortiError.Error, errorCode, fortiError.CLIError, fortiError.HTTPStatus)
 	return err
 }
 
-func parseErrorCode(errorCode int64) string {
+func parseErrorCode(errorCode int64, errorString string) string {
 	switch e := errorCode; e {
+	case int64(-3):
+		// parse errorString and return troubled datasource
+		datasource := ""
+		find := *regexp.MustCompile(`.*value parse error before '(.*)'.*`)
+		match := find.FindAllStringSubmatch(errorString, -1)
+		if len(match) == 1 {
+			datasource = match[0][1]
+		}
+		return fmt.Sprintf("Referenced datasource %q does not exist\n", datasource)
 	case int64(-5):
-		return "Mkey already exists"
+		return "Mkey already exists\n"
 	case int64(-8):
-		return "Invalid IP"
+		return "Invalid IP\n"
 	case int64(-9):
-		return "Invalid netmask"
+		return "Invalid netmask\n"
 	case int64(-15):
-		return "Duplicated entry"
+		return "Duplicated entry\n"
+	case int64(-23):
+		// potentially look at listing references?
+		return "Unable to remove, target is referenced elsewhere\n"
 	case int64(-651):
-		return "Missing required attribute or attribute incorrect"
+		return "Missing required attribute or attribute incorrect\n"
 	default:
-		return "No additional context available"
+		return "No additional context available\n"
 	}
 }
 
+// -3 missing datasource/reference
 // -5 mkey already exists
 // -8 invalid IP
 // -9 invalid mask /33
 // -15 duplicate entry
+// -23 cannot delete, target referenced
 // -651 "enables" // missing required attribute // attribute incorrect
 //
 
