@@ -2,7 +2,6 @@ package cmdb
 
 import (
 	"encoding/json"
-	"errors"
 	"log"
 	"strconv"
 
@@ -10,7 +9,7 @@ import (
 	"github.com/poroping/forti-sdk-go/v2/request"
 )
 
-func (c *Client) CreateFirewallconsolidatedPolicy(payload *models.FirewallconsolidatedPolicy, params *models.CmdbRequestParams) (*models.CmdbResponse, error) {
+func (c *Client) CreateFirewallConsolidatedPolicy(payload *models.FirewallConsolidatedPolicy, params *models.CmdbRequestParams) (*models.CmdbResponse, error) {
 	body, err := json.Marshal(payload)
 	if err != nil {
 		return nil, err
@@ -19,20 +18,20 @@ func (c *Client) CreateFirewallconsolidatedPolicy(payload *models.Firewallconsol
 	mkey := ""
 	if payload.Policyid != nil && *params.AllowAppend {
 		mkey = strconv.Itoa(int(*payload.Policyid))
-		read, err := c.ReadFirewallconsolidatedPolicy(mkey, params)
+		read, err := c.ReadFirewallConsolidatedPolicy(mkey, params)
 		if err != nil {
 			return nil, err
 		}
 		if read != nil {
-			log.Printf("[WARN] Resource at path %q with mkey %q detected upon CREATE with flag set to to overwrite. Changing to UPDATE.", models.FirewallconsolidatedPolicyPath, mkey)
-			return c.UpdateFirewallconsolidatedPolicy(mkey, payload, params)
+			log.Printf("[WARN] Resource at path %q with mkey %q detected upon CREATE with flag set to to overwrite. Changing to UPDATE.", models.FirewallConsolidatedPolicyPath, mkey)
+			return c.UpdateFirewallConsolidatedPolicy(mkey, payload, params)
 		}
 	}
 
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "POST"
 	req.Payload = body
-	req.Path = models.CmdbBasePath + models.FirewallconsolidatedPolicyPath
+	req.Path = models.CmdbBasePath + models.FirewallConsolidatedPolicyPath
 	req.Params = *params
 
 	res, err := request.CreateUpdate(c.config, req)
@@ -42,12 +41,12 @@ func (c *Client) CreateFirewallconsolidatedPolicy(payload *models.Firewallconsol
 	return res, nil
 }
 
-func (c *Client) ReadFirewallconsolidatedPolicy(mkey string, params *models.CmdbRequestParams) (*models.FirewallconsolidatedPolicy, error) {
+func (c *Client) ReadFirewallConsolidatedPolicy(mkey string, params *models.CmdbRequestParams) (*models.FirewallConsolidatedPolicy, error) {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "GET"
 	req.Mkey = &mkey
 	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.FirewallconsolidatedPolicyPath + mkey + "/"
+	req.Path = models.CmdbBasePath + models.FirewallConsolidatedPolicyPath + mkey + "/"
 	req.Params = *params
 
 	res, err := request.Read(c.config, req)
@@ -62,17 +61,15 @@ func (c *Client) ReadFirewallconsolidatedPolicy(mkey string, params *models.Cmdb
 		if err != nil {
 			return nil, err
 		}
-		v := models.FirewallconsolidatedPolicy{}
+		v := models.FirewallConsolidatedPolicy{}
 		json.Unmarshal(jsontmp, &v)
 		return &v, nil
 	}
 
-	err = errors.New("unable to parse API response results")
-
 	return nil, err
 }
 
-func (c *Client) UpdateFirewallconsolidatedPolicy(mkey string, payload *models.FirewallconsolidatedPolicy, params *models.CmdbRequestParams) (*models.CmdbResponse, error) {
+func (c *Client) UpdateFirewallConsolidatedPolicy(mkey string, payload *models.FirewallConsolidatedPolicy, params *models.CmdbRequestParams) (*models.CmdbResponse, error) {
 	body, err := json.Marshal(payload)
 	if err != nil {
 		return nil, err
@@ -82,7 +79,7 @@ func (c *Client) UpdateFirewallconsolidatedPolicy(mkey string, payload *models.F
 	req.HTTPMethod = "PUT"
 	req.Mkey = &mkey
 	req.Payload = body
-	req.Path = models.CmdbBasePath + models.FirewallconsolidatedPolicyPath + mkey + "/"
+	req.Path = models.CmdbBasePath + models.FirewallConsolidatedPolicyPath + mkey + "/"
 	req.Params = *params
 
 	res, err := request.CreateUpdate(c.config, req)
@@ -92,12 +89,12 @@ func (c *Client) UpdateFirewallconsolidatedPolicy(mkey string, payload *models.F
 	return res, nil
 }
 
-func (c *Client) DeleteFirewallconsolidatedPolicy(mkey string, params *models.CmdbRequestParams) error {
+func (c *Client) DeleteFirewallConsolidatedPolicy(mkey string, params *models.CmdbRequestParams) error {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "DELETE"
 	req.Mkey = &mkey
 	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.FirewallconsolidatedPolicyPath + mkey + "/"
+	req.Path = models.CmdbBasePath + models.FirewallConsolidatedPolicyPath + mkey + "/"
 	req.Params = *params
 
 	err := request.Delete(c.config, req)

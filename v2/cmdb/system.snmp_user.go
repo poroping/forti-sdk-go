@@ -2,14 +2,13 @@ package cmdb
 
 import (
 	"encoding/json"
-	"errors"
 	"log"
 
 	"github.com/poroping/forti-sdk-go/v2/models"
 	"github.com/poroping/forti-sdk-go/v2/request"
 )
 
-func (c *Client) CreateSystemsnmpUser(payload *models.SystemsnmpUser, params *models.CmdbRequestParams) (*models.CmdbResponse, error) {
+func (c *Client) CreateSystemSnmpUser(payload *models.SystemSnmpUser, params *models.CmdbRequestParams) (*models.CmdbResponse, error) {
 	body, err := json.Marshal(payload)
 	if err != nil {
 		return nil, err
@@ -18,20 +17,20 @@ func (c *Client) CreateSystemsnmpUser(payload *models.SystemsnmpUser, params *mo
 	mkey := ""
 	if payload.Name != nil && *params.AllowAppend {
 		mkey = *payload.Name
-		read, err := c.ReadSystemsnmpUser(mkey, params)
+		read, err := c.ReadSystemSnmpUser(mkey, params)
 		if err != nil {
 			return nil, err
 		}
 		if read != nil {
-			log.Printf("[WARN] Resource at path %q with mkey %q detected upon CREATE with flag set to to overwrite. Changing to UPDATE.", models.SystemsnmpUserPath, mkey)
-			return c.UpdateSystemsnmpUser(mkey, payload, params)
+			log.Printf("[WARN] Resource at path %q with mkey %q detected upon CREATE with flag set to to overwrite. Changing to UPDATE.", models.SystemSnmpUserPath, mkey)
+			return c.UpdateSystemSnmpUser(mkey, payload, params)
 		}
 	}
 
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "POST"
 	req.Payload = body
-	req.Path = models.CmdbBasePath + models.SystemsnmpUserPath
+	req.Path = models.CmdbBasePath + models.SystemSnmpUserPath
 	req.Params = *params
 
 	res, err := request.CreateUpdate(c.config, req)
@@ -41,12 +40,12 @@ func (c *Client) CreateSystemsnmpUser(payload *models.SystemsnmpUser, params *mo
 	return res, nil
 }
 
-func (c *Client) ReadSystemsnmpUser(mkey string, params *models.CmdbRequestParams) (*models.SystemsnmpUser, error) {
+func (c *Client) ReadSystemSnmpUser(mkey string, params *models.CmdbRequestParams) (*models.SystemSnmpUser, error) {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "GET"
 	req.Mkey = &mkey
 	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.SystemsnmpUserPath + mkey + "/"
+	req.Path = models.CmdbBasePath + models.SystemSnmpUserPath + mkey + "/"
 	req.Params = *params
 
 	res, err := request.Read(c.config, req)
@@ -61,17 +60,15 @@ func (c *Client) ReadSystemsnmpUser(mkey string, params *models.CmdbRequestParam
 		if err != nil {
 			return nil, err
 		}
-		v := models.SystemsnmpUser{}
+		v := models.SystemSnmpUser{}
 		json.Unmarshal(jsontmp, &v)
 		return &v, nil
 	}
 
-	err = errors.New("unable to parse API response results")
-
 	return nil, err
 }
 
-func (c *Client) UpdateSystemsnmpUser(mkey string, payload *models.SystemsnmpUser, params *models.CmdbRequestParams) (*models.CmdbResponse, error) {
+func (c *Client) UpdateSystemSnmpUser(mkey string, payload *models.SystemSnmpUser, params *models.CmdbRequestParams) (*models.CmdbResponse, error) {
 	body, err := json.Marshal(payload)
 	if err != nil {
 		return nil, err
@@ -81,7 +78,7 @@ func (c *Client) UpdateSystemsnmpUser(mkey string, payload *models.SystemsnmpUse
 	req.HTTPMethod = "PUT"
 	req.Mkey = &mkey
 	req.Payload = body
-	req.Path = models.CmdbBasePath + models.SystemsnmpUserPath + mkey + "/"
+	req.Path = models.CmdbBasePath + models.SystemSnmpUserPath + mkey + "/"
 	req.Params = *params
 
 	res, err := request.CreateUpdate(c.config, req)
@@ -91,12 +88,12 @@ func (c *Client) UpdateSystemsnmpUser(mkey string, payload *models.SystemsnmpUse
 	return res, nil
 }
 
-func (c *Client) DeleteSystemsnmpUser(mkey string, params *models.CmdbRequestParams) error {
+func (c *Client) DeleteSystemSnmpUser(mkey string, params *models.CmdbRequestParams) error {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "DELETE"
 	req.Mkey = &mkey
 	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.SystemsnmpUserPath + mkey + "/"
+	req.Path = models.CmdbBasePath + models.SystemSnmpUserPath + mkey + "/"
 	req.Params = *params
 
 	err := request.Delete(c.config, req)

@@ -1,8 +1,8 @@
 package models
 
-const LogfortiguardOverrideSettingPath = "log/fortiguard/override-setting/"
+const LogFortiguardOverrideSettingPath = "log.fortiguard/override-setting/"
 
-type LogfortiguardOverrideSetting struct {
+type LogFortiguardOverrideSetting struct {
 	AccessConfig   *string `json:"access-config,omitempty"`
 	MaxLogRate     *int64  `json:"max-log-rate,omitempty"`
 	Override       *string `json:"override,omitempty"`

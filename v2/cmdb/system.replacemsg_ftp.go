@@ -2,14 +2,13 @@ package cmdb
 
 import (
 	"encoding/json"
-	"errors"
 	"log"
 
 	"github.com/poroping/forti-sdk-go/v2/models"
 	"github.com/poroping/forti-sdk-go/v2/request"
 )
 
-func (c *Client) CreateSystemreplacemsgFtp(payload *models.SystemreplacemsgFtp, params *models.CmdbRequestParams) (*models.CmdbResponse, error) {
+func (c *Client) CreateSystemReplacemsgFtp(payload *models.SystemReplacemsgFtp, params *models.CmdbRequestParams) (*models.CmdbResponse, error) {
 	body, err := json.Marshal(payload)
 	if err != nil {
 		return nil, err
@@ -18,20 +17,20 @@ func (c *Client) CreateSystemreplacemsgFtp(payload *models.SystemreplacemsgFtp, 
 	mkey := ""
 	if payload.MsgType != nil && *params.AllowAppend {
 		mkey = *payload.MsgType
-		read, err := c.ReadSystemreplacemsgFtp(mkey, params)
+		read, err := c.ReadSystemReplacemsgFtp(mkey, params)
 		if err != nil {
 			return nil, err
 		}
 		if read != nil {
-			log.Printf("[WARN] Resource at path %q with mkey %q detected upon CREATE with flag set to to overwrite. Changing to UPDATE.", models.SystemreplacemsgFtpPath, mkey)
-			return c.UpdateSystemreplacemsgFtp(mkey, payload, params)
+			log.Printf("[WARN] Resource at path %q with mkey %q detected upon CREATE with flag set to to overwrite. Changing to UPDATE.", models.SystemReplacemsgFtpPath, mkey)
+			return c.UpdateSystemReplacemsgFtp(mkey, payload, params)
 		}
 	}
 
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "POST"
 	req.Payload = body
-	req.Path = models.CmdbBasePath + models.SystemreplacemsgFtpPath
+	req.Path = models.CmdbBasePath + models.SystemReplacemsgFtpPath
 	req.Params = *params
 
 	res, err := request.CreateUpdate(c.config, req)
@@ -41,12 +40,12 @@ func (c *Client) CreateSystemreplacemsgFtp(payload *models.SystemreplacemsgFtp, 
 	return res, nil
 }
 
-func (c *Client) ReadSystemreplacemsgFtp(mkey string, params *models.CmdbRequestParams) (*models.SystemreplacemsgFtp, error) {
+func (c *Client) ReadSystemReplacemsgFtp(mkey string, params *models.CmdbRequestParams) (*models.SystemReplacemsgFtp, error) {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "GET"
 	req.Mkey = &mkey
 	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.SystemreplacemsgFtpPath + mkey + "/"
+	req.Path = models.CmdbBasePath + models.SystemReplacemsgFtpPath + mkey + "/"
 	req.Params = *params
 
 	res, err := request.Read(c.config, req)
@@ -61,17 +60,15 @@ func (c *Client) ReadSystemreplacemsgFtp(mkey string, params *models.CmdbRequest
 		if err != nil {
 			return nil, err
 		}
-		v := models.SystemreplacemsgFtp{}
+		v := models.SystemReplacemsgFtp{}
 		json.Unmarshal(jsontmp, &v)
 		return &v, nil
 	}
 
-	err = errors.New("unable to parse API response results")
-
 	return nil, err
 }
 
-func (c *Client) UpdateSystemreplacemsgFtp(mkey string, payload *models.SystemreplacemsgFtp, params *models.CmdbRequestParams) (*models.CmdbResponse, error) {
+func (c *Client) UpdateSystemReplacemsgFtp(mkey string, payload *models.SystemReplacemsgFtp, params *models.CmdbRequestParams) (*models.CmdbResponse, error) {
 	body, err := json.Marshal(payload)
 	if err != nil {
 		return nil, err
@@ -81,7 +78,7 @@ func (c *Client) UpdateSystemreplacemsgFtp(mkey string, payload *models.Systemre
 	req.HTTPMethod = "PUT"
 	req.Mkey = &mkey
 	req.Payload = body
-	req.Path = models.CmdbBasePath + models.SystemreplacemsgFtpPath + mkey + "/"
+	req.Path = models.CmdbBasePath + models.SystemReplacemsgFtpPath + mkey + "/"
 	req.Params = *params
 
 	res, err := request.CreateUpdate(c.config, req)
@@ -91,12 +88,12 @@ func (c *Client) UpdateSystemreplacemsgFtp(mkey string, payload *models.Systemre
 	return res, nil
 }
 
-func (c *Client) DeleteSystemreplacemsgFtp(mkey string, params *models.CmdbRequestParams) error {
+func (c *Client) DeleteSystemReplacemsgFtp(mkey string, params *models.CmdbRequestParams) error {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "DELETE"
 	req.Mkey = &mkey
 	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.SystemreplacemsgFtpPath + mkey + "/"
+	req.Path = models.CmdbBasePath + models.SystemReplacemsgFtpPath + mkey + "/"
 	req.Params = *params
 
 	err := request.Delete(c.config, req)

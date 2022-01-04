@@ -1,8 +1,8 @@
 package models
 
-const FirewallshaperTrafficShaperPath = "firewall/shaper/traffic-shaper/"
+const FirewallShaperTrafficShaperPath = "firewall.shaper/traffic-shaper/"
 
-type FirewallshaperTrafficShaper struct {
+type FirewallShaperTrafficShaper struct {
 	BandwidthUnit       *string `json:"bandwidth-unit,omitempty"`
 	Diffserv            *string `json:"diffserv,omitempty"`
 	Diffservcode        *string `json:"diffservcode,omitempty"`

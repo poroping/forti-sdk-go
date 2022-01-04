@@ -1,8 +1,8 @@
 package models
 
-const SystemreplacemsgDeviceDetectionPortalPath = "system/replacemsg/device-detection-portal/"
+const SystemReplacemsgDeviceDetectionPortalPath = "system.replacemsg/device-detection-portal/"
 
-type SystemreplacemsgDeviceDetectionPortal struct {
+type SystemReplacemsgDeviceDetectionPortal struct {
 	Buffer  *string `json:"buffer,omitempty"`
 	Format  *string `json:"format,omitempty"`
 	Header  *string `json:"header,omitempty"`

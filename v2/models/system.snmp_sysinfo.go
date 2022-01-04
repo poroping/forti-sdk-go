@@ -1,8 +1,8 @@
 package models
 
-const SystemsnmpSysinfoPath = "system/snmp/sysinfo/"
+const SystemSnmpSysinfoPath = "system.snmp/sysinfo/"
 
-type SystemsnmpSysinfo struct {
+type SystemSnmpSysinfo struct {
 	ContactInfo            *string `json:"contact-info,omitempty"`
 	Description            *string `json:"description,omitempty"`
 	EngineId               *string `json:"engine-id,omitempty"`

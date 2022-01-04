@@ -1,11 +1,11 @@
 package models
 
-const SystemsnmpCommunityPath = "system/snmp/community/"
+const SystemSnmpCommunityPath = "system.snmp/community/"
 
-type SystemsnmpCommunity struct {
+type SystemSnmpCommunity struct {
 	Events         *string                      `json:"events,omitempty"`
-	Hosts          *[]SystemsnmpCommunityHosts  `json:"hosts,omitempty"`
-	Hosts6         *[]SystemsnmpCommunityHosts6 `json:"hosts6,omitempty"`
+	Hosts          *[]SystemSnmpCommunityHosts  `json:"hosts,omitempty"`
+	Hosts6         *[]SystemSnmpCommunityHosts6 `json:"hosts6,omitempty"`
 	Id             *int64                       `json:"id,omitempty"`
 	Name           *string                      `json:"name,omitempty"`
 	QueryV1Port    *int64                       `json:"query-v1-port,omitempty"`
@@ -21,7 +21,7 @@ type SystemsnmpCommunity struct {
 	TrapV2cStatus  *string                      `json:"trap-v2c-status,omitempty"`
 }
 
-type SystemsnmpCommunityHosts struct {
+type SystemSnmpCommunityHosts struct {
 	HaDirect *string `json:"ha-direct,omitempty"`
 	HostType *string `json:"host-type,omitempty"`
 	Id       *int64  `json:"id,omitempty"`
@@ -29,7 +29,7 @@ type SystemsnmpCommunityHosts struct {
 	SourceIp *string `json:"source-ip,omitempty"`
 }
 
-type SystemsnmpCommunityHosts6 struct {
+type SystemSnmpCommunityHosts6 struct {
 	HaDirect   *string `json:"ha-direct,omitempty"`
 	HostType   *string `json:"host-type,omitempty"`
 	Id         *int64  `json:"id,omitempty"`

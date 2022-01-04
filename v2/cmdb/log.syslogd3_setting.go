@@ -2,24 +2,23 @@ package cmdb
 
 import (
 	"encoding/json"
-	"errors"
 	"log"
 
 	"github.com/poroping/forti-sdk-go/v2/models"
 	"github.com/poroping/forti-sdk-go/v2/request"
 )
 
-func (c *Client) CreateLogsyslogd3Setting(payload *models.Logsyslogd3Setting, params *models.CmdbRequestParams) (*models.CmdbResponse, error) {
-	log.Printf("[INFO] Resource at path %q is complex type. Changing to UPDATE.", models.Logsyslogd3SettingPath)
-	return c.UpdateLogsyslogd3Setting("", payload, params)
+func (c *Client) CreateLogSyslogd3Setting(payload *models.LogSyslogd3Setting, params *models.CmdbRequestParams) (*models.CmdbResponse, error) {
+	log.Printf("[INFO] Resource at path %q is complex type. Changing to UPDATE.", models.LogSyslogd3SettingPath)
+	return c.UpdateLogSyslogd3Setting("", payload, params)
 }
 
-func (c *Client) ReadLogsyslogd3Setting(mkey string, params *models.CmdbRequestParams) (*models.Logsyslogd3Setting, error) {
+func (c *Client) ReadLogSyslogd3Setting(mkey string, params *models.CmdbRequestParams) (*models.LogSyslogd3Setting, error) {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "GET"
 	req.Mkey = &mkey
 	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.Logsyslogd3SettingPath
+	req.Path = models.CmdbBasePath + models.LogSyslogd3SettingPath
 	req.Params = *params
 
 	res, err := request.Read(c.config, req)
@@ -34,17 +33,15 @@ func (c *Client) ReadLogsyslogd3Setting(mkey string, params *models.CmdbRequestP
 		if err != nil {
 			return nil, err
 		}
-		v := models.Logsyslogd3Setting{}
+		v := models.LogSyslogd3Setting{}
 		json.Unmarshal(jsontmp, &v)
 		return &v, nil
 	}
 
-	err = errors.New("unable to parse API response results")
-
 	return nil, err
 }
 
-func (c *Client) UpdateLogsyslogd3Setting(mkey string, payload *models.Logsyslogd3Setting, params *models.CmdbRequestParams) (*models.CmdbResponse, error) {
+func (c *Client) UpdateLogSyslogd3Setting(mkey string, payload *models.LogSyslogd3Setting, params *models.CmdbRequestParams) (*models.CmdbResponse, error) {
 	body, err := json.Marshal(payload)
 	if err != nil {
 		return nil, err
@@ -54,7 +51,7 @@ func (c *Client) UpdateLogsyslogd3Setting(mkey string, payload *models.Logsyslog
 	req.HTTPMethod = "PUT"
 	req.Mkey = &mkey
 	req.Payload = body
-	req.Path = models.CmdbBasePath + models.Logsyslogd3SettingPath + mkey + "/"
+	req.Path = models.CmdbBasePath + models.LogSyslogd3SettingPath
 	req.Params = *params
 
 	res, err := request.CreateUpdate(c.config, req)
@@ -64,8 +61,8 @@ func (c *Client) UpdateLogsyslogd3Setting(mkey string, payload *models.Logsyslog
 	return res, nil
 }
 
-func (c *Client) DeleteLogsyslogd3Setting(mkey string, params *models.CmdbRequestParams) error {
-	payload := &models.Logsyslogd3Setting{}
-	_, err := c.UpdateLogsyslogd3Setting("", payload, params)
+func (c *Client) DeleteLogSyslogd3Setting(mkey string, params *models.CmdbRequestParams) error {
+	payload := &models.LogSyslogd3Setting{}
+	_, err := c.UpdateLogSyslogd3Setting("", payload, params)
 	return err
 }

@@ -1,8 +1,8 @@
 package models
 
-const VpnipsecPhase2InterfacePath = "vpn/ipsec/phase2-interface/"
+const VpnIpsecPhase2InterfacePath = "vpn.ipsec/phase2-interface/"
 
-type VpnipsecPhase2Interface struct {
+type VpnIpsecPhase2Interface struct {
 	AddRoute               *string `json:"add-route,omitempty"`
 	AutoDiscoveryForwarder *string `json:"auto-discovery-forwarder,omitempty"`
 	AutoDiscoverySender    *string `json:"auto-discovery-sender,omitempty"`

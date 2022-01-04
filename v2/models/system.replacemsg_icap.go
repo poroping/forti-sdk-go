@@ -1,8 +1,8 @@
 package models
 
-const SystemreplacemsgIcapPath = "system/replacemsg/icap/"
+const SystemReplacemsgIcapPath = "system.replacemsg/icap/"
 
-type SystemreplacemsgIcap struct {
+type SystemReplacemsgIcap struct {
 	Buffer  *string `json:"buffer,omitempty"`
 	Format  *string `json:"format,omitempty"`
 	Header  *string `json:"header,omitempty"`

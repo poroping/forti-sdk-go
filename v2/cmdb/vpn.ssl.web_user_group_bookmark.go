@@ -2,14 +2,13 @@ package cmdb
 
 import (
 	"encoding/json"
-	"errors"
 	"log"
 
 	"github.com/poroping/forti-sdk-go/v2/models"
 	"github.com/poroping/forti-sdk-go/v2/request"
 )
 
-func (c *Client) CreateVpnsslwebUserGroupBookmark(payload *models.VpnsslwebUserGroupBookmark, params *models.CmdbRequestParams) (*models.CmdbResponse, error) {
+func (c *Client) CreateVpnSslWebUserGroupBookmark(payload *models.VpnSslWebUserGroupBookmark, params *models.CmdbRequestParams) (*models.CmdbResponse, error) {
 	body, err := json.Marshal(payload)
 	if err != nil {
 		return nil, err
@@ -18,20 +17,20 @@ func (c *Client) CreateVpnsslwebUserGroupBookmark(payload *models.VpnsslwebUserG
 	mkey := ""
 	if payload.Name != nil && *params.AllowAppend {
 		mkey = *payload.Name
-		read, err := c.ReadVpnsslwebUserGroupBookmark(mkey, params)
+		read, err := c.ReadVpnSslWebUserGroupBookmark(mkey, params)
 		if err != nil {
 			return nil, err
 		}
 		if read != nil {
-			log.Printf("[WARN] Resource at path %q with mkey %q detected upon CREATE with flag set to to overwrite. Changing to UPDATE.", models.VpnsslwebUserGroupBookmarkPath, mkey)
-			return c.UpdateVpnsslwebUserGroupBookmark(mkey, payload, params)
+			log.Printf("[WARN] Resource at path %q with mkey %q detected upon CREATE with flag set to to overwrite. Changing to UPDATE.", models.VpnSslWebUserGroupBookmarkPath, mkey)
+			return c.UpdateVpnSslWebUserGroupBookmark(mkey, payload, params)
 		}
 	}
 
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "POST"
 	req.Payload = body
-	req.Path = models.CmdbBasePath + models.VpnsslwebUserGroupBookmarkPath
+	req.Path = models.CmdbBasePath + models.VpnSslWebUserGroupBookmarkPath
 	req.Params = *params
 
 	res, err := request.CreateUpdate(c.config, req)
@@ -41,12 +40,12 @@ func (c *Client) CreateVpnsslwebUserGroupBookmark(payload *models.VpnsslwebUserG
 	return res, nil
 }
 
-func (c *Client) ReadVpnsslwebUserGroupBookmark(mkey string, params *models.CmdbRequestParams) (*models.VpnsslwebUserGroupBookmark, error) {
+func (c *Client) ReadVpnSslWebUserGroupBookmark(mkey string, params *models.CmdbRequestParams) (*models.VpnSslWebUserGroupBookmark, error) {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "GET"
 	req.Mkey = &mkey
 	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.VpnsslwebUserGroupBookmarkPath + mkey + "/"
+	req.Path = models.CmdbBasePath + models.VpnSslWebUserGroupBookmarkPath + mkey + "/"
 	req.Params = *params
 
 	res, err := request.Read(c.config, req)
@@ -61,17 +60,15 @@ func (c *Client) ReadVpnsslwebUserGroupBookmark(mkey string, params *models.Cmdb
 		if err != nil {
 			return nil, err
 		}
-		v := models.VpnsslwebUserGroupBookmark{}
+		v := models.VpnSslWebUserGroupBookmark{}
 		json.Unmarshal(jsontmp, &v)
 		return &v, nil
 	}
 
-	err = errors.New("unable to parse API response results")
-
 	return nil, err
 }
 
-func (c *Client) UpdateVpnsslwebUserGroupBookmark(mkey string, payload *models.VpnsslwebUserGroupBookmark, params *models.CmdbRequestParams) (*models.CmdbResponse, error) {
+func (c *Client) UpdateVpnSslWebUserGroupBookmark(mkey string, payload *models.VpnSslWebUserGroupBookmark, params *models.CmdbRequestParams) (*models.CmdbResponse, error) {
 	body, err := json.Marshal(payload)
 	if err != nil {
 		return nil, err
@@ -81,7 +78,7 @@ func (c *Client) UpdateVpnsslwebUserGroupBookmark(mkey string, payload *models.V
 	req.HTTPMethod = "PUT"
 	req.Mkey = &mkey
 	req.Payload = body
-	req.Path = models.CmdbBasePath + models.VpnsslwebUserGroupBookmarkPath + mkey + "/"
+	req.Path = models.CmdbBasePath + models.VpnSslWebUserGroupBookmarkPath + mkey + "/"
 	req.Params = *params
 
 	res, err := request.CreateUpdate(c.config, req)
@@ -91,12 +88,12 @@ func (c *Client) UpdateVpnsslwebUserGroupBookmark(mkey string, payload *models.V
 	return res, nil
 }
 
-func (c *Client) DeleteVpnsslwebUserGroupBookmark(mkey string, params *models.CmdbRequestParams) error {
+func (c *Client) DeleteVpnSslWebUserGroupBookmark(mkey string, params *models.CmdbRequestParams) error {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "DELETE"
 	req.Mkey = &mkey
 	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.VpnsslwebUserGroupBookmarkPath + mkey + "/"
+	req.Path = models.CmdbBasePath + models.VpnSslWebUserGroupBookmarkPath + mkey + "/"
 	req.Params = *params
 
 	err := request.Delete(c.config, req)

@@ -1,8 +1,8 @@
 package models
 
-const VpnsslClientPath = "vpn/ssl/client/"
+const VpnSslClientPath = "vpn.ssl/client/"
 
-type VpnsslClient struct {
+type VpnSslClient struct {
 	Certificate *string `json:"certificate,omitempty"`
 	Comment     *string `json:"comment,omitempty"`
 	Distance    *int64  `json:"distance,omitempty"`

@@ -2,14 +2,13 @@ package cmdb
 
 import (
 	"encoding/json"
-	"errors"
 	"log"
 
 	"github.com/poroping/forti-sdk-go/v2/models"
 	"github.com/poroping/forti-sdk-go/v2/request"
 )
 
-func (c *Client) CreateSystemreplacemsgAuth(payload *models.SystemreplacemsgAuth, params *models.CmdbRequestParams) (*models.CmdbResponse, error) {
+func (c *Client) CreateSystemReplacemsgAuth(payload *models.SystemReplacemsgAuth, params *models.CmdbRequestParams) (*models.CmdbResponse, error) {
 	body, err := json.Marshal(payload)
 	if err != nil {
 		return nil, err
@@ -18,20 +17,20 @@ func (c *Client) CreateSystemreplacemsgAuth(payload *models.SystemreplacemsgAuth
 	mkey := ""
 	if payload.MsgType != nil && *params.AllowAppend {
 		mkey = *payload.MsgType
-		read, err := c.ReadSystemreplacemsgAuth(mkey, params)
+		read, err := c.ReadSystemReplacemsgAuth(mkey, params)
 		if err != nil {
 			return nil, err
 		}
 		if read != nil {
-			log.Printf("[WARN] Resource at path %q with mkey %q detected upon CREATE with flag set to to overwrite. Changing to UPDATE.", models.SystemreplacemsgAuthPath, mkey)
-			return c.UpdateSystemreplacemsgAuth(mkey, payload, params)
+			log.Printf("[WARN] Resource at path %q with mkey %q detected upon CREATE with flag set to to overwrite. Changing to UPDATE.", models.SystemReplacemsgAuthPath, mkey)
+			return c.UpdateSystemReplacemsgAuth(mkey, payload, params)
 		}
 	}
 
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "POST"
 	req.Payload = body
-	req.Path = models.CmdbBasePath + models.SystemreplacemsgAuthPath
+	req.Path = models.CmdbBasePath + models.SystemReplacemsgAuthPath
 	req.Params = *params
 
 	res, err := request.CreateUpdate(c.config, req)
@@ -41,12 +40,12 @@ func (c *Client) CreateSystemreplacemsgAuth(payload *models.SystemreplacemsgAuth
 	return res, nil
 }
 
-func (c *Client) ReadSystemreplacemsgAuth(mkey string, params *models.CmdbRequestParams) (*models.SystemreplacemsgAuth, error) {
+func (c *Client) ReadSystemReplacemsgAuth(mkey string, params *models.CmdbRequestParams) (*models.SystemReplacemsgAuth, error) {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "GET"
 	req.Mkey = &mkey
 	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.SystemreplacemsgAuthPath + mkey + "/"
+	req.Path = models.CmdbBasePath + models.SystemReplacemsgAuthPath + mkey + "/"
 	req.Params = *params
 
 	res, err := request.Read(c.config, req)
@@ -61,17 +60,15 @@ func (c *Client) ReadSystemreplacemsgAuth(mkey string, params *models.CmdbReques
 		if err != nil {
 			return nil, err
 		}
-		v := models.SystemreplacemsgAuth{}
+		v := models.SystemReplacemsgAuth{}
 		json.Unmarshal(jsontmp, &v)
 		return &v, nil
 	}
 
-	err = errors.New("unable to parse API response results")
-
 	return nil, err
 }
 
-func (c *Client) UpdateSystemreplacemsgAuth(mkey string, payload *models.SystemreplacemsgAuth, params *models.CmdbRequestParams) (*models.CmdbResponse, error) {
+func (c *Client) UpdateSystemReplacemsgAuth(mkey string, payload *models.SystemReplacemsgAuth, params *models.CmdbRequestParams) (*models.CmdbResponse, error) {
 	body, err := json.Marshal(payload)
 	if err != nil {
 		return nil, err
@@ -81,7 +78,7 @@ func (c *Client) UpdateSystemreplacemsgAuth(mkey string, payload *models.Systemr
 	req.HTTPMethod = "PUT"
 	req.Mkey = &mkey
 	req.Payload = body
-	req.Path = models.CmdbBasePath + models.SystemreplacemsgAuthPath + mkey + "/"
+	req.Path = models.CmdbBasePath + models.SystemReplacemsgAuthPath + mkey + "/"
 	req.Params = *params
 
 	res, err := request.CreateUpdate(c.config, req)
@@ -91,12 +88,12 @@ func (c *Client) UpdateSystemreplacemsgAuth(mkey string, payload *models.Systemr
 	return res, nil
 }
 
-func (c *Client) DeleteSystemreplacemsgAuth(mkey string, params *models.CmdbRequestParams) error {
+func (c *Client) DeleteSystemReplacemsgAuth(mkey string, params *models.CmdbRequestParams) error {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "DELETE"
 	req.Mkey = &mkey
 	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.SystemreplacemsgAuthPath + mkey + "/"
+	req.Path = models.CmdbBasePath + models.SystemReplacemsgAuthPath + mkey + "/"
 	req.Params = *params
 
 	err := request.Delete(c.config, req)

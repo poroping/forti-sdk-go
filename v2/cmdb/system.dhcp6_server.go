@@ -2,7 +2,6 @@ package cmdb
 
 import (
 	"encoding/json"
-	"errors"
 	"log"
 	"strconv"
 
@@ -10,7 +9,7 @@ import (
 	"github.com/poroping/forti-sdk-go/v2/request"
 )
 
-func (c *Client) CreateSystemdhcp6Server(payload *models.Systemdhcp6Server, params *models.CmdbRequestParams) (*models.CmdbResponse, error) {
+func (c *Client) CreateSystemDhcp6Server(payload *models.SystemDhcp6Server, params *models.CmdbRequestParams) (*models.CmdbResponse, error) {
 	body, err := json.Marshal(payload)
 	if err != nil {
 		return nil, err
@@ -19,20 +18,20 @@ func (c *Client) CreateSystemdhcp6Server(payload *models.Systemdhcp6Server, para
 	mkey := ""
 	if payload.Id != nil && *params.AllowAppend {
 		mkey = strconv.Itoa(int(*payload.Id))
-		read, err := c.ReadSystemdhcp6Server(mkey, params)
+		read, err := c.ReadSystemDhcp6Server(mkey, params)
 		if err != nil {
 			return nil, err
 		}
 		if read != nil {
-			log.Printf("[WARN] Resource at path %q with mkey %q detected upon CREATE with flag set to to overwrite. Changing to UPDATE.", models.Systemdhcp6ServerPath, mkey)
-			return c.UpdateSystemdhcp6Server(mkey, payload, params)
+			log.Printf("[WARN] Resource at path %q with mkey %q detected upon CREATE with flag set to to overwrite. Changing to UPDATE.", models.SystemDhcp6ServerPath, mkey)
+			return c.UpdateSystemDhcp6Server(mkey, payload, params)
 		}
 	}
 
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "POST"
 	req.Payload = body
-	req.Path = models.CmdbBasePath + models.Systemdhcp6ServerPath
+	req.Path = models.CmdbBasePath + models.SystemDhcp6ServerPath
 	req.Params = *params
 
 	res, err := request.CreateUpdate(c.config, req)
@@ -42,12 +41,12 @@ func (c *Client) CreateSystemdhcp6Server(payload *models.Systemdhcp6Server, para
 	return res, nil
 }
 
-func (c *Client) ReadSystemdhcp6Server(mkey string, params *models.CmdbRequestParams) (*models.Systemdhcp6Server, error) {
+func (c *Client) ReadSystemDhcp6Server(mkey string, params *models.CmdbRequestParams) (*models.SystemDhcp6Server, error) {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "GET"
 	req.Mkey = &mkey
 	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.Systemdhcp6ServerPath + mkey + "/"
+	req.Path = models.CmdbBasePath + models.SystemDhcp6ServerPath + mkey + "/"
 	req.Params = *params
 
 	res, err := request.Read(c.config, req)
@@ -62,17 +61,15 @@ func (c *Client) ReadSystemdhcp6Server(mkey string, params *models.CmdbRequestPa
 		if err != nil {
 			return nil, err
 		}
-		v := models.Systemdhcp6Server{}
+		v := models.SystemDhcp6Server{}
 		json.Unmarshal(jsontmp, &v)
 		return &v, nil
 	}
 
-	err = errors.New("unable to parse API response results")
-
 	return nil, err
 }
 
-func (c *Client) UpdateSystemdhcp6Server(mkey string, payload *models.Systemdhcp6Server, params *models.CmdbRequestParams) (*models.CmdbResponse, error) {
+func (c *Client) UpdateSystemDhcp6Server(mkey string, payload *models.SystemDhcp6Server, params *models.CmdbRequestParams) (*models.CmdbResponse, error) {
 	body, err := json.Marshal(payload)
 	if err != nil {
 		return nil, err
@@ -82,7 +79,7 @@ func (c *Client) UpdateSystemdhcp6Server(mkey string, payload *models.Systemdhcp
 	req.HTTPMethod = "PUT"
 	req.Mkey = &mkey
 	req.Payload = body
-	req.Path = models.CmdbBasePath + models.Systemdhcp6ServerPath + mkey + "/"
+	req.Path = models.CmdbBasePath + models.SystemDhcp6ServerPath + mkey + "/"
 	req.Params = *params
 
 	res, err := request.CreateUpdate(c.config, req)
@@ -92,12 +89,12 @@ func (c *Client) UpdateSystemdhcp6Server(mkey string, payload *models.Systemdhcp
 	return res, nil
 }
 
-func (c *Client) DeleteSystemdhcp6Server(mkey string, params *models.CmdbRequestParams) error {
+func (c *Client) DeleteSystemDhcp6Server(mkey string, params *models.CmdbRequestParams) error {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "DELETE"
 	req.Mkey = &mkey
 	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.Systemdhcp6ServerPath + mkey + "/"
+	req.Path = models.CmdbBasePath + models.SystemDhcp6ServerPath + mkey + "/"
 	req.Params = *params
 
 	err := request.Delete(c.config, req)

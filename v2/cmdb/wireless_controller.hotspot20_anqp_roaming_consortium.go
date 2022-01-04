@@ -2,14 +2,13 @@ package cmdb
 
 import (
 	"encoding/json"
-	"errors"
 	"log"
 
 	"github.com/poroping/forti-sdk-go/v2/models"
 	"github.com/poroping/forti-sdk-go/v2/request"
 )
 
-func (c *Client) CreateWirelessControllerhotspot20AnqpRoamingConsortium(payload *models.WirelessControllerhotspot20AnqpRoamingConsortium, params *models.CmdbRequestParams) (*models.CmdbResponse, error) {
+func (c *Client) CreateWirelessControllerHotspot20AnqpRoamingConsortium(payload *models.WirelessControllerHotspot20AnqpRoamingConsortium, params *models.CmdbRequestParams) (*models.CmdbResponse, error) {
 	body, err := json.Marshal(payload)
 	if err != nil {
 		return nil, err
@@ -18,20 +17,20 @@ func (c *Client) CreateWirelessControllerhotspot20AnqpRoamingConsortium(payload 
 	mkey := ""
 	if payload.Name != nil && *params.AllowAppend {
 		mkey = *payload.Name
-		read, err := c.ReadWirelessControllerhotspot20AnqpRoamingConsortium(mkey, params)
+		read, err := c.ReadWirelessControllerHotspot20AnqpRoamingConsortium(mkey, params)
 		if err != nil {
 			return nil, err
 		}
 		if read != nil {
-			log.Printf("[WARN] Resource at path %q with mkey %q detected upon CREATE with flag set to to overwrite. Changing to UPDATE.", models.WirelessControllerhotspot20AnqpRoamingConsortiumPath, mkey)
-			return c.UpdateWirelessControllerhotspot20AnqpRoamingConsortium(mkey, payload, params)
+			log.Printf("[WARN] Resource at path %q with mkey %q detected upon CREATE with flag set to to overwrite. Changing to UPDATE.", models.WirelessControllerHotspot20AnqpRoamingConsortiumPath, mkey)
+			return c.UpdateWirelessControllerHotspot20AnqpRoamingConsortium(mkey, payload, params)
 		}
 	}
 
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "POST"
 	req.Payload = body
-	req.Path = models.CmdbBasePath + models.WirelessControllerhotspot20AnqpRoamingConsortiumPath
+	req.Path = models.CmdbBasePath + models.WirelessControllerHotspot20AnqpRoamingConsortiumPath
 	req.Params = *params
 
 	res, err := request.CreateUpdate(c.config, req)
@@ -41,12 +40,12 @@ func (c *Client) CreateWirelessControllerhotspot20AnqpRoamingConsortium(payload 
 	return res, nil
 }
 
-func (c *Client) ReadWirelessControllerhotspot20AnqpRoamingConsortium(mkey string, params *models.CmdbRequestParams) (*models.WirelessControllerhotspot20AnqpRoamingConsortium, error) {
+func (c *Client) ReadWirelessControllerHotspot20AnqpRoamingConsortium(mkey string, params *models.CmdbRequestParams) (*models.WirelessControllerHotspot20AnqpRoamingConsortium, error) {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "GET"
 	req.Mkey = &mkey
 	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.WirelessControllerhotspot20AnqpRoamingConsortiumPath + mkey + "/"
+	req.Path = models.CmdbBasePath + models.WirelessControllerHotspot20AnqpRoamingConsortiumPath + mkey + "/"
 	req.Params = *params
 
 	res, err := request.Read(c.config, req)
@@ -61,17 +60,15 @@ func (c *Client) ReadWirelessControllerhotspot20AnqpRoamingConsortium(mkey strin
 		if err != nil {
 			return nil, err
 		}
-		v := models.WirelessControllerhotspot20AnqpRoamingConsortium{}
+		v := models.WirelessControllerHotspot20AnqpRoamingConsortium{}
 		json.Unmarshal(jsontmp, &v)
 		return &v, nil
 	}
 
-	err = errors.New("unable to parse API response results")
-
 	return nil, err
 }
 
-func (c *Client) UpdateWirelessControllerhotspot20AnqpRoamingConsortium(mkey string, payload *models.WirelessControllerhotspot20AnqpRoamingConsortium, params *models.CmdbRequestParams) (*models.CmdbResponse, error) {
+func (c *Client) UpdateWirelessControllerHotspot20AnqpRoamingConsortium(mkey string, payload *models.WirelessControllerHotspot20AnqpRoamingConsortium, params *models.CmdbRequestParams) (*models.CmdbResponse, error) {
 	body, err := json.Marshal(payload)
 	if err != nil {
 		return nil, err
@@ -81,7 +78,7 @@ func (c *Client) UpdateWirelessControllerhotspot20AnqpRoamingConsortium(mkey str
 	req.HTTPMethod = "PUT"
 	req.Mkey = &mkey
 	req.Payload = body
-	req.Path = models.CmdbBasePath + models.WirelessControllerhotspot20AnqpRoamingConsortiumPath + mkey + "/"
+	req.Path = models.CmdbBasePath + models.WirelessControllerHotspot20AnqpRoamingConsortiumPath + mkey + "/"
 	req.Params = *params
 
 	res, err := request.CreateUpdate(c.config, req)
@@ -91,12 +88,12 @@ func (c *Client) UpdateWirelessControllerhotspot20AnqpRoamingConsortium(mkey str
 	return res, nil
 }
 
-func (c *Client) DeleteWirelessControllerhotspot20AnqpRoamingConsortium(mkey string, params *models.CmdbRequestParams) error {
+func (c *Client) DeleteWirelessControllerHotspot20AnqpRoamingConsortium(mkey string, params *models.CmdbRequestParams) error {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "DELETE"
 	req.Mkey = &mkey
 	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.WirelessControllerhotspot20AnqpRoamingConsortiumPath + mkey + "/"
+	req.Path = models.CmdbBasePath + models.WirelessControllerHotspot20AnqpRoamingConsortiumPath + mkey + "/"
 	req.Params = *params
 
 	err := request.Delete(c.config, req)

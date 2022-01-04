@@ -1,8 +1,8 @@
 package models
 
-const FirewallsslSettingPath = "firewall/ssl/setting/"
+const FirewallSslSettingPath = "firewall.ssl/setting/"
 
-type FirewallsslSetting struct {
+type FirewallSslSetting struct {
 	AbbreviateHandshake    *string `json:"abbreviate-handshake,omitempty"`
 	CertCacheCapacity      *int64  `json:"cert-cache-capacity,omitempty"`
 	CertCacheTimeout       *int64  `json:"cert-cache-timeout,omitempty"`

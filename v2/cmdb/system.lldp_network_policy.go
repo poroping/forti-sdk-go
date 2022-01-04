@@ -2,14 +2,13 @@ package cmdb
 
 import (
 	"encoding/json"
-	"errors"
 	"log"
 
 	"github.com/poroping/forti-sdk-go/v2/models"
 	"github.com/poroping/forti-sdk-go/v2/request"
 )
 
-func (c *Client) CreateSystemlldpNetworkPolicy(payload *models.SystemlldpNetworkPolicy, params *models.CmdbRequestParams) (*models.CmdbResponse, error) {
+func (c *Client) CreateSystemLldpNetworkPolicy(payload *models.SystemLldpNetworkPolicy, params *models.CmdbRequestParams) (*models.CmdbResponse, error) {
 	body, err := json.Marshal(payload)
 	if err != nil {
 		return nil, err
@@ -18,20 +17,20 @@ func (c *Client) CreateSystemlldpNetworkPolicy(payload *models.SystemlldpNetwork
 	mkey := ""
 	if payload.Name != nil && *params.AllowAppend {
 		mkey = *payload.Name
-		read, err := c.ReadSystemlldpNetworkPolicy(mkey, params)
+		read, err := c.ReadSystemLldpNetworkPolicy(mkey, params)
 		if err != nil {
 			return nil, err
 		}
 		if read != nil {
-			log.Printf("[WARN] Resource at path %q with mkey %q detected upon CREATE with flag set to to overwrite. Changing to UPDATE.", models.SystemlldpNetworkPolicyPath, mkey)
-			return c.UpdateSystemlldpNetworkPolicy(mkey, payload, params)
+			log.Printf("[WARN] Resource at path %q with mkey %q detected upon CREATE with flag set to to overwrite. Changing to UPDATE.", models.SystemLldpNetworkPolicyPath, mkey)
+			return c.UpdateSystemLldpNetworkPolicy(mkey, payload, params)
 		}
 	}
 
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "POST"
 	req.Payload = body
-	req.Path = models.CmdbBasePath + models.SystemlldpNetworkPolicyPath
+	req.Path = models.CmdbBasePath + models.SystemLldpNetworkPolicyPath
 	req.Params = *params
 
 	res, err := request.CreateUpdate(c.config, req)
@@ -41,12 +40,12 @@ func (c *Client) CreateSystemlldpNetworkPolicy(payload *models.SystemlldpNetwork
 	return res, nil
 }
 
-func (c *Client) ReadSystemlldpNetworkPolicy(mkey string, params *models.CmdbRequestParams) (*models.SystemlldpNetworkPolicy, error) {
+func (c *Client) ReadSystemLldpNetworkPolicy(mkey string, params *models.CmdbRequestParams) (*models.SystemLldpNetworkPolicy, error) {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "GET"
 	req.Mkey = &mkey
 	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.SystemlldpNetworkPolicyPath + mkey + "/"
+	req.Path = models.CmdbBasePath + models.SystemLldpNetworkPolicyPath + mkey + "/"
 	req.Params = *params
 
 	res, err := request.Read(c.config, req)
@@ -61,17 +60,15 @@ func (c *Client) ReadSystemlldpNetworkPolicy(mkey string, params *models.CmdbReq
 		if err != nil {
 			return nil, err
 		}
-		v := models.SystemlldpNetworkPolicy{}
+		v := models.SystemLldpNetworkPolicy{}
 		json.Unmarshal(jsontmp, &v)
 		return &v, nil
 	}
 
-	err = errors.New("unable to parse API response results")
-
 	return nil, err
 }
 
-func (c *Client) UpdateSystemlldpNetworkPolicy(mkey string, payload *models.SystemlldpNetworkPolicy, params *models.CmdbRequestParams) (*models.CmdbResponse, error) {
+func (c *Client) UpdateSystemLldpNetworkPolicy(mkey string, payload *models.SystemLldpNetworkPolicy, params *models.CmdbRequestParams) (*models.CmdbResponse, error) {
 	body, err := json.Marshal(payload)
 	if err != nil {
 		return nil, err
@@ -81,7 +78,7 @@ func (c *Client) UpdateSystemlldpNetworkPolicy(mkey string, payload *models.Syst
 	req.HTTPMethod = "PUT"
 	req.Mkey = &mkey
 	req.Payload = body
-	req.Path = models.CmdbBasePath + models.SystemlldpNetworkPolicyPath + mkey + "/"
+	req.Path = models.CmdbBasePath + models.SystemLldpNetworkPolicyPath + mkey + "/"
 	req.Params = *params
 
 	res, err := request.CreateUpdate(c.config, req)
@@ -91,12 +88,12 @@ func (c *Client) UpdateSystemlldpNetworkPolicy(mkey string, payload *models.Syst
 	return res, nil
 }
 
-func (c *Client) DeleteSystemlldpNetworkPolicy(mkey string, params *models.CmdbRequestParams) error {
+func (c *Client) DeleteSystemLldpNetworkPolicy(mkey string, params *models.CmdbRequestParams) error {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "DELETE"
 	req.Mkey = &mkey
 	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.SystemlldpNetworkPolicyPath + mkey + "/"
+	req.Path = models.CmdbBasePath + models.SystemLldpNetworkPolicyPath + mkey + "/"
 	req.Params = *params
 
 	err := request.Delete(c.config, req)

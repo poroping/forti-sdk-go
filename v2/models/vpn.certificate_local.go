@@ -1,8 +1,8 @@
 package models
 
-const VpncertificateLocalPath = "vpn/certificate/local/"
+const VpnCertificateLocalPath = "vpn.certificate/local/"
 
-type VpncertificateLocal struct {
+type VpnCertificateLocal struct {
 	AcmeCaUrl                 *string `json:"acme-ca-url,omitempty"`
 	AcmeDomain                *string `json:"acme-domain,omitempty"`
 	AcmeEmail                 *string `json:"acme-email,omitempty"`

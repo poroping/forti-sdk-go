@@ -1,8 +1,8 @@
 package models
 
-const LogmemoryFilterPath = "log/memory/filter/"
+const LogMemoryFilterPath = "log.memory/filter/"
 
-type LogmemoryFilter struct {
+type LogMemoryFilter struct {
 	Admin            *string                     `json:"admin,omitempty"`
 	Anomaly          *string                     `json:"anomaly,omitempty"`
 	Auth             *string                     `json:"auth,omitempty"`
@@ -12,7 +12,7 @@ type LogmemoryFilter struct {
 	Filter           *string                     `json:"filter,omitempty"`
 	FilterType       *string                     `json:"filter-type,omitempty"`
 	ForwardTraffic   *string                     `json:"forward-traffic,omitempty"`
-	FreeStyle        *[]LogmemoryFilterFreeStyle `json:"free-style,omitempty"`
+	FreeStyle        *[]LogMemoryFilterFreeStyle `json:"free-style,omitempty"`
 	Gtp              *string                     `json:"gtp,omitempty"`
 	Ha               *string                     `json:"ha,omitempty"`
 	Ipsec            *string                     `json:"ipsec,omitempty"`
@@ -34,7 +34,7 @@ type LogmemoryFilter struct {
 	WirelessActivity *string                     `json:"wireless-activity,omitempty"`
 }
 
-type LogmemoryFilterFreeStyle struct {
+type LogMemoryFilterFreeStyle struct {
 	Category   *string `json:"category,omitempty"`
 	Filter     *string `json:"filter,omitempty"`
 	FilterType *string `json:"filter-type,omitempty"`

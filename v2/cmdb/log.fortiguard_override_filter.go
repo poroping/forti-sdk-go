@@ -2,24 +2,23 @@ package cmdb
 
 import (
 	"encoding/json"
-	"errors"
 	"log"
 
 	"github.com/poroping/forti-sdk-go/v2/models"
 	"github.com/poroping/forti-sdk-go/v2/request"
 )
 
-func (c *Client) CreateLogfortiguardOverrideFilter(payload *models.LogfortiguardOverrideFilter, params *models.CmdbRequestParams) (*models.CmdbResponse, error) {
-	log.Printf("[INFO] Resource at path %q is complex type. Changing to UPDATE.", models.LogfortiguardOverrideFilterPath)
-	return c.UpdateLogfortiguardOverrideFilter("", payload, params)
+func (c *Client) CreateLogFortiguardOverrideFilter(payload *models.LogFortiguardOverrideFilter, params *models.CmdbRequestParams) (*models.CmdbResponse, error) {
+	log.Printf("[INFO] Resource at path %q is complex type. Changing to UPDATE.", models.LogFortiguardOverrideFilterPath)
+	return c.UpdateLogFortiguardOverrideFilter("", payload, params)
 }
 
-func (c *Client) ReadLogfortiguardOverrideFilter(mkey string, params *models.CmdbRequestParams) (*models.LogfortiguardOverrideFilter, error) {
+func (c *Client) ReadLogFortiguardOverrideFilter(mkey string, params *models.CmdbRequestParams) (*models.LogFortiguardOverrideFilter, error) {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "GET"
 	req.Mkey = &mkey
 	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.LogfortiguardOverrideFilterPath
+	req.Path = models.CmdbBasePath + models.LogFortiguardOverrideFilterPath
 	req.Params = *params
 
 	res, err := request.Read(c.config, req)
@@ -34,17 +33,15 @@ func (c *Client) ReadLogfortiguardOverrideFilter(mkey string, params *models.Cmd
 		if err != nil {
 			return nil, err
 		}
-		v := models.LogfortiguardOverrideFilter{}
+		v := models.LogFortiguardOverrideFilter{}
 		json.Unmarshal(jsontmp, &v)
 		return &v, nil
 	}
 
-	err = errors.New("unable to parse API response results")
-
 	return nil, err
 }
 
-func (c *Client) UpdateLogfortiguardOverrideFilter(mkey string, payload *models.LogfortiguardOverrideFilter, params *models.CmdbRequestParams) (*models.CmdbResponse, error) {
+func (c *Client) UpdateLogFortiguardOverrideFilter(mkey string, payload *models.LogFortiguardOverrideFilter, params *models.CmdbRequestParams) (*models.CmdbResponse, error) {
 	body, err := json.Marshal(payload)
 	if err != nil {
 		return nil, err
@@ -54,7 +51,7 @@ func (c *Client) UpdateLogfortiguardOverrideFilter(mkey string, payload *models.
 	req.HTTPMethod = "PUT"
 	req.Mkey = &mkey
 	req.Payload = body
-	req.Path = models.CmdbBasePath + models.LogfortiguardOverrideFilterPath + mkey + "/"
+	req.Path = models.CmdbBasePath + models.LogFortiguardOverrideFilterPath
 	req.Params = *params
 
 	res, err := request.CreateUpdate(c.config, req)
@@ -64,8 +61,8 @@ func (c *Client) UpdateLogfortiguardOverrideFilter(mkey string, payload *models.
 	return res, nil
 }
 
-func (c *Client) DeleteLogfortiguardOverrideFilter(mkey string, params *models.CmdbRequestParams) error {
-	payload := &models.LogfortiguardOverrideFilter{}
-	_, err := c.UpdateLogfortiguardOverrideFilter("", payload, params)
+func (c *Client) DeleteLogFortiguardOverrideFilter(mkey string, params *models.CmdbRequestParams) error {
+	payload := &models.LogFortiguardOverrideFilter{}
+	_, err := c.UpdateLogFortiguardOverrideFilter("", payload, params)
 	return err
 }

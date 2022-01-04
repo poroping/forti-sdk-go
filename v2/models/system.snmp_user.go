@@ -1,8 +1,8 @@
 package models
 
-const SystemsnmpUserPath = "system/snmp/user/"
+const SystemSnmpUserPath = "system.snmp/user/"
 
-type SystemsnmpUser struct {
+type SystemSnmpUser struct {
 	AuthProto     *string `json:"auth-proto,omitempty"`
 	AuthPwd       *string `json:"auth-pwd,omitempty"`
 	Events        *string `json:"events,omitempty"`

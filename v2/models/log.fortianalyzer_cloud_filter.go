@@ -1,14 +1,14 @@
 package models
 
-const LogfortianalyzerCloudFilterPath = "log/fortianalyzer-cloud/filter/"
+const LogFortianalyzerCloudFilterPath = "log.fortianalyzer-cloud/filter/"
 
-type LogfortianalyzerCloudFilter struct {
+type LogFortianalyzerCloudFilter struct {
 	Anomaly          *string                                 `json:"anomaly,omitempty"`
 	DlpArchive       *string                                 `json:"dlp-archive,omitempty"`
 	Filter           *string                                 `json:"filter,omitempty"`
 	FilterType       *string                                 `json:"filter-type,omitempty"`
 	ForwardTraffic   *string                                 `json:"forward-traffic,omitempty"`
-	FreeStyle        *[]LogfortianalyzerCloudFilterFreeStyle `json:"free-style,omitempty"`
+	FreeStyle        *[]LogFortianalyzerCloudFilterFreeStyle `json:"free-style,omitempty"`
 	Gtp              *string                                 `json:"gtp,omitempty"`
 	LocalTraffic     *string                                 `json:"local-traffic,omitempty"`
 	MulticastTraffic *string                                 `json:"multicast-traffic,omitempty"`
@@ -17,7 +17,7 @@ type LogfortianalyzerCloudFilter struct {
 	Voip             *string                                 `json:"voip,omitempty"`
 }
 
-type LogfortianalyzerCloudFilterFreeStyle struct {
+type LogFortianalyzerCloudFilterFreeStyle struct {
 	Category   *string `json:"category,omitempty"`
 	Filter     *string `json:"filter,omitempty"`
 	FilterType *string `json:"filter-type,omitempty"`

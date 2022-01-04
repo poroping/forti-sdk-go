@@ -1,8 +1,8 @@
 package models
 
-const SystemreplacemsgTrafficQuotaPath = "system/replacemsg/traffic-quota/"
+const SystemReplacemsgTrafficQuotaPath = "system.replacemsg/traffic-quota/"
 
-type SystemreplacemsgTrafficQuota struct {
+type SystemReplacemsgTrafficQuota struct {
 	Buffer  *string `json:"buffer,omitempty"`
 	Format  *string `json:"format,omitempty"`
 	Header  *string `json:"header,omitempty"`

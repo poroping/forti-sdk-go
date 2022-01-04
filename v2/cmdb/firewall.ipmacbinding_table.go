@@ -2,7 +2,6 @@ package cmdb
 
 import (
 	"encoding/json"
-	"errors"
 	"log"
 	"strconv"
 
@@ -10,7 +9,7 @@ import (
 	"github.com/poroping/forti-sdk-go/v2/request"
 )
 
-func (c *Client) CreateFirewallipmacbindingTable(payload *models.FirewallipmacbindingTable, params *models.CmdbRequestParams) (*models.CmdbResponse, error) {
+func (c *Client) CreateFirewallIpmacbindingTable(payload *models.FirewallIpmacbindingTable, params *models.CmdbRequestParams) (*models.CmdbResponse, error) {
 	body, err := json.Marshal(payload)
 	if err != nil {
 		return nil, err
@@ -19,20 +18,20 @@ func (c *Client) CreateFirewallipmacbindingTable(payload *models.Firewallipmacbi
 	mkey := ""
 	if payload.SeqNum != nil && *params.AllowAppend {
 		mkey = strconv.Itoa(int(*payload.SeqNum))
-		read, err := c.ReadFirewallipmacbindingTable(mkey, params)
+		read, err := c.ReadFirewallIpmacbindingTable(mkey, params)
 		if err != nil {
 			return nil, err
 		}
 		if read != nil {
-			log.Printf("[WARN] Resource at path %q with mkey %q detected upon CREATE with flag set to to overwrite. Changing to UPDATE.", models.FirewallipmacbindingTablePath, mkey)
-			return c.UpdateFirewallipmacbindingTable(mkey, payload, params)
+			log.Printf("[WARN] Resource at path %q with mkey %q detected upon CREATE with flag set to to overwrite. Changing to UPDATE.", models.FirewallIpmacbindingTablePath, mkey)
+			return c.UpdateFirewallIpmacbindingTable(mkey, payload, params)
 		}
 	}
 
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "POST"
 	req.Payload = body
-	req.Path = models.CmdbBasePath + models.FirewallipmacbindingTablePath
+	req.Path = models.CmdbBasePath + models.FirewallIpmacbindingTablePath
 	req.Params = *params
 
 	res, err := request.CreateUpdate(c.config, req)
@@ -42,12 +41,12 @@ func (c *Client) CreateFirewallipmacbindingTable(payload *models.Firewallipmacbi
 	return res, nil
 }
 
-func (c *Client) ReadFirewallipmacbindingTable(mkey string, params *models.CmdbRequestParams) (*models.FirewallipmacbindingTable, error) {
+func (c *Client) ReadFirewallIpmacbindingTable(mkey string, params *models.CmdbRequestParams) (*models.FirewallIpmacbindingTable, error) {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "GET"
 	req.Mkey = &mkey
 	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.FirewallipmacbindingTablePath + mkey + "/"
+	req.Path = models.CmdbBasePath + models.FirewallIpmacbindingTablePath + mkey + "/"
 	req.Params = *params
 
 	res, err := request.Read(c.config, req)
@@ -62,17 +61,15 @@ func (c *Client) ReadFirewallipmacbindingTable(mkey string, params *models.CmdbR
 		if err != nil {
 			return nil, err
 		}
-		v := models.FirewallipmacbindingTable{}
+		v := models.FirewallIpmacbindingTable{}
 		json.Unmarshal(jsontmp, &v)
 		return &v, nil
 	}
 
-	err = errors.New("unable to parse API response results")
-
 	return nil, err
 }
 
-func (c *Client) UpdateFirewallipmacbindingTable(mkey string, payload *models.FirewallipmacbindingTable, params *models.CmdbRequestParams) (*models.CmdbResponse, error) {
+func (c *Client) UpdateFirewallIpmacbindingTable(mkey string, payload *models.FirewallIpmacbindingTable, params *models.CmdbRequestParams) (*models.CmdbResponse, error) {
 	body, err := json.Marshal(payload)
 	if err != nil {
 		return nil, err
@@ -82,7 +79,7 @@ func (c *Client) UpdateFirewallipmacbindingTable(mkey string, payload *models.Fi
 	req.HTTPMethod = "PUT"
 	req.Mkey = &mkey
 	req.Payload = body
-	req.Path = models.CmdbBasePath + models.FirewallipmacbindingTablePath + mkey + "/"
+	req.Path = models.CmdbBasePath + models.FirewallIpmacbindingTablePath + mkey + "/"
 	req.Params = *params
 
 	res, err := request.CreateUpdate(c.config, req)
@@ -92,12 +89,12 @@ func (c *Client) UpdateFirewallipmacbindingTable(mkey string, payload *models.Fi
 	return res, nil
 }
 
-func (c *Client) DeleteFirewallipmacbindingTable(mkey string, params *models.CmdbRequestParams) error {
+func (c *Client) DeleteFirewallIpmacbindingTable(mkey string, params *models.CmdbRequestParams) error {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "DELETE"
 	req.Mkey = &mkey
 	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.FirewallipmacbindingTablePath + mkey + "/"
+	req.Path = models.CmdbBasePath + models.FirewallIpmacbindingTablePath + mkey + "/"
 	req.Params = *params
 
 	err := request.Delete(c.config, req)

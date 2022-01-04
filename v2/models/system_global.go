@@ -83,6 +83,7 @@ type SystemGlobal struct {
 	GuiDeviceLatitude                    *string `json:"gui-device-latitude,omitempty"`
 	GuiDeviceLongitude                   *string `json:"gui-device-longitude,omitempty"`
 	GuiDisplayHostname                   *string `json:"gui-display-hostname,omitempty"`
+	GuiFirmwareUpgradeSetupWarning       *string `json:"gui-firmware-upgrade-setup-warning,omitempty"`
 	GuiFirmwareUpgradeWarning            *string `json:"gui-firmware-upgrade-warning,omitempty"`
 	GuiForticareRegistrationSetupWarning *string `json:"gui-forticare-registration-setup-warning,omitempty"`
 	GuiFortigateCloudSandbox             *string `json:"gui-fortigate-cloud-sandbox,omitempty"`

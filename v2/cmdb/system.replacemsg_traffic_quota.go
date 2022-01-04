@@ -2,14 +2,13 @@ package cmdb
 
 import (
 	"encoding/json"
-	"errors"
 	"log"
 
 	"github.com/poroping/forti-sdk-go/v2/models"
 	"github.com/poroping/forti-sdk-go/v2/request"
 )
 
-func (c *Client) CreateSystemreplacemsgTrafficQuota(payload *models.SystemreplacemsgTrafficQuota, params *models.CmdbRequestParams) (*models.CmdbResponse, error) {
+func (c *Client) CreateSystemReplacemsgTrafficQuota(payload *models.SystemReplacemsgTrafficQuota, params *models.CmdbRequestParams) (*models.CmdbResponse, error) {
 	body, err := json.Marshal(payload)
 	if err != nil {
 		return nil, err
@@ -18,20 +17,20 @@ func (c *Client) CreateSystemreplacemsgTrafficQuota(payload *models.Systemreplac
 	mkey := ""
 	if payload.MsgType != nil && *params.AllowAppend {
 		mkey = *payload.MsgType
-		read, err := c.ReadSystemreplacemsgTrafficQuota(mkey, params)
+		read, err := c.ReadSystemReplacemsgTrafficQuota(mkey, params)
 		if err != nil {
 			return nil, err
 		}
 		if read != nil {
-			log.Printf("[WARN] Resource at path %q with mkey %q detected upon CREATE with flag set to to overwrite. Changing to UPDATE.", models.SystemreplacemsgTrafficQuotaPath, mkey)
-			return c.UpdateSystemreplacemsgTrafficQuota(mkey, payload, params)
+			log.Printf("[WARN] Resource at path %q with mkey %q detected upon CREATE with flag set to to overwrite. Changing to UPDATE.", models.SystemReplacemsgTrafficQuotaPath, mkey)
+			return c.UpdateSystemReplacemsgTrafficQuota(mkey, payload, params)
 		}
 	}
 
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "POST"
 	req.Payload = body
-	req.Path = models.CmdbBasePath + models.SystemreplacemsgTrafficQuotaPath
+	req.Path = models.CmdbBasePath + models.SystemReplacemsgTrafficQuotaPath
 	req.Params = *params
 
 	res, err := request.CreateUpdate(c.config, req)
@@ -41,12 +40,12 @@ func (c *Client) CreateSystemreplacemsgTrafficQuota(payload *models.Systemreplac
 	return res, nil
 }
 
-func (c *Client) ReadSystemreplacemsgTrafficQuota(mkey string, params *models.CmdbRequestParams) (*models.SystemreplacemsgTrafficQuota, error) {
+func (c *Client) ReadSystemReplacemsgTrafficQuota(mkey string, params *models.CmdbRequestParams) (*models.SystemReplacemsgTrafficQuota, error) {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "GET"
 	req.Mkey = &mkey
 	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.SystemreplacemsgTrafficQuotaPath + mkey + "/"
+	req.Path = models.CmdbBasePath + models.SystemReplacemsgTrafficQuotaPath + mkey + "/"
 	req.Params = *params
 
 	res, err := request.Read(c.config, req)
@@ -61,17 +60,15 @@ func (c *Client) ReadSystemreplacemsgTrafficQuota(mkey string, params *models.Cm
 		if err != nil {
 			return nil, err
 		}
-		v := models.SystemreplacemsgTrafficQuota{}
+		v := models.SystemReplacemsgTrafficQuota{}
 		json.Unmarshal(jsontmp, &v)
 		return &v, nil
 	}
 
-	err = errors.New("unable to parse API response results")
-
 	return nil, err
 }
 
-func (c *Client) UpdateSystemreplacemsgTrafficQuota(mkey string, payload *models.SystemreplacemsgTrafficQuota, params *models.CmdbRequestParams) (*models.CmdbResponse, error) {
+func (c *Client) UpdateSystemReplacemsgTrafficQuota(mkey string, payload *models.SystemReplacemsgTrafficQuota, params *models.CmdbRequestParams) (*models.CmdbResponse, error) {
 	body, err := json.Marshal(payload)
 	if err != nil {
 		return nil, err
@@ -81,7 +78,7 @@ func (c *Client) UpdateSystemreplacemsgTrafficQuota(mkey string, payload *models
 	req.HTTPMethod = "PUT"
 	req.Mkey = &mkey
 	req.Payload = body
-	req.Path = models.CmdbBasePath + models.SystemreplacemsgTrafficQuotaPath + mkey + "/"
+	req.Path = models.CmdbBasePath + models.SystemReplacemsgTrafficQuotaPath + mkey + "/"
 	req.Params = *params
 
 	res, err := request.CreateUpdate(c.config, req)
@@ -91,12 +88,12 @@ func (c *Client) UpdateSystemreplacemsgTrafficQuota(mkey string, payload *models
 	return res, nil
 }
 
-func (c *Client) DeleteSystemreplacemsgTrafficQuota(mkey string, params *models.CmdbRequestParams) error {
+func (c *Client) DeleteSystemReplacemsgTrafficQuota(mkey string, params *models.CmdbRequestParams) error {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "DELETE"
 	req.Mkey = &mkey
 	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.SystemreplacemsgTrafficQuotaPath + mkey + "/"
+	req.Path = models.CmdbBasePath + models.SystemReplacemsgTrafficQuotaPath + mkey + "/"
 	req.Params = *params
 
 	err := request.Delete(c.config, req)

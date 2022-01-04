@@ -2,24 +2,23 @@ package cmdb
 
 import (
 	"encoding/json"
-	"errors"
 	"log"
 
 	"github.com/poroping/forti-sdk-go/v2/models"
 	"github.com/poroping/forti-sdk-go/v2/request"
 )
 
-func (c *Client) CreateSwitchControllerautoConfigDefault(payload *models.SwitchControllerautoConfigDefault, params *models.CmdbRequestParams) (*models.CmdbResponse, error) {
-	log.Printf("[INFO] Resource at path %q is complex type. Changing to UPDATE.", models.SwitchControllerautoConfigDefaultPath)
-	return c.UpdateSwitchControllerautoConfigDefault("", payload, params)
+func (c *Client) CreateSwitchControllerAutoConfigDefault(payload *models.SwitchControllerAutoConfigDefault, params *models.CmdbRequestParams) (*models.CmdbResponse, error) {
+	log.Printf("[INFO] Resource at path %q is complex type. Changing to UPDATE.", models.SwitchControllerAutoConfigDefaultPath)
+	return c.UpdateSwitchControllerAutoConfigDefault("", payload, params)
 }
 
-func (c *Client) ReadSwitchControllerautoConfigDefault(mkey string, params *models.CmdbRequestParams) (*models.SwitchControllerautoConfigDefault, error) {
+func (c *Client) ReadSwitchControllerAutoConfigDefault(mkey string, params *models.CmdbRequestParams) (*models.SwitchControllerAutoConfigDefault, error) {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "GET"
 	req.Mkey = &mkey
 	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.SwitchControllerautoConfigDefaultPath
+	req.Path = models.CmdbBasePath + models.SwitchControllerAutoConfigDefaultPath
 	req.Params = *params
 
 	res, err := request.Read(c.config, req)
@@ -34,17 +33,15 @@ func (c *Client) ReadSwitchControllerautoConfigDefault(mkey string, params *mode
 		if err != nil {
 			return nil, err
 		}
-		v := models.SwitchControllerautoConfigDefault{}
+		v := models.SwitchControllerAutoConfigDefault{}
 		json.Unmarshal(jsontmp, &v)
 		return &v, nil
 	}
 
-	err = errors.New("unable to parse API response results")
-
 	return nil, err
 }
 
-func (c *Client) UpdateSwitchControllerautoConfigDefault(mkey string, payload *models.SwitchControllerautoConfigDefault, params *models.CmdbRequestParams) (*models.CmdbResponse, error) {
+func (c *Client) UpdateSwitchControllerAutoConfigDefault(mkey string, payload *models.SwitchControllerAutoConfigDefault, params *models.CmdbRequestParams) (*models.CmdbResponse, error) {
 	body, err := json.Marshal(payload)
 	if err != nil {
 		return nil, err
@@ -54,7 +51,7 @@ func (c *Client) UpdateSwitchControllerautoConfigDefault(mkey string, payload *m
 	req.HTTPMethod = "PUT"
 	req.Mkey = &mkey
 	req.Payload = body
-	req.Path = models.CmdbBasePath + models.SwitchControllerautoConfigDefaultPath + mkey + "/"
+	req.Path = models.CmdbBasePath + models.SwitchControllerAutoConfigDefaultPath
 	req.Params = *params
 
 	res, err := request.CreateUpdate(c.config, req)
@@ -64,8 +61,8 @@ func (c *Client) UpdateSwitchControllerautoConfigDefault(mkey string, payload *m
 	return res, nil
 }
 
-func (c *Client) DeleteSwitchControllerautoConfigDefault(mkey string, params *models.CmdbRequestParams) error {
-	payload := &models.SwitchControllerautoConfigDefault{}
-	_, err := c.UpdateSwitchControllerautoConfigDefault("", payload, params)
+func (c *Client) DeleteSwitchControllerAutoConfigDefault(mkey string, params *models.CmdbRequestParams) error {
+	payload := &models.SwitchControllerAutoConfigDefault{}
+	_, err := c.UpdateSwitchControllerAutoConfigDefault("", payload, params)
 	return err
 }

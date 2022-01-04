@@ -2,24 +2,23 @@ package cmdb
 
 import (
 	"encoding/json"
-	"errors"
 	"log"
 
 	"github.com/poroping/forti-sdk-go/v2/models"
 	"github.com/poroping/forti-sdk-go/v2/request"
 )
 
-func (c *Client) CreateLogmemoryFilter(payload *models.LogmemoryFilter, params *models.CmdbRequestParams) (*models.CmdbResponse, error) {
-	log.Printf("[INFO] Resource at path %q is complex type. Changing to UPDATE.", models.LogmemoryFilterPath)
-	return c.UpdateLogmemoryFilter("", payload, params)
+func (c *Client) CreateLogMemoryFilter(payload *models.LogMemoryFilter, params *models.CmdbRequestParams) (*models.CmdbResponse, error) {
+	log.Printf("[INFO] Resource at path %q is complex type. Changing to UPDATE.", models.LogMemoryFilterPath)
+	return c.UpdateLogMemoryFilter("", payload, params)
 }
 
-func (c *Client) ReadLogmemoryFilter(mkey string, params *models.CmdbRequestParams) (*models.LogmemoryFilter, error) {
+func (c *Client) ReadLogMemoryFilter(mkey string, params *models.CmdbRequestParams) (*models.LogMemoryFilter, error) {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "GET"
 	req.Mkey = &mkey
 	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.LogmemoryFilterPath
+	req.Path = models.CmdbBasePath + models.LogMemoryFilterPath
 	req.Params = *params
 
 	res, err := request.Read(c.config, req)
@@ -34,17 +33,15 @@ func (c *Client) ReadLogmemoryFilter(mkey string, params *models.CmdbRequestPara
 		if err != nil {
 			return nil, err
 		}
-		v := models.LogmemoryFilter{}
+		v := models.LogMemoryFilter{}
 		json.Unmarshal(jsontmp, &v)
 		return &v, nil
 	}
 
-	err = errors.New("unable to parse API response results")
-
 	return nil, err
 }
 
-func (c *Client) UpdateLogmemoryFilter(mkey string, payload *models.LogmemoryFilter, params *models.CmdbRequestParams) (*models.CmdbResponse, error) {
+func (c *Client) UpdateLogMemoryFilter(mkey string, payload *models.LogMemoryFilter, params *models.CmdbRequestParams) (*models.CmdbResponse, error) {
 	body, err := json.Marshal(payload)
 	if err != nil {
 		return nil, err
@@ -54,7 +51,7 @@ func (c *Client) UpdateLogmemoryFilter(mkey string, payload *models.LogmemoryFil
 	req.HTTPMethod = "PUT"
 	req.Mkey = &mkey
 	req.Payload = body
-	req.Path = models.CmdbBasePath + models.LogmemoryFilterPath + mkey + "/"
+	req.Path = models.CmdbBasePath + models.LogMemoryFilterPath
 	req.Params = *params
 
 	res, err := request.CreateUpdate(c.config, req)
@@ -64,8 +61,8 @@ func (c *Client) UpdateLogmemoryFilter(mkey string, payload *models.LogmemoryFil
 	return res, nil
 }
 
-func (c *Client) DeleteLogmemoryFilter(mkey string, params *models.CmdbRequestParams) error {
-	payload := &models.LogmemoryFilter{}
-	_, err := c.UpdateLogmemoryFilter("", payload, params)
+func (c *Client) DeleteLogMemoryFilter(mkey string, params *models.CmdbRequestParams) error {
+	payload := &models.LogMemoryFilter{}
+	_, err := c.UpdateLogMemoryFilter("", payload, params)
 	return err
 }

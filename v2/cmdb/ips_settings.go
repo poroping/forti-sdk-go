@@ -2,7 +2,6 @@ package cmdb
 
 import (
 	"encoding/json"
-	"errors"
 	"log"
 
 	"github.com/poroping/forti-sdk-go/v2/models"
@@ -39,8 +38,6 @@ func (c *Client) ReadIpsSettings(mkey string, params *models.CmdbRequestParams) 
 		return &v, nil
 	}
 
-	err = errors.New("unable to parse API response results")
-
 	return nil, err
 }
 
@@ -54,7 +51,7 @@ func (c *Client) UpdateIpsSettings(mkey string, payload *models.IpsSettings, par
 	req.HTTPMethod = "PUT"
 	req.Mkey = &mkey
 	req.Payload = body
-	req.Path = models.CmdbBasePath + models.IpsSettingsPath + mkey + "/"
+	req.Path = models.CmdbBasePath + models.IpsSettingsPath
 	req.Params = *params
 
 	res, err := request.CreateUpdate(c.config, req)

@@ -2,14 +2,13 @@ package cmdb
 
 import (
 	"encoding/json"
-	"errors"
 	"log"
 
 	"github.com/poroping/forti-sdk-go/v2/models"
 	"github.com/poroping/forti-sdk-go/v2/request"
 )
 
-func (c *Client) CreateFirewallscheduleRecurring(payload *models.FirewallscheduleRecurring, params *models.CmdbRequestParams) (*models.CmdbResponse, error) {
+func (c *Client) CreateFirewallScheduleRecurring(payload *models.FirewallScheduleRecurring, params *models.CmdbRequestParams) (*models.CmdbResponse, error) {
 	body, err := json.Marshal(payload)
 	if err != nil {
 		return nil, err
@@ -18,20 +17,20 @@ func (c *Client) CreateFirewallscheduleRecurring(payload *models.Firewallschedul
 	mkey := ""
 	if payload.Name != nil && *params.AllowAppend {
 		mkey = *payload.Name
-		read, err := c.ReadFirewallscheduleRecurring(mkey, params)
+		read, err := c.ReadFirewallScheduleRecurring(mkey, params)
 		if err != nil {
 			return nil, err
 		}
 		if read != nil {
-			log.Printf("[WARN] Resource at path %q with mkey %q detected upon CREATE with flag set to to overwrite. Changing to UPDATE.", models.FirewallscheduleRecurringPath, mkey)
-			return c.UpdateFirewallscheduleRecurring(mkey, payload, params)
+			log.Printf("[WARN] Resource at path %q with mkey %q detected upon CREATE with flag set to to overwrite. Changing to UPDATE.", models.FirewallScheduleRecurringPath, mkey)
+			return c.UpdateFirewallScheduleRecurring(mkey, payload, params)
 		}
 	}
 
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "POST"
 	req.Payload = body
-	req.Path = models.CmdbBasePath + models.FirewallscheduleRecurringPath
+	req.Path = models.CmdbBasePath + models.FirewallScheduleRecurringPath
 	req.Params = *params
 
 	res, err := request.CreateUpdate(c.config, req)
@@ -41,12 +40,12 @@ func (c *Client) CreateFirewallscheduleRecurring(payload *models.Firewallschedul
 	return res, nil
 }
 
-func (c *Client) ReadFirewallscheduleRecurring(mkey string, params *models.CmdbRequestParams) (*models.FirewallscheduleRecurring, error) {
+func (c *Client) ReadFirewallScheduleRecurring(mkey string, params *models.CmdbRequestParams) (*models.FirewallScheduleRecurring, error) {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "GET"
 	req.Mkey = &mkey
 	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.FirewallscheduleRecurringPath + mkey + "/"
+	req.Path = models.CmdbBasePath + models.FirewallScheduleRecurringPath + mkey + "/"
 	req.Params = *params
 
 	res, err := request.Read(c.config, req)
@@ -61,17 +60,15 @@ func (c *Client) ReadFirewallscheduleRecurring(mkey string, params *models.CmdbR
 		if err != nil {
 			return nil, err
 		}
-		v := models.FirewallscheduleRecurring{}
+		v := models.FirewallScheduleRecurring{}
 		json.Unmarshal(jsontmp, &v)
 		return &v, nil
 	}
 
-	err = errors.New("unable to parse API response results")
-
 	return nil, err
 }
 
-func (c *Client) UpdateFirewallscheduleRecurring(mkey string, payload *models.FirewallscheduleRecurring, params *models.CmdbRequestParams) (*models.CmdbResponse, error) {
+func (c *Client) UpdateFirewallScheduleRecurring(mkey string, payload *models.FirewallScheduleRecurring, params *models.CmdbRequestParams) (*models.CmdbResponse, error) {
 	body, err := json.Marshal(payload)
 	if err != nil {
 		return nil, err
@@ -81,7 +78,7 @@ func (c *Client) UpdateFirewallscheduleRecurring(mkey string, payload *models.Fi
 	req.HTTPMethod = "PUT"
 	req.Mkey = &mkey
 	req.Payload = body
-	req.Path = models.CmdbBasePath + models.FirewallscheduleRecurringPath + mkey + "/"
+	req.Path = models.CmdbBasePath + models.FirewallScheduleRecurringPath + mkey + "/"
 	req.Params = *params
 
 	res, err := request.CreateUpdate(c.config, req)
@@ -91,12 +88,12 @@ func (c *Client) UpdateFirewallscheduleRecurring(mkey string, payload *models.Fi
 	return res, nil
 }
 
-func (c *Client) DeleteFirewallscheduleRecurring(mkey string, params *models.CmdbRequestParams) error {
+func (c *Client) DeleteFirewallScheduleRecurring(mkey string, params *models.CmdbRequestParams) error {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "DELETE"
 	req.Mkey = &mkey
 	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.FirewallscheduleRecurringPath + mkey + "/"
+	req.Path = models.CmdbBasePath + models.FirewallScheduleRecurringPath + mkey + "/"
 	req.Params = *params
 
 	err := request.Delete(c.config, req)

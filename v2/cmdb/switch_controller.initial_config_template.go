@@ -2,14 +2,13 @@ package cmdb
 
 import (
 	"encoding/json"
-	"errors"
 	"log"
 
 	"github.com/poroping/forti-sdk-go/v2/models"
 	"github.com/poroping/forti-sdk-go/v2/request"
 )
 
-func (c *Client) CreateSwitchControllerinitialConfigTemplate(payload *models.SwitchControllerinitialConfigTemplate, params *models.CmdbRequestParams) (*models.CmdbResponse, error) {
+func (c *Client) CreateSwitchControllerInitialConfigTemplate(payload *models.SwitchControllerInitialConfigTemplate, params *models.CmdbRequestParams) (*models.CmdbResponse, error) {
 	body, err := json.Marshal(payload)
 	if err != nil {
 		return nil, err
@@ -18,20 +17,20 @@ func (c *Client) CreateSwitchControllerinitialConfigTemplate(payload *models.Swi
 	mkey := ""
 	if payload.Name != nil && *params.AllowAppend {
 		mkey = *payload.Name
-		read, err := c.ReadSwitchControllerinitialConfigTemplate(mkey, params)
+		read, err := c.ReadSwitchControllerInitialConfigTemplate(mkey, params)
 		if err != nil {
 			return nil, err
 		}
 		if read != nil {
-			log.Printf("[WARN] Resource at path %q with mkey %q detected upon CREATE with flag set to to overwrite. Changing to UPDATE.", models.SwitchControllerinitialConfigTemplatePath, mkey)
-			return c.UpdateSwitchControllerinitialConfigTemplate(mkey, payload, params)
+			log.Printf("[WARN] Resource at path %q with mkey %q detected upon CREATE with flag set to to overwrite. Changing to UPDATE.", models.SwitchControllerInitialConfigTemplatePath, mkey)
+			return c.UpdateSwitchControllerInitialConfigTemplate(mkey, payload, params)
 		}
 	}
 
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "POST"
 	req.Payload = body
-	req.Path = models.CmdbBasePath + models.SwitchControllerinitialConfigTemplatePath
+	req.Path = models.CmdbBasePath + models.SwitchControllerInitialConfigTemplatePath
 	req.Params = *params
 
 	res, err := request.CreateUpdate(c.config, req)
@@ -41,12 +40,12 @@ func (c *Client) CreateSwitchControllerinitialConfigTemplate(payload *models.Swi
 	return res, nil
 }
 
-func (c *Client) ReadSwitchControllerinitialConfigTemplate(mkey string, params *models.CmdbRequestParams) (*models.SwitchControllerinitialConfigTemplate, error) {
+func (c *Client) ReadSwitchControllerInitialConfigTemplate(mkey string, params *models.CmdbRequestParams) (*models.SwitchControllerInitialConfigTemplate, error) {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "GET"
 	req.Mkey = &mkey
 	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.SwitchControllerinitialConfigTemplatePath + mkey + "/"
+	req.Path = models.CmdbBasePath + models.SwitchControllerInitialConfigTemplatePath + mkey + "/"
 	req.Params = *params
 
 	res, err := request.Read(c.config, req)
@@ -61,17 +60,15 @@ func (c *Client) ReadSwitchControllerinitialConfigTemplate(mkey string, params *
 		if err != nil {
 			return nil, err
 		}
-		v := models.SwitchControllerinitialConfigTemplate{}
+		v := models.SwitchControllerInitialConfigTemplate{}
 		json.Unmarshal(jsontmp, &v)
 		return &v, nil
 	}
 
-	err = errors.New("unable to parse API response results")
-
 	return nil, err
 }
 
-func (c *Client) UpdateSwitchControllerinitialConfigTemplate(mkey string, payload *models.SwitchControllerinitialConfigTemplate, params *models.CmdbRequestParams) (*models.CmdbResponse, error) {
+func (c *Client) UpdateSwitchControllerInitialConfigTemplate(mkey string, payload *models.SwitchControllerInitialConfigTemplate, params *models.CmdbRequestParams) (*models.CmdbResponse, error) {
 	body, err := json.Marshal(payload)
 	if err != nil {
 		return nil, err
@@ -81,7 +78,7 @@ func (c *Client) UpdateSwitchControllerinitialConfigTemplate(mkey string, payloa
 	req.HTTPMethod = "PUT"
 	req.Mkey = &mkey
 	req.Payload = body
-	req.Path = models.CmdbBasePath + models.SwitchControllerinitialConfigTemplatePath + mkey + "/"
+	req.Path = models.CmdbBasePath + models.SwitchControllerInitialConfigTemplatePath + mkey + "/"
 	req.Params = *params
 
 	res, err := request.CreateUpdate(c.config, req)
@@ -91,12 +88,12 @@ func (c *Client) UpdateSwitchControllerinitialConfigTemplate(mkey string, payloa
 	return res, nil
 }
 
-func (c *Client) DeleteSwitchControllerinitialConfigTemplate(mkey string, params *models.CmdbRequestParams) error {
+func (c *Client) DeleteSwitchControllerInitialConfigTemplate(mkey string, params *models.CmdbRequestParams) error {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "DELETE"
 	req.Mkey = &mkey
 	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.SwitchControllerinitialConfigTemplatePath + mkey + "/"
+	req.Path = models.CmdbBasePath + models.SwitchControllerInitialConfigTemplatePath + mkey + "/"
 	req.Params = *params
 
 	err := request.Delete(c.config, req)

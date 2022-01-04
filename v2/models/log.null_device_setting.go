@@ -1,7 +1,7 @@
 package models
 
-const LognullDeviceSettingPath = "log/null-device/setting/"
+const LogNullDeviceSettingPath = "log.null-device/setting/"
 
-type LognullDeviceSetting struct {
+type LogNullDeviceSetting struct {
 	Status *string `json:"status,omitempty"`
 }

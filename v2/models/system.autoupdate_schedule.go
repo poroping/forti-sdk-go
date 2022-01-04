@@ -1,8 +1,8 @@
 package models
 
-const SystemautoupdateSchedulePath = "system/autoupdate/schedule/"
+const SystemAutoupdateSchedulePath = "system.autoupdate/schedule/"
 
-type SystemautoupdateSchedule struct {
+type SystemAutoupdateSchedule struct {
 	Day       *string `json:"day,omitempty"`
 	Frequency *string `json:"frequency,omitempty"`
 	Status    *string `json:"status,omitempty"`

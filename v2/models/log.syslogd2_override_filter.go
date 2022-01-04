@@ -1,13 +1,13 @@
 package models
 
-const Logsyslogd2OverrideFilterPath = "log/syslogd2/override-filter/"
+const LogSyslogd2OverrideFilterPath = "log.syslogd2/override-filter/"
 
-type Logsyslogd2OverrideFilter struct {
+type LogSyslogd2OverrideFilter struct {
 	Anomaly          *string                               `json:"anomaly,omitempty"`
 	Filter           *string                               `json:"filter,omitempty"`
 	FilterType       *string                               `json:"filter-type,omitempty"`
 	ForwardTraffic   *string                               `json:"forward-traffic,omitempty"`
-	FreeStyle        *[]Logsyslogd2OverrideFilterFreeStyle `json:"free-style,omitempty"`
+	FreeStyle        *[]LogSyslogd2OverrideFilterFreeStyle `json:"free-style,omitempty"`
 	Gtp              *string                               `json:"gtp,omitempty"`
 	LocalTraffic     *string                               `json:"local-traffic,omitempty"`
 	MulticastTraffic *string                               `json:"multicast-traffic,omitempty"`
@@ -16,7 +16,7 @@ type Logsyslogd2OverrideFilter struct {
 	Voip             *string                               `json:"voip,omitempty"`
 }
 
-type Logsyslogd2OverrideFilterFreeStyle struct {
+type LogSyslogd2OverrideFilterFreeStyle struct {
 	Category   *string `json:"category,omitempty"`
 	Filter     *string `json:"filter,omitempty"`
 	FilterType *string `json:"filter-type,omitempty"`

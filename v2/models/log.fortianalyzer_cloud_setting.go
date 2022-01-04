@@ -1,8 +1,8 @@
 package models
 
-const LogfortianalyzerCloudSettingPath = "log/fortianalyzer-cloud/setting/"
+const LogFortianalyzerCloudSettingPath = "log.fortianalyzer-cloud/setting/"
 
-type LogfortianalyzerCloudSetting struct {
+type LogFortianalyzerCloudSetting struct {
 	AccessConfig              *string `json:"access-config,omitempty"`
 	Certificate               *string `json:"certificate,omitempty"`
 	ConnTimeout               *int64  `json:"conn-timeout,omitempty"`

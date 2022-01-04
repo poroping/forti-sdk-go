@@ -2,24 +2,23 @@ package cmdb
 
 import (
 	"encoding/json"
-	"errors"
 	"log"
 
 	"github.com/poroping/forti-sdk-go/v2/models"
 	"github.com/poroping/forti-sdk-go/v2/request"
 )
 
-func (c *Client) CreateLogsyslogd4OverrideSetting(payload *models.Logsyslogd4OverrideSetting, params *models.CmdbRequestParams) (*models.CmdbResponse, error) {
-	log.Printf("[INFO] Resource at path %q is complex type. Changing to UPDATE.", models.Logsyslogd4OverrideSettingPath)
-	return c.UpdateLogsyslogd4OverrideSetting("", payload, params)
+func (c *Client) CreateLogSyslogd4OverrideSetting(payload *models.LogSyslogd4OverrideSetting, params *models.CmdbRequestParams) (*models.CmdbResponse, error) {
+	log.Printf("[INFO] Resource at path %q is complex type. Changing to UPDATE.", models.LogSyslogd4OverrideSettingPath)
+	return c.UpdateLogSyslogd4OverrideSetting("", payload, params)
 }
 
-func (c *Client) ReadLogsyslogd4OverrideSetting(mkey string, params *models.CmdbRequestParams) (*models.Logsyslogd4OverrideSetting, error) {
+func (c *Client) ReadLogSyslogd4OverrideSetting(mkey string, params *models.CmdbRequestParams) (*models.LogSyslogd4OverrideSetting, error) {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "GET"
 	req.Mkey = &mkey
 	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.Logsyslogd4OverrideSettingPath
+	req.Path = models.CmdbBasePath + models.LogSyslogd4OverrideSettingPath
 	req.Params = *params
 
 	res, err := request.Read(c.config, req)
@@ -34,17 +33,15 @@ func (c *Client) ReadLogsyslogd4OverrideSetting(mkey string, params *models.Cmdb
 		if err != nil {
 			return nil, err
 		}
-		v := models.Logsyslogd4OverrideSetting{}
+		v := models.LogSyslogd4OverrideSetting{}
 		json.Unmarshal(jsontmp, &v)
 		return &v, nil
 	}
 
-	err = errors.New("unable to parse API response results")
-
 	return nil, err
 }
 
-func (c *Client) UpdateLogsyslogd4OverrideSetting(mkey string, payload *models.Logsyslogd4OverrideSetting, params *models.CmdbRequestParams) (*models.CmdbResponse, error) {
+func (c *Client) UpdateLogSyslogd4OverrideSetting(mkey string, payload *models.LogSyslogd4OverrideSetting, params *models.CmdbRequestParams) (*models.CmdbResponse, error) {
 	body, err := json.Marshal(payload)
 	if err != nil {
 		return nil, err
@@ -54,7 +51,7 @@ func (c *Client) UpdateLogsyslogd4OverrideSetting(mkey string, payload *models.L
 	req.HTTPMethod = "PUT"
 	req.Mkey = &mkey
 	req.Payload = body
-	req.Path = models.CmdbBasePath + models.Logsyslogd4OverrideSettingPath + mkey + "/"
+	req.Path = models.CmdbBasePath + models.LogSyslogd4OverrideSettingPath
 	req.Params = *params
 
 	res, err := request.CreateUpdate(c.config, req)
@@ -64,8 +61,8 @@ func (c *Client) UpdateLogsyslogd4OverrideSetting(mkey string, payload *models.L
 	return res, nil
 }
 
-func (c *Client) DeleteLogsyslogd4OverrideSetting(mkey string, params *models.CmdbRequestParams) error {
-	payload := &models.Logsyslogd4OverrideSetting{}
-	_, err := c.UpdateLogsyslogd4OverrideSetting("", payload, params)
+func (c *Client) DeleteLogSyslogd4OverrideSetting(mkey string, params *models.CmdbRequestParams) error {
+	payload := &models.LogSyslogd4OverrideSetting{}
+	_, err := c.UpdateLogSyslogd4OverrideSetting("", payload, params)
 	return err
 }

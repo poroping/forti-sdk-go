@@ -1,8 +1,8 @@
 package models
 
-const WirelessControllerhotspot20H2qpTermsAndConditionsPath = "wireless-controller/hotspot20/h2qp-terms-and-conditions/"
+const WirelessControllerHotspot20H2qpTermsAndConditionsPath = "wireless-controller.hotspot20/h2qp-terms-and-conditions/"
 
-type WirelessControllerhotspot20H2qpTermsAndConditions struct {
+type WirelessControllerHotspot20H2qpTermsAndConditions struct {
 	Filename  *string `json:"filename,omitempty"`
 	Name      *string `json:"name,omitempty"`
 	Timestamp *int64  `json:"timestamp,omitempty"`

@@ -2,24 +2,23 @@ package cmdb
 
 import (
 	"encoding/json"
-	"errors"
 	"log"
 
 	"github.com/poroping/forti-sdk-go/v2/models"
 	"github.com/poroping/forti-sdk-go/v2/request"
 )
 
-func (c *Client) CreateLogmemoryGlobalSetting(payload *models.LogmemoryGlobalSetting, params *models.CmdbRequestParams) (*models.CmdbResponse, error) {
-	log.Printf("[INFO] Resource at path %q is complex type. Changing to UPDATE.", models.LogmemoryGlobalSettingPath)
-	return c.UpdateLogmemoryGlobalSetting("", payload, params)
+func (c *Client) CreateLogMemoryGlobalSetting(payload *models.LogMemoryGlobalSetting, params *models.CmdbRequestParams) (*models.CmdbResponse, error) {
+	log.Printf("[INFO] Resource at path %q is complex type. Changing to UPDATE.", models.LogMemoryGlobalSettingPath)
+	return c.UpdateLogMemoryGlobalSetting("", payload, params)
 }
 
-func (c *Client) ReadLogmemoryGlobalSetting(mkey string, params *models.CmdbRequestParams) (*models.LogmemoryGlobalSetting, error) {
+func (c *Client) ReadLogMemoryGlobalSetting(mkey string, params *models.CmdbRequestParams) (*models.LogMemoryGlobalSetting, error) {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "GET"
 	req.Mkey = &mkey
 	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.LogmemoryGlobalSettingPath
+	req.Path = models.CmdbBasePath + models.LogMemoryGlobalSettingPath
 	req.Params = *params
 
 	res, err := request.Read(c.config, req)
@@ -34,17 +33,15 @@ func (c *Client) ReadLogmemoryGlobalSetting(mkey string, params *models.CmdbRequ
 		if err != nil {
 			return nil, err
 		}
-		v := models.LogmemoryGlobalSetting{}
+		v := models.LogMemoryGlobalSetting{}
 		json.Unmarshal(jsontmp, &v)
 		return &v, nil
 	}
 
-	err = errors.New("unable to parse API response results")
-
 	return nil, err
 }
 
-func (c *Client) UpdateLogmemoryGlobalSetting(mkey string, payload *models.LogmemoryGlobalSetting, params *models.CmdbRequestParams) (*models.CmdbResponse, error) {
+func (c *Client) UpdateLogMemoryGlobalSetting(mkey string, payload *models.LogMemoryGlobalSetting, params *models.CmdbRequestParams) (*models.CmdbResponse, error) {
 	body, err := json.Marshal(payload)
 	if err != nil {
 		return nil, err
@@ -54,7 +51,7 @@ func (c *Client) UpdateLogmemoryGlobalSetting(mkey string, payload *models.Logme
 	req.HTTPMethod = "PUT"
 	req.Mkey = &mkey
 	req.Payload = body
-	req.Path = models.CmdbBasePath + models.LogmemoryGlobalSettingPath + mkey + "/"
+	req.Path = models.CmdbBasePath + models.LogMemoryGlobalSettingPath
 	req.Params = *params
 
 	res, err := request.CreateUpdate(c.config, req)
@@ -64,8 +61,8 @@ func (c *Client) UpdateLogmemoryGlobalSetting(mkey string, payload *models.Logme
 	return res, nil
 }
 
-func (c *Client) DeleteLogmemoryGlobalSetting(mkey string, params *models.CmdbRequestParams) error {
-	payload := &models.LogmemoryGlobalSetting{}
-	_, err := c.UpdateLogmemoryGlobalSetting("", payload, params)
+func (c *Client) DeleteLogMemoryGlobalSetting(mkey string, params *models.CmdbRequestParams) error {
+	payload := &models.LogMemoryGlobalSetting{}
+	_, err := c.UpdateLogMemoryGlobalSetting("", payload, params)
 	return err
 }

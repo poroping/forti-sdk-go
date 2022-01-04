@@ -1,20 +1,20 @@
 package models
 
-const VpnsslwebUserGroupBookmarkPath = "vpn/ssl/web/user-group-bookmark/"
+const VpnSslWebUserGroupBookmarkPath = "vpn.ssl.web/user-group-bookmark/"
 
-type VpnsslwebUserGroupBookmark struct {
-	Bookmarks *[]VpnsslwebUserGroupBookmarkBookmarks `json:"bookmarks,omitempty"`
+type VpnSslWebUserGroupBookmark struct {
+	Bookmarks *[]VpnSslWebUserGroupBookmarkBookmarks `json:"bookmarks,omitempty"`
 	Name      *string                                `json:"name,omitempty"`
 }
 
-type VpnsslwebUserGroupBookmarkBookmarks struct {
+type VpnSslWebUserGroupBookmarkBookmarks struct {
 	AdditionalParams      *string                                        `json:"additional-params,omitempty"`
 	Apptype               *string                                        `json:"apptype,omitempty"`
 	ColorDepth            *string                                        `json:"color-depth,omitempty"`
 	Description           *string                                        `json:"description,omitempty"`
 	Domain                *string                                        `json:"domain,omitempty"`
 	Folder                *string                                        `json:"folder,omitempty"`
-	FormData              *[]VpnsslwebUserGroupBookmarkBookmarksFormData `json:"form-data,omitempty"`
+	FormData              *[]VpnSslWebUserGroupBookmarkBookmarksFormData `json:"form-data,omitempty"`
 	Host                  *string                                        `json:"host,omitempty"`
 	KeyboardLayout        *string                                        `json:"keyboard-layout,omitempty"`
 	ListeningPort         *int64                                         `json:"listening-port,omitempty"`
@@ -39,7 +39,7 @@ type VpnsslwebUserGroupBookmarkBookmarks struct {
 	Url                   *string                                        `json:"url,omitempty"`
 }
 
-type VpnsslwebUserGroupBookmarkBookmarksFormData struct {
+type VpnSslWebUserGroupBookmarkBookmarksFormData struct {
 	Name  *string `json:"name,omitempty"`
 	Value *string `json:"value,omitempty"`
 }

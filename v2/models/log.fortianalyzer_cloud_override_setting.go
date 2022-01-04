@@ -1,7 +1,7 @@
 package models
 
-const LogfortianalyzerCloudOverrideSettingPath = "log/fortianalyzer-cloud/override-setting/"
+const LogFortianalyzerCloudOverrideSettingPath = "log.fortianalyzer-cloud/override-setting/"
 
-type LogfortianalyzerCloudOverrideSetting struct {
+type LogFortianalyzerCloudOverrideSetting struct {
 	Status *string `json:"status,omitempty"`
 }

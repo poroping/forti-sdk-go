@@ -2,14 +2,13 @@ package cmdb
 
 import (
 	"encoding/json"
-	"errors"
 	"log"
 
 	"github.com/poroping/forti-sdk-go/v2/models"
 	"github.com/poroping/forti-sdk-go/v2/request"
 )
 
-func (c *Client) CreateVpnsslwebHostCheckSoftware(payload *models.VpnsslwebHostCheckSoftware, params *models.CmdbRequestParams) (*models.CmdbResponse, error) {
+func (c *Client) CreateVpnSslWebHostCheckSoftware(payload *models.VpnSslWebHostCheckSoftware, params *models.CmdbRequestParams) (*models.CmdbResponse, error) {
 	body, err := json.Marshal(payload)
 	if err != nil {
 		return nil, err
@@ -18,20 +17,20 @@ func (c *Client) CreateVpnsslwebHostCheckSoftware(payload *models.VpnsslwebHostC
 	mkey := ""
 	if payload.Name != nil && *params.AllowAppend {
 		mkey = *payload.Name
-		read, err := c.ReadVpnsslwebHostCheckSoftware(mkey, params)
+		read, err := c.ReadVpnSslWebHostCheckSoftware(mkey, params)
 		if err != nil {
 			return nil, err
 		}
 		if read != nil {
-			log.Printf("[WARN] Resource at path %q with mkey %q detected upon CREATE with flag set to to overwrite. Changing to UPDATE.", models.VpnsslwebHostCheckSoftwarePath, mkey)
-			return c.UpdateVpnsslwebHostCheckSoftware(mkey, payload, params)
+			log.Printf("[WARN] Resource at path %q with mkey %q detected upon CREATE with flag set to to overwrite. Changing to UPDATE.", models.VpnSslWebHostCheckSoftwarePath, mkey)
+			return c.UpdateVpnSslWebHostCheckSoftware(mkey, payload, params)
 		}
 	}
 
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "POST"
 	req.Payload = body
-	req.Path = models.CmdbBasePath + models.VpnsslwebHostCheckSoftwarePath
+	req.Path = models.CmdbBasePath + models.VpnSslWebHostCheckSoftwarePath
 	req.Params = *params
 
 	res, err := request.CreateUpdate(c.config, req)
@@ -41,12 +40,12 @@ func (c *Client) CreateVpnsslwebHostCheckSoftware(payload *models.VpnsslwebHostC
 	return res, nil
 }
 
-func (c *Client) ReadVpnsslwebHostCheckSoftware(mkey string, params *models.CmdbRequestParams) (*models.VpnsslwebHostCheckSoftware, error) {
+func (c *Client) ReadVpnSslWebHostCheckSoftware(mkey string, params *models.CmdbRequestParams) (*models.VpnSslWebHostCheckSoftware, error) {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "GET"
 	req.Mkey = &mkey
 	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.VpnsslwebHostCheckSoftwarePath + mkey + "/"
+	req.Path = models.CmdbBasePath + models.VpnSslWebHostCheckSoftwarePath + mkey + "/"
 	req.Params = *params
 
 	res, err := request.Read(c.config, req)
@@ -61,17 +60,15 @@ func (c *Client) ReadVpnsslwebHostCheckSoftware(mkey string, params *models.Cmdb
 		if err != nil {
 			return nil, err
 		}
-		v := models.VpnsslwebHostCheckSoftware{}
+		v := models.VpnSslWebHostCheckSoftware{}
 		json.Unmarshal(jsontmp, &v)
 		return &v, nil
 	}
 
-	err = errors.New("unable to parse API response results")
-
 	return nil, err
 }
 
-func (c *Client) UpdateVpnsslwebHostCheckSoftware(mkey string, payload *models.VpnsslwebHostCheckSoftware, params *models.CmdbRequestParams) (*models.CmdbResponse, error) {
+func (c *Client) UpdateVpnSslWebHostCheckSoftware(mkey string, payload *models.VpnSslWebHostCheckSoftware, params *models.CmdbRequestParams) (*models.CmdbResponse, error) {
 	body, err := json.Marshal(payload)
 	if err != nil {
 		return nil, err
@@ -81,7 +78,7 @@ func (c *Client) UpdateVpnsslwebHostCheckSoftware(mkey string, payload *models.V
 	req.HTTPMethod = "PUT"
 	req.Mkey = &mkey
 	req.Payload = body
-	req.Path = models.CmdbBasePath + models.VpnsslwebHostCheckSoftwarePath + mkey + "/"
+	req.Path = models.CmdbBasePath + models.VpnSslWebHostCheckSoftwarePath + mkey + "/"
 	req.Params = *params
 
 	res, err := request.CreateUpdate(c.config, req)
@@ -91,12 +88,12 @@ func (c *Client) UpdateVpnsslwebHostCheckSoftware(mkey string, payload *models.V
 	return res, nil
 }
 
-func (c *Client) DeleteVpnsslwebHostCheckSoftware(mkey string, params *models.CmdbRequestParams) error {
+func (c *Client) DeleteVpnSslWebHostCheckSoftware(mkey string, params *models.CmdbRequestParams) error {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "DELETE"
 	req.Mkey = &mkey
 	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.VpnsslwebHostCheckSoftwarePath + mkey + "/"
+	req.Path = models.CmdbBasePath + models.VpnSslWebHostCheckSoftwarePath + mkey + "/"
 	req.Params = *params
 
 	err := request.Delete(c.config, req)

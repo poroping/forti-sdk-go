@@ -1,8 +1,8 @@
 package models
 
-const SwitchControllerinitialConfigTemplatePath = "switch-controller/initial-config/template/"
+const SwitchControllerInitialConfigTemplatePath = "switch-controller.initial-config/template/"
 
-type SwitchControllerinitialConfigTemplate struct {
+type SwitchControllerInitialConfigTemplate struct {
 	Allowaccess *string `json:"allowaccess,omitempty"`
 	AutoIp      *string `json:"auto-ip,omitempty"`
 	DhcpServer  *string `json:"dhcp-server,omitempty"`

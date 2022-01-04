@@ -2,14 +2,13 @@ package cmdb
 
 import (
 	"encoding/json"
-	"errors"
 	"log"
 
 	"github.com/poroping/forti-sdk-go/v2/models"
 	"github.com/poroping/forti-sdk-go/v2/request"
 )
 
-func (c *Client) CreateVpncertificateCa(payload *models.VpncertificateCa, params *models.CmdbRequestParams) (*models.CmdbResponse, error) {
+func (c *Client) CreateVpnCertificateCa(payload *models.VpnCertificateCa, params *models.CmdbRequestParams) (*models.CmdbResponse, error) {
 	body, err := json.Marshal(payload)
 	if err != nil {
 		return nil, err
@@ -18,20 +17,20 @@ func (c *Client) CreateVpncertificateCa(payload *models.VpncertificateCa, params
 	mkey := ""
 	if payload.Name != nil && *params.AllowAppend {
 		mkey = *payload.Name
-		read, err := c.ReadVpncertificateCa(mkey, params)
+		read, err := c.ReadVpnCertificateCa(mkey, params)
 		if err != nil {
 			return nil, err
 		}
 		if read != nil {
-			log.Printf("[WARN] Resource at path %q with mkey %q detected upon CREATE with flag set to to overwrite. Changing to UPDATE.", models.VpncertificateCaPath, mkey)
-			return c.UpdateVpncertificateCa(mkey, payload, params)
+			log.Printf("[WARN] Resource at path %q with mkey %q detected upon CREATE with flag set to to overwrite. Changing to UPDATE.", models.VpnCertificateCaPath, mkey)
+			return c.UpdateVpnCertificateCa(mkey, payload, params)
 		}
 	}
 
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "POST"
 	req.Payload = body
-	req.Path = models.CmdbBasePath + models.VpncertificateCaPath
+	req.Path = models.CmdbBasePath + models.VpnCertificateCaPath
 	req.Params = *params
 
 	res, err := request.CreateUpdate(c.config, req)
@@ -41,12 +40,12 @@ func (c *Client) CreateVpncertificateCa(payload *models.VpncertificateCa, params
 	return res, nil
 }
 
-func (c *Client) ReadVpncertificateCa(mkey string, params *models.CmdbRequestParams) (*models.VpncertificateCa, error) {
+func (c *Client) ReadVpnCertificateCa(mkey string, params *models.CmdbRequestParams) (*models.VpnCertificateCa, error) {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "GET"
 	req.Mkey = &mkey
 	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.VpncertificateCaPath + mkey + "/"
+	req.Path = models.CmdbBasePath + models.VpnCertificateCaPath + mkey + "/"
 	req.Params = *params
 
 	res, err := request.Read(c.config, req)
@@ -61,17 +60,15 @@ func (c *Client) ReadVpncertificateCa(mkey string, params *models.CmdbRequestPar
 		if err != nil {
 			return nil, err
 		}
-		v := models.VpncertificateCa{}
+		v := models.VpnCertificateCa{}
 		json.Unmarshal(jsontmp, &v)
 		return &v, nil
 	}
 
-	err = errors.New("unable to parse API response results")
-
 	return nil, err
 }
 
-func (c *Client) UpdateVpncertificateCa(mkey string, payload *models.VpncertificateCa, params *models.CmdbRequestParams) (*models.CmdbResponse, error) {
+func (c *Client) UpdateVpnCertificateCa(mkey string, payload *models.VpnCertificateCa, params *models.CmdbRequestParams) (*models.CmdbResponse, error) {
 	body, err := json.Marshal(payload)
 	if err != nil {
 		return nil, err
@@ -81,7 +78,7 @@ func (c *Client) UpdateVpncertificateCa(mkey string, payload *models.Vpncertific
 	req.HTTPMethod = "PUT"
 	req.Mkey = &mkey
 	req.Payload = body
-	req.Path = models.CmdbBasePath + models.VpncertificateCaPath + mkey + "/"
+	req.Path = models.CmdbBasePath + models.VpnCertificateCaPath + mkey + "/"
 	req.Params = *params
 
 	res, err := request.CreateUpdate(c.config, req)
@@ -91,12 +88,12 @@ func (c *Client) UpdateVpncertificateCa(mkey string, payload *models.Vpncertific
 	return res, nil
 }
 
-func (c *Client) DeleteVpncertificateCa(mkey string, params *models.CmdbRequestParams) error {
+func (c *Client) DeleteVpnCertificateCa(mkey string, params *models.CmdbRequestParams) error {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "DELETE"
 	req.Mkey = &mkey
 	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.VpncertificateCaPath + mkey + "/"
+	req.Path = models.CmdbBasePath + models.VpnCertificateCaPath + mkey + "/"
 	req.Params = *params
 
 	err := request.Delete(c.config, req)

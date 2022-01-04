@@ -1,8 +1,8 @@
 package models
 
-const FirewallshaperPerIpShaperPath = "firewall/shaper/per-ip-shaper/"
+const FirewallShaperPerIpShaperPath = "firewall.shaper/per-ip-shaper/"
 
-type FirewallshaperPerIpShaper struct {
+type FirewallShaperPerIpShaper struct {
 	BandwidthUnit           *string `json:"bandwidth-unit,omitempty"`
 	DiffservForward         *string `json:"diffserv-forward,omitempty"`
 	DiffservReverse         *string `json:"diffserv-reverse,omitempty"`

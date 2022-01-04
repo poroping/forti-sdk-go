@@ -1,8 +1,8 @@
 package models
 
-const WirelessControllerhotspot20AnqpNetworkAuthTypePath = "wireless-controller/hotspot20/anqp-network-auth-type/"
+const WirelessControllerHotspot20AnqpNetworkAuthTypePath = "wireless-controller.hotspot20/anqp-network-auth-type/"
 
-type WirelessControllerhotspot20AnqpNetworkAuthType struct {
+type WirelessControllerHotspot20AnqpNetworkAuthType struct {
 	AuthType *string `json:"auth-type,omitempty"`
 	Name     *string `json:"name,omitempty"`
 	Url      *string `json:"url,omitempty"`

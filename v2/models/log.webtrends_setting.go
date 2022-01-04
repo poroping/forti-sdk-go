@@ -1,8 +1,8 @@
 package models
 
-const LogwebtrendsSettingPath = "log/webtrends/setting/"
+const LogWebtrendsSettingPath = "log.webtrends/setting/"
 
-type LogwebtrendsSetting struct {
+type LogWebtrendsSetting struct {
 	Server *string `json:"server,omitempty"`
 	Status *string `json:"status,omitempty"`
 }

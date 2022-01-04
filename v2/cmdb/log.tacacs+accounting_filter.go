@@ -2,24 +2,23 @@ package cmdb
 
 import (
 	"encoding/json"
-	"errors"
 	"log"
 
 	"github.com/poroping/forti-sdk-go/v2/models"
 	"github.com/poroping/forti-sdk-go/v2/request"
 )
 
-func (c *Client) CreateLogtacacsaccountingFilter(payload *models.LogtacacsaccountingFilter, params *models.CmdbRequestParams) (*models.CmdbResponse, error) {
-	log.Printf("[INFO] Resource at path %q is complex type. Changing to UPDATE.", models.LogtacacsaccountingFilterPath)
-	return c.UpdateLogtacacsaccountingFilter("", payload, params)
+func (c *Client) CreateLogTacacsaccountingFilter(payload *models.LogTacacsaccountingFilter, params *models.CmdbRequestParams) (*models.CmdbResponse, error) {
+	log.Printf("[INFO] Resource at path %q is complex type. Changing to UPDATE.", models.LogTacacsaccountingFilterPath)
+	return c.UpdateLogTacacsaccountingFilter("", payload, params)
 }
 
-func (c *Client) ReadLogtacacsaccountingFilter(mkey string, params *models.CmdbRequestParams) (*models.LogtacacsaccountingFilter, error) {
+func (c *Client) ReadLogTacacsaccountingFilter(mkey string, params *models.CmdbRequestParams) (*models.LogTacacsaccountingFilter, error) {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "GET"
 	req.Mkey = &mkey
 	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.LogtacacsaccountingFilterPath
+	req.Path = models.CmdbBasePath + models.LogTacacsaccountingFilterPath
 	req.Params = *params
 
 	res, err := request.Read(c.config, req)
@@ -34,17 +33,15 @@ func (c *Client) ReadLogtacacsaccountingFilter(mkey string, params *models.CmdbR
 		if err != nil {
 			return nil, err
 		}
-		v := models.LogtacacsaccountingFilter{}
+		v := models.LogTacacsaccountingFilter{}
 		json.Unmarshal(jsontmp, &v)
 		return &v, nil
 	}
 
-	err = errors.New("unable to parse API response results")
-
 	return nil, err
 }
 
-func (c *Client) UpdateLogtacacsaccountingFilter(mkey string, payload *models.LogtacacsaccountingFilter, params *models.CmdbRequestParams) (*models.CmdbResponse, error) {
+func (c *Client) UpdateLogTacacsaccountingFilter(mkey string, payload *models.LogTacacsaccountingFilter, params *models.CmdbRequestParams) (*models.CmdbResponse, error) {
 	body, err := json.Marshal(payload)
 	if err != nil {
 		return nil, err
@@ -54,7 +51,7 @@ func (c *Client) UpdateLogtacacsaccountingFilter(mkey string, payload *models.Lo
 	req.HTTPMethod = "PUT"
 	req.Mkey = &mkey
 	req.Payload = body
-	req.Path = models.CmdbBasePath + models.LogtacacsaccountingFilterPath + mkey + "/"
+	req.Path = models.CmdbBasePath + models.LogTacacsaccountingFilterPath
 	req.Params = *params
 
 	res, err := request.CreateUpdate(c.config, req)
@@ -64,8 +61,8 @@ func (c *Client) UpdateLogtacacsaccountingFilter(mkey string, payload *models.Lo
 	return res, nil
 }
 
-func (c *Client) DeleteLogtacacsaccountingFilter(mkey string, params *models.CmdbRequestParams) error {
-	payload := &models.LogtacacsaccountingFilter{}
-	_, err := c.UpdateLogtacacsaccountingFilter("", payload, params)
+func (c *Client) DeleteLogTacacsaccountingFilter(mkey string, params *models.CmdbRequestParams) error {
+	payload := &models.LogTacacsaccountingFilter{}
+	_, err := c.UpdateLogTacacsaccountingFilter("", payload, params)
 	return err
 }

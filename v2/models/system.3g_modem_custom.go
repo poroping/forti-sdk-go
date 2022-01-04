@@ -1,6 +1,6 @@
 package models
 
-const System3gModemCustomPath = "system/3g-modem/custom/"
+const System3gModemCustomPath = "system.3g-modem/custom/"
 
 type System3gModemCustom struct {
 	ClassId          *string `json:"class-id,omitempty"`

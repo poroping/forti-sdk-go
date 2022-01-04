@@ -1,8 +1,8 @@
 package models
 
-const VpnipsecManualkeyPath = "vpn/ipsec/manualkey/"
+const VpnIpsecManualkeyPath = "vpn.ipsec/manualkey/"
 
-type VpnipsecManualkey struct {
+type VpnIpsecManualkey struct {
 	Authentication *string `json:"authentication,omitempty"`
 	Authkey        *string `json:"authkey,omitempty"`
 	Enckey         *string `json:"enckey,omitempty"`

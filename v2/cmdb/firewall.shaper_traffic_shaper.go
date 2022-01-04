@@ -2,14 +2,13 @@ package cmdb
 
 import (
 	"encoding/json"
-	"errors"
 	"log"
 
 	"github.com/poroping/forti-sdk-go/v2/models"
 	"github.com/poroping/forti-sdk-go/v2/request"
 )
 
-func (c *Client) CreateFirewallshaperTrafficShaper(payload *models.FirewallshaperTrafficShaper, params *models.CmdbRequestParams) (*models.CmdbResponse, error) {
+func (c *Client) CreateFirewallShaperTrafficShaper(payload *models.FirewallShaperTrafficShaper, params *models.CmdbRequestParams) (*models.CmdbResponse, error) {
 	body, err := json.Marshal(payload)
 	if err != nil {
 		return nil, err
@@ -18,20 +17,20 @@ func (c *Client) CreateFirewallshaperTrafficShaper(payload *models.Firewallshape
 	mkey := ""
 	if payload.Name != nil && *params.AllowAppend {
 		mkey = *payload.Name
-		read, err := c.ReadFirewallshaperTrafficShaper(mkey, params)
+		read, err := c.ReadFirewallShaperTrafficShaper(mkey, params)
 		if err != nil {
 			return nil, err
 		}
 		if read != nil {
-			log.Printf("[WARN] Resource at path %q with mkey %q detected upon CREATE with flag set to to overwrite. Changing to UPDATE.", models.FirewallshaperTrafficShaperPath, mkey)
-			return c.UpdateFirewallshaperTrafficShaper(mkey, payload, params)
+			log.Printf("[WARN] Resource at path %q with mkey %q detected upon CREATE with flag set to to overwrite. Changing to UPDATE.", models.FirewallShaperTrafficShaperPath, mkey)
+			return c.UpdateFirewallShaperTrafficShaper(mkey, payload, params)
 		}
 	}
 
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "POST"
 	req.Payload = body
-	req.Path = models.CmdbBasePath + models.FirewallshaperTrafficShaperPath
+	req.Path = models.CmdbBasePath + models.FirewallShaperTrafficShaperPath
 	req.Params = *params
 
 	res, err := request.CreateUpdate(c.config, req)
@@ -41,12 +40,12 @@ func (c *Client) CreateFirewallshaperTrafficShaper(payload *models.Firewallshape
 	return res, nil
 }
 
-func (c *Client) ReadFirewallshaperTrafficShaper(mkey string, params *models.CmdbRequestParams) (*models.FirewallshaperTrafficShaper, error) {
+func (c *Client) ReadFirewallShaperTrafficShaper(mkey string, params *models.CmdbRequestParams) (*models.FirewallShaperTrafficShaper, error) {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "GET"
 	req.Mkey = &mkey
 	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.FirewallshaperTrafficShaperPath + mkey + "/"
+	req.Path = models.CmdbBasePath + models.FirewallShaperTrafficShaperPath + mkey + "/"
 	req.Params = *params
 
 	res, err := request.Read(c.config, req)
@@ -61,17 +60,15 @@ func (c *Client) ReadFirewallshaperTrafficShaper(mkey string, params *models.Cmd
 		if err != nil {
 			return nil, err
 		}
-		v := models.FirewallshaperTrafficShaper{}
+		v := models.FirewallShaperTrafficShaper{}
 		json.Unmarshal(jsontmp, &v)
 		return &v, nil
 	}
 
-	err = errors.New("unable to parse API response results")
-
 	return nil, err
 }
 
-func (c *Client) UpdateFirewallshaperTrafficShaper(mkey string, payload *models.FirewallshaperTrafficShaper, params *models.CmdbRequestParams) (*models.CmdbResponse, error) {
+func (c *Client) UpdateFirewallShaperTrafficShaper(mkey string, payload *models.FirewallShaperTrafficShaper, params *models.CmdbRequestParams) (*models.CmdbResponse, error) {
 	body, err := json.Marshal(payload)
 	if err != nil {
 		return nil, err
@@ -81,7 +78,7 @@ func (c *Client) UpdateFirewallshaperTrafficShaper(mkey string, payload *models.
 	req.HTTPMethod = "PUT"
 	req.Mkey = &mkey
 	req.Payload = body
-	req.Path = models.CmdbBasePath + models.FirewallshaperTrafficShaperPath + mkey + "/"
+	req.Path = models.CmdbBasePath + models.FirewallShaperTrafficShaperPath + mkey + "/"
 	req.Params = *params
 
 	res, err := request.CreateUpdate(c.config, req)
@@ -91,12 +88,12 @@ func (c *Client) UpdateFirewallshaperTrafficShaper(mkey string, payload *models.
 	return res, nil
 }
 
-func (c *Client) DeleteFirewallshaperTrafficShaper(mkey string, params *models.CmdbRequestParams) error {
+func (c *Client) DeleteFirewallShaperTrafficShaper(mkey string, params *models.CmdbRequestParams) error {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "DELETE"
 	req.Mkey = &mkey
 	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.FirewallshaperTrafficShaperPath + mkey + "/"
+	req.Path = models.CmdbBasePath + models.FirewallShaperTrafficShaperPath + mkey + "/"
 	req.Params = *params
 
 	err := request.Delete(c.config, req)

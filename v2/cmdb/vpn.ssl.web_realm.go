@@ -2,14 +2,13 @@ package cmdb
 
 import (
 	"encoding/json"
-	"errors"
 	"log"
 
 	"github.com/poroping/forti-sdk-go/v2/models"
 	"github.com/poroping/forti-sdk-go/v2/request"
 )
 
-func (c *Client) CreateVpnsslwebRealm(payload *models.VpnsslwebRealm, params *models.CmdbRequestParams) (*models.CmdbResponse, error) {
+func (c *Client) CreateVpnSslWebRealm(payload *models.VpnSslWebRealm, params *models.CmdbRequestParams) (*models.CmdbResponse, error) {
 	body, err := json.Marshal(payload)
 	if err != nil {
 		return nil, err
@@ -18,20 +17,20 @@ func (c *Client) CreateVpnsslwebRealm(payload *models.VpnsslwebRealm, params *mo
 	mkey := ""
 	if payload.UrlPath != nil && *params.AllowAppend {
 		mkey = *payload.UrlPath
-		read, err := c.ReadVpnsslwebRealm(mkey, params)
+		read, err := c.ReadVpnSslWebRealm(mkey, params)
 		if err != nil {
 			return nil, err
 		}
 		if read != nil {
-			log.Printf("[WARN] Resource at path %q with mkey %q detected upon CREATE with flag set to to overwrite. Changing to UPDATE.", models.VpnsslwebRealmPath, mkey)
-			return c.UpdateVpnsslwebRealm(mkey, payload, params)
+			log.Printf("[WARN] Resource at path %q with mkey %q detected upon CREATE with flag set to to overwrite. Changing to UPDATE.", models.VpnSslWebRealmPath, mkey)
+			return c.UpdateVpnSslWebRealm(mkey, payload, params)
 		}
 	}
 
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "POST"
 	req.Payload = body
-	req.Path = models.CmdbBasePath + models.VpnsslwebRealmPath
+	req.Path = models.CmdbBasePath + models.VpnSslWebRealmPath
 	req.Params = *params
 
 	res, err := request.CreateUpdate(c.config, req)
@@ -41,12 +40,12 @@ func (c *Client) CreateVpnsslwebRealm(payload *models.VpnsslwebRealm, params *mo
 	return res, nil
 }
 
-func (c *Client) ReadVpnsslwebRealm(mkey string, params *models.CmdbRequestParams) (*models.VpnsslwebRealm, error) {
+func (c *Client) ReadVpnSslWebRealm(mkey string, params *models.CmdbRequestParams) (*models.VpnSslWebRealm, error) {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "GET"
 	req.Mkey = &mkey
 	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.VpnsslwebRealmPath + mkey + "/"
+	req.Path = models.CmdbBasePath + models.VpnSslWebRealmPath + mkey + "/"
 	req.Params = *params
 
 	res, err := request.Read(c.config, req)
@@ -61,17 +60,15 @@ func (c *Client) ReadVpnsslwebRealm(mkey string, params *models.CmdbRequestParam
 		if err != nil {
 			return nil, err
 		}
-		v := models.VpnsslwebRealm{}
+		v := models.VpnSslWebRealm{}
 		json.Unmarshal(jsontmp, &v)
 		return &v, nil
 	}
 
-	err = errors.New("unable to parse API response results")
-
 	return nil, err
 }
 
-func (c *Client) UpdateVpnsslwebRealm(mkey string, payload *models.VpnsslwebRealm, params *models.CmdbRequestParams) (*models.CmdbResponse, error) {
+func (c *Client) UpdateVpnSslWebRealm(mkey string, payload *models.VpnSslWebRealm, params *models.CmdbRequestParams) (*models.CmdbResponse, error) {
 	body, err := json.Marshal(payload)
 	if err != nil {
 		return nil, err
@@ -81,7 +78,7 @@ func (c *Client) UpdateVpnsslwebRealm(mkey string, payload *models.VpnsslwebReal
 	req.HTTPMethod = "PUT"
 	req.Mkey = &mkey
 	req.Payload = body
-	req.Path = models.CmdbBasePath + models.VpnsslwebRealmPath + mkey + "/"
+	req.Path = models.CmdbBasePath + models.VpnSslWebRealmPath + mkey + "/"
 	req.Params = *params
 
 	res, err := request.CreateUpdate(c.config, req)
@@ -91,12 +88,12 @@ func (c *Client) UpdateVpnsslwebRealm(mkey string, payload *models.VpnsslwebReal
 	return res, nil
 }
 
-func (c *Client) DeleteVpnsslwebRealm(mkey string, params *models.CmdbRequestParams) error {
+func (c *Client) DeleteVpnSslWebRealm(mkey string, params *models.CmdbRequestParams) error {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "DELETE"
 	req.Mkey = &mkey
 	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.VpnsslwebRealmPath + mkey + "/"
+	req.Path = models.CmdbBasePath + models.VpnSslWebRealmPath + mkey + "/"
 	req.Params = *params
 
 	err := request.Delete(c.config, req)

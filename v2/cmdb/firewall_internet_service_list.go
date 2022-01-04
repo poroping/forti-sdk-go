@@ -2,7 +2,6 @@ package cmdb
 
 import (
 	"encoding/json"
-	"errors"
 	"log"
 	"strconv"
 
@@ -66,8 +65,6 @@ func (c *Client) ReadFirewallInternetServiceList(mkey string, params *models.Cmd
 		json.Unmarshal(jsontmp, &v)
 		return &v, nil
 	}
-
-	err = errors.New("unable to parse API response results")
 
 	return nil, err
 }

@@ -1,13 +1,13 @@
 package models
 
-const WirelessControllerhotspot20AnqpRoamingConsortiumPath = "wireless-controller/hotspot20/anqp-roaming-consortium/"
+const WirelessControllerHotspot20AnqpRoamingConsortiumPath = "wireless-controller.hotspot20/anqp-roaming-consortium/"
 
-type WirelessControllerhotspot20AnqpRoamingConsortium struct {
+type WirelessControllerHotspot20AnqpRoamingConsortium struct {
 	Name   *string                                                   `json:"name,omitempty"`
-	OiList *[]WirelessControllerhotspot20AnqpRoamingConsortiumOiList `json:"oi-list,omitempty"`
+	OiList *[]WirelessControllerHotspot20AnqpRoamingConsortiumOiList `json:"oi-list,omitempty"`
 }
 
-type WirelessControllerhotspot20AnqpRoamingConsortiumOiList struct {
+type WirelessControllerHotspot20AnqpRoamingConsortiumOiList struct {
 	Comment *string `json:"comment,omitempty"`
 	Index   *int64  `json:"index,omitempty"`
 	Oi      *string `json:"oi,omitempty"`

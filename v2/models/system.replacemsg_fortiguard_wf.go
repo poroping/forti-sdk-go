@@ -1,8 +1,8 @@
 package models
 
-const SystemreplacemsgFortiguardWfPath = "system/replacemsg/fortiguard-wf/"
+const SystemReplacemsgFortiguardWfPath = "system.replacemsg/fortiguard-wf/"
 
-type SystemreplacemsgFortiguardWf struct {
+type SystemReplacemsgFortiguardWf struct {
 	Buffer  *string `json:"buffer,omitempty"`
 	Format  *string `json:"format,omitempty"`
 	Header  *string `json:"header,omitempty"`

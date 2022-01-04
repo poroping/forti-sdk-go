@@ -1,8 +1,8 @@
 package models
 
-const FirewallscheduleRecurringPath = "firewall/schedule/recurring/"
+const FirewallScheduleRecurringPath = "firewall.schedule/recurring/"
 
-type FirewallscheduleRecurring struct {
+type FirewallScheduleRecurring struct {
 	Color        *int64  `json:"color,omitempty"`
 	Day          *string `json:"day,omitempty"`
 	End          *string `json:"end,omitempty"`

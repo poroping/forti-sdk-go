@@ -2,14 +2,13 @@ package cmdb
 
 import (
 	"encoding/json"
-	"errors"
 	"log"
 
 	"github.com/poroping/forti-sdk-go/v2/models"
 	"github.com/poroping/forti-sdk-go/v2/request"
 )
 
-func (c *Client) CreateSystemreplacemsgDeviceDetectionPortal(payload *models.SystemreplacemsgDeviceDetectionPortal, params *models.CmdbRequestParams) (*models.CmdbResponse, error) {
+func (c *Client) CreateSystemReplacemsgDeviceDetectionPortal(payload *models.SystemReplacemsgDeviceDetectionPortal, params *models.CmdbRequestParams) (*models.CmdbResponse, error) {
 	body, err := json.Marshal(payload)
 	if err != nil {
 		return nil, err
@@ -18,20 +17,20 @@ func (c *Client) CreateSystemreplacemsgDeviceDetectionPortal(payload *models.Sys
 	mkey := ""
 	if payload.MsgType != nil && *params.AllowAppend {
 		mkey = *payload.MsgType
-		read, err := c.ReadSystemreplacemsgDeviceDetectionPortal(mkey, params)
+		read, err := c.ReadSystemReplacemsgDeviceDetectionPortal(mkey, params)
 		if err != nil {
 			return nil, err
 		}
 		if read != nil {
-			log.Printf("[WARN] Resource at path %q with mkey %q detected upon CREATE with flag set to to overwrite. Changing to UPDATE.", models.SystemreplacemsgDeviceDetectionPortalPath, mkey)
-			return c.UpdateSystemreplacemsgDeviceDetectionPortal(mkey, payload, params)
+			log.Printf("[WARN] Resource at path %q with mkey %q detected upon CREATE with flag set to to overwrite. Changing to UPDATE.", models.SystemReplacemsgDeviceDetectionPortalPath, mkey)
+			return c.UpdateSystemReplacemsgDeviceDetectionPortal(mkey, payload, params)
 		}
 	}
 
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "POST"
 	req.Payload = body
-	req.Path = models.CmdbBasePath + models.SystemreplacemsgDeviceDetectionPortalPath
+	req.Path = models.CmdbBasePath + models.SystemReplacemsgDeviceDetectionPortalPath
 	req.Params = *params
 
 	res, err := request.CreateUpdate(c.config, req)
@@ -41,12 +40,12 @@ func (c *Client) CreateSystemreplacemsgDeviceDetectionPortal(payload *models.Sys
 	return res, nil
 }
 
-func (c *Client) ReadSystemreplacemsgDeviceDetectionPortal(mkey string, params *models.CmdbRequestParams) (*models.SystemreplacemsgDeviceDetectionPortal, error) {
+func (c *Client) ReadSystemReplacemsgDeviceDetectionPortal(mkey string, params *models.CmdbRequestParams) (*models.SystemReplacemsgDeviceDetectionPortal, error) {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "GET"
 	req.Mkey = &mkey
 	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.SystemreplacemsgDeviceDetectionPortalPath + mkey + "/"
+	req.Path = models.CmdbBasePath + models.SystemReplacemsgDeviceDetectionPortalPath + mkey + "/"
 	req.Params = *params
 
 	res, err := request.Read(c.config, req)
@@ -61,17 +60,15 @@ func (c *Client) ReadSystemreplacemsgDeviceDetectionPortal(mkey string, params *
 		if err != nil {
 			return nil, err
 		}
-		v := models.SystemreplacemsgDeviceDetectionPortal{}
+		v := models.SystemReplacemsgDeviceDetectionPortal{}
 		json.Unmarshal(jsontmp, &v)
 		return &v, nil
 	}
 
-	err = errors.New("unable to parse API response results")
-
 	return nil, err
 }
 
-func (c *Client) UpdateSystemreplacemsgDeviceDetectionPortal(mkey string, payload *models.SystemreplacemsgDeviceDetectionPortal, params *models.CmdbRequestParams) (*models.CmdbResponse, error) {
+func (c *Client) UpdateSystemReplacemsgDeviceDetectionPortal(mkey string, payload *models.SystemReplacemsgDeviceDetectionPortal, params *models.CmdbRequestParams) (*models.CmdbResponse, error) {
 	body, err := json.Marshal(payload)
 	if err != nil {
 		return nil, err
@@ -81,7 +78,7 @@ func (c *Client) UpdateSystemreplacemsgDeviceDetectionPortal(mkey string, payloa
 	req.HTTPMethod = "PUT"
 	req.Mkey = &mkey
 	req.Payload = body
-	req.Path = models.CmdbBasePath + models.SystemreplacemsgDeviceDetectionPortalPath + mkey + "/"
+	req.Path = models.CmdbBasePath + models.SystemReplacemsgDeviceDetectionPortalPath + mkey + "/"
 	req.Params = *params
 
 	res, err := request.CreateUpdate(c.config, req)
@@ -91,12 +88,12 @@ func (c *Client) UpdateSystemreplacemsgDeviceDetectionPortal(mkey string, payloa
 	return res, nil
 }
 
-func (c *Client) DeleteSystemreplacemsgDeviceDetectionPortal(mkey string, params *models.CmdbRequestParams) error {
+func (c *Client) DeleteSystemReplacemsgDeviceDetectionPortal(mkey string, params *models.CmdbRequestParams) error {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "DELETE"
 	req.Mkey = &mkey
 	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.SystemreplacemsgDeviceDetectionPortalPath + mkey + "/"
+	req.Path = models.CmdbBasePath + models.SystemReplacemsgDeviceDetectionPortalPath + mkey + "/"
 	req.Params = *params
 
 	err := request.Delete(c.config, req)

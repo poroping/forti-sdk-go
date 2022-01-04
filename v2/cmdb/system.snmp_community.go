@@ -2,7 +2,6 @@ package cmdb
 
 import (
 	"encoding/json"
-	"errors"
 	"log"
 	"strconv"
 
@@ -10,7 +9,7 @@ import (
 	"github.com/poroping/forti-sdk-go/v2/request"
 )
 
-func (c *Client) CreateSystemsnmpCommunity(payload *models.SystemsnmpCommunity, params *models.CmdbRequestParams) (*models.CmdbResponse, error) {
+func (c *Client) CreateSystemSnmpCommunity(payload *models.SystemSnmpCommunity, params *models.CmdbRequestParams) (*models.CmdbResponse, error) {
 	body, err := json.Marshal(payload)
 	if err != nil {
 		return nil, err
@@ -19,20 +18,20 @@ func (c *Client) CreateSystemsnmpCommunity(payload *models.SystemsnmpCommunity, 
 	mkey := ""
 	if payload.Id != nil && *params.AllowAppend {
 		mkey = strconv.Itoa(int(*payload.Id))
-		read, err := c.ReadSystemsnmpCommunity(mkey, params)
+		read, err := c.ReadSystemSnmpCommunity(mkey, params)
 		if err != nil {
 			return nil, err
 		}
 		if read != nil {
-			log.Printf("[WARN] Resource at path %q with mkey %q detected upon CREATE with flag set to to overwrite. Changing to UPDATE.", models.SystemsnmpCommunityPath, mkey)
-			return c.UpdateSystemsnmpCommunity(mkey, payload, params)
+			log.Printf("[WARN] Resource at path %q with mkey %q detected upon CREATE with flag set to to overwrite. Changing to UPDATE.", models.SystemSnmpCommunityPath, mkey)
+			return c.UpdateSystemSnmpCommunity(mkey, payload, params)
 		}
 	}
 
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "POST"
 	req.Payload = body
-	req.Path = models.CmdbBasePath + models.SystemsnmpCommunityPath
+	req.Path = models.CmdbBasePath + models.SystemSnmpCommunityPath
 	req.Params = *params
 
 	res, err := request.CreateUpdate(c.config, req)
@@ -42,12 +41,12 @@ func (c *Client) CreateSystemsnmpCommunity(payload *models.SystemsnmpCommunity, 
 	return res, nil
 }
 
-func (c *Client) ReadSystemsnmpCommunity(mkey string, params *models.CmdbRequestParams) (*models.SystemsnmpCommunity, error) {
+func (c *Client) ReadSystemSnmpCommunity(mkey string, params *models.CmdbRequestParams) (*models.SystemSnmpCommunity, error) {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "GET"
 	req.Mkey = &mkey
 	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.SystemsnmpCommunityPath + mkey + "/"
+	req.Path = models.CmdbBasePath + models.SystemSnmpCommunityPath + mkey + "/"
 	req.Params = *params
 
 	res, err := request.Read(c.config, req)
@@ -62,17 +61,15 @@ func (c *Client) ReadSystemsnmpCommunity(mkey string, params *models.CmdbRequest
 		if err != nil {
 			return nil, err
 		}
-		v := models.SystemsnmpCommunity{}
+		v := models.SystemSnmpCommunity{}
 		json.Unmarshal(jsontmp, &v)
 		return &v, nil
 	}
 
-	err = errors.New("unable to parse API response results")
-
 	return nil, err
 }
 
-func (c *Client) UpdateSystemsnmpCommunity(mkey string, payload *models.SystemsnmpCommunity, params *models.CmdbRequestParams) (*models.CmdbResponse, error) {
+func (c *Client) UpdateSystemSnmpCommunity(mkey string, payload *models.SystemSnmpCommunity, params *models.CmdbRequestParams) (*models.CmdbResponse, error) {
 	body, err := json.Marshal(payload)
 	if err != nil {
 		return nil, err
@@ -82,7 +79,7 @@ func (c *Client) UpdateSystemsnmpCommunity(mkey string, payload *models.Systemsn
 	req.HTTPMethod = "PUT"
 	req.Mkey = &mkey
 	req.Payload = body
-	req.Path = models.CmdbBasePath + models.SystemsnmpCommunityPath + mkey + "/"
+	req.Path = models.CmdbBasePath + models.SystemSnmpCommunityPath + mkey + "/"
 	req.Params = *params
 
 	res, err := request.CreateUpdate(c.config, req)
@@ -92,12 +89,12 @@ func (c *Client) UpdateSystemsnmpCommunity(mkey string, payload *models.Systemsn
 	return res, nil
 }
 
-func (c *Client) DeleteSystemsnmpCommunity(mkey string, params *models.CmdbRequestParams) error {
+func (c *Client) DeleteSystemSnmpCommunity(mkey string, params *models.CmdbRequestParams) error {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "DELETE"
 	req.Mkey = &mkey
 	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.SystemsnmpCommunityPath + mkey + "/"
+	req.Path = models.CmdbBasePath + models.SystemSnmpCommunityPath + mkey + "/"
 	req.Params = *params
 
 	err := request.Delete(c.config, req)

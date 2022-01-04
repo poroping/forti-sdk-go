@@ -1,8 +1,8 @@
 package models
 
-const VpnsslwebRealmPath = "vpn/ssl/web/realm/"
+const VpnSslWebRealmPath = "vpn.ssl.web/realm/"
 
-type VpnsslwebRealm struct {
+type VpnSslWebRealm struct {
 	LoginPage             *string `json:"login-page,omitempty"`
 	MaxConcurrentUser     *int64  `json:"max-concurrent-user,omitempty"`
 	NasIp                 *string `json:"nas-ip,omitempty"`

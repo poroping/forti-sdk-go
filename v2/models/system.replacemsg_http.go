@@ -1,8 +1,8 @@
 package models
 
-const SystemreplacemsgHttpPath = "system/replacemsg/http/"
+const SystemReplacemsgHttpPath = "system.replacemsg/http/"
 
-type SystemreplacemsgHttp struct {
+type SystemReplacemsgHttp struct {
 	Buffer  *string `json:"buffer,omitempty"`
 	Format  *string `json:"format,omitempty"`
 	Header  *string `json:"header,omitempty"`

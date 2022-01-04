@@ -2,14 +2,13 @@ package cmdb
 
 import (
 	"encoding/json"
-	"errors"
 	"log"
 
 	"github.com/poroping/forti-sdk-go/v2/models"
 	"github.com/poroping/forti-sdk-go/v2/request"
 )
 
-func (c *Client) CreateSwitchControllersecurityPolicy8021X(payload *models.SwitchControllersecurityPolicy8021X, params *models.CmdbRequestParams) (*models.CmdbResponse, error) {
+func (c *Client) CreateSwitchControllerSecurityPolicy8021X(payload *models.SwitchControllerSecurityPolicy8021X, params *models.CmdbRequestParams) (*models.CmdbResponse, error) {
 	body, err := json.Marshal(payload)
 	if err != nil {
 		return nil, err
@@ -18,20 +17,20 @@ func (c *Client) CreateSwitchControllersecurityPolicy8021X(payload *models.Switc
 	mkey := ""
 	if payload.Name != nil && *params.AllowAppend {
 		mkey = *payload.Name
-		read, err := c.ReadSwitchControllersecurityPolicy8021X(mkey, params)
+		read, err := c.ReadSwitchControllerSecurityPolicy8021X(mkey, params)
 		if err != nil {
 			return nil, err
 		}
 		if read != nil {
-			log.Printf("[WARN] Resource at path %q with mkey %q detected upon CREATE with flag set to to overwrite. Changing to UPDATE.", models.SwitchControllersecurityPolicy8021XPath, mkey)
-			return c.UpdateSwitchControllersecurityPolicy8021X(mkey, payload, params)
+			log.Printf("[WARN] Resource at path %q with mkey %q detected upon CREATE with flag set to to overwrite. Changing to UPDATE.", models.SwitchControllerSecurityPolicy8021XPath, mkey)
+			return c.UpdateSwitchControllerSecurityPolicy8021X(mkey, payload, params)
 		}
 	}
 
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "POST"
 	req.Payload = body
-	req.Path = models.CmdbBasePath + models.SwitchControllersecurityPolicy8021XPath
+	req.Path = models.CmdbBasePath + models.SwitchControllerSecurityPolicy8021XPath
 	req.Params = *params
 
 	res, err := request.CreateUpdate(c.config, req)
@@ -41,12 +40,12 @@ func (c *Client) CreateSwitchControllersecurityPolicy8021X(payload *models.Switc
 	return res, nil
 }
 
-func (c *Client) ReadSwitchControllersecurityPolicy8021X(mkey string, params *models.CmdbRequestParams) (*models.SwitchControllersecurityPolicy8021X, error) {
+func (c *Client) ReadSwitchControllerSecurityPolicy8021X(mkey string, params *models.CmdbRequestParams) (*models.SwitchControllerSecurityPolicy8021X, error) {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "GET"
 	req.Mkey = &mkey
 	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.SwitchControllersecurityPolicy8021XPath + mkey + "/"
+	req.Path = models.CmdbBasePath + models.SwitchControllerSecurityPolicy8021XPath + mkey + "/"
 	req.Params = *params
 
 	res, err := request.Read(c.config, req)
@@ -61,17 +60,15 @@ func (c *Client) ReadSwitchControllersecurityPolicy8021X(mkey string, params *mo
 		if err != nil {
 			return nil, err
 		}
-		v := models.SwitchControllersecurityPolicy8021X{}
+		v := models.SwitchControllerSecurityPolicy8021X{}
 		json.Unmarshal(jsontmp, &v)
 		return &v, nil
 	}
 
-	err = errors.New("unable to parse API response results")
-
 	return nil, err
 }
 
-func (c *Client) UpdateSwitchControllersecurityPolicy8021X(mkey string, payload *models.SwitchControllersecurityPolicy8021X, params *models.CmdbRequestParams) (*models.CmdbResponse, error) {
+func (c *Client) UpdateSwitchControllerSecurityPolicy8021X(mkey string, payload *models.SwitchControllerSecurityPolicy8021X, params *models.CmdbRequestParams) (*models.CmdbResponse, error) {
 	body, err := json.Marshal(payload)
 	if err != nil {
 		return nil, err
@@ -81,7 +78,7 @@ func (c *Client) UpdateSwitchControllersecurityPolicy8021X(mkey string, payload 
 	req.HTTPMethod = "PUT"
 	req.Mkey = &mkey
 	req.Payload = body
-	req.Path = models.CmdbBasePath + models.SwitchControllersecurityPolicy8021XPath + mkey + "/"
+	req.Path = models.CmdbBasePath + models.SwitchControllerSecurityPolicy8021XPath + mkey + "/"
 	req.Params = *params
 
 	res, err := request.CreateUpdate(c.config, req)
@@ -91,12 +88,12 @@ func (c *Client) UpdateSwitchControllersecurityPolicy8021X(mkey string, payload 
 	return res, nil
 }
 
-func (c *Client) DeleteSwitchControllersecurityPolicy8021X(mkey string, params *models.CmdbRequestParams) error {
+func (c *Client) DeleteSwitchControllerSecurityPolicy8021X(mkey string, params *models.CmdbRequestParams) error {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "DELETE"
 	req.Mkey = &mkey
 	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.SwitchControllersecurityPolicy8021XPath + mkey + "/"
+	req.Path = models.CmdbBasePath + models.SwitchControllerSecurityPolicy8021XPath + mkey + "/"
 	req.Params = *params
 
 	err := request.Delete(c.config, req)

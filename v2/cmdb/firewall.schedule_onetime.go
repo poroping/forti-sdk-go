@@ -2,14 +2,13 @@ package cmdb
 
 import (
 	"encoding/json"
-	"errors"
 	"log"
 
 	"github.com/poroping/forti-sdk-go/v2/models"
 	"github.com/poroping/forti-sdk-go/v2/request"
 )
 
-func (c *Client) CreateFirewallscheduleOnetime(payload *models.FirewallscheduleOnetime, params *models.CmdbRequestParams) (*models.CmdbResponse, error) {
+func (c *Client) CreateFirewallScheduleOnetime(payload *models.FirewallScheduleOnetime, params *models.CmdbRequestParams) (*models.CmdbResponse, error) {
 	body, err := json.Marshal(payload)
 	if err != nil {
 		return nil, err
@@ -18,20 +17,20 @@ func (c *Client) CreateFirewallscheduleOnetime(payload *models.FirewallscheduleO
 	mkey := ""
 	if payload.Name != nil && *params.AllowAppend {
 		mkey = *payload.Name
-		read, err := c.ReadFirewallscheduleOnetime(mkey, params)
+		read, err := c.ReadFirewallScheduleOnetime(mkey, params)
 		if err != nil {
 			return nil, err
 		}
 		if read != nil {
-			log.Printf("[WARN] Resource at path %q with mkey %q detected upon CREATE with flag set to to overwrite. Changing to UPDATE.", models.FirewallscheduleOnetimePath, mkey)
-			return c.UpdateFirewallscheduleOnetime(mkey, payload, params)
+			log.Printf("[WARN] Resource at path %q with mkey %q detected upon CREATE with flag set to to overwrite. Changing to UPDATE.", models.FirewallScheduleOnetimePath, mkey)
+			return c.UpdateFirewallScheduleOnetime(mkey, payload, params)
 		}
 	}
 
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "POST"
 	req.Payload = body
-	req.Path = models.CmdbBasePath + models.FirewallscheduleOnetimePath
+	req.Path = models.CmdbBasePath + models.FirewallScheduleOnetimePath
 	req.Params = *params
 
 	res, err := request.CreateUpdate(c.config, req)
@@ -41,12 +40,12 @@ func (c *Client) CreateFirewallscheduleOnetime(payload *models.FirewallscheduleO
 	return res, nil
 }
 
-func (c *Client) ReadFirewallscheduleOnetime(mkey string, params *models.CmdbRequestParams) (*models.FirewallscheduleOnetime, error) {
+func (c *Client) ReadFirewallScheduleOnetime(mkey string, params *models.CmdbRequestParams) (*models.FirewallScheduleOnetime, error) {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "GET"
 	req.Mkey = &mkey
 	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.FirewallscheduleOnetimePath + mkey + "/"
+	req.Path = models.CmdbBasePath + models.FirewallScheduleOnetimePath + mkey + "/"
 	req.Params = *params
 
 	res, err := request.Read(c.config, req)
@@ -61,17 +60,15 @@ func (c *Client) ReadFirewallscheduleOnetime(mkey string, params *models.CmdbReq
 		if err != nil {
 			return nil, err
 		}
-		v := models.FirewallscheduleOnetime{}
+		v := models.FirewallScheduleOnetime{}
 		json.Unmarshal(jsontmp, &v)
 		return &v, nil
 	}
 
-	err = errors.New("unable to parse API response results")
-
 	return nil, err
 }
 
-func (c *Client) UpdateFirewallscheduleOnetime(mkey string, payload *models.FirewallscheduleOnetime, params *models.CmdbRequestParams) (*models.CmdbResponse, error) {
+func (c *Client) UpdateFirewallScheduleOnetime(mkey string, payload *models.FirewallScheduleOnetime, params *models.CmdbRequestParams) (*models.CmdbResponse, error) {
 	body, err := json.Marshal(payload)
 	if err != nil {
 		return nil, err
@@ -81,7 +78,7 @@ func (c *Client) UpdateFirewallscheduleOnetime(mkey string, payload *models.Fire
 	req.HTTPMethod = "PUT"
 	req.Mkey = &mkey
 	req.Payload = body
-	req.Path = models.CmdbBasePath + models.FirewallscheduleOnetimePath + mkey + "/"
+	req.Path = models.CmdbBasePath + models.FirewallScheduleOnetimePath + mkey + "/"
 	req.Params = *params
 
 	res, err := request.CreateUpdate(c.config, req)
@@ -91,12 +88,12 @@ func (c *Client) UpdateFirewallscheduleOnetime(mkey string, payload *models.Fire
 	return res, nil
 }
 
-func (c *Client) DeleteFirewallscheduleOnetime(mkey string, params *models.CmdbRequestParams) error {
+func (c *Client) DeleteFirewallScheduleOnetime(mkey string, params *models.CmdbRequestParams) error {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "DELETE"
 	req.Mkey = &mkey
 	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.FirewallscheduleOnetimePath + mkey + "/"
+	req.Path = models.CmdbBasePath + models.FirewallScheduleOnetimePath + mkey + "/"
 	req.Params = *params
 
 	err := request.Delete(c.config, req)

@@ -1,21 +1,21 @@
 package models
 
-const VpnsslwebUserBookmarkPath = "vpn/ssl/web/user-bookmark/"
+const VpnSslWebUserBookmarkPath = "vpn.ssl.web/user-bookmark/"
 
-type VpnsslwebUserBookmark struct {
-	Bookmarks  *[]VpnsslwebUserBookmarkBookmarks `json:"bookmarks,omitempty"`
+type VpnSslWebUserBookmark struct {
+	Bookmarks  *[]VpnSslWebUserBookmarkBookmarks `json:"bookmarks,omitempty"`
 	CustomLang *string                           `json:"custom-lang,omitempty"`
 	Name       *string                           `json:"name,omitempty"`
 }
 
-type VpnsslwebUserBookmarkBookmarks struct {
+type VpnSslWebUserBookmarkBookmarks struct {
 	AdditionalParams      *string                                   `json:"additional-params,omitempty"`
 	Apptype               *string                                   `json:"apptype,omitempty"`
 	ColorDepth            *string                                   `json:"color-depth,omitempty"`
 	Description           *string                                   `json:"description,omitempty"`
 	Domain                *string                                   `json:"domain,omitempty"`
 	Folder                *string                                   `json:"folder,omitempty"`
-	FormData              *[]VpnsslwebUserBookmarkBookmarksFormData `json:"form-data,omitempty"`
+	FormData              *[]VpnSslWebUserBookmarkBookmarksFormData `json:"form-data,omitempty"`
 	Host                  *string                                   `json:"host,omitempty"`
 	KeyboardLayout        *string                                   `json:"keyboard-layout,omitempty"`
 	ListeningPort         *int64                                    `json:"listening-port,omitempty"`
@@ -40,7 +40,7 @@ type VpnsslwebUserBookmarkBookmarks struct {
 	Url                   *string                                   `json:"url,omitempty"`
 }
 
-type VpnsslwebUserBookmarkBookmarksFormData struct {
+type VpnSslWebUserBookmarkBookmarksFormData struct {
 	Name  *string `json:"name,omitempty"`
 	Value *string `json:"value,omitempty"`
 }

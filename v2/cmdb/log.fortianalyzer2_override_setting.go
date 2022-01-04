@@ -2,24 +2,23 @@ package cmdb
 
 import (
 	"encoding/json"
-	"errors"
 	"log"
 
 	"github.com/poroping/forti-sdk-go/v2/models"
 	"github.com/poroping/forti-sdk-go/v2/request"
 )
 
-func (c *Client) CreateLogfortianalyzer2OverrideSetting(payload *models.Logfortianalyzer2OverrideSetting, params *models.CmdbRequestParams) (*models.CmdbResponse, error) {
-	log.Printf("[INFO] Resource at path %q is complex type. Changing to UPDATE.", models.Logfortianalyzer2OverrideSettingPath)
-	return c.UpdateLogfortianalyzer2OverrideSetting("", payload, params)
+func (c *Client) CreateLogFortianalyzer2OverrideSetting(payload *models.LogFortianalyzer2OverrideSetting, params *models.CmdbRequestParams) (*models.CmdbResponse, error) {
+	log.Printf("[INFO] Resource at path %q is complex type. Changing to UPDATE.", models.LogFortianalyzer2OverrideSettingPath)
+	return c.UpdateLogFortianalyzer2OverrideSetting("", payload, params)
 }
 
-func (c *Client) ReadLogfortianalyzer2OverrideSetting(mkey string, params *models.CmdbRequestParams) (*models.Logfortianalyzer2OverrideSetting, error) {
+func (c *Client) ReadLogFortianalyzer2OverrideSetting(mkey string, params *models.CmdbRequestParams) (*models.LogFortianalyzer2OverrideSetting, error) {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "GET"
 	req.Mkey = &mkey
 	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.Logfortianalyzer2OverrideSettingPath
+	req.Path = models.CmdbBasePath + models.LogFortianalyzer2OverrideSettingPath
 	req.Params = *params
 
 	res, err := request.Read(c.config, req)
@@ -34,17 +33,15 @@ func (c *Client) ReadLogfortianalyzer2OverrideSetting(mkey string, params *model
 		if err != nil {
 			return nil, err
 		}
-		v := models.Logfortianalyzer2OverrideSetting{}
+		v := models.LogFortianalyzer2OverrideSetting{}
 		json.Unmarshal(jsontmp, &v)
 		return &v, nil
 	}
 
-	err = errors.New("unable to parse API response results")
-
 	return nil, err
 }
 
-func (c *Client) UpdateLogfortianalyzer2OverrideSetting(mkey string, payload *models.Logfortianalyzer2OverrideSetting, params *models.CmdbRequestParams) (*models.CmdbResponse, error) {
+func (c *Client) UpdateLogFortianalyzer2OverrideSetting(mkey string, payload *models.LogFortianalyzer2OverrideSetting, params *models.CmdbRequestParams) (*models.CmdbResponse, error) {
 	body, err := json.Marshal(payload)
 	if err != nil {
 		return nil, err
@@ -54,7 +51,7 @@ func (c *Client) UpdateLogfortianalyzer2OverrideSetting(mkey string, payload *mo
 	req.HTTPMethod = "PUT"
 	req.Mkey = &mkey
 	req.Payload = body
-	req.Path = models.CmdbBasePath + models.Logfortianalyzer2OverrideSettingPath + mkey + "/"
+	req.Path = models.CmdbBasePath + models.LogFortianalyzer2OverrideSettingPath
 	req.Params = *params
 
 	res, err := request.CreateUpdate(c.config, req)
@@ -64,8 +61,8 @@ func (c *Client) UpdateLogfortianalyzer2OverrideSetting(mkey string, payload *mo
 	return res, nil
 }
 
-func (c *Client) DeleteLogfortianalyzer2OverrideSetting(mkey string, params *models.CmdbRequestParams) error {
-	payload := &models.Logfortianalyzer2OverrideSetting{}
-	_, err := c.UpdateLogfortianalyzer2OverrideSetting("", payload, params)
+func (c *Client) DeleteLogFortianalyzer2OverrideSetting(mkey string, params *models.CmdbRequestParams) error {
+	payload := &models.LogFortianalyzer2OverrideSetting{}
+	_, err := c.UpdateLogFortianalyzer2OverrideSetting("", payload, params)
 	return err
 }

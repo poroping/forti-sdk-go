@@ -1,9 +1,9 @@
 package models
 
-const VpnsslwebHostCheckSoftwarePath = "vpn/ssl/web/host-check-software/"
+const VpnSslWebHostCheckSoftwarePath = "vpn.ssl.web/host-check-software/"
 
-type VpnsslwebHostCheckSoftware struct {
-	CheckItemList *[]VpnsslwebHostCheckSoftwareCheckItemList `json:"check-item-list,omitempty"`
+type VpnSslWebHostCheckSoftware struct {
+	CheckItemList *[]VpnSslWebHostCheckSoftwareCheckItemList `json:"check-item-list,omitempty"`
 	Guid          *string                                    `json:"guid,omitempty"`
 	Name          *string                                    `json:"name,omitempty"`
 	OsType        *string                                    `json:"os-type,omitempty"`
@@ -11,15 +11,15 @@ type VpnsslwebHostCheckSoftware struct {
 	Version       *string                                    `json:"version,omitempty"`
 }
 
-type VpnsslwebHostCheckSoftwareCheckItemList struct {
+type VpnSslWebHostCheckSoftwareCheckItemList struct {
 	Action  *string                                        `json:"action,omitempty"`
 	Id      *int64                                         `json:"id,omitempty"`
-	Md5s    *[]VpnsslwebHostCheckSoftwareCheckItemListMd5s `json:"md5s,omitempty"`
+	Md5s    *[]VpnSslWebHostCheckSoftwareCheckItemListMd5s `json:"md5s,omitempty"`
 	Target  *string                                        `json:"target,omitempty"`
 	Type    *string                                        `json:"type,omitempty"`
 	Version *string                                        `json:"version,omitempty"`
 }
 
-type VpnsslwebHostCheckSoftwareCheckItemListMd5s struct {
+type VpnSslWebHostCheckSoftwareCheckItemListMd5s struct {
 	Id *string `json:"id,omitempty"`
 }

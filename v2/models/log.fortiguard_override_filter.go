@@ -1,13 +1,13 @@
 package models
 
-const LogfortiguardOverrideFilterPath = "log/fortiguard/override-filter/"
+const LogFortiguardOverrideFilterPath = "log.fortiguard/override-filter/"
 
-type LogfortiguardOverrideFilter struct {
+type LogFortiguardOverrideFilter struct {
 	Anomaly          *string                                 `json:"anomaly,omitempty"`
 	Filter           *string                                 `json:"filter,omitempty"`
 	FilterType       *string                                 `json:"filter-type,omitempty"`
 	ForwardTraffic   *string                                 `json:"forward-traffic,omitempty"`
-	FreeStyle        *[]LogfortiguardOverrideFilterFreeStyle `json:"free-style,omitempty"`
+	FreeStyle        *[]LogFortiguardOverrideFilterFreeStyle `json:"free-style,omitempty"`
 	Gtp              *string                                 `json:"gtp,omitempty"`
 	LocalTraffic     *string                                 `json:"local-traffic,omitempty"`
 	MulticastTraffic *string                                 `json:"multicast-traffic,omitempty"`
@@ -16,7 +16,7 @@ type LogfortiguardOverrideFilter struct {
 	Voip             *string                                 `json:"voip,omitempty"`
 }
 
-type LogfortiguardOverrideFilterFreeStyle struct {
+type LogFortiguardOverrideFilterFreeStyle struct {
 	Category   *string `json:"category,omitempty"`
 	Filter     *string `json:"filter,omitempty"`
 	FilterType *string `json:"filter-type,omitempty"`

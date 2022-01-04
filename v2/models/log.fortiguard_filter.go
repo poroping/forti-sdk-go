@@ -1,13 +1,13 @@
 package models
 
-const LogfortiguardFilterPath = "log/fortiguard/filter/"
+const LogFortiguardFilterPath = "log.fortiguard/filter/"
 
-type LogfortiguardFilter struct {
+type LogFortiguardFilter struct {
 	Anomaly          *string                         `json:"anomaly,omitempty"`
 	Filter           *string                         `json:"filter,omitempty"`
 	FilterType       *string                         `json:"filter-type,omitempty"`
 	ForwardTraffic   *string                         `json:"forward-traffic,omitempty"`
-	FreeStyle        *[]LogfortiguardFilterFreeStyle `json:"free-style,omitempty"`
+	FreeStyle        *[]LogFortiguardFilterFreeStyle `json:"free-style,omitempty"`
 	Gtp              *string                         `json:"gtp,omitempty"`
 	LocalTraffic     *string                         `json:"local-traffic,omitempty"`
 	MulticastTraffic *string                         `json:"multicast-traffic,omitempty"`
@@ -16,7 +16,7 @@ type LogfortiguardFilter struct {
 	Voip             *string                         `json:"voip,omitempty"`
 }
 
-type LogfortiguardFilterFreeStyle struct {
+type LogFortiguardFilterFreeStyle struct {
 	Category   *string `json:"category,omitempty"`
 	Filter     *string `json:"filter,omitempty"`
 	FilterType *string `json:"filter-type,omitempty"`

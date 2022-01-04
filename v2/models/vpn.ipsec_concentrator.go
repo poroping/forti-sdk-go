@@ -1,14 +1,14 @@
 package models
 
-const VpnipsecConcentratorPath = "vpn/ipsec/concentrator/"
+const VpnIpsecConcentratorPath = "vpn.ipsec/concentrator/"
 
-type VpnipsecConcentrator struct {
+type VpnIpsecConcentrator struct {
 	Id       *int64                        `json:"id,omitempty"`
-	Member   *[]VpnipsecConcentratorMember `json:"member,omitempty"`
+	Member   *[]VpnIpsecConcentratorMember `json:"member,omitempty"`
 	Name     *string                       `json:"name,omitempty"`
 	SrcCheck *string                       `json:"src-check,omitempty"`
 }
 
-type VpnipsecConcentratorMember struct {
+type VpnIpsecConcentratorMember struct {
 	Name *string `json:"name,omitempty"`
 }

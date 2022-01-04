@@ -1,8 +1,8 @@
 package models
 
-const FirewallipmacbindingTablePath = "firewall/ipmacbinding/table/"
+const FirewallIpmacbindingTablePath = "firewall.ipmacbinding/table/"
 
-type FirewallipmacbindingTable struct {
+type FirewallIpmacbindingTable struct {
 	Ip     *string `json:"ip,omitempty"`
 	Mac    *string `json:"mac,omitempty"`
 	Name   *string `json:"name,omitempty"`

@@ -1,13 +1,13 @@
 package models
 
-const LogsyslogdFilterPath = "log/syslogd/filter/"
+const LogSyslogdFilterPath = "log.syslogd/filter/"
 
-type LogsyslogdFilter struct {
+type LogSyslogdFilter struct {
 	Anomaly          *string                      `json:"anomaly,omitempty"`
 	Filter           *string                      `json:"filter,omitempty"`
 	FilterType       *string                      `json:"filter-type,omitempty"`
 	ForwardTraffic   *string                      `json:"forward-traffic,omitempty"`
-	FreeStyle        *[]LogsyslogdFilterFreeStyle `json:"free-style,omitempty"`
+	FreeStyle        *[]LogSyslogdFilterFreeStyle `json:"free-style,omitempty"`
 	Gtp              *string                      `json:"gtp,omitempty"`
 	LocalTraffic     *string                      `json:"local-traffic,omitempty"`
 	MulticastTraffic *string                      `json:"multicast-traffic,omitempty"`
@@ -16,7 +16,7 @@ type LogsyslogdFilter struct {
 	Voip             *string                      `json:"voip,omitempty"`
 }
 
-type LogsyslogdFilterFreeStyle struct {
+type LogSyslogdFilterFreeStyle struct {
 	Category   *string `json:"category,omitempty"`
 	Filter     *string `json:"filter,omitempty"`
 	FilterType *string `json:"filter-type,omitempty"`

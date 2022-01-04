@@ -1,8 +1,8 @@
 package models
 
-const LogdiskFilterPath = "log/disk/filter/"
+const LogDiskFilterPath = "log.disk/filter/"
 
-type LogdiskFilter struct {
+type LogDiskFilter struct {
 	Admin            *string                   `json:"admin,omitempty"`
 	Anomaly          *string                   `json:"anomaly,omitempty"`
 	Auth             *string                   `json:"auth,omitempty"`
@@ -13,7 +13,7 @@ type LogdiskFilter struct {
 	Filter           *string                   `json:"filter,omitempty"`
 	FilterType       *string                   `json:"filter-type,omitempty"`
 	ForwardTraffic   *string                   `json:"forward-traffic,omitempty"`
-	FreeStyle        *[]LogdiskFilterFreeStyle `json:"free-style,omitempty"`
+	FreeStyle        *[]LogDiskFilterFreeStyle `json:"free-style,omitempty"`
 	Gtp              *string                   `json:"gtp,omitempty"`
 	Ha               *string                   `json:"ha,omitempty"`
 	Ipsec            *string                   `json:"ipsec,omitempty"`
@@ -35,7 +35,7 @@ type LogdiskFilter struct {
 	WirelessActivity *string                   `json:"wireless-activity,omitempty"`
 }
 
-type LogdiskFilterFreeStyle struct {
+type LogDiskFilterFreeStyle struct {
 	Category   *string `json:"category,omitempty"`
 	Filter     *string `json:"filter,omitempty"`
 	FilterType *string `json:"filter-type,omitempty"`

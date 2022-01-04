@@ -2,7 +2,6 @@ package cmdb
 
 import (
 	"encoding/json"
-	"errors"
 	"log"
 
 	"github.com/poroping/forti-sdk-go/v2/models"
@@ -39,8 +38,6 @@ func (c *Client) ReadSystemPasswordPolicy(mkey string, params *models.CmdbReques
 		return &v, nil
 	}
 
-	err = errors.New("unable to parse API response results")
-
 	return nil, err
 }
 
@@ -54,7 +51,7 @@ func (c *Client) UpdateSystemPasswordPolicy(mkey string, payload *models.SystemP
 	req.HTTPMethod = "PUT"
 	req.Mkey = &mkey
 	req.Payload = body
-	req.Path = models.CmdbBasePath + models.SystemPasswordPolicyPath + mkey + "/"
+	req.Path = models.CmdbBasePath + models.SystemPasswordPolicyPath
 	req.Params = *params
 
 	res, err := request.CreateUpdate(c.config, req)

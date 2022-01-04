@@ -1,8 +1,8 @@
 package models
 
-const SwitchControllerinitialConfigVlansPath = "switch-controller/initial-config/vlans/"
+const SwitchControllerInitialConfigVlansPath = "switch-controller.initial-config/vlans/"
 
-type SwitchControllerinitialConfigVlans struct {
+type SwitchControllerInitialConfigVlans struct {
 	DefaultVlan *string `json:"default-vlan,omitempty"`
 	Nac         *string `json:"nac,omitempty"`
 	NacSegment  *string `json:"nac-segment,omitempty"`

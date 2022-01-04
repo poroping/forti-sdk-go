@@ -1,10 +1,10 @@
 package models
 
-const LogsyslogdSettingPath = "log/syslogd/setting/"
+const LogSyslogdSettingPath = "log.syslogd/setting/"
 
-type LogsyslogdSetting struct {
+type LogSyslogdSetting struct {
 	Certificate           *string                             `json:"certificate,omitempty"`
-	CustomFieldName       *[]LogsyslogdSettingCustomFieldName `json:"custom-field-name,omitempty"`
+	CustomFieldName       *[]LogSyslogdSettingCustomFieldName `json:"custom-field-name,omitempty"`
 	EncAlgorithm          *string                             `json:"enc-algorithm,omitempty"`
 	Facility              *string                             `json:"facility,omitempty"`
 	Format                *string                             `json:"format,omitempty"`
@@ -20,7 +20,7 @@ type LogsyslogdSetting struct {
 	Status                *string                             `json:"status,omitempty"`
 }
 
-type LogsyslogdSettingCustomFieldName struct {
+type LogSyslogdSettingCustomFieldName struct {
 	Custom *string `json:"custom,omitempty"`
 	Id     *int64  `json:"id,omitempty"`
 	Name   *string `json:"name,omitempty"`

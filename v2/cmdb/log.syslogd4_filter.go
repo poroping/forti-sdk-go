@@ -2,24 +2,23 @@ package cmdb
 
 import (
 	"encoding/json"
-	"errors"
 	"log"
 
 	"github.com/poroping/forti-sdk-go/v2/models"
 	"github.com/poroping/forti-sdk-go/v2/request"
 )
 
-func (c *Client) CreateLogsyslogd4Filter(payload *models.Logsyslogd4Filter, params *models.CmdbRequestParams) (*models.CmdbResponse, error) {
-	log.Printf("[INFO] Resource at path %q is complex type. Changing to UPDATE.", models.Logsyslogd4FilterPath)
-	return c.UpdateLogsyslogd4Filter("", payload, params)
+func (c *Client) CreateLogSyslogd4Filter(payload *models.LogSyslogd4Filter, params *models.CmdbRequestParams) (*models.CmdbResponse, error) {
+	log.Printf("[INFO] Resource at path %q is complex type. Changing to UPDATE.", models.LogSyslogd4FilterPath)
+	return c.UpdateLogSyslogd4Filter("", payload, params)
 }
 
-func (c *Client) ReadLogsyslogd4Filter(mkey string, params *models.CmdbRequestParams) (*models.Logsyslogd4Filter, error) {
+func (c *Client) ReadLogSyslogd4Filter(mkey string, params *models.CmdbRequestParams) (*models.LogSyslogd4Filter, error) {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "GET"
 	req.Mkey = &mkey
 	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.Logsyslogd4FilterPath
+	req.Path = models.CmdbBasePath + models.LogSyslogd4FilterPath
 	req.Params = *params
 
 	res, err := request.Read(c.config, req)
@@ -34,17 +33,15 @@ func (c *Client) ReadLogsyslogd4Filter(mkey string, params *models.CmdbRequestPa
 		if err != nil {
 			return nil, err
 		}
-		v := models.Logsyslogd4Filter{}
+		v := models.LogSyslogd4Filter{}
 		json.Unmarshal(jsontmp, &v)
 		return &v, nil
 	}
 
-	err = errors.New("unable to parse API response results")
-
 	return nil, err
 }
 
-func (c *Client) UpdateLogsyslogd4Filter(mkey string, payload *models.Logsyslogd4Filter, params *models.CmdbRequestParams) (*models.CmdbResponse, error) {
+func (c *Client) UpdateLogSyslogd4Filter(mkey string, payload *models.LogSyslogd4Filter, params *models.CmdbRequestParams) (*models.CmdbResponse, error) {
 	body, err := json.Marshal(payload)
 	if err != nil {
 		return nil, err
@@ -54,7 +51,7 @@ func (c *Client) UpdateLogsyslogd4Filter(mkey string, payload *models.Logsyslogd
 	req.HTTPMethod = "PUT"
 	req.Mkey = &mkey
 	req.Payload = body
-	req.Path = models.CmdbBasePath + models.Logsyslogd4FilterPath + mkey + "/"
+	req.Path = models.CmdbBasePath + models.LogSyslogd4FilterPath
 	req.Params = *params
 
 	res, err := request.CreateUpdate(c.config, req)
@@ -64,8 +61,8 @@ func (c *Client) UpdateLogsyslogd4Filter(mkey string, payload *models.Logsyslogd
 	return res, nil
 }
 
-func (c *Client) DeleteLogsyslogd4Filter(mkey string, params *models.CmdbRequestParams) error {
-	payload := &models.Logsyslogd4Filter{}
-	_, err := c.UpdateLogsyslogd4Filter("", payload, params)
+func (c *Client) DeleteLogSyslogd4Filter(mkey string, params *models.CmdbRequestParams) error {
+	payload := &models.LogSyslogd4Filter{}
+	_, err := c.UpdateLogSyslogd4Filter("", payload, params)
 	return err
 }

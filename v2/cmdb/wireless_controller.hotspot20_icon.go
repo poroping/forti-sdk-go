@@ -2,14 +2,13 @@ package cmdb
 
 import (
 	"encoding/json"
-	"errors"
 	"log"
 
 	"github.com/poroping/forti-sdk-go/v2/models"
 	"github.com/poroping/forti-sdk-go/v2/request"
 )
 
-func (c *Client) CreateWirelessControllerhotspot20Icon(payload *models.WirelessControllerhotspot20Icon, params *models.CmdbRequestParams) (*models.CmdbResponse, error) {
+func (c *Client) CreateWirelessControllerHotspot20Icon(payload *models.WirelessControllerHotspot20Icon, params *models.CmdbRequestParams) (*models.CmdbResponse, error) {
 	body, err := json.Marshal(payload)
 	if err != nil {
 		return nil, err
@@ -18,20 +17,20 @@ func (c *Client) CreateWirelessControllerhotspot20Icon(payload *models.WirelessC
 	mkey := ""
 	if payload.Name != nil && *params.AllowAppend {
 		mkey = *payload.Name
-		read, err := c.ReadWirelessControllerhotspot20Icon(mkey, params)
+		read, err := c.ReadWirelessControllerHotspot20Icon(mkey, params)
 		if err != nil {
 			return nil, err
 		}
 		if read != nil {
-			log.Printf("[WARN] Resource at path %q with mkey %q detected upon CREATE with flag set to to overwrite. Changing to UPDATE.", models.WirelessControllerhotspot20IconPath, mkey)
-			return c.UpdateWirelessControllerhotspot20Icon(mkey, payload, params)
+			log.Printf("[WARN] Resource at path %q with mkey %q detected upon CREATE with flag set to to overwrite. Changing to UPDATE.", models.WirelessControllerHotspot20IconPath, mkey)
+			return c.UpdateWirelessControllerHotspot20Icon(mkey, payload, params)
 		}
 	}
 
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "POST"
 	req.Payload = body
-	req.Path = models.CmdbBasePath + models.WirelessControllerhotspot20IconPath
+	req.Path = models.CmdbBasePath + models.WirelessControllerHotspot20IconPath
 	req.Params = *params
 
 	res, err := request.CreateUpdate(c.config, req)
@@ -41,12 +40,12 @@ func (c *Client) CreateWirelessControllerhotspot20Icon(payload *models.WirelessC
 	return res, nil
 }
 
-func (c *Client) ReadWirelessControllerhotspot20Icon(mkey string, params *models.CmdbRequestParams) (*models.WirelessControllerhotspot20Icon, error) {
+func (c *Client) ReadWirelessControllerHotspot20Icon(mkey string, params *models.CmdbRequestParams) (*models.WirelessControllerHotspot20Icon, error) {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "GET"
 	req.Mkey = &mkey
 	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.WirelessControllerhotspot20IconPath + mkey + "/"
+	req.Path = models.CmdbBasePath + models.WirelessControllerHotspot20IconPath + mkey + "/"
 	req.Params = *params
 
 	res, err := request.Read(c.config, req)
@@ -61,17 +60,15 @@ func (c *Client) ReadWirelessControllerhotspot20Icon(mkey string, params *models
 		if err != nil {
 			return nil, err
 		}
-		v := models.WirelessControllerhotspot20Icon{}
+		v := models.WirelessControllerHotspot20Icon{}
 		json.Unmarshal(jsontmp, &v)
 		return &v, nil
 	}
 
-	err = errors.New("unable to parse API response results")
-
 	return nil, err
 }
 
-func (c *Client) UpdateWirelessControllerhotspot20Icon(mkey string, payload *models.WirelessControllerhotspot20Icon, params *models.CmdbRequestParams) (*models.CmdbResponse, error) {
+func (c *Client) UpdateWirelessControllerHotspot20Icon(mkey string, payload *models.WirelessControllerHotspot20Icon, params *models.CmdbRequestParams) (*models.CmdbResponse, error) {
 	body, err := json.Marshal(payload)
 	if err != nil {
 		return nil, err
@@ -81,7 +78,7 @@ func (c *Client) UpdateWirelessControllerhotspot20Icon(mkey string, payload *mod
 	req.HTTPMethod = "PUT"
 	req.Mkey = &mkey
 	req.Payload = body
-	req.Path = models.CmdbBasePath + models.WirelessControllerhotspot20IconPath + mkey + "/"
+	req.Path = models.CmdbBasePath + models.WirelessControllerHotspot20IconPath + mkey + "/"
 	req.Params = *params
 
 	res, err := request.CreateUpdate(c.config, req)
@@ -91,12 +88,12 @@ func (c *Client) UpdateWirelessControllerhotspot20Icon(mkey string, payload *mod
 	return res, nil
 }
 
-func (c *Client) DeleteWirelessControllerhotspot20Icon(mkey string, params *models.CmdbRequestParams) error {
+func (c *Client) DeleteWirelessControllerHotspot20Icon(mkey string, params *models.CmdbRequestParams) error {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "DELETE"
 	req.Mkey = &mkey
 	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.WirelessControllerhotspot20IconPath + mkey + "/"
+	req.Path = models.CmdbBasePath + models.WirelessControllerHotspot20IconPath + mkey + "/"
 	req.Params = *params
 
 	err := request.Delete(c.config, req)

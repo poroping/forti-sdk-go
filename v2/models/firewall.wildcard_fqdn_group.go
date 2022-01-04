@@ -1,16 +1,16 @@
 package models
 
-const FirewallwildcardFqdnGroupPath = "firewall/wildcard-fqdn/group/"
+const FirewallWildcardFqdnGroupPath = "firewall.wildcard-fqdn/group/"
 
-type FirewallwildcardFqdnGroup struct {
+type FirewallWildcardFqdnGroup struct {
 	Color      *int64                             `json:"color,omitempty"`
 	Comment    *string                            `json:"comment,omitempty"`
-	Member     *[]FirewallwildcardFqdnGroupMember `json:"member,omitempty"`
+	Member     *[]FirewallWildcardFqdnGroupMember `json:"member,omitempty"`
 	Name       *string                            `json:"name,omitempty"`
 	Uuid       *string                            `json:"uuid,omitempty"`
 	Visibility *string                            `json:"visibility,omitempty"`
 }
 
-type FirewallwildcardFqdnGroupMember struct {
+type FirewallWildcardFqdnGroupMember struct {
 	Name *string `json:"name,omitempty"`
 }

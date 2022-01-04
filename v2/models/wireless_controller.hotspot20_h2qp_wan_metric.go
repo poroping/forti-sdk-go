@@ -1,8 +1,8 @@
 package models
 
-const WirelessControllerhotspot20H2qpWanMetricPath = "wireless-controller/hotspot20/h2qp-wan-metric/"
+const WirelessControllerHotspot20H2qpWanMetricPath = "wireless-controller.hotspot20/h2qp-wan-metric/"
 
-type WirelessControllerhotspot20H2qpWanMetric struct {
+type WirelessControllerHotspot20H2qpWanMetric struct {
 	DownlinkLoad            *int64  `json:"downlink-load,omitempty"`
 	DownlinkSpeed           *int64  `json:"downlink-speed,omitempty"`
 	LinkAtCapacity          *string `json:"link-at-capacity,omitempty"`

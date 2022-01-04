@@ -2,7 +2,6 @@ package cmdb
 
 import (
 	"encoding/json"
-	"errors"
 	"log"
 
 	"github.com/poroping/forti-sdk-go/v2/models"
@@ -65,8 +64,6 @@ func (c *Client) ReadSystemAdmin(mkey string, params *models.CmdbRequestParams) 
 		json.Unmarshal(jsontmp, &v)
 		return &v, nil
 	}
-
-	err = errors.New("unable to parse API response results")
 
 	return nil, err
 }

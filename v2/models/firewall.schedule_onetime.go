@@ -1,8 +1,8 @@
 package models
 
-const FirewallscheduleOnetimePath = "firewall/schedule/onetime/"
+const FirewallScheduleOnetimePath = "firewall.schedule/onetime/"
 
-type FirewallscheduleOnetime struct {
+type FirewallScheduleOnetime struct {
 	Color          *int64  `json:"color,omitempty"`
 	End            *string `json:"end,omitempty"`
 	ExpirationDays *int64  `json:"expiration-days,omitempty"`

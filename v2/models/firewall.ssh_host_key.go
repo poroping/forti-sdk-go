@@ -1,8 +1,8 @@
 package models
 
-const FirewallsshHostKeyPath = "firewall/ssh/host-key/"
+const FirewallSshHostKeyPath = "firewall.ssh/host-key/"
 
-type FirewallsshHostKey struct {
+type FirewallSshHostKey struct {
 	Hostname  *string `json:"hostname,omitempty"`
 	Ip        *string `json:"ip,omitempty"`
 	Name      *string `json:"name,omitempty"`

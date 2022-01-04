@@ -1,10 +1,10 @@
 package models
 
-const LogsyslogdOverrideSettingPath = "log/syslogd/override-setting/"
+const LogSyslogdOverrideSettingPath = "log.syslogd/override-setting/"
 
-type LogsyslogdOverrideSetting struct {
+type LogSyslogdOverrideSetting struct {
 	Certificate           *string                                     `json:"certificate,omitempty"`
-	CustomFieldName       *[]LogsyslogdOverrideSettingCustomFieldName `json:"custom-field-name,omitempty"`
+	CustomFieldName       *[]LogSyslogdOverrideSettingCustomFieldName `json:"custom-field-name,omitempty"`
 	EncAlgorithm          *string                                     `json:"enc-algorithm,omitempty"`
 	Facility              *string                                     `json:"facility,omitempty"`
 	Format                *string                                     `json:"format,omitempty"`
@@ -20,7 +20,7 @@ type LogsyslogdOverrideSetting struct {
 	Status                *string                                     `json:"status,omitempty"`
 }
 
-type LogsyslogdOverrideSettingCustomFieldName struct {
+type LogSyslogdOverrideSettingCustomFieldName struct {
 	Custom *string `json:"custom,omitempty"`
 	Id     *int64  `json:"id,omitempty"`
 	Name   *string `json:"name,omitempty"`

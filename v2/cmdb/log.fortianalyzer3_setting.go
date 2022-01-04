@@ -2,24 +2,23 @@ package cmdb
 
 import (
 	"encoding/json"
-	"errors"
 	"log"
 
 	"github.com/poroping/forti-sdk-go/v2/models"
 	"github.com/poroping/forti-sdk-go/v2/request"
 )
 
-func (c *Client) CreateLogfortianalyzer3Setting(payload *models.Logfortianalyzer3Setting, params *models.CmdbRequestParams) (*models.CmdbResponse, error) {
-	log.Printf("[INFO] Resource at path %q is complex type. Changing to UPDATE.", models.Logfortianalyzer3SettingPath)
-	return c.UpdateLogfortianalyzer3Setting("", payload, params)
+func (c *Client) CreateLogFortianalyzer3Setting(payload *models.LogFortianalyzer3Setting, params *models.CmdbRequestParams) (*models.CmdbResponse, error) {
+	log.Printf("[INFO] Resource at path %q is complex type. Changing to UPDATE.", models.LogFortianalyzer3SettingPath)
+	return c.UpdateLogFortianalyzer3Setting("", payload, params)
 }
 
-func (c *Client) ReadLogfortianalyzer3Setting(mkey string, params *models.CmdbRequestParams) (*models.Logfortianalyzer3Setting, error) {
+func (c *Client) ReadLogFortianalyzer3Setting(mkey string, params *models.CmdbRequestParams) (*models.LogFortianalyzer3Setting, error) {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "GET"
 	req.Mkey = &mkey
 	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.Logfortianalyzer3SettingPath
+	req.Path = models.CmdbBasePath + models.LogFortianalyzer3SettingPath
 	req.Params = *params
 
 	res, err := request.Read(c.config, req)
@@ -34,17 +33,15 @@ func (c *Client) ReadLogfortianalyzer3Setting(mkey string, params *models.CmdbRe
 		if err != nil {
 			return nil, err
 		}
-		v := models.Logfortianalyzer3Setting{}
+		v := models.LogFortianalyzer3Setting{}
 		json.Unmarshal(jsontmp, &v)
 		return &v, nil
 	}
 
-	err = errors.New("unable to parse API response results")
-
 	return nil, err
 }
 
-func (c *Client) UpdateLogfortianalyzer3Setting(mkey string, payload *models.Logfortianalyzer3Setting, params *models.CmdbRequestParams) (*models.CmdbResponse, error) {
+func (c *Client) UpdateLogFortianalyzer3Setting(mkey string, payload *models.LogFortianalyzer3Setting, params *models.CmdbRequestParams) (*models.CmdbResponse, error) {
 	body, err := json.Marshal(payload)
 	if err != nil {
 		return nil, err
@@ -54,7 +51,7 @@ func (c *Client) UpdateLogfortianalyzer3Setting(mkey string, payload *models.Log
 	req.HTTPMethod = "PUT"
 	req.Mkey = &mkey
 	req.Payload = body
-	req.Path = models.CmdbBasePath + models.Logfortianalyzer3SettingPath + mkey + "/"
+	req.Path = models.CmdbBasePath + models.LogFortianalyzer3SettingPath
 	req.Params = *params
 
 	res, err := request.CreateUpdate(c.config, req)
@@ -64,8 +61,8 @@ func (c *Client) UpdateLogfortianalyzer3Setting(mkey string, payload *models.Log
 	return res, nil
 }
 
-func (c *Client) DeleteLogfortianalyzer3Setting(mkey string, params *models.CmdbRequestParams) error {
-	payload := &models.Logfortianalyzer3Setting{}
-	_, err := c.UpdateLogfortianalyzer3Setting("", payload, params)
+func (c *Client) DeleteLogFortianalyzer3Setting(mkey string, params *models.CmdbRequestParams) error {
+	payload := &models.LogFortianalyzer3Setting{}
+	_, err := c.UpdateLogFortianalyzer3Setting("", payload, params)
 	return err
 }

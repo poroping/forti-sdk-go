@@ -1,11 +1,11 @@
 package models
 
-const FirewallserviceCustomPath = "firewall/service/custom/"
+const FirewallServiceCustomPath = "firewall.service/custom/"
 
-type FirewallserviceCustom struct {
-	AppCategory       *[]FirewallserviceCustomAppCategory `json:"app-category,omitempty"`
+type FirewallServiceCustom struct {
+	AppCategory       *[]FirewallServiceCustomAppCategory `json:"app-category,omitempty"`
 	AppServiceType    *string                             `json:"app-service-type,omitempty"`
-	Application       *[]FirewallserviceCustomApplication `json:"application,omitempty"`
+	Application       *[]FirewallServiceCustomApplication `json:"application,omitempty"`
 	Category          *string                             `json:"category,omitempty"`
 	CheckResetRange   *string                             `json:"check-reset-range,omitempty"`
 	Color             *int64                              `json:"color,omitempty"`
@@ -32,10 +32,10 @@ type FirewallserviceCustom struct {
 	Visibility        *string                             `json:"visibility,omitempty"`
 }
 
-type FirewallserviceCustomAppCategory struct {
+type FirewallServiceCustomAppCategory struct {
 	Id *int64 `json:"id,omitempty"`
 }
 
-type FirewallserviceCustomApplication struct {
+type FirewallServiceCustomApplication struct {
 	Id *int64 `json:"id,omitempty"`
 }

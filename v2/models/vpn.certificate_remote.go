@@ -1,8 +1,8 @@
 package models
 
-const VpncertificateRemotePath = "vpn/certificate/remote/"
+const VpnCertificateRemotePath = "vpn.certificate/remote/"
 
-type VpncertificateRemote struct {
+type VpnCertificateRemote struct {
 	Name   *string `json:"name,omitempty"`
 	Range  *string `json:"range,omitempty"`
 	Remote *string `json:"remote,omitempty"`

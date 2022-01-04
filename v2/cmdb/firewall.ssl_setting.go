@@ -2,24 +2,23 @@ package cmdb
 
 import (
 	"encoding/json"
-	"errors"
 	"log"
 
 	"github.com/poroping/forti-sdk-go/v2/models"
 	"github.com/poroping/forti-sdk-go/v2/request"
 )
 
-func (c *Client) CreateFirewallsslSetting(payload *models.FirewallsslSetting, params *models.CmdbRequestParams) (*models.CmdbResponse, error) {
-	log.Printf("[INFO] Resource at path %q is complex type. Changing to UPDATE.", models.FirewallsslSettingPath)
-	return c.UpdateFirewallsslSetting("", payload, params)
+func (c *Client) CreateFirewallSslSetting(payload *models.FirewallSslSetting, params *models.CmdbRequestParams) (*models.CmdbResponse, error) {
+	log.Printf("[INFO] Resource at path %q is complex type. Changing to UPDATE.", models.FirewallSslSettingPath)
+	return c.UpdateFirewallSslSetting("", payload, params)
 }
 
-func (c *Client) ReadFirewallsslSetting(mkey string, params *models.CmdbRequestParams) (*models.FirewallsslSetting, error) {
+func (c *Client) ReadFirewallSslSetting(mkey string, params *models.CmdbRequestParams) (*models.FirewallSslSetting, error) {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "GET"
 	req.Mkey = &mkey
 	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.FirewallsslSettingPath
+	req.Path = models.CmdbBasePath + models.FirewallSslSettingPath
 	req.Params = *params
 
 	res, err := request.Read(c.config, req)
@@ -34,17 +33,15 @@ func (c *Client) ReadFirewallsslSetting(mkey string, params *models.CmdbRequestP
 		if err != nil {
 			return nil, err
 		}
-		v := models.FirewallsslSetting{}
+		v := models.FirewallSslSetting{}
 		json.Unmarshal(jsontmp, &v)
 		return &v, nil
 	}
 
-	err = errors.New("unable to parse API response results")
-
 	return nil, err
 }
 
-func (c *Client) UpdateFirewallsslSetting(mkey string, payload *models.FirewallsslSetting, params *models.CmdbRequestParams) (*models.CmdbResponse, error) {
+func (c *Client) UpdateFirewallSslSetting(mkey string, payload *models.FirewallSslSetting, params *models.CmdbRequestParams) (*models.CmdbResponse, error) {
 	body, err := json.Marshal(payload)
 	if err != nil {
 		return nil, err
@@ -54,7 +51,7 @@ func (c *Client) UpdateFirewallsslSetting(mkey string, payload *models.Firewalls
 	req.HTTPMethod = "PUT"
 	req.Mkey = &mkey
 	req.Payload = body
-	req.Path = models.CmdbBasePath + models.FirewallsslSettingPath + mkey + "/"
+	req.Path = models.CmdbBasePath + models.FirewallSslSettingPath
 	req.Params = *params
 
 	res, err := request.CreateUpdate(c.config, req)
@@ -64,8 +61,8 @@ func (c *Client) UpdateFirewallsslSetting(mkey string, payload *models.Firewalls
 	return res, nil
 }
 
-func (c *Client) DeleteFirewallsslSetting(mkey string, params *models.CmdbRequestParams) error {
-	payload := &models.FirewallsslSetting{}
-	_, err := c.UpdateFirewallsslSetting("", payload, params)
+func (c *Client) DeleteFirewallSslSetting(mkey string, params *models.CmdbRequestParams) error {
+	payload := &models.FirewallSslSetting{}
+	_, err := c.UpdateFirewallSslSetting("", payload, params)
 	return err
 }

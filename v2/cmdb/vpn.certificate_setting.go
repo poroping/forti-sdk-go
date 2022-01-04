@@ -2,24 +2,23 @@ package cmdb
 
 import (
 	"encoding/json"
-	"errors"
 	"log"
 
 	"github.com/poroping/forti-sdk-go/v2/models"
 	"github.com/poroping/forti-sdk-go/v2/request"
 )
 
-func (c *Client) CreateVpncertificateSetting(payload *models.VpncertificateSetting, params *models.CmdbRequestParams) (*models.CmdbResponse, error) {
-	log.Printf("[INFO] Resource at path %q is complex type. Changing to UPDATE.", models.VpncertificateSettingPath)
-	return c.UpdateVpncertificateSetting("", payload, params)
+func (c *Client) CreateVpnCertificateSetting(payload *models.VpnCertificateSetting, params *models.CmdbRequestParams) (*models.CmdbResponse, error) {
+	log.Printf("[INFO] Resource at path %q is complex type. Changing to UPDATE.", models.VpnCertificateSettingPath)
+	return c.UpdateVpnCertificateSetting("", payload, params)
 }
 
-func (c *Client) ReadVpncertificateSetting(mkey string, params *models.CmdbRequestParams) (*models.VpncertificateSetting, error) {
+func (c *Client) ReadVpnCertificateSetting(mkey string, params *models.CmdbRequestParams) (*models.VpnCertificateSetting, error) {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "GET"
 	req.Mkey = &mkey
 	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.VpncertificateSettingPath
+	req.Path = models.CmdbBasePath + models.VpnCertificateSettingPath
 	req.Params = *params
 
 	res, err := request.Read(c.config, req)
@@ -34,17 +33,15 @@ func (c *Client) ReadVpncertificateSetting(mkey string, params *models.CmdbReque
 		if err != nil {
 			return nil, err
 		}
-		v := models.VpncertificateSetting{}
+		v := models.VpnCertificateSetting{}
 		json.Unmarshal(jsontmp, &v)
 		return &v, nil
 	}
 
-	err = errors.New("unable to parse API response results")
-
 	return nil, err
 }
 
-func (c *Client) UpdateVpncertificateSetting(mkey string, payload *models.VpncertificateSetting, params *models.CmdbRequestParams) (*models.CmdbResponse, error) {
+func (c *Client) UpdateVpnCertificateSetting(mkey string, payload *models.VpnCertificateSetting, params *models.CmdbRequestParams) (*models.CmdbResponse, error) {
 	body, err := json.Marshal(payload)
 	if err != nil {
 		return nil, err
@@ -54,7 +51,7 @@ func (c *Client) UpdateVpncertificateSetting(mkey string, payload *models.Vpncer
 	req.HTTPMethod = "PUT"
 	req.Mkey = &mkey
 	req.Payload = body
-	req.Path = models.CmdbBasePath + models.VpncertificateSettingPath + mkey + "/"
+	req.Path = models.CmdbBasePath + models.VpnCertificateSettingPath
 	req.Params = *params
 
 	res, err := request.CreateUpdate(c.config, req)
@@ -64,8 +61,8 @@ func (c *Client) UpdateVpncertificateSetting(mkey string, payload *models.Vpncer
 	return res, nil
 }
 
-func (c *Client) DeleteVpncertificateSetting(mkey string, params *models.CmdbRequestParams) error {
-	payload := &models.VpncertificateSetting{}
-	_, err := c.UpdateVpncertificateSetting("", payload, params)
+func (c *Client) DeleteVpnCertificateSetting(mkey string, params *models.CmdbRequestParams) error {
+	payload := &models.VpnCertificateSetting{}
+	_, err := c.UpdateVpnCertificateSetting("", payload, params)
 	return err
 }

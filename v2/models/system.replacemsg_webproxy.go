@@ -1,8 +1,8 @@
 package models
 
-const SystemreplacemsgWebproxyPath = "system/replacemsg/webproxy/"
+const SystemReplacemsgWebproxyPath = "system.replacemsg/webproxy/"
 
-type SystemreplacemsgWebproxy struct {
+type SystemReplacemsgWebproxy struct {
 	Buffer  *string `json:"buffer,omitempty"`
 	Format  *string `json:"format,omitempty"`
 	Header  *string `json:"header,omitempty"`

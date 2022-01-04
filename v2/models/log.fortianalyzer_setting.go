@@ -1,8 +1,8 @@
 package models
 
-const LogfortianalyzerSettingPath = "log/fortianalyzer/setting/"
+const LogFortianalyzerSettingPath = "log.fortianalyzer/setting/"
 
-type LogfortianalyzerSetting struct {
+type LogFortianalyzerSetting struct {
 	AccessConfig              *string                          `json:"access-config,omitempty"`
 	Certificate               *string                          `json:"certificate,omitempty"`
 	CertificateVerification   *string                          `json:"certificate-verification,omitempty"`
@@ -18,7 +18,7 @@ type LogfortianalyzerSetting struct {
 	PresharedKey              *string                          `json:"preshared-key,omitempty"`
 	Priority                  *string                          `json:"priority,omitempty"`
 	Reliable                  *string                          `json:"reliable,omitempty"`
-	Serial                    *[]LogfortianalyzerSettingSerial `json:"serial,omitempty"`
+	Serial                    *[]LogFortianalyzerSettingSerial `json:"serial,omitempty"`
 	Server                    *string                          `json:"server,omitempty"`
 	SourceIp                  *string                          `json:"source-ip,omitempty"`
 	SslMinProtoVersion        *string                          `json:"ssl-min-proto-version,omitempty"`
@@ -29,6 +29,6 @@ type LogfortianalyzerSetting struct {
 	UploadTime                *string                          `json:"upload-time,omitempty"`
 }
 
-type LogfortianalyzerSettingSerial struct {
+type LogFortianalyzerSettingSerial struct {
 	Name *string `json:"name,omitempty"`
 }

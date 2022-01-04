@@ -182,78 +182,78 @@ type Endpoints interface {
 	ReadFileFilterProfile(mkey string, params *models.CmdbRequestParams) (*models.FileFilterProfile, error)
 	UpdateFileFilterProfile(mkey string, payload *models.FileFilterProfile, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
 	DeleteFileFilterProfile(mkey string, params *models.CmdbRequestParams) error
-	CreateFirewallconsolidatedPolicy(payload *models.FirewallconsolidatedPolicy, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	ReadFirewallconsolidatedPolicy(mkey string, params *models.CmdbRequestParams) (*models.FirewallconsolidatedPolicy, error)
-	UpdateFirewallconsolidatedPolicy(mkey string, payload *models.FirewallconsolidatedPolicy, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	DeleteFirewallconsolidatedPolicy(mkey string, params *models.CmdbRequestParams) error
-	CreateFirewallipmacbindingSetting(payload *models.FirewallipmacbindingSetting, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	ReadFirewallipmacbindingSetting(mkey string, params *models.CmdbRequestParams) (*models.FirewallipmacbindingSetting, error)
-	UpdateFirewallipmacbindingSetting(mkey string, payload *models.FirewallipmacbindingSetting, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	DeleteFirewallipmacbindingSetting(mkey string, params *models.CmdbRequestParams) error
-	CreateFirewallipmacbindingTable(payload *models.FirewallipmacbindingTable, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	ReadFirewallipmacbindingTable(mkey string, params *models.CmdbRequestParams) (*models.FirewallipmacbindingTable, error)
-	UpdateFirewallipmacbindingTable(mkey string, payload *models.FirewallipmacbindingTable, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	DeleteFirewallipmacbindingTable(mkey string, params *models.CmdbRequestParams) error
-	CreateFirewallscheduleGroup(payload *models.FirewallscheduleGroup, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	ReadFirewallscheduleGroup(mkey string, params *models.CmdbRequestParams) (*models.FirewallscheduleGroup, error)
-	UpdateFirewallscheduleGroup(mkey string, payload *models.FirewallscheduleGroup, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	DeleteFirewallscheduleGroup(mkey string, params *models.CmdbRequestParams) error
-	CreateFirewallscheduleOnetime(payload *models.FirewallscheduleOnetime, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	ReadFirewallscheduleOnetime(mkey string, params *models.CmdbRequestParams) (*models.FirewallscheduleOnetime, error)
-	UpdateFirewallscheduleOnetime(mkey string, payload *models.FirewallscheduleOnetime, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	DeleteFirewallscheduleOnetime(mkey string, params *models.CmdbRequestParams) error
-	CreateFirewallscheduleRecurring(payload *models.FirewallscheduleRecurring, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	ReadFirewallscheduleRecurring(mkey string, params *models.CmdbRequestParams) (*models.FirewallscheduleRecurring, error)
-	UpdateFirewallscheduleRecurring(mkey string, payload *models.FirewallscheduleRecurring, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	DeleteFirewallscheduleRecurring(mkey string, params *models.CmdbRequestParams) error
-	CreateFirewallserviceCategory(payload *models.FirewallserviceCategory, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	ReadFirewallserviceCategory(mkey string, params *models.CmdbRequestParams) (*models.FirewallserviceCategory, error)
-	UpdateFirewallserviceCategory(mkey string, payload *models.FirewallserviceCategory, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	DeleteFirewallserviceCategory(mkey string, params *models.CmdbRequestParams) error
-	CreateFirewallserviceCustom(payload *models.FirewallserviceCustom, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	ReadFirewallserviceCustom(mkey string, params *models.CmdbRequestParams) (*models.FirewallserviceCustom, error)
-	UpdateFirewallserviceCustom(mkey string, payload *models.FirewallserviceCustom, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	DeleteFirewallserviceCustom(mkey string, params *models.CmdbRequestParams) error
-	CreateFirewallserviceGroup(payload *models.FirewallserviceGroup, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	ReadFirewallserviceGroup(mkey string, params *models.CmdbRequestParams) (*models.FirewallserviceGroup, error)
-	UpdateFirewallserviceGroup(mkey string, payload *models.FirewallserviceGroup, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	DeleteFirewallserviceGroup(mkey string, params *models.CmdbRequestParams) error
-	CreateFirewallshaperPerIpShaper(payload *models.FirewallshaperPerIpShaper, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	ReadFirewallshaperPerIpShaper(mkey string, params *models.CmdbRequestParams) (*models.FirewallshaperPerIpShaper, error)
-	UpdateFirewallshaperPerIpShaper(mkey string, payload *models.FirewallshaperPerIpShaper, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	DeleteFirewallshaperPerIpShaper(mkey string, params *models.CmdbRequestParams) error
-	CreateFirewallshaperTrafficShaper(payload *models.FirewallshaperTrafficShaper, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	ReadFirewallshaperTrafficShaper(mkey string, params *models.CmdbRequestParams) (*models.FirewallshaperTrafficShaper, error)
-	UpdateFirewallshaperTrafficShaper(mkey string, payload *models.FirewallshaperTrafficShaper, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	DeleteFirewallshaperTrafficShaper(mkey string, params *models.CmdbRequestParams) error
-	CreateFirewallsshHostKey(payload *models.FirewallsshHostKey, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	ReadFirewallsshHostKey(mkey string, params *models.CmdbRequestParams) (*models.FirewallsshHostKey, error)
-	UpdateFirewallsshHostKey(mkey string, payload *models.FirewallsshHostKey, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	DeleteFirewallsshHostKey(mkey string, params *models.CmdbRequestParams) error
-	CreateFirewallsshLocalCa(payload *models.FirewallsshLocalCa, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	ReadFirewallsshLocalCa(mkey string, params *models.CmdbRequestParams) (*models.FirewallsshLocalCa, error)
-	UpdateFirewallsshLocalCa(mkey string, payload *models.FirewallsshLocalCa, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	DeleteFirewallsshLocalCa(mkey string, params *models.CmdbRequestParams) error
-	CreateFirewallsshLocalKey(payload *models.FirewallsshLocalKey, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	ReadFirewallsshLocalKey(mkey string, params *models.CmdbRequestParams) (*models.FirewallsshLocalKey, error)
-	UpdateFirewallsshLocalKey(mkey string, payload *models.FirewallsshLocalKey, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	DeleteFirewallsshLocalKey(mkey string, params *models.CmdbRequestParams) error
-	CreateFirewallsshSetting(payload *models.FirewallsshSetting, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	ReadFirewallsshSetting(mkey string, params *models.CmdbRequestParams) (*models.FirewallsshSetting, error)
-	UpdateFirewallsshSetting(mkey string, payload *models.FirewallsshSetting, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	DeleteFirewallsshSetting(mkey string, params *models.CmdbRequestParams) error
-	CreateFirewallsslSetting(payload *models.FirewallsslSetting, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	ReadFirewallsslSetting(mkey string, params *models.CmdbRequestParams) (*models.FirewallsslSetting, error)
-	UpdateFirewallsslSetting(mkey string, payload *models.FirewallsslSetting, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	DeleteFirewallsslSetting(mkey string, params *models.CmdbRequestParams) error
-	CreateFirewallwildcardFqdnCustom(payload *models.FirewallwildcardFqdnCustom, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	ReadFirewallwildcardFqdnCustom(mkey string, params *models.CmdbRequestParams) (*models.FirewallwildcardFqdnCustom, error)
-	UpdateFirewallwildcardFqdnCustom(mkey string, payload *models.FirewallwildcardFqdnCustom, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	DeleteFirewallwildcardFqdnCustom(mkey string, params *models.CmdbRequestParams) error
-	CreateFirewallwildcardFqdnGroup(payload *models.FirewallwildcardFqdnGroup, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	ReadFirewallwildcardFqdnGroup(mkey string, params *models.CmdbRequestParams) (*models.FirewallwildcardFqdnGroup, error)
-	UpdateFirewallwildcardFqdnGroup(mkey string, payload *models.FirewallwildcardFqdnGroup, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	DeleteFirewallwildcardFqdnGroup(mkey string, params *models.CmdbRequestParams) error
+	CreateFirewallConsolidatedPolicy(payload *models.FirewallConsolidatedPolicy, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	ReadFirewallConsolidatedPolicy(mkey string, params *models.CmdbRequestParams) (*models.FirewallConsolidatedPolicy, error)
+	UpdateFirewallConsolidatedPolicy(mkey string, payload *models.FirewallConsolidatedPolicy, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	DeleteFirewallConsolidatedPolicy(mkey string, params *models.CmdbRequestParams) error
+	CreateFirewallIpmacbindingSetting(payload *models.FirewallIpmacbindingSetting, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	ReadFirewallIpmacbindingSetting(mkey string, params *models.CmdbRequestParams) (*models.FirewallIpmacbindingSetting, error)
+	UpdateFirewallIpmacbindingSetting(mkey string, payload *models.FirewallIpmacbindingSetting, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	DeleteFirewallIpmacbindingSetting(mkey string, params *models.CmdbRequestParams) error
+	CreateFirewallIpmacbindingTable(payload *models.FirewallIpmacbindingTable, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	ReadFirewallIpmacbindingTable(mkey string, params *models.CmdbRequestParams) (*models.FirewallIpmacbindingTable, error)
+	UpdateFirewallIpmacbindingTable(mkey string, payload *models.FirewallIpmacbindingTable, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	DeleteFirewallIpmacbindingTable(mkey string, params *models.CmdbRequestParams) error
+	CreateFirewallScheduleGroup(payload *models.FirewallScheduleGroup, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	ReadFirewallScheduleGroup(mkey string, params *models.CmdbRequestParams) (*models.FirewallScheduleGroup, error)
+	UpdateFirewallScheduleGroup(mkey string, payload *models.FirewallScheduleGroup, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	DeleteFirewallScheduleGroup(mkey string, params *models.CmdbRequestParams) error
+	CreateFirewallScheduleOnetime(payload *models.FirewallScheduleOnetime, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	ReadFirewallScheduleOnetime(mkey string, params *models.CmdbRequestParams) (*models.FirewallScheduleOnetime, error)
+	UpdateFirewallScheduleOnetime(mkey string, payload *models.FirewallScheduleOnetime, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	DeleteFirewallScheduleOnetime(mkey string, params *models.CmdbRequestParams) error
+	CreateFirewallScheduleRecurring(payload *models.FirewallScheduleRecurring, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	ReadFirewallScheduleRecurring(mkey string, params *models.CmdbRequestParams) (*models.FirewallScheduleRecurring, error)
+	UpdateFirewallScheduleRecurring(mkey string, payload *models.FirewallScheduleRecurring, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	DeleteFirewallScheduleRecurring(mkey string, params *models.CmdbRequestParams) error
+	CreateFirewallServiceCategory(payload *models.FirewallServiceCategory, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	ReadFirewallServiceCategory(mkey string, params *models.CmdbRequestParams) (*models.FirewallServiceCategory, error)
+	UpdateFirewallServiceCategory(mkey string, payload *models.FirewallServiceCategory, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	DeleteFirewallServiceCategory(mkey string, params *models.CmdbRequestParams) error
+	CreateFirewallServiceCustom(payload *models.FirewallServiceCustom, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	ReadFirewallServiceCustom(mkey string, params *models.CmdbRequestParams) (*models.FirewallServiceCustom, error)
+	UpdateFirewallServiceCustom(mkey string, payload *models.FirewallServiceCustom, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	DeleteFirewallServiceCustom(mkey string, params *models.CmdbRequestParams) error
+	CreateFirewallServiceGroup(payload *models.FirewallServiceGroup, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	ReadFirewallServiceGroup(mkey string, params *models.CmdbRequestParams) (*models.FirewallServiceGroup, error)
+	UpdateFirewallServiceGroup(mkey string, payload *models.FirewallServiceGroup, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	DeleteFirewallServiceGroup(mkey string, params *models.CmdbRequestParams) error
+	CreateFirewallShaperPerIpShaper(payload *models.FirewallShaperPerIpShaper, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	ReadFirewallShaperPerIpShaper(mkey string, params *models.CmdbRequestParams) (*models.FirewallShaperPerIpShaper, error)
+	UpdateFirewallShaperPerIpShaper(mkey string, payload *models.FirewallShaperPerIpShaper, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	DeleteFirewallShaperPerIpShaper(mkey string, params *models.CmdbRequestParams) error
+	CreateFirewallShaperTrafficShaper(payload *models.FirewallShaperTrafficShaper, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	ReadFirewallShaperTrafficShaper(mkey string, params *models.CmdbRequestParams) (*models.FirewallShaperTrafficShaper, error)
+	UpdateFirewallShaperTrafficShaper(mkey string, payload *models.FirewallShaperTrafficShaper, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	DeleteFirewallShaperTrafficShaper(mkey string, params *models.CmdbRequestParams) error
+	CreateFirewallSshHostKey(payload *models.FirewallSshHostKey, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	ReadFirewallSshHostKey(mkey string, params *models.CmdbRequestParams) (*models.FirewallSshHostKey, error)
+	UpdateFirewallSshHostKey(mkey string, payload *models.FirewallSshHostKey, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	DeleteFirewallSshHostKey(mkey string, params *models.CmdbRequestParams) error
+	CreateFirewallSshLocalCa(payload *models.FirewallSshLocalCa, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	ReadFirewallSshLocalCa(mkey string, params *models.CmdbRequestParams) (*models.FirewallSshLocalCa, error)
+	UpdateFirewallSshLocalCa(mkey string, payload *models.FirewallSshLocalCa, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	DeleteFirewallSshLocalCa(mkey string, params *models.CmdbRequestParams) error
+	CreateFirewallSshLocalKey(payload *models.FirewallSshLocalKey, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	ReadFirewallSshLocalKey(mkey string, params *models.CmdbRequestParams) (*models.FirewallSshLocalKey, error)
+	UpdateFirewallSshLocalKey(mkey string, payload *models.FirewallSshLocalKey, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	DeleteFirewallSshLocalKey(mkey string, params *models.CmdbRequestParams) error
+	CreateFirewallSshSetting(payload *models.FirewallSshSetting, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	ReadFirewallSshSetting(mkey string, params *models.CmdbRequestParams) (*models.FirewallSshSetting, error)
+	UpdateFirewallSshSetting(mkey string, payload *models.FirewallSshSetting, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	DeleteFirewallSshSetting(mkey string, params *models.CmdbRequestParams) error
+	CreateFirewallSslSetting(payload *models.FirewallSslSetting, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	ReadFirewallSslSetting(mkey string, params *models.CmdbRequestParams) (*models.FirewallSslSetting, error)
+	UpdateFirewallSslSetting(mkey string, payload *models.FirewallSslSetting, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	DeleteFirewallSslSetting(mkey string, params *models.CmdbRequestParams) error
+	CreateFirewallWildcardFqdnCustom(payload *models.FirewallWildcardFqdnCustom, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	ReadFirewallWildcardFqdnCustom(mkey string, params *models.CmdbRequestParams) (*models.FirewallWildcardFqdnCustom, error)
+	UpdateFirewallWildcardFqdnCustom(mkey string, payload *models.FirewallWildcardFqdnCustom, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	DeleteFirewallWildcardFqdnCustom(mkey string, params *models.CmdbRequestParams) error
+	CreateFirewallWildcardFqdnGroup(payload *models.FirewallWildcardFqdnGroup, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	ReadFirewallWildcardFqdnGroup(mkey string, params *models.CmdbRequestParams) (*models.FirewallWildcardFqdnGroup, error)
+	UpdateFirewallWildcardFqdnGroup(mkey string, payload *models.FirewallWildcardFqdnGroup, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	DeleteFirewallWildcardFqdnGroup(mkey string, params *models.CmdbRequestParams) error
 	CreateFirewallDoSPolicy(payload *models.FirewallDoSPolicy, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
 	ReadFirewallDoSPolicy(mkey string, params *models.CmdbRequestParams) (*models.FirewallDoSPolicy, error)
 	UpdateFirewallDoSPolicy(mkey string, payload *models.FirewallDoSPolicy, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
@@ -594,210 +594,210 @@ type Endpoints interface {
 	ReadIpsViewMap(mkey string, params *models.CmdbRequestParams) (*models.IpsViewMap, error)
 	UpdateIpsViewMap(mkey string, payload *models.IpsViewMap, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
 	DeleteIpsViewMap(mkey string, params *models.CmdbRequestParams) error
-	CreateLogdiskFilter(payload *models.LogdiskFilter, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	ReadLogdiskFilter(mkey string, params *models.CmdbRequestParams) (*models.LogdiskFilter, error)
-	UpdateLogdiskFilter(mkey string, payload *models.LogdiskFilter, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	DeleteLogdiskFilter(mkey string, params *models.CmdbRequestParams) error
-	CreateLogdiskSetting(payload *models.LogdiskSetting, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	ReadLogdiskSetting(mkey string, params *models.CmdbRequestParams) (*models.LogdiskSetting, error)
-	UpdateLogdiskSetting(mkey string, payload *models.LogdiskSetting, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	DeleteLogdiskSetting(mkey string, params *models.CmdbRequestParams) error
-	CreateLogfortianalyzer2Filter(payload *models.Logfortianalyzer2Filter, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	ReadLogfortianalyzer2Filter(mkey string, params *models.CmdbRequestParams) (*models.Logfortianalyzer2Filter, error)
-	UpdateLogfortianalyzer2Filter(mkey string, payload *models.Logfortianalyzer2Filter, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	DeleteLogfortianalyzer2Filter(mkey string, params *models.CmdbRequestParams) error
-	CreateLogfortianalyzer2OverrideFilter(payload *models.Logfortianalyzer2OverrideFilter, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	ReadLogfortianalyzer2OverrideFilter(mkey string, params *models.CmdbRequestParams) (*models.Logfortianalyzer2OverrideFilter, error)
-	UpdateLogfortianalyzer2OverrideFilter(mkey string, payload *models.Logfortianalyzer2OverrideFilter, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	DeleteLogfortianalyzer2OverrideFilter(mkey string, params *models.CmdbRequestParams) error
-	CreateLogfortianalyzer2OverrideSetting(payload *models.Logfortianalyzer2OverrideSetting, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	ReadLogfortianalyzer2OverrideSetting(mkey string, params *models.CmdbRequestParams) (*models.Logfortianalyzer2OverrideSetting, error)
-	UpdateLogfortianalyzer2OverrideSetting(mkey string, payload *models.Logfortianalyzer2OverrideSetting, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	DeleteLogfortianalyzer2OverrideSetting(mkey string, params *models.CmdbRequestParams) error
-	CreateLogfortianalyzer2Setting(payload *models.Logfortianalyzer2Setting, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	ReadLogfortianalyzer2Setting(mkey string, params *models.CmdbRequestParams) (*models.Logfortianalyzer2Setting, error)
-	UpdateLogfortianalyzer2Setting(mkey string, payload *models.Logfortianalyzer2Setting, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	DeleteLogfortianalyzer2Setting(mkey string, params *models.CmdbRequestParams) error
-	CreateLogfortianalyzer3Filter(payload *models.Logfortianalyzer3Filter, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	ReadLogfortianalyzer3Filter(mkey string, params *models.CmdbRequestParams) (*models.Logfortianalyzer3Filter, error)
-	UpdateLogfortianalyzer3Filter(mkey string, payload *models.Logfortianalyzer3Filter, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	DeleteLogfortianalyzer3Filter(mkey string, params *models.CmdbRequestParams) error
-	CreateLogfortianalyzer3OverrideFilter(payload *models.Logfortianalyzer3OverrideFilter, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	ReadLogfortianalyzer3OverrideFilter(mkey string, params *models.CmdbRequestParams) (*models.Logfortianalyzer3OverrideFilter, error)
-	UpdateLogfortianalyzer3OverrideFilter(mkey string, payload *models.Logfortianalyzer3OverrideFilter, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	DeleteLogfortianalyzer3OverrideFilter(mkey string, params *models.CmdbRequestParams) error
-	CreateLogfortianalyzer3OverrideSetting(payload *models.Logfortianalyzer3OverrideSetting, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	ReadLogfortianalyzer3OverrideSetting(mkey string, params *models.CmdbRequestParams) (*models.Logfortianalyzer3OverrideSetting, error)
-	UpdateLogfortianalyzer3OverrideSetting(mkey string, payload *models.Logfortianalyzer3OverrideSetting, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	DeleteLogfortianalyzer3OverrideSetting(mkey string, params *models.CmdbRequestParams) error
-	CreateLogfortianalyzer3Setting(payload *models.Logfortianalyzer3Setting, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	ReadLogfortianalyzer3Setting(mkey string, params *models.CmdbRequestParams) (*models.Logfortianalyzer3Setting, error)
-	UpdateLogfortianalyzer3Setting(mkey string, payload *models.Logfortianalyzer3Setting, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	DeleteLogfortianalyzer3Setting(mkey string, params *models.CmdbRequestParams) error
-	CreateLogfortianalyzerCloudFilter(payload *models.LogfortianalyzerCloudFilter, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	ReadLogfortianalyzerCloudFilter(mkey string, params *models.CmdbRequestParams) (*models.LogfortianalyzerCloudFilter, error)
-	UpdateLogfortianalyzerCloudFilter(mkey string, payload *models.LogfortianalyzerCloudFilter, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	DeleteLogfortianalyzerCloudFilter(mkey string, params *models.CmdbRequestParams) error
-	CreateLogfortianalyzerCloudOverrideFilter(payload *models.LogfortianalyzerCloudOverrideFilter, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	ReadLogfortianalyzerCloudOverrideFilter(mkey string, params *models.CmdbRequestParams) (*models.LogfortianalyzerCloudOverrideFilter, error)
-	UpdateLogfortianalyzerCloudOverrideFilter(mkey string, payload *models.LogfortianalyzerCloudOverrideFilter, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	DeleteLogfortianalyzerCloudOverrideFilter(mkey string, params *models.CmdbRequestParams) error
-	CreateLogfortianalyzerCloudOverrideSetting(payload *models.LogfortianalyzerCloudOverrideSetting, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	ReadLogfortianalyzerCloudOverrideSetting(mkey string, params *models.CmdbRequestParams) (*models.LogfortianalyzerCloudOverrideSetting, error)
-	UpdateLogfortianalyzerCloudOverrideSetting(mkey string, payload *models.LogfortianalyzerCloudOverrideSetting, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	DeleteLogfortianalyzerCloudOverrideSetting(mkey string, params *models.CmdbRequestParams) error
-	CreateLogfortianalyzerCloudSetting(payload *models.LogfortianalyzerCloudSetting, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	ReadLogfortianalyzerCloudSetting(mkey string, params *models.CmdbRequestParams) (*models.LogfortianalyzerCloudSetting, error)
-	UpdateLogfortianalyzerCloudSetting(mkey string, payload *models.LogfortianalyzerCloudSetting, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	DeleteLogfortianalyzerCloudSetting(mkey string, params *models.CmdbRequestParams) error
-	CreateLogfortianalyzerFilter(payload *models.LogfortianalyzerFilter, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	ReadLogfortianalyzerFilter(mkey string, params *models.CmdbRequestParams) (*models.LogfortianalyzerFilter, error)
-	UpdateLogfortianalyzerFilter(mkey string, payload *models.LogfortianalyzerFilter, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	DeleteLogfortianalyzerFilter(mkey string, params *models.CmdbRequestParams) error
-	CreateLogfortianalyzerOverrideFilter(payload *models.LogfortianalyzerOverrideFilter, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	ReadLogfortianalyzerOverrideFilter(mkey string, params *models.CmdbRequestParams) (*models.LogfortianalyzerOverrideFilter, error)
-	UpdateLogfortianalyzerOverrideFilter(mkey string, payload *models.LogfortianalyzerOverrideFilter, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	DeleteLogfortianalyzerOverrideFilter(mkey string, params *models.CmdbRequestParams) error
-	CreateLogfortianalyzerOverrideSetting(payload *models.LogfortianalyzerOverrideSetting, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	ReadLogfortianalyzerOverrideSetting(mkey string, params *models.CmdbRequestParams) (*models.LogfortianalyzerOverrideSetting, error)
-	UpdateLogfortianalyzerOverrideSetting(mkey string, payload *models.LogfortianalyzerOverrideSetting, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	DeleteLogfortianalyzerOverrideSetting(mkey string, params *models.CmdbRequestParams) error
-	CreateLogfortianalyzerSetting(payload *models.LogfortianalyzerSetting, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	ReadLogfortianalyzerSetting(mkey string, params *models.CmdbRequestParams) (*models.LogfortianalyzerSetting, error)
-	UpdateLogfortianalyzerSetting(mkey string, payload *models.LogfortianalyzerSetting, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	DeleteLogfortianalyzerSetting(mkey string, params *models.CmdbRequestParams) error
-	CreateLogfortiguardFilter(payload *models.LogfortiguardFilter, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	ReadLogfortiguardFilter(mkey string, params *models.CmdbRequestParams) (*models.LogfortiguardFilter, error)
-	UpdateLogfortiguardFilter(mkey string, payload *models.LogfortiguardFilter, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	DeleteLogfortiguardFilter(mkey string, params *models.CmdbRequestParams) error
-	CreateLogfortiguardOverrideFilter(payload *models.LogfortiguardOverrideFilter, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	ReadLogfortiguardOverrideFilter(mkey string, params *models.CmdbRequestParams) (*models.LogfortiguardOverrideFilter, error)
-	UpdateLogfortiguardOverrideFilter(mkey string, payload *models.LogfortiguardOverrideFilter, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	DeleteLogfortiguardOverrideFilter(mkey string, params *models.CmdbRequestParams) error
-	CreateLogfortiguardOverrideSetting(payload *models.LogfortiguardOverrideSetting, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	ReadLogfortiguardOverrideSetting(mkey string, params *models.CmdbRequestParams) (*models.LogfortiguardOverrideSetting, error)
-	UpdateLogfortiguardOverrideSetting(mkey string, payload *models.LogfortiguardOverrideSetting, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	DeleteLogfortiguardOverrideSetting(mkey string, params *models.CmdbRequestParams) error
-	CreateLogfortiguardSetting(payload *models.LogfortiguardSetting, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	ReadLogfortiguardSetting(mkey string, params *models.CmdbRequestParams) (*models.LogfortiguardSetting, error)
-	UpdateLogfortiguardSetting(mkey string, payload *models.LogfortiguardSetting, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	DeleteLogfortiguardSetting(mkey string, params *models.CmdbRequestParams) error
-	CreateLogmemoryFilter(payload *models.LogmemoryFilter, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	ReadLogmemoryFilter(mkey string, params *models.CmdbRequestParams) (*models.LogmemoryFilter, error)
-	UpdateLogmemoryFilter(mkey string, payload *models.LogmemoryFilter, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	DeleteLogmemoryFilter(mkey string, params *models.CmdbRequestParams) error
-	CreateLogmemoryGlobalSetting(payload *models.LogmemoryGlobalSetting, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	ReadLogmemoryGlobalSetting(mkey string, params *models.CmdbRequestParams) (*models.LogmemoryGlobalSetting, error)
-	UpdateLogmemoryGlobalSetting(mkey string, payload *models.LogmemoryGlobalSetting, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	DeleteLogmemoryGlobalSetting(mkey string, params *models.CmdbRequestParams) error
-	CreateLogmemorySetting(payload *models.LogmemorySetting, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	ReadLogmemorySetting(mkey string, params *models.CmdbRequestParams) (*models.LogmemorySetting, error)
-	UpdateLogmemorySetting(mkey string, payload *models.LogmemorySetting, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	DeleteLogmemorySetting(mkey string, params *models.CmdbRequestParams) error
-	CreateLognullDeviceFilter(payload *models.LognullDeviceFilter, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	ReadLognullDeviceFilter(mkey string, params *models.CmdbRequestParams) (*models.LognullDeviceFilter, error)
-	UpdateLognullDeviceFilter(mkey string, payload *models.LognullDeviceFilter, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	DeleteLognullDeviceFilter(mkey string, params *models.CmdbRequestParams) error
-	CreateLognullDeviceSetting(payload *models.LognullDeviceSetting, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	ReadLognullDeviceSetting(mkey string, params *models.CmdbRequestParams) (*models.LognullDeviceSetting, error)
-	UpdateLognullDeviceSetting(mkey string, payload *models.LognullDeviceSetting, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	DeleteLognullDeviceSetting(mkey string, params *models.CmdbRequestParams) error
-	CreateLogsyslogd2Filter(payload *models.Logsyslogd2Filter, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	ReadLogsyslogd2Filter(mkey string, params *models.CmdbRequestParams) (*models.Logsyslogd2Filter, error)
-	UpdateLogsyslogd2Filter(mkey string, payload *models.Logsyslogd2Filter, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	DeleteLogsyslogd2Filter(mkey string, params *models.CmdbRequestParams) error
-	CreateLogsyslogd2OverrideFilter(payload *models.Logsyslogd2OverrideFilter, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	ReadLogsyslogd2OverrideFilter(mkey string, params *models.CmdbRequestParams) (*models.Logsyslogd2OverrideFilter, error)
-	UpdateLogsyslogd2OverrideFilter(mkey string, payload *models.Logsyslogd2OverrideFilter, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	DeleteLogsyslogd2OverrideFilter(mkey string, params *models.CmdbRequestParams) error
-	CreateLogsyslogd2OverrideSetting(payload *models.Logsyslogd2OverrideSetting, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	ReadLogsyslogd2OverrideSetting(mkey string, params *models.CmdbRequestParams) (*models.Logsyslogd2OverrideSetting, error)
-	UpdateLogsyslogd2OverrideSetting(mkey string, payload *models.Logsyslogd2OverrideSetting, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	DeleteLogsyslogd2OverrideSetting(mkey string, params *models.CmdbRequestParams) error
-	CreateLogsyslogd2Setting(payload *models.Logsyslogd2Setting, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	ReadLogsyslogd2Setting(mkey string, params *models.CmdbRequestParams) (*models.Logsyslogd2Setting, error)
-	UpdateLogsyslogd2Setting(mkey string, payload *models.Logsyslogd2Setting, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	DeleteLogsyslogd2Setting(mkey string, params *models.CmdbRequestParams) error
-	CreateLogsyslogd3Filter(payload *models.Logsyslogd3Filter, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	ReadLogsyslogd3Filter(mkey string, params *models.CmdbRequestParams) (*models.Logsyslogd3Filter, error)
-	UpdateLogsyslogd3Filter(mkey string, payload *models.Logsyslogd3Filter, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	DeleteLogsyslogd3Filter(mkey string, params *models.CmdbRequestParams) error
-	CreateLogsyslogd3OverrideFilter(payload *models.Logsyslogd3OverrideFilter, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	ReadLogsyslogd3OverrideFilter(mkey string, params *models.CmdbRequestParams) (*models.Logsyslogd3OverrideFilter, error)
-	UpdateLogsyslogd3OverrideFilter(mkey string, payload *models.Logsyslogd3OverrideFilter, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	DeleteLogsyslogd3OverrideFilter(mkey string, params *models.CmdbRequestParams) error
-	CreateLogsyslogd3OverrideSetting(payload *models.Logsyslogd3OverrideSetting, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	ReadLogsyslogd3OverrideSetting(mkey string, params *models.CmdbRequestParams) (*models.Logsyslogd3OverrideSetting, error)
-	UpdateLogsyslogd3OverrideSetting(mkey string, payload *models.Logsyslogd3OverrideSetting, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	DeleteLogsyslogd3OverrideSetting(mkey string, params *models.CmdbRequestParams) error
-	CreateLogsyslogd3Setting(payload *models.Logsyslogd3Setting, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	ReadLogsyslogd3Setting(mkey string, params *models.CmdbRequestParams) (*models.Logsyslogd3Setting, error)
-	UpdateLogsyslogd3Setting(mkey string, payload *models.Logsyslogd3Setting, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	DeleteLogsyslogd3Setting(mkey string, params *models.CmdbRequestParams) error
-	CreateLogsyslogd4Filter(payload *models.Logsyslogd4Filter, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	ReadLogsyslogd4Filter(mkey string, params *models.CmdbRequestParams) (*models.Logsyslogd4Filter, error)
-	UpdateLogsyslogd4Filter(mkey string, payload *models.Logsyslogd4Filter, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	DeleteLogsyslogd4Filter(mkey string, params *models.CmdbRequestParams) error
-	CreateLogsyslogd4OverrideFilter(payload *models.Logsyslogd4OverrideFilter, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	ReadLogsyslogd4OverrideFilter(mkey string, params *models.CmdbRequestParams) (*models.Logsyslogd4OverrideFilter, error)
-	UpdateLogsyslogd4OverrideFilter(mkey string, payload *models.Logsyslogd4OverrideFilter, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	DeleteLogsyslogd4OverrideFilter(mkey string, params *models.CmdbRequestParams) error
-	CreateLogsyslogd4OverrideSetting(payload *models.Logsyslogd4OverrideSetting, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	ReadLogsyslogd4OverrideSetting(mkey string, params *models.CmdbRequestParams) (*models.Logsyslogd4OverrideSetting, error)
-	UpdateLogsyslogd4OverrideSetting(mkey string, payload *models.Logsyslogd4OverrideSetting, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	DeleteLogsyslogd4OverrideSetting(mkey string, params *models.CmdbRequestParams) error
-	CreateLogsyslogd4Setting(payload *models.Logsyslogd4Setting, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	ReadLogsyslogd4Setting(mkey string, params *models.CmdbRequestParams) (*models.Logsyslogd4Setting, error)
-	UpdateLogsyslogd4Setting(mkey string, payload *models.Logsyslogd4Setting, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	DeleteLogsyslogd4Setting(mkey string, params *models.CmdbRequestParams) error
-	CreateLogsyslogdFilter(payload *models.LogsyslogdFilter, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	ReadLogsyslogdFilter(mkey string, params *models.CmdbRequestParams) (*models.LogsyslogdFilter, error)
-	UpdateLogsyslogdFilter(mkey string, payload *models.LogsyslogdFilter, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	DeleteLogsyslogdFilter(mkey string, params *models.CmdbRequestParams) error
-	CreateLogsyslogdOverrideFilter(payload *models.LogsyslogdOverrideFilter, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	ReadLogsyslogdOverrideFilter(mkey string, params *models.CmdbRequestParams) (*models.LogsyslogdOverrideFilter, error)
-	UpdateLogsyslogdOverrideFilter(mkey string, payload *models.LogsyslogdOverrideFilter, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	DeleteLogsyslogdOverrideFilter(mkey string, params *models.CmdbRequestParams) error
-	CreateLogsyslogdOverrideSetting(payload *models.LogsyslogdOverrideSetting, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	ReadLogsyslogdOverrideSetting(mkey string, params *models.CmdbRequestParams) (*models.LogsyslogdOverrideSetting, error)
-	UpdateLogsyslogdOverrideSetting(mkey string, payload *models.LogsyslogdOverrideSetting, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	DeleteLogsyslogdOverrideSetting(mkey string, params *models.CmdbRequestParams) error
-	CreateLogsyslogdSetting(payload *models.LogsyslogdSetting, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	ReadLogsyslogdSetting(mkey string, params *models.CmdbRequestParams) (*models.LogsyslogdSetting, error)
-	UpdateLogsyslogdSetting(mkey string, payload *models.LogsyslogdSetting, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	DeleteLogsyslogdSetting(mkey string, params *models.CmdbRequestParams) error
-	CreateLogtacacsaccounting2Filter(payload *models.Logtacacsaccounting2Filter, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	ReadLogtacacsaccounting2Filter(mkey string, params *models.CmdbRequestParams) (*models.Logtacacsaccounting2Filter, error)
-	UpdateLogtacacsaccounting2Filter(mkey string, payload *models.Logtacacsaccounting2Filter, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	DeleteLogtacacsaccounting2Filter(mkey string, params *models.CmdbRequestParams) error
-	CreateLogtacacsaccounting2Setting(payload *models.Logtacacsaccounting2Setting, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	ReadLogtacacsaccounting2Setting(mkey string, params *models.CmdbRequestParams) (*models.Logtacacsaccounting2Setting, error)
-	UpdateLogtacacsaccounting2Setting(mkey string, payload *models.Logtacacsaccounting2Setting, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	DeleteLogtacacsaccounting2Setting(mkey string, params *models.CmdbRequestParams) error
-	CreateLogtacacsaccounting3Filter(payload *models.Logtacacsaccounting3Filter, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	ReadLogtacacsaccounting3Filter(mkey string, params *models.CmdbRequestParams) (*models.Logtacacsaccounting3Filter, error)
-	UpdateLogtacacsaccounting3Filter(mkey string, payload *models.Logtacacsaccounting3Filter, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	DeleteLogtacacsaccounting3Filter(mkey string, params *models.CmdbRequestParams) error
-	CreateLogtacacsaccounting3Setting(payload *models.Logtacacsaccounting3Setting, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	ReadLogtacacsaccounting3Setting(mkey string, params *models.CmdbRequestParams) (*models.Logtacacsaccounting3Setting, error)
-	UpdateLogtacacsaccounting3Setting(mkey string, payload *models.Logtacacsaccounting3Setting, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	DeleteLogtacacsaccounting3Setting(mkey string, params *models.CmdbRequestParams) error
-	CreateLogtacacsaccountingFilter(payload *models.LogtacacsaccountingFilter, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	ReadLogtacacsaccountingFilter(mkey string, params *models.CmdbRequestParams) (*models.LogtacacsaccountingFilter, error)
-	UpdateLogtacacsaccountingFilter(mkey string, payload *models.LogtacacsaccountingFilter, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	DeleteLogtacacsaccountingFilter(mkey string, params *models.CmdbRequestParams) error
-	CreateLogtacacsaccountingSetting(payload *models.LogtacacsaccountingSetting, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	ReadLogtacacsaccountingSetting(mkey string, params *models.CmdbRequestParams) (*models.LogtacacsaccountingSetting, error)
-	UpdateLogtacacsaccountingSetting(mkey string, payload *models.LogtacacsaccountingSetting, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	DeleteLogtacacsaccountingSetting(mkey string, params *models.CmdbRequestParams) error
-	CreateLogwebtrendsFilter(payload *models.LogwebtrendsFilter, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	ReadLogwebtrendsFilter(mkey string, params *models.CmdbRequestParams) (*models.LogwebtrendsFilter, error)
-	UpdateLogwebtrendsFilter(mkey string, payload *models.LogwebtrendsFilter, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	DeleteLogwebtrendsFilter(mkey string, params *models.CmdbRequestParams) error
-	CreateLogwebtrendsSetting(payload *models.LogwebtrendsSetting, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	ReadLogwebtrendsSetting(mkey string, params *models.CmdbRequestParams) (*models.LogwebtrendsSetting, error)
-	UpdateLogwebtrendsSetting(mkey string, payload *models.LogwebtrendsSetting, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	DeleteLogwebtrendsSetting(mkey string, params *models.CmdbRequestParams) error
+	CreateLogDiskFilter(payload *models.LogDiskFilter, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	ReadLogDiskFilter(mkey string, params *models.CmdbRequestParams) (*models.LogDiskFilter, error)
+	UpdateLogDiskFilter(mkey string, payload *models.LogDiskFilter, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	DeleteLogDiskFilter(mkey string, params *models.CmdbRequestParams) error
+	CreateLogDiskSetting(payload *models.LogDiskSetting, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	ReadLogDiskSetting(mkey string, params *models.CmdbRequestParams) (*models.LogDiskSetting, error)
+	UpdateLogDiskSetting(mkey string, payload *models.LogDiskSetting, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	DeleteLogDiskSetting(mkey string, params *models.CmdbRequestParams) error
+	CreateLogFortianalyzer2Filter(payload *models.LogFortianalyzer2Filter, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	ReadLogFortianalyzer2Filter(mkey string, params *models.CmdbRequestParams) (*models.LogFortianalyzer2Filter, error)
+	UpdateLogFortianalyzer2Filter(mkey string, payload *models.LogFortianalyzer2Filter, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	DeleteLogFortianalyzer2Filter(mkey string, params *models.CmdbRequestParams) error
+	CreateLogFortianalyzer2OverrideFilter(payload *models.LogFortianalyzer2OverrideFilter, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	ReadLogFortianalyzer2OverrideFilter(mkey string, params *models.CmdbRequestParams) (*models.LogFortianalyzer2OverrideFilter, error)
+	UpdateLogFortianalyzer2OverrideFilter(mkey string, payload *models.LogFortianalyzer2OverrideFilter, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	DeleteLogFortianalyzer2OverrideFilter(mkey string, params *models.CmdbRequestParams) error
+	CreateLogFortianalyzer2OverrideSetting(payload *models.LogFortianalyzer2OverrideSetting, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	ReadLogFortianalyzer2OverrideSetting(mkey string, params *models.CmdbRequestParams) (*models.LogFortianalyzer2OverrideSetting, error)
+	UpdateLogFortianalyzer2OverrideSetting(mkey string, payload *models.LogFortianalyzer2OverrideSetting, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	DeleteLogFortianalyzer2OverrideSetting(mkey string, params *models.CmdbRequestParams) error
+	CreateLogFortianalyzer2Setting(payload *models.LogFortianalyzer2Setting, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	ReadLogFortianalyzer2Setting(mkey string, params *models.CmdbRequestParams) (*models.LogFortianalyzer2Setting, error)
+	UpdateLogFortianalyzer2Setting(mkey string, payload *models.LogFortianalyzer2Setting, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	DeleteLogFortianalyzer2Setting(mkey string, params *models.CmdbRequestParams) error
+	CreateLogFortianalyzer3Filter(payload *models.LogFortianalyzer3Filter, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	ReadLogFortianalyzer3Filter(mkey string, params *models.CmdbRequestParams) (*models.LogFortianalyzer3Filter, error)
+	UpdateLogFortianalyzer3Filter(mkey string, payload *models.LogFortianalyzer3Filter, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	DeleteLogFortianalyzer3Filter(mkey string, params *models.CmdbRequestParams) error
+	CreateLogFortianalyzer3OverrideFilter(payload *models.LogFortianalyzer3OverrideFilter, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	ReadLogFortianalyzer3OverrideFilter(mkey string, params *models.CmdbRequestParams) (*models.LogFortianalyzer3OverrideFilter, error)
+	UpdateLogFortianalyzer3OverrideFilter(mkey string, payload *models.LogFortianalyzer3OverrideFilter, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	DeleteLogFortianalyzer3OverrideFilter(mkey string, params *models.CmdbRequestParams) error
+	CreateLogFortianalyzer3OverrideSetting(payload *models.LogFortianalyzer3OverrideSetting, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	ReadLogFortianalyzer3OverrideSetting(mkey string, params *models.CmdbRequestParams) (*models.LogFortianalyzer3OverrideSetting, error)
+	UpdateLogFortianalyzer3OverrideSetting(mkey string, payload *models.LogFortianalyzer3OverrideSetting, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	DeleteLogFortianalyzer3OverrideSetting(mkey string, params *models.CmdbRequestParams) error
+	CreateLogFortianalyzer3Setting(payload *models.LogFortianalyzer3Setting, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	ReadLogFortianalyzer3Setting(mkey string, params *models.CmdbRequestParams) (*models.LogFortianalyzer3Setting, error)
+	UpdateLogFortianalyzer3Setting(mkey string, payload *models.LogFortianalyzer3Setting, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	DeleteLogFortianalyzer3Setting(mkey string, params *models.CmdbRequestParams) error
+	CreateLogFortianalyzerCloudFilter(payload *models.LogFortianalyzerCloudFilter, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	ReadLogFortianalyzerCloudFilter(mkey string, params *models.CmdbRequestParams) (*models.LogFortianalyzerCloudFilter, error)
+	UpdateLogFortianalyzerCloudFilter(mkey string, payload *models.LogFortianalyzerCloudFilter, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	DeleteLogFortianalyzerCloudFilter(mkey string, params *models.CmdbRequestParams) error
+	CreateLogFortianalyzerCloudOverrideFilter(payload *models.LogFortianalyzerCloudOverrideFilter, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	ReadLogFortianalyzerCloudOverrideFilter(mkey string, params *models.CmdbRequestParams) (*models.LogFortianalyzerCloudOverrideFilter, error)
+	UpdateLogFortianalyzerCloudOverrideFilter(mkey string, payload *models.LogFortianalyzerCloudOverrideFilter, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	DeleteLogFortianalyzerCloudOverrideFilter(mkey string, params *models.CmdbRequestParams) error
+	CreateLogFortianalyzerCloudOverrideSetting(payload *models.LogFortianalyzerCloudOverrideSetting, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	ReadLogFortianalyzerCloudOverrideSetting(mkey string, params *models.CmdbRequestParams) (*models.LogFortianalyzerCloudOverrideSetting, error)
+	UpdateLogFortianalyzerCloudOverrideSetting(mkey string, payload *models.LogFortianalyzerCloudOverrideSetting, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	DeleteLogFortianalyzerCloudOverrideSetting(mkey string, params *models.CmdbRequestParams) error
+	CreateLogFortianalyzerCloudSetting(payload *models.LogFortianalyzerCloudSetting, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	ReadLogFortianalyzerCloudSetting(mkey string, params *models.CmdbRequestParams) (*models.LogFortianalyzerCloudSetting, error)
+	UpdateLogFortianalyzerCloudSetting(mkey string, payload *models.LogFortianalyzerCloudSetting, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	DeleteLogFortianalyzerCloudSetting(mkey string, params *models.CmdbRequestParams) error
+	CreateLogFortianalyzerFilter(payload *models.LogFortianalyzerFilter, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	ReadLogFortianalyzerFilter(mkey string, params *models.CmdbRequestParams) (*models.LogFortianalyzerFilter, error)
+	UpdateLogFortianalyzerFilter(mkey string, payload *models.LogFortianalyzerFilter, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	DeleteLogFortianalyzerFilter(mkey string, params *models.CmdbRequestParams) error
+	CreateLogFortianalyzerOverrideFilter(payload *models.LogFortianalyzerOverrideFilter, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	ReadLogFortianalyzerOverrideFilter(mkey string, params *models.CmdbRequestParams) (*models.LogFortianalyzerOverrideFilter, error)
+	UpdateLogFortianalyzerOverrideFilter(mkey string, payload *models.LogFortianalyzerOverrideFilter, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	DeleteLogFortianalyzerOverrideFilter(mkey string, params *models.CmdbRequestParams) error
+	CreateLogFortianalyzerOverrideSetting(payload *models.LogFortianalyzerOverrideSetting, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	ReadLogFortianalyzerOverrideSetting(mkey string, params *models.CmdbRequestParams) (*models.LogFortianalyzerOverrideSetting, error)
+	UpdateLogFortianalyzerOverrideSetting(mkey string, payload *models.LogFortianalyzerOverrideSetting, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	DeleteLogFortianalyzerOverrideSetting(mkey string, params *models.CmdbRequestParams) error
+	CreateLogFortianalyzerSetting(payload *models.LogFortianalyzerSetting, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	ReadLogFortianalyzerSetting(mkey string, params *models.CmdbRequestParams) (*models.LogFortianalyzerSetting, error)
+	UpdateLogFortianalyzerSetting(mkey string, payload *models.LogFortianalyzerSetting, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	DeleteLogFortianalyzerSetting(mkey string, params *models.CmdbRequestParams) error
+	CreateLogFortiguardFilter(payload *models.LogFortiguardFilter, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	ReadLogFortiguardFilter(mkey string, params *models.CmdbRequestParams) (*models.LogFortiguardFilter, error)
+	UpdateLogFortiguardFilter(mkey string, payload *models.LogFortiguardFilter, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	DeleteLogFortiguardFilter(mkey string, params *models.CmdbRequestParams) error
+	CreateLogFortiguardOverrideFilter(payload *models.LogFortiguardOverrideFilter, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	ReadLogFortiguardOverrideFilter(mkey string, params *models.CmdbRequestParams) (*models.LogFortiguardOverrideFilter, error)
+	UpdateLogFortiguardOverrideFilter(mkey string, payload *models.LogFortiguardOverrideFilter, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	DeleteLogFortiguardOverrideFilter(mkey string, params *models.CmdbRequestParams) error
+	CreateLogFortiguardOverrideSetting(payload *models.LogFortiguardOverrideSetting, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	ReadLogFortiguardOverrideSetting(mkey string, params *models.CmdbRequestParams) (*models.LogFortiguardOverrideSetting, error)
+	UpdateLogFortiguardOverrideSetting(mkey string, payload *models.LogFortiguardOverrideSetting, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	DeleteLogFortiguardOverrideSetting(mkey string, params *models.CmdbRequestParams) error
+	CreateLogFortiguardSetting(payload *models.LogFortiguardSetting, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	ReadLogFortiguardSetting(mkey string, params *models.CmdbRequestParams) (*models.LogFortiguardSetting, error)
+	UpdateLogFortiguardSetting(mkey string, payload *models.LogFortiguardSetting, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	DeleteLogFortiguardSetting(mkey string, params *models.CmdbRequestParams) error
+	CreateLogMemoryFilter(payload *models.LogMemoryFilter, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	ReadLogMemoryFilter(mkey string, params *models.CmdbRequestParams) (*models.LogMemoryFilter, error)
+	UpdateLogMemoryFilter(mkey string, payload *models.LogMemoryFilter, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	DeleteLogMemoryFilter(mkey string, params *models.CmdbRequestParams) error
+	CreateLogMemoryGlobalSetting(payload *models.LogMemoryGlobalSetting, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	ReadLogMemoryGlobalSetting(mkey string, params *models.CmdbRequestParams) (*models.LogMemoryGlobalSetting, error)
+	UpdateLogMemoryGlobalSetting(mkey string, payload *models.LogMemoryGlobalSetting, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	DeleteLogMemoryGlobalSetting(mkey string, params *models.CmdbRequestParams) error
+	CreateLogMemorySetting(payload *models.LogMemorySetting, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	ReadLogMemorySetting(mkey string, params *models.CmdbRequestParams) (*models.LogMemorySetting, error)
+	UpdateLogMemorySetting(mkey string, payload *models.LogMemorySetting, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	DeleteLogMemorySetting(mkey string, params *models.CmdbRequestParams) error
+	CreateLogNullDeviceFilter(payload *models.LogNullDeviceFilter, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	ReadLogNullDeviceFilter(mkey string, params *models.CmdbRequestParams) (*models.LogNullDeviceFilter, error)
+	UpdateLogNullDeviceFilter(mkey string, payload *models.LogNullDeviceFilter, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	DeleteLogNullDeviceFilter(mkey string, params *models.CmdbRequestParams) error
+	CreateLogNullDeviceSetting(payload *models.LogNullDeviceSetting, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	ReadLogNullDeviceSetting(mkey string, params *models.CmdbRequestParams) (*models.LogNullDeviceSetting, error)
+	UpdateLogNullDeviceSetting(mkey string, payload *models.LogNullDeviceSetting, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	DeleteLogNullDeviceSetting(mkey string, params *models.CmdbRequestParams) error
+	CreateLogSyslogd2Filter(payload *models.LogSyslogd2Filter, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	ReadLogSyslogd2Filter(mkey string, params *models.CmdbRequestParams) (*models.LogSyslogd2Filter, error)
+	UpdateLogSyslogd2Filter(mkey string, payload *models.LogSyslogd2Filter, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	DeleteLogSyslogd2Filter(mkey string, params *models.CmdbRequestParams) error
+	CreateLogSyslogd2OverrideFilter(payload *models.LogSyslogd2OverrideFilter, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	ReadLogSyslogd2OverrideFilter(mkey string, params *models.CmdbRequestParams) (*models.LogSyslogd2OverrideFilter, error)
+	UpdateLogSyslogd2OverrideFilter(mkey string, payload *models.LogSyslogd2OverrideFilter, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	DeleteLogSyslogd2OverrideFilter(mkey string, params *models.CmdbRequestParams) error
+	CreateLogSyslogd2OverrideSetting(payload *models.LogSyslogd2OverrideSetting, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	ReadLogSyslogd2OverrideSetting(mkey string, params *models.CmdbRequestParams) (*models.LogSyslogd2OverrideSetting, error)
+	UpdateLogSyslogd2OverrideSetting(mkey string, payload *models.LogSyslogd2OverrideSetting, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	DeleteLogSyslogd2OverrideSetting(mkey string, params *models.CmdbRequestParams) error
+	CreateLogSyslogd2Setting(payload *models.LogSyslogd2Setting, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	ReadLogSyslogd2Setting(mkey string, params *models.CmdbRequestParams) (*models.LogSyslogd2Setting, error)
+	UpdateLogSyslogd2Setting(mkey string, payload *models.LogSyslogd2Setting, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	DeleteLogSyslogd2Setting(mkey string, params *models.CmdbRequestParams) error
+	CreateLogSyslogd3Filter(payload *models.LogSyslogd3Filter, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	ReadLogSyslogd3Filter(mkey string, params *models.CmdbRequestParams) (*models.LogSyslogd3Filter, error)
+	UpdateLogSyslogd3Filter(mkey string, payload *models.LogSyslogd3Filter, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	DeleteLogSyslogd3Filter(mkey string, params *models.CmdbRequestParams) error
+	CreateLogSyslogd3OverrideFilter(payload *models.LogSyslogd3OverrideFilter, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	ReadLogSyslogd3OverrideFilter(mkey string, params *models.CmdbRequestParams) (*models.LogSyslogd3OverrideFilter, error)
+	UpdateLogSyslogd3OverrideFilter(mkey string, payload *models.LogSyslogd3OverrideFilter, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	DeleteLogSyslogd3OverrideFilter(mkey string, params *models.CmdbRequestParams) error
+	CreateLogSyslogd3OverrideSetting(payload *models.LogSyslogd3OverrideSetting, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	ReadLogSyslogd3OverrideSetting(mkey string, params *models.CmdbRequestParams) (*models.LogSyslogd3OverrideSetting, error)
+	UpdateLogSyslogd3OverrideSetting(mkey string, payload *models.LogSyslogd3OverrideSetting, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	DeleteLogSyslogd3OverrideSetting(mkey string, params *models.CmdbRequestParams) error
+	CreateLogSyslogd3Setting(payload *models.LogSyslogd3Setting, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	ReadLogSyslogd3Setting(mkey string, params *models.CmdbRequestParams) (*models.LogSyslogd3Setting, error)
+	UpdateLogSyslogd3Setting(mkey string, payload *models.LogSyslogd3Setting, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	DeleteLogSyslogd3Setting(mkey string, params *models.CmdbRequestParams) error
+	CreateLogSyslogd4Filter(payload *models.LogSyslogd4Filter, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	ReadLogSyslogd4Filter(mkey string, params *models.CmdbRequestParams) (*models.LogSyslogd4Filter, error)
+	UpdateLogSyslogd4Filter(mkey string, payload *models.LogSyslogd4Filter, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	DeleteLogSyslogd4Filter(mkey string, params *models.CmdbRequestParams) error
+	CreateLogSyslogd4OverrideFilter(payload *models.LogSyslogd4OverrideFilter, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	ReadLogSyslogd4OverrideFilter(mkey string, params *models.CmdbRequestParams) (*models.LogSyslogd4OverrideFilter, error)
+	UpdateLogSyslogd4OverrideFilter(mkey string, payload *models.LogSyslogd4OverrideFilter, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	DeleteLogSyslogd4OverrideFilter(mkey string, params *models.CmdbRequestParams) error
+	CreateLogSyslogd4OverrideSetting(payload *models.LogSyslogd4OverrideSetting, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	ReadLogSyslogd4OverrideSetting(mkey string, params *models.CmdbRequestParams) (*models.LogSyslogd4OverrideSetting, error)
+	UpdateLogSyslogd4OverrideSetting(mkey string, payload *models.LogSyslogd4OverrideSetting, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	DeleteLogSyslogd4OverrideSetting(mkey string, params *models.CmdbRequestParams) error
+	CreateLogSyslogd4Setting(payload *models.LogSyslogd4Setting, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	ReadLogSyslogd4Setting(mkey string, params *models.CmdbRequestParams) (*models.LogSyslogd4Setting, error)
+	UpdateLogSyslogd4Setting(mkey string, payload *models.LogSyslogd4Setting, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	DeleteLogSyslogd4Setting(mkey string, params *models.CmdbRequestParams) error
+	CreateLogSyslogdFilter(payload *models.LogSyslogdFilter, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	ReadLogSyslogdFilter(mkey string, params *models.CmdbRequestParams) (*models.LogSyslogdFilter, error)
+	UpdateLogSyslogdFilter(mkey string, payload *models.LogSyslogdFilter, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	DeleteLogSyslogdFilter(mkey string, params *models.CmdbRequestParams) error
+	CreateLogSyslogdOverrideFilter(payload *models.LogSyslogdOverrideFilter, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	ReadLogSyslogdOverrideFilter(mkey string, params *models.CmdbRequestParams) (*models.LogSyslogdOverrideFilter, error)
+	UpdateLogSyslogdOverrideFilter(mkey string, payload *models.LogSyslogdOverrideFilter, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	DeleteLogSyslogdOverrideFilter(mkey string, params *models.CmdbRequestParams) error
+	CreateLogSyslogdOverrideSetting(payload *models.LogSyslogdOverrideSetting, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	ReadLogSyslogdOverrideSetting(mkey string, params *models.CmdbRequestParams) (*models.LogSyslogdOverrideSetting, error)
+	UpdateLogSyslogdOverrideSetting(mkey string, payload *models.LogSyslogdOverrideSetting, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	DeleteLogSyslogdOverrideSetting(mkey string, params *models.CmdbRequestParams) error
+	CreateLogSyslogdSetting(payload *models.LogSyslogdSetting, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	ReadLogSyslogdSetting(mkey string, params *models.CmdbRequestParams) (*models.LogSyslogdSetting, error)
+	UpdateLogSyslogdSetting(mkey string, payload *models.LogSyslogdSetting, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	DeleteLogSyslogdSetting(mkey string, params *models.CmdbRequestParams) error
+	CreateLogTacacsaccounting2Filter(payload *models.LogTacacsaccounting2Filter, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	ReadLogTacacsaccounting2Filter(mkey string, params *models.CmdbRequestParams) (*models.LogTacacsaccounting2Filter, error)
+	UpdateLogTacacsaccounting2Filter(mkey string, payload *models.LogTacacsaccounting2Filter, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	DeleteLogTacacsaccounting2Filter(mkey string, params *models.CmdbRequestParams) error
+	CreateLogTacacsaccounting2Setting(payload *models.LogTacacsaccounting2Setting, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	ReadLogTacacsaccounting2Setting(mkey string, params *models.CmdbRequestParams) (*models.LogTacacsaccounting2Setting, error)
+	UpdateLogTacacsaccounting2Setting(mkey string, payload *models.LogTacacsaccounting2Setting, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	DeleteLogTacacsaccounting2Setting(mkey string, params *models.CmdbRequestParams) error
+	CreateLogTacacsaccounting3Filter(payload *models.LogTacacsaccounting3Filter, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	ReadLogTacacsaccounting3Filter(mkey string, params *models.CmdbRequestParams) (*models.LogTacacsaccounting3Filter, error)
+	UpdateLogTacacsaccounting3Filter(mkey string, payload *models.LogTacacsaccounting3Filter, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	DeleteLogTacacsaccounting3Filter(mkey string, params *models.CmdbRequestParams) error
+	CreateLogTacacsaccounting3Setting(payload *models.LogTacacsaccounting3Setting, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	ReadLogTacacsaccounting3Setting(mkey string, params *models.CmdbRequestParams) (*models.LogTacacsaccounting3Setting, error)
+	UpdateLogTacacsaccounting3Setting(mkey string, payload *models.LogTacacsaccounting3Setting, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	DeleteLogTacacsaccounting3Setting(mkey string, params *models.CmdbRequestParams) error
+	CreateLogTacacsaccountingFilter(payload *models.LogTacacsaccountingFilter, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	ReadLogTacacsaccountingFilter(mkey string, params *models.CmdbRequestParams) (*models.LogTacacsaccountingFilter, error)
+	UpdateLogTacacsaccountingFilter(mkey string, payload *models.LogTacacsaccountingFilter, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	DeleteLogTacacsaccountingFilter(mkey string, params *models.CmdbRequestParams) error
+	CreateLogTacacsaccountingSetting(payload *models.LogTacacsaccountingSetting, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	ReadLogTacacsaccountingSetting(mkey string, params *models.CmdbRequestParams) (*models.LogTacacsaccountingSetting, error)
+	UpdateLogTacacsaccountingSetting(mkey string, payload *models.LogTacacsaccountingSetting, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	DeleteLogTacacsaccountingSetting(mkey string, params *models.CmdbRequestParams) error
+	CreateLogWebtrendsFilter(payload *models.LogWebtrendsFilter, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	ReadLogWebtrendsFilter(mkey string, params *models.CmdbRequestParams) (*models.LogWebtrendsFilter, error)
+	UpdateLogWebtrendsFilter(mkey string, payload *models.LogWebtrendsFilter, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	DeleteLogWebtrendsFilter(mkey string, params *models.CmdbRequestParams) error
+	CreateLogWebtrendsSetting(payload *models.LogWebtrendsSetting, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	ReadLogWebtrendsSetting(mkey string, params *models.CmdbRequestParams) (*models.LogWebtrendsSetting, error)
+	UpdateLogWebtrendsSetting(mkey string, payload *models.LogWebtrendsSetting, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	DeleteLogWebtrendsSetting(mkey string, params *models.CmdbRequestParams) error
 	CreateLogCustomField(payload *models.LogCustomField, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
 	ReadLogCustomField(mkey string, params *models.CmdbRequestParams) (*models.LogCustomField, error)
 	UpdateLogCustomField(mkey string, payload *models.LogCustomField, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
@@ -842,82 +842,6 @@ type Endpoints interface {
 	ReadReportTheme(mkey string, params *models.CmdbRequestParams) (*models.ReportTheme, error)
 	UpdateReportTheme(mkey string, payload *models.ReportTheme, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
 	DeleteReportTheme(mkey string, params *models.CmdbRequestParams) error
-	CreateRouteraccessList6Rule(payload *models.RouteraccessList6Rule, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	ReadRouteraccessList6Rule(mkey string, params *models.CmdbRequestParams) (*models.RouteraccessList6Rule, error)
-	UpdateRouteraccessList6Rule(mkey string, payload *models.RouteraccessList6Rule, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	DeleteRouteraccessList6Rule(mkey string, params *models.CmdbRequestParams) error
-	CreateRouteraccessListRule(payload *models.RouteraccessListRule, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	ReadRouteraccessListRule(mkey string, params *models.CmdbRequestParams) (*models.RouteraccessListRule, error)
-	UpdateRouteraccessListRule(mkey string, payload *models.RouteraccessListRule, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	DeleteRouteraccessListRule(mkey string, params *models.CmdbRequestParams) error
-	CreateRouterbgpNeighbor(payload *models.RouterbgpNeighbor, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	ReadRouterbgpNeighbor(mkey string, params *models.CmdbRequestParams) (*models.RouterbgpNeighbor, error)
-	UpdateRouterbgpNeighbor(mkey string, payload *models.RouterbgpNeighbor, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	DeleteRouterbgpNeighbor(mkey string, params *models.CmdbRequestParams) error
-	CreateRouterbgpNeighborGroup(payload *models.RouterbgpNeighborGroup, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	ReadRouterbgpNeighborGroup(mkey string, params *models.CmdbRequestParams) (*models.RouterbgpNeighborGroup, error)
-	UpdateRouterbgpNeighborGroup(mkey string, payload *models.RouterbgpNeighborGroup, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	DeleteRouterbgpNeighborGroup(mkey string, params *models.CmdbRequestParams) error
-	CreateRouterbgpNeighborRange(payload *models.RouterbgpNeighborRange, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	ReadRouterbgpNeighborRange(mkey string, params *models.CmdbRequestParams) (*models.RouterbgpNeighborRange, error)
-	UpdateRouterbgpNeighborRange(mkey string, payload *models.RouterbgpNeighborRange, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	DeleteRouterbgpNeighborRange(mkey string, params *models.CmdbRequestParams) error
-	CreateRouterbgpNetwork(payload *models.RouterbgpNetwork, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	ReadRouterbgpNetwork(mkey string, params *models.CmdbRequestParams) (*models.RouterbgpNetwork, error)
-	UpdateRouterbgpNetwork(mkey string, payload *models.RouterbgpNetwork, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	DeleteRouterbgpNetwork(mkey string, params *models.CmdbRequestParams) error
-	CreateRouterbgpNetwork6(payload *models.RouterbgpNetwork6, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	ReadRouterbgpNetwork6(mkey string, params *models.CmdbRequestParams) (*models.RouterbgpNetwork6, error)
-	UpdateRouterbgpNetwork6(mkey string, payload *models.RouterbgpNetwork6, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	DeleteRouterbgpNetwork6(mkey string, params *models.CmdbRequestParams) error
-	CreateRouterbgpRedistribute(payload *models.RouterbgpRedistribute, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	ReadRouterbgpRedistribute(mkey string, params *models.CmdbRequestParams) (*models.RouterbgpRedistribute, error)
-	UpdateRouterbgpRedistribute(mkey string, payload *models.RouterbgpRedistribute, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	DeleteRouterbgpRedistribute(mkey string, params *models.CmdbRequestParams) error
-	CreateRouterospf6Area(payload *models.Routerospf6Area, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	ReadRouterospf6Area(mkey string, params *models.CmdbRequestParams) (*models.Routerospf6Area, error)
-	UpdateRouterospf6Area(mkey string, payload *models.Routerospf6Area, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	DeleteRouterospf6Area(mkey string, params *models.CmdbRequestParams) error
-	CreateRouterospf6Ospf6Interface(payload *models.Routerospf6Ospf6Interface, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	ReadRouterospf6Ospf6Interface(mkey string, params *models.CmdbRequestParams) (*models.Routerospf6Ospf6Interface, error)
-	UpdateRouterospf6Ospf6Interface(mkey string, payload *models.Routerospf6Ospf6Interface, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	DeleteRouterospf6Ospf6Interface(mkey string, params *models.CmdbRequestParams) error
-	CreateRouterospf6Redistribute(payload *models.Routerospf6Redistribute, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	ReadRouterospf6Redistribute(mkey string, params *models.CmdbRequestParams) (*models.Routerospf6Redistribute, error)
-	UpdateRouterospf6Redistribute(mkey string, payload *models.Routerospf6Redistribute, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	DeleteRouterospf6Redistribute(mkey string, params *models.CmdbRequestParams) error
-	CreateRouterospfArea(payload *models.RouterospfArea, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	ReadRouterospfArea(mkey string, params *models.CmdbRequestParams) (*models.RouterospfArea, error)
-	UpdateRouterospfArea(mkey string, payload *models.RouterospfArea, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	DeleteRouterospfArea(mkey string, params *models.CmdbRequestParams) error
-	CreateRouterospfNeighbor(payload *models.RouterospfNeighbor, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	ReadRouterospfNeighbor(mkey string, params *models.CmdbRequestParams) (*models.RouterospfNeighbor, error)
-	UpdateRouterospfNeighbor(mkey string, payload *models.RouterospfNeighbor, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	DeleteRouterospfNeighbor(mkey string, params *models.CmdbRequestParams) error
-	CreateRouterospfNetwork(payload *models.RouterospfNetwork, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	ReadRouterospfNetwork(mkey string, params *models.CmdbRequestParams) (*models.RouterospfNetwork, error)
-	UpdateRouterospfNetwork(mkey string, payload *models.RouterospfNetwork, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	DeleteRouterospfNetwork(mkey string, params *models.CmdbRequestParams) error
-	CreateRouterospfOspfInterface(payload *models.RouterospfOspfInterface, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	ReadRouterospfOspfInterface(mkey string, params *models.CmdbRequestParams) (*models.RouterospfOspfInterface, error)
-	UpdateRouterospfOspfInterface(mkey string, payload *models.RouterospfOspfInterface, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	DeleteRouterospfOspfInterface(mkey string, params *models.CmdbRequestParams) error
-	CreateRouterospfRedistribute(payload *models.RouterospfRedistribute, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	ReadRouterospfRedistribute(mkey string, params *models.CmdbRequestParams) (*models.RouterospfRedistribute, error)
-	UpdateRouterospfRedistribute(mkey string, payload *models.RouterospfRedistribute, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	DeleteRouterospfRedistribute(mkey string, params *models.CmdbRequestParams) error
-	CreateRouterprefixList6Rule(payload *models.RouterprefixList6Rule, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	ReadRouterprefixList6Rule(mkey string, params *models.CmdbRequestParams) (*models.RouterprefixList6Rule, error)
-	UpdateRouterprefixList6Rule(mkey string, payload *models.RouterprefixList6Rule, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	DeleteRouterprefixList6Rule(mkey string, params *models.CmdbRequestParams) error
-	CreateRouterprefixListRule(payload *models.RouterprefixListRule, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	ReadRouterprefixListRule(mkey string, params *models.CmdbRequestParams) (*models.RouterprefixListRule, error)
-	UpdateRouterprefixListRule(mkey string, payload *models.RouterprefixListRule, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	DeleteRouterprefixListRule(mkey string, params *models.CmdbRequestParams) error
-	CreateRouterrouteMapRule(payload *models.RouterrouteMapRule, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	ReadRouterrouteMapRule(mkey string, params *models.CmdbRequestParams) (*models.RouterrouteMapRule, error)
-	UpdateRouterrouteMapRule(mkey string, payload *models.RouterrouteMapRule, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	DeleteRouterrouteMapRule(mkey string, params *models.CmdbRequestParams) error
 	CreateRouterAccessList(payload *models.RouterAccessList, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
 	ReadRouterAccessList(mkey string, params *models.CmdbRequestParams) (*models.RouterAccessList, error)
 	UpdateRouterAccessList(mkey string, payload *models.RouterAccessList, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
@@ -946,6 +870,58 @@ type Endpoints interface {
 	ReadRouterBgp(mkey string, params *models.CmdbRequestParams) (*models.RouterBgp, error)
 	UpdateRouterBgp(mkey string, payload *models.RouterBgp, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
 	DeleteRouterBgp(mkey string, params *models.CmdbRequestParams) error
+	CreateRouterBgpAdminDistance(payload *models.RouterBgpAdminDistance, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	ReadRouterBgpAdminDistance(mkey string, params *models.CmdbRequestParams) (*models.RouterBgpAdminDistance, error)
+	UpdateRouterBgpAdminDistance(mkey string, payload *models.RouterBgpAdminDistance, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	DeleteRouterBgpAdminDistance(mkey string, params *models.CmdbRequestParams) error
+	CreateRouterBgpAggregateAddress(payload *models.RouterBgpAggregateAddress, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	ReadRouterBgpAggregateAddress(mkey string, params *models.CmdbRequestParams) (*models.RouterBgpAggregateAddress, error)
+	UpdateRouterBgpAggregateAddress(mkey string, payload *models.RouterBgpAggregateAddress, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	DeleteRouterBgpAggregateAddress(mkey string, params *models.CmdbRequestParams) error
+	CreateRouterBgpAggregateAddress6(payload *models.RouterBgpAggregateAddress6, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	ReadRouterBgpAggregateAddress6(mkey string, params *models.CmdbRequestParams) (*models.RouterBgpAggregateAddress6, error)
+	UpdateRouterBgpAggregateAddress6(mkey string, payload *models.RouterBgpAggregateAddress6, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	DeleteRouterBgpAggregateAddress6(mkey string, params *models.CmdbRequestParams) error
+	CreateRouterBgpNeighbor(payload *models.RouterBgpNeighbor, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	ReadRouterBgpNeighbor(mkey string, params *models.CmdbRequestParams) (*models.RouterBgpNeighbor, error)
+	UpdateRouterBgpNeighbor(mkey string, payload *models.RouterBgpNeighbor, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	DeleteRouterBgpNeighbor(mkey string, params *models.CmdbRequestParams) error
+	CreateRouterBgpNeighborGroup(payload *models.RouterBgpNeighborGroup, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	ReadRouterBgpNeighborGroup(mkey string, params *models.CmdbRequestParams) (*models.RouterBgpNeighborGroup, error)
+	UpdateRouterBgpNeighborGroup(mkey string, payload *models.RouterBgpNeighborGroup, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	DeleteRouterBgpNeighborGroup(mkey string, params *models.CmdbRequestParams) error
+	CreateRouterBgpNeighborRange(payload *models.RouterBgpNeighborRange, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	ReadRouterBgpNeighborRange(mkey string, params *models.CmdbRequestParams) (*models.RouterBgpNeighborRange, error)
+	UpdateRouterBgpNeighborRange(mkey string, payload *models.RouterBgpNeighborRange, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	DeleteRouterBgpNeighborRange(mkey string, params *models.CmdbRequestParams) error
+	CreateRouterBgpNeighborRange6(payload *models.RouterBgpNeighborRange6, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	ReadRouterBgpNeighborRange6(mkey string, params *models.CmdbRequestParams) (*models.RouterBgpNeighborRange6, error)
+	UpdateRouterBgpNeighborRange6(mkey string, payload *models.RouterBgpNeighborRange6, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	DeleteRouterBgpNeighborRange6(mkey string, params *models.CmdbRequestParams) error
+	CreateRouterBgpNetwork(payload *models.RouterBgpNetwork, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	ReadRouterBgpNetwork(mkey string, params *models.CmdbRequestParams) (*models.RouterBgpNetwork, error)
+	UpdateRouterBgpNetwork(mkey string, payload *models.RouterBgpNetwork, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	DeleteRouterBgpNetwork(mkey string, params *models.CmdbRequestParams) error
+	CreateRouterBgpNetwork6(payload *models.RouterBgpNetwork6, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	ReadRouterBgpNetwork6(mkey string, params *models.CmdbRequestParams) (*models.RouterBgpNetwork6, error)
+	UpdateRouterBgpNetwork6(mkey string, payload *models.RouterBgpNetwork6, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	DeleteRouterBgpNetwork6(mkey string, params *models.CmdbRequestParams) error
+	CreateRouterBgpRedistribute(payload *models.RouterBgpRedistribute, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	ReadRouterBgpRedistribute(mkey string, params *models.CmdbRequestParams) (*models.RouterBgpRedistribute, error)
+	UpdateRouterBgpRedistribute(mkey string, payload *models.RouterBgpRedistribute, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	DeleteRouterBgpRedistribute(mkey string, params *models.CmdbRequestParams) error
+	CreateRouterBgpRedistribute6(payload *models.RouterBgpRedistribute6, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	ReadRouterBgpRedistribute6(mkey string, params *models.CmdbRequestParams) (*models.RouterBgpRedistribute6, error)
+	UpdateRouterBgpRedistribute6(mkey string, payload *models.RouterBgpRedistribute6, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	DeleteRouterBgpRedistribute6(mkey string, params *models.CmdbRequestParams) error
+	CreateRouterBgpVrfLeak(payload *models.RouterBgpVrfLeak, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	ReadRouterBgpVrfLeak(mkey string, params *models.CmdbRequestParams) (*models.RouterBgpVrfLeak, error)
+	UpdateRouterBgpVrfLeak(mkey string, payload *models.RouterBgpVrfLeak, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	DeleteRouterBgpVrfLeak(mkey string, params *models.CmdbRequestParams) error
+	CreateRouterBgpVrfLeak6(payload *models.RouterBgpVrfLeak6, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	ReadRouterBgpVrfLeak6(mkey string, params *models.CmdbRequestParams) (*models.RouterBgpVrfLeak6, error)
+	UpdateRouterBgpVrfLeak6(mkey string, payload *models.RouterBgpVrfLeak6, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	DeleteRouterBgpVrfLeak6(mkey string, params *models.CmdbRequestParams) error
 	CreateRouterCommunityList(payload *models.RouterCommunityList, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
 	ReadRouterCommunityList(mkey string, params *models.CmdbRequestParams) (*models.RouterCommunityList, error)
 	UpdateRouterCommunityList(mkey string, payload *models.RouterCommunityList, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
@@ -954,6 +930,30 @@ type Endpoints interface {
 	ReadRouterIsis(mkey string, params *models.CmdbRequestParams) (*models.RouterIsis, error)
 	UpdateRouterIsis(mkey string, payload *models.RouterIsis, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
 	DeleteRouterIsis(mkey string, params *models.CmdbRequestParams) error
+	CreateRouterIsisIsisInterface(payload *models.RouterIsisIsisInterface, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	ReadRouterIsisIsisInterface(mkey string, params *models.CmdbRequestParams) (*models.RouterIsisIsisInterface, error)
+	UpdateRouterIsisIsisInterface(mkey string, payload *models.RouterIsisIsisInterface, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	DeleteRouterIsisIsisInterface(mkey string, params *models.CmdbRequestParams) error
+	CreateRouterIsisIsisNet(payload *models.RouterIsisIsisNet, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	ReadRouterIsisIsisNet(mkey string, params *models.CmdbRequestParams) (*models.RouterIsisIsisNet, error)
+	UpdateRouterIsisIsisNet(mkey string, payload *models.RouterIsisIsisNet, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	DeleteRouterIsisIsisNet(mkey string, params *models.CmdbRequestParams) error
+	CreateRouterIsisRedistribute(payload *models.RouterIsisRedistribute, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	ReadRouterIsisRedistribute(mkey string, params *models.CmdbRequestParams) (*models.RouterIsisRedistribute, error)
+	UpdateRouterIsisRedistribute(mkey string, payload *models.RouterIsisRedistribute, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	DeleteRouterIsisRedistribute(mkey string, params *models.CmdbRequestParams) error
+	CreateRouterIsisRedistribute6(payload *models.RouterIsisRedistribute6, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	ReadRouterIsisRedistribute6(mkey string, params *models.CmdbRequestParams) (*models.RouterIsisRedistribute6, error)
+	UpdateRouterIsisRedistribute6(mkey string, payload *models.RouterIsisRedistribute6, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	DeleteRouterIsisRedistribute6(mkey string, params *models.CmdbRequestParams) error
+	CreateRouterIsisSummaryAddress(payload *models.RouterIsisSummaryAddress, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	ReadRouterIsisSummaryAddress(mkey string, params *models.CmdbRequestParams) (*models.RouterIsisSummaryAddress, error)
+	UpdateRouterIsisSummaryAddress(mkey string, payload *models.RouterIsisSummaryAddress, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	DeleteRouterIsisSummaryAddress(mkey string, params *models.CmdbRequestParams) error
+	CreateRouterIsisSummaryAddress6(payload *models.RouterIsisSummaryAddress6, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	ReadRouterIsisSummaryAddress6(mkey string, params *models.CmdbRequestParams) (*models.RouterIsisSummaryAddress6, error)
+	UpdateRouterIsisSummaryAddress6(mkey string, payload *models.RouterIsisSummaryAddress6, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	DeleteRouterIsisSummaryAddress6(mkey string, params *models.CmdbRequestParams) error
 	CreateRouterKeyChain(payload *models.RouterKeyChain, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
 	ReadRouterKeyChain(mkey string, params *models.CmdbRequestParams) (*models.RouterKeyChain, error)
 	UpdateRouterKeyChain(mkey string, payload *models.RouterKeyChain, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
@@ -978,6 +978,50 @@ type Endpoints interface {
 	ReadRouterOspf6(mkey string, params *models.CmdbRequestParams) (*models.RouterOspf6, error)
 	UpdateRouterOspf6(mkey string, payload *models.RouterOspf6, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
 	DeleteRouterOspf6(mkey string, params *models.CmdbRequestParams) error
+	CreateRouterOspf6Area(payload *models.RouterOspf6Area, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	ReadRouterOspf6Area(mkey string, params *models.CmdbRequestParams) (*models.RouterOspf6Area, error)
+	UpdateRouterOspf6Area(mkey string, payload *models.RouterOspf6Area, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	DeleteRouterOspf6Area(mkey string, params *models.CmdbRequestParams) error
+	CreateRouterOspf6Ospf6Interface(payload *models.RouterOspf6Ospf6Interface, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	ReadRouterOspf6Ospf6Interface(mkey string, params *models.CmdbRequestParams) (*models.RouterOspf6Ospf6Interface, error)
+	UpdateRouterOspf6Ospf6Interface(mkey string, payload *models.RouterOspf6Ospf6Interface, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	DeleteRouterOspf6Ospf6Interface(mkey string, params *models.CmdbRequestParams) error
+	CreateRouterOspf6Redistribute(payload *models.RouterOspf6Redistribute, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	ReadRouterOspf6Redistribute(mkey string, params *models.CmdbRequestParams) (*models.RouterOspf6Redistribute, error)
+	UpdateRouterOspf6Redistribute(mkey string, payload *models.RouterOspf6Redistribute, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	DeleteRouterOspf6Redistribute(mkey string, params *models.CmdbRequestParams) error
+	CreateRouterOspf6SummaryAddress(payload *models.RouterOspf6SummaryAddress, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	ReadRouterOspf6SummaryAddress(mkey string, params *models.CmdbRequestParams) (*models.RouterOspf6SummaryAddress, error)
+	UpdateRouterOspf6SummaryAddress(mkey string, payload *models.RouterOspf6SummaryAddress, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	DeleteRouterOspf6SummaryAddress(mkey string, params *models.CmdbRequestParams) error
+	CreateRouterOspfArea(payload *models.RouterOspfArea, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	ReadRouterOspfArea(mkey string, params *models.CmdbRequestParams) (*models.RouterOspfArea, error)
+	UpdateRouterOspfArea(mkey string, payload *models.RouterOspfArea, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	DeleteRouterOspfArea(mkey string, params *models.CmdbRequestParams) error
+	CreateRouterOspfDistributeList(payload *models.RouterOspfDistributeList, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	ReadRouterOspfDistributeList(mkey string, params *models.CmdbRequestParams) (*models.RouterOspfDistributeList, error)
+	UpdateRouterOspfDistributeList(mkey string, payload *models.RouterOspfDistributeList, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	DeleteRouterOspfDistributeList(mkey string, params *models.CmdbRequestParams) error
+	CreateRouterOspfNeighbor(payload *models.RouterOspfNeighbor, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	ReadRouterOspfNeighbor(mkey string, params *models.CmdbRequestParams) (*models.RouterOspfNeighbor, error)
+	UpdateRouterOspfNeighbor(mkey string, payload *models.RouterOspfNeighbor, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	DeleteRouterOspfNeighbor(mkey string, params *models.CmdbRequestParams) error
+	CreateRouterOspfNetwork(payload *models.RouterOspfNetwork, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	ReadRouterOspfNetwork(mkey string, params *models.CmdbRequestParams) (*models.RouterOspfNetwork, error)
+	UpdateRouterOspfNetwork(mkey string, payload *models.RouterOspfNetwork, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	DeleteRouterOspfNetwork(mkey string, params *models.CmdbRequestParams) error
+	CreateRouterOspfOspfInterface(payload *models.RouterOspfOspfInterface, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	ReadRouterOspfOspfInterface(mkey string, params *models.CmdbRequestParams) (*models.RouterOspfOspfInterface, error)
+	UpdateRouterOspfOspfInterface(mkey string, payload *models.RouterOspfOspfInterface, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	DeleteRouterOspfOspfInterface(mkey string, params *models.CmdbRequestParams) error
+	CreateRouterOspfRedistribute(payload *models.RouterOspfRedistribute, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	ReadRouterOspfRedistribute(mkey string, params *models.CmdbRequestParams) (*models.RouterOspfRedistribute, error)
+	UpdateRouterOspfRedistribute(mkey string, payload *models.RouterOspfRedistribute, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	DeleteRouterOspfRedistribute(mkey string, params *models.CmdbRequestParams) error
+	CreateRouterOspfSummaryAddress(payload *models.RouterOspfSummaryAddress, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	ReadRouterOspfSummaryAddress(mkey string, params *models.CmdbRequestParams) (*models.RouterOspfSummaryAddress, error)
+	UpdateRouterOspfSummaryAddress(mkey string, payload *models.RouterOspfSummaryAddress, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	DeleteRouterOspfSummaryAddress(mkey string, params *models.CmdbRequestParams) error
 	CreateRouterPolicy(payload *models.RouterPolicy, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
 	ReadRouterPolicy(mkey string, params *models.CmdbRequestParams) (*models.RouterPolicy, error)
 	UpdateRouterPolicy(mkey string, payload *models.RouterPolicy, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
@@ -998,6 +1042,34 @@ type Endpoints interface {
 	ReadRouterRip(mkey string, params *models.CmdbRequestParams) (*models.RouterRip, error)
 	UpdateRouterRip(mkey string, payload *models.RouterRip, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
 	DeleteRouterRip(mkey string, params *models.CmdbRequestParams) error
+	CreateRouterRipDistance(payload *models.RouterRipDistance, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	ReadRouterRipDistance(mkey string, params *models.CmdbRequestParams) (*models.RouterRipDistance, error)
+	UpdateRouterRipDistance(mkey string, payload *models.RouterRipDistance, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	DeleteRouterRipDistance(mkey string, params *models.CmdbRequestParams) error
+	CreateRouterRipDistributeList(payload *models.RouterRipDistributeList, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	ReadRouterRipDistributeList(mkey string, params *models.CmdbRequestParams) (*models.RouterRipDistributeList, error)
+	UpdateRouterRipDistributeList(mkey string, payload *models.RouterRipDistributeList, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	DeleteRouterRipDistributeList(mkey string, params *models.CmdbRequestParams) error
+	CreateRouterRipInterface(payload *models.RouterRipInterface, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	ReadRouterRipInterface(mkey string, params *models.CmdbRequestParams) (*models.RouterRipInterface, error)
+	UpdateRouterRipInterface(mkey string, payload *models.RouterRipInterface, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	DeleteRouterRipInterface(mkey string, params *models.CmdbRequestParams) error
+	CreateRouterRipNeighbor(payload *models.RouterRipNeighbor, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	ReadRouterRipNeighbor(mkey string, params *models.CmdbRequestParams) (*models.RouterRipNeighbor, error)
+	UpdateRouterRipNeighbor(mkey string, payload *models.RouterRipNeighbor, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	DeleteRouterRipNeighbor(mkey string, params *models.CmdbRequestParams) error
+	CreateRouterRipNetwork(payload *models.RouterRipNetwork, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	ReadRouterRipNetwork(mkey string, params *models.CmdbRequestParams) (*models.RouterRipNetwork, error)
+	UpdateRouterRipNetwork(mkey string, payload *models.RouterRipNetwork, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	DeleteRouterRipNetwork(mkey string, params *models.CmdbRequestParams) error
+	CreateRouterRipOffsetList(payload *models.RouterRipOffsetList, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	ReadRouterRipOffsetList(mkey string, params *models.CmdbRequestParams) (*models.RouterRipOffsetList, error)
+	UpdateRouterRipOffsetList(mkey string, payload *models.RouterRipOffsetList, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	DeleteRouterRipOffsetList(mkey string, params *models.CmdbRequestParams) error
+	CreateRouterRipRedistribute(payload *models.RouterRipRedistribute, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	ReadRouterRipRedistribute(mkey string, params *models.CmdbRequestParams) (*models.RouterRipRedistribute, error)
+	UpdateRouterRipRedistribute(mkey string, payload *models.RouterRipRedistribute, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	DeleteRouterRipRedistribute(mkey string, params *models.CmdbRequestParams) error
 	CreateRouterRipng(payload *models.RouterRipng, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
 	ReadRouterRipng(mkey string, params *models.CmdbRequestParams) (*models.RouterRipng, error)
 	UpdateRouterRipng(mkey string, payload *models.RouterRipng, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
@@ -1026,22 +1098,22 @@ type Endpoints interface {
 	ReadSshFilterProfile(mkey string, params *models.CmdbRequestParams) (*models.SshFilterProfile, error)
 	UpdateSshFilterProfile(mkey string, payload *models.SshFilterProfile, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
 	DeleteSshFilterProfile(mkey string, params *models.CmdbRequestParams) error
-	CreateSwitchControllerautoConfigDefault(payload *models.SwitchControllerautoConfigDefault, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	ReadSwitchControllerautoConfigDefault(mkey string, params *models.CmdbRequestParams) (*models.SwitchControllerautoConfigDefault, error)
-	UpdateSwitchControllerautoConfigDefault(mkey string, payload *models.SwitchControllerautoConfigDefault, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	DeleteSwitchControllerautoConfigDefault(mkey string, params *models.CmdbRequestParams) error
-	CreateSwitchControllerinitialConfigTemplate(payload *models.SwitchControllerinitialConfigTemplate, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	ReadSwitchControllerinitialConfigTemplate(mkey string, params *models.CmdbRequestParams) (*models.SwitchControllerinitialConfigTemplate, error)
-	UpdateSwitchControllerinitialConfigTemplate(mkey string, payload *models.SwitchControllerinitialConfigTemplate, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	DeleteSwitchControllerinitialConfigTemplate(mkey string, params *models.CmdbRequestParams) error
-	CreateSwitchControllerinitialConfigVlans(payload *models.SwitchControllerinitialConfigVlans, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	ReadSwitchControllerinitialConfigVlans(mkey string, params *models.CmdbRequestParams) (*models.SwitchControllerinitialConfigVlans, error)
-	UpdateSwitchControllerinitialConfigVlans(mkey string, payload *models.SwitchControllerinitialConfigVlans, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	DeleteSwitchControllerinitialConfigVlans(mkey string, params *models.CmdbRequestParams) error
-	CreateSwitchControllersecurityPolicy8021X(payload *models.SwitchControllersecurityPolicy8021X, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	ReadSwitchControllersecurityPolicy8021X(mkey string, params *models.CmdbRequestParams) (*models.SwitchControllersecurityPolicy8021X, error)
-	UpdateSwitchControllersecurityPolicy8021X(mkey string, payload *models.SwitchControllersecurityPolicy8021X, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	DeleteSwitchControllersecurityPolicy8021X(mkey string, params *models.CmdbRequestParams) error
+	CreateSwitchControllerAutoConfigDefault(payload *models.SwitchControllerAutoConfigDefault, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	ReadSwitchControllerAutoConfigDefault(mkey string, params *models.CmdbRequestParams) (*models.SwitchControllerAutoConfigDefault, error)
+	UpdateSwitchControllerAutoConfigDefault(mkey string, payload *models.SwitchControllerAutoConfigDefault, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	DeleteSwitchControllerAutoConfigDefault(mkey string, params *models.CmdbRequestParams) error
+	CreateSwitchControllerInitialConfigTemplate(payload *models.SwitchControllerInitialConfigTemplate, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	ReadSwitchControllerInitialConfigTemplate(mkey string, params *models.CmdbRequestParams) (*models.SwitchControllerInitialConfigTemplate, error)
+	UpdateSwitchControllerInitialConfigTemplate(mkey string, payload *models.SwitchControllerInitialConfigTemplate, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	DeleteSwitchControllerInitialConfigTemplate(mkey string, params *models.CmdbRequestParams) error
+	CreateSwitchControllerInitialConfigVlans(payload *models.SwitchControllerInitialConfigVlans, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	ReadSwitchControllerInitialConfigVlans(mkey string, params *models.CmdbRequestParams) (*models.SwitchControllerInitialConfigVlans, error)
+	UpdateSwitchControllerInitialConfigVlans(mkey string, payload *models.SwitchControllerInitialConfigVlans, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	DeleteSwitchControllerInitialConfigVlans(mkey string, params *models.CmdbRequestParams) error
+	CreateSwitchControllerSecurityPolicy8021X(payload *models.SwitchControllerSecurityPolicy8021X, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	ReadSwitchControllerSecurityPolicy8021X(mkey string, params *models.CmdbRequestParams) (*models.SwitchControllerSecurityPolicy8021X, error)
+	UpdateSwitchControllerSecurityPolicy8021X(mkey string, payload *models.SwitchControllerSecurityPolicy8021X, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	DeleteSwitchControllerSecurityPolicy8021X(mkey string, params *models.CmdbRequestParams) error
 	CreateSwitchControllerDynamicPortPolicy(payload *models.SwitchControllerDynamicPortPolicy, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
 	ReadSwitchControllerDynamicPortPolicy(mkey string, params *models.CmdbRequestParams) (*models.SwitchControllerDynamicPortPolicy, error)
 	UpdateSwitchControllerDynamicPortPolicy(mkey string, payload *models.SwitchControllerDynamicPortPolicy, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
@@ -1114,134 +1186,110 @@ type Endpoints interface {
 	ReadSystem3gModemCustom(mkey string, params *models.CmdbRequestParams) (*models.System3gModemCustom, error)
 	UpdateSystem3gModemCustom(mkey string, payload *models.System3gModemCustom, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
 	DeleteSystem3gModemCustom(mkey string, params *models.CmdbRequestParams) error
-	CreateSystemautoupdatePushUpdate(payload *models.SystemautoupdatePushUpdate, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	ReadSystemautoupdatePushUpdate(mkey string, params *models.CmdbRequestParams) (*models.SystemautoupdatePushUpdate, error)
-	UpdateSystemautoupdatePushUpdate(mkey string, payload *models.SystemautoupdatePushUpdate, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	DeleteSystemautoupdatePushUpdate(mkey string, params *models.CmdbRequestParams) error
-	CreateSystemautoupdateSchedule(payload *models.SystemautoupdateSchedule, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	ReadSystemautoupdateSchedule(mkey string, params *models.CmdbRequestParams) (*models.SystemautoupdateSchedule, error)
-	UpdateSystemautoupdateSchedule(mkey string, payload *models.SystemautoupdateSchedule, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	DeleteSystemautoupdateSchedule(mkey string, params *models.CmdbRequestParams) error
-	CreateSystemautoupdateTunneling(payload *models.SystemautoupdateTunneling, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	ReadSystemautoupdateTunneling(mkey string, params *models.CmdbRequestParams) (*models.SystemautoupdateTunneling, error)
-	UpdateSystemautoupdateTunneling(mkey string, payload *models.SystemautoupdateTunneling, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	DeleteSystemautoupdateTunneling(mkey string, params *models.CmdbRequestParams) error
-	CreateSystemdhcp6Server(payload *models.Systemdhcp6Server, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	ReadSystemdhcp6Server(mkey string, params *models.CmdbRequestParams) (*models.Systemdhcp6Server, error)
-	UpdateSystemdhcp6Server(mkey string, payload *models.Systemdhcp6Server, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	DeleteSystemdhcp6Server(mkey string, params *models.CmdbRequestParams) error
-	CreateSystemdhcpServer(payload *models.SystemdhcpServer, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	ReadSystemdhcpServer(mkey string, params *models.CmdbRequestParams) (*models.SystemdhcpServer, error)
-	UpdateSystemdhcpServer(mkey string, payload *models.SystemdhcpServer, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	DeleteSystemdhcpServer(mkey string, params *models.CmdbRequestParams) error
-	CreateSystemlldpNetworkPolicy(payload *models.SystemlldpNetworkPolicy, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	ReadSystemlldpNetworkPolicy(mkey string, params *models.CmdbRequestParams) (*models.SystemlldpNetworkPolicy, error)
-	UpdateSystemlldpNetworkPolicy(mkey string, payload *models.SystemlldpNetworkPolicy, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	DeleteSystemlldpNetworkPolicy(mkey string, params *models.CmdbRequestParams) error
-	CreateSystemreplacemsgAdmin(payload *models.SystemreplacemsgAdmin, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	ReadSystemreplacemsgAdmin(mkey string, params *models.CmdbRequestParams) (*models.SystemreplacemsgAdmin, error)
-	UpdateSystemreplacemsgAdmin(mkey string, payload *models.SystemreplacemsgAdmin, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	DeleteSystemreplacemsgAdmin(mkey string, params *models.CmdbRequestParams) error
-	CreateSystemreplacemsgAlertmail(payload *models.SystemreplacemsgAlertmail, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	ReadSystemreplacemsgAlertmail(mkey string, params *models.CmdbRequestParams) (*models.SystemreplacemsgAlertmail, error)
-	UpdateSystemreplacemsgAlertmail(mkey string, payload *models.SystemreplacemsgAlertmail, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	DeleteSystemreplacemsgAlertmail(mkey string, params *models.CmdbRequestParams) error
-	CreateSystemreplacemsgAuth(payload *models.SystemreplacemsgAuth, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	ReadSystemreplacemsgAuth(mkey string, params *models.CmdbRequestParams) (*models.SystemreplacemsgAuth, error)
-	UpdateSystemreplacemsgAuth(mkey string, payload *models.SystemreplacemsgAuth, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	DeleteSystemreplacemsgAuth(mkey string, params *models.CmdbRequestParams) error
-	CreateSystemreplacemsgAutomation(payload *models.SystemreplacemsgAutomation, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	ReadSystemreplacemsgAutomation(mkey string, params *models.CmdbRequestParams) (*models.SystemreplacemsgAutomation, error)
-	UpdateSystemreplacemsgAutomation(mkey string, payload *models.SystemreplacemsgAutomation, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	DeleteSystemreplacemsgAutomation(mkey string, params *models.CmdbRequestParams) error
-	CreateSystemreplacemsgDeviceDetectionPortal(payload *models.SystemreplacemsgDeviceDetectionPortal, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	ReadSystemreplacemsgDeviceDetectionPortal(mkey string, params *models.CmdbRequestParams) (*models.SystemreplacemsgDeviceDetectionPortal, error)
-	UpdateSystemreplacemsgDeviceDetectionPortal(mkey string, payload *models.SystemreplacemsgDeviceDetectionPortal, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	DeleteSystemreplacemsgDeviceDetectionPortal(mkey string, params *models.CmdbRequestParams) error
-	CreateSystemreplacemsgFortiguardWf(payload *models.SystemreplacemsgFortiguardWf, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	ReadSystemreplacemsgFortiguardWf(mkey string, params *models.CmdbRequestParams) (*models.SystemreplacemsgFortiguardWf, error)
-	UpdateSystemreplacemsgFortiguardWf(mkey string, payload *models.SystemreplacemsgFortiguardWf, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	DeleteSystemreplacemsgFortiguardWf(mkey string, params *models.CmdbRequestParams) error
-	CreateSystemreplacemsgFtp(payload *models.SystemreplacemsgFtp, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	ReadSystemreplacemsgFtp(mkey string, params *models.CmdbRequestParams) (*models.SystemreplacemsgFtp, error)
-	UpdateSystemreplacemsgFtp(mkey string, payload *models.SystemreplacemsgFtp, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	DeleteSystemreplacemsgFtp(mkey string, params *models.CmdbRequestParams) error
-	CreateSystemreplacemsgHttp(payload *models.SystemreplacemsgHttp, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	ReadSystemreplacemsgHttp(mkey string, params *models.CmdbRequestParams) (*models.SystemreplacemsgHttp, error)
-	UpdateSystemreplacemsgHttp(mkey string, payload *models.SystemreplacemsgHttp, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	DeleteSystemreplacemsgHttp(mkey string, params *models.CmdbRequestParams) error
-	CreateSystemreplacemsgIcap(payload *models.SystemreplacemsgIcap, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	ReadSystemreplacemsgIcap(mkey string, params *models.CmdbRequestParams) (*models.SystemreplacemsgIcap, error)
-	UpdateSystemreplacemsgIcap(mkey string, payload *models.SystemreplacemsgIcap, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	DeleteSystemreplacemsgIcap(mkey string, params *models.CmdbRequestParams) error
-	CreateSystemreplacemsgMail(payload *models.SystemreplacemsgMail, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	ReadSystemreplacemsgMail(mkey string, params *models.CmdbRequestParams) (*models.SystemreplacemsgMail, error)
-	UpdateSystemreplacemsgMail(mkey string, payload *models.SystemreplacemsgMail, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	DeleteSystemreplacemsgMail(mkey string, params *models.CmdbRequestParams) error
-	CreateSystemreplacemsgNacQuar(payload *models.SystemreplacemsgNacQuar, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	ReadSystemreplacemsgNacQuar(mkey string, params *models.CmdbRequestParams) (*models.SystemreplacemsgNacQuar, error)
-	UpdateSystemreplacemsgNacQuar(mkey string, payload *models.SystemreplacemsgNacQuar, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	DeleteSystemreplacemsgNacQuar(mkey string, params *models.CmdbRequestParams) error
-	CreateSystemreplacemsgNntp(payload *models.SystemreplacemsgNntp, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	ReadSystemreplacemsgNntp(mkey string, params *models.CmdbRequestParams) (*models.SystemreplacemsgNntp, error)
-	UpdateSystemreplacemsgNntp(mkey string, payload *models.SystemreplacemsgNntp, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	DeleteSystemreplacemsgNntp(mkey string, params *models.CmdbRequestParams) error
-	CreateSystemreplacemsgSpam(payload *models.SystemreplacemsgSpam, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	ReadSystemreplacemsgSpam(mkey string, params *models.CmdbRequestParams) (*models.SystemreplacemsgSpam, error)
-	UpdateSystemreplacemsgSpam(mkey string, payload *models.SystemreplacemsgSpam, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	DeleteSystemreplacemsgSpam(mkey string, params *models.CmdbRequestParams) error
-	CreateSystemreplacemsgSslvpn(payload *models.SystemreplacemsgSslvpn, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	ReadSystemreplacemsgSslvpn(mkey string, params *models.CmdbRequestParams) (*models.SystemreplacemsgSslvpn, error)
-	UpdateSystemreplacemsgSslvpn(mkey string, payload *models.SystemreplacemsgSslvpn, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	DeleteSystemreplacemsgSslvpn(mkey string, params *models.CmdbRequestParams) error
-	CreateSystemreplacemsgTrafficQuota(payload *models.SystemreplacemsgTrafficQuota, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	ReadSystemreplacemsgTrafficQuota(mkey string, params *models.CmdbRequestParams) (*models.SystemreplacemsgTrafficQuota, error)
-	UpdateSystemreplacemsgTrafficQuota(mkey string, payload *models.SystemreplacemsgTrafficQuota, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	DeleteSystemreplacemsgTrafficQuota(mkey string, params *models.CmdbRequestParams) error
-	CreateSystemreplacemsgUtm(payload *models.SystemreplacemsgUtm, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	ReadSystemreplacemsgUtm(mkey string, params *models.CmdbRequestParams) (*models.SystemreplacemsgUtm, error)
-	UpdateSystemreplacemsgUtm(mkey string, payload *models.SystemreplacemsgUtm, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	DeleteSystemreplacemsgUtm(mkey string, params *models.CmdbRequestParams) error
-	CreateSystemreplacemsgWebproxy(payload *models.SystemreplacemsgWebproxy, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	ReadSystemreplacemsgWebproxy(mkey string, params *models.CmdbRequestParams) (*models.SystemreplacemsgWebproxy, error)
-	UpdateSystemreplacemsgWebproxy(mkey string, payload *models.SystemreplacemsgWebproxy, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	DeleteSystemreplacemsgWebproxy(mkey string, params *models.CmdbRequestParams) error
-	CreateSystemsdwanDuplication(payload *models.SystemsdwanDuplication, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	ReadSystemsdwanDuplication(mkey string, params *models.CmdbRequestParams) (*models.SystemsdwanDuplication, error)
-	UpdateSystemsdwanDuplication(mkey string, payload *models.SystemsdwanDuplication, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	DeleteSystemsdwanDuplication(mkey string, params *models.CmdbRequestParams) error
-	CreateSystemsdwanHealthCheck(payload *models.SystemsdwanHealthCheck, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	ReadSystemsdwanHealthCheck(mkey string, params *models.CmdbRequestParams) (*models.SystemsdwanHealthCheck, error)
-	UpdateSystemsdwanHealthCheck(mkey string, payload *models.SystemsdwanHealthCheck, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	DeleteSystemsdwanHealthCheck(mkey string, params *models.CmdbRequestParams) error
-	CreateSystemsdwanMembers(payload *models.SystemsdwanMembers, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	ReadSystemsdwanMembers(mkey string, params *models.CmdbRequestParams) (*models.SystemsdwanMembers, error)
-	UpdateSystemsdwanMembers(mkey string, payload *models.SystemsdwanMembers, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	DeleteSystemsdwanMembers(mkey string, params *models.CmdbRequestParams) error
-	CreateSystemsdwanNeighbor(payload *models.SystemsdwanNeighbor, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	ReadSystemsdwanNeighbor(mkey string, params *models.CmdbRequestParams) (*models.SystemsdwanNeighbor, error)
-	UpdateSystemsdwanNeighbor(mkey string, payload *models.SystemsdwanNeighbor, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	DeleteSystemsdwanNeighbor(mkey string, params *models.CmdbRequestParams) error
-	CreateSystemsdwanService(payload *models.SystemsdwanService, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	ReadSystemsdwanService(mkey string, params *models.CmdbRequestParams) (*models.SystemsdwanService, error)
-	UpdateSystemsdwanService(mkey string, payload *models.SystemsdwanService, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	DeleteSystemsdwanService(mkey string, params *models.CmdbRequestParams) error
-	CreateSystemsdwanZone(payload *models.SystemsdwanZone, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	ReadSystemsdwanZone(mkey string, params *models.CmdbRequestParams) (*models.SystemsdwanZone, error)
-	UpdateSystemsdwanZone(mkey string, payload *models.SystemsdwanZone, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	DeleteSystemsdwanZone(mkey string, params *models.CmdbRequestParams) error
-	CreateSystemsnmpCommunity(payload *models.SystemsnmpCommunity, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	ReadSystemsnmpCommunity(mkey string, params *models.CmdbRequestParams) (*models.SystemsnmpCommunity, error)
-	UpdateSystemsnmpCommunity(mkey string, payload *models.SystemsnmpCommunity, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	DeleteSystemsnmpCommunity(mkey string, params *models.CmdbRequestParams) error
-	CreateSystemsnmpSysinfo(payload *models.SystemsnmpSysinfo, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	ReadSystemsnmpSysinfo(mkey string, params *models.CmdbRequestParams) (*models.SystemsnmpSysinfo, error)
-	UpdateSystemsnmpSysinfo(mkey string, payload *models.SystemsnmpSysinfo, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	DeleteSystemsnmpSysinfo(mkey string, params *models.CmdbRequestParams) error
-	CreateSystemsnmpUser(payload *models.SystemsnmpUser, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	ReadSystemsnmpUser(mkey string, params *models.CmdbRequestParams) (*models.SystemsnmpUser, error)
-	UpdateSystemsnmpUser(mkey string, payload *models.SystemsnmpUser, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	DeleteSystemsnmpUser(mkey string, params *models.CmdbRequestParams) error
+	CreateSystemAutoupdatePushUpdate(payload *models.SystemAutoupdatePushUpdate, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	ReadSystemAutoupdatePushUpdate(mkey string, params *models.CmdbRequestParams) (*models.SystemAutoupdatePushUpdate, error)
+	UpdateSystemAutoupdatePushUpdate(mkey string, payload *models.SystemAutoupdatePushUpdate, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	DeleteSystemAutoupdatePushUpdate(mkey string, params *models.CmdbRequestParams) error
+	CreateSystemAutoupdateSchedule(payload *models.SystemAutoupdateSchedule, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	ReadSystemAutoupdateSchedule(mkey string, params *models.CmdbRequestParams) (*models.SystemAutoupdateSchedule, error)
+	UpdateSystemAutoupdateSchedule(mkey string, payload *models.SystemAutoupdateSchedule, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	DeleteSystemAutoupdateSchedule(mkey string, params *models.CmdbRequestParams) error
+	CreateSystemAutoupdateTunneling(payload *models.SystemAutoupdateTunneling, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	ReadSystemAutoupdateTunneling(mkey string, params *models.CmdbRequestParams) (*models.SystemAutoupdateTunneling, error)
+	UpdateSystemAutoupdateTunneling(mkey string, payload *models.SystemAutoupdateTunneling, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	DeleteSystemAutoupdateTunneling(mkey string, params *models.CmdbRequestParams) error
+	CreateSystemDhcp6Server(payload *models.SystemDhcp6Server, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	ReadSystemDhcp6Server(mkey string, params *models.CmdbRequestParams) (*models.SystemDhcp6Server, error)
+	UpdateSystemDhcp6Server(mkey string, payload *models.SystemDhcp6Server, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	DeleteSystemDhcp6Server(mkey string, params *models.CmdbRequestParams) error
+	CreateSystemDhcpServer(payload *models.SystemDhcpServer, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	ReadSystemDhcpServer(mkey string, params *models.CmdbRequestParams) (*models.SystemDhcpServer, error)
+	UpdateSystemDhcpServer(mkey string, payload *models.SystemDhcpServer, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	DeleteSystemDhcpServer(mkey string, params *models.CmdbRequestParams) error
+	CreateSystemLldpNetworkPolicy(payload *models.SystemLldpNetworkPolicy, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	ReadSystemLldpNetworkPolicy(mkey string, params *models.CmdbRequestParams) (*models.SystemLldpNetworkPolicy, error)
+	UpdateSystemLldpNetworkPolicy(mkey string, payload *models.SystemLldpNetworkPolicy, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	DeleteSystemLldpNetworkPolicy(mkey string, params *models.CmdbRequestParams) error
+	CreateSystemReplacemsgAdmin(payload *models.SystemReplacemsgAdmin, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	ReadSystemReplacemsgAdmin(mkey string, params *models.CmdbRequestParams) (*models.SystemReplacemsgAdmin, error)
+	UpdateSystemReplacemsgAdmin(mkey string, payload *models.SystemReplacemsgAdmin, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	DeleteSystemReplacemsgAdmin(mkey string, params *models.CmdbRequestParams) error
+	CreateSystemReplacemsgAlertmail(payload *models.SystemReplacemsgAlertmail, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	ReadSystemReplacemsgAlertmail(mkey string, params *models.CmdbRequestParams) (*models.SystemReplacemsgAlertmail, error)
+	UpdateSystemReplacemsgAlertmail(mkey string, payload *models.SystemReplacemsgAlertmail, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	DeleteSystemReplacemsgAlertmail(mkey string, params *models.CmdbRequestParams) error
+	CreateSystemReplacemsgAuth(payload *models.SystemReplacemsgAuth, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	ReadSystemReplacemsgAuth(mkey string, params *models.CmdbRequestParams) (*models.SystemReplacemsgAuth, error)
+	UpdateSystemReplacemsgAuth(mkey string, payload *models.SystemReplacemsgAuth, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	DeleteSystemReplacemsgAuth(mkey string, params *models.CmdbRequestParams) error
+	CreateSystemReplacemsgAutomation(payload *models.SystemReplacemsgAutomation, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	ReadSystemReplacemsgAutomation(mkey string, params *models.CmdbRequestParams) (*models.SystemReplacemsgAutomation, error)
+	UpdateSystemReplacemsgAutomation(mkey string, payload *models.SystemReplacemsgAutomation, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	DeleteSystemReplacemsgAutomation(mkey string, params *models.CmdbRequestParams) error
+	CreateSystemReplacemsgDeviceDetectionPortal(payload *models.SystemReplacemsgDeviceDetectionPortal, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	ReadSystemReplacemsgDeviceDetectionPortal(mkey string, params *models.CmdbRequestParams) (*models.SystemReplacemsgDeviceDetectionPortal, error)
+	UpdateSystemReplacemsgDeviceDetectionPortal(mkey string, payload *models.SystemReplacemsgDeviceDetectionPortal, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	DeleteSystemReplacemsgDeviceDetectionPortal(mkey string, params *models.CmdbRequestParams) error
+	CreateSystemReplacemsgFortiguardWf(payload *models.SystemReplacemsgFortiguardWf, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	ReadSystemReplacemsgFortiguardWf(mkey string, params *models.CmdbRequestParams) (*models.SystemReplacemsgFortiguardWf, error)
+	UpdateSystemReplacemsgFortiguardWf(mkey string, payload *models.SystemReplacemsgFortiguardWf, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	DeleteSystemReplacemsgFortiguardWf(mkey string, params *models.CmdbRequestParams) error
+	CreateSystemReplacemsgFtp(payload *models.SystemReplacemsgFtp, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	ReadSystemReplacemsgFtp(mkey string, params *models.CmdbRequestParams) (*models.SystemReplacemsgFtp, error)
+	UpdateSystemReplacemsgFtp(mkey string, payload *models.SystemReplacemsgFtp, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	DeleteSystemReplacemsgFtp(mkey string, params *models.CmdbRequestParams) error
+	CreateSystemReplacemsgHttp(payload *models.SystemReplacemsgHttp, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	ReadSystemReplacemsgHttp(mkey string, params *models.CmdbRequestParams) (*models.SystemReplacemsgHttp, error)
+	UpdateSystemReplacemsgHttp(mkey string, payload *models.SystemReplacemsgHttp, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	DeleteSystemReplacemsgHttp(mkey string, params *models.CmdbRequestParams) error
+	CreateSystemReplacemsgIcap(payload *models.SystemReplacemsgIcap, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	ReadSystemReplacemsgIcap(mkey string, params *models.CmdbRequestParams) (*models.SystemReplacemsgIcap, error)
+	UpdateSystemReplacemsgIcap(mkey string, payload *models.SystemReplacemsgIcap, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	DeleteSystemReplacemsgIcap(mkey string, params *models.CmdbRequestParams) error
+	CreateSystemReplacemsgMail(payload *models.SystemReplacemsgMail, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	ReadSystemReplacemsgMail(mkey string, params *models.CmdbRequestParams) (*models.SystemReplacemsgMail, error)
+	UpdateSystemReplacemsgMail(mkey string, payload *models.SystemReplacemsgMail, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	DeleteSystemReplacemsgMail(mkey string, params *models.CmdbRequestParams) error
+	CreateSystemReplacemsgNacQuar(payload *models.SystemReplacemsgNacQuar, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	ReadSystemReplacemsgNacQuar(mkey string, params *models.CmdbRequestParams) (*models.SystemReplacemsgNacQuar, error)
+	UpdateSystemReplacemsgNacQuar(mkey string, payload *models.SystemReplacemsgNacQuar, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	DeleteSystemReplacemsgNacQuar(mkey string, params *models.CmdbRequestParams) error
+	CreateSystemReplacemsgNntp(payload *models.SystemReplacemsgNntp, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	ReadSystemReplacemsgNntp(mkey string, params *models.CmdbRequestParams) (*models.SystemReplacemsgNntp, error)
+	UpdateSystemReplacemsgNntp(mkey string, payload *models.SystemReplacemsgNntp, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	DeleteSystemReplacemsgNntp(mkey string, params *models.CmdbRequestParams) error
+	CreateSystemReplacemsgSpam(payload *models.SystemReplacemsgSpam, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	ReadSystemReplacemsgSpam(mkey string, params *models.CmdbRequestParams) (*models.SystemReplacemsgSpam, error)
+	UpdateSystemReplacemsgSpam(mkey string, payload *models.SystemReplacemsgSpam, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	DeleteSystemReplacemsgSpam(mkey string, params *models.CmdbRequestParams) error
+	CreateSystemReplacemsgSslvpn(payload *models.SystemReplacemsgSslvpn, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	ReadSystemReplacemsgSslvpn(mkey string, params *models.CmdbRequestParams) (*models.SystemReplacemsgSslvpn, error)
+	UpdateSystemReplacemsgSslvpn(mkey string, payload *models.SystemReplacemsgSslvpn, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	DeleteSystemReplacemsgSslvpn(mkey string, params *models.CmdbRequestParams) error
+	CreateSystemReplacemsgTrafficQuota(payload *models.SystemReplacemsgTrafficQuota, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	ReadSystemReplacemsgTrafficQuota(mkey string, params *models.CmdbRequestParams) (*models.SystemReplacemsgTrafficQuota, error)
+	UpdateSystemReplacemsgTrafficQuota(mkey string, payload *models.SystemReplacemsgTrafficQuota, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	DeleteSystemReplacemsgTrafficQuota(mkey string, params *models.CmdbRequestParams) error
+	CreateSystemReplacemsgUtm(payload *models.SystemReplacemsgUtm, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	ReadSystemReplacemsgUtm(mkey string, params *models.CmdbRequestParams) (*models.SystemReplacemsgUtm, error)
+	UpdateSystemReplacemsgUtm(mkey string, payload *models.SystemReplacemsgUtm, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	DeleteSystemReplacemsgUtm(mkey string, params *models.CmdbRequestParams) error
+	CreateSystemReplacemsgWebproxy(payload *models.SystemReplacemsgWebproxy, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	ReadSystemReplacemsgWebproxy(mkey string, params *models.CmdbRequestParams) (*models.SystemReplacemsgWebproxy, error)
+	UpdateSystemReplacemsgWebproxy(mkey string, payload *models.SystemReplacemsgWebproxy, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	DeleteSystemReplacemsgWebproxy(mkey string, params *models.CmdbRequestParams) error
+	CreateSystemSnmpCommunity(payload *models.SystemSnmpCommunity, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	ReadSystemSnmpCommunity(mkey string, params *models.CmdbRequestParams) (*models.SystemSnmpCommunity, error)
+	UpdateSystemSnmpCommunity(mkey string, payload *models.SystemSnmpCommunity, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	DeleteSystemSnmpCommunity(mkey string, params *models.CmdbRequestParams) error
+	CreateSystemSnmpSysinfo(payload *models.SystemSnmpSysinfo, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	ReadSystemSnmpSysinfo(mkey string, params *models.CmdbRequestParams) (*models.SystemSnmpSysinfo, error)
+	UpdateSystemSnmpSysinfo(mkey string, payload *models.SystemSnmpSysinfo, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	DeleteSystemSnmpSysinfo(mkey string, params *models.CmdbRequestParams) error
+	CreateSystemSnmpUser(payload *models.SystemSnmpUser, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	ReadSystemSnmpUser(mkey string, params *models.CmdbRequestParams) (*models.SystemSnmpUser, error)
+	UpdateSystemSnmpUser(mkey string, payload *models.SystemSnmpUser, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	DeleteSystemSnmpUser(mkey string, params *models.CmdbRequestParams) error
 	CreateSystemAccprofile(payload *models.SystemAccprofile, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
 	ReadSystemAccprofile(mkey string, params *models.CmdbRequestParams) (*models.SystemAccprofile, error)
 	UpdateSystemAccprofile(mkey string, payload *models.SystemAccprofile, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
@@ -1546,6 +1594,30 @@ type Endpoints interface {
 	ReadSystemSdwan(mkey string, params *models.CmdbRequestParams) (*models.SystemSdwan, error)
 	UpdateSystemSdwan(mkey string, payload *models.SystemSdwan, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
 	DeleteSystemSdwan(mkey string, params *models.CmdbRequestParams) error
+	CreateSystemSdwanDuplication(payload *models.SystemSdwanDuplication, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	ReadSystemSdwanDuplication(mkey string, params *models.CmdbRequestParams) (*models.SystemSdwanDuplication, error)
+	UpdateSystemSdwanDuplication(mkey string, payload *models.SystemSdwanDuplication, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	DeleteSystemSdwanDuplication(mkey string, params *models.CmdbRequestParams) error
+	CreateSystemSdwanHealthCheck(payload *models.SystemSdwanHealthCheck, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	ReadSystemSdwanHealthCheck(mkey string, params *models.CmdbRequestParams) (*models.SystemSdwanHealthCheck, error)
+	UpdateSystemSdwanHealthCheck(mkey string, payload *models.SystemSdwanHealthCheck, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	DeleteSystemSdwanHealthCheck(mkey string, params *models.CmdbRequestParams) error
+	CreateSystemSdwanMembers(payload *models.SystemSdwanMembers, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	ReadSystemSdwanMembers(mkey string, params *models.CmdbRequestParams) (*models.SystemSdwanMembers, error)
+	UpdateSystemSdwanMembers(mkey string, payload *models.SystemSdwanMembers, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	DeleteSystemSdwanMembers(mkey string, params *models.CmdbRequestParams) error
+	CreateSystemSdwanNeighbor(payload *models.SystemSdwanNeighbor, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	ReadSystemSdwanNeighbor(mkey string, params *models.CmdbRequestParams) (*models.SystemSdwanNeighbor, error)
+	UpdateSystemSdwanNeighbor(mkey string, payload *models.SystemSdwanNeighbor, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	DeleteSystemSdwanNeighbor(mkey string, params *models.CmdbRequestParams) error
+	CreateSystemSdwanService(payload *models.SystemSdwanService, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	ReadSystemSdwanService(mkey string, params *models.CmdbRequestParams) (*models.SystemSdwanService, error)
+	UpdateSystemSdwanService(mkey string, payload *models.SystemSdwanService, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	DeleteSystemSdwanService(mkey string, params *models.CmdbRequestParams) error
+	CreateSystemSdwanZone(payload *models.SystemSdwanZone, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	ReadSystemSdwanZone(mkey string, params *models.CmdbRequestParams) (*models.SystemSdwanZone, error)
+	UpdateSystemSdwanZone(mkey string, payload *models.SystemSdwanZone, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	DeleteSystemSdwanZone(mkey string, params *models.CmdbRequestParams) error
 	CreateSystemSessionHelper(payload *models.SystemSessionHelper, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
 	ReadSystemSessionHelper(mkey string, params *models.CmdbRequestParams) (*models.SystemSessionHelper, error)
 	UpdateSystemSessionHelper(mkey string, payload *models.SystemSessionHelper, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
@@ -1770,98 +1842,98 @@ type Endpoints interface {
 	ReadVoipProfile(mkey string, params *models.CmdbRequestParams) (*models.VoipProfile, error)
 	UpdateVoipProfile(mkey string, payload *models.VoipProfile, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
 	DeleteVoipProfile(mkey string, params *models.CmdbRequestParams) error
-	CreateVpncertificateCa(payload *models.VpncertificateCa, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	ReadVpncertificateCa(mkey string, params *models.CmdbRequestParams) (*models.VpncertificateCa, error)
-	UpdateVpncertificateCa(mkey string, payload *models.VpncertificateCa, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	DeleteVpncertificateCa(mkey string, params *models.CmdbRequestParams) error
-	CreateVpncertificateCrl(payload *models.VpncertificateCrl, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	ReadVpncertificateCrl(mkey string, params *models.CmdbRequestParams) (*models.VpncertificateCrl, error)
-	UpdateVpncertificateCrl(mkey string, payload *models.VpncertificateCrl, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	DeleteVpncertificateCrl(mkey string, params *models.CmdbRequestParams) error
-	CreateVpncertificateLocal(payload *models.VpncertificateLocal, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	ReadVpncertificateLocal(mkey string, params *models.CmdbRequestParams) (*models.VpncertificateLocal, error)
-	UpdateVpncertificateLocal(mkey string, payload *models.VpncertificateLocal, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	DeleteVpncertificateLocal(mkey string, params *models.CmdbRequestParams) error
-	CreateVpncertificateOcspServer(payload *models.VpncertificateOcspServer, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	ReadVpncertificateOcspServer(mkey string, params *models.CmdbRequestParams) (*models.VpncertificateOcspServer, error)
-	UpdateVpncertificateOcspServer(mkey string, payload *models.VpncertificateOcspServer, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	DeleteVpncertificateOcspServer(mkey string, params *models.CmdbRequestParams) error
-	CreateVpncertificateRemote(payload *models.VpncertificateRemote, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	ReadVpncertificateRemote(mkey string, params *models.CmdbRequestParams) (*models.VpncertificateRemote, error)
-	UpdateVpncertificateRemote(mkey string, payload *models.VpncertificateRemote, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	DeleteVpncertificateRemote(mkey string, params *models.CmdbRequestParams) error
-	CreateVpncertificateSetting(payload *models.VpncertificateSetting, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	ReadVpncertificateSetting(mkey string, params *models.CmdbRequestParams) (*models.VpncertificateSetting, error)
-	UpdateVpncertificateSetting(mkey string, payload *models.VpncertificateSetting, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	DeleteVpncertificateSetting(mkey string, params *models.CmdbRequestParams) error
-	CreateVpnipsecConcentrator(payload *models.VpnipsecConcentrator, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	ReadVpnipsecConcentrator(mkey string, params *models.CmdbRequestParams) (*models.VpnipsecConcentrator, error)
-	UpdateVpnipsecConcentrator(mkey string, payload *models.VpnipsecConcentrator, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	DeleteVpnipsecConcentrator(mkey string, params *models.CmdbRequestParams) error
-	CreateVpnipsecFec(payload *models.VpnipsecFec, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	ReadVpnipsecFec(mkey string, params *models.CmdbRequestParams) (*models.VpnipsecFec, error)
-	UpdateVpnipsecFec(mkey string, payload *models.VpnipsecFec, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	DeleteVpnipsecFec(mkey string, params *models.CmdbRequestParams) error
-	CreateVpnipsecForticlient(payload *models.VpnipsecForticlient, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	ReadVpnipsecForticlient(mkey string, params *models.CmdbRequestParams) (*models.VpnipsecForticlient, error)
-	UpdateVpnipsecForticlient(mkey string, payload *models.VpnipsecForticlient, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	DeleteVpnipsecForticlient(mkey string, params *models.CmdbRequestParams) error
-	CreateVpnipsecManualkey(payload *models.VpnipsecManualkey, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	ReadVpnipsecManualkey(mkey string, params *models.CmdbRequestParams) (*models.VpnipsecManualkey, error)
-	UpdateVpnipsecManualkey(mkey string, payload *models.VpnipsecManualkey, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	DeleteVpnipsecManualkey(mkey string, params *models.CmdbRequestParams) error
-	CreateVpnipsecManualkeyInterface(payload *models.VpnipsecManualkeyInterface, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	ReadVpnipsecManualkeyInterface(mkey string, params *models.CmdbRequestParams) (*models.VpnipsecManualkeyInterface, error)
-	UpdateVpnipsecManualkeyInterface(mkey string, payload *models.VpnipsecManualkeyInterface, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	DeleteVpnipsecManualkeyInterface(mkey string, params *models.CmdbRequestParams) error
-	CreateVpnipsecPhase1(payload *models.VpnipsecPhase1, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	ReadVpnipsecPhase1(mkey string, params *models.CmdbRequestParams) (*models.VpnipsecPhase1, error)
-	UpdateVpnipsecPhase1(mkey string, payload *models.VpnipsecPhase1, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	DeleteVpnipsecPhase1(mkey string, params *models.CmdbRequestParams) error
-	CreateVpnipsecPhase1Interface(payload *models.VpnipsecPhase1Interface, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	ReadVpnipsecPhase1Interface(mkey string, params *models.CmdbRequestParams) (*models.VpnipsecPhase1Interface, error)
-	UpdateVpnipsecPhase1Interface(mkey string, payload *models.VpnipsecPhase1Interface, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	DeleteVpnipsecPhase1Interface(mkey string, params *models.CmdbRequestParams) error
-	CreateVpnipsecPhase2(payload *models.VpnipsecPhase2, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	ReadVpnipsecPhase2(mkey string, params *models.CmdbRequestParams) (*models.VpnipsecPhase2, error)
-	UpdateVpnipsecPhase2(mkey string, payload *models.VpnipsecPhase2, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	DeleteVpnipsecPhase2(mkey string, params *models.CmdbRequestParams) error
-	CreateVpnipsecPhase2Interface(payload *models.VpnipsecPhase2Interface, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	ReadVpnipsecPhase2Interface(mkey string, params *models.CmdbRequestParams) (*models.VpnipsecPhase2Interface, error)
-	UpdateVpnipsecPhase2Interface(mkey string, payload *models.VpnipsecPhase2Interface, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	DeleteVpnipsecPhase2Interface(mkey string, params *models.CmdbRequestParams) error
-	CreateVpnsslsettingsAuthenticationRule(payload *models.VpnsslsettingsAuthenticationRule, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	ReadVpnsslsettingsAuthenticationRule(mkey string, params *models.CmdbRequestParams) (*models.VpnsslsettingsAuthenticationRule, error)
-	UpdateVpnsslsettingsAuthenticationRule(mkey string, payload *models.VpnsslsettingsAuthenticationRule, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	DeleteVpnsslsettingsAuthenticationRule(mkey string, params *models.CmdbRequestParams) error
-	CreateVpnsslwebHostCheckSoftware(payload *models.VpnsslwebHostCheckSoftware, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	ReadVpnsslwebHostCheckSoftware(mkey string, params *models.CmdbRequestParams) (*models.VpnsslwebHostCheckSoftware, error)
-	UpdateVpnsslwebHostCheckSoftware(mkey string, payload *models.VpnsslwebHostCheckSoftware, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	DeleteVpnsslwebHostCheckSoftware(mkey string, params *models.CmdbRequestParams) error
-	CreateVpnsslwebPortal(payload *models.VpnsslwebPortal, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	ReadVpnsslwebPortal(mkey string, params *models.CmdbRequestParams) (*models.VpnsslwebPortal, error)
-	UpdateVpnsslwebPortal(mkey string, payload *models.VpnsslwebPortal, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	DeleteVpnsslwebPortal(mkey string, params *models.CmdbRequestParams) error
-	CreateVpnsslwebRealm(payload *models.VpnsslwebRealm, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	ReadVpnsslwebRealm(mkey string, params *models.CmdbRequestParams) (*models.VpnsslwebRealm, error)
-	UpdateVpnsslwebRealm(mkey string, payload *models.VpnsslwebRealm, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	DeleteVpnsslwebRealm(mkey string, params *models.CmdbRequestParams) error
-	CreateVpnsslwebUserBookmark(payload *models.VpnsslwebUserBookmark, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	ReadVpnsslwebUserBookmark(mkey string, params *models.CmdbRequestParams) (*models.VpnsslwebUserBookmark, error)
-	UpdateVpnsslwebUserBookmark(mkey string, payload *models.VpnsslwebUserBookmark, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	DeleteVpnsslwebUserBookmark(mkey string, params *models.CmdbRequestParams) error
-	CreateVpnsslwebUserGroupBookmark(payload *models.VpnsslwebUserGroupBookmark, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	ReadVpnsslwebUserGroupBookmark(mkey string, params *models.CmdbRequestParams) (*models.VpnsslwebUserGroupBookmark, error)
-	UpdateVpnsslwebUserGroupBookmark(mkey string, payload *models.VpnsslwebUserGroupBookmark, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	DeleteVpnsslwebUserGroupBookmark(mkey string, params *models.CmdbRequestParams) error
-	CreateVpnsslClient(payload *models.VpnsslClient, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	ReadVpnsslClient(mkey string, params *models.CmdbRequestParams) (*models.VpnsslClient, error)
-	UpdateVpnsslClient(mkey string, payload *models.VpnsslClient, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	DeleteVpnsslClient(mkey string, params *models.CmdbRequestParams) error
-	CreateVpnsslSettings(payload *models.VpnsslSettings, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	ReadVpnsslSettings(mkey string, params *models.CmdbRequestParams) (*models.VpnsslSettings, error)
-	UpdateVpnsslSettings(mkey string, payload *models.VpnsslSettings, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	DeleteVpnsslSettings(mkey string, params *models.CmdbRequestParams) error
+	CreateVpnCertificateCa(payload *models.VpnCertificateCa, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	ReadVpnCertificateCa(mkey string, params *models.CmdbRequestParams) (*models.VpnCertificateCa, error)
+	UpdateVpnCertificateCa(mkey string, payload *models.VpnCertificateCa, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	DeleteVpnCertificateCa(mkey string, params *models.CmdbRequestParams) error
+	CreateVpnCertificateCrl(payload *models.VpnCertificateCrl, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	ReadVpnCertificateCrl(mkey string, params *models.CmdbRequestParams) (*models.VpnCertificateCrl, error)
+	UpdateVpnCertificateCrl(mkey string, payload *models.VpnCertificateCrl, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	DeleteVpnCertificateCrl(mkey string, params *models.CmdbRequestParams) error
+	CreateVpnCertificateLocal(payload *models.VpnCertificateLocal, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	ReadVpnCertificateLocal(mkey string, params *models.CmdbRequestParams) (*models.VpnCertificateLocal, error)
+	UpdateVpnCertificateLocal(mkey string, payload *models.VpnCertificateLocal, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	DeleteVpnCertificateLocal(mkey string, params *models.CmdbRequestParams) error
+	CreateVpnCertificateOcspServer(payload *models.VpnCertificateOcspServer, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	ReadVpnCertificateOcspServer(mkey string, params *models.CmdbRequestParams) (*models.VpnCertificateOcspServer, error)
+	UpdateVpnCertificateOcspServer(mkey string, payload *models.VpnCertificateOcspServer, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	DeleteVpnCertificateOcspServer(mkey string, params *models.CmdbRequestParams) error
+	CreateVpnCertificateRemote(payload *models.VpnCertificateRemote, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	ReadVpnCertificateRemote(mkey string, params *models.CmdbRequestParams) (*models.VpnCertificateRemote, error)
+	UpdateVpnCertificateRemote(mkey string, payload *models.VpnCertificateRemote, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	DeleteVpnCertificateRemote(mkey string, params *models.CmdbRequestParams) error
+	CreateVpnCertificateSetting(payload *models.VpnCertificateSetting, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	ReadVpnCertificateSetting(mkey string, params *models.CmdbRequestParams) (*models.VpnCertificateSetting, error)
+	UpdateVpnCertificateSetting(mkey string, payload *models.VpnCertificateSetting, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	DeleteVpnCertificateSetting(mkey string, params *models.CmdbRequestParams) error
+	CreateVpnIpsecConcentrator(payload *models.VpnIpsecConcentrator, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	ReadVpnIpsecConcentrator(mkey string, params *models.CmdbRequestParams) (*models.VpnIpsecConcentrator, error)
+	UpdateVpnIpsecConcentrator(mkey string, payload *models.VpnIpsecConcentrator, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	DeleteVpnIpsecConcentrator(mkey string, params *models.CmdbRequestParams) error
+	CreateVpnIpsecFec(payload *models.VpnIpsecFec, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	ReadVpnIpsecFec(mkey string, params *models.CmdbRequestParams) (*models.VpnIpsecFec, error)
+	UpdateVpnIpsecFec(mkey string, payload *models.VpnIpsecFec, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	DeleteVpnIpsecFec(mkey string, params *models.CmdbRequestParams) error
+	CreateVpnIpsecForticlient(payload *models.VpnIpsecForticlient, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	ReadVpnIpsecForticlient(mkey string, params *models.CmdbRequestParams) (*models.VpnIpsecForticlient, error)
+	UpdateVpnIpsecForticlient(mkey string, payload *models.VpnIpsecForticlient, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	DeleteVpnIpsecForticlient(mkey string, params *models.CmdbRequestParams) error
+	CreateVpnIpsecManualkey(payload *models.VpnIpsecManualkey, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	ReadVpnIpsecManualkey(mkey string, params *models.CmdbRequestParams) (*models.VpnIpsecManualkey, error)
+	UpdateVpnIpsecManualkey(mkey string, payload *models.VpnIpsecManualkey, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	DeleteVpnIpsecManualkey(mkey string, params *models.CmdbRequestParams) error
+	CreateVpnIpsecManualkeyInterface(payload *models.VpnIpsecManualkeyInterface, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	ReadVpnIpsecManualkeyInterface(mkey string, params *models.CmdbRequestParams) (*models.VpnIpsecManualkeyInterface, error)
+	UpdateVpnIpsecManualkeyInterface(mkey string, payload *models.VpnIpsecManualkeyInterface, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	DeleteVpnIpsecManualkeyInterface(mkey string, params *models.CmdbRequestParams) error
+	CreateVpnIpsecPhase1(payload *models.VpnIpsecPhase1, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	ReadVpnIpsecPhase1(mkey string, params *models.CmdbRequestParams) (*models.VpnIpsecPhase1, error)
+	UpdateVpnIpsecPhase1(mkey string, payload *models.VpnIpsecPhase1, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	DeleteVpnIpsecPhase1(mkey string, params *models.CmdbRequestParams) error
+	CreateVpnIpsecPhase1Interface(payload *models.VpnIpsecPhase1Interface, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	ReadVpnIpsecPhase1Interface(mkey string, params *models.CmdbRequestParams) (*models.VpnIpsecPhase1Interface, error)
+	UpdateVpnIpsecPhase1Interface(mkey string, payload *models.VpnIpsecPhase1Interface, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	DeleteVpnIpsecPhase1Interface(mkey string, params *models.CmdbRequestParams) error
+	CreateVpnIpsecPhase2(payload *models.VpnIpsecPhase2, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	ReadVpnIpsecPhase2(mkey string, params *models.CmdbRequestParams) (*models.VpnIpsecPhase2, error)
+	UpdateVpnIpsecPhase2(mkey string, payload *models.VpnIpsecPhase2, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	DeleteVpnIpsecPhase2(mkey string, params *models.CmdbRequestParams) error
+	CreateVpnIpsecPhase2Interface(payload *models.VpnIpsecPhase2Interface, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	ReadVpnIpsecPhase2Interface(mkey string, params *models.CmdbRequestParams) (*models.VpnIpsecPhase2Interface, error)
+	UpdateVpnIpsecPhase2Interface(mkey string, payload *models.VpnIpsecPhase2Interface, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	DeleteVpnIpsecPhase2Interface(mkey string, params *models.CmdbRequestParams) error
+	CreateVpnSslWebHostCheckSoftware(payload *models.VpnSslWebHostCheckSoftware, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	ReadVpnSslWebHostCheckSoftware(mkey string, params *models.CmdbRequestParams) (*models.VpnSslWebHostCheckSoftware, error)
+	UpdateVpnSslWebHostCheckSoftware(mkey string, payload *models.VpnSslWebHostCheckSoftware, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	DeleteVpnSslWebHostCheckSoftware(mkey string, params *models.CmdbRequestParams) error
+	CreateVpnSslWebPortal(payload *models.VpnSslWebPortal, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	ReadVpnSslWebPortal(mkey string, params *models.CmdbRequestParams) (*models.VpnSslWebPortal, error)
+	UpdateVpnSslWebPortal(mkey string, payload *models.VpnSslWebPortal, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	DeleteVpnSslWebPortal(mkey string, params *models.CmdbRequestParams) error
+	CreateVpnSslWebRealm(payload *models.VpnSslWebRealm, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	ReadVpnSslWebRealm(mkey string, params *models.CmdbRequestParams) (*models.VpnSslWebRealm, error)
+	UpdateVpnSslWebRealm(mkey string, payload *models.VpnSslWebRealm, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	DeleteVpnSslWebRealm(mkey string, params *models.CmdbRequestParams) error
+	CreateVpnSslWebUserBookmark(payload *models.VpnSslWebUserBookmark, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	ReadVpnSslWebUserBookmark(mkey string, params *models.CmdbRequestParams) (*models.VpnSslWebUserBookmark, error)
+	UpdateVpnSslWebUserBookmark(mkey string, payload *models.VpnSslWebUserBookmark, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	DeleteVpnSslWebUserBookmark(mkey string, params *models.CmdbRequestParams) error
+	CreateVpnSslWebUserGroupBookmark(payload *models.VpnSslWebUserGroupBookmark, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	ReadVpnSslWebUserGroupBookmark(mkey string, params *models.CmdbRequestParams) (*models.VpnSslWebUserGroupBookmark, error)
+	UpdateVpnSslWebUserGroupBookmark(mkey string, payload *models.VpnSslWebUserGroupBookmark, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	DeleteVpnSslWebUserGroupBookmark(mkey string, params *models.CmdbRequestParams) error
+	CreateVpnSslClient(payload *models.VpnSslClient, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	ReadVpnSslClient(mkey string, params *models.CmdbRequestParams) (*models.VpnSslClient, error)
+	UpdateVpnSslClient(mkey string, payload *models.VpnSslClient, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	DeleteVpnSslClient(mkey string, params *models.CmdbRequestParams) error
+	CreateVpnSslSettings(payload *models.VpnSslSettings, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	ReadVpnSslSettings(mkey string, params *models.CmdbRequestParams) (*models.VpnSslSettings, error)
+	UpdateVpnSslSettings(mkey string, payload *models.VpnSslSettings, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	DeleteVpnSslSettings(mkey string, params *models.CmdbRequestParams) error
+	CreateVpnSslSettingsAuthenticationRule(payload *models.VpnSslSettingsAuthenticationRule, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	ReadVpnSslSettingsAuthenticationRule(mkey string, params *models.CmdbRequestParams) (*models.VpnSslSettingsAuthenticationRule, error)
+	UpdateVpnSslSettingsAuthenticationRule(mkey string, payload *models.VpnSslSettingsAuthenticationRule, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	DeleteVpnSslSettingsAuthenticationRule(mkey string, params *models.CmdbRequestParams) error
 	CreateVpnL2tp(payload *models.VpnL2tp, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
 	ReadVpnL2tp(mkey string, params *models.CmdbRequestParams) (*models.VpnL2tp, error)
 	UpdateVpnL2tp(mkey string, payload *models.VpnL2tp, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
@@ -1998,74 +2070,74 @@ type Endpoints interface {
 	ReadWebfilterUrlfilter(mkey string, params *models.CmdbRequestParams) (*models.WebfilterUrlfilter, error)
 	UpdateWebfilterUrlfilter(mkey string, payload *models.WebfilterUrlfilter, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
 	DeleteWebfilterUrlfilter(mkey string, params *models.CmdbRequestParams) error
-	CreateWirelessControllerhotspot20Anqp3gppCellular(payload *models.WirelessControllerhotspot20Anqp3gppCellular, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	ReadWirelessControllerhotspot20Anqp3gppCellular(mkey string, params *models.CmdbRequestParams) (*models.WirelessControllerhotspot20Anqp3gppCellular, error)
-	UpdateWirelessControllerhotspot20Anqp3gppCellular(mkey string, payload *models.WirelessControllerhotspot20Anqp3gppCellular, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	DeleteWirelessControllerhotspot20Anqp3gppCellular(mkey string, params *models.CmdbRequestParams) error
-	CreateWirelessControllerhotspot20AnqpIpAddressType(payload *models.WirelessControllerhotspot20AnqpIpAddressType, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	ReadWirelessControllerhotspot20AnqpIpAddressType(mkey string, params *models.CmdbRequestParams) (*models.WirelessControllerhotspot20AnqpIpAddressType, error)
-	UpdateWirelessControllerhotspot20AnqpIpAddressType(mkey string, payload *models.WirelessControllerhotspot20AnqpIpAddressType, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	DeleteWirelessControllerhotspot20AnqpIpAddressType(mkey string, params *models.CmdbRequestParams) error
-	CreateWirelessControllerhotspot20AnqpNaiRealm(payload *models.WirelessControllerhotspot20AnqpNaiRealm, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	ReadWirelessControllerhotspot20AnqpNaiRealm(mkey string, params *models.CmdbRequestParams) (*models.WirelessControllerhotspot20AnqpNaiRealm, error)
-	UpdateWirelessControllerhotspot20AnqpNaiRealm(mkey string, payload *models.WirelessControllerhotspot20AnqpNaiRealm, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	DeleteWirelessControllerhotspot20AnqpNaiRealm(mkey string, params *models.CmdbRequestParams) error
-	CreateWirelessControllerhotspot20AnqpNetworkAuthType(payload *models.WirelessControllerhotspot20AnqpNetworkAuthType, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	ReadWirelessControllerhotspot20AnqpNetworkAuthType(mkey string, params *models.CmdbRequestParams) (*models.WirelessControllerhotspot20AnqpNetworkAuthType, error)
-	UpdateWirelessControllerhotspot20AnqpNetworkAuthType(mkey string, payload *models.WirelessControllerhotspot20AnqpNetworkAuthType, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	DeleteWirelessControllerhotspot20AnqpNetworkAuthType(mkey string, params *models.CmdbRequestParams) error
-	CreateWirelessControllerhotspot20AnqpRoamingConsortium(payload *models.WirelessControllerhotspot20AnqpRoamingConsortium, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	ReadWirelessControllerhotspot20AnqpRoamingConsortium(mkey string, params *models.CmdbRequestParams) (*models.WirelessControllerhotspot20AnqpRoamingConsortium, error)
-	UpdateWirelessControllerhotspot20AnqpRoamingConsortium(mkey string, payload *models.WirelessControllerhotspot20AnqpRoamingConsortium, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	DeleteWirelessControllerhotspot20AnqpRoamingConsortium(mkey string, params *models.CmdbRequestParams) error
-	CreateWirelessControllerhotspot20AnqpVenueName(payload *models.WirelessControllerhotspot20AnqpVenueName, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	ReadWirelessControllerhotspot20AnqpVenueName(mkey string, params *models.CmdbRequestParams) (*models.WirelessControllerhotspot20AnqpVenueName, error)
-	UpdateWirelessControllerhotspot20AnqpVenueName(mkey string, payload *models.WirelessControllerhotspot20AnqpVenueName, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	DeleteWirelessControllerhotspot20AnqpVenueName(mkey string, params *models.CmdbRequestParams) error
-	CreateWirelessControllerhotspot20AnqpVenueUrl(payload *models.WirelessControllerhotspot20AnqpVenueUrl, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	ReadWirelessControllerhotspot20AnqpVenueUrl(mkey string, params *models.CmdbRequestParams) (*models.WirelessControllerhotspot20AnqpVenueUrl, error)
-	UpdateWirelessControllerhotspot20AnqpVenueUrl(mkey string, payload *models.WirelessControllerhotspot20AnqpVenueUrl, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	DeleteWirelessControllerhotspot20AnqpVenueUrl(mkey string, params *models.CmdbRequestParams) error
-	CreateWirelessControllerhotspot20H2qpAdviceOfCharge(payload *models.WirelessControllerhotspot20H2qpAdviceOfCharge, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	ReadWirelessControllerhotspot20H2qpAdviceOfCharge(mkey string, params *models.CmdbRequestParams) (*models.WirelessControllerhotspot20H2qpAdviceOfCharge, error)
-	UpdateWirelessControllerhotspot20H2qpAdviceOfCharge(mkey string, payload *models.WirelessControllerhotspot20H2qpAdviceOfCharge, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	DeleteWirelessControllerhotspot20H2qpAdviceOfCharge(mkey string, params *models.CmdbRequestParams) error
-	CreateWirelessControllerhotspot20H2qpConnCapability(payload *models.WirelessControllerhotspot20H2qpConnCapability, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	ReadWirelessControllerhotspot20H2qpConnCapability(mkey string, params *models.CmdbRequestParams) (*models.WirelessControllerhotspot20H2qpConnCapability, error)
-	UpdateWirelessControllerhotspot20H2qpConnCapability(mkey string, payload *models.WirelessControllerhotspot20H2qpConnCapability, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	DeleteWirelessControllerhotspot20H2qpConnCapability(mkey string, params *models.CmdbRequestParams) error
-	CreateWirelessControllerhotspot20H2qpOperatorName(payload *models.WirelessControllerhotspot20H2qpOperatorName, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	ReadWirelessControllerhotspot20H2qpOperatorName(mkey string, params *models.CmdbRequestParams) (*models.WirelessControllerhotspot20H2qpOperatorName, error)
-	UpdateWirelessControllerhotspot20H2qpOperatorName(mkey string, payload *models.WirelessControllerhotspot20H2qpOperatorName, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	DeleteWirelessControllerhotspot20H2qpOperatorName(mkey string, params *models.CmdbRequestParams) error
-	CreateWirelessControllerhotspot20H2qpOsuProvider(payload *models.WirelessControllerhotspot20H2qpOsuProvider, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	ReadWirelessControllerhotspot20H2qpOsuProvider(mkey string, params *models.CmdbRequestParams) (*models.WirelessControllerhotspot20H2qpOsuProvider, error)
-	UpdateWirelessControllerhotspot20H2qpOsuProvider(mkey string, payload *models.WirelessControllerhotspot20H2qpOsuProvider, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	DeleteWirelessControllerhotspot20H2qpOsuProvider(mkey string, params *models.CmdbRequestParams) error
-	CreateWirelessControllerhotspot20H2qpOsuProviderNai(payload *models.WirelessControllerhotspot20H2qpOsuProviderNai, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	ReadWirelessControllerhotspot20H2qpOsuProviderNai(mkey string, params *models.CmdbRequestParams) (*models.WirelessControllerhotspot20H2qpOsuProviderNai, error)
-	UpdateWirelessControllerhotspot20H2qpOsuProviderNai(mkey string, payload *models.WirelessControllerhotspot20H2qpOsuProviderNai, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	DeleteWirelessControllerhotspot20H2qpOsuProviderNai(mkey string, params *models.CmdbRequestParams) error
-	CreateWirelessControllerhotspot20H2qpTermsAndConditions(payload *models.WirelessControllerhotspot20H2qpTermsAndConditions, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	ReadWirelessControllerhotspot20H2qpTermsAndConditions(mkey string, params *models.CmdbRequestParams) (*models.WirelessControllerhotspot20H2qpTermsAndConditions, error)
-	UpdateWirelessControllerhotspot20H2qpTermsAndConditions(mkey string, payload *models.WirelessControllerhotspot20H2qpTermsAndConditions, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	DeleteWirelessControllerhotspot20H2qpTermsAndConditions(mkey string, params *models.CmdbRequestParams) error
-	CreateWirelessControllerhotspot20H2qpWanMetric(payload *models.WirelessControllerhotspot20H2qpWanMetric, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	ReadWirelessControllerhotspot20H2qpWanMetric(mkey string, params *models.CmdbRequestParams) (*models.WirelessControllerhotspot20H2qpWanMetric, error)
-	UpdateWirelessControllerhotspot20H2qpWanMetric(mkey string, payload *models.WirelessControllerhotspot20H2qpWanMetric, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	DeleteWirelessControllerhotspot20H2qpWanMetric(mkey string, params *models.CmdbRequestParams) error
-	CreateWirelessControllerhotspot20HsProfile(payload *models.WirelessControllerhotspot20HsProfile, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	ReadWirelessControllerhotspot20HsProfile(mkey string, params *models.CmdbRequestParams) (*models.WirelessControllerhotspot20HsProfile, error)
-	UpdateWirelessControllerhotspot20HsProfile(mkey string, payload *models.WirelessControllerhotspot20HsProfile, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	DeleteWirelessControllerhotspot20HsProfile(mkey string, params *models.CmdbRequestParams) error
-	CreateWirelessControllerhotspot20Icon(payload *models.WirelessControllerhotspot20Icon, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	ReadWirelessControllerhotspot20Icon(mkey string, params *models.CmdbRequestParams) (*models.WirelessControllerhotspot20Icon, error)
-	UpdateWirelessControllerhotspot20Icon(mkey string, payload *models.WirelessControllerhotspot20Icon, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	DeleteWirelessControllerhotspot20Icon(mkey string, params *models.CmdbRequestParams) error
-	CreateWirelessControllerhotspot20QosMap(payload *models.WirelessControllerhotspot20QosMap, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	ReadWirelessControllerhotspot20QosMap(mkey string, params *models.CmdbRequestParams) (*models.WirelessControllerhotspot20QosMap, error)
-	UpdateWirelessControllerhotspot20QosMap(mkey string, payload *models.WirelessControllerhotspot20QosMap, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
-	DeleteWirelessControllerhotspot20QosMap(mkey string, params *models.CmdbRequestParams) error
+	CreateWirelessControllerHotspot20Anqp3gppCellular(payload *models.WirelessControllerHotspot20Anqp3gppCellular, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	ReadWirelessControllerHotspot20Anqp3gppCellular(mkey string, params *models.CmdbRequestParams) (*models.WirelessControllerHotspot20Anqp3gppCellular, error)
+	UpdateWirelessControllerHotspot20Anqp3gppCellular(mkey string, payload *models.WirelessControllerHotspot20Anqp3gppCellular, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	DeleteWirelessControllerHotspot20Anqp3gppCellular(mkey string, params *models.CmdbRequestParams) error
+	CreateWirelessControllerHotspot20AnqpIpAddressType(payload *models.WirelessControllerHotspot20AnqpIpAddressType, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	ReadWirelessControllerHotspot20AnqpIpAddressType(mkey string, params *models.CmdbRequestParams) (*models.WirelessControllerHotspot20AnqpIpAddressType, error)
+	UpdateWirelessControllerHotspot20AnqpIpAddressType(mkey string, payload *models.WirelessControllerHotspot20AnqpIpAddressType, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	DeleteWirelessControllerHotspot20AnqpIpAddressType(mkey string, params *models.CmdbRequestParams) error
+	CreateWirelessControllerHotspot20AnqpNaiRealm(payload *models.WirelessControllerHotspot20AnqpNaiRealm, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	ReadWirelessControllerHotspot20AnqpNaiRealm(mkey string, params *models.CmdbRequestParams) (*models.WirelessControllerHotspot20AnqpNaiRealm, error)
+	UpdateWirelessControllerHotspot20AnqpNaiRealm(mkey string, payload *models.WirelessControllerHotspot20AnqpNaiRealm, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	DeleteWirelessControllerHotspot20AnqpNaiRealm(mkey string, params *models.CmdbRequestParams) error
+	CreateWirelessControllerHotspot20AnqpNetworkAuthType(payload *models.WirelessControllerHotspot20AnqpNetworkAuthType, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	ReadWirelessControllerHotspot20AnqpNetworkAuthType(mkey string, params *models.CmdbRequestParams) (*models.WirelessControllerHotspot20AnqpNetworkAuthType, error)
+	UpdateWirelessControllerHotspot20AnqpNetworkAuthType(mkey string, payload *models.WirelessControllerHotspot20AnqpNetworkAuthType, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	DeleteWirelessControllerHotspot20AnqpNetworkAuthType(mkey string, params *models.CmdbRequestParams) error
+	CreateWirelessControllerHotspot20AnqpRoamingConsortium(payload *models.WirelessControllerHotspot20AnqpRoamingConsortium, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	ReadWirelessControllerHotspot20AnqpRoamingConsortium(mkey string, params *models.CmdbRequestParams) (*models.WirelessControllerHotspot20AnqpRoamingConsortium, error)
+	UpdateWirelessControllerHotspot20AnqpRoamingConsortium(mkey string, payload *models.WirelessControllerHotspot20AnqpRoamingConsortium, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	DeleteWirelessControllerHotspot20AnqpRoamingConsortium(mkey string, params *models.CmdbRequestParams) error
+	CreateWirelessControllerHotspot20AnqpVenueName(payload *models.WirelessControllerHotspot20AnqpVenueName, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	ReadWirelessControllerHotspot20AnqpVenueName(mkey string, params *models.CmdbRequestParams) (*models.WirelessControllerHotspot20AnqpVenueName, error)
+	UpdateWirelessControllerHotspot20AnqpVenueName(mkey string, payload *models.WirelessControllerHotspot20AnqpVenueName, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	DeleteWirelessControllerHotspot20AnqpVenueName(mkey string, params *models.CmdbRequestParams) error
+	CreateWirelessControllerHotspot20AnqpVenueUrl(payload *models.WirelessControllerHotspot20AnqpVenueUrl, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	ReadWirelessControllerHotspot20AnqpVenueUrl(mkey string, params *models.CmdbRequestParams) (*models.WirelessControllerHotspot20AnqpVenueUrl, error)
+	UpdateWirelessControllerHotspot20AnqpVenueUrl(mkey string, payload *models.WirelessControllerHotspot20AnqpVenueUrl, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	DeleteWirelessControllerHotspot20AnqpVenueUrl(mkey string, params *models.CmdbRequestParams) error
+	CreateWirelessControllerHotspot20H2qpAdviceOfCharge(payload *models.WirelessControllerHotspot20H2qpAdviceOfCharge, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	ReadWirelessControllerHotspot20H2qpAdviceOfCharge(mkey string, params *models.CmdbRequestParams) (*models.WirelessControllerHotspot20H2qpAdviceOfCharge, error)
+	UpdateWirelessControllerHotspot20H2qpAdviceOfCharge(mkey string, payload *models.WirelessControllerHotspot20H2qpAdviceOfCharge, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	DeleteWirelessControllerHotspot20H2qpAdviceOfCharge(mkey string, params *models.CmdbRequestParams) error
+	CreateWirelessControllerHotspot20H2qpConnCapability(payload *models.WirelessControllerHotspot20H2qpConnCapability, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	ReadWirelessControllerHotspot20H2qpConnCapability(mkey string, params *models.CmdbRequestParams) (*models.WirelessControllerHotspot20H2qpConnCapability, error)
+	UpdateWirelessControllerHotspot20H2qpConnCapability(mkey string, payload *models.WirelessControllerHotspot20H2qpConnCapability, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	DeleteWirelessControllerHotspot20H2qpConnCapability(mkey string, params *models.CmdbRequestParams) error
+	CreateWirelessControllerHotspot20H2qpOperatorName(payload *models.WirelessControllerHotspot20H2qpOperatorName, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	ReadWirelessControllerHotspot20H2qpOperatorName(mkey string, params *models.CmdbRequestParams) (*models.WirelessControllerHotspot20H2qpOperatorName, error)
+	UpdateWirelessControllerHotspot20H2qpOperatorName(mkey string, payload *models.WirelessControllerHotspot20H2qpOperatorName, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	DeleteWirelessControllerHotspot20H2qpOperatorName(mkey string, params *models.CmdbRequestParams) error
+	CreateWirelessControllerHotspot20H2qpOsuProvider(payload *models.WirelessControllerHotspot20H2qpOsuProvider, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	ReadWirelessControllerHotspot20H2qpOsuProvider(mkey string, params *models.CmdbRequestParams) (*models.WirelessControllerHotspot20H2qpOsuProvider, error)
+	UpdateWirelessControllerHotspot20H2qpOsuProvider(mkey string, payload *models.WirelessControllerHotspot20H2qpOsuProvider, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	DeleteWirelessControllerHotspot20H2qpOsuProvider(mkey string, params *models.CmdbRequestParams) error
+	CreateWirelessControllerHotspot20H2qpOsuProviderNai(payload *models.WirelessControllerHotspot20H2qpOsuProviderNai, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	ReadWirelessControllerHotspot20H2qpOsuProviderNai(mkey string, params *models.CmdbRequestParams) (*models.WirelessControllerHotspot20H2qpOsuProviderNai, error)
+	UpdateWirelessControllerHotspot20H2qpOsuProviderNai(mkey string, payload *models.WirelessControllerHotspot20H2qpOsuProviderNai, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	DeleteWirelessControllerHotspot20H2qpOsuProviderNai(mkey string, params *models.CmdbRequestParams) error
+	CreateWirelessControllerHotspot20H2qpTermsAndConditions(payload *models.WirelessControllerHotspot20H2qpTermsAndConditions, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	ReadWirelessControllerHotspot20H2qpTermsAndConditions(mkey string, params *models.CmdbRequestParams) (*models.WirelessControllerHotspot20H2qpTermsAndConditions, error)
+	UpdateWirelessControllerHotspot20H2qpTermsAndConditions(mkey string, payload *models.WirelessControllerHotspot20H2qpTermsAndConditions, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	DeleteWirelessControllerHotspot20H2qpTermsAndConditions(mkey string, params *models.CmdbRequestParams) error
+	CreateWirelessControllerHotspot20H2qpWanMetric(payload *models.WirelessControllerHotspot20H2qpWanMetric, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	ReadWirelessControllerHotspot20H2qpWanMetric(mkey string, params *models.CmdbRequestParams) (*models.WirelessControllerHotspot20H2qpWanMetric, error)
+	UpdateWirelessControllerHotspot20H2qpWanMetric(mkey string, payload *models.WirelessControllerHotspot20H2qpWanMetric, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	DeleteWirelessControllerHotspot20H2qpWanMetric(mkey string, params *models.CmdbRequestParams) error
+	CreateWirelessControllerHotspot20HsProfile(payload *models.WirelessControllerHotspot20HsProfile, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	ReadWirelessControllerHotspot20HsProfile(mkey string, params *models.CmdbRequestParams) (*models.WirelessControllerHotspot20HsProfile, error)
+	UpdateWirelessControllerHotspot20HsProfile(mkey string, payload *models.WirelessControllerHotspot20HsProfile, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	DeleteWirelessControllerHotspot20HsProfile(mkey string, params *models.CmdbRequestParams) error
+	CreateWirelessControllerHotspot20Icon(payload *models.WirelessControllerHotspot20Icon, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	ReadWirelessControllerHotspot20Icon(mkey string, params *models.CmdbRequestParams) (*models.WirelessControllerHotspot20Icon, error)
+	UpdateWirelessControllerHotspot20Icon(mkey string, payload *models.WirelessControllerHotspot20Icon, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	DeleteWirelessControllerHotspot20Icon(mkey string, params *models.CmdbRequestParams) error
+	CreateWirelessControllerHotspot20QosMap(payload *models.WirelessControllerHotspot20QosMap, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	ReadWirelessControllerHotspot20QosMap(mkey string, params *models.CmdbRequestParams) (*models.WirelessControllerHotspot20QosMap, error)
+	UpdateWirelessControllerHotspot20QosMap(mkey string, payload *models.WirelessControllerHotspot20QosMap, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	DeleteWirelessControllerHotspot20QosMap(mkey string, params *models.CmdbRequestParams) error
 	CreateWirelessControllerAccessControlList(payload *models.WirelessControllerAccessControlList, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
 	ReadWirelessControllerAccessControlList(mkey string, params *models.CmdbRequestParams) (*models.WirelessControllerAccessControlList, error)
 	UpdateWirelessControllerAccessControlList(mkey string, payload *models.WirelessControllerAccessControlList, params *models.CmdbRequestParams) (*models.CmdbResponse, error)

@@ -2,24 +2,23 @@ package cmdb
 
 import (
 	"encoding/json"
-	"errors"
 	"log"
 
 	"github.com/poroping/forti-sdk-go/v2/models"
 	"github.com/poroping/forti-sdk-go/v2/request"
 )
 
-func (c *Client) CreateSystemsnmpSysinfo(payload *models.SystemsnmpSysinfo, params *models.CmdbRequestParams) (*models.CmdbResponse, error) {
-	log.Printf("[INFO] Resource at path %q is complex type. Changing to UPDATE.", models.SystemsnmpSysinfoPath)
-	return c.UpdateSystemsnmpSysinfo("", payload, params)
+func (c *Client) CreateSystemSnmpSysinfo(payload *models.SystemSnmpSysinfo, params *models.CmdbRequestParams) (*models.CmdbResponse, error) {
+	log.Printf("[INFO] Resource at path %q is complex type. Changing to UPDATE.", models.SystemSnmpSysinfoPath)
+	return c.UpdateSystemSnmpSysinfo("", payload, params)
 }
 
-func (c *Client) ReadSystemsnmpSysinfo(mkey string, params *models.CmdbRequestParams) (*models.SystemsnmpSysinfo, error) {
+func (c *Client) ReadSystemSnmpSysinfo(mkey string, params *models.CmdbRequestParams) (*models.SystemSnmpSysinfo, error) {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "GET"
 	req.Mkey = &mkey
 	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.SystemsnmpSysinfoPath
+	req.Path = models.CmdbBasePath + models.SystemSnmpSysinfoPath
 	req.Params = *params
 
 	res, err := request.Read(c.config, req)
@@ -34,17 +33,15 @@ func (c *Client) ReadSystemsnmpSysinfo(mkey string, params *models.CmdbRequestPa
 		if err != nil {
 			return nil, err
 		}
-		v := models.SystemsnmpSysinfo{}
+		v := models.SystemSnmpSysinfo{}
 		json.Unmarshal(jsontmp, &v)
 		return &v, nil
 	}
 
-	err = errors.New("unable to parse API response results")
-
 	return nil, err
 }
 
-func (c *Client) UpdateSystemsnmpSysinfo(mkey string, payload *models.SystemsnmpSysinfo, params *models.CmdbRequestParams) (*models.CmdbResponse, error) {
+func (c *Client) UpdateSystemSnmpSysinfo(mkey string, payload *models.SystemSnmpSysinfo, params *models.CmdbRequestParams) (*models.CmdbResponse, error) {
 	body, err := json.Marshal(payload)
 	if err != nil {
 		return nil, err
@@ -54,7 +51,7 @@ func (c *Client) UpdateSystemsnmpSysinfo(mkey string, payload *models.Systemsnmp
 	req.HTTPMethod = "PUT"
 	req.Mkey = &mkey
 	req.Payload = body
-	req.Path = models.CmdbBasePath + models.SystemsnmpSysinfoPath + mkey + "/"
+	req.Path = models.CmdbBasePath + models.SystemSnmpSysinfoPath
 	req.Params = *params
 
 	res, err := request.CreateUpdate(c.config, req)
@@ -64,8 +61,8 @@ func (c *Client) UpdateSystemsnmpSysinfo(mkey string, payload *models.Systemsnmp
 	return res, nil
 }
 
-func (c *Client) DeleteSystemsnmpSysinfo(mkey string, params *models.CmdbRequestParams) error {
-	payload := &models.SystemsnmpSysinfo{}
-	_, err := c.UpdateSystemsnmpSysinfo("", payload, params)
+func (c *Client) DeleteSystemSnmpSysinfo(mkey string, params *models.CmdbRequestParams) error {
+	payload := &models.SystemSnmpSysinfo{}
+	_, err := c.UpdateSystemSnmpSysinfo("", payload, params)
 	return err
 }

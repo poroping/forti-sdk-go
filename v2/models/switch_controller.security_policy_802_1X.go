@@ -1,8 +1,8 @@
 package models
 
-const SwitchControllersecurityPolicy8021XPath = "switch-controller/security-policy/802-1X/"
+const SwitchControllerSecurityPolicy8021XPath = "switch-controller.security-policy/802-1X/"
 
-type SwitchControllersecurityPolicy8021X struct {
+type SwitchControllerSecurityPolicy8021X struct {
 	AuthFailVlan            *string                                         `json:"auth-fail-vlan,omitempty"`
 	AuthFailVlanId          *string                                         `json:"auth-fail-vlan-id,omitempty"`
 	AuthserverTimeoutPeriod *int64                                          `json:"authserver-timeout-period,omitempty"`
@@ -20,9 +20,9 @@ type SwitchControllersecurityPolicy8021X struct {
 	PolicyType              *string                                         `json:"policy-type,omitempty"`
 	RadiusTimeoutOverwrite  *string                                         `json:"radius-timeout-overwrite,omitempty"`
 	SecurityMode            *string                                         `json:"security-mode,omitempty"`
-	UserGroup               *[]SwitchControllersecurityPolicy8021XUserGroup `json:"user-group,omitempty"`
+	UserGroup               *[]SwitchControllerSecurityPolicy8021XUserGroup `json:"user-group,omitempty"`
 }
 
-type SwitchControllersecurityPolicy8021XUserGroup struct {
+type SwitchControllerSecurityPolicy8021XUserGroup struct {
 	Name *string `json:"name,omitempty"`
 }

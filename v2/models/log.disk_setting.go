@@ -1,8 +1,8 @@
 package models
 
-const LogdiskSettingPath = "log/disk/setting/"
+const LogDiskSettingPath = "log.disk/setting/"
 
-type LogdiskSetting struct {
+type LogDiskSetting struct {
 	Diskfull                   *string `json:"diskfull,omitempty"`
 	DlpArchiveQuota            *int64  `json:"dlp-archive-quota,omitempty"`
 	FullFinalWarningThreshold  *int64  `json:"full-final-warning-threshold,omitempty"`

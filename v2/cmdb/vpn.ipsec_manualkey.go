@@ -2,14 +2,13 @@ package cmdb
 
 import (
 	"encoding/json"
-	"errors"
 	"log"
 
 	"github.com/poroping/forti-sdk-go/v2/models"
 	"github.com/poroping/forti-sdk-go/v2/request"
 )
 
-func (c *Client) CreateVpnipsecManualkey(payload *models.VpnipsecManualkey, params *models.CmdbRequestParams) (*models.CmdbResponse, error) {
+func (c *Client) CreateVpnIpsecManualkey(payload *models.VpnIpsecManualkey, params *models.CmdbRequestParams) (*models.CmdbResponse, error) {
 	body, err := json.Marshal(payload)
 	if err != nil {
 		return nil, err
@@ -18,20 +17,20 @@ func (c *Client) CreateVpnipsecManualkey(payload *models.VpnipsecManualkey, para
 	mkey := ""
 	if payload.Name != nil && *params.AllowAppend {
 		mkey = *payload.Name
-		read, err := c.ReadVpnipsecManualkey(mkey, params)
+		read, err := c.ReadVpnIpsecManualkey(mkey, params)
 		if err != nil {
 			return nil, err
 		}
 		if read != nil {
-			log.Printf("[WARN] Resource at path %q with mkey %q detected upon CREATE with flag set to to overwrite. Changing to UPDATE.", models.VpnipsecManualkeyPath, mkey)
-			return c.UpdateVpnipsecManualkey(mkey, payload, params)
+			log.Printf("[WARN] Resource at path %q with mkey %q detected upon CREATE with flag set to to overwrite. Changing to UPDATE.", models.VpnIpsecManualkeyPath, mkey)
+			return c.UpdateVpnIpsecManualkey(mkey, payload, params)
 		}
 	}
 
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "POST"
 	req.Payload = body
-	req.Path = models.CmdbBasePath + models.VpnipsecManualkeyPath
+	req.Path = models.CmdbBasePath + models.VpnIpsecManualkeyPath
 	req.Params = *params
 
 	res, err := request.CreateUpdate(c.config, req)
@@ -41,12 +40,12 @@ func (c *Client) CreateVpnipsecManualkey(payload *models.VpnipsecManualkey, para
 	return res, nil
 }
 
-func (c *Client) ReadVpnipsecManualkey(mkey string, params *models.CmdbRequestParams) (*models.VpnipsecManualkey, error) {
+func (c *Client) ReadVpnIpsecManualkey(mkey string, params *models.CmdbRequestParams) (*models.VpnIpsecManualkey, error) {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "GET"
 	req.Mkey = &mkey
 	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.VpnipsecManualkeyPath + mkey + "/"
+	req.Path = models.CmdbBasePath + models.VpnIpsecManualkeyPath + mkey + "/"
 	req.Params = *params
 
 	res, err := request.Read(c.config, req)
@@ -61,17 +60,15 @@ func (c *Client) ReadVpnipsecManualkey(mkey string, params *models.CmdbRequestPa
 		if err != nil {
 			return nil, err
 		}
-		v := models.VpnipsecManualkey{}
+		v := models.VpnIpsecManualkey{}
 		json.Unmarshal(jsontmp, &v)
 		return &v, nil
 	}
 
-	err = errors.New("unable to parse API response results")
-
 	return nil, err
 }
 
-func (c *Client) UpdateVpnipsecManualkey(mkey string, payload *models.VpnipsecManualkey, params *models.CmdbRequestParams) (*models.CmdbResponse, error) {
+func (c *Client) UpdateVpnIpsecManualkey(mkey string, payload *models.VpnIpsecManualkey, params *models.CmdbRequestParams) (*models.CmdbResponse, error) {
 	body, err := json.Marshal(payload)
 	if err != nil {
 		return nil, err
@@ -81,7 +78,7 @@ func (c *Client) UpdateVpnipsecManualkey(mkey string, payload *models.VpnipsecMa
 	req.HTTPMethod = "PUT"
 	req.Mkey = &mkey
 	req.Payload = body
-	req.Path = models.CmdbBasePath + models.VpnipsecManualkeyPath + mkey + "/"
+	req.Path = models.CmdbBasePath + models.VpnIpsecManualkeyPath + mkey + "/"
 	req.Params = *params
 
 	res, err := request.CreateUpdate(c.config, req)
@@ -91,12 +88,12 @@ func (c *Client) UpdateVpnipsecManualkey(mkey string, payload *models.VpnipsecMa
 	return res, nil
 }
 
-func (c *Client) DeleteVpnipsecManualkey(mkey string, params *models.CmdbRequestParams) error {
+func (c *Client) DeleteVpnIpsecManualkey(mkey string, params *models.CmdbRequestParams) error {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "DELETE"
 	req.Mkey = &mkey
 	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.VpnipsecManualkeyPath + mkey + "/"
+	req.Path = models.CmdbBasePath + models.VpnIpsecManualkeyPath + mkey + "/"
 	req.Params = *params
 
 	err := request.Delete(c.config, req)

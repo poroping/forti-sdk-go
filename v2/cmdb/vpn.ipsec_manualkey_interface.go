@@ -2,14 +2,13 @@ package cmdb
 
 import (
 	"encoding/json"
-	"errors"
 	"log"
 
 	"github.com/poroping/forti-sdk-go/v2/models"
 	"github.com/poroping/forti-sdk-go/v2/request"
 )
 
-func (c *Client) CreateVpnipsecManualkeyInterface(payload *models.VpnipsecManualkeyInterface, params *models.CmdbRequestParams) (*models.CmdbResponse, error) {
+func (c *Client) CreateVpnIpsecManualkeyInterface(payload *models.VpnIpsecManualkeyInterface, params *models.CmdbRequestParams) (*models.CmdbResponse, error) {
 	body, err := json.Marshal(payload)
 	if err != nil {
 		return nil, err
@@ -18,20 +17,20 @@ func (c *Client) CreateVpnipsecManualkeyInterface(payload *models.VpnipsecManual
 	mkey := ""
 	if payload.Name != nil && *params.AllowAppend {
 		mkey = *payload.Name
-		read, err := c.ReadVpnipsecManualkeyInterface(mkey, params)
+		read, err := c.ReadVpnIpsecManualkeyInterface(mkey, params)
 		if err != nil {
 			return nil, err
 		}
 		if read != nil {
-			log.Printf("[WARN] Resource at path %q with mkey %q detected upon CREATE with flag set to to overwrite. Changing to UPDATE.", models.VpnipsecManualkeyInterfacePath, mkey)
-			return c.UpdateVpnipsecManualkeyInterface(mkey, payload, params)
+			log.Printf("[WARN] Resource at path %q with mkey %q detected upon CREATE with flag set to to overwrite. Changing to UPDATE.", models.VpnIpsecManualkeyInterfacePath, mkey)
+			return c.UpdateVpnIpsecManualkeyInterface(mkey, payload, params)
 		}
 	}
 
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "POST"
 	req.Payload = body
-	req.Path = models.CmdbBasePath + models.VpnipsecManualkeyInterfacePath
+	req.Path = models.CmdbBasePath + models.VpnIpsecManualkeyInterfacePath
 	req.Params = *params
 
 	res, err := request.CreateUpdate(c.config, req)
@@ -41,12 +40,12 @@ func (c *Client) CreateVpnipsecManualkeyInterface(payload *models.VpnipsecManual
 	return res, nil
 }
 
-func (c *Client) ReadVpnipsecManualkeyInterface(mkey string, params *models.CmdbRequestParams) (*models.VpnipsecManualkeyInterface, error) {
+func (c *Client) ReadVpnIpsecManualkeyInterface(mkey string, params *models.CmdbRequestParams) (*models.VpnIpsecManualkeyInterface, error) {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "GET"
 	req.Mkey = &mkey
 	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.VpnipsecManualkeyInterfacePath + mkey + "/"
+	req.Path = models.CmdbBasePath + models.VpnIpsecManualkeyInterfacePath + mkey + "/"
 	req.Params = *params
 
 	res, err := request.Read(c.config, req)
@@ -61,17 +60,15 @@ func (c *Client) ReadVpnipsecManualkeyInterface(mkey string, params *models.Cmdb
 		if err != nil {
 			return nil, err
 		}
-		v := models.VpnipsecManualkeyInterface{}
+		v := models.VpnIpsecManualkeyInterface{}
 		json.Unmarshal(jsontmp, &v)
 		return &v, nil
 	}
 
-	err = errors.New("unable to parse API response results")
-
 	return nil, err
 }
 
-func (c *Client) UpdateVpnipsecManualkeyInterface(mkey string, payload *models.VpnipsecManualkeyInterface, params *models.CmdbRequestParams) (*models.CmdbResponse, error) {
+func (c *Client) UpdateVpnIpsecManualkeyInterface(mkey string, payload *models.VpnIpsecManualkeyInterface, params *models.CmdbRequestParams) (*models.CmdbResponse, error) {
 	body, err := json.Marshal(payload)
 	if err != nil {
 		return nil, err
@@ -81,7 +78,7 @@ func (c *Client) UpdateVpnipsecManualkeyInterface(mkey string, payload *models.V
 	req.HTTPMethod = "PUT"
 	req.Mkey = &mkey
 	req.Payload = body
-	req.Path = models.CmdbBasePath + models.VpnipsecManualkeyInterfacePath + mkey + "/"
+	req.Path = models.CmdbBasePath + models.VpnIpsecManualkeyInterfacePath + mkey + "/"
 	req.Params = *params
 
 	res, err := request.CreateUpdate(c.config, req)
@@ -91,12 +88,12 @@ func (c *Client) UpdateVpnipsecManualkeyInterface(mkey string, payload *models.V
 	return res, nil
 }
 
-func (c *Client) DeleteVpnipsecManualkeyInterface(mkey string, params *models.CmdbRequestParams) error {
+func (c *Client) DeleteVpnIpsecManualkeyInterface(mkey string, params *models.CmdbRequestParams) error {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "DELETE"
 	req.Mkey = &mkey
 	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.VpnipsecManualkeyInterfacePath + mkey + "/"
+	req.Path = models.CmdbBasePath + models.VpnIpsecManualkeyInterfacePath + mkey + "/"
 	req.Params = *params
 
 	err := request.Delete(c.config, req)

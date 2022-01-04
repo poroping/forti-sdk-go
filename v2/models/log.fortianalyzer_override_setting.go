@@ -1,8 +1,8 @@
 package models
 
-const LogfortianalyzerOverrideSettingPath = "log/fortianalyzer/override-setting/"
+const LogFortianalyzerOverrideSettingPath = "log.fortianalyzer/override-setting/"
 
-type LogfortianalyzerOverrideSetting struct {
+type LogFortianalyzerOverrideSetting struct {
 	AccessConfig              *string                                  `json:"access-config,omitempty"`
 	Certificate               *string                                  `json:"certificate,omitempty"`
 	CertificateVerification   *string                                  `json:"certificate-verification,omitempty"`
@@ -18,7 +18,7 @@ type LogfortianalyzerOverrideSetting struct {
 	PresharedKey              *string                                  `json:"preshared-key,omitempty"`
 	Priority                  *string                                  `json:"priority,omitempty"`
 	Reliable                  *string                                  `json:"reliable,omitempty"`
-	Serial                    *[]LogfortianalyzerOverrideSettingSerial `json:"serial,omitempty"`
+	Serial                    *[]LogFortianalyzerOverrideSettingSerial `json:"serial,omitempty"`
 	Server                    *string                                  `json:"server,omitempty"`
 	SourceIp                  *string                                  `json:"source-ip,omitempty"`
 	SslMinProtoVersion        *string                                  `json:"ssl-min-proto-version,omitempty"`
@@ -30,6 +30,6 @@ type LogfortianalyzerOverrideSetting struct {
 	UseManagementVdom         *string                                  `json:"use-management-vdom,omitempty"`
 }
 
-type LogfortianalyzerOverrideSettingSerial struct {
+type LogFortianalyzerOverrideSettingSerial struct {
 	Name *string `json:"name,omitempty"`
 }

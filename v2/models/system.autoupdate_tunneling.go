@@ -1,8 +1,8 @@
 package models
 
-const SystemautoupdateTunnelingPath = "system/autoupdate/tunneling/"
+const SystemAutoupdateTunnelingPath = "system.autoupdate/tunneling/"
 
-type SystemautoupdateTunneling struct {
+type SystemAutoupdateTunneling struct {
 	Address  *string `json:"address,omitempty"`
 	Password *string `json:"password,omitempty"`
 	Port     *int64  `json:"port,omitempty"`

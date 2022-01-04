@@ -1,8 +1,8 @@
 package models
 
-const SystemdhcpServerPath = "system/dhcp/server/"
+const SystemDhcpServerPath = "system.dhcp/server/"
 
-type SystemdhcpServer struct {
+type SystemDhcpServer struct {
 	AutoConfiguration         *string                            `json:"auto-configuration,omitempty"`
 	AutoManagedStatus         *string                            `json:"auto-managed-status,omitempty"`
 	ConflictedIpTimeout       *int64                             `json:"conflicted-ip-timeout,omitempty"`
@@ -22,13 +22,13 @@ type SystemdhcpServer struct {
 	DnsServer4                *string                            `json:"dns-server4,omitempty"`
 	DnsService                *string                            `json:"dns-service,omitempty"`
 	Domain                    *string                            `json:"domain,omitempty"`
-	ExcludeRange              *[]SystemdhcpServerExcludeRange    `json:"exclude-range,omitempty"`
+	ExcludeRange              *[]SystemDhcpServerExcludeRange    `json:"exclude-range,omitempty"`
 	Filename                  *string                            `json:"filename,omitempty"`
 	ForticlientOnNetStatus    *string                            `json:"forticlient-on-net-status,omitempty"`
 	Id                        *int64                             `json:"id,omitempty"`
 	Interface                 *string                            `json:"interface,omitempty"`
 	IpMode                    *string                            `json:"ip-mode,omitempty"`
-	IpRange                   *[]SystemdhcpServerIpRange         `json:"ip-range,omitempty"`
+	IpRange                   *[]SystemDhcpServerIpRange         `json:"ip-range,omitempty"`
 	IpsecLeaseHold            *int64                             `json:"ipsec-lease-hold,omitempty"`
 	LeaseTime                 *int64                             `json:"lease-time,omitempty"`
 	MacAclDefaultAction       *string                            `json:"mac-acl-default-action,omitempty"`
@@ -38,15 +38,15 @@ type SystemdhcpServer struct {
 	NtpServer2                *string                            `json:"ntp-server2,omitempty"`
 	NtpServer3                *string                            `json:"ntp-server3,omitempty"`
 	NtpService                *string                            `json:"ntp-service,omitempty"`
-	Options                   *[]SystemdhcpServerOptions         `json:"options,omitempty"`
-	ReservedAddress           *[]SystemdhcpServerReservedAddress `json:"reserved-address,omitempty"`
+	Options                   *[]SystemDhcpServerOptions         `json:"options,omitempty"`
+	ReservedAddress           *[]SystemDhcpServerReservedAddress `json:"reserved-address,omitempty"`
 	ServerType                *string                            `json:"server-type,omitempty"`
 	Status                    *string                            `json:"status,omitempty"`
-	TftpServer                *[]SystemdhcpServerTftpServer      `json:"tftp-server,omitempty"`
+	TftpServer                *[]SystemDhcpServerTftpServer      `json:"tftp-server,omitempty"`
 	Timezone                  *string                            `json:"timezone,omitempty"`
 	TimezoneOption            *string                            `json:"timezone-option,omitempty"`
 	VciMatch                  *string                            `json:"vci-match,omitempty"`
-	VciString                 *[]SystemdhcpServerVciString       `json:"vci-string,omitempty"`
+	VciString                 *[]SystemDhcpServerVciString       `json:"vci-string,omitempty"`
 	WifiAcService             *string                            `json:"wifi-ac-service,omitempty"`
 	WifiAc1                   *string                            `json:"wifi-ac1,omitempty"`
 	WifiAc2                   *string                            `json:"wifi-ac2,omitempty"`
@@ -55,19 +55,19 @@ type SystemdhcpServer struct {
 	WinsServer2               *string                            `json:"wins-server2,omitempty"`
 }
 
-type SystemdhcpServerExcludeRange struct {
+type SystemDhcpServerExcludeRange struct {
 	EndIp   *string `json:"end-ip,omitempty"`
 	Id      *int64  `json:"id,omitempty"`
 	StartIp *string `json:"start-ip,omitempty"`
 }
 
-type SystemdhcpServerIpRange struct {
+type SystemDhcpServerIpRange struct {
 	EndIp   *string `json:"end-ip,omitempty"`
 	Id      *int64  `json:"id,omitempty"`
 	StartIp *string `json:"start-ip,omitempty"`
 }
 
-type SystemdhcpServerOptions struct {
+type SystemDhcpServerOptions struct {
 	Code  *int64  `json:"code,omitempty"`
 	Id    *int64  `json:"id,omitempty"`
 	Ip    *string `json:"ip,omitempty"`
@@ -75,7 +75,7 @@ type SystemdhcpServerOptions struct {
 	Value *string `json:"value,omitempty"`
 }
 
-type SystemdhcpServerReservedAddress struct {
+type SystemDhcpServerReservedAddress struct {
 	Action        *string `json:"action,omitempty"`
 	CircuitId     *string `json:"circuit-id,omitempty"`
 	CircuitIdType *string `json:"circuit-id-type,omitempty"`
@@ -88,10 +88,10 @@ type SystemdhcpServerReservedAddress struct {
 	Type          *string `json:"type,omitempty"`
 }
 
-type SystemdhcpServerTftpServer struct {
+type SystemDhcpServerTftpServer struct {
 	TftpServer *string `json:"tftp-server,omitempty"`
 }
 
-type SystemdhcpServerVciString struct {
+type SystemDhcpServerVciString struct {
 	VciString *string `json:"vci-string,omitempty"`
 }

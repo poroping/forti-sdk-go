@@ -1,14 +1,14 @@
 package models
 
-const FirewallscheduleGroupPath = "firewall/schedule/group/"
+const FirewallScheduleGroupPath = "firewall.schedule/group/"
 
-type FirewallscheduleGroup struct {
+type FirewallScheduleGroup struct {
 	Color        *int64                         `json:"color,omitempty"`
 	FabricObject *string                        `json:"fabric-object,omitempty"`
-	Member       *[]FirewallscheduleGroupMember `json:"member,omitempty"`
+	Member       *[]FirewallScheduleGroupMember `json:"member,omitempty"`
 	Name         *string                        `json:"name,omitempty"`
 }
 
-type FirewallscheduleGroupMember struct {
+type FirewallScheduleGroupMember struct {
 	Name *string `json:"name,omitempty"`
 }

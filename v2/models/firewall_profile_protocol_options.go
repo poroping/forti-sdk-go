@@ -6,6 +6,7 @@ type FirewallProfileProtocolOptions struct {
 	Cifs                  *[]FirewallProfileProtocolOptionsCifs          `json:"cifs,omitempty"`
 	Comment               *string                                        `json:"comment,omitempty"`
 	Dns                   *[]FirewallProfileProtocolOptionsDns           `json:"dns,omitempty"`
+	FeatureSet            *string                                        `json:"feature-set,omitempty"`
 	Ftp                   *[]FirewallProfileProtocolOptionsFtp           `json:"ftp,omitempty"`
 	Http                  *[]FirewallProfileProtocolOptionsHttp          `json:"http,omitempty"`
 	Imap                  *[]FirewallProfileProtocolOptionsImap          `json:"imap,omitempty"`

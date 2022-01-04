@@ -1,8 +1,8 @@
 package models
 
-const VpnipsecPhase1Path = "vpn/ipsec/phase1/"
+const VpnIpsecPhase1Path = "vpn.ipsec/phase1/"
 
-type VpnipsecPhase1 struct {
+type VpnIpsecPhase1 struct {
 	AcctVerify                *string                           `json:"acct-verify,omitempty"`
 	AddGwRoute                *string                           `json:"add-gw-route,omitempty"`
 	AddRoute                  *string                           `json:"add-route,omitempty"`
@@ -14,10 +14,10 @@ type VpnipsecPhase1 struct {
 	Authusr                   *string                           `json:"authusr,omitempty"`
 	Authusrgrp                *string                           `json:"authusrgrp,omitempty"`
 	AutoNegotiate             *string                           `json:"auto-negotiate,omitempty"`
-	BackupGateway             *[]VpnipsecPhase1BackupGateway    `json:"backup-gateway,omitempty"`
+	BackupGateway             *[]VpnIpsecPhase1BackupGateway    `json:"backup-gateway,omitempty"`
 	Banner                    *string                           `json:"banner,omitempty"`
 	CertIdValidation          *string                           `json:"cert-id-validation,omitempty"`
-	Certificate               *[]VpnipsecPhase1Certificate      `json:"certificate,omitempty"`
+	Certificate               *[]VpnIpsecPhase1Certificate      `json:"certificate,omitempty"`
 	ChildlessIke              *string                           `json:"childless-ike,omitempty"`
 	ClientAutoNegotiate       *string                           `json:"client-auto-negotiate,omitempty"`
 	ClientKeepAlive           *string                           `json:"client-keep-alive,omitempty"`
@@ -62,7 +62,7 @@ type VpnipsecPhase1 struct {
 	Ipv4DnsServer2            *string                           `json:"ipv4-dns-server2,omitempty"`
 	Ipv4DnsServer3            *string                           `json:"ipv4-dns-server3,omitempty"`
 	Ipv4EndIp                 *string                           `json:"ipv4-end-ip,omitempty"`
-	Ipv4ExcludeRange          *[]VpnipsecPhase1Ipv4ExcludeRange `json:"ipv4-exclude-range,omitempty"`
+	Ipv4ExcludeRange          *[]VpnIpsecPhase1Ipv4ExcludeRange `json:"ipv4-exclude-range,omitempty"`
 	Ipv4Name                  *string                           `json:"ipv4-name,omitempty"`
 	Ipv4Netmask               *string                           `json:"ipv4-netmask,omitempty"`
 	Ipv4SplitExclude          *string                           `json:"ipv4-split-exclude,omitempty"`
@@ -74,7 +74,7 @@ type VpnipsecPhase1 struct {
 	Ipv6DnsServer2            *string                           `json:"ipv6-dns-server2,omitempty"`
 	Ipv6DnsServer3            *string                           `json:"ipv6-dns-server3,omitempty"`
 	Ipv6EndIp                 *string                           `json:"ipv6-end-ip,omitempty"`
-	Ipv6ExcludeRange          *[]VpnipsecPhase1Ipv6ExcludeRange `json:"ipv6-exclude-range,omitempty"`
+	Ipv6ExcludeRange          *[]VpnIpsecPhase1Ipv6ExcludeRange `json:"ipv6-exclude-range,omitempty"`
 	Ipv6Name                  *string                           `json:"ipv6-name,omitempty"`
 	Ipv6Prefix                *int64                            `json:"ipv6-prefix,omitempty"`
 	Ipv6SplitExclude          *string                           `json:"ipv6-split-exclude,omitempty"`
@@ -123,21 +123,21 @@ type VpnipsecPhase1 struct {
 	Xauthtype                 *string                           `json:"xauthtype,omitempty"`
 }
 
-type VpnipsecPhase1BackupGateway struct {
+type VpnIpsecPhase1BackupGateway struct {
 	Address *string `json:"address,omitempty"`
 }
 
-type VpnipsecPhase1Certificate struct {
+type VpnIpsecPhase1Certificate struct {
 	Name *string `json:"name,omitempty"`
 }
 
-type VpnipsecPhase1Ipv4ExcludeRange struct {
+type VpnIpsecPhase1Ipv4ExcludeRange struct {
 	EndIp   *string `json:"end-ip,omitempty"`
 	Id      *int64  `json:"id,omitempty"`
 	StartIp *string `json:"start-ip,omitempty"`
 }
 
-type VpnipsecPhase1Ipv6ExcludeRange struct {
+type VpnIpsecPhase1Ipv6ExcludeRange struct {
 	EndIp   *string `json:"end-ip,omitempty"`
 	Id      *int64  `json:"id,omitempty"`
 	StartIp *string `json:"start-ip,omitempty"`

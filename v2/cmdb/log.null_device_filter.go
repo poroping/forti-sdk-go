@@ -2,24 +2,23 @@ package cmdb
 
 import (
 	"encoding/json"
-	"errors"
 	"log"
 
 	"github.com/poroping/forti-sdk-go/v2/models"
 	"github.com/poroping/forti-sdk-go/v2/request"
 )
 
-func (c *Client) CreateLognullDeviceFilter(payload *models.LognullDeviceFilter, params *models.CmdbRequestParams) (*models.CmdbResponse, error) {
-	log.Printf("[INFO] Resource at path %q is complex type. Changing to UPDATE.", models.LognullDeviceFilterPath)
-	return c.UpdateLognullDeviceFilter("", payload, params)
+func (c *Client) CreateLogNullDeviceFilter(payload *models.LogNullDeviceFilter, params *models.CmdbRequestParams) (*models.CmdbResponse, error) {
+	log.Printf("[INFO] Resource at path %q is complex type. Changing to UPDATE.", models.LogNullDeviceFilterPath)
+	return c.UpdateLogNullDeviceFilter("", payload, params)
 }
 
-func (c *Client) ReadLognullDeviceFilter(mkey string, params *models.CmdbRequestParams) (*models.LognullDeviceFilter, error) {
+func (c *Client) ReadLogNullDeviceFilter(mkey string, params *models.CmdbRequestParams) (*models.LogNullDeviceFilter, error) {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "GET"
 	req.Mkey = &mkey
 	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.LognullDeviceFilterPath
+	req.Path = models.CmdbBasePath + models.LogNullDeviceFilterPath
 	req.Params = *params
 
 	res, err := request.Read(c.config, req)
@@ -34,17 +33,15 @@ func (c *Client) ReadLognullDeviceFilter(mkey string, params *models.CmdbRequest
 		if err != nil {
 			return nil, err
 		}
-		v := models.LognullDeviceFilter{}
+		v := models.LogNullDeviceFilter{}
 		json.Unmarshal(jsontmp, &v)
 		return &v, nil
 	}
 
-	err = errors.New("unable to parse API response results")
-
 	return nil, err
 }
 
-func (c *Client) UpdateLognullDeviceFilter(mkey string, payload *models.LognullDeviceFilter, params *models.CmdbRequestParams) (*models.CmdbResponse, error) {
+func (c *Client) UpdateLogNullDeviceFilter(mkey string, payload *models.LogNullDeviceFilter, params *models.CmdbRequestParams) (*models.CmdbResponse, error) {
 	body, err := json.Marshal(payload)
 	if err != nil {
 		return nil, err
@@ -54,7 +51,7 @@ func (c *Client) UpdateLognullDeviceFilter(mkey string, payload *models.LognullD
 	req.HTTPMethod = "PUT"
 	req.Mkey = &mkey
 	req.Payload = body
-	req.Path = models.CmdbBasePath + models.LognullDeviceFilterPath + mkey + "/"
+	req.Path = models.CmdbBasePath + models.LogNullDeviceFilterPath
 	req.Params = *params
 
 	res, err := request.CreateUpdate(c.config, req)
@@ -64,8 +61,8 @@ func (c *Client) UpdateLognullDeviceFilter(mkey string, payload *models.LognullD
 	return res, nil
 }
 
-func (c *Client) DeleteLognullDeviceFilter(mkey string, params *models.CmdbRequestParams) error {
-	payload := &models.LognullDeviceFilter{}
-	_, err := c.UpdateLognullDeviceFilter("", payload, params)
+func (c *Client) DeleteLogNullDeviceFilter(mkey string, params *models.CmdbRequestParams) error {
+	payload := &models.LogNullDeviceFilter{}
+	_, err := c.UpdateLogNullDeviceFilter("", payload, params)
 	return err
 }

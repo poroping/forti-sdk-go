@@ -1,8 +1,8 @@
 package models
 
-const LogfortiguardSettingPath = "log/fortiguard/setting/"
+const LogFortiguardSettingPath = "log.fortiguard/setting/"
 
-type LogfortiguardSetting struct {
+type LogFortiguardSetting struct {
 	AccessConfig          *string `json:"access-config,omitempty"`
 	ConnTimeout           *int64  `json:"conn-timeout,omitempty"`
 	EncAlgorithm          *string `json:"enc-algorithm,omitempty"`

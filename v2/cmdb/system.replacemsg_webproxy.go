@@ -2,14 +2,13 @@ package cmdb
 
 import (
 	"encoding/json"
-	"errors"
 	"log"
 
 	"github.com/poroping/forti-sdk-go/v2/models"
 	"github.com/poroping/forti-sdk-go/v2/request"
 )
 
-func (c *Client) CreateSystemreplacemsgWebproxy(payload *models.SystemreplacemsgWebproxy, params *models.CmdbRequestParams) (*models.CmdbResponse, error) {
+func (c *Client) CreateSystemReplacemsgWebproxy(payload *models.SystemReplacemsgWebproxy, params *models.CmdbRequestParams) (*models.CmdbResponse, error) {
 	body, err := json.Marshal(payload)
 	if err != nil {
 		return nil, err
@@ -18,20 +17,20 @@ func (c *Client) CreateSystemreplacemsgWebproxy(payload *models.Systemreplacemsg
 	mkey := ""
 	if payload.MsgType != nil && *params.AllowAppend {
 		mkey = *payload.MsgType
-		read, err := c.ReadSystemreplacemsgWebproxy(mkey, params)
+		read, err := c.ReadSystemReplacemsgWebproxy(mkey, params)
 		if err != nil {
 			return nil, err
 		}
 		if read != nil {
-			log.Printf("[WARN] Resource at path %q with mkey %q detected upon CREATE with flag set to to overwrite. Changing to UPDATE.", models.SystemreplacemsgWebproxyPath, mkey)
-			return c.UpdateSystemreplacemsgWebproxy(mkey, payload, params)
+			log.Printf("[WARN] Resource at path %q with mkey %q detected upon CREATE with flag set to to overwrite. Changing to UPDATE.", models.SystemReplacemsgWebproxyPath, mkey)
+			return c.UpdateSystemReplacemsgWebproxy(mkey, payload, params)
 		}
 	}
 
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "POST"
 	req.Payload = body
-	req.Path = models.CmdbBasePath + models.SystemreplacemsgWebproxyPath
+	req.Path = models.CmdbBasePath + models.SystemReplacemsgWebproxyPath
 	req.Params = *params
 
 	res, err := request.CreateUpdate(c.config, req)
@@ -41,12 +40,12 @@ func (c *Client) CreateSystemreplacemsgWebproxy(payload *models.Systemreplacemsg
 	return res, nil
 }
 
-func (c *Client) ReadSystemreplacemsgWebproxy(mkey string, params *models.CmdbRequestParams) (*models.SystemreplacemsgWebproxy, error) {
+func (c *Client) ReadSystemReplacemsgWebproxy(mkey string, params *models.CmdbRequestParams) (*models.SystemReplacemsgWebproxy, error) {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "GET"
 	req.Mkey = &mkey
 	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.SystemreplacemsgWebproxyPath + mkey + "/"
+	req.Path = models.CmdbBasePath + models.SystemReplacemsgWebproxyPath + mkey + "/"
 	req.Params = *params
 
 	res, err := request.Read(c.config, req)
@@ -61,17 +60,15 @@ func (c *Client) ReadSystemreplacemsgWebproxy(mkey string, params *models.CmdbRe
 		if err != nil {
 			return nil, err
 		}
-		v := models.SystemreplacemsgWebproxy{}
+		v := models.SystemReplacemsgWebproxy{}
 		json.Unmarshal(jsontmp, &v)
 		return &v, nil
 	}
 
-	err = errors.New("unable to parse API response results")
-
 	return nil, err
 }
 
-func (c *Client) UpdateSystemreplacemsgWebproxy(mkey string, payload *models.SystemreplacemsgWebproxy, params *models.CmdbRequestParams) (*models.CmdbResponse, error) {
+func (c *Client) UpdateSystemReplacemsgWebproxy(mkey string, payload *models.SystemReplacemsgWebproxy, params *models.CmdbRequestParams) (*models.CmdbResponse, error) {
 	body, err := json.Marshal(payload)
 	if err != nil {
 		return nil, err
@@ -81,7 +78,7 @@ func (c *Client) UpdateSystemreplacemsgWebproxy(mkey string, payload *models.Sys
 	req.HTTPMethod = "PUT"
 	req.Mkey = &mkey
 	req.Payload = body
-	req.Path = models.CmdbBasePath + models.SystemreplacemsgWebproxyPath + mkey + "/"
+	req.Path = models.CmdbBasePath + models.SystemReplacemsgWebproxyPath + mkey + "/"
 	req.Params = *params
 
 	res, err := request.CreateUpdate(c.config, req)
@@ -91,12 +88,12 @@ func (c *Client) UpdateSystemreplacemsgWebproxy(mkey string, payload *models.Sys
 	return res, nil
 }
 
-func (c *Client) DeleteSystemreplacemsgWebproxy(mkey string, params *models.CmdbRequestParams) error {
+func (c *Client) DeleteSystemReplacemsgWebproxy(mkey string, params *models.CmdbRequestParams) error {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "DELETE"
 	req.Mkey = &mkey
 	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.SystemreplacemsgWebproxyPath + mkey + "/"
+	req.Path = models.CmdbBasePath + models.SystemReplacemsgWebproxyPath + mkey + "/"
 	req.Params = *params
 
 	err := request.Delete(c.config, req)

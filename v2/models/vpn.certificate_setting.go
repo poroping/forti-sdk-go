@@ -1,8 +1,8 @@
 package models
 
-const VpncertificateSettingPath = "vpn/certificate/setting/"
+const VpnCertificateSettingPath = "vpn.certificate/setting/"
 
-type VpncertificateSetting struct {
+type VpnCertificateSetting struct {
 	CertnameDsa1024       *string                                 `json:"certname-dsa1024,omitempty"`
 	CertnameDsa2048       *string                                 `json:"certname-dsa2048,omitempty"`
 	CertnameEcdsa256      *string                                 `json:"certname-ecdsa256,omitempty"`
@@ -19,7 +19,7 @@ type VpncertificateSetting struct {
 	CmpSaveExtraCerts     *string                                 `json:"cmp-save-extra-certs,omitempty"`
 	CnAllowMulti          *string                                 `json:"cn-allow-multi,omitempty"`
 	CnMatch               *string                                 `json:"cn-match,omitempty"`
-	CrlVerification       *[]VpncertificateSettingCrlVerification `json:"crl-verification,omitempty"`
+	CrlVerification       *[]VpnCertificateSettingCrlVerification `json:"crl-verification,omitempty"`
 	Interface             *string                                 `json:"interface,omitempty"`
 	InterfaceSelectMethod *string                                 `json:"interface-select-method,omitempty"`
 	OcspDefaultServer     *string                                 `json:"ocsp-default-server,omitempty"`
@@ -33,7 +33,7 @@ type VpncertificateSetting struct {
 	SubjectSet            *string                                 `json:"subject-set,omitempty"`
 }
 
-type VpncertificateSettingCrlVerification struct {
+type VpnCertificateSettingCrlVerification struct {
 	ChainCrlAbsence *string `json:"chain-crl-absence,omitempty"`
 	Expiry          *string `json:"expiry,omitempty"`
 	LeafCrlAbsence  *string `json:"leaf-crl-absence,omitempty"`

@@ -1,8 +1,8 @@
 package models
 
-const WirelessControllerhotspot20HsProfilePath = "wireless-controller/hotspot20/hs-profile/"
+const WirelessControllerHotspot20HsProfilePath = "wireless-controller.hotspot20/hs-profile/"
 
-type WirelessControllerhotspot20HsProfile struct {
+type WirelessControllerHotspot20HsProfile struct {
 	The3gppPlmn           *string                                            `json:"3gpp-plmn,omitempty"`
 	AccessNetworkAsra     *string                                            `json:"access-network-asra,omitempty"`
 	AccessNetworkEsr      *string                                            `json:"access-network-esr,omitempty"`
@@ -26,7 +26,7 @@ type WirelessControllerhotspot20HsProfile struct {
 	NetworkAuth           *string                                            `json:"network-auth,omitempty"`
 	OperFriendlyName      *string                                            `json:"oper-friendly-name,omitempty"`
 	OperIcon              *string                                            `json:"oper-icon,omitempty"`
-	OsuProvider           *[]WirelessControllerhotspot20HsProfileOsuProvider `json:"osu-provider,omitempty"`
+	OsuProvider           *[]WirelessControllerHotspot20HsProfileOsuProvider `json:"osu-provider,omitempty"`
 	OsuProviderNai        *string                                            `json:"osu-provider-nai,omitempty"`
 	OsuSsid               *string                                            `json:"osu-ssid,omitempty"`
 	PameBi                *string                                            `json:"pame-bi,omitempty"`
@@ -43,6 +43,6 @@ type WirelessControllerhotspot20HsProfile struct {
 	WnmSleepMode          *string                                            `json:"wnm-sleep-mode,omitempty"`
 }
 
-type WirelessControllerhotspot20HsProfileOsuProvider struct {
+type WirelessControllerHotspot20HsProfileOsuProvider struct {
 	Name *string `json:"name,omitempty"`
 }

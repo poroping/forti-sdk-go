@@ -1,8 +1,8 @@
 package models
 
-const VpncertificateCrlPath = "vpn/certificate/crl/"
+const VpnCertificateCrlPath = "vpn.certificate/crl/"
 
-type VpncertificateCrl struct {
+type VpnCertificateCrl struct {
 	Crl            *string `json:"crl,omitempty"`
 	HttpUrl        *string `json:"http-url,omitempty"`
 	LdapPassword   *string `json:"ldap-password,omitempty"`

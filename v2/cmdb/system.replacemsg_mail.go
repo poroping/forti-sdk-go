@@ -2,14 +2,13 @@ package cmdb
 
 import (
 	"encoding/json"
-	"errors"
 	"log"
 
 	"github.com/poroping/forti-sdk-go/v2/models"
 	"github.com/poroping/forti-sdk-go/v2/request"
 )
 
-func (c *Client) CreateSystemreplacemsgMail(payload *models.SystemreplacemsgMail, params *models.CmdbRequestParams) (*models.CmdbResponse, error) {
+func (c *Client) CreateSystemReplacemsgMail(payload *models.SystemReplacemsgMail, params *models.CmdbRequestParams) (*models.CmdbResponse, error) {
 	body, err := json.Marshal(payload)
 	if err != nil {
 		return nil, err
@@ -18,20 +17,20 @@ func (c *Client) CreateSystemreplacemsgMail(payload *models.SystemreplacemsgMail
 	mkey := ""
 	if payload.MsgType != nil && *params.AllowAppend {
 		mkey = *payload.MsgType
-		read, err := c.ReadSystemreplacemsgMail(mkey, params)
+		read, err := c.ReadSystemReplacemsgMail(mkey, params)
 		if err != nil {
 			return nil, err
 		}
 		if read != nil {
-			log.Printf("[WARN] Resource at path %q with mkey %q detected upon CREATE with flag set to to overwrite. Changing to UPDATE.", models.SystemreplacemsgMailPath, mkey)
-			return c.UpdateSystemreplacemsgMail(mkey, payload, params)
+			log.Printf("[WARN] Resource at path %q with mkey %q detected upon CREATE with flag set to to overwrite. Changing to UPDATE.", models.SystemReplacemsgMailPath, mkey)
+			return c.UpdateSystemReplacemsgMail(mkey, payload, params)
 		}
 	}
 
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "POST"
 	req.Payload = body
-	req.Path = models.CmdbBasePath + models.SystemreplacemsgMailPath
+	req.Path = models.CmdbBasePath + models.SystemReplacemsgMailPath
 	req.Params = *params
 
 	res, err := request.CreateUpdate(c.config, req)
@@ -41,12 +40,12 @@ func (c *Client) CreateSystemreplacemsgMail(payload *models.SystemreplacemsgMail
 	return res, nil
 }
 
-func (c *Client) ReadSystemreplacemsgMail(mkey string, params *models.CmdbRequestParams) (*models.SystemreplacemsgMail, error) {
+func (c *Client) ReadSystemReplacemsgMail(mkey string, params *models.CmdbRequestParams) (*models.SystemReplacemsgMail, error) {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "GET"
 	req.Mkey = &mkey
 	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.SystemreplacemsgMailPath + mkey + "/"
+	req.Path = models.CmdbBasePath + models.SystemReplacemsgMailPath + mkey + "/"
 	req.Params = *params
 
 	res, err := request.Read(c.config, req)
@@ -61,17 +60,15 @@ func (c *Client) ReadSystemreplacemsgMail(mkey string, params *models.CmdbReques
 		if err != nil {
 			return nil, err
 		}
-		v := models.SystemreplacemsgMail{}
+		v := models.SystemReplacemsgMail{}
 		json.Unmarshal(jsontmp, &v)
 		return &v, nil
 	}
 
-	err = errors.New("unable to parse API response results")
-
 	return nil, err
 }
 
-func (c *Client) UpdateSystemreplacemsgMail(mkey string, payload *models.SystemreplacemsgMail, params *models.CmdbRequestParams) (*models.CmdbResponse, error) {
+func (c *Client) UpdateSystemReplacemsgMail(mkey string, payload *models.SystemReplacemsgMail, params *models.CmdbRequestParams) (*models.CmdbResponse, error) {
 	body, err := json.Marshal(payload)
 	if err != nil {
 		return nil, err
@@ -81,7 +78,7 @@ func (c *Client) UpdateSystemreplacemsgMail(mkey string, payload *models.Systemr
 	req.HTTPMethod = "PUT"
 	req.Mkey = &mkey
 	req.Payload = body
-	req.Path = models.CmdbBasePath + models.SystemreplacemsgMailPath + mkey + "/"
+	req.Path = models.CmdbBasePath + models.SystemReplacemsgMailPath + mkey + "/"
 	req.Params = *params
 
 	res, err := request.CreateUpdate(c.config, req)
@@ -91,12 +88,12 @@ func (c *Client) UpdateSystemreplacemsgMail(mkey string, payload *models.Systemr
 	return res, nil
 }
 
-func (c *Client) DeleteSystemreplacemsgMail(mkey string, params *models.CmdbRequestParams) error {
+func (c *Client) DeleteSystemReplacemsgMail(mkey string, params *models.CmdbRequestParams) error {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "DELETE"
 	req.Mkey = &mkey
 	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.SystemreplacemsgMailPath + mkey + "/"
+	req.Path = models.CmdbBasePath + models.SystemReplacemsgMailPath + mkey + "/"
 	req.Params = *params
 
 	err := request.Delete(c.config, req)

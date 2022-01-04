@@ -2,24 +2,23 @@ package cmdb
 
 import (
 	"encoding/json"
-	"errors"
 	"log"
 
 	"github.com/poroping/forti-sdk-go/v2/models"
 	"github.com/poroping/forti-sdk-go/v2/request"
 )
 
-func (c *Client) CreateSystemautoupdateSchedule(payload *models.SystemautoupdateSchedule, params *models.CmdbRequestParams) (*models.CmdbResponse, error) {
-	log.Printf("[INFO] Resource at path %q is complex type. Changing to UPDATE.", models.SystemautoupdateSchedulePath)
-	return c.UpdateSystemautoupdateSchedule("", payload, params)
+func (c *Client) CreateSystemAutoupdateSchedule(payload *models.SystemAutoupdateSchedule, params *models.CmdbRequestParams) (*models.CmdbResponse, error) {
+	log.Printf("[INFO] Resource at path %q is complex type. Changing to UPDATE.", models.SystemAutoupdateSchedulePath)
+	return c.UpdateSystemAutoupdateSchedule("", payload, params)
 }
 
-func (c *Client) ReadSystemautoupdateSchedule(mkey string, params *models.CmdbRequestParams) (*models.SystemautoupdateSchedule, error) {
+func (c *Client) ReadSystemAutoupdateSchedule(mkey string, params *models.CmdbRequestParams) (*models.SystemAutoupdateSchedule, error) {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "GET"
 	req.Mkey = &mkey
 	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.SystemautoupdateSchedulePath
+	req.Path = models.CmdbBasePath + models.SystemAutoupdateSchedulePath
 	req.Params = *params
 
 	res, err := request.Read(c.config, req)
@@ -34,17 +33,15 @@ func (c *Client) ReadSystemautoupdateSchedule(mkey string, params *models.CmdbRe
 		if err != nil {
 			return nil, err
 		}
-		v := models.SystemautoupdateSchedule{}
+		v := models.SystemAutoupdateSchedule{}
 		json.Unmarshal(jsontmp, &v)
 		return &v, nil
 	}
 
-	err = errors.New("unable to parse API response results")
-
 	return nil, err
 }
 
-func (c *Client) UpdateSystemautoupdateSchedule(mkey string, payload *models.SystemautoupdateSchedule, params *models.CmdbRequestParams) (*models.CmdbResponse, error) {
+func (c *Client) UpdateSystemAutoupdateSchedule(mkey string, payload *models.SystemAutoupdateSchedule, params *models.CmdbRequestParams) (*models.CmdbResponse, error) {
 	body, err := json.Marshal(payload)
 	if err != nil {
 		return nil, err
@@ -54,7 +51,7 @@ func (c *Client) UpdateSystemautoupdateSchedule(mkey string, payload *models.Sys
 	req.HTTPMethod = "PUT"
 	req.Mkey = &mkey
 	req.Payload = body
-	req.Path = models.CmdbBasePath + models.SystemautoupdateSchedulePath + mkey + "/"
+	req.Path = models.CmdbBasePath + models.SystemAutoupdateSchedulePath
 	req.Params = *params
 
 	res, err := request.CreateUpdate(c.config, req)
@@ -64,8 +61,8 @@ func (c *Client) UpdateSystemautoupdateSchedule(mkey string, payload *models.Sys
 	return res, nil
 }
 
-func (c *Client) DeleteSystemautoupdateSchedule(mkey string, params *models.CmdbRequestParams) error {
-	payload := &models.SystemautoupdateSchedule{}
-	_, err := c.UpdateSystemautoupdateSchedule("", payload, params)
+func (c *Client) DeleteSystemAutoupdateSchedule(mkey string, params *models.CmdbRequestParams) error {
+	payload := &models.SystemAutoupdateSchedule{}
+	_, err := c.UpdateSystemAutoupdateSchedule("", payload, params)
 	return err
 }

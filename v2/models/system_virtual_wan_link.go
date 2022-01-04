@@ -24,6 +24,7 @@ type SystemVirtualWanLinkFailAlertInterfaces struct {
 type SystemVirtualWanLinkHealthCheck struct {
 	AddrMode                   *string                                   `json:"addr-mode,omitempty"`
 	Diffservcode               *string                                   `json:"diffservcode,omitempty"`
+	DnsRequestDomain           *string                                   `json:"dns-request-domain,omitempty"`
 	Failtime                   *int64                                    `json:"failtime,omitempty"`
 	HaPriority                 *int64                                    `json:"ha-priority,omitempty"`
 	HttpAgent                  *string                                   `json:"http-agent,omitempty"`
@@ -35,6 +36,7 @@ type SystemVirtualWanLinkHealthCheck struct {
 	PacketSize                 *int64                                    `json:"packet-size,omitempty"`
 	Password                   *string                                   `json:"password,omitempty"`
 	Port                       *int64                                    `json:"port,omitempty"`
+	ProbeCount                 *int64                                    `json:"probe-count,omitempty"`
 	ProbePackets               *string                                   `json:"probe-packets,omitempty"`
 	ProbeTimeout               *int64                                    `json:"probe-timeout,omitempty"`
 	Protocol                   *string                                   `json:"protocol,omitempty"`
@@ -44,6 +46,7 @@ type SystemVirtualWanLinkHealthCheck struct {
 	Sla                        *[]SystemVirtualWanLinkHealthCheckSla     `json:"sla,omitempty"`
 	SlaFailLogPeriod           *int64                                    `json:"sla-fail-log-period,omitempty"`
 	SlaPassLogPeriod           *int64                                    `json:"sla-pass-log-period,omitempty"`
+	SystemDns                  *string                                   `json:"system-dns,omitempty"`
 	ThresholdAlertJitter       *int64                                    `json:"threshold-alert-jitter,omitempty"`
 	ThresholdAlertLatency      *int64                                    `json:"threshold-alert-latency,omitempty"`
 	ThresholdAlertPacketloss   *int64                                    `json:"threshold-alert-packetloss,omitempty"`
@@ -105,7 +108,7 @@ type SystemVirtualWanLinkService struct {
 	EndPort                     *int64                                                    `json:"end-port,omitempty"`
 	Gateway                     *string                                                   `json:"gateway,omitempty"`
 	Groups                      *[]SystemVirtualWanLinkServiceGroups                      `json:"groups,omitempty"`
-	HealthCheck                 *string                                                   `json:"health-check,omitempty"`
+	HealthCheck                 *[]SystemVirtualWanLinkServiceHealthCheck                 `json:"health-check,omitempty"`
 	HoldDownTime                *int64                                                    `json:"hold-down-time,omitempty"`
 	Id                          *int64                                                    `json:"id,omitempty"`
 	InputDevice                 *[]SystemVirtualWanLinkServiceInputDevice                 `json:"input-device,omitempty"`
@@ -117,6 +120,7 @@ type SystemVirtualWanLinkService struct {
 	InternetServiceCustomGroup  *[]SystemVirtualWanLinkServiceInternetServiceCustomGroup  `json:"internet-service-custom-group,omitempty"`
 	InternetServiceGroup        *[]SystemVirtualWanLinkServiceInternetServiceGroup        `json:"internet-service-group,omitempty"`
 	InternetServiceId           *[]SystemVirtualWanLinkServiceInternetServiceId           `json:"internet-service-id,omitempty"`
+	InternetServiceName         *[]SystemVirtualWanLinkServiceInternetServiceName         `json:"internet-service-name,omitempty"`
 	JitterWeight                *int64                                                    `json:"jitter-weight,omitempty"`
 	LatencyWeight               *int64                                                    `json:"latency-weight,omitempty"`
 	LinkCostFactor              *string                                                   `json:"link-cost-factor,omitempty"`
@@ -154,6 +158,10 @@ type SystemVirtualWanLinkServiceGroups struct {
 	Name *string `json:"name,omitempty"`
 }
 
+type SystemVirtualWanLinkServiceHealthCheck struct {
+	Name *string `json:"name,omitempty"`
+}
+
 type SystemVirtualWanLinkServiceInputDevice struct {
 	Name *string `json:"name,omitempty"`
 }
@@ -180,6 +188,10 @@ type SystemVirtualWanLinkServiceInternetServiceGroup struct {
 
 type SystemVirtualWanLinkServiceInternetServiceId struct {
 	Id *int64 `json:"id,omitempty"`
+}
+
+type SystemVirtualWanLinkServiceInternetServiceName struct {
+	Name *string `json:"name,omitempty"`
 }
 
 type SystemVirtualWanLinkServicePriorityMembers struct {

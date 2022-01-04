@@ -2,24 +2,23 @@ package cmdb
 
 import (
 	"encoding/json"
-	"errors"
 	"log"
 
 	"github.com/poroping/forti-sdk-go/v2/models"
 	"github.com/poroping/forti-sdk-go/v2/request"
 )
 
-func (c *Client) CreateLogwebtrendsSetting(payload *models.LogwebtrendsSetting, params *models.CmdbRequestParams) (*models.CmdbResponse, error) {
-	log.Printf("[INFO] Resource at path %q is complex type. Changing to UPDATE.", models.LogwebtrendsSettingPath)
-	return c.UpdateLogwebtrendsSetting("", payload, params)
+func (c *Client) CreateLogWebtrendsSetting(payload *models.LogWebtrendsSetting, params *models.CmdbRequestParams) (*models.CmdbResponse, error) {
+	log.Printf("[INFO] Resource at path %q is complex type. Changing to UPDATE.", models.LogWebtrendsSettingPath)
+	return c.UpdateLogWebtrendsSetting("", payload, params)
 }
 
-func (c *Client) ReadLogwebtrendsSetting(mkey string, params *models.CmdbRequestParams) (*models.LogwebtrendsSetting, error) {
+func (c *Client) ReadLogWebtrendsSetting(mkey string, params *models.CmdbRequestParams) (*models.LogWebtrendsSetting, error) {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "GET"
 	req.Mkey = &mkey
 	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.LogwebtrendsSettingPath
+	req.Path = models.CmdbBasePath + models.LogWebtrendsSettingPath
 	req.Params = *params
 
 	res, err := request.Read(c.config, req)
@@ -34,17 +33,15 @@ func (c *Client) ReadLogwebtrendsSetting(mkey string, params *models.CmdbRequest
 		if err != nil {
 			return nil, err
 		}
-		v := models.LogwebtrendsSetting{}
+		v := models.LogWebtrendsSetting{}
 		json.Unmarshal(jsontmp, &v)
 		return &v, nil
 	}
 
-	err = errors.New("unable to parse API response results")
-
 	return nil, err
 }
 
-func (c *Client) UpdateLogwebtrendsSetting(mkey string, payload *models.LogwebtrendsSetting, params *models.CmdbRequestParams) (*models.CmdbResponse, error) {
+func (c *Client) UpdateLogWebtrendsSetting(mkey string, payload *models.LogWebtrendsSetting, params *models.CmdbRequestParams) (*models.CmdbResponse, error) {
 	body, err := json.Marshal(payload)
 	if err != nil {
 		return nil, err
@@ -54,7 +51,7 @@ func (c *Client) UpdateLogwebtrendsSetting(mkey string, payload *models.Logwebtr
 	req.HTTPMethod = "PUT"
 	req.Mkey = &mkey
 	req.Payload = body
-	req.Path = models.CmdbBasePath + models.LogwebtrendsSettingPath + mkey + "/"
+	req.Path = models.CmdbBasePath + models.LogWebtrendsSettingPath
 	req.Params = *params
 
 	res, err := request.CreateUpdate(c.config, req)
@@ -64,8 +61,8 @@ func (c *Client) UpdateLogwebtrendsSetting(mkey string, payload *models.Logwebtr
 	return res, nil
 }
 
-func (c *Client) DeleteLogwebtrendsSetting(mkey string, params *models.CmdbRequestParams) error {
-	payload := &models.LogwebtrendsSetting{}
-	_, err := c.UpdateLogwebtrendsSetting("", payload, params)
+func (c *Client) DeleteLogWebtrendsSetting(mkey string, params *models.CmdbRequestParams) error {
+	payload := &models.LogWebtrendsSetting{}
+	_, err := c.UpdateLogWebtrendsSetting("", payload, params)
 	return err
 }

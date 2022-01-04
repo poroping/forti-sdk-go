@@ -1,8 +1,8 @@
 package models
 
-const VpncertificateCaPath = "vpn/certificate/ca/"
+const VpnCertificateCaPath = "vpn.certificate/ca/"
 
-type VpncertificateCa struct {
+type VpnCertificateCa struct {
 	AutoUpdateDays        *int64  `json:"auto-update-days,omitempty"`
 	AutoUpdateDaysWarning *int64  `json:"auto-update-days-warning,omitempty"`
 	Ca                    *string `json:"ca,omitempty"`

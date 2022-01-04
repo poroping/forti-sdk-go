@@ -1,13 +1,13 @@
 package models
 
-const LognullDeviceFilterPath = "log/null-device/filter/"
+const LogNullDeviceFilterPath = "log.null-device/filter/"
 
-type LognullDeviceFilter struct {
+type LogNullDeviceFilter struct {
 	Anomaly          *string                         `json:"anomaly,omitempty"`
 	Filter           *string                         `json:"filter,omitempty"`
 	FilterType       *string                         `json:"filter-type,omitempty"`
 	ForwardTraffic   *string                         `json:"forward-traffic,omitempty"`
-	FreeStyle        *[]LognullDeviceFilterFreeStyle `json:"free-style,omitempty"`
+	FreeStyle        *[]LogNullDeviceFilterFreeStyle `json:"free-style,omitempty"`
 	Gtp              *string                         `json:"gtp,omitempty"`
 	LocalTraffic     *string                         `json:"local-traffic,omitempty"`
 	MulticastTraffic *string                         `json:"multicast-traffic,omitempty"`
@@ -16,7 +16,7 @@ type LognullDeviceFilter struct {
 	Voip             *string                         `json:"voip,omitempty"`
 }
 
-type LognullDeviceFilterFreeStyle struct {
+type LogNullDeviceFilterFreeStyle struct {
 	Category   *string `json:"category,omitempty"`
 	Filter     *string `json:"filter,omitempty"`
 	FilterType *string `json:"filter-type,omitempty"`

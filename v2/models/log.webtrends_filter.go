@@ -1,13 +1,13 @@
 package models
 
-const LogwebtrendsFilterPath = "log/webtrends/filter/"
+const LogWebtrendsFilterPath = "log.webtrends/filter/"
 
-type LogwebtrendsFilter struct {
+type LogWebtrendsFilter struct {
 	Anomaly          *string                        `json:"anomaly,omitempty"`
 	Filter           *string                        `json:"filter,omitempty"`
 	FilterType       *string                        `json:"filter-type,omitempty"`
 	ForwardTraffic   *string                        `json:"forward-traffic,omitempty"`
-	FreeStyle        *[]LogwebtrendsFilterFreeStyle `json:"free-style,omitempty"`
+	FreeStyle        *[]LogWebtrendsFilterFreeStyle `json:"free-style,omitempty"`
 	Gtp              *string                        `json:"gtp,omitempty"`
 	LocalTraffic     *string                        `json:"local-traffic,omitempty"`
 	MulticastTraffic *string                        `json:"multicast-traffic,omitempty"`
@@ -16,7 +16,7 @@ type LogwebtrendsFilter struct {
 	Voip             *string                        `json:"voip,omitempty"`
 }
 
-type LogwebtrendsFilterFreeStyle struct {
+type LogWebtrendsFilterFreeStyle struct {
 	Category   *string `json:"category,omitempty"`
 	Filter     *string `json:"filter,omitempty"`
 	FilterType *string `json:"filter-type,omitempty"`

@@ -2,14 +2,13 @@ package cmdb
 
 import (
 	"encoding/json"
-	"errors"
 	"log"
 
 	"github.com/poroping/forti-sdk-go/v2/models"
 	"github.com/poroping/forti-sdk-go/v2/request"
 )
 
-func (c *Client) CreateSystemreplacemsgAutomation(payload *models.SystemreplacemsgAutomation, params *models.CmdbRequestParams) (*models.CmdbResponse, error) {
+func (c *Client) CreateSystemReplacemsgAutomation(payload *models.SystemReplacemsgAutomation, params *models.CmdbRequestParams) (*models.CmdbResponse, error) {
 	body, err := json.Marshal(payload)
 	if err != nil {
 		return nil, err
@@ -18,20 +17,20 @@ func (c *Client) CreateSystemreplacemsgAutomation(payload *models.Systemreplacem
 	mkey := ""
 	if payload.MsgType != nil && *params.AllowAppend {
 		mkey = *payload.MsgType
-		read, err := c.ReadSystemreplacemsgAutomation(mkey, params)
+		read, err := c.ReadSystemReplacemsgAutomation(mkey, params)
 		if err != nil {
 			return nil, err
 		}
 		if read != nil {
-			log.Printf("[WARN] Resource at path %q with mkey %q detected upon CREATE with flag set to to overwrite. Changing to UPDATE.", models.SystemreplacemsgAutomationPath, mkey)
-			return c.UpdateSystemreplacemsgAutomation(mkey, payload, params)
+			log.Printf("[WARN] Resource at path %q with mkey %q detected upon CREATE with flag set to to overwrite. Changing to UPDATE.", models.SystemReplacemsgAutomationPath, mkey)
+			return c.UpdateSystemReplacemsgAutomation(mkey, payload, params)
 		}
 	}
 
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "POST"
 	req.Payload = body
-	req.Path = models.CmdbBasePath + models.SystemreplacemsgAutomationPath
+	req.Path = models.CmdbBasePath + models.SystemReplacemsgAutomationPath
 	req.Params = *params
 
 	res, err := request.CreateUpdate(c.config, req)
@@ -41,12 +40,12 @@ func (c *Client) CreateSystemreplacemsgAutomation(payload *models.Systemreplacem
 	return res, nil
 }
 
-func (c *Client) ReadSystemreplacemsgAutomation(mkey string, params *models.CmdbRequestParams) (*models.SystemreplacemsgAutomation, error) {
+func (c *Client) ReadSystemReplacemsgAutomation(mkey string, params *models.CmdbRequestParams) (*models.SystemReplacemsgAutomation, error) {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "GET"
 	req.Mkey = &mkey
 	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.SystemreplacemsgAutomationPath + mkey + "/"
+	req.Path = models.CmdbBasePath + models.SystemReplacemsgAutomationPath + mkey + "/"
 	req.Params = *params
 
 	res, err := request.Read(c.config, req)
@@ -61,17 +60,15 @@ func (c *Client) ReadSystemreplacemsgAutomation(mkey string, params *models.Cmdb
 		if err != nil {
 			return nil, err
 		}
-		v := models.SystemreplacemsgAutomation{}
+		v := models.SystemReplacemsgAutomation{}
 		json.Unmarshal(jsontmp, &v)
 		return &v, nil
 	}
 
-	err = errors.New("unable to parse API response results")
-
 	return nil, err
 }
 
-func (c *Client) UpdateSystemreplacemsgAutomation(mkey string, payload *models.SystemreplacemsgAutomation, params *models.CmdbRequestParams) (*models.CmdbResponse, error) {
+func (c *Client) UpdateSystemReplacemsgAutomation(mkey string, payload *models.SystemReplacemsgAutomation, params *models.CmdbRequestParams) (*models.CmdbResponse, error) {
 	body, err := json.Marshal(payload)
 	if err != nil {
 		return nil, err
@@ -81,7 +78,7 @@ func (c *Client) UpdateSystemreplacemsgAutomation(mkey string, payload *models.S
 	req.HTTPMethod = "PUT"
 	req.Mkey = &mkey
 	req.Payload = body
-	req.Path = models.CmdbBasePath + models.SystemreplacemsgAutomationPath + mkey + "/"
+	req.Path = models.CmdbBasePath + models.SystemReplacemsgAutomationPath + mkey + "/"
 	req.Params = *params
 
 	res, err := request.CreateUpdate(c.config, req)
@@ -91,12 +88,12 @@ func (c *Client) UpdateSystemreplacemsgAutomation(mkey string, payload *models.S
 	return res, nil
 }
 
-func (c *Client) DeleteSystemreplacemsgAutomation(mkey string, params *models.CmdbRequestParams) error {
+func (c *Client) DeleteSystemReplacemsgAutomation(mkey string, params *models.CmdbRequestParams) error {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "DELETE"
 	req.Mkey = &mkey
 	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.SystemreplacemsgAutomationPath + mkey + "/"
+	req.Path = models.CmdbBasePath + models.SystemReplacemsgAutomationPath + mkey + "/"
 	req.Params = *params
 
 	err := request.Delete(c.config, req)
