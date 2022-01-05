@@ -17,8 +17,9 @@ const (
 )
 
 type cmdbRes struct {
-	Path    string
-	Complex bool
+	Path     string
+	Complex  bool
+	Category string
 }
 
 func main() {
@@ -56,8 +57,9 @@ func main() {
 		r := addResourceInfo(n)
 
 		tmp := cmdbRes{
-			Path:    mixedCase(r["fpath"].(string)),
-			Complex: isComplex(r["results"].(map[string]interface{})["category"].(string)),
+			Path:     mixedCase(r["fpath"].(string)),
+			Complex:  isComplex(r["results"].(map[string]interface{})["category"].(string)),
+			Category: r["results"].(map[string]interface{})["category"].(string),
 		}
 		cmdbResources = append(cmdbResources, tmp)
 

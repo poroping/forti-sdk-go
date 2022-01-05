@@ -100,3 +100,29 @@ func (c *Client) DeleteWebfilterOverride(mkey string, params *models.CmdbRequest
 	err := request.Delete(c.config, req)
 	return err
 }
+
+func (c *Client) ListWebfilterOverride(mkey string, params *models.CmdbRequestParams) (*[]models.WebfilterOverride, error) {
+	req := &models.CmdbRequest{}
+	req.HTTPMethod = "GET"
+	req.Payload = nil
+	req.Path = models.CmdbBasePath + models.WebfilterOverridePath
+	req.Params = *params
+
+	res, err := request.Read(c.config, req)
+	if err != nil {
+		return nil, err
+	}
+
+	// marshal/unmarshal results
+
+	if tmp, ok := res.Results.([]interface{}); ok {
+		jsontmp, err := json.Marshal(tmp)
+		if err != nil {
+			return nil, err
+		}
+		v := []models.WebfilterOverride{}
+		json.Unmarshal(jsontmp, &v)
+		return &v, nil
+	}
+	return nil, err
+}

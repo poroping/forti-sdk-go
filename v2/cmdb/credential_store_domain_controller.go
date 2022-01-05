@@ -99,3 +99,29 @@ func (c *Client) DeleteCredentialStoreDomainController(mkey string, params *mode
 	err := request.Delete(c.config, req)
 	return err
 }
+
+func (c *Client) ListCredentialStoreDomainController(mkey string, params *models.CmdbRequestParams) (*[]models.CredentialStoreDomainController, error) {
+	req := &models.CmdbRequest{}
+	req.HTTPMethod = "GET"
+	req.Payload = nil
+	req.Path = models.CmdbBasePath + models.CredentialStoreDomainControllerPath
+	req.Params = *params
+
+	res, err := request.Read(c.config, req)
+	if err != nil {
+		return nil, err
+	}
+
+	// marshal/unmarshal results
+
+	if tmp, ok := res.Results.([]interface{}); ok {
+		jsontmp, err := json.Marshal(tmp)
+		if err != nil {
+			return nil, err
+		}
+		v := []models.CredentialStoreDomainController{}
+		json.Unmarshal(jsontmp, &v)
+		return &v, nil
+	}
+	return nil, err
+}

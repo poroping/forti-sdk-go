@@ -99,3 +99,29 @@ func (c *Client) DeleteSwitchControllerInitialConfigTemplate(mkey string, params
 	err := request.Delete(c.config, req)
 	return err
 }
+
+func (c *Client) ListSwitchControllerInitialConfigTemplate(mkey string, params *models.CmdbRequestParams) (*[]models.SwitchControllerInitialConfigTemplate, error) {
+	req := &models.CmdbRequest{}
+	req.HTTPMethod = "GET"
+	req.Payload = nil
+	req.Path = models.CmdbBasePath + models.SwitchControllerInitialConfigTemplatePath
+	req.Params = *params
+
+	res, err := request.Read(c.config, req)
+	if err != nil {
+		return nil, err
+	}
+
+	// marshal/unmarshal results
+
+	if tmp, ok := res.Results.([]interface{}); ok {
+		jsontmp, err := json.Marshal(tmp)
+		if err != nil {
+			return nil, err
+		}
+		v := []models.SwitchControllerInitialConfigTemplate{}
+		json.Unmarshal(jsontmp, &v)
+		return &v, nil
+	}
+	return nil, err
+}

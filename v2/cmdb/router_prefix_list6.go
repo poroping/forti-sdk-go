@@ -99,3 +99,29 @@ func (c *Client) DeleteRouterPrefixList6(mkey string, params *models.CmdbRequest
 	err := request.Delete(c.config, req)
 	return err
 }
+
+func (c *Client) ListRouterPrefixList6(mkey string, params *models.CmdbRequestParams) (*[]models.RouterPrefixList6, error) {
+	req := &models.CmdbRequest{}
+	req.HTTPMethod = "GET"
+	req.Payload = nil
+	req.Path = models.CmdbBasePath + models.RouterPrefixList6Path
+	req.Params = *params
+
+	res, err := request.Read(c.config, req)
+	if err != nil {
+		return nil, err
+	}
+
+	// marshal/unmarshal results
+
+	if tmp, ok := res.Results.([]interface{}); ok {
+		jsontmp, err := json.Marshal(tmp)
+		if err != nil {
+			return nil, err
+		}
+		v := []models.RouterPrefixList6{}
+		json.Unmarshal(jsontmp, &v)
+		return &v, nil
+	}
+	return nil, err
+}

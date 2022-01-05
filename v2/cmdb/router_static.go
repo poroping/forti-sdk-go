@@ -100,3 +100,29 @@ func (c *Client) DeleteRouterStatic(mkey string, params *models.CmdbRequestParam
 	err := request.Delete(c.config, req)
 	return err
 }
+
+func (c *Client) ListRouterStatic(mkey string, params *models.CmdbRequestParams) (*[]models.RouterStatic, error) {
+	req := &models.CmdbRequest{}
+	req.HTTPMethod = "GET"
+	req.Payload = nil
+	req.Path = models.CmdbBasePath + models.RouterStaticPath
+	req.Params = *params
+
+	res, err := request.Read(c.config, req)
+	if err != nil {
+		return nil, err
+	}
+
+	// marshal/unmarshal results
+
+	if tmp, ok := res.Results.([]interface{}); ok {
+		jsontmp, err := json.Marshal(tmp)
+		if err != nil {
+			return nil, err
+		}
+		v := []models.RouterStatic{}
+		json.Unmarshal(jsontmp, &v)
+		return &v, nil
+	}
+	return nil, err
+}

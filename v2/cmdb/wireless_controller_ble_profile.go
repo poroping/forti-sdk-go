@@ -99,3 +99,29 @@ func (c *Client) DeleteWirelessControllerBleProfile(mkey string, params *models.
 	err := request.Delete(c.config, req)
 	return err
 }
+
+func (c *Client) ListWirelessControllerBleProfile(mkey string, params *models.CmdbRequestParams) (*[]models.WirelessControllerBleProfile, error) {
+	req := &models.CmdbRequest{}
+	req.HTTPMethod = "GET"
+	req.Payload = nil
+	req.Path = models.CmdbBasePath + models.WirelessControllerBleProfilePath
+	req.Params = *params
+
+	res, err := request.Read(c.config, req)
+	if err != nil {
+		return nil, err
+	}
+
+	// marshal/unmarshal results
+
+	if tmp, ok := res.Results.([]interface{}); ok {
+		jsontmp, err := json.Marshal(tmp)
+		if err != nil {
+			return nil, err
+		}
+		v := []models.WirelessControllerBleProfile{}
+		json.Unmarshal(jsontmp, &v)
+		return &v, nil
+	}
+	return nil, err
+}

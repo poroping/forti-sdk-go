@@ -99,3 +99,29 @@ func (c *Client) DeleteFirewallVipgrp64(mkey string, params *models.CmdbRequestP
 	err := request.Delete(c.config, req)
 	return err
 }
+
+func (c *Client) ListFirewallVipgrp64(mkey string, params *models.CmdbRequestParams) (*[]models.FirewallVipgrp64, error) {
+	req := &models.CmdbRequest{}
+	req.HTTPMethod = "GET"
+	req.Payload = nil
+	req.Path = models.CmdbBasePath + models.FirewallVipgrp64Path
+	req.Params = *params
+
+	res, err := request.Read(c.config, req)
+	if err != nil {
+		return nil, err
+	}
+
+	// marshal/unmarshal results
+
+	if tmp, ok := res.Results.([]interface{}); ok {
+		jsontmp, err := json.Marshal(tmp)
+		if err != nil {
+			return nil, err
+		}
+		v := []models.FirewallVipgrp64{}
+		json.Unmarshal(jsontmp, &v)
+		return &v, nil
+	}
+	return nil, err
+}

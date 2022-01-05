@@ -99,3 +99,29 @@ func (c *Client) DeleteVpnIpsecPhase1(mkey string, params *models.CmdbRequestPar
 	err := request.Delete(c.config, req)
 	return err
 }
+
+func (c *Client) ListVpnIpsecPhase1(mkey string, params *models.CmdbRequestParams) (*[]models.VpnIpsecPhase1, error) {
+	req := &models.CmdbRequest{}
+	req.HTTPMethod = "GET"
+	req.Payload = nil
+	req.Path = models.CmdbBasePath + models.VpnIpsecPhase1Path
+	req.Params = *params
+
+	res, err := request.Read(c.config, req)
+	if err != nil {
+		return nil, err
+	}
+
+	// marshal/unmarshal results
+
+	if tmp, ok := res.Results.([]interface{}); ok {
+		jsontmp, err := json.Marshal(tmp)
+		if err != nil {
+			return nil, err
+		}
+		v := []models.VpnIpsecPhase1{}
+		json.Unmarshal(jsontmp, &v)
+		return &v, nil
+	}
+	return nil, err
+}

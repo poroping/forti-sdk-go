@@ -99,3 +99,29 @@ func (c *Client) DeleteWirelessControllerHotspot20Icon(mkey string, params *mode
 	err := request.Delete(c.config, req)
 	return err
 }
+
+func (c *Client) ListWirelessControllerHotspot20Icon(mkey string, params *models.CmdbRequestParams) (*[]models.WirelessControllerHotspot20Icon, error) {
+	req := &models.CmdbRequest{}
+	req.HTTPMethod = "GET"
+	req.Payload = nil
+	req.Path = models.CmdbBasePath + models.WirelessControllerHotspot20IconPath
+	req.Params = *params
+
+	res, err := request.Read(c.config, req)
+	if err != nil {
+		return nil, err
+	}
+
+	// marshal/unmarshal results
+
+	if tmp, ok := res.Results.([]interface{}); ok {
+		jsontmp, err := json.Marshal(tmp)
+		if err != nil {
+			return nil, err
+		}
+		v := []models.WirelessControllerHotspot20Icon{}
+		json.Unmarshal(jsontmp, &v)
+		return &v, nil
+	}
+	return nil, err
+}

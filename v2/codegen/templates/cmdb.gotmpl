@@ -18,4 +18,6 @@ import (
 
 {{template "cmdb_delete" .}}
 
+{{if eq .results.category "table"}}{{template "cmdb_list" .}}{{end}}
+
 {{end}}

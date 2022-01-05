@@ -100,3 +100,29 @@ func (c *Client) DeleteFirewallDnstranslation(mkey string, params *models.CmdbRe
 	err := request.Delete(c.config, req)
 	return err
 }
+
+func (c *Client) ListFirewallDnstranslation(mkey string, params *models.CmdbRequestParams) (*[]models.FirewallDnstranslation, error) {
+	req := &models.CmdbRequest{}
+	req.HTTPMethod = "GET"
+	req.Payload = nil
+	req.Path = models.CmdbBasePath + models.FirewallDnstranslationPath
+	req.Params = *params
+
+	res, err := request.Read(c.config, req)
+	if err != nil {
+		return nil, err
+	}
+
+	// marshal/unmarshal results
+
+	if tmp, ok := res.Results.([]interface{}); ok {
+		jsontmp, err := json.Marshal(tmp)
+		if err != nil {
+			return nil, err
+		}
+		v := []models.FirewallDnstranslation{}
+		json.Unmarshal(jsontmp, &v)
+		return &v, nil
+	}
+	return nil, err
+}

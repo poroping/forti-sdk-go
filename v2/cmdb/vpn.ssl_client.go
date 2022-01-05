@@ -99,3 +99,29 @@ func (c *Client) DeleteVpnSslClient(mkey string, params *models.CmdbRequestParam
 	err := request.Delete(c.config, req)
 	return err
 }
+
+func (c *Client) ListVpnSslClient(mkey string, params *models.CmdbRequestParams) (*[]models.VpnSslClient, error) {
+	req := &models.CmdbRequest{}
+	req.HTTPMethod = "GET"
+	req.Payload = nil
+	req.Path = models.CmdbBasePath + models.VpnSslClientPath
+	req.Params = *params
+
+	res, err := request.Read(c.config, req)
+	if err != nil {
+		return nil, err
+	}
+
+	// marshal/unmarshal results
+
+	if tmp, ok := res.Results.([]interface{}); ok {
+		jsontmp, err := json.Marshal(tmp)
+		if err != nil {
+			return nil, err
+		}
+		v := []models.VpnSslClient{}
+		json.Unmarshal(jsontmp, &v)
+		return &v, nil
+	}
+	return nil, err
+}

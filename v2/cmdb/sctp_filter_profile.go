@@ -99,3 +99,29 @@ func (c *Client) DeleteSctpFilterProfile(mkey string, params *models.CmdbRequest
 	err := request.Delete(c.config, req)
 	return err
 }
+
+func (c *Client) ListSctpFilterProfile(mkey string, params *models.CmdbRequestParams) (*[]models.SctpFilterProfile, error) {
+	req := &models.CmdbRequest{}
+	req.HTTPMethod = "GET"
+	req.Payload = nil
+	req.Path = models.CmdbBasePath + models.SctpFilterProfilePath
+	req.Params = *params
+
+	res, err := request.Read(c.config, req)
+	if err != nil {
+		return nil, err
+	}
+
+	// marshal/unmarshal results
+
+	if tmp, ok := res.Results.([]interface{}); ok {
+		jsontmp, err := json.Marshal(tmp)
+		if err != nil {
+			return nil, err
+		}
+		v := []models.SctpFilterProfile{}
+		json.Unmarshal(jsontmp, &v)
+		return &v, nil
+	}
+	return nil, err
+}

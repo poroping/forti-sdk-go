@@ -99,3 +99,29 @@ func (c *Client) DeleteWirelessControllerAddrgrp(mkey string, params *models.Cmd
 	err := request.Delete(c.config, req)
 	return err
 }
+
+func (c *Client) ListWirelessControllerAddrgrp(mkey string, params *models.CmdbRequestParams) (*[]models.WirelessControllerAddrgrp, error) {
+	req := &models.CmdbRequest{}
+	req.HTTPMethod = "GET"
+	req.Payload = nil
+	req.Path = models.CmdbBasePath + models.WirelessControllerAddrgrpPath
+	req.Params = *params
+
+	res, err := request.Read(c.config, req)
+	if err != nil {
+		return nil, err
+	}
+
+	// marshal/unmarshal results
+
+	if tmp, ok := res.Results.([]interface{}); ok {
+		jsontmp, err := json.Marshal(tmp)
+		if err != nil {
+			return nil, err
+		}
+		v := []models.WirelessControllerAddrgrp{}
+		json.Unmarshal(jsontmp, &v)
+		return &v, nil
+	}
+	return nil, err
+}
