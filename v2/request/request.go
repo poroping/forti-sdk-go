@@ -340,8 +340,17 @@ func marshalParams(params *models.CmdbRequestParams) url.Values {
 	if params.Action != "" {
 		urlQuery.Add("action", params.Action)
 	}
-	urlQuery.Add("filter", strings.Join(params.Filter, ","))
-	urlQuery.Add("format", strings.Join(params.Format, "|"))
-	urlQuery.Add("sort", strings.Join(params.Sort, ","))
+	if params.Filter != nil {
+		v := params.Filter
+		urlQuery.Add("filter", strings.Join(*v, ","))
+	}
+	if params.Format != nil {
+		v := params.Format
+		urlQuery.Add("format", strings.Join(*v, "|"))
+	}
+	if params.Sort != nil {
+		v := params.Sort
+		urlQuery.Add("sort", strings.Join(*v, ","))
+	}
 	return urlQuery
 }
