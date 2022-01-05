@@ -100,7 +100,7 @@ func (c *Client) DeleteRouterBgpVrfLeak(mkey string, params *models.CmdbRequestP
 	return err
 }
 
-func (c *Client) ListRouterBgpVrfLeak(mkey string, params *models.CmdbRequestParams) (*[]models.RouterBgpVrfLeak, error) {
+func (c *Client) ListRouterBgpVrfLeak(params *models.CmdbRequestParams) (*[]models.RouterBgpVrfLeak, error) {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "GET"
 	req.Payload = nil

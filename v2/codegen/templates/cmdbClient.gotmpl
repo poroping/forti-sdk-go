@@ -20,7 +20,7 @@ type Endpoints interface {
 	Read{{.Path}}(mkey string, params *models.CmdbRequestParams) (*models.{{.Path}}, error)
 	Update{{.Path}}(mkey string, payload *models.{{.Path}}, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
 	Delete{{.Path}}(mkey string, params *models.CmdbRequestParams) error{{ if eq .Category "table" }}
-	List{{.Path}}(mkey string, params *models.CmdbRequestParams) (*[]models.{{.Path}}, error){{ end }}
+	List{{.Path}}(params *models.CmdbRequestParams) (*[]models.{{.Path}}, error){{ end }}
 	{{- end}}
 
 }

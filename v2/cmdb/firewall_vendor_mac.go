@@ -101,7 +101,7 @@ func (c *Client) DeleteFirewallVendorMac(mkey string, params *models.CmdbRequest
 	return err
 }
 
-func (c *Client) ListFirewallVendorMac(mkey string, params *models.CmdbRequestParams) (*[]models.FirewallVendorMac, error) {
+func (c *Client) ListFirewallVendorMac(params *models.CmdbRequestParams) (*[]models.FirewallVendorMac, error) {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "GET"
 	req.Payload = nil

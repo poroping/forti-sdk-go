@@ -100,7 +100,7 @@ func (c *Client) DeleteSwitchControllerVlanPolicy(mkey string, params *models.Cm
 	return err
 }
 
-func (c *Client) ListSwitchControllerVlanPolicy(mkey string, params *models.CmdbRequestParams) (*[]models.SwitchControllerVlanPolicy, error) {
+func (c *Client) ListSwitchControllerVlanPolicy(params *models.CmdbRequestParams) (*[]models.SwitchControllerVlanPolicy, error) {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "GET"
 	req.Payload = nil

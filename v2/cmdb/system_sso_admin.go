@@ -100,7 +100,7 @@ func (c *Client) DeleteSystemSsoAdmin(mkey string, params *models.CmdbRequestPar
 	return err
 }
 
-func (c *Client) ListSystemSsoAdmin(mkey string, params *models.CmdbRequestParams) (*[]models.SystemSsoAdmin, error) {
+func (c *Client) ListSystemSsoAdmin(params *models.CmdbRequestParams) (*[]models.SystemSsoAdmin, error) {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "GET"
 	req.Payload = nil

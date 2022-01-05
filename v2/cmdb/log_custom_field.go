@@ -100,7 +100,7 @@ func (c *Client) DeleteLogCustomField(mkey string, params *models.CmdbRequestPar
 	return err
 }
 
-func (c *Client) ListLogCustomField(mkey string, params *models.CmdbRequestParams) (*[]models.LogCustomField, error) {
+func (c *Client) ListLogCustomField(params *models.CmdbRequestParams) (*[]models.LogCustomField, error) {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "GET"
 	req.Payload = nil

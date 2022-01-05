@@ -100,7 +100,7 @@ func (c *Client) DeleteSwitchControllerSecurityPolicy8021X(mkey string, params *
 	return err
 }
 
-func (c *Client) ListSwitchControllerSecurityPolicy8021X(mkey string, params *models.CmdbRequestParams) (*[]models.SwitchControllerSecurityPolicy8021X, error) {
+func (c *Client) ListSwitchControllerSecurityPolicy8021X(params *models.CmdbRequestParams) (*[]models.SwitchControllerSecurityPolicy8021X, error) {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "GET"
 	req.Payload = nil

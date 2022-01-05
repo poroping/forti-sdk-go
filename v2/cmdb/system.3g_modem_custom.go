@@ -101,7 +101,7 @@ func (c *Client) DeleteSystem3gModemCustom(mkey string, params *models.CmdbReque
 	return err
 }
 
-func (c *Client) ListSystem3gModemCustom(mkey string, params *models.CmdbRequestParams) (*[]models.System3gModemCustom, error) {
+func (c *Client) ListSystem3gModemCustom(params *models.CmdbRequestParams) (*[]models.System3gModemCustom, error) {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "GET"
 	req.Payload = nil

@@ -100,7 +100,7 @@ func (c *Client) DeleteSwitchControllerMacPolicy(mkey string, params *models.Cmd
 	return err
 }
 
-func (c *Client) ListSwitchControllerMacPolicy(mkey string, params *models.CmdbRequestParams) (*[]models.SwitchControllerMacPolicy, error) {
+func (c *Client) ListSwitchControllerMacPolicy(params *models.CmdbRequestParams) (*[]models.SwitchControllerMacPolicy, error) {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "GET"
 	req.Payload = nil

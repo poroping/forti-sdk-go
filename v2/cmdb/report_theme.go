@@ -100,7 +100,7 @@ func (c *Client) DeleteReportTheme(mkey string, params *models.CmdbRequestParams
 	return err
 }
 
-func (c *Client) ListReportTheme(mkey string, params *models.CmdbRequestParams) (*[]models.ReportTheme, error) {
+func (c *Client) ListReportTheme(params *models.CmdbRequestParams) (*[]models.ReportTheme, error) {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "GET"
 	req.Payload = nil

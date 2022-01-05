@@ -101,7 +101,7 @@ func (c *Client) DeleteFirewallSecurityPolicy(mkey string, params *models.CmdbRe
 	return err
 }
 
-func (c *Client) ListFirewallSecurityPolicy(mkey string, params *models.CmdbRequestParams) (*[]models.FirewallSecurityPolicy, error) {
+func (c *Client) ListFirewallSecurityPolicy(params *models.CmdbRequestParams) (*[]models.FirewallSecurityPolicy, error) {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "GET"
 	req.Payload = nil

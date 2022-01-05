@@ -100,7 +100,7 @@ func (c *Client) DeleteFirewallProfileGroup(mkey string, params *models.CmdbRequ
 	return err
 }
 
-func (c *Client) ListFirewallProfileGroup(mkey string, params *models.CmdbRequestParams) (*[]models.FirewallProfileGroup, error) {
+func (c *Client) ListFirewallProfileGroup(params *models.CmdbRequestParams) (*[]models.FirewallProfileGroup, error) {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "GET"
 	req.Payload = nil

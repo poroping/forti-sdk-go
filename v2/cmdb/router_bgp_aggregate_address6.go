@@ -101,7 +101,7 @@ func (c *Client) DeleteRouterBgpAggregateAddress6(mkey string, params *models.Cm
 	return err
 }
 
-func (c *Client) ListRouterBgpAggregateAddress6(mkey string, params *models.CmdbRequestParams) (*[]models.RouterBgpAggregateAddress6, error) {
+func (c *Client) ListRouterBgpAggregateAddress6(params *models.CmdbRequestParams) (*[]models.RouterBgpAggregateAddress6, error) {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "GET"
 	req.Payload = nil

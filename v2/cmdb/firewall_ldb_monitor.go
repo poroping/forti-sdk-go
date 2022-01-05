@@ -100,7 +100,7 @@ func (c *Client) DeleteFirewallLdbMonitor(mkey string, params *models.CmdbReques
 	return err
 }
 
-func (c *Client) ListFirewallLdbMonitor(mkey string, params *models.CmdbRequestParams) (*[]models.FirewallLdbMonitor, error) {
+func (c *Client) ListFirewallLdbMonitor(params *models.CmdbRequestParams) (*[]models.FirewallLdbMonitor, error) {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "GET"
 	req.Payload = nil

@@ -101,7 +101,7 @@ func (c *Client) DeleteSystemVdomException(mkey string, params *models.CmdbReque
 	return err
 }
 
-func (c *Client) ListSystemVdomException(mkey string, params *models.CmdbRequestParams) (*[]models.SystemVdomException, error) {
+func (c *Client) ListSystemVdomException(params *models.CmdbRequestParams) (*[]models.SystemVdomException, error) {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "GET"
 	req.Payload = nil

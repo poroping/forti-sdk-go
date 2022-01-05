@@ -100,7 +100,7 @@ func (c *Client) DeleteRouterAuthPath(mkey string, params *models.CmdbRequestPar
 	return err
 }
 
-func (c *Client) ListRouterAuthPath(mkey string, params *models.CmdbRequestParams) (*[]models.RouterAuthPath, error) {
+func (c *Client) ListRouterAuthPath(params *models.CmdbRequestParams) (*[]models.RouterAuthPath, error) {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "GET"
 	req.Payload = nil

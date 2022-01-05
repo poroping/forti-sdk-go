@@ -101,7 +101,7 @@ func (c *Client) DeleteFirewallLocalInPolicy6(mkey string, params *models.CmdbRe
 	return err
 }
 
-func (c *Client) ListFirewallLocalInPolicy6(mkey string, params *models.CmdbRequestParams) (*[]models.FirewallLocalInPolicy6, error) {
+func (c *Client) ListFirewallLocalInPolicy6(params *models.CmdbRequestParams) (*[]models.FirewallLocalInPolicy6, error) {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "GET"
 	req.Payload = nil

@@ -100,7 +100,7 @@ func (c *Client) DeleteWirelessControllerHotspot20QosMap(mkey string, params *mo
 	return err
 }
 
-func (c *Client) ListWirelessControllerHotspot20QosMap(mkey string, params *models.CmdbRequestParams) (*[]models.WirelessControllerHotspot20QosMap, error) {
+func (c *Client) ListWirelessControllerHotspot20QosMap(params *models.CmdbRequestParams) (*[]models.WirelessControllerHotspot20QosMap, error) {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "GET"
 	req.Payload = nil

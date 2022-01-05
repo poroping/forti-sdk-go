@@ -100,7 +100,7 @@ func (c *Client) DeleteSystemIpsecAggregate(mkey string, params *models.CmdbRequ
 	return err
 }
 
-func (c *Client) ListSystemIpsecAggregate(mkey string, params *models.CmdbRequestParams) (*[]models.SystemIpsecAggregate, error) {
+func (c *Client) ListSystemIpsecAggregate(params *models.CmdbRequestParams) (*[]models.SystemIpsecAggregate, error) {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "GET"
 	req.Payload = nil

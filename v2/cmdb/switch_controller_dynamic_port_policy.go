@@ -100,7 +100,7 @@ func (c *Client) DeleteSwitchControllerDynamicPortPolicy(mkey string, params *mo
 	return err
 }
 
-func (c *Client) ListSwitchControllerDynamicPortPolicy(mkey string, params *models.CmdbRequestParams) (*[]models.SwitchControllerDynamicPortPolicy, error) {
+func (c *Client) ListSwitchControllerDynamicPortPolicy(params *models.CmdbRequestParams) (*[]models.SwitchControllerDynamicPortPolicy, error) {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "GET"
 	req.Payload = nil

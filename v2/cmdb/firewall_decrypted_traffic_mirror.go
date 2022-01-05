@@ -100,7 +100,7 @@ func (c *Client) DeleteFirewallDecryptedTrafficMirror(mkey string, params *model
 	return err
 }
 
-func (c *Client) ListFirewallDecryptedTrafficMirror(mkey string, params *models.CmdbRequestParams) (*[]models.FirewallDecryptedTrafficMirror, error) {
+func (c *Client) ListFirewallDecryptedTrafficMirror(params *models.CmdbRequestParams) (*[]models.FirewallDecryptedTrafficMirror, error) {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "GET"
 	req.Payload = nil

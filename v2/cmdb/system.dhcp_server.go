@@ -101,7 +101,7 @@ func (c *Client) DeleteSystemDhcpServer(mkey string, params *models.CmdbRequestP
 	return err
 }
 
-func (c *Client) ListSystemDhcpServer(mkey string, params *models.CmdbRequestParams) (*[]models.SystemDhcpServer, error) {
+func (c *Client) ListSystemDhcpServer(params *models.CmdbRequestParams) (*[]models.SystemDhcpServer, error) {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "GET"
 	req.Payload = nil

@@ -100,7 +100,7 @@ func (c *Client) DeleteVpnIpsecFec(mkey string, params *models.CmdbRequestParams
 	return err
 }
 
-func (c *Client) ListVpnIpsecFec(mkey string, params *models.CmdbRequestParams) (*[]models.VpnIpsecFec, error) {
+func (c *Client) ListVpnIpsecFec(params *models.CmdbRequestParams) (*[]models.VpnIpsecFec, error) {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "GET"
 	req.Payload = nil

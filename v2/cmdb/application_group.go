@@ -100,7 +100,7 @@ func (c *Client) DeleteApplicationGroup(mkey string, params *models.CmdbRequestP
 	return err
 }
 
-func (c *Client) ListApplicationGroup(mkey string, params *models.CmdbRequestParams) (*[]models.ApplicationGroup, error) {
+func (c *Client) ListApplicationGroup(params *models.CmdbRequestParams) (*[]models.ApplicationGroup, error) {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "GET"
 	req.Payload = nil

@@ -100,7 +100,7 @@ func (c *Client) DeleteRouterAccessList(mkey string, params *models.CmdbRequestP
 	return err
 }
 
-func (c *Client) ListRouterAccessList(mkey string, params *models.CmdbRequestParams) (*[]models.RouterAccessList, error) {
+func (c *Client) ListRouterAccessList(params *models.CmdbRequestParams) (*[]models.RouterAccessList, error) {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "GET"
 	req.Payload = nil

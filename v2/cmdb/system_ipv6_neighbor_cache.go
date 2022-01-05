@@ -101,7 +101,7 @@ func (c *Client) DeleteSystemIpv6NeighborCache(mkey string, params *models.CmdbR
 	return err
 }
 
-func (c *Client) ListSystemIpv6NeighborCache(mkey string, params *models.CmdbRequestParams) (*[]models.SystemIpv6NeighborCache, error) {
+func (c *Client) ListSystemIpv6NeighborCache(params *models.CmdbRequestParams) (*[]models.SystemIpv6NeighborCache, error) {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "GET"
 	req.Payload = nil

@@ -101,7 +101,7 @@ func (c *Client) DeleteSwitchControllerNacDevice(mkey string, params *models.Cmd
 	return err
 }
 
-func (c *Client) ListSwitchControllerNacDevice(mkey string, params *models.CmdbRequestParams) (*[]models.SwitchControllerNacDevice, error) {
+func (c *Client) ListSwitchControllerNacDevice(params *models.CmdbRequestParams) (*[]models.SwitchControllerNacDevice, error) {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "GET"
 	req.Payload = nil

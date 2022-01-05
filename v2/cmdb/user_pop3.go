@@ -100,7 +100,7 @@ func (c *Client) DeleteUserPop3(mkey string, params *models.CmdbRequestParams) e
 	return err
 }
 
-func (c *Client) ListUserPop3(mkey string, params *models.CmdbRequestParams) (*[]models.UserPop3, error) {
+func (c *Client) ListUserPop3(params *models.CmdbRequestParams) (*[]models.UserPop3, error) {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "GET"
 	req.Payload = nil

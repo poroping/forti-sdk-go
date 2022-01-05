@@ -100,7 +100,7 @@ func (c *Client) DeleteFirewallScheduleGroup(mkey string, params *models.CmdbReq
 	return err
 }
 
-func (c *Client) ListFirewallScheduleGroup(mkey string, params *models.CmdbRequestParams) (*[]models.FirewallScheduleGroup, error) {
+func (c *Client) ListFirewallScheduleGroup(params *models.CmdbRequestParams) (*[]models.FirewallScheduleGroup, error) {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "GET"
 	req.Payload = nil

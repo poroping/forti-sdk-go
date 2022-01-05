@@ -100,7 +100,7 @@ func (c *Client) DeleteSwitchControllerManagedSwitch(mkey string, params *models
 	return err
 }
 
-func (c *Client) ListSwitchControllerManagedSwitch(mkey string, params *models.CmdbRequestParams) (*[]models.SwitchControllerManagedSwitch, error) {
+func (c *Client) ListSwitchControllerManagedSwitch(params *models.CmdbRequestParams) (*[]models.SwitchControllerManagedSwitch, error) {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "GET"
 	req.Payload = nil

@@ -100,7 +100,7 @@ func (c *Client) DeleteSystemAutomationTrigger(mkey string, params *models.CmdbR
 	return err
 }
 
-func (c *Client) ListSystemAutomationTrigger(mkey string, params *models.CmdbRequestParams) (*[]models.SystemAutomationTrigger, error) {
+func (c *Client) ListSystemAutomationTrigger(params *models.CmdbRequestParams) (*[]models.SystemAutomationTrigger, error) {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "GET"
 	req.Payload = nil

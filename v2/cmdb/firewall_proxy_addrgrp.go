@@ -100,7 +100,7 @@ func (c *Client) DeleteFirewallProxyAddrgrp(mkey string, params *models.CmdbRequ
 	return err
 }
 
-func (c *Client) ListFirewallProxyAddrgrp(mkey string, params *models.CmdbRequestParams) (*[]models.FirewallProxyAddrgrp, error) {
+func (c *Client) ListFirewallProxyAddrgrp(params *models.CmdbRequestParams) (*[]models.FirewallProxyAddrgrp, error) {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "GET"
 	req.Payload = nil

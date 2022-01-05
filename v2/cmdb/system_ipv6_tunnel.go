@@ -100,7 +100,7 @@ func (c *Client) DeleteSystemIpv6Tunnel(mkey string, params *models.CmdbRequestP
 	return err
 }
 
-func (c *Client) ListSystemIpv6Tunnel(mkey string, params *models.CmdbRequestParams) (*[]models.SystemIpv6Tunnel, error) {
+func (c *Client) ListSystemIpv6Tunnel(params *models.CmdbRequestParams) (*[]models.SystemIpv6Tunnel, error) {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "GET"
 	req.Payload = nil

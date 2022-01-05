@@ -100,7 +100,7 @@ func (c *Client) DeleteWanoptAuthGroup(mkey string, params *models.CmdbRequestPa
 	return err
 }
 
-func (c *Client) ListWanoptAuthGroup(mkey string, params *models.CmdbRequestParams) (*[]models.WanoptAuthGroup, error) {
+func (c *Client) ListWanoptAuthGroup(params *models.CmdbRequestParams) (*[]models.WanoptAuthGroup, error) {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "GET"
 	req.Payload = nil

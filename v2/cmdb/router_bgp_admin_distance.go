@@ -101,7 +101,7 @@ func (c *Client) DeleteRouterBgpAdminDistance(mkey string, params *models.CmdbRe
 	return err
 }
 
-func (c *Client) ListRouterBgpAdminDistance(mkey string, params *models.CmdbRequestParams) (*[]models.RouterBgpAdminDistance, error) {
+func (c *Client) ListRouterBgpAdminDistance(params *models.CmdbRequestParams) (*[]models.RouterBgpAdminDistance, error) {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "GET"
 	req.Payload = nil

@@ -100,7 +100,7 @@ func (c *Client) DeleteFileFilterProfile(mkey string, params *models.CmdbRequest
 	return err
 }
 
-func (c *Client) ListFileFilterProfile(mkey string, params *models.CmdbRequestParams) (*[]models.FileFilterProfile, error) {
+func (c *Client) ListFileFilterProfile(params *models.CmdbRequestParams) (*[]models.FileFilterProfile, error) {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "GET"
 	req.Payload = nil

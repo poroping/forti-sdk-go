@@ -100,7 +100,7 @@ func (c *Client) DeleteFirewallScheduleOnetime(mkey string, params *models.CmdbR
 	return err
 }
 
-func (c *Client) ListFirewallScheduleOnetime(mkey string, params *models.CmdbRequestParams) (*[]models.FirewallScheduleOnetime, error) {
+func (c *Client) ListFirewallScheduleOnetime(params *models.CmdbRequestParams) (*[]models.FirewallScheduleOnetime, error) {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "GET"
 	req.Payload = nil

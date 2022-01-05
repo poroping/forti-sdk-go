@@ -101,7 +101,7 @@ func (c *Client) DeleteSystemSessionHelper(mkey string, params *models.CmdbReque
 	return err
 }
 
-func (c *Client) ListSystemSessionHelper(mkey string, params *models.CmdbRequestParams) (*[]models.SystemSessionHelper, error) {
+func (c *Client) ListSystemSessionHelper(params *models.CmdbRequestParams) (*[]models.SystemSessionHelper, error) {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "GET"
 	req.Payload = nil

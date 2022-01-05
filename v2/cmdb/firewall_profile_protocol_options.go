@@ -100,7 +100,7 @@ func (c *Client) DeleteFirewallProfileProtocolOptions(mkey string, params *model
 	return err
 }
 
-func (c *Client) ListFirewallProfileProtocolOptions(mkey string, params *models.CmdbRequestParams) (*[]models.FirewallProfileProtocolOptions, error) {
+func (c *Client) ListFirewallProfileProtocolOptions(params *models.CmdbRequestParams) (*[]models.FirewallProfileProtocolOptions, error) {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "GET"
 	req.Payload = nil

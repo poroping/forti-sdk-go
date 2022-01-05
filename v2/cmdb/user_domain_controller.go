@@ -100,7 +100,7 @@ func (c *Client) DeleteUserDomainController(mkey string, params *models.CmdbRequ
 	return err
 }
 
-func (c *Client) ListUserDomainController(mkey string, params *models.CmdbRequestParams) (*[]models.UserDomainController, error) {
+func (c *Client) ListUserDomainController(params *models.CmdbRequestParams) (*[]models.UserDomainController, error) {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "GET"
 	req.Payload = nil

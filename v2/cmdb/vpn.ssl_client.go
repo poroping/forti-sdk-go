@@ -100,7 +100,7 @@ func (c *Client) DeleteVpnSslClient(mkey string, params *models.CmdbRequestParam
 	return err
 }
 
-func (c *Client) ListVpnSslClient(mkey string, params *models.CmdbRequestParams) (*[]models.VpnSslClient, error) {
+func (c *Client) ListVpnSslClient(params *models.CmdbRequestParams) (*[]models.VpnSslClient, error) {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "GET"
 	req.Payload = nil

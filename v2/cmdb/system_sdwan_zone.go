@@ -100,7 +100,7 @@ func (c *Client) DeleteSystemSdwanZone(mkey string, params *models.CmdbRequestPa
 	return err
 }
 
-func (c *Client) ListSystemSdwanZone(mkey string, params *models.CmdbRequestParams) (*[]models.SystemSdwanZone, error) {
+func (c *Client) ListSystemSdwanZone(params *models.CmdbRequestParams) (*[]models.SystemSdwanZone, error) {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "GET"
 	req.Payload = nil

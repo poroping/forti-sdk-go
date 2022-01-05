@@ -100,7 +100,7 @@ func (c *Client) DeleteSystemLldpNetworkPolicy(mkey string, params *models.CmdbR
 	return err
 }
 
-func (c *Client) ListSystemLldpNetworkPolicy(mkey string, params *models.CmdbRequestParams) (*[]models.SystemLldpNetworkPolicy, error) {
+func (c *Client) ListSystemLldpNetworkPolicy(params *models.CmdbRequestParams) (*[]models.SystemLldpNetworkPolicy, error) {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "GET"
 	req.Payload = nil

@@ -101,7 +101,7 @@ func (c *Client) DeleteEmailfilterDnsbl(mkey string, params *models.CmdbRequestP
 	return err
 }
 
-func (c *Client) ListEmailfilterDnsbl(mkey string, params *models.CmdbRequestParams) (*[]models.EmailfilterDnsbl, error) {
+func (c *Client) ListEmailfilterDnsbl(params *models.CmdbRequestParams) (*[]models.EmailfilterDnsbl, error) {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "GET"
 	req.Payload = nil

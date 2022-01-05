@@ -100,7 +100,7 @@ func (c *Client) DeleteRouterCommunityList(mkey string, params *models.CmdbReque
 	return err
 }
 
-func (c *Client) ListRouterCommunityList(mkey string, params *models.CmdbRequestParams) (*[]models.RouterCommunityList, error) {
+func (c *Client) ListRouterCommunityList(params *models.CmdbRequestParams) (*[]models.RouterCommunityList, error) {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "GET"
 	req.Payload = nil

@@ -101,7 +101,7 @@ func (c *Client) DeleteWafSignature(mkey string, params *models.CmdbRequestParam
 	return err
 }
 
-func (c *Client) ListWafSignature(mkey string, params *models.CmdbRequestParams) (*[]models.WafSignature, error) {
+func (c *Client) ListWafSignature(params *models.CmdbRequestParams) (*[]models.WafSignature, error) {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "GET"
 	req.Payload = nil

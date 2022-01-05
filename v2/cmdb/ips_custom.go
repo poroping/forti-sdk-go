@@ -100,7 +100,7 @@ func (c *Client) DeleteIpsCustom(mkey string, params *models.CmdbRequestParams) 
 	return err
 }
 
-func (c *Client) ListIpsCustom(mkey string, params *models.CmdbRequestParams) (*[]models.IpsCustom, error) {
+func (c *Client) ListIpsCustom(params *models.CmdbRequestParams) (*[]models.IpsCustom, error) {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "GET"
 	req.Payload = nil

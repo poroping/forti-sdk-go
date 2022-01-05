@@ -100,7 +100,7 @@ func (c *Client) DeleteSystemReplacemsgWebproxy(mkey string, params *models.Cmdb
 	return err
 }
 
-func (c *Client) ListSystemReplacemsgWebproxy(mkey string, params *models.CmdbRequestParams) (*[]models.SystemReplacemsgWebproxy, error) {
+func (c *Client) ListSystemReplacemsgWebproxy(params *models.CmdbRequestParams) (*[]models.SystemReplacemsgWebproxy, error) {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "GET"
 	req.Payload = nil

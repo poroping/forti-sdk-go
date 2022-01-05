@@ -100,7 +100,7 @@ func (c *Client) DeleteSystemReplacemsgAlertmail(mkey string, params *models.Cmd
 	return err
 }
 
-func (c *Client) ListSystemReplacemsgAlertmail(mkey string, params *models.CmdbRequestParams) (*[]models.SystemReplacemsgAlertmail, error) {
+func (c *Client) ListSystemReplacemsgAlertmail(params *models.CmdbRequestParams) (*[]models.SystemReplacemsgAlertmail, error) {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "GET"
 	req.Payload = nil

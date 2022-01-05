@@ -101,7 +101,7 @@ func (c *Client) DeleteSwitchControllerSnmpCommunity(mkey string, params *models
 	return err
 }
 
-func (c *Client) ListSwitchControllerSnmpCommunity(mkey string, params *models.CmdbRequestParams) (*[]models.SwitchControllerSnmpCommunity, error) {
+func (c *Client) ListSwitchControllerSnmpCommunity(params *models.CmdbRequestParams) (*[]models.SwitchControllerSnmpCommunity, error) {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "GET"
 	req.Payload = nil

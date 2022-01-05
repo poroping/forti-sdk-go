@@ -100,7 +100,7 @@ func (c *Client) DeleteSystemReplacemsgFortiguardWf(mkey string, params *models.
 	return err
 }
 
-func (c *Client) ListSystemReplacemsgFortiguardWf(mkey string, params *models.CmdbRequestParams) (*[]models.SystemReplacemsgFortiguardWf, error) {
+func (c *Client) ListSystemReplacemsgFortiguardWf(params *models.CmdbRequestParams) (*[]models.SystemReplacemsgFortiguardWf, error) {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "GET"
 	req.Payload = nil

@@ -101,7 +101,7 @@ func (c *Client) DeleteUserFssoPolling(mkey string, params *models.CmdbRequestPa
 	return err
 }
 
-func (c *Client) ListUserFssoPolling(mkey string, params *models.CmdbRequestParams) (*[]models.UserFssoPolling, error) {
+func (c *Client) ListUserFssoPolling(params *models.CmdbRequestParams) (*[]models.UserFssoPolling, error) {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "GET"
 	req.Payload = nil

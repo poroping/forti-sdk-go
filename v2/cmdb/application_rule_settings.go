@@ -101,7 +101,7 @@ func (c *Client) DeleteApplicationRuleSettings(mkey string, params *models.CmdbR
 	return err
 }
 
-func (c *Client) ListApplicationRuleSettings(mkey string, params *models.CmdbRequestParams) (*[]models.ApplicationRuleSettings, error) {
+func (c *Client) ListApplicationRuleSettings(params *models.CmdbRequestParams) (*[]models.ApplicationRuleSettings, error) {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "GET"
 	req.Payload = nil

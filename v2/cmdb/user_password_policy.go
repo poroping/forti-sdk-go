@@ -100,7 +100,7 @@ func (c *Client) DeleteUserPasswordPolicy(mkey string, params *models.CmdbReques
 	return err
 }
 
-func (c *Client) ListUserPasswordPolicy(mkey string, params *models.CmdbRequestParams) (*[]models.UserPasswordPolicy, error) {
+func (c *Client) ListUserPasswordPolicy(params *models.CmdbRequestParams) (*[]models.UserPasswordPolicy, error) {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "GET"
 	req.Payload = nil

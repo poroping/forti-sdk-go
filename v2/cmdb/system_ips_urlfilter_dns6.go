@@ -100,7 +100,7 @@ func (c *Client) DeleteSystemIpsUrlfilterDns6(mkey string, params *models.CmdbRe
 	return err
 }
 
-func (c *Client) ListSystemIpsUrlfilterDns6(mkey string, params *models.CmdbRequestParams) (*[]models.SystemIpsUrlfilterDns6, error) {
+func (c *Client) ListSystemIpsUrlfilterDns6(params *models.CmdbRequestParams) (*[]models.SystemIpsUrlfilterDns6, error) {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "GET"
 	req.Payload = nil

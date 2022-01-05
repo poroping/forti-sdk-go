@@ -100,7 +100,7 @@ func (c *Client) DeleteSwitchControllerLldpProfile(mkey string, params *models.C
 	return err
 }
 
-func (c *Client) ListSwitchControllerLldpProfile(mkey string, params *models.CmdbRequestParams) (*[]models.SwitchControllerLldpProfile, error) {
+func (c *Client) ListSwitchControllerLldpProfile(params *models.CmdbRequestParams) (*[]models.SwitchControllerLldpProfile, error) {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "GET"
 	req.Payload = nil

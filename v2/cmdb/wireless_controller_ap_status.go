@@ -101,7 +101,7 @@ func (c *Client) DeleteWirelessControllerApStatus(mkey string, params *models.Cm
 	return err
 }
 
-func (c *Client) ListWirelessControllerApStatus(mkey string, params *models.CmdbRequestParams) (*[]models.WirelessControllerApStatus, error) {
+func (c *Client) ListWirelessControllerApStatus(params *models.CmdbRequestParams) (*[]models.WirelessControllerApStatus, error) {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "GET"
 	req.Payload = nil

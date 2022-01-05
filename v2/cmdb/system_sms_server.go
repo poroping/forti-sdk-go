@@ -100,7 +100,7 @@ func (c *Client) DeleteSystemSmsServer(mkey string, params *models.CmdbRequestPa
 	return err
 }
 
-func (c *Client) ListSystemSmsServer(mkey string, params *models.CmdbRequestParams) (*[]models.SystemSmsServer, error) {
+func (c *Client) ListSystemSmsServer(params *models.CmdbRequestParams) (*[]models.SystemSmsServer, error) {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "GET"
 	req.Payload = nil

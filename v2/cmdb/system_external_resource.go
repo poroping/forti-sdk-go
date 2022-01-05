@@ -100,7 +100,7 @@ func (c *Client) DeleteSystemExternalResource(mkey string, params *models.CmdbRe
 	return err
 }
 
-func (c *Client) ListSystemExternalResource(mkey string, params *models.CmdbRequestParams) (*[]models.SystemExternalResource, error) {
+func (c *Client) ListSystemExternalResource(params *models.CmdbRequestParams) (*[]models.SystemExternalResource, error) {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "GET"
 	req.Payload = nil

@@ -100,7 +100,7 @@ func (c *Client) DeleteVpnIpsecManualkey(mkey string, params *models.CmdbRequest
 	return err
 }
 
-func (c *Client) ListVpnIpsecManualkey(mkey string, params *models.CmdbRequestParams) (*[]models.VpnIpsecManualkey, error) {
+func (c *Client) ListVpnIpsecManualkey(params *models.CmdbRequestParams) (*[]models.VpnIpsecManualkey, error) {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "GET"
 	req.Payload = nil

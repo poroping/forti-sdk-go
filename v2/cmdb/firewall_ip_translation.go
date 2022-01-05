@@ -101,7 +101,7 @@ func (c *Client) DeleteFirewallIpTranslation(mkey string, params *models.CmdbReq
 	return err
 }
 
-func (c *Client) ListFirewallIpTranslation(mkey string, params *models.CmdbRequestParams) (*[]models.FirewallIpTranslation, error) {
+func (c *Client) ListFirewallIpTranslation(params *models.CmdbRequestParams) (*[]models.FirewallIpTranslation, error) {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "GET"
 	req.Payload = nil

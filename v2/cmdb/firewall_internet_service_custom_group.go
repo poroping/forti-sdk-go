@@ -100,7 +100,7 @@ func (c *Client) DeleteFirewallInternetServiceCustomGroup(mkey string, params *m
 	return err
 }
 
-func (c *Client) ListFirewallInternetServiceCustomGroup(mkey string, params *models.CmdbRequestParams) (*[]models.FirewallInternetServiceCustomGroup, error) {
+func (c *Client) ListFirewallInternetServiceCustomGroup(params *models.CmdbRequestParams) (*[]models.FirewallInternetServiceCustomGroup, error) {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "GET"
 	req.Payload = nil

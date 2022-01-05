@@ -100,7 +100,7 @@ func (c *Client) DeleteWirelessControllerRegion(mkey string, params *models.Cmdb
 	return err
 }
 
-func (c *Client) ListWirelessControllerRegion(mkey string, params *models.CmdbRequestParams) (*[]models.WirelessControllerRegion, error) {
+func (c *Client) ListWirelessControllerRegion(params *models.CmdbRequestParams) (*[]models.WirelessControllerRegion, error) {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "GET"
 	req.Payload = nil

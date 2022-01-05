@@ -100,7 +100,7 @@ func (c *Client) DeleteExtenderControllerExtender(mkey string, params *models.Cm
 	return err
 }
 
-func (c *Client) ListExtenderControllerExtender(mkey string, params *models.CmdbRequestParams) (*[]models.ExtenderControllerExtender, error) {
+func (c *Client) ListExtenderControllerExtender(params *models.CmdbRequestParams) (*[]models.ExtenderControllerExtender, error) {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "GET"
 	req.Payload = nil

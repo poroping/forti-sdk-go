@@ -101,7 +101,7 @@ func (c *Client) DeleteEmailfilterBlockAllowList(mkey string, params *models.Cmd
 	return err
 }
 
-func (c *Client) ListEmailfilterBlockAllowList(mkey string, params *models.CmdbRequestParams) (*[]models.EmailfilterBlockAllowList, error) {
+func (c *Client) ListEmailfilterBlockAllowList(params *models.CmdbRequestParams) (*[]models.EmailfilterBlockAllowList, error) {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "GET"
 	req.Payload = nil

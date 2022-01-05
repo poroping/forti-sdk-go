@@ -100,7 +100,7 @@ func (c *Client) DeleteRouterOspfArea(mkey string, params *models.CmdbRequestPar
 	return err
 }
 
-func (c *Client) ListRouterOspfArea(mkey string, params *models.CmdbRequestParams) (*[]models.RouterOspfArea, error) {
+func (c *Client) ListRouterOspfArea(params *models.CmdbRequestParams) (*[]models.RouterOspfArea, error) {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "GET"
 	req.Payload = nil

@@ -100,7 +100,7 @@ func (c *Client) DeleteWanoptPeer(mkey string, params *models.CmdbRequestParams)
 	return err
 }
 
-func (c *Client) ListWanoptPeer(mkey string, params *models.CmdbRequestParams) (*[]models.WanoptPeer, error) {
+func (c *Client) ListWanoptPeer(params *models.CmdbRequestParams) (*[]models.WanoptPeer, error) {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "GET"
 	req.Payload = nil

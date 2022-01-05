@@ -100,7 +100,7 @@ func (c *Client) DeleteSystemGreTunnel(mkey string, params *models.CmdbRequestPa
 	return err
 }
 
-func (c *Client) ListSystemGreTunnel(mkey string, params *models.CmdbRequestParams) (*[]models.SystemGreTunnel, error) {
+func (c *Client) ListSystemGreTunnel(params *models.CmdbRequestParams) (*[]models.SystemGreTunnel, error) {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "GET"
 	req.Payload = nil

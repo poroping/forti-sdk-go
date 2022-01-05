@@ -101,7 +101,7 @@ func (c *Client) DeleteRouterOspfDistributeList(mkey string, params *models.Cmdb
 	return err
 }
 
-func (c *Client) ListRouterOspfDistributeList(mkey string, params *models.CmdbRequestParams) (*[]models.RouterOspfDistributeList, error) {
+func (c *Client) ListRouterOspfDistributeList(params *models.CmdbRequestParams) (*[]models.RouterOspfDistributeList, error) {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "GET"
 	req.Payload = nil

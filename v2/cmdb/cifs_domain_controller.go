@@ -100,7 +100,7 @@ func (c *Client) DeleteCifsDomainController(mkey string, params *models.CmdbRequ
 	return err
 }
 
-func (c *Client) ListCifsDomainController(mkey string, params *models.CmdbRequestParams) (*[]models.CifsDomainController, error) {
+func (c *Client) ListCifsDomainController(params *models.CmdbRequestParams) (*[]models.CifsDomainController, error) {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "GET"
 	req.Payload = nil

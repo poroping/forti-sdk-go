@@ -100,7 +100,7 @@ func (c *Client) DeleteFirewallShaperTrafficShaper(mkey string, params *models.C
 	return err
 }
 
-func (c *Client) ListFirewallShaperTrafficShaper(mkey string, params *models.CmdbRequestParams) (*[]models.FirewallShaperTrafficShaper, error) {
+func (c *Client) ListFirewallShaperTrafficShaper(params *models.CmdbRequestParams) (*[]models.FirewallShaperTrafficShaper, error) {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "GET"
 	req.Payload = nil

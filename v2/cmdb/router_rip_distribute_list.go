@@ -101,7 +101,7 @@ func (c *Client) DeleteRouterRipDistributeList(mkey string, params *models.CmdbR
 	return err
 }
 
-func (c *Client) ListRouterRipDistributeList(mkey string, params *models.CmdbRequestParams) (*[]models.RouterRipDistributeList, error) {
+func (c *Client) ListRouterRipDistributeList(params *models.CmdbRequestParams) (*[]models.RouterRipDistributeList, error) {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "GET"
 	req.Payload = nil

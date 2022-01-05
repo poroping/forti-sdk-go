@@ -101,7 +101,7 @@ func (c *Client) DeleteSystemDscpBasedPriority(mkey string, params *models.CmdbR
 	return err
 }
 
-func (c *Client) ListSystemDscpBasedPriority(mkey string, params *models.CmdbRequestParams) (*[]models.SystemDscpBasedPriority, error) {
+func (c *Client) ListSystemDscpBasedPriority(params *models.CmdbRequestParams) (*[]models.SystemDscpBasedPriority, error) {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "GET"
 	req.Payload = nil

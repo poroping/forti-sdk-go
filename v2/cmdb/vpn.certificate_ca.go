@@ -100,7 +100,7 @@ func (c *Client) DeleteVpnCertificateCa(mkey string, params *models.CmdbRequestP
 	return err
 }
 
-func (c *Client) ListVpnCertificateCa(mkey string, params *models.CmdbRequestParams) (*[]models.VpnCertificateCa, error) {
+func (c *Client) ListVpnCertificateCa(params *models.CmdbRequestParams) (*[]models.VpnCertificateCa, error) {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "GET"
 	req.Payload = nil

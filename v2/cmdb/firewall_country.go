@@ -101,7 +101,7 @@ func (c *Client) DeleteFirewallCountry(mkey string, params *models.CmdbRequestPa
 	return err
 }
 
-func (c *Client) ListFirewallCountry(mkey string, params *models.CmdbRequestParams) (*[]models.FirewallCountry, error) {
+func (c *Client) ListFirewallCountry(params *models.CmdbRequestParams) (*[]models.FirewallCountry, error) {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "GET"
 	req.Payload = nil

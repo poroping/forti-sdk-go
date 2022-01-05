@@ -100,7 +100,7 @@ func (c *Client) DeleteSystemVdomProperty(mkey string, params *models.CmdbReques
 	return err
 }
 
-func (c *Client) ListSystemVdomProperty(mkey string, params *models.CmdbRequestParams) (*[]models.SystemVdomProperty, error) {
+func (c *Client) ListSystemVdomProperty(params *models.CmdbRequestParams) (*[]models.SystemVdomProperty, error) {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "GET"
 	req.Payload = nil

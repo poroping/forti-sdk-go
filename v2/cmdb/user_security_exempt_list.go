@@ -100,7 +100,7 @@ func (c *Client) DeleteUserSecurityExemptList(mkey string, params *models.CmdbRe
 	return err
 }
 
-func (c *Client) ListUserSecurityExemptList(mkey string, params *models.CmdbRequestParams) (*[]models.UserSecurityExemptList, error) {
+func (c *Client) ListUserSecurityExemptList(params *models.CmdbRequestParams) (*[]models.UserSecurityExemptList, error) {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "GET"
 	req.Payload = nil

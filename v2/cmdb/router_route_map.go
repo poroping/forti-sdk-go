@@ -100,7 +100,7 @@ func (c *Client) DeleteRouterRouteMap(mkey string, params *models.CmdbRequestPar
 	return err
 }
 
-func (c *Client) ListRouterRouteMap(mkey string, params *models.CmdbRequestParams) (*[]models.RouterRouteMap, error) {
+func (c *Client) ListRouterRouteMap(params *models.CmdbRequestParams) (*[]models.RouterRouteMap, error) {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "GET"
 	req.Payload = nil

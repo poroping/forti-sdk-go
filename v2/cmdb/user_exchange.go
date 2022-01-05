@@ -100,7 +100,7 @@ func (c *Client) DeleteUserExchange(mkey string, params *models.CmdbRequestParam
 	return err
 }
 
-func (c *Client) ListUserExchange(mkey string, params *models.CmdbRequestParams) (*[]models.UserExchange, error) {
+func (c *Client) ListUserExchange(params *models.CmdbRequestParams) (*[]models.UserExchange, error) {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "GET"
 	req.Payload = nil

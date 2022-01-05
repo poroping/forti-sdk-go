@@ -100,7 +100,7 @@ func (c *Client) DeleteCredentialStoreDomainController(mkey string, params *mode
 	return err
 }
 
-func (c *Client) ListCredentialStoreDomainController(mkey string, params *models.CmdbRequestParams) (*[]models.CredentialStoreDomainController, error) {
+func (c *Client) ListCredentialStoreDomainController(params *models.CmdbRequestParams) (*[]models.CredentialStoreDomainController, error) {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "GET"
 	req.Payload = nil

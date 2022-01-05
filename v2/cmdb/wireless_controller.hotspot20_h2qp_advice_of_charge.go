@@ -100,7 +100,7 @@ func (c *Client) DeleteWirelessControllerHotspot20H2qpAdviceOfCharge(mkey string
 	return err
 }
 
-func (c *Client) ListWirelessControllerHotspot20H2qpAdviceOfCharge(mkey string, params *models.CmdbRequestParams) (*[]models.WirelessControllerHotspot20H2qpAdviceOfCharge, error) {
+func (c *Client) ListWirelessControllerHotspot20H2qpAdviceOfCharge(params *models.CmdbRequestParams) (*[]models.WirelessControllerHotspot20H2qpAdviceOfCharge, error) {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "GET"
 	req.Payload = nil

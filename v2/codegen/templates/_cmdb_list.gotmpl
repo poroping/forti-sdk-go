@@ -1,5 +1,5 @@
 {{define "cmdb_list"}}
-func (c *Client) List{{.fpath}}(mkey string, params *models.CmdbRequestParams) (*[]models.{{(mixedCase .path)}}{{(mixedCase .name)}}{{with .child_path}}{{(mixedCase .)}}{{end}}, error) {
+func (c *Client) List{{.fpath}}(params *models.CmdbRequestParams) (*[]models.{{(mixedCase .path)}}{{(mixedCase .name)}}{{with .child_path}}{{(mixedCase .)}}{{end}}, error) {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "GET"
 	req.Payload = nil

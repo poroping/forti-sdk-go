@@ -100,7 +100,7 @@ func (c *Client) DeleteSystemMacAddressTable(mkey string, params *models.CmdbReq
 	return err
 }
 
-func (c *Client) ListSystemMacAddressTable(mkey string, params *models.CmdbRequestParams) (*[]models.SystemMacAddressTable, error) {
+func (c *Client) ListSystemMacAddressTable(params *models.CmdbRequestParams) (*[]models.SystemMacAddressTable, error) {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "GET"
 	req.Payload = nil

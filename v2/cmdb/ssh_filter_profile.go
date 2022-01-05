@@ -100,7 +100,7 @@ func (c *Client) DeleteSshFilterProfile(mkey string, params *models.CmdbRequestP
 	return err
 }
 
-func (c *Client) ListSshFilterProfile(mkey string, params *models.CmdbRequestParams) (*[]models.SshFilterProfile, error) {
+func (c *Client) ListSshFilterProfile(params *models.CmdbRequestParams) (*[]models.SshFilterProfile, error) {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "GET"
 	req.Payload = nil

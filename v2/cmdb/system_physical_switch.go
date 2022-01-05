@@ -100,7 +100,7 @@ func (c *Client) DeleteSystemPhysicalSwitch(mkey string, params *models.CmdbRequ
 	return err
 }
 
-func (c *Client) ListSystemPhysicalSwitch(mkey string, params *models.CmdbRequestParams) (*[]models.SystemPhysicalSwitch, error) {
+func (c *Client) ListSystemPhysicalSwitch(params *models.CmdbRequestParams) (*[]models.SystemPhysicalSwitch, error) {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "GET"
 	req.Payload = nil

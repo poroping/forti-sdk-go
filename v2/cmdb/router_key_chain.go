@@ -100,7 +100,7 @@ func (c *Client) DeleteRouterKeyChain(mkey string, params *models.CmdbRequestPar
 	return err
 }
 
-func (c *Client) ListRouterKeyChain(mkey string, params *models.CmdbRequestParams) (*[]models.RouterKeyChain, error) {
+func (c *Client) ListRouterKeyChain(params *models.CmdbRequestParams) (*[]models.RouterKeyChain, error) {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "GET"
 	req.Payload = nil

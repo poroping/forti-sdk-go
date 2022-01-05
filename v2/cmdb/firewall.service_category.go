@@ -100,7 +100,7 @@ func (c *Client) DeleteFirewallServiceCategory(mkey string, params *models.CmdbR
 	return err
 }
 
-func (c *Client) ListFirewallServiceCategory(mkey string, params *models.CmdbRequestParams) (*[]models.FirewallServiceCategory, error) {
+func (c *Client) ListFirewallServiceCategory(params *models.CmdbRequestParams) (*[]models.FirewallServiceCategory, error) {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "GET"
 	req.Payload = nil

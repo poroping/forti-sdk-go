@@ -100,7 +100,7 @@ func (c *Client) DeleteSystemPppoeInterface(mkey string, params *models.CmdbRequ
 	return err
 }
 
-func (c *Client) ListSystemPppoeInterface(mkey string, params *models.CmdbRequestParams) (*[]models.SystemPppoeInterface, error) {
+func (c *Client) ListSystemPppoeInterface(params *models.CmdbRequestParams) (*[]models.SystemPppoeInterface, error) {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "GET"
 	req.Payload = nil

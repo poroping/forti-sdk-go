@@ -100,7 +100,7 @@ func (c *Client) DeleteCertificateCa(mkey string, params *models.CmdbRequestPara
 	return err
 }
 
-func (c *Client) ListCertificateCa(mkey string, params *models.CmdbRequestParams) (*[]models.CertificateCa, error) {
+func (c *Client) ListCertificateCa(params *models.CmdbRequestParams) (*[]models.CertificateCa, error) {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "GET"
 	req.Payload = nil

@@ -101,7 +101,7 @@ func (c *Client) DeleteVpnIpsecConcentrator(mkey string, params *models.CmdbRequ
 	return err
 }
 
-func (c *Client) ListVpnIpsecConcentrator(mkey string, params *models.CmdbRequestParams) (*[]models.VpnIpsecConcentrator, error) {
+func (c *Client) ListVpnIpsecConcentrator(params *models.CmdbRequestParams) (*[]models.VpnIpsecConcentrator, error) {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "GET"
 	req.Payload = nil

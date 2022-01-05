@@ -100,7 +100,7 @@ func (c *Client) DeleteRouterOspfOspfInterface(mkey string, params *models.CmdbR
 	return err
 }
 
-func (c *Client) ListRouterOspfOspfInterface(mkey string, params *models.CmdbRequestParams) (*[]models.RouterOspfOspfInterface, error) {
+func (c *Client) ListRouterOspfOspfInterface(params *models.CmdbRequestParams) (*[]models.RouterOspfOspfInterface, error) {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "GET"
 	req.Payload = nil

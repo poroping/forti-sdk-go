@@ -100,7 +100,7 @@ func (c *Client) DeleteSystemReplacemsgIcap(mkey string, params *models.CmdbRequ
 	return err
 }
 
-func (c *Client) ListSystemReplacemsgIcap(mkey string, params *models.CmdbRequestParams) (*[]models.SystemReplacemsgIcap, error) {
+func (c *Client) ListSystemReplacemsgIcap(params *models.CmdbRequestParams) (*[]models.SystemReplacemsgIcap, error) {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "GET"
 	req.Payload = nil

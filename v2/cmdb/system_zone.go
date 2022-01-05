@@ -100,7 +100,7 @@ func (c *Client) DeleteSystemZone(mkey string, params *models.CmdbRequestParams)
 	return err
 }
 
-func (c *Client) ListSystemZone(mkey string, params *models.CmdbRequestParams) (*[]models.SystemZone, error) {
+func (c *Client) ListSystemZone(params *models.CmdbRequestParams) (*[]models.SystemZone, error) {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "GET"
 	req.Payload = nil

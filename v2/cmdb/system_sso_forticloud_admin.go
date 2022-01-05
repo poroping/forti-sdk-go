@@ -100,7 +100,7 @@ func (c *Client) DeleteSystemSsoForticloudAdmin(mkey string, params *models.Cmdb
 	return err
 }
 
-func (c *Client) ListSystemSsoForticloudAdmin(mkey string, params *models.CmdbRequestParams) (*[]models.SystemSsoForticloudAdmin, error) {
+func (c *Client) ListSystemSsoForticloudAdmin(params *models.CmdbRequestParams) (*[]models.SystemSsoForticloudAdmin, error) {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "GET"
 	req.Payload = nil

@@ -101,7 +101,7 @@ func (c *Client) DeleteEmailfilterIptrust(mkey string, params *models.CmdbReques
 	return err
 }
 
-func (c *Client) ListEmailfilterIptrust(mkey string, params *models.CmdbRequestParams) (*[]models.EmailfilterIptrust, error) {
+func (c *Client) ListEmailfilterIptrust(params *models.CmdbRequestParams) (*[]models.EmailfilterIptrust, error) {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "GET"
 	req.Payload = nil

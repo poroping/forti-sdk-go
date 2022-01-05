@@ -101,7 +101,7 @@ func (c *Client) DeleteRouterOspf6SummaryAddress(mkey string, params *models.Cmd
 	return err
 }
 
-func (c *Client) ListRouterOspf6SummaryAddress(mkey string, params *models.CmdbRequestParams) (*[]models.RouterOspf6SummaryAddress, error) {
+func (c *Client) ListRouterOspf6SummaryAddress(params *models.CmdbRequestParams) (*[]models.RouterOspf6SummaryAddress, error) {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "GET"
 	req.Payload = nil

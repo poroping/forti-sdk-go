@@ -100,7 +100,7 @@ func (c *Client) DeleteSystemAutomationStitch(mkey string, params *models.CmdbRe
 	return err
 }
 
-func (c *Client) ListSystemAutomationStitch(mkey string, params *models.CmdbRequestParams) (*[]models.SystemAutomationStitch, error) {
+func (c *Client) ListSystemAutomationStitch(params *models.CmdbRequestParams) (*[]models.SystemAutomationStitch, error) {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "GET"
 	req.Payload = nil

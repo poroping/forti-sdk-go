@@ -101,7 +101,7 @@ func (c *Client) DeleteWafMainClass(mkey string, params *models.CmdbRequestParam
 	return err
 }
 
-func (c *Client) ListWafMainClass(mkey string, params *models.CmdbRequestParams) (*[]models.WafMainClass, error) {
+func (c *Client) ListWafMainClass(params *models.CmdbRequestParams) (*[]models.WafMainClass, error) {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "GET"
 	req.Payload = nil

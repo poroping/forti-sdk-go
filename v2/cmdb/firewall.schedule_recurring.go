@@ -100,7 +100,7 @@ func (c *Client) DeleteFirewallScheduleRecurring(mkey string, params *models.Cmd
 	return err
 }
 
-func (c *Client) ListFirewallScheduleRecurring(mkey string, params *models.CmdbRequestParams) (*[]models.FirewallScheduleRecurring, error) {
+func (c *Client) ListFirewallScheduleRecurring(params *models.CmdbRequestParams) (*[]models.FirewallScheduleRecurring, error) {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "GET"
 	req.Payload = nil

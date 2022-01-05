@@ -101,7 +101,7 @@ func (c *Client) DeleteSystemTosBasedPriority(mkey string, params *models.CmdbRe
 	return err
 }
 
-func (c *Client) ListSystemTosBasedPriority(mkey string, params *models.CmdbRequestParams) (*[]models.SystemTosBasedPriority, error) {
+func (c *Client) ListSystemTosBasedPriority(params *models.CmdbRequestParams) (*[]models.SystemTosBasedPriority, error) {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "GET"
 	req.Payload = nil

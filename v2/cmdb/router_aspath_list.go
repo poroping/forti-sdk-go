@@ -100,7 +100,7 @@ func (c *Client) DeleteRouterAspathList(mkey string, params *models.CmdbRequestP
 	return err
 }
 
-func (c *Client) ListRouterAspathList(mkey string, params *models.CmdbRequestParams) (*[]models.RouterAspathList, error) {
+func (c *Client) ListRouterAspathList(params *models.CmdbRequestParams) (*[]models.RouterAspathList, error) {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "GET"
 	req.Payload = nil

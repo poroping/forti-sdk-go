@@ -100,7 +100,7 @@ func (c *Client) DeleteWebProxyForwardServer(mkey string, params *models.CmdbReq
 	return err
 }
 
-func (c *Client) ListWebProxyForwardServer(mkey string, params *models.CmdbRequestParams) (*[]models.WebProxyForwardServer, error) {
+func (c *Client) ListWebProxyForwardServer(params *models.CmdbRequestParams) (*[]models.WebProxyForwardServer, error) {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "GET"
 	req.Payload = nil

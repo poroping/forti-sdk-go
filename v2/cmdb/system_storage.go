@@ -100,7 +100,7 @@ func (c *Client) DeleteSystemStorage(mkey string, params *models.CmdbRequestPara
 	return err
 }
 
-func (c *Client) ListSystemStorage(mkey string, params *models.CmdbRequestParams) (*[]models.SystemStorage, error) {
+func (c *Client) ListSystemStorage(params *models.CmdbRequestParams) (*[]models.SystemStorage, error) {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "GET"
 	req.Payload = nil

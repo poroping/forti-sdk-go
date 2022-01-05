@@ -100,7 +100,7 @@ func (c *Client) DeleteSwitchControllerSwitchGroup(mkey string, params *models.C
 	return err
 }
 
-func (c *Client) ListSwitchControllerSwitchGroup(mkey string, params *models.CmdbRequestParams) (*[]models.SwitchControllerSwitchGroup, error) {
+func (c *Client) ListSwitchControllerSwitchGroup(params *models.CmdbRequestParams) (*[]models.SwitchControllerSwitchGroup, error) {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "GET"
 	req.Payload = nil

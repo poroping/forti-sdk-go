@@ -100,7 +100,7 @@ func (c *Client) DeleteSystemSitTunnel(mkey string, params *models.CmdbRequestPa
 	return err
 }
 
-func (c *Client) ListSystemSitTunnel(mkey string, params *models.CmdbRequestParams) (*[]models.SystemSitTunnel, error) {
+func (c *Client) ListSystemSitTunnel(params *models.CmdbRequestParams) (*[]models.SystemSitTunnel, error) {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "GET"
 	req.Payload = nil

@@ -101,7 +101,7 @@ func (c *Client) DeleteWebfilterContentHeader(mkey string, params *models.CmdbRe
 	return err
 }
 
-func (c *Client) ListWebfilterContentHeader(mkey string, params *models.CmdbRequestParams) (*[]models.WebfilterContentHeader, error) {
+func (c *Client) ListWebfilterContentHeader(params *models.CmdbRequestParams) (*[]models.WebfilterContentHeader, error) {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "GET"
 	req.Payload = nil

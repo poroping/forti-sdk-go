@@ -100,7 +100,7 @@ func (c *Client) DeleteVpnSslWebHostCheckSoftware(mkey string, params *models.Cm
 	return err
 }
 
-func (c *Client) ListVpnSslWebHostCheckSoftware(mkey string, params *models.CmdbRequestParams) (*[]models.VpnSslWebHostCheckSoftware, error) {
+func (c *Client) ListVpnSslWebHostCheckSoftware(params *models.CmdbRequestParams) (*[]models.VpnSslWebHostCheckSoftware, error) {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "GET"
 	req.Payload = nil

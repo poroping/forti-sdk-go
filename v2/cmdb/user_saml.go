@@ -100,7 +100,7 @@ func (c *Client) DeleteUserSaml(mkey string, params *models.CmdbRequestParams) e
 	return err
 }
 
-func (c *Client) ListUserSaml(mkey string, params *models.CmdbRequestParams) (*[]models.UserSaml, error) {
+func (c *Client) ListUserSaml(params *models.CmdbRequestParams) (*[]models.UserSaml, error) {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "GET"
 	req.Payload = nil

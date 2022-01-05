@@ -101,7 +101,7 @@ func (c *Client) DeleteSystemArpTable(mkey string, params *models.CmdbRequestPar
 	return err
 }
 
-func (c *Client) ListSystemArpTable(mkey string, params *models.CmdbRequestParams) (*[]models.SystemArpTable, error) {
+func (c *Client) ListSystemArpTable(params *models.CmdbRequestParams) (*[]models.SystemArpTable, error) {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "GET"
 	req.Payload = nil

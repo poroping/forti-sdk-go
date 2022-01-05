@@ -101,7 +101,7 @@ func (c *Client) DeleteSystemSnmpCommunity(mkey string, params *models.CmdbReque
 	return err
 }
 
-func (c *Client) ListSystemSnmpCommunity(mkey string, params *models.CmdbRequestParams) (*[]models.SystemSnmpCommunity, error) {
+func (c *Client) ListSystemSnmpCommunity(params *models.CmdbRequestParams) (*[]models.SystemSnmpCommunity, error) {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "GET"
 	req.Payload = nil

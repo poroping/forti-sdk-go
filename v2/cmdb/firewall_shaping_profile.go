@@ -100,7 +100,7 @@ func (c *Client) DeleteFirewallShapingProfile(mkey string, params *models.CmdbRe
 	return err
 }
 
-func (c *Client) ListFirewallShapingProfile(mkey string, params *models.CmdbRequestParams) (*[]models.FirewallShapingProfile, error) {
+func (c *Client) ListFirewallShapingProfile(params *models.CmdbRequestParams) (*[]models.FirewallShapingProfile, error) {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "GET"
 	req.Payload = nil

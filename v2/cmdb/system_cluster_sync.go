@@ -101,7 +101,7 @@ func (c *Client) DeleteSystemClusterSync(mkey string, params *models.CmdbRequest
 	return err
 }
 
-func (c *Client) ListSystemClusterSync(mkey string, params *models.CmdbRequestParams) (*[]models.SystemClusterSync, error) {
+func (c *Client) ListSystemClusterSync(params *models.CmdbRequestParams) (*[]models.SystemClusterSync, error) {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "GET"
 	req.Payload = nil

@@ -100,7 +100,7 @@ func (c *Client) DeleteSystemReplacemsgNntp(mkey string, params *models.CmdbRequ
 	return err
 }
 
-func (c *Client) ListSystemReplacemsgNntp(mkey string, params *models.CmdbRequestParams) (*[]models.SystemReplacemsgNntp, error) {
+func (c *Client) ListSystemReplacemsgNntp(params *models.CmdbRequestParams) (*[]models.SystemReplacemsgNntp, error) {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "GET"
 	req.Payload = nil

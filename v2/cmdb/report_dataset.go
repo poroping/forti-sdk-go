@@ -100,7 +100,7 @@ func (c *Client) DeleteReportDataset(mkey string, params *models.CmdbRequestPara
 	return err
 }
 
-func (c *Client) ListReportDataset(mkey string, params *models.CmdbRequestParams) (*[]models.ReportDataset, error) {
+func (c *Client) ListReportDataset(params *models.CmdbRequestParams) (*[]models.ReportDataset, error) {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "GET"
 	req.Payload = nil

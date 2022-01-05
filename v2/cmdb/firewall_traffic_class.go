@@ -101,7 +101,7 @@ func (c *Client) DeleteFirewallTrafficClass(mkey string, params *models.CmdbRequ
 	return err
 }
 
-func (c *Client) ListFirewallTrafficClass(mkey string, params *models.CmdbRequestParams) (*[]models.FirewallTrafficClass, error) {
+func (c *Client) ListFirewallTrafficClass(params *models.CmdbRequestParams) (*[]models.FirewallTrafficClass, error) {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "GET"
 	req.Payload = nil

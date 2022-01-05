@@ -101,7 +101,7 @@ func (c *Client) DeleteDlpFilepattern(mkey string, params *models.CmdbRequestPar
 	return err
 }
 
-func (c *Client) ListDlpFilepattern(mkey string, params *models.CmdbRequestParams) (*[]models.DlpFilepattern, error) {
+func (c *Client) ListDlpFilepattern(params *models.CmdbRequestParams) (*[]models.DlpFilepattern, error) {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "GET"
 	req.Payload = nil

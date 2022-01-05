@@ -100,7 +100,7 @@ func (c *Client) DeleteFirewallWildcardFqdnGroup(mkey string, params *models.Cmd
 	return err
 }
 
-func (c *Client) ListFirewallWildcardFqdnGroup(mkey string, params *models.CmdbRequestParams) (*[]models.FirewallWildcardFqdnGroup, error) {
+func (c *Client) ListFirewallWildcardFqdnGroup(params *models.CmdbRequestParams) (*[]models.FirewallWildcardFqdnGroup, error) {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "GET"
 	req.Payload = nil

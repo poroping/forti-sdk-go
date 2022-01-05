@@ -100,7 +100,7 @@ func (c *Client) DeleteIpsDecoder(mkey string, params *models.CmdbRequestParams)
 	return err
 }
 
-func (c *Client) ListIpsDecoder(mkey string, params *models.CmdbRequestParams) (*[]models.IpsDecoder, error) {
+func (c *Client) ListIpsDecoder(params *models.CmdbRequestParams) (*[]models.IpsDecoder, error) {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "GET"
 	req.Payload = nil

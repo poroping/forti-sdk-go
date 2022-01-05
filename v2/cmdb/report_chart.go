@@ -100,7 +100,7 @@ func (c *Client) DeleteReportChart(mkey string, params *models.CmdbRequestParams
 	return err
 }
 
-func (c *Client) ListReportChart(mkey string, params *models.CmdbRequestParams) (*[]models.ReportChart, error) {
+func (c *Client) ListReportChart(params *models.CmdbRequestParams) (*[]models.ReportChart, error) {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "GET"
 	req.Payload = nil

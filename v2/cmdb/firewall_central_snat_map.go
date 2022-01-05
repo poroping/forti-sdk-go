@@ -101,7 +101,7 @@ func (c *Client) DeleteFirewallCentralSnatMap(mkey string, params *models.CmdbRe
 	return err
 }
 
-func (c *Client) ListFirewallCentralSnatMap(mkey string, params *models.CmdbRequestParams) (*[]models.FirewallCentralSnatMap, error) {
+func (c *Client) ListFirewallCentralSnatMap(params *models.CmdbRequestParams) (*[]models.FirewallCentralSnatMap, error) {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "GET"
 	req.Payload = nil

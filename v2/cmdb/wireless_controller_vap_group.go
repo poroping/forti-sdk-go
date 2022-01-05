@@ -100,7 +100,7 @@ func (c *Client) DeleteWirelessControllerVapGroup(mkey string, params *models.Cm
 	return err
 }
 
-func (c *Client) ListWirelessControllerVapGroup(mkey string, params *models.CmdbRequestParams) (*[]models.WirelessControllerVapGroup, error) {
+func (c *Client) ListWirelessControllerVapGroup(params *models.CmdbRequestParams) (*[]models.WirelessControllerVapGroup, error) {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "GET"
 	req.Payload = nil

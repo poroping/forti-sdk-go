@@ -100,7 +100,7 @@ func (c *Client) DeleteSystemAutoScript(mkey string, params *models.CmdbRequestP
 	return err
 }
 
-func (c *Client) ListSystemAutoScript(mkey string, params *models.CmdbRequestParams) (*[]models.SystemAutoScript, error) {
+func (c *Client) ListSystemAutoScript(params *models.CmdbRequestParams) (*[]models.SystemAutoScript, error) {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "GET"
 	req.Payload = nil

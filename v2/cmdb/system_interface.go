@@ -100,7 +100,7 @@ func (c *Client) DeleteSystemInterface(mkey string, params *models.CmdbRequestPa
 	return err
 }
 
-func (c *Client) ListSystemInterface(mkey string, params *models.CmdbRequestParams) (*[]models.SystemInterface, error) {
+func (c *Client) ListSystemInterface(params *models.CmdbRequestParams) (*[]models.SystemInterface, error) {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "GET"
 	req.Payload = nil

@@ -100,7 +100,7 @@ func (c *Client) DeleteDlpSensor(mkey string, params *models.CmdbRequestParams) 
 	return err
 }
 
-func (c *Client) ListDlpSensor(mkey string, params *models.CmdbRequestParams) (*[]models.DlpSensor, error) {
+func (c *Client) ListDlpSensor(params *models.CmdbRequestParams) (*[]models.DlpSensor, error) {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "GET"
 	req.Payload = nil

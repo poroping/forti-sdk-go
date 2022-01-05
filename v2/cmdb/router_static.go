@@ -101,7 +101,7 @@ func (c *Client) DeleteRouterStatic(mkey string, params *models.CmdbRequestParam
 	return err
 }
 
-func (c *Client) ListRouterStatic(mkey string, params *models.CmdbRequestParams) (*[]models.RouterStatic, error) {
+func (c *Client) ListRouterStatic(params *models.CmdbRequestParams) (*[]models.RouterStatic, error) {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "GET"
 	req.Payload = nil

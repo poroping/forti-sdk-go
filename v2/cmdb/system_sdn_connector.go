@@ -100,7 +100,7 @@ func (c *Client) DeleteSystemSdnConnector(mkey string, params *models.CmdbReques
 	return err
 }
 
-func (c *Client) ListSystemSdnConnector(mkey string, params *models.CmdbRequestParams) (*[]models.SystemSdnConnector, error) {
+func (c *Client) ListSystemSdnConnector(params *models.CmdbRequestParams) (*[]models.SystemSdnConnector, error) {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "GET"
 	req.Payload = nil

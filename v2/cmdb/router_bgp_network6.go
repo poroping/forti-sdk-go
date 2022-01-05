@@ -101,7 +101,7 @@ func (c *Client) DeleteRouterBgpNetwork6(mkey string, params *models.CmdbRequest
 	return err
 }
 
-func (c *Client) ListRouterBgpNetwork6(mkey string, params *models.CmdbRequestParams) (*[]models.RouterBgpNetwork6, error) {
+func (c *Client) ListRouterBgpNetwork6(params *models.CmdbRequestParams) (*[]models.RouterBgpNetwork6, error) {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "GET"
 	req.Payload = nil

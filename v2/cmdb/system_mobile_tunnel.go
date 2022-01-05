@@ -100,7 +100,7 @@ func (c *Client) DeleteSystemMobileTunnel(mkey string, params *models.CmdbReques
 	return err
 }
 
-func (c *Client) ListSystemMobileTunnel(mkey string, params *models.CmdbRequestParams) (*[]models.SystemMobileTunnel, error) {
+func (c *Client) ListSystemMobileTunnel(params *models.CmdbRequestParams) (*[]models.SystemMobileTunnel, error) {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "GET"
 	req.Payload = nil

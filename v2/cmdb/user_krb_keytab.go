@@ -100,7 +100,7 @@ func (c *Client) DeleteUserKrbKeytab(mkey string, params *models.CmdbRequestPara
 	return err
 }
 
-func (c *Client) ListUserKrbKeytab(mkey string, params *models.CmdbRequestParams) (*[]models.UserKrbKeytab, error) {
+func (c *Client) ListUserKrbKeytab(params *models.CmdbRequestParams) (*[]models.UserKrbKeytab, error) {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "GET"
 	req.Payload = nil

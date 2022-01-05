@@ -100,7 +100,7 @@ func (c *Client) DeleteVpnCertificateOcspServer(mkey string, params *models.Cmdb
 	return err
 }
 
-func (c *Client) ListVpnCertificateOcspServer(mkey string, params *models.CmdbRequestParams) (*[]models.VpnCertificateOcspServer, error) {
+func (c *Client) ListVpnCertificateOcspServer(params *models.CmdbRequestParams) (*[]models.VpnCertificateOcspServer, error) {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "GET"
 	req.Payload = nil

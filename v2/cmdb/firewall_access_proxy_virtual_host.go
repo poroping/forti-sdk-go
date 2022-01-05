@@ -100,7 +100,7 @@ func (c *Client) DeleteFirewallAccessProxyVirtualHost(mkey string, params *model
 	return err
 }
 
-func (c *Client) ListFirewallAccessProxyVirtualHost(mkey string, params *models.CmdbRequestParams) (*[]models.FirewallAccessProxyVirtualHost, error) {
+func (c *Client) ListFirewallAccessProxyVirtualHost(params *models.CmdbRequestParams) (*[]models.FirewallAccessProxyVirtualHost, error) {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "GET"
 	req.Payload = nil

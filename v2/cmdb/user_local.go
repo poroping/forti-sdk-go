@@ -100,7 +100,7 @@ func (c *Client) DeleteUserLocal(mkey string, params *models.CmdbRequestParams) 
 	return err
 }
 
-func (c *Client) ListUserLocal(mkey string, params *models.CmdbRequestParams) (*[]models.UserLocal, error) {
+func (c *Client) ListUserLocal(params *models.CmdbRequestParams) (*[]models.UserLocal, error) {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "GET"
 	req.Payload = nil

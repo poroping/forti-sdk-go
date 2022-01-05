@@ -100,7 +100,7 @@ func (c *Client) DeleteWirelessControllerSyslogProfile(mkey string, params *mode
 	return err
 }
 
-func (c *Client) ListWirelessControllerSyslogProfile(mkey string, params *models.CmdbRequestParams) (*[]models.WirelessControllerSyslogProfile, error) {
+func (c *Client) ListWirelessControllerSyslogProfile(params *models.CmdbRequestParams) (*[]models.WirelessControllerSyslogProfile, error) {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "GET"
 	req.Payload = nil

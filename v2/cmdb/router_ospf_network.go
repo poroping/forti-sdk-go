@@ -101,7 +101,7 @@ func (c *Client) DeleteRouterOspfNetwork(mkey string, params *models.CmdbRequest
 	return err
 }
 
-func (c *Client) ListRouterOspfNetwork(mkey string, params *models.CmdbRequestParams) (*[]models.RouterOspfNetwork, error) {
+func (c *Client) ListRouterOspfNetwork(params *models.CmdbRequestParams) (*[]models.RouterOspfNetwork, error) {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "GET"
 	req.Payload = nil

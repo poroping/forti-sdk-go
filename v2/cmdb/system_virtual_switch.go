@@ -100,7 +100,7 @@ func (c *Client) DeleteSystemVirtualSwitch(mkey string, params *models.CmdbReque
 	return err
 }
 
-func (c *Client) ListSystemVirtualSwitch(mkey string, params *models.CmdbRequestParams) (*[]models.SystemVirtualSwitch, error) {
+func (c *Client) ListSystemVirtualSwitch(params *models.CmdbRequestParams) (*[]models.SystemVirtualSwitch, error) {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "GET"
 	req.Payload = nil

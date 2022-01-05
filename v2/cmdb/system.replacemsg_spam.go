@@ -100,7 +100,7 @@ func (c *Client) DeleteSystemReplacemsgSpam(mkey string, params *models.CmdbRequ
 	return err
 }
 
-func (c *Client) ListSystemReplacemsgSpam(mkey string, params *models.CmdbRequestParams) (*[]models.SystemReplacemsgSpam, error) {
+func (c *Client) ListSystemReplacemsgSpam(params *models.CmdbRequestParams) (*[]models.SystemReplacemsgSpam, error) {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "GET"
 	req.Payload = nil

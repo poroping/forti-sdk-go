@@ -100,7 +100,7 @@ func (c *Client) DeleteSystemGeoipOverride(mkey string, params *models.CmdbReque
 	return err
 }
 
-func (c *Client) ListSystemGeoipOverride(mkey string, params *models.CmdbRequestParams) (*[]models.SystemGeoipOverride, error) {
+func (c *Client) ListSystemGeoipOverride(params *models.CmdbRequestParams) (*[]models.SystemGeoipOverride, error) {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "GET"
 	req.Payload = nil

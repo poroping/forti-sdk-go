@@ -100,7 +100,7 @@ func (c *Client) DeleteIpsSensor(mkey string, params *models.CmdbRequestParams) 
 	return err
 }
 
-func (c *Client) ListIpsSensor(mkey string, params *models.CmdbRequestParams) (*[]models.IpsSensor, error) {
+func (c *Client) ListIpsSensor(params *models.CmdbRequestParams) (*[]models.IpsSensor, error) {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "GET"
 	req.Payload = nil

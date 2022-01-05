@@ -100,7 +100,7 @@ func (c *Client) DeleteSystemReplacemsgAutomation(mkey string, params *models.Cm
 	return err
 }
 
-func (c *Client) ListSystemReplacemsgAutomation(mkey string, params *models.CmdbRequestParams) (*[]models.SystemReplacemsgAutomation, error) {
+func (c *Client) ListSystemReplacemsgAutomation(params *models.CmdbRequestParams) (*[]models.SystemReplacemsgAutomation, error) {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "GET"
 	req.Payload = nil

@@ -101,7 +101,7 @@ func (c *Client) DeleteFirewallInternetServiceSld(mkey string, params *models.Cm
 	return err
 }
 
-func (c *Client) ListFirewallInternetServiceSld(mkey string, params *models.CmdbRequestParams) (*[]models.FirewallInternetServiceSld, error) {
+func (c *Client) ListFirewallInternetServiceSld(params *models.CmdbRequestParams) (*[]models.FirewallInternetServiceSld, error) {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "GET"
 	req.Payload = nil

@@ -100,7 +100,7 @@ func (c *Client) DeleteSystemReplacemsgImage(mkey string, params *models.CmdbReq
 	return err
 }
 
-func (c *Client) ListSystemReplacemsgImage(mkey string, params *models.CmdbRequestParams) (*[]models.SystemReplacemsgImage, error) {
+func (c *Client) ListSystemReplacemsgImage(params *models.CmdbRequestParams) (*[]models.SystemReplacemsgImage, error) {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "GET"
 	req.Payload = nil

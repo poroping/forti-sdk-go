@@ -100,7 +100,7 @@ func (c *Client) DeleteWafProfile(mkey string, params *models.CmdbRequestParams)
 	return err
 }
 
-func (c *Client) ListWafProfile(mkey string, params *models.CmdbRequestParams) (*[]models.WafProfile, error) {
+func (c *Client) ListWafProfile(params *models.CmdbRequestParams) (*[]models.WafProfile, error) {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "GET"
 	req.Payload = nil

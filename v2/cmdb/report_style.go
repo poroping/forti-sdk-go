@@ -100,7 +100,7 @@ func (c *Client) DeleteReportStyle(mkey string, params *models.CmdbRequestParams
 	return err
 }
 
-func (c *Client) ListReportStyle(mkey string, params *models.CmdbRequestParams) (*[]models.ReportStyle, error) {
+func (c *Client) ListReportStyle(params *models.CmdbRequestParams) (*[]models.ReportStyle, error) {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "GET"
 	req.Payload = nil

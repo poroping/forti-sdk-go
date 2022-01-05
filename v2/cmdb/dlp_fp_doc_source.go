@@ -100,7 +100,7 @@ func (c *Client) DeleteDlpFpDocSource(mkey string, params *models.CmdbRequestPar
 	return err
 }
 
-func (c *Client) ListDlpFpDocSource(mkey string, params *models.CmdbRequestParams) (*[]models.DlpFpDocSource, error) {
+func (c *Client) ListDlpFpDocSource(params *models.CmdbRequestParams) (*[]models.DlpFpDocSource, error) {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "GET"
 	req.Payload = nil

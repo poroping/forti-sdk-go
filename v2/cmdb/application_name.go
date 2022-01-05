@@ -100,7 +100,7 @@ func (c *Client) DeleteApplicationName(mkey string, params *models.CmdbRequestPa
 	return err
 }
 
-func (c *Client) ListApplicationName(mkey string, params *models.CmdbRequestParams) (*[]models.ApplicationName, error) {
+func (c *Client) ListApplicationName(params *models.CmdbRequestParams) (*[]models.ApplicationName, error) {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "GET"
 	req.Payload = nil

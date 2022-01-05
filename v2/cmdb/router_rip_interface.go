@@ -100,7 +100,7 @@ func (c *Client) DeleteRouterRipInterface(mkey string, params *models.CmdbReques
 	return err
 }
 
-func (c *Client) ListRouterRipInterface(mkey string, params *models.CmdbRequestParams) (*[]models.RouterRipInterface, error) {
+func (c *Client) ListRouterRipInterface(params *models.CmdbRequestParams) (*[]models.RouterRipInterface, error) {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "GET"
 	req.Payload = nil

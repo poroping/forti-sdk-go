@@ -101,7 +101,7 @@ func (c *Client) DeleteRouterPolicy(mkey string, params *models.CmdbRequestParam
 	return err
 }
 
-func (c *Client) ListRouterPolicy(mkey string, params *models.CmdbRequestParams) (*[]models.RouterPolicy, error) {
+func (c *Client) ListRouterPolicy(params *models.CmdbRequestParams) (*[]models.RouterPolicy, error) {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "GET"
 	req.Payload = nil

@@ -101,7 +101,7 @@ func (c *Client) DeleteWebfilterOverride(mkey string, params *models.CmdbRequest
 	return err
 }
 
-func (c *Client) ListWebfilterOverride(mkey string, params *models.CmdbRequestParams) (*[]models.WebfilterOverride, error) {
+func (c *Client) ListWebfilterOverride(params *models.CmdbRequestParams) (*[]models.WebfilterOverride, error) {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "GET"
 	req.Payload = nil

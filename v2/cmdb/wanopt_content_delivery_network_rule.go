@@ -100,7 +100,7 @@ func (c *Client) DeleteWanoptContentDeliveryNetworkRule(mkey string, params *mod
 	return err
 }
 
-func (c *Client) ListWanoptContentDeliveryNetworkRule(mkey string, params *models.CmdbRequestParams) (*[]models.WanoptContentDeliveryNetworkRule, error) {
+func (c *Client) ListWanoptContentDeliveryNetworkRule(params *models.CmdbRequestParams) (*[]models.WanoptContentDeliveryNetworkRule, error) {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "GET"
 	req.Payload = nil

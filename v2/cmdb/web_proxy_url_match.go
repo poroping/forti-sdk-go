@@ -100,7 +100,7 @@ func (c *Client) DeleteWebProxyUrlMatch(mkey string, params *models.CmdbRequestP
 	return err
 }
 
-func (c *Client) ListWebProxyUrlMatch(mkey string, params *models.CmdbRequestParams) (*[]models.WebProxyUrlMatch, error) {
+func (c *Client) ListWebProxyUrlMatch(params *models.CmdbRequestParams) (*[]models.WebProxyUrlMatch, error) {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "GET"
 	req.Payload = nil

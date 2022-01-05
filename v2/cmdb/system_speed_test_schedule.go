@@ -100,7 +100,7 @@ func (c *Client) DeleteSystemSpeedTestSchedule(mkey string, params *models.CmdbR
 	return err
 }
 
-func (c *Client) ListSystemSpeedTestSchedule(mkey string, params *models.CmdbRequestParams) (*[]models.SystemSpeedTestSchedule, error) {
+func (c *Client) ListSystemSpeedTestSchedule(params *models.CmdbRequestParams) (*[]models.SystemSpeedTestSchedule, error) {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "GET"
 	req.Payload = nil

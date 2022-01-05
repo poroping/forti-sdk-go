@@ -100,7 +100,7 @@ func (c *Client) DeleteUserLdap(mkey string, params *models.CmdbRequestParams) e
 	return err
 }
 
-func (c *Client) ListUserLdap(mkey string, params *models.CmdbRequestParams) (*[]models.UserLdap, error) {
+func (c *Client) ListUserLdap(params *models.CmdbRequestParams) (*[]models.UserLdap, error) {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "GET"
 	req.Payload = nil

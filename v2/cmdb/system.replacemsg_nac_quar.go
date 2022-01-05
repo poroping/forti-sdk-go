@@ -100,7 +100,7 @@ func (c *Client) DeleteSystemReplacemsgNacQuar(mkey string, params *models.CmdbR
 	return err
 }
 
-func (c *Client) ListSystemReplacemsgNacQuar(mkey string, params *models.CmdbRequestParams) (*[]models.SystemReplacemsgNacQuar, error) {
+func (c *Client) ListSystemReplacemsgNacQuar(params *models.CmdbRequestParams) (*[]models.SystemReplacemsgNacQuar, error) {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "GET"
 	req.Payload = nil

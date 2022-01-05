@@ -100,7 +100,7 @@ func (c *Client) DeleteSystemGeneve(mkey string, params *models.CmdbRequestParam
 	return err
 }
 
-func (c *Client) ListSystemGeneve(mkey string, params *models.CmdbRequestParams) (*[]models.SystemGeneve, error) {
+func (c *Client) ListSystemGeneve(params *models.CmdbRequestParams) (*[]models.SystemGeneve, error) {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "GET"
 	req.Payload = nil

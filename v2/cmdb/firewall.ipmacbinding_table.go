@@ -101,7 +101,7 @@ func (c *Client) DeleteFirewallIpmacbindingTable(mkey string, params *models.Cmd
 	return err
 }
 
-func (c *Client) ListFirewallIpmacbindingTable(mkey string, params *models.CmdbRequestParams) (*[]models.FirewallIpmacbindingTable, error) {
+func (c *Client) ListFirewallIpmacbindingTable(params *models.CmdbRequestParams) (*[]models.FirewallIpmacbindingTable, error) {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "GET"
 	req.Payload = nil

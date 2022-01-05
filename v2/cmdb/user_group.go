@@ -100,7 +100,7 @@ func (c *Client) DeleteUserGroup(mkey string, params *models.CmdbRequestParams) 
 	return err
 }
 
-func (c *Client) ListUserGroup(mkey string, params *models.CmdbRequestParams) (*[]models.UserGroup, error) {
+func (c *Client) ListUserGroup(params *models.CmdbRequestParams) (*[]models.UserGroup, error) {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "GET"
 	req.Payload = nil

@@ -101,7 +101,7 @@ func (c *Client) DeleteDnsfilterDomainFilter(mkey string, params *models.CmdbReq
 	return err
 }
 
-func (c *Client) ListDnsfilterDomainFilter(mkey string, params *models.CmdbRequestParams) (*[]models.DnsfilterDomainFilter, error) {
+func (c *Client) ListDnsfilterDomainFilter(params *models.CmdbRequestParams) (*[]models.DnsfilterDomainFilter, error) {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "GET"
 	req.Payload = nil

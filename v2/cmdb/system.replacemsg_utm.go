@@ -100,7 +100,7 @@ func (c *Client) DeleteSystemReplacemsgUtm(mkey string, params *models.CmdbReque
 	return err
 }
 
-func (c *Client) ListSystemReplacemsgUtm(mkey string, params *models.CmdbRequestParams) (*[]models.SystemReplacemsgUtm, error) {
+func (c *Client) ListSystemReplacemsgUtm(params *models.CmdbRequestParams) (*[]models.SystemReplacemsgUtm, error) {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "GET"
 	req.Payload = nil

@@ -100,7 +100,7 @@ func (c *Client) DeleteSystemAccprofile(mkey string, params *models.CmdbRequestP
 	return err
 }
 
-func (c *Client) ListSystemAccprofile(mkey string, params *models.CmdbRequestParams) (*[]models.SystemAccprofile, error) {
+func (c *Client) ListSystemAccprofile(params *models.CmdbRequestParams) (*[]models.SystemAccprofile, error) {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "GET"
 	req.Payload = nil

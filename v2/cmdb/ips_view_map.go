@@ -101,7 +101,7 @@ func (c *Client) DeleteIpsViewMap(mkey string, params *models.CmdbRequestParams)
 	return err
 }
 
-func (c *Client) ListIpsViewMap(mkey string, params *models.CmdbRequestParams) (*[]models.IpsViewMap, error) {
+func (c *Client) ListIpsViewMap(params *models.CmdbRequestParams) (*[]models.IpsViewMap, error) {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "GET"
 	req.Payload = nil

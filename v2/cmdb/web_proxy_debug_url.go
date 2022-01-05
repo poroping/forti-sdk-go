@@ -100,7 +100,7 @@ func (c *Client) DeleteWebProxyDebugUrl(mkey string, params *models.CmdbRequestP
 	return err
 }
 
-func (c *Client) ListWebProxyDebugUrl(mkey string, params *models.CmdbRequestParams) (*[]models.WebProxyDebugUrl, error) {
+func (c *Client) ListWebProxyDebugUrl(params *models.CmdbRequestParams) (*[]models.WebProxyDebugUrl, error) {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "GET"
 	req.Payload = nil

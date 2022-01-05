@@ -100,7 +100,7 @@ func (c *Client) DeleteWebfilterFtgdLocalCat(mkey string, params *models.CmdbReq
 	return err
 }
 
-func (c *Client) ListWebfilterFtgdLocalCat(mkey string, params *models.CmdbRequestParams) (*[]models.WebfilterFtgdLocalCat, error) {
+func (c *Client) ListWebfilterFtgdLocalCat(params *models.CmdbRequestParams) (*[]models.WebfilterFtgdLocalCat, error) {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "GET"
 	req.Payload = nil

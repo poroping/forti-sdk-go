@@ -100,7 +100,7 @@ func (c *Client) DeleteSystemIpipTunnel(mkey string, params *models.CmdbRequestP
 	return err
 }
 
-func (c *Client) ListSystemIpipTunnel(mkey string, params *models.CmdbRequestParams) (*[]models.SystemIpipTunnel, error) {
+func (c *Client) ListSystemIpipTunnel(params *models.CmdbRequestParams) (*[]models.SystemIpipTunnel, error) {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "GET"
 	req.Payload = nil

@@ -100,7 +100,7 @@ func (c *Client) DeleteFirewallSshHostKey(mkey string, params *models.CmdbReques
 	return err
 }
 
-func (c *Client) ListFirewallSshHostKey(mkey string, params *models.CmdbRequestParams) (*[]models.FirewallSshHostKey, error) {
+func (c *Client) ListFirewallSshHostKey(params *models.CmdbRequestParams) (*[]models.FirewallSshHostKey, error) {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "GET"
 	req.Payload = nil

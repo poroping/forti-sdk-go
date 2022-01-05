@@ -100,7 +100,7 @@ func (c *Client) DeleteWirelessControllerSsidPolicy(mkey string, params *models.
 	return err
 }
 
-func (c *Client) ListWirelessControllerSsidPolicy(mkey string, params *models.CmdbRequestParams) (*[]models.WirelessControllerSsidPolicy, error) {
+func (c *Client) ListWirelessControllerSsidPolicy(params *models.CmdbRequestParams) (*[]models.WirelessControllerSsidPolicy, error) {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "GET"
 	req.Payload = nil

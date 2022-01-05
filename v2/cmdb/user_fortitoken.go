@@ -100,7 +100,7 @@ func (c *Client) DeleteUserFortitoken(mkey string, params *models.CmdbRequestPar
 	return err
 }
 
-func (c *Client) ListUserFortitoken(mkey string, params *models.CmdbRequestParams) (*[]models.UserFortitoken, error) {
+func (c *Client) ListUserFortitoken(params *models.CmdbRequestParams) (*[]models.UserFortitoken, error) {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "GET"
 	req.Payload = nil

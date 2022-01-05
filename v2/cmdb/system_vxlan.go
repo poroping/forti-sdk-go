@@ -100,7 +100,7 @@ func (c *Client) DeleteSystemVxlan(mkey string, params *models.CmdbRequestParams
 	return err
 }
 
-func (c *Client) ListSystemVxlan(mkey string, params *models.CmdbRequestParams) (*[]models.SystemVxlan, error) {
+func (c *Client) ListSystemVxlan(params *models.CmdbRequestParams) (*[]models.SystemVxlan, error) {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "GET"
 	req.Payload = nil

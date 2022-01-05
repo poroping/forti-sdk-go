@@ -100,7 +100,7 @@ func (c *Client) DeleteWebfilterProfile(mkey string, params *models.CmdbRequestP
 	return err
 }
 
-func (c *Client) ListWebfilterProfile(mkey string, params *models.CmdbRequestParams) (*[]models.WebfilterProfile, error) {
+func (c *Client) ListWebfilterProfile(params *models.CmdbRequestParams) (*[]models.WebfilterProfile, error) {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "GET"
 	req.Payload = nil

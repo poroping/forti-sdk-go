@@ -100,7 +100,7 @@ func (c *Client) DeleteRouterPrefixList6(mkey string, params *models.CmdbRequest
 	return err
 }
 
-func (c *Client) ListRouterPrefixList6(mkey string, params *models.CmdbRequestParams) (*[]models.RouterPrefixList6, error) {
+func (c *Client) ListRouterPrefixList6(params *models.CmdbRequestParams) (*[]models.RouterPrefixList6, error) {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "GET"
 	req.Payload = nil

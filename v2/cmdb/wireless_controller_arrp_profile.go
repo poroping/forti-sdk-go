@@ -100,7 +100,7 @@ func (c *Client) DeleteWirelessControllerArrpProfile(mkey string, params *models
 	return err
 }
 
-func (c *Client) ListWirelessControllerArrpProfile(mkey string, params *models.CmdbRequestParams) (*[]models.WirelessControllerArrpProfile, error) {
+func (c *Client) ListWirelessControllerArrpProfile(params *models.CmdbRequestParams) (*[]models.WirelessControllerArrpProfile, error) {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "GET"
 	req.Payload = nil

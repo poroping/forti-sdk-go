@@ -100,7 +100,7 @@ func (c *Client) DeleteSystemSdwanNeighbor(mkey string, params *models.CmdbReque
 	return err
 }
 
-func (c *Client) ListSystemSdwanNeighbor(mkey string, params *models.CmdbRequestParams) (*[]models.SystemSdwanNeighbor, error) {
+func (c *Client) ListSystemSdwanNeighbor(params *models.CmdbRequestParams) (*[]models.SystemSdwanNeighbor, error) {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "GET"
 	req.Payload = nil

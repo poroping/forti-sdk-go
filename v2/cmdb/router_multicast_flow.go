@@ -100,7 +100,7 @@ func (c *Client) DeleteRouterMulticastFlow(mkey string, params *models.CmdbReque
 	return err
 }
 
-func (c *Client) ListRouterMulticastFlow(mkey string, params *models.CmdbRequestParams) (*[]models.RouterMulticastFlow, error) {
+func (c *Client) ListRouterMulticastFlow(params *models.CmdbRequestParams) (*[]models.RouterMulticastFlow, error) {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "GET"
 	req.Payload = nil

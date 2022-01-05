@@ -100,7 +100,7 @@ func (c *Client) DeleteSystemSdwanHealthCheck(mkey string, params *models.CmdbRe
 	return err
 }
 
-func (c *Client) ListSystemSdwanHealthCheck(mkey string, params *models.CmdbRequestParams) (*[]models.SystemSdwanHealthCheck, error) {
+func (c *Client) ListSystemSdwanHealthCheck(params *models.CmdbRequestParams) (*[]models.SystemSdwanHealthCheck, error) {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "GET"
 	req.Payload = nil

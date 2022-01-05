@@ -100,7 +100,7 @@ func (c *Client) DeleteSystemWccp(mkey string, params *models.CmdbRequestParams)
 	return err
 }
 
-func (c *Client) ListSystemWccp(mkey string, params *models.CmdbRequestParams) (*[]models.SystemWccp, error) {
+func (c *Client) ListSystemWccp(params *models.CmdbRequestParams) (*[]models.SystemWccp, error) {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "GET"
 	req.Payload = nil

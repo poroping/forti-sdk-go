@@ -100,7 +100,7 @@ func (c *Client) DeleteUserTacacs(mkey string, params *models.CmdbRequestParams)
 	return err
 }
 
-func (c *Client) ListUserTacacs(mkey string, params *models.CmdbRequestParams) (*[]models.UserTacacs, error) {
+func (c *Client) ListUserTacacs(params *models.CmdbRequestParams) (*[]models.UserTacacs, error) {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "GET"
 	req.Payload = nil

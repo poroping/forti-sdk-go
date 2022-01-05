@@ -100,7 +100,7 @@ func (c *Client) DeleteSystemReplacemsgFtp(mkey string, params *models.CmdbReque
 	return err
 }
 
-func (c *Client) ListSystemReplacemsgFtp(mkey string, params *models.CmdbRequestParams) (*[]models.SystemReplacemsgFtp, error) {
+func (c *Client) ListSystemReplacemsgFtp(params *models.CmdbRequestParams) (*[]models.SystemReplacemsgFtp, error) {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "GET"
 	req.Payload = nil

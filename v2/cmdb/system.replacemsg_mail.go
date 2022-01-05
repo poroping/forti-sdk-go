@@ -100,7 +100,7 @@ func (c *Client) DeleteSystemReplacemsgMail(mkey string, params *models.CmdbRequ
 	return err
 }
 
-func (c *Client) ListSystemReplacemsgMail(mkey string, params *models.CmdbRequestParams) (*[]models.SystemReplacemsgMail, error) {
+func (c *Client) ListSystemReplacemsgMail(params *models.CmdbRequestParams) (*[]models.SystemReplacemsgMail, error) {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "GET"
 	req.Payload = nil

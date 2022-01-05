@@ -100,7 +100,7 @@ func (c *Client) DeleteUserRadius(mkey string, params *models.CmdbRequestParams)
 	return err
 }
 
-func (c *Client) ListUserRadius(mkey string, params *models.CmdbRequestParams) (*[]models.UserRadius, error) {
+func (c *Client) ListUserRadius(params *models.CmdbRequestParams) (*[]models.UserRadius, error) {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "GET"
 	req.Payload = nil

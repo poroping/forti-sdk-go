@@ -100,7 +100,7 @@ func (c *Client) DeleteSystemReplacemsgSslvpn(mkey string, params *models.CmdbRe
 	return err
 }
 
-func (c *Client) ListSystemReplacemsgSslvpn(mkey string, params *models.CmdbRequestParams) (*[]models.SystemReplacemsgSslvpn, error) {
+func (c *Client) ListSystemReplacemsgSslvpn(params *models.CmdbRequestParams) (*[]models.SystemReplacemsgSslvpn, error) {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "GET"
 	req.Payload = nil

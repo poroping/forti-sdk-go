@@ -100,7 +100,7 @@ func (c *Client) DeleteCertificateLocal(mkey string, params *models.CmdbRequestP
 	return err
 }
 
-func (c *Client) ListCertificateLocal(mkey string, params *models.CmdbRequestParams) (*[]models.CertificateLocal, error) {
+func (c *Client) ListCertificateLocal(params *models.CmdbRequestParams) (*[]models.CertificateLocal, error) {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "GET"
 	req.Payload = nil

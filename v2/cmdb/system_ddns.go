@@ -101,7 +101,7 @@ func (c *Client) DeleteSystemDdns(mkey string, params *models.CmdbRequestParams)
 	return err
 }
 
-func (c *Client) ListSystemDdns(mkey string, params *models.CmdbRequestParams) (*[]models.SystemDdns, error) {
+func (c *Client) ListSystemDdns(params *models.CmdbRequestParams) (*[]models.SystemDdns, error) {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "GET"
 	req.Payload = nil

@@ -101,7 +101,7 @@ func (c *Client) DeleteVideofilterYoutubeChannelFilter(mkey string, params *mode
 	return err
 }
 
-func (c *Client) ListVideofilterYoutubeChannelFilter(mkey string, params *models.CmdbRequestParams) (*[]models.VideofilterYoutubeChannelFilter, error) {
+func (c *Client) ListVideofilterYoutubeChannelFilter(params *models.CmdbRequestParams) (*[]models.VideofilterYoutubeChannelFilter, error) {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "GET"
 	req.Payload = nil

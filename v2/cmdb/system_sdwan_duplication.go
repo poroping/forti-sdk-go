@@ -101,7 +101,7 @@ func (c *Client) DeleteSystemSdwanDuplication(mkey string, params *models.CmdbRe
 	return err
 }
 
-func (c *Client) ListSystemSdwanDuplication(mkey string, params *models.CmdbRequestParams) (*[]models.SystemSdwanDuplication, error) {
+func (c *Client) ListSystemSdwanDuplication(params *models.CmdbRequestParams) (*[]models.SystemSdwanDuplication, error) {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "GET"
 	req.Payload = nil

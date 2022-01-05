@@ -100,7 +100,7 @@ func (c *Client) DeleteSystemReplacemsgTrafficQuota(mkey string, params *models.
 	return err
 }
 
-func (c *Client) ListSystemReplacemsgTrafficQuota(mkey string, params *models.CmdbRequestParams) (*[]models.SystemReplacemsgTrafficQuota, error) {
+func (c *Client) ListSystemReplacemsgTrafficQuota(params *models.CmdbRequestParams) (*[]models.SystemReplacemsgTrafficQuota, error) {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "GET"
 	req.Payload = nil

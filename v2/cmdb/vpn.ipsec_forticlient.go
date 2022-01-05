@@ -100,7 +100,7 @@ func (c *Client) DeleteVpnIpsecForticlient(mkey string, params *models.CmdbReque
 	return err
 }
 
-func (c *Client) ListVpnIpsecForticlient(mkey string, params *models.CmdbRequestParams) (*[]models.VpnIpsecForticlient, error) {
+func (c *Client) ListVpnIpsecForticlient(params *models.CmdbRequestParams) (*[]models.VpnIpsecForticlient, error) {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "GET"
 	req.Payload = nil

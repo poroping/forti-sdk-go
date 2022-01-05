@@ -100,7 +100,7 @@ func (c *Client) DeleteSwitchControllerInitialConfigTemplate(mkey string, params
 	return err
 }
 
-func (c *Client) ListSwitchControllerInitialConfigTemplate(mkey string, params *models.CmdbRequestParams) (*[]models.SwitchControllerInitialConfigTemplate, error) {
+func (c *Client) ListSwitchControllerInitialConfigTemplate(params *models.CmdbRequestParams) (*[]models.SwitchControllerInitialConfigTemplate, error) {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "GET"
 	req.Payload = nil

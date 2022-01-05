@@ -100,7 +100,7 @@ func (c *Client) DeleteFirewallVipgrp(mkey string, params *models.CmdbRequestPar
 	return err
 }
 
-func (c *Client) ListFirewallVipgrp(mkey string, params *models.CmdbRequestParams) (*[]models.FirewallVipgrp, error) {
+func (c *Client) ListFirewallVipgrp(params *models.CmdbRequestParams) (*[]models.FirewallVipgrp, error) {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "GET"
 	req.Payload = nil

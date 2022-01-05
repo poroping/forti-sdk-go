@@ -100,7 +100,7 @@ func (c *Client) DeleteRouterBgpNeighbor(mkey string, params *models.CmdbRequest
 	return err
 }
 
-func (c *Client) ListRouterBgpNeighbor(mkey string, params *models.CmdbRequestParams) (*[]models.RouterBgpNeighbor, error) {
+func (c *Client) ListRouterBgpNeighbor(params *models.CmdbRequestParams) (*[]models.RouterBgpNeighbor, error) {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "GET"
 	req.Payload = nil

@@ -100,7 +100,7 @@ func (c *Client) DeleteVideofilterProfile(mkey string, params *models.CmdbReques
 	return err
 }
 
-func (c *Client) ListVideofilterProfile(mkey string, params *models.CmdbRequestParams) (*[]models.VideofilterProfile, error) {
+func (c *Client) ListVideofilterProfile(params *models.CmdbRequestParams) (*[]models.VideofilterProfile, error) {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "GET"
 	req.Payload = nil

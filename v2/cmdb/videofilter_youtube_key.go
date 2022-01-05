@@ -101,7 +101,7 @@ func (c *Client) DeleteVideofilterYoutubeKey(mkey string, params *models.CmdbReq
 	return err
 }
 
-func (c *Client) ListVideofilterYoutubeKey(mkey string, params *models.CmdbRequestParams) (*[]models.VideofilterYoutubeKey, error) {
+func (c *Client) ListVideofilterYoutubeKey(params *models.CmdbRequestParams) (*[]models.VideofilterYoutubeKey, error) {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "GET"
 	req.Payload = nil

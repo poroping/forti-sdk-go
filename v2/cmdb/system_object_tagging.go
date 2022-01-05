@@ -100,7 +100,7 @@ func (c *Client) DeleteSystemObjectTagging(mkey string, params *models.CmdbReque
 	return err
 }
 
-func (c *Client) ListSystemObjectTagging(mkey string, params *models.CmdbRequestParams) (*[]models.SystemObjectTagging, error) {
+func (c *Client) ListSystemObjectTagging(params *models.CmdbRequestParams) (*[]models.SystemObjectTagging, error) {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "GET"
 	req.Payload = nil

@@ -100,7 +100,7 @@ func (c *Client) DeleteAuthenticationRule(mkey string, params *models.CmdbReques
 	return err
 }
 
-func (c *Client) ListAuthenticationRule(mkey string, params *models.CmdbRequestParams) (*[]models.AuthenticationRule, error) {
+func (c *Client) ListAuthenticationRule(params *models.CmdbRequestParams) (*[]models.AuthenticationRule, error) {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "GET"
 	req.Payload = nil

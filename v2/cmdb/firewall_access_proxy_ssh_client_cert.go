@@ -100,7 +100,7 @@ func (c *Client) DeleteFirewallAccessProxySshClientCert(mkey string, params *mod
 	return err
 }
 
-func (c *Client) ListFirewallAccessProxySshClientCert(mkey string, params *models.CmdbRequestParams) (*[]models.FirewallAccessProxySshClientCert, error) {
+func (c *Client) ListFirewallAccessProxySshClientCert(params *models.CmdbRequestParams) (*[]models.FirewallAccessProxySshClientCert, error) {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "GET"
 	req.Payload = nil

@@ -100,7 +100,7 @@ func (c *Client) DeleteIcapServer(mkey string, params *models.CmdbRequestParams)
 	return err
 }
 
-func (c *Client) ListIcapServer(mkey string, params *models.CmdbRequestParams) (*[]models.IcapServer, error) {
+func (c *Client) ListIcapServer(params *models.CmdbRequestParams) (*[]models.IcapServer, error) {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "GET"
 	req.Payload = nil

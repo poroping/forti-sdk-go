@@ -100,7 +100,7 @@ func (c *Client) DeleteSystemVdomRadiusServer(mkey string, params *models.CmdbRe
 	return err
 }
 
-func (c *Client) ListSystemVdomRadiusServer(mkey string, params *models.CmdbRequestParams) (*[]models.SystemVdomRadiusServer, error) {
+func (c *Client) ListSystemVdomRadiusServer(params *models.CmdbRequestParams) (*[]models.SystemVdomRadiusServer, error) {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "GET"
 	req.Payload = nil

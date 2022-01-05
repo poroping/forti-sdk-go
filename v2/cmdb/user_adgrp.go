@@ -100,7 +100,7 @@ func (c *Client) DeleteUserAdgrp(mkey string, params *models.CmdbRequestParams) 
 	return err
 }
 
-func (c *Client) ListUserAdgrp(mkey string, params *models.CmdbRequestParams) (*[]models.UserAdgrp, error) {
+func (c *Client) ListUserAdgrp(params *models.CmdbRequestParams) (*[]models.UserAdgrp, error) {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "GET"
 	req.Payload = nil

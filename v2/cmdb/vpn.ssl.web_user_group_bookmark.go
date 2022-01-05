@@ -100,7 +100,7 @@ func (c *Client) DeleteVpnSslWebUserGroupBookmark(mkey string, params *models.Cm
 	return err
 }
 
-func (c *Client) ListVpnSslWebUserGroupBookmark(mkey string, params *models.CmdbRequestParams) (*[]models.VpnSslWebUserGroupBookmark, error) {
+func (c *Client) ListVpnSslWebUserGroupBookmark(params *models.CmdbRequestParams) (*[]models.VpnSslWebUserGroupBookmark, error) {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "GET"
 	req.Payload = nil

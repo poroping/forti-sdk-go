@@ -100,7 +100,7 @@ func (c *Client) DeleteExtenderControllerDataplan(mkey string, params *models.Cm
 	return err
 }
 
-func (c *Client) ListExtenderControllerDataplan(mkey string, params *models.CmdbRequestParams) (*[]models.ExtenderControllerDataplan, error) {
+func (c *Client) ListExtenderControllerDataplan(params *models.CmdbRequestParams) (*[]models.ExtenderControllerDataplan, error) {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "GET"
 	req.Payload = nil

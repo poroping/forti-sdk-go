@@ -101,7 +101,7 @@ func (c *Client) DeleteRouterRipDistance(mkey string, params *models.CmdbRequest
 	return err
 }
 
-func (c *Client) ListRouterRipDistance(mkey string, params *models.CmdbRequestParams) (*[]models.RouterRipDistance, error) {
+func (c *Client) ListRouterRipDistance(params *models.CmdbRequestParams) (*[]models.RouterRipDistance, error) {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "GET"
 	req.Payload = nil

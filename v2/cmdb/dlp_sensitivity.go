@@ -100,7 +100,7 @@ func (c *Client) DeleteDlpSensitivity(mkey string, params *models.CmdbRequestPar
 	return err
 }
 
-func (c *Client) ListDlpSensitivity(mkey string, params *models.CmdbRequestParams) (*[]models.DlpSensitivity, error) {
+func (c *Client) ListDlpSensitivity(params *models.CmdbRequestParams) (*[]models.DlpSensitivity, error) {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "GET"
 	req.Payload = nil

@@ -101,7 +101,7 @@ func (c *Client) DeleteVpnSslSettingsAuthenticationRule(mkey string, params *mod
 	return err
 }
 
-func (c *Client) ListVpnSslSettingsAuthenticationRule(mkey string, params *models.CmdbRequestParams) (*[]models.VpnSslSettingsAuthenticationRule, error) {
+func (c *Client) ListVpnSslSettingsAuthenticationRule(params *models.CmdbRequestParams) (*[]models.VpnSslSettingsAuthenticationRule, error) {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "GET"
 	req.Payload = nil

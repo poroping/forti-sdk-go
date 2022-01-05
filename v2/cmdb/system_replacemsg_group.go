@@ -100,7 +100,7 @@ func (c *Client) DeleteSystemReplacemsgGroup(mkey string, params *models.CmdbReq
 	return err
 }
 
-func (c *Client) ListSystemReplacemsgGroup(mkey string, params *models.CmdbRequestParams) (*[]models.SystemReplacemsgGroup, error) {
+func (c *Client) ListSystemReplacemsgGroup(params *models.CmdbRequestParams) (*[]models.SystemReplacemsgGroup, error) {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "GET"
 	req.Payload = nil

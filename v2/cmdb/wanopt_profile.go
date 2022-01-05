@@ -100,7 +100,7 @@ func (c *Client) DeleteWanoptProfile(mkey string, params *models.CmdbRequestPara
 	return err
 }
 
-func (c *Client) ListWanoptProfile(mkey string, params *models.CmdbRequestParams) (*[]models.WanoptProfile, error) {
+func (c *Client) ListWanoptProfile(params *models.CmdbRequestParams) (*[]models.WanoptProfile, error) {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "GET"
 	req.Payload = nil

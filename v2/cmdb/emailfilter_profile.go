@@ -100,7 +100,7 @@ func (c *Client) DeleteEmailfilterProfile(mkey string, params *models.CmdbReques
 	return err
 }
 
-func (c *Client) ListEmailfilterProfile(mkey string, params *models.CmdbRequestParams) (*[]models.EmailfilterProfile, error) {
+func (c *Client) ListEmailfilterProfile(params *models.CmdbRequestParams) (*[]models.EmailfilterProfile, error) {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "GET"
 	req.Payload = nil

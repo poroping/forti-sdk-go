@@ -100,7 +100,7 @@ func (c *Client) DeleteFirewallSshLocalCa(mkey string, params *models.CmdbReques
 	return err
 }
 
-func (c *Client) ListFirewallSshLocalCa(mkey string, params *models.CmdbRequestParams) (*[]models.FirewallSshLocalCa, error) {
+func (c *Client) ListFirewallSshLocalCa(params *models.CmdbRequestParams) (*[]models.FirewallSshLocalCa, error) {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "GET"
 	req.Payload = nil

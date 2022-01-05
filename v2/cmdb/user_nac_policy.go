@@ -100,7 +100,7 @@ func (c *Client) DeleteUserNacPolicy(mkey string, params *models.CmdbRequestPara
 	return err
 }
 
-func (c *Client) ListUserNacPolicy(mkey string, params *models.CmdbRequestParams) (*[]models.UserNacPolicy, error) {
+func (c *Client) ListUserNacPolicy(params *models.CmdbRequestParams) (*[]models.UserNacPolicy, error) {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "GET"
 	req.Payload = nil

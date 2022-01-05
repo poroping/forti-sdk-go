@@ -100,7 +100,7 @@ func (c *Client) DeleteSystemReplacemsgAdmin(mkey string, params *models.CmdbReq
 	return err
 }
 
-func (c *Client) ListSystemReplacemsgAdmin(mkey string, params *models.CmdbRequestParams) (*[]models.SystemReplacemsgAdmin, error) {
+func (c *Client) ListSystemReplacemsgAdmin(params *models.CmdbRequestParams) (*[]models.SystemReplacemsgAdmin, error) {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "GET"
 	req.Payload = nil

@@ -100,7 +100,7 @@ func (c *Client) DeleteFirewallIdentityBasedRoute(mkey string, params *models.Cm
 	return err
 }
 
-func (c *Client) ListFirewallIdentityBasedRoute(mkey string, params *models.CmdbRequestParams) (*[]models.FirewallIdentityBasedRoute, error) {
+func (c *Client) ListFirewallIdentityBasedRoute(params *models.CmdbRequestParams) (*[]models.FirewallIdentityBasedRoute, error) {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "GET"
 	req.Payload = nil

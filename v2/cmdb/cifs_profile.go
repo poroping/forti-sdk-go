@@ -100,7 +100,7 @@ func (c *Client) DeleteCifsProfile(mkey string, params *models.CmdbRequestParams
 	return err
 }
 
-func (c *Client) ListCifsProfile(mkey string, params *models.CmdbRequestParams) (*[]models.CifsProfile, error) {
+func (c *Client) ListCifsProfile(params *models.CmdbRequestParams) (*[]models.CifsProfile, error) {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "GET"
 	req.Payload = nil

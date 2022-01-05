@@ -100,7 +100,7 @@ func (c *Client) DeleteEndpointControlFctems(mkey string, params *models.CmdbReq
 	return err
 }
 
-func (c *Client) ListEndpointControlFctems(mkey string, params *models.CmdbRequestParams) (*[]models.EndpointControlFctems, error) {
+func (c *Client) ListEndpointControlFctems(params *models.CmdbRequestParams) (*[]models.EndpointControlFctems, error) {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "GET"
 	req.Payload = nil

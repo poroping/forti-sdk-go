@@ -100,7 +100,7 @@ func (c *Client) DeleteReportLayout(mkey string, params *models.CmdbRequestParam
 	return err
 }
 
-func (c *Client) ListReportLayout(mkey string, params *models.CmdbRequestParams) (*[]models.ReportLayout, error) {
+func (c *Client) ListReportLayout(params *models.CmdbRequestParams) (*[]models.ReportLayout, error) {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "GET"
 	req.Payload = nil

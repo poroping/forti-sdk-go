@@ -101,7 +101,7 @@ func (c *Client) DeleteFirewallSniffer(mkey string, params *models.CmdbRequestPa
 	return err
 }
 
-func (c *Client) ListFirewallSniffer(mkey string, params *models.CmdbRequestParams) (*[]models.FirewallSniffer, error) {
+func (c *Client) ListFirewallSniffer(params *models.CmdbRequestParams) (*[]models.FirewallSniffer, error) {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "GET"
 	req.Payload = nil

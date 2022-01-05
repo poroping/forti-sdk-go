@@ -100,7 +100,7 @@ func (c *Client) DeleteSystemReplacemsgAuth(mkey string, params *models.CmdbRequ
 	return err
 }
 
-func (c *Client) ListSystemReplacemsgAuth(mkey string, params *models.CmdbRequestParams) (*[]models.SystemReplacemsgAuth, error) {
+func (c *Client) ListSystemReplacemsgAuth(params *models.CmdbRequestParams) (*[]models.SystemReplacemsgAuth, error) {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "GET"
 	req.Payload = nil

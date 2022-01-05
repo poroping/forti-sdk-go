@@ -100,7 +100,7 @@ func (c *Client) DeleteVoipProfile(mkey string, params *models.CmdbRequestParams
 	return err
 }
 
-func (c *Client) ListVoipProfile(mkey string, params *models.CmdbRequestParams) (*[]models.VoipProfile, error) {
+func (c *Client) ListVoipProfile(params *models.CmdbRequestParams) (*[]models.VoipProfile, error) {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "GET"
 	req.Payload = nil

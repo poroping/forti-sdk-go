@@ -100,7 +100,7 @@ func (c *Client) DeleteSwitchControllerFortilinkSettings(mkey string, params *mo
 	return err
 }
 
-func (c *Client) ListSwitchControllerFortilinkSettings(mkey string, params *models.CmdbRequestParams) (*[]models.SwitchControllerFortilinkSettings, error) {
+func (c *Client) ListSwitchControllerFortilinkSettings(params *models.CmdbRequestParams) (*[]models.SwitchControllerFortilinkSettings, error) {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "GET"
 	req.Payload = nil

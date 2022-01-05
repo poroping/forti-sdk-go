@@ -101,7 +101,7 @@ func (c *Client) DeleteSystemProxyArp(mkey string, params *models.CmdbRequestPar
 	return err
 }
 
-func (c *Client) ListSystemProxyArp(mkey string, params *models.CmdbRequestParams) (*[]models.SystemProxyArp, error) {
+func (c *Client) ListSystemProxyArp(params *models.CmdbRequestParams) (*[]models.SystemProxyArp, error) {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "GET"
 	req.Payload = nil

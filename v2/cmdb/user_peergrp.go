@@ -100,7 +100,7 @@ func (c *Client) DeleteUserPeergrp(mkey string, params *models.CmdbRequestParams
 	return err
 }
 
-func (c *Client) ListUserPeergrp(mkey string, params *models.CmdbRequestParams) (*[]models.UserPeergrp, error) {
+func (c *Client) ListUserPeergrp(params *models.CmdbRequestParams) (*[]models.UserPeergrp, error) {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "GET"
 	req.Payload = nil

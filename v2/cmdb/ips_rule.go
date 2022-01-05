@@ -100,7 +100,7 @@ func (c *Client) DeleteIpsRule(mkey string, params *models.CmdbRequestParams) er
 	return err
 }
 
-func (c *Client) ListIpsRule(mkey string, params *models.CmdbRequestParams) (*[]models.IpsRule, error) {
+func (c *Client) ListIpsRule(params *models.CmdbRequestParams) (*[]models.IpsRule, error) {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "GET"
 	req.Payload = nil

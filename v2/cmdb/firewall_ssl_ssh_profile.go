@@ -100,7 +100,7 @@ func (c *Client) DeleteFirewallSslSshProfile(mkey string, params *models.CmdbReq
 	return err
 }
 
-func (c *Client) ListFirewallSslSshProfile(mkey string, params *models.CmdbRequestParams) (*[]models.FirewallSslSshProfile, error) {
+func (c *Client) ListFirewallSslSshProfile(params *models.CmdbRequestParams) (*[]models.FirewallSslSshProfile, error) {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "GET"
 	req.Payload = nil

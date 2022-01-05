@@ -100,7 +100,7 @@ func (c *Client) DeleteSystemCustomLanguage(mkey string, params *models.CmdbRequ
 	return err
 }
 
-func (c *Client) ListSystemCustomLanguage(mkey string, params *models.CmdbRequestParams) (*[]models.SystemCustomLanguage, error) {
+func (c *Client) ListSystemCustomLanguage(params *models.CmdbRequestParams) (*[]models.SystemCustomLanguage, error) {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "GET"
 	req.Payload = nil

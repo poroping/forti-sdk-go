@@ -100,7 +100,7 @@ func (c *Client) DeleteFirewallMulticastAddress(mkey string, params *models.Cmdb
 	return err
 }
 
-func (c *Client) ListFirewallMulticastAddress(mkey string, params *models.CmdbRequestParams) (*[]models.FirewallMulticastAddress, error) {
+func (c *Client) ListFirewallMulticastAddress(params *models.CmdbRequestParams) (*[]models.FirewallMulticastAddress, error) {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "GET"
 	req.Payload = nil

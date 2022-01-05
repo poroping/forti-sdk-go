@@ -100,7 +100,7 @@ func (c *Client) DeleteSystemLinkMonitor(mkey string, params *models.CmdbRequest
 	return err
 }
 
-func (c *Client) ListSystemLinkMonitor(mkey string, params *models.CmdbRequestParams) (*[]models.SystemLinkMonitor, error) {
+func (c *Client) ListSystemLinkMonitor(params *models.CmdbRequestParams) (*[]models.SystemLinkMonitor, error) {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "GET"
 	req.Payload = nil

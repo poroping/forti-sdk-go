@@ -100,7 +100,7 @@ func (c *Client) DeleteWirelessControllerHotspot20AnqpNetworkAuthType(mkey strin
 	return err
 }
 
-func (c *Client) ListWirelessControllerHotspot20AnqpNetworkAuthType(mkey string, params *models.CmdbRequestParams) (*[]models.WirelessControllerHotspot20AnqpNetworkAuthType, error) {
+func (c *Client) ListWirelessControllerHotspot20AnqpNetworkAuthType(params *models.CmdbRequestParams) (*[]models.WirelessControllerHotspot20AnqpNetworkAuthType, error) {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "GET"
 	req.Payload = nil

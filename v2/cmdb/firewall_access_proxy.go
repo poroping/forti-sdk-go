@@ -100,7 +100,7 @@ func (c *Client) DeleteFirewallAccessProxy(mkey string, params *models.CmdbReque
 	return err
 }
 
-func (c *Client) ListFirewallAccessProxy(mkey string, params *models.CmdbRequestParams) (*[]models.FirewallAccessProxy, error) {
+func (c *Client) ListFirewallAccessProxy(params *models.CmdbRequestParams) (*[]models.FirewallAccessProxy, error) {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "GET"
 	req.Payload = nil

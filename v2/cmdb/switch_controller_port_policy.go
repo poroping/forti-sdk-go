@@ -100,7 +100,7 @@ func (c *Client) DeleteSwitchControllerPortPolicy(mkey string, params *models.Cm
 	return err
 }
 
-func (c *Client) ListSwitchControllerPortPolicy(mkey string, params *models.CmdbRequestParams) (*[]models.SwitchControllerPortPolicy, error) {
+func (c *Client) ListSwitchControllerPortPolicy(params *models.CmdbRequestParams) (*[]models.SwitchControllerPortPolicy, error) {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "GET"
 	req.Payload = nil

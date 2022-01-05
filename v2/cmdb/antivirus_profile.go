@@ -100,7 +100,7 @@ func (c *Client) DeleteAntivirusProfile(mkey string, params *models.CmdbRequestP
 	return err
 }
 
-func (c *Client) ListAntivirusProfile(mkey string, params *models.CmdbRequestParams) (*[]models.AntivirusProfile, error) {
+func (c *Client) ListAntivirusProfile(params *models.CmdbRequestParams) (*[]models.AntivirusProfile, error) {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "GET"
 	req.Payload = nil

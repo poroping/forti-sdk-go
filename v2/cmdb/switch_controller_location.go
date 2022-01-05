@@ -100,7 +100,7 @@ func (c *Client) DeleteSwitchControllerLocation(mkey string, params *models.Cmdb
 	return err
 }
 
-func (c *Client) ListSwitchControllerLocation(mkey string, params *models.CmdbRequestParams) (*[]models.SwitchControllerLocation, error) {
+func (c *Client) ListSwitchControllerLocation(params *models.CmdbRequestParams) (*[]models.SwitchControllerLocation, error) {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "GET"
 	req.Payload = nil

@@ -100,7 +100,7 @@ func (c *Client) DeleteSctpFilterProfile(mkey string, params *models.CmdbRequest
 	return err
 }
 
-func (c *Client) ListSctpFilterProfile(mkey string, params *models.CmdbRequestParams) (*[]models.SctpFilterProfile, error) {
+func (c *Client) ListSctpFilterProfile(params *models.CmdbRequestParams) (*[]models.SctpFilterProfile, error) {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "GET"
 	req.Payload = nil

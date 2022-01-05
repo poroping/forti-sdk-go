@@ -100,7 +100,7 @@ func (c *Client) DeleteWebProxyWisp(mkey string, params *models.CmdbRequestParam
 	return err
 }
 
-func (c *Client) ListWebProxyWisp(mkey string, params *models.CmdbRequestParams) (*[]models.WebProxyWisp, error) {
+func (c *Client) ListWebProxyWisp(params *models.CmdbRequestParams) (*[]models.WebProxyWisp, error) {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "GET"
 	req.Payload = nil

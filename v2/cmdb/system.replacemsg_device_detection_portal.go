@@ -100,7 +100,7 @@ func (c *Client) DeleteSystemReplacemsgDeviceDetectionPortal(mkey string, params
 	return err
 }
 
-func (c *Client) ListSystemReplacemsgDeviceDetectionPortal(mkey string, params *models.CmdbRequestParams) (*[]models.SystemReplacemsgDeviceDetectionPortal, error) {
+func (c *Client) ListSystemReplacemsgDeviceDetectionPortal(params *models.CmdbRequestParams) (*[]models.SystemReplacemsgDeviceDetectionPortal, error) {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "GET"
 	req.Payload = nil

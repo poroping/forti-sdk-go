@@ -100,7 +100,7 @@ func (c *Client) DeleteSystemApiUser(mkey string, params *models.CmdbRequestPara
 	return err
 }
 
-func (c *Client) ListSystemApiUser(mkey string, params *models.CmdbRequestParams) (*[]models.SystemApiUser, error) {
+func (c *Client) ListSystemApiUser(params *models.CmdbRequestParams) (*[]models.SystemApiUser, error) {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "GET"
 	req.Payload = nil

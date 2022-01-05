@@ -100,7 +100,7 @@ func (c *Client) DeleteRouterOspf6Redistribute(mkey string, params *models.CmdbR
 	return err
 }
 
-func (c *Client) ListRouterOspf6Redistribute(mkey string, params *models.CmdbRequestParams) (*[]models.RouterOspf6Redistribute, error) {
+func (c *Client) ListRouterOspf6Redistribute(params *models.CmdbRequestParams) (*[]models.RouterOspf6Redistribute, error) {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "GET"
 	req.Payload = nil

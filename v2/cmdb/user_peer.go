@@ -100,7 +100,7 @@ func (c *Client) DeleteUserPeer(mkey string, params *models.CmdbRequestParams) e
 	return err
 }
 
-func (c *Client) ListUserPeer(mkey string, params *models.CmdbRequestParams) (*[]models.UserPeer, error) {
+func (c *Client) ListUserPeer(params *models.CmdbRequestParams) (*[]models.UserPeer, error) {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "GET"
 	req.Payload = nil

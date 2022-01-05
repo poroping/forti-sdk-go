@@ -100,7 +100,7 @@ func (c *Client) DeleteSystemGeoipCountry(mkey string, params *models.CmdbReques
 	return err
 }
 
-func (c *Client) ListSystemGeoipCountry(mkey string, params *models.CmdbRequestParams) (*[]models.SystemGeoipCountry, error) {
+func (c *Client) ListSystemGeoipCountry(params *models.CmdbRequestParams) (*[]models.SystemGeoipCountry, error) {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "GET"
 	req.Payload = nil

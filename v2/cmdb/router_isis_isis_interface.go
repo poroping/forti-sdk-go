@@ -100,7 +100,7 @@ func (c *Client) DeleteRouterIsisIsisInterface(mkey string, params *models.CmdbR
 	return err
 }
 
-func (c *Client) ListRouterIsisIsisInterface(mkey string, params *models.CmdbRequestParams) (*[]models.RouterIsisIsisInterface, error) {
+func (c *Client) ListRouterIsisIsisInterface(params *models.CmdbRequestParams) (*[]models.RouterIsisIsisInterface, error) {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "GET"
 	req.Payload = nil

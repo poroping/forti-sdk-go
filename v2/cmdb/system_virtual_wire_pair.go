@@ -100,7 +100,7 @@ func (c *Client) DeleteSystemVirtualWirePair(mkey string, params *models.CmdbReq
 	return err
 }
 
-func (c *Client) ListSystemVirtualWirePair(mkey string, params *models.CmdbRequestParams) (*[]models.SystemVirtualWirePair, error) {
+func (c *Client) ListSystemVirtualWirePair(params *models.CmdbRequestParams) (*[]models.SystemVirtualWirePair, error) {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "GET"
 	req.Payload = nil

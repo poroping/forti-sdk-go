@@ -100,7 +100,7 @@ func (c *Client) DeleteSystemSnmpUser(mkey string, params *models.CmdbRequestPar
 	return err
 }
 
-func (c *Client) ListSystemSnmpUser(mkey string, params *models.CmdbRequestParams) (*[]models.SystemSnmpUser, error) {
+func (c *Client) ListSystemSnmpUser(params *models.CmdbRequestParams) (*[]models.SystemSnmpUser, error) {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "GET"
 	req.Payload = nil
