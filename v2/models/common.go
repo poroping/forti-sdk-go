@@ -1,6 +1,7 @@
 package models
 
 const CmdbBasePath = "/api/v2/cmdb/"
+const MonitorBasePath = "/api/v2/monitor/"
 
 type CmdbRequest struct {
 	HTTPMethod string
@@ -12,8 +13,10 @@ type CmdbRequest struct {
 }
 
 type CmdbRequestParams struct {
-	AllowAppend          *bool     `json:"allow_append,omitempty"`
 	Action               string    `json:"action,omitempty"`
+	AllowAppend          *bool     `json:"allow_append,omitempty"`
+	After                string    `json:"after,omitempty"`
+	Before               string    `json:"before,omitempty"`
 	Datasource           *bool     `json:"datasource,omitempty"`
 	ExcludeDefaultValues *bool     `json:"exclude-default-values,omitempty"`
 	Filter               *[]string `json:"filter,omitempty"`

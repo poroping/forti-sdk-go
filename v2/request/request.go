@@ -261,7 +261,9 @@ func parseErrorCode(errorCode int64, errorString string) string {
 func newRequest(c config.Config, r *models.CmdbRequest) (*http.Request, error) {
 	headers := buildHeaders(c, r)
 	body := bytes.NewBuffer(r.Payload)
-	log.Printf("[DEBUG] BODY: %s", body.String())
+	if body != nil {
+		log.Printf("[DEBUG] BODY: %s", body.String())
+	}
 	// set URL w/ url queries
 	url := buildURL(c, r)
 	log.Printf("[DEBUG] %s %s", r.HTTPMethod, url)
@@ -313,9 +315,18 @@ func buildURL(c config.Config, r *models.CmdbRequest) *url.URL {
 
 func marshalParams(params *models.CmdbRequestParams) url.Values {
 	urlQuery := url.Values{}
+	if params.Action != "" {
+		urlQuery.Add("action", params.Action)
+	}
 	if params.AllowAppend != nil {
 		v := strconv.FormatBool(*params.AllowAppend)
 		urlQuery.Set("allow_append", v)
+	}
+	if params.After != "" {
+		urlQuery.Add("after", params.After)
+	}
+	if params.Before != "" {
+		urlQuery.Add("before", params.Before)
 	}
 	if params.Datasource != nil {
 		v := strconv.FormatBool(*params.Datasource)
@@ -336,9 +347,6 @@ func marshalParams(params *models.CmdbRequestParams) url.Values {
 	if params.WithMeta != nil {
 		v := strconv.FormatBool(*params.WithMeta)
 		urlQuery.Set("with_meta", v)
-	}
-	if params.Action != "" {
-		urlQuery.Add("action", params.Action)
 	}
 	if params.Filter != nil {
 		v := params.Filter
