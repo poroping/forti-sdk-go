@@ -9,19 +9,22 @@ import (
 	"github.com/poroping/forti-sdk-go/v2/cmdb"
 	"github.com/poroping/forti-sdk-go/v2/config"
 	"github.com/poroping/forti-sdk-go/v2/monitor"
+	"github.com/poroping/forti-sdk-go/v2/utils"
 )
 
 type FortiSDKClient struct {
 	Config  config.Config
 	Cmdb    cmdb.Endpoints
 	Monitor monitor.Endpoints
+	Utils   utils.Endpoints
 }
 
 func NewClient(auth *auth.Auth) (*FortiSDKClient, error) {
 	c, _ := NewClientBase(auth)
 
 	c.Cmdb = cmdb.New(&c.Config)
-	c.Monitor = cmdb.New(&c.Config)
+	c.Monitor = monitor.New(&c.Config)
+	c.Utils = utils.New(&c.Config)
 
 	return c, nil
 }
