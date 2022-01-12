@@ -37,7 +37,7 @@ func (c *Client) MonitorRouterBgpNeighbors() (*[]MonitorRouterBgpNeighborsResult
 	}
 
 	if tmp, ok := res.Results.([]interface{}); ok {
-		jsontmp, err := json.Marshal(tmp[0])
+		jsontmp, err := json.Marshal(tmp)
 		if err != nil {
 			return nil, err
 		}
