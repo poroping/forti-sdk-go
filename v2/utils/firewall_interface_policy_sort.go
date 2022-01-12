@@ -12,20 +12,22 @@ import (
 	"github.com/poroping/forti-sdk-go/v2/request"
 )
 
-type utilsFirewallPolicy struct {
+type utilsFirewallInterfacePolicy struct {
 	Comments string `json:"comments,omitempty"`
 	Name     string `json:"name,omitempty"`
 	PolicyID int64  `json:"policyid,omitempty"`
 }
 
-func (c *Client) utilsGetFirewallPolicyList(params *models.CmdbRequestParams) (policyList *[]utilsFirewallPolicy, err error) {
+const utilsFirewallInterfacePolicyPath = "firewall/interface-policy/"
+
+func (c *Client) utilsGetFirewallInterfacePolicyList(params *models.CmdbRequestParams) (policyList *[]utilsFirewallInterfacePolicy, err error) {
 	req := &models.CmdbRequest{}
 
 	format := []string{"policyid", "name", "comments"}
 
 	req.HTTPMethod = "GET"
 	req.Payload = nil
-	req.Path = models.CmdbBasePath + "firewall/policy/"
+	req.Path = models.CmdbBasePath + utilsFirewallInterfacePolicyPath
 	req.Params = *params
 	req.Params.Format = &format
 
@@ -39,7 +41,7 @@ func (c *Client) utilsGetFirewallPolicyList(params *models.CmdbRequestParams) (p
 		if err != nil {
 			return nil, err
 		}
-		v := []utilsFirewallPolicy{}
+		v := []utilsFirewallInterfacePolicy{}
 		json.Unmarshal(jsontmp, &v)
 		return &v, nil
 	}
@@ -47,8 +49,8 @@ func (c *Client) utilsGetFirewallPolicyList(params *models.CmdbRequestParams) (p
 	return nil, err
 }
 
-func (c *Client) utilsSortFirewallPolicyList(policyList []utilsFirewallPolicy, sortBy, sortDirection string) (err error) {
-	log.Println("[DEBUG] sorting policy list")
+func (c *Client) utilsSortFirewallInterfacePolicyList(policyList []utilsFirewallInterfacePolicy, sortBy, sortDirection string) (err error) {
+	log.Println("[DEBUG] sorting firewall policy list")
 	if len(policyList) == 0 {
 		log.Println("[INFO] list is empty")
 		return nil
@@ -101,7 +103,7 @@ func (c *Client) utilsSortFirewallPolicyList(policyList []utilsFirewallPolicy, s
 	return fmt.Errorf("sorting failed")
 }
 
-func (c *Client) utilsFirewallPolicyListIsSorted(policyList []utilsFirewallPolicy, sortBy, sortDirection string) (sorted bool, err error) {
+func (c *Client) utilsFirewallInterfacePolicyListIsSorted(policyList []utilsFirewallInterfacePolicy, sortBy, sortDirection string) (sorted bool, err error) {
 	log.Println("[DEBUG] checking sort status")
 	if len(policyList) == 0 {
 		log.Println("[INFO] list is empty")
@@ -158,7 +160,7 @@ func (c *Client) utilsFirewallPolicyListIsSorted(policyList []utilsFirewallPolic
 }
 
 // Move the policyMoved policy AFTER the policyTarget policy
-func (c *Client) utilsMoveAfterFirewallPolicy(policyMoved, policyTarget int) (err error) {
+func (c *Client) utilsMoveAfterFirewallInterfacePolicy(policyMoved, policyTarget int) (err error) {
 	if policyMoved == policyTarget {
 		log.Println("[INFO] policyid matches, ignoring.")
 		return nil
@@ -173,7 +175,7 @@ func (c *Client) utilsMoveAfterFirewallPolicy(policyMoved, policyTarget int) (er
 
 	req.HTTPMethod = "PUT"
 	req.Payload = nil
-	req.Path = models.CmdbBasePath + "firewall/policy/" + idMoved
+	req.Path = models.CmdbBasePath + utilsFirewallInterfacePolicyPath + idMoved
 	req.Params = *params
 
 	_, err = request.CreateUpdate(c.config, req)
@@ -184,7 +186,7 @@ func (c *Client) utilsMoveAfterFirewallPolicy(policyMoved, policyTarget int) (er
 }
 
 // Move the policyMoved policy BEFORE the policyTarget policy
-func (c *Client) utilsMoveBeforeFirewallPolicy(policyMoved, policyTarget int) (err error) {
+func (c *Client) utilsMoveBeforeFirewallInterfacePolicy(policyMoved, policyTarget int) (err error) {
 	if policyMoved == policyTarget {
 		log.Println("[INFO] policyid matches, ignoring.")
 		return nil
@@ -199,7 +201,7 @@ func (c *Client) utilsMoveBeforeFirewallPolicy(policyMoved, policyTarget int) (e
 
 	req.HTTPMethod = "PUT"
 	req.Payload = nil
-	req.Path = models.CmdbBasePath + "firewall/policy/" + idMoved
+	req.Path = models.CmdbBasePath + utilsFirewallInterfacePolicyPath + idMoved
 	req.Params = *params
 
 	_, err = request.CreateUpdate(c.config, req)
@@ -209,13 +211,13 @@ func (c *Client) utilsMoveBeforeFirewallPolicy(policyMoved, policyTarget int) (e
 	return nil
 }
 
-func (c *Client) SortFirewallPolicy(params *models.CmdbRequestParams, sortBy, sortDirection string) (err error) {
-	policyList, err := c.utilsGetFirewallPolicyList(params)
+func (c *Client) SortFirewallInterfacePolicy(params *models.CmdbRequestParams, sortBy, sortDirection string) (err error) {
+	policyList, err := c.utilsGetFirewallInterfacePolicyList(params)
 	if err != nil {
 		return err
 	}
 
-	sorted, err := c.utilsFirewallPolicyListIsSorted(*policyList, sortBy, sortDirection)
+	sorted, err := c.utilsFirewallInterfacePolicyListIsSorted(*policyList, sortBy, sortDirection)
 	if err != nil {
 		return err
 	}
@@ -225,20 +227,20 @@ func (c *Client) SortFirewallPolicy(params *models.CmdbRequestParams, sortBy, so
 	}
 
 	currentLast := (*policyList)[len(*policyList)-1].PolicyID
-	c.utilsSortFirewallPolicyList(*policyList, sortBy, sortDirection)
+	c.utilsSortFirewallInterfacePolicyList(*policyList, sortBy, sortDirection)
 
 	for i := range *policyList {
 		i1 := len(*policyList) - i - 1
 		p1 := (*policyList)[i1]
 		if i == 0 {
-			err := c.utilsMoveAfterFirewallPolicy(int(p1.PolicyID), int(currentLast))
+			err := c.utilsMoveAfterFirewallInterfacePolicy(int(p1.PolicyID), int(currentLast))
 			if err != nil {
 				return err
 			}
 		} else {
 			i2 := len(*policyList) - i
 			p2 := (*policyList)[i2]
-			err := c.utilsMoveBeforeFirewallPolicy(int(p1.PolicyID), int(p2.PolicyID))
+			err := c.utilsMoveBeforeFirewallInterfacePolicy(int(p1.PolicyID), int(p2.PolicyID))
 			if err != nil {
 				return err
 			}
@@ -247,13 +249,13 @@ func (c *Client) SortFirewallPolicy(params *models.CmdbRequestParams, sortBy, so
 	return nil
 }
 
-func (c *Client) FirewallPolicyListIsSorted(params *models.CmdbRequestParams, sortBy, sortDirection string) (sorted bool, err error) {
-	policyList, err := c.utilsGetFirewallPolicyList(params)
+func (c *Client) FirewallInterfacePolicyListIsSorted(params *models.CmdbRequestParams, sortBy, sortDirection string) (sorted bool, err error) {
+	policyList, err := c.utilsGetFirewallInterfacePolicyList(params)
 	if err != nil {
 		return false, err
 	}
 
-	sorted, err = c.utilsFirewallPolicyListIsSorted(*policyList, sortBy, sortDirection)
+	sorted, err = c.utilsFirewallInterfacePolicyListIsSorted(*policyList, sortBy, sortDirection)
 	if err != nil {
 		return false, err
 	}
