@@ -22,8 +22,11 @@ type CmdbRequestParams struct {
 	Filter               *[]string `json:"filter,omitempty"`
 	Format               *[]string `json:"format,omitempty"`
 	Meta                 *bool     `json:"meta,omitempty"`
+	Mkey                 string    `json:"mykey,omitempty"`
 	PlainTextPassword    *bool     `json:"plain-text-password,omitempty"`
+	Scope                string    `json:"scope,omitempty"`
 	Sort                 *[]string `json:"sort,omitempty"`
+	Type                 string    `json:"type,omitempty"`
 	Vdom                 string    `json:"vdom,omitempty"`
 	WithMeta             *bool     `json:"with_meta,omitempty"`
 }

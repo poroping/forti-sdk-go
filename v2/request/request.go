@@ -103,6 +103,38 @@ func Read(c *config.Config, r *models.CmdbRequest) (*models.CmdbResponse, error)
 	return response, err
 }
 
+func ReadString(c *config.Config, r *models.CmdbRequest) (*string, error) {
+	req, err := newRequest(*c, r)
+	if err != nil {
+		return nil, err
+	}
+
+	res, err := c.HTTPCon.Do(req)
+	if err != nil {
+		return nil, err
+	}
+
+	log.Printf("[DEBUG] Status code: %d", res.StatusCode)
+
+	defer res.Body.Close()
+
+	body, err := ioutil.ReadAll(res.Body)
+	if err != nil {
+		return nil, err
+	}
+
+	response := &models.CmdbResponse{}
+	err = json.Unmarshal(body, response)
+	if err != nil {
+		log.Printf("[ERROR] Error reading response body during READ")
+		return nil, err
+	}
+
+	responseString := string(body)
+
+	return &responseString, err
+}
+
 func Delete(c *config.Config, r *models.CmdbRequest) (err error) {
 	req, err := newRequest(*c, r)
 	if err != nil {
@@ -132,10 +164,6 @@ func Delete(c *config.Config, r *models.CmdbRequest) (err error) {
 
 	err = fortiErrorCheck(body, &response)
 	if err != nil {
-		// if res.StatusCode == 404 {
-		// 	log.Printf("[WARN] Resource not found, assumed DELETE succeeded")
-		// 	return nil
-		// }
 		return err
 	}
 
@@ -339,6 +367,15 @@ func marshalParams(params *models.CmdbRequestParams) url.Values {
 	if params.Meta != nil {
 		v := strconv.FormatBool(*params.Meta)
 		urlQuery.Set("meta", v)
+	}
+	if params.Mkey != "" {
+		urlQuery.Add("mkey", params.Mkey)
+	}
+	if params.Scope != "" {
+		urlQuery.Add("scope", params.Scope)
+	}
+	if params.Type != "" {
+		urlQuery.Add("type", params.Type)
 	}
 	if params.PlainTextPassword != nil {
 		v := strconv.FormatBool(*params.PlainTextPassword)
