@@ -12,7 +12,7 @@ type Auth struct {
 	CABundle string
 	Vdom     string
 	Insecure bool
-	Refresh  bool
+	Offline  bool
 
 	PeerAuth   string
 	CaCert     string
