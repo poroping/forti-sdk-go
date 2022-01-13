@@ -2,7 +2,6 @@ package utils
 
 import (
 	"encoding/json"
-	"net/url"
 
 	"github.com/poroping/forti-sdk-go/v2/models"
 	"github.com/poroping/forti-sdk-go/v2/request"
@@ -23,7 +22,7 @@ func (c *Client) GenericApi(payload *UtilsGenericApi, params *models.CmdbRequest
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = payload.HTTPMethod
 	req.Payload = body
-	req.Path = models.CmdbBasePath + url.PathEscape(payload.Path)
+	req.Path = payload.Path
 	req.Params = *params
 
 	res, err := request.CreateUpdate(c.config, req)
