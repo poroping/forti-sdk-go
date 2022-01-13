@@ -123,16 +123,36 @@ func ReadString(c *config.Config, r *models.CmdbRequest) (*string, error) {
 		return nil, err
 	}
 
+	if body == nil {
+		log.Printf("[ERROR] Error empty string response during READ")
+		return nil, err
+	}
+
 	response := &models.CmdbResponse{}
 	err = json.Unmarshal(body, response)
-	if err != nil {
-		log.Printf("[ERROR] Error reading response body during READ")
-		return nil, err
+	if err == nil {
+		log.Printf("[WARN] Expected string, got CmdbResponse")
+		// skipping error parsing cause non existant cert response missing httpmethod
+		// {
+		// 	"path":"system",
+		// 	"name":"certificate",
+		// 	"action":"download",
+		// 	"serial":"FGT60FTK20028507",
+		// 	"version":"v7.0.2",
+		// 	"build":234,
+		// 	"status":"error",
+		// 	"http_status":404
+		//   }
+		// err = fortiErrorCheck(body, response)
+		// if err != nil {
+		// 	return nil, err
+		// }
+		return nil, nil
 	}
 
 	responseString := string(body)
 
-	return &responseString, err
+	return &responseString, nil
 }
 
 func Delete(c *config.Config, r *models.CmdbRequest) (err error) {
