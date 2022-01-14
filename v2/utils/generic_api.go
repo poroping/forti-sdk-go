@@ -9,11 +9,11 @@ import (
 
 type UtilsGenericApi struct {
 	HTTPMethod string `json:"-"`
-	Json       string `json:"json"`
+	Json       string `json:"json,omitempty"`
 	Path       string `json:"-"`
 }
 
-func (c *Client) GenericApi(payload *UtilsGenericApi, params *models.CmdbRequestParams) (*models.CmdbResponse, error) {
+func (c *Client) GenericApi(payload *UtilsGenericApi, params *models.CmdbRequestParams) (*string, error) {
 	body, err := json.Marshal(payload)
 	if err != nil {
 		return nil, err
@@ -25,7 +25,7 @@ func (c *Client) GenericApi(payload *UtilsGenericApi, params *models.CmdbRequest
 	req.Path = payload.Path
 	req.Params = *params
 
-	res, err := request.CreateUpdate(c.config, req)
+	res, err := request.Generic(c.config, req)
 	if err != nil {
 		return nil, err
 	}

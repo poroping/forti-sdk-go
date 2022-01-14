@@ -190,6 +190,44 @@ func Delete(c *config.Config, r *models.CmdbRequest) (err error) {
 	return nil
 }
 
+func Generic(c *config.Config, r *models.CmdbRequest) (*string, error) {
+	req, err := newRequest(*c, r)
+	if err != nil {
+		return nil, err
+	}
+
+	res, err := c.HTTPCon.Do(req)
+	if err != nil {
+		// handle 404s (search for resource on delete at least)
+		return nil, err
+	}
+
+	log.Printf("[DEBUG] Status code: %d", res.StatusCode)
+
+	defer res.Body.Close()
+
+	body, err := ioutil.ReadAll(res.Body)
+	if err != nil {
+		return nil, err
+	}
+
+	response := &models.CmdbResponse{}
+	err = json.Unmarshal(body, &response)
+	if err != nil {
+		log.Printf("[ERROR] Error reading response body during CREATE/UPDATE %s", err)
+		return nil, err
+	}
+
+	err = fortiErrorCheck(body, response)
+	if err != nil {
+		return nil, err
+	}
+
+	resp := string(body)
+
+	return &resp, err
+}
+
 // Currently only checks for errors, don't trust false, needs work.
 func Exists(c *config.Config, r *models.CmdbRequest) bool {
 	_, err := Read(c, r)

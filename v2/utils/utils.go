@@ -14,7 +14,7 @@ type Client struct {
 }
 
 type Endpoints interface {
-	GenericApi(payload *UtilsGenericApi, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	GenericApi(payload *UtilsGenericApi, params *models.CmdbRequestParams) (*string, error)
 	SortCentralSnatMap(params *models.CmdbRequestParams, sortBy, sortDirection string) (err error)
 	CentralSnatMapListIsSorted(params *models.CmdbRequestParams, sortBy, sortDirection string) (sorted bool, err error)
 	SortFirewallPolicy(params *models.CmdbRequestParams, sortBy, sortDirection string) (err error)
