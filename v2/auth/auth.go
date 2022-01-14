@@ -7,12 +7,12 @@ import (
 
 // Auth describes the authentication information for FortiOS
 type Auth struct {
-	Hostname string
-	Token    string
-	CABundle string
-	Vdom     string
-	Insecure bool
-	Offline  bool
+	Hostname    string
+	Token       string
+	CABundle    string
+	Vdom        string
+	Insecure    bool
+	AutoVersion bool
 
 	PeerAuth   string
 	CaCert     string

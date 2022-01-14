@@ -49,7 +49,7 @@ func NewClientBase(auth *auth.Auth) (*FortiSDKClient, error) {
 
 	dc := &http.Client{}
 	dc.Transport = tr
-	dc.Timeout = 10 * time.Second
+	dc.Timeout = 30 * time.Second
 
 	c := &FortiSDKClient{}
 	c.Config.Auth = auth
@@ -60,8 +60,8 @@ func NewClientBase(auth *auth.Auth) (*FortiSDKClient, error) {
 	c.Config.UserAgent = "FortiOS Go-SDK"
 	c.Config.Retries = 5
 
-	if auth.Offline {
-		log.Print("[INFO] Client set as offline, skipping version check.")
+	if !auth.AutoVersion {
+		log.Print("[INFO] Skipping FortiOS version check.")
 	} else {
 		log.Print("[INFO] Attempting to determine FortiOS version.")
 		req := &models.CmdbRequest{}
