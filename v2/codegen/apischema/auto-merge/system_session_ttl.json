@@ -1,0 +1,90 @@
+{
+	"addedIn": "v6.2.7",
+	"build": 237,
+	"http_method": "GET",
+	"http_status": 200,
+	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3",
+	"name": "session-ttl",
+	"path": "system",
+	"results": {
+		"access_group": "sysgrp",
+		"category": "complex",
+		"children": {
+			"default": {
+				"category": "unitary",
+				"default": "",
+				"help": "Default timeout.",
+				"name": "default",
+				"type": "user"
+			},
+			"port": {
+				"category": "table",
+				"children": {
+					"end-port": {
+						"category": "unitary",
+						"default": 0,
+						"help": "End port number.",
+						"max-value": 65535,
+						"min-value": 0,
+						"name": "end-port",
+						"required": true,
+						"type": "integer"
+					},
+					"id": {
+						"category": "unitary",
+						"default": 0,
+						"help": "Table entry ID.",
+						"max-value": 65535,
+						"min-value": 0,
+						"name": "id",
+						"required": true,
+						"type": "integer"
+					},
+					"protocol": {
+						"category": "unitary",
+						"default": 0,
+						"help": "Protocol (0 - 255).",
+						"max-value": 255,
+						"min-value": 0,
+						"name": "protocol",
+						"required": true,
+						"type": "integer"
+					},
+					"start-port": {
+						"category": "unitary",
+						"default": 0,
+						"help": "Start port number.",
+						"max-value": 65535,
+						"min-value": 0,
+						"name": "start-port",
+						"required": true,
+						"type": "integer"
+					},
+					"timeout": {
+						"category": "unitary",
+						"default": "",
+						"help": "Session timeout (TTL).",
+						"name": "timeout",
+						"type": "user"
+					}
+				},
+				"help": "Session TTL port.",
+				"max_table_size_global": 0,
+				"max_table_size_item": 0,
+				"max_table_size_vdom": 512,
+				"mkey": "id",
+				"mkey_type": "integer",
+				"name": "port"
+			}
+		},
+		"help": "Configure global session TTL timers for this FortiGate.",
+		"name": "session-ttl",
+		"path": "system",
+		"q_type": 16
+	},
+	"revision": "78ee061304af9c5d17bcae6474808d97",
+	"serial": "FGTAZRAQCG14L19D",
+	"status": "success",
+	"vdom": "root",
+	"version": "v7.0.3"
+}

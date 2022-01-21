@@ -1,0 +1,142 @@
+{
+    "http_method": "GET",
+    "revision": "b99fbbdb38c6c20efcdc3feaa6b8aa88",
+    "results": {
+        "name": "zone",
+        "category": "table",
+        "help": "Configure zones to group two or more interfaces. When a zone is created you can configure policies for the zone instead of individual interfaces in the zone.",
+        "mkey": "name",
+        "mkey_type": "string",
+        "children": {
+            "name": {
+                "name": "name",
+                "category": "unitary",
+                "type": "string",
+                "help": "Zone name.",
+                "size": 35,
+                "default": ""
+            },
+            "tagging": {
+                "name": "tagging",
+                "category": "table",
+                "help": "Config object tagging.",
+                "mkey": "name",
+                "mkey_type": "string",
+                "children": {
+                    "name": {
+                        "name": "name",
+                        "category": "unitary",
+                        "type": "string",
+                        "help": "Tagging entry name.",
+                        "size": 63,
+                        "default": ""
+                    },
+                    "category": {
+                        "name": "category",
+                        "category": "unitary",
+                        "type": "string",
+                        "help": "Tag category.",
+                        "datasource": [
+                            "system.object-tagging.category"
+                        ],
+                        "size": 63,
+                        "default": ""
+                    },
+                    "tags": {
+                        "name": "tags",
+                        "category": "table",
+                        "help": "Tags.",
+                        "member_table": true,
+                        "mkey": "name",
+                        "mkey_type": "string",
+                        "children": {
+                            "name": {
+                                "name": "name",
+                                "category": "unitary",
+                                "type": "string",
+                                "help": "Tag name.",
+                                "datasource": [
+                                    "system.object-tagging.tags.name"
+                                ],
+                                "size": 79,
+                                "default": ""
+                            }
+                        },
+                        "max_table_size_vdom": 0,
+                        "max_table_size_global": 0,
+                        "max_table_size_item": 0
+                    }
+                },
+                "max_table_size_vdom": 0,
+                "max_table_size_global": 0,
+                "max_table_size_item": 0
+            },
+            "description": {
+                "name": "description",
+                "category": "unitary",
+                "type": "string",
+                "help": "Description.",
+                "size": 127,
+                "default": ""
+            },
+            "intrazone": {
+                "name": "intrazone",
+                "category": "unitary",
+                "type": "option",
+                "help": "Allow or deny traffic routing between different interfaces in the same zone (default = deny).",
+                "multiple_values": false,
+                "options": [
+                    {
+                        "name": "allow",
+                        "help": "Allow traffic between interfaces in the zone."
+                    },
+                    {
+                        "name": "deny",
+                        "help": "Deny traffic between interfaces in the zone."
+                    }
+                ],
+                "default": "deny"
+            },
+            "interface": {
+                "name": "interface",
+                "category": "table",
+                "help": "Add interfaces to this zone. Interfaces must not be assigned to another zone or have firewall policies defined.",
+                "member_table": true,
+                "mkey": "interface-name",
+                "mkey_type": "string",
+                "children": {
+                    "interface-name": {
+                        "name": "interface-name",
+                        "category": "unitary",
+                        "type": "string",
+                        "help": "Select interfaces to add to the zone.",
+                        "required": true,
+                        "datasource": [
+                            "system.interface.name"
+                        ],
+                        "size": 79,
+                        "default": ""
+                    }
+                },
+                "max_table_size_vdom": 0,
+                "max_table_size_global": 0,
+                "max_table_size_item": 0
+            }
+        },
+        "max_table_size_vdom": 20,
+        "max_table_size_global": 0,
+        "max_table_size_item": 0,
+        "path": "system",
+        "q_type": 12,
+        "access_group": "netgrp"
+    },
+    "vdom": "root",
+    "path": "system",
+    "name": "zone",
+    "action": "schema",
+    "status": "success",
+    "http_status": 200,
+    "serial": "FGT60FTK20028507",
+    "version": "v7.0.1",
+    "build": 157
+}

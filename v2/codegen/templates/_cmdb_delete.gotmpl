@@ -1,0 +1,27 @@
+{{define "cmdb_delete"}}
+{{if (eq .results.category "complex")}}
+{{template "_cmdb_delete_complex" .}}{{else}}{{template "_cmdb_delete" .}}
+{{end}}
+{{end}}
+
+{{define "_cmdb_delete"}}
+func (c *Client) Delete{{.fpath}}(mkey string, params *models.CmdbRequestParams) error {
+	req := &models.CmdbRequest{}
+	req.HTTPMethod = "DELETE"
+	req.Mkey = &mkey
+	req.Payload = nil
+	req.Path = models.CmdbBasePath + models.{{.fpath}}Path + mkey + "/"
+	req.Params = *params
+
+	err := request.Delete(c.config, req)
+	return err
+}
+{{end}}
+
+{{define "_cmdb_delete_complex"}}
+func (c *Client) Delete{{.fpath}}(mkey string, params *models.CmdbRequestParams) error {
+	payload := &models.{{.fpath}}{}
+	_, err := c.Update{{.fpath}}("", payload, params)
+	return err
+}
+{{end}}

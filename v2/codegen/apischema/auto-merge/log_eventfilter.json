@@ -1,0 +1,297 @@
+{
+	"addedIn": "v6.2.7",
+	"build": 237,
+	"http_method": "GET",
+	"http_status": 200,
+	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3",
+	"name": "eventfilter",
+	"path": "log",
+	"results": {
+		"access_group": "loggrp",
+		"category": "complex",
+		"children": {
+			"cifs": {
+				"addedIn": "v7.0.0",
+				"category": "unitary",
+				"default": "enable",
+				"help": "Enable/disable CIFS logging.",
+				"multiple_values": false,
+				"name": "cifs",
+				"options": [
+					{
+						"help": "Enable CIFS logging.",
+						"name": "enable"
+					},
+					{
+						"help": "Disable CIFS logging.",
+						"name": "disable"
+					}
+				],
+				"type": "option"
+			},
+			"connector": {
+				"category": "unitary",
+				"default": "enable",
+				"help": "Enable/disable SDN connector logging.",
+				"multiple_values": false,
+				"name": "connector",
+				"options": [
+					{
+						"help": "Enable SDN connector logging.",
+						"name": "enable"
+					},
+					{
+						"help": "Disable SDN connector logging.",
+						"name": "disable"
+					}
+				],
+				"type": "option"
+			},
+			"endpoint": {
+				"category": "unitary",
+				"default": "enable",
+				"help": "Enable/disable endpoint event logging.",
+				"multiple_values": false,
+				"name": "endpoint",
+				"options": [
+					{
+						"help": "Enable endpoint event logging.",
+						"name": "enable"
+					},
+					{
+						"help": "Disable endpoint event logging.",
+						"name": "disable"
+					}
+				],
+				"type": "option"
+			},
+			"event": {
+				"category": "unitary",
+				"default": "enable",
+				"help": "Enable/disable event logging.",
+				"multiple_values": false,
+				"name": "event",
+				"options": [
+					{
+						"help": "Enable event logging.",
+						"name": "enable"
+					},
+					{
+						"help": "Disable event logging.",
+						"name": "disable"
+					}
+				],
+				"type": "option"
+			},
+			"fortiextender": {
+				"category": "unitary",
+				"default": "enable",
+				"help": "Enable/disable FortiExtender logging.",
+				"multiple_values": false,
+				"name": "fortiextender",
+				"options": [
+					{
+						"help": "Enable Forti-Extender logging.",
+						"name": "enable"
+					},
+					{
+						"help": "Disable Forti-Extender logging.",
+						"name": "disable"
+					}
+				],
+				"type": "option"
+			},
+			"ha": {
+				"category": "unitary",
+				"default": "enable",
+				"help": "Enable/disable ha event logging.",
+				"multiple_values": false,
+				"name": "ha",
+				"options": [
+					{
+						"help": "Enable ha event logging.",
+						"name": "enable"
+					},
+					{
+						"help": "Disable ha event logging.",
+						"name": "disable"
+					}
+				],
+				"type": "option"
+			},
+			"router": {
+				"category": "unitary",
+				"default": "enable",
+				"help": "Enable/disable router event logging.",
+				"multiple_values": false,
+				"name": "router",
+				"options": [
+					{
+						"help": "Enable router event logging.",
+						"name": "enable"
+					},
+					{
+						"help": "Disable router event logging.",
+						"name": "disable"
+					}
+				],
+				"type": "option"
+			},
+			"sdwan": {
+				"addedIn": "v6.4.0",
+				"category": "unitary",
+				"default": "enable",
+				"help": "Enable/disable SD-WAN logging.",
+				"multiple_values": false,
+				"name": "sdwan",
+				"options": [
+					{
+						"help": "Enable SD-WAN logging.",
+						"name": "enable"
+					},
+					{
+						"help": "Disable SD-WAN logging.",
+						"name": "disable"
+					}
+				],
+				"type": "option"
+			},
+			"security-rating": {
+				"category": "unitary",
+				"default": "enable",
+				"help": "Enable/disable Security Rating result logging.",
+				"multiple_values": false,
+				"name": "security-rating",
+				"options": [
+					{
+						"help": "Enable Security Fabric audit result logging.",
+						"name": "enable"
+					},
+					{
+						"help": "Disable Security Fabric audit result logging.",
+						"name": "disable"
+					}
+				],
+				"type": "option"
+			},
+			"switch-controller": {
+				"addedIn": "v6.4.3",
+				"category": "unitary",
+				"default": "enable",
+				"help": "Enable/disable Switch-Controller logging.",
+				"multiple_values": false,
+				"name": "switch-controller",
+				"options": [
+					{
+						"help": "Enable Switch-Controller logging.",
+						"name": "enable"
+					},
+					{
+						"help": "Disable Switch-Controller logging.",
+						"name": "disable"
+					}
+				],
+				"type": "option"
+			},
+			"system": {
+				"category": "unitary",
+				"default": "enable",
+				"help": "Enable/disable system event logging.",
+				"multiple_values": false,
+				"name": "system",
+				"options": [
+					{
+						"help": "Enable system event logging.",
+						"name": "enable"
+					},
+					{
+						"help": "Disable system event logging.",
+						"name": "disable"
+					}
+				],
+				"type": "option"
+			},
+			"user": {
+				"category": "unitary",
+				"default": "enable",
+				"help": "Enable/disable user authentication event logging.",
+				"multiple_values": false,
+				"name": "user",
+				"options": [
+					{
+						"help": "Enable user authentication event logging.",
+						"name": "enable"
+					},
+					{
+						"help": "Disable user authentication event logging.",
+						"name": "disable"
+					}
+				],
+				"type": "option"
+			},
+			"vpn": {
+				"category": "unitary",
+				"default": "enable",
+				"help": "Enable/disable VPN event logging.",
+				"multiple_values": false,
+				"name": "vpn",
+				"options": [
+					{
+						"help": "Enable VPN event logging.",
+						"name": "enable"
+					},
+					{
+						"help": "Disable VPN event logging.",
+						"name": "disable"
+					}
+				],
+				"type": "option"
+			},
+			"wan-opt": {
+				"category": "unitary",
+				"default": "enable",
+				"help": "Enable/disable WAN optimization event logging.",
+				"multiple_values": false,
+				"name": "wan-opt",
+				"options": [
+					{
+						"help": "Enable WAN optimization event logging.",
+						"name": "enable"
+					},
+					{
+						"help": "Disable WAN optimization event logging.",
+						"name": "disable"
+					}
+				],
+				"type": "option"
+			},
+			"wireless-activity": {
+				"category": "unitary",
+				"default": "enable",
+				"help": "Enable/disable wireless event logging.",
+				"multiple_values": false,
+				"name": "wireless-activity",
+				"options": [
+					{
+						"help": "Enable wireless event logging.",
+						"name": "enable"
+					},
+					{
+						"help": "Disable wireless event logging.",
+						"name": "disable"
+					}
+				],
+				"type": "option"
+			}
+		},
+		"help": "Configure log event filters.",
+		"name": "eventfilter",
+		"path": "log",
+		"q_type": 83
+	},
+	"revision": "78ee061304af9c5d17bcae6474808d97",
+	"serial": "FGTAZRAQCG14L19D",
+	"status": "success",
+	"vdom": "root",
+	"version": "v7.0.3"
+}

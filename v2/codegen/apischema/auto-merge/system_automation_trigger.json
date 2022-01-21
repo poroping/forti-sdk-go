@@ -1,0 +1,414 @@
+{
+	"addedIn": "v6.2.7",
+	"build": 237,
+	"http_method": "GET",
+	"http_status": 200,
+	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3",
+	"name": "automation-trigger",
+	"path": "system",
+	"results": {
+		"access_group": "sysgrp",
+		"category": "table",
+		"children": {
+			"description": {
+				"addedIn": "v7.0.0",
+				"category": "unitary",
+				"help": "Description.",
+				"name": "description",
+				"size": 255,
+				"type": "var-string"
+			},
+			"event-type": {
+				"category": "unitary",
+				"default": "ioc",
+				"help": "Event type.",
+				"multiple_values": false,
+				"name": "event-type",
+				"options": [
+					{
+						"help": "Indicator of compromise detected.",
+						"name": "ioc"
+					},
+					{
+						"help": "Use log ID as trigger.",
+						"name": "event-log"
+					},
+					{
+						"help": "Device reboot.",
+						"name": "reboot"
+					},
+					{
+						"help": "Conserve mode due to low memory.",
+						"name": "low-memory"
+					},
+					{
+						"help": "High CPU usage.",
+						"name": "high-cpu"
+					},
+					{
+						"help": "License near expiration date.",
+						"name": "license-near-expiry"
+					},
+					{
+						"help": "HA failover.",
+						"name": "ha-failover"
+					},
+					{
+						"help": "Configuration change.",
+						"name": "config-change"
+					},
+					{
+						"help": "Security rating summary.",
+						"name": "security-rating-summary"
+					},
+					{
+						"help": "Virus and IPS database updated.",
+						"name": "virus-ips-db-updated"
+					},
+					{
+						"help": "FortiAnalyzer event.",
+						"name": "faz-event"
+					},
+					{
+						"help": "Incoming webhook call.",
+						"name": "incoming-webhook"
+					},
+					{
+						"help": "Fabric connector event.",
+						"name": "fabric-event"
+					}
+				],
+				"type": "option"
+			},
+			"fabric-event-name": {
+				"addedIn": "v7.0.0",
+				"category": "unitary",
+				"help": "Fabric connector event handler name.",
+				"name": "fabric-event-name",
+				"required": true,
+				"size": 255,
+				"type": "var-string"
+			},
+			"fabric-event-severity": {
+				"addedIn": "v7.0.0",
+				"category": "unitary",
+				"help": "Fabric connector event severity.",
+				"name": "fabric-event-severity",
+				"size": 255,
+				"type": "var-string"
+			},
+			"faz-event-name": {
+				"category": "unitary",
+				"help": "FortiAnalyzer event handler name.",
+				"name": "faz-event-name",
+				"required": true,
+				"size": 255,
+				"type": "var-string"
+			},
+			"faz-event-severity": {
+				"category": "unitary",
+				"help": "FortiAnalyzer event severity.",
+				"name": "faz-event-severity",
+				"size": 255,
+				"type": "var-string"
+			},
+			"faz-event-tags": {
+				"category": "unitary",
+				"help": "FortiAnalyzer event tags.",
+				"name": "faz-event-tags",
+				"size": 255,
+				"type": "var-string"
+			},
+			"fields": {
+				"category": "table",
+				"children": {
+					"id": {
+						"category": "unitary",
+						"default": 0,
+						"help": "Entry ID.",
+						"max-value": 4294967295,
+						"min-value": 0,
+						"name": "id",
+						"type": "integer"
+					},
+					"name": {
+						"category": "unitary",
+						"default": "",
+						"help": "Name.",
+						"name": "name",
+						"size": 35,
+						"type": "string"
+					},
+					"value": {
+						"category": "unitary",
+						"help": "Value.",
+						"name": "value",
+						"size": 63,
+						"type": "var-string"
+					}
+				},
+				"help": "Customized trigger field settings.",
+				"max_table_size_global": 0,
+				"max_table_size_item": 5,
+				"max_table_size_vdom": 0,
+				"mkey": "id",
+				"mkey_type": "integer",
+				"name": "fields"
+			},
+			"ioc-level": {
+				"category": "unitary",
+				"default": "high",
+				"help": "IOC threat level.",
+				"multiple_values": false,
+				"name": "ioc-level",
+				"options": [
+					{
+						"help": "IOC level medium and high.",
+						"name": "medium"
+					},
+					{
+						"help": "IOC level high only.",
+						"name": "high"
+					}
+				],
+				"type": "option"
+			},
+			"license-type": {
+				"category": "unitary",
+				"default": "forticare-support",
+				"help": "License type.",
+				"multiple_values": false,
+				"name": "license-type",
+				"options": [
+					{
+						"help": "FortiCare support license.",
+						"name": "forticare-support"
+					},
+					{
+						"help": "FortiGuard web filter license.",
+						"name": "fortiguard-webfilter"
+					},
+					{
+						"help": "FortiGuard antispam license.",
+						"name": "fortiguard-antispam"
+					},
+					{
+						"help": "FortiGuard AntiVirus license.",
+						"name": "fortiguard-antivirus"
+					},
+					{
+						"help": "FortiGuard IPS license.",
+						"name": "fortiguard-ips"
+					},
+					{
+						"help": "FortiGuard management service license.",
+						"name": "fortiguard-management"
+					},
+					{
+						"help": "FortiCloud license.",
+						"name": "forticloud"
+					},
+					{
+						"help": "Any license.",
+						"name": "any"
+					}
+				],
+				"type": "option"
+			},
+			"logid": {
+				"category": "table",
+				"children": {
+					"id": {
+						"category": "unitary",
+						"default": 0,
+						"help": "Log ID.",
+						"max-value": 65535,
+						"min-value": 1,
+						"name": "id",
+						"required": true,
+						"type": "integer"
+					}
+				},
+				"default": 0,
+				"help": "Log IDs to trigger event.",
+				"max-value": 65535,
+				"max_table_size_global": 0,
+				"max_table_size_item": 0,
+				"max_table_size_vdom": 0,
+				"member_table": true,
+				"min-value": 1,
+				"mkey": "id",
+				"mkey_type": "integer",
+				"name": "logid",
+				"type": "integer"
+			},
+			"name": {
+				"category": "unitary",
+				"default": "",
+				"help": "Name.",
+				"name": "name",
+				"size": 35,
+				"type": "string"
+			},
+			"report-type": {
+				"addedIn": "v6.4.0",
+				"category": "unitary",
+				"default": "posture",
+				"help": "Security Rating report.",
+				"multiple_values": false,
+				"name": "report-type",
+				"options": [
+					{
+						"help": "Posture report.",
+						"name": "posture"
+					},
+					{
+						"help": "Coverage report.",
+						"name": "coverage"
+					},
+					{
+						"help": "Optimization report",
+						"name": "optimization"
+					},
+					{
+						"help": "Any report.",
+						"name": "any"
+					}
+				],
+				"type": "option"
+			},
+			"serial": {
+				"addedIn": "v7.0.0",
+				"category": "unitary",
+				"help": "Fabric connector serial number.",
+				"name": "serial",
+				"required": true,
+				"size": 255,
+				"type": "var-string"
+			},
+			"trigger-day": {
+				"category": "unitary",
+				"default": 1,
+				"help": "Day within a month to trigger.",
+				"max-value": 31,
+				"min-value": 1,
+				"name": "trigger-day",
+				"type": "integer"
+			},
+			"trigger-frequency": {
+				"category": "unitary",
+				"default": "daily",
+				"help": "Scheduled trigger frequency (default = daily).",
+				"multiple_values": false,
+				"name": "trigger-frequency",
+				"options": [
+					{
+						"help": "Run hourly.",
+						"name": "hourly"
+					},
+					{
+						"help": "Run daily.",
+						"name": "daily"
+					},
+					{
+						"help": "Run weekly.",
+						"name": "weekly"
+					},
+					{
+						"help": "Run monthly.",
+						"name": "monthly"
+					}
+				],
+				"type": "option"
+			},
+			"trigger-hour": {
+				"category": "unitary",
+				"default": 0,
+				"help": "Hour of the day on which to trigger (0 - 23, default = 1).",
+				"max-value": 23,
+				"min-value": 0,
+				"name": "trigger-hour",
+				"type": "integer"
+			},
+			"trigger-minute": {
+				"category": "unitary",
+				"default": 0,
+				"help": "Minute of the hour on which to trigger (0 - 59, default = 0).",
+				"max-value": 59,
+				"min-value": 0,
+				"name": "trigger-minute",
+				"type": "integer"
+			},
+			"trigger-type": {
+				"category": "unitary",
+				"default": "event-based",
+				"help": "Trigger type.",
+				"multiple_values": false,
+				"name": "trigger-type",
+				"options": [
+					{
+						"help": "Event based trigger.",
+						"name": "event-based"
+					},
+					{
+						"help": "Scheduled trigger.",
+						"name": "scheduled"
+					}
+				],
+				"type": "option"
+			},
+			"trigger-weekday": {
+				"category": "unitary",
+				"default": "",
+				"help": "Day of week for trigger.",
+				"multiple_values": false,
+				"name": "trigger-weekday",
+				"options": [
+					{
+						"help": "Sunday.",
+						"name": "sunday"
+					},
+					{
+						"help": "Monday.",
+						"name": "monday"
+					},
+					{
+						"help": "Tuesday.",
+						"name": "tuesday"
+					},
+					{
+						"help": "Wednesday.",
+						"name": "wednesday"
+					},
+					{
+						"help": "Thursday.",
+						"name": "thursday"
+					},
+					{
+						"help": "Friday.",
+						"name": "friday"
+					},
+					{
+						"help": "Saturday.",
+						"name": "saturday"
+					}
+				],
+				"type": "option"
+			}
+		},
+		"help": "Trigger for automation stitches.",
+		"max_table_size_global": 512,
+		"max_table_size_item": 0,
+		"max_table_size_vdom": 256,
+		"mkey": "name",
+		"mkey_type": "string",
+		"name": "automation-trigger",
+		"path": "system",
+		"q_type": 497
+	},
+	"revision": "9fdc6abd0044b4a706bb2643fe91ebd6",
+	"serial": "FGTAZRAQCG14L19D",
+	"status": "success",
+	"vdom": "root",
+	"version": "v7.0.3"
+}

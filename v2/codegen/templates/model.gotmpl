@@ -1,0 +1,27 @@
+{{define "models"}}
+{{template "modelfile" .}}
+{{end}}
+
+{{define "modelfile"}}
+package models
+
+const {{.fpath}}Path = "{{.path }}/{{.name }}/{{if .child_path}}{{.child_path }}/{{end}}"
+
+{{if not .child_path}}{{template "generatetype" .results}}{{end}}
+{{end}}
+
+{{define "generatetype"}}
+type {{.fpath}} struct {	{{range $key, $value := .children}}	
+	{{if $value.name_begin_with_int}}The{{end}}{{(mixedCase $value.name)}}	{{if or (eq $value.category "complex") (eq $value.category "table")}}*[]{{$value.fpath}}{{else}}{{(typeLookup $value.type)}}{{end}}	`json:"{{$value.name}},omitempty"`{{end}}
+	}
+{{range $key, $value := .children}}{{if or (eq $value.category "complex") (eq $value.category "table")}}
+{{template "generatetype" $value}}{{end}}{{end}}
+{{if .never}}{{if .readonly}}{{if (eq .category "table")}}{{template "defaultfuncs" . }}{{end}}{{end}}{{end}}
+{{end}}
+
+{{ define "defaultfuncs" }}
+//defaultfuncs
+func(def *{{.fpath}}) defaults(){ {{range $key, $value := .children}}{{if eq $value.category "unitary"}}
+	def.{{if $value.name_begin_with_int}}The{{end}}{{(mixedCase $value.name)}} = "{{$value.default}}"{{end}}{{end}}
+	}
+{{ end }}

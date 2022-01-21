@@ -1,0 +1,67 @@
+{
+	"addedIn": "v7.0.0",
+	"build": 237,
+	"http_method": "GET",
+	"http_status": 200,
+	"mergedVersions": "v7.0.0,v7.0.1,v7.0.2,v7.0.3",
+	"name": "youtube-key",
+	"path": "videofilter",
+	"results": {
+		"access_group": "utmgrp",
+		"category": "table",
+		"children": {
+			"id": {
+				"category": "unitary",
+				"default": 0,
+				"help": "ID.",
+				"max-value": 4294967295,
+				"min-value": 0,
+				"name": "id",
+				"required": true,
+				"type": "integer"
+			},
+			"key": {
+				"category": "unitary",
+				"default": "",
+				"help": "Key.",
+				"name": "key",
+				"required": true,
+				"size": 47,
+				"type": "string"
+			},
+			"status": {
+				"category": "unitary",
+				"default": "enable",
+				"help": "Enable/disable YouTube API service.",
+				"multiple_values": false,
+				"name": "status",
+				"options": [
+					{
+						"help": "Enable YouTube key status.",
+						"name": "enable"
+					},
+					{
+						"help": "Disable YouTube key status.",
+						"name": "disable"
+					}
+				],
+				"removedIn": "v7.0.1",
+				"type": "option"
+			}
+		},
+		"help": "Configure YouTube API keys.",
+		"max_table_size_global": 512,
+		"max_table_size_item": 0,
+		"max_table_size_vdom": 256,
+		"mkey": "id",
+		"mkey_type": "integer",
+		"name": "youtube-key",
+		"path": "videofilter",
+		"q_type": 95
+	},
+	"revision": "78ee061304af9c5d17bcae6474808d97",
+	"serial": "FGTAZRAQCG14L19D",
+	"status": "success",
+	"vdom": "root",
+	"version": "v7.0.3"
+}

@@ -1,0 +1,240 @@
+{
+	"addedIn": "v6.2.7",
+	"build": 237,
+	"http_method": "GET",
+	"http_status": 200,
+	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3",
+	"name": "setting",
+	"path": "authentication",
+	"results": {
+		"access_group": "authgrp",
+		"category": "complex",
+		"children": {
+			"active-auth-scheme": {
+				"category": "unitary",
+				"datasource": [
+					"authentication.scheme.name"
+				],
+				"default": "",
+				"help": "Active authentication method (scheme name).",
+				"name": "active-auth-scheme",
+				"size": 35,
+				"type": "string"
+			},
+			"auth-https": {
+				"category": "unitary",
+				"default": "enable",
+				"help": "Enable/disable redirecting HTTP user authentication to HTTPS.",
+				"multiple_values": false,
+				"name": "auth-https",
+				"options": [
+					{
+						"help": "Enable setting.",
+						"name": "enable"
+					},
+					{
+						"help": "Disable setting.",
+						"name": "disable"
+					}
+				],
+				"type": "option"
+			},
+			"captive-portal": {
+				"category": "unitary",
+				"datasource": [
+					"firewall.address.name"
+				],
+				"default": "",
+				"help": "Captive portal host name.",
+				"name": "captive-portal",
+				"size": 255,
+				"type": "string"
+			},
+			"captive-portal-ip": {
+				"category": "unitary",
+				"default": "0.0.0.0",
+				"help": "Captive portal IP address.",
+				"name": "captive-portal-ip",
+				"type": "ipv4-address-any"
+			},
+			"captive-portal-ip6": {
+				"category": "unitary",
+				"default": "::",
+				"help": "Captive portal IPv6 address.",
+				"name": "captive-portal-ip6",
+				"type": "ipv6-address"
+			},
+			"captive-portal-port": {
+				"category": "unitary",
+				"default": 7830,
+				"help": "Captive portal port number (1 - 65535, default = 7830).",
+				"max-value": 65535,
+				"min-value": 1,
+				"name": "captive-portal-port",
+				"type": "integer"
+			},
+			"captive-portal-ssl-port": {
+				"category": "unitary",
+				"default": 7831,
+				"help": "Captive portal SSL port number (1 - 65535, default = 7831).",
+				"max-value": 65535,
+				"min-value": 1,
+				"name": "captive-portal-ssl-port",
+				"type": "integer"
+			},
+			"captive-portal-type": {
+				"category": "unitary",
+				"default": "fqdn",
+				"help": "Captive portal type.",
+				"multiple_values": false,
+				"name": "captive-portal-type",
+				"options": [
+					{
+						"help": "Use FQDN for captive portal.",
+						"name": "fqdn"
+					},
+					{
+						"help": "Use an IP address for captive portal.",
+						"name": "ip"
+					}
+				],
+				"type": "option"
+			},
+			"captive-portal6": {
+				"category": "unitary",
+				"datasource": [
+					"firewall.address6.name"
+				],
+				"default": "",
+				"help": "IPv6 captive portal host name.",
+				"name": "captive-portal6",
+				"size": 255,
+				"type": "string"
+			},
+			"cert-auth": {
+				"addedIn": "v7.0.1",
+				"category": "unitary",
+				"default": "disable",
+				"help": "Enable/disable redirecting certificate authentication to HTTPS portal.",
+				"multiple_values": false,
+				"name": "cert-auth",
+				"options": [
+					{
+						"help": "Enable setting.",
+						"name": "enable"
+					},
+					{
+						"help": "Disable setting.",
+						"name": "disable"
+					}
+				],
+				"type": "option"
+			},
+			"cert-captive-portal": {
+				"addedIn": "v7.0.1",
+				"category": "unitary",
+				"datasource": [
+					"firewall.address.name"
+				],
+				"default": "",
+				"help": "Certificate captive portal host name.",
+				"name": "cert-captive-portal",
+				"size": 255,
+				"type": "string"
+			},
+			"cert-captive-portal-ip": {
+				"addedIn": "v7.0.1",
+				"category": "unitary",
+				"default": "0.0.0.0",
+				"help": "Certificate captive portal IP address.",
+				"name": "cert-captive-portal-ip",
+				"type": "ipv4-address-any"
+			},
+			"cert-captive-portal-port": {
+				"addedIn": "v7.0.1",
+				"category": "unitary",
+				"default": 7832,
+				"help": "Certificate captive portal port number (1 - 65535, default = 7832).",
+				"max-value": 65535,
+				"min-value": 1,
+				"name": "cert-captive-portal-port",
+				"type": "integer"
+			},
+			"dev-range": {
+				"addedIn": "v7.0.0",
+				"category": "table",
+				"children": {
+					"name": {
+						"category": "unitary",
+						"datasource": [
+							"firewall.address.name",
+							"firewall.addrgrp.name"
+						],
+						"default": "",
+						"help": "Address name.",
+						"name": "name",
+						"required": true,
+						"size": 79,
+						"type": "string"
+					}
+				},
+				"help": "Address range for the IP based device query.",
+				"max_table_size_global": 512,
+				"max_table_size_item": 0,
+				"max_table_size_vdom": 256,
+				"member_table": true,
+				"mkey": "name",
+				"mkey_type": "string",
+				"name": "dev-range"
+			},
+			"sso-auth-scheme": {
+				"category": "unitary",
+				"datasource": [
+					"authentication.scheme.name"
+				],
+				"default": "",
+				"help": "Single-Sign-On authentication method (scheme name).",
+				"name": "sso-auth-scheme",
+				"size": 35,
+				"type": "string"
+			},
+			"user-cert-ca": {
+				"addedIn": "v7.0.0",
+				"category": "table",
+				"children": {
+					"name": {
+						"category": "unitary",
+						"datasource": [
+							"vpn.certificate.ca.name"
+						],
+						"default": "",
+						"help": "CA certificate list.",
+						"name": "name",
+						"size": 79,
+						"type": "string"
+					}
+				},
+				"default": "",
+				"help": "CA certificate used for client certificate verification.",
+				"max_table_size_global": 512,
+				"max_table_size_item": 0,
+				"max_table_size_vdom": 256,
+				"member_table": true,
+				"mkey": "name",
+				"mkey_type": "string",
+				"name": "user-cert-ca",
+				"size": 79,
+				"type": "string"
+			}
+		},
+		"help": "Configure authentication setting.",
+		"name": "setting",
+		"path": "authentication",
+		"q_type": 490
+	},
+	"revision": "78ee061304af9c5d17bcae6474808d97",
+	"serial": "FGTAZRAQCG14L19D",
+	"status": "success",
+	"vdom": "root",
+	"version": "v7.0.3"
+}

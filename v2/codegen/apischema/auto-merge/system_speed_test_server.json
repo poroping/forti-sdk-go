@@ -1,0 +1,98 @@
+{
+	"addedIn": "v6.2.7",
+	"build": 237,
+	"http_method": "GET",
+	"http_status": 200,
+	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3",
+	"name": "speed-test-server",
+	"path": "system",
+	"results": {
+		"access_group": "sysgrp",
+		"category": "table",
+		"children": {
+			"host": {
+				"category": "table",
+				"children": {
+					"id": {
+						"category": "unitary",
+						"default": 0,
+						"help": "Server host ID.",
+						"max-value": 4294967295,
+						"min-value": 0,
+						"name": "id",
+						"type": "integer"
+					},
+					"ip": {
+						"category": "unitary",
+						"default": "0.0.0.0",
+						"help": "Server host IPv4 address.",
+						"name": "ip",
+						"type": "ipv4-address"
+					},
+					"password": {
+						"category": "unitary",
+						"help": "Speed test host password.",
+						"name": "password",
+						"size": 128,
+						"type": "password"
+					},
+					"port": {
+						"category": "unitary",
+						"default": 5204,
+						"help": "Server host port number to communicate with client.",
+						"max-value": 65535,
+						"min-value": 1,
+						"name": "port",
+						"type": "integer"
+					},
+					"user": {
+						"category": "unitary",
+						"default": "",
+						"help": "Speed test host user name.",
+						"name": "user",
+						"size": 64,
+						"type": "string"
+					}
+				},
+				"help": "Hosts of the server.",
+				"max_table_size_global": 0,
+				"max_table_size_item": 0,
+				"max_table_size_vdom": 0,
+				"mkey": "id",
+				"mkey_type": "integer",
+				"name": "host"
+			},
+			"name": {
+				"category": "unitary",
+				"default": "",
+				"help": "Speed test server name.",
+				"name": "name",
+				"size": 35,
+				"type": "string"
+			},
+			"timestamp": {
+				"category": "unitary",
+				"default": 0,
+				"help": "Speed test server timestamp.",
+				"max-value": 4294967295,
+				"min-value": 0,
+				"name": "timestamp",
+				"type": "integer"
+			}
+		},
+		"help": "Configure speed test server list.",
+		"max_table_size_global": 512,
+		"max_table_size_item": 0,
+		"max_table_size_vdom": 256,
+		"mkey": "name",
+		"mkey_type": "string",
+		"name": "speed-test-server",
+		"path": "system",
+		"q_type": 389
+	},
+	"revision": "78ee061304af9c5d17bcae6474808d97",
+	"serial": "FGTAZRAQCG14L19D",
+	"status": "success",
+	"vdom": "root",
+	"version": "v7.0.3"
+}

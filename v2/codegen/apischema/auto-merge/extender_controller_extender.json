@@ -1,0 +1,1391 @@
+{
+	"addedIn": "v6.2.7",
+	"build": 237,
+	"http_method": "GET",
+	"http_status": 200,
+	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3",
+	"name": "extender",
+	"path": "extender-controller",
+	"results": {
+		"access_group": "sysgrp",
+		"category": "table",
+		"children": {
+			"aaa-shared-secret": {
+				"category": "unitary",
+				"help": "AAA shared secret.",
+				"name": "aaa-shared-secret",
+				"removedIn": "v6.4.2",
+				"size": 27,
+				"type": "password"
+			},
+			"access-point-name": {
+				"category": "unitary",
+				"help": "Access point name(APN).",
+				"name": "access-point-name",
+				"removedIn": "v6.4.2",
+				"size": 63,
+				"type": "string"
+			},
+			"admin": {
+				"category": "unitary",
+				"help": "FortiExtender Administration (enable or disable).",
+				"multiple_values": false,
+				"name": "admin",
+				"options": [
+					{
+						"help": "AC is configured to not provide service to this FortiExtender.",
+						"name": "disable"
+					},
+					{
+						"help": "FortiExtender discovered through discovery or join request message.",
+						"name": "discovered"
+					},
+					{
+						"help": "AC is configured to provide service to this FortiExtender.",
+						"name": "enable"
+					}
+				],
+				"removedIn": "v6.4.2",
+				"required": true,
+				"type": "option"
+			},
+			"allowaccess": {
+				"addedIn": "v7.0.2",
+				"category": "unitary",
+				"default": "",
+				"help": "Control management access to the managed extender. Separate entries with a space.",
+				"multiple_values": true,
+				"name": "allowaccess",
+				"options": [
+					{
+						"help": "PING access.",
+						"name": "ping"
+					},
+					{
+						"help": "TELNET access.",
+						"name": "telnet"
+					},
+					{
+						"help": "HTTP access.",
+						"name": "http"
+					},
+					{
+						"help": "HTTPS access.",
+						"name": "https"
+					},
+					{
+						"help": "SSH access.",
+						"name": "ssh"
+					},
+					{
+						"help": "SNMP access.",
+						"name": "snmp"
+					}
+				],
+				"type": "option"
+			},
+			"at-dial-script": {
+				"category": "unitary",
+				"help": "Initialization AT commands specific to the MODEM.",
+				"name": "at-dial-script",
+				"removedIn": "v6.4.2",
+				"size": 127,
+				"type": "string"
+			},
+			"authorized": {
+				"addedIn": "v6.4.2",
+				"category": "unitary",
+				"default": "disable",
+				"help": "FortiExtender Administration (enable or disable).",
+				"multiple_values": false,
+				"name": "authorized",
+				"options": [
+					{
+						"help": "Controller is configured to not provide service to this FortiExtender.",
+						"name": "disable"
+					},
+					{
+						"help": "Controller is configured to provide service to this FortiExtender.",
+						"name": "enable"
+					}
+				],
+				"required": true,
+				"type": "option"
+			},
+			"bandwidth-limit": {
+				"addedIn": "v7.0.2",
+				"category": "unitary",
+				"default": 1024,
+				"help": "FortiExtender LAN extension bandwidth limit (Mbps).",
+				"max-value": 16776000,
+				"min-value": 1,
+				"name": "bandwidth-limit",
+				"required": true,
+				"type": "integer"
+			},
+			"billing-start-day": {
+				"category": "unitary",
+				"help": "Billing start day.",
+				"max-value": 28,
+				"min-value": 1,
+				"name": "billing-start-day",
+				"removedIn": "v6.4.2",
+				"type": "integer"
+			},
+			"cdma-aaa-spi": {
+				"category": "unitary",
+				"help": "CDMA AAA SPI.",
+				"name": "cdma-aaa-spi",
+				"removedIn": "v6.4.2",
+				"size": 31,
+				"type": "string"
+			},
+			"cdma-ha-spi": {
+				"category": "unitary",
+				"help": "CDMA HA SPI.",
+				"name": "cdma-ha-spi",
+				"removedIn": "v6.4.2",
+				"size": 31,
+				"type": "string"
+			},
+			"cdma-nai": {
+				"category": "unitary",
+				"help": "NAI for CDMA MODEMS.",
+				"name": "cdma-nai",
+				"removedIn": "v6.4.2",
+				"size": 31,
+				"type": "string"
+			},
+			"conn-status": {
+				"category": "unitary",
+				"help": "Connection status.",
+				"max-value": 4294967295,
+				"min-value": 0,
+				"name": "conn-status",
+				"readonly": true,
+				"removedIn": "v6.4.2",
+				"type": "integer"
+			},
+			"controller-report": {
+				"addedIn": "v6.4.2",
+				"category": "complex",
+				"children": {
+					"interval": {
+						"category": "unitary",
+						"default": 300,
+						"help": "Controller report interval.",
+						"max-value": 4294967295,
+						"min-value": 0,
+						"name": "interval",
+						"required": true,
+						"type": "integer"
+					},
+					"signal-threshold": {
+						"category": "unitary",
+						"default": 10,
+						"help": "Controller report signal threshold.",
+						"max-value": 4294967295,
+						"min-value": 0,
+						"name": "signal-threshold",
+						"required": true,
+						"type": "integer"
+					},
+					"status": {
+						"category": "unitary",
+						"default": "disable",
+						"help": "FortiExtender controller report status.",
+						"multiple_values": false,
+						"name": "status",
+						"options": [
+							{
+								"help": "Controller is configured to not provide service to this FortiExtender.",
+								"name": "disable"
+							},
+							{
+								"help": "Controller is configured to provide service to this FortiExtender.",
+								"name": "enable"
+							}
+						],
+						"required": true,
+						"type": "option"
+					}
+				},
+				"help": "FortiExtender controller report configuration.",
+				"name": "controller-report",
+				"removedIn": "v7.0.2"
+			},
+			"description": {
+				"category": "unitary",
+				"default": "",
+				"help": "Description.",
+				"name": "description",
+				"size": 255,
+				"type": "string"
+			},
+			"device-id": {
+				"addedIn": "v7.0.2",
+				"category": "unitary",
+				"default": 1024,
+				"help": "device-id",
+				"max-value": 4294967295,
+				"min-value": 0,
+				"missing_help": true,
+				"name": "device-id",
+				"type": "integer"
+			},
+			"dial-mode": {
+				"category": "unitary",
+				"help": "Dial mode (dial-on-demand or always-connect).",
+				"multiple_values": false,
+				"name": "dial-mode",
+				"options": [
+					{
+						"help": "The dial action is controlled by user.",
+						"name": "dial-on-demand"
+					},
+					{
+						"help": "auto dial.",
+						"name": "always-connect"
+					}
+				],
+				"removedIn": "v6.4.2",
+				"type": "option"
+			},
+			"dial-status": {
+				"category": "unitary",
+				"help": "Dial status.",
+				"max-value": 4294967295,
+				"min-value": 0,
+				"name": "dial-status",
+				"readonly": true,
+				"removedIn": "v6.4.2",
+				"type": "integer"
+			},
+			"enforce-bandwidth": {
+				"addedIn": "v7.0.2",
+				"category": "unitary",
+				"default": "disable",
+				"help": "Enable/disable enforcement of bandwidth on LAN extension interface.",
+				"multiple_values": false,
+				"name": "enforce-bandwidth",
+				"options": [
+					{
+						"help": "Enable to enforce bandwidth limit on LAN extension interface.",
+						"name": "enable"
+					},
+					{
+						"help": "Disable to enforce bandwidth limit on LAN extension interface.",
+						"name": "disable"
+					}
+				],
+				"type": "option"
+			},
+			"ext-name": {
+				"category": "unitary",
+				"default": "",
+				"help": "FortiExtender name.",
+				"name": "ext-name",
+				"size": 31,
+				"type": "string"
+			},
+			"extension-type": {
+				"addedIn": "v7.0.2",
+				"category": "unitary",
+				"default": "",
+				"help": "Extension type for this FortiExtender.",
+				"multiple_values": false,
+				"name": "extension-type",
+				"options": [
+					{
+						"help": "FortiExtender wan-extension.",
+						"name": "wan-extension"
+					},
+					{
+						"help": "FortiExtender lan-extension.",
+						"name": "lan-extension"
+					}
+				],
+				"required": true,
+				"type": "option"
+			},
+			"ha-shared-secret": {
+				"category": "unitary",
+				"help": "HA shared secret.",
+				"name": "ha-shared-secret",
+				"removedIn": "v6.4.2",
+				"size": 27,
+				"type": "password"
+			},
+			"id": {
+				"category": "unitary",
+				"default": "",
+				"help": "FortiExtender serial number.",
+				"name": "id",
+				"required": true,
+				"size": 19,
+				"type": "string"
+			},
+			"ifname": {
+				"category": "unitary",
+				"datasource": [
+					"system.interface.name"
+				],
+				"help": "FortiExtender interface name.",
+				"name": "ifname",
+				"removedIn": "v6.4.2",
+				"required": true,
+				"size": 15,
+				"type": "string"
+			},
+			"initiated-update": {
+				"category": "unitary",
+				"help": "Allow/disallow network initiated updates to the MODEM.",
+				"multiple_values": false,
+				"name": "initiated-update",
+				"options": [
+					{
+						"help": "Enable network_initiated_update option.",
+						"name": "enable"
+					},
+					{
+						"help": "Disable network_initiated_update option.",
+						"name": "disable"
+					}
+				],
+				"removedIn": "v6.4.2",
+				"type": "option"
+			},
+			"login-password": {
+				"addedIn": "v6.4.2",
+				"category": "unitary",
+				"help": "Set the managed extender's administrator password.",
+				"name": "login-password",
+				"required": true,
+				"size": 27,
+				"type": "password"
+			},
+			"login-password-change": {
+				"addedIn": "v7.0.2",
+				"category": "unitary",
+				"default": "no",
+				"help": "Change or reset the administrator password of a managed extender (yes, default, or no, default = no).",
+				"multiple_values": false,
+				"name": "login-password-change",
+				"options": [
+					{
+						"help": "Change the managed extender's administrator password. Use the login-password option to set the password.",
+						"name": "yes"
+					},
+					{
+						"help": "Keep the managed extender's administrator password set to the factory default.",
+						"name": "default"
+					},
+					{
+						"help": "Do not change the managed extender's administrator password.",
+						"name": "no"
+					}
+				],
+				"type": "option"
+			},
+			"mode": {
+				"category": "unitary",
+				"help": "FortiExtender mode.",
+				"multiple_values": false,
+				"name": "mode",
+				"options": [
+					{
+						"help": "Standalone.",
+						"name": "standalone"
+					},
+					{
+						"help": "Redundant for an interface.",
+						"name": "redundant"
+					}
+				],
+				"removedIn": "v6.4.2",
+				"required": true,
+				"type": "option"
+			},
+			"modem-passwd": {
+				"category": "unitary",
+				"help": "MODEM password.",
+				"name": "modem-passwd",
+				"removedIn": "v6.4.2",
+				"size": 27,
+				"type": "password"
+			},
+			"modem-type": {
+				"category": "unitary",
+				"help": "MODEM type (CDMA, GSM/LTE or WIMAX).",
+				"multiple_values": false,
+				"name": "modem-type",
+				"options": [
+					{
+						"help": "CDMA",
+						"name": "cdma"
+					},
+					{
+						"help": "GSM/LTE",
+						"name": "gsm/lte"
+					},
+					{
+						"help": "WIMAX",
+						"name": "wimax"
+					}
+				],
+				"removedIn": "v6.4.2",
+				"type": "option"
+			},
+			"modem1": {
+				"addedIn": "v6.4.2",
+				"category": "complex",
+				"children": {
+					"auto-switch": {
+						"category": "complex",
+						"children": {
+							"dataplan": {
+								"category": "unitary",
+								"default": "disable",
+								"help": "Automatically switch based on data usage.",
+								"multiple_values": false,
+								"name": "dataplan",
+								"options": [
+									{
+										"help": "Disable switching of SIM card based on cellular data usage.",
+										"name": "disable"
+									},
+									{
+										"help": "Enable switching of SIM card based on cellular data usage.",
+										"name": "enable"
+									}
+								],
+								"required": true,
+								"type": "option"
+							},
+							"disconnect": {
+								"category": "unitary",
+								"default": "disable",
+								"help": "Auto switch by disconnect.",
+								"multiple_values": false,
+								"name": "disconnect",
+								"options": [
+									{
+										"help": "Disable switching of SIM card based on cellular disconnections.",
+										"name": "disable"
+									},
+									{
+										"help": "Enable switching of SIM card based on cellular disconnections.",
+										"name": "enable"
+									}
+								],
+								"required": true,
+								"type": "option"
+							},
+							"disconnect-period": {
+								"category": "unitary",
+								"default": 600,
+								"help": "Automatically switch based on disconnect period.",
+								"max-value": 18000,
+								"min-value": 600,
+								"name": "disconnect-period",
+								"required": true,
+								"type": "integer"
+							},
+							"disconnect-threshold": {
+								"category": "unitary",
+								"default": 3,
+								"help": "Automatically switch based on disconnect threshold.",
+								"max-value": 4294967295,
+								"min-value": 0,
+								"name": "disconnect-threshold",
+								"required": true,
+								"type": "integer"
+							},
+							"signal": {
+								"category": "unitary",
+								"default": "disable",
+								"help": "Automatically switch based on signal strength.",
+								"multiple_values": false,
+								"name": "signal",
+								"options": [
+									{
+										"help": "Disable switching of SIM card based on cellular signal quality.",
+										"name": "disable"
+									},
+									{
+										"help": "Enable switching of SIM card based on cellular signal quality.",
+										"name": "enable"
+									}
+								],
+								"required": true,
+								"type": "option"
+							},
+							"switch-back": {
+								"category": "unitary",
+								"default": "",
+								"help": "Auto switch with switch back multi-options.",
+								"multiple_values": true,
+								"name": "switch-back",
+								"options": [
+									{
+										"help": "Switch back based on specific time in UTC (HH:MM).",
+										"name": "time"
+									},
+									{
+										"help": "Switch back based on an interval.",
+										"name": "timer"
+									}
+								],
+								"type": "option"
+							},
+							"switch-back-time": {
+								"category": "unitary",
+								"default": "00:01",
+								"help": "Automatically switch over to preferred SIM/carrier at a specified time in UTC (HH:MM).",
+								"name": "switch-back-time",
+								"size": 31,
+								"type": "string"
+							},
+							"switch-back-timer": {
+								"category": "unitary",
+								"default": 86400,
+								"help": "Automatically switch over to preferred SIM/carrier after the given time (3600 - 2147483647 sec).",
+								"max-value": 2147483647,
+								"min-value": 3600,
+								"name": "switch-back-timer",
+								"type": "integer"
+							}
+						},
+						"help": "FortiExtender auto switch configuration.",
+						"name": "auto-switch"
+					},
+					"conn-status": {
+						"category": "unitary",
+						"default": 0,
+						"help": "Connection status.",
+						"max-value": 4294967295,
+						"min-value": 0,
+						"name": "conn-status",
+						"readonly": true,
+						"type": "integer"
+					},
+					"default-sim": {
+						"category": "unitary",
+						"default": "sim1",
+						"help": "Default SIM selection.",
+						"multiple_values": false,
+						"name": "default-sim",
+						"options": [
+							{
+								"help": "Use SIM #1 by default.",
+								"name": "sim1"
+							},
+							{
+								"help": "Use SIM #2 by default.",
+								"name": "sim2"
+							},
+							{
+								"help": "Assign default SIM based on carrier.",
+								"name": "carrier"
+							},
+							{
+								"help": "Assign default SIM based on cost.",
+								"name": "cost"
+							}
+						],
+						"required": true,
+						"type": "option"
+					},
+					"gps": {
+						"category": "unitary",
+						"default": "enable",
+						"help": "FortiExtender GPS enable/disable.",
+						"multiple_values": false,
+						"name": "gps",
+						"options": [
+							{
+								"help": "Disable GPS.",
+								"name": "disable"
+							},
+							{
+								"help": "Enable GPS.",
+								"name": "enable"
+							}
+						],
+						"type": "option"
+					},
+					"ifname": {
+						"category": "unitary",
+						"datasource": [
+							"system.interface.name"
+						],
+						"default": "",
+						"help": "FortiExtender interface name.",
+						"name": "ifname",
+						"size": 15,
+						"type": "string"
+					},
+					"preferred-carrier": {
+						"category": "unitary",
+						"default": "",
+						"help": "Preferred carrier.",
+						"name": "preferred-carrier",
+						"size": 31,
+						"type": "string"
+					},
+					"redundant-intf": {
+						"category": "unitary",
+						"default": "",
+						"help": "Redundant interface.",
+						"name": "redundant-intf",
+						"required": true,
+						"size": 15,
+						"type": "string"
+					},
+					"redundant-mode": {
+						"category": "unitary",
+						"default": "disable",
+						"help": "FortiExtender mode.",
+						"multiple_values": false,
+						"name": "redundant-mode",
+						"options": [
+							{
+								"help": "Disable interface redundancy.",
+								"name": "disable"
+							},
+							{
+								"help": "Enable interface redundancy.",
+								"name": "enable"
+							}
+						],
+						"required": true,
+						"type": "option"
+					},
+					"sim1-pin": {
+						"category": "unitary",
+						"default": "disable",
+						"help": "SIM #1 PIN status.",
+						"multiple_values": false,
+						"name": "sim1-pin",
+						"options": [
+							{
+								"help": "Disable SIM #1 pin.",
+								"name": "disable"
+							},
+							{
+								"help": "Enable SIM #1 pin.",
+								"name": "enable"
+							}
+						],
+						"type": "option"
+					},
+					"sim1-pin-code": {
+						"category": "unitary",
+						"help": "SIM #1 PIN password.",
+						"name": "sim1-pin-code",
+						"size": 27,
+						"type": "password"
+					},
+					"sim2-pin": {
+						"category": "unitary",
+						"default": "disable",
+						"help": "SIM #2 PIN status.",
+						"multiple_values": false,
+						"name": "sim2-pin",
+						"options": [
+							{
+								"help": "Disable SIM #2 pin.",
+								"name": "disable"
+							},
+							{
+								"help": "Enable SIM #2 pin.",
+								"name": "enable"
+							}
+						],
+						"type": "option"
+					},
+					"sim2-pin-code": {
+						"category": "unitary",
+						"help": "SIM #2 PIN password.",
+						"name": "sim2-pin-code",
+						"size": 27,
+						"type": "password"
+					}
+				},
+				"help": "Configuration options for modem 1.",
+				"name": "modem1",
+				"removedIn": "v7.0.2"
+			},
+			"modem2": {
+				"addedIn": "v6.4.2",
+				"category": "complex",
+				"children": {
+					"auto-switch": {
+						"category": "complex",
+						"children": {
+							"dataplan": {
+								"category": "unitary",
+								"default": "disable",
+								"help": "Automatically switch based on data usage.",
+								"multiple_values": false,
+								"name": "dataplan",
+								"options": [
+									{
+										"help": "Disable switching of SIM card based on cellular data usage.",
+										"name": "disable"
+									},
+									{
+										"help": "Enable switching of SIM card based on cellular data usage.",
+										"name": "enable"
+									}
+								],
+								"required": true,
+								"type": "option"
+							},
+							"disconnect": {
+								"category": "unitary",
+								"default": "disable",
+								"help": "Auto switch by disconnect.",
+								"multiple_values": false,
+								"name": "disconnect",
+								"options": [
+									{
+										"help": "Disable switching of SIM card based on cellular disconnections.",
+										"name": "disable"
+									},
+									{
+										"help": "Enable switching of SIM card based on cellular disconnections.",
+										"name": "enable"
+									}
+								],
+								"required": true,
+								"type": "option"
+							},
+							"disconnect-period": {
+								"category": "unitary",
+								"default": 600,
+								"help": "Automatically switch based on disconnect period.",
+								"max-value": 18000,
+								"min-value": 600,
+								"name": "disconnect-period",
+								"required": true,
+								"type": "integer"
+							},
+							"disconnect-threshold": {
+								"category": "unitary",
+								"default": 3,
+								"help": "Automatically switch based on disconnect threshold.",
+								"max-value": 4294967295,
+								"min-value": 0,
+								"name": "disconnect-threshold",
+								"required": true,
+								"type": "integer"
+							},
+							"signal": {
+								"category": "unitary",
+								"default": "disable",
+								"help": "Automatically switch based on signal strength.",
+								"multiple_values": false,
+								"name": "signal",
+								"options": [
+									{
+										"help": "Disable switching of SIM card based on cellular signal quality.",
+										"name": "disable"
+									},
+									{
+										"help": "Enable switching of SIM card based on cellular signal quality.",
+										"name": "enable"
+									}
+								],
+								"required": true,
+								"type": "option"
+							},
+							"switch-back": {
+								"category": "unitary",
+								"default": "",
+								"help": "Auto switch with switch back multi-options.",
+								"multiple_values": true,
+								"name": "switch-back",
+								"options": [
+									{
+										"help": "Switch back based on specific time in UTC (HH:MM).",
+										"name": "time"
+									},
+									{
+										"help": "Switch back based on an interval.",
+										"name": "timer"
+									}
+								],
+								"type": "option"
+							},
+							"switch-back-time": {
+								"category": "unitary",
+								"default": "00:01",
+								"help": "Automatically switch over to preferred SIM/carrier at a specified time in UTC (HH:MM).",
+								"name": "switch-back-time",
+								"size": 31,
+								"type": "string"
+							},
+							"switch-back-timer": {
+								"category": "unitary",
+								"default": 86400,
+								"help": "Automatically switch over to preferred SIM/carrier after the given time (3600 - 2147483647 sec).",
+								"max-value": 2147483647,
+								"min-value": 3600,
+								"name": "switch-back-timer",
+								"type": "integer"
+							}
+						},
+						"help": "FortiExtender auto switch configuration.",
+						"name": "auto-switch"
+					},
+					"conn-status": {
+						"category": "unitary",
+						"default": 0,
+						"help": "Connection status.",
+						"max-value": 4294967295,
+						"min-value": 0,
+						"name": "conn-status",
+						"readonly": true,
+						"type": "integer"
+					},
+					"default-sim": {
+						"category": "unitary",
+						"default": "sim1",
+						"help": "Default SIM selection.",
+						"multiple_values": false,
+						"name": "default-sim",
+						"options": [
+							{
+								"help": "Use SIM #1 by default.",
+								"name": "sim1"
+							},
+							{
+								"help": "Use SIM #2 by default.",
+								"name": "sim2"
+							},
+							{
+								"help": "Assign default SIM based on carrier.",
+								"name": "carrier"
+							},
+							{
+								"help": "Assign default SIM based on cost.",
+								"name": "cost"
+							}
+						],
+						"required": true,
+						"type": "option"
+					},
+					"gps": {
+						"category": "unitary",
+						"default": "enable",
+						"help": "FortiExtender GPS enable/disable.",
+						"multiple_values": false,
+						"name": "gps",
+						"options": [
+							{
+								"help": "Disable GPS.",
+								"name": "disable"
+							},
+							{
+								"help": "Enable GPS.",
+								"name": "enable"
+							}
+						],
+						"type": "option"
+					},
+					"ifname": {
+						"category": "unitary",
+						"datasource": [
+							"system.interface.name"
+						],
+						"default": "",
+						"help": "FortiExtender interface name.",
+						"name": "ifname",
+						"size": 15,
+						"type": "string"
+					},
+					"preferred-carrier": {
+						"category": "unitary",
+						"default": "",
+						"help": "Preferred carrier.",
+						"name": "preferred-carrier",
+						"size": 31,
+						"type": "string"
+					},
+					"redundant-intf": {
+						"category": "unitary",
+						"default": "",
+						"help": "Redundant interface.",
+						"name": "redundant-intf",
+						"required": true,
+						"size": 15,
+						"type": "string"
+					},
+					"redundant-mode": {
+						"category": "unitary",
+						"default": "disable",
+						"help": "FortiExtender mode.",
+						"multiple_values": false,
+						"name": "redundant-mode",
+						"options": [
+							{
+								"help": "Disable interface redundancy.",
+								"name": "disable"
+							},
+							{
+								"help": "Enable interface redundancy.",
+								"name": "enable"
+							}
+						],
+						"required": true,
+						"type": "option"
+					},
+					"sim1-pin": {
+						"category": "unitary",
+						"default": "disable",
+						"help": "SIM #1 PIN status.",
+						"multiple_values": false,
+						"name": "sim1-pin",
+						"options": [
+							{
+								"help": "Disable SIM #1 pin.",
+								"name": "disable"
+							},
+							{
+								"help": "Enable SIM #1 pin.",
+								"name": "enable"
+							}
+						],
+						"type": "option"
+					},
+					"sim1-pin-code": {
+						"category": "unitary",
+						"help": "SIM #1 PIN password.",
+						"name": "sim1-pin-code",
+						"size": 27,
+						"type": "password"
+					},
+					"sim2-pin": {
+						"category": "unitary",
+						"default": "disable",
+						"help": "SIM #2 PIN status.",
+						"multiple_values": false,
+						"name": "sim2-pin",
+						"options": [
+							{
+								"help": "Disable SIM #2 pin.",
+								"name": "disable"
+							},
+							{
+								"help": "Enable SIM #2 pin.",
+								"name": "enable"
+							}
+						],
+						"type": "option"
+					},
+					"sim2-pin-code": {
+						"category": "unitary",
+						"help": "SIM #2 PIN password.",
+						"name": "sim2-pin-code",
+						"size": 27,
+						"type": "password"
+					}
+				},
+				"help": "Configuration options for modem 2.",
+				"name": "modem2",
+				"removedIn": "v7.0.2"
+			},
+			"multi-mode": {
+				"category": "unitary",
+				"help": "MODEM mode of operation(3G,LTE,etc).",
+				"multiple_values": false,
+				"name": "multi-mode",
+				"options": [
+					{
+						"help": "AUTO",
+						"name": "auto"
+					},
+					{
+						"help": "Auto 3G(3G or less)",
+						"name": "auto-3g"
+					},
+					{
+						"help": "Force LTE",
+						"name": "force-lte"
+					},
+					{
+						"help": "Force 3G",
+						"name": "force-3g"
+					},
+					{
+						"help": "Force 2G",
+						"name": "force-2g"
+					}
+				],
+				"removedIn": "v6.4.2",
+				"type": "option"
+			},
+			"name": {
+				"addedIn": "v6.4.2",
+				"category": "unitary",
+				"default": "",
+				"help": "FortiExtender entry name.",
+				"name": "name",
+				"required": true,
+				"size": 19,
+				"type": "string"
+			},
+			"override-allowaccess": {
+				"addedIn": "v7.0.2",
+				"category": "unitary",
+				"default": "disable",
+				"help": "Enable to override the extender profile management access configuration.",
+				"multiple_values": false,
+				"name": "override-allowaccess",
+				"options": [
+					{
+						"help": "Override the extender profile management access configuration.",
+						"name": "enable"
+					},
+					{
+						"help": "Use the extender profile management access configuration.",
+						"name": "disable"
+					}
+				],
+				"type": "option"
+			},
+			"override-enforce-bandwidth": {
+				"addedIn": "v7.0.2",
+				"category": "unitary",
+				"default": "disable",
+				"help": "Enable to override the extender profile enforce-bandwidth setting.",
+				"multiple_values": false,
+				"name": "override-enforce-bandwidth",
+				"options": [
+					{
+						"help": "Enable override of FortiExtender profile bandwidth setting.",
+						"name": "enable"
+					},
+					{
+						"help": "Disable override of FortiExtender profile bandwidth setting.",
+						"name": "disable"
+					}
+				],
+				"type": "option"
+			},
+			"override-login-password-change": {
+				"addedIn": "v7.0.2",
+				"category": "unitary",
+				"default": "disable",
+				"help": "Enable to override the extender profile login-password (administrator password) setting.",
+				"multiple_values": false,
+				"name": "override-login-password-change",
+				"options": [
+					{
+						"help": "Override the WTP profile login-password (administrator password) setting.",
+						"name": "enable"
+					},
+					{
+						"help": "Use the the WTP profile login-password (administrator password) setting.",
+						"name": "disable"
+					}
+				],
+				"type": "option"
+			},
+			"ppp-auth-protocol": {
+				"category": "unitary",
+				"help": "PPP authentication protocol (PAP,CHAP or auto).",
+				"multiple_values": false,
+				"name": "ppp-auth-protocol",
+				"options": [
+					{
+						"help": "AUTO",
+						"name": "auto"
+					},
+					{
+						"help": "PAP",
+						"name": "pap"
+					},
+					{
+						"help": "CHAP",
+						"name": "chap"
+					}
+				],
+				"removedIn": "v6.4.2",
+				"type": "option"
+			},
+			"ppp-echo-request": {
+				"category": "unitary",
+				"help": "Enable/disable PPP echo request.",
+				"multiple_values": false,
+				"name": "ppp-echo-request",
+				"options": [
+					{
+						"help": "Enable PPP echo request option.",
+						"name": "enable"
+					},
+					{
+						"help": "Disable PPP echo request option.",
+						"name": "disable"
+					}
+				],
+				"removedIn": "v6.4.2",
+				"type": "option"
+			},
+			"ppp-password": {
+				"category": "unitary",
+				"help": "PPP password.",
+				"name": "ppp-password",
+				"removedIn": "v6.4.2",
+				"size": 27,
+				"type": "password"
+			},
+			"ppp-username": {
+				"category": "unitary",
+				"help": "PPP username.",
+				"name": "ppp-username",
+				"removedIn": "v6.4.2",
+				"size": 31,
+				"type": "string"
+			},
+			"primary-ha": {
+				"category": "unitary",
+				"help": "Primary HA.",
+				"name": "primary-ha",
+				"removedIn": "v6.4.2",
+				"size": 31,
+				"type": "string"
+			},
+			"profile": {
+				"addedIn": "v7.0.2",
+				"category": "unitary",
+				"datasource": [
+					"extender-controller.extender-profile.name"
+				],
+				"default": "",
+				"help": "FortiExtender profile configuration.",
+				"name": "profile",
+				"size": 31,
+				"type": "string"
+			},
+			"quota-limit-mb": {
+				"category": "unitary",
+				"help": "Monthly quota limit (MB).",
+				"max-value": 10485760,
+				"min-value": 0,
+				"name": "quota-limit-mb",
+				"removedIn": "v6.4.2",
+				"type": "integer"
+			},
+			"redial": {
+				"category": "unitary",
+				"help": "Number of redials allowed based on failed attempts.",
+				"multiple_values": false,
+				"name": "redial",
+				"options": [
+					{
+						"help": "Forever.",
+						"name": "none"
+					},
+					{
+						"help": "One attempt.",
+						"name": "1"
+					},
+					{
+						"help": "Two attempts.",
+						"name": "2"
+					},
+					{
+						"help": "Three attempts.",
+						"name": "3"
+					},
+					{
+						"help": "Four attempts.",
+						"name": "4"
+					},
+					{
+						"help": "Five attempts.",
+						"name": "5"
+					},
+					{
+						"help": "Six attempts.",
+						"name": "6"
+					},
+					{
+						"help": "Seven attempts.",
+						"name": "7"
+					},
+					{
+						"help": "Eight attempts.",
+						"name": "8"
+					},
+					{
+						"help": "Nine attempts.",
+						"name": "9"
+					},
+					{
+						"help": "Ten attempts.",
+						"name": "10"
+					}
+				],
+				"removedIn": "v6.4.2",
+				"type": "option"
+			},
+			"redundant-intf": {
+				"category": "unitary",
+				"help": "Redundant interface.",
+				"name": "redundant-intf",
+				"removedIn": "v6.4.2",
+				"required": true,
+				"size": 15,
+				"type": "string"
+			},
+			"roaming": {
+				"category": "unitary",
+				"help": "Enable/disable MODEM roaming.",
+				"multiple_values": false,
+				"name": "roaming",
+				"options": [
+					{
+						"help": "Enable GSM/LTE roaming option.",
+						"name": "enable"
+					},
+					{
+						"help": "Disable GSM/LTE roaming option.",
+						"name": "disable"
+					}
+				],
+				"removedIn": "v6.4.2",
+				"type": "option"
+			},
+			"role": {
+				"category": "unitary",
+				"help": "FortiExtender work role(Primary, Secondary, None).",
+				"multiple_values": false,
+				"name": "role",
+				"options": [
+					{
+						"help": "FortiExtender is not supplying any service.",
+						"name": "none"
+					},
+					{
+						"help": "FortiExtender is supplying primary service.",
+						"name": "primary"
+					},
+					{
+						"help": "FortiExtender is standby for primary FortiExtender.",
+						"name": "secondary"
+					}
+				],
+				"removedIn": "v6.4.2",
+				"required": true,
+				"type": "option"
+			},
+			"secondary-ha": {
+				"category": "unitary",
+				"help": "Secondary HA.",
+				"name": "secondary-ha",
+				"removedIn": "v6.4.2",
+				"size": 31,
+				"type": "string"
+			},
+			"sim-pin": {
+				"category": "unitary",
+				"help": "SIM PIN.",
+				"name": "sim-pin",
+				"removedIn": "v6.4.2",
+				"size": 27,
+				"type": "password"
+			},
+			"vdom": {
+				"category": "unitary",
+				"default": 0,
+				"help": "VDOM",
+				"max-value": 4294967295,
+				"min-value": 0,
+				"name": "vdom",
+				"readonly": true,
+				"type": "integer"
+			},
+			"wan-extension": {
+				"addedIn": "v7.0.2",
+				"category": "complex",
+				"children": {
+					"modem1-extension": {
+						"category": "unitary",
+						"datasource": [
+							"system.interface.name"
+						],
+						"default": "",
+						"help": "FortiExtender interface name.",
+						"name": "modem1-extension",
+						"size": 31,
+						"type": "string"
+					},
+					"modem2-extension": {
+						"category": "unitary",
+						"datasource": [
+							"system.interface.name"
+						],
+						"default": "",
+						"help": "FortiExtender interface name.",
+						"name": "modem2-extension",
+						"size": 31,
+						"type": "string"
+					}
+				},
+				"help": "FortiExtender wan extension configuration.",
+				"name": "wan-extension"
+			},
+			"wimax-auth-protocol": {
+				"category": "unitary",
+				"help": "WiMax authentication protocol(TLS or TTLS).",
+				"multiple_values": false,
+				"name": "wimax-auth-protocol",
+				"options": [
+					{
+						"help": "TLS",
+						"name": "tls"
+					},
+					{
+						"help": "TTLS",
+						"name": "ttls"
+					}
+				],
+				"removedIn": "v6.4.2",
+				"type": "option"
+			},
+			"wimax-carrier": {
+				"category": "unitary",
+				"help": "WiMax carrier.",
+				"name": "wimax-carrier",
+				"removedIn": "v6.4.2",
+				"size": 31,
+				"type": "string"
+			},
+			"wimax-realm": {
+				"category": "unitary",
+				"help": "WiMax realm.",
+				"name": "wimax-realm",
+				"removedIn": "v6.4.2",
+				"size": 31,
+				"type": "string"
+			}
+		},
+		"help": "Extender controller configuration.",
+		"max_table_size_global": 512,
+		"max_table_size_item": 0,
+		"max_table_size_vdom": 256,
+		"mkey": "name",
+		"mkey_type": "string",
+		"name": "extender",
+		"path": "extender-controller",
+		"q_type": 233
+	},
+	"revision": "78ee061304af9c5d17bcae6474808d97",
+	"serial": "FGTAZRAQCG14L19D",
+	"status": "success",
+	"vdom": "root",
+	"version": "v7.0.3"
+}

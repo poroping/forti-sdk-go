@@ -1,0 +1,123 @@
+{
+	"addedIn": "v6.2.7",
+	"build": 237,
+	"http_method": "GET",
+	"http_status": 200,
+	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3",
+	"name": "geneve",
+	"path": "system",
+	"results": {
+		"access_group": "netgrp",
+		"category": "table",
+		"children": {
+			"dstport": {
+				"category": "unitary",
+				"default": 6081,
+				"help": "GENEVE destination port (1 - 65535, default = 6081).",
+				"max-value": 65535,
+				"min-value": 1,
+				"name": "dstport",
+				"type": "integer"
+			},
+			"interface": {
+				"category": "unitary",
+				"datasource": [
+					"system.interface.name"
+				],
+				"default": "",
+				"help": "Outgoing interface for GENEVE encapsulated traffic.",
+				"name": "interface",
+				"required": true,
+				"size": 15,
+				"type": "string"
+			},
+			"ip-version": {
+				"category": "unitary",
+				"default": "ipv4-unicast",
+				"help": "IP version to use for the GENEVE interface and so for communication over the GENEVE. IPv4 or IPv6 unicast.",
+				"multiple_values": false,
+				"name": "ip-version",
+				"options": [
+					{
+						"help": "Use IPv4 unicast addressing over the GENEVE.",
+						"name": "ipv4-unicast"
+					},
+					{
+						"help": "Use IPv6 unicast addressing over the GENEVE.",
+						"name": "ipv6-unicast"
+					}
+				],
+				"required": true,
+				"type": "option"
+			},
+			"name": {
+				"category": "unitary",
+				"default": "",
+				"help": "GENEVE device or interface name. Must be an unique interface name.",
+				"name": "name",
+				"size": 15,
+				"type": "string"
+			},
+			"remote-ip": {
+				"category": "unitary",
+				"default": "0.0.0.0",
+				"help": "IPv4 address of the GENEVE interface on the device at the remote end of the GENEVE.",
+				"name": "remote-ip",
+				"required": true,
+				"type": "ipv4-address"
+			},
+			"remote-ip6": {
+				"category": "unitary",
+				"default": "::",
+				"help": "IPv6 IP address of the GENEVE interface on the device at the remote end of the GENEVE.",
+				"name": "remote-ip6",
+				"required": true,
+				"type": "ipv6-address"
+			},
+			"type": {
+				"addedIn": "v6.4.5",
+				"category": "unitary",
+				"default": "ethernet",
+				"help": "GENEVE type.",
+				"multiple_values": false,
+				"name": "type",
+				"options": [
+					{
+						"help": "Internal packet includes Ethernet header.",
+						"name": "ethernet"
+					},
+					{
+						"help": "Internal packet does not include Ethernet header.",
+						"name": "ppp"
+					}
+				],
+				"required": true,
+				"type": "option"
+			},
+			"vni": {
+				"category": "unitary",
+				"default": 0,
+				"help": "GENEVE network ID.",
+				"max-value": 16777215,
+				"min-value": 0,
+				"name": "vni",
+				"required": true,
+				"type": "integer"
+			}
+		},
+		"help": "Configure GENEVE devices.",
+		"max_table_size_global": 512,
+		"max_table_size_item": 0,
+		"max_table_size_vdom": 256,
+		"mkey": "name",
+		"mkey_type": "string",
+		"name": "geneve",
+		"path": "system",
+		"q_type": 177
+	},
+	"revision": "78ee061304af9c5d17bcae6474808d97",
+	"serial": "FGTAZRAQCG14L19D",
+	"status": "success",
+	"vdom": "root",
+	"version": "v7.0.3"
+}

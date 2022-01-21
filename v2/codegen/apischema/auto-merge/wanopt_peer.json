@@ -1,0 +1,44 @@
+{
+	"addedIn": "v6.2.7",
+	"build": 237,
+	"http_method": "GET",
+	"http_status": 200,
+	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3",
+	"name": "peer",
+	"path": "wanopt",
+	"results": {
+		"access_group": "wanoptgrp",
+		"category": "table",
+		"children": {
+			"ip": {
+				"category": "unitary",
+				"default": "0.0.0.0",
+				"help": "Peer IP address.",
+				"name": "ip",
+				"type": "ipv4-address-any"
+			},
+			"peer-host-id": {
+				"category": "unitary",
+				"default": "",
+				"help": "Peer host ID.",
+				"name": "peer-host-id",
+				"size": 35,
+				"type": "string"
+			}
+		},
+		"help": "Configure WAN optimization peers.",
+		"max_table_size_global": 0,
+		"max_table_size_item": 0,
+		"max_table_size_vdom": 256,
+		"mkey": "peer-host-id",
+		"mkey_type": "string",
+		"name": "peer",
+		"path": "wanopt",
+		"q_type": 335
+	},
+	"revision": "78ee061304af9c5d17bcae6474808d97",
+	"serial": "FGTAZRAQCG14L19D",
+	"status": "success",
+	"vdom": "root",
+	"version": "v7.0.3"
+}

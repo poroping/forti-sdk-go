@@ -1,0 +1,189 @@
+{
+	"addedIn": "v6.2.7",
+	"build": 237,
+	"http_method": "GET",
+	"http_status": 200,
+	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3",
+	"name": "automation-stitch",
+	"path": "system",
+	"results": {
+		"access_group": "sysgrp",
+		"category": "table",
+		"children": {
+			"action": {
+				"category": "table",
+				"children": {
+					"name": {
+						"category": "unitary",
+						"datasource": [
+							"system.automation-action.name"
+						],
+						"default": "",
+						"help": "Action name.",
+						"name": "name",
+						"required": true,
+						"size": 79,
+						"type": "string"
+					}
+				},
+				"help": "Action names.",
+				"max_table_size_global": 0,
+				"max_table_size_item": 0,
+				"max_table_size_vdom": 0,
+				"member_table": true,
+				"mkey": "name",
+				"mkey_type": "string",
+				"name": "action",
+				"removedIn": "v7.0.1",
+				"required": true
+			},
+			"actions": {
+				"addedIn": "v7.0.1",
+				"category": "table",
+				"children": {
+					"action": {
+						"category": "unitary",
+						"datasource": [
+							"system.automation-action.name"
+						],
+						"default": "",
+						"help": "Action name.",
+						"name": "action",
+						"required": true,
+						"size": 64,
+						"type": "string"
+					},
+					"delay": {
+						"category": "unitary",
+						"default": 0,
+						"help": "Delay before execution (in seconds).",
+						"max-value": 3600,
+						"min-value": 0,
+						"name": "delay",
+						"type": "integer"
+					},
+					"id": {
+						"category": "unitary",
+						"default": 0,
+						"help": "Entry ID.",
+						"max-value": 4294967295,
+						"min-value": 0,
+						"name": "id",
+						"type": "integer"
+					},
+					"required": {
+						"category": "unitary",
+						"default": "disable",
+						"help": "Required in action chain.",
+						"multiple_values": false,
+						"name": "required",
+						"options": [
+							{
+								"help": "Required in action chain.",
+								"name": "enable"
+							},
+							{
+								"help": "Not required in action chain.",
+								"name": "disable"
+							}
+						],
+						"type": "option"
+					}
+				},
+				"help": "Configure stitch actions.",
+				"max_table_size_global": 0,
+				"max_table_size_item": 0,
+				"max_table_size_vdom": 0,
+				"mkey": "id",
+				"mkey_type": "integer",
+				"name": "actions"
+			},
+			"description": {
+				"addedIn": "v7.0.0",
+				"category": "unitary",
+				"help": "Description.",
+				"name": "description",
+				"size": 255,
+				"type": "var-string"
+			},
+			"destination": {
+				"category": "table",
+				"children": {
+					"name": {
+						"category": "unitary",
+						"datasource": [
+							"system.automation-destination.name"
+						],
+						"default": "",
+						"help": "Destination name.",
+						"name": "name",
+						"required": true,
+						"size": 79,
+						"type": "string"
+					}
+				},
+				"help": "Serial number/HA group-name of destination devices.",
+				"max_table_size_global": 0,
+				"max_table_size_item": 0,
+				"max_table_size_vdom": 0,
+				"member_table": true,
+				"mkey": "name",
+				"mkey_type": "string",
+				"name": "destination"
+			},
+			"name": {
+				"category": "unitary",
+				"default": "",
+				"help": "Name.",
+				"name": "name",
+				"size": 35,
+				"type": "string"
+			},
+			"status": {
+				"category": "unitary",
+				"default": "enable",
+				"help": "Enable/disable this stitch.",
+				"multiple_values": false,
+				"name": "status",
+				"options": [
+					{
+						"help": "Enable stitch.",
+						"name": "enable"
+					},
+					{
+						"help": "Disable stitch.",
+						"name": "disable"
+					}
+				],
+				"required": true,
+				"type": "option"
+			},
+			"trigger": {
+				"category": "unitary",
+				"datasource": [
+					"system.automation-trigger.name"
+				],
+				"default": "",
+				"help": "Trigger name.",
+				"name": "trigger",
+				"required": true,
+				"size": 35,
+				"type": "string"
+			}
+		},
+		"help": "Automation stitches.",
+		"max_table_size_global": 512,
+		"max_table_size_item": 0,
+		"max_table_size_vdom": 256,
+		"mkey": "name",
+		"mkey_type": "string",
+		"name": "automation-stitch",
+		"path": "system",
+		"q_type": 498
+	},
+	"revision": "9502a46606ed08d8fb79ceaae4ddc006",
+	"serial": "FGTAZRAQCG14L19D",
+	"status": "success",
+	"vdom": "root",
+	"version": "v7.0.3"
+}

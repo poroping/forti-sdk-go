@@ -1,0 +1,54 @@
+// firewall_ssl_ssh_profile
+
+category change
+
+            "server-cert": {
+                "category": "unitary",
+                "datasource": [
+                    "vpn.certificate.local.name"
+                ],
+                "default": "Fortinet_SSL",
+                "help": "Certificate used by SSL Inspection to replace server certificate.",
+                "name": "server-cert",
+                "required": true,
+                "size": 35,
+                "type": "string"
+            },
+
+            "server-cert": {
+				"category": "table",
+				"children": {
+					"addedIn": "v7.0.0",
+					"name": {
+						"category": "unitary",
+						"datasource": [
+							"vpn.certificate.local.name"
+						],
+						"default": "Fortinet_SSL",
+						"help": "Certificate list.",
+						"name": "name",
+						"size": 35,
+						"type": "string"
+					}
+				},
+				"datasource": [
+					"vpn.certificate.local.name"
+				],
+				"default": "",
+				"help": "Certificate used by SSL Inspection to replace server certificate.",
+				"max_table_size_global": 0,
+				"max_table_size_item": 0,
+				"max_table_size_vdom": 0,
+				"member_table": true,
+				"mkey": "name",
+				"mkey_type": "string",
+				"name": "server-cert",
+				"required": true,
+				"size": 35,
+				"type": "string"
+			},
+
+data fortiextender plan <6.4.5 has caps for 2 attributes >.<
+
+
+"readonly": true for redist table = no delete

@@ -1,0 +1,564 @@
+{
+    "http_method": "GET",
+    "revision": "7f0e93af54088092cb7818d2130adf1b",
+    "results": {
+        "name": "health-check",
+        "category": "table",
+        "help": "SD-WAN status checking or health checking. Identify a server on the Internet and determine how SD-WAN verifies that the FortiGate can communicate with it.",
+        "mkey": "name",
+        "mkey_type": "string",
+        "children": {
+            "name": {
+                "name": "name",
+                "category": "unitary",
+                "type": "string",
+                "help": "Status check or health check name.",
+                "required": true,
+                "size": 35,
+                "default": ""
+            },
+            "probe-packets": {
+                "name": "probe-packets",
+                "category": "unitary",
+                "type": "option",
+                "help": "Enable/disable transmission of probe packets.",
+                "multiple_values": false,
+                "options": [
+                    {
+                        "name": "disable",
+                        "help": "Disable transmission of probe packets."
+                    },
+                    {
+                        "name": "enable",
+                        "help": "Enable transmission of probe packets."
+                    }
+                ],
+                "default": "enable"
+            },
+            "addr-mode": {
+                "name": "addr-mode",
+                "category": "unitary",
+                "type": "option",
+                "help": "Address mode (IPv4 or IPv6).",
+                "multiple_values": false,
+                "options": [
+                    {
+                        "name": "ipv4",
+                        "help": "IPv4 mode."
+                    },
+                    {
+                        "name": "ipv6",
+                        "help": "IPv6 mode."
+                    }
+                ],
+                "default": "ipv4"
+            },
+            "system-dns": {
+                "name": "system-dns",
+                "category": "unitary",
+                "type": "option",
+                "help": "Enable/disable system DNS as the probe server.",
+                "multiple_values": false,
+                "options": [
+                    {
+                        "name": "disable",
+                        "help": "Disable system DNS as the probe server."
+                    },
+                    {
+                        "name": "enable",
+                        "help": "Enable system DNS as the probe server."
+                    }
+                ],
+                "default": "disable"
+            },
+            "server": {
+                "name": "server",
+                "category": "unitary",
+                "type": "string",
+                "help": "IP address or FQDN name of the server.",
+                "size": 79,
+                "default": ""
+            },
+            "detect-mode": {
+                "name": "detect-mode",
+                "category": "unitary",
+                "type": "option",
+                "help": "The mode determining how to detect the server.",
+                "multiple_values": false,
+                "options": [
+                    {
+                        "name": "active",
+                        "help": "The probes are sent actively."
+                    },
+                    {
+                        "name": "passive",
+                        "help": "The traffic measures health without probes."
+                    },
+                    {
+                        "name": "prefer-passive",
+                        "help": "The probes are sent in case of no new traffic."
+                    }
+                ],
+                "default": "active"
+            },
+            "protocol": {
+                "name": "protocol",
+                "category": "unitary",
+                "type": "option",
+                "help": "Protocol used to determine if the FortiGate can communicate with the server.",
+                "multiple_values": false,
+                "options": [
+                    {
+                        "name": "ping",
+                        "help": "Use PING to test the link with the server."
+                    },
+                    {
+                        "name": "tcp-echo",
+                        "help": "Use TCP echo to test the link with the server."
+                    },
+                    {
+                        "name": "udp-echo",
+                        "help": "Use UDP echo to test the link with the server."
+                    },
+                    {
+                        "name": "http",
+                        "help": "Use HTTP-GET to test the link with the server."
+                    },
+                    {
+                        "name": "twamp",
+                        "help": "Use TWAMP to test the link with the server."
+                    },
+                    {
+                        "name": "dns",
+                        "help": "Use DNS query to test the link with the server."
+                    },
+                    {
+                        "name": "tcp-connect",
+                        "help": "Use a full TCP connection to test the link with the server."
+                    },
+                    {
+                        "name": "ftp",
+                        "help": "Use FTP to test the link with the server."
+                    }
+                ],
+                "default": "ping"
+            },
+            "port": {
+                "name": "port",
+                "category": "unitary",
+                "type": "integer",
+                "help": "Port number used to communicate with the server over the selected protocol (0-65535, default = 0, auto select. http, twamp: 80, udp-echo, tcp-echo: 7, dns: 53, ftp: 21).",
+                "min-value": 0,
+                "max-value": 65535,
+                "default": 0
+            },
+            "quality-measured-method": {
+                "name": "quality-measured-method",
+                "category": "unitary",
+                "type": "option",
+                "help": "Method to measure the quality of tcp-connect.",
+                "multiple_values": false,
+                "options": [
+                    {
+                        "name": "half-open",
+                        "help": "Measure the round trip between syn and ack."
+                    },
+                    {
+                        "name": "half-close",
+                        "help": "Measure the round trip between fin and ack."
+                    }
+                ],
+                "default": "half-open"
+            },
+            "security-mode": {
+                "name": "security-mode",
+                "category": "unitary",
+                "type": "option",
+                "help": "Twamp controller security mode.",
+                "multiple_values": false,
+                "options": [
+                    {
+                        "name": "none",
+                        "help": "Unauthenticated mode."
+                    },
+                    {
+                        "name": "authentication",
+                        "help": "Authenticated mode."
+                    }
+                ],
+                "default": "none"
+            },
+            "user": {
+                "name": "user",
+                "category": "unitary",
+                "type": "string",
+                "help": "The user name to access probe server.",
+                "size": 64,
+                "default": ""
+            },
+            "password": {
+                "name": "password",
+                "category": "unitary",
+                "type": "password",
+                "help": "Twamp controller password in authentication mode",
+                "size": 128
+            },
+            "packet-size": {
+                "name": "packet-size",
+                "category": "unitary",
+                "type": "integer",
+                "help": "Packet size of a twamp test session,",
+                "min-value": 64,
+                "max-value": 1024,
+                "default": 64
+            },
+            "ha-priority": {
+                "name": "ha-priority",
+                "category": "unitary",
+                "type": "integer",
+                "help": "HA election priority (1 - 50).",
+                "min-value": 1,
+                "max-value": 50,
+                "default": 1
+            },
+            "ftp-mode": {
+                "name": "ftp-mode",
+                "category": "unitary",
+                "type": "option",
+                "help": "FTP mode.",
+                "multiple_values": false,
+                "options": [
+                    {
+                        "name": "passive",
+                        "help": "The FTP health-check initiates and establishes the data connection."
+                    },
+                    {
+                        "name": "port",
+                        "help": "The FTP server initiates and establishes the data connection."
+                    }
+                ],
+                "default": "passive"
+            },
+            "ftp-file": {
+                "name": "ftp-file",
+                "category": "unitary",
+                "type": "string",
+                "help": "Full path and file name on the FTP server to download for FTP health-check to probe.",
+                "size": 254,
+                "default": ""
+            },
+            "http-get": {
+                "name": "http-get",
+                "category": "unitary",
+                "type": "string",
+                "help": "URL used to communicate with the server if the protocol if the protocol is HTTP.",
+                "size": 1024,
+                "default": "/"
+            },
+            "http-agent": {
+                "name": "http-agent",
+                "category": "unitary",
+                "type": "string",
+                "help": "String in the http-agent field in the HTTP header.",
+                "size": 1024,
+                "default": "Chrome/ Safari/"
+            },
+            "http-match": {
+                "name": "http-match",
+                "category": "unitary",
+                "type": "string",
+                "help": "Response string expected from the server if the protocol is HTTP.",
+                "size": 1024,
+                "default": ""
+            },
+            "dns-request-domain": {
+                "name": "dns-request-domain",
+                "category": "unitary",
+                "type": "string",
+                "help": "Fully qualified domain name to resolve for the DNS probe.",
+                "size": 255,
+                "default": "www.example.com"
+            },
+            "dns-match-ip": {
+                "name": "dns-match-ip",
+                "category": "unitary",
+                "type": "ipv4-address",
+                "help": "Response IP expected from DNS server if the protocol is DNS.",
+                "default": "0.0.0.0"
+            },
+            "interval": {
+                "name": "interval",
+                "category": "unitary",
+                "type": "integer",
+                "help": "Status check interval in milliseconds, or the time between attempting to connect to the server (500 - 3600*1000 msec, default = 500).",
+                "min-value": 500,
+                "max-value": 3600000,
+                "default": 500
+            },
+            "probe-timeout": {
+                "name": "probe-timeout",
+                "category": "unitary",
+                "type": "integer",
+                "help": "Time to wait before a probe packet is considered lost (500 - 3600*1000 msec, default = 500).",
+                "min-value": 500,
+                "max-value": 3600000,
+                "default": 500
+            },
+            "failtime": {
+                "name": "failtime",
+                "category": "unitary",
+                "type": "integer",
+                "help": "Number of failures before server is considered lost (1 - 3600, default = 5).",
+                "min-value": 1,
+                "max-value": 3600,
+                "default": 5
+            },
+            "recoverytime": {
+                "name": "recoverytime",
+                "category": "unitary",
+                "type": "integer",
+                "help": "Number of successful responses received before server is considered recovered (1 - 3600, default = 5).",
+                "min-value": 1,
+                "max-value": 3600,
+                "default": 5
+            },
+            "probe-count": {
+                "name": "probe-count",
+                "category": "unitary",
+                "type": "integer",
+                "help": "Number of most recent probes that should be used to calculate latency and jitter (5 - 30, default = 30).",
+                "min-value": 5,
+                "max-value": 30,
+                "default": 30
+            },
+            "diffservcode": {
+                "name": "diffservcode",
+                "category": "unitary",
+                "type": "user",
+                "help": "Differentiated services code point (DSCP) in the IP header of the probe packet.",
+                "default": ""
+            },
+            "update-cascade-interface": {
+                "name": "update-cascade-interface",
+                "category": "unitary",
+                "type": "option",
+                "help": "Enable/disable update cascade interface.",
+                "multiple_values": false,
+                "options": [
+                    {
+                        "name": "enable",
+                        "help": "Enable update cascade interface."
+                    },
+                    {
+                        "name": "disable",
+                        "help": "Disable update cascade interface."
+                    }
+                ],
+                "default": "enable"
+            },
+            "update-static-route": {
+                "name": "update-static-route",
+                "category": "unitary",
+                "type": "option",
+                "help": "Enable/disable updating the static route.",
+                "multiple_values": false,
+                "options": [
+                    {
+                        "name": "enable",
+                        "help": "Enable updating the static route."
+                    },
+                    {
+                        "name": "disable",
+                        "help": "Disable updating the static route."
+                    }
+                ],
+                "default": "enable"
+            },
+            "sla-fail-log-period": {
+                "name": "sla-fail-log-period",
+                "category": "unitary",
+                "type": "integer",
+                "help": "Time interval in seconds that SLA fail log messages will be generated (0 - 3600, default = 0).",
+                "min-value": 0,
+                "max-value": 3600,
+                "default": 0
+            },
+            "sla-pass-log-period": {
+                "name": "sla-pass-log-period",
+                "category": "unitary",
+                "type": "integer",
+                "help": "Time interval in seconds that SLA pass log messages will be generated (0 - 3600, default = 0).",
+                "min-value": 0,
+                "max-value": 3600,
+                "default": 0
+            },
+            "threshold-warning-packetloss": {
+                "name": "threshold-warning-packetloss",
+                "category": "unitary",
+                "type": "integer",
+                "help": "Warning threshold for packet loss (percentage, default = 0).",
+                "min-value": 0,
+                "max-value": 100,
+                "default": 0
+            },
+            "threshold-alert-packetloss": {
+                "name": "threshold-alert-packetloss",
+                "category": "unitary",
+                "type": "integer",
+                "help": "Alert threshold for packet loss (percentage, default = 0).",
+                "min-value": 0,
+                "max-value": 100,
+                "default": 0
+            },
+            "threshold-warning-latency": {
+                "name": "threshold-warning-latency",
+                "category": "unitary",
+                "type": "integer",
+                "help": "Warning threshold for latency (ms, default = 0).",
+                "min-value": 0,
+                "max-value": 4294967295,
+                "default": 0
+            },
+            "threshold-alert-latency": {
+                "name": "threshold-alert-latency",
+                "category": "unitary",
+                "type": "integer",
+                "help": "Alert threshold for latency (ms, default = 0).",
+                "min-value": 0,
+                "max-value": 4294967295,
+                "default": 0
+            },
+            "threshold-warning-jitter": {
+                "name": "threshold-warning-jitter",
+                "category": "unitary",
+                "type": "integer",
+                "help": "Warning threshold for jitter (ms, default = 0).",
+                "min-value": 0,
+                "max-value": 4294967295,
+                "default": 0
+            },
+            "threshold-alert-jitter": {
+                "name": "threshold-alert-jitter",
+                "category": "unitary",
+                "type": "integer",
+                "help": "Alert threshold for jitter (ms, default = 0).",
+                "min-value": 0,
+                "max-value": 4294967295,
+                "default": 0
+            },
+            "members": {
+                "name": "members",
+                "category": "table",
+                "help": "Member sequence number list.",
+                "member_table": true,
+                "mkey": "seq-num",
+                "mkey_type": "integer",
+                "children": {
+                    "seq-num": {
+                        "name": "seq-num",
+                        "category": "unitary",
+                        "type": "integer",
+                        "help": "Member sequence number.",
+                        "required": true,
+                        "datasource": [
+                            "system.sdwan.members.seq-num"
+                        ],
+                        "min-value": 0,
+                        "max-value": 4294967295,
+                        "default": 0
+                    }
+                },
+                "max_table_size_vdom": 0,
+                "max_table_size_global": 0,
+                "max_table_size_item": 0
+            },
+            "sla": {
+                "name": "sla",
+                "category": "table",
+                "help": "Service level agreement (SLA).",
+                "mkey": "id",
+                "mkey_type": "integer",
+                "children": {
+                    "id": {
+                        "name": "id",
+                        "category": "unitary",
+                        "type": "integer",
+                        "help": "SLA ID.",
+                        "required": true,
+                        "min-value": 1,
+                        "max-value": 32,
+                        "default": 0
+                    },
+                    "link-cost-factor": {
+                        "name": "link-cost-factor",
+                        "category": "unitary",
+                        "type": "option",
+                        "help": "Criteria on which to base link selection.",
+                        "multiple_values": true,
+                        "options": [
+                            {
+                                "name": "latency",
+                                "help": "Select link based on latency."
+                            },
+                            {
+                                "name": "jitter",
+                                "help": "Select link based on jitter."
+                            },
+                            {
+                                "name": "packet-loss",
+                                "help": "Select link based on packet loss."
+                            }
+                        ],
+                        "default": "latency jitter packet-loss"
+                    },
+                    "latency-threshold": {
+                        "name": "latency-threshold",
+                        "category": "unitary",
+                        "type": "integer",
+                        "help": "Latency for SLA to make decision in milliseconds. (0 - 10000000, default = 5).",
+                        "min-value": 0,
+                        "max-value": 10000000,
+                        "default": 5
+                    },
+                    "jitter-threshold": {
+                        "name": "jitter-threshold",
+                        "category": "unitary",
+                        "type": "integer",
+                        "help": "Jitter for SLA to make decision in milliseconds. (0 - 10000000, default = 5).",
+                        "min-value": 0,
+                        "max-value": 10000000,
+                        "default": 5
+                    },
+                    "packetloss-threshold": {
+                        "name": "packetloss-threshold",
+                        "category": "unitary",
+                        "type": "integer",
+                        "help": "Packet loss for SLA to make decision in percentage. (0 - 100, default = 0).",
+                        "min-value": 0,
+                        "max-value": 100,
+                        "default": 0
+                    }
+                },
+                "max_table_size_vdom": 0,
+                "max_table_size_global": 0,
+                "max_table_size_item": 0
+            }
+        },
+        "max_table_size_vdom": 4000,
+        "max_table_size_global": 0,
+        "max_table_size_item": 0,
+        "path": "system",
+        "q_type": 451,
+        "access_group": "netgrp"
+    },
+    "vdom": "root",
+    "path": "system",
+    "name": "sdwan",
+    "action": "schema",
+    "child_path": "health-check",
+    "status": "success",
+    "http_status": 200,
+    "serial": "FGT60FTK20028507",
+    "version": "v7.0.1",
+    "build": 157
+}

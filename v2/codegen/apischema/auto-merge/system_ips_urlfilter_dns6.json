@@ -1,0 +1,54 @@
+{
+	"addedIn": "v6.2.7",
+	"build": 237,
+	"http_method": "GET",
+	"http_status": 200,
+	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3",
+	"name": "ips-urlfilter-dns6",
+	"path": "system",
+	"results": {
+		"access_group": "sysgrp",
+		"category": "table",
+		"children": {
+			"address6": {
+				"category": "unitary",
+				"default": "::",
+				"help": "IPv6 address of DNS server.",
+				"name": "address6",
+				"type": "ipv6-address"
+			},
+			"status": {
+				"category": "unitary",
+				"default": "enable",
+				"help": "Enable/disable this server for IPv6 DNS queries.",
+				"multiple_values": false,
+				"name": "status",
+				"options": [
+					{
+						"help": "Enable setting.",
+						"name": "enable"
+					},
+					{
+						"help": "Disable setting.",
+						"name": "disable"
+					}
+				],
+				"type": "option"
+			}
+		},
+		"help": "Configure IPS URL filter IPv6 DNS servers.",
+		"max_table_size_global": 20,
+		"max_table_size_item": 0,
+		"max_table_size_vdom": 0,
+		"mkey": "address6",
+		"mkey_type": "ipv6-address",
+		"name": "ips-urlfilter-dns6",
+		"path": "system",
+		"q_type": 460
+	},
+	"revision": "78ee061304af9c5d17bcae6474808d97",
+	"serial": "FGTAZRAQCG14L19D",
+	"status": "success",
+	"vdom": "root",
+	"version": "v7.0.3"
+}

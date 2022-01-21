@@ -1,0 +1,228 @@
+{
+	"addedIn": "v6.2.7",
+	"build": 237,
+	"http_method": "GET",
+	"http_status": 200,
+	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3",
+	"name": "profile-group",
+	"path": "firewall",
+	"results": {
+		"access_group": "fwgrp",
+		"category": "table",
+		"children": {
+			"application-list": {
+				"category": "unitary",
+				"datasource": [
+					"application.list.name"
+				],
+				"default": "",
+				"help": "Name of an existing Application list.",
+				"name": "application-list",
+				"size": 35,
+				"type": "string"
+			},
+			"av-profile": {
+				"category": "unitary",
+				"datasource": [
+					"antivirus.profile.name"
+				],
+				"default": "",
+				"help": "Name of an existing Antivirus profile.",
+				"name": "av-profile",
+				"size": 35,
+				"type": "string"
+			},
+			"cifs-profile": {
+				"category": "unitary",
+				"datasource": [
+					"cifs.profile.name"
+				],
+				"default": "",
+				"help": "Name of an existing CIFS profile.",
+				"name": "cifs-profile",
+				"size": 35,
+				"type": "string"
+			},
+			"dlp-sensor": {
+				"category": "unitary",
+				"datasource": [
+					"dlp.sensor.name"
+				],
+				"default": "",
+				"help": "Name of an existing DLP sensor.",
+				"name": "dlp-sensor",
+				"size": 35,
+				"type": "string"
+			},
+			"dnsfilter-profile": {
+				"category": "unitary",
+				"datasource": [
+					"dnsfilter.profile.name"
+				],
+				"default": "",
+				"help": "Name of an existing DNS filter profile.",
+				"name": "dnsfilter-profile",
+				"size": 35,
+				"type": "string"
+			},
+			"emailfilter-profile": {
+				"category": "unitary",
+				"datasource": [
+					"emailfilter.profile.name"
+				],
+				"default": "",
+				"help": "Name of an existing email filter profile.",
+				"name": "emailfilter-profile",
+				"size": 35,
+				"type": "string"
+			},
+			"file-filter-profile": {
+				"addedIn": "v6.4.2",
+				"category": "unitary",
+				"datasource": [
+					"file-filter.profile.name"
+				],
+				"default": "",
+				"help": "Name of an existing file-filter profile.",
+				"name": "file-filter-profile",
+				"size": 35,
+				"type": "string"
+			},
+			"icap-profile": {
+				"category": "unitary",
+				"datasource": [
+					"icap.profile.name"
+				],
+				"default": "",
+				"help": "Name of an existing ICAP profile.",
+				"name": "icap-profile",
+				"size": 35,
+				"type": "string"
+			},
+			"ips-sensor": {
+				"category": "unitary",
+				"datasource": [
+					"ips.sensor.name"
+				],
+				"default": "",
+				"help": "Name of an existing IPS sensor.",
+				"name": "ips-sensor",
+				"size": 35,
+				"type": "string"
+			},
+			"name": {
+				"category": "unitary",
+				"default": "",
+				"help": "Profile group name.",
+				"name": "name",
+				"required": true,
+				"size": 35,
+				"type": "string"
+			},
+			"profile-protocol-options": {
+				"category": "unitary",
+				"datasource": [
+					"firewall.profile-protocol-options.name"
+				],
+				"default": "default",
+				"help": "Name of an existing Protocol options profile.",
+				"name": "profile-protocol-options",
+				"size": 35,
+				"type": "string"
+			},
+			"sctp-filter-profile": {
+				"addedIn": "v7.0.1",
+				"category": "unitary",
+				"datasource": [
+					"sctp-filter.profile.name"
+				],
+				"default": "",
+				"help": "Name of an existing SCTP filter profile.",
+				"name": "sctp-filter-profile",
+				"size": 35,
+				"type": "string"
+			},
+			"ssh-filter-profile": {
+				"category": "unitary",
+				"datasource": [
+					"ssh-filter.profile.name"
+				],
+				"default": "",
+				"help": "Name of an existing SSH filter profile.",
+				"name": "ssh-filter-profile",
+				"size": 35,
+				"type": "string"
+			},
+			"ssl-ssh-profile": {
+				"category": "unitary",
+				"datasource": [
+					"firewall.ssl-ssh-profile.name"
+				],
+				"default": "certificate-inspection",
+				"help": "Name of an existing SSL SSH profile.",
+				"name": "ssl-ssh-profile",
+				"size": 35,
+				"type": "string"
+			},
+			"videofilter-profile": {
+				"addedIn": "v7.0.0",
+				"category": "unitary",
+				"datasource": [
+					"videofilter.profile.name"
+				],
+				"default": "",
+				"help": "Name of an existing VideoFilter profile.",
+				"name": "videofilter-profile",
+				"size": 35,
+				"type": "string"
+			},
+			"voip-profile": {
+				"category": "unitary",
+				"datasource": [
+					"voip.profile.name"
+				],
+				"default": "",
+				"help": "Name of an existing VoIP profile.",
+				"name": "voip-profile",
+				"size": 35,
+				"type": "string"
+			},
+			"waf-profile": {
+				"category": "unitary",
+				"datasource": [
+					"waf.profile.name"
+				],
+				"default": "",
+				"help": "Name of an existing Web application firewall profile.",
+				"name": "waf-profile",
+				"size": 35,
+				"type": "string"
+			},
+			"webfilter-profile": {
+				"category": "unitary",
+				"datasource": [
+					"webfilter.profile.name"
+				],
+				"default": "",
+				"help": "Name of an existing Web filter profile.",
+				"name": "webfilter-profile",
+				"size": 35,
+				"type": "string"
+			}
+		},
+		"help": "Configure profile groups.",
+		"max_table_size_global": 20000,
+		"max_table_size_item": 0,
+		"max_table_size_vdom": 20000,
+		"mkey": "name",
+		"mkey_type": "string",
+		"name": "profile-group",
+		"path": "firewall",
+		"q_type": 439
+	},
+	"revision": "78ee061304af9c5d17bcae6474808d97",
+	"serial": "FGTAZRAQCG14L19D",
+	"status": "success",
+	"vdom": "root",
+	"version": "v7.0.3"
+}

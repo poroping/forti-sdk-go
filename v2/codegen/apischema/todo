@@ -1,0 +1,10 @@
+short:
+pull multiple versions and merge - missing v6.4.4/6.4.1/6.4.0/6.2.10
+find easier way to get paths
+[x]add versioning to attributes
+[x]add versioning to resources
+
+medium:
+make diffs for docs
+long:
+separate to own repo? allows for cicd to spin up azure instance and automate new releases

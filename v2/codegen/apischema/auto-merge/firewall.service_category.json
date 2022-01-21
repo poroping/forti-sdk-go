@@ -1,0 +1,63 @@
+{
+	"addedIn": "v6.2.7",
+	"build": 237,
+	"http_method": "GET",
+	"http_status": 200,
+	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3",
+	"name": "category",
+	"path": "firewall.service",
+	"results": {
+		"access_group": "fwgrp",
+		"category": "table",
+		"children": {
+			"comment": {
+				"category": "unitary",
+				"help": "Comment.",
+				"name": "comment",
+				"size": 255,
+				"type": "var-string"
+			},
+			"fabric-object": {
+				"addedIn": "v6.4.5",
+				"category": "unitary",
+				"default": "disable",
+				"help": "Security Fabric global object setting.",
+				"multiple_values": false,
+				"name": "fabric-object",
+				"options": [
+					{
+						"help": "Object is set as a security fabric-wide global object.",
+						"name": "enable"
+					},
+					{
+						"help": "Object is local to this security fabric member.",
+						"name": "disable"
+					}
+				],
+				"type": "option"
+			},
+			"name": {
+				"category": "unitary",
+				"default": "",
+				"help": "Service category name.",
+				"name": "name",
+				"size": 63,
+				"type": "string"
+			}
+		},
+		"help": "Configure service categories.",
+		"max_table_size_global": 10000,
+		"max_table_size_item": 0,
+		"max_table_size_vdom": 10000,
+		"mkey": "name",
+		"mkey_type": "string",
+		"name": "category",
+		"path": "firewall.service",
+		"q_type": 35
+	},
+	"revision": "7177c61ea89612ca354e581cc92f6db0",
+	"serial": "FGTAZRAQCG14L19D",
+	"status": "success",
+	"vdom": "root",
+	"version": "v7.0.3"
+}

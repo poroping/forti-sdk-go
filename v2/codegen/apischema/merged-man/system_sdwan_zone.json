@@ -1,0 +1,56 @@
+{
+    "http_method": "GET",
+    "revision": "7f0e93af54088092cb7818d2130adf1b",
+    "results": {
+        "name": "zone",
+        "category": "table",
+        "help": "Configure SD-WAN zones.",
+        "mkey": "name",
+        "mkey_type": "string",
+        "children": {
+            "name": {
+                "name": "name",
+                "category": "unitary",
+                "type": "string",
+                "help": "Zone name.",
+                "required": true,
+                "size": 35,
+                "default": ""
+            },
+            "service-sla-tie-break": {
+                "name": "service-sla-tie-break",
+                "category": "unitary",
+                "type": "option",
+                "help": "Method of selecting member if more than one meets the SLA.",
+                "multiple_values": false,
+                "options": [
+                    {
+                        "name": "cfg-order",
+                        "help": "Members that meet the SLA are selected in the order they are configured."
+                    },
+                    {
+                        "name": "fib-best-match",
+                        "help": "Members that meet the SLA are selected that match the longest prefix in the routing table."
+                    }
+                ],
+                "default": "cfg-order"
+            }
+        },
+        "max_table_size_vdom": 256,
+        "max_table_size_global": 512,
+        "max_table_size_item": 0,
+        "path": "system",
+        "q_type": 451,
+        "access_group": "netgrp"
+    },
+    "vdom": "root",
+    "path": "system",
+    "name": "sdwan",
+    "action": "schema",
+    "child_path": "zone",
+    "status": "success",
+    "http_status": 200,
+    "serial": "FGT60FTK20028507",
+    "version": "v7.0.1",
+    "build": 157
+}

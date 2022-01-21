@@ -1,0 +1,296 @@
+{
+    "http_method": "GET",
+    "revision": "11ab0db6d3544a90ad5fa952ef10a584",
+    "results": {
+        "name": "static",
+        "category": "table",
+        "help": "Configure IPv4 static routing tables.",
+        "mkey": "seq-num",
+        "mkey_type": "integer",
+        "children": {
+            "seq-num": {
+                "name": "seq-num",
+                "category": "unitary",
+                "type": "integer",
+                "help": "Sequence number.",
+                "min-value": 0,
+                "max-value": 4294967295,
+                "default": 0
+            },
+            "status": {
+                "name": "status",
+                "category": "unitary",
+                "type": "option",
+                "help": "Enable/disable this static route.",
+                "multiple_values": false,
+                "options": [
+                    {
+                        "name": "enable",
+                        "help": "Enable static route."
+                    },
+                    {
+                        "name": "disable",
+                        "help": "Disable static route."
+                    }
+                ],
+                "default": "enable"
+            },
+            "dst": {
+                "name": "dst",
+                "category": "unitary",
+                "type": "ipv4-classnet",
+                "help": "Destination IP and mask for this route.",
+                "required": true,
+                "default": "0.0.0.0 0.0.0.0"
+            },
+            "src": {
+                "name": "src",
+                "category": "unitary",
+                "type": "ipv4-classnet",
+                "help": "Source prefix for this route.",
+                "default": "0.0.0.0 0.0.0.0"
+            },
+            "gateway": {
+                "name": "gateway",
+                "category": "unitary",
+                "type": "ipv4-address",
+                "help": "Gateway IP for this route.",
+                "default": "0.0.0.0"
+            },
+            "distance": {
+                "name": "distance",
+                "category": "unitary",
+                "type": "integer",
+                "help": "Administrative distance (1 - 255).",
+                "min-value": 1,
+                "max-value": 255,
+                "default": 10
+            },
+            "weight": {
+                "name": "weight",
+                "category": "unitary",
+                "type": "integer",
+                "help": "Administrative weight (0 - 255).",
+                "min-value": 0,
+                "max-value": 255,
+                "default": 0
+            },
+            "priority": {
+                "name": "priority",
+                "category": "unitary",
+                "type": "integer",
+                "help": "Administrative priority (0 - 65535).",
+                "min-value": 0,
+                "max-value": 65535,
+                "default": 0
+            },
+            "device": {
+                "name": "device",
+                "category": "unitary",
+                "type": "string",
+                "help": "Gateway out interface or tunnel.",
+                "required": true,
+                "datasource": [
+                    "system.interface.name"
+                ],
+                "size": 35,
+                "default": ""
+            },
+            "comment": {
+                "name": "comment",
+                "category": "unitary",
+                "type": "var-string",
+                "help": "Optional comments.",
+                "size": 255
+            },
+            "blackhole": {
+                "name": "blackhole",
+                "category": "unitary",
+                "type": "option",
+                "help": "Enable/disable black hole.",
+                "multiple_values": false,
+                "options": [
+                    {
+                        "name": "enable",
+                        "help": "Enable black hole."
+                    },
+                    {
+                        "name": "disable",
+                        "help": "Disable black hole."
+                    }
+                ],
+                "default": "disable"
+            },
+            "dynamic-gateway": {
+                "name": "dynamic-gateway",
+                "category": "unitary",
+                "type": "option",
+                "help": "Enable use of dynamic gateway retrieved from a DHCP or PPP server.",
+                "multiple_values": false,
+                "options": [
+                    {
+                        "name": "enable",
+                        "help": "Enable dynamic gateway."
+                    },
+                    {
+                        "name": "disable",
+                        "help": "Disable dynamic gateway."
+                    }
+                ],
+                "default": "disable"
+            },
+            "virtual-wan-link":{
+                "name":"virtual-wan-link",
+                "category":"unitary",
+                "type":"option",
+                "help":"Enable\/disable egress through the virtual-wan-link.",
+                "multiple_values":false,
+                "options":[
+                  {
+                    "name":"enable",
+                    "help":"Enable virtual-wan-link access."
+                  },
+                  {
+                    "name":"disable",
+                    "help":"Disable virtual-wan-link access."
+                  }
+                ]
+              },
+            "sdwan":{
+                "name":"sdwan",
+                "category":"unitary",
+                "type":"option",
+                "help":"Enable\/disable egress through SD-WAN.",
+                "multiple_values":false,
+                "options":[
+                  {
+                    "name":"enable",
+                    "help":"Enable SD-WAN access."
+                  },
+                  {
+                    "name":"disable",
+                    "help":"Disable SD-WAN access."
+                  }
+                ]
+              },
+            "sdwan-zone": {
+                "name": "sdwan-zone",
+                "category": "table",
+                "help": "Choose SD-WAN Zone.",
+                "member_table": true,
+                "mkey": "name",
+                "mkey_type": "string",
+                "children": {
+                    "name": {
+                        "name": "name",
+                        "category": "unitary",
+                        "type": "string",
+                        "help": "SD-WAN zone name.",
+                        "datasource": [
+                            "system.sdwan.zone.name"
+                        ],
+                        "size": 79,
+                        "default": ""
+                    }
+                },
+                "max_table_size_vdom": 0,
+                "max_table_size_global": 0,
+                "max_table_size_item": 0
+            },
+            "dstaddr": {
+                "name": "dstaddr",
+                "category": "unitary",
+                "type": "string",
+                "help": "Name of firewall address or address group.",
+                "datasource": [
+                    "firewall.address.name",
+                    "firewall.addrgrp.name"
+                ],
+                "size": 79,
+                "default": ""
+            },
+            "internet-service": {
+                "name": "internet-service",
+                "category": "unitary",
+                "type": "integer",
+                "help": "Application ID in the Internet service database.",
+                "datasource": [
+                    "firewall.internet-service.id"
+                ],
+                "min-value": 0,
+                "max-value": 4294967295,
+                "default": 0
+            },
+            "internet-service-custom": {
+                "name": "internet-service-custom",
+                "category": "unitary",
+                "type": "string",
+                "help": "Application name in the Internet service custom database.",
+                "datasource": [
+                    "firewall.internet-service-custom.name"
+                ],
+                "size": 64,
+                "default": ""
+            },
+            "link-monitor-exempt": {
+                "name": "link-monitor-exempt",
+                "category": "unitary",
+                "type": "option",
+                "help": "Enable/disable withdrawal of this static route when link monitor or health check is down.",
+                "multiple_values": false,
+                "options": [
+                    {
+                        "name": "enable",
+                        "help": "Keep this static route when link monitor or health check is down."
+                    },
+                    {
+                        "name": "disable",
+                        "help": "Withdraw this static route when link monitor or health check is down. (default)"
+                    }
+                ],
+                "default": "disable"
+            },
+            "vrf": {
+                "name": "vrf",
+                "category": "unitary",
+                "type": "integer",
+                "help": "Virtual Routing Forwarding ID.",
+                "min-value": 0,
+                "max-value": 31,
+                "default": 0
+            },
+            "bfd": {
+                "name": "bfd",
+                "category": "unitary",
+                "type": "option",
+                "help": "Enable/disable Bidirectional Forwarding Detection (BFD).",
+                "multiple_values": false,
+                "options": [
+                    {
+                        "name": "enable",
+                        "help": "Enable Bidirectional Forwarding Detection (BFD)."
+                    },
+                    {
+                        "name": "disable",
+                        "help": "Disable Bidirectional Forwarding Detection (BFD)."
+                    }
+                ],
+                "default": "disable"
+            }
+        },
+        "max_table_size_vdom": 100,
+        "max_table_size_global": 0,
+        "max_table_size_item": 0,
+        "path": "router",
+        "q_type": 2,
+        "access_group": "netgrp"
+    },
+    "vdom": "root",
+    "path": "router",
+    "name": "static",
+    "action": "schema",
+    "status": "success",
+    "http_status": 200,
+    "version": "v7.0.1 | v6.4.2 | v6.2.7 merged",
+    "build": 157
+}

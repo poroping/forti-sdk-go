@@ -1,0 +1,1236 @@
+{
+    "http_method": "GET",
+    "revision": "c71ea1ba1b2a5a50b2642437351a1a62",
+    "results": {
+        "name": "ospf6",
+        "category": "complex",
+        "help": "Configure IPv6 OSPF.",
+        "children": {
+            "abr-type": {
+                "name": "abr-type",
+                "category": "unitary",
+                "type": "option",
+                "help": "Area border router type.",
+                "multiple_values": false,
+                "options": [
+                    {
+                        "name": "cisco",
+                        "help": "Cisco."
+                    },
+                    {
+                        "name": "ibm",
+                        "help": "IBM."
+                    },
+                    {
+                        "name": "standard",
+                        "help": "Standard."
+                    }
+                ],
+                "default": "standard"
+            },
+            "auto-cost-ref-bandwidth": {
+                "name": "auto-cost-ref-bandwidth",
+                "category": "unitary",
+                "type": "integer",
+                "help": "Reference bandwidth in terms of megabits per second.",
+                "min-value": 1,
+                "max-value": 1000000,
+                "default": 1000
+            },
+            "default-information-originate": {
+                "name": "default-information-originate",
+                "category": "unitary",
+                "type": "option",
+                "help": "Enable/disable generation of default route.",
+                "multiple_values": false,
+                "options": [
+                    {
+                        "name": "enable",
+                        "help": "Enable setting."
+                    },
+                    {
+                        "name": "always",
+                        "help": "Always advertise the default router."
+                    },
+                    {
+                        "name": "disable",
+                        "help": "Disable setting."
+                    }
+                ],
+                "default": "disable"
+            },
+            "log-neighbour-changes": {
+                "name": "log-neighbour-changes",
+                "category": "unitary",
+                "type": "option",
+                "help": "Enable logging of OSPFv3 neighbour's changes",
+                "multiple_values": false,
+                "options": [
+                    {
+                        "name": "enable",
+                        "help": "Enable setting."
+                    },
+                    {
+                        "name": "disable",
+                        "help": "Disable setting."
+                    }
+                ],
+                "default": "enable"
+            },
+            "default-information-metric": {
+                "name": "default-information-metric",
+                "category": "unitary",
+                "type": "integer",
+                "help": "Default information metric.",
+                "min-value": 1,
+                "max-value": 16777214,
+                "default": 10
+            },
+            "default-information-metric-type": {
+                "name": "default-information-metric-type",
+                "category": "unitary",
+                "type": "option",
+                "help": "Default information metric type.",
+                "multiple_values": false,
+                "options": [
+                    {
+                        "name": "1",
+                        "help": "Type 1."
+                    },
+                    {
+                        "name": "2",
+                        "help": "Type 2."
+                    }
+                ],
+                "default": "2"
+            },
+            "default-information-route-map": {
+                "name": "default-information-route-map",
+                "category": "unitary",
+                "type": "string",
+                "help": "Default information route map.",
+                "datasource": [
+                    "router.route-map.name"
+                ],
+                "size": 35,
+                "default": ""
+            },
+            "default-metric": {
+                "name": "default-metric",
+                "category": "unitary",
+                "type": "integer",
+                "help": "Default metric of redistribute routes.",
+                "min-value": 1,
+                "max-value": 16777214,
+                "default": 10
+            },
+            "router-id": {
+                "name": "router-id",
+                "category": "unitary",
+                "type": "ipv4-address-any",
+                "help": "A.B.C.D, in IPv4 address format.",
+                "required": true,
+                "default": "0.0.0.0"
+            },
+            "spf-timers": {
+                "name": "spf-timers",
+                "category": "unitary",
+                "type": "user",
+                "help": "SPF calculation frequency.",
+                "default": ""
+            },
+            "bfd": {
+                "name": "bfd",
+                "category": "unitary",
+                "type": "option",
+                "help": "Enable/disable Bidirectional Forwarding Detection (BFD).",
+                "multiple_values": false,
+                "options": [
+                    {
+                        "name": "enable",
+                        "help": "Enable Bidirectional Forwarding Detection (BFD)."
+                    },
+                    {
+                        "name": "disable",
+                        "help": "Disable Bidirectional Forwarding Detection (BFD)."
+                    }
+                ],
+                "default": "disable"
+            },
+            "area": {
+                "name": "area",
+                "category": "table",
+                "help": "OSPF6 area configuration.",
+                "mkey": "id",
+                "mkey_type": "ipv4-address-any",
+                "children": {
+                    "id": {
+                        "name": "id",
+                        "category": "unitary",
+                        "type": "ipv4-address-any",
+                        "help": "Area entry IP address.",
+                        "default": "0.0.0.0"
+                    },
+                    "default-cost": {
+                        "name": "default-cost",
+                        "category": "unitary",
+                        "type": "integer",
+                        "help": "Summary default cost of stub or NSSA area.",
+                        "min-value": 0,
+                        "max-value": 16777215,
+                        "default": 10
+                    },
+                    "nssa-translator-role": {
+                        "name": "nssa-translator-role",
+                        "category": "unitary",
+                        "type": "option",
+                        "help": "NSSA translator role type.",
+                        "multiple_values": false,
+                        "options": [
+                            {
+                                "name": "candidate",
+                                "help": "Candidate."
+                            },
+                            {
+                                "name": "never",
+                                "help": "Never."
+                            },
+                            {
+                                "name": "always",
+                                "help": "Always."
+                            }
+                        ],
+                        "default": "candidate"
+                    },
+                    "stub-type": {
+                        "name": "stub-type",
+                        "category": "unitary",
+                        "type": "option",
+                        "help": "Stub summary setting.",
+                        "multiple_values": false,
+                        "options": [
+                            {
+                                "name": "no-summary",
+                                "help": "No summary."
+                            },
+                            {
+                                "name": "summary",
+                                "help": "Summary."
+                            }
+                        ],
+                        "default": "summary"
+                    },
+                    "type": {
+                        "name": "type",
+                        "category": "unitary",
+                        "type": "option",
+                        "help": "Area type setting.",
+                        "multiple_values": false,
+                        "options": [
+                            {
+                                "name": "regular",
+                                "help": "Regular."
+                            },
+                            {
+                                "name": "nssa",
+                                "help": "NSSA."
+                            },
+                            {
+                                "name": "stub",
+                                "help": "Stub."
+                            }
+                        ],
+                        "default": "regular"
+                    },
+                    "nssa-default-information-originate": {
+                        "name": "nssa-default-information-originate",
+                        "category": "unitary",
+                        "type": "option",
+                        "help": "Enable/disable originate type 7 default into NSSA area.",
+                        "multiple_values": false,
+                        "options": [
+                            {
+                                "name": "enable",
+                                "help": "Enable originate type 7 default into NSSA area."
+                            },
+                            {
+                                "name": "disable",
+                                "help": "Disable originate type 7 default into NSSA area."
+                            }
+                        ],
+                        "default": "disable"
+                    },
+                    "nssa-default-information-originate-metric": {
+                        "name": "nssa-default-information-originate-metric",
+                        "category": "unitary",
+                        "type": "integer",
+                        "help": "OSPFv3 default metric.",
+                        "min-value": 0,
+                        "max-value": 16777214,
+                        "default": 10
+                    },
+                    "nssa-default-information-originate-metric-type": {
+                        "name": "nssa-default-information-originate-metric-type",
+                        "category": "unitary",
+                        "type": "option",
+                        "help": "OSPFv3 metric type for default routes.",
+                        "multiple_values": false,
+                        "options": [
+                            {
+                                "name": "1",
+                                "help": "Type 1."
+                            },
+                            {
+                                "name": "2",
+                                "help": "Type 2."
+                            }
+                        ],
+                        "default": "2"
+                    },
+                    "nssa-redistribution": {
+                        "name": "nssa-redistribution",
+                        "category": "unitary",
+                        "type": "option",
+                        "help": "Enable/disable redistribute into NSSA area.",
+                        "multiple_values": false,
+                        "options": [
+                            {
+                                "name": "enable",
+                                "help": "Enable redistribute into NSSA area."
+                            },
+                            {
+                                "name": "disable",
+                                "help": "Disable redistribute into NSSA area."
+                            }
+                        ],
+                        "default": "enable"
+                    },
+                    "authentication": {
+                        "name": "authentication",
+                        "category": "unitary",
+                        "type": "option",
+                        "help": "Authentication mode.",
+                        "multiple_values": false,
+                        "options": [
+                            {
+                                "name": "none",
+                                "help": "Disable authentication."
+                            },
+                            {
+                                "name": "ah",
+                                "help": "Authentication Header."
+                            },
+                            {
+                                "name": "esp",
+                                "help": "Encapsulating Security Payload."
+                            }
+                        ],
+                        "default": "none"
+                    },
+                    "key-rollover-interval": {
+                        "name": "key-rollover-interval",
+                        "category": "unitary",
+                        "type": "integer",
+                        "help": "Key roll-over interval.",
+                        "min-value": 300,
+                        "max-value": 216000,
+                        "default": 300
+                    },
+                    "ipsec-auth-alg": {
+                        "name": "ipsec-auth-alg",
+                        "category": "unitary",
+                        "type": "option",
+                        "help": "Authentication algorithm.",
+                        "multiple_values": false,
+                        "options": [
+                            {
+                                "name": "md5",
+                                "help": "MD5."
+                            },
+                            {
+                                "name": "sha1",
+                                "help": "SHA1."
+                            },
+                            {
+                                "name": "sha256",
+                                "help": "SHA256."
+                            },
+                            {
+                                "name": "sha384",
+                                "help": "SHA384."
+                            },
+                            {
+                                "name": "sha512",
+                                "help": "SHA512."
+                            }
+                        ],
+                        "default": "md5"
+                    },
+                    "ipsec-enc-alg": {
+                        "name": "ipsec-enc-alg",
+                        "category": "unitary",
+                        "type": "option",
+                        "help": "Encryption algorithm.",
+                        "multiple_values": false,
+                        "options": [
+                            {
+                                "name": "null",
+                                "help": "No encryption."
+                            },
+                            {
+                                "name": "des",
+                                "help": "DES."
+                            },
+                            {
+                                "name": "3des",
+                                "help": "3DES."
+                            },
+                            {
+                                "name": "aes128",
+                                "help": "AES128."
+                            },
+                            {
+                                "name": "aes192",
+                                "help": "AES192."
+                            },
+                            {
+                                "name": "aes256",
+                                "help": "AES256."
+                            }
+                        ],
+                        "default": "null"
+                    },
+                    "ipsec-keys": {
+                        "name": "ipsec-keys",
+                        "category": "table",
+                        "help": "IPsec authentication and encryption keys.",
+                        "mkey": "spi",
+                        "mkey_type": "integer",
+                        "children": {
+                            "spi": {
+                                "name": "spi",
+                                "category": "unitary",
+                                "type": "integer",
+                                "help": "Security Parameters Index.",
+                                "required": true,
+                                "min-value": 256,
+                                "max-value": 4294967295,
+                                "default": 0
+                            },
+                            "auth-key": {
+                                "name": "auth-key",
+                                "category": "unitary",
+                                "type": "password",
+                                "help": "Authentication key.",
+                                "size": 128
+                            },
+                            "enc-key": {
+                                "name": "enc-key",
+                                "category": "unitary",
+                                "type": "password",
+                                "help": "Encryption key.",
+                                "size": 128
+                            }
+                        },
+                        "max_table_size_vdom": 0,
+                        "max_table_size_global": 0,
+                        "max_table_size_item": 0
+                    },
+                    "range": {
+                        "name": "range",
+                        "category": "table",
+                        "help": "OSPF6 area range configuration.",
+                        "mkey": "id",
+                        "mkey_type": "integer",
+                        "children": {
+                            "id": {
+                                "name": "id",
+                                "category": "unitary",
+                                "type": "integer",
+                                "help": "Range entry ID.",
+                                "min-value": 0,
+                                "max-value": 4294967295,
+                                "default": 0
+                            },
+                            "prefix6": {
+                                "name": "prefix6",
+                                "category": "unitary",
+                                "type": "ipv6-network",
+                                "help": "IPv6 prefix.",
+                                "required": true,
+                                "default": "::/0"
+                            },
+                            "advertise": {
+                                "name": "advertise",
+                                "category": "unitary",
+                                "type": "option",
+                                "help": "Enable/disable advertise status.",
+                                "multiple_values": false,
+                                "options": [
+                                    {
+                                        "name": "disable",
+                                        "help": "disable"
+                                    },
+                                    {
+                                        "name": "enable",
+                                        "help": "enable"
+                                    }
+                                ],
+                                "default": "enable"
+                            }
+                        },
+                        "max_table_size_vdom": 0,
+                        "max_table_size_global": 0,
+                        "max_table_size_item": 0
+                    },
+                    "virtual-link": {
+                        "name": "virtual-link",
+                        "category": "table",
+                        "help": "OSPF6 virtual link configuration.",
+                        "mkey": "name",
+                        "mkey_type": "string",
+                        "children": {
+                            "name": {
+                                "name": "name",
+                                "category": "unitary",
+                                "type": "string",
+                                "help": "Virtual link entry name.",
+                                "size": 35,
+                                "default": ""
+                            },
+                            "dead-interval": {
+                                "name": "dead-interval",
+                                "category": "unitary",
+                                "type": "integer",
+                                "help": "Dead interval.",
+                                "min-value": 1,
+                                "max-value": 65535,
+                                "default": 40
+                            },
+                            "hello-interval": {
+                                "name": "hello-interval",
+                                "category": "unitary",
+                                "type": "integer",
+                                "help": "Hello interval.",
+                                "min-value": 1,
+                                "max-value": 65535,
+                                "default": 10
+                            },
+                            "retransmit-interval": {
+                                "name": "retransmit-interval",
+                                "category": "unitary",
+                                "type": "integer",
+                                "help": "Retransmit interval.",
+                                "min-value": 1,
+                                "max-value": 65535,
+                                "default": 5
+                            },
+                            "transmit-delay": {
+                                "name": "transmit-delay",
+                                "category": "unitary",
+                                "type": "integer",
+                                "help": "Transmit delay.",
+                                "min-value": 1,
+                                "max-value": 65535,
+                                "default": 1
+                            },
+                            "peer": {
+                                "name": "peer",
+                                "category": "unitary",
+                                "type": "ipv4-address-any",
+                                "help": "A.B.C.D, peer router ID.",
+                                "required": true,
+                                "default": "0.0.0.0"
+                            },
+                            "authentication": {
+                                "name": "authentication",
+                                "category": "unitary",
+                                "type": "option",
+                                "help": "Authentication mode.",
+                                "multiple_values": false,
+                                "options": [
+                                    {
+                                        "name": "none",
+                                        "help": "Disable authentication."
+                                    },
+                                    {
+                                        "name": "ah",
+                                        "help": "Authentication Header."
+                                    },
+                                    {
+                                        "name": "esp",
+                                        "help": "Encapsulating Security Payload."
+                                    },
+                                    {
+                                        "name": "area",
+                                        "help": "Use the routing area's authentication configuration."
+                                    }
+                                ],
+                                "default": "area"
+                            },
+                            "key-rollover-interval": {
+                                "name": "key-rollover-interval",
+                                "category": "unitary",
+                                "type": "integer",
+                                "help": "Key roll-over interval.",
+                                "min-value": 300,
+                                "max-value": 216000,
+                                "default": 300
+                            },
+                            "ipsec-auth-alg": {
+                                "name": "ipsec-auth-alg",
+                                "category": "unitary",
+                                "type": "option",
+                                "help": "Authentication algorithm.",
+                                "multiple_values": false,
+                                "options": [
+                                    {
+                                        "name": "md5",
+                                        "help": "MD5."
+                                    },
+                                    {
+                                        "name": "sha1",
+                                        "help": "SHA1."
+                                    },
+                                    {
+                                        "name": "sha256",
+                                        "help": "SHA256."
+                                    },
+                                    {
+                                        "name": "sha384",
+                                        "help": "SHA384."
+                                    },
+                                    {
+                                        "name": "sha512",
+                                        "help": "SHA512."
+                                    }
+                                ],
+                                "default": "md5"
+                            },
+                            "ipsec-enc-alg": {
+                                "name": "ipsec-enc-alg",
+                                "category": "unitary",
+                                "type": "option",
+                                "help": "Encryption algorithm.",
+                                "multiple_values": false,
+                                "options": [
+                                    {
+                                        "name": "null",
+                                        "help": "No encryption."
+                                    },
+                                    {
+                                        "name": "des",
+                                        "help": "DES."
+                                    },
+                                    {
+                                        "name": "3des",
+                                        "help": "3DES."
+                                    },
+                                    {
+                                        "name": "aes128",
+                                        "help": "AES128."
+                                    },
+                                    {
+                                        "name": "aes192",
+                                        "help": "AES192."
+                                    },
+                                    {
+                                        "name": "aes256",
+                                        "help": "AES256."
+                                    }
+                                ],
+                                "default": "null"
+                            },
+                            "ipsec-keys": {
+                                "name": "ipsec-keys",
+                                "category": "table",
+                                "help": "IPsec authentication and encryption keys.",
+                                "mkey": "spi",
+                                "mkey_type": "integer",
+                                "children": {
+                                    "spi": {
+                                        "name": "spi",
+                                        "category": "unitary",
+                                        "type": "integer",
+                                        "help": "Security Parameters Index.",
+                                        "required": true,
+                                        "min-value": 256,
+                                        "max-value": 4294967295,
+                                        "default": 0
+                                    },
+                                    "auth-key": {
+                                        "name": "auth-key",
+                                        "category": "unitary",
+                                        "type": "password",
+                                        "help": "Authentication key.",
+                                        "size": 128
+                                    },
+                                    "enc-key": {
+                                        "name": "enc-key",
+                                        "category": "unitary",
+                                        "type": "password",
+                                        "help": "Encryption key.",
+                                        "size": 128
+                                    }
+                                },
+                                "max_table_size_vdom": 0,
+                                "max_table_size_global": 0,
+                                "max_table_size_item": 0
+                            }
+                        },
+                        "max_table_size_vdom": 0,
+                        "max_table_size_global": 0,
+                        "max_table_size_item": 0
+                    }
+                },
+                "max_table_size_vdom": 256,
+                "max_table_size_global": 512,
+                "max_table_size_item": 0
+            },
+            "ospf6-interface": {
+                "name": "ospf6-interface",
+                "category": "table",
+                "help": "OSPF6 interface configuration.",
+                "mkey": "name",
+                "mkey_type": "string",
+                "children": {
+                    "name": {
+                        "name": "name",
+                        "category": "unitary",
+                        "type": "string",
+                        "help": "Interface entry name.",
+                        "size": 35,
+                        "default": ""
+                    },
+                    "area-id": {
+                        "name": "area-id",
+                        "category": "unitary",
+                        "type": "ipv4-address-any",
+                        "help": "A.B.C.D, in IPv4 address format.",
+                        "required": true,
+                        "default": "0.0.0.0"
+                    },
+                    "interface": {
+                        "name": "interface",
+                        "category": "unitary",
+                        "type": "string",
+                        "help": "Configuration interface name.",
+                        "required": true,
+                        "datasource": [
+                            "system.interface.name"
+                        ],
+                        "size": 15,
+                        "default": ""
+                    },
+                    "retransmit-interval": {
+                        "name": "retransmit-interval",
+                        "category": "unitary",
+                        "type": "integer",
+                        "help": "Retransmit interval.",
+                        "min-value": 1,
+                        "max-value": 65535,
+                        "default": 5
+                    },
+                    "transmit-delay": {
+                        "name": "transmit-delay",
+                        "category": "unitary",
+                        "type": "integer",
+                        "help": "Transmit delay.",
+                        "min-value": 1,
+                        "max-value": 65535,
+                        "default": 1
+                    },
+                    "cost": {
+                        "name": "cost",
+                        "category": "unitary",
+                        "type": "integer",
+                        "help": "Cost of the interface, value range from 0 to 65535, 0 means auto-cost.",
+                        "min-value": 0,
+                        "max-value": 65535,
+                        "default": 0
+                    },
+                    "priority": {
+                        "name": "priority",
+                        "category": "unitary",
+                        "type": "integer",
+                        "help": "priority",
+                        "min-value": 0,
+                        "max-value": 255,
+                        "default": 1
+                    },
+                    "dead-interval": {
+                        "name": "dead-interval",
+                        "category": "unitary",
+                        "type": "integer",
+                        "help": "Dead interval.",
+                        "min-value": 1,
+                        "max-value": 65535,
+                        "default": 0
+                    },
+                    "hello-interval": {
+                        "name": "hello-interval",
+                        "category": "unitary",
+                        "type": "integer",
+                        "help": "Hello interval.",
+                        "min-value": 1,
+                        "max-value": 65535,
+                        "default": 0
+                    },
+                    "status": {
+                        "name": "status",
+                        "category": "unitary",
+                        "type": "option",
+                        "help": "Enable/disable OSPF6 routing on this interface.",
+                        "multiple_values": false,
+                        "options": [
+                            {
+                                "name": "disable",
+                                "help": "Disable OSPF6 routing."
+                            },
+                            {
+                                "name": "enable",
+                                "help": "Enable OSPF6 routing."
+                            }
+                        ],
+                        "default": "enable"
+                    },
+                    "network-type": {
+                        "name": "network-type",
+                        "category": "unitary",
+                        "type": "option",
+                        "help": "Network type.",
+                        "multiple_values": false,
+                        "options": [
+                            {
+                                "name": "broadcast",
+                                "help": "broadcast"
+                            },
+                            {
+                                "name": "point-to-point",
+                                "help": "point-to-point"
+                            },
+                            {
+                                "name": "non-broadcast",
+                                "help": "non-broadcast"
+                            },
+                            {
+                                "name": "point-to-multipoint",
+                                "help": "point-to-multipoint"
+                            },
+                            {
+                                "name": "point-to-multipoint-non-broadcast",
+                                "help": "point-to-multipoint and non-broadcast."
+                            }
+                        ],
+                        "default": "broadcast"
+                    },
+                    "bfd": {
+                        "name": "bfd",
+                        "category": "unitary",
+                        "type": "option",
+                        "help": "Enable/disable Bidirectional Forwarding Detection (BFD).",
+                        "multiple_values": false,
+                        "options": [
+                            {
+                                "name": "global",
+                                "help": "Use global configuration of Bidirectional Forwarding Detection (BFD)."
+                            },
+                            {
+                                "name": "enable",
+                                "help": "Enable Bidirectional Forwarding Detection (BFD) on this interface."
+                            },
+                            {
+                                "name": "disable",
+                                "help": "Disable Bidirectional Forwarding Detection (BFD) on this interface."
+                            }
+                        ],
+                        "default": "global"
+                    },
+                    "mtu": {
+                        "name": "mtu",
+                        "category": "unitary",
+                        "type": "integer",
+                        "help": "MTU for OSPFv3 packets.",
+                        "min-value": 576,
+                        "max-value": 65535,
+                        "default": 0
+                    },
+                    "mtu-ignore": {
+                        "name": "mtu-ignore",
+                        "category": "unitary",
+                        "type": "option",
+                        "help": "Enable/disable ignoring MTU field in DBD packets.",
+                        "multiple_values": false,
+                        "options": [
+                            {
+                                "name": "enable",
+                                "help": "Ignore MTU field in DBD packets."
+                            },
+                            {
+                                "name": "disable",
+                                "help": "Do not ignore MTU field in DBD packets."
+                            }
+                        ],
+                        "default": "disable"
+                    },
+                    "authentication": {
+                        "name": "authentication",
+                        "category": "unitary",
+                        "type": "option",
+                        "help": "Authentication mode.",
+                        "multiple_values": false,
+                        "options": [
+                            {
+                                "name": "none",
+                                "help": "Disable authentication."
+                            },
+                            {
+                                "name": "ah",
+                                "help": "Authentication Header."
+                            },
+                            {
+                                "name": "esp",
+                                "help": "Encapsulating Security Payload."
+                            },
+                            {
+                                "name": "area",
+                                "help": "Use the routing area's authentication configuration."
+                            }
+                        ],
+                        "default": "area"
+                    },
+                    "key-rollover-interval": {
+                        "name": "key-rollover-interval",
+                        "category": "unitary",
+                        "type": "integer",
+                        "help": "Key roll-over interval.",
+                        "min-value": 300,
+                        "max-value": 216000,
+                        "default": 300
+                    },
+                    "ipsec-auth-alg": {
+                        "name": "ipsec-auth-alg",
+                        "category": "unitary",
+                        "type": "option",
+                        "help": "Authentication algorithm.",
+                        "multiple_values": false,
+                        "options": [
+                            {
+                                "name": "md5",
+                                "help": "MD5."
+                            },
+                            {
+                                "name": "sha1",
+                                "help": "SHA1."
+                            },
+                            {
+                                "name": "sha256",
+                                "help": "SHA256."
+                            },
+                            {
+                                "name": "sha384",
+                                "help": "SHA384."
+                            },
+                            {
+                                "name": "sha512",
+                                "help": "SHA512."
+                            }
+                        ],
+                        "default": "md5"
+                    },
+                    "ipsec-enc-alg": {
+                        "name": "ipsec-enc-alg",
+                        "category": "unitary",
+                        "type": "option",
+                        "help": "Encryption algorithm.",
+                        "multiple_values": false,
+                        "options": [
+                            {
+                                "name": "null",
+                                "help": "No encryption."
+                            },
+                            {
+                                "name": "des",
+                                "help": "DES."
+                            },
+                            {
+                                "name": "3des",
+                                "help": "3DES."
+                            },
+                            {
+                                "name": "aes128",
+                                "help": "AES128."
+                            },
+                            {
+                                "name": "aes192",
+                                "help": "AES192."
+                            },
+                            {
+                                "name": "aes256",
+                                "help": "AES256."
+                            }
+                        ],
+                        "default": "null"
+                    },
+                    "ipsec-keys": {
+                        "name": "ipsec-keys",
+                        "category": "table",
+                        "help": "IPsec authentication and encryption keys.",
+                        "mkey": "spi",
+                        "mkey_type": "integer",
+                        "children": {
+                            "spi": {
+                                "name": "spi",
+                                "category": "unitary",
+                                "type": "integer",
+                                "help": "Security Parameters Index.",
+                                "required": true,
+                                "min-value": 256,
+                                "max-value": 4294967295,
+                                "default": 0
+                            },
+                            "auth-key": {
+                                "name": "auth-key",
+                                "category": "unitary",
+                                "type": "password",
+                                "help": "Authentication key.",
+                                "size": 128
+                            },
+                            "enc-key": {
+                                "name": "enc-key",
+                                "category": "unitary",
+                                "type": "password",
+                                "help": "Encryption key.",
+                                "size": 128
+                            }
+                        },
+                        "max_table_size_vdom": 0,
+                        "max_table_size_global": 0,
+                        "max_table_size_item": 0
+                    },
+                    "neighbor": {
+                        "name": "neighbor",
+                        "category": "table",
+                        "help": "OSPFv3 neighbors are used when OSPFv3 runs on non-broadcast media",
+                        "mkey": "ip6",
+                        "mkey_type": "ipv6-address",
+                        "children": {
+                            "ip6": {
+                                "name": "ip6",
+                                "category": "unitary",
+                                "type": "ipv6-address",
+                                "help": "IPv6 link local address of the neighbor.",
+                                "required": true,
+                                "default": "::"
+                            },
+                            "poll-interval": {
+                                "name": "poll-interval",
+                                "category": "unitary",
+                                "type": "integer",
+                                "help": "Poll interval time in seconds.",
+                                "min-value": 1,
+                                "max-value": 65535,
+                                "default": 10
+                            },
+                            "cost": {
+                                "name": "cost",
+                                "category": "unitary",
+                                "type": "integer",
+                                "help": "Cost of the interface, value range from 0 to 65535, 0 means auto-cost.",
+                                "min-value": 0,
+                                "max-value": 65535,
+                                "default": 0
+                            },
+                            "priority": {
+                                "name": "priority",
+                                "category": "unitary",
+                                "type": "integer",
+                                "help": "priority",
+                                "min-value": 0,
+                                "max-value": 255,
+                                "default": 1
+                            }
+                        },
+                        "max_table_size_vdom": 0,
+                        "max_table_size_global": 0,
+                        "max_table_size_item": 0
+                    }
+                },
+                "max_table_size_vdom": 256,
+                "max_table_size_global": 512,
+                "max_table_size_item": 0
+            },
+            "redistribute": {
+                "name": "redistribute",
+                "category": "table",
+                "help": "Redistribute configuration.",
+                "readonly": true,
+                "mkey": "name",
+                "mkey_type": "string",
+                "children": {
+                    "name": {
+                        "name": "name",
+                        "category": "unitary",
+                        "type": "string",
+                        "help": "Redistribute name.",
+                        "required": true,
+                        "size": 35,
+                        "default": ""
+                    },
+                    "status": {
+                        "name": "status",
+                        "category": "unitary",
+                        "type": "option",
+                        "help": "status",
+                        "multiple_values": false,
+                        "options": [
+                            {
+                                "name": "enable",
+                                "help": "Enable setting."
+                            },
+                            {
+                                "name": "disable",
+                                "help": "Disable setting."
+                            }
+                        ],
+                        "default": "disable"
+                    },
+                    "metric": {
+                        "name": "metric",
+                        "category": "unitary",
+                        "type": "integer",
+                        "help": "Redistribute metric setting.",
+                        "min-value": 0,
+                        "max-value": 16777214,
+                        "default": 0
+                    },
+                    "routemap": {
+                        "name": "routemap",
+                        "category": "unitary",
+                        "type": "string",
+                        "help": "Route map name.",
+                        "datasource": [
+                            "router.route-map.name"
+                        ],
+                        "size": 35,
+                        "default": ""
+                    },
+                    "metric-type": {
+                        "name": "metric-type",
+                        "category": "unitary",
+                        "type": "option",
+                        "help": "Metric type.",
+                        "multiple_values": false,
+                        "options": [
+                            {
+                                "name": "1",
+                                "help": "Type 1."
+                            },
+                            {
+                                "name": "2",
+                                "help": "Type 2."
+                            }
+                        ],
+                        "default": "2"
+                    }
+                },
+                "max_table_size_vdom": 0,
+                "max_table_size_global": 0,
+                "max_table_size_item": 0
+            },
+            "passive-interface": {
+                "name": "passive-interface",
+                "category": "table",
+                "help": "Passive interface configuration.",
+                "member_table": true,
+                "mkey": "name",
+                "mkey_type": "string",
+                "children": {
+                    "name": {
+                        "name": "name",
+                        "category": "unitary",
+                        "type": "string",
+                        "help": "Passive interface name.",
+                        "required": true,
+                        "datasource": [
+                            "system.interface.name"
+                        ],
+                        "size": 79,
+                        "default": ""
+                    }
+                },
+                "max_table_size_vdom": 256,
+                "max_table_size_global": 512,
+                "max_table_size_item": 0
+            },
+            "summary-address": {
+                "name": "summary-address",
+                "category": "table",
+                "help": "IPv6 address summary configuration.",
+                "mkey": "id",
+                "mkey_type": "integer",
+                "children": {
+                    "id": {
+                        "name": "id",
+                        "category": "unitary",
+                        "type": "integer",
+                        "help": "Summary address entry ID.",
+                        "min-value": 0,
+                        "max-value": 4294967295,
+                        "default": 0
+                    },
+                    "prefix6": {
+                        "name": "prefix6",
+                        "category": "unitary",
+                        "type": "ipv6-network",
+                        "help": "IPv6 prefix.",
+                        "required": true,
+                        "default": "::/0"
+                    },
+                    "advertise": {
+                        "name": "advertise",
+                        "category": "unitary",
+                        "type": "option",
+                        "help": "Enable/disable advertise status.",
+                        "multiple_values": false,
+                        "options": [
+                            {
+                                "name": "disable",
+                                "help": "disable"
+                            },
+                            {
+                                "name": "enable",
+                                "help": "enable"
+                            }
+                        ],
+                        "default": "enable"
+                    },
+                    "tag": {
+                        "name": "tag",
+                        "category": "unitary",
+                        "type": "integer",
+                        "help": "Tag value.",
+                        "min-value": 0,
+                        "max-value": 4294967295,
+                        "default": 0
+                    }
+                },
+                "max_table_size_vdom": 256,
+                "max_table_size_global": 512,
+                "max_table_size_item": 0
+            }
+        },
+        "path": "router",
+        "q_type": 359,
+        "access_group": "netgrp"
+    },
+    "vdom": "root",
+    "path": "router",
+    "name": "ospf6",
+    "action": "schema",
+    "status": "success",
+    "http_status": 200,
+    "serial": "FGT60FTK20028507",
+    "version": "v7.0.1",
+    "build": 157
+}

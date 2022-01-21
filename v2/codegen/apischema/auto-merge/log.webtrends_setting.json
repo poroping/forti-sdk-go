@@ -1,0 +1,50 @@
+{
+	"addedIn": "v6.2.7",
+	"build": 237,
+	"http_method": "GET",
+	"http_status": 200,
+	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3",
+	"name": "setting",
+	"path": "log.webtrends",
+	"results": {
+		"access_group": "loggrp",
+		"category": "complex",
+		"children": {
+			"server": {
+				"category": "unitary",
+				"default": "",
+				"help": "Address of the remote WebTrends server.",
+				"name": "server",
+				"size": 63,
+				"type": "string"
+			},
+			"status": {
+				"category": "unitary",
+				"default": "disable",
+				"help": "Enable/disable logging to WebTrends.",
+				"multiple_values": false,
+				"name": "status",
+				"options": [
+					{
+						"help": "Enable logging to WebTrends.",
+						"name": "enable"
+					},
+					{
+						"help": "Disble logging to WebTrends.",
+						"name": "disable"
+					}
+				],
+				"type": "option"
+			}
+		},
+		"help": "Settings for WebTrends.",
+		"name": "setting",
+		"path": "log.webtrends",
+		"q_type": 67
+	},
+	"revision": "78ee061304af9c5d17bcae6474808d97",
+	"serial": "FGTAZRAQCG14L19D",
+	"status": "success",
+	"vdom": "root",
+	"version": "v7.0.3"
+}

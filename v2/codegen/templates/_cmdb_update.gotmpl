@@ -1,0 +1,21 @@
+{{define "cmdb_update"}}
+func (c *Client) Update{{.fpath}}(mkey string, payload *models.{{(mixedCase .path)}}{{(mixedCase .name)}}{{with .child_path}}{{(mixedCase .)}}{{end}}, params *models.CmdbRequestParams) (*models.CmdbResponse, error) {
+	body, err := json.Marshal(payload)
+	if err != nil {
+		return nil, err
+	}
+
+	req := &models.CmdbRequest{}
+	req.HTTPMethod = "PUT"
+	req.Mkey = &mkey
+	req.Payload = body
+	req.Path = models.CmdbBasePath + models.{{.fpath}}Path{{if not (eq .results.category "complex")}} + mkey + "/"{{end}}
+	req.Params = *params
+
+	res, err := request.CreateUpdate(c.config, req)
+	if err != nil {
+		return nil, err
+	}
+	return res, nil
+}
+{{end}}

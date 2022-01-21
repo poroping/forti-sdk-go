@@ -1,0 +1,78 @@
+{
+	"FullPath": null,
+	"addedIn": "v6.2.7",
+	"build": 234,
+	"http_method": "GET",
+	"http_status": 200,
+	"mergedVersions": "v6.2.7,v6.4.6,v7.0.2",
+	"name": "auto-install",
+	"path": "system",
+	"removedIn": "v6.4.0",
+	"results": {
+		"access_group": "sysgrp",
+		"category": "complex",
+		"children": {
+			"auto-install-config": {
+				"category": "unitary",
+				"default": "disable",
+				"help": "Enable/disable auto install the config in USB disk.",
+				"multiple_values": false,
+				"name": "auto-install-config",
+				"options": [
+					{
+						"help": "Enable config.",
+						"name": "enable"
+					},
+					{
+						"help": "Disable config.",
+						"name": "disable"
+					}
+				],
+				"type": "option"
+			},
+			"auto-install-image": {
+				"category": "unitary",
+				"default": "disable",
+				"help": "Enable/disable auto install the image in USB disk.",
+				"multiple_values": false,
+				"name": "auto-install-image",
+				"options": [
+					{
+						"help": "Enable config.",
+						"name": "enable"
+					},
+					{
+						"help": "Disable config.",
+						"name": "disable"
+					}
+				],
+				"type": "option"
+			},
+			"default-config-file": {
+				"category": "unitary",
+				"default": "fgt_system.conf",
+				"help": "Default config file name in USB disk.",
+				"name": "default-config-file",
+				"size": 127,
+				"type": "string"
+			},
+			"default-image-file": {
+				"category": "unitary",
+				"default": "image.out",
+				"help": "Default image file name in USB disk.",
+				"name": "default-image-file",
+				"size": 127,
+				"type": "string"
+			}
+		},
+		"help": "Configure USB auto installation.",
+		"name": "auto-install",
+		"path": "system",
+		"q_type": 158
+	},
+	"revision": "de3308b3e2398a64893efceba65b0541",
+	"serial": "FGT60FTK20028507",
+	"status": "success",
+	"vdom": "root",
+	"version": "v7.0.2"
+}

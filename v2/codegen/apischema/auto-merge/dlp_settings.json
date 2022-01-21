@@ -1,0 +1,84 @@
+{
+	"addedIn": "v6.2.7",
+	"build": 237,
+	"http_method": "GET",
+	"http_status": 200,
+	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3",
+	"name": "settings",
+	"path": "dlp",
+	"results": {
+		"access_group": "utmgrp",
+		"category": "complex",
+		"children": {
+			"cache-mem-percent": {
+				"category": "unitary",
+				"default": 2,
+				"help": "Maximum percentage of available memory allocated to caching (1 - 15%).",
+				"max-value": 15,
+				"min-value": 1,
+				"name": "cache-mem-percent",
+				"type": "integer"
+			},
+			"chunk-size": {
+				"category": "unitary",
+				"default": 2800,
+				"help": "Maximum fingerprint chunk size.  **Changing will flush the entire database**.",
+				"max-value": 100000,
+				"min-value": 100,
+				"name": "chunk-size",
+				"type": "integer"
+			},
+			"db-mode": {
+				"category": "unitary",
+				"default": "stop-adding",
+				"help": "Behaviour when the maximum size is reached.",
+				"multiple_values": false,
+				"name": "db-mode",
+				"options": [
+					{
+						"help": "Stop adding entries.",
+						"name": "stop-adding"
+					},
+					{
+						"help": "Remove modified chunks first, then oldest file entries.",
+						"name": "remove-modified-then-oldest"
+					},
+					{
+						"help": "Remove the oldest files first.",
+						"name": "remove-oldest"
+					}
+				],
+				"type": "option"
+			},
+			"size": {
+				"category": "unitary",
+				"default": 16,
+				"help": "Maximum total size of files within the storage (MB).",
+				"max-value": 4294967295,
+				"min-value": 16,
+				"name": "size",
+				"type": "integer"
+			},
+			"storage-device": {
+				"category": "unitary",
+				"datasource": [
+					"system.storage.name"
+				],
+				"default": "",
+				"help": "Storage device name.",
+				"name": "storage-device",
+				"size": 35,
+				"type": "string"
+			}
+		},
+		"help": "Designate logical storage for DLP fingerprint database.",
+		"name": "settings",
+		"path": "dlp",
+		"q_type": 244
+	},
+	"revision": "78ee061304af9c5d17bcae6474808d97",
+	"serial": "FGTAZRAQCG14L19D",
+	"status": "success",
+	"vdom": "root",
+	"version": "v7.0.3"
+}

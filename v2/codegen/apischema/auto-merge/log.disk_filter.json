@@ -1,0 +1,695 @@
+{
+	"addedIn": "v6.2.7",
+	"build": 237,
+	"http_method": "GET",
+	"http_status": 200,
+	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3",
+	"name": "filter",
+	"path": "log.disk",
+	"results": {
+		"access_group": "loggrp",
+		"category": "complex",
+		"children": {
+			"admin": {
+				"category": "unitary",
+				"help": "Enable/disable admin login/logout logging.",
+				"multiple_values": false,
+				"name": "admin",
+				"options": [
+					{
+						"help": "Enable admin login/logout logging.",
+						"name": "enable"
+					},
+					{
+						"help": "Disable admin login/logout logging.",
+						"name": "disable"
+					}
+				],
+				"removedIn": "v6.4.2",
+				"type": "option"
+			},
+			"anomaly": {
+				"category": "unitary",
+				"default": "enable",
+				"help": "Enable/disable anomaly logging.",
+				"multiple_values": false,
+				"name": "anomaly",
+				"options": [
+					{
+						"help": "Enable anomaly logging.",
+						"name": "enable"
+					},
+					{
+						"help": "Disable anomaly logging.",
+						"name": "disable"
+					}
+				],
+				"type": "option"
+			},
+			"auth": {
+				"category": "unitary",
+				"help": "Enable/disable firewall authentication logging.",
+				"multiple_values": false,
+				"name": "auth",
+				"options": [
+					{
+						"help": "Enable firewall authentication logging.",
+						"name": "enable"
+					},
+					{
+						"help": "Disable firewall authentication logging.",
+						"name": "disable"
+					}
+				],
+				"removedIn": "v6.4.2",
+				"type": "option"
+			},
+			"cpu-memory-usage": {
+				"category": "unitary",
+				"help": "Enable/disable CPU \u0026 memory usage logging every 5 minutes.",
+				"multiple_values": false,
+				"name": "cpu-memory-usage",
+				"options": [
+					{
+						"help": "Enable CPU \u0026 memory usage logging every 5 minutes.",
+						"name": "enable"
+					},
+					{
+						"help": "Disable CPU \u0026 memory usage logging every 5 minutes.",
+						"name": "disable"
+					}
+				],
+				"removedIn": "v6.4.2",
+				"type": "option"
+			},
+			"dhcp": {
+				"category": "unitary",
+				"help": "Enable/disable DHCP service messages logging.",
+				"multiple_values": false,
+				"name": "dhcp",
+				"options": [
+					{
+						"help": "Enable DHCP service messages logging.",
+						"name": "enable"
+					},
+					{
+						"help": "Disable DHCP service messages logging.",
+						"name": "disable"
+					}
+				],
+				"removedIn": "v6.4.2",
+				"type": "option"
+			},
+			"dlp-archive": {
+				"category": "unitary",
+				"help": "Enable/disable DLP archive logging.",
+				"multiple_values": false,
+				"name": "dlp-archive",
+				"options": [
+					{
+						"help": "Enable DLP archive logging.",
+						"name": "enable"
+					},
+					{
+						"help": "Disable DLP archive logging.",
+						"name": "disable"
+					}
+				],
+				"removedIn": "v6.4.0",
+				"type": "option"
+			},
+			"event": {
+				"category": "unitary",
+				"help": "Enable/disable event logging.",
+				"multiple_values": false,
+				"name": "event",
+				"options": [
+					{
+						"help": "Enable setting.",
+						"name": "enable"
+					},
+					{
+						"help": "Disable setting.",
+						"name": "disable"
+					}
+				],
+				"removedIn": "v6.4.2",
+				"type": "option"
+			},
+			"filter": {
+				"category": "unitary",
+				"default": "",
+				"help": "Disk log filter.",
+				"name": "filter",
+				"removedIn": "v7.0.0",
+				"size": 1023,
+				"type": "string"
+			},
+			"filter-type": {
+				"category": "unitary",
+				"default": "include",
+				"help": "Include/exclude logs that match the filter.",
+				"multiple_values": false,
+				"name": "filter-type",
+				"options": [
+					{
+						"help": "Include logs that match the filter.",
+						"name": "include"
+					},
+					{
+						"help": "Exclude logs that match the filter.",
+						"name": "exclude"
+					}
+				],
+				"removedIn": "v7.0.0",
+				"type": "option"
+			},
+			"forward-traffic": {
+				"category": "unitary",
+				"default": "enable",
+				"help": "Enable/disable forward traffic logging.",
+				"multiple_values": false,
+				"name": "forward-traffic",
+				"options": [
+					{
+						"help": "Enable forward traffic logging.",
+						"name": "enable"
+					},
+					{
+						"help": "Disable forward traffic logging.",
+						"name": "disable"
+					}
+				],
+				"type": "option"
+			},
+			"free-style": {
+				"addedIn": "v7.0.0",
+				"category": "table",
+				"children": {
+					"category": {
+						"category": "unitary",
+						"default": "traffic",
+						"help": "Log category.",
+						"multiple_values": false,
+						"name": "category",
+						"options": [
+							{
+								"help": "Traffic log.",
+								"name": "traffic"
+							},
+							{
+								"help": "Event log.",
+								"name": "event"
+							},
+							{
+								"help": "Antivirus log.",
+								"name": "virus"
+							},
+							{
+								"help": "Web filter log.",
+								"name": "webfilter"
+							},
+							{
+								"help": "Attack log.",
+								"name": "attack"
+							},
+							{
+								"help": "Antispam log.",
+								"name": "spam"
+							},
+							{
+								"help": "Anomaly log.",
+								"name": "anomaly"
+							},
+							{
+								"help": "VoIP log.",
+								"name": "voip"
+							},
+							{
+								"help": "DLP log.",
+								"name": "dlp"
+							},
+							{
+								"help": "Application control log.",
+								"name": "app-ctrl"
+							},
+							{
+								"help": "Web application firewall log.",
+								"name": "waf"
+							},
+							{
+								"help": "GTP log.",
+								"name": "gtp"
+							},
+							{
+								"help": "DNS detail log.",
+								"name": "dns"
+							},
+							{
+								"help": "SSH log.",
+								"name": "ssh"
+							},
+							{
+								"help": "SSL log.",
+								"name": "ssl"
+							},
+							{
+								"help": "File filter log.",
+								"name": "file-filter"
+							},
+							{
+								"help": "ICAP log.",
+								"name": "icap"
+							},
+							{
+								"help": "Zero trust network access log.",
+								"name": "ztna"
+							}
+						],
+						"required": true,
+						"type": "option"
+					},
+					"filter": {
+						"category": "unitary",
+						"default": "",
+						"help": "Free style filter string.",
+						"name": "filter",
+						"required": true,
+						"size": 1023,
+						"type": "string"
+					},
+					"filter-type": {
+						"category": "unitary",
+						"default": "include",
+						"help": "Include/exclude logs that match the filter.",
+						"multiple_values": false,
+						"name": "filter-type",
+						"options": [
+							{
+								"help": "Include logs that match the filter.",
+								"name": "include"
+							},
+							{
+								"help": "Exclude logs that match the filter.",
+								"name": "exclude"
+							}
+						],
+						"type": "option"
+					},
+					"id": {
+						"category": "unitary",
+						"default": 0,
+						"help": "Entry ID.",
+						"max-value": 4294967295,
+						"min-value": 0,
+						"name": "id",
+						"type": "integer"
+					}
+				},
+				"help": "Free Style Filters",
+				"max_table_size_global": 512,
+				"max_table_size_item": 0,
+				"max_table_size_vdom": 256,
+				"mkey": "id",
+				"mkey_type": "integer",
+				"name": "free-style"
+			},
+			"gtp": {
+				"addedIn": "v6.4.0",
+				"category": "unitary",
+				"default": "enable",
+				"help": "Enable/disable GTP messages logging.",
+				"multiple_values": false,
+				"name": "gtp",
+				"options": [
+					{
+						"help": "Enable GTP messages logging.",
+						"name": "enable"
+					},
+					{
+						"help": "Disable GTP messages logging.",
+						"name": "disable"
+					}
+				],
+				"type": "option"
+			},
+			"ha": {
+				"category": "unitary",
+				"help": "Enable/disable HA logging.",
+				"multiple_values": false,
+				"name": "ha",
+				"options": [
+					{
+						"help": "Enable HA logging.",
+						"name": "enable"
+					},
+					{
+						"help": "Disable HA logging.",
+						"name": "disable"
+					}
+				],
+				"removedIn": "v6.4.2",
+				"type": "option"
+			},
+			"ipsec": {
+				"category": "unitary",
+				"help": "Enable/disable IPsec negotiation messages logging.",
+				"multiple_values": false,
+				"name": "ipsec",
+				"options": [
+					{
+						"help": "Enable IPsec negotiation messages logging.",
+						"name": "enable"
+					},
+					{
+						"help": "Disable IPsec negotiation messages logging.",
+						"name": "disable"
+					}
+				],
+				"removedIn": "v6.4.2",
+				"type": "option"
+			},
+			"ldb-monitor": {
+				"category": "unitary",
+				"help": "Enable/disable VIP real server health monitoring logging.",
+				"multiple_values": false,
+				"name": "ldb-monitor",
+				"options": [
+					{
+						"help": "Enable VIP real server health monitoring logging.",
+						"name": "enable"
+					},
+					{
+						"help": "Disable VIP real server health monitoring logging.",
+						"name": "disable"
+					}
+				],
+				"removedIn": "v6.4.2",
+				"type": "option"
+			},
+			"local-traffic": {
+				"category": "unitary",
+				"default": "enable",
+				"help": "Enable/disable local in or out traffic logging.",
+				"multiple_values": false,
+				"name": "local-traffic",
+				"options": [
+					{
+						"help": "Enable local in or out traffic logging.",
+						"name": "enable"
+					},
+					{
+						"help": "Disable local in or out traffic logging.",
+						"name": "disable"
+					}
+				],
+				"type": "option"
+			},
+			"multicast-traffic": {
+				"category": "unitary",
+				"default": "enable",
+				"help": "Enable/disable multicast traffic logging.",
+				"multiple_values": false,
+				"name": "multicast-traffic",
+				"options": [
+					{
+						"help": "Enable multicast traffic logging.",
+						"name": "enable"
+					},
+					{
+						"help": "Disable multicast traffic logging.",
+						"name": "disable"
+					}
+				],
+				"type": "option"
+			},
+			"pattern": {
+				"category": "unitary",
+				"help": "Enable/disable pattern update logging.",
+				"multiple_values": false,
+				"name": "pattern",
+				"options": [
+					{
+						"help": "Enable pattern update logging.",
+						"name": "enable"
+					},
+					{
+						"help": "Disable pattern update logging.",
+						"name": "disable"
+					}
+				],
+				"removedIn": "v6.4.2",
+				"type": "option"
+			},
+			"ppp": {
+				"category": "unitary",
+				"help": "Enable/disable L2TP/PPTP/PPPoE logging.",
+				"multiple_values": false,
+				"name": "ppp",
+				"options": [
+					{
+						"help": "Enable L2TP/PPTP/PPPoE logging.",
+						"name": "enable"
+					},
+					{
+						"help": "Disable L2TP/PPTP/PPPoE logging.",
+						"name": "disable"
+					}
+				],
+				"removedIn": "v6.4.2",
+				"type": "option"
+			},
+			"radius": {
+				"category": "unitary",
+				"help": "Enable/disable RADIUS messages logging.",
+				"multiple_values": false,
+				"name": "radius",
+				"options": [
+					{
+						"help": "Enable RADIUS messages logging.",
+						"name": "enable"
+					},
+					{
+						"help": "Disable RADIUS messages logging.",
+						"name": "disable"
+					}
+				],
+				"removedIn": "v6.4.2",
+				"type": "option"
+			},
+			"severity": {
+				"category": "unitary",
+				"default": "information",
+				"help": "Log to disk every message above and including this severity level.",
+				"multiple_values": false,
+				"name": "severity",
+				"options": [
+					{
+						"help": "Emergency level.",
+						"name": "emergency"
+					},
+					{
+						"help": "Alert level.",
+						"name": "alert"
+					},
+					{
+						"help": "Critical level.",
+						"name": "critical"
+					},
+					{
+						"help": "Error level.",
+						"name": "error"
+					},
+					{
+						"help": "Warning level.",
+						"name": "warning"
+					},
+					{
+						"help": "Notification level.",
+						"name": "notification"
+					},
+					{
+						"help": "Information level.",
+						"name": "information"
+					},
+					{
+						"help": "Debug level.",
+						"name": "debug"
+					}
+				],
+				"type": "option"
+			},
+			"sniffer-traffic": {
+				"category": "unitary",
+				"default": "enable",
+				"help": "Enable/disable sniffer traffic logging.",
+				"multiple_values": false,
+				"name": "sniffer-traffic",
+				"options": [
+					{
+						"help": "Enable sniffer traffic logging.",
+						"name": "enable"
+					},
+					{
+						"help": "Disable sniffer traffic logging.",
+						"name": "disable"
+					}
+				],
+				"type": "option"
+			},
+			"sslvpn-log-adm": {
+				"category": "unitary",
+				"help": "Enable/disable SSL administrator login logging.",
+				"multiple_values": false,
+				"name": "sslvpn-log-adm",
+				"options": [
+					{
+						"help": "Enable SSL administrator logging.",
+						"name": "enable"
+					},
+					{
+						"help": "Disable SSL administrator logging.",
+						"name": "disable"
+					}
+				],
+				"removedIn": "v6.4.2",
+				"type": "option"
+			},
+			"sslvpn-log-auth": {
+				"category": "unitary",
+				"help": "Enable/disable SSL user authentication logging.",
+				"multiple_values": false,
+				"name": "sslvpn-log-auth",
+				"options": [
+					{
+						"help": "Enable SSL user authentication logging.",
+						"name": "enable"
+					},
+					{
+						"help": "Disable SSL user authentication logging.",
+						"name": "disable"
+					}
+				],
+				"removedIn": "v6.4.2",
+				"type": "option"
+			},
+			"sslvpn-log-session": {
+				"category": "unitary",
+				"help": "Enable/disable SSL session logging.",
+				"multiple_values": false,
+				"name": "sslvpn-log-session",
+				"options": [
+					{
+						"help": "Enable SSL session logging.",
+						"name": "enable"
+					},
+					{
+						"help": "Disable SSL session logging.",
+						"name": "disable"
+					}
+				],
+				"removedIn": "v6.4.2",
+				"type": "option"
+			},
+			"system": {
+				"category": "unitary",
+				"help": "Enable/disable system activity logging.",
+				"multiple_values": false,
+				"name": "system",
+				"options": [
+					{
+						"help": "Enable system activity logging.",
+						"name": "enable"
+					},
+					{
+						"help": "Disable system activity logging.",
+						"name": "disable"
+					}
+				],
+				"removedIn": "v6.4.2",
+				"type": "option"
+			},
+			"vip-ssl": {
+				"category": "unitary",
+				"help": "Enable/disable VIP SSL logging.",
+				"multiple_values": false,
+				"name": "vip-ssl",
+				"options": [
+					{
+						"help": "Enable VIP SSL logging.",
+						"name": "enable"
+					},
+					{
+						"help": "Disable VIP SSL logging.",
+						"name": "disable"
+					}
+				],
+				"removedIn": "v6.4.2",
+				"type": "option"
+			},
+			"voip": {
+				"category": "unitary",
+				"default": "enable",
+				"help": "Enable/disable VoIP logging.",
+				"multiple_values": false,
+				"name": "voip",
+				"options": [
+					{
+						"help": "Enable VoIP logging.",
+						"name": "enable"
+					},
+					{
+						"help": "Disable VoIP logging.",
+						"name": "disable"
+					}
+				],
+				"type": "option"
+			},
+			"wan-opt": {
+				"category": "unitary",
+				"help": "Enable/disable WAN optimization event logging.",
+				"multiple_values": false,
+				"name": "wan-opt",
+				"options": [
+					{
+						"help": "Enable WAN optimization event logging.",
+						"name": "enable"
+					},
+					{
+						"help": "Disable WAN optimization event logging.",
+						"name": "disable"
+					}
+				],
+				"removedIn": "v6.4.2",
+				"type": "option"
+			},
+			"wireless-activity": {
+				"category": "unitary",
+				"help": "Enable/disable wireless activity event logging.",
+				"multiple_values": false,
+				"name": "wireless-activity",
+				"options": [
+					{
+						"help": "Enable wireless activity event logging.",
+						"name": "enable"
+					},
+					{
+						"help": "Disable wireless activity event logging.",
+						"name": "disable"
+					}
+				],
+				"removedIn": "v6.4.2",
+				"type": "option"
+			}
+		},
+		"help": "Configure filters for local disk logging. Use these filters to determine the log messages to record according to severity and type.",
+		"name": "filter",
+		"path": "log.disk",
+		"q_type": 74
+	},
+	"revision": "78ee061304af9c5d17bcae6474808d97",
+	"serial": "FGTAZRAQCG14L19D",
+	"status": "success",
+	"vdom": "root",
+	"version": "v7.0.3"
+}
