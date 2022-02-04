@@ -10,6 +10,8 @@ import (
 	"os"
 	"strings"
 	"text/template"
+
+	"golang.org/x/tools/imports"
 )
 
 const (
@@ -124,6 +126,10 @@ func render(templateName, fileName string, t *template.Template, m map[string]in
 	// Debug
 	// f := buf.Bytes()
 	// fmt.Println(f)
+	f, err = imports.Process("", f, nil)
+	if err != nil {
+		panic(err)
+	}
 
 	perm := int(0755)
 	resname := strings.TrimSuffix(fileName, ".json")

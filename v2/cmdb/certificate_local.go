@@ -3,6 +3,7 @@ package cmdb
 import (
 	"encoding/json"
 	"log"
+	"net/url"
 
 	"github.com/poroping/forti-sdk-go/v2/models"
 	"github.com/poroping/forti-sdk-go/v2/request"
