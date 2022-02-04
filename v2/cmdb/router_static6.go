@@ -46,7 +46,7 @@ func (c *Client) ReadRouterStatic6(mkey string, params *models.CmdbRequestParams
 	req.HTTPMethod = "GET"
 	req.Mkey = &mkey
 	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.RouterStatic6Path + mkey + "/"
+	req.Path = models.CmdbBasePath + models.RouterStatic6Path + url.PathEscape(mkey) + "/"
 	req.Params = *params
 
 	res, err := request.Read(c.config, req)
@@ -79,7 +79,7 @@ func (c *Client) UpdateRouterStatic6(mkey string, payload *models.RouterStatic6,
 	req.HTTPMethod = "PUT"
 	req.Mkey = &mkey
 	req.Payload = body
-	req.Path = models.CmdbBasePath + models.RouterStatic6Path + mkey + "/"
+	req.Path = models.CmdbBasePath + models.RouterStatic6Path + url.PathEscape(mkey) + "/"
 	req.Params = *params
 
 	res, err := request.CreateUpdate(c.config, req)
@@ -94,7 +94,7 @@ func (c *Client) DeleteRouterStatic6(mkey string, params *models.CmdbRequestPara
 	req.HTTPMethod = "DELETE"
 	req.Mkey = &mkey
 	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.RouterStatic6Path + mkey + "/"
+	req.Path = models.CmdbBasePath + models.RouterStatic6Path + url.PathEscape(mkey) + "/"
 	req.Params = *params
 
 	err := request.Delete(c.config, req)

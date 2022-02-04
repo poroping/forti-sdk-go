@@ -45,7 +45,7 @@ func (c *Client) ReadSystemReplacemsgFortiguardWf(mkey string, params *models.Cm
 	req.HTTPMethod = "GET"
 	req.Mkey = &mkey
 	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.SystemReplacemsgFortiguardWfPath + mkey + "/"
+	req.Path = models.CmdbBasePath + models.SystemReplacemsgFortiguardWfPath + url.PathEscape(mkey) + "/"
 	req.Params = *params
 
 	res, err := request.Read(c.config, req)
@@ -78,7 +78,7 @@ func (c *Client) UpdateSystemReplacemsgFortiguardWf(mkey string, payload *models
 	req.HTTPMethod = "PUT"
 	req.Mkey = &mkey
 	req.Payload = body
-	req.Path = models.CmdbBasePath + models.SystemReplacemsgFortiguardWfPath + mkey + "/"
+	req.Path = models.CmdbBasePath + models.SystemReplacemsgFortiguardWfPath + url.PathEscape(mkey) + "/"
 	req.Params = *params
 
 	res, err := request.CreateUpdate(c.config, req)
@@ -93,7 +93,7 @@ func (c *Client) DeleteSystemReplacemsgFortiguardWf(mkey string, params *models.
 	req.HTTPMethod = "DELETE"
 	req.Mkey = &mkey
 	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.SystemReplacemsgFortiguardWfPath + mkey + "/"
+	req.Path = models.CmdbBasePath + models.SystemReplacemsgFortiguardWfPath + url.PathEscape(mkey) + "/"
 	req.Params = *params
 
 	err := request.Delete(c.config, req)

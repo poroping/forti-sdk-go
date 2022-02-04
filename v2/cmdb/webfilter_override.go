@@ -46,7 +46,7 @@ func (c *Client) ReadWebfilterOverride(mkey string, params *models.CmdbRequestPa
 	req.HTTPMethod = "GET"
 	req.Mkey = &mkey
 	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.WebfilterOverridePath + mkey + "/"
+	req.Path = models.CmdbBasePath + models.WebfilterOverridePath + url.PathEscape(mkey) + "/"
 	req.Params = *params
 
 	res, err := request.Read(c.config, req)
@@ -79,7 +79,7 @@ func (c *Client) UpdateWebfilterOverride(mkey string, payload *models.WebfilterO
 	req.HTTPMethod = "PUT"
 	req.Mkey = &mkey
 	req.Payload = body
-	req.Path = models.CmdbBasePath + models.WebfilterOverridePath + mkey + "/"
+	req.Path = models.CmdbBasePath + models.WebfilterOverridePath + url.PathEscape(mkey) + "/"
 	req.Params = *params
 
 	res, err := request.CreateUpdate(c.config, req)
@@ -94,7 +94,7 @@ func (c *Client) DeleteWebfilterOverride(mkey string, params *models.CmdbRequest
 	req.HTTPMethod = "DELETE"
 	req.Mkey = &mkey
 	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.WebfilterOverridePath + mkey + "/"
+	req.Path = models.CmdbBasePath + models.WebfilterOverridePath + url.PathEscape(mkey) + "/"
 	req.Params = *params
 
 	err := request.Delete(c.config, req)

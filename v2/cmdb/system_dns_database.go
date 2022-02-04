@@ -45,7 +45,7 @@ func (c *Client) ReadSystemDnsDatabase(mkey string, params *models.CmdbRequestPa
 	req.HTTPMethod = "GET"
 	req.Mkey = &mkey
 	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.SystemDnsDatabasePath + mkey + "/"
+	req.Path = models.CmdbBasePath + models.SystemDnsDatabasePath + url.PathEscape(mkey) + "/"
 	req.Params = *params
 
 	res, err := request.Read(c.config, req)
@@ -78,7 +78,7 @@ func (c *Client) UpdateSystemDnsDatabase(mkey string, payload *models.SystemDnsD
 	req.HTTPMethod = "PUT"
 	req.Mkey = &mkey
 	req.Payload = body
-	req.Path = models.CmdbBasePath + models.SystemDnsDatabasePath + mkey + "/"
+	req.Path = models.CmdbBasePath + models.SystemDnsDatabasePath + url.PathEscape(mkey) + "/"
 	req.Params = *params
 
 	res, err := request.CreateUpdate(c.config, req)
@@ -93,7 +93,7 @@ func (c *Client) DeleteSystemDnsDatabase(mkey string, params *models.CmdbRequest
 	req.HTTPMethod = "DELETE"
 	req.Mkey = &mkey
 	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.SystemDnsDatabasePath + mkey + "/"
+	req.Path = models.CmdbBasePath + models.SystemDnsDatabasePath + url.PathEscape(mkey) + "/"
 	req.Params = *params
 
 	err := request.Delete(c.config, req)

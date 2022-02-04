@@ -45,7 +45,7 @@ func (c *Client) ReadSwitchControllerMacPolicy(mkey string, params *models.CmdbR
 	req.HTTPMethod = "GET"
 	req.Mkey = &mkey
 	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.SwitchControllerMacPolicyPath + mkey + "/"
+	req.Path = models.CmdbBasePath + models.SwitchControllerMacPolicyPath + url.PathEscape(mkey) + "/"
 	req.Params = *params
 
 	res, err := request.Read(c.config, req)
@@ -78,7 +78,7 @@ func (c *Client) UpdateSwitchControllerMacPolicy(mkey string, payload *models.Sw
 	req.HTTPMethod = "PUT"
 	req.Mkey = &mkey
 	req.Payload = body
-	req.Path = models.CmdbBasePath + models.SwitchControllerMacPolicyPath + mkey + "/"
+	req.Path = models.CmdbBasePath + models.SwitchControllerMacPolicyPath + url.PathEscape(mkey) + "/"
 	req.Params = *params
 
 	res, err := request.CreateUpdate(c.config, req)
@@ -93,7 +93,7 @@ func (c *Client) DeleteSwitchControllerMacPolicy(mkey string, params *models.Cmd
 	req.HTTPMethod = "DELETE"
 	req.Mkey = &mkey
 	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.SwitchControllerMacPolicyPath + mkey + "/"
+	req.Path = models.CmdbBasePath + models.SwitchControllerMacPolicyPath + url.PathEscape(mkey) + "/"
 	req.Params = *params
 
 	err := request.Delete(c.config, req)

@@ -45,7 +45,7 @@ func (c *Client) ReadWanoptAuthGroup(mkey string, params *models.CmdbRequestPara
 	req.HTTPMethod = "GET"
 	req.Mkey = &mkey
 	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.WanoptAuthGroupPath + mkey + "/"
+	req.Path = models.CmdbBasePath + models.WanoptAuthGroupPath + url.PathEscape(mkey) + "/"
 	req.Params = *params
 
 	res, err := request.Read(c.config, req)
@@ -78,7 +78,7 @@ func (c *Client) UpdateWanoptAuthGroup(mkey string, payload *models.WanoptAuthGr
 	req.HTTPMethod = "PUT"
 	req.Mkey = &mkey
 	req.Payload = body
-	req.Path = models.CmdbBasePath + models.WanoptAuthGroupPath + mkey + "/"
+	req.Path = models.CmdbBasePath + models.WanoptAuthGroupPath + url.PathEscape(mkey) + "/"
 	req.Params = *params
 
 	res, err := request.CreateUpdate(c.config, req)
@@ -93,7 +93,7 @@ func (c *Client) DeleteWanoptAuthGroup(mkey string, params *models.CmdbRequestPa
 	req.HTTPMethod = "DELETE"
 	req.Mkey = &mkey
 	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.WanoptAuthGroupPath + mkey + "/"
+	req.Path = models.CmdbBasePath + models.WanoptAuthGroupPath + url.PathEscape(mkey) + "/"
 	req.Params = *params
 
 	err := request.Delete(c.config, req)

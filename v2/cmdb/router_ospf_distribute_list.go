@@ -46,7 +46,7 @@ func (c *Client) ReadRouterOspfDistributeList(mkey string, params *models.CmdbRe
 	req.HTTPMethod = "GET"
 	req.Mkey = &mkey
 	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.RouterOspfDistributeListPath + mkey + "/"
+	req.Path = models.CmdbBasePath + models.RouterOspfDistributeListPath + url.PathEscape(mkey) + "/"
 	req.Params = *params
 
 	res, err := request.Read(c.config, req)
@@ -79,7 +79,7 @@ func (c *Client) UpdateRouterOspfDistributeList(mkey string, payload *models.Rou
 	req.HTTPMethod = "PUT"
 	req.Mkey = &mkey
 	req.Payload = body
-	req.Path = models.CmdbBasePath + models.RouterOspfDistributeListPath + mkey + "/"
+	req.Path = models.CmdbBasePath + models.RouterOspfDistributeListPath + url.PathEscape(mkey) + "/"
 	req.Params = *params
 
 	res, err := request.CreateUpdate(c.config, req)
@@ -94,7 +94,7 @@ func (c *Client) DeleteRouterOspfDistributeList(mkey string, params *models.Cmdb
 	req.HTTPMethod = "DELETE"
 	req.Mkey = &mkey
 	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.RouterOspfDistributeListPath + mkey + "/"
+	req.Path = models.CmdbBasePath + models.RouterOspfDistributeListPath + url.PathEscape(mkey) + "/"
 	req.Params = *params
 
 	err := request.Delete(c.config, req)

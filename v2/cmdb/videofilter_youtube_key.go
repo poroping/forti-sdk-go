@@ -46,7 +46,7 @@ func (c *Client) ReadVideofilterYoutubeKey(mkey string, params *models.CmdbReque
 	req.HTTPMethod = "GET"
 	req.Mkey = &mkey
 	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.VideofilterYoutubeKeyPath + mkey + "/"
+	req.Path = models.CmdbBasePath + models.VideofilterYoutubeKeyPath + url.PathEscape(mkey) + "/"
 	req.Params = *params
 
 	res, err := request.Read(c.config, req)
@@ -79,7 +79,7 @@ func (c *Client) UpdateVideofilterYoutubeKey(mkey string, payload *models.Videof
 	req.HTTPMethod = "PUT"
 	req.Mkey = &mkey
 	req.Payload = body
-	req.Path = models.CmdbBasePath + models.VideofilterYoutubeKeyPath + mkey + "/"
+	req.Path = models.CmdbBasePath + models.VideofilterYoutubeKeyPath + url.PathEscape(mkey) + "/"
 	req.Params = *params
 
 	res, err := request.CreateUpdate(c.config, req)
@@ -94,7 +94,7 @@ func (c *Client) DeleteVideofilterYoutubeKey(mkey string, params *models.CmdbReq
 	req.HTTPMethod = "DELETE"
 	req.Mkey = &mkey
 	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.VideofilterYoutubeKeyPath + mkey + "/"
+	req.Path = models.CmdbBasePath + models.VideofilterYoutubeKeyPath + url.PathEscape(mkey) + "/"
 	req.Params = *params
 
 	err := request.Delete(c.config, req)

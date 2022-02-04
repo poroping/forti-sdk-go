@@ -45,7 +45,7 @@ func (c *Client) ReadRouterAuthPath(mkey string, params *models.CmdbRequestParam
 	req.HTTPMethod = "GET"
 	req.Mkey = &mkey
 	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.RouterAuthPathPath + mkey + "/"
+	req.Path = models.CmdbBasePath + models.RouterAuthPathPath + url.PathEscape(mkey) + "/"
 	req.Params = *params
 
 	res, err := request.Read(c.config, req)
@@ -78,7 +78,7 @@ func (c *Client) UpdateRouterAuthPath(mkey string, payload *models.RouterAuthPat
 	req.HTTPMethod = "PUT"
 	req.Mkey = &mkey
 	req.Payload = body
-	req.Path = models.CmdbBasePath + models.RouterAuthPathPath + mkey + "/"
+	req.Path = models.CmdbBasePath + models.RouterAuthPathPath + url.PathEscape(mkey) + "/"
 	req.Params = *params
 
 	res, err := request.CreateUpdate(c.config, req)
@@ -93,7 +93,7 @@ func (c *Client) DeleteRouterAuthPath(mkey string, params *models.CmdbRequestPar
 	req.HTTPMethod = "DELETE"
 	req.Mkey = &mkey
 	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.RouterAuthPathPath + mkey + "/"
+	req.Path = models.CmdbBasePath + models.RouterAuthPathPath + url.PathEscape(mkey) + "/"
 	req.Params = *params
 
 	err := request.Delete(c.config, req)

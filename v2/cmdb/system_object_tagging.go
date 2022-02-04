@@ -45,7 +45,7 @@ func (c *Client) ReadSystemObjectTagging(mkey string, params *models.CmdbRequest
 	req.HTTPMethod = "GET"
 	req.Mkey = &mkey
 	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.SystemObjectTaggingPath + mkey + "/"
+	req.Path = models.CmdbBasePath + models.SystemObjectTaggingPath + url.PathEscape(mkey) + "/"
 	req.Params = *params
 
 	res, err := request.Read(c.config, req)
@@ -78,7 +78,7 @@ func (c *Client) UpdateSystemObjectTagging(mkey string, payload *models.SystemOb
 	req.HTTPMethod = "PUT"
 	req.Mkey = &mkey
 	req.Payload = body
-	req.Path = models.CmdbBasePath + models.SystemObjectTaggingPath + mkey + "/"
+	req.Path = models.CmdbBasePath + models.SystemObjectTaggingPath + url.PathEscape(mkey) + "/"
 	req.Params = *params
 
 	res, err := request.CreateUpdate(c.config, req)
@@ -93,7 +93,7 @@ func (c *Client) DeleteSystemObjectTagging(mkey string, params *models.CmdbReque
 	req.HTTPMethod = "DELETE"
 	req.Mkey = &mkey
 	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.SystemObjectTaggingPath + mkey + "/"
+	req.Path = models.CmdbBasePath + models.SystemObjectTaggingPath + url.PathEscape(mkey) + "/"
 	req.Params = *params
 
 	err := request.Delete(c.config, req)

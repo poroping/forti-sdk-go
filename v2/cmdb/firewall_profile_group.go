@@ -45,7 +45,7 @@ func (c *Client) ReadFirewallProfileGroup(mkey string, params *models.CmdbReques
 	req.HTTPMethod = "GET"
 	req.Mkey = &mkey
 	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.FirewallProfileGroupPath + mkey + "/"
+	req.Path = models.CmdbBasePath + models.FirewallProfileGroupPath + url.PathEscape(mkey) + "/"
 	req.Params = *params
 
 	res, err := request.Read(c.config, req)
@@ -78,7 +78,7 @@ func (c *Client) UpdateFirewallProfileGroup(mkey string, payload *models.Firewal
 	req.HTTPMethod = "PUT"
 	req.Mkey = &mkey
 	req.Payload = body
-	req.Path = models.CmdbBasePath + models.FirewallProfileGroupPath + mkey + "/"
+	req.Path = models.CmdbBasePath + models.FirewallProfileGroupPath + url.PathEscape(mkey) + "/"
 	req.Params = *params
 
 	res, err := request.CreateUpdate(c.config, req)
@@ -93,7 +93,7 @@ func (c *Client) DeleteFirewallProfileGroup(mkey string, params *models.CmdbRequ
 	req.HTTPMethod = "DELETE"
 	req.Mkey = &mkey
 	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.FirewallProfileGroupPath + mkey + "/"
+	req.Path = models.CmdbBasePath + models.FirewallProfileGroupPath + url.PathEscape(mkey) + "/"
 	req.Params = *params
 
 	err := request.Delete(c.config, req)

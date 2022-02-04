@@ -45,7 +45,7 @@ func (c *Client) ReadVoipProfile(mkey string, params *models.CmdbRequestParams) 
 	req.HTTPMethod = "GET"
 	req.Mkey = &mkey
 	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.VoipProfilePath + mkey + "/"
+	req.Path = models.CmdbBasePath + models.VoipProfilePath + url.PathEscape(mkey) + "/"
 	req.Params = *params
 
 	res, err := request.Read(c.config, req)
@@ -78,7 +78,7 @@ func (c *Client) UpdateVoipProfile(mkey string, payload *models.VoipProfile, par
 	req.HTTPMethod = "PUT"
 	req.Mkey = &mkey
 	req.Payload = body
-	req.Path = models.CmdbBasePath + models.VoipProfilePath + mkey + "/"
+	req.Path = models.CmdbBasePath + models.VoipProfilePath + url.PathEscape(mkey) + "/"
 	req.Params = *params
 
 	res, err := request.CreateUpdate(c.config, req)
@@ -93,7 +93,7 @@ func (c *Client) DeleteVoipProfile(mkey string, params *models.CmdbRequestParams
 	req.HTTPMethod = "DELETE"
 	req.Mkey = &mkey
 	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.VoipProfilePath + mkey + "/"
+	req.Path = models.CmdbBasePath + models.VoipProfilePath + url.PathEscape(mkey) + "/"
 	req.Params = *params
 
 	err := request.Delete(c.config, req)

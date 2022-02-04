@@ -46,7 +46,7 @@ func (c *Client) ReadIpsRuleSettings(mkey string, params *models.CmdbRequestPara
 	req.HTTPMethod = "GET"
 	req.Mkey = &mkey
 	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.IpsRuleSettingsPath + mkey + "/"
+	req.Path = models.CmdbBasePath + models.IpsRuleSettingsPath + url.PathEscape(mkey) + "/"
 	req.Params = *params
 
 	res, err := request.Read(c.config, req)
@@ -79,7 +79,7 @@ func (c *Client) UpdateIpsRuleSettings(mkey string, payload *models.IpsRuleSetti
 	req.HTTPMethod = "PUT"
 	req.Mkey = &mkey
 	req.Payload = body
-	req.Path = models.CmdbBasePath + models.IpsRuleSettingsPath + mkey + "/"
+	req.Path = models.CmdbBasePath + models.IpsRuleSettingsPath + url.PathEscape(mkey) + "/"
 	req.Params = *params
 
 	res, err := request.CreateUpdate(c.config, req)
@@ -94,7 +94,7 @@ func (c *Client) DeleteIpsRuleSettings(mkey string, params *models.CmdbRequestPa
 	req.HTTPMethod = "DELETE"
 	req.Mkey = &mkey
 	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.IpsRuleSettingsPath + mkey + "/"
+	req.Path = models.CmdbBasePath + models.IpsRuleSettingsPath + url.PathEscape(mkey) + "/"
 	req.Params = *params
 
 	err := request.Delete(c.config, req)

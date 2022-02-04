@@ -45,7 +45,7 @@ func (c *Client) ReadSystemAutomationTrigger(mkey string, params *models.CmdbReq
 	req.HTTPMethod = "GET"
 	req.Mkey = &mkey
 	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.SystemAutomationTriggerPath + mkey + "/"
+	req.Path = models.CmdbBasePath + models.SystemAutomationTriggerPath + url.PathEscape(mkey) + "/"
 	req.Params = *params
 
 	res, err := request.Read(c.config, req)
@@ -78,7 +78,7 @@ func (c *Client) UpdateSystemAutomationTrigger(mkey string, payload *models.Syst
 	req.HTTPMethod = "PUT"
 	req.Mkey = &mkey
 	req.Payload = body
-	req.Path = models.CmdbBasePath + models.SystemAutomationTriggerPath + mkey + "/"
+	req.Path = models.CmdbBasePath + models.SystemAutomationTriggerPath + url.PathEscape(mkey) + "/"
 	req.Params = *params
 
 	res, err := request.CreateUpdate(c.config, req)
@@ -93,7 +93,7 @@ func (c *Client) DeleteSystemAutomationTrigger(mkey string, params *models.CmdbR
 	req.HTTPMethod = "DELETE"
 	req.Mkey = &mkey
 	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.SystemAutomationTriggerPath + mkey + "/"
+	req.Path = models.CmdbBasePath + models.SystemAutomationTriggerPath + url.PathEscape(mkey) + "/"
 	req.Params = *params
 
 	err := request.Delete(c.config, req)

@@ -45,7 +45,7 @@ func (c *Client) ReadFirewallIppool(mkey string, params *models.CmdbRequestParam
 	req.HTTPMethod = "GET"
 	req.Mkey = &mkey
 	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.FirewallIppoolPath + mkey + "/"
+	req.Path = models.CmdbBasePath + models.FirewallIppoolPath + url.PathEscape(mkey) + "/"
 	req.Params = *params
 
 	res, err := request.Read(c.config, req)
@@ -78,7 +78,7 @@ func (c *Client) UpdateFirewallIppool(mkey string, payload *models.FirewallIppoo
 	req.HTTPMethod = "PUT"
 	req.Mkey = &mkey
 	req.Payload = body
-	req.Path = models.CmdbBasePath + models.FirewallIppoolPath + mkey + "/"
+	req.Path = models.CmdbBasePath + models.FirewallIppoolPath + url.PathEscape(mkey) + "/"
 	req.Params = *params
 
 	res, err := request.CreateUpdate(c.config, req)
@@ -93,7 +93,7 @@ func (c *Client) DeleteFirewallIppool(mkey string, params *models.CmdbRequestPar
 	req.HTTPMethod = "DELETE"
 	req.Mkey = &mkey
 	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.FirewallIppoolPath + mkey + "/"
+	req.Path = models.CmdbBasePath + models.FirewallIppoolPath + url.PathEscape(mkey) + "/"
 	req.Params = *params
 
 	err := request.Delete(c.config, req)

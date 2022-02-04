@@ -45,7 +45,7 @@ func (c *Client) ReadApplicationCustom(mkey string, params *models.CmdbRequestPa
 	req.HTTPMethod = "GET"
 	req.Mkey = &mkey
 	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.ApplicationCustomPath + mkey + "/"
+	req.Path = models.CmdbBasePath + models.ApplicationCustomPath + url.PathEscape(mkey) + "/"
 	req.Params = *params
 
 	res, err := request.Read(c.config, req)
@@ -78,7 +78,7 @@ func (c *Client) UpdateApplicationCustom(mkey string, payload *models.Applicatio
 	req.HTTPMethod = "PUT"
 	req.Mkey = &mkey
 	req.Payload = body
-	req.Path = models.CmdbBasePath + models.ApplicationCustomPath + mkey + "/"
+	req.Path = models.CmdbBasePath + models.ApplicationCustomPath + url.PathEscape(mkey) + "/"
 	req.Params = *params
 
 	res, err := request.CreateUpdate(c.config, req)
@@ -93,7 +93,7 @@ func (c *Client) DeleteApplicationCustom(mkey string, params *models.CmdbRequest
 	req.HTTPMethod = "DELETE"
 	req.Mkey = &mkey
 	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.ApplicationCustomPath + mkey + "/"
+	req.Path = models.CmdbBasePath + models.ApplicationCustomPath + url.PathEscape(mkey) + "/"
 	req.Params = *params
 
 	err := request.Delete(c.config, req)

@@ -46,7 +46,7 @@ func (c *Client) ReadRouterRipOffsetList(mkey string, params *models.CmdbRequest
 	req.HTTPMethod = "GET"
 	req.Mkey = &mkey
 	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.RouterRipOffsetListPath + mkey + "/"
+	req.Path = models.CmdbBasePath + models.RouterRipOffsetListPath + url.PathEscape(mkey) + "/"
 	req.Params = *params
 
 	res, err := request.Read(c.config, req)
@@ -79,7 +79,7 @@ func (c *Client) UpdateRouterRipOffsetList(mkey string, payload *models.RouterRi
 	req.HTTPMethod = "PUT"
 	req.Mkey = &mkey
 	req.Payload = body
-	req.Path = models.CmdbBasePath + models.RouterRipOffsetListPath + mkey + "/"
+	req.Path = models.CmdbBasePath + models.RouterRipOffsetListPath + url.PathEscape(mkey) + "/"
 	req.Params = *params
 
 	res, err := request.CreateUpdate(c.config, req)
@@ -94,7 +94,7 @@ func (c *Client) DeleteRouterRipOffsetList(mkey string, params *models.CmdbReque
 	req.HTTPMethod = "DELETE"
 	req.Mkey = &mkey
 	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.RouterRipOffsetListPath + mkey + "/"
+	req.Path = models.CmdbBasePath + models.RouterRipOffsetListPath + url.PathEscape(mkey) + "/"
 	req.Params = *params
 
 	err := request.Delete(c.config, req)

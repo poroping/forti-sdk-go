@@ -46,7 +46,7 @@ func (c *Client) ReadFirewallMulticastPolicy(mkey string, params *models.CmdbReq
 	req.HTTPMethod = "GET"
 	req.Mkey = &mkey
 	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.FirewallMulticastPolicyPath + mkey + "/"
+	req.Path = models.CmdbBasePath + models.FirewallMulticastPolicyPath + url.PathEscape(mkey) + "/"
 	req.Params = *params
 
 	res, err := request.Read(c.config, req)
@@ -79,7 +79,7 @@ func (c *Client) UpdateFirewallMulticastPolicy(mkey string, payload *models.Fire
 	req.HTTPMethod = "PUT"
 	req.Mkey = &mkey
 	req.Payload = body
-	req.Path = models.CmdbBasePath + models.FirewallMulticastPolicyPath + mkey + "/"
+	req.Path = models.CmdbBasePath + models.FirewallMulticastPolicyPath + url.PathEscape(mkey) + "/"
 	req.Params = *params
 
 	res, err := request.CreateUpdate(c.config, req)
@@ -94,7 +94,7 @@ func (c *Client) DeleteFirewallMulticastPolicy(mkey string, params *models.CmdbR
 	req.HTTPMethod = "DELETE"
 	req.Mkey = &mkey
 	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.FirewallMulticastPolicyPath + mkey + "/"
+	req.Path = models.CmdbBasePath + models.FirewallMulticastPolicyPath + url.PathEscape(mkey) + "/"
 	req.Params = *params
 
 	err := request.Delete(c.config, req)

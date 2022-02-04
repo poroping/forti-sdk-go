@@ -46,7 +46,7 @@ func (c *Client) ReadVpnIpsecConcentrator(mkey string, params *models.CmdbReques
 	req.HTTPMethod = "GET"
 	req.Mkey = &mkey
 	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.VpnIpsecConcentratorPath + mkey + "/"
+	req.Path = models.CmdbBasePath + models.VpnIpsecConcentratorPath + url.PathEscape(mkey) + "/"
 	req.Params = *params
 
 	res, err := request.Read(c.config, req)
@@ -79,7 +79,7 @@ func (c *Client) UpdateVpnIpsecConcentrator(mkey string, payload *models.VpnIpse
 	req.HTTPMethod = "PUT"
 	req.Mkey = &mkey
 	req.Payload = body
-	req.Path = models.CmdbBasePath + models.VpnIpsecConcentratorPath + mkey + "/"
+	req.Path = models.CmdbBasePath + models.VpnIpsecConcentratorPath + url.PathEscape(mkey) + "/"
 	req.Params = *params
 
 	res, err := request.CreateUpdate(c.config, req)
@@ -94,7 +94,7 @@ func (c *Client) DeleteVpnIpsecConcentrator(mkey string, params *models.CmdbRequ
 	req.HTTPMethod = "DELETE"
 	req.Mkey = &mkey
 	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.VpnIpsecConcentratorPath + mkey + "/"
+	req.Path = models.CmdbBasePath + models.VpnIpsecConcentratorPath + url.PathEscape(mkey) + "/"
 	req.Params = *params
 
 	err := request.Delete(c.config, req)

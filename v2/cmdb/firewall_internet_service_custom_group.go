@@ -45,7 +45,7 @@ func (c *Client) ReadFirewallInternetServiceCustomGroup(mkey string, params *mod
 	req.HTTPMethod = "GET"
 	req.Mkey = &mkey
 	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.FirewallInternetServiceCustomGroupPath + mkey + "/"
+	req.Path = models.CmdbBasePath + models.FirewallInternetServiceCustomGroupPath + url.PathEscape(mkey) + "/"
 	req.Params = *params
 
 	res, err := request.Read(c.config, req)
@@ -78,7 +78,7 @@ func (c *Client) UpdateFirewallInternetServiceCustomGroup(mkey string, payload *
 	req.HTTPMethod = "PUT"
 	req.Mkey = &mkey
 	req.Payload = body
-	req.Path = models.CmdbBasePath + models.FirewallInternetServiceCustomGroupPath + mkey + "/"
+	req.Path = models.CmdbBasePath + models.FirewallInternetServiceCustomGroupPath + url.PathEscape(mkey) + "/"
 	req.Params = *params
 
 	res, err := request.CreateUpdate(c.config, req)
@@ -93,7 +93,7 @@ func (c *Client) DeleteFirewallInternetServiceCustomGroup(mkey string, params *m
 	req.HTTPMethod = "DELETE"
 	req.Mkey = &mkey
 	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.FirewallInternetServiceCustomGroupPath + mkey + "/"
+	req.Path = models.CmdbBasePath + models.FirewallInternetServiceCustomGroupPath + url.PathEscape(mkey) + "/"
 	req.Params = *params
 
 	err := request.Delete(c.config, req)

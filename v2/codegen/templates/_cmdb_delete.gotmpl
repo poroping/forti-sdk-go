@@ -10,7 +10,7 @@ func (c *Client) Delete{{.fpath}}(mkey string, params *models.CmdbRequestParams)
 	req.HTTPMethod = "DELETE"
 	req.Mkey = &mkey
 	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.{{.fpath}}Path + mkey + "/"
+	req.Path = models.CmdbBasePath + models.{{.fpath}}Path + url.PathEscape(mkey) + "/"
 	req.Params = *params
 
 	err := request.Delete(c.config, req)

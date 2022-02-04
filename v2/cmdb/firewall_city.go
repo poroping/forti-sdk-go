@@ -46,7 +46,7 @@ func (c *Client) ReadFirewallCity(mkey string, params *models.CmdbRequestParams)
 	req.HTTPMethod = "GET"
 	req.Mkey = &mkey
 	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.FirewallCityPath + mkey + "/"
+	req.Path = models.CmdbBasePath + models.FirewallCityPath + url.PathEscape(mkey) + "/"
 	req.Params = *params
 
 	res, err := request.Read(c.config, req)
@@ -79,7 +79,7 @@ func (c *Client) UpdateFirewallCity(mkey string, payload *models.FirewallCity, p
 	req.HTTPMethod = "PUT"
 	req.Mkey = &mkey
 	req.Payload = body
-	req.Path = models.CmdbBasePath + models.FirewallCityPath + mkey + "/"
+	req.Path = models.CmdbBasePath + models.FirewallCityPath + url.PathEscape(mkey) + "/"
 	req.Params = *params
 
 	res, err := request.CreateUpdate(c.config, req)
@@ -94,7 +94,7 @@ func (c *Client) DeleteFirewallCity(mkey string, params *models.CmdbRequestParam
 	req.HTTPMethod = "DELETE"
 	req.Mkey = &mkey
 	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.FirewallCityPath + mkey + "/"
+	req.Path = models.CmdbBasePath + models.FirewallCityPath + url.PathEscape(mkey) + "/"
 	req.Params = *params
 
 	err := request.Delete(c.config, req)

@@ -45,7 +45,7 @@ func (c *Client) ReadWirelessControllerHotspot20AnqpNaiRealm(mkey string, params
 	req.HTTPMethod = "GET"
 	req.Mkey = &mkey
 	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.WirelessControllerHotspot20AnqpNaiRealmPath + mkey + "/"
+	req.Path = models.CmdbBasePath + models.WirelessControllerHotspot20AnqpNaiRealmPath + url.PathEscape(mkey) + "/"
 	req.Params = *params
 
 	res, err := request.Read(c.config, req)
@@ -78,7 +78,7 @@ func (c *Client) UpdateWirelessControllerHotspot20AnqpNaiRealm(mkey string, payl
 	req.HTTPMethod = "PUT"
 	req.Mkey = &mkey
 	req.Payload = body
-	req.Path = models.CmdbBasePath + models.WirelessControllerHotspot20AnqpNaiRealmPath + mkey + "/"
+	req.Path = models.CmdbBasePath + models.WirelessControllerHotspot20AnqpNaiRealmPath + url.PathEscape(mkey) + "/"
 	req.Params = *params
 
 	res, err := request.CreateUpdate(c.config, req)
@@ -93,7 +93,7 @@ func (c *Client) DeleteWirelessControllerHotspot20AnqpNaiRealm(mkey string, para
 	req.HTTPMethod = "DELETE"
 	req.Mkey = &mkey
 	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.WirelessControllerHotspot20AnqpNaiRealmPath + mkey + "/"
+	req.Path = models.CmdbBasePath + models.WirelessControllerHotspot20AnqpNaiRealmPath + url.PathEscape(mkey) + "/"
 	req.Params = *params
 
 	err := request.Delete(c.config, req)

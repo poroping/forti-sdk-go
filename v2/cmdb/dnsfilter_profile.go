@@ -45,7 +45,7 @@ func (c *Client) ReadDnsfilterProfile(mkey string, params *models.CmdbRequestPar
 	req.HTTPMethod = "GET"
 	req.Mkey = &mkey
 	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.DnsfilterProfilePath + mkey + "/"
+	req.Path = models.CmdbBasePath + models.DnsfilterProfilePath + url.PathEscape(mkey) + "/"
 	req.Params = *params
 
 	res, err := request.Read(c.config, req)
@@ -78,7 +78,7 @@ func (c *Client) UpdateDnsfilterProfile(mkey string, payload *models.DnsfilterPr
 	req.HTTPMethod = "PUT"
 	req.Mkey = &mkey
 	req.Payload = body
-	req.Path = models.CmdbBasePath + models.DnsfilterProfilePath + mkey + "/"
+	req.Path = models.CmdbBasePath + models.DnsfilterProfilePath + url.PathEscape(mkey) + "/"
 	req.Params = *params
 
 	res, err := request.CreateUpdate(c.config, req)
@@ -93,7 +93,7 @@ func (c *Client) DeleteDnsfilterProfile(mkey string, params *models.CmdbRequestP
 	req.HTTPMethod = "DELETE"
 	req.Mkey = &mkey
 	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.DnsfilterProfilePath + mkey + "/"
+	req.Path = models.CmdbBasePath + models.DnsfilterProfilePath + url.PathEscape(mkey) + "/"
 	req.Params = *params
 
 	err := request.Delete(c.config, req)

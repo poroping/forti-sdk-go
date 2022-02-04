@@ -45,7 +45,7 @@ func (c *Client) ReadWirelessControllerAddrgrp(mkey string, params *models.CmdbR
 	req.HTTPMethod = "GET"
 	req.Mkey = &mkey
 	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.WirelessControllerAddrgrpPath + mkey + "/"
+	req.Path = models.CmdbBasePath + models.WirelessControllerAddrgrpPath + url.PathEscape(mkey) + "/"
 	req.Params = *params
 
 	res, err := request.Read(c.config, req)
@@ -78,7 +78,7 @@ func (c *Client) UpdateWirelessControllerAddrgrp(mkey string, payload *models.Wi
 	req.HTTPMethod = "PUT"
 	req.Mkey = &mkey
 	req.Payload = body
-	req.Path = models.CmdbBasePath + models.WirelessControllerAddrgrpPath + mkey + "/"
+	req.Path = models.CmdbBasePath + models.WirelessControllerAddrgrpPath + url.PathEscape(mkey) + "/"
 	req.Params = *params
 
 	res, err := request.CreateUpdate(c.config, req)
@@ -93,7 +93,7 @@ func (c *Client) DeleteWirelessControllerAddrgrp(mkey string, params *models.Cmd
 	req.HTTPMethod = "DELETE"
 	req.Mkey = &mkey
 	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.WirelessControllerAddrgrpPath + mkey + "/"
+	req.Path = models.CmdbBasePath + models.WirelessControllerAddrgrpPath + url.PathEscape(mkey) + "/"
 	req.Params = *params
 
 	err := request.Delete(c.config, req)

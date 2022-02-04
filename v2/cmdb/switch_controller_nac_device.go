@@ -46,7 +46,7 @@ func (c *Client) ReadSwitchControllerNacDevice(mkey string, params *models.CmdbR
 	req.HTTPMethod = "GET"
 	req.Mkey = &mkey
 	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.SwitchControllerNacDevicePath + mkey + "/"
+	req.Path = models.CmdbBasePath + models.SwitchControllerNacDevicePath + url.PathEscape(mkey) + "/"
 	req.Params = *params
 
 	res, err := request.Read(c.config, req)
@@ -79,7 +79,7 @@ func (c *Client) UpdateSwitchControllerNacDevice(mkey string, payload *models.Sw
 	req.HTTPMethod = "PUT"
 	req.Mkey = &mkey
 	req.Payload = body
-	req.Path = models.CmdbBasePath + models.SwitchControllerNacDevicePath + mkey + "/"
+	req.Path = models.CmdbBasePath + models.SwitchControllerNacDevicePath + url.PathEscape(mkey) + "/"
 	req.Params = *params
 
 	res, err := request.CreateUpdate(c.config, req)
@@ -94,7 +94,7 @@ func (c *Client) DeleteSwitchControllerNacDevice(mkey string, params *models.Cmd
 	req.HTTPMethod = "DELETE"
 	req.Mkey = &mkey
 	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.SwitchControllerNacDevicePath + mkey + "/"
+	req.Path = models.CmdbBasePath + models.SwitchControllerNacDevicePath + url.PathEscape(mkey) + "/"
 	req.Params = *params
 
 	err := request.Delete(c.config, req)

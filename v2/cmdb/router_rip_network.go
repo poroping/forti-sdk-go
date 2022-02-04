@@ -46,7 +46,7 @@ func (c *Client) ReadRouterRipNetwork(mkey string, params *models.CmdbRequestPar
 	req.HTTPMethod = "GET"
 	req.Mkey = &mkey
 	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.RouterRipNetworkPath + mkey + "/"
+	req.Path = models.CmdbBasePath + models.RouterRipNetworkPath + url.PathEscape(mkey) + "/"
 	req.Params = *params
 
 	res, err := request.Read(c.config, req)
@@ -79,7 +79,7 @@ func (c *Client) UpdateRouterRipNetwork(mkey string, payload *models.RouterRipNe
 	req.HTTPMethod = "PUT"
 	req.Mkey = &mkey
 	req.Payload = body
-	req.Path = models.CmdbBasePath + models.RouterRipNetworkPath + mkey + "/"
+	req.Path = models.CmdbBasePath + models.RouterRipNetworkPath + url.PathEscape(mkey) + "/"
 	req.Params = *params
 
 	res, err := request.CreateUpdate(c.config, req)
@@ -94,7 +94,7 @@ func (c *Client) DeleteRouterRipNetwork(mkey string, params *models.CmdbRequestP
 	req.HTTPMethod = "DELETE"
 	req.Mkey = &mkey
 	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.RouterRipNetworkPath + mkey + "/"
+	req.Path = models.CmdbBasePath + models.RouterRipNetworkPath + url.PathEscape(mkey) + "/"
 	req.Params = *params
 
 	err := request.Delete(c.config, req)

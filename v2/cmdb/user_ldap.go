@@ -45,7 +45,7 @@ func (c *Client) ReadUserLdap(mkey string, params *models.CmdbRequestParams) (*m
 	req.HTTPMethod = "GET"
 	req.Mkey = &mkey
 	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.UserLdapPath + mkey + "/"
+	req.Path = models.CmdbBasePath + models.UserLdapPath + url.PathEscape(mkey) + "/"
 	req.Params = *params
 
 	res, err := request.Read(c.config, req)
@@ -78,7 +78,7 @@ func (c *Client) UpdateUserLdap(mkey string, payload *models.UserLdap, params *m
 	req.HTTPMethod = "PUT"
 	req.Mkey = &mkey
 	req.Payload = body
-	req.Path = models.CmdbBasePath + models.UserLdapPath + mkey + "/"
+	req.Path = models.CmdbBasePath + models.UserLdapPath + url.PathEscape(mkey) + "/"
 	req.Params = *params
 
 	res, err := request.CreateUpdate(c.config, req)
@@ -93,7 +93,7 @@ func (c *Client) DeleteUserLdap(mkey string, params *models.CmdbRequestParams) e
 	req.HTTPMethod = "DELETE"
 	req.Mkey = &mkey
 	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.UserLdapPath + mkey + "/"
+	req.Path = models.CmdbBasePath + models.UserLdapPath + url.PathEscape(mkey) + "/"
 	req.Params = *params
 
 	err := request.Delete(c.config, req)

@@ -45,7 +45,7 @@ func (c *Client) ReadApplicationGroup(mkey string, params *models.CmdbRequestPar
 	req.HTTPMethod = "GET"
 	req.Mkey = &mkey
 	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.ApplicationGroupPath + mkey + "/"
+	req.Path = models.CmdbBasePath + models.ApplicationGroupPath + url.PathEscape(mkey) + "/"
 	req.Params = *params
 
 	res, err := request.Read(c.config, req)
@@ -78,7 +78,7 @@ func (c *Client) UpdateApplicationGroup(mkey string, payload *models.Application
 	req.HTTPMethod = "PUT"
 	req.Mkey = &mkey
 	req.Payload = body
-	req.Path = models.CmdbBasePath + models.ApplicationGroupPath + mkey + "/"
+	req.Path = models.CmdbBasePath + models.ApplicationGroupPath + url.PathEscape(mkey) + "/"
 	req.Params = *params
 
 	res, err := request.CreateUpdate(c.config, req)
@@ -93,7 +93,7 @@ func (c *Client) DeleteApplicationGroup(mkey string, params *models.CmdbRequestP
 	req.HTTPMethod = "DELETE"
 	req.Mkey = &mkey
 	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.ApplicationGroupPath + mkey + "/"
+	req.Path = models.CmdbBasePath + models.ApplicationGroupPath + url.PathEscape(mkey) + "/"
 	req.Params = *params
 
 	err := request.Delete(c.config, req)

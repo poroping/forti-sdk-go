@@ -45,7 +45,7 @@ func (c *Client) ReadSystemPppoeInterface(mkey string, params *models.CmdbReques
 	req.HTTPMethod = "GET"
 	req.Mkey = &mkey
 	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.SystemPppoeInterfacePath + mkey + "/"
+	req.Path = models.CmdbBasePath + models.SystemPppoeInterfacePath + url.PathEscape(mkey) + "/"
 	req.Params = *params
 
 	res, err := request.Read(c.config, req)
@@ -78,7 +78,7 @@ func (c *Client) UpdateSystemPppoeInterface(mkey string, payload *models.SystemP
 	req.HTTPMethod = "PUT"
 	req.Mkey = &mkey
 	req.Payload = body
-	req.Path = models.CmdbBasePath + models.SystemPppoeInterfacePath + mkey + "/"
+	req.Path = models.CmdbBasePath + models.SystemPppoeInterfacePath + url.PathEscape(mkey) + "/"
 	req.Params = *params
 
 	res, err := request.CreateUpdate(c.config, req)
@@ -93,7 +93,7 @@ func (c *Client) DeleteSystemPppoeInterface(mkey string, params *models.CmdbRequ
 	req.HTTPMethod = "DELETE"
 	req.Mkey = &mkey
 	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.SystemPppoeInterfacePath + mkey + "/"
+	req.Path = models.CmdbBasePath + models.SystemPppoeInterfacePath + url.PathEscape(mkey) + "/"
 	req.Params = *params
 
 	err := request.Delete(c.config, req)

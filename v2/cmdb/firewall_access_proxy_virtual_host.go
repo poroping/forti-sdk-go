@@ -45,7 +45,7 @@ func (c *Client) ReadFirewallAccessProxyVirtualHost(mkey string, params *models.
 	req.HTTPMethod = "GET"
 	req.Mkey = &mkey
 	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.FirewallAccessProxyVirtualHostPath + mkey + "/"
+	req.Path = models.CmdbBasePath + models.FirewallAccessProxyVirtualHostPath + url.PathEscape(mkey) + "/"
 	req.Params = *params
 
 	res, err := request.Read(c.config, req)
@@ -78,7 +78,7 @@ func (c *Client) UpdateFirewallAccessProxyVirtualHost(mkey string, payload *mode
 	req.HTTPMethod = "PUT"
 	req.Mkey = &mkey
 	req.Payload = body
-	req.Path = models.CmdbBasePath + models.FirewallAccessProxyVirtualHostPath + mkey + "/"
+	req.Path = models.CmdbBasePath + models.FirewallAccessProxyVirtualHostPath + url.PathEscape(mkey) + "/"
 	req.Params = *params
 
 	res, err := request.CreateUpdate(c.config, req)
@@ -93,7 +93,7 @@ func (c *Client) DeleteFirewallAccessProxyVirtualHost(mkey string, params *model
 	req.HTTPMethod = "DELETE"
 	req.Mkey = &mkey
 	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.FirewallAccessProxyVirtualHostPath + mkey + "/"
+	req.Path = models.CmdbBasePath + models.FirewallAccessProxyVirtualHostPath + url.PathEscape(mkey) + "/"
 	req.Params = *params
 
 	err := request.Delete(c.config, req)

@@ -46,7 +46,7 @@ func (c *Client) ReadSystemTosBasedPriority(mkey string, params *models.CmdbRequ
 	req.HTTPMethod = "GET"
 	req.Mkey = &mkey
 	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.SystemTosBasedPriorityPath + mkey + "/"
+	req.Path = models.CmdbBasePath + models.SystemTosBasedPriorityPath + url.PathEscape(mkey) + "/"
 	req.Params = *params
 
 	res, err := request.Read(c.config, req)
@@ -79,7 +79,7 @@ func (c *Client) UpdateSystemTosBasedPriority(mkey string, payload *models.Syste
 	req.HTTPMethod = "PUT"
 	req.Mkey = &mkey
 	req.Payload = body
-	req.Path = models.CmdbBasePath + models.SystemTosBasedPriorityPath + mkey + "/"
+	req.Path = models.CmdbBasePath + models.SystemTosBasedPriorityPath + url.PathEscape(mkey) + "/"
 	req.Params = *params
 
 	res, err := request.CreateUpdate(c.config, req)
@@ -94,7 +94,7 @@ func (c *Client) DeleteSystemTosBasedPriority(mkey string, params *models.CmdbRe
 	req.HTTPMethod = "DELETE"
 	req.Mkey = &mkey
 	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.SystemTosBasedPriorityPath + mkey + "/"
+	req.Path = models.CmdbBasePath + models.SystemTosBasedPriorityPath + url.PathEscape(mkey) + "/"
 	req.Params = *params
 
 	err := request.Delete(c.config, req)

@@ -45,7 +45,7 @@ func (c *Client) ReadWebfilterProfile(mkey string, params *models.CmdbRequestPar
 	req.HTTPMethod = "GET"
 	req.Mkey = &mkey
 	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.WebfilterProfilePath + mkey + "/"
+	req.Path = models.CmdbBasePath + models.WebfilterProfilePath + url.PathEscape(mkey) + "/"
 	req.Params = *params
 
 	res, err := request.Read(c.config, req)
@@ -78,7 +78,7 @@ func (c *Client) UpdateWebfilterProfile(mkey string, payload *models.WebfilterPr
 	req.HTTPMethod = "PUT"
 	req.Mkey = &mkey
 	req.Payload = body
-	req.Path = models.CmdbBasePath + models.WebfilterProfilePath + mkey + "/"
+	req.Path = models.CmdbBasePath + models.WebfilterProfilePath + url.PathEscape(mkey) + "/"
 	req.Params = *params
 
 	res, err := request.CreateUpdate(c.config, req)
@@ -93,7 +93,7 @@ func (c *Client) DeleteWebfilterProfile(mkey string, params *models.CmdbRequestP
 	req.HTTPMethod = "DELETE"
 	req.Mkey = &mkey
 	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.WebfilterProfilePath + mkey + "/"
+	req.Path = models.CmdbBasePath + models.WebfilterProfilePath + url.PathEscape(mkey) + "/"
 	req.Params = *params
 
 	err := request.Delete(c.config, req)

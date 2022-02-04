@@ -45,7 +45,7 @@ func (c *Client) ReadWirelessControllerMpskProfile(mkey string, params *models.C
 	req.HTTPMethod = "GET"
 	req.Mkey = &mkey
 	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.WirelessControllerMpskProfilePath + mkey + "/"
+	req.Path = models.CmdbBasePath + models.WirelessControllerMpskProfilePath + url.PathEscape(mkey) + "/"
 	req.Params = *params
 
 	res, err := request.Read(c.config, req)
@@ -78,7 +78,7 @@ func (c *Client) UpdateWirelessControllerMpskProfile(mkey string, payload *model
 	req.HTTPMethod = "PUT"
 	req.Mkey = &mkey
 	req.Payload = body
-	req.Path = models.CmdbBasePath + models.WirelessControllerMpskProfilePath + mkey + "/"
+	req.Path = models.CmdbBasePath + models.WirelessControllerMpskProfilePath + url.PathEscape(mkey) + "/"
 	req.Params = *params
 
 	res, err := request.CreateUpdate(c.config, req)
@@ -93,7 +93,7 @@ func (c *Client) DeleteWirelessControllerMpskProfile(mkey string, params *models
 	req.HTTPMethod = "DELETE"
 	req.Mkey = &mkey
 	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.WirelessControllerMpskProfilePath + mkey + "/"
+	req.Path = models.CmdbBasePath + models.WirelessControllerMpskProfilePath + url.PathEscape(mkey) + "/"
 	req.Params = *params
 
 	err := request.Delete(c.config, req)

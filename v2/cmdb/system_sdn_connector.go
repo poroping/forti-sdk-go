@@ -45,7 +45,7 @@ func (c *Client) ReadSystemSdnConnector(mkey string, params *models.CmdbRequestP
 	req.HTTPMethod = "GET"
 	req.Mkey = &mkey
 	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.SystemSdnConnectorPath + mkey + "/"
+	req.Path = models.CmdbBasePath + models.SystemSdnConnectorPath + url.PathEscape(mkey) + "/"
 	req.Params = *params
 
 	res, err := request.Read(c.config, req)
@@ -78,7 +78,7 @@ func (c *Client) UpdateSystemSdnConnector(mkey string, payload *models.SystemSdn
 	req.HTTPMethod = "PUT"
 	req.Mkey = &mkey
 	req.Payload = body
-	req.Path = models.CmdbBasePath + models.SystemSdnConnectorPath + mkey + "/"
+	req.Path = models.CmdbBasePath + models.SystemSdnConnectorPath + url.PathEscape(mkey) + "/"
 	req.Params = *params
 
 	res, err := request.CreateUpdate(c.config, req)
@@ -93,7 +93,7 @@ func (c *Client) DeleteSystemSdnConnector(mkey string, params *models.CmdbReques
 	req.HTTPMethod = "DELETE"
 	req.Mkey = &mkey
 	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.SystemSdnConnectorPath + mkey + "/"
+	req.Path = models.CmdbBasePath + models.SystemSdnConnectorPath + url.PathEscape(mkey) + "/"
 	req.Params = *params
 
 	err := request.Delete(c.config, req)

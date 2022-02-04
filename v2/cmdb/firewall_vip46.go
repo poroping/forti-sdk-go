@@ -45,7 +45,7 @@ func (c *Client) ReadFirewallVip46(mkey string, params *models.CmdbRequestParams
 	req.HTTPMethod = "GET"
 	req.Mkey = &mkey
 	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.FirewallVip46Path + mkey + "/"
+	req.Path = models.CmdbBasePath + models.FirewallVip46Path + url.PathEscape(mkey) + "/"
 	req.Params = *params
 
 	res, err := request.Read(c.config, req)
@@ -78,7 +78,7 @@ func (c *Client) UpdateFirewallVip46(mkey string, payload *models.FirewallVip46,
 	req.HTTPMethod = "PUT"
 	req.Mkey = &mkey
 	req.Payload = body
-	req.Path = models.CmdbBasePath + models.FirewallVip46Path + mkey + "/"
+	req.Path = models.CmdbBasePath + models.FirewallVip46Path + url.PathEscape(mkey) + "/"
 	req.Params = *params
 
 	res, err := request.CreateUpdate(c.config, req)
@@ -93,7 +93,7 @@ func (c *Client) DeleteFirewallVip46(mkey string, params *models.CmdbRequestPara
 	req.HTTPMethod = "DELETE"
 	req.Mkey = &mkey
 	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.FirewallVip46Path + mkey + "/"
+	req.Path = models.CmdbBasePath + models.FirewallVip46Path + url.PathEscape(mkey) + "/"
 	req.Params = *params
 
 	err := request.Delete(c.config, req)

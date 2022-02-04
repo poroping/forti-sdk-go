@@ -46,7 +46,7 @@ func (c *Client) ReadApplicationRuleSettings(mkey string, params *models.CmdbReq
 	req.HTTPMethod = "GET"
 	req.Mkey = &mkey
 	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.ApplicationRuleSettingsPath + mkey + "/"
+	req.Path = models.CmdbBasePath + models.ApplicationRuleSettingsPath + url.PathEscape(mkey) + "/"
 	req.Params = *params
 
 	res, err := request.Read(c.config, req)
@@ -79,7 +79,7 @@ func (c *Client) UpdateApplicationRuleSettings(mkey string, payload *models.Appl
 	req.HTTPMethod = "PUT"
 	req.Mkey = &mkey
 	req.Payload = body
-	req.Path = models.CmdbBasePath + models.ApplicationRuleSettingsPath + mkey + "/"
+	req.Path = models.CmdbBasePath + models.ApplicationRuleSettingsPath + url.PathEscape(mkey) + "/"
 	req.Params = *params
 
 	res, err := request.CreateUpdate(c.config, req)
@@ -94,7 +94,7 @@ func (c *Client) DeleteApplicationRuleSettings(mkey string, params *models.CmdbR
 	req.HTTPMethod = "DELETE"
 	req.Mkey = &mkey
 	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.ApplicationRuleSettingsPath + mkey + "/"
+	req.Path = models.CmdbBasePath + models.ApplicationRuleSettingsPath + url.PathEscape(mkey) + "/"
 	req.Params = *params
 
 	err := request.Delete(c.config, req)
