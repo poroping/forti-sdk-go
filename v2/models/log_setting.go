@@ -23,6 +23,8 @@ type LogSetting struct {
 	NeighborEvent        *string                      `json:"neighbor-event,omitempty"`
 	ResolveIp            *string                      `json:"resolve-ip,omitempty"`
 	ResolvePort          *string                      `json:"resolve-port,omitempty"`
+	RestApiGet           *string                      `json:"rest-api-get,omitempty"`
+	RestApiSet           *string                      `json:"rest-api-set,omitempty"`
 	SyslogOverride       *string                      `json:"syslog-override,omitempty"`
 	UserAnonymize        *string                      `json:"user-anonymize,omitempty"`
 }

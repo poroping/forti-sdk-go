@@ -58,6 +58,7 @@ type FirewallSslSshProfileFtps struct {
 	ClientCertificate         *string `json:"client-certificate,omitempty"`
 	ExpiredServerCert         *string `json:"expired-server-cert,omitempty"`
 	InvalidServerCert         *string `json:"invalid-server-cert,omitempty"`
+	MinAllowedSslVersion      *string `json:"min-allowed-ssl-version,omitempty"`
 	Ports                     *int64  `json:"ports,omitempty"`
 	RevokedServerCert         *string `json:"revoked-server-cert,omitempty"`
 	SniServerCertCheck        *string `json:"sni-server-cert-check,omitempty"`
@@ -77,6 +78,7 @@ type FirewallSslSshProfileHttps struct {
 	ClientCertificate         *string `json:"client-certificate,omitempty"`
 	ExpiredServerCert         *string `json:"expired-server-cert,omitempty"`
 	InvalidServerCert         *string `json:"invalid-server-cert,omitempty"`
+	MinAllowedSslVersion      *string `json:"min-allowed-ssl-version,omitempty"`
 	Ports                     *int64  `json:"ports,omitempty"`
 	ProxyAfterTcpHandshake    *string `json:"proxy-after-tcp-handshake,omitempty"`
 	RevokedServerCert         *string `json:"revoked-server-cert,omitempty"`
@@ -169,6 +171,7 @@ type FirewallSslSshProfileSsl struct {
 	ExpiredServerCert         *string `json:"expired-server-cert,omitempty"`
 	InspectAll                *string `json:"inspect-all,omitempty"`
 	InvalidServerCert         *string `json:"invalid-server-cert,omitempty"`
+	MinAllowedSslVersion      *string `json:"min-allowed-ssl-version,omitempty"`
 	RevokedServerCert         *string `json:"revoked-server-cert,omitempty"`
 	SniServerCertCheck        *string `json:"sni-server-cert-check,omitempty"`
 	UnsupportedSsl            *string `json:"unsupported-ssl,omitempty"`

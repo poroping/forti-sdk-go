@@ -16,6 +16,7 @@ type VpnSslWebUserBookmarkBookmarks struct {
 	Domain                *string                                   `json:"domain,omitempty"`
 	Folder                *string                                   `json:"folder,omitempty"`
 	FormData              *[]VpnSslWebUserBookmarkBookmarksFormData `json:"form-data,omitempty"`
+	Height                *int64                                    `json:"height,omitempty"`
 	Host                  *string                                   `json:"host,omitempty"`
 	KeyboardLayout        *string                                   `json:"keyboard-layout,omitempty"`
 	ListeningPort         *int64                                    `json:"listening-port,omitempty"`
@@ -38,6 +39,7 @@ type VpnSslWebUserBookmarkBookmarks struct {
 	SsoPassword           *string                                   `json:"sso-password,omitempty"`
 	SsoUsername           *string                                   `json:"sso-username,omitempty"`
 	Url                   *string                                   `json:"url,omitempty"`
+	Width                 *int64                                    `json:"width,omitempty"`
 }
 
 type VpnSslWebUserBookmarkBookmarksFormData struct {

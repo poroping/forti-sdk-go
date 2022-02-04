@@ -14,6 +14,7 @@ type LogNullDeviceFilter struct {
 	Severity         *string                         `json:"severity,omitempty"`
 	SnifferTraffic   *string                         `json:"sniffer-traffic,omitempty"`
 	Voip             *string                         `json:"voip,omitempty"`
+	ZtnaTraffic      *string                         `json:"ztna-traffic,omitempty"`
 }
 
 type LogNullDeviceFilterFreeStyle struct {

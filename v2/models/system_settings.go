@@ -87,6 +87,7 @@ type SystemSettings struct {
 	GuiWebfilterAdvanced           *string                                  `json:"gui-webfilter-advanced,omitempty"`
 	GuiWirelessController          *string                                  `json:"gui-wireless-controller,omitempty"`
 	GuiZtna                        *string                                  `json:"gui-ztna,omitempty"`
+	H323DirectModel                *string                                  `json:"h323-direct-model,omitempty"`
 	HttpExternalDest               *string                                  `json:"http-external-dest,omitempty"`
 	IkeDnFormat                    *string                                  `json:"ike-dn-format,omitempty"`
 	IkePolicyRoute                 *string                                  `json:"ike-policy-route,omitempty"`

@@ -11,6 +11,8 @@ type WirelessControllerVap struct {
 	ApplicationList                     *string                                         `json:"application-list,omitempty"`
 	AtfWeight                           *int64                                          `json:"atf-weight,omitempty"`
 	Auth                                *string                                         `json:"auth,omitempty"`
+	AuthCert                            *string                                         `json:"auth-cert,omitempty"`
+	AuthPortalAddr                      *string                                         `json:"auth-portal-addr,omitempty"`
 	BeaconAdvertising                   *string                                         `json:"beacon-advertising,omitempty"`
 	BroadcastSsid                       *string                                         `json:"broadcast-ssid,omitempty"`
 	BroadcastSuppression                *string                                         `json:"broadcast-suppression,omitempty"`
@@ -154,6 +156,7 @@ type WirelessControllerVap struct {
 	UtmProfile                          *string                                         `json:"utm-profile,omitempty"`
 	UtmStatus                           *string                                         `json:"utm-status,omitempty"`
 	VlanAuto                            *string                                         `json:"vlan-auto,omitempty"`
+	VlanName                            *[]WirelessControllerVapVlanName                `json:"vlan-name,omitempty"`
 	VlanPool                            *[]WirelessControllerVapVlanPool                `json:"vlan-pool,omitempty"`
 	VlanPooling                         *string                                         `json:"vlan-pooling,omitempty"`
 	Vlanid                              *int64                                          `json:"vlanid,omitempty"`
@@ -200,6 +203,11 @@ type WirelessControllerVapSelectedUsergroups struct {
 
 type WirelessControllerVapUsergroup struct {
 	Name *string `json:"name,omitempty"`
+}
+
+type WirelessControllerVapVlanName struct {
+	Name   *string `json:"name,omitempty"`
+	VlanId *int64  `json:"vlan-id,omitempty"`
 }
 
 type WirelessControllerVapVlanPool struct {

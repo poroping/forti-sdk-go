@@ -40,6 +40,7 @@ type FirewallVip6 struct {
 	Realservers                  *[]FirewallVip6Realservers           `json:"realservers,omitempty"`
 	ServerType                   *string                              `json:"server-type,omitempty"`
 	SrcFilter                    *[]FirewallVip6SrcFilter             `json:"src-filter,omitempty"`
+	SslAcceptFfdheGroups         *string                              `json:"ssl-accept-ffdhe-groups,omitempty"`
 	SslAlgorithm                 *string                              `json:"ssl-algorithm,omitempty"`
 	SslCertificate               *string                              `json:"ssl-certificate,omitempty"`
 	SslCipherSuites              *[]FirewallVip6SslCipherSuites       `json:"ssl-cipher-suites,omitempty"`

@@ -13,6 +13,7 @@ type SwitchControllerManagedSwitch struct {
 	DynamicCapability         *string                                           `json:"dynamic-capability,omitempty"`
 	DynamicallyDiscovered     *int64                                            `json:"dynamically-discovered,omitempty"`
 	FirmwareProvision         *string                                           `json:"firmware-provision,omitempty"`
+	FirmwareProvisionLatest   *string                                           `json:"firmware-provision-latest,omitempty"`
 	FirmwareProvisionVersion  *string                                           `json:"firmware-provision-version,omitempty"`
 	FlowIdentity              *string                                           `json:"flow-identity,omitempty"`
 	FswWan1Admin              *string                                           `json:"fsw-wan1-admin,omitempty"`

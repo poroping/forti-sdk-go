@@ -5,6 +5,8 @@ const FirewallAccessProxyPath = "firewall/access-proxy/"
 type FirewallAccessProxy struct {
 	ApiGateway               *[]FirewallAccessProxyApiGateway               `json:"api-gateway,omitempty"`
 	ApiGateway6              *[]FirewallAccessProxyApiGateway6              `json:"api-gateway6,omitempty"`
+	AuthPortal               *string                                        `json:"auth-portal,omitempty"`
+	AuthVirtualHost          *string                                        `json:"auth-virtual-host,omitempty"`
 	ClientCert               *string                                        `json:"client-cert,omitempty"`
 	DecryptedTrafficMirror   *string                                        `json:"decrypted-traffic-mirror,omitempty"`
 	EmptyCertAction          *string                                        `json:"empty-cert-action,omitempty"`
@@ -37,6 +39,7 @@ type FirewallAccessProxyApiGateway struct {
 	SslDhBits                *string                                         `json:"ssl-dh-bits,omitempty"`
 	SslMaxVersion            *string                                         `json:"ssl-max-version,omitempty"`
 	SslMinVersion            *string                                         `json:"ssl-min-version,omitempty"`
+	SslVpnWebPortal          *string                                         `json:"ssl-vpn-web-portal,omitempty"`
 	UrlMap                   *string                                         `json:"url-map,omitempty"`
 	UrlMapType               *string                                         `json:"url-map-type,omitempty"`
 	VirtualHost              *string                                         `json:"virtual-host,omitempty"`
@@ -45,6 +48,7 @@ type FirewallAccessProxyApiGateway struct {
 type FirewallAccessProxyApiGatewayRealservers struct {
 	AddrType             *string                                               `json:"addr-type,omitempty"`
 	Address              *string                                               `json:"address,omitempty"`
+	Domain               *string                                               `json:"domain,omitempty"`
 	HealthCheck          *string                                               `json:"health-check,omitempty"`
 	HealthCheckProto     *string                                               `json:"health-check-proto,omitempty"`
 	HolddownInterval     *string                                               `json:"holddown-interval,omitempty"`
@@ -91,6 +95,7 @@ type FirewallAccessProxyApiGateway6 struct {
 	SslDhBits                *string                                          `json:"ssl-dh-bits,omitempty"`
 	SslMaxVersion            *string                                          `json:"ssl-max-version,omitempty"`
 	SslMinVersion            *string                                          `json:"ssl-min-version,omitempty"`
+	SslVpnWebPortal          *string                                          `json:"ssl-vpn-web-portal,omitempty"`
 	UrlMap                   *string                                          `json:"url-map,omitempty"`
 	UrlMapType               *string                                          `json:"url-map-type,omitempty"`
 	VirtualHost              *string                                          `json:"virtual-host,omitempty"`
@@ -99,6 +104,7 @@ type FirewallAccessProxyApiGateway6 struct {
 type FirewallAccessProxyApiGateway6Realservers struct {
 	AddrType             *string                                                `json:"addr-type,omitempty"`
 	Address              *string                                                `json:"address,omitempty"`
+	Domain               *string                                                `json:"domain,omitempty"`
 	HealthCheck          *string                                                `json:"health-check,omitempty"`
 	HealthCheckProto     *string                                                `json:"health-check-proto,omitempty"`
 	HolddownInterval     *string                                                `json:"holddown-interval,omitempty"`

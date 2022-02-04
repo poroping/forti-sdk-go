@@ -63,6 +63,7 @@ type SystemGlobal struct {
 	DhParams                             *string `json:"dh-params,omitempty"`
 	DnsproxyWorkerCount                  *int64  `json:"dnsproxy-worker-count,omitempty"`
 	Dst                                  *string `json:"dst,omitempty"`
+	ExtenderControllerReservedNetwork    *string `json:"extender-controller-reserved-network,omitempty"`
 	Failtime                             *int64  `json:"failtime,omitempty"`
 	FazDiskBufferSize                    *int64  `json:"faz-disk-buffer-size,omitempty"`
 	FdsStatistics                        *string `json:"fds-statistics,omitempty"`
@@ -71,11 +72,13 @@ type SystemGlobal struct {
 	FgdAlertSubscription                 *string `json:"fgd-alert-subscription,omitempty"`
 	Fortiextender                        *string `json:"fortiextender,omitempty"`
 	FortiextenderDataPort                *int64  `json:"fortiextender-data-port,omitempty"`
+	FortiextenderDiscoveryLockdown       *string `json:"fortiextender-discovery-lockdown,omitempty"`
 	FortiextenderVlanMode                *string `json:"fortiextender-vlan-mode,omitempty"`
 	FortiipamIntegration                 *string `json:"fortiipam-integration,omitempty"`
 	FortiservicePort                     *int64  `json:"fortiservice-port,omitempty"`
 	FortitokenCloud                      *string `json:"fortitoken-cloud,omitempty"`
 	GuiAllowDefaultHostname              *string `json:"gui-allow-default-hostname,omitempty"`
+	GuiCdnUsage                          *string `json:"gui-cdn-usage,omitempty"`
 	GuiCertificates                      *string `json:"gui-certificates,omitempty"`
 	GuiCustomLanguage                    *string `json:"gui-custom-language,omitempty"`
 	GuiDateFormat                        *string `json:"gui-date-format,omitempty"`
@@ -99,6 +102,7 @@ type SystemGlobal struct {
 	HonorDf                              *string `json:"honor-df,omitempty"`
 	Hostname                             *string `json:"hostname,omitempty"`
 	IgmpStateLimit                       *int64  `json:"igmp-state-limit,omitempty"`
+	InternetServiceDatabase              *string `json:"internet-service-database,omitempty"`
 	Interval                             *int64  `json:"interval,omitempty"`
 	IpSrcPortRange                       *string `json:"ip-src-port-range,omitempty"`
 	IpsAffinity                          *string `json:"ips-affinity,omitempty"`
@@ -142,6 +146,7 @@ type SystemGlobal struct {
 	ProxyAuthLifetime                    *string `json:"proxy-auth-lifetime,omitempty"`
 	ProxyAuthLifetimeTimeout             *int64  `json:"proxy-auth-lifetime-timeout,omitempty"`
 	ProxyAuthTimeout                     *int64  `json:"proxy-auth-timeout,omitempty"`
+	ProxyCertUseMgmtVdom                 *string `json:"proxy-cert-use-mgmt-vdom,omitempty"`
 	ProxyCipherHardwareAcceleration      *string `json:"proxy-cipher-hardware-acceleration,omitempty"`
 	ProxyKxpHardwareAcceleration         *string `json:"proxy-kxp-hardware-acceleration,omitempty"`
 	ProxyReAuthenticationMode            *string `json:"proxy-re-authentication-mode,omitempty"`

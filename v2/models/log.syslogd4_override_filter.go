@@ -14,6 +14,7 @@ type LogSyslogd4OverrideFilter struct {
 	Severity         *string                               `json:"severity,omitempty"`
 	SnifferTraffic   *string                               `json:"sniffer-traffic,omitempty"`
 	Voip             *string                               `json:"voip,omitempty"`
+	ZtnaTraffic      *string                               `json:"ztna-traffic,omitempty"`
 }
 
 type LogSyslogd4OverrideFilterFreeStyle struct {

@@ -35,6 +35,8 @@ type FirewallAddress struct {
 	SubType             *string                     `json:"sub-type,omitempty"`
 	Subnet              *string                     `json:"subnet,omitempty"`
 	SubnetName          *string                     `json:"subnet-name,omitempty"`
+	TagDetectionLevel   *string                     `json:"tag-detection-level,omitempty"`
+	TagType             *string                     `json:"tag-type,omitempty"`
 	Tagging             *[]FirewallAddressTagging   `json:"tagging,omitempty"`
 	Tenant              *string                     `json:"tenant,omitempty"`
 	Type                *string                     `json:"type,omitempty"`

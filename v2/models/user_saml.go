@@ -5,6 +5,7 @@ const UserSamlPath = "user/saml/"
 type UserSaml struct {
 	AdfsClaim          *string `json:"adfs-claim,omitempty"`
 	Cert               *string `json:"cert,omitempty"`
+	ClockTolerance     *int64  `json:"clock-tolerance,omitempty"`
 	DigestMethod       *string `json:"digest-method,omitempty"`
 	EntityId           *string `json:"entity-id,omitempty"`
 	GroupClaimType     *string `json:"group-claim-type,omitempty"`

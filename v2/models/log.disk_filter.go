@@ -33,6 +33,7 @@ type LogDiskFilter struct {
 	Voip             *string                   `json:"voip,omitempty"`
 	WanOpt           *string                   `json:"wan-opt,omitempty"`
 	WirelessActivity *string                   `json:"wireless-activity,omitempty"`
+	ZtnaTraffic      *string                   `json:"ztna-traffic,omitempty"`
 }
 
 type LogDiskFilterFreeStyle struct {

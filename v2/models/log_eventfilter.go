@@ -9,6 +9,7 @@ type LogEventfilter struct {
 	Event            *string `json:"event,omitempty"`
 	Fortiextender    *string `json:"fortiextender,omitempty"`
 	Ha               *string `json:"ha,omitempty"`
+	RestApi          *string `json:"rest-api,omitempty"`
 	Router           *string `json:"router,omitempty"`
 	Sdwan            *string `json:"sdwan,omitempty"`
 	SecurityRating   *string `json:"security-rating,omitempty"`

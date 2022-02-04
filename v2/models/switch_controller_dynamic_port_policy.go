@@ -16,6 +16,7 @@ type SwitchControllerDynamicPortPolicyPolicy struct {
 	Description    *string                                                 `json:"description,omitempty"`
 	Family         *string                                                 `json:"family,omitempty"`
 	Host           *string                                                 `json:"host,omitempty"`
+	HwVendor       *string                                                 `json:"hw-vendor,omitempty"`
 	InterfaceTags  *[]SwitchControllerDynamicPortPolicyPolicyInterfaceTags `json:"interface-tags,omitempty"`
 	LldpProfile    *string                                                 `json:"lldp-profile,omitempty"`
 	Mac            *string                                                 `json:"mac,omitempty"`

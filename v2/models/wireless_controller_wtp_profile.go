@@ -142,6 +142,7 @@ type WirelessControllerWtpProfileRadio1 struct {
 	ApSnifferMgmtBeacon       *string                                      `json:"ap-sniffer-mgmt-beacon,omitempty"`
 	ApSnifferMgmtOther        *string                                      `json:"ap-sniffer-mgmt-other,omitempty"`
 	ApSnifferMgmtProbe        *string                                      `json:"ap-sniffer-mgmt-probe,omitempty"`
+	ArrpProfile               *string                                      `json:"arrp-profile,omitempty"`
 	AutoPowerHigh             *int64                                       `json:"auto-power-high,omitempty"`
 	AutoPowerLevel            *string                                      `json:"auto-power-level,omitempty"`
 	AutoPowerLow              *int64                                       `json:"auto-power-low,omitempty"`
@@ -223,6 +224,7 @@ type WirelessControllerWtpProfileRadio2 struct {
 	ApSnifferMgmtBeacon       *string                                      `json:"ap-sniffer-mgmt-beacon,omitempty"`
 	ApSnifferMgmtOther        *string                                      `json:"ap-sniffer-mgmt-other,omitempty"`
 	ApSnifferMgmtProbe        *string                                      `json:"ap-sniffer-mgmt-probe,omitempty"`
+	ArrpProfile               *string                                      `json:"arrp-profile,omitempty"`
 	AutoPowerHigh             *int64                                       `json:"auto-power-high,omitempty"`
 	AutoPowerLevel            *string                                      `json:"auto-power-level,omitempty"`
 	AutoPowerLow              *int64                                       `json:"auto-power-low,omitempty"`
@@ -304,6 +306,7 @@ type WirelessControllerWtpProfileRadio3 struct {
 	ApSnifferMgmtBeacon       *string                                      `json:"ap-sniffer-mgmt-beacon,omitempty"`
 	ApSnifferMgmtOther        *string                                      `json:"ap-sniffer-mgmt-other,omitempty"`
 	ApSnifferMgmtProbe        *string                                      `json:"ap-sniffer-mgmt-probe,omitempty"`
+	ArrpProfile               *string                                      `json:"arrp-profile,omitempty"`
 	AutoPowerHigh             *int64                                       `json:"auto-power-high,omitempty"`
 	AutoPowerLevel            *string                                      `json:"auto-power-level,omitempty"`
 	AutoPowerLow              *int64                                       `json:"auto-power-low,omitempty"`
@@ -385,6 +388,7 @@ type WirelessControllerWtpProfileRadio4 struct {
 	ApSnifferMgmtBeacon       *string                                      `json:"ap-sniffer-mgmt-beacon,omitempty"`
 	ApSnifferMgmtOther        *string                                      `json:"ap-sniffer-mgmt-other,omitempty"`
 	ApSnifferMgmtProbe        *string                                      `json:"ap-sniffer-mgmt-probe,omitempty"`
+	ArrpProfile               *string                                      `json:"arrp-profile,omitempty"`
 	AutoPowerHigh             *int64                                       `json:"auto-power-high,omitempty"`
 	AutoPowerLevel            *string                                      `json:"auto-power-level,omitempty"`
 	AutoPowerLow              *int64                                       `json:"auto-power-low,omitempty"`

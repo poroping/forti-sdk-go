@@ -47,6 +47,7 @@ type FirewallVip struct {
 	Service                      *[]FirewallVipService               `json:"service,omitempty"`
 	SrcFilter                    *[]FirewallVipSrcFilter             `json:"src-filter,omitempty"`
 	SrcintfFilter                *[]FirewallVipSrcintfFilter         `json:"srcintf-filter,omitempty"`
+	SslAcceptFfdheGroups         *string                             `json:"ssl-accept-ffdhe-groups,omitempty"`
 	SslAlgorithm                 *string                             `json:"ssl-algorithm,omitempty"`
 	SslCertificate               *string                             `json:"ssl-certificate,omitempty"`
 	SslCipherSuites              *[]FirewallVipSslCipherSuites       `json:"ssl-cipher-suites,omitempty"`

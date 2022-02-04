@@ -8,6 +8,7 @@ type FirewallProxyPolicy struct {
 	Action                     *string                                          `json:"action,omitempty"`
 	ApplicationList            *string                                          `json:"application-list,omitempty"`
 	AvProfile                  *string                                          `json:"av-profile,omitempty"`
+	BlockNotification          *string                                          `json:"block-notification,omitempty"`
 	CifsProfile                *string                                          `json:"cifs-profile,omitempty"`
 	Comments                   *string                                          `json:"comments,omitempty"`
 	DecryptedTrafficMirror     *string                                          `json:"decrypted-traffic-mirror,omitempty"`

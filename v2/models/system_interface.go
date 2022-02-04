@@ -10,6 +10,8 @@ type SystemInterface struct {
 	Allowaccess                           *string                                  `json:"allowaccess,omitempty"`
 	ApDiscover                            *string                                  `json:"ap-discover,omitempty"`
 	Arpforward                            *string                                  `json:"arpforward,omitempty"`
+	AuthCert                              *string                                  `json:"auth-cert,omitempty"`
+	AuthPortalAddr                        *string                                  `json:"auth-portal-addr,omitempty"`
 	AuthType                              *string                                  `json:"auth-type,omitempty"`
 	AutoAuthExtensionDevice               *string                                  `json:"auto-auth-extension-device,omitempty"`
 	BandwidthMeasureTime                  *int64                                   `json:"bandwidth-measure-time,omitempty"`
@@ -37,6 +39,7 @@ type SystemInterface struct {
 	DhcpRelayInterface                    *string                                  `json:"dhcp-relay-interface,omitempty"`
 	DhcpRelayInterfaceSelectMethod        *string                                  `json:"dhcp-relay-interface-select-method,omitempty"`
 	DhcpRelayIp                           *string                                  `json:"dhcp-relay-ip,omitempty"`
+	DhcpRelayLinkSelection                *string                                  `json:"dhcp-relay-link-selection,omitempty"`
 	DhcpRelayRequestAllServer             *string                                  `json:"dhcp-relay-request-all-server,omitempty"`
 	DhcpRelayService                      *string                                  `json:"dhcp-relay-service,omitempty"`
 	DhcpRelayType                         *string                                  `json:"dhcp-relay-type,omitempty"`
@@ -46,6 +49,7 @@ type SystemInterface struct {
 	DisconnectThreshold                   *int64                                   `json:"disconnect-threshold,omitempty"`
 	Distance                              *int64                                   `json:"distance,omitempty"`
 	DnsServerOverride                     *string                                  `json:"dns-server-override,omitempty"`
+	DnsServerProtocol                     *string                                  `json:"dns-server-protocol,omitempty"`
 	DropFragment                          *string                                  `json:"drop-fragment,omitempty"`
 	DropOverlappedFragment                *string                                  `json:"drop-overlapped-fragment,omitempty"`
 	EgressCos                             *string                                  `json:"egress-cos,omitempty"`
@@ -129,6 +133,7 @@ type SystemInterface struct {
 	Priority                              *int64                                   `json:"priority,omitempty"`
 	PriorityOverride                      *string                                  `json:"priority-override,omitempty"`
 	ProxyCaptivePortal                    *string                                  `json:"proxy-captive-portal,omitempty"`
+	ReachableTime                         *int64                                   `json:"reachable-time,omitempty"`
 	RedundantInterface                    *string                                  `json:"redundant-interface,omitempty"`
 	RemoteIp                              *string                                  `json:"remote-ip,omitempty"`
 	ReplacemsgOverrideGroup               *string                                  `json:"replacemsg-override-group,omitempty"`

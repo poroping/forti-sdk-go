@@ -60,6 +60,7 @@ type RouterBgp struct {
 	RouterId                        *string                        `json:"router-id,omitempty"`
 	ScanTime                        *int64                         `json:"scan-time,omitempty"`
 	Synchronization                 *string                        `json:"synchronization,omitempty"`
+	TagResolveMode                  *string                        `json:"tag-resolve-mode,omitempty"`
 	VrfLeak                         *[]RouterBgpVrfLeak            `json:"vrf-leak,omitempty"`
 	VrfLeak6                        *[]RouterBgpVrfLeak6           `json:"vrf-leak6,omitempty"`
 }
@@ -185,15 +186,23 @@ type RouterBgpNeighbor struct {
 }
 
 type RouterBgpNeighborConditionalAdvertise struct {
-	AdvertiseRoutemap *string `json:"advertise-routemap,omitempty"`
-	ConditionRoutemap *string `json:"condition-routemap,omitempty"`
-	ConditionType     *string `json:"condition-type,omitempty"`
+	AdvertiseRoutemap *string                                                   `json:"advertise-routemap,omitempty"`
+	ConditionRoutemap *[]RouterBgpNeighborConditionalAdvertiseConditionRoutemap `json:"condition-routemap,omitempty"`
+	ConditionType     *string                                                   `json:"condition-type,omitempty"`
+}
+
+type RouterBgpNeighborConditionalAdvertiseConditionRoutemap struct {
+	Name *string `json:"name,omitempty"`
 }
 
 type RouterBgpNeighborConditionalAdvertise6 struct {
-	AdvertiseRoutemap *string `json:"advertise-routemap,omitempty"`
-	ConditionRoutemap *string `json:"condition-routemap,omitempty"`
-	ConditionType     *string `json:"condition-type,omitempty"`
+	AdvertiseRoutemap *string                                                    `json:"advertise-routemap,omitempty"`
+	ConditionRoutemap *[]RouterBgpNeighborConditionalAdvertise6ConditionRoutemap `json:"condition-routemap,omitempty"`
+	ConditionType     *string                                                    `json:"condition-type,omitempty"`
+}
+
+type RouterBgpNeighborConditionalAdvertise6ConditionRoutemap struct {
+	Name *string `json:"name,omitempty"`
 }
 
 type RouterBgpNeighborGroup struct {
@@ -303,17 +312,19 @@ type RouterBgpNeighborRange6 struct {
 }
 
 type RouterBgpNetwork struct {
-	Backdoor *string `json:"backdoor,omitempty"`
-	Id       *int64  `json:"id,omitempty"`
-	Prefix   *string `json:"prefix,omitempty"`
-	RouteMap *string `json:"route-map,omitempty"`
+	Backdoor           *string `json:"backdoor,omitempty"`
+	Id                 *int64  `json:"id,omitempty"`
+	NetworkImportCheck *string `json:"network-import-check,omitempty"`
+	Prefix             *string `json:"prefix,omitempty"`
+	RouteMap           *string `json:"route-map,omitempty"`
 }
 
 type RouterBgpNetwork6 struct {
-	Backdoor *string `json:"backdoor,omitempty"`
-	Id       *int64  `json:"id,omitempty"`
-	Prefix6  *string `json:"prefix6,omitempty"`
-	RouteMap *string `json:"route-map,omitempty"`
+	Backdoor           *string `json:"backdoor,omitempty"`
+	Id                 *int64  `json:"id,omitempty"`
+	NetworkImportCheck *string `json:"network-import-check,omitempty"`
+	Prefix6            *string `json:"prefix6,omitempty"`
+	RouteMap           *string `json:"route-map,omitempty"`
 }
 
 type RouterBgpRedistribute struct {

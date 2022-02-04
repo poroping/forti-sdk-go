@@ -15,6 +15,7 @@ type LogFortianalyzer3Filter struct {
 	Severity         *string                             `json:"severity,omitempty"`
 	SnifferTraffic   *string                             `json:"sniffer-traffic,omitempty"`
 	Voip             *string                             `json:"voip,omitempty"`
+	ZtnaTraffic      *string                             `json:"ztna-traffic,omitempty"`
 }
 
 type LogFortianalyzer3FilterFreeStyle struct {
