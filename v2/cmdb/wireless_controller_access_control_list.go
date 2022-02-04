@@ -46,7 +46,7 @@ func (c *Client) ReadWirelessControllerAccessControlList(mkey string, params *mo
 	req.HTTPMethod = "GET"
 	req.Mkey = &mkey
 	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.WirelessControllerAccessControlListPath + url.PathEscape(mkey) + "/"
+	req.Path = models.CmdbBasePath + models.WirelessControllerAccessControlListPath + url.QueryEscape(mkey) + "/"
 	req.Params = *params
 
 	res, err := request.Read(c.config, req)
@@ -79,7 +79,7 @@ func (c *Client) UpdateWirelessControllerAccessControlList(mkey string, payload 
 	req.HTTPMethod = "PUT"
 	req.Mkey = &mkey
 	req.Payload = body
-	req.Path = models.CmdbBasePath + models.WirelessControllerAccessControlListPath + url.PathEscape(mkey) + "/"
+	req.Path = models.CmdbBasePath + models.WirelessControllerAccessControlListPath + url.QueryEscape(mkey) + "/"
 	req.Params = *params
 
 	res, err := request.CreateUpdate(c.config, req)
@@ -94,7 +94,7 @@ func (c *Client) DeleteWirelessControllerAccessControlList(mkey string, params *
 	req.HTTPMethod = "DELETE"
 	req.Mkey = &mkey
 	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.WirelessControllerAccessControlListPath + url.PathEscape(mkey) + "/"
+	req.Path = models.CmdbBasePath + models.WirelessControllerAccessControlListPath + url.QueryEscape(mkey) + "/"
 	req.Params = *params
 
 	err := request.Delete(c.config, req)

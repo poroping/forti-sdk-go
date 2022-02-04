@@ -46,7 +46,7 @@ func (c *Client) ReadVpnSslWebHostCheckSoftware(mkey string, params *models.Cmdb
 	req.HTTPMethod = "GET"
 	req.Mkey = &mkey
 	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.VpnSslWebHostCheckSoftwarePath + url.PathEscape(mkey) + "/"
+	req.Path = models.CmdbBasePath + models.VpnSslWebHostCheckSoftwarePath + url.QueryEscape(mkey) + "/"
 	req.Params = *params
 
 	res, err := request.Read(c.config, req)
@@ -79,7 +79,7 @@ func (c *Client) UpdateVpnSslWebHostCheckSoftware(mkey string, payload *models.V
 	req.HTTPMethod = "PUT"
 	req.Mkey = &mkey
 	req.Payload = body
-	req.Path = models.CmdbBasePath + models.VpnSslWebHostCheckSoftwarePath + url.PathEscape(mkey) + "/"
+	req.Path = models.CmdbBasePath + models.VpnSslWebHostCheckSoftwarePath + url.QueryEscape(mkey) + "/"
 	req.Params = *params
 
 	res, err := request.CreateUpdate(c.config, req)
@@ -94,7 +94,7 @@ func (c *Client) DeleteVpnSslWebHostCheckSoftware(mkey string, params *models.Cm
 	req.HTTPMethod = "DELETE"
 	req.Mkey = &mkey
 	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.VpnSslWebHostCheckSoftwarePath + url.PathEscape(mkey) + "/"
+	req.Path = models.CmdbBasePath + models.VpnSslWebHostCheckSoftwarePath + url.QueryEscape(mkey) + "/"
 	req.Params = *params
 
 	err := request.Delete(c.config, req)

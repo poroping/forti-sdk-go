@@ -46,7 +46,7 @@ func (c *Client) ReadUserDomainController(mkey string, params *models.CmdbReques
 	req.HTTPMethod = "GET"
 	req.Mkey = &mkey
 	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.UserDomainControllerPath + url.PathEscape(mkey) + "/"
+	req.Path = models.CmdbBasePath + models.UserDomainControllerPath + url.QueryEscape(mkey) + "/"
 	req.Params = *params
 
 	res, err := request.Read(c.config, req)
@@ -79,7 +79,7 @@ func (c *Client) UpdateUserDomainController(mkey string, payload *models.UserDom
 	req.HTTPMethod = "PUT"
 	req.Mkey = &mkey
 	req.Payload = body
-	req.Path = models.CmdbBasePath + models.UserDomainControllerPath + url.PathEscape(mkey) + "/"
+	req.Path = models.CmdbBasePath + models.UserDomainControllerPath + url.QueryEscape(mkey) + "/"
 	req.Params = *params
 
 	res, err := request.CreateUpdate(c.config, req)
@@ -94,7 +94,7 @@ func (c *Client) DeleteUserDomainController(mkey string, params *models.CmdbRequ
 	req.HTTPMethod = "DELETE"
 	req.Mkey = &mkey
 	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.UserDomainControllerPath + url.PathEscape(mkey) + "/"
+	req.Path = models.CmdbBasePath + models.UserDomainControllerPath + url.QueryEscape(mkey) + "/"
 	req.Params = *params
 
 	err := request.Delete(c.config, req)

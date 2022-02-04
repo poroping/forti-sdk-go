@@ -47,7 +47,7 @@ func (c *Client) ReadSystemSdwanService(mkey string, params *models.CmdbRequestP
 	req.HTTPMethod = "GET"
 	req.Mkey = &mkey
 	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.SystemSdwanServicePath + url.PathEscape(mkey) + "/"
+	req.Path = models.CmdbBasePath + models.SystemSdwanServicePath + url.QueryEscape(mkey) + "/"
 	req.Params = *params
 
 	res, err := request.Read(c.config, req)
@@ -80,7 +80,7 @@ func (c *Client) UpdateSystemSdwanService(mkey string, payload *models.SystemSdw
 	req.HTTPMethod = "PUT"
 	req.Mkey = &mkey
 	req.Payload = body
-	req.Path = models.CmdbBasePath + models.SystemSdwanServicePath + url.PathEscape(mkey) + "/"
+	req.Path = models.CmdbBasePath + models.SystemSdwanServicePath + url.QueryEscape(mkey) + "/"
 	req.Params = *params
 
 	res, err := request.CreateUpdate(c.config, req)
@@ -95,7 +95,7 @@ func (c *Client) DeleteSystemSdwanService(mkey string, params *models.CmdbReques
 	req.HTTPMethod = "DELETE"
 	req.Mkey = &mkey
 	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.SystemSdwanServicePath + url.PathEscape(mkey) + "/"
+	req.Path = models.CmdbBasePath + models.SystemSdwanServicePath + url.QueryEscape(mkey) + "/"
 	req.Params = *params
 
 	err := request.Delete(c.config, req)

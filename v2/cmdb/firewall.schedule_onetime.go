@@ -46,7 +46,7 @@ func (c *Client) ReadFirewallScheduleOnetime(mkey string, params *models.CmdbReq
 	req.HTTPMethod = "GET"
 	req.Mkey = &mkey
 	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.FirewallScheduleOnetimePath + url.PathEscape(mkey) + "/"
+	req.Path = models.CmdbBasePath + models.FirewallScheduleOnetimePath + url.QueryEscape(mkey) + "/"
 	req.Params = *params
 
 	res, err := request.Read(c.config, req)
@@ -79,7 +79,7 @@ func (c *Client) UpdateFirewallScheduleOnetime(mkey string, payload *models.Fire
 	req.HTTPMethod = "PUT"
 	req.Mkey = &mkey
 	req.Payload = body
-	req.Path = models.CmdbBasePath + models.FirewallScheduleOnetimePath + url.PathEscape(mkey) + "/"
+	req.Path = models.CmdbBasePath + models.FirewallScheduleOnetimePath + url.QueryEscape(mkey) + "/"
 	req.Params = *params
 
 	res, err := request.CreateUpdate(c.config, req)
@@ -94,7 +94,7 @@ func (c *Client) DeleteFirewallScheduleOnetime(mkey string, params *models.CmdbR
 	req.HTTPMethod = "DELETE"
 	req.Mkey = &mkey
 	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.FirewallScheduleOnetimePath + url.PathEscape(mkey) + "/"
+	req.Path = models.CmdbBasePath + models.FirewallScheduleOnetimePath + url.QueryEscape(mkey) + "/"
 	req.Params = *params
 
 	err := request.Delete(c.config, req)

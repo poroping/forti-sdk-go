@@ -46,7 +46,7 @@ func (c *Client) ReadWebfilterSearchEngine(mkey string, params *models.CmdbReque
 	req.HTTPMethod = "GET"
 	req.Mkey = &mkey
 	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.WebfilterSearchEnginePath + url.PathEscape(mkey) + "/"
+	req.Path = models.CmdbBasePath + models.WebfilterSearchEnginePath + url.QueryEscape(mkey) + "/"
 	req.Params = *params
 
 	res, err := request.Read(c.config, req)
@@ -79,7 +79,7 @@ func (c *Client) UpdateWebfilterSearchEngine(mkey string, payload *models.Webfil
 	req.HTTPMethod = "PUT"
 	req.Mkey = &mkey
 	req.Payload = body
-	req.Path = models.CmdbBasePath + models.WebfilterSearchEnginePath + url.PathEscape(mkey) + "/"
+	req.Path = models.CmdbBasePath + models.WebfilterSearchEnginePath + url.QueryEscape(mkey) + "/"
 	req.Params = *params
 
 	res, err := request.CreateUpdate(c.config, req)
@@ -94,7 +94,7 @@ func (c *Client) DeleteWebfilterSearchEngine(mkey string, params *models.CmdbReq
 	req.HTTPMethod = "DELETE"
 	req.Mkey = &mkey
 	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.WebfilterSearchEnginePath + url.PathEscape(mkey) + "/"
+	req.Path = models.CmdbBasePath + models.WebfilterSearchEnginePath + url.QueryEscape(mkey) + "/"
 	req.Params = *params
 
 	err := request.Delete(c.config, req)

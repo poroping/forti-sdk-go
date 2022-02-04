@@ -46,7 +46,7 @@ func (c *Client) ReadFirewallShaperTrafficShaper(mkey string, params *models.Cmd
 	req.HTTPMethod = "GET"
 	req.Mkey = &mkey
 	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.FirewallShaperTrafficShaperPath + url.PathEscape(mkey) + "/"
+	req.Path = models.CmdbBasePath + models.FirewallShaperTrafficShaperPath + url.QueryEscape(mkey) + "/"
 	req.Params = *params
 
 	res, err := request.Read(c.config, req)
@@ -79,7 +79,7 @@ func (c *Client) UpdateFirewallShaperTrafficShaper(mkey string, payload *models.
 	req.HTTPMethod = "PUT"
 	req.Mkey = &mkey
 	req.Payload = body
-	req.Path = models.CmdbBasePath + models.FirewallShaperTrafficShaperPath + url.PathEscape(mkey) + "/"
+	req.Path = models.CmdbBasePath + models.FirewallShaperTrafficShaperPath + url.QueryEscape(mkey) + "/"
 	req.Params = *params
 
 	res, err := request.CreateUpdate(c.config, req)
@@ -94,7 +94,7 @@ func (c *Client) DeleteFirewallShaperTrafficShaper(mkey string, params *models.C
 	req.HTTPMethod = "DELETE"
 	req.Mkey = &mkey
 	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.FirewallShaperTrafficShaperPath + url.PathEscape(mkey) + "/"
+	req.Path = models.CmdbBasePath + models.FirewallShaperTrafficShaperPath + url.QueryEscape(mkey) + "/"
 	req.Params = *params
 
 	err := request.Delete(c.config, req)

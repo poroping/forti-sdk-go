@@ -46,7 +46,7 @@ func (c *Client) ReadSwitchControllerSecurityPolicy8021X(mkey string, params *mo
 	req.HTTPMethod = "GET"
 	req.Mkey = &mkey
 	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.SwitchControllerSecurityPolicy8021XPath + url.PathEscape(mkey) + "/"
+	req.Path = models.CmdbBasePath + models.SwitchControllerSecurityPolicy8021XPath + url.QueryEscape(mkey) + "/"
 	req.Params = *params
 
 	res, err := request.Read(c.config, req)
@@ -79,7 +79,7 @@ func (c *Client) UpdateSwitchControllerSecurityPolicy8021X(mkey string, payload 
 	req.HTTPMethod = "PUT"
 	req.Mkey = &mkey
 	req.Payload = body
-	req.Path = models.CmdbBasePath + models.SwitchControllerSecurityPolicy8021XPath + url.PathEscape(mkey) + "/"
+	req.Path = models.CmdbBasePath + models.SwitchControllerSecurityPolicy8021XPath + url.QueryEscape(mkey) + "/"
 	req.Params = *params
 
 	res, err := request.CreateUpdate(c.config, req)
@@ -94,7 +94,7 @@ func (c *Client) DeleteSwitchControllerSecurityPolicy8021X(mkey string, params *
 	req.HTTPMethod = "DELETE"
 	req.Mkey = &mkey
 	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.SwitchControllerSecurityPolicy8021XPath + url.PathEscape(mkey) + "/"
+	req.Path = models.CmdbBasePath + models.SwitchControllerSecurityPolicy8021XPath + url.QueryEscape(mkey) + "/"
 	req.Params = *params
 
 	err := request.Delete(c.config, req)

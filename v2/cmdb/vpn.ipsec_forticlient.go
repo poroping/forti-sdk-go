@@ -46,7 +46,7 @@ func (c *Client) ReadVpnIpsecForticlient(mkey string, params *models.CmdbRequest
 	req.HTTPMethod = "GET"
 	req.Mkey = &mkey
 	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.VpnIpsecForticlientPath + url.PathEscape(mkey) + "/"
+	req.Path = models.CmdbBasePath + models.VpnIpsecForticlientPath + url.QueryEscape(mkey) + "/"
 	req.Params = *params
 
 	res, err := request.Read(c.config, req)
@@ -79,7 +79,7 @@ func (c *Client) UpdateVpnIpsecForticlient(mkey string, payload *models.VpnIpsec
 	req.HTTPMethod = "PUT"
 	req.Mkey = &mkey
 	req.Payload = body
-	req.Path = models.CmdbBasePath + models.VpnIpsecForticlientPath + url.PathEscape(mkey) + "/"
+	req.Path = models.CmdbBasePath + models.VpnIpsecForticlientPath + url.QueryEscape(mkey) + "/"
 	req.Params = *params
 
 	res, err := request.CreateUpdate(c.config, req)
@@ -94,7 +94,7 @@ func (c *Client) DeleteVpnIpsecForticlient(mkey string, params *models.CmdbReque
 	req.HTTPMethod = "DELETE"
 	req.Mkey = &mkey
 	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.VpnIpsecForticlientPath + url.PathEscape(mkey) + "/"
+	req.Path = models.CmdbBasePath + models.VpnIpsecForticlientPath + url.QueryEscape(mkey) + "/"
 	req.Params = *params
 
 	err := request.Delete(c.config, req)

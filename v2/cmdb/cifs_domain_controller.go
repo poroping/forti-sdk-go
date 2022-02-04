@@ -46,7 +46,7 @@ func (c *Client) ReadCifsDomainController(mkey string, params *models.CmdbReques
 	req.HTTPMethod = "GET"
 	req.Mkey = &mkey
 	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.CifsDomainControllerPath + url.PathEscape(mkey) + "/"
+	req.Path = models.CmdbBasePath + models.CifsDomainControllerPath + url.QueryEscape(mkey) + "/"
 	req.Params = *params
 
 	res, err := request.Read(c.config, req)
@@ -79,7 +79,7 @@ func (c *Client) UpdateCifsDomainController(mkey string, payload *models.CifsDom
 	req.HTTPMethod = "PUT"
 	req.Mkey = &mkey
 	req.Payload = body
-	req.Path = models.CmdbBasePath + models.CifsDomainControllerPath + url.PathEscape(mkey) + "/"
+	req.Path = models.CmdbBasePath + models.CifsDomainControllerPath + url.QueryEscape(mkey) + "/"
 	req.Params = *params
 
 	res, err := request.CreateUpdate(c.config, req)
@@ -94,7 +94,7 @@ func (c *Client) DeleteCifsDomainController(mkey string, params *models.CmdbRequ
 	req.HTTPMethod = "DELETE"
 	req.Mkey = &mkey
 	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.CifsDomainControllerPath + url.PathEscape(mkey) + "/"
+	req.Path = models.CmdbBasePath + models.CifsDomainControllerPath + url.QueryEscape(mkey) + "/"
 	req.Params = *params
 
 	err := request.Delete(c.config, req)

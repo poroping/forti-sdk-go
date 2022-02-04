@@ -47,7 +47,7 @@ func (c *Client) ReadVpnSslSettingsAuthenticationRule(mkey string, params *model
 	req.HTTPMethod = "GET"
 	req.Mkey = &mkey
 	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.VpnSslSettingsAuthenticationRulePath + url.PathEscape(mkey) + "/"
+	req.Path = models.CmdbBasePath + models.VpnSslSettingsAuthenticationRulePath + url.QueryEscape(mkey) + "/"
 	req.Params = *params
 
 	res, err := request.Read(c.config, req)
@@ -80,7 +80,7 @@ func (c *Client) UpdateVpnSslSettingsAuthenticationRule(mkey string, payload *mo
 	req.HTTPMethod = "PUT"
 	req.Mkey = &mkey
 	req.Payload = body
-	req.Path = models.CmdbBasePath + models.VpnSslSettingsAuthenticationRulePath + url.PathEscape(mkey) + "/"
+	req.Path = models.CmdbBasePath + models.VpnSslSettingsAuthenticationRulePath + url.QueryEscape(mkey) + "/"
 	req.Params = *params
 
 	res, err := request.CreateUpdate(c.config, req)
@@ -95,7 +95,7 @@ func (c *Client) DeleteVpnSslSettingsAuthenticationRule(mkey string, params *mod
 	req.HTTPMethod = "DELETE"
 	req.Mkey = &mkey
 	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.VpnSslSettingsAuthenticationRulePath + url.PathEscape(mkey) + "/"
+	req.Path = models.CmdbBasePath + models.VpnSslSettingsAuthenticationRulePath + url.QueryEscape(mkey) + "/"
 	req.Params = *params
 
 	err := request.Delete(c.config, req)

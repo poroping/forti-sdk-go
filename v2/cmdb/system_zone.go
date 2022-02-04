@@ -46,7 +46,7 @@ func (c *Client) ReadSystemZone(mkey string, params *models.CmdbRequestParams) (
 	req.HTTPMethod = "GET"
 	req.Mkey = &mkey
 	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.SystemZonePath + url.PathEscape(mkey) + "/"
+	req.Path = models.CmdbBasePath + models.SystemZonePath + url.QueryEscape(mkey) + "/"
 	req.Params = *params
 
 	res, err := request.Read(c.config, req)
@@ -79,7 +79,7 @@ func (c *Client) UpdateSystemZone(mkey string, payload *models.SystemZone, param
 	req.HTTPMethod = "PUT"
 	req.Mkey = &mkey
 	req.Payload = body
-	req.Path = models.CmdbBasePath + models.SystemZonePath + url.PathEscape(mkey) + "/"
+	req.Path = models.CmdbBasePath + models.SystemZonePath + url.QueryEscape(mkey) + "/"
 	req.Params = *params
 
 	res, err := request.CreateUpdate(c.config, req)
@@ -94,7 +94,7 @@ func (c *Client) DeleteSystemZone(mkey string, params *models.CmdbRequestParams)
 	req.HTTPMethod = "DELETE"
 	req.Mkey = &mkey
 	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.SystemZonePath + url.PathEscape(mkey) + "/"
+	req.Path = models.CmdbBasePath + models.SystemZonePath + url.QueryEscape(mkey) + "/"
 	req.Params = *params
 
 	err := request.Delete(c.config, req)

@@ -46,7 +46,7 @@ func (c *Client) ReadUserSecurityExemptList(mkey string, params *models.CmdbRequ
 	req.HTTPMethod = "GET"
 	req.Mkey = &mkey
 	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.UserSecurityExemptListPath + url.PathEscape(mkey) + "/"
+	req.Path = models.CmdbBasePath + models.UserSecurityExemptListPath + url.QueryEscape(mkey) + "/"
 	req.Params = *params
 
 	res, err := request.Read(c.config, req)
@@ -79,7 +79,7 @@ func (c *Client) UpdateUserSecurityExemptList(mkey string, payload *models.UserS
 	req.HTTPMethod = "PUT"
 	req.Mkey = &mkey
 	req.Payload = body
-	req.Path = models.CmdbBasePath + models.UserSecurityExemptListPath + url.PathEscape(mkey) + "/"
+	req.Path = models.CmdbBasePath + models.UserSecurityExemptListPath + url.QueryEscape(mkey) + "/"
 	req.Params = *params
 
 	res, err := request.CreateUpdate(c.config, req)
@@ -94,7 +94,7 @@ func (c *Client) DeleteUserSecurityExemptList(mkey string, params *models.CmdbRe
 	req.HTTPMethod = "DELETE"
 	req.Mkey = &mkey
 	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.UserSecurityExemptListPath + url.PathEscape(mkey) + "/"
+	req.Path = models.CmdbBasePath + models.UserSecurityExemptListPath + url.QueryEscape(mkey) + "/"
 	req.Params = *params
 
 	err := request.Delete(c.config, req)

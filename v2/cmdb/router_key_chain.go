@@ -46,7 +46,7 @@ func (c *Client) ReadRouterKeyChain(mkey string, params *models.CmdbRequestParam
 	req.HTTPMethod = "GET"
 	req.Mkey = &mkey
 	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.RouterKeyChainPath + url.PathEscape(mkey) + "/"
+	req.Path = models.CmdbBasePath + models.RouterKeyChainPath + url.QueryEscape(mkey) + "/"
 	req.Params = *params
 
 	res, err := request.Read(c.config, req)
@@ -79,7 +79,7 @@ func (c *Client) UpdateRouterKeyChain(mkey string, payload *models.RouterKeyChai
 	req.HTTPMethod = "PUT"
 	req.Mkey = &mkey
 	req.Payload = body
-	req.Path = models.CmdbBasePath + models.RouterKeyChainPath + url.PathEscape(mkey) + "/"
+	req.Path = models.CmdbBasePath + models.RouterKeyChainPath + url.QueryEscape(mkey) + "/"
 	req.Params = *params
 
 	res, err := request.CreateUpdate(c.config, req)
@@ -94,7 +94,7 @@ func (c *Client) DeleteRouterKeyChain(mkey string, params *models.CmdbRequestPar
 	req.HTTPMethod = "DELETE"
 	req.Mkey = &mkey
 	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.RouterKeyChainPath + url.PathEscape(mkey) + "/"
+	req.Path = models.CmdbBasePath + models.RouterKeyChainPath + url.QueryEscape(mkey) + "/"
 	req.Params = *params
 
 	err := request.Delete(c.config, req)

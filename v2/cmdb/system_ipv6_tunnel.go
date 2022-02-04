@@ -46,7 +46,7 @@ func (c *Client) ReadSystemIpv6Tunnel(mkey string, params *models.CmdbRequestPar
 	req.HTTPMethod = "GET"
 	req.Mkey = &mkey
 	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.SystemIpv6TunnelPath + url.PathEscape(mkey) + "/"
+	req.Path = models.CmdbBasePath + models.SystemIpv6TunnelPath + url.QueryEscape(mkey) + "/"
 	req.Params = *params
 
 	res, err := request.Read(c.config, req)
@@ -79,7 +79,7 @@ func (c *Client) UpdateSystemIpv6Tunnel(mkey string, payload *models.SystemIpv6T
 	req.HTTPMethod = "PUT"
 	req.Mkey = &mkey
 	req.Payload = body
-	req.Path = models.CmdbBasePath + models.SystemIpv6TunnelPath + url.PathEscape(mkey) + "/"
+	req.Path = models.CmdbBasePath + models.SystemIpv6TunnelPath + url.QueryEscape(mkey) + "/"
 	req.Params = *params
 
 	res, err := request.CreateUpdate(c.config, req)
@@ -94,7 +94,7 @@ func (c *Client) DeleteSystemIpv6Tunnel(mkey string, params *models.CmdbRequestP
 	req.HTTPMethod = "DELETE"
 	req.Mkey = &mkey
 	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.SystemIpv6TunnelPath + url.PathEscape(mkey) + "/"
+	req.Path = models.CmdbBasePath + models.SystemIpv6TunnelPath + url.QueryEscape(mkey) + "/"
 	req.Params = *params
 
 	err := request.Delete(c.config, req)

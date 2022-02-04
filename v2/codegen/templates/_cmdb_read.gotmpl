@@ -4,7 +4,7 @@ func (c *Client) Read{{.fpath}}(mkey string, params *models.CmdbRequestParams) (
 	req.HTTPMethod = "GET"
 	req.Mkey = &mkey
 	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.{{.fpath}}Path{{if not (eq .results.category "complex")}} + url.PathEscape(mkey) + "/"{{end}}
+	req.Path = models.CmdbBasePath + models.{{.fpath}}Path{{if not (eq .results.category "complex")}} + url.QueryEscape(mkey) + "/"{{end}}
 	req.Params = *params
 
 	res, err := request.Read(c.config, req)

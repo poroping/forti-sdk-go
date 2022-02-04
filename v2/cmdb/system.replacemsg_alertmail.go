@@ -46,7 +46,7 @@ func (c *Client) ReadSystemReplacemsgAlertmail(mkey string, params *models.CmdbR
 	req.HTTPMethod = "GET"
 	req.Mkey = &mkey
 	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.SystemReplacemsgAlertmailPath + url.PathEscape(mkey) + "/"
+	req.Path = models.CmdbBasePath + models.SystemReplacemsgAlertmailPath + url.QueryEscape(mkey) + "/"
 	req.Params = *params
 
 	res, err := request.Read(c.config, req)
@@ -79,7 +79,7 @@ func (c *Client) UpdateSystemReplacemsgAlertmail(mkey string, payload *models.Sy
 	req.HTTPMethod = "PUT"
 	req.Mkey = &mkey
 	req.Payload = body
-	req.Path = models.CmdbBasePath + models.SystemReplacemsgAlertmailPath + url.PathEscape(mkey) + "/"
+	req.Path = models.CmdbBasePath + models.SystemReplacemsgAlertmailPath + url.QueryEscape(mkey) + "/"
 	req.Params = *params
 
 	res, err := request.CreateUpdate(c.config, req)
@@ -94,7 +94,7 @@ func (c *Client) DeleteSystemReplacemsgAlertmail(mkey string, params *models.Cmd
 	req.HTTPMethod = "DELETE"
 	req.Mkey = &mkey
 	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.SystemReplacemsgAlertmailPath + url.PathEscape(mkey) + "/"
+	req.Path = models.CmdbBasePath + models.SystemReplacemsgAlertmailPath + url.QueryEscape(mkey) + "/"
 	req.Params = *params
 
 	err := request.Delete(c.config, req)

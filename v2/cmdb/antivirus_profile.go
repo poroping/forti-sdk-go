@@ -46,7 +46,7 @@ func (c *Client) ReadAntivirusProfile(mkey string, params *models.CmdbRequestPar
 	req.HTTPMethod = "GET"
 	req.Mkey = &mkey
 	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.AntivirusProfilePath + url.PathEscape(mkey) + "/"
+	req.Path = models.CmdbBasePath + models.AntivirusProfilePath + url.QueryEscape(mkey) + "/"
 	req.Params = *params
 
 	res, err := request.Read(c.config, req)
@@ -79,7 +79,7 @@ func (c *Client) UpdateAntivirusProfile(mkey string, payload *models.AntivirusPr
 	req.HTTPMethod = "PUT"
 	req.Mkey = &mkey
 	req.Payload = body
-	req.Path = models.CmdbBasePath + models.AntivirusProfilePath + url.PathEscape(mkey) + "/"
+	req.Path = models.CmdbBasePath + models.AntivirusProfilePath + url.QueryEscape(mkey) + "/"
 	req.Params = *params
 
 	res, err := request.CreateUpdate(c.config, req)
@@ -94,7 +94,7 @@ func (c *Client) DeleteAntivirusProfile(mkey string, params *models.CmdbRequestP
 	req.HTTPMethod = "DELETE"
 	req.Mkey = &mkey
 	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.AntivirusProfilePath + url.PathEscape(mkey) + "/"
+	req.Path = models.CmdbBasePath + models.AntivirusProfilePath + url.QueryEscape(mkey) + "/"
 	req.Params = *params
 
 	err := request.Delete(c.config, req)

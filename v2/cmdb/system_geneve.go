@@ -46,7 +46,7 @@ func (c *Client) ReadSystemGeneve(mkey string, params *models.CmdbRequestParams)
 	req.HTTPMethod = "GET"
 	req.Mkey = &mkey
 	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.SystemGenevePath + url.PathEscape(mkey) + "/"
+	req.Path = models.CmdbBasePath + models.SystemGenevePath + url.QueryEscape(mkey) + "/"
 	req.Params = *params
 
 	res, err := request.Read(c.config, req)
@@ -79,7 +79,7 @@ func (c *Client) UpdateSystemGeneve(mkey string, payload *models.SystemGeneve, p
 	req.HTTPMethod = "PUT"
 	req.Mkey = &mkey
 	req.Payload = body
-	req.Path = models.CmdbBasePath + models.SystemGenevePath + url.PathEscape(mkey) + "/"
+	req.Path = models.CmdbBasePath + models.SystemGenevePath + url.QueryEscape(mkey) + "/"
 	req.Params = *params
 
 	res, err := request.CreateUpdate(c.config, req)
@@ -94,7 +94,7 @@ func (c *Client) DeleteSystemGeneve(mkey string, params *models.CmdbRequestParam
 	req.HTTPMethod = "DELETE"
 	req.Mkey = &mkey
 	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.SystemGenevePath + url.PathEscape(mkey) + "/"
+	req.Path = models.CmdbBasePath + models.SystemGenevePath + url.QueryEscape(mkey) + "/"
 	req.Params = *params
 
 	err := request.Delete(c.config, req)

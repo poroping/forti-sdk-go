@@ -46,7 +46,7 @@ func (c *Client) ReadAuthenticationRule(mkey string, params *models.CmdbRequestP
 	req.HTTPMethod = "GET"
 	req.Mkey = &mkey
 	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.AuthenticationRulePath + url.PathEscape(mkey) + "/"
+	req.Path = models.CmdbBasePath + models.AuthenticationRulePath + url.QueryEscape(mkey) + "/"
 	req.Params = *params
 
 	res, err := request.Read(c.config, req)
@@ -79,7 +79,7 @@ func (c *Client) UpdateAuthenticationRule(mkey string, payload *models.Authentic
 	req.HTTPMethod = "PUT"
 	req.Mkey = &mkey
 	req.Payload = body
-	req.Path = models.CmdbBasePath + models.AuthenticationRulePath + url.PathEscape(mkey) + "/"
+	req.Path = models.CmdbBasePath + models.AuthenticationRulePath + url.QueryEscape(mkey) + "/"
 	req.Params = *params
 
 	res, err := request.CreateUpdate(c.config, req)
@@ -94,7 +94,7 @@ func (c *Client) DeleteAuthenticationRule(mkey string, params *models.CmdbReques
 	req.HTTPMethod = "DELETE"
 	req.Mkey = &mkey
 	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.AuthenticationRulePath + url.PathEscape(mkey) + "/"
+	req.Path = models.CmdbBasePath + models.AuthenticationRulePath + url.QueryEscape(mkey) + "/"
 	req.Params = *params
 
 	err := request.Delete(c.config, req)

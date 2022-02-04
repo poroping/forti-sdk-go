@@ -46,7 +46,7 @@ func (c *Client) ReadRouterIsisRedistribute6(mkey string, params *models.CmdbReq
 	req.HTTPMethod = "GET"
 	req.Mkey = &mkey
 	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.RouterIsisRedistribute6Path + url.PathEscape(mkey) + "/"
+	req.Path = models.CmdbBasePath + models.RouterIsisRedistribute6Path + url.QueryEscape(mkey) + "/"
 	req.Params = *params
 
 	res, err := request.Read(c.config, req)
@@ -79,7 +79,7 @@ func (c *Client) UpdateRouterIsisRedistribute6(mkey string, payload *models.Rout
 	req.HTTPMethod = "PUT"
 	req.Mkey = &mkey
 	req.Payload = body
-	req.Path = models.CmdbBasePath + models.RouterIsisRedistribute6Path + url.PathEscape(mkey) + "/"
+	req.Path = models.CmdbBasePath + models.RouterIsisRedistribute6Path + url.QueryEscape(mkey) + "/"
 	req.Params = *params
 
 	res, err := request.CreateUpdate(c.config, req)
@@ -94,7 +94,7 @@ func (c *Client) DeleteRouterIsisRedistribute6(mkey string, params *models.CmdbR
 	req.HTTPMethod = "DELETE"
 	req.Mkey = &mkey
 	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.RouterIsisRedistribute6Path + url.PathEscape(mkey) + "/"
+	req.Path = models.CmdbBasePath + models.RouterIsisRedistribute6Path + url.QueryEscape(mkey) + "/"
 	req.Params = *params
 
 	err := request.Delete(c.config, req)
