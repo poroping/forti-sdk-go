@@ -383,7 +383,10 @@ func buildURL(c config.Config, r *models.CmdbRequest) *url.URL {
 	u := url.URL{}
 	u.Scheme = "https"
 	u.Host = c.FwTarget
-	u.Path = r.Path
+	// this shitmix is needed cause the fortios needs to query escape the mkey even though it's part of the path
+	path, _ := url.Parse(r.Path)
+	u.Path = path.Path
+	u.RawPath = r.Path
 	q := marshalParams(&r.Params)
 	if r.Params.Vdom != "" {
 		q.Set("vdom", r.Params.Vdom)
