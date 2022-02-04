@@ -1,9 +1,9 @@
 {
 	"addedIn": "v6.2.7",
-	"build": 237,
+	"build": 301,
 	"http_method": "GET",
 	"http_status": 200,
-	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3",
+	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3,v7.0.4",
 	"name": "lldp-profile",
 	"path": "switch-controller",
 	"results": {
@@ -66,6 +66,7 @@
 				"help": "Auto inter-switch LAG hello timer duration (1 - 30 sec, default = 3).",
 				"max-value": 30,
 				"min-value": 1,
+				"multiple_values": false,
 				"name": "auto-isl-hello-timer",
 				"type": "integer"
 			},
@@ -75,6 +76,7 @@
 				"help": "Auto inter-switch LAG port group ID (0 - 9).",
 				"max-value": 9,
 				"min-value": 0,
+				"multiple_values": false,
 				"name": "auto-isl-port-group",
 				"type": "integer"
 			},
@@ -84,6 +86,7 @@
 				"help": "Auto inter-switch LAG timeout if no response is received (3 - 90 sec, default = 9).",
 				"max-value": 90,
 				"min-value": 0,
+				"multiple_values": false,
 				"name": "auto-isl-receive-timeout",
 				"type": "integer"
 			},
@@ -113,6 +116,7 @@
 						"category": "unitary",
 						"default": "",
 						"help": "Organizationally defined information string (0 - 507 hexadecimal bytes).",
+						"multiple_values": false,
 						"name": "information-string",
 						"type": "user"
 					},
@@ -120,6 +124,7 @@
 						"category": "unitary",
 						"default": "",
 						"help": "TLV name (not sent).",
+						"multiple_values": false,
 						"name": "name",
 						"size": 63,
 						"type": "string"
@@ -128,6 +133,7 @@
 						"category": "unitary",
 						"default": "000000",
 						"help": "Organizationally unique identifier (OUI), a 3-byte hexadecimal number, for this TLV.",
+						"multiple_values": false,
 						"name": "oui",
 						"required": true,
 						"type": "user"
@@ -138,6 +144,7 @@
 						"help": "Organizationally defined subtype (0 - 255).",
 						"max-value": 255,
 						"min-value": 0,
+						"multiple_values": false,
 						"name": "subtype",
 						"type": "integer"
 					}
@@ -157,6 +164,7 @@
 						"category": "unitary",
 						"default": "",
 						"help": "Location service type name.",
+						"multiple_values": false,
 						"name": "name",
 						"size": 63,
 						"type": "string"
@@ -186,6 +194,7 @@
 						],
 						"default": "",
 						"help": "Location service ID.",
+						"multiple_values": false,
 						"name": "sys-location-id",
 						"size": 63,
 						"type": "string"
@@ -226,6 +235,7 @@
 						"help": "Advertised Differentiated Services Code Point (DSCP) value, a packet header value indicating the level of service requested for traffic, such as high priority or best effort delivery.",
 						"max-value": 63,
 						"min-value": 0,
+						"multiple_values": false,
 						"name": "dscp",
 						"type": "integer"
 					},
@@ -233,6 +243,7 @@
 						"category": "unitary",
 						"default": "",
 						"help": "Policy type name.",
+						"multiple_values": false,
 						"name": "name",
 						"size": 63,
 						"type": "string"
@@ -243,6 +254,7 @@
 						"help": "Advertised Layer 2 priority (0 - 7; from lowest to highest priority).",
 						"max-value": 7,
 						"min-value": 0,
+						"multiple_values": false,
 						"name": "priority",
 						"type": "integer"
 					},
@@ -271,6 +283,7 @@
 						],
 						"default": "",
 						"help": "VLAN interface to advertise; if configured on port.",
+						"multiple_values": false,
 						"name": "vlan-intf",
 						"size": 15,
 						"type": "string"
@@ -314,6 +327,7 @@
 				"category": "unitary",
 				"default": "",
 				"help": "Profile name.",
+				"multiple_values": false,
 				"name": "name",
 				"size": 63,
 				"type": "string"
@@ -329,9 +343,9 @@
 		"path": "switch-controller",
 		"q_type": 311
 	},
-	"revision": "22c573ef906abcf27e1034726da16d9a",
-	"serial": "FGTAZRAQCG14L19D",
+	"revision": "a34bad87afb99fef2597eff78ce53129",
+	"serial": "FGTAZRI5HXAAGI90",
 	"status": "success",
 	"vdom": "root",
-	"version": "v7.0.3"
+	"version": "v7.0.4"
 }

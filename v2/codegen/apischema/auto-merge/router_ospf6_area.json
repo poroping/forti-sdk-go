@@ -1,10 +1,10 @@
 {
 	"addedIn": "v6.2.7",
-	"build": 237,
+	"build": 301,
 	"child_path": "area",
 	"http_method": "GET",
 	"http_status": 200,
-	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3",
+	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3,v7.0.4",
 	"name": "ospf6",
 	"path": "router",
 	"results": {
@@ -39,6 +39,7 @@
 				"help": "Summary default cost of stub or NSSA area.",
 				"max-value": 16777215,
 				"min-value": 0,
+				"multiple_values": false,
 				"name": "default-cost",
 				"type": "integer"
 			},
@@ -46,6 +47,7 @@
 				"category": "unitary",
 				"default": "0.0.0.0",
 				"help": "Area entry IP address.",
+				"multiple_values": false,
 				"name": "id",
 				"type": "ipv4-address-any"
 			},
@@ -119,6 +121,7 @@
 					"auth-key": {
 						"category": "unitary",
 						"help": "Authentication key.",
+						"multiple_values": false,
 						"name": "auth-key",
 						"size": 128,
 						"type": "password"
@@ -126,6 +129,7 @@
 					"enc-key": {
 						"category": "unitary",
 						"help": "Encryption key.",
+						"multiple_values": false,
 						"name": "enc-key",
 						"size": 128,
 						"type": "password"
@@ -136,6 +140,7 @@
 						"help": "Security Parameters Index.",
 						"max-value": 4294967295,
 						"min-value": 256,
+						"multiple_values": false,
 						"name": "spi",
 						"required": true,
 						"type": "integer"
@@ -155,6 +160,7 @@
 				"help": "Key roll-over interval.",
 				"max-value": 216000,
 				"min-value": 300,
+				"multiple_values": false,
 				"name": "key-rollover-interval",
 				"type": "integer"
 			},
@@ -182,6 +188,7 @@
 				"help": "OSPFv3 default metric.",
 				"max-value": 16777214,
 				"min-value": 0,
+				"multiple_values": false,
 				"name": "nssa-default-information-originate-metric",
 				"type": "integer"
 			},
@@ -270,6 +277,7 @@
 						"help": "Range entry ID.",
 						"max-value": 4294967295,
 						"min-value": 0,
+						"multiple_values": false,
 						"name": "id",
 						"type": "integer"
 					},
@@ -277,6 +285,7 @@
 						"category": "unitary",
 						"default": "::/0",
 						"help": "IPv6 prefix.",
+						"multiple_values": false,
 						"name": "prefix6",
 						"required": true,
 						"type": "ipv6-network"
@@ -365,6 +374,7 @@
 						"help": "Dead interval.",
 						"max-value": 65535,
 						"min-value": 1,
+						"multiple_values": false,
 						"name": "dead-interval",
 						"type": "integer"
 					},
@@ -374,6 +384,7 @@
 						"help": "Hello interval.",
 						"max-value": 65535,
 						"min-value": 1,
+						"multiple_values": false,
 						"name": "hello-interval",
 						"type": "integer"
 					},
@@ -447,6 +458,7 @@
 							"auth-key": {
 								"category": "unitary",
 								"help": "Authentication key.",
+								"multiple_values": false,
 								"name": "auth-key",
 								"size": 128,
 								"type": "password"
@@ -454,6 +466,7 @@
 							"enc-key": {
 								"category": "unitary",
 								"help": "Encryption key.",
+								"multiple_values": false,
 								"name": "enc-key",
 								"size": 128,
 								"type": "password"
@@ -464,6 +477,7 @@
 								"help": "Security Parameters Index.",
 								"max-value": 4294967295,
 								"min-value": 256,
+								"multiple_values": false,
 								"name": "spi",
 								"required": true,
 								"type": "integer"
@@ -483,6 +497,7 @@
 						"help": "Key roll-over interval.",
 						"max-value": 216000,
 						"min-value": 300,
+						"multiple_values": false,
 						"name": "key-rollover-interval",
 						"type": "integer"
 					},
@@ -490,6 +505,7 @@
 						"category": "unitary",
 						"default": "",
 						"help": "Virtual link entry name.",
+						"multiple_values": false,
 						"name": "name",
 						"size": 35,
 						"type": "string"
@@ -498,6 +514,7 @@
 						"category": "unitary",
 						"default": "0.0.0.0",
 						"help": "A.B.C.D, peer router ID.",
+						"multiple_values": false,
 						"name": "peer",
 						"required": true,
 						"type": "ipv4-address-any"
@@ -508,6 +525,7 @@
 						"help": "Retransmit interval.",
 						"max-value": 65535,
 						"min-value": 1,
+						"multiple_values": false,
 						"name": "retransmit-interval",
 						"type": "integer"
 					},
@@ -517,6 +535,7 @@
 						"help": "Transmit delay.",
 						"max-value": 65535,
 						"min-value": 1,
+						"multiple_values": false,
 						"name": "transmit-delay",
 						"type": "integer"
 					}
@@ -540,9 +559,9 @@
 		"path": "router",
 		"q_type": 386
 	},
-	"revision": "6a99ecb7470ab13dcf58ec1bd9f5285f",
-	"serial": "FGTAZRAQCG14L19D",
+	"revision": "6fe1b58b227957de34a8a7fa5689f98e",
+	"serial": "FGTAZRI5HXAAGI90",
 	"status": "success",
 	"vdom": "root",
-	"version": "v7.0.3"
+	"version": "v7.0.4"
 }

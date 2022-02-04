@@ -1,9 +1,9 @@
 {
 	"addedIn": "v6.2.7",
-	"build": 237,
+	"build": 301,
 	"http_method": "GET",
 	"http_status": 200,
-	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3",
+	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3,v7.0.4",
 	"name": "setting",
 	"path": "log",
 	"results": {
@@ -15,6 +15,7 @@
 				"category": "unitary",
 				"default": "",
 				"help": "User name anonymization hash salt.",
+				"multiple_values": false,
 				"name": "anonymization-hash",
 				"size": 32,
 				"type": "string"
@@ -47,6 +48,7 @@
 						],
 						"default": "",
 						"help": "Custom log field.",
+						"multiple_values": false,
 						"name": "field-id",
 						"size": 35,
 						"type": "string"
@@ -367,6 +369,44 @@
 				],
 				"type": "option"
 			},
+			"rest-api-get": {
+				"addedIn": "v7.0.4",
+				"category": "unitary",
+				"default": "disable",
+				"help": "Enable/disable REST API GET request logging.",
+				"multiple_values": false,
+				"name": "rest-api-get",
+				"options": [
+					{
+						"help": "Enable GET REST API logging.",
+						"name": "enable"
+					},
+					{
+						"help": "Disable GET REST API logging.",
+						"name": "disable"
+					}
+				],
+				"type": "option"
+			},
+			"rest-api-set": {
+				"addedIn": "v7.0.4",
+				"category": "unitary",
+				"default": "disable",
+				"help": "Enable/disable REST API POST/PUT/DELETE request logging.",
+				"multiple_values": false,
+				"name": "rest-api-set",
+				"options": [
+					{
+						"help": "Enable POST/PUT/DELETE REST API logging.",
+						"name": "enable"
+					},
+					{
+						"help": "Disable POST/PUT/DELETE REST API logging.",
+						"name": "disable"
+					}
+				],
+				"type": "option"
+			},
 			"syslog-override": {
 				"category": "unitary",
 				"default": "disable",
@@ -405,13 +445,14 @@
 			}
 		},
 		"help": "Configure general log settings.",
+		"multiple_values": false,
 		"name": "setting",
 		"path": "log",
 		"q_type": 64
 	},
-	"revision": "78ee061304af9c5d17bcae6474808d97",
-	"serial": "FGTAZRAQCG14L19D",
+	"revision": "e338e35a484eaafc990a69dd13ff4f76",
+	"serial": "FGTAZRI5HXAAGI90",
 	"status": "success",
 	"vdom": "root",
-	"version": "v7.0.3"
+	"version": "v7.0.4"
 }

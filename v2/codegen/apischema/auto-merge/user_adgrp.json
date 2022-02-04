@@ -1,9 +1,9 @@
 {
 	"addedIn": "v6.2.7",
-	"build": 237,
+	"build": 301,
 	"http_method": "GET",
 	"http_status": 200,
-	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3",
+	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3,v7.0.4",
 	"name": "adgrp",
 	"path": "user",
 	"results": {
@@ -15,6 +15,7 @@
 				"category": "unitary",
 				"default": "",
 				"help": "FSSO connector source.",
+				"multiple_values": false,
 				"name": "connector-source",
 				"size": 35,
 				"type": "string"
@@ -25,6 +26,7 @@
 				"help": "Group ID.",
 				"max-value": 4294967295,
 				"min-value": 0,
+				"multiple_values": false,
 				"name": "id",
 				"readonly": true,
 				"type": "integer"
@@ -33,6 +35,7 @@
 				"category": "unitary",
 				"default": "",
 				"help": "Name.",
+				"multiple_values": false,
 				"name": "name",
 				"required": true,
 				"size": 511,
@@ -42,6 +45,7 @@
 				"category": "unitary",
 				"default": "",
 				"help": "FSSO agent name.",
+				"multiple_values": false,
 				"name": "server-name",
 				"size": 35,
 				"type": "string"
@@ -57,9 +61,9 @@
 		"path": "user",
 		"q_type": 158
 	},
-	"revision": "83663ccb232ef404eaac5a256049cd0b",
-	"serial": "FGTAZRAQCG14L19D",
+	"revision": "437e8be3a9784954dfbe87b61e193b58",
+	"serial": "FGTAZRI5HXAAGI90",
 	"status": "success",
 	"vdom": "root",
-	"version": "v7.0.3"
+	"version": "v7.0.4"
 }

@@ -1,9 +1,9 @@
 {
 	"addedIn": "v6.2.7",
-	"build": 237,
+	"build": 301,
 	"http_method": "GET",
 	"http_status": 200,
-	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3",
+	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3,v7.0.4",
 	"name": "local",
 	"path": "user",
 	"results": {
@@ -34,6 +34,7 @@
 				"help": "Maximum number of concurrent logins permitted from the same user.",
 				"max-value": 100,
 				"min-value": 0,
+				"multiple_values": false,
 				"name": "auth-concurrent-value",
 				"type": "integer"
 			},
@@ -43,6 +44,7 @@
 				"help": "Time in minutes before the authentication timeout for a user is reached.",
 				"max-value": 1440,
 				"min-value": 0,
+				"multiple_values": false,
 				"name": "authtimeout",
 				"type": "integer"
 			},
@@ -50,6 +52,7 @@
 				"category": "unitary",
 				"default": "",
 				"help": "Two-factor recipient's email address.",
+				"multiple_values": false,
 				"name": "email-to",
 				"size": 63,
 				"type": "string"
@@ -61,6 +64,7 @@
 				],
 				"default": "",
 				"help": "Two-factor recipient's FortiToken serial number.",
+				"multiple_values": false,
 				"name": "fortitoken",
 				"size": 16,
 				"type": "string"
@@ -71,6 +75,7 @@
 				"help": "User ID.",
 				"max-value": 4294967295,
 				"min-value": 0,
+				"multiple_values": false,
 				"name": "id",
 				"readonly": true,
 				"type": "integer"
@@ -82,6 +87,7 @@
 				],
 				"default": "",
 				"help": "Name of LDAP server with which the user must authenticate.",
+				"multiple_values": false,
 				"name": "ldap-server",
 				"required": true,
 				"size": 35,
@@ -91,6 +97,7 @@
 				"category": "unitary",
 				"default": "",
 				"help": "User name.",
+				"multiple_values": false,
 				"name": "name",
 				"size": 64,
 				"type": "string"
@@ -98,6 +105,7 @@
 			"passwd": {
 				"category": "unitary",
 				"help": "User's password.",
+				"multiple_values": false,
 				"name": "passwd",
 				"required": true,
 				"size": 128,
@@ -110,6 +118,7 @@
 				],
 				"default": "",
 				"help": "Password policy to apply to this user, as defined in config user password-policy.",
+				"multiple_values": false,
 				"name": "passwd-policy",
 				"size": 35,
 				"type": "string"
@@ -118,6 +127,7 @@
 				"category": "unitary",
 				"default": "",
 				"help": "Time of the last password update.",
+				"multiple_values": false,
 				"name": "passwd-time",
 				"type": "user"
 			},
@@ -125,6 +135,7 @@
 				"category": "unitary",
 				"default": "",
 				"help": "IKEv2 Postquantum Preshared Key Identity.",
+				"multiple_values": false,
 				"name": "ppk-identity",
 				"size": 35,
 				"type": "string"
@@ -132,6 +143,7 @@
 			"ppk-secret": {
 				"category": "unitary",
 				"help": "IKEv2 Postquantum Preshared Key (ASCII string or hexadecimal encoded with a leading 0x).",
+				"multiple_values": false,
 				"name": "ppk-secret",
 				"type": "password-3"
 			},
@@ -142,6 +154,7 @@
 				],
 				"default": "",
 				"help": "Name of RADIUS server with which the user must authenticate.",
+				"multiple_values": false,
 				"name": "radius-server",
 				"required": true,
 				"size": 35,
@@ -154,6 +167,7 @@
 				],
 				"default": "",
 				"help": "Two-factor recipient's SMS server.",
+				"multiple_values": false,
 				"name": "sms-custom-server",
 				"size": 35,
 				"type": "string"
@@ -162,6 +176,7 @@
 				"category": "unitary",
 				"default": "",
 				"help": "Two-factor recipient's mobile phone number.",
+				"multiple_values": false,
 				"name": "sms-phone",
 				"size": 15,
 				"type": "string"
@@ -210,6 +225,7 @@
 				],
 				"default": "",
 				"help": "Name of TACACS+ server with which the user must authenticate.",
+				"multiple_values": false,
 				"name": "tacacs+-server",
 				"required": true,
 				"size": 35,
@@ -374,6 +390,7 @@
 				"category": "unitary",
 				"default": "",
 				"help": "Name of the remote user workstation, if you want to limit the user to authenticate only from a particular workstation.",
+				"multiple_values": false,
 				"name": "workstation",
 				"size": 35,
 				"type": "string"
@@ -389,9 +406,9 @@
 		"path": "user",
 		"q_type": 21
 	},
-	"revision": "c07db4458e5ad04f5181f508f23dff58",
-	"serial": "FGTAZRAQCG14L19D",
+	"revision": "e43c0edb187efc1f93f23f84d205db97",
+	"serial": "FGTAZRI5HXAAGI90",
 	"status": "success",
 	"vdom": "root",
-	"version": "v7.0.3"
+	"version": "v7.0.4"
 }

@@ -1,10 +1,10 @@
 {
 	"addedIn": "v6.4.0",
-	"build": 237,
+	"build": 301,
 	"child_path": "neighbor-range6",
 	"http_method": "GET",
 	"http_status": 200,
-	"mergedVersions": "v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3",
+	"mergedVersions": "v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3,v7.0.4",
 	"name": "bgp",
 	"path": "router",
 	"results": {
@@ -17,6 +17,7 @@
 				"help": "IPv6 neighbor range ID.",
 				"max-value": 4294967295,
 				"min-value": 0,
+				"multiple_values": false,
 				"name": "id",
 				"type": "integer"
 			},
@@ -26,6 +27,7 @@
 				"help": "Maximum number of neighbors.",
 				"max-value": 1000,
 				"min-value": 1,
+				"multiple_values": false,
 				"name": "max-neighbor-num",
 				"type": "integer"
 			},
@@ -36,6 +38,7 @@
 				],
 				"default": "",
 				"help": "Neighbor group name.",
+				"multiple_values": false,
 				"name": "neighbor-group",
 				"required": true,
 				"size": 63,
@@ -45,6 +48,7 @@
 				"category": "unitary",
 				"default": "::/0",
 				"help": "IPv6 prefix.",
+				"multiple_values": false,
 				"name": "prefix6",
 				"required": true,
 				"type": "ipv6-network"
@@ -60,9 +64,9 @@
 		"path": "router",
 		"q_type": 131
 	},
-	"revision": "9243f71c30c6697d8deac29b80f5fede",
-	"serial": "FGTAZRAQCG14L19D",
+	"revision": "2300bf664b13ba20500ed3ee8809bf7f",
+	"serial": "FGTAZRI5HXAAGI90",
 	"status": "success",
 	"vdom": "root",
-	"version": "v7.0.3"
+	"version": "v7.0.4"
 }

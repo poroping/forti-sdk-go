@@ -1,9 +1,9 @@
 {
 	"addedIn": "v6.2.7",
-	"build": 237,
+	"build": 301,
 	"http_method": "GET",
 	"http_status": 200,
-	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3",
+	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3,v7.0.4",
 	"name": "snmp",
 	"path": "wireless-controller",
 	"results": {
@@ -22,6 +22,7 @@
 								"help": "Host entry ID.",
 								"max-value": 4294967295,
 								"min-value": 0,
+								"multiple_values": false,
 								"name": "id",
 								"required": true,
 								"type": "integer"
@@ -30,6 +31,7 @@
 								"category": "unitary",
 								"default": "",
 								"help": "IPv4 address of the SNMP manager (host).",
+								"multiple_values": false,
 								"name": "ip",
 								"required": true,
 								"type": "user"
@@ -49,6 +51,7 @@
 						"help": "Community ID.",
 						"max-value": 4294967295,
 						"min-value": 0,
+						"multiple_values": false,
 						"name": "id",
 						"required": true,
 						"type": "integer"
@@ -57,6 +60,7 @@
 						"category": "unitary",
 						"default": "",
 						"help": "Community name.",
+						"multiple_values": false,
 						"name": "name",
 						"required": true,
 						"size": 35,
@@ -165,6 +169,7 @@
 				"category": "unitary",
 				"default": "",
 				"help": "Contact Information.",
+				"multiple_values": false,
 				"name": "contact-info",
 				"size": 31,
 				"type": "string"
@@ -172,7 +177,8 @@
 			"engine-id": {
 				"category": "unitary",
 				"default": "",
-				"help": "AC SNMP engineId string (maximum 24 characters).",
+				"help": "AC SNMP engineID string (maximum 24 characters).",
+				"multiple_values": false,
 				"name": "engine-id",
 				"size": 23,
 				"type": "string"
@@ -183,6 +189,7 @@
 				"help": "CPU usage when trap is sent.",
 				"max-value": 100,
 				"min-value": 10,
+				"multiple_values": false,
 				"name": "trap-high-cpu-threshold",
 				"type": "integer"
 			},
@@ -192,6 +199,7 @@
 				"help": "Memory usage when trap is sent.",
 				"max-value": 100,
 				"min-value": 10,
+				"multiple_values": false,
 				"name": "trap-high-mem-threshold",
 				"type": "integer"
 			},
@@ -219,6 +227,7 @@
 					"auth-pwd": {
 						"category": "unitary",
 						"help": "Password for authentication protocol.",
+						"multiple_values": false,
 						"name": "auth-pwd",
 						"required": true,
 						"size": 128,
@@ -227,7 +236,8 @@
 					"name": {
 						"category": "unitary",
 						"default": "test",
-						"help": "SNMP User Name",
+						"help": "SNMP user name.",
+						"multiple_values": false,
 						"name": "name",
 						"required": true,
 						"size": 32,
@@ -237,6 +247,8 @@
 						"category": "unitary",
 						"default": "",
 						"help": "Configure SNMP User Notify Hosts.",
+						"max_num_values": 4,
+						"multiple_values": true,
 						"name": "notify-hosts",
 						"type": "ipv4-address"
 					},
@@ -269,6 +281,7 @@
 					"priv-pwd": {
 						"category": "unitary",
 						"help": "Password for privacy (encryption) protocol.",
+						"multiple_values": false,
 						"name": "priv-pwd",
 						"required": true,
 						"size": 128,
@@ -317,7 +330,7 @@
 					"status": {
 						"category": "unitary",
 						"default": "enable",
-						"help": "SNMP User Enable",
+						"help": "SNMP user enable.",
 						"multiple_values": false,
 						"name": "status",
 						"options": [
@@ -361,13 +374,14 @@
 			}
 		},
 		"help": "Configure SNMP.",
+		"multiple_values": false,
 		"name": "snmp",
 		"path": "wireless-controller",
 		"q_type": 301
 	},
-	"revision": "78ee061304af9c5d17bcae6474808d97",
-	"serial": "FGTAZRAQCG14L19D",
+	"revision": "e338e35a484eaafc990a69dd13ff4f76",
+	"serial": "FGTAZRI5HXAAGI90",
 	"status": "success",
 	"vdom": "root",
-	"version": "v7.0.3"
+	"version": "v7.0.4"
 }

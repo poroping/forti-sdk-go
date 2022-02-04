@@ -1,9 +1,9 @@
 {
 	"addedIn": "v6.2.7",
-	"build": 237,
+	"build": 301,
 	"http_method": "GET",
 	"http_status": 200,
-	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3",
+	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3,v7.0.4",
 	"name": "multicast-address6",
 	"path": "firewall",
 	"results": {
@@ -16,12 +16,14 @@
 				"help": "Color of icon on the GUI.",
 				"max-value": 32,
 				"min-value": 0,
+				"multiple_values": false,
 				"name": "color",
 				"type": "integer"
 			},
 			"comment": {
 				"category": "unitary",
 				"help": "Comment.",
+				"multiple_values": false,
 				"name": "comment",
 				"size": 255,
 				"type": "var-string"
@@ -30,6 +32,7 @@
 				"category": "unitary",
 				"default": "::/0",
 				"help": "IPv6 address prefix (format: xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx/xxx).",
+				"multiple_values": false,
 				"name": "ip6",
 				"required": true,
 				"type": "ipv6-network"
@@ -38,6 +41,7 @@
 				"category": "unitary",
 				"default": "",
 				"help": "IPv6 multicast address name.",
+				"multiple_values": false,
 				"name": "name",
 				"size": 79,
 				"type": "string"
@@ -52,6 +56,7 @@
 						],
 						"default": "",
 						"help": "Tag category.",
+						"multiple_values": false,
 						"name": "category",
 						"size": 63,
 						"type": "string"
@@ -60,6 +65,7 @@
 						"category": "unitary",
 						"default": "",
 						"help": "Tagging entry name.",
+						"multiple_values": false,
 						"name": "name",
 						"size": 63,
 						"type": "string"
@@ -74,6 +80,7 @@
 								],
 								"default": "",
 								"help": "Tag name.",
+								"multiple_values": false,
 								"name": "name",
 								"size": 79,
 								"type": "string"
@@ -126,9 +133,9 @@
 		"path": "firewall",
 		"q_type": 34
 	},
-	"revision": "dc2ff334d4ea43f3ce3ece5fb63bdf32",
-	"serial": "FGTAZRAQCG14L19D",
+	"revision": "a50da4daeb798022d514d8898a95368c",
+	"serial": "FGTAZRI5HXAAGI90",
 	"status": "success",
 	"vdom": "root",
-	"version": "v7.0.3"
+	"version": "v7.0.4"
 }

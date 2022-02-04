@@ -1,9 +1,9 @@
 {
 	"addedIn": "v6.2.7",
-	"build": 237,
+	"build": 301,
 	"http_method": "GET",
 	"http_status": 200,
-	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3",
+	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3,v7.0.4",
 	"name": "multicast",
 	"path": "router",
 	"results": {
@@ -55,6 +55,7 @@
 						"help": "DR election priority.",
 						"max-value": 4294967295,
 						"min-value": 1,
+						"multiple_values": false,
 						"name": "dr-priority",
 						"type": "integer"
 					},
@@ -64,6 +65,7 @@
 						"help": "Time before old neighbor information expires (0 - 65535 sec, default = 105).",
 						"max-value": 65535,
 						"min-value": 1,
+						"multiple_values": false,
 						"name": "hello-holdtime",
 						"type": "integer"
 					},
@@ -73,6 +75,7 @@
 						"help": "Interval between sending PIM hello messages (0 - 65535 sec, default = 30).",
 						"max-value": 65535,
 						"min-value": 1,
+						"multiple_values": false,
 						"name": "hello-interval",
 						"type": "integer"
 					},
@@ -86,6 +89,7 @@
 								],
 								"default": "",
 								"help": "Groups IGMP hosts are allowed to join.",
+								"multiple_values": false,
 								"name": "access-group",
 								"size": 35,
 								"type": "string"
@@ -97,6 +101,7 @@
 								],
 								"default": "",
 								"help": "Groups to drop membership for immediately after receiving IGMPv2 leave.",
+								"multiple_values": false,
 								"name": "immediate-leave-group",
 								"size": 35,
 								"type": "string"
@@ -107,6 +112,7 @@
 								"help": "Number of group specific queries before removing group (2 - 7, default = 2).",
 								"max-value": 7,
 								"min-value": 2,
+								"multiple_values": false,
 								"name": "last-member-query-count",
 								"type": "integer"
 							},
@@ -116,6 +122,7 @@
 								"help": "Timeout between IGMPv2 leave and removing group (1 - 65535 msec, default = 1000).",
 								"max-value": 65535,
 								"min-value": 1,
+								"multiple_values": false,
 								"name": "last-member-query-interval",
 								"type": "integer"
 							},
@@ -125,6 +132,7 @@
 								"help": "Interval between queries to IGMP hosts (1 - 65535 sec, default = 125).",
 								"max-value": 65535,
 								"min-value": 1,
+								"multiple_values": false,
 								"name": "query-interval",
 								"type": "integer"
 							},
@@ -134,15 +142,17 @@
 								"help": "Maximum time to wait for a IGMP query response (1 - 25 sec, default = 10).",
 								"max-value": 25,
 								"min-value": 1,
+								"multiple_values": false,
 								"name": "query-max-response-time",
 								"type": "integer"
 							},
 							"query-timeout": {
 								"category": "unitary",
 								"default": 255,
-								"help": "Timeout between queries before becoming querier for network (60 - 900, default = 255).",
+								"help": "Timeout between queries before becoming querying unit for network (60 - 900, default = 255).",
 								"max-value": 900,
 								"min-value": 60,
+								"multiple_values": false,
 								"name": "query-timeout",
 								"type": "integer"
 							},
@@ -188,6 +198,7 @@
 							}
 						},
 						"help": "IGMP configuration options.",
+						"multiple_values": false,
 						"name": "igmp"
 					},
 					"join-group": {
@@ -197,6 +208,7 @@
 								"category": "unitary",
 								"default": "0.0.0.0",
 								"help": "Multicast group IP address.",
+								"multiple_values": false,
 								"name": "address",
 								"type": "ipv4-address-any"
 							}
@@ -216,6 +228,7 @@
 						],
 						"default": "",
 						"help": "Acceptable source for multicast group.",
+						"multiple_values": false,
 						"name": "multicast-flow",
 						"size": 35,
 						"type": "string"
@@ -227,6 +240,7 @@
 						],
 						"default": "",
 						"help": "Interface name.",
+						"multiple_values": false,
 						"name": "name",
 						"size": 15,
 						"type": "string"
@@ -238,6 +252,7 @@
 						],
 						"default": "",
 						"help": "Routers acknowledged as neighbor routers.",
+						"multiple_values": false,
 						"name": "neighbour-filter",
 						"size": 35,
 						"type": "string"
@@ -284,6 +299,7 @@
 						"help": "Delay flooding packets on this interface (100 - 5000 msec, default = 500).",
 						"max-value": 5000,
 						"min-value": 100,
+						"multiple_values": false,
 						"name": "propagation-delay",
 						"type": "integer"
 					},
@@ -312,6 +328,7 @@
 						],
 						"default": "",
 						"help": "Multicast groups managed by this RP.",
+						"multiple_values": false,
 						"name": "rp-candidate-group",
 						"size": 35,
 						"type": "string"
@@ -322,6 +339,7 @@
 						"help": "RP candidate advertisement interval (1 - 16383 sec, default = 60).",
 						"max-value": 16383,
 						"min-value": 1,
+						"multiple_values": false,
 						"name": "rp-candidate-interval",
 						"type": "integer"
 					},
@@ -331,6 +349,7 @@
 						"help": "Router's priority as RP.",
 						"max-value": 255,
 						"min-value": 0,
+						"multiple_values": false,
 						"name": "rp-candidate-priority",
 						"type": "integer"
 					},
@@ -359,6 +378,7 @@
 						],
 						"default": "",
 						"help": "Filter for fail back RPF neighbors.",
+						"multiple_values": false,
 						"name": "rpf-nbr-fail-back-filter",
 						"size": 35,
 						"type": "string"
@@ -369,6 +389,7 @@
 						"help": "Interval between sending state-refresh packets (1 - 100 sec, default = 60).",
 						"max-value": 100,
 						"min-value": 1,
+						"multiple_values": false,
 						"name": "state-refresh-interval",
 						"type": "integer"
 					},
@@ -379,6 +400,7 @@
 						],
 						"default": "",
 						"help": "Statically set multicast groups to forward out.",
+						"multiple_values": false,
 						"name": "static-group",
 						"size": 35,
 						"type": "string"
@@ -389,6 +411,7 @@
 						"help": "Minimum TTL of multicast packets that will be forwarded (applied only to new multicast routes) (1 - 255, default = 1).",
 						"max-value": 255,
 						"min-value": 1,
+						"multiple_values": false,
 						"name": "ttl-threshold",
 						"type": "integer"
 					}
@@ -429,6 +452,7 @@
 						],
 						"default": "",
 						"help": "Sources allowed to register packets with this Rendezvous Point (RP).",
+						"multiple_values": false,
 						"name": "accept-register-list",
 						"size": 35,
 						"type": "string"
@@ -440,6 +464,7 @@
 						],
 						"default": "",
 						"help": "Sources allowed to send multicast traffic.",
+						"multiple_values": false,
 						"name": "accept-source-list",
 						"size": 35,
 						"type": "string"
@@ -486,6 +511,7 @@
 						"help": "BSR hash length (0 - 32, default = 10).",
 						"max-value": 32,
 						"min-value": 0,
+						"multiple_values": false,
 						"name": "bsr-hash",
 						"type": "integer"
 					},
@@ -496,6 +522,7 @@
 						],
 						"default": "",
 						"help": "Interface to advertise as candidate BSR.",
+						"multiple_values": false,
 						"name": "bsr-interface",
 						"size": 15,
 						"type": "string"
@@ -506,6 +533,7 @@
 						"help": "BSR priority (0 - 255, default = 0).",
 						"max-value": 255,
 						"min-value": 0,
+						"multiple_values": false,
 						"name": "bsr-priority",
 						"type": "integer"
 					},
@@ -570,6 +598,7 @@
 						],
 						"default": "",
 						"help": "Cisco register checksum only these groups.",
+						"multiple_values": false,
 						"name": "cisco-register-checksum-group",
 						"size": 35,
 						"type": "string"
@@ -580,6 +609,7 @@
 						"help": "Join/prune holdtime (1 - 65535, default = 210).",
 						"max-value": 65535,
 						"min-value": 1,
+						"multiple_values": false,
 						"name": "join-prune-holdtime",
 						"type": "integer"
 					},
@@ -589,6 +619,7 @@
 						"help": "Period of time between sending periodic PIM join/prune messages in seconds (1 - 65535, default = 60).",
 						"max-value": 65535,
 						"min-value": 1,
+						"multiple_values": false,
 						"name": "message-interval",
 						"type": "integer"
 					},
@@ -598,6 +629,7 @@
 						"help": "Maximum retries of null register (1 - 20, default = 1).",
 						"max-value": 20,
 						"min-value": 1,
+						"multiple_values": false,
 						"name": "null-register-retries",
 						"type": "integer"
 					},
@@ -607,6 +639,7 @@
 						"help": "Limit of packets/sec per source registered through this RP (0 - 65535, default = 0 which means unlimited).",
 						"max-value": 65535,
 						"min-value": 0,
+						"multiple_values": false,
 						"name": "register-rate-limit",
 						"type": "integer"
 					},
@@ -657,6 +690,7 @@
 						],
 						"default": "",
 						"help": "Override with primary interface address.",
+						"multiple_values": false,
 						"name": "register-source-interface",
 						"size": 15,
 						"type": "string"
@@ -665,6 +699,7 @@
 						"category": "unitary",
 						"default": "0.0.0.0",
 						"help": "Override with local IP address.",
+						"multiple_values": false,
 						"name": "register-source-ip",
 						"type": "ipv4-address"
 					},
@@ -674,6 +709,7 @@
 						"help": "Period of time to honor register-stop message (1 - 65535 sec, default = 60).",
 						"max-value": 65535,
 						"min-value": 1,
+						"multiple_values": false,
 						"name": "register-supression",
 						"type": "integer"
 					},
@@ -687,6 +723,7 @@
 								],
 								"default": "",
 								"help": "Groups to use this RP.",
+								"multiple_values": false,
 								"name": "group",
 								"size": 35,
 								"type": "string"
@@ -697,6 +734,7 @@
 								"help": "ID.",
 								"max-value": 4294967295,
 								"min-value": 0,
+								"multiple_values": false,
 								"name": "id",
 								"type": "integer"
 							},
@@ -704,6 +742,7 @@
 								"category": "unitary",
 								"default": "0.0.0.0",
 								"help": "RP router address.",
+								"multiple_values": false,
 								"name": "ip-address",
 								"required": true,
 								"type": "ipv4-address"
@@ -723,6 +762,7 @@
 						"help": "Timeout for RP receiving data on (S,G) tree (1 - 65535 sec, default = 185).",
 						"max-value": 65535,
 						"min-value": 1,
+						"multiple_values": false,
 						"name": "rp-register-keepalive",
 						"type": "integer"
 					},
@@ -751,6 +791,7 @@
 						],
 						"default": "",
 						"help": "Groups allowed to switch to source tree.",
+						"multiple_values": false,
 						"name": "spt-threshold-group",
 						"size": 35,
 						"type": "string"
@@ -780,12 +821,14 @@
 						],
 						"default": "",
 						"help": "Groups allowed to source specific multicast.",
+						"multiple_values": false,
 						"name": "ssm-range",
 						"size": 35,
 						"type": "string"
 					}
 				},
 				"help": "PIM sparse-mode global settings.",
+				"multiple_values": false,
 				"name": "pim-sm-global"
 			},
 			"route-limit": {
@@ -794,6 +837,7 @@
 				"help": "Maximum number of multicast routes.",
 				"max-value": 2147483647,
 				"min-value": 1,
+				"multiple_values": false,
 				"name": "route-limit",
 				"type": "integer"
 			},
@@ -803,18 +847,20 @@
 				"help": "Generate warnings when the number of multicast routes exceeds this number, must not be greater than route-limit.",
 				"max-value": 2147483647,
 				"min-value": 1,
+				"multiple_values": false,
 				"name": "route-threshold",
 				"type": "integer"
 			}
 		},
 		"help": "Configure router multicast.",
+		"multiple_values": false,
 		"name": "multicast",
 		"path": "router",
 		"q_type": 185
 	},
-	"revision": "78ee061304af9c5d17bcae6474808d97",
-	"serial": "FGTAZRAQCG14L19D",
+	"revision": "e338e35a484eaafc990a69dd13ff4f76",
+	"serial": "FGTAZRI5HXAAGI90",
 	"status": "success",
 	"vdom": "root",
-	"version": "v7.0.3"
+	"version": "v7.0.4"
 }

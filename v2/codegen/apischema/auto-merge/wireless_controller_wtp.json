@@ -1,9 +1,9 @@
 {
 	"addedIn": "v6.2.7",
-	"build": 237,
+	"build": 301,
 	"http_method": "GET",
 	"http_status": 200,
-	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3",
+	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3,v7.0.4",
 	"name": "wtp",
 	"path": "wireless-controller",
 	"results": {
@@ -62,6 +62,7 @@
 				],
 				"default": "",
 				"help": "AP local configuration profile name.",
+				"multiple_values": false,
 				"name": "apcfg-profile",
 				"size": 35,
 				"type": "string"
@@ -73,6 +74,7 @@
 				],
 				"default": "",
 				"help": "Bonjour profile name.",
+				"multiple_values": false,
 				"name": "bonjour-profile",
 				"size": 35,
 				"type": "string"
@@ -81,6 +83,7 @@
 				"category": "unitary",
 				"default": "",
 				"help": "WTP latitude coordinate.",
+				"multiple_values": false,
 				"name": "coordinate-latitude",
 				"size": 19,
 				"type": "string"
@@ -89,6 +92,7 @@
 				"category": "unitary",
 				"default": "",
 				"help": "WTP longitude coordinate.",
+				"multiple_values": false,
 				"name": "coordinate-longitude",
 				"size": 19,
 				"type": "string"
@@ -98,6 +102,7 @@
 				"category": "unitary",
 				"default": "",
 				"help": "Firmware version to provision to this FortiAP on bootup (major.minor.build, i.e. 6.2.1234).",
+				"multiple_values": false,
 				"name": "firmware-provision",
 				"size": 35,
 				"type": "string"
@@ -145,6 +150,7 @@
 				"help": "Index (0 - 4294967295).",
 				"max-value": 4294967295,
 				"min-value": 0,
+				"multiple_values": false,
 				"name": "index",
 				"readonly": true,
 				"type": "integer"
@@ -205,6 +211,7 @@
 						],
 						"default": "",
 						"help": "Bridge ESL port to SSID.",
+						"multiple_values": false,
 						"name": "port-esl-ssid",
 						"size": 15,
 						"type": "string"
@@ -242,6 +249,7 @@
 						],
 						"default": "",
 						"help": "Bridge LAN port to SSID.",
+						"multiple_values": false,
 						"name": "port-ssid",
 						"size": 15,
 						"type": "string"
@@ -279,6 +287,7 @@
 						],
 						"default": "",
 						"help": "Bridge LAN port 1 to SSID.",
+						"multiple_values": false,
 						"name": "port1-ssid",
 						"size": 15,
 						"type": "string"
@@ -316,6 +325,7 @@
 						],
 						"default": "",
 						"help": "Bridge LAN port 2 to SSID.",
+						"multiple_values": false,
 						"name": "port2-ssid",
 						"size": 15,
 						"type": "string"
@@ -353,6 +363,7 @@
 						],
 						"default": "",
 						"help": "Bridge LAN port 3 to SSID.",
+						"multiple_values": false,
 						"name": "port3-ssid",
 						"size": 15,
 						"type": "string"
@@ -390,6 +401,7 @@
 						],
 						"default": "",
 						"help": "Bridge LAN port 4 to SSID.",
+						"multiple_values": false,
 						"name": "port4-ssid",
 						"size": 15,
 						"type": "string"
@@ -427,6 +439,7 @@
 						],
 						"default": "",
 						"help": "Bridge LAN port 5 to SSID.",
+						"multiple_values": false,
 						"name": "port5-ssid",
 						"size": 15,
 						"type": "string"
@@ -464,6 +477,7 @@
 						],
 						"default": "",
 						"help": "Bridge LAN port 6 to SSID.",
+						"multiple_values": false,
 						"name": "port6-ssid",
 						"size": 15,
 						"type": "string"
@@ -501,6 +515,7 @@
 						],
 						"default": "",
 						"help": "Bridge LAN port 7 to SSID.",
+						"multiple_values": false,
 						"name": "port7-ssid",
 						"size": 15,
 						"type": "string"
@@ -538,12 +553,14 @@
 						],
 						"default": "",
 						"help": "Bridge LAN port 8 to SSID.",
+						"multiple_values": false,
 						"name": "port8-ssid",
 						"size": 15,
 						"type": "string"
 					}
 				},
 				"help": "WTP LAN port mapping.",
+				"multiple_values": false,
 				"name": "lan"
 			},
 			"led-state": {
@@ -568,6 +585,7 @@
 				"category": "unitary",
 				"default": "",
 				"help": "Field for describing the physical location of the WTP, AP or FortiAP.",
+				"multiple_values": false,
 				"name": "location",
 				"size": 35,
 				"type": "string"
@@ -575,6 +593,7 @@
 			"login-passwd": {
 				"category": "unitary",
 				"help": "Set the managed WTP, FortiAP, or AP's administrator password.",
+				"multiple_values": false,
 				"name": "login-passwd",
 				"size": 128,
 				"type": "password"
@@ -627,6 +646,7 @@
 				"category": "unitary",
 				"default": "",
 				"help": "WTP, AP or FortiAP configuration name.",
+				"multiple_values": false,
 				"name": "name",
 				"size": 35,
 				"type": "string"
@@ -766,6 +786,7 @@
 						"help": "The upper bound of automatic transmit power adjustment in dBm (the actual range of transmit power depends on the AP platform type).",
 						"max-value": 4294967295,
 						"min-value": 0,
+						"multiple_values": false,
 						"name": "auto-power-high",
 						"type": "integer"
 					},
@@ -793,6 +814,7 @@
 						"help": "The lower bound of automatic transmit power adjustment in dBm (the actual range of transmit power depends on the AP platform type).",
 						"max-value": 4294967295,
 						"min-value": 0,
+						"multiple_values": false,
 						"name": "auto-power-low",
 						"type": "integer"
 					},
@@ -800,7 +822,8 @@
 						"addedIn": "v6.4.3",
 						"category": "unitary",
 						"default": "-70",
-						"help": "The target of automatic transmit power adjustment in dBm. (-95 to -20, default = -70).",
+						"help": "Target of automatic transmit power adjustment in dBm (-95 to -20, default = -70).",
+						"multiple_values": false,
 						"name": "auto-power-target",
 						"size": 7,
 						"type": "string"
@@ -906,6 +929,7 @@
 								"category": "unitary",
 								"default": "",
 								"help": "Channel number.",
+								"multiple_values": false,
 								"name": "chan",
 								"required": true,
 								"size": 3,
@@ -1044,6 +1068,7 @@
 						"help": "Radio EIRP power level as a percentage of the maximum EIRP power (0 - 100, default = 100).",
 						"max-value": 100,
 						"min-value": 0,
+						"multiple_values": false,
 						"name": "power-level",
 						"type": "integer"
 					},
@@ -1073,6 +1098,7 @@
 						"help": "Radio EIRP power in dBm (1 - 33, default = 27).",
 						"max-value": 33,
 						"min-value": 1,
+						"multiple_values": false,
 						"name": "power-value",
 						"type": "integer"
 					},
@@ -1131,6 +1157,7 @@
 								],
 								"default": "",
 								"help": "Virtual Access Point (VAP) name.",
+								"multiple_values": false,
 								"name": "name",
 								"required": true,
 								"size": 35,
@@ -1148,6 +1175,7 @@
 					}
 				},
 				"help": "Configuration options for radio 1.",
+				"multiple_values": false,
 				"name": "radio-1"
 			},
 			"radio-2": {
@@ -1159,6 +1187,7 @@
 						"help": "The upper bound of automatic transmit power adjustment in dBm (the actual range of transmit power depends on the AP platform type).",
 						"max-value": 4294967295,
 						"min-value": 0,
+						"multiple_values": false,
 						"name": "auto-power-high",
 						"type": "integer"
 					},
@@ -1186,6 +1215,7 @@
 						"help": "The lower bound of automatic transmit power adjustment in dBm (the actual range of transmit power depends on the AP platform type).",
 						"max-value": 4294967295,
 						"min-value": 0,
+						"multiple_values": false,
 						"name": "auto-power-low",
 						"type": "integer"
 					},
@@ -1193,7 +1223,8 @@
 						"addedIn": "v6.4.3",
 						"category": "unitary",
 						"default": "-70",
-						"help": "The target of automatic transmit power adjustment in dBm. (-95 to -20, default = -70).",
+						"help": "Target of automatic transmit power adjustment in dBm (-95 to -20, default = -70).",
+						"multiple_values": false,
 						"name": "auto-power-target",
 						"size": 7,
 						"type": "string"
@@ -1299,6 +1330,7 @@
 								"category": "unitary",
 								"default": "",
 								"help": "Channel number.",
+								"multiple_values": false,
 								"name": "chan",
 								"required": true,
 								"size": 3,
@@ -1437,6 +1469,7 @@
 						"help": "Radio EIRP power level as a percentage of the maximum EIRP power (0 - 100, default = 100).",
 						"max-value": 100,
 						"min-value": 0,
+						"multiple_values": false,
 						"name": "power-level",
 						"type": "integer"
 					},
@@ -1466,6 +1499,7 @@
 						"help": "Radio EIRP power in dBm (1 - 33, default = 27).",
 						"max-value": 33,
 						"min-value": 1,
+						"multiple_values": false,
 						"name": "power-value",
 						"type": "integer"
 					},
@@ -1524,6 +1558,7 @@
 								],
 								"default": "",
 								"help": "Virtual Access Point (VAP) name.",
+								"multiple_values": false,
 								"name": "name",
 								"required": true,
 								"size": 35,
@@ -1541,6 +1576,7 @@
 					}
 				},
 				"help": "Configuration options for radio 2.",
+				"multiple_values": false,
 				"name": "radio-2"
 			},
 			"radio-3": {
@@ -1552,6 +1588,7 @@
 						"help": "The upper bound of automatic transmit power adjustment in dBm (the actual range of transmit power depends on the AP platform type).",
 						"max-value": 4294967295,
 						"min-value": 0,
+						"multiple_values": false,
 						"name": "auto-power-high",
 						"type": "integer"
 					},
@@ -1579,6 +1616,7 @@
 						"help": "The lower bound of automatic transmit power adjustment in dBm (the actual range of transmit power depends on the AP platform type).",
 						"max-value": 4294967295,
 						"min-value": 0,
+						"multiple_values": false,
 						"name": "auto-power-low",
 						"type": "integer"
 					},
@@ -1586,7 +1624,8 @@
 						"addedIn": "v6.4.3",
 						"category": "unitary",
 						"default": "-70",
-						"help": "The target of automatic transmit power adjustment in dBm. (-95 to -20, default = -70).",
+						"help": "Target of automatic transmit power adjustment in dBm (-95 to -20, default = -70).",
+						"multiple_values": false,
 						"name": "auto-power-target",
 						"size": 7,
 						"type": "string"
@@ -1692,6 +1731,7 @@
 								"category": "unitary",
 								"default": "",
 								"help": "Channel number.",
+								"multiple_values": false,
 								"name": "chan",
 								"required": true,
 								"size": 3,
@@ -1830,6 +1870,7 @@
 						"help": "Radio EIRP power level as a percentage of the maximum EIRP power (0 - 100, default = 100).",
 						"max-value": 100,
 						"min-value": 0,
+						"multiple_values": false,
 						"name": "power-level",
 						"type": "integer"
 					},
@@ -1859,6 +1900,7 @@
 						"help": "Radio EIRP power in dBm (1 - 33, default = 27).",
 						"max-value": 33,
 						"min-value": 1,
+						"multiple_values": false,
 						"name": "power-value",
 						"type": "integer"
 					},
@@ -1917,6 +1959,7 @@
 								],
 								"default": "",
 								"help": "Virtual Access Point (VAP) name.",
+								"multiple_values": false,
 								"name": "name",
 								"required": true,
 								"size": 35,
@@ -1934,6 +1977,7 @@
 					}
 				},
 				"help": "Configuration options for radio 3.",
+				"multiple_values": false,
 				"name": "radio-3"
 			},
 			"radio-4": {
@@ -1945,6 +1989,7 @@
 						"help": "The upper bound of automatic transmit power adjustment in dBm (the actual range of transmit power depends on the AP platform type).",
 						"max-value": 4294967295,
 						"min-value": 0,
+						"multiple_values": false,
 						"name": "auto-power-high",
 						"type": "integer"
 					},
@@ -1972,6 +2017,7 @@
 						"help": "The lower bound of automatic transmit power adjustment in dBm (the actual range of transmit power depends on the AP platform type).",
 						"max-value": 4294967295,
 						"min-value": 0,
+						"multiple_values": false,
 						"name": "auto-power-low",
 						"type": "integer"
 					},
@@ -1979,7 +2025,8 @@
 						"addedIn": "v6.4.3",
 						"category": "unitary",
 						"default": "-70",
-						"help": "The target of automatic transmit power adjustment in dBm. (-95 to -20, default = -70).",
+						"help": "Target of automatic transmit power adjustment in dBm (-95 to -20, default = -70).",
+						"multiple_values": false,
 						"name": "auto-power-target",
 						"size": 7,
 						"type": "string"
@@ -2085,6 +2132,7 @@
 								"category": "unitary",
 								"default": "",
 								"help": "Channel number.",
+								"multiple_values": false,
 								"name": "chan",
 								"required": true,
 								"size": 3,
@@ -2223,6 +2271,7 @@
 						"help": "Radio EIRP power level as a percentage of the maximum EIRP power (0 - 100, default = 100).",
 						"max-value": 100,
 						"min-value": 0,
+						"multiple_values": false,
 						"name": "power-level",
 						"type": "integer"
 					},
@@ -2252,6 +2301,7 @@
 						"help": "Radio EIRP power in dBm (1 - 33, default = 27).",
 						"max-value": 33,
 						"min-value": 1,
+						"multiple_values": false,
 						"name": "power-value",
 						"type": "integer"
 					},
@@ -2310,6 +2360,7 @@
 								],
 								"default": "",
 								"help": "Virtual Access Point (VAP) name.",
+								"multiple_values": false,
 								"name": "name",
 								"required": true,
 								"size": 35,
@@ -2327,6 +2378,7 @@
 					}
 				},
 				"help": "Configuration options for radio 4.",
+				"multiple_values": false,
 				"name": "radio-4"
 			},
 			"region": {
@@ -2336,6 +2388,7 @@
 				],
 				"default": "",
 				"help": "Region name WTP is associated with.",
+				"multiple_values": false,
 				"name": "region",
 				"size": 35,
 				"type": "string"
@@ -2344,6 +2397,7 @@
 				"category": "unitary",
 				"default": "0",
 				"help": "Relative horizontal region coordinate (between 0 and 1).",
+				"multiple_values": false,
 				"name": "region-x",
 				"size": 15,
 				"type": "string"
@@ -2352,6 +2406,7 @@
 				"category": "unitary",
 				"default": "0",
 				"help": "Relative vertical region coordinate (between 0 and 1).",
+				"multiple_values": false,
 				"name": "region-y",
 				"size": 15,
 				"type": "string"
@@ -2363,6 +2418,7 @@
 						"category": "unitary",
 						"default": "0.0.0.0 0.0.0.0",
 						"help": "Destination IP and mask for the split-tunneling subnet.",
+						"multiple_values": false,
 						"name": "dest-ip",
 						"required": true,
 						"type": "ipv4-classnet"
@@ -2373,6 +2429,7 @@
 						"help": "ID.",
 						"max-value": 4294967295,
 						"min-value": 0,
+						"multiple_values": false,
 						"name": "id",
 						"type": "integer"
 					}
@@ -2427,6 +2484,7 @@
 				"help": "The MTU of downlink CAPWAP tunnel (576 - 1500 bytes or 0; 0 means the local MTU of FortiAP; default = 0).",
 				"max-value": 1500,
 				"min-value": 576,
+				"multiple_values": false,
 				"name": "tun-mtu-downlink",
 				"type": "integer"
 			},
@@ -2436,6 +2494,7 @@
 				"help": "The maximum transmission unit (MTU) of uplink CAPWAP tunnel (576 - 1500 bytes or 0; 0 means the local MTU of FortiAP; default = 0).",
 				"max-value": 1500,
 				"min-value": 576,
+				"multiple_values": false,
 				"name": "tun-mtu-uplink",
 				"type": "integer"
 			},
@@ -2444,6 +2503,7 @@
 				"category": "unitary",
 				"default": "00000000-0000-0000-0000-000000000000",
 				"help": "Universally Unique Identifier (UUID; automatically assigned but can be manually reset).",
+				"multiple_values": false,
 				"name": "uuid",
 				"type": "uuid"
 			},
@@ -2469,6 +2529,7 @@
 				"category": "unitary",
 				"default": "",
 				"help": "WTP ID.",
+				"multiple_values": false,
 				"name": "wtp-id",
 				"required": true,
 				"size": 35,
@@ -2499,6 +2560,7 @@
 				],
 				"default": "",
 				"help": "WTP profile name to apply to this WTP, AP or FortiAP.",
+				"multiple_values": false,
 				"name": "wtp-profile",
 				"required": true,
 				"size": 35,
@@ -2515,9 +2577,9 @@
 		"path": "wireless-controller",
 		"q_type": 271
 	},
-	"revision": "78ee061304af9c5d17bcae6474808d97",
-	"serial": "FGTAZRAQCG14L19D",
+	"revision": "e338e35a484eaafc990a69dd13ff4f76",
+	"serial": "FGTAZRI5HXAAGI90",
 	"status": "success",
 	"vdom": "root",
-	"version": "v7.0.3"
+	"version": "v7.0.4"
 }

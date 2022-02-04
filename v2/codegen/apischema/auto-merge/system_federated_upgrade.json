@@ -1,9 +1,9 @@
 {
 	"addedIn": "v7.0.0",
-	"build": 237,
+	"build": 301,
 	"http_method": "GET",
 	"http_status": 200,
-	"mergedVersions": "v7.0.0,v7.0.1,v7.0.2,v7.0.3",
+	"mergedVersions": "v7.0.0,v7.0.1,v7.0.2,v7.0.3,v7.0.4",
 	"name": "federated-upgrade",
 	"path": "system",
 	"results": {
@@ -15,6 +15,7 @@
 				"category": "unitary",
 				"default": "",
 				"help": "Serial number of the node to include.",
+				"multiple_values": false,
 				"name": "failure-device",
 				"size": 79,
 				"type": "string"
@@ -82,13 +83,26 @@
 				],
 				"type": "option"
 			},
+			"next-path-index": {
+				"addedIn": "v7.0.4",
+				"category": "unitary",
+				"default": 0,
+				"help": "The index of the next image to upgrade to.",
+				"max-value": 10,
+				"min-value": 0,
+				"multiple_values": false,
+				"name": "next-path-index",
+				"required": true,
+				"type": "integer"
+			},
 			"node-list": {
 				"category": "table",
 				"children": {
 					"coordinating-fortigate": {
 						"category": "unitary",
 						"default": "",
-						"help": "The serial of the FortiGate that controls this device",
+						"help": "Serial number of the FortiGate unit that controls this device.",
+						"multiple_values": false,
 						"name": "coordinating-fortigate",
 						"size": 79,
 						"type": "string"
@@ -120,6 +134,7 @@
 						"category": "unitary",
 						"default": "",
 						"help": "Serial number of the node to include.",
+						"multiple_values": false,
 						"name": "serial",
 						"required": true,
 						"size": 79,
@@ -129,6 +144,7 @@
 						"category": "unitary",
 						"default": "",
 						"help": "When the upgrade was configured. Format hh:mm yyyy/mm/dd UTC.",
+						"multiple_values": false,
 						"name": "setup-time",
 						"required": true,
 						"type": "user"
@@ -137,6 +153,7 @@
 						"category": "unitary",
 						"default": "",
 						"help": "Scheduled time for the upgrade. Format hh:mm yyyy/mm/dd UTC.",
+						"multiple_values": false,
 						"name": "time",
 						"required": true,
 						"type": "user"
@@ -164,6 +181,7 @@
 						"category": "unitary",
 						"default": "",
 						"help": "Image IDs to upgrade through.",
+						"multiple_values": false,
 						"name": "upgrade-path",
 						"required": true,
 						"type": "user"
@@ -242,18 +260,20 @@
 				"help": "Unique identifier for this upgrade.",
 				"max-value": 4294967295,
 				"min-value": 0,
+				"multiple_values": false,
 				"name": "upgrade-id",
 				"type": "integer"
 			}
 		},
 		"help": "Coordinate federated upgrades within the Security Fabric.",
+		"multiple_values": false,
 		"name": "federated-upgrade",
 		"path": "system",
 		"q_type": 534
 	},
-	"revision": "5a78955211ebb1641b50c9360238cb5c",
-	"serial": "FGTAZRAQCG14L19D",
+	"revision": "1af996ea72fbf3755ecb12a854d78106",
+	"serial": "FGTAZRI5HXAAGI90",
 	"status": "success",
 	"vdom": "root",
-	"version": "v7.0.3"
+	"version": "v7.0.4"
 }

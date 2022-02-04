@@ -1,9 +1,9 @@
 {
 	"addedIn": "v6.2.7",
-	"build": 237,
+	"build": 301,
 	"http_method": "GET",
 	"http_status": 200,
-	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3",
+	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3,v7.0.4",
 	"name": "profile",
 	"path": "waf",
 	"results": {
@@ -24,6 +24,7 @@
 								],
 								"default": "",
 								"help": "Address name.",
+								"multiple_values": false,
 								"name": "name",
 								"required": true,
 								"size": 79,
@@ -108,6 +109,7 @@
 								],
 								"default": "",
 								"help": "Address name.",
+								"multiple_values": false,
 								"name": "name",
 								"required": true,
 								"size": 79,
@@ -125,11 +127,13 @@
 					}
 				},
 				"help": "Address block and allow lists.",
+				"multiple_values": false,
 				"name": "address-list"
 			},
 			"comment": {
 				"category": "unitary",
 				"help": "Comment.",
+				"multiple_values": false,
 				"name": "comment",
 				"size": 1023,
 				"type": "var-string"
@@ -164,6 +168,7 @@
 								"help": "Length of HTTP content in bytes (0 to 2147483647).",
 								"max-value": 2147483647,
 								"min-value": 0,
+								"multiple_values": false,
 								"name": "length",
 								"type": "integer"
 							},
@@ -227,6 +232,7 @@
 							}
 						},
 						"help": "HTTP content length in request.",
+						"multiple_values": false,
 						"name": "content-length"
 					},
 					"exception": {
@@ -240,6 +246,7 @@
 								],
 								"default": "",
 								"help": "Host address.",
+								"multiple_values": false,
 								"name": "address",
 								"required": true,
 								"size": 79,
@@ -305,6 +312,7 @@
 								"help": "Exception ID.",
 								"max-value": 4294967295,
 								"min-value": 0,
+								"multiple_values": false,
 								"name": "id",
 								"type": "integer"
 							},
@@ -456,6 +464,7 @@
 								"category": "unitary",
 								"default": "",
 								"help": "URL pattern.",
+								"multiple_values": false,
 								"name": "pattern",
 								"required": true,
 								"size": 511,
@@ -551,6 +560,7 @@
 								"help": "Length of HTTP header in bytes (0 to 2147483647).",
 								"max-value": 2147483647,
 								"min-value": 0,
+								"multiple_values": false,
 								"name": "length",
 								"type": "integer"
 							},
@@ -614,6 +624,7 @@
 							}
 						},
 						"help": "HTTP header length in request.",
+						"multiple_values": false,
 						"name": "header-length"
 					},
 					"hostname": {
@@ -697,6 +708,7 @@
 							}
 						},
 						"help": "Enable/disable hostname check.",
+						"multiple_values": false,
 						"name": "hostname"
 					},
 					"line-length": {
@@ -726,6 +738,7 @@
 								"help": "Length of HTTP line in bytes (0 to 2147483647).",
 								"max-value": 2147483647,
 								"min-value": 0,
+								"multiple_values": false,
 								"name": "length",
 								"type": "integer"
 							},
@@ -789,6 +802,7 @@
 							}
 						},
 						"help": "HTTP line length in request.",
+						"multiple_values": false,
 						"name": "line-length"
 					},
 					"malformed": {
@@ -872,6 +886,7 @@
 							}
 						},
 						"help": "Enable/disable malformed HTTP request check.",
+						"multiple_values": false,
 						"name": "malformed"
 					},
 					"max-cookie": {
@@ -919,6 +934,7 @@
 								"help": "Maximum number of cookies in HTTP request (0 to 2147483647).",
 								"max-value": 2147483647,
 								"min-value": 0,
+								"multiple_values": false,
 								"name": "max-cookie",
 								"type": "integer"
 							},
@@ -964,6 +980,7 @@
 							}
 						},
 						"help": "Maximum number of cookies in HTTP request.",
+						"multiple_values": false,
 						"name": "max-cookie"
 					},
 					"max-header-line": {
@@ -1011,6 +1028,7 @@
 								"help": "Maximum number HTTP header lines (0 to 2147483647).",
 								"max-value": 2147483647,
 								"min-value": 0,
+								"multiple_values": false,
 								"name": "max-header-line",
 								"type": "integer"
 							},
@@ -1056,6 +1074,7 @@
 							}
 						},
 						"help": "Maximum number of HTTP header line.",
+						"multiple_values": false,
 						"name": "max-header-line"
 					},
 					"max-range-segment": {
@@ -1103,6 +1122,7 @@
 								"help": "Maximum number of range segments in HTTP range line (0 to 2147483647).",
 								"max-value": 2147483647,
 								"min-value": 0,
+								"multiple_values": false,
 								"name": "max-range-segment",
 								"type": "integer"
 							},
@@ -1148,6 +1168,7 @@
 							}
 						},
 						"help": "Maximum number of range segments in HTTP range line.",
+						"multiple_values": false,
 						"name": "max-range-segment"
 					},
 					"max-url-param": {
@@ -1195,6 +1216,7 @@
 								"help": "Maximum number of parameters in URL (0 to 2147483647).",
 								"max-value": 2147483647,
 								"min-value": 0,
+								"multiple_values": false,
 								"name": "max-url-param",
 								"type": "integer"
 							},
@@ -1240,6 +1262,7 @@
 							}
 						},
 						"help": "Maximum number of parameters in URL.",
+						"multiple_values": false,
 						"name": "max-url-param"
 					},
 					"method": {
@@ -1323,6 +1346,7 @@
 							}
 						},
 						"help": "Enable/disable HTTP method check.",
+						"multiple_values": false,
 						"name": "method"
 					},
 					"param-length": {
@@ -1352,6 +1376,7 @@
 								"help": "Maximum length of parameter in URL, HTTP POST request or HTTP body in bytes (0 to 2147483647).",
 								"max-value": 2147483647,
 								"min-value": 0,
+								"multiple_values": false,
 								"name": "length",
 								"type": "integer"
 							},
@@ -1415,6 +1440,7 @@
 							}
 						},
 						"help": "Maximum length of parameter in URL, HTTP POST request or HTTP body.",
+						"multiple_values": false,
 						"name": "param-length"
 					},
 					"url-param-length": {
@@ -1444,6 +1470,7 @@
 								"help": "Maximum length of URL parameter in bytes (0 to 2147483647).",
 								"max-value": 2147483647,
 								"min-value": 0,
+								"multiple_values": false,
 								"name": "length",
 								"type": "integer"
 							},
@@ -1507,6 +1534,7 @@
 							}
 						},
 						"help": "Maximum length of parameter in URL.",
+						"multiple_values": false,
 						"name": "url-param-length"
 					},
 					"version": {
@@ -1590,10 +1618,12 @@
 							}
 						},
 						"help": "Enable/disable HTTP version check.",
+						"multiple_values": false,
 						"name": "version"
 					}
 				},
 				"help": "WAF HTTP protocol restrictions.",
+				"multiple_values": false,
 				"name": "constraint"
 			},
 			"extended-log": {
@@ -1711,6 +1741,7 @@
 								],
 								"default": "",
 								"help": "Host address.",
+								"multiple_values": false,
 								"name": "address",
 								"required": true,
 								"size": 79,
@@ -1769,6 +1800,7 @@
 								"help": "HTTP method policy ID.",
 								"max-value": 4294967295,
 								"min-value": 0,
+								"multiple_values": false,
 								"name": "id",
 								"type": "integer"
 							},
@@ -1776,6 +1808,7 @@
 								"category": "unitary",
 								"default": "",
 								"help": "URL pattern.",
+								"multiple_values": false,
 								"name": "pattern",
 								"size": 511,
 								"type": "string"
@@ -1849,12 +1882,14 @@
 					}
 				},
 				"help": "Method restriction.",
+				"multiple_values": false,
 				"name": "method"
 			},
 			"name": {
 				"category": "unitary",
 				"default": "",
 				"help": "WAF Profile name.",
+				"multiple_values": false,
 				"name": "name",
 				"size": 35,
 				"type": "string"
@@ -1868,6 +1903,7 @@
 						"help": "The minimum number of Credit cards to detect violation.",
 						"max-value": 128,
 						"min-value": 0,
+						"multiple_values": false,
 						"name": "credit-card-detection-threshold",
 						"type": "integer"
 					},
@@ -1954,6 +1990,7 @@
 								"category": "unitary",
 								"default": "",
 								"help": "Signature name.",
+								"multiple_values": false,
 								"name": "name",
 								"size": 35,
 								"type": "string"
@@ -1962,6 +1999,7 @@
 								"category": "unitary",
 								"default": "",
 								"help": "Match pattern.",
+								"multiple_values": false,
 								"name": "pattern",
 								"size": 511,
 								"type": "string"
@@ -2090,11 +2128,12 @@
 								"help": "Signature ID.",
 								"max-value": 4294967295,
 								"min-value": 0,
+								"multiple_values": false,
 								"name": "id",
 								"type": "integer"
 							}
 						},
-						"help": "Disabled signatures",
+						"help": "Disabled signatures.",
 						"max_table_size_global": 0,
 						"max_table_size_item": 0,
 						"max_table_size_vdom": 0,
@@ -2115,6 +2154,7 @@
 								"help": "Signature subclass ID.",
 								"max-value": 4294967295,
 								"min-value": 0,
+								"multiple_values": false,
 								"name": "id",
 								"type": "integer"
 							}
@@ -2162,6 +2202,7 @@
 								"help": "Main signature class ID.",
 								"max-value": 4294967295,
 								"min-value": 0,
+								"multiple_values": false,
 								"name": "id",
 								"type": "integer"
 							},
@@ -2235,6 +2276,7 @@
 					}
 				},
 				"help": "WAF signatures.",
+				"multiple_values": false,
 				"name": "signature"
 			},
 			"url-access": {
@@ -2249,6 +2291,7 @@
 								"help": "URL access pattern ID.",
 								"max-value": 4294967295,
 								"min-value": 0,
+								"multiple_values": false,
 								"name": "id",
 								"type": "integer"
 							},
@@ -2274,6 +2317,7 @@
 								"category": "unitary",
 								"default": "",
 								"help": "URL pattern.",
+								"multiple_values": false,
 								"name": "pattern",
 								"required": true,
 								"size": 511,
@@ -2305,6 +2349,7 @@
 								],
 								"default": "",
 								"help": "Source address.",
+								"multiple_values": false,
 								"name": "srcaddr",
 								"size": 79,
 								"type": "string"
@@ -2348,6 +2393,7 @@
 						],
 						"default": "",
 						"help": "Host address.",
+						"multiple_values": false,
 						"name": "address",
 						"required": true,
 						"size": 79,
@@ -2359,6 +2405,7 @@
 						"help": "URL access ID.",
 						"max-value": 4294967295,
 						"min-value": 0,
+						"multiple_values": false,
 						"name": "id",
 						"type": "integer"
 					},
@@ -2403,7 +2450,7 @@
 						"type": "option"
 					}
 				},
-				"help": "URL access list",
+				"help": "URL access list.",
 				"max_table_size_global": 0,
 				"max_table_size_item": 0,
 				"max_table_size_vdom": 0,
@@ -2422,9 +2469,9 @@
 		"path": "waf",
 		"q_type": 483
 	},
-	"revision": "fde7b173b85f242a90dac86e9530fe27",
-	"serial": "FGTAZRAQCG14L19D",
+	"revision": "bac459c34867190752352ccc21eb7309",
+	"serial": "FGTAZRI5HXAAGI90",
 	"status": "success",
 	"vdom": "root",
-	"version": "v7.0.3"
+	"version": "v7.0.4"
 }

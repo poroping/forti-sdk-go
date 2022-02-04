@@ -1,9 +1,9 @@
 {
 	"addedIn": "v6.2.7",
-	"build": 237,
+	"build": 301,
 	"http_method": "GET",
 	"http_status": 200,
-	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3",
+	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3,v7.0.4",
 	"name": "address6",
 	"path": "firewall",
 	"results": {
@@ -16,6 +16,7 @@
 				"help": "Minimal TTL of individual IPv6 addresses in FQDN cache.",
 				"max-value": 86400,
 				"min-value": 0,
+				"multiple_values": false,
 				"name": "cache-ttl",
 				"type": "integer"
 			},
@@ -25,12 +26,14 @@
 				"help": "Integer value to determine the color of the icon in the GUI (range 1 to 32, default = 0, which sets the value to 1).",
 				"max-value": 32,
 				"min-value": 0,
+				"multiple_values": false,
 				"name": "color",
 				"type": "integer"
 			},
 			"comment": {
 				"category": "unitary",
 				"help": "Comment.",
+				"multiple_values": false,
 				"name": "comment",
 				"size": 255,
 				"type": "var-string"
@@ -40,6 +43,7 @@
 				"category": "unitary",
 				"default": "",
 				"help": "IPv6 addresses associated to a specific country.",
+				"multiple_values": false,
 				"name": "country",
 				"size": 2,
 				"type": "string"
@@ -48,6 +52,7 @@
 				"category": "unitary",
 				"default": "::",
 				"help": "Final IP address (inclusive) in the range for the address (format: xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx).",
+				"multiple_values": false,
 				"name": "end-ip",
 				"type": "ipv6-address"
 			},
@@ -82,6 +87,7 @@
 				"category": "unitary",
 				"default": "",
 				"help": "Fully qualified domain name.",
+				"multiple_values": false,
 				"name": "fqdn",
 				"size": 255,
 				"type": "string"
@@ -90,6 +96,7 @@
 				"category": "unitary",
 				"default": "::",
 				"help": "Host Address.",
+				"multiple_values": false,
 				"name": "host",
 				"type": "ipv6-address"
 			},
@@ -115,6 +122,7 @@
 				"category": "unitary",
 				"default": "::/0",
 				"help": "IPv6 address prefix (format: xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx/xxx).",
+				"multiple_values": false,
 				"name": "ip6",
 				"type": "ipv6-network"
 			},
@@ -125,6 +133,7 @@
 						"category": "unitary",
 						"default": "",
 						"help": "IP.",
+						"multiple_values": false,
 						"name": "ip",
 						"required": true,
 						"size": 89,
@@ -147,6 +156,7 @@
 						"category": "unitary",
 						"default": "",
 						"help": "MAC address ranges \u003cstart\u003e[-\u003cend\u003e] separated by space.",
+						"multiple_values": false,
 						"name": "macaddr",
 						"required": true,
 						"size": 127,
@@ -166,6 +176,7 @@
 				"category": "unitary",
 				"default": "",
 				"help": "Address name.",
+				"multiple_values": false,
 				"name": "name",
 				"size": 79,
 				"type": "string"
@@ -173,6 +184,7 @@
 			"obj-id": {
 				"category": "unitary",
 				"help": "Object ID for NSX.",
+				"multiple_values": false,
 				"name": "obj-id",
 				"size": 255,
 				"type": "var-string"
@@ -184,6 +196,7 @@
 				],
 				"default": "",
 				"help": "SDN.",
+				"multiple_values": false,
 				"name": "sdn",
 				"size": 35,
 				"type": "string"
@@ -192,6 +205,7 @@
 				"category": "unitary",
 				"default": "::",
 				"help": "First IP address (inclusive) in the range for the address (format: xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx).",
+				"multiple_values": false,
 				"name": "start-ip",
 				"type": "ipv6-address"
 			},
@@ -210,6 +224,7 @@
 						"category": "unitary",
 						"default": "",
 						"help": "Name.",
+						"multiple_values": false,
 						"name": "name",
 						"required": true,
 						"size": 63,
@@ -238,6 +253,7 @@
 						"category": "unitary",
 						"default": "",
 						"help": "Subnet segment value.",
+						"multiple_values": false,
 						"name": "value",
 						"required": true,
 						"size": 35,
@@ -262,6 +278,7 @@
 						],
 						"default": "",
 						"help": "Tag category.",
+						"multiple_values": false,
 						"name": "category",
 						"size": 63,
 						"type": "string"
@@ -270,6 +287,7 @@
 						"category": "unitary",
 						"default": "",
 						"help": "Tagging entry name.",
+						"multiple_values": false,
 						"name": "name",
 						"size": 63,
 						"type": "string"
@@ -284,6 +302,7 @@
 								],
 								"default": "",
 								"help": "Tag name.",
+								"multiple_values": false,
 								"name": "name",
 								"size": 79,
 								"type": "string"
@@ -299,7 +318,7 @@
 						"name": "tags"
 					}
 				},
-				"help": "Config object tagging",
+				"help": "Config object tagging.",
 				"max_table_size_global": 0,
 				"max_table_size_item": 0,
 				"max_table_size_vdom": 0,
@@ -314,6 +333,7 @@
 				],
 				"default": "",
 				"help": "IPv6 address template.",
+				"multiple_values": false,
 				"name": "template",
 				"required": true,
 				"size": 63,
@@ -361,6 +381,7 @@
 				"category": "unitary",
 				"default": "00000000-0000-0000-0000-000000000000",
 				"help": "Universally Unique Identifier (UUID; automatically assigned but can be manually reset).",
+				"multiple_values": false,
 				"name": "uuid",
 				"type": "uuid"
 			},
@@ -393,9 +414,9 @@
 		"path": "firewall",
 		"q_type": 202
 	},
-	"revision": "ee22f3039727fbcb00add871aedf5018",
-	"serial": "FGTAZRAQCG14L19D",
+	"revision": "80847ea1be5b5c041ff9fc3a022b403a",
+	"serial": "FGTAZRI5HXAAGI90",
 	"status": "success",
 	"vdom": "root",
-	"version": "v7.0.3"
+	"version": "v7.0.4"
 }

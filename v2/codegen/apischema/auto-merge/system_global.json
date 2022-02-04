@@ -1,9 +1,9 @@
 {
 	"addedIn": "v6.2.7",
-	"build": 237,
+	"build": 301,
 	"http_method": "GET",
 	"http_status": 200,
-	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3",
+	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3,v7.0.4",
 	"name": "global",
 	"path": "system",
 	"results": {
@@ -13,7 +13,7 @@
 			"admin-concurrent": {
 				"category": "unitary",
 				"default": "enable",
-				"help": "Enable/disable concurrent administrator logins. (Use policy-auth-concurrent for firewall authenticated users.)",
+				"help": "Enable/disable concurrent administrator logins. Use policy-auth-concurrent for firewall authenticated users.",
 				"multiple_values": false,
 				"name": "admin-concurrent",
 				"options": [
@@ -31,9 +31,10 @@
 			"admin-console-timeout": {
 				"category": "unitary",
 				"default": 0,
-				"help": "Console login timeout that overrides the admintimeout value. (15 - 300 seconds) (15 seconds to 5 minutes). 0 the default, disables this timeout.",
+				"help": "Console login timeout that overrides the admin timeout value (15 - 300 seconds, default = 0, which disables the timeout).",
 				"max-value": 300,
 				"min-value": 15,
+				"multiple_values": false,
 				"name": "admin-console-timeout",
 				"type": "integer"
 			},
@@ -62,6 +63,7 @@
 				"help": "HTTPS Strict-Transport-Security header max-age in seconds. A value of 0 will reset any HSTS records in the browser.When admin-https-redirect is disabled the header max-age will be 0.",
 				"max-value": 2147483647,
 				"min-value": 0,
+				"multiple_values": false,
 				"name": "admin-hsts-max-age",
 				"type": "integer"
 			},
@@ -235,6 +237,7 @@
 				"help": "Amount of time in seconds that an administrator account is locked out after reaching the admin-lockout-threshold for repeated failed login attempts.",
 				"max-value": 2147483647,
 				"min-value": 1,
+				"multiple_values": false,
 				"name": "admin-lockout-duration",
 				"type": "integer"
 			},
@@ -244,15 +247,17 @@
 				"help": "Number of failed login attempts before an administrator account is locked out for the admin-lockout-duration.",
 				"max-value": 10,
 				"min-value": 1,
+				"multiple_values": false,
 				"name": "admin-lockout-threshold",
 				"type": "integer"
 			},
 			"admin-login-max": {
 				"category": "unitary",
 				"default": 100,
-				"help": "Maximum number of administrators who can be logged in at the same time (1 - 100, default = 100)",
+				"help": "Maximum number of administrators who can be logged in at the same time (1 - 100, default = 100).",
 				"max-value": 100,
 				"min-value": 1,
+				"multiple_values": false,
 				"name": "admin-login-max",
 				"type": "integer"
 			},
@@ -280,13 +285,14 @@
 				"help": "Administrative access port for HTTP. (1 - 65535, default = 80).",
 				"max-value": 65535,
 				"min-value": 1,
+				"multiple_values": false,
 				"name": "admin-port",
 				"type": "integer"
 			},
 			"admin-restrict-local": {
 				"category": "unitary",
 				"default": "disable",
-				"help": "Enable/disable local admin authentication restriction when remote authenticator is up and running. (default = disable)",
+				"help": "Enable/disable local admin authentication restriction when remote authenticator is up and running (default = disable).",
 				"multiple_values": false,
 				"name": "admin-restrict-local",
 				"options": [
@@ -326,6 +332,7 @@
 				],
 				"default": "self-sign",
 				"help": "Server certificate that the FortiGate uses for HTTPS administrative connections.",
+				"multiple_values": false,
 				"name": "admin-server-cert",
 				"size": 35,
 				"type": "string"
@@ -336,6 +343,7 @@
 				"help": "Administrative access port for HTTPS. (1 - 65535, default = 443).",
 				"max-value": 65535,
 				"min-value": 1,
+				"multiple_values": false,
 				"name": "admin-sport",
 				"type": "integer"
 			},
@@ -345,6 +353,7 @@
 				"help": "Maximum time in seconds permitted between making an SSH connection to the FortiGate unit and authenticating (10 - 3600 sec (1 hour), default 120).",
 				"max-value": 3600,
 				"min-value": 10,
+				"multiple_values": false,
 				"name": "admin-ssh-grace-time",
 				"type": "integer"
 			},
@@ -372,6 +381,7 @@
 				"help": "Administrative access port for SSH. (1 - 65535, default = 22).",
 				"max-value": 65535,
 				"min-value": 1,
+				"multiple_values": false,
 				"name": "admin-ssh-port",
 				"type": "integer"
 			},
@@ -417,6 +427,7 @@
 				"help": "Administrative access port for TELNET. (1 - 65535, default = 23).",
 				"max-value": 65535,
 				"min-value": 1,
+				"multiple_values": false,
 				"name": "admin-telnet-port",
 				"type": "integer"
 			},
@@ -426,6 +437,7 @@
 				"help": "Number of minutes before an idle administrator session times out (1 - 480 minutes (8 hours), default = 5). A shorter idle timeout is more secure.",
 				"max-value": 480,
 				"min-value": 1,
+				"multiple_values": false,
 				"name": "admintimeout",
 				"type": "integer"
 			},
@@ -433,6 +445,7 @@
 				"category": "unitary",
 				"default": "",
 				"help": "Alias for your FortiGate unit.",
+				"multiple_values": false,
 				"name": "alias",
 				"size": 35,
 				"type": "string"
@@ -483,6 +496,7 @@
 				"help": "Maximum number of dynamically learned MAC addresses that can be added to the ARP table (131072 - 2147483647, default = 131072).",
 				"max-value": 2147483647,
 				"min-value": 131072,
+				"multiple_values": false,
 				"name": "arp-max-entry",
 				"type": "integer"
 			},
@@ -493,6 +507,7 @@
 				],
 				"default": "Fortinet_Factory",
 				"help": "Server certificate that the FortiGate uses for HTTPS firewall authentication connections.",
+				"multiple_values": false,
 				"name": "auth-cert",
 				"size": 35,
 				"type": "string"
@@ -503,6 +518,7 @@
 				"help": "User authentication HTTP port. (1 - 65535, default = 1000).",
 				"max-value": 65535,
 				"min-value": 1,
+				"multiple_values": false,
 				"name": "auth-http-port",
 				"type": "integer"
 			},
@@ -512,6 +528,7 @@
 				"help": "User authentication HTTPS port. (1 - 65535, default = 1003).",
 				"max-value": 65535,
 				"min-value": 1,
+				"multiple_values": false,
 				"name": "auth-https-port",
 				"type": "integer"
 			},
@@ -591,6 +608,7 @@
 				"category": "unitary",
 				"default": "0",
 				"help": "Affinity setting for AV scanning (hexadecimal value up to 256 bits in the format of xxxxxxxxxxxxxxxx).",
+				"multiple_values": false,
 				"name": "av-affinity",
 				"size": 79,
 				"type": "string"
@@ -659,6 +677,7 @@
 				"help": "Duration in seconds for blocked sessions (1 - 300 sec  (5 minutes), default = 30).",
 				"max-value": 300,
 				"min-value": 1,
+				"multiple_values": false,
 				"name": "block-session-timer",
 				"type": "integer"
 			},
@@ -668,6 +687,7 @@
 				"help": "Maximum number of bridge forwarding database (FDB) entries.",
 				"max-value": 2147483647,
 				"min-value": 8192,
+				"multiple_values": false,
 				"name": "br-fdb-max-entry",
 				"type": "integer"
 			},
@@ -677,6 +697,7 @@
 				"help": "Maximum number of certificates that can be traversed in a certificate chain.",
 				"max-value": 2147483647,
 				"min-value": 1,
+				"multiple_values": false,
 				"name": "cert-chain-max",
 				"type": "integer"
 			},
@@ -686,6 +707,7 @@
 				"help": "Time-out for reverting to the last saved configuration. (10 - 4294967295 seconds, default = 600).",
 				"max-value": 4294967295,
 				"min-value": 10,
+				"multiple_values": false,
 				"name": "cfg-revert-timeout",
 				"type": "integer"
 			},
@@ -714,7 +736,7 @@
 			"check-protocol-header": {
 				"category": "unitary",
 				"default": "loose",
-				"help": "Level of checking performed on protocol headers. Strict checking is more thorough but may affect performance. Loose checking is ok in most cases.",
+				"help": "Level of checking performed on protocol headers. Strict checking is more thorough but may affect performance. Loose checking is OK in most cases.",
 				"multiple_values": false,
 				"name": "check-protocol-header",
 				"options": [
@@ -806,6 +828,7 @@
 				"category": "unitary",
 				"default": "0",
 				"help": "Affinity setting for cmdbsvr (hexadecimal value up to 256 bits in the format of xxxxxxxxxxxxxxxx).",
+				"multiple_values": false,
 				"name": "cmdbsvr-affinity",
 				"size": 79,
 				"type": "string"
@@ -813,9 +836,10 @@
 			"cpu-use-threshold": {
 				"category": "unitary",
 				"default": 90,
-				"help": "Threshold at which CPU usage is reported. (% of total CPU, default = 90).",
+				"help": "Threshold at which CPU usage is reported (% of total CPU, default = 90).",
 				"max-value": 99,
 				"min-value": 50,
+				"multiple_values": false,
 				"name": "cpu-use-threshold",
 				"type": "integer"
 			},
@@ -858,7 +882,8 @@
 			"default-service-source-port": {
 				"category": "unitary",
 				"default": "",
-				"help": "Default service source port range. (default=1-65535)",
+				"help": "Default service source port range (default = 1 - 65535).",
+				"multiple_values": false,
 				"name": "default-service-source-port",
 				"type": "user"
 			},
@@ -877,6 +902,7 @@
 				"help": "Time in seconds that a device must be idle to automatically log the device user out. (30 - 31536000 sec (30 sec to 1 year), default = 300).",
 				"max-value": 31536000,
 				"min-value": 30,
+				"multiple_values": false,
 				"name": "device-idle-timeout",
 				"type": "integer"
 			},
@@ -924,6 +950,7 @@
 				"help": "DNS proxy worker count. For a FortiGate with multiple logical CPUs, you can set the DNS process number from 1 to the number of logical CPUs.",
 				"max-value": 255,
 				"min-value": 1,
+				"multiple_values": false,
 				"name": "dnsproxy-worker-count",
 				"type": "integer"
 			},
@@ -945,12 +972,22 @@
 				],
 				"type": "option"
 			},
+			"extender-controller-reserved-network": {
+				"addedIn": "v7.0.4",
+				"category": "unitary",
+				"default": "10.252.0.1 255.255.0.0",
+				"help": "Configure reserved network subnet for managed LAN extension FortiExtender units. This is available when the FortiExtender daemon is running.",
+				"multiple_values": false,
+				"name": "extender-controller-reserved-network",
+				"type": "ipv4-classnet-host"
+			},
 			"failtime": {
 				"category": "unitary",
 				"default": 5,
 				"help": "Fail-time for server lost.",
 				"max-value": 4294967295,
 				"min-value": 0,
+				"multiple_values": false,
 				"name": "failtime",
 				"type": "integer"
 			},
@@ -958,9 +995,10 @@
 				"addedIn": "v6.4.0",
 				"category": "unitary",
 				"default": 0,
-				"help": "Maximum disk buffer size to temporarily store logs destined for FortiAnalyzer. To be used in the event that FortiAnalyzer is unavailalble.",
+				"help": "Maximum disk buffer size to temporarily store logs destined for FortiAnalyzer. To be used in the event that FortiAnalyzer is unavailable.",
 				"max-value": 214748364,
 				"min-value": 0,
+				"multiple_values": false,
 				"name": "faz-disk-buffer-size",
 				"type": "integer"
 			},
@@ -988,6 +1026,7 @@
 				"help": "FortiGuard statistics collection period in minutes. (1 - 1440 min (1 min to 24 hours), default = 60).",
 				"max-value": 1440,
 				"min-value": 1,
+				"multiple_values": false,
 				"name": "fds-statistics-period",
 				"type": "integer"
 			},
@@ -1037,6 +1076,7 @@
 			},
 			"fortiextender": {
 				"category": "unitary",
+				"default": "disable",
 				"help": "Enable/disable FortiExtender.",
 				"multiple_values": false,
 				"name": "fortiextender",
@@ -1055,12 +1095,33 @@
 			},
 			"fortiextender-data-port": {
 				"category": "unitary",
+				"default": 25246,
 				"help": "FortiExtender data port (1024 - 49150, default = 25246).",
 				"max-value": 49150,
 				"min-value": 1024,
+				"multiple_values": false,
 				"name": "fortiextender-data-port",
 				"removedIn": "v6.4.2",
 				"type": "integer"
+			},
+			"fortiextender-discovery-lockdown": {
+				"addedIn": "v7.0.4",
+				"category": "unitary",
+				"default": "disable",
+				"help": "Enable/disable FortiExtender CAPWAP lockdown.",
+				"multiple_values": false,
+				"name": "fortiextender-discovery-lockdown",
+				"options": [
+					{
+						"help": "Unlock down new FortiExtender device discovery.",
+						"name": "disable"
+					},
+					{
+						"help": "Lock down new FortiExtender device discovery.",
+						"name": "enable"
+					}
+				],
+				"type": "option"
 			},
 			"fortiextender-vlan-mode": {
 				"category": "unitary",
@@ -1106,6 +1167,7 @@
 				"help": "FortiService port (1 - 65535, default = 8013). Used by FortiClient endpoint compliance. Older versions of FortiClient used a different port.",
 				"max-value": 65535,
 				"min-value": 1,
+				"multiple_values": false,
 				"name": "fortiservice-port",
 				"type": "integer"
 			},
@@ -1133,6 +1195,25 @@
 				"help": "Enable/disable the factory default hostname warning on the GUI setup wizard.",
 				"multiple_values": false,
 				"name": "gui-allow-default-hostname",
+				"options": [
+					{
+						"help": "Display the feature in GUI.",
+						"name": "enable"
+					},
+					{
+						"help": "Do not display the feature in GUI.",
+						"name": "disable"
+					}
+				],
+				"type": "option"
+			},
+			"gui-cdn-usage": {
+				"addedIn": "v7.0.4",
+				"category": "unitary",
+				"default": "enable",
+				"help": "Enable/disable Load GUI static files from a CDN.",
+				"multiple_values": false,
+				"name": "gui-cdn-usage",
 				"options": [
 					{
 						"help": "Display the feature in GUI.",
@@ -1237,6 +1318,7 @@
 				"category": "unitary",
 				"default": "",
 				"help": "Add the latitude of the location of this FortiGate to position it on the Threat Map.",
+				"multiple_values": false,
 				"name": "gui-device-latitude",
 				"size": 19,
 				"type": "string"
@@ -1245,6 +1327,7 @@
 				"category": "unitary",
 				"default": "",
 				"help": "Add the longitude of the location of this FortiGate to position it on the Threat Map.",
+				"multiple_values": false,
 				"name": "gui-device-longitude",
 				"size": 19,
 				"type": "string"
@@ -1515,6 +1598,7 @@
 				"category": "unitary",
 				"default": "0",
 				"help": "Affinity setting for HA daemons (hexadecimal value up to 256 bits in the format of xxxxxxxxxxxxxxxx).",
+				"multiple_values": false,
 				"name": "ha-affinity",
 				"size": 79,
 				"type": "string"
@@ -1541,6 +1625,7 @@
 				"category": "unitary",
 				"default": "",
 				"help": "FortiGate unit's hostname. Most models will truncate names longer than 24 characters. Some models support hostnames up to 35 characters.",
+				"multiple_values": false,
 				"name": "hostname",
 				"size": 35,
 				"type": "string"
@@ -1551,8 +1636,32 @@
 				"help": "Maximum number of IGMP memberships (96 - 64000, default = 3200).",
 				"max-value": 128000,
 				"min-value": 96,
+				"multiple_values": false,
 				"name": "igmp-state-limit",
 				"type": "integer"
+			},
+			"internet-service-database": {
+				"addedIn": "v7.0.4",
+				"category": "unitary",
+				"default": "full",
+				"help": "Configure which Internet Service database size to download from FortiGuard and use.",
+				"multiple_values": false,
+				"name": "internet-service-database",
+				"options": [
+					{
+						"help": "Small sized Internet Service database with very limited IP addresses.",
+						"name": "mini"
+					},
+					{
+						"help": "Medium sized Internet Service database with most IP addresses.",
+						"name": "standard"
+					},
+					{
+						"help": "Full sized Internet Service database with all IP addresses.",
+						"name": "full"
+					}
+				],
+				"type": "option"
 			},
 			"interval": {
 				"category": "unitary",
@@ -1560,6 +1669,7 @@
 				"help": "Dead gateway detection interval.",
 				"max-value": 4294967295,
 				"min-value": 0,
+				"multiple_values": false,
 				"name": "interval",
 				"type": "integer"
 			},
@@ -1567,6 +1677,7 @@
 				"category": "unitary",
 				"default": "1024-25000",
 				"help": "IP source port range used for traffic originating from the FortiGate unit.",
+				"multiple_values": false,
 				"name": "ip-src-port-range",
 				"required": true,
 				"type": "user"
@@ -1575,6 +1686,7 @@
 				"category": "unitary",
 				"default": "0",
 				"help": "Affinity setting for IPS (hexadecimal value up to 256 bits in the format of xxxxxxxxxxxxxxxx; allowed CPUs must be less than total number of IPS engine daemons).",
+				"multiple_values": false,
 				"name": "ips-affinity",
 				"size": 79,
 				"type": "string"
@@ -1604,6 +1716,7 @@
 				"help": "ESP jump ahead rate (1G - 10G pps equivalent).",
 				"max-value": 10,
 				"min-value": 1,
+				"multiple_values": false,
 				"name": "ipsec-ha-seqjump-rate",
 				"type": "integer"
 			},
@@ -1649,6 +1762,7 @@
 				"help": "Enable/disable acceptance of IPv6 Duplicate Address Detection (DAD).",
 				"max-value": 2,
 				"min-value": 0,
+				"multiple_values": false,
 				"name": "ipv6-accept-dad",
 				"type": "integer"
 			},
@@ -1756,6 +1870,7 @@
 				"help": "Global timeout for connections with remote LDAP servers in milliseconds (1 - 300000, default 500).",
 				"max-value": 300000,
 				"min-value": 1,
+				"multiple_values": false,
 				"name": "ldapconntimeout",
 				"type": "integer"
 			},
@@ -1890,6 +2005,7 @@
 				"category": "unitary",
 				"default": "",
 				"help": "Management IP address of this FortiGate. Used to log into this FortiGate from another FortiGate in the Security Fabric.",
+				"multiple_values": false,
 				"name": "management-ip",
 				"size": 255,
 				"type": "string"
@@ -1901,6 +2017,7 @@
 				"help": "Overriding port for management connection (Overrides admin port).",
 				"max-value": 65535,
 				"min-value": 1,
+				"multiple_values": false,
 				"name": "management-port",
 				"type": "integer"
 			},
@@ -1930,6 +2047,7 @@
 				],
 				"default": "root",
 				"help": "Management virtual domain name.",
+				"multiple_values": false,
 				"name": "management-vdom",
 				"size": 31,
 				"type": "string"
@@ -1947,6 +2065,7 @@
 				"help": "Maximum number of IP route cache entries (0 - 2147483647).",
 				"max-value": 2147483647,
 				"min-value": 0,
+				"multiple_values": false,
 				"name": "max-route-cache-size",
 				"type": "integer"
 			},
@@ -1956,6 +2075,7 @@
 				"help": "Threshold at which memory usage is considered extreme (new sessions are dropped) (% of total RAM, default = 95).",
 				"max-value": 97,
 				"min-value": 70,
+				"multiple_values": false,
 				"name": "memory-use-threshold-extreme",
 				"type": "integer"
 			},
@@ -1965,6 +2085,7 @@
 				"help": "Threshold at which memory usage forces the FortiGate to exit conserve mode (% of total RAM, default = 82).",
 				"max-value": 97,
 				"min-value": 70,
+				"multiple_values": false,
 				"name": "memory-use-threshold-green",
 				"type": "integer"
 			},
@@ -1974,6 +2095,7 @@
 				"help": "Threshold at which memory usage forces the FortiGate to enter conserve mode (% of total RAM, default = 88).",
 				"max-value": 97,
 				"min-value": 70,
+				"multiple_values": false,
 				"name": "memory-use-threshold-red",
 				"type": "integer"
 			},
@@ -1981,6 +2103,7 @@
 				"category": "unitary",
 				"default": "0",
 				"help": "Affinity setting for logging (64-bit hexadecimal value in the format of xxxxxxxxxxxxxxxx).",
+				"multiple_values": false,
 				"name": "miglog-affinity",
 				"size": 19,
 				"type": "string"
@@ -1991,6 +2114,7 @@
 				"help": "Number of logging (miglogd) processes to be allowed to run. Higher number can reduce performance; lower number can slow log processing time. No logs will be dropped or lost if the number is changed.",
 				"max-value": 15,
 				"min-value": 0,
+				"multiple_values": false,
 				"name": "miglogd-children",
 				"type": "integer"
 			},
@@ -2018,6 +2142,7 @@
 				"help": "Maximum number of NDP table entries (set to 65,536 or higher; if set to 0, kernel holds 65,536 entries).",
 				"max-value": 2147483647,
 				"min-value": 65536,
+				"multiple_values": false,
 				"name": "ndp-max-entry",
 				"type": "integer"
 			},
@@ -2085,6 +2210,7 @@
 				"help": "Number of concurrent firewall use logins from the same user (1 - 100, default = 0 means no limit).",
 				"max-value": 100,
 				"min-value": 0,
+				"multiple_values": false,
 				"name": "policy-auth-concurrent",
 				"type": "integer"
 			},
@@ -2145,7 +2271,7 @@
 			"proxy-auth-lifetime": {
 				"category": "unitary",
 				"default": "disable",
-				"help": "Enable/disable authenticated users lifetime control.  This is a cap on the total time a proxy user can be authenticated for after which re-authentication will take place.",
+				"help": "Enable/disable authenticated users lifetime control. This is a cap on the total time a proxy user can be authenticated for after which re-authentication will take place.",
 				"multiple_values": false,
 				"name": "proxy-auth-lifetime",
 				"options": [
@@ -2166,6 +2292,7 @@
 				"help": "Lifetime timeout in minutes for authenticated users (5  - 65535 min, default=480 (8 hours)).",
 				"max-value": 65535,
 				"min-value": 5,
+				"multiple_values": false,
 				"name": "proxy-auth-lifetime-timeout",
 				"type": "integer"
 			},
@@ -2175,8 +2302,28 @@
 				"help": "Authentication timeout in minutes for authenticated users (1 - 300 min, default = 10).",
 				"max-value": 300,
 				"min-value": 1,
+				"multiple_values": false,
 				"name": "proxy-auth-timeout",
 				"type": "integer"
+			},
+			"proxy-cert-use-mgmt-vdom": {
+				"addedIn": "v7.0.4",
+				"category": "unitary",
+				"default": "disable",
+				"help": "Enable/disable using management VDOM to send requests.",
+				"multiple_values": false,
+				"name": "proxy-cert-use-mgmt-vdom",
+				"options": [
+					{
+						"help": "Enable setting.",
+						"name": "enable"
+					},
+					{
+						"help": "Disable setting.",
+						"name": "disable"
+					}
+				],
+				"type": "option"
 			},
 			"proxy-cipher-hardware-acceleration": {
 				"category": "unitary",
@@ -2261,6 +2408,7 @@
 				"help": "Proxy worker count.",
 				"max-value": 255,
 				"min-value": 1,
+				"multiple_values": false,
 				"name": "proxy-worker-count",
 				"type": "integer"
 			},
@@ -2270,6 +2418,7 @@
 				"help": "RADIUS service port number.",
 				"max-value": 65535,
 				"min-value": 1,
+				"multiple_values": false,
 				"name": "radius-port",
 				"type": "integer"
 			},
@@ -2297,6 +2446,7 @@
 				"help": "Statistics refresh interval second(s) in GUI.",
 				"max-value": 4294967295,
 				"min-value": 0,
+				"multiple_values": false,
 				"name": "refresh",
 				"type": "integer"
 			},
@@ -2306,6 +2456,7 @@
 				"help": "Number of seconds that the FortiGate waits for responses from remote RADIUS, LDAP, or TACACS+ authentication servers. (1-300 sec, default = 5).",
 				"max-value": 300,
 				"min-value": 1,
+				"multiple_values": false,
 				"name": "remoteauthtimeout",
 				"type": "integer"
 			},
@@ -2331,6 +2482,7 @@
 				"category": "unitary",
 				"default": "",
 				"help": "Daily restart time (hh:mm).",
+				"multiple_values": false,
 				"name": "restart-time",
 				"required": true,
 				"type": "user"
@@ -2377,6 +2529,7 @@
 				"help": "Number of scanunits. The range and the default depend on the number of CPUs. Only available on FortiGate units with multiple CPUs.",
 				"max-value": 255,
 				"min-value": 2,
+				"multiple_values": false,
 				"name": "scanunit-count",
 				"type": "integer"
 			},
@@ -2495,6 +2648,7 @@
 				"help": "Date within a month to run ssd trim.",
 				"max-value": 31,
 				"min-value": 1,
+				"multiple_values": false,
 				"name": "ssd-trim-date",
 				"type": "integer"
 			},
@@ -2534,6 +2688,7 @@
 				"help": "Hour of the day on which to run SSD Trim (0 - 23, default = 1).",
 				"max-value": 23,
 				"min-value": 0,
+				"multiple_values": false,
 				"name": "ssd-trim-hour",
 				"type": "integer"
 			},
@@ -2543,6 +2698,7 @@
 				"help": "Minute of the hour on which to run SSD Trim (0 - 59, 60 for random).",
 				"max-value": 60,
 				"min-value": 0,
+				"multiple_values": false,
 				"name": "ssd-trim-min",
 				"type": "integer"
 			},
@@ -2966,6 +3122,7 @@
 				"help": "Maximum number of SSL-VPN processes. Upper limit for this value is the number of CPUs and depends on the model. Default value of zero means the SSLVPN daemon decides the number of worker processes.",
 				"max-value": 128,
 				"min-value": 0,
+				"multiple_values": false,
 				"name": "sslvpn-max-worker-count",
 				"type": "integer"
 			},
@@ -3045,6 +3202,7 @@
 				"category": "unitary",
 				"default": "10.255.0.0 255.255.0.0",
 				"help": "Configure reserved network subnet for managed switches. This is available when the switch controller is enabled.",
+				"multiple_values": false,
 				"name": "switch-controller-reserved-network",
 				"type": "ipv4-classnet-host"
 			},
@@ -3054,6 +3212,7 @@
 				"help": "Time in minutes between updates of performance statistics logging. (1 - 15 min, default = 5, 0 = disabled).",
 				"max-value": 15,
 				"min-value": 0,
+				"multiple_values": false,
 				"name": "sys-perf-log-interval",
 				"type": "integer"
 			},
@@ -3063,6 +3222,7 @@
 				"help": "Number of seconds the FortiGate unit should wait to close a session after one peer has sent a FIN packet but the other has not responded (1 - 86400 sec (1 day), default = 120).",
 				"max-value": 86400,
 				"min-value": 1,
+				"multiple_values": false,
 				"name": "tcp-halfclose-timer",
 				"type": "integer"
 			},
@@ -3072,6 +3232,7 @@
 				"help": "Number of seconds the FortiGate unit should wait to close a session after one peer has sent an open session packet but the other has not responded (1 - 86400 sec (1 day), default = 10).",
 				"max-value": 86400,
 				"min-value": 1,
+				"multiple_values": false,
 				"name": "tcp-halfopen-timer",
 				"type": "integer"
 			},
@@ -3100,6 +3261,7 @@
 				"help": "Length of the TCP CLOSE state in seconds (5 - 300 sec, default = 5).",
 				"max-value": 300,
 				"min-value": 5,
+				"multiple_values": false,
 				"name": "tcp-rst-timer",
 				"type": "integer"
 			},
@@ -3109,6 +3271,7 @@
 				"help": "Length of the TCP TIME-WAIT state in seconds (1 - 300 sec, default = 1).",
 				"max-value": 300,
 				"min-value": 0,
+				"multiple_values": false,
 				"name": "tcp-timewait-timer",
 				"type": "integer"
 			},
@@ -3541,6 +3704,7 @@
 				"help": "Email-based two-factor authentication session timeout (30 - 300 seconds (5 minutes), default = 60).",
 				"max-value": 300,
 				"min-value": 30,
+				"multiple_values": false,
 				"name": "two-factor-email-expiry",
 				"type": "integer"
 			},
@@ -3550,6 +3714,7 @@
 				"help": "FortiAuthenticator token authentication session timeout (10 - 3600 seconds (1 hour), default = 60).",
 				"max-value": 3600,
 				"min-value": 10,
+				"multiple_values": false,
 				"name": "two-factor-fac-expiry",
 				"type": "integer"
 			},
@@ -3559,6 +3724,7 @@
 				"help": "FortiToken authentication session timeout (60 - 600 sec (10 minutes), default = 60).",
 				"max-value": 600,
 				"min-value": 60,
+				"multiple_values": false,
 				"name": "two-factor-ftk-expiry",
 				"type": "integer"
 			},
@@ -3568,6 +3734,7 @@
 				"help": "FortiToken Mobile session timeout (1 - 168 hours (7 days), default = 72).",
 				"max-value": 168,
 				"min-value": 1,
+				"multiple_values": false,
 				"name": "two-factor-ftm-expiry",
 				"type": "integer"
 			},
@@ -3577,6 +3744,7 @@
 				"help": "SMS-based two-factor authentication session timeout (30 - 300 sec, default = 60).",
 				"max-value": 300,
 				"min-value": 30,
+				"multiple_values": false,
 				"name": "two-factor-sms-expiry",
 				"type": "integer"
 			},
@@ -3586,6 +3754,7 @@
 				"help": "UDP connection session timeout. This command can be useful in managing CPU and memory resources (1 - 86400 seconds (1 day), default = 60).",
 				"max-value": 86400,
 				"min-value": 1,
+				"multiple_values": false,
 				"name": "udp-idle-timer",
 				"type": "integer"
 			},
@@ -3593,6 +3762,7 @@
 				"category": "unitary",
 				"default": "0",
 				"help": "URL filter CPU affinity.",
+				"multiple_values": false,
 				"name": "url-filter-affinity",
 				"size": 79,
 				"type": "string"
@@ -3603,36 +3773,40 @@
 				"help": "URL filter daemon count.",
 				"max-value": 10,
 				"min-value": 1,
+				"multiple_values": false,
 				"name": "url-filter-count",
 				"type": "integer"
 			},
 			"user-device-store-max-devices": {
 				"addedIn": "v6.4.3",
 				"category": "unitary",
-				"default": 73358,
+				"default": 73355,
 				"help": "Maximum number of devices allowed in user device store.",
-				"max-value": 104797,
-				"min-value": 36679,
+				"max-value": 104794,
+				"min-value": 36677,
+				"multiple_values": false,
 				"name": "user-device-store-max-devices",
 				"type": "integer"
 			},
 			"user-device-store-max-unified-mem": {
 				"addedIn": "v7.0.2",
 				"category": "unitary",
-				"default": 366791270,
+				"default": 366779801,
 				"help": "Maximum unified memory allowed in user device store.",
-				"max-value": 733582540,
-				"min-value": 73358254,
+				"max-value": 733559603,
+				"min-value": 73355960,
+				"multiple_values": false,
 				"name": "user-device-store-max-unified-mem",
 				"type": "integer"
 			},
 			"user-device-store-max-users": {
 				"addedIn": "v6.4.3",
 				"category": "unitary",
-				"default": 73358,
+				"default": 73355,
 				"help": "Maximum number of users allowed in user device store.",
-				"max-value": 104797,
-				"min-value": 36679,
+				"max-value": 104794,
+				"min-value": 36677,
+				"multiple_values": false,
 				"name": "user-device-store-max-users",
 				"type": "integer"
 			},
@@ -3643,6 +3817,7 @@
 				],
 				"default": "Fortinet_Factory",
 				"help": "Certificate to use for https user authentication.",
+				"multiple_values": false,
 				"name": "user-server-cert",
 				"size": 35,
 				"type": "string"
@@ -3691,6 +3866,7 @@
 				"category": "unitary",
 				"default": "0",
 				"help": "Affinity setting for wad (hexadecimal value up to 256 bits in the format of xxxxxxxxxxxxxxxx).",
+				"multiple_values": false,
 				"name": "wad-affinity",
 				"size": 79,
 				"type": "string"
@@ -3701,6 +3877,7 @@
 				"help": "Number of concurrent WAD-cache-service object-cache processes.",
 				"max-value": 1,
 				"min-value": 1,
+				"multiple_values": false,
 				"name": "wad-csvc-cs-count",
 				"type": "integer"
 			},
@@ -3710,6 +3887,7 @@
 				"help": "Number of concurrent WAD-cache-service byte-cache processes.",
 				"max-value": 255,
 				"min-value": 0,
+				"multiple_values": false,
 				"name": "wad-csvc-db-count",
 				"type": "integer"
 			},
@@ -3719,6 +3897,7 @@
 				"help": "Minimum percentage change in system memory usage detected by the wad daemon prior to adjusting TCP window size for any active connection.",
 				"max-value": 25,
 				"min-value": 5,
+				"multiple_values": false,
 				"name": "wad-memory-change-granularity",
 				"type": "integer"
 			},
@@ -3746,6 +3925,7 @@
 				"help": "Number of explicit proxy WAN optimization daemon (WAD) processes. By default WAN optimization, explicit proxy, and web caching is handled by all of the CPU cores in a FortiGate unit.",
 				"max-value": 255,
 				"min-value": 0,
+				"multiple_values": false,
 				"name": "wad-worker-count",
 				"type": "integer"
 			},
@@ -3756,6 +3936,7 @@
 				],
 				"default": "Fortinet_Wifi_CA",
 				"help": "CA certificate that verifies the WiFi certificate.",
+				"multiple_values": false,
 				"name": "wifi-ca-certificate",
 				"size": 79,
 				"type": "string"
@@ -3767,6 +3948,7 @@
 				],
 				"default": "Fortinet_Wifi",
 				"help": "Certificate to use for WiFi authentication.",
+				"multiple_values": false,
 				"name": "wifi-certificate",
 				"size": 35,
 				"type": "string"
@@ -3813,18 +3995,20 @@
 				"help": "Port used for the control channel in wireless controller mode (wireless-mode is ac). The data channel port is the control channel port number plus one (1024 - 49150, default = 5246).",
 				"max-value": 49150,
 				"min-value": 1024,
+				"multiple_values": false,
 				"name": "wireless-controller-port",
 				"type": "integer"
 			}
 		},
 		"help": "Configure global attributes.",
+		"multiple_values": false,
 		"name": "global",
 		"path": "system",
 		"q_type": 11
 	},
-	"revision": "0448b4bf37cda5ed31380db12be5b1d5",
-	"serial": "FGTAZRAQCG14L19D",
+	"revision": "369cd31b55dc6b6b1adbd349a6863d41",
+	"serial": "FGTAZRI5HXAAGI90",
 	"status": "success",
 	"vdom": "root",
-	"version": "v7.0.3"
+	"version": "v7.0.4"
 }

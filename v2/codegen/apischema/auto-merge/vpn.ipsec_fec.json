@@ -1,9 +1,9 @@
 {
 	"addedIn": "v7.0.2",
-	"build": 237,
+	"build": 301,
 	"http_method": "GET",
 	"http_status": 200,
-	"mergedVersions": "v7.0.2,v7.0.3",
+	"mergedVersions": "v7.0.2,v7.0.3,v7.0.4",
 	"name": "fec",
 	"path": "vpn.ipsec",
 	"results": {
@@ -19,6 +19,7 @@
 						"help": "Apply FEC parameters when available bi-bandwidth is \u003e= threshold (kbps, 0 means no threshold).",
 						"max-value": 4294967295,
 						"min-value": 0,
+						"multiple_values": false,
 						"name": "bandwidth-bi-threshold",
 						"type": "integer"
 					},
@@ -28,6 +29,7 @@
 						"help": "Apply FEC parameters when available down bandwidth is \u003e= threshold (kbps, 0 means no threshold).",
 						"max-value": 4294967295,
 						"min-value": 0,
+						"multiple_values": false,
 						"name": "bandwidth-down-threshold",
 						"type": "integer"
 					},
@@ -37,6 +39,7 @@
 						"help": "Apply FEC parameters when available up bandwidth is \u003e= threshold (kbps, 0 means no threshold).",
 						"max-value": 4294967295,
 						"min-value": 0,
+						"multiple_values": false,
 						"name": "bandwidth-up-threshold",
 						"type": "integer"
 					},
@@ -46,6 +49,7 @@
 						"help": "Number of base FEC packets (1 - 20).",
 						"max-value": 20,
 						"min-value": 1,
+						"multiple_values": false,
 						"name": "base",
 						"required": true,
 						"type": "integer"
@@ -56,6 +60,7 @@
 						"help": "Apply FEC parameters when latency is \u003c= threshold (0 means no threshold).",
 						"max-value": 4294967295,
 						"min-value": 0,
+						"multiple_values": false,
 						"name": "latency-threshold",
 						"type": "integer"
 					},
@@ -65,6 +70,7 @@
 						"help": "Apply FEC parameters when packet loss is \u003e= threshold (0 - 100, 0 means no threshold).",
 						"max-value": 100,
 						"min-value": 0,
+						"multiple_values": false,
 						"name": "packet-loss-threshold",
 						"type": "integer"
 					},
@@ -74,6 +80,7 @@
 						"help": "Number of redundant FEC packets (1 - 5).",
 						"max-value": 5,
 						"min-value": 1,
+						"multiple_values": false,
 						"name": "redundant",
 						"required": true,
 						"type": "integer"
@@ -84,6 +91,7 @@
 						"help": "Sequence number (1 - 64).",
 						"max-value": 64,
 						"min-value": 0,
+						"multiple_values": false,
 						"name": "seqno",
 						"required": true,
 						"type": "integer"
@@ -102,6 +110,7 @@
 				"category": "unitary",
 				"default": "",
 				"help": "Profile name.",
+				"multiple_values": false,
 				"name": "name",
 				"required": true,
 				"size": 35,
@@ -118,9 +127,9 @@
 		"path": "vpn.ipsec",
 		"q_type": 180
 	},
-	"revision": "78ee061304af9c5d17bcae6474808d97",
-	"serial": "FGTAZRAQCG14L19D",
+	"revision": "e338e35a484eaafc990a69dd13ff4f76",
+	"serial": "FGTAZRI5HXAAGI90",
 	"status": "success",
 	"vdom": "root",
-	"version": "v7.0.3"
+	"version": "v7.0.4"
 }

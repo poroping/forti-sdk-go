@@ -1,9 +1,9 @@
 {
 	"addedIn": "v6.4.0",
-	"build": 237,
+	"build": 301,
 	"http_method": "GET",
 	"http_status": 200,
-	"mergedVersions": "v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3",
+	"mergedVersions": "v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3,v7.0.4",
 	"name": "apcfg-profile",
 	"path": "wireless-controller",
 	"results": {
@@ -14,6 +14,7 @@
 				"category": "unitary",
 				"default": "0.0.0.0",
 				"help": "IP address of the validation controller that AP must be able to join after applying AP local configuration.",
+				"multiple_values": false,
 				"name": "ac-ip",
 				"type": "ipv4-address"
 			},
@@ -23,6 +24,7 @@
 				"help": "Port of the validation controller that AP must be able to join after applying AP local configuration (1024 - 49150, default = 5246).",
 				"max-value": 49150,
 				"min-value": 1024,
+				"multiple_values": false,
 				"name": "ac-port",
 				"type": "integer"
 			},
@@ -32,6 +34,7 @@
 				"help": "Maximum waiting time for the AP to join the validation controller after applying AP local configuration (3 - 30 min, default = 10).",
 				"max-value": 30,
 				"min-value": 3,
+				"multiple_values": false,
 				"name": "ac-timer",
 				"type": "integer"
 			},
@@ -89,6 +92,7 @@
 						"help": "Command ID.",
 						"max-value": 255,
 						"min-value": 1,
+						"multiple_values": false,
 						"name": "id",
 						"type": "integer"
 					},
@@ -96,6 +100,7 @@
 						"category": "unitary",
 						"default": "",
 						"help": "AP local configuration command name.",
+						"multiple_values": false,
 						"name": "name",
 						"size": 63,
 						"type": "string"
@@ -103,6 +108,7 @@
 					"passwd-value": {
 						"category": "unitary",
 						"help": "AP local configuration command password value.",
+						"multiple_values": false,
 						"name": "passwd-value",
 						"size": 128,
 						"type": "password"
@@ -129,6 +135,7 @@
 						"category": "unitary",
 						"default": "",
 						"help": "AP local configuration command value.",
+						"multiple_values": false,
 						"name": "value",
 						"size": 127,
 						"type": "string"
@@ -145,6 +152,7 @@
 			"comment": {
 				"category": "unitary",
 				"help": "Comment.",
+				"multiple_values": false,
 				"name": "comment",
 				"size": 255,
 				"type": "var-string"
@@ -153,6 +161,7 @@
 				"category": "unitary",
 				"default": "",
 				"help": "AP local configuration profile name.",
+				"multiple_values": false,
 				"name": "name",
 				"size": 35,
 				"type": "string"
@@ -168,9 +177,9 @@
 		"path": "wireless-controller",
 		"q_type": 266
 	},
-	"revision": "78ee061304af9c5d17bcae6474808d97",
-	"serial": "FGTAZRAQCG14L19D",
+	"revision": "e338e35a484eaafc990a69dd13ff4f76",
+	"serial": "FGTAZRI5HXAAGI90",
 	"status": "success",
 	"vdom": "root",
-	"version": "v7.0.3"
+	"version": "v7.0.4"
 }

@@ -1,9 +1,9 @@
 {
 	"addedIn": "v7.0.0",
-	"build": 237,
+	"build": 301,
 	"http_method": "GET",
 	"http_status": 200,
-	"mergedVersions": "v7.0.0,v7.0.1,v7.0.2,v7.0.3",
+	"mergedVersions": "v7.0.0,v7.0.1,v7.0.2,v7.0.3,v7.0.4",
 	"name": "dynamic-port-policy",
 	"path": "switch-controller",
 	"results": {
@@ -14,6 +14,7 @@
 				"category": "unitary",
 				"default": "",
 				"help": "Description for the Dynamic port policy.",
+				"multiple_values": false,
 				"name": "description",
 				"size": 63,
 				"type": "string"
@@ -25,6 +26,7 @@
 				],
 				"default": "",
 				"help": "FortiLink interface for which this Dynamic port policy belongs to.",
+				"multiple_values": false,
 				"name": "fortilink",
 				"required": true,
 				"size": 15,
@@ -34,6 +36,7 @@
 				"category": "unitary",
 				"default": "",
 				"help": "Dynamic port policy name.",
+				"multiple_values": false,
 				"name": "name",
 				"size": 63,
 				"type": "string"
@@ -49,6 +52,7 @@
 						],
 						"default": "",
 						"help": "802.1x security policy to be applied when using this policy.",
+						"multiple_values": false,
 						"name": "802-1x",
 						"size": 31,
 						"type": "string"
@@ -93,6 +97,7 @@
 						"category": "unitary",
 						"default": "",
 						"help": "Description for the policy.",
+						"multiple_values": false,
 						"name": "description",
 						"size": 63,
 						"type": "string"
@@ -100,7 +105,8 @@
 					"family": {
 						"category": "unitary",
 						"default": "",
-						"help": "Policy matching family.",
+						"help": "Match policy based on family.",
+						"multiple_values": false,
 						"name": "family",
 						"size": 31,
 						"type": "string"
@@ -108,9 +114,20 @@
 					"host": {
 						"category": "unitary",
 						"default": "",
-						"help": "Policy matching host.",
+						"help": "Match policy based on host.",
+						"multiple_values": false,
 						"name": "host",
 						"size": 64,
+						"type": "string"
+					},
+					"hw-vendor": {
+						"addedIn": "v7.0.4",
+						"category": "unitary",
+						"default": "",
+						"help": "Match policy based on hardware vendor.",
+						"multiple_values": false,
+						"name": "hw-vendor",
+						"size": 15,
 						"type": "string"
 					},
 					"interface-tags": {
@@ -123,12 +140,13 @@
 								],
 								"default": "",
 								"help": "FortiSwitch port tag name.",
+								"multiple_values": false,
 								"name": "tag-name",
 								"size": 63,
 								"type": "string"
 							}
 						},
-						"help": "Policy matching the FortiSwitch interface object tags.",
+						"help": "Match policy based on the FortiSwitch interface object tags.",
 						"max_table_size_global": 0,
 						"max_table_size_item": 0,
 						"max_table_size_vdom": 0,
@@ -144,6 +162,7 @@
 						],
 						"default": "",
 						"help": "LLDP profile to be applied when using this policy.",
+						"multiple_values": false,
 						"name": "lldp-profile",
 						"size": 63,
 						"type": "string"
@@ -151,7 +170,8 @@
 					"mac": {
 						"category": "unitary",
 						"default": "",
-						"help": "Policy matching MAC address.",
+						"help": "Match policy based on MAC address.",
+						"multiple_values": false,
 						"name": "mac",
 						"size": 17,
 						"type": "string"
@@ -160,6 +180,7 @@
 						"category": "unitary",
 						"default": "",
 						"help": "Policy name.",
+						"multiple_values": false,
 						"name": "name",
 						"required": true,
 						"size": 63,
@@ -172,6 +193,7 @@
 						],
 						"default": "",
 						"help": "QoS policy to be applied when using this policy.",
+						"multiple_values": false,
 						"name": "qos-policy",
 						"size": 63,
 						"type": "string"
@@ -197,7 +219,8 @@
 					"type": {
 						"category": "unitary",
 						"default": "",
-						"help": "Policy matching type.",
+						"help": "Match policy based on type.",
+						"multiple_values": false,
 						"name": "type",
 						"size": 15,
 						"type": "string"
@@ -209,6 +232,7 @@
 						],
 						"default": "",
 						"help": "VLAN policy to be applied when using this policy.",
+						"multiple_values": false,
 						"name": "vlan-policy",
 						"size": 63,
 						"type": "string"
@@ -233,9 +257,9 @@
 		"path": "switch-controller",
 		"q_type": 326
 	},
-	"revision": "78ee061304af9c5d17bcae6474808d97",
-	"serial": "FGTAZRAQCG14L19D",
+	"revision": "e338e35a484eaafc990a69dd13ff4f76",
+	"serial": "FGTAZRI5HXAAGI90",
 	"status": "success",
 	"vdom": "root",
-	"version": "v7.0.3"
+	"version": "v7.0.4"
 }

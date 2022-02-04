@@ -1,9 +1,9 @@
 {
 	"addedIn": "v6.2.7",
-	"build": 237,
+	"build": 301,
 	"http_method": "GET",
 	"http_status": 200,
-	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3",
+	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3,v7.0.4",
 	"name": "cache-service",
 	"path": "wanopt",
 	"results": {
@@ -50,6 +50,7 @@
 				"category": "unitary",
 				"default": "default_dev_id",
 				"help": "Set identifier for this cache device.",
+				"multiple_values": false,
 				"name": "device-id",
 				"size": 35,
 				"type": "string"
@@ -63,6 +64,7 @@
 						"help": "Set authentication type for this peer.",
 						"max-value": 255,
 						"min-value": 0,
+						"multiple_values": false,
 						"name": "auth-type",
 						"type": "integer"
 					},
@@ -70,6 +72,7 @@
 						"category": "unitary",
 						"default": "",
 						"help": "Device ID of this peer.",
+						"multiple_values": false,
 						"name": "device-id",
 						"size": 35,
 						"type": "string"
@@ -80,6 +83,7 @@
 						"help": "Set encode type for this peer.",
 						"max-value": 255,
 						"min-value": 0,
+						"multiple_values": false,
 						"name": "encode-type",
 						"type": "integer"
 					},
@@ -87,6 +91,7 @@
 						"category": "unitary",
 						"default": "0.0.0.0",
 						"help": "Set cluster IP address of this peer.",
+						"multiple_values": false,
 						"name": "ip",
 						"type": "ipv4-address-any"
 					},
@@ -96,6 +101,7 @@
 						"help": "Set priority for this peer.",
 						"max-value": 255,
 						"min-value": 0,
+						"multiple_values": false,
 						"name": "priority",
 						"type": "integer"
 					}
@@ -139,6 +145,7 @@
 						"help": "Set authentication type for this peer.",
 						"max-value": 255,
 						"min-value": 0,
+						"multiple_values": false,
 						"name": "auth-type",
 						"type": "integer"
 					},
@@ -146,6 +153,7 @@
 						"category": "unitary",
 						"default": "",
 						"help": "Device ID of this peer.",
+						"multiple_values": false,
 						"name": "device-id",
 						"size": 35,
 						"type": "string"
@@ -156,6 +164,7 @@
 						"help": "Set encode type for this peer.",
 						"max-value": 255,
 						"min-value": 0,
+						"multiple_values": false,
 						"name": "encode-type",
 						"type": "integer"
 					},
@@ -163,6 +172,7 @@
 						"category": "unitary",
 						"default": "0.0.0.0",
 						"help": "Set cluster IP address of this peer.",
+						"multiple_values": false,
 						"name": "ip",
 						"type": "ipv4-address-any"
 					},
@@ -172,6 +182,7 @@
 						"help": "Set priority for this peer.",
 						"max-value": 255,
 						"min-value": 0,
+						"multiple_values": false,
 						"name": "priority",
 						"type": "integer"
 					}
@@ -186,13 +197,14 @@
 			}
 		},
 		"help": "Designate cache-service for wan-optimization and webcache.",
+		"multiple_values": false,
 		"name": "cache-service",
 		"path": "wanopt",
 		"q_type": 339
 	},
-	"revision": "78ee061304af9c5d17bcae6474808d97",
-	"serial": "FGTAZRAQCG14L19D",
+	"revision": "e338e35a484eaafc990a69dd13ff4f76",
+	"serial": "FGTAZRI5HXAAGI90",
 	"status": "success",
 	"vdom": "root",
-	"version": "v7.0.3"
+	"version": "v7.0.4"
 }

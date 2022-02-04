@@ -1,9 +1,9 @@
 {
 	"addedIn": "v6.2.7",
-	"build": 237,
+	"build": 301,
 	"http_method": "GET",
 	"http_status": 200,
-	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3",
+	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3,v7.0.4",
 	"name": "host-check-software",
 	"path": "vpn.ssl.web",
 	"results": {
@@ -37,6 +37,7 @@
 						"help": "ID (0 - 4294967295).",
 						"max-value": 65535,
 						"min-value": 0,
+						"multiple_values": false,
 						"name": "id",
 						"type": "integer"
 					},
@@ -47,6 +48,7 @@
 								"category": "unitary",
 								"default": "",
 								"help": "Hex string of MD5 checksum.",
+								"multiple_values": false,
 								"name": "id",
 								"required": true,
 								"size": 32,
@@ -66,6 +68,7 @@
 						"category": "unitary",
 						"default": "",
 						"help": "Target.",
+						"multiple_values": false,
 						"name": "target",
 						"required": true,
 						"size": 255,
@@ -97,6 +100,7 @@
 						"category": "unitary",
 						"default": "",
 						"help": "Version.",
+						"multiple_values": false,
 						"name": "version",
 						"size": 35,
 						"type": "string"
@@ -114,6 +118,7 @@
 				"category": "unitary",
 				"default": "",
 				"help": "Globally unique ID.",
+				"multiple_values": false,
 				"name": "guid",
 				"type": "user"
 			},
@@ -121,6 +126,7 @@
 				"category": "unitary",
 				"default": "",
 				"help": "Name.",
+				"multiple_values": false,
 				"name": "name",
 				"size": 63,
 				"type": "string"
@@ -165,6 +171,7 @@
 				"category": "unitary",
 				"default": "",
 				"help": "Version.",
+				"multiple_values": false,
 				"name": "version",
 				"size": 35,
 				"type": "string"
@@ -180,9 +187,9 @@
 		"path": "vpn.ssl.web",
 		"q_type": 151
 	},
-	"revision": "214b5079bced3e1810928d9b55481d57",
-	"serial": "FGTAZRAQCG14L19D",
+	"revision": "d2b519f8a1fa574a27ff0bafaf7cbc54",
+	"serial": "FGTAZRI5HXAAGI90",
 	"status": "success",
 	"vdom": "root",
-	"version": "v7.0.3"
+	"version": "v7.0.4"
 }

@@ -1,9 +1,9 @@
 {
 	"addedIn": "v7.0.2",
-	"build": 237,
+	"build": 301,
 	"http_method": "GET",
 	"http_status": 200,
-	"mergedVersions": "v7.0.2,v7.0.3",
+	"mergedVersions": "v7.0.2,v7.0.3,v7.0.4",
 	"name": "syslog-profile",
 	"path": "wireless-controller",
 	"results": {
@@ -13,6 +13,7 @@
 			"comment": {
 				"category": "unitary",
 				"help": "Comment.",
+				"multiple_values": false,
 				"name": "comment",
 				"size": 255,
 				"type": "var-string"
@@ -20,7 +21,7 @@
 			"log-level": {
 				"category": "unitary",
 				"default": "information",
-				"help": "Lowest level of log messages that FortiAP units send to this server (default = information)",
+				"help": "Lowest level of log messages that FortiAP units send to this server (default = information).",
 				"multiple_values": false,
 				"name": "log-level",
 				"options": [
@@ -63,6 +64,7 @@
 				"category": "unitary",
 				"default": "",
 				"help": "WTP system log server profile name.",
+				"multiple_values": false,
 				"name": "name",
 				"size": 35,
 				"type": "string"
@@ -70,7 +72,7 @@
 			"server-addr-type": {
 				"category": "unitary",
 				"default": "ip",
-				"help": "Syslog server address type (default = IP)",
+				"help": "Syslog server address type (default = ip).",
 				"multiple_values": false,
 				"name": "server-addr-type",
 				"options": [
@@ -89,6 +91,7 @@
 				"category": "unitary",
 				"default": "",
 				"help": "FQDN of syslog server that FortiAP units send log messages to.",
+				"multiple_values": false,
 				"name": "server-fqdn",
 				"size": 63,
 				"type": "string"
@@ -97,6 +100,7 @@
 				"category": "unitary",
 				"default": "0.0.0.0",
 				"help": "IP address of syslog server that FortiAP units send log messages to.",
+				"multiple_values": false,
 				"name": "server-ip",
 				"type": "ipv4-address"
 			},
@@ -106,6 +110,7 @@
 				"help": "Port number of syslog server that FortiAP units send log messages to (default = 514).",
 				"max-value": 65535,
 				"min-value": 0,
+				"multiple_values": false,
 				"name": "server-port",
 				"type": "integer"
 			},
@@ -138,9 +143,9 @@
 		"path": "wireless-controller",
 		"q_type": 279
 	},
-	"revision": "78ee061304af9c5d17bcae6474808d97",
-	"serial": "FGTAZRAQCG14L19D",
+	"revision": "e338e35a484eaafc990a69dd13ff4f76",
+	"serial": "FGTAZRI5HXAAGI90",
 	"status": "success",
 	"vdom": "root",
-	"version": "v7.0.3"
+	"version": "v7.0.4"
 }

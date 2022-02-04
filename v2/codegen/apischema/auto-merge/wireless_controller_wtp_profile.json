@@ -1,9 +1,9 @@
 {
 	"addedIn": "v6.2.7",
-	"build": 237,
+	"build": 301,
 	"http_method": "GET",
 	"http_status": 200,
-	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3",
+	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3,v7.0.4",
 	"name": "wtp-profile",
 	"path": "wireless-controller",
 	"results": {
@@ -35,7 +35,7 @@
 			"ap-country": {
 				"category": "unitary",
 				"default": "--",
-				"help": "Country in which this WTP, FortiAP or AP will operate (default = NA, automatically use the country configured for the current VDOM).",
+				"help": "Country in which this WTP, FortiAP, or AP will operate (default = NA, automatically use the country configured for the current VDOM).",
 				"multiple_values": false,
 				"name": "ap-country",
 				"options": [
@@ -821,6 +821,7 @@
 				],
 				"default": "",
 				"help": "AP local configuration profile name.",
+				"multiple_values": false,
 				"name": "apcfg-profile",
 				"size": 35,
 				"type": "string"
@@ -832,6 +833,7 @@
 				],
 				"default": "",
 				"help": "Bluetooth Low Energy profile name.",
+				"multiple_values": false,
 				"name": "ble-profile",
 				"size": 35,
 				"type": "string"
@@ -839,6 +841,7 @@
 			"comment": {
 				"category": "unitary",
 				"help": "Comment.",
+				"multiple_values": false,
 				"name": "comment",
 				"size": 255,
 				"type": "var-string"
@@ -847,7 +850,7 @@
 				"addedIn": "v7.0.1",
 				"category": "unitary",
 				"default": "enable",
-				"help": "Enable/disable FAP console login access (default = enable).",
+				"help": "Enable/disable FortiAP console login access (default = enable).",
 				"multiple_values": false,
 				"name": "console-login",
 				"options": [
@@ -917,6 +920,7 @@
 						"help": "ID.",
 						"max-value": 4294967295,
 						"min-value": 0,
+						"multiple_values": false,
 						"name": "id",
 						"type": "integer"
 					},
@@ -924,6 +928,7 @@
 						"category": "unitary",
 						"default": "00:00:00:00:00:00",
 						"help": "A WiFi device with this MAC address is denied access to this WTP, FortiAP or AP.",
+						"multiple_values": false,
 						"name": "mac",
 						"type": "mac-address"
 					}
@@ -1020,6 +1025,7 @@
 						"category": "unitary",
 						"default": "",
 						"help": "FQDN of ESL SES-imagotag Access Point Controller (APC).",
+						"multiple_values": false,
 						"name": "apc-fqdn",
 						"size": 63,
 						"type": "string"
@@ -1028,6 +1034,7 @@
 						"category": "unitary",
 						"default": "0.0.0.0",
 						"help": "IP address of ESL SES-imagotag Access Point Controller (APC).",
+						"multiple_values": false,
 						"name": "apc-ip",
 						"type": "ipv4-address"
 					},
@@ -1037,6 +1044,7 @@
 						"help": "Port of ESL SES-imagotag Access Point Controller (APC).",
 						"max-value": 65535,
 						"min-value": 0,
+						"multiple_values": false,
 						"name": "apc-port",
 						"type": "integer"
 					},
@@ -1193,7 +1201,7 @@
 					"tls-cert-verification": {
 						"category": "unitary",
 						"default": "enable",
-						"help": "Enable/disable TLS Certificate verification. (default = enable).",
+						"help": "Enable/disable TLS certificate verification (default = enable).",
 						"multiple_values": false,
 						"name": "tls-cert-verification",
 						"options": [
@@ -1211,7 +1219,7 @@
 					"tls-fqdn-verification": {
 						"category": "unitary",
 						"default": "disable",
-						"help": "Enable/disable TLS Certificate verification. (default = disable).",
+						"help": "Enable/disable TLS certificate verification (default = disable).",
 						"multiple_values": false,
 						"name": "tls-fqdn-verification",
 						"options": [
@@ -1228,6 +1236,7 @@
 					}
 				},
 				"help": "ESL SES-imagotag dongle configuration.",
+				"multiple_values": false,
 				"name": "esl-ses-dongle"
 			},
 			"ext-info-enable": {
@@ -1291,6 +1300,7 @@
 				"help": "Minimum received signal strength indicator (RSSI) value for handoff (20 - 30, default = 25).",
 				"max-value": 30,
 				"min-value": 20,
+				"multiple_values": false,
 				"name": "handoff-rssi",
 				"type": "integer"
 			},
@@ -1300,6 +1310,7 @@
 				"help": "Threshold value for AP handoff.",
 				"max-value": 4294967295,
 				"min-value": 0,
+				"multiple_values": false,
 				"name": "handoff-sta-thresh",
 				"type": "integer"
 			},
@@ -1382,6 +1393,7 @@
 						],
 						"default": "",
 						"help": "Bridge ESL port to SSID.",
+						"multiple_values": false,
 						"name": "port-esl-ssid",
 						"size": 15,
 						"type": "string"
@@ -1419,6 +1431,7 @@
 						],
 						"default": "",
 						"help": "Bridge LAN port to SSID.",
+						"multiple_values": false,
 						"name": "port-ssid",
 						"size": 15,
 						"type": "string"
@@ -1456,6 +1469,7 @@
 						],
 						"default": "",
 						"help": "Bridge LAN port 1 to SSID.",
+						"multiple_values": false,
 						"name": "port1-ssid",
 						"size": 15,
 						"type": "string"
@@ -1493,6 +1507,7 @@
 						],
 						"default": "",
 						"help": "Bridge LAN port 2 to SSID.",
+						"multiple_values": false,
 						"name": "port2-ssid",
 						"size": 15,
 						"type": "string"
@@ -1530,6 +1545,7 @@
 						],
 						"default": "",
 						"help": "Bridge LAN port 3 to SSID.",
+						"multiple_values": false,
 						"name": "port3-ssid",
 						"size": 15,
 						"type": "string"
@@ -1567,6 +1583,7 @@
 						],
 						"default": "",
 						"help": "Bridge LAN port 4 to SSID.",
+						"multiple_values": false,
 						"name": "port4-ssid",
 						"size": 15,
 						"type": "string"
@@ -1604,6 +1621,7 @@
 						],
 						"default": "",
 						"help": "Bridge LAN port 5 to SSID.",
+						"multiple_values": false,
 						"name": "port5-ssid",
 						"size": 15,
 						"type": "string"
@@ -1641,6 +1659,7 @@
 						],
 						"default": "",
 						"help": "Bridge LAN port 6 to SSID.",
+						"multiple_values": false,
 						"name": "port6-ssid",
 						"size": 15,
 						"type": "string"
@@ -1678,6 +1697,7 @@
 						],
 						"default": "",
 						"help": "Bridge LAN port 7 to SSID.",
+						"multiple_values": false,
 						"name": "port7-ssid",
 						"size": 15,
 						"type": "string"
@@ -1715,12 +1735,14 @@
 						],
 						"default": "",
 						"help": "Bridge LAN port 8 to SSID.",
+						"multiple_values": false,
 						"name": "port8-ssid",
 						"size": 15,
 						"type": "string"
 					}
 				},
 				"help": "WTP LAN port mapping.",
+				"multiple_values": false,
 				"name": "lan"
 			},
 			"lbs": {
@@ -1804,6 +1826,7 @@
 						"help": "AeroScout MU mode dilution factor (default = 20).",
 						"max-value": 4294967295,
 						"min-value": 0,
+						"multiple_values": false,
 						"name": "aeroscout-mu-factor",
 						"type": "integer"
 					},
@@ -1813,6 +1836,7 @@
 						"help": "AeroScout MU mode timeout (0 - 65535 sec, default = 5).",
 						"max-value": 65535,
 						"min-value": 0,
+						"multiple_values": false,
 						"name": "aeroscout-mu-timeout",
 						"type": "integer"
 					},
@@ -1820,6 +1844,7 @@
 						"category": "unitary",
 						"default": "0.0.0.0",
 						"help": "IP address of AeroScout server.",
+						"multiple_values": false,
 						"name": "aeroscout-server-ip",
 						"type": "ipv4-address-any"
 					},
@@ -1829,6 +1854,7 @@
 						"help": "AeroScout server UDP listening port.",
 						"max-value": 65535,
 						"min-value": 1024,
+						"multiple_values": false,
 						"name": "aeroscout-server-port",
 						"type": "integer"
 					},
@@ -1854,6 +1880,7 @@
 						"category": "unitary",
 						"default": "01:18:8e:00:00:00",
 						"help": "WiFi frame MAC address or WiFi Tag.",
+						"multiple_values": false,
 						"name": "ekahau-tag",
 						"type": "mac-address"
 					},
@@ -1861,6 +1888,7 @@
 						"category": "unitary",
 						"default": "0.0.0.0",
 						"help": "IP address of Ekahau RTLS Controller (ERC).",
+						"multiple_values": false,
 						"name": "erc-server-ip",
 						"type": "ipv4-address-any"
 					},
@@ -1870,6 +1898,7 @@
 						"help": "Ekahau RTLS Controller (ERC) UDP listening port.",
 						"max-value": 65535,
 						"min-value": 1024,
+						"multiple_values": false,
 						"name": "erc-server-port",
 						"type": "integer"
 					},
@@ -1919,6 +1948,7 @@
 						"help": "FortiPresence report transmit frequency (5 - 65535 sec, default = 30).",
 						"max-value": 65535,
 						"min-value": 5,
+						"multiple_values": false,
 						"name": "fortipresence-frequency",
 						"type": "integer"
 					},
@@ -1928,6 +1958,7 @@
 						"help": "UDP listening port of FortiPresence server (default = 3000).",
 						"max-value": 65535,
 						"min-value": 300,
+						"multiple_values": false,
 						"name": "fortipresence-port",
 						"type": "integer"
 					},
@@ -1935,6 +1966,7 @@
 						"category": "unitary",
 						"default": "fortipresence",
 						"help": "FortiPresence project name (max. 16 characters, default = fortipresence).",
+						"multiple_values": false,
 						"name": "fortipresence-project",
 						"size": 16,
 						"type": "string"
@@ -1960,6 +1992,7 @@
 					"fortipresence-secret": {
 						"category": "unitary",
 						"help": "FortiPresence secret password (max. 16 characters).",
+						"multiple_values": false,
 						"name": "fortipresence-secret",
 						"size": 123,
 						"type": "password"
@@ -1968,6 +2001,7 @@
 						"category": "unitary",
 						"default": "0.0.0.0",
 						"help": "IP address of FortiPresence server.",
+						"multiple_values": false,
 						"name": "fortipresence-server",
 						"type": "ipv4-address-any"
 					},
@@ -1995,6 +2029,7 @@
 						"category": "unitary",
 						"default": "",
 						"help": "FQDN of FortiPresence server.",
+						"multiple_values": false,
 						"name": "fortipresence-server-fqdn",
 						"size": 255,
 						"type": "string"
@@ -2037,6 +2072,7 @@
 					}
 				},
 				"help": "Set various location based service (LBS) options.",
+				"multiple_values": false,
 				"name": "lbs"
 			},
 			"led-schedules": {
@@ -2051,6 +2087,7 @@
 						],
 						"default": "",
 						"help": "Schedule name.",
+						"multiple_values": false,
 						"name": "name",
 						"required": true,
 						"size": 35,
@@ -2105,6 +2142,7 @@
 			"login-passwd": {
 				"category": "unitary",
 				"help": "Set the managed WTP, FortiAP, or AP's administrator password.",
+				"multiple_values": false,
 				"name": "login-passwd",
 				"size": 128,
 				"type": "password"
@@ -2137,6 +2175,7 @@
 				"help": "Maximum number of stations (STAs) supported by the WTP (default = 0, meaning no client limitation).",
 				"max-value": 4294967295,
 				"min-value": 0,
+				"multiple_values": false,
 				"name": "max-clients",
 				"type": "integer"
 			},
@@ -2144,6 +2183,7 @@
 				"category": "unitary",
 				"default": "",
 				"help": "WTP (or FortiAP or AP) profile name.",
+				"multiple_values": false,
 				"name": "name",
 				"size": 35,
 				"type": "string"
@@ -2463,6 +2503,7 @@
 					}
 				},
 				"help": "WTP, FortiAP, or AP platform.",
+				"multiple_values": false,
 				"name": "platform"
 			},
 			"poe-mode": {
@@ -2564,6 +2605,7 @@
 						"category": "unitary",
 						"default": "00:00:00:00:00:00",
 						"help": "MAC address to monitor.",
+						"multiple_values": false,
 						"name": "ap-sniffer-addr",
 						"type": "mac-address"
 					},
@@ -2573,6 +2615,7 @@
 						"help": "Sniffer buffer size (1 - 32 MB, default = 16).",
 						"max-value": 32,
 						"min-value": 1,
+						"multiple_values": false,
 						"name": "ap-sniffer-bufsize",
 						"type": "integer"
 					},
@@ -2582,6 +2625,7 @@
 						"help": "Channel on which to operate the sniffer (default = 6).",
 						"max-value": 4294967295,
 						"min-value": 0,
+						"multiple_values": false,
 						"name": "ap-sniffer-chan",
 						"type": "integer"
 					},
@@ -2675,12 +2719,26 @@
 						],
 						"type": "option"
 					},
+					"arrp-profile": {
+						"addedIn": "v7.0.4",
+						"category": "unitary",
+						"datasource": [
+							"wireless-controller.arrp-profile.name"
+						],
+						"default": "",
+						"help": "Distributed Automatic Radio Resource Provisioning (DARRP) profile name to assign to the radio.",
+						"multiple_values": false,
+						"name": "arrp-profile",
+						"size": 35,
+						"type": "string"
+					},
 					"auto-power-high": {
 						"category": "unitary",
 						"default": 17,
 						"help": "The upper bound of automatic transmit power adjustment in dBm (the actual range of transmit power depends on the AP platform type).",
 						"max-value": 4294967295,
 						"min-value": 0,
+						"multiple_values": false,
 						"name": "auto-power-high",
 						"type": "integer"
 					},
@@ -2708,6 +2766,7 @@
 						"help": "The lower bound of automatic transmit power adjustment in dBm (the actual range of transmit power depends on the AP platform type).",
 						"max-value": 4294967295,
 						"min-value": 0,
+						"multiple_values": false,
 						"name": "auto-power-low",
 						"type": "integer"
 					},
@@ -2715,7 +2774,8 @@
 						"addedIn": "v6.4.3",
 						"category": "unitary",
 						"default": "-70",
-						"help": "The target of automatic transmit power adjustment in dBm. (-95 to -20, default = -70).",
+						"help": "Target of automatic transmit power adjustment in dBm (-95 to -20, default = -70).",
+						"multiple_values": false,
 						"name": "auto-power-target",
 						"size": 7,
 						"type": "string"
@@ -2860,15 +2920,17 @@
 						"help": "Maximum bandwidth capacity allowed (1 - 600000 Kbps, default = 2000).",
 						"max-value": 600000,
 						"min-value": 1,
+						"multiple_values": false,
 						"name": "bandwidth-capacity",
 						"type": "integer"
 					},
 					"beacon-interval": {
 						"category": "unitary",
 						"default": 100,
-						"help": "Beacon interval. The time between beacon frames in msec (the actual range of beacon interval depends on the AP platform type, default = 100).",
+						"help": "Beacon interval. The time between beacon frames in milliseconds. Actual range of beacon interval depends on the AP platform type (default = 100).",
 						"max-value": 65535,
 						"min-value": 0,
+						"multiple_values": false,
 						"name": "beacon-interval",
 						"type": "integer"
 					},
@@ -2876,9 +2938,10 @@
 						"addedIn": "v6.4.2",
 						"category": "unitary",
 						"default": 0,
-						"help": "BSS color value for this 11ax radio (0 - 63, 0 means disable. default = 0).",
+						"help": "BSS color value for this 11ax radio (0 - 63, disable = 0, default = 0).",
 						"max-value": 63,
 						"min-value": 0,
+						"multiple_values": false,
 						"name": "bss-color",
 						"type": "integer"
 					},
@@ -2925,6 +2988,7 @@
 						"help": "Maximum number of Voice over WLAN (VoWLAN) phones supported by the radio (0 - 60, default = 10).",
 						"max-value": 60,
 						"min-value": 0,
+						"multiple_values": false,
 						"name": "call-capacity",
 						"type": "integer"
 					},
@@ -2935,6 +2999,7 @@
 								"category": "unitary",
 								"default": "",
 								"help": "Channel number.",
+								"multiple_values": false,
 								"name": "chan",
 								"required": true,
 								"size": 3,
@@ -3078,6 +3143,7 @@
 						"help": "Delivery Traffic Indication Map (DTIM) period (1 - 255, default = 1). Set higher to save battery life of WiFi client in power-save mode.",
 						"max-value": 255,
 						"min-value": 1,
+						"multiple_values": false,
 						"name": "dtim",
 						"type": "integer"
 					},
@@ -3087,6 +3153,7 @@
 						"help": "Maximum packet size that can be sent without fragmentation (800 - 2346 bytes, default = 2346).",
 						"max-value": 2346,
 						"min-value": 800,
+						"multiple_values": false,
 						"name": "frag-threshold",
 						"type": "integer"
 					},
@@ -3134,6 +3201,7 @@
 						"help": "Iperf service port number.",
 						"max-value": 65535,
 						"min-value": 0,
+						"multiple_values": false,
 						"name": "iperf-server-port",
 						"type": "integer"
 					},
@@ -3143,6 +3211,7 @@
 						"help": "Maximum number of stations (STAs) or WiFi clients supported by the radio. Range depends on the hardware.",
 						"max-value": 4294967295,
 						"min-value": 0,
+						"multiple_values": false,
 						"name": "max-clients",
 						"type": "integer"
 					},
@@ -3152,6 +3221,7 @@
 						"help": "Maximum expected distance between the AP and clients (0 - 54000 m, default = 0).",
 						"max-value": 54000,
 						"min-value": 0,
+						"multiple_values": false,
 						"name": "max-distance",
 						"type": "integer"
 					},
@@ -3191,6 +3261,7 @@
 						"help": "Radio EIRP power level as a percentage of the maximum EIRP power (0 - 100, default = 100).",
 						"max-value": 100,
 						"min-value": 0,
+						"multiple_values": false,
 						"name": "power-level",
 						"type": "integer"
 					},
@@ -3220,6 +3291,7 @@
 						"help": "Radio EIRP power in dBm (1 - 33, default = 27).",
 						"max-value": 33,
 						"min-value": 1,
+						"multiple_values": false,
 						"name": "power-value",
 						"type": "integer"
 					},
@@ -3281,6 +3353,7 @@
 						"help": "Maximum packet size for RTS transmissions, specifying the maximum size of a data packet before RTS/CTS (256 - 2346 bytes, default = 2346).",
 						"max-value": 2346,
 						"min-value": 256,
+						"multiple_values": false,
 						"name": "rts-threshold",
 						"type": "integer"
 					},
@@ -3289,6 +3362,7 @@
 						"category": "unitary",
 						"default": "00:00:00:00:00:00",
 						"help": "BSSID for WiFi network.",
+						"multiple_values": false,
 						"name": "sam-bssid",
 						"type": "mac-address"
 					},
@@ -3316,6 +3390,7 @@
 						"category": "unitary",
 						"default": "",
 						"help": "Failure identification on the page after an incorrect login.",
+						"multiple_values": false,
 						"name": "sam-cwp-failure-string",
 						"size": 64,
 						"type": "string"
@@ -3325,6 +3400,7 @@
 						"category": "unitary",
 						"default": "",
 						"help": "Identification string from the captive portal login form.",
+						"multiple_values": false,
 						"name": "sam-cwp-match-string",
 						"size": 64,
 						"type": "string"
@@ -3333,6 +3409,7 @@
 						"addedIn": "v7.0.1",
 						"category": "unitary",
 						"help": "Password for captive portal authentication.",
+						"multiple_values": false,
 						"name": "sam-cwp-password",
 						"size": 128,
 						"type": "password"
@@ -3342,6 +3419,7 @@
 						"category": "unitary",
 						"default": "",
 						"help": "Success identification on the page after a successful login.",
+						"multiple_values": false,
 						"name": "sam-cwp-success-string",
 						"size": 64,
 						"type": "string"
@@ -3351,6 +3429,7 @@
 						"category": "unitary",
 						"default": "",
 						"help": "Website the client is trying to access.",
+						"multiple_values": false,
 						"name": "sam-cwp-test-url",
 						"size": 255,
 						"type": "string"
@@ -3360,6 +3439,7 @@
 						"category": "unitary",
 						"default": "",
 						"help": "Username for captive portal authentication.",
+						"multiple_values": false,
 						"name": "sam-cwp-username",
 						"size": 35,
 						"type": "string"
@@ -3368,6 +3448,7 @@
 						"addedIn": "v7.0.0",
 						"category": "unitary",
 						"help": "Passphrase for WiFi network connection.",
+						"multiple_values": false,
 						"name": "sam-password",
 						"size": 128,
 						"type": "password"
@@ -3379,6 +3460,7 @@
 						"help": "SAM report interval (sec), 0 for a one-time report.",
 						"max-value": 864000,
 						"min-value": 60,
+						"multiple_values": false,
 						"name": "sam-report-intv",
 						"type": "integer"
 					},
@@ -3420,6 +3502,7 @@
 						"category": "unitary",
 						"default": "",
 						"help": "SAM test server domain name.",
+						"multiple_values": false,
 						"name": "sam-server-fqdn",
 						"size": 255,
 						"type": "string"
@@ -3429,6 +3512,7 @@
 						"category": "unitary",
 						"default": "0.0.0.0",
 						"help": "SAM test server IP address.",
+						"multiple_values": false,
 						"name": "sam-server-ip",
 						"type": "ipv4-address"
 					},
@@ -3456,6 +3540,7 @@
 						"category": "unitary",
 						"default": "",
 						"help": "SSID for WiFi network.",
+						"multiple_values": false,
 						"name": "sam-ssid",
 						"size": 32,
 						"type": "string"
@@ -3484,6 +3569,7 @@
 						"category": "unitary",
 						"default": "",
 						"help": "Username for WiFi network connection.",
+						"multiple_values": false,
 						"name": "sam-username",
 						"size": 35,
 						"type": "string"
@@ -3591,6 +3677,7 @@
 								],
 								"default": "",
 								"help": "Virtual Access Point (VAP) name.",
+								"multiple_values": false,
 								"name": "name",
 								"required": true,
 								"size": 35,
@@ -3613,6 +3700,7 @@
 						],
 						"default": "",
 						"help": "Wireless Intrusion Detection System (WIDS) profile name to assign to the radio.",
+						"multiple_values": false,
 						"name": "wids-profile",
 						"size": 35,
 						"type": "string"
@@ -3637,6 +3725,7 @@
 					}
 				},
 				"help": "Configuration options for radio 1.",
+				"multiple_values": false,
 				"name": "radio-1"
 			},
 			"radio-2": {
@@ -3700,6 +3789,7 @@
 						"category": "unitary",
 						"default": "00:00:00:00:00:00",
 						"help": "MAC address to monitor.",
+						"multiple_values": false,
 						"name": "ap-sniffer-addr",
 						"type": "mac-address"
 					},
@@ -3709,6 +3799,7 @@
 						"help": "Sniffer buffer size (1 - 32 MB, default = 16).",
 						"max-value": 32,
 						"min-value": 1,
+						"multiple_values": false,
 						"name": "ap-sniffer-bufsize",
 						"type": "integer"
 					},
@@ -3718,6 +3809,7 @@
 						"help": "Channel on which to operate the sniffer (default = 6).",
 						"max-value": 4294967295,
 						"min-value": 0,
+						"multiple_values": false,
 						"name": "ap-sniffer-chan",
 						"type": "integer"
 					},
@@ -3811,12 +3903,26 @@
 						],
 						"type": "option"
 					},
+					"arrp-profile": {
+						"addedIn": "v7.0.4",
+						"category": "unitary",
+						"datasource": [
+							"wireless-controller.arrp-profile.name"
+						],
+						"default": "",
+						"help": "Distributed Automatic Radio Resource Provisioning (DARRP) profile name to assign to the radio.",
+						"multiple_values": false,
+						"name": "arrp-profile",
+						"size": 35,
+						"type": "string"
+					},
 					"auto-power-high": {
 						"category": "unitary",
 						"default": 17,
 						"help": "The upper bound of automatic transmit power adjustment in dBm (the actual range of transmit power depends on the AP platform type).",
 						"max-value": 4294967295,
 						"min-value": 0,
+						"multiple_values": false,
 						"name": "auto-power-high",
 						"type": "integer"
 					},
@@ -3844,6 +3950,7 @@
 						"help": "The lower bound of automatic transmit power adjustment in dBm (the actual range of transmit power depends on the AP platform type).",
 						"max-value": 4294967295,
 						"min-value": 0,
+						"multiple_values": false,
 						"name": "auto-power-low",
 						"type": "integer"
 					},
@@ -3851,7 +3958,8 @@
 						"addedIn": "v6.4.3",
 						"category": "unitary",
 						"default": "-70",
-						"help": "The target of automatic transmit power adjustment in dBm. (-95 to -20, default = -70).",
+						"help": "Target of automatic transmit power adjustment in dBm (-95 to -20, default = -70).",
+						"multiple_values": false,
 						"name": "auto-power-target",
 						"size": 7,
 						"type": "string"
@@ -3996,15 +4104,17 @@
 						"help": "Maximum bandwidth capacity allowed (1 - 600000 Kbps, default = 2000).",
 						"max-value": 600000,
 						"min-value": 1,
+						"multiple_values": false,
 						"name": "bandwidth-capacity",
 						"type": "integer"
 					},
 					"beacon-interval": {
 						"category": "unitary",
 						"default": 100,
-						"help": "Beacon interval. The time between beacon frames in msec (the actual range of beacon interval depends on the AP platform type, default = 100).",
+						"help": "Beacon interval. The time between beacon frames in milliseconds. Actual range of beacon interval depends on the AP platform type (default = 100).",
 						"max-value": 65535,
 						"min-value": 0,
+						"multiple_values": false,
 						"name": "beacon-interval",
 						"type": "integer"
 					},
@@ -4012,9 +4122,10 @@
 						"addedIn": "v6.4.2",
 						"category": "unitary",
 						"default": 0,
-						"help": "BSS color value for this 11ax radio (0 - 63, 0 means disable. default = 0).",
+						"help": "BSS color value for this 11ax radio (0 - 63, disable = 0, default = 0).",
 						"max-value": 63,
 						"min-value": 0,
+						"multiple_values": false,
 						"name": "bss-color",
 						"type": "integer"
 					},
@@ -4061,6 +4172,7 @@
 						"help": "Maximum number of Voice over WLAN (VoWLAN) phones supported by the radio (0 - 60, default = 10).",
 						"max-value": 60,
 						"min-value": 0,
+						"multiple_values": false,
 						"name": "call-capacity",
 						"type": "integer"
 					},
@@ -4071,6 +4183,7 @@
 								"category": "unitary",
 								"default": "",
 								"help": "Channel number.",
+								"multiple_values": false,
 								"name": "chan",
 								"required": true,
 								"size": 3,
@@ -4214,6 +4327,7 @@
 						"help": "Delivery Traffic Indication Map (DTIM) period (1 - 255, default = 1). Set higher to save battery life of WiFi client in power-save mode.",
 						"max-value": 255,
 						"min-value": 1,
+						"multiple_values": false,
 						"name": "dtim",
 						"type": "integer"
 					},
@@ -4223,6 +4337,7 @@
 						"help": "Maximum packet size that can be sent without fragmentation (800 - 2346 bytes, default = 2346).",
 						"max-value": 2346,
 						"min-value": 800,
+						"multiple_values": false,
 						"name": "frag-threshold",
 						"type": "integer"
 					},
@@ -4270,6 +4385,7 @@
 						"help": "Iperf service port number.",
 						"max-value": 65535,
 						"min-value": 0,
+						"multiple_values": false,
 						"name": "iperf-server-port",
 						"type": "integer"
 					},
@@ -4279,6 +4395,7 @@
 						"help": "Maximum number of stations (STAs) or WiFi clients supported by the radio. Range depends on the hardware.",
 						"max-value": 4294967295,
 						"min-value": 0,
+						"multiple_values": false,
 						"name": "max-clients",
 						"type": "integer"
 					},
@@ -4288,6 +4405,7 @@
 						"help": "Maximum expected distance between the AP and clients (0 - 54000 m, default = 0).",
 						"max-value": 54000,
 						"min-value": 0,
+						"multiple_values": false,
 						"name": "max-distance",
 						"type": "integer"
 					},
@@ -4327,6 +4445,7 @@
 						"help": "Radio EIRP power level as a percentage of the maximum EIRP power (0 - 100, default = 100).",
 						"max-value": 100,
 						"min-value": 0,
+						"multiple_values": false,
 						"name": "power-level",
 						"type": "integer"
 					},
@@ -4356,6 +4475,7 @@
 						"help": "Radio EIRP power in dBm (1 - 33, default = 27).",
 						"max-value": 33,
 						"min-value": 1,
+						"multiple_values": false,
 						"name": "power-value",
 						"type": "integer"
 					},
@@ -4417,6 +4537,7 @@
 						"help": "Maximum packet size for RTS transmissions, specifying the maximum size of a data packet before RTS/CTS (256 - 2346 bytes, default = 2346).",
 						"max-value": 2346,
 						"min-value": 256,
+						"multiple_values": false,
 						"name": "rts-threshold",
 						"type": "integer"
 					},
@@ -4425,6 +4546,7 @@
 						"category": "unitary",
 						"default": "00:00:00:00:00:00",
 						"help": "BSSID for WiFi network.",
+						"multiple_values": false,
 						"name": "sam-bssid",
 						"type": "mac-address"
 					},
@@ -4452,6 +4574,7 @@
 						"category": "unitary",
 						"default": "",
 						"help": "Failure identification on the page after an incorrect login.",
+						"multiple_values": false,
 						"name": "sam-cwp-failure-string",
 						"size": 64,
 						"type": "string"
@@ -4461,6 +4584,7 @@
 						"category": "unitary",
 						"default": "",
 						"help": "Identification string from the captive portal login form.",
+						"multiple_values": false,
 						"name": "sam-cwp-match-string",
 						"size": 64,
 						"type": "string"
@@ -4469,6 +4593,7 @@
 						"addedIn": "v7.0.1",
 						"category": "unitary",
 						"help": "Password for captive portal authentication.",
+						"multiple_values": false,
 						"name": "sam-cwp-password",
 						"size": 128,
 						"type": "password"
@@ -4478,6 +4603,7 @@
 						"category": "unitary",
 						"default": "",
 						"help": "Success identification on the page after a successful login.",
+						"multiple_values": false,
 						"name": "sam-cwp-success-string",
 						"size": 64,
 						"type": "string"
@@ -4487,6 +4613,7 @@
 						"category": "unitary",
 						"default": "",
 						"help": "Website the client is trying to access.",
+						"multiple_values": false,
 						"name": "sam-cwp-test-url",
 						"size": 255,
 						"type": "string"
@@ -4496,6 +4623,7 @@
 						"category": "unitary",
 						"default": "",
 						"help": "Username for captive portal authentication.",
+						"multiple_values": false,
 						"name": "sam-cwp-username",
 						"size": 35,
 						"type": "string"
@@ -4504,6 +4632,7 @@
 						"addedIn": "v7.0.0",
 						"category": "unitary",
 						"help": "Passphrase for WiFi network connection.",
+						"multiple_values": false,
 						"name": "sam-password",
 						"size": 128,
 						"type": "password"
@@ -4515,6 +4644,7 @@
 						"help": "SAM report interval (sec), 0 for a one-time report.",
 						"max-value": 864000,
 						"min-value": 60,
+						"multiple_values": false,
 						"name": "sam-report-intv",
 						"type": "integer"
 					},
@@ -4556,6 +4686,7 @@
 						"category": "unitary",
 						"default": "",
 						"help": "SAM test server domain name.",
+						"multiple_values": false,
 						"name": "sam-server-fqdn",
 						"size": 255,
 						"type": "string"
@@ -4565,6 +4696,7 @@
 						"category": "unitary",
 						"default": "0.0.0.0",
 						"help": "SAM test server IP address.",
+						"multiple_values": false,
 						"name": "sam-server-ip",
 						"type": "ipv4-address"
 					},
@@ -4592,6 +4724,7 @@
 						"category": "unitary",
 						"default": "",
 						"help": "SSID for WiFi network.",
+						"multiple_values": false,
 						"name": "sam-ssid",
 						"size": 32,
 						"type": "string"
@@ -4620,6 +4753,7 @@
 						"category": "unitary",
 						"default": "",
 						"help": "Username for WiFi network connection.",
+						"multiple_values": false,
 						"name": "sam-username",
 						"size": 35,
 						"type": "string"
@@ -4727,6 +4861,7 @@
 								],
 								"default": "",
 								"help": "Virtual Access Point (VAP) name.",
+								"multiple_values": false,
 								"name": "name",
 								"required": true,
 								"size": 35,
@@ -4749,6 +4884,7 @@
 						],
 						"default": "",
 						"help": "Wireless Intrusion Detection System (WIDS) profile name to assign to the radio.",
+						"multiple_values": false,
 						"name": "wids-profile",
 						"size": 35,
 						"type": "string"
@@ -4773,6 +4909,7 @@
 					}
 				},
 				"help": "Configuration options for radio 2.",
+				"multiple_values": false,
 				"name": "radio-2"
 			},
 			"radio-3": {
@@ -4836,6 +4973,7 @@
 						"category": "unitary",
 						"default": "00:00:00:00:00:00",
 						"help": "MAC address to monitor.",
+						"multiple_values": false,
 						"name": "ap-sniffer-addr",
 						"type": "mac-address"
 					},
@@ -4845,6 +4983,7 @@
 						"help": "Sniffer buffer size (1 - 32 MB, default = 16).",
 						"max-value": 32,
 						"min-value": 1,
+						"multiple_values": false,
 						"name": "ap-sniffer-bufsize",
 						"type": "integer"
 					},
@@ -4854,6 +4993,7 @@
 						"help": "Channel on which to operate the sniffer (default = 6).",
 						"max-value": 4294967295,
 						"min-value": 0,
+						"multiple_values": false,
 						"name": "ap-sniffer-chan",
 						"type": "integer"
 					},
@@ -4947,12 +5087,26 @@
 						],
 						"type": "option"
 					},
+					"arrp-profile": {
+						"addedIn": "v7.0.4",
+						"category": "unitary",
+						"datasource": [
+							"wireless-controller.arrp-profile.name"
+						],
+						"default": "",
+						"help": "Distributed Automatic Radio Resource Provisioning (DARRP) profile name to assign to the radio.",
+						"multiple_values": false,
+						"name": "arrp-profile",
+						"size": 35,
+						"type": "string"
+					},
 					"auto-power-high": {
 						"category": "unitary",
 						"default": 17,
 						"help": "The upper bound of automatic transmit power adjustment in dBm (the actual range of transmit power depends on the AP platform type).",
 						"max-value": 4294967295,
 						"min-value": 0,
+						"multiple_values": false,
 						"name": "auto-power-high",
 						"type": "integer"
 					},
@@ -4980,6 +5134,7 @@
 						"help": "The lower bound of automatic transmit power adjustment in dBm (the actual range of transmit power depends on the AP platform type).",
 						"max-value": 4294967295,
 						"min-value": 0,
+						"multiple_values": false,
 						"name": "auto-power-low",
 						"type": "integer"
 					},
@@ -4987,7 +5142,8 @@
 						"addedIn": "v6.4.3",
 						"category": "unitary",
 						"default": "-70",
-						"help": "The target of automatic transmit power adjustment in dBm. (-95 to -20, default = -70).",
+						"help": "Target of automatic transmit power adjustment in dBm (-95 to -20, default = -70).",
+						"multiple_values": false,
 						"name": "auto-power-target",
 						"size": 7,
 						"type": "string"
@@ -5132,15 +5288,17 @@
 						"help": "Maximum bandwidth capacity allowed (1 - 600000 Kbps, default = 2000).",
 						"max-value": 600000,
 						"min-value": 1,
+						"multiple_values": false,
 						"name": "bandwidth-capacity",
 						"type": "integer"
 					},
 					"beacon-interval": {
 						"category": "unitary",
 						"default": 100,
-						"help": "Beacon interval. The time between beacon frames in msec (the actual range of beacon interval depends on the AP platform type, default = 100).",
+						"help": "Beacon interval. The time between beacon frames in milliseconds. Actual range of beacon interval depends on the AP platform type (default = 100).",
 						"max-value": 65535,
 						"min-value": 0,
+						"multiple_values": false,
 						"name": "beacon-interval",
 						"type": "integer"
 					},
@@ -5148,9 +5306,10 @@
 						"addedIn": "v6.4.2",
 						"category": "unitary",
 						"default": 0,
-						"help": "BSS color value for this 11ax radio (0 - 63, 0 means disable. default = 0).",
+						"help": "BSS color value for this 11ax radio (0 - 63, disable = 0, default = 0).",
 						"max-value": 63,
 						"min-value": 0,
+						"multiple_values": false,
 						"name": "bss-color",
 						"type": "integer"
 					},
@@ -5197,6 +5356,7 @@
 						"help": "Maximum number of Voice over WLAN (VoWLAN) phones supported by the radio (0 - 60, default = 10).",
 						"max-value": 60,
 						"min-value": 0,
+						"multiple_values": false,
 						"name": "call-capacity",
 						"type": "integer"
 					},
@@ -5207,6 +5367,7 @@
 								"category": "unitary",
 								"default": "",
 								"help": "Channel number.",
+								"multiple_values": false,
 								"name": "chan",
 								"required": true,
 								"size": 3,
@@ -5350,6 +5511,7 @@
 						"help": "Delivery Traffic Indication Map (DTIM) period (1 - 255, default = 1). Set higher to save battery life of WiFi client in power-save mode.",
 						"max-value": 255,
 						"min-value": 1,
+						"multiple_values": false,
 						"name": "dtim",
 						"type": "integer"
 					},
@@ -5359,6 +5521,7 @@
 						"help": "Maximum packet size that can be sent without fragmentation (800 - 2346 bytes, default = 2346).",
 						"max-value": 2346,
 						"min-value": 800,
+						"multiple_values": false,
 						"name": "frag-threshold",
 						"type": "integer"
 					},
@@ -5406,6 +5569,7 @@
 						"help": "Iperf service port number.",
 						"max-value": 65535,
 						"min-value": 0,
+						"multiple_values": false,
 						"name": "iperf-server-port",
 						"type": "integer"
 					},
@@ -5415,6 +5579,7 @@
 						"help": "Maximum number of stations (STAs) or WiFi clients supported by the radio. Range depends on the hardware.",
 						"max-value": 4294967295,
 						"min-value": 0,
+						"multiple_values": false,
 						"name": "max-clients",
 						"type": "integer"
 					},
@@ -5424,6 +5589,7 @@
 						"help": "Maximum expected distance between the AP and clients (0 - 54000 m, default = 0).",
 						"max-value": 54000,
 						"min-value": 0,
+						"multiple_values": false,
 						"name": "max-distance",
 						"type": "integer"
 					},
@@ -5463,6 +5629,7 @@
 						"help": "Radio EIRP power level as a percentage of the maximum EIRP power (0 - 100, default = 100).",
 						"max-value": 100,
 						"min-value": 0,
+						"multiple_values": false,
 						"name": "power-level",
 						"type": "integer"
 					},
@@ -5492,6 +5659,7 @@
 						"help": "Radio EIRP power in dBm (1 - 33, default = 27).",
 						"max-value": 33,
 						"min-value": 1,
+						"multiple_values": false,
 						"name": "power-value",
 						"type": "integer"
 					},
@@ -5553,6 +5721,7 @@
 						"help": "Maximum packet size for RTS transmissions, specifying the maximum size of a data packet before RTS/CTS (256 - 2346 bytes, default = 2346).",
 						"max-value": 2346,
 						"min-value": 256,
+						"multiple_values": false,
 						"name": "rts-threshold",
 						"type": "integer"
 					},
@@ -5561,6 +5730,7 @@
 						"category": "unitary",
 						"default": "00:00:00:00:00:00",
 						"help": "BSSID for WiFi network.",
+						"multiple_values": false,
 						"name": "sam-bssid",
 						"type": "mac-address"
 					},
@@ -5588,6 +5758,7 @@
 						"category": "unitary",
 						"default": "",
 						"help": "Failure identification on the page after an incorrect login.",
+						"multiple_values": false,
 						"name": "sam-cwp-failure-string",
 						"size": 64,
 						"type": "string"
@@ -5597,6 +5768,7 @@
 						"category": "unitary",
 						"default": "",
 						"help": "Identification string from the captive portal login form.",
+						"multiple_values": false,
 						"name": "sam-cwp-match-string",
 						"size": 64,
 						"type": "string"
@@ -5605,6 +5777,7 @@
 						"addedIn": "v7.0.1",
 						"category": "unitary",
 						"help": "Password for captive portal authentication.",
+						"multiple_values": false,
 						"name": "sam-cwp-password",
 						"size": 128,
 						"type": "password"
@@ -5614,6 +5787,7 @@
 						"category": "unitary",
 						"default": "",
 						"help": "Success identification on the page after a successful login.",
+						"multiple_values": false,
 						"name": "sam-cwp-success-string",
 						"size": 64,
 						"type": "string"
@@ -5623,6 +5797,7 @@
 						"category": "unitary",
 						"default": "",
 						"help": "Website the client is trying to access.",
+						"multiple_values": false,
 						"name": "sam-cwp-test-url",
 						"size": 255,
 						"type": "string"
@@ -5632,6 +5807,7 @@
 						"category": "unitary",
 						"default": "",
 						"help": "Username for captive portal authentication.",
+						"multiple_values": false,
 						"name": "sam-cwp-username",
 						"size": 35,
 						"type": "string"
@@ -5640,6 +5816,7 @@
 						"addedIn": "v7.0.0",
 						"category": "unitary",
 						"help": "Passphrase for WiFi network connection.",
+						"multiple_values": false,
 						"name": "sam-password",
 						"size": 128,
 						"type": "password"
@@ -5651,6 +5828,7 @@
 						"help": "SAM report interval (sec), 0 for a one-time report.",
 						"max-value": 864000,
 						"min-value": 60,
+						"multiple_values": false,
 						"name": "sam-report-intv",
 						"type": "integer"
 					},
@@ -5692,6 +5870,7 @@
 						"category": "unitary",
 						"default": "",
 						"help": "SAM test server domain name.",
+						"multiple_values": false,
 						"name": "sam-server-fqdn",
 						"size": 255,
 						"type": "string"
@@ -5701,6 +5880,7 @@
 						"category": "unitary",
 						"default": "0.0.0.0",
 						"help": "SAM test server IP address.",
+						"multiple_values": false,
 						"name": "sam-server-ip",
 						"type": "ipv4-address"
 					},
@@ -5728,6 +5908,7 @@
 						"category": "unitary",
 						"default": "",
 						"help": "SSID for WiFi network.",
+						"multiple_values": false,
 						"name": "sam-ssid",
 						"size": 32,
 						"type": "string"
@@ -5756,6 +5937,7 @@
 						"category": "unitary",
 						"default": "",
 						"help": "Username for WiFi network connection.",
+						"multiple_values": false,
 						"name": "sam-username",
 						"size": 35,
 						"type": "string"
@@ -5863,6 +6045,7 @@
 								],
 								"default": "",
 								"help": "Virtual Access Point (VAP) name.",
+								"multiple_values": false,
 								"name": "name",
 								"required": true,
 								"size": 35,
@@ -5885,6 +6068,7 @@
 						],
 						"default": "",
 						"help": "Wireless Intrusion Detection System (WIDS) profile name to assign to the radio.",
+						"multiple_values": false,
 						"name": "wids-profile",
 						"size": 35,
 						"type": "string"
@@ -5909,6 +6093,7 @@
 					}
 				},
 				"help": "Configuration options for radio 3.",
+				"multiple_values": false,
 				"name": "radio-3"
 			},
 			"radio-4": {
@@ -5972,6 +6157,7 @@
 						"category": "unitary",
 						"default": "00:00:00:00:00:00",
 						"help": "MAC address to monitor.",
+						"multiple_values": false,
 						"name": "ap-sniffer-addr",
 						"type": "mac-address"
 					},
@@ -5981,6 +6167,7 @@
 						"help": "Sniffer buffer size (1 - 32 MB, default = 16).",
 						"max-value": 32,
 						"min-value": 1,
+						"multiple_values": false,
 						"name": "ap-sniffer-bufsize",
 						"type": "integer"
 					},
@@ -5990,6 +6177,7 @@
 						"help": "Channel on which to operate the sniffer (default = 6).",
 						"max-value": 4294967295,
 						"min-value": 0,
+						"multiple_values": false,
 						"name": "ap-sniffer-chan",
 						"type": "integer"
 					},
@@ -6083,12 +6271,26 @@
 						],
 						"type": "option"
 					},
+					"arrp-profile": {
+						"addedIn": "v7.0.4",
+						"category": "unitary",
+						"datasource": [
+							"wireless-controller.arrp-profile.name"
+						],
+						"default": "",
+						"help": "Distributed Automatic Radio Resource Provisioning (DARRP) profile name to assign to the radio.",
+						"multiple_values": false,
+						"name": "arrp-profile",
+						"size": 35,
+						"type": "string"
+					},
 					"auto-power-high": {
 						"category": "unitary",
 						"default": 17,
 						"help": "The upper bound of automatic transmit power adjustment in dBm (the actual range of transmit power depends on the AP platform type).",
 						"max-value": 4294967295,
 						"min-value": 0,
+						"multiple_values": false,
 						"name": "auto-power-high",
 						"type": "integer"
 					},
@@ -6116,6 +6318,7 @@
 						"help": "The lower bound of automatic transmit power adjustment in dBm (the actual range of transmit power depends on the AP platform type).",
 						"max-value": 4294967295,
 						"min-value": 0,
+						"multiple_values": false,
 						"name": "auto-power-low",
 						"type": "integer"
 					},
@@ -6123,7 +6326,8 @@
 						"addedIn": "v6.4.3",
 						"category": "unitary",
 						"default": "-70",
-						"help": "The target of automatic transmit power adjustment in dBm. (-95 to -20, default = -70).",
+						"help": "Target of automatic transmit power adjustment in dBm (-95 to -20, default = -70).",
+						"multiple_values": false,
 						"name": "auto-power-target",
 						"size": 7,
 						"type": "string"
@@ -6268,15 +6472,17 @@
 						"help": "Maximum bandwidth capacity allowed (1 - 600000 Kbps, default = 2000).",
 						"max-value": 600000,
 						"min-value": 1,
+						"multiple_values": false,
 						"name": "bandwidth-capacity",
 						"type": "integer"
 					},
 					"beacon-interval": {
 						"category": "unitary",
 						"default": 100,
-						"help": "Beacon interval. The time between beacon frames in msec (the actual range of beacon interval depends on the AP platform type, default = 100).",
+						"help": "Beacon interval. The time between beacon frames in milliseconds. Actual range of beacon interval depends on the AP platform type (default = 100).",
 						"max-value": 65535,
 						"min-value": 0,
+						"multiple_values": false,
 						"name": "beacon-interval",
 						"type": "integer"
 					},
@@ -6284,9 +6490,10 @@
 						"addedIn": "v6.4.2",
 						"category": "unitary",
 						"default": 0,
-						"help": "BSS color value for this 11ax radio (0 - 63, 0 means disable. default = 0).",
+						"help": "BSS color value for this 11ax radio (0 - 63, disable = 0, default = 0).",
 						"max-value": 63,
 						"min-value": 0,
+						"multiple_values": false,
 						"name": "bss-color",
 						"type": "integer"
 					},
@@ -6333,6 +6540,7 @@
 						"help": "Maximum number of Voice over WLAN (VoWLAN) phones supported by the radio (0 - 60, default = 10).",
 						"max-value": 60,
 						"min-value": 0,
+						"multiple_values": false,
 						"name": "call-capacity",
 						"type": "integer"
 					},
@@ -6343,6 +6551,7 @@
 								"category": "unitary",
 								"default": "",
 								"help": "Channel number.",
+								"multiple_values": false,
 								"name": "chan",
 								"required": true,
 								"size": 3,
@@ -6486,6 +6695,7 @@
 						"help": "Delivery Traffic Indication Map (DTIM) period (1 - 255, default = 1). Set higher to save battery life of WiFi client in power-save mode.",
 						"max-value": 255,
 						"min-value": 1,
+						"multiple_values": false,
 						"name": "dtim",
 						"type": "integer"
 					},
@@ -6495,6 +6705,7 @@
 						"help": "Maximum packet size that can be sent without fragmentation (800 - 2346 bytes, default = 2346).",
 						"max-value": 2346,
 						"min-value": 800,
+						"multiple_values": false,
 						"name": "frag-threshold",
 						"type": "integer"
 					},
@@ -6542,6 +6753,7 @@
 						"help": "Iperf service port number.",
 						"max-value": 65535,
 						"min-value": 0,
+						"multiple_values": false,
 						"name": "iperf-server-port",
 						"type": "integer"
 					},
@@ -6551,6 +6763,7 @@
 						"help": "Maximum number of stations (STAs) or WiFi clients supported by the radio. Range depends on the hardware.",
 						"max-value": 4294967295,
 						"min-value": 0,
+						"multiple_values": false,
 						"name": "max-clients",
 						"type": "integer"
 					},
@@ -6560,6 +6773,7 @@
 						"help": "Maximum expected distance between the AP and clients (0 - 54000 m, default = 0).",
 						"max-value": 54000,
 						"min-value": 0,
+						"multiple_values": false,
 						"name": "max-distance",
 						"type": "integer"
 					},
@@ -6599,6 +6813,7 @@
 						"help": "Radio EIRP power level as a percentage of the maximum EIRP power (0 - 100, default = 100).",
 						"max-value": 100,
 						"min-value": 0,
+						"multiple_values": false,
 						"name": "power-level",
 						"type": "integer"
 					},
@@ -6628,6 +6843,7 @@
 						"help": "Radio EIRP power in dBm (1 - 33, default = 27).",
 						"max-value": 33,
 						"min-value": 1,
+						"multiple_values": false,
 						"name": "power-value",
 						"type": "integer"
 					},
@@ -6689,6 +6905,7 @@
 						"help": "Maximum packet size for RTS transmissions, specifying the maximum size of a data packet before RTS/CTS (256 - 2346 bytes, default = 2346).",
 						"max-value": 2346,
 						"min-value": 256,
+						"multiple_values": false,
 						"name": "rts-threshold",
 						"type": "integer"
 					},
@@ -6697,6 +6914,7 @@
 						"category": "unitary",
 						"default": "00:00:00:00:00:00",
 						"help": "BSSID for WiFi network.",
+						"multiple_values": false,
 						"name": "sam-bssid",
 						"type": "mac-address"
 					},
@@ -6724,6 +6942,7 @@
 						"category": "unitary",
 						"default": "",
 						"help": "Failure identification on the page after an incorrect login.",
+						"multiple_values": false,
 						"name": "sam-cwp-failure-string",
 						"size": 64,
 						"type": "string"
@@ -6733,6 +6952,7 @@
 						"category": "unitary",
 						"default": "",
 						"help": "Identification string from the captive portal login form.",
+						"multiple_values": false,
 						"name": "sam-cwp-match-string",
 						"size": 64,
 						"type": "string"
@@ -6741,6 +6961,7 @@
 						"addedIn": "v7.0.1",
 						"category": "unitary",
 						"help": "Password for captive portal authentication.",
+						"multiple_values": false,
 						"name": "sam-cwp-password",
 						"size": 128,
 						"type": "password"
@@ -6750,6 +6971,7 @@
 						"category": "unitary",
 						"default": "",
 						"help": "Success identification on the page after a successful login.",
+						"multiple_values": false,
 						"name": "sam-cwp-success-string",
 						"size": 64,
 						"type": "string"
@@ -6759,6 +6981,7 @@
 						"category": "unitary",
 						"default": "",
 						"help": "Website the client is trying to access.",
+						"multiple_values": false,
 						"name": "sam-cwp-test-url",
 						"size": 255,
 						"type": "string"
@@ -6768,6 +6991,7 @@
 						"category": "unitary",
 						"default": "",
 						"help": "Username for captive portal authentication.",
+						"multiple_values": false,
 						"name": "sam-cwp-username",
 						"size": 35,
 						"type": "string"
@@ -6776,6 +7000,7 @@
 						"addedIn": "v7.0.0",
 						"category": "unitary",
 						"help": "Passphrase for WiFi network connection.",
+						"multiple_values": false,
 						"name": "sam-password",
 						"size": 128,
 						"type": "password"
@@ -6787,6 +7012,7 @@
 						"help": "SAM report interval (sec), 0 for a one-time report.",
 						"max-value": 864000,
 						"min-value": 60,
+						"multiple_values": false,
 						"name": "sam-report-intv",
 						"type": "integer"
 					},
@@ -6828,6 +7054,7 @@
 						"category": "unitary",
 						"default": "",
 						"help": "SAM test server domain name.",
+						"multiple_values": false,
 						"name": "sam-server-fqdn",
 						"size": 255,
 						"type": "string"
@@ -6837,6 +7064,7 @@
 						"category": "unitary",
 						"default": "0.0.0.0",
 						"help": "SAM test server IP address.",
+						"multiple_values": false,
 						"name": "sam-server-ip",
 						"type": "ipv4-address"
 					},
@@ -6864,6 +7092,7 @@
 						"category": "unitary",
 						"default": "",
 						"help": "SSID for WiFi network.",
+						"multiple_values": false,
 						"name": "sam-ssid",
 						"size": 32,
 						"type": "string"
@@ -6892,6 +7121,7 @@
 						"category": "unitary",
 						"default": "",
 						"help": "Username for WiFi network connection.",
+						"multiple_values": false,
 						"name": "sam-username",
 						"size": 35,
 						"type": "string"
@@ -6999,6 +7229,7 @@
 								],
 								"default": "",
 								"help": "Virtual Access Point (VAP) name.",
+								"multiple_values": false,
 								"name": "name",
 								"required": true,
 								"size": 35,
@@ -7021,6 +7252,7 @@
 						],
 						"default": "",
 						"help": "Wireless Intrusion Detection System (WIDS) profile name to assign to the radio.",
+						"multiple_values": false,
 						"name": "wids-profile",
 						"size": 35,
 						"type": "string"
@@ -7045,6 +7277,7 @@
 					}
 				},
 				"help": "Configuration options for radio 4.",
+				"multiple_values": false,
 				"name": "radio-4"
 			},
 			"split-tunneling-acl": {
@@ -7054,6 +7287,7 @@
 						"category": "unitary",
 						"default": "0.0.0.0 0.0.0.0",
 						"help": "Destination IP and mask for the split-tunneling subnet.",
+						"multiple_values": false,
 						"name": "dest-ip",
 						"required": true,
 						"type": "ipv4-classnet"
@@ -7064,6 +7298,7 @@
 						"help": "ID.",
 						"max-value": 4294967295,
 						"min-value": 0,
+						"multiple_values": false,
 						"name": "id",
 						"type": "integer"
 					}
@@ -7120,6 +7355,7 @@
 				],
 				"default": "",
 				"help": "System log server configuration profile name.",
+				"multiple_values": false,
 				"name": "syslog-profile",
 				"size": 35,
 				"type": "string"
@@ -7130,6 +7366,7 @@
 				"help": "The MTU of downlink CAPWAP tunnel (576 - 1500 bytes or 0; 0 means the local MTU of FortiAP; default = 0).",
 				"max-value": 1500,
 				"min-value": 576,
+				"multiple_values": false,
 				"name": "tun-mtu-downlink",
 				"type": "integer"
 			},
@@ -7139,6 +7376,7 @@
 				"help": "The maximum transmission unit (MTU) of uplink CAPWAP tunnel (576 - 1500 bytes or 0; 0 means the local MTU of FortiAP; default = 0).",
 				"max-value": 1500,
 				"min-value": 576,
+				"multiple_values": false,
 				"name": "tun-mtu-uplink",
 				"type": "integer"
 			},
@@ -7192,6 +7430,7 @@
 				"addedIn": "v7.0.2",
 				"category": "unitary",
 				"help": "Set WAN port 802.1x supplicant password.",
+				"multiple_values": false,
 				"name": "wan-port-auth-password",
 				"size": 128,
 				"type": "password"
@@ -7201,6 +7440,7 @@
 				"category": "unitary",
 				"default": "",
 				"help": "Set WAN port 802.1x supplicant user name.",
+				"multiple_values": false,
 				"name": "wan-port-auth-usrname",
 				"size": 63,
 				"type": "string"
@@ -7234,9 +7474,9 @@
 		"path": "wireless-controller",
 		"q_type": 269
 	},
-	"revision": "78ee061304af9c5d17bcae6474808d97",
-	"serial": "FGTAZRAQCG14L19D",
+	"revision": "e338e35a484eaafc990a69dd13ff4f76",
+	"serial": "FGTAZRI5HXAAGI90",
 	"status": "success",
 	"vdom": "root",
-	"version": "v7.0.3"
+	"version": "v7.0.4"
 }

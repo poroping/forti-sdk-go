@@ -1,9 +1,9 @@
 {
 	"addedIn": "v6.2.7",
-	"build": 237,
+	"build": 301,
 	"http_method": "GET",
 	"http_status": 200,
-	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3",
+	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3,v7.0.4",
 	"name": "internet-service-ipbl-vendor",
 	"path": "firewall",
 	"results": {
@@ -13,22 +13,24 @@
 			"id": {
 				"category": "unitary",
 				"default": 0,
-				"help": "IP blocklist vendor ID.",
+				"help": "IP block list vendor ID.",
 				"max-value": 4294967295,
 				"min-value": 0,
+				"multiple_values": false,
 				"name": "id",
 				"type": "integer"
 			},
 			"name": {
 				"category": "unitary",
 				"default": "",
-				"help": "IP blocklist vendor name.",
+				"help": "IP block list vendor name.",
+				"multiple_values": false,
 				"name": "name",
 				"size": 63,
 				"type": "string"
 			}
 		},
-		"help": "IP blocklist vendor.",
+		"help": "IP block list vendor.",
 		"max_table_size_global": 0,
 		"max_table_size_item": 0,
 		"max_table_size_vdom": 0,
@@ -39,9 +41,9 @@
 		"q_type": 352,
 		"readonly": true
 	},
-	"revision": "b9af64d219fb69ad393262e75711e4e7",
-	"serial": "FGTAZRAQCG14L19D",
+	"revision": "1563ef551f543e133b07109c078fccf0",
+	"serial": "FGTAZRI5HXAAGI90",
 	"status": "success",
 	"vdom": "root",
-	"version": "v7.0.3"
+	"version": "v7.0.4"
 }

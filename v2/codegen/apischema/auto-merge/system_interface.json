@@ -1,9 +1,9 @@
 {
 	"addedIn": "v6.2.7",
-	"build": 237,
+	"build": 301,
 	"http_method": "GET",
 	"http_status": 200,
-	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3",
+	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3,v7.0.4",
 	"name": "interface",
 	"path": "system",
 	"results": {
@@ -14,6 +14,7 @@
 				"category": "unitary",
 				"default": "",
 				"help": "PPPoE server name.",
+				"multiple_values": false,
 				"name": "ac-name",
 				"size": 63,
 				"type": "string"
@@ -22,6 +23,7 @@
 				"category": "unitary",
 				"default": "",
 				"help": "Aggregate interface.",
+				"multiple_values": false,
 				"name": "aggregate",
 				"readonly": true,
 				"size": 15,
@@ -53,6 +55,7 @@
 				"category": "unitary",
 				"default": "",
 				"help": "Alias will be displayed with the interface name to make it easier to distinguish.",
+				"multiple_values": false,
 				"name": "alias",
 				"size": 25,
 				"type": "string"
@@ -151,6 +154,29 @@
 				],
 				"type": "option"
 			},
+			"auth-cert": {
+				"addedIn": "v7.0.4",
+				"category": "unitary",
+				"datasource": [
+					"vpn.certificate.local.name"
+				],
+				"default": "",
+				"help": "HTTPS server certificate.",
+				"multiple_values": false,
+				"name": "auth-cert",
+				"size": 35,
+				"type": "string"
+			},
+			"auth-portal-addr": {
+				"addedIn": "v7.0.4",
+				"category": "unitary",
+				"default": "",
+				"help": "Address of captive portal.",
+				"multiple_values": false,
+				"name": "auth-portal-addr",
+				"size": 63,
+				"type": "string"
+			},
 			"auth-type": {
 				"category": "unitary",
 				"default": "auto",
@@ -203,9 +229,10 @@
 				"addedIn": "v6.4.0",
 				"category": "unitary",
 				"default": 0,
-				"help": "Bandwidth measure time ",
+				"help": "Bandwidth measure time.",
 				"max-value": 4294967295,
 				"min-value": 0,
+				"multiple_values": false,
 				"name": "bandwidth-measure-time",
 				"type": "integer"
 			},
@@ -237,6 +264,7 @@
 				"help": "BFD desired minimal transmit interval.",
 				"max-value": 100000,
 				"min-value": 1,
+				"multiple_values": false,
 				"name": "bfd-desired-min-tx",
 				"type": "integer"
 			},
@@ -246,6 +274,7 @@
 				"help": "BFD detection multiplier.",
 				"max-value": 50,
 				"min-value": 1,
+				"multiple_values": false,
 				"name": "bfd-detect-mult",
 				"type": "integer"
 			},
@@ -255,6 +284,7 @@
 				"help": "BFD required minimal receive interval.",
 				"max-value": 100000,
 				"min-value": 1,
+				"multiple_values": false,
 				"name": "bfd-required-min-rx",
 				"type": "integer"
 			},
@@ -300,6 +330,7 @@
 				"help": "CLI connection status.",
 				"max-value": 4294967295,
 				"min-value": 0,
+				"multiple_values": false,
 				"name": "cli-conn-status",
 				"readonly": true,
 				"type": "integer"
@@ -314,6 +345,7 @@
 						"help": "DHCP client option code.",
 						"max-value": 255,
 						"min-value": 0,
+						"multiple_values": false,
 						"name": "code",
 						"required": true,
 						"type": "integer"
@@ -324,6 +356,7 @@
 						"help": "ID.",
 						"max-value": 4294967295,
 						"min-value": 0,
+						"multiple_values": false,
 						"name": "id",
 						"required": true,
 						"type": "integer"
@@ -332,6 +365,7 @@
 						"category": "unitary",
 						"default": "",
 						"help": "DHCP option IPs.",
+						"multiple_values": true,
 						"name": "ip",
 						"type": "user"
 					},
@@ -365,6 +399,7 @@
 						"category": "unitary",
 						"default": "",
 						"help": "DHCP client option value.",
+						"multiple_values": false,
 						"name": "value",
 						"size": 312,
 						"type": "string"
@@ -384,6 +419,7 @@
 				"help": "Color of icon on the GUI.",
 				"max-value": 32,
 				"min-value": 0,
+				"multiple_values": false,
 				"name": "color",
 				"type": "integer"
 			},
@@ -426,6 +462,7 @@
 			"description": {
 				"category": "unitary",
 				"help": "Description.",
+				"multiple_values": false,
 				"name": "description",
 				"size": 255,
 				"type": "var-string"
@@ -436,6 +473,7 @@
 				"help": "MTU of detected peer (0 - 4294967295).",
 				"max-value": 4294967295,
 				"min-value": 0,
+				"multiple_values": false,
 				"name": "detected-peer-mtu",
 				"readonly": true,
 				"type": "integer"
@@ -466,6 +504,7 @@
 				"category": "unitary",
 				"default": "",
 				"help": "Gateway's ping server for this IP.",
+				"multiple_values": false,
 				"name": "detectserver",
 				"type": "user"
 			},
@@ -511,6 +550,7 @@
 				"help": "Device Index.",
 				"max-value": 4294967295,
 				"min-value": 0,
+				"multiple_values": false,
 				"name": "devindex",
 				"readonly": true,
 				"type": "integer"
@@ -538,6 +578,7 @@
 				"category": "unitary",
 				"default": "",
 				"help": "DHCP client identifier.",
+				"multiple_values": false,
 				"name": "dhcp-client-identifier",
 				"size": 48,
 				"type": "string"
@@ -567,6 +608,7 @@
 				],
 				"default": "",
 				"help": "Specify outgoing interface to reach server.",
+				"multiple_values": false,
 				"name": "dhcp-relay-interface",
 				"removedIn": "v6.4.0",
 				"required": true,
@@ -600,8 +642,18 @@
 				"category": "unitary",
 				"default": "",
 				"help": "DHCP relay IP address.",
+				"multiple_values": true,
 				"name": "dhcp-relay-ip",
 				"type": "user"
+			},
+			"dhcp-relay-link-selection": {
+				"addedIn": "v7.0.4",
+				"category": "unitary",
+				"default": "0.0.0.0",
+				"help": "DHCP relay link selection.",
+				"multiple_values": false,
+				"name": "dhcp-relay-link-selection",
+				"type": "ipv4-address"
 			},
 			"dhcp-relay-request-all-server": {
 				"addedIn": "v7.0.0",
@@ -664,6 +716,7 @@
 				"help": "DHCP renew time in seconds (300-604800), 0 means use the renew time provided by the server.",
 				"max-value": 604800,
 				"min-value": 300,
+				"multiple_values": false,
 				"name": "dhcp-renew-time",
 				"type": "integer"
 			},
@@ -675,6 +728,7 @@
 						"category": "unitary",
 						"default": "default",
 						"help": "DHCP server name.",
+						"multiple_values": false,
 						"name": "name",
 						"size": 35,
 						"type": "string"
@@ -683,6 +737,7 @@
 						"category": "unitary",
 						"default": "0.0.0.0",
 						"help": "IP address for DHCP server.",
+						"multiple_values": false,
 						"name": "server-ip",
 						"type": "ipv4-address"
 					}
@@ -701,6 +756,7 @@
 				"help": "Time in seconds to wait before retrying to start a PPPoE discovery, 0 means no timeout.",
 				"max-value": 4294967295,
 				"min-value": 0,
+				"multiple_values": false,
 				"name": "disc-retry-timeout",
 				"type": "integer"
 			},
@@ -710,6 +766,7 @@
 				"help": "Time in milliseconds to wait before sending a notification that this interface is down or disconnected.",
 				"max-value": 10000,
 				"min-value": 0,
+				"multiple_values": false,
 				"name": "disconnect-threshold",
 				"type": "integer"
 			},
@@ -719,6 +776,7 @@
 				"help": "Distance for routes learned through PPPoE or DHCP, lower distance indicates preferred route.",
 				"max-value": 255,
 				"min-value": 1,
+				"multiple_values": false,
 				"name": "distance",
 				"type": "integer"
 			},
@@ -736,6 +794,29 @@
 					{
 						"help": "No not use DNS acquired by DHCP or PPPoE.",
 						"name": "disable"
+					}
+				],
+				"type": "option"
+			},
+			"dns-server-protocol": {
+				"addedIn": "v7.0.4",
+				"category": "unitary",
+				"default": "cleartext",
+				"help": "DNS transport protocols.",
+				"multiple_values": true,
+				"name": "dns-server-protocol",
+				"options": [
+					{
+						"help": "DNS over UDP/53, DNS over TCP/53.",
+						"name": "cleartext"
+					},
+					{
+						"help": "DNS over TLS/853.",
+						"name": "dot"
+					},
+					{
+						"help": "DNS over HTTPS/443.",
+						"name": "doh"
 					}
 				],
 				"type": "option"
@@ -917,6 +998,7 @@
 				],
 				"default": "",
 				"help": "Outgoing traffic shaping profile.",
+				"multiple_values": false,
 				"name": "egress-shaping-profile",
 				"size": 35,
 				"type": "string"
@@ -926,6 +1008,7 @@
 				"category": "unitary",
 				"default": "0.0.0.0",
 				"help": "External IP.",
+				"multiple_values": false,
 				"name": "eip",
 				"readonly": true,
 				"type": "ipv4-address-any"
@@ -936,6 +1019,7 @@
 				"help": "Estimated maximum downstream bandwidth (kbps). Used to estimate link utilization.",
 				"max-value": 4294967295,
 				"min-value": 0,
+				"multiple_values": false,
 				"name": "estimated-downstream-bandwidth",
 				"type": "integer"
 			},
@@ -945,6 +1029,7 @@
 				"help": "Estimated maximum upstream bandwidth (kbps). Used to estimate link utilization.",
 				"max-value": 4294967295,
 				"min-value": 0,
+				"multiple_values": false,
 				"name": "estimated-upstream-bandwidth",
 				"type": "integer"
 			},
@@ -1005,7 +1090,7 @@
 			"fail-action-on-extender": {
 				"category": "unitary",
 				"default": "soft-restart",
-				"help": "Action on extender when interface fail .",
+				"help": "Action on FortiExtender when interface fail.",
 				"multiple_values": false,
 				"name": "fail-action-on-extender",
 				"options": [
@@ -1034,6 +1119,7 @@
 						],
 						"default": "",
 						"help": "Names of the non-virtual interface.",
+						"multiple_values": false,
 						"name": "name",
 						"required": true,
 						"size": 79,
@@ -1124,9 +1210,10 @@
 			"fortilink-backup-link": {
 				"category": "unitary",
 				"default": 0,
-				"help": "fortilink split interface backup link.",
+				"help": "FortiLink split interface backup link.",
 				"max-value": 255,
 				"min-value": 0,
+				"multiple_values": false,
 				"name": "fortilink-backup-link",
 				"readonly": true,
 				"type": "integer"
@@ -1192,6 +1279,7 @@
 				"help": "Transparent mode forward domain.",
 				"max-value": 2147483647,
 				"min-value": 0,
+				"multiple_values": false,
 				"name": "forward-domain",
 				"type": "integer"
 			},
@@ -1219,6 +1307,7 @@
 				"help": "HA election priority for the PING server.",
 				"max-value": 50,
 				"min-value": 1,
+				"multiple_values": false,
 				"name": "ha-priority",
 				"type": "integer"
 			},
@@ -1282,6 +1371,7 @@
 				"help": "PPPoE auto disconnect after idle timeout seconds, 0 means no timeout.",
 				"max-value": 32767,
 				"min-value": 0,
+				"multiple_values": false,
 				"name": "idle-timeout",
 				"type": "integer"
 			},
@@ -1291,6 +1381,7 @@
 				"help": "Bandwidth limit for incoming traffic (0 - 16776000 kbps), 0 means unlimited.",
 				"max-value": 16776000,
 				"min-value": 0,
+				"multiple_values": false,
 				"name": "inbandwidth",
 				"type": "integer"
 			},
@@ -1347,6 +1438,7 @@
 				],
 				"default": "",
 				"help": "Incoming traffic shaping profile.",
+				"multiple_values": false,
 				"name": "ingress-shaping-profile",
 				"size": 35,
 				"type": "string"
@@ -1357,6 +1449,7 @@
 				"help": "Ingress Spillover threshold (0 - 16776000 kbps), 0 means unlimited.",
 				"max-value": 16776000,
 				"min-value": 0,
+				"multiple_values": false,
 				"name": "ingress-spillover-threshold",
 				"type": "integer"
 			},
@@ -1367,6 +1460,7 @@
 				],
 				"default": "",
 				"help": "Interface name.",
+				"multiple_values": false,
 				"name": "interface",
 				"required": true,
 				"size": 15,
@@ -1378,6 +1472,7 @@
 				"help": "Implicitly created.",
 				"max-value": 255,
 				"min-value": 0,
+				"multiple_values": false,
 				"name": "internal",
 				"type": "integer"
 			},
@@ -1385,6 +1480,7 @@
 				"category": "unitary",
 				"default": "0.0.0.0 0.0.0.0",
 				"help": "Interface IPv4 address and subnet mask, syntax: X.X.X.X/24.",
+				"multiple_values": false,
 				"name": "ip",
 				"type": "ipv4-classnet-host"
 			},
@@ -1447,6 +1543,7 @@
 				"category": "unitary",
 				"default": "0.0.0.0",
 				"help": "Unnumbered IP used for PPPoE interfaces for which no unique local address is provided.",
+				"multiple_values": false,
 				"name": "ipunnumbered",
 				"type": "ipv4-address"
 			},
@@ -1478,6 +1575,7 @@
 						"help": "CLI IPv6 connection status.",
 						"max-value": 4294967295,
 						"min-value": 0,
+						"multiple_values": false,
 						"name": "cli-conn6-status",
 						"readonly": true,
 						"type": "integer"
@@ -1515,6 +1613,7 @@
 								"help": "Identity association identifier.",
 								"max-value": 4294967295,
 								"min-value": 0,
+								"multiple_values": false,
 								"name": "iaid",
 								"required": true,
 								"type": "integer"
@@ -1523,6 +1622,7 @@
 								"category": "unitary",
 								"default": "::/0",
 								"help": "DHCPv6 prefix that will be used as a hint to the upstream DHCPv6 server.",
+								"multiple_values": false,
 								"name": "prefix-hint",
 								"type": "ipv6-network"
 							},
@@ -1532,6 +1632,7 @@
 								"help": "DHCPv6 prefix hint preferred life time (sec), 0 means unlimited lease time.",
 								"max-value": 4294967295,
 								"min-value": 0,
+								"multiple_values": false,
 								"name": "prefix-hint-plt",
 								"type": "integer"
 							},
@@ -1541,11 +1642,12 @@
 								"help": "DHCPv6 prefix hint valid life time (sec).",
 								"max-value": 4294967295,
 								"min-value": 0,
+								"multiple_values": false,
 								"name": "prefix-hint-vlt",
 								"type": "integer"
 							}
 						},
-						"help": "DHCPv6 IA-PD list",
+						"help": "DHCPv6 IA-PD list.",
 						"max_table_size_global": 0,
 						"max_table_size_item": 0,
 						"max_table_size_vdom": 0,
@@ -1621,6 +1723,7 @@
 						"category": "unitary",
 						"default": "",
 						"help": "DHCPv6 relay IP address.",
+						"multiple_values": true,
 						"name": "dhcp6-relay-ip",
 						"type": "user"
 					},
@@ -1680,13 +1783,15 @@
 						"category": "unitary",
 						"default": "::",
 						"help": "IPv6 interface identifier.",
+						"multiple_values": false,
 						"name": "interface-identifier",
 						"type": "ipv6-address"
 					},
 					"ip6-address": {
 						"category": "unitary",
 						"default": "::/0",
-						"help": "Primary IPv6 address prefix, syntax: xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx/xxx",
+						"help": "Primary IPv6 address prefix. Syntax: xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx/xxx.",
+						"multiple_values": false,
 						"name": "ip6-address",
 						"type": "ipv6-prefix"
 					},
@@ -1738,6 +1843,7 @@
 						"help": "Default life (sec).",
 						"max-value": 9000,
 						"min-value": 0,
+						"multiple_values": false,
 						"name": "ip6-default-life",
 						"type": "integer"
 					},
@@ -1748,6 +1854,7 @@
 						"help": "IAID of obtained delegated-prefix from the upstream interface.",
 						"max-value": 4294967295,
 						"min-value": 0,
+						"multiple_values": false,
 						"name": "ip6-delegated-prefix-iaid",
 						"required": true,
 						"type": "integer"
@@ -1780,6 +1887,7 @@
 								"help": "IAID of obtained delegated-prefix from the upstream interface.",
 								"max-value": 4294967295,
 								"min-value": 0,
+								"multiple_values": false,
 								"name": "delegated-prefix-iaid",
 								"required": true,
 								"type": "integer"
@@ -1808,6 +1916,7 @@
 								"help": "Prefix ID.",
 								"max-value": 4294967295,
 								"min-value": 0,
+								"multiple_values": false,
 								"name": "prefix-id",
 								"required": true,
 								"type": "integer"
@@ -1816,6 +1925,7 @@
 								"category": "unitary",
 								"default": "",
 								"help": "Recursive DNS server option.",
+								"multiple_values": true,
 								"name": "rdnss",
 								"type": "user"
 							},
@@ -1844,7 +1954,8 @@
 							"subnet": {
 								"category": "unitary",
 								"default": "::/0",
-								"help": " Add subnet ID to routing prefix.",
+								"help": "Add subnet ID to routing prefix.",
+								"multiple_values": false,
 								"name": "subnet",
 								"type": "ipv6-network"
 							},
@@ -1855,6 +1966,7 @@
 								],
 								"default": "",
 								"help": "Name of the interface that provides delegated information.",
+								"multiple_values": false,
 								"name": "upstream-interface",
 								"required": true,
 								"size": 15,
@@ -1894,6 +2006,7 @@
 								"category": "unitary",
 								"default": "::/0",
 								"help": "IPv6 address prefix.",
+								"multiple_values": false,
 								"name": "prefix",
 								"required": true,
 								"type": "ipv6-prefix"
@@ -1913,6 +2026,7 @@
 						"help": "Hop limit (0 means unspecified).",
 						"max-value": 255,
 						"min-value": 0,
+						"multiple_values": false,
 						"name": "ip6-hop-limit",
 						"type": "integer"
 					},
@@ -1922,6 +2036,7 @@
 						"help": "IPv6 link MTU.",
 						"max-value": 16000,
 						"min-value": 1280,
+						"multiple_values": false,
 						"name": "ip6-link-mtu",
 						"type": "integer"
 					},
@@ -1949,6 +2064,7 @@
 						"help": "IPv6 maximum interval (4 to 1800 sec).",
 						"max-value": 1800,
 						"min-value": 4,
+						"multiple_values": false,
 						"name": "ip6-max-interval",
 						"type": "integer"
 					},
@@ -1958,6 +2074,7 @@
 						"help": "IPv6 minimum interval (3 to 1350 sec).",
 						"max-value": 1350,
 						"min-value": 3,
+						"multiple_values": false,
 						"name": "ip6-min-interval",
 						"type": "integer"
 					},
@@ -2033,6 +2150,7 @@
 										"category": "unitary",
 										"default": "",
 										"help": "Domain name.",
+										"multiple_values": false,
 										"name": "domain",
 										"required": true,
 										"size": 79,
@@ -2072,6 +2190,7 @@
 								"help": "Preferred life time (sec).",
 								"max-value": 4294967295,
 								"min-value": 0,
+								"multiple_values": false,
 								"name": "preferred-life-time",
 								"type": "integer"
 							},
@@ -2079,6 +2198,7 @@
 								"category": "unitary",
 								"default": "::/0",
 								"help": "IPv6 prefix.",
+								"multiple_values": false,
 								"name": "prefix",
 								"required": true,
 								"type": "ipv6-network"
@@ -2087,6 +2207,7 @@
 								"category": "unitary",
 								"default": "",
 								"help": "Recursive DNS server option.",
+								"multiple_values": true,
 								"name": "rdnss",
 								"type": "user"
 							},
@@ -2096,6 +2217,7 @@
 								"help": "Valid life time (sec).",
 								"max-value": 4294967295,
 								"min-value": 0,
+								"multiple_values": false,
 								"name": "valid-life-time",
 								"type": "integer"
 							}
@@ -2133,6 +2255,7 @@
 						"help": "IPv6 reachable time (milliseconds; 0 means unspecified).",
 						"max-value": 3600000,
 						"min-value": 0,
+						"multiple_values": false,
 						"name": "ip6-reachable-time",
 						"type": "integer"
 					},
@@ -2142,6 +2265,7 @@
 						"help": "IPv6 retransmit time (milliseconds; 0 means unspecified).",
 						"max-value": 4294967295,
 						"min-value": 0,
+						"multiple_values": false,
 						"name": "ip6-retrans-time",
 						"type": "integer"
 					},
@@ -2166,7 +2290,8 @@
 					"ip6-subnet": {
 						"category": "unitary",
 						"default": "::/0",
-						"help": " Subnet to routing prefix, syntax: xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx/xxx",
+						"help": "Subnet to routing prefix. Syntax: xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx/xxx.",
+						"multiple_values": false,
 						"name": "ip6-subnet",
 						"type": "ipv6-prefix"
 					},
@@ -2177,6 +2302,7 @@
 						],
 						"default": "",
 						"help": "Interface name providing delegated information.",
+						"multiple_values": false,
 						"name": "ip6-upstream-interface",
 						"required": true,
 						"size": 15,
@@ -2189,6 +2315,7 @@
 						],
 						"default": "",
 						"help": "Neighbor discovery certificate.",
+						"multiple_values": false,
 						"name": "nd-cert",
 						"required": true,
 						"size": 35,
@@ -2198,6 +2325,7 @@
 						"category": "unitary",
 						"default": "",
 						"help": "Neighbor discovery CGA modifier.",
+						"multiple_values": false,
 						"name": "nd-cga-modifier",
 						"type": "user"
 					},
@@ -2225,6 +2353,7 @@
 						"help": "Neighbor discovery security level (0 - 7; 0 = least secure, default = 0).",
 						"max-value": 7,
 						"min-value": 0,
+						"multiple_values": false,
 						"name": "nd-security-level",
 						"type": "integer"
 					},
@@ -2234,6 +2363,7 @@
 						"help": "Neighbor discovery timestamp delta value (1 - 3600 sec; default = 300).",
 						"max-value": 3600,
 						"min-value": 1,
+						"multiple_values": false,
 						"name": "nd-timestamp-delta",
 						"type": "integer"
 					},
@@ -2243,6 +2373,7 @@
 						"help": "Neighbor discovery timestamp fuzz factor (1 - 60 sec; default = 1).",
 						"max-value": 60,
 						"min-value": 1,
+						"multiple_values": false,
 						"name": "nd-timestamp-fuzz",
 						"type": "integer"
 					},
@@ -2288,6 +2419,7 @@
 						"category": "unitary",
 						"default": "::",
 						"help": "Link-local IPv6 address of virtual router.",
+						"multiple_values": false,
 						"name": "vrip6_link_local",
 						"type": "ipv6-address"
 					},
@@ -2336,6 +2468,7 @@
 								"help": "Advertisement interval (1 - 255 seconds).",
 								"max-value": 255,
 								"min-value": 1,
+								"multiple_values": false,
 								"name": "adv-interval",
 								"type": "integer"
 							},
@@ -2363,6 +2496,7 @@
 								"help": "Priority of the virtual router (1 - 255).",
 								"max-value": 255,
 								"min-value": 1,
+								"multiple_values": false,
 								"name": "priority",
 								"type": "integer"
 							},
@@ -2372,6 +2506,7 @@
 								"help": "Startup time (1 - 255 seconds).",
 								"max-value": 255,
 								"min-value": 1,
+								"multiple_values": false,
 								"name": "start-time",
 								"type": "integer"
 							},
@@ -2397,6 +2532,8 @@
 								"category": "unitary",
 								"default": "",
 								"help": "Monitor the route to this destination.",
+								"max_num_values": 2,
+								"multiple_values": true,
 								"name": "vrdst6",
 								"type": "ipv6-address"
 							},
@@ -2406,6 +2543,7 @@
 								"help": "VRRP group ID (1 - 65535).",
 								"max-value": 65535,
 								"min-value": 1,
+								"multiple_values": false,
 								"name": "vrgrp",
 								"type": "integer"
 							},
@@ -2415,6 +2553,7 @@
 								"help": "Virtual router identifier (1 - 255).",
 								"max-value": 255,
 								"min-value": 1,
+								"multiple_values": false,
 								"name": "vrid",
 								"required": true,
 								"type": "integer"
@@ -2423,6 +2562,7 @@
 								"category": "unitary",
 								"default": "::",
 								"help": "IPv6 address of the virtual router.",
+								"multiple_values": false,
 								"name": "vrip6",
 								"required": true,
 								"type": "ipv6-address"
@@ -2438,6 +2578,7 @@
 					}
 				},
 				"help": "IPv6 of interface.",
+				"multiple_values": false,
 				"name": "ipv6"
 			},
 			"l2forward": {
@@ -2522,6 +2663,7 @@
 				"help": "Time in seconds between PPPoE Link Control Protocol (LCP) echo requests.",
 				"max-value": 32767,
 				"min-value": 0,
+				"multiple_values": false,
 				"name": "lcp-echo-interval",
 				"type": "integer"
 			},
@@ -2531,6 +2673,7 @@
 				"help": "Maximum missed LCP echo messages before disconnect.",
 				"max-value": 32767,
 				"min-value": 0,
+				"multiple_values": false,
 				"name": "lcp-max-echo-fails",
 				"type": "integer"
 			},
@@ -2540,6 +2683,7 @@
 				"help": "Number of milliseconds to wait before considering a link is up.",
 				"max-value": 3600000,
 				"min-value": 50,
+				"multiple_values": false,
 				"name": "link-up-delay",
 				"type": "integer"
 			},
@@ -2550,6 +2694,7 @@
 				],
 				"default": "",
 				"help": "LLDP-MED network policy profile.",
+				"multiple_values": false,
 				"name": "lldp-network-policy",
 				"size": 35,
 				"type": "string"
@@ -2602,6 +2747,7 @@
 				"category": "unitary",
 				"default": "00:00:00:00:00:00",
 				"help": "Change the interface's MAC address.",
+				"multiple_values": false,
 				"name": "macaddr",
 				"type": "mac-address"
 			},
@@ -2668,6 +2814,7 @@
 				"category": "unitary",
 				"default": "0.0.0.0 0.0.0.0",
 				"help": "High Availability in-band management IP address of this interface.",
+				"multiple_values": false,
 				"name": "management-ip",
 				"type": "ipv4-classnet-host"
 			},
@@ -2675,9 +2822,10 @@
 				"addedIn": "v6.4.0",
 				"category": "unitary",
 				"default": 0,
-				"help": "Measured downstream bandwidth (kbps). ",
+				"help": "Measured downstream bandwidth (kbps).",
 				"max-value": 4294967295,
 				"min-value": 0,
+				"multiple_values": false,
 				"name": "measured-downstream-bandwidth",
 				"type": "integer"
 			},
@@ -2685,9 +2833,10 @@
 				"addedIn": "v6.4.0",
 				"category": "unitary",
 				"default": 0,
-				"help": "Measured upstream bandwidth (kbps). ",
+				"help": "Measured upstream bandwidth (kbps).",
 				"max-value": 4294967295,
 				"min-value": 0,
+				"multiple_values": false,
 				"name": "measured-upstream-bandwidth",
 				"type": "integer"
 			},
@@ -2723,6 +2872,7 @@
 						],
 						"default": "",
 						"help": "Physical interface name.",
+						"multiple_values": false,
 						"name": "interface-name",
 						"size": 79,
 						"type": "string"
@@ -2743,6 +2893,7 @@
 				"help": "Minimum number of aggregated ports that must be up.",
 				"max-value": 32,
 				"min-value": 1,
+				"multiple_values": false,
 				"name": "min-links",
 				"type": "integer"
 			},
@@ -2811,6 +2962,7 @@
 				"help": "MTU value for this interface.",
 				"max-value": 4294967295,
 				"min-value": 0,
+				"multiple_values": false,
 				"name": "mtu",
 				"type": "integer"
 			},
@@ -2836,6 +2988,7 @@
 				"category": "unitary",
 				"default": "",
 				"help": "Name.",
+				"multiple_values": false,
 				"name": "name",
 				"size": 15,
 				"type": "string"
@@ -2908,6 +3061,7 @@
 				"help": "Bandwidth limit for outgoing traffic (0 - 16776000 kbps), 0 means unlimited.",
 				"max-value": 16776000,
 				"min-value": 0,
+				"multiple_values": false,
 				"name": "outbandwidth",
 				"type": "integer"
 			},
@@ -2917,12 +3071,14 @@
 				"help": "PPPoE Active Discovery Terminate (PADT) used to terminate sessions after an idle time.",
 				"max-value": 4294967295,
 				"min-value": 0,
+				"multiple_values": false,
 				"name": "padt-retry-timeout",
 				"type": "integer"
 			},
 			"password": {
 				"category": "unitary",
 				"help": "PPPoE account's password.",
+				"multiple_values": false,
 				"name": "password",
 				"size": 128,
 				"type": "password"
@@ -2933,6 +3089,7 @@
 				"help": "PING server status.",
 				"max-value": 255,
 				"min-value": 0,
+				"multiple_values": false,
 				"name": "ping-serv-status",
 				"readonly": true,
 				"type": "integer"
@@ -2940,9 +3097,10 @@
 			"polling-interval": {
 				"category": "unitary",
 				"default": 20,
-				"help": "sFlow polling interval (1 - 255 sec).",
+				"help": "sFlow polling interval in seconds (1 - 255).",
 				"max-value": 255,
 				"min-value": 1,
+				"multiple_values": false,
 				"name": "polling-interval",
 				"type": "integer"
 			},
@@ -3015,6 +3173,7 @@
 			"pptp-password": {
 				"category": "unitary",
 				"help": "PPTP password.",
+				"multiple_values": false,
 				"name": "pptp-password",
 				"size": 128,
 				"type": "password"
@@ -3023,6 +3182,7 @@
 				"category": "unitary",
 				"default": "0.0.0.0",
 				"help": "PPTP server IP address.",
+				"multiple_values": false,
 				"name": "pptp-server-ip",
 				"type": "ipv4-address"
 			},
@@ -3032,6 +3192,7 @@
 				"help": "Idle timer in minutes (0 for disabled).",
 				"max-value": 65535,
 				"min-value": 0,
+				"multiple_values": false,
 				"name": "pptp-timeout",
 				"type": "integer"
 			},
@@ -3039,6 +3200,7 @@
 				"category": "unitary",
 				"default": "",
 				"help": "PPTP user name.",
+				"multiple_values": false,
 				"name": "pptp-user",
 				"size": 64,
 				"type": "string"
@@ -3063,10 +3225,11 @@
 			},
 			"priority": {
 				"category": "unitary",
-				"default": 0,
+				"default": 1,
 				"help": "Priority of learned routes.",
-				"max-value": 4294967295,
-				"min-value": 0,
+				"max-value": 65535,
+				"min-value": 1,
+				"multiple_values": false,
 				"name": "priority",
 				"type": "integer"
 			},
@@ -3106,10 +3269,22 @@
 				],
 				"type": "option"
 			},
+			"reachable-time": {
+				"addedIn": "v7.0.4",
+				"category": "unitary",
+				"default": 30000,
+				"help": "IPv4 reachable time in milliseconds (30000 - 3600000, default = 30000).",
+				"max-value": 3600000,
+				"min-value": 30000,
+				"multiple_values": false,
+				"name": "reachable-time",
+				"type": "integer"
+			},
 			"redundant-interface": {
 				"category": "unitary",
 				"default": "",
 				"help": "Redundant interface.",
+				"multiple_values": false,
 				"name": "redundant-interface",
 				"readonly": true,
 				"size": 15,
@@ -3119,6 +3294,7 @@
 				"category": "unitary",
 				"default": "0.0.0.0 0.0.0.0",
 				"help": "Remote IP address of tunnel.",
+				"multiple_values": false,
 				"name": "remote-ip",
 				"type": "ipv4-classnet-host"
 			},
@@ -3126,6 +3302,7 @@
 				"category": "unitary",
 				"default": "",
 				"help": "Replacement message override group.",
+				"multiple_values": false,
 				"name": "replacemsg-override-group",
 				"size": 35,
 				"type": "string"
@@ -3137,6 +3314,7 @@
 				"help": "RX ring size.",
 				"max-value": 4294967295,
 				"min-value": 0,
+				"multiple_values": false,
 				"name": "ring-rx",
 				"type": "integer"
 			},
@@ -3147,6 +3325,7 @@
 				"help": "TX ring size.",
 				"max-value": 4294967295,
 				"min-value": 0,
+				"multiple_values": false,
 				"name": "ring-tx",
 				"type": "integer"
 			},
@@ -3204,6 +3383,7 @@
 				"help": "sFlow sample rate (10 - 99999).",
 				"max-value": 99999,
 				"min-value": 10,
+				"multiple_values": false,
 				"name": "sample-rate",
 				"type": "integer"
 			},
@@ -3312,6 +3492,7 @@
 						"category": "unitary",
 						"default": "",
 						"help": "Gateway's ping server for this IP.",
+						"multiple_values": false,
 						"name": "detectserver",
 						"type": "user"
 					},
@@ -3339,6 +3520,7 @@
 						"help": "HA election priority for the PING server.",
 						"max-value": 50,
 						"min-value": 1,
+						"multiple_values": false,
 						"name": "ha-priority",
 						"type": "integer"
 					},
@@ -3348,6 +3530,7 @@
 						"help": "ID.",
 						"max-value": 4294967295,
 						"min-value": 0,
+						"multiple_values": false,
 						"name": "id",
 						"type": "integer"
 					},
@@ -3355,6 +3538,7 @@
 						"category": "unitary",
 						"default": "0.0.0.0 0.0.0.0",
 						"help": "Secondary IP address of the interface.",
+						"multiple_values": false,
 						"name": "ip",
 						"type": "ipv4-classnet-host"
 					},
@@ -3364,6 +3548,7 @@
 						"help": "PING server status.",
 						"max-value": 255,
 						"min-value": 0,
+						"multiple_values": false,
 						"name": "ping-serv-status",
 						"readonly": true,
 						"type": "integer"
@@ -3381,6 +3566,7 @@
 				"category": "unitary",
 				"default": "",
 				"help": "Name of security-exempt-list.",
+				"multiple_values": false,
 				"name": "security-exempt-list",
 				"size": 35,
 				"type": "string"
@@ -3389,6 +3575,7 @@
 				"category": "unitary",
 				"default": "",
 				"help": "URL of external authentication logout server.",
+				"multiple_values": false,
 				"name": "security-external-logout",
 				"size": 127,
 				"type": "string"
@@ -3397,6 +3584,7 @@
 				"category": "unitary",
 				"default": "",
 				"help": "URL of external authentication web server.",
+				"multiple_values": false,
 				"name": "security-external-web",
 				"size": 1023,
 				"type": "var-string"
@@ -3411,6 +3599,7 @@
 						],
 						"default": "",
 						"help": "Names of user groups that can authenticate with the captive portal.",
+						"multiple_values": false,
 						"name": "name",
 						"required": true,
 						"size": 79,
@@ -3474,6 +3663,7 @@
 				"category": "unitary",
 				"default": "",
 				"help": "URL redirection after disclaimer/authentication.",
+				"multiple_values": false,
 				"name": "security-redirect-url",
 				"size": 1023,
 				"type": "var-string"
@@ -3482,6 +3672,7 @@
 				"category": "unitary",
 				"default": "",
 				"help": "PPPoE service name.",
+				"multiple_values": false,
 				"name": "service-name",
 				"size": 63,
 				"type": "string"
@@ -3510,6 +3701,7 @@
 				"help": "Permanent SNMP Index of the interface.",
 				"max-value": 2147483647,
 				"min-value": 1,
+				"multiple_values": false,
 				"name": "snmp-index",
 				"type": "integer"
 			},
@@ -3545,10 +3737,6 @@
 						"name": "1000full"
 					},
 					{
-						"help": "1000M half-duplex.",
-						"name": "1000half"
-					},
-					{
 						"help": "1000M auto adjust.",
 						"name": "1000auto"
 					}
@@ -3561,6 +3749,7 @@
 				"help": "Egress Spillover threshold (0 - 16776000 kbps), 0 means unlimited.",
 				"max-value": 16776000,
 				"min-value": 0,
+				"multiple_values": false,
 				"name": "spillover-threshold",
 				"type": "integer"
 			},
@@ -3662,6 +3851,7 @@
 				"category": "unitary",
 				"default": "00:00:00:00:00:00",
 				"help": "Destination MAC address that all packets are sent to from this interface.",
+				"multiple_values": false,
 				"name": "substitute-dst-mac",
 				"type": "mac-address"
 			},
@@ -3672,6 +3862,7 @@
 				"help": "Initial create for switch-controller VLANs.",
 				"max-value": 4294967295,
 				"min-value": 0,
+				"multiple_values": false,
 				"name": "swc-first-create",
 				"type": "integer"
 			},
@@ -3682,6 +3873,7 @@
 				"help": "Creation status for switch-controller VLANs.",
 				"max-value": 4294967295,
 				"min-value": 0,
+				"multiple_values": false,
 				"name": "swc-vlan",
 				"readonly": true,
 				"type": "integer"
@@ -3690,6 +3882,7 @@
 				"category": "unitary",
 				"default": "",
 				"help": "Contained in switch.",
+				"multiple_values": false,
 				"name": "switch",
 				"readonly": true,
 				"size": 15,
@@ -3793,6 +3986,7 @@
 				],
 				"default": "",
 				"help": "Integrated FortiLink settings for managed FortiSwitch.",
+				"multiple_values": false,
 				"name": "switch-controller-dynamic",
 				"size": 35,
 				"type": "string"
@@ -3919,6 +4113,7 @@
 				"help": "Limit the number of dynamic MAC addresses on this VLAN (1 - 128, 0 = no limit, default).",
 				"max-value": 128,
 				"min-value": 0,
+				"multiple_values": false,
 				"name": "switch-controller-learning-limit",
 				"type": "integer"
 			},
@@ -3929,6 +4124,7 @@
 				"help": "VLAN to use for FortiLink management purposes.",
 				"max-value": 4094,
 				"min-value": 1,
+				"multiple_values": false,
 				"name": "switch-controller-mgmt-vlan",
 				"type": "integer"
 			},
@@ -3940,6 +4136,7 @@
 				],
 				"default": "",
 				"help": "Integrated FortiLink settings for managed FortiSwitch.",
+				"multiple_values": false,
 				"name": "switch-controller-nac",
 				"size": 35,
 				"type": "string"
@@ -3988,6 +4185,7 @@
 				],
 				"default": "",
 				"help": "Switch controller traffic policy for the VLAN.",
+				"multiple_values": false,
 				"name": "switch-controller-traffic-policy",
 				"size": 63,
 				"type": "string"
@@ -3997,6 +4195,7 @@
 				"category": "unitary",
 				"default": "00:00:00:00:00:00",
 				"help": "Define a system ID for the aggregate interface.",
+				"multiple_values": false,
 				"name": "system-id",
 				"removedIn": "v7.0.0",
 				"required": true,
@@ -4032,6 +4231,7 @@
 						],
 						"default": "",
 						"help": "Tag category.",
+						"multiple_values": false,
 						"name": "category",
 						"size": 63,
 						"type": "string"
@@ -4040,6 +4240,7 @@
 						"category": "unitary",
 						"default": "",
 						"help": "Tagging entry name.",
+						"multiple_values": false,
 						"name": "name",
 						"size": 63,
 						"type": "string"
@@ -4054,6 +4255,7 @@
 								],
 								"default": "",
 								"help": "Tag name.",
+								"multiple_values": false,
 								"name": "name",
 								"size": 79,
 								"type": "string"
@@ -4083,6 +4285,7 @@
 				"help": "TCP maximum segment size. 0 means do not change segment size.",
 				"max-value": 4294967295,
 				"min-value": 0,
+				"multiple_values": false,
 				"name": "tcp-mss",
 				"type": "integer"
 			},
@@ -4090,6 +4293,7 @@
 				"category": "unitary",
 				"default": "0.0.0.0 0.0.0.0",
 				"help": "Trusted host for dedicated management traffic (0.0.0.0/24 for all hosts).",
+				"multiple_values": false,
 				"name": "trust-ip-1",
 				"type": "ipv4-classnet-any"
 			},
@@ -4097,6 +4301,7 @@
 				"category": "unitary",
 				"default": "0.0.0.0 0.0.0.0",
 				"help": "Trusted host for dedicated management traffic (0.0.0.0/24 for all hosts).",
+				"multiple_values": false,
 				"name": "trust-ip-2",
 				"type": "ipv4-classnet-any"
 			},
@@ -4104,6 +4309,7 @@
 				"category": "unitary",
 				"default": "0.0.0.0 0.0.0.0",
 				"help": "Trusted host for dedicated management traffic (0.0.0.0/24 for all hosts).",
+				"multiple_values": false,
 				"name": "trust-ip-3",
 				"type": "ipv4-classnet-any"
 			},
@@ -4111,6 +4317,7 @@
 				"category": "unitary",
 				"default": "::/0",
 				"help": "Trusted IPv6 host for dedicated management traffic (::/0 for all hosts).",
+				"multiple_values": false,
 				"name": "trust-ip6-1",
 				"type": "ipv6-prefix"
 			},
@@ -4118,6 +4325,7 @@
 				"category": "unitary",
 				"default": "::/0",
 				"help": "Trusted IPv6 host for dedicated management traffic (::/0 for all hosts).",
+				"multiple_values": false,
 				"name": "trust-ip6-2",
 				"type": "ipv6-prefix"
 			},
@@ -4125,6 +4333,7 @@
 				"category": "unitary",
 				"default": "::/0",
 				"help": "Trusted IPv6 host for dedicated management traffic (::/0 for all hosts).",
+				"multiple_values": false,
 				"name": "trust-ip6-3",
 				"type": "ipv6-prefix"
 			},
@@ -4214,6 +4423,7 @@
 				"category": "unitary",
 				"default": "",
 				"help": "Username of the PPPoE account, provided by your ISP.",
+				"multiple_values": false,
 				"name": "username",
 				"size": 64,
 				"type": "string"
@@ -4225,6 +4435,7 @@
 				],
 				"default": "",
 				"help": "Interface is in this virtual domain (VDOM).",
+				"multiple_values": false,
 				"name": "vdom",
 				"required": true,
 				"size": 31,
@@ -4236,6 +4447,7 @@
 				"help": "Switch control interface VLAN ID.",
 				"max-value": 65535,
 				"min-value": 0,
+				"multiple_values": false,
 				"name": "vindex",
 				"readonly": true,
 				"type": "integer"
@@ -4283,6 +4495,7 @@
 				"help": "VLAN ID (1 - 4094).",
 				"max-value": 4094,
 				"min-value": 1,
+				"multiple_values": false,
 				"name": "vlanid",
 				"type": "integer"
 			},
@@ -4292,6 +4505,7 @@
 				"help": "Virtual Routing Forwarding ID.",
 				"max-value": 31,
 				"min-value": 0,
+				"multiple_values": false,
 				"name": "vrf",
 				"type": "integer"
 			},
@@ -4322,6 +4536,7 @@
 						"help": "Advertisement interval (1 - 255 seconds).",
 						"max-value": 255,
 						"min-value": 1,
+						"multiple_values": false,
 						"name": "adv-interval",
 						"type": "integer"
 					},
@@ -4367,6 +4582,7 @@
 						"help": "Priority of the virtual router (1 - 255).",
 						"max-value": 255,
 						"min-value": 1,
+						"multiple_values": false,
 						"name": "priority",
 						"type": "integer"
 					},
@@ -4379,6 +4595,7 @@
 								"help": "ID.",
 								"max-value": 4294967295,
 								"min-value": 0,
+								"multiple_values": false,
 								"name": "id",
 								"required": true,
 								"type": "integer"
@@ -4387,6 +4604,7 @@
 								"category": "unitary",
 								"default": "",
 								"help": "Set IP addresses of proxy ARP.",
+								"multiple_values": false,
 								"name": "ip",
 								"type": "user"
 							}
@@ -4405,6 +4623,7 @@
 						"help": "Startup time (1 - 255 seconds).",
 						"max-value": 255,
 						"min-value": 1,
+						"multiple_values": false,
 						"name": "start-time",
 						"type": "integer"
 					},
@@ -4448,6 +4667,8 @@
 						"category": "unitary",
 						"default": "",
 						"help": "Monitor the route to this destination.",
+						"max_num_values": 2,
+						"multiple_values": true,
 						"name": "vrdst",
 						"type": "ipv4-address-any"
 					},
@@ -4457,6 +4678,7 @@
 						"help": "Priority of the virtual router when the virtual router destination becomes unreachable (0 - 254).",
 						"max-value": 254,
 						"min-value": 0,
+						"multiple_values": false,
 						"name": "vrdst-priority",
 						"type": "integer"
 					},
@@ -4466,6 +4688,7 @@
 						"help": "VRRP group ID (1 - 65535).",
 						"max-value": 65535,
 						"min-value": 1,
+						"multiple_values": false,
 						"name": "vrgrp",
 						"type": "integer"
 					},
@@ -4475,6 +4698,7 @@
 						"help": "Virtual router identifier (1 - 255).",
 						"max-value": 255,
 						"min-value": 1,
+						"multiple_values": false,
 						"name": "vrid",
 						"required": true,
 						"type": "integer"
@@ -4483,6 +4707,7 @@
 						"category": "unitary",
 						"default": "0.0.0.0",
 						"help": "IP address of the virtual router.",
+						"multiple_values": false,
 						"name": "vrip",
 						"required": true,
 						"type": "ipv4-address-any"
@@ -4538,6 +4763,7 @@
 				"help": "Default weight for static routes (if route has no weight configured).",
 				"max-value": 255,
 				"min-value": 0,
+				"multiple_values": false,
 				"name": "weight",
 				"type": "integer"
 			},
@@ -4545,6 +4771,7 @@
 				"category": "unitary",
 				"default": "0.0.0.0",
 				"help": "WINS server IP.",
+				"multiple_values": false,
 				"name": "wins-ip",
 				"type": "ipv4-address"
 			}
@@ -4559,9 +4786,9 @@
 		"path": "system",
 		"q_type": 0
 	},
-	"revision": "ec354a1e735ce884ee09ac99cc109d13",
-	"serial": "FGTAZRAQCG14L19D",
+	"revision": "73524d1661d36c728221d224a4746dcd",
+	"serial": "FGTAZRI5HXAAGI90",
 	"status": "success",
 	"vdom": "root",
-	"version": "v7.0.3"
+	"version": "v7.0.4"
 }

@@ -1,9 +1,9 @@
 {
 	"addedIn": "v6.2.7",
-	"build": 237,
+	"build": 301,
 	"http_method": "GET",
 	"http_status": 200,
-	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3",
+	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3,v7.0.4",
 	"name": "profile-protocol-options",
 	"path": "firewall",
 	"results": {
@@ -22,6 +22,7 @@
 						],
 						"default": "",
 						"help": "Domain for which to decrypt CIFS traffic.",
+						"multiple_values": false,
 						"name": "domain-controller",
 						"required": true,
 						"size": 63,
@@ -49,6 +50,7 @@
 						"help": "Maximum in-memory file size that can be scanned (1 - 383 MB, default = 10).",
 						"max-value": 26214,
 						"min-value": 1,
+						"multiple_values": false,
 						"name": "oversize-limit",
 						"type": "integer"
 					},
@@ -57,7 +59,9 @@
 						"default": "",
 						"help": "Ports to scan for content (1 - 65535, default = 445).",
 						"max-value": 65535,
+						"max_num_values": 20,
 						"min-value": 1,
+						"multiple_values": true,
 						"name": "ports",
 						"required": true,
 						"type": "integer"
@@ -112,6 +116,7 @@
 								"category": "unitary",
 								"default": "",
 								"help": "Base64 encoded keytab file containing credential of the server.",
+								"multiple_values": false,
 								"name": "keytab",
 								"required": true,
 								"size": 8191,
@@ -120,7 +125,8 @@
 							"principal": {
 								"category": "unitary",
 								"default": "",
-								"help": "Service principal.  For example, \"host/cifsserver.example.com@example.com\".",
+								"help": "Service principal. For example, host/cifsserver.example.com@example.com.",
+								"multiple_values": false,
 								"name": "principal",
 								"required": true,
 								"size": 511,
@@ -164,6 +170,7 @@
 						"help": "Maximum dynamic TCP window size.",
 						"max-value": 33554432,
 						"min-value": 1048576,
+						"multiple_values": false,
 						"name": "tcp-window-maximum",
 						"type": "integer"
 					},
@@ -174,6 +181,7 @@
 						"help": "Minimum dynamic TCP window size.",
 						"max-value": 1048576,
 						"min-value": 65536,
+						"multiple_values": false,
 						"name": "tcp-window-minimum",
 						"type": "integer"
 					},
@@ -184,6 +192,7 @@
 						"help": "Set TCP static window size.",
 						"max-value": 33554432,
 						"min-value": 65536,
+						"multiple_values": false,
 						"name": "tcp-window-size",
 						"type": "integer"
 					},
@@ -206,6 +215,10 @@
 							{
 								"help": "Vary TCP window size based on available memory and within limits of tcp-window-minimum and tcp-window-maximum.",
 								"name": "dynamic"
+							},
+							{
+								"help": "Allow system to auto-tune TCP window size.",
+								"name": "auto-tuning"
 							}
 						],
 						"type": "option"
@@ -217,6 +230,7 @@
 						"help": "Maximum nested levels of compression that can be uncompressed and scanned (2 - 100, default = 12).",
 						"max-value": 100,
 						"min-value": 2,
+						"multiple_values": false,
 						"name": "uncompressed-nest-limit",
 						"type": "integer"
 					},
@@ -227,16 +241,19 @@
 						"help": "Maximum in-memory uncompressed file size that can be scanned (1 - 383 MB, default = 10).",
 						"max-value": 26214,
 						"min-value": 1,
+						"multiple_values": false,
 						"name": "uncompressed-oversize-limit",
 						"type": "integer"
 					}
 				},
 				"help": "Configure CIFS protocol options.",
+				"multiple_values": false,
 				"name": "cifs"
 			},
 			"comment": {
 				"category": "unitary",
 				"help": "Optional comments.",
+				"multiple_values": false,
 				"name": "comment",
 				"size": 255,
 				"type": "var-string"
@@ -249,7 +266,9 @@
 						"default": "",
 						"help": "Ports to scan for content (1 - 65535, default = 53).",
 						"max-value": 65535,
+						"max_num_values": 20,
 						"min-value": 1,
+						"multiple_values": true,
 						"name": "ports",
 						"required": true,
 						"type": "integer"
@@ -274,6 +293,7 @@
 					}
 				},
 				"help": "Configure DNS protocol options.",
+				"multiple_values": false,
 				"name": "dns"
 			},
 			"feature-set": {
@@ -304,6 +324,7 @@
 						"help": "Amount of data to send in a transmission for client comforting (1 - 65535 bytes, default = 1).",
 						"max-value": 65535,
 						"min-value": 1,
+						"multiple_values": false,
 						"name": "comfort-amount",
 						"type": "integer"
 					},
@@ -313,6 +334,7 @@
 						"help": "Period of time between start, or last transmission, and the next client comfort transmission of data (1 - 900 sec, default = 10).",
 						"max-value": 900,
 						"min-value": 1,
+						"multiple_values": false,
 						"name": "comfort-interval",
 						"type": "integer"
 					},
@@ -370,6 +392,7 @@
 						"help": "Maximum in-memory file size that can be scanned (1 - 383 MB, default = 10).",
 						"max-value": 26214,
 						"min-value": 1,
+						"multiple_values": false,
 						"name": "oversize-limit",
 						"type": "integer"
 					},
@@ -378,7 +401,9 @@
 						"default": "",
 						"help": "Ports to scan for content (1 - 65535, default = 21).",
 						"max-value": 65535,
+						"max_num_values": 20,
 						"min-value": 1,
+						"multiple_values": true,
 						"name": "ports",
 						"required": true,
 						"type": "integer"
@@ -441,9 +466,10 @@
 						"addedIn": "v7.0.0",
 						"category": "unitary",
 						"default": 0,
-						"help": "Maximum stream-based uncompressed data size that will be scanned (MB, 0 = unlimited (default).  Stream-based uncompression used only under certain conditions.).",
+						"help": "Maximum stream-based uncompressed data size that will be scanned in megabytes. Stream-based uncompression used only under certain conditions (unlimited = 0, default = 0).",
 						"max-value": 4294967295,
 						"min-value": 0,
+						"multiple_values": false,
 						"name": "stream-based-uncompressed-limit",
 						"type": "integer"
 					},
@@ -454,6 +480,7 @@
 						"help": "Maximum dynamic TCP window size.",
 						"max-value": 33554432,
 						"min-value": 1048576,
+						"multiple_values": false,
 						"name": "tcp-window-maximum",
 						"type": "integer"
 					},
@@ -464,6 +491,7 @@
 						"help": "Minimum dynamic TCP window size.",
 						"max-value": 1048576,
 						"min-value": 65536,
+						"multiple_values": false,
 						"name": "tcp-window-minimum",
 						"type": "integer"
 					},
@@ -474,6 +502,7 @@
 						"help": "Set TCP static window size.",
 						"max-value": 33554432,
 						"min-value": 65536,
+						"multiple_values": false,
 						"name": "tcp-window-size",
 						"type": "integer"
 					},
@@ -496,6 +525,10 @@
 							{
 								"help": "Vary TCP window size based on available memory and within limits of tcp-window-minimum and tcp-window-maximum.",
 								"name": "dynamic"
+							},
+							{
+								"help": "Allow system to auto-tune TCP window size.",
+								"name": "auto-tuning"
 							}
 						],
 						"type": "option"
@@ -506,6 +539,7 @@
 						"help": "Maximum nested levels of compression that can be uncompressed and scanned (2 - 100, default = 12).",
 						"max-value": 100,
 						"min-value": 2,
+						"multiple_values": false,
 						"name": "uncompressed-nest-limit",
 						"type": "integer"
 					},
@@ -515,11 +549,13 @@
 						"help": "Maximum in-memory uncompressed file size that can be scanned (1 - 383 MB, default = 10).",
 						"max-value": 26214,
 						"min-value": 1,
+						"multiple_values": false,
 						"name": "uncompressed-oversize-limit",
 						"type": "integer"
 					}
 				},
 				"help": "Configure FTP protocol options.",
+				"multiple_values": false,
 				"name": "ftp"
 			},
 			"http": {
@@ -531,6 +567,7 @@
 						"help": "Code number returned for blocked HTTP pages (non-FortiGuard only) (100 - 599, default = 403).",
 						"max-value": 599,
 						"min-value": 100,
+						"multiple_values": false,
 						"name": "block-page-status-code",
 						"type": "integer"
 					},
@@ -540,6 +577,7 @@
 						"help": "Amount of data to send in a transmission for client comforting (1 - 65535 bytes, default = 1).",
 						"max-value": 65535,
 						"min-value": 1,
+						"multiple_values": false,
 						"name": "comfort-amount",
 						"type": "integer"
 					},
@@ -549,6 +587,7 @@
 						"help": "Period of time between start, or last transmission, and the next client comfort transmission of data (1 - 900 sec, default = 10).",
 						"max-value": 900,
 						"min-value": 1,
+						"multiple_values": false,
 						"name": "comfort-interval",
 						"type": "integer"
 					},
@@ -629,6 +668,7 @@
 						"help": "Maximum in-memory file size that can be scanned (1 - 383 MB, default = 10).",
 						"max-value": 26214,
 						"min-value": 1,
+						"multiple_values": false,
 						"name": "oversize-limit",
 						"type": "integer"
 					},
@@ -637,7 +677,9 @@
 						"default": "",
 						"help": "Ports to scan for content (1 - 65535, default = 80).",
 						"max-value": 65535,
+						"max_num_values": 20,
 						"min-value": 1,
+						"multiple_values": true,
 						"name": "ports",
 						"required": true,
 						"type": "integer"
@@ -779,6 +821,7 @@
 						"help": "Number of attempts to retry HTTP connection (0 - 100, default = 0).",
 						"max-value": 100,
 						"min-value": 0,
+						"multiple_values": false,
 						"name": "retry-count",
 						"type": "integer"
 					},
@@ -839,9 +882,10 @@
 					"stream-based-uncompressed-limit": {
 						"category": "unitary",
 						"default": 0,
-						"help": "Maximum stream-based uncompressed data size that will be scanned (MB, 0 = unlimited (default).  Stream-based uncompression used only under certain conditions.).",
+						"help": "Maximum stream-based uncompressed data size that will be scanned in megabytes. Stream-based uncompression used only under certain conditions (unlimited = 0, default = 0).",
 						"max-value": 4294967295,
 						"min-value": 0,
+						"multiple_values": false,
 						"name": "stream-based-uncompressed-limit",
 						"type": "integer"
 					},
@@ -905,6 +949,7 @@
 						"help": "Maximum dynamic TCP window size.",
 						"max-value": 33554432,
 						"min-value": 1048576,
+						"multiple_values": false,
 						"name": "tcp-window-maximum",
 						"type": "integer"
 					},
@@ -914,6 +959,7 @@
 						"help": "Minimum dynamic TCP window size.",
 						"max-value": 1048576,
 						"min-value": 65536,
+						"multiple_values": false,
 						"name": "tcp-window-minimum",
 						"type": "integer"
 					},
@@ -923,6 +969,7 @@
 						"help": "Set TCP static window size.",
 						"max-value": 33554432,
 						"min-value": 65536,
+						"multiple_values": false,
 						"name": "tcp-window-size",
 						"type": "integer"
 					},
@@ -944,6 +991,10 @@
 							{
 								"help": "Vary TCP window size based on available memory and within limits of tcp-window-minimum and tcp-window-maximum.",
 								"name": "dynamic"
+							},
+							{
+								"help": "Allow system to auto-tune TCP window size.",
+								"name": "auto-tuning"
 							}
 						],
 						"type": "option"
@@ -973,6 +1024,7 @@
 						"help": "Maximum nested levels of compression that can be uncompressed and scanned (2 - 100, default = 12).",
 						"max-value": 100,
 						"min-value": 2,
+						"multiple_values": false,
 						"name": "uncompressed-nest-limit",
 						"type": "integer"
 					},
@@ -982,6 +1034,7 @@
 						"help": "Maximum in-memory uncompressed file size that can be scanned (1 - 383 MB, default = 10).",
 						"max-value": 26214,
 						"min-value": 1,
+						"multiple_values": false,
 						"name": "uncompressed-oversize-limit",
 						"type": "integer"
 					},
@@ -1010,6 +1063,7 @@
 					}
 				},
 				"help": "Configure HTTP protocol options.",
+				"multiple_values": false,
 				"name": "http"
 			},
 			"imap": {
@@ -1057,6 +1111,7 @@
 						"help": "Maximum in-memory file size that can be scanned (1 - 383 MB, default = 10).",
 						"max-value": 26214,
 						"min-value": 1,
+						"multiple_values": false,
 						"name": "oversize-limit",
 						"type": "integer"
 					},
@@ -1065,7 +1120,9 @@
 						"default": "",
 						"help": "Ports to scan for content (1 - 65535, default = 143).",
 						"max-value": 65535,
+						"max_num_values": 20,
 						"min-value": 1,
+						"multiple_values": true,
 						"name": "ports",
 						"required": true,
 						"type": "integer"
@@ -1149,6 +1206,7 @@
 						"help": "Maximum nested levels of compression that can be uncompressed and scanned (2 - 100, default = 12).",
 						"max-value": 100,
 						"min-value": 2,
+						"multiple_values": false,
 						"name": "uncompressed-nest-limit",
 						"type": "integer"
 					},
@@ -1158,11 +1216,13 @@
 						"help": "Maximum in-memory uncompressed file size that can be scanned (1 - 383 MB, default = 10).",
 						"max-value": 26214,
 						"min-value": 1,
+						"multiple_values": false,
 						"name": "uncompressed-oversize-limit",
 						"type": "integer"
 					}
 				},
 				"help": "Configure IMAP protocol options.",
+				"multiple_values": false,
 				"name": "imap"
 			},
 			"mail-signature": {
@@ -1172,6 +1232,7 @@
 						"category": "unitary",
 						"default": "",
 						"help": "Email signature to be added to outgoing email (if the signature contains spaces, enclose with quotation marks).",
+						"multiple_values": false,
 						"name": "signature",
 						"size": 1023,
 						"type": "string"
@@ -1196,6 +1257,7 @@
 					}
 				},
 				"help": "Configure Mail signature.",
+				"multiple_values": false,
 				"name": "mail-signature"
 			},
 			"mapi": {
@@ -1225,6 +1287,7 @@
 						"help": "Maximum in-memory file size that can be scanned (1 - 383 MB, default = 10).",
 						"max-value": 26214,
 						"min-value": 1,
+						"multiple_values": false,
 						"name": "oversize-limit",
 						"type": "integer"
 					},
@@ -1233,7 +1296,9 @@
 						"default": "",
 						"help": "Ports to scan for content (1 - 65535, default = 135).",
 						"max-value": 65535,
+						"max_num_values": 20,
 						"min-value": 1,
+						"multiple_values": true,
 						"name": "ports",
 						"required": true,
 						"type": "integer"
@@ -1280,6 +1345,7 @@
 						"help": "Maximum nested levels of compression that can be uncompressed and scanned (2 - 100, default = 12).",
 						"max-value": 100,
 						"min-value": 2,
+						"multiple_values": false,
 						"name": "uncompressed-nest-limit",
 						"type": "integer"
 					},
@@ -1289,17 +1355,20 @@
 						"help": "Maximum in-memory uncompressed file size that can be scanned (1 - 383 MB, default = 10).",
 						"max-value": 26214,
 						"min-value": 1,
+						"multiple_values": false,
 						"name": "uncompressed-oversize-limit",
 						"type": "integer"
 					}
 				},
 				"help": "Configure MAPI protocol options.",
+				"multiple_values": false,
 				"name": "mapi"
 			},
 			"name": {
 				"category": "unitary",
 				"default": "",
 				"help": "Name.",
+				"multiple_values": false,
 				"name": "name",
 				"required": true,
 				"size": 35,
@@ -1350,6 +1419,7 @@
 						"help": "Maximum in-memory file size that can be scanned (1 - 383 MB, default = 10).",
 						"max-value": 26214,
 						"min-value": 1,
+						"multiple_values": false,
 						"name": "oversize-limit",
 						"type": "integer"
 					},
@@ -1358,7 +1428,9 @@
 						"default": "",
 						"help": "Ports to scan for content (1 - 65535, default = 119).",
 						"max-value": 65535,
+						"max_num_values": 20,
 						"min-value": 1,
+						"multiple_values": true,
 						"name": "ports",
 						"required": true,
 						"type": "integer"
@@ -1424,6 +1496,7 @@
 						"help": "Maximum nested levels of compression that can be uncompressed and scanned (2 - 100, default = 12).",
 						"max-value": 100,
 						"min-value": 2,
+						"multiple_values": false,
 						"name": "uncompressed-nest-limit",
 						"type": "integer"
 					},
@@ -1433,11 +1506,13 @@
 						"help": "Maximum in-memory uncompressed file size that can be scanned (1 - 383 MB, default = 10).",
 						"max-value": 26214,
 						"min-value": 1,
+						"multiple_values": false,
 						"name": "uncompressed-oversize-limit",
 						"type": "integer"
 					}
 				},
 				"help": "Configure NNTP protocol options.",
+				"multiple_values": false,
 				"name": "nntp"
 			},
 			"oversize-log": {
@@ -1503,6 +1578,7 @@
 						"help": "Maximum in-memory file size that can be scanned (1 - 383 MB, default = 10).",
 						"max-value": 26214,
 						"min-value": 1,
+						"multiple_values": false,
 						"name": "oversize-limit",
 						"type": "integer"
 					},
@@ -1511,7 +1587,9 @@
 						"default": "",
 						"help": "Ports to scan for content (1 - 65535, default = 110).",
 						"max-value": 65535,
+						"max_num_values": 20,
 						"min-value": 1,
+						"multiple_values": true,
 						"name": "ports",
 						"required": true,
 						"type": "integer"
@@ -1595,6 +1673,7 @@
 						"help": "Maximum nested levels of compression that can be uncompressed and scanned (2 - 100, default = 12).",
 						"max-value": 100,
 						"min-value": 2,
+						"multiple_values": false,
 						"name": "uncompressed-nest-limit",
 						"type": "integer"
 					},
@@ -1604,11 +1683,13 @@
 						"help": "Maximum in-memory uncompressed file size that can be scanned (1 - 383 MB, default = 10).",
 						"max-value": 26214,
 						"min-value": 1,
+						"multiple_values": false,
 						"name": "uncompressed-oversize-limit",
 						"type": "integer"
 					}
 				},
 				"help": "Configure POP3 protocol options.",
+				"multiple_values": false,
 				"name": "pop3"
 			},
 			"replacemsg-group": {
@@ -1617,7 +1698,8 @@
 					"system.replacemsg-group.name"
 				],
 				"default": "",
-				"help": "Name of the replacement message group to be used",
+				"help": "Name of the replacement message group to be used.",
+				"multiple_values": false,
 				"name": "replacemsg-group",
 				"size": 35,
 				"type": "string"
@@ -1689,6 +1771,7 @@
 						"help": "Maximum in-memory file size that can be scanned (1 - 383 MB, default = 10).",
 						"max-value": 26214,
 						"min-value": 1,
+						"multiple_values": false,
 						"name": "oversize-limit",
 						"type": "integer"
 					},
@@ -1697,7 +1780,9 @@
 						"default": "",
 						"help": "Ports to scan for content (1 - 65535, default = 25).",
 						"max-value": 65535,
+						"max_num_values": 20,
 						"min-value": 1,
+						"multiple_values": true,
 						"name": "ports",
 						"required": true,
 						"type": "integer"
@@ -1799,6 +1884,7 @@
 						"help": "Maximum nested levels of compression that can be uncompressed and scanned (2 - 100, default = 12).",
 						"max-value": 100,
 						"min-value": 2,
+						"multiple_values": false,
 						"name": "uncompressed-nest-limit",
 						"type": "integer"
 					},
@@ -1808,11 +1894,13 @@
 						"help": "Maximum in-memory uncompressed file size that can be scanned (1 - 383 MB, default = 10).",
 						"max-value": 26214,
 						"min-value": 1,
+						"multiple_values": false,
 						"name": "uncompressed-oversize-limit",
 						"type": "integer"
 					}
 				},
 				"help": "Configure SMTP protocol options.",
+				"multiple_values": false,
 				"name": "smtp"
 			},
 			"ssh": {
@@ -1824,6 +1912,7 @@
 						"help": "Amount of data to send in a transmission for client comforting (1 - 65535 bytes, default = 1).",
 						"max-value": 65535,
 						"min-value": 1,
+						"multiple_values": false,
 						"name": "comfort-amount",
 						"type": "integer"
 					},
@@ -1833,6 +1922,7 @@
 						"help": "Period of time between start, or last transmission, and the next client comfort transmission of data (1 - 900 sec, default = 10).",
 						"max-value": 900,
 						"min-value": 1,
+						"multiple_values": false,
 						"name": "comfort-interval",
 						"type": "integer"
 					},
@@ -1864,6 +1954,7 @@
 						"help": "Maximum in-memory file size that can be scanned (1 - 383 MB, default = 10).",
 						"max-value": 26214,
 						"min-value": 1,
+						"multiple_values": false,
 						"name": "oversize-limit",
 						"type": "integer"
 					},
@@ -1908,9 +1999,10 @@
 						"addedIn": "v7.0.0",
 						"category": "unitary",
 						"default": 0,
-						"help": "Maximum stream-based uncompressed data size that will be scanned (MB, 0 = unlimited (default).  Stream-based uncompression used only under certain conditions.).",
+						"help": "Maximum stream-based uncompressed data size that will be scanned in megabytes. Stream-based uncompression used only under certain conditions (unlimited = 0, default = 0).",
 						"max-value": 4294967295,
 						"min-value": 0,
+						"multiple_values": false,
 						"name": "stream-based-uncompressed-limit",
 						"type": "integer"
 					},
@@ -1921,6 +2013,7 @@
 						"help": "Maximum dynamic TCP window size.",
 						"max-value": 33554432,
 						"min-value": 1048576,
+						"multiple_values": false,
 						"name": "tcp-window-maximum",
 						"type": "integer"
 					},
@@ -1931,6 +2024,7 @@
 						"help": "Minimum dynamic TCP window size.",
 						"max-value": 1048576,
 						"min-value": 65536,
+						"multiple_values": false,
 						"name": "tcp-window-minimum",
 						"type": "integer"
 					},
@@ -1941,6 +2035,7 @@
 						"help": "Set TCP static window size.",
 						"max-value": 33554432,
 						"min-value": 65536,
+						"multiple_values": false,
 						"name": "tcp-window-size",
 						"type": "integer"
 					},
@@ -1963,6 +2058,10 @@
 							{
 								"help": "Vary TCP window size based on available memory and within limits of tcp-window-minimum and tcp-window-maximum.",
 								"name": "dynamic"
+							},
+							{
+								"help": "Allow system to auto-tune TCP window size.",
+								"name": "auto-tuning"
 							}
 						],
 						"type": "option"
@@ -1973,6 +2072,7 @@
 						"help": "Maximum nested levels of compression that can be uncompressed and scanned (2 - 100, default = 12).",
 						"max-value": 100,
 						"min-value": 2,
+						"multiple_values": false,
 						"name": "uncompressed-nest-limit",
 						"type": "integer"
 					},
@@ -1982,11 +2082,13 @@
 						"help": "Maximum in-memory uncompressed file size that can be scanned (1 - 383 MB, default = 10).",
 						"max-value": 26214,
 						"min-value": 1,
+						"multiple_values": false,
 						"name": "uncompressed-oversize-limit",
 						"type": "integer"
 					}
 				},
 				"help": "Configure SFTP and SCP protocol options.",
+				"multiple_values": false,
 				"name": "ssh"
 			},
 			"switching-protocols-log": {
@@ -2018,9 +2120,9 @@
 		"path": "firewall",
 		"q_type": 432
 	},
-	"revision": "a6d7c47c9972d7dcbc9ed8eb570bbda3",
-	"serial": "FGTAZRAQCG14L19D",
+	"revision": "f6f50adbf25460534525a5cdde66e4fb",
+	"serial": "FGTAZRI5HXAAGI90",
 	"status": "success",
 	"vdom": "root",
-	"version": "v7.0.3"
+	"version": "v7.0.4"
 }

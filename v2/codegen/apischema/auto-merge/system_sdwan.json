@@ -1,9 +1,9 @@
 {
 	"addedIn": "v6.4.2",
-	"build": 237,
+	"build": 301,
 	"http_method": "GET",
 	"http_status": 200,
-	"mergedVersions": "v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3",
+	"mergedVersions": "v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3,v7.0.4",
 	"name": "sdwan",
 	"path": "system",
 	"results": {
@@ -24,6 +24,7 @@
 								],
 								"default": "",
 								"help": "Address or address group name.",
+								"multiple_values": false,
 								"name": "name",
 								"required": true,
 								"size": 79,
@@ -50,6 +51,7 @@
 								],
 								"default": "",
 								"help": "Address6 or address6 group name.",
+								"multiple_values": false,
 								"name": "name",
 								"required": true,
 								"size": 79,
@@ -77,6 +79,7 @@
 								],
 								"default": "",
 								"help": "Interface, zone or SDWAN zone name.",
+								"multiple_values": false,
 								"name": "name",
 								"required": true,
 								"size": 79,
@@ -98,6 +101,7 @@
 						"help": "Duplication rule ID (1 - 255).",
 						"max-value": 255,
 						"min-value": 1,
+						"multiple_values": false,
 						"name": "id",
 						"required": true,
 						"type": "integer"
@@ -153,6 +157,7 @@
 								],
 								"default": "",
 								"help": "Service and service group name.",
+								"multiple_values": false,
 								"name": "name",
 								"required": true,
 								"size": 79,
@@ -181,6 +186,7 @@
 								"help": "SD-WAN service rule ID.",
 								"max-value": 4294967295,
 								"min-value": 0,
+								"multiple_values": false,
 								"name": "id",
 								"required": true,
 								"type": "integer"
@@ -206,6 +212,7 @@
 								],
 								"default": "",
 								"help": "Address or address group name.",
+								"multiple_values": false,
 								"name": "name",
 								"required": true,
 								"size": 79,
@@ -232,6 +239,7 @@
 								],
 								"default": "",
 								"help": "Address6 or address6 group name.",
+								"multiple_values": false,
 								"name": "name",
 								"required": true,
 								"size": 79,
@@ -259,6 +267,7 @@
 								],
 								"default": "",
 								"help": "Interface, zone or SDWAN zone name.",
+								"multiple_values": false,
 								"name": "name",
 								"required": true,
 								"size": 79,
@@ -289,6 +298,7 @@
 				"help": "Maximum number of interface members a packet is duplicated in the SD-WAN zone (2 - 4, default = 2; if set to 3, the original packet plus 2 more copies are created).",
 				"max-value": 4,
 				"min-value": 2,
+				"multiple_values": false,
 				"name": "duplication-max-num",
 				"type": "integer"
 			},
@@ -302,6 +312,7 @@
 						],
 						"default": "",
 						"help": "Physical interface name.",
+						"multiple_values": false,
 						"name": "name",
 						"required": true,
 						"size": 79,
@@ -383,6 +394,7 @@
 						"category": "unitary",
 						"default": "",
 						"help": "Differentiated services code point (DSCP) in the IP header of the probe packet.",
+						"multiple_values": false,
 						"name": "diffservcode",
 						"type": "user"
 					},
@@ -390,6 +402,7 @@
 						"category": "unitary",
 						"default": "0.0.0.0",
 						"help": "Response IP expected from DNS server if the protocol is DNS.",
+						"multiple_values": false,
 						"name": "dns-match-ip",
 						"type": "ipv4-address"
 					},
@@ -397,6 +410,7 @@
 						"category": "unitary",
 						"default": "www.example.com",
 						"help": "Fully qualified domain name to resolve for the DNS probe.",
+						"multiple_values": false,
 						"name": "dns-request-domain",
 						"size": 255,
 						"type": "string"
@@ -407,6 +421,7 @@
 						"help": "Number of failures before server is considered lost (1 - 3600, default = 5).",
 						"max-value": 3600,
 						"min-value": 1,
+						"multiple_values": false,
 						"name": "failtime",
 						"type": "integer"
 					},
@@ -414,6 +429,7 @@
 						"category": "unitary",
 						"default": "",
 						"help": "Full path and file name on the FTP server to download for FTP health-check to probe.",
+						"multiple_values": false,
 						"name": "ftp-file",
 						"size": 254,
 						"type": "string"
@@ -442,6 +458,7 @@
 						"help": "HA election priority (1 - 50).",
 						"max-value": 50,
 						"min-value": 1,
+						"multiple_values": false,
 						"name": "ha-priority",
 						"type": "integer"
 					},
@@ -449,6 +466,7 @@
 						"category": "unitary",
 						"default": "Chrome/ Safari/",
 						"help": "String in the http-agent field in the HTTP header.",
+						"multiple_values": false,
 						"name": "http-agent",
 						"size": 1024,
 						"type": "string"
@@ -457,6 +475,7 @@
 						"category": "unitary",
 						"default": "/",
 						"help": "URL used to communicate with the server if the protocol if the protocol is HTTP.",
+						"multiple_values": false,
 						"name": "http-get",
 						"size": 1024,
 						"type": "string"
@@ -465,6 +484,7 @@
 						"category": "unitary",
 						"default": "",
 						"help": "Response string expected from the server if the protocol is HTTP.",
+						"multiple_values": false,
 						"name": "http-match",
 						"size": 1024,
 						"type": "string"
@@ -475,6 +495,7 @@
 						"help": "Status check interval in milliseconds, or the time between attempting to connect to the server (500 - 3600*1000 msec, default = 500).",
 						"max-value": 3600000,
 						"min-value": 500,
+						"multiple_values": false,
 						"name": "interval",
 						"type": "integer"
 					},
@@ -490,6 +511,7 @@
 								"help": "Member sequence number.",
 								"max-value": 4294967295,
 								"min-value": 0,
+								"multiple_values": false,
 								"name": "seq-num",
 								"required": true,
 								"type": "integer"
@@ -508,6 +530,7 @@
 						"category": "unitary",
 						"default": "",
 						"help": "Status check or health check name.",
+						"multiple_values": false,
 						"name": "name",
 						"required": true,
 						"size": 35,
@@ -516,15 +539,17 @@
 					"packet-size": {
 						"category": "unitary",
 						"default": 64,
-						"help": "Packet size of a twamp test session,",
+						"help": "Packet size of a TWAMP test session.",
 						"max-value": 1024,
 						"min-value": 64,
+						"multiple_values": false,
 						"name": "packet-size",
 						"type": "integer"
 					},
 					"password": {
 						"category": "unitary",
-						"help": "Twamp controller password in authentication mode",
+						"help": "TWAMP controller password in authentication mode.",
+						"multiple_values": false,
 						"name": "password",
 						"size": 128,
 						"type": "password"
@@ -532,9 +557,10 @@
 					"port": {
 						"category": "unitary",
 						"default": 0,
-						"help": "Port number used to communicate with the server over the selected protocol (0-65535, default = 0, auto select. http, tcp-connect: 80, udp-echo, tcp-echo: 7, dns: 53, ftp: 21, twamp: 862).",
+						"help": "Port number used to communicate with the server over the selected protocol (0 - 65535, default = 0, auto select. http, tcp-connect: 80, udp-echo, tcp-echo: 7, dns: 53, ftp: 21, twamp: 862).",
 						"max-value": 65535,
 						"min-value": 0,
+						"multiple_values": false,
 						"name": "port",
 						"type": "integer"
 					},
@@ -544,6 +570,7 @@
 						"help": "Number of most recent probes that should be used to calculate latency and jitter (5 - 30, default = 30).",
 						"max-value": 30,
 						"min-value": 5,
+						"multiple_values": false,
 						"name": "probe-count",
 						"type": "integer"
 					},
@@ -571,6 +598,7 @@
 						"help": "Time to wait before a probe packet is considered lost (500 - 3600*1000 msec, default = 500).",
 						"max-value": 3600000,
 						"min-value": 500,
+						"multiple_values": false,
 						"name": "probe-timeout",
 						"type": "integer"
 					},
@@ -640,6 +668,7 @@
 						"help": "Number of successful responses received before server is considered recovered (1 - 3600, default = 5).",
 						"max-value": 3600,
 						"min-value": 1,
+						"multiple_values": false,
 						"name": "recoverytime",
 						"type": "integer"
 					},
@@ -665,6 +694,8 @@
 						"category": "unitary",
 						"default": "",
 						"help": "IP address or FQDN name of the server.",
+						"max_num_values": 2,
+						"multiple_values": true,
 						"name": "server",
 						"size": 79,
 						"type": "string"
@@ -678,6 +709,7 @@
 								"help": "SLA ID.",
 								"max-value": 32,
 								"min-value": 1,
+								"multiple_values": false,
 								"name": "id",
 								"required": true,
 								"type": "integer"
@@ -688,6 +720,7 @@
 								"help": "Jitter for SLA to make decision in milliseconds. (0 - 10000000, default = 5).",
 								"max-value": 10000000,
 								"min-value": 0,
+								"multiple_values": false,
 								"name": "jitter-threshold",
 								"type": "integer"
 							},
@@ -697,6 +730,7 @@
 								"help": "Latency for SLA to make decision in milliseconds. (0 - 10000000, default = 5).",
 								"max-value": 10000000,
 								"min-value": 0,
+								"multiple_values": false,
 								"name": "latency-threshold",
 								"type": "integer"
 							},
@@ -728,6 +762,7 @@
 								"help": "Packet loss for SLA to make decision in percentage. (0 - 100, default = 0).",
 								"max-value": 100,
 								"min-value": 0,
+								"multiple_values": false,
 								"name": "packetloss-threshold",
 								"type": "integer"
 							}
@@ -746,6 +781,7 @@
 						"help": "Time interval in seconds that SLA fail log messages will be generated (0 - 3600, default = 0).",
 						"max-value": 3600,
 						"min-value": 0,
+						"multiple_values": false,
 						"name": "sla-fail-log-period",
 						"type": "integer"
 					},
@@ -755,6 +791,7 @@
 						"help": "Time interval in seconds that SLA pass log messages will be generated (0 - 3600, default = 0).",
 						"max-value": 3600,
 						"min-value": 0,
+						"multiple_values": false,
 						"name": "sla-pass-log-period",
 						"type": "integer"
 					},
@@ -782,6 +819,7 @@
 						"help": "Alert threshold for jitter (ms, default = 0).",
 						"max-value": 4294967295,
 						"min-value": 0,
+						"multiple_values": false,
 						"name": "threshold-alert-jitter",
 						"type": "integer"
 					},
@@ -791,6 +829,7 @@
 						"help": "Alert threshold for latency (ms, default = 0).",
 						"max-value": 4294967295,
 						"min-value": 0,
+						"multiple_values": false,
 						"name": "threshold-alert-latency",
 						"type": "integer"
 					},
@@ -800,6 +839,7 @@
 						"help": "Alert threshold for packet loss (percentage, default = 0).",
 						"max-value": 100,
 						"min-value": 0,
+						"multiple_values": false,
 						"name": "threshold-alert-packetloss",
 						"type": "integer"
 					},
@@ -809,6 +849,7 @@
 						"help": "Warning threshold for jitter (ms, default = 0).",
 						"max-value": 4294967295,
 						"min-value": 0,
+						"multiple_values": false,
 						"name": "threshold-warning-jitter",
 						"type": "integer"
 					},
@@ -818,6 +859,7 @@
 						"help": "Warning threshold for latency (ms, default = 0).",
 						"max-value": 4294967295,
 						"min-value": 0,
+						"multiple_values": false,
 						"name": "threshold-warning-latency",
 						"type": "integer"
 					},
@@ -827,6 +869,7 @@
 						"help": "Warning threshold for packet loss (percentage, default = 0).",
 						"max-value": 100,
 						"min-value": 0,
+						"multiple_values": false,
 						"name": "threshold-warning-packetloss",
 						"type": "integer"
 					},
@@ -870,6 +913,7 @@
 						"category": "unitary",
 						"default": "",
 						"help": "The user name to access probe server.",
+						"multiple_values": false,
 						"name": "user",
 						"size": 64,
 						"type": "string"
@@ -919,6 +963,7 @@
 					"comment": {
 						"category": "unitary",
 						"help": "Comments.",
+						"multiple_values": false,
 						"name": "comment",
 						"size": 255,
 						"type": "var-string"
@@ -929,6 +974,7 @@
 						"help": "Cost of this interface for services in SLA mode (0 - 4294967295, default = 0).",
 						"max-value": 4294967295,
 						"min-value": 0,
+						"multiple_values": false,
 						"name": "cost",
 						"type": "integer"
 					},
@@ -936,6 +982,7 @@
 						"category": "unitary",
 						"default": "0.0.0.0",
 						"help": "The default gateway for this interface. Usually the default gateway of the Internet service provider that this interface is connected to.",
+						"multiple_values": false,
 						"name": "gateway",
 						"type": "ipv4-address"
 					},
@@ -943,6 +990,7 @@
 						"category": "unitary",
 						"default": "::",
 						"help": "IPv6 gateway.",
+						"multiple_values": false,
 						"name": "gateway6",
 						"type": "ipv6-address"
 					},
@@ -952,6 +1000,7 @@
 						"help": "Ingress spillover threshold for this interface (0 - 16776000 kbit/s). When this traffic volume threshold is reached, new sessions spill over to other interfaces in the SD-WAN.",
 						"max-value": 16776000,
 						"min-value": 0,
+						"multiple_values": false,
 						"name": "ingress-spillover-threshold",
 						"type": "integer"
 					},
@@ -962,16 +1011,18 @@
 						],
 						"default": "",
 						"help": "Interface name.",
+						"multiple_values": false,
 						"name": "interface",
 						"size": 15,
 						"type": "string"
 					},
 					"priority": {
 						"category": "unitary",
-						"default": 0,
-						"help": "Priority of the interface for IPv4 (0 - 65535, default = 0). Used for SD-WAN rules or priority rules.",
+						"default": 1,
+						"help": "Priority of the interface for IPv4 (1 - 65535, default = 1). Used for SD-WAN rules or priority rules.",
 						"max-value": 65535,
-						"min-value": 0,
+						"min-value": 1,
+						"multiple_values": false,
 						"name": "priority",
 						"type": "integer"
 					},
@@ -982,6 +1033,7 @@
 						"help": "Priority of the interface for IPv6 (1 - 65535, default = 1024). Used for SD-WAN rules or priority rules.",
 						"max-value": 65535,
 						"min-value": 1,
+						"multiple_values": false,
 						"name": "priority6",
 						"type": "integer"
 					},
@@ -991,6 +1043,7 @@
 						"help": "Sequence number(1-512).",
 						"max-value": 512,
 						"min-value": 0,
+						"multiple_values": false,
 						"name": "seq-num",
 						"type": "integer"
 					},
@@ -998,6 +1051,7 @@
 						"category": "unitary",
 						"default": "0.0.0.0",
 						"help": "Source IP address used in the health-check packet to the server.",
+						"multiple_values": false,
 						"name": "source",
 						"type": "ipv4-address"
 					},
@@ -1005,6 +1059,7 @@
 						"category": "unitary",
 						"default": "::",
 						"help": "Source IPv6 address used in the health-check packet to the server.",
+						"multiple_values": false,
 						"name": "source6",
 						"type": "ipv6-address"
 					},
@@ -1014,6 +1069,7 @@
 						"help": "Egress spillover threshold for this interface (0 - 16776000 kbit/s). When this traffic volume threshold is reached, new sessions spill over to other interfaces in the SD-WAN.",
 						"max-value": 16776000,
 						"min-value": 0,
+						"multiple_values": false,
 						"name": "spillover-threshold",
 						"type": "integer"
 					},
@@ -1041,6 +1097,7 @@
 						"help": "Measured volume ratio (this value / sum of all values = percentage of link volume, 1 - 255).",
 						"max-value": 255,
 						"min-value": 1,
+						"multiple_values": false,
 						"name": "volume-ratio",
 						"type": "integer"
 					},
@@ -1050,6 +1107,7 @@
 						"help": "Weight of this interface for weighted load balancing. (1 - 255) More traffic is directed to interfaces with higher weights.",
 						"max-value": 255,
 						"min-value": 1,
+						"multiple_values": false,
 						"name": "weight",
 						"type": "integer"
 					},
@@ -1060,6 +1118,7 @@
 						],
 						"default": "virtual-wan-link",
 						"help": "Zone name.",
+						"multiple_values": false,
 						"name": "zone",
 						"size": 35,
 						"type": "string"
@@ -1083,6 +1142,7 @@
 						],
 						"default": "",
 						"help": "SD-WAN health-check name.",
+						"multiple_values": false,
 						"name": "health-check",
 						"required": true,
 						"size": 35,
@@ -1095,6 +1155,7 @@
 						],
 						"default": "",
 						"help": "IP/IPv6 address of neighbor.",
+						"multiple_values": false,
 						"name": "ip",
 						"required": true,
 						"size": 45,
@@ -1109,6 +1170,7 @@
 						"help": "Member sequence number.",
 						"max-value": 4294967295,
 						"min-value": 0,
+						"multiple_values": false,
 						"name": "member",
 						"required": true,
 						"type": "integer"
@@ -1160,6 +1222,7 @@
 						"help": "SLA ID.",
 						"max-value": 4294967295,
 						"min-value": 0,
+						"multiple_values": false,
 						"name": "sla-id",
 						"required": true,
 						"type": "integer"
@@ -1179,6 +1242,7 @@
 				"help": "Waiting period in seconds when switching from the primary neighbor to the secondary neighbor from the neighbor start. (0 - 10000000, default = 0).",
 				"max-value": 10000000,
 				"min-value": 0,
+				"multiple_values": false,
 				"name": "neighbor-hold-boot-time",
 				"type": "integer"
 			},
@@ -1206,6 +1270,7 @@
 				"help": "Waiting period in seconds when switching from the secondary neighbor to the primary neighbor when hold-down is disabled. (0 - 10000000, default = 0).",
 				"max-value": 10000000,
 				"min-value": 0,
+				"multiple_values": false,
 				"name": "neighbor-hold-down-time",
 				"type": "integer"
 			},
@@ -1236,6 +1301,7 @@
 						"help": "Coefficient of reciprocal of available bidirectional bandwidth in the formula of custom-profile-1.",
 						"max-value": 10000000,
 						"min-value": 0,
+						"multiple_values": false,
 						"name": "bandwidth-weight",
 						"type": "integer"
 					},
@@ -1279,6 +1345,7 @@
 						"category": "unitary",
 						"default": "",
 						"help": "Forward traffic DSCP tag.",
+						"multiple_values": false,
 						"name": "dscp-forward-tag",
 						"type": "user"
 					},
@@ -1304,6 +1371,7 @@
 						"category": "unitary",
 						"default": "",
 						"help": "Reverse traffic DSCP tag.",
+						"multiple_values": false,
 						"name": "dscp-reverse-tag",
 						"type": "user"
 					},
@@ -1318,6 +1386,7 @@
 								],
 								"default": "",
 								"help": "Address or address group name.",
+								"multiple_values": false,
 								"name": "name",
 								"required": true,
 								"size": 79,
@@ -1362,6 +1431,7 @@
 								],
 								"default": "",
 								"help": "Address6 or address6 group name.",
+								"multiple_values": false,
 								"name": "name",
 								"required": true,
 								"size": 79,
@@ -1383,6 +1453,7 @@
 						"help": "End destination port number.",
 						"max-value": 65535,
 						"min-value": 0,
+						"multiple_values": false,
 						"name": "end-port",
 						"type": "integer"
 					},
@@ -1414,6 +1485,7 @@
 								],
 								"default": "",
 								"help": "Group name.",
+								"multiple_values": false,
 								"name": "name",
 								"size": 79,
 								"type": "string"
@@ -1472,6 +1544,7 @@
 								],
 								"default": "",
 								"help": "Health check name.",
+								"multiple_values": false,
 								"name": "name",
 								"required": true,
 								"size": 79,
@@ -1493,6 +1566,7 @@
 						"help": "Waiting period in seconds when switching from the back-up member to the primary member (0 - 10000000, default = 0).",
 						"max-value": 10000000,
 						"min-value": 0,
+						"multiple_values": false,
 						"name": "hold-down-time",
 						"type": "integer"
 					},
@@ -1502,6 +1576,7 @@
 						"help": "SD-WAN rule ID (1 - 4000).",
 						"max-value": 4000,
 						"min-value": 1,
+						"multiple_values": false,
 						"name": "id",
 						"required": true,
 						"type": "integer"
@@ -1516,6 +1591,7 @@
 								],
 								"default": "",
 								"help": "Interface name.",
+								"multiple_values": false,
 								"name": "name",
 								"required": true,
 								"size": 79,
@@ -1576,6 +1652,7 @@
 								"help": "Application control based Internet Service ID.",
 								"max-value": 4294967295,
 								"min-value": 0,
+								"multiple_values": false,
 								"name": "id",
 								"required": true,
 								"type": "integer"
@@ -1600,6 +1677,7 @@
 								],
 								"default": "",
 								"help": "Application control based Internet Service group name.",
+								"multiple_values": false,
 								"name": "name",
 								"required": true,
 								"size": 79,
@@ -1625,6 +1703,7 @@
 								],
 								"default": "",
 								"help": "Custom Internet service name.",
+								"multiple_values": false,
 								"name": "name",
 								"required": true,
 								"size": 79,
@@ -1650,6 +1729,7 @@
 								],
 								"default": "",
 								"help": "Custom Internet Service group name.",
+								"multiple_values": false,
 								"name": "name",
 								"required": true,
 								"size": 79,
@@ -1675,6 +1755,7 @@
 								],
 								"default": "",
 								"help": "Internet Service group name.",
+								"multiple_values": false,
 								"name": "name",
 								"required": true,
 								"size": 79,
@@ -1700,6 +1781,7 @@
 								],
 								"default": "",
 								"help": "Internet service name.",
+								"multiple_values": false,
 								"name": "name",
 								"required": true,
 								"size": 79,
@@ -1721,6 +1803,7 @@
 						"help": "Coefficient of jitter in the formula of custom-profile-1.",
 						"max-value": 10000000,
 						"min-value": 0,
+						"multiple_values": false,
 						"name": "jitter-weight",
 						"type": "integer"
 					},
@@ -1730,6 +1813,7 @@
 						"help": "Coefficient of latency in the formula of custom-profile-1.",
 						"max-value": 10000000,
 						"min-value": 0,
+						"multiple_values": false,
 						"name": "latency-weight",
 						"type": "integer"
 					},
@@ -1777,6 +1861,7 @@
 						"help": "Percentage threshold change of link cost values that will result in policy route regeneration (0 - 10000000, default = 10).",
 						"max-value": 10000000,
 						"min-value": 0,
+						"multiple_values": false,
 						"name": "link-cost-threshold",
 						"type": "integer"
 					},
@@ -1786,6 +1871,7 @@
 						"help": "Minimum number of members which meet SLA.",
 						"max-value": 255,
 						"min-value": 0,
+						"multiple_values": false,
 						"name": "minimum-sla-meet-members",
 						"type": "integer"
 					},
@@ -1823,6 +1909,7 @@
 						"category": "unitary",
 						"default": "",
 						"help": "SD-WAN rule name.",
+						"multiple_values": false,
 						"name": "name",
 						"size": 35,
 						"type": "string"
@@ -1833,6 +1920,7 @@
 						"help": "Coefficient of packet-loss in the formula of custom-profile-1.",
 						"max-value": 10000000,
 						"min-value": 0,
+						"multiple_values": false,
 						"name": "packet-loss-weight",
 						"type": "integer"
 					},
@@ -1867,6 +1955,7 @@
 								"help": "Member sequence number.",
 								"max-value": 4294967295,
 								"min-value": 0,
+								"multiple_values": false,
 								"name": "seq-num",
 								"required": true,
 								"type": "integer"
@@ -1892,6 +1981,7 @@
 								],
 								"default": "",
 								"help": "Priority zone name.",
+								"multiple_values": false,
 								"name": "name",
 								"size": 79,
 								"type": "string"
@@ -1912,6 +2002,7 @@
 						"help": "Protocol number.",
 						"max-value": 255,
 						"min-value": 0,
+						"multiple_values": false,
 						"name": "protocol",
 						"type": "integer"
 					},
@@ -1921,6 +2012,7 @@
 						"help": "Quality grade.",
 						"max-value": 255,
 						"min-value": 0,
+						"multiple_values": false,
 						"name": "quality-link",
 						"type": "integer"
 					},
@@ -1952,6 +2044,7 @@
 						"help": "IPv4 route map route-tag.",
 						"max-value": 4294967295,
 						"min-value": 0,
+						"multiple_values": false,
 						"name": "route-tag",
 						"type": "integer"
 					},
@@ -1965,6 +2058,7 @@
 								],
 								"default": "",
 								"help": "SD-WAN health-check.",
+								"multiple_values": false,
 								"name": "health-check",
 								"required": true,
 								"size": 35,
@@ -1976,6 +2070,7 @@
 								"help": "SLA ID.",
 								"max-value": 4294967295,
 								"min-value": 0,
+								"multiple_values": false,
 								"name": "id",
 								"required": true,
 								"type": "integer"
@@ -2018,6 +2113,7 @@
 								],
 								"default": "",
 								"help": "Address or address group name.",
+								"multiple_values": false,
 								"name": "name",
 								"required": true,
 								"size": 79,
@@ -2062,6 +2158,7 @@
 								],
 								"default": "",
 								"help": "Address6 or address6 group name.",
+								"multiple_values": false,
 								"name": "name",
 								"required": true,
 								"size": 79,
@@ -2101,6 +2198,7 @@
 						"help": "Start destination port number.",
 						"max-value": 65535,
 						"min-value": 0,
+						"multiple_values": false,
 						"name": "start-port",
 						"type": "integer"
 					},
@@ -2149,6 +2247,7 @@
 						"category": "unitary",
 						"default": "",
 						"help": "Type of service bit pattern.",
+						"multiple_values": false,
 						"name": "tos",
 						"type": "user"
 					},
@@ -2156,6 +2255,7 @@
 						"category": "unitary",
 						"default": "",
 						"help": "Type of service evaluated bits.",
+						"multiple_values": false,
 						"name": "tos-mask",
 						"type": "user"
 					},
@@ -2188,6 +2288,7 @@
 								],
 								"default": "",
 								"help": "User name.",
+								"multiple_values": false,
 								"name": "name",
 								"required": true,
 								"size": 79,
@@ -2256,6 +2357,7 @@
 						"category": "unitary",
 						"default": "",
 						"help": "Zone name.",
+						"multiple_values": false,
 						"name": "name",
 						"required": true,
 						"size": 35,
@@ -2282,22 +2384,23 @@
 					}
 				},
 				"help": "Configure SD-WAN zones.",
-				"max_table_size_global": 512,
+				"max_table_size_global": 0,
 				"max_table_size_item": 0,
-				"max_table_size_vdom": 256,
+				"max_table_size_vdom": 1024,
 				"mkey": "name",
 				"mkey_type": "string",
 				"name": "zone"
 			}
 		},
 		"help": "Configure redundant Internet connections with multiple outbound links and health-check profiles.",
+		"multiple_values": false,
 		"name": "sdwan",
 		"path": "system",
 		"q_type": 477
 	},
-	"revision": "c47afc208e6922e7baa78a9c2702c673",
-	"serial": "FGTAZRAQCG14L19D",
+	"revision": "ec8b2effd872e1e15355de181b7673e5",
+	"serial": "FGTAZRI5HXAAGI90",
 	"status": "success",
 	"vdom": "root",
-	"version": "v7.0.3"
+	"version": "v7.0.4"
 }

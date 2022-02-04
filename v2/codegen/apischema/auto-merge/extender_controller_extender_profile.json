@@ -1,9 +1,9 @@
 {
 	"addedIn": "v7.0.2",
-	"build": 237,
+	"build": 301,
 	"http_method": "GET",
 	"http_status": 200,
-	"mergedVersions": "v7.0.2,v7.0.3",
+	"mergedVersions": "v7.0.2,v7.0.3,v7.0.4",
 	"name": "extender-profile",
 	"path": "extender-controller",
 	"results": {
@@ -50,6 +50,7 @@
 				"help": "FortiExtender LAN extension bandwidth limit (Mbps).",
 				"max-value": 16776000,
 				"min-value": 1,
+				"multiple_values": false,
 				"name": "bandwidth-limit",
 				"required": true,
 				"type": "integer"
@@ -66,6 +67,7 @@
 								"help": "Controller report interval.",
 								"max-value": 4294967295,
 								"min-value": 0,
+								"multiple_values": false,
 								"name": "interval",
 								"required": true,
 								"type": "integer"
@@ -76,6 +78,7 @@
 								"help": "Controller report signal threshold.",
 								"max-value": 50,
 								"min-value": 10,
+								"multiple_values": false,
 								"name": "signal-threshold",
 								"required": true,
 								"type": "integer"
@@ -101,6 +104,7 @@
 							}
 						},
 						"help": "FortiExtender controller report configuration.",
+						"multiple_values": false,
 						"name": "controller-report"
 					},
 					"dataplan": {
@@ -113,6 +117,7 @@
 								],
 								"default": "",
 								"help": "Dataplan name.",
+								"multiple_values": false,
 								"name": "name",
 								"size": 79,
 								"type": "string"
@@ -177,6 +182,7 @@
 										"help": "Automatically switch based on disconnect period.",
 										"max-value": 18000,
 										"min-value": 600,
+										"multiple_values": false,
 										"name": "disconnect-period",
 										"required": true,
 										"type": "integer"
@@ -187,6 +193,7 @@
 										"help": "Automatically switch based on disconnect threshold.",
 										"max-value": 100,
 										"min-value": 1,
+										"multiple_values": false,
 										"name": "disconnect-threshold",
 										"required": true,
 										"type": "integer"
@@ -232,6 +239,7 @@
 										"category": "unitary",
 										"default": "00:01",
 										"help": "Automatically switch over to preferred SIM/carrier at a specified time in UTC (HH:MM).",
+										"multiple_values": false,
 										"name": "switch-back-time",
 										"size": 31,
 										"type": "string"
@@ -242,11 +250,13 @@
 										"help": "Automatically switch over to preferred SIM/carrier after the given time (3600 - 2147483647 sec).",
 										"max-value": 2147483647,
 										"min-value": 3600,
+										"multiple_values": false,
 										"name": "switch-back-timer",
 										"type": "integer"
 									}
 								},
 								"help": "FortiExtender auto switch configuration.",
+								"multiple_values": false,
 								"name": "auto-switch"
 							},
 							"conn-status": {
@@ -255,6 +265,7 @@
 								"help": "Connection status.",
 								"max-value": 4294967295,
 								"min-value": 0,
+								"multiple_values": false,
 								"name": "conn-status",
 								"readonly": true,
 								"type": "integer"
@@ -308,6 +319,7 @@
 								"category": "unitary",
 								"default": "",
 								"help": "Preferred carrier.",
+								"multiple_values": false,
 								"name": "preferred-carrier",
 								"size": 31,
 								"type": "string"
@@ -316,6 +328,7 @@
 								"category": "unitary",
 								"default": "",
 								"help": "Redundant interface.",
+								"multiple_values": false,
 								"name": "redundant-intf",
 								"required": true,
 								"size": 15,
@@ -361,6 +374,7 @@
 							"sim1-pin-code": {
 								"category": "unitary",
 								"help": "SIM #1 PIN password.",
+								"multiple_values": false,
 								"name": "sim1-pin-code",
 								"size": 27,
 								"type": "password"
@@ -386,12 +400,14 @@
 							"sim2-pin-code": {
 								"category": "unitary",
 								"help": "SIM #2 PIN password.",
+								"multiple_values": false,
 								"name": "sim2-pin-code",
 								"size": 27,
 								"type": "password"
 							}
 						},
 						"help": "Configuration options for modem 1.",
+						"multiple_values": false,
 						"name": "modem1"
 					},
 					"modem2": {
@@ -444,6 +460,7 @@
 										"help": "Automatically switch based on disconnect period.",
 										"max-value": 18000,
 										"min-value": 600,
+										"multiple_values": false,
 										"name": "disconnect-period",
 										"required": true,
 										"type": "integer"
@@ -454,6 +471,7 @@
 										"help": "Automatically switch based on disconnect threshold.",
 										"max-value": 100,
 										"min-value": 1,
+										"multiple_values": false,
 										"name": "disconnect-threshold",
 										"required": true,
 										"type": "integer"
@@ -499,6 +517,7 @@
 										"category": "unitary",
 										"default": "00:01",
 										"help": "Automatically switch over to preferred SIM/carrier at a specified time in UTC (HH:MM).",
+										"multiple_values": false,
 										"name": "switch-back-time",
 										"size": 31,
 										"type": "string"
@@ -509,11 +528,13 @@
 										"help": "Automatically switch over to preferred SIM/carrier after the given time (3600 - 2147483647 sec).",
 										"max-value": 2147483647,
 										"min-value": 3600,
+										"multiple_values": false,
 										"name": "switch-back-timer",
 										"type": "integer"
 									}
 								},
 								"help": "FortiExtender auto switch configuration.",
+								"multiple_values": false,
 								"name": "auto-switch"
 							},
 							"conn-status": {
@@ -522,6 +543,7 @@
 								"help": "Connection status.",
 								"max-value": 4294967295,
 								"min-value": 0,
+								"multiple_values": false,
 								"name": "conn-status",
 								"readonly": true,
 								"type": "integer"
@@ -575,6 +597,7 @@
 								"category": "unitary",
 								"default": "",
 								"help": "Preferred carrier.",
+								"multiple_values": false,
 								"name": "preferred-carrier",
 								"size": 31,
 								"type": "string"
@@ -583,6 +606,7 @@
 								"category": "unitary",
 								"default": "",
 								"help": "Redundant interface.",
+								"multiple_values": false,
 								"name": "redundant-intf",
 								"required": true,
 								"size": 15,
@@ -628,6 +652,7 @@
 							"sim1-pin-code": {
 								"category": "unitary",
 								"help": "SIM #1 PIN password.",
+								"multiple_values": false,
 								"name": "sim1-pin-code",
 								"size": 27,
 								"type": "password"
@@ -653,12 +678,14 @@
 							"sim2-pin-code": {
 								"category": "unitary",
 								"help": "SIM #2 PIN password.",
+								"multiple_values": false,
 								"name": "sim2-pin-code",
 								"size": 27,
 								"type": "password"
 							}
 						},
 						"help": "Configuration options for modem 2.",
+						"multiple_values": false,
 						"name": "modem2"
 					},
 					"sms-notification": {
@@ -671,6 +698,7 @@
 										"category": "unitary",
 										"default": "data plan is exhausted",
 										"help": "Display string when data exhausted.",
+										"multiple_values": false,
 										"name": "data-exhausted",
 										"required": true,
 										"size": 63,
@@ -680,6 +708,7 @@
 										"category": "unitary",
 										"default": "FortiGate backup work mode switched",
 										"help": "Display string when FortiGate backup mode switched.",
+										"multiple_values": false,
 										"name": "fgt-backup-mode-switch",
 										"required": true,
 										"size": 63,
@@ -689,6 +718,7 @@
 										"category": "unitary",
 										"default": "LTE signal strength is too low",
 										"help": "Display string when signal strength is low.",
+										"multiple_values": false,
 										"name": "low-signal-strength",
 										"required": true,
 										"size": 63,
@@ -698,6 +728,7 @@
 										"category": "unitary",
 										"default": "system networking mode switched",
 										"help": "Display string when mode is switched.",
+										"multiple_values": false,
 										"name": "mode-switch",
 										"required": true,
 										"size": 63,
@@ -707,6 +738,7 @@
 										"category": "unitary",
 										"default": "system start to fallback OS image",
 										"help": "Display string when falling back to a previous OS image.",
+										"multiple_values": false,
 										"name": "os-image-fallback",
 										"required": true,
 										"size": 63,
@@ -716,6 +748,7 @@
 										"category": "unitary",
 										"default": "LTE data session is disconnected",
 										"help": "Display string when session disconnected.",
+										"multiple_values": false,
 										"name": "session-disconnect",
 										"required": true,
 										"size": 63,
@@ -725,6 +758,7 @@
 										"category": "unitary",
 										"default": "system will reboot",
 										"help": "Display string when system rebooted.",
+										"multiple_values": false,
 										"name": "system-reboot",
 										"required": true,
 										"size": 63,
@@ -732,6 +766,7 @@
 									}
 								},
 								"help": "SMS alert list.",
+								"multiple_values": false,
 								"name": "alert"
 							},
 							"receiver": {
@@ -779,6 +814,7 @@
 										"category": "unitary",
 										"default": "",
 										"help": "FortiExtender SMS notification receiver name.",
+										"multiple_values": false,
 										"name": "name",
 										"size": 31,
 										"type": "string"
@@ -786,7 +822,8 @@
 									"phone-number": {
 										"category": "unitary",
 										"default": "",
-										"help": "Receiver phone number.  Format: [+][country code][area code][local phone number].  For example: +16501234567.",
+										"help": "Receiver phone number. Format: [+][country code][area code][local phone number]. For example, +16501234567.",
+										"multiple_values": false,
 										"name": "phone-number",
 										"required": true,
 										"size": 31,
@@ -840,10 +877,12 @@
 							}
 						},
 						"help": "FortiExtender cellular SMS notification configuration.",
+						"multiple_values": false,
 						"name": "sms-notification"
 					}
 				},
 				"help": "FortiExtender cellular configuration.",
+				"multiple_values": false,
 				"name": "cellular",
 				"required": true
 			},
@@ -867,15 +906,11 @@
 			},
 			"extension": {
 				"category": "unitary",
-				"default": "wan-extension",
+				"default": "",
 				"help": "Extension option.",
 				"multiple_values": false,
 				"name": "extension",
 				"options": [
-					{
-						"help": "WAN extension.",
-						"name": "wan-extension"
-					},
 					{
 						"help": "LAN extension.",
 						"name": "lan-extension"
@@ -887,10 +922,11 @@
 			"id": {
 				"category": "unitary",
 				"default": 32,
-				"help": "id",
+				"help": "ID.",
 				"max-value": 102400000,
 				"min-value": 0,
 				"missing_help": true,
+				"multiple_values": false,
 				"name": "id",
 				"type": "integer"
 			},
@@ -903,7 +939,8 @@
 							"name": {
 								"category": "unitary",
 								"default": "",
-								"help": "FortiExtender LAN extension backhaul name",
+								"help": "FortiExtender LAN extension backhaul name.",
+								"multiple_values": false,
 								"name": "name",
 								"size": 31,
 								"type": "string"
@@ -977,9 +1014,10 @@
 							"weight": {
 								"category": "unitary",
 								"default": 1,
-								"help": "WRR weight parameter",
+								"help": "WRR weight parameter.",
 								"max-value": 256,
 								"min-value": 1,
+								"multiple_values": false,
 								"name": "weight",
 								"required": true,
 								"type": "integer"
@@ -1000,6 +1038,7 @@
 						],
 						"default": "",
 						"help": "IPsec phase1 interface.",
+						"multiple_values": false,
 						"name": "backhaul-interface",
 						"size": 15,
 						"type": "string"
@@ -1008,6 +1047,7 @@
 						"category": "unitary",
 						"default": "",
 						"help": "IPsec phase1 IPv4/FQDN. Used to specify the external IP/FQDN when the FortiGate unit is behind a NAT device.",
+						"multiple_values": false,
 						"name": "backhaul-ip",
 						"size": 63,
 						"type": "string"
@@ -1016,6 +1056,7 @@
 						"category": "unitary",
 						"default": "",
 						"help": "IPsec tunnel name.",
+						"multiple_values": false,
 						"name": "ipsec-tunnel",
 						"size": 15,
 						"type": "string"
@@ -1041,12 +1082,14 @@
 					}
 				},
 				"help": "FortiExtender lan extension configuration.",
+				"multiple_values": false,
 				"name": "lan-extension",
 				"required": true
 			},
 			"login-password": {
 				"category": "unitary",
 				"help": "Set the managed extender's administrator password.",
+				"multiple_values": false,
 				"name": "login-password",
 				"required": true,
 				"size": 27,
@@ -1160,7 +1203,8 @@
 			"name": {
 				"category": "unitary",
 				"default": "",
-				"help": "FortiExtender profile name",
+				"help": "FortiExtender profile name.",
+				"multiple_values": false,
 				"name": "name",
 				"size": 31,
 				"type": "string"
@@ -1176,9 +1220,9 @@
 		"path": "extender-controller",
 		"q_type": 232
 	},
-	"revision": "78ee061304af9c5d17bcae6474808d97",
-	"serial": "FGTAZRAQCG14L19D",
+	"revision": "e338e35a484eaafc990a69dd13ff4f76",
+	"serial": "FGTAZRI5HXAAGI90",
 	"status": "success",
 	"vdom": "root",
-	"version": "v7.0.3"
+	"version": "v7.0.4"
 }

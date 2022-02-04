@@ -1,15 +1,62 @@
 {
 	"addedIn": "v7.0.1",
-	"build": 237,
+	"build": 301,
 	"http_method": "GET",
 	"http_status": 200,
-	"mergedVersions": "v7.0.1,v7.0.2,v7.0.3",
+	"mergedVersions": "v7.0.1,v7.0.2,v7.0.3,v7.0.4",
 	"name": "fortiai",
 	"path": "system",
 	"results": {
 		"access_group": "secfabgrp",
 		"category": "complex",
 		"children": {
+			"interface": {
+				"addedIn": "v7.0.4",
+				"category": "unitary",
+				"datasource": [
+					"system.interface.name"
+				],
+				"default": "",
+				"help": "Specify outgoing interface to reach server.",
+				"multiple_values": false,
+				"name": "interface",
+				"required": true,
+				"size": 15,
+				"type": "string"
+			},
+			"interface-select-method": {
+				"addedIn": "v7.0.4",
+				"category": "unitary",
+				"default": "auto",
+				"help": "Specify how to select outgoing interface to reach server.",
+				"multiple_values": false,
+				"name": "interface-select-method",
+				"options": [
+					{
+						"help": "Set outgoing interface automatically.",
+						"name": "auto"
+					},
+					{
+						"help": "Set outgoing interface by SD-WAN or policy routing rules.",
+						"name": "sdwan"
+					},
+					{
+						"help": "Set outgoing interface manually.",
+						"name": "specify"
+					}
+				],
+				"type": "option"
+			},
+			"source-ip": {
+				"addedIn": "v7.0.4",
+				"category": "unitary",
+				"default": "",
+				"help": "Source IP address for communications to FortiAI.",
+				"multiple_values": false,
+				"name": "source-ip",
+				"size": 63,
+				"type": "string"
+			},
 			"status": {
 				"category": "unitary",
 				"default": "disable",
@@ -30,13 +77,14 @@
 			}
 		},
 		"help": "Configure FortiAI.",
+		"multiple_values": false,
 		"name": "fortiai",
 		"path": "system",
 		"q_type": 474
 	},
-	"revision": "78ee061304af9c5d17bcae6474808d97",
-	"serial": "FGTAZRAQCG14L19D",
+	"revision": "e338e35a484eaafc990a69dd13ff4f76",
+	"serial": "FGTAZRI5HXAAGI90",
 	"status": "success",
 	"vdom": "root",
-	"version": "v7.0.3"
+	"version": "v7.0.4"
 }

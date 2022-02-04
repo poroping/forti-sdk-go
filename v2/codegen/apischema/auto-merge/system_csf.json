@@ -1,9 +1,9 @@
 {
 	"addedIn": "v6.2.7",
-	"build": 237,
+	"build": 301,
 	"http_method": "GET",
 	"http_status": 200,
-	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3",
+	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3,v7.0.4",
 	"name": "csf",
 	"path": "system",
 	"results": {
@@ -56,6 +56,7 @@
 				],
 				"default": "",
 				"help": "Certificate.",
+				"multiple_values": false,
 				"name": "certificate",
 				"size": 35,
 				"type": "string"
@@ -68,7 +69,7 @@
 				"name": "configuration-sync",
 				"options": [
 					{
-						"help": "Synchronize configuration for FortiAnalyzer, FortiSandbox, and Central Management to root node.",
+						"help": "Synchronize configuration for IPAM, FortiAnalyzer, FortiSandbox, and Central Management to root node.",
 						"name": "default"
 					},
 					{
@@ -106,6 +107,7 @@
 				],
 				"default": "",
 				"help": "Default access profile for requests from downstream devices.",
+				"multiple_values": false,
 				"name": "downstream-accprofile",
 				"required": true,
 				"size": 35,
@@ -122,6 +124,7 @@
 						],
 						"default": "",
 						"help": "Override access profile.",
+						"multiple_values": false,
 						"name": "accprofile",
 						"required": true,
 						"size": 35,
@@ -149,6 +152,7 @@
 						"category": "unitary",
 						"default": "",
 						"help": "Serial.",
+						"multiple_values": false,
 						"name": "serial",
 						"size": 19,
 						"type": "string"
@@ -168,6 +172,7 @@
 					"access-token": {
 						"category": "unitary",
 						"help": "Device access token.",
+						"multiple_values": false,
 						"name": "access-token",
 						"required": true,
 						"type": "varlen_password"
@@ -176,6 +181,7 @@
 						"category": "unitary",
 						"default": "0.0.0.0",
 						"help": "Device IP.",
+						"multiple_values": false,
 						"name": "device-ip",
 						"required": true,
 						"type": "ipv4-address"
@@ -186,6 +192,7 @@
 						"help": "HTTPS port for fabric device.",
 						"max-value": 65535,
 						"min-value": 1,
+						"multiple_values": false,
 						"name": "https-port",
 						"type": "integer"
 					},
@@ -193,6 +200,7 @@
 						"category": "unitary",
 						"default": "",
 						"help": "Device name.",
+						"multiple_values": false,
 						"name": "name",
 						"size": 35,
 						"type": "string"
@@ -232,13 +240,34 @@
 				"help": "Number of worker processes for Security Fabric daemon.",
 				"max-value": 4,
 				"min-value": 1,
+				"multiple_values": false,
 				"name": "fabric-workers",
 				"type": "integer"
+			},
+			"forticloud-account-enforcement": {
+				"addedIn": "v7.0.4",
+				"category": "unitary",
+				"default": "enable",
+				"help": "Fabric FortiCloud account unification.",
+				"multiple_values": false,
+				"name": "forticloud-account-enforcement",
+				"options": [
+					{
+						"help": "Enable FortiCloud account ID matching for Security Fabric.",
+						"name": "enable"
+					},
+					{
+						"help": "Disable FortiCloud accound ID matching for Security Fabric.",
+						"name": "disable"
+					}
+				],
+				"type": "option"
 			},
 			"group-name": {
 				"category": "unitary",
 				"default": "",
 				"help": "Security Fabric group name. All FortiGates in a Security Fabric must have the same group name.",
+				"multiple_values": false,
 				"name": "group-name",
 				"size": 35,
 				"type": "string"
@@ -246,6 +275,7 @@
 			"group-password": {
 				"category": "unitary",
 				"help": "Security Fabric group password. All FortiGates in a Security Fabric must have the same group password.",
+				"multiple_values": false,
 				"name": "group-password",
 				"required": true,
 				"size": 128,
@@ -371,6 +401,7 @@
 						"addedIn": "v6.4.2",
 						"category": "unitary",
 						"help": "Certificate.",
+						"multiple_values": false,
 						"name": "certificate",
 						"size": 32767,
 						"type": "var-string"
@@ -397,6 +428,8 @@
 						"category": "unitary",
 						"default": "",
 						"help": "HA members.",
+						"max_num_values": 16,
+						"multiple_values": true,
 						"name": "ha-members",
 						"size": 19,
 						"type": "string"
@@ -406,6 +439,7 @@
 						"category": "unitary",
 						"default": "",
 						"help": "Name.",
+						"multiple_values": false,
 						"name": "name",
 						"size": 35,
 						"type": "string"
@@ -414,6 +448,7 @@
 						"category": "unitary",
 						"default": "",
 						"help": "Serial.",
+						"multiple_values": false,
 						"name": "serial",
 						"size": 19,
 						"type": "string"
@@ -432,6 +467,7 @@
 				"category": "unitary",
 				"default": "",
 				"help": "IP/FQDN of the FortiGate upstream from this FortiGate in the Security Fabric.",
+				"multiple_values": false,
 				"name": "upstream",
 				"size": 255,
 				"type": "string"
@@ -450,18 +486,20 @@
 				"help": "The port number to use to communicate with the FortiGate upstream from this FortiGate in the Security Fabric (default = 8013).",
 				"max-value": 65535,
 				"min-value": 1,
+				"multiple_values": false,
 				"name": "upstream-port",
 				"type": "integer"
 			}
 		},
 		"help": "Add this FortiGate to a Security Fabric or set up a new Security Fabric on this FortiGate.",
+		"multiple_values": false,
 		"name": "csf",
 		"path": "system",
 		"q_type": 494
 	},
-	"revision": "78ee061304af9c5d17bcae6474808d97",
-	"serial": "FGTAZRAQCG14L19D",
+	"revision": "e338e35a484eaafc990a69dd13ff4f76",
+	"serial": "FGTAZRI5HXAAGI90",
 	"status": "success",
 	"vdom": "root",
-	"version": "v7.0.3"
+	"version": "v7.0.4"
 }

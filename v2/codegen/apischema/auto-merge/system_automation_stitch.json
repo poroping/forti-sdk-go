@@ -1,9 +1,9 @@
 {
 	"addedIn": "v6.2.7",
-	"build": 237,
+	"build": 301,
 	"http_method": "GET",
 	"http_status": 200,
-	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3",
+	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3,v7.0.4",
 	"name": "automation-stitch",
 	"path": "system",
 	"results": {
@@ -48,6 +48,7 @@
 						],
 						"default": "",
 						"help": "Action name.",
+						"multiple_values": false,
 						"name": "action",
 						"required": true,
 						"size": 64,
@@ -59,6 +60,7 @@
 						"help": "Delay before execution (in seconds).",
 						"max-value": 3600,
 						"min-value": 0,
+						"multiple_values": false,
 						"name": "delay",
 						"type": "integer"
 					},
@@ -68,6 +70,7 @@
 						"help": "Entry ID.",
 						"max-value": 4294967295,
 						"min-value": 0,
+						"multiple_values": false,
 						"name": "id",
 						"type": "integer"
 					},
@@ -102,6 +105,7 @@
 				"addedIn": "v7.0.0",
 				"category": "unitary",
 				"help": "Description.",
+				"multiple_values": false,
 				"name": "description",
 				"size": 255,
 				"type": "var-string"
@@ -116,6 +120,7 @@
 						],
 						"default": "",
 						"help": "Destination name.",
+						"multiple_values": false,
 						"name": "name",
 						"required": true,
 						"size": 79,
@@ -135,6 +140,7 @@
 				"category": "unitary",
 				"default": "",
 				"help": "Name.",
+				"multiple_values": false,
 				"name": "name",
 				"size": 35,
 				"type": "string"
@@ -165,6 +171,7 @@
 				],
 				"default": "",
 				"help": "Trigger name.",
+				"multiple_values": false,
 				"name": "trigger",
 				"required": true,
 				"size": 35,
@@ -181,9 +188,9 @@
 		"path": "system",
 		"q_type": 498
 	},
-	"revision": "9502a46606ed08d8fb79ceaae4ddc006",
-	"serial": "FGTAZRAQCG14L19D",
+	"revision": "8c883006518c0117f1c022afefbdd1b9",
+	"serial": "FGTAZRI5HXAAGI90",
 	"status": "success",
 	"vdom": "root",
-	"version": "v7.0.3"
+	"version": "v7.0.4"
 }

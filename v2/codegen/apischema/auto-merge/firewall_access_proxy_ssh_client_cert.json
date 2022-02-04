@@ -1,9 +1,9 @@
 {
 	"addedIn": "v7.0.1",
-	"build": 237,
+	"build": 301,
 	"http_method": "GET",
 	"http_status": 200,
-	"mergedVersions": "v7.0.1,v7.0.2,v7.0.3",
+	"mergedVersions": "v7.0.1,v7.0.2,v7.0.3,v7.0.4",
 	"name": "access-proxy-ssh-client-cert",
 	"path": "firewall",
 	"results": {
@@ -17,6 +17,7 @@
 				],
 				"default": "",
 				"help": "Name of the SSH server public key authentication CA.",
+				"multiple_values": false,
 				"name": "auth-ca",
 				"required": true,
 				"size": 79,
@@ -47,6 +48,7 @@
 						"category": "unitary",
 						"default": "",
 						"help": "Data of certificate extension.",
+						"multiple_values": false,
 						"name": "data",
 						"size": 127,
 						"type": "string"
@@ -55,6 +57,7 @@
 						"category": "unitary",
 						"default": "",
 						"help": "Name of certificate extension.",
+						"multiple_values": false,
 						"name": "name",
 						"required": true,
 						"size": 127,
@@ -91,6 +94,7 @@
 				"category": "unitary",
 				"default": "",
 				"help": "SSH client certificate name.",
+				"multiple_values": false,
 				"name": "name",
 				"size": 79,
 				"type": "string"
@@ -214,9 +218,9 @@
 		"path": "firewall",
 		"q_type": 47
 	},
-	"revision": "78ee061304af9c5d17bcae6474808d97",
-	"serial": "FGTAZRAQCG14L19D",
+	"revision": "e338e35a484eaafc990a69dd13ff4f76",
+	"serial": "FGTAZRI5HXAAGI90",
 	"status": "success",
 	"vdom": "root",
-	"version": "v7.0.3"
+	"version": "v7.0.4"
 }

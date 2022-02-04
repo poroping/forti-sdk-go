@@ -1,9 +1,9 @@
 {
 	"addedIn": "v6.2.7",
-	"build": 237,
+	"build": 301,
 	"http_method": "GET",
 	"http_status": 200,
-	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3",
+	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3,v7.0.4",
 	"name": "profile",
 	"path": "emailfilter",
 	"results": {
@@ -13,6 +13,7 @@
 			"comment": {
 				"category": "unitary",
 				"help": "Comment.",
+				"multiple_values": false,
 				"name": "comment",
 				"size": 255,
 				"type": "var-string"
@@ -259,6 +260,7 @@
 					}
 				},
 				"help": "Gmail.",
+				"multiple_values": false,
 				"name": "gmail"
 			},
 			"imap": {
@@ -323,6 +325,7 @@
 						"category": "unitary",
 						"default": "Spam",
 						"help": "Subject text or header added to spam email.",
+						"multiple_values": false,
 						"name": "tag-msg",
 						"size": 63,
 						"type": "string"
@@ -351,6 +354,7 @@
 					}
 				},
 				"help": "IMAP.",
+				"multiple_values": false,
 				"name": "imap"
 			},
 			"mapi": {
@@ -413,6 +417,7 @@
 					}
 				},
 				"help": "MAPI.",
+				"multiple_values": false,
 				"name": "mapi"
 			},
 			"msn-hotmail": {
@@ -457,12 +462,14 @@
 					}
 				},
 				"help": "MSN Hotmail.",
+				"multiple_values": false,
 				"name": "msn-hotmail"
 			},
 			"name": {
 				"category": "unitary",
 				"default": "",
 				"help": "Profile name.",
+				"multiple_values": false,
 				"name": "name",
 				"required": true,
 				"size": 35,
@@ -546,6 +553,7 @@
 					}
 				},
 				"help": "Other supported webmails.",
+				"multiple_values": false,
 				"name": "other-webmails"
 			},
 			"pop3": {
@@ -610,6 +618,7 @@
 						"category": "unitary",
 						"default": "Spam",
 						"help": "Subject text or header added to spam email.",
+						"multiple_values": false,
 						"name": "tag-msg",
 						"size": 63,
 						"type": "string"
@@ -638,6 +647,7 @@
 					}
 				},
 				"help": "POP3.",
+				"multiple_values": false,
 				"name": "pop3"
 			},
 			"replacemsg-group": {
@@ -647,6 +657,7 @@
 				],
 				"default": "",
 				"help": "Replacement message group.",
+				"multiple_values": false,
 				"name": "replacemsg-group",
 				"size": 35,
 				"type": "string"
@@ -679,16 +690,16 @@
 					"hdrip": {
 						"category": "unitary",
 						"default": "disable",
-						"help": "Enable/disable SMTP email header IP checks for spamfsip, spamrbl and spambal filters.",
+						"help": "Enable/disable SMTP email header IP checks for spamfsip, spamrbl, and spambal filters.",
 						"multiple_values": false,
 						"name": "hdrip",
 						"options": [
 							{
-								"help": "Disable SMTP email header IP checks for spamfsip, spamrbl and spambal filters.",
+								"help": "Disable SMTP email header IP checks for spamfsip, spamrbl, and spambal filters.",
 								"name": "disable"
 							},
 							{
-								"help": "Enable SMTP email header IP checks for spamfsip, spamrbl and spambal filters.",
+								"help": "Enable SMTP email header IP checks for spamfsip, spamrbl, and spambal filters.",
 								"name": "enable"
 							}
 						],
@@ -753,6 +764,7 @@
 						"category": "unitary",
 						"default": "Spam",
 						"help": "Subject text or header added to spam email.",
+						"multiple_values": false,
 						"name": "tag-msg",
 						"size": 63,
 						"type": "string"
@@ -781,6 +793,7 @@
 					}
 				},
 				"help": "SMTP.",
+				"multiple_values": false,
 				"name": "smtp"
 			},
 			"spam-bal-table": {
@@ -793,6 +806,7 @@
 				"help": "Anti-spam block/allow list table ID.",
 				"max-value": 4294967295,
 				"min-value": 0,
+				"multiple_values": false,
 				"name": "spam-bal-table",
 				"type": "integer"
 			},
@@ -818,6 +832,7 @@
 				"help": "Anti-spam banned word table ID.",
 				"max-value": 4294967295,
 				"min-value": 0,
+				"multiple_values": false,
 				"name": "spam-bword-table",
 				"type": "integer"
 			},
@@ -827,6 +842,7 @@
 				"help": "Spam banned word threshold.",
 				"max-value": 2147483647,
 				"min-value": 0,
+				"multiple_values": false,
 				"name": "spam-bword-threshold",
 				"type": "integer"
 			},
@@ -857,6 +873,7 @@
 				"help": "Anti-spam IP trust table ID.",
 				"max-value": 4294967295,
 				"min-value": 0,
+				"multiple_values": false,
 				"name": "spam-iptrust-table",
 				"type": "integer"
 			},
@@ -905,6 +922,7 @@
 				"help": "Anti-spam MIME header table ID.",
 				"max-value": 4294967295,
 				"min-value": 0,
+				"multiple_values": false,
 				"name": "spam-mheader-table",
 				"type": "integer"
 			},
@@ -917,6 +935,7 @@
 				"help": "Anti-spam DNSBL table ID.",
 				"max-value": 4294967295,
 				"min-value": 0,
+				"multiple_values": false,
 				"name": "spam-rbl-table",
 				"type": "integer"
 			},
@@ -962,6 +981,7 @@
 					}
 				},
 				"help": "Yahoo! Mail.",
+				"multiple_values": false,
 				"name": "yahoo-mail"
 			}
 		},
@@ -975,9 +995,9 @@
 		"path": "emailfilter",
 		"q_type": 436
 	},
-	"revision": "561f4be78ef9517a4d55a9fc2dfc0905",
-	"serial": "FGTAZRAQCG14L19D",
+	"revision": "3527aa6ee01ad91555f7a901dd1b85a2",
+	"serial": "FGTAZRI5HXAAGI90",
 	"status": "success",
 	"vdom": "root",
-	"version": "v7.0.3"
+	"version": "v7.0.4"
 }

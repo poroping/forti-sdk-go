@@ -1,9 +1,9 @@
 {
 	"addedIn": "v6.2.7",
-	"build": 237,
+	"build": 301,
 	"http_method": "GET",
 	"http_status": 200,
-	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3",
+	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3,v7.0.4",
 	"name": "vap",
 	"path": "wireless-controller",
 	"results": {
@@ -17,7 +17,8 @@
 					"wireless-controller.access-control-list.name"
 				],
 				"default": "",
-				"help": "access-control-list profile name.",
+				"help": "Profile name for access-control-list.",
+				"multiple_values": false,
 				"name": "access-control-list",
 				"size": 35,
 				"type": "string"
@@ -54,6 +55,7 @@
 				],
 				"default": "",
 				"help": "Address group ID.",
+				"multiple_values": false,
 				"name": "address-group",
 				"size": 35,
 				"type": "string"
@@ -66,6 +68,7 @@
 				],
 				"default": "",
 				"help": "AntiVirus profile name.",
+				"multiple_values": false,
 				"name": "antivirus-profile",
 				"size": 35,
 				"type": "string"
@@ -78,6 +81,7 @@
 				],
 				"default": "",
 				"help": "Application control list name.",
+				"multiple_values": false,
 				"name": "application-list",
 				"size": 35,
 				"type": "string"
@@ -88,6 +92,7 @@
 				"help": "Airtime weight in percentage (default = 20).",
 				"max-value": 100,
 				"min-value": 0,
+				"multiple_values": false,
 				"name": "atf-weight",
 				"type": "integer"
 			},
@@ -112,6 +117,29 @@
 					}
 				],
 				"type": "option"
+			},
+			"auth-cert": {
+				"addedIn": "v7.0.4",
+				"category": "unitary",
+				"datasource": [
+					"vpn.certificate.local.name"
+				],
+				"default": "",
+				"help": "HTTPS server certificate.",
+				"multiple_values": false,
+				"name": "auth-cert",
+				"size": 35,
+				"type": "string"
+			},
+			"auth-portal-addr": {
+				"addedIn": "v7.0.4",
+				"category": "unitary",
+				"default": "",
+				"help": "Address of captive portal.",
+				"multiple_values": false,
+				"name": "auth-portal-addr",
+				"size": 63,
+				"type": "string"
 			},
 			"beacon-advertising": {
 				"addedIn": "v7.0.2",
@@ -265,6 +293,7 @@
 				"help": "Time interval for client to voluntarily leave AP before forcing a disassociation due to AP load-balancing (0 to 30, default = 10).",
 				"max-value": 30,
 				"min-value": 1,
+				"multiple_values": false,
 				"name": "bstm-load-balancing-disassoc-timer",
 				"type": "integer"
 			},
@@ -275,6 +304,7 @@
 				"help": "Time interval for client to voluntarily leave AP before forcing a disassociation due to low RSSI (0 to 2000, default = 200).",
 				"max-value": 2000,
 				"min-value": 1,
+				"multiple_values": false,
 				"name": "bstm-rssi-disassoc-timer",
 				"type": "integer"
 			},
@@ -282,6 +312,7 @@
 				"category": "unitary",
 				"default": "",
 				"help": "Local-bridging captive portal ac-name.",
+				"multiple_values": false,
 				"name": "captive-portal-ac-name",
 				"size": 35,
 				"type": "string"
@@ -293,6 +324,7 @@
 				"help": "Hard timeout - AP will always clear the session after timeout regardless of traffic (0 - 864000 sec, default = 0).",
 				"max-value": 864000,
 				"min-value": 0,
+				"multiple_values": false,
 				"name": "captive-portal-auth-timeout",
 				"type": "integer"
 			},
@@ -362,6 +394,7 @@
 				"help": "DHCP lease time in seconds for NAT IP address.",
 				"max-value": 8640000,
 				"min-value": 300,
+				"multiple_values": false,
 				"name": "dhcp-lease-time",
 				"type": "integer"
 			},
@@ -488,6 +521,7 @@
 				"help": "EAP re-authentication interval (1800 - 864000 sec, default = 86400).",
 				"max-value": 864000,
 				"min-value": 1800,
+				"multiple_values": false,
 				"name": "eap-reauth-intv",
 				"type": "integer"
 			},
@@ -553,6 +587,7 @@
 				"category": "unitary",
 				"default": "",
 				"help": "URL of external authentication logout server.",
+				"multiple_values": false,
 				"name": "external-logout",
 				"size": 127,
 				"type": "string"
@@ -561,6 +596,7 @@
 				"category": "unitary",
 				"default": "",
 				"help": "URL of external authentication web server.",
+				"multiple_values": false,
 				"name": "external-web",
 				"size": 1023,
 				"type": "var-string"
@@ -629,6 +665,7 @@
 				"help": "Mobility domain identifier in FT (1 - 65535, default = 1000).",
 				"max-value": 65535,
 				"min-value": 1,
+				"multiple_values": false,
 				"name": "ft-mobility-domain",
 				"type": "integer"
 			},
@@ -656,6 +693,7 @@
 				"help": "Lifetime of the PMK-R0 key in FT, 1-65535 minutes.",
 				"max-value": 65535,
 				"min-value": 1,
+				"multiple_values": false,
 				"name": "ft-r0-key-lifetime",
 				"type": "integer"
 			},
@@ -666,6 +704,7 @@
 				"help": "GAS comeback delay (0 or 100 - 10000 milliseconds, default = 500).",
 				"max-value": 10000,
 				"min-value": 100,
+				"multiple_values": false,
 				"name": "gas-comeback-delay",
 				"type": "integer"
 			},
@@ -676,6 +715,7 @@
 				"help": "GAS fragmentation limit (512 - 4096, default = 1024).",
 				"max-value": 4096,
 				"min-value": 512,
+				"multiple_values": false,
 				"name": "gas-fragmentation-limit",
 				"type": "integer"
 			},
@@ -703,6 +743,7 @@
 				"help": "GTK rekey interval (1800 - 864000 sec, default = 86400).",
 				"max-value": 864000,
 				"min-value": 1800,
+				"multiple_values": false,
 				"name": "gtk-rekey-intv",
 				"type": "integer"
 			},
@@ -731,6 +772,7 @@
 				],
 				"default": "",
 				"help": "Hotspot 2.0 profile name.",
+				"multiple_values": false,
 				"name": "hotspot20-profile",
 				"size": 35,
 				"type": "string"
@@ -776,6 +818,7 @@
 				"category": "unitary",
 				"default": "0.0.0.0 0.0.0.0",
 				"help": "IP address and subnet mask for the local standalone NAT subnet.",
+				"multiple_values": false,
 				"name": "ip",
 				"type": "ipv4-classnet-host"
 			},
@@ -787,6 +830,7 @@
 				],
 				"default": "",
 				"help": "IPS sensor name.",
+				"multiple_values": false,
 				"name": "ips-sensor",
 				"size": 35,
 				"type": "string"
@@ -841,6 +885,7 @@
 			"key": {
 				"category": "unitary",
 				"help": "WEP Key.",
+				"multiple_values": false,
 				"name": "key",
 				"size": 128,
 				"type": "password"
@@ -851,6 +896,7 @@
 				"help": "WEP key index (1 - 4).",
 				"max-value": 4,
 				"min-value": 1,
+				"multiple_values": false,
 				"name": "keyindex",
 				"type": "integer"
 			},
@@ -976,6 +1022,8 @@
 				"category": "unitary",
 				"default": "",
 				"help": "IPv4 addresses for the local standalone DNS.",
+				"max_num_values": 3,
+				"multiple_values": true,
 				"name": "local-standalone-dns-ip",
 				"type": "ipv4-address"
 			},
@@ -1115,6 +1163,7 @@
 						"help": "ID.",
 						"max-value": 4294967295,
 						"min-value": 0,
+						"multiple_values": false,
 						"name": "id",
 						"type": "integer"
 					},
@@ -1122,6 +1171,7 @@
 						"category": "unitary",
 						"default": "00:00:00:00:00:00",
 						"help": "MAC address.",
+						"multiple_values": false,
 						"name": "mac",
 						"type": "mac-address"
 					},
@@ -1230,6 +1280,7 @@
 				"help": "Maximum number of clients that can connect simultaneously to the VAP (default = 0, meaning no limitation).",
 				"max-value": 4294967295,
 				"min-value": 0,
+				"multiple_values": false,
 				"name": "max-clients",
 				"type": "integer"
 			},
@@ -1239,6 +1290,7 @@
 				"help": "Maximum number of clients that can connect simultaneously to the VAP per AP radio (default = 0, meaning no limitation).",
 				"max-value": 4294967295,
 				"min-value": 0,
+				"multiple_values": false,
 				"name": "max-clients-ap",
 				"type": "integer"
 			},
@@ -1290,6 +1342,7 @@
 				"help": "Disable multicast enhancement when this many clients are receiving multicast traffic.",
 				"max-value": 256,
 				"min-value": 2,
+				"multiple_values": false,
 				"name": "me-disable-thresh",
 				"type": "integer"
 			},
@@ -1414,6 +1467,7 @@
 				],
 				"default": "",
 				"help": "MPSK profile name.",
+				"multiple_values": false,
 				"name": "mpsk-profile",
 				"size": 35,
 				"type": "string"
@@ -1507,6 +1561,7 @@
 				],
 				"default": "",
 				"help": "NAC profile name.",
+				"multiple_values": false,
 				"name": "nac-profile",
 				"size": 35,
 				"type": "string"
@@ -1515,6 +1570,7 @@
 				"category": "unitary",
 				"default": "",
 				"help": "Virtual AP name.",
+				"multiple_values": false,
 				"name": "name",
 				"required": true,
 				"size": 15,
@@ -1621,6 +1677,7 @@
 				"category": "unitary",
 				"default": "",
 				"help": "OWE transition mode peer SSID.",
+				"multiple_values": false,
 				"name": "owe-transition-ssid",
 				"size": 32,
 				"type": "string"
@@ -1628,6 +1685,7 @@
 			"passphrase": {
 				"category": "unitary",
 				"help": "WPA pre-shared key (PSK) to be used to authenticate WiFi users.",
+				"multiple_values": false,
 				"name": "passphrase",
 				"size": 128,
 				"type": "password"
@@ -1660,6 +1718,7 @@
 				"help": "Protected Management Frames (PMF) comeback maximum timeout (1-20 sec).",
 				"max-value": 20,
 				"min-value": 1,
+				"multiple_values": false,
 				"name": "pmf-assoc-comeback-timeout",
 				"type": "integer"
 			},
@@ -1669,6 +1728,7 @@
 				"help": "Protected Management Frames (PMF) SA query retry timeout interval (1 - 5 100s of msec).",
 				"max-value": 5,
 				"min-value": 1,
+				"multiple_values": false,
 				"name": "pmf-sa-query-retry-timeout",
 				"type": "integer"
 			},
@@ -1702,6 +1762,7 @@
 				"help": "LAN port MAC authentication re-authentication timeout value (default = 7200 sec).",
 				"max-value": 65535,
 				"min-value": 120,
+				"multiple_values": false,
 				"name": "port-macauth-reauth-timeout",
 				"type": "integer"
 			},
@@ -1712,6 +1773,7 @@
 				"help": "LAN port MAC authentication idle timeout value (default = 600 sec).",
 				"max-value": 65535,
 				"min-value": 60,
+				"multiple_values": false,
 				"name": "port-macauth-timeout",
 				"type": "integer"
 			},
@@ -1722,6 +1784,7 @@
 				],
 				"default": "",
 				"help": "Replacement message group for this VAP (only available when security is set to a captive portal type).",
+				"multiple_values": false,
 				"name": "portal-message-override-group",
 				"size": 35,
 				"type": "string"
@@ -1733,6 +1796,7 @@
 						"category": "unitary",
 						"default": "",
 						"help": "Override auth-disclaimer-page message with message from portal-message-overrides group.",
+						"multiple_values": false,
 						"name": "auth-disclaimer-page",
 						"size": 35,
 						"type": "string"
@@ -1741,6 +1805,7 @@
 						"category": "unitary",
 						"default": "",
 						"help": "Override auth-login-failed-page message with message from portal-message-overrides group.",
+						"multiple_values": false,
 						"name": "auth-login-failed-page",
 						"size": 35,
 						"type": "string"
@@ -1749,6 +1814,7 @@
 						"category": "unitary",
 						"default": "",
 						"help": "Override auth-login-page message with message from portal-message-overrides group.",
+						"multiple_values": false,
 						"name": "auth-login-page",
 						"size": 35,
 						"type": "string"
@@ -1757,12 +1823,14 @@
 						"category": "unitary",
 						"default": "",
 						"help": "Override auth-reject-page message with message from portal-message-overrides group.",
+						"multiple_values": false,
 						"name": "auth-reject-page",
 						"size": 35,
 						"type": "string"
 					}
 				},
 				"help": "Individual message overrides.",
+				"multiple_values": false,
 				"name": "portal-message-overrides"
 			},
 			"portal-type": {
@@ -1818,6 +1886,7 @@
 				],
 				"default": "",
 				"help": "Primary wireless access gateway profile name.",
+				"multiple_values": false,
 				"name": "primary-wag-profile",
 				"size": 35,
 				"type": "string"
@@ -1844,6 +1913,7 @@
 				"category": "unitary",
 				"default": "-80",
 				"help": "Minimum signal level/threshold in dBm required for the AP response to probe requests (-95 to -20, default = -80).",
+				"multiple_values": false,
 				"name": "probe-resp-threshold",
 				"size": 7,
 				"type": "string"
@@ -1872,6 +1942,7 @@
 				"help": "PTK rekey interval (1800 - 864000 sec, default = 86400).",
 				"max-value": 864000,
 				"min-value": 1800,
+				"multiple_values": false,
 				"name": "ptk-rekey-intv",
 				"type": "integer"
 			},
@@ -1882,6 +1953,7 @@
 				],
 				"default": "",
 				"help": "Quality of service profile name.",
+				"multiple_values": false,
 				"name": "qos-profile",
 				"size": 35,
 				"type": "string"
@@ -1908,6 +1980,7 @@
 				"category": "unitary",
 				"default": "-79",
 				"help": "Minimum signal level/threshold in dBm required for the AP response to receive a packet in 2.4G band (-95 to -20, default = -79).",
+				"multiple_values": false,
 				"name": "radio-2g-threshold",
 				"size": 7,
 				"type": "string"
@@ -1916,6 +1989,7 @@
 				"category": "unitary",
 				"default": "-76",
 				"help": "Minimum signal level/threshold in dBm required for the AP response to receive a packet in 5G band(-95 to -20, default = -76).",
+				"multiple_values": false,
 				"name": "radio-5g-threshold",
 				"size": 7,
 				"type": "string"
@@ -1963,6 +2037,7 @@
 				],
 				"default": "",
 				"help": "RADIUS-based MAC authentication server.",
+				"multiple_values": false,
 				"name": "radius-mac-auth-server",
 				"size": 35,
 				"type": "string"
@@ -1974,6 +2049,7 @@
 						"category": "unitary",
 						"default": "",
 						"help": "User group name.",
+						"multiple_values": false,
 						"name": "name",
 						"required": true,
 						"size": 79,
@@ -2015,6 +2091,7 @@
 				"help": "RADIUS MAC MPSK cache timeout interval (1800 - 864000, default = 86400).",
 				"max-value": 864000,
 				"min-value": 1800,
+				"multiple_values": false,
 				"name": "radius-mac-mpsk-timeout",
 				"type": "integer"
 			},
@@ -2025,6 +2102,7 @@
 				],
 				"default": "",
 				"help": "RADIUS server to be used to authenticate WiFi users.",
+				"multiple_values": false,
 				"name": "radius-server",
 				"size": 35,
 				"type": "string"
@@ -2841,6 +2919,7 @@
 			"sae-password": {
 				"category": "unitary",
 				"help": "WPA3 SAE password to be used to authenticate WiFi users.",
+				"multiple_values": false,
 				"name": "sae-password",
 				"size": 128,
 				"type": "password"
@@ -2880,6 +2959,7 @@
 						],
 						"default": "",
 						"help": "Schedule name.",
+						"multiple_values": false,
 						"name": "name",
 						"required": true,
 						"size": 35,
@@ -2902,6 +2982,7 @@
 				],
 				"default": "",
 				"help": "Secondary wireless access gateway profile name.",
+				"multiple_values": false,
 				"name": "secondary-wag-profile",
 				"size": 35,
 				"type": "string"
@@ -3003,6 +3084,7 @@
 				],
 				"default": "",
 				"help": "Optional security exempt list for captive portal authentication.",
+				"multiple_values": false,
 				"name": "security-exempt-list",
 				"size": 35,
 				"type": "string"
@@ -3011,6 +3093,7 @@
 				"category": "unitary",
 				"default": "",
 				"help": "Optional URL for redirecting users after they pass captive portal authentication.",
+				"multiple_values": false,
 				"name": "security-redirect-url",
 				"size": 1023,
 				"type": "var-string"
@@ -3025,6 +3108,7 @@
 						],
 						"default": "",
 						"help": "User group name.",
+						"multiple_values": false,
 						"name": "name",
 						"required": true,
 						"size": 79,
@@ -3062,6 +3146,7 @@
 				"category": "unitary",
 				"default": "fortinet",
 				"help": "IEEE 802.11 service set identifier (SSID) for the wireless interface. Users who wish to use the wireless network must configure their computers to access this SSID name.",
+				"multiple_values": false,
 				"name": "ssid",
 				"size": 32,
 				"type": "string"
@@ -3070,7 +3155,7 @@
 				"addedIn": "v6.4.0",
 				"category": "unitary",
 				"default": "disable",
-				"help": "Enable/disable sticky client remove to maintain good signal level clients in SSID. (default = disable).",
+				"help": "Enable/disable sticky client remove to maintain good signal level clients in SSID (default = disable).",
 				"multiple_values": false,
 				"name": "sticky-client-remove",
 				"options": [
@@ -3090,6 +3175,7 @@
 				"category": "unitary",
 				"default": "-79",
 				"help": "Minimum signal level/threshold in dBm required for the 2G client to be serviced by the AP (-95 to -20, default = -79).",
+				"multiple_values": false,
 				"name": "sticky-client-threshold-2g",
 				"size": 7,
 				"type": "string"
@@ -3099,6 +3185,7 @@
 				"category": "unitary",
 				"default": "-76",
 				"help": "Minimum signal level/threshold in dBm required for the 5G client to be serviced by the AP (-95 to -20, default = -76).",
+				"multiple_values": false,
 				"name": "sticky-client-threshold-5g",
 				"size": 7,
 				"type": "string"
@@ -3145,6 +3232,7 @@
 				"help": "The time interval to send echo to both primary and secondary tunnel peers (1 - 65535 sec, default = 300).",
 				"max-value": 65535,
 				"min-value": 1,
+				"multiple_values": false,
 				"name": "tunnel-echo-interval",
 				"type": "integer"
 			},
@@ -3154,6 +3242,7 @@
 				"help": "The time interval for secondary tunnel to fall back to primary tunnel (0 - 65535 sec, default = 7200).",
 				"max-value": 65535,
 				"min-value": 0,
+				"multiple_values": false,
 				"name": "tunnel-fallback-interval",
 				"type": "integer"
 			},
@@ -3167,6 +3256,7 @@
 						],
 						"default": "",
 						"help": "User group name.",
+						"multiple_values": false,
 						"name": "name",
 						"required": true,
 						"size": 79,
@@ -3208,6 +3298,7 @@
 				],
 				"default": "",
 				"help": "UTM profile name.",
+				"multiple_values": false,
 				"name": "utm-profile",
 				"size": 35,
 				"type": "string"
@@ -3249,6 +3340,39 @@
 				],
 				"type": "option"
 			},
+			"vlan-name": {
+				"addedIn": "v7.0.4",
+				"category": "table",
+				"children": {
+					"name": {
+						"category": "unitary",
+						"default": "",
+						"help": "VLAN name.",
+						"multiple_values": false,
+						"name": "name",
+						"required": true,
+						"size": 35,
+						"type": "string"
+					},
+					"vlan-id": {
+						"category": "unitary",
+						"default": 0,
+						"help": "VLAN ID.",
+						"max-value": 4094,
+						"min-value": 0,
+						"multiple_values": false,
+						"name": "vlan-id",
+						"type": "integer"
+					}
+				},
+				"help": "Table for mapping VLAN name to VLAN ID.",
+				"max_table_size_global": 0,
+				"max_table_size_item": 64,
+				"max_table_size_vdom": 0,
+				"mkey": "name",
+				"mkey_type": "string",
+				"name": "vlan-name"
+			},
 			"vlan-pool": {
 				"category": "table",
 				"children": {
@@ -3258,6 +3382,7 @@
 						"help": "ID.",
 						"max-value": 4094,
 						"min-value": 0,
+						"multiple_values": false,
 						"name": "id",
 						"type": "integer"
 					},
@@ -3268,6 +3393,7 @@
 						],
 						"default": "",
 						"help": "WTP group name.",
+						"multiple_values": false,
 						"name": "wtp-group",
 						"size": 35,
 						"type": "string"
@@ -3313,6 +3439,7 @@
 				"help": "Optional VLAN ID.",
 				"max-value": 4094,
 				"min-value": 0,
+				"multiple_values": false,
 				"name": "vlanid",
 				"type": "integer"
 			},
@@ -3342,6 +3469,7 @@
 				],
 				"default": "",
 				"help": "WebFilter profile name.",
+				"multiple_values": false,
 				"name": "webfilter-profile",
 				"size": 35,
 				"type": "string"
@@ -3357,9 +3485,9 @@
 		"path": "wireless-controller",
 		"q_type": 274
 	},
-	"revision": "78ee061304af9c5d17bcae6474808d97",
-	"serial": "FGTAZRAQCG14L19D",
+	"revision": "e338e35a484eaafc990a69dd13ff4f76",
+	"serial": "FGTAZRI5HXAAGI90",
 	"status": "success",
 	"vdom": "root",
-	"version": "v7.0.3"
+	"version": "v7.0.4"
 }

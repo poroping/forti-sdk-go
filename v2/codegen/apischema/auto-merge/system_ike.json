@@ -1,9 +1,9 @@
 {
 	"addedIn": "v7.0.0",
-	"build": 237,
+	"build": 301,
 	"http_method": "GET",
 	"http_status": 200,
-	"mergedVersions": "v7.0.0,v7.0.1,v7.0.2,v7.0.3",
+	"mergedVersions": "v7.0.0,v7.0.1,v7.0.2,v7.0.3,v7.0.4",
 	"name": "ike",
 	"path": "system",
 	"results": {
@@ -37,6 +37,7 @@
 						"help": "Number of key pairs to pre-generate for this Diffie-Hellman group (per-worker).",
 						"max-value": 50000,
 						"min-value": 0,
+						"multiple_values": false,
 						"name": "keypair-count",
 						"type": "integer"
 					},
@@ -64,6 +65,7 @@
 					}
 				},
 				"help": "Diffie-Hellman group 1 (MODP-768).",
+				"multiple_values": false,
 				"name": "dh-group-1"
 			},
 			"dh-group-14": {
@@ -93,6 +95,7 @@
 						"help": "Number of key pairs to pre-generate for this Diffie-Hellman group (per-worker).",
 						"max-value": 50000,
 						"min-value": 0,
+						"multiple_values": false,
 						"name": "keypair-count",
 						"type": "integer"
 					},
@@ -120,6 +123,7 @@
 					}
 				},
 				"help": "Diffie-Hellman group 14 (MODP-2048).",
+				"multiple_values": false,
 				"name": "dh-group-14"
 			},
 			"dh-group-15": {
@@ -149,6 +153,7 @@
 						"help": "Number of key pairs to pre-generate for this Diffie-Hellman group (per-worker).",
 						"max-value": 50000,
 						"min-value": 0,
+						"multiple_values": false,
 						"name": "keypair-count",
 						"type": "integer"
 					},
@@ -176,6 +181,7 @@
 					}
 				},
 				"help": "Diffie-Hellman group 15 (MODP-3072).",
+				"multiple_values": false,
 				"name": "dh-group-15"
 			},
 			"dh-group-16": {
@@ -205,6 +211,7 @@
 						"help": "Number of key pairs to pre-generate for this Diffie-Hellman group (per-worker).",
 						"max-value": 50000,
 						"min-value": 0,
+						"multiple_values": false,
 						"name": "keypair-count",
 						"type": "integer"
 					},
@@ -232,6 +239,7 @@
 					}
 				},
 				"help": "Diffie-Hellman group 16 (MODP-4096).",
+				"multiple_values": false,
 				"name": "dh-group-16"
 			},
 			"dh-group-17": {
@@ -261,6 +269,7 @@
 						"help": "Number of key pairs to pre-generate for this Diffie-Hellman group (per-worker).",
 						"max-value": 50000,
 						"min-value": 0,
+						"multiple_values": false,
 						"name": "keypair-count",
 						"type": "integer"
 					},
@@ -288,6 +297,7 @@
 					}
 				},
 				"help": "Diffie-Hellman group 17 (MODP-6144).",
+				"multiple_values": false,
 				"name": "dh-group-17"
 			},
 			"dh-group-18": {
@@ -317,6 +327,7 @@
 						"help": "Number of key pairs to pre-generate for this Diffie-Hellman group (per-worker).",
 						"max-value": 50000,
 						"min-value": 0,
+						"multiple_values": false,
 						"name": "keypair-count",
 						"type": "integer"
 					},
@@ -344,6 +355,7 @@
 					}
 				},
 				"help": "Diffie-Hellman group 18 (MODP-8192).",
+				"multiple_values": false,
 				"name": "dh-group-18"
 			},
 			"dh-group-19": {
@@ -373,6 +385,7 @@
 						"help": "Number of key pairs to pre-generate for this Diffie-Hellman group (per-worker).",
 						"max-value": 50000,
 						"min-value": 0,
+						"multiple_values": false,
 						"name": "keypair-count",
 						"type": "integer"
 					},
@@ -400,6 +413,7 @@
 					}
 				},
 				"help": "Diffie-Hellman group 19 (EC-P256).",
+				"multiple_values": false,
 				"name": "dh-group-19"
 			},
 			"dh-group-2": {
@@ -429,6 +443,7 @@
 						"help": "Number of key pairs to pre-generate for this Diffie-Hellman group (per-worker).",
 						"max-value": 50000,
 						"min-value": 0,
+						"multiple_values": false,
 						"name": "keypair-count",
 						"type": "integer"
 					},
@@ -456,6 +471,7 @@
 					}
 				},
 				"help": "Diffie-Hellman group 2 (MODP-1024).",
+				"multiple_values": false,
 				"name": "dh-group-2"
 			},
 			"dh-group-20": {
@@ -485,6 +501,7 @@
 						"help": "Number of key pairs to pre-generate for this Diffie-Hellman group (per-worker).",
 						"max-value": 50000,
 						"min-value": 0,
+						"multiple_values": false,
 						"name": "keypair-count",
 						"type": "integer"
 					},
@@ -512,6 +529,7 @@
 					}
 				},
 				"help": "Diffie-Hellman group 20 (EC-P384).",
+				"multiple_values": false,
 				"name": "dh-group-20"
 			},
 			"dh-group-21": {
@@ -541,6 +559,7 @@
 						"help": "Number of key pairs to pre-generate for this Diffie-Hellman group (per-worker).",
 						"max-value": 50000,
 						"min-value": 0,
+						"multiple_values": false,
 						"name": "keypair-count",
 						"type": "integer"
 					},
@@ -568,6 +587,7 @@
 					}
 				},
 				"help": "Diffie-Hellman group 21 (EC-P521).",
+				"multiple_values": false,
 				"name": "dh-group-21"
 			},
 			"dh-group-27": {
@@ -597,6 +617,7 @@
 						"help": "Number of key pairs to pre-generate for this Diffie-Hellman group (per-worker).",
 						"max-value": 50000,
 						"min-value": 0,
+						"multiple_values": false,
 						"name": "keypair-count",
 						"type": "integer"
 					},
@@ -624,6 +645,7 @@
 					}
 				},
 				"help": "Diffie-Hellman group 27 (EC-P224BP).",
+				"multiple_values": false,
 				"name": "dh-group-27"
 			},
 			"dh-group-28": {
@@ -653,6 +675,7 @@
 						"help": "Number of key pairs to pre-generate for this Diffie-Hellman group (per-worker).",
 						"max-value": 50000,
 						"min-value": 0,
+						"multiple_values": false,
 						"name": "keypair-count",
 						"type": "integer"
 					},
@@ -680,6 +703,7 @@
 					}
 				},
 				"help": "Diffie-Hellman group 28 (EC-P256BP).",
+				"multiple_values": false,
 				"name": "dh-group-28"
 			},
 			"dh-group-29": {
@@ -709,6 +733,7 @@
 						"help": "Number of key pairs to pre-generate for this Diffie-Hellman group (per-worker).",
 						"max-value": 50000,
 						"min-value": 0,
+						"multiple_values": false,
 						"name": "keypair-count",
 						"type": "integer"
 					},
@@ -736,6 +761,7 @@
 					}
 				},
 				"help": "Diffie-Hellman group 29 (EC-P384BP).",
+				"multiple_values": false,
 				"name": "dh-group-29"
 			},
 			"dh-group-30": {
@@ -765,6 +791,7 @@
 						"help": "Number of key pairs to pre-generate for this Diffie-Hellman group (per-worker).",
 						"max-value": 50000,
 						"min-value": 0,
+						"multiple_values": false,
 						"name": "keypair-count",
 						"type": "integer"
 					},
@@ -792,6 +819,7 @@
 					}
 				},
 				"help": "Diffie-Hellman group 30 (EC-P512BP).",
+				"multiple_values": false,
 				"name": "dh-group-30"
 			},
 			"dh-group-31": {
@@ -821,6 +849,7 @@
 						"help": "Number of key pairs to pre-generate for this Diffie-Hellman group (per-worker).",
 						"max-value": 50000,
 						"min-value": 0,
+						"multiple_values": false,
 						"name": "keypair-count",
 						"type": "integer"
 					},
@@ -848,6 +877,7 @@
 					}
 				},
 				"help": "Diffie-Hellman group 31 (EC-X25519).",
+				"multiple_values": false,
 				"name": "dh-group-31"
 			},
 			"dh-group-32": {
@@ -877,6 +907,7 @@
 						"help": "Number of key pairs to pre-generate for this Diffie-Hellman group (per-worker).",
 						"max-value": 50000,
 						"min-value": 0,
+						"multiple_values": false,
 						"name": "keypair-count",
 						"type": "integer"
 					},
@@ -904,6 +935,7 @@
 					}
 				},
 				"help": "Diffie-Hellman group 32 (EC-X448).",
+				"multiple_values": false,
 				"name": "dh-group-32"
 			},
 			"dh-group-5": {
@@ -933,6 +965,7 @@
 						"help": "Number of key pairs to pre-generate for this Diffie-Hellman group (per-worker).",
 						"max-value": 50000,
 						"min-value": 0,
+						"multiple_values": false,
 						"name": "keypair-count",
 						"type": "integer"
 					},
@@ -960,6 +993,7 @@
 					}
 				},
 				"help": "Diffie-Hellman group 5 (MODP-1536).",
+				"multiple_values": false,
 				"name": "dh-group-5"
 			},
 			"dh-keypair-cache": {
@@ -986,6 +1020,7 @@
 				"help": "Number of key pairs to pre-generate for each Diffie-Hellman group (per-worker).",
 				"max-value": 50000,
 				"min-value": 0,
+				"multiple_values": false,
 				"name": "dh-keypair-count",
 				"type": "integer"
 			},
@@ -1049,6 +1084,7 @@
 				"help": "Number of Diffie-Hellman workers to start.",
 				"max-value": 32,
 				"min-value": 1,
+				"multiple_values": false,
 				"name": "dh-worker-count",
 				"type": "integer"
 			},
@@ -1058,18 +1094,20 @@
 				"help": "Maximum number of IPsec tunnels to negotiate simultaneously.",
 				"max-value": 20000,
 				"min-value": 50,
+				"multiple_values": false,
 				"name": "embryonic-limit",
 				"type": "integer"
 			}
 		},
 		"help": "Configure IKE global attributes.",
+		"multiple_values": false,
 		"name": "ike",
 		"path": "system",
 		"q_type": 535
 	},
-	"revision": "78ee061304af9c5d17bcae6474808d97",
-	"serial": "FGTAZRAQCG14L19D",
+	"revision": "e338e35a484eaafc990a69dd13ff4f76",
+	"serial": "FGTAZRI5HXAAGI90",
 	"status": "success",
 	"vdom": "root",
-	"version": "v7.0.3"
+	"version": "v7.0.4"
 }

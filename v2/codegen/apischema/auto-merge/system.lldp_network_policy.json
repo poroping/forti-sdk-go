@@ -1,9 +1,9 @@
 {
 	"addedIn": "v6.2.7",
-	"build": 237,
+	"build": 301,
 	"http_method": "GET",
 	"http_status": 200,
-	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3",
+	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3,v7.0.4",
 	"name": "network-policy",
 	"path": "system.lldp",
 	"results": {
@@ -13,6 +13,7 @@
 			"comment": {
 				"category": "unitary",
 				"help": "Comment.",
+				"multiple_values": false,
 				"name": "comment",
 				"size": 1023,
 				"type": "var-string"
@@ -26,6 +27,7 @@
 						"help": "Differentiated Services Code Point (DSCP) value to advertise.",
 						"max-value": 63,
 						"min-value": 0,
+						"multiple_values": false,
 						"name": "dscp",
 						"type": "integer"
 					},
@@ -35,6 +37,7 @@
 						"help": "802.1P CoS/PCP to advertise (0 - 7; from lowest to highest priority).",
 						"max-value": 7,
 						"min-value": 0,
+						"multiple_values": false,
 						"name": "priority",
 						"type": "integer"
 					},
@@ -84,12 +87,14 @@
 						"help": "802.1Q VLAN ID to advertise (1 - 4094).",
 						"max-value": 4094,
 						"min-value": 1,
+						"multiple_values": false,
 						"name": "vlan",
 						"required": true,
 						"type": "integer"
 					}
 				},
 				"help": "Guest.",
+				"multiple_values": false,
 				"name": "guest"
 			},
 			"guest-voice-signaling": {
@@ -101,6 +106,7 @@
 						"help": "Differentiated Services Code Point (DSCP) value to advertise.",
 						"max-value": 63,
 						"min-value": 0,
+						"multiple_values": false,
 						"name": "dscp",
 						"type": "integer"
 					},
@@ -110,6 +116,7 @@
 						"help": "802.1P CoS/PCP to advertise (0 - 7; from lowest to highest priority).",
 						"max-value": 7,
 						"min-value": 0,
+						"multiple_values": false,
 						"name": "priority",
 						"type": "integer"
 					},
@@ -159,18 +166,21 @@
 						"help": "802.1Q VLAN ID to advertise (1 - 4094).",
 						"max-value": 4094,
 						"min-value": 1,
+						"multiple_values": false,
 						"name": "vlan",
 						"required": true,
 						"type": "integer"
 					}
 				},
 				"help": "Guest Voice Signaling.",
+				"multiple_values": false,
 				"name": "guest-voice-signaling"
 			},
 			"name": {
 				"category": "unitary",
 				"default": "",
 				"help": "LLDP network policy name.",
+				"multiple_values": false,
 				"name": "name",
 				"required": true,
 				"size": 35,
@@ -185,6 +195,7 @@
 						"help": "Differentiated Services Code Point (DSCP) value to advertise.",
 						"max-value": 63,
 						"min-value": 0,
+						"multiple_values": false,
 						"name": "dscp",
 						"type": "integer"
 					},
@@ -194,6 +205,7 @@
 						"help": "802.1P CoS/PCP to advertise (0 - 7; from lowest to highest priority).",
 						"max-value": 7,
 						"min-value": 0,
+						"multiple_values": false,
 						"name": "priority",
 						"type": "integer"
 					},
@@ -243,12 +255,14 @@
 						"help": "802.1Q VLAN ID to advertise (1 - 4094).",
 						"max-value": 4094,
 						"min-value": 1,
+						"multiple_values": false,
 						"name": "vlan",
 						"required": true,
 						"type": "integer"
 					}
 				},
 				"help": "Softphone.",
+				"multiple_values": false,
 				"name": "softphone"
 			},
 			"streaming-video": {
@@ -260,6 +274,7 @@
 						"help": "Differentiated Services Code Point (DSCP) value to advertise.",
 						"max-value": 63,
 						"min-value": 0,
+						"multiple_values": false,
 						"name": "dscp",
 						"type": "integer"
 					},
@@ -269,6 +284,7 @@
 						"help": "802.1P CoS/PCP to advertise (0 - 7; from lowest to highest priority).",
 						"max-value": 7,
 						"min-value": 0,
+						"multiple_values": false,
 						"name": "priority",
 						"type": "integer"
 					},
@@ -318,12 +334,14 @@
 						"help": "802.1Q VLAN ID to advertise (1 - 4094).",
 						"max-value": 4094,
 						"min-value": 1,
+						"multiple_values": false,
 						"name": "vlan",
 						"required": true,
 						"type": "integer"
 					}
 				},
 				"help": "Streaming Video.",
+				"multiple_values": false,
 				"name": "streaming-video"
 			},
 			"video-conferencing": {
@@ -335,6 +353,7 @@
 						"help": "Differentiated Services Code Point (DSCP) value to advertise.",
 						"max-value": 63,
 						"min-value": 0,
+						"multiple_values": false,
 						"name": "dscp",
 						"type": "integer"
 					},
@@ -344,6 +363,7 @@
 						"help": "802.1P CoS/PCP to advertise (0 - 7; from lowest to highest priority).",
 						"max-value": 7,
 						"min-value": 0,
+						"multiple_values": false,
 						"name": "priority",
 						"type": "integer"
 					},
@@ -393,12 +413,14 @@
 						"help": "802.1Q VLAN ID to advertise (1 - 4094).",
 						"max-value": 4094,
 						"min-value": 1,
+						"multiple_values": false,
 						"name": "vlan",
 						"required": true,
 						"type": "integer"
 					}
 				},
 				"help": "Video Conferencing.",
+				"multiple_values": false,
 				"name": "video-conferencing"
 			},
 			"video-signaling": {
@@ -410,6 +432,7 @@
 						"help": "Differentiated Services Code Point (DSCP) value to advertise.",
 						"max-value": 63,
 						"min-value": 0,
+						"multiple_values": false,
 						"name": "dscp",
 						"type": "integer"
 					},
@@ -419,6 +442,7 @@
 						"help": "802.1P CoS/PCP to advertise (0 - 7; from lowest to highest priority).",
 						"max-value": 7,
 						"min-value": 0,
+						"multiple_values": false,
 						"name": "priority",
 						"type": "integer"
 					},
@@ -468,12 +492,14 @@
 						"help": "802.1Q VLAN ID to advertise (1 - 4094).",
 						"max-value": 4094,
 						"min-value": 1,
+						"multiple_values": false,
 						"name": "vlan",
 						"required": true,
 						"type": "integer"
 					}
 				},
 				"help": "Video Signaling.",
+				"multiple_values": false,
 				"name": "video-signaling"
 			},
 			"voice": {
@@ -485,6 +511,7 @@
 						"help": "Differentiated Services Code Point (DSCP) value to advertise.",
 						"max-value": 63,
 						"min-value": 0,
+						"multiple_values": false,
 						"name": "dscp",
 						"type": "integer"
 					},
@@ -494,6 +521,7 @@
 						"help": "802.1P CoS/PCP to advertise (0 - 7; from lowest to highest priority).",
 						"max-value": 7,
 						"min-value": 0,
+						"multiple_values": false,
 						"name": "priority",
 						"type": "integer"
 					},
@@ -543,12 +571,14 @@
 						"help": "802.1Q VLAN ID to advertise (1 - 4094).",
 						"max-value": 4094,
 						"min-value": 1,
+						"multiple_values": false,
 						"name": "vlan",
 						"required": true,
 						"type": "integer"
 					}
 				},
 				"help": "Voice.",
+				"multiple_values": false,
 				"name": "voice"
 			},
 			"voice-signaling": {
@@ -560,6 +590,7 @@
 						"help": "Differentiated Services Code Point (DSCP) value to advertise.",
 						"max-value": 63,
 						"min-value": 0,
+						"multiple_values": false,
 						"name": "dscp",
 						"type": "integer"
 					},
@@ -569,6 +600,7 @@
 						"help": "802.1P CoS/PCP to advertise (0 - 7; from lowest to highest priority).",
 						"max-value": 7,
 						"min-value": 0,
+						"multiple_values": false,
 						"name": "priority",
 						"type": "integer"
 					},
@@ -618,12 +650,14 @@
 						"help": "802.1Q VLAN ID to advertise (1 - 4094).",
 						"max-value": 4094,
 						"min-value": 1,
+						"multiple_values": false,
 						"name": "vlan",
 						"required": true,
 						"type": "integer"
 					}
 				},
 				"help": "Voice signaling.",
+				"multiple_values": false,
 				"name": "voice-signaling"
 			}
 		},
@@ -637,9 +671,9 @@
 		"path": "system.lldp",
 		"q_type": 201
 	},
-	"revision": "c63b3f15b6991a6ab02e05523690fd18",
-	"serial": "FGTAZRAQCG14L19D",
+	"revision": "158a923525badbf574f17da05e5a2185",
+	"serial": "FGTAZRI5HXAAGI90",
 	"status": "success",
 	"vdom": "root",
-	"version": "v7.0.3"
+	"version": "v7.0.4"
 }

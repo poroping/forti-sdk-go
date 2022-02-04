@@ -1,9 +1,9 @@
 {
 	"addedIn": "v6.2.7",
-	"build": 237,
+	"build": 301,
 	"http_method": "GET",
 	"http_status": 200,
-	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3",
+	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3,v7.0.4",
 	"name": "layout",
 	"path": "report",
 	"results": {
@@ -17,6 +17,7 @@
 						"category": "unitary",
 						"default": "",
 						"help": "Report item chart name.",
+						"multiple_values": false,
 						"name": "chart",
 						"size": 71,
 						"type": "string"
@@ -57,6 +58,7 @@
 						"category": "unitary",
 						"default": "",
 						"help": "Report item text content.",
+						"multiple_values": false,
 						"name": "content",
 						"size": 511,
 						"type": "string"
@@ -65,6 +67,7 @@
 						"category": "unitary",
 						"default": "",
 						"help": "Description.",
+						"multiple_values": false,
 						"name": "description",
 						"size": 63,
 						"type": "string"
@@ -112,6 +115,7 @@
 						"help": "Report item ID.",
 						"max-value": 4294967295,
 						"min-value": 0,
+						"multiple_values": false,
 						"name": "id",
 						"type": "integer"
 					},
@@ -119,6 +123,7 @@
 						"category": "unitary",
 						"default": "",
 						"help": "Report item image file name.",
+						"multiple_values": false,
 						"name": "img-src",
 						"size": 127,
 						"type": "string"
@@ -207,6 +212,7 @@
 								"help": "ID.",
 								"max-value": 4294967295,
 								"min-value": 0,
+								"multiple_values": false,
 								"name": "id",
 								"required": true,
 								"type": "integer"
@@ -215,6 +221,7 @@
 								"category": "unitary",
 								"default": "",
 								"help": "Field name that match field of parameters defined in dataset.",
+								"multiple_values": false,
 								"name": "name",
 								"required": true,
 								"size": 127,
@@ -224,6 +231,7 @@
 								"category": "unitary",
 								"default": "",
 								"help": "Value to replace corresponding field of parameters defined in dataset.",
+								"multiple_values": false,
 								"name": "value",
 								"required": true,
 								"size": 1023,
@@ -242,6 +250,7 @@
 						"category": "unitary",
 						"default": "",
 						"help": "Report item style.",
+						"multiple_values": false,
 						"name": "style",
 						"size": 71,
 						"type": "string"
@@ -321,6 +330,7 @@
 						"category": "unitary",
 						"default": "",
 						"help": "Report section title.",
+						"multiple_values": false,
 						"name": "title",
 						"size": 511,
 						"type": "string"
@@ -331,6 +341,7 @@
 						"help": "Value of top.",
 						"max-value": 4294967295,
 						"min-value": 0,
+						"multiple_values": false,
 						"name": "top-n",
 						"type": "integer"
 					},
@@ -390,7 +401,8 @@
 			"cutoff-time": {
 				"category": "unitary",
 				"default": "",
-				"help": "Custom cutoff time to generate report [hh:mm].",
+				"help": "Custom cutoff time to generate report (format = hh:mm).",
+				"multiple_values": false,
 				"name": "cutoff-time",
 				"type": "user"
 			},
@@ -436,6 +448,7 @@
 				"category": "unitary",
 				"default": "",
 				"help": "Description.",
+				"multiple_values": false,
 				"name": "description",
 				"size": 127,
 				"type": "string"
@@ -444,6 +457,7 @@
 				"category": "unitary",
 				"default": "",
 				"help": "Email recipients for generated reports.",
+				"multiple_values": false,
 				"name": "email-recipients",
 				"size": 511,
 				"type": "string"
@@ -486,6 +500,7 @@
 				"help": "Maximum number of PDF reports to keep at one time (oldest report is overwritten).",
 				"max-value": 365,
 				"min-value": 1,
+				"multiple_values": false,
 				"name": "max-pdf-report",
 				"type": "integer"
 			},
@@ -493,6 +508,7 @@
 				"category": "unitary",
 				"default": "",
 				"help": "Report layout name.",
+				"multiple_values": false,
 				"name": "name",
 				"size": 35,
 				"type": "string"
@@ -562,6 +578,7 @@
 										"category": "unitary",
 										"default": "",
 										"help": "Report item text content.",
+										"multiple_values": false,
 										"name": "content",
 										"size": 511,
 										"type": "string"
@@ -570,6 +587,7 @@
 										"category": "unitary",
 										"default": "",
 										"help": "Description.",
+										"multiple_values": false,
 										"name": "description",
 										"size": 63,
 										"type": "string"
@@ -580,6 +598,7 @@
 										"help": "Report item ID.",
 										"max-value": 4294967295,
 										"min-value": 0,
+										"multiple_values": false,
 										"name": "id",
 										"type": "integer"
 									},
@@ -587,6 +606,7 @@
 										"category": "unitary",
 										"default": "",
 										"help": "Report item image file name.",
+										"multiple_values": false,
 										"name": "img-src",
 										"size": 127,
 										"type": "string"
@@ -595,6 +615,7 @@
 										"category": "unitary",
 										"default": "",
 										"help": "Report item style.",
+										"multiple_values": false,
 										"name": "style",
 										"size": 71,
 										"type": "string"
@@ -630,12 +651,14 @@
 								"category": "unitary",
 								"default": "",
 								"help": "Report footer style.",
+								"multiple_values": false,
 								"name": "style",
 								"size": 71,
 								"type": "string"
 							}
 						},
 						"help": "Configure report page footer.",
+						"multiple_values": false,
 						"name": "footer"
 					},
 					"header": {
@@ -648,6 +671,7 @@
 										"category": "unitary",
 										"default": "",
 										"help": "Report item text content.",
+										"multiple_values": false,
 										"name": "content",
 										"size": 511,
 										"type": "string"
@@ -656,6 +680,7 @@
 										"category": "unitary",
 										"default": "",
 										"help": "Description.",
+										"multiple_values": false,
 										"name": "description",
 										"size": 63,
 										"type": "string"
@@ -666,6 +691,7 @@
 										"help": "Report item ID.",
 										"max-value": 4294967295,
 										"min-value": 0,
+										"multiple_values": false,
 										"name": "id",
 										"type": "integer"
 									},
@@ -673,6 +699,7 @@
 										"category": "unitary",
 										"default": "",
 										"help": "Report item image file name.",
+										"multiple_values": false,
 										"name": "img-src",
 										"size": 127,
 										"type": "string"
@@ -681,6 +708,7 @@
 										"category": "unitary",
 										"default": "",
 										"help": "Report item style.",
+										"multiple_values": false,
 										"name": "style",
 										"size": 71,
 										"type": "string"
@@ -716,12 +744,14 @@
 								"category": "unitary",
 								"default": "",
 								"help": "Report header style.",
+								"multiple_values": false,
 								"name": "style",
 								"size": 71,
 								"type": "string"
 							}
 						},
 						"help": "Configure report page header.",
+						"multiple_values": false,
 						"name": "header"
 					},
 					"options": {
@@ -784,6 +814,7 @@
 					}
 				},
 				"help": "Configure report page.",
+				"multiple_values": false,
 				"name": "page"
 			},
 			"schedule-type": {
@@ -812,6 +843,7 @@
 				"category": "unitary",
 				"default": "",
 				"help": "Report style theme.",
+				"multiple_values": false,
 				"name": "style-theme",
 				"required": true,
 				"size": 35,
@@ -821,6 +853,7 @@
 				"category": "unitary",
 				"default": "",
 				"help": "Report subtitle.",
+				"multiple_values": false,
 				"name": "subtitle",
 				"size": 127,
 				"type": "string"
@@ -828,7 +861,8 @@
 			"time": {
 				"category": "unitary",
 				"default": "",
-				"help": "Schedule time to generate report [hh:mm].",
+				"help": "Schedule time to generate report (format = hh:mm).",
+				"multiple_values": false,
 				"name": "time",
 				"type": "user"
 			},
@@ -836,6 +870,7 @@
 				"category": "unitary",
 				"default": "",
 				"help": "Report title.",
+				"multiple_values": false,
 				"name": "title",
 				"size": 127,
 				"type": "string"
@@ -851,9 +886,9 @@
 		"path": "report",
 		"q_type": 423
 	},
-	"revision": "214b5079bced3e1810928d9b55481d57",
-	"serial": "FGTAZRAQCG14L19D",
+	"revision": "d2b519f8a1fa574a27ff0bafaf7cbc54",
+	"serial": "FGTAZRI5HXAAGI90",
 	"status": "success",
 	"vdom": "root",
-	"version": "v7.0.3"
+	"version": "v7.0.4"
 }

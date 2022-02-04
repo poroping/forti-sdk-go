@@ -1,9 +1,9 @@
 {
 	"addedIn": "v7.0.2",
-	"build": 237,
+	"build": 301,
 	"http_method": "GET",
 	"http_status": 200,
-	"mergedVersions": "v7.0.2,v7.0.3",
+	"mergedVersions": "v7.0.2,v7.0.3,v7.0.4",
 	"name": "filter",
 	"path": "log.tacacs+accounting",
 	"results": {
@@ -66,13 +66,14 @@
 			}
 		},
 		"help": "Settings for TACACS+ accounting events filter.",
+		"multiple_values": false,
 		"name": "filter",
 		"path": "log.tacacs+accounting",
 		"q_type": 78
 	},
-	"revision": "78ee061304af9c5d17bcae6474808d97",
-	"serial": "FGTAZRAQCG14L19D",
+	"revision": "e338e35a484eaafc990a69dd13ff4f76",
+	"serial": "FGTAZRI5HXAAGI90",
 	"status": "success",
 	"vdom": "root",
-	"version": "v7.0.3"
+	"version": "v7.0.4"
 }

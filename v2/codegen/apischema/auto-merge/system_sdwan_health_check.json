@@ -1,10 +1,10 @@
 {
 	"addedIn": "v6.4.2",
-	"build": 237,
+	"build": 301,
 	"child_path": "health-check",
 	"http_method": "GET",
 	"http_status": 200,
-	"mergedVersions": "v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3",
+	"mergedVersions": "v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3,v7.0.4",
 	"name": "sdwan",
 	"path": "system",
 	"results": {
@@ -56,6 +56,7 @@
 				"category": "unitary",
 				"default": "",
 				"help": "Differentiated services code point (DSCP) in the IP header of the probe packet.",
+				"multiple_values": false,
 				"name": "diffservcode",
 				"type": "user"
 			},
@@ -63,6 +64,7 @@
 				"category": "unitary",
 				"default": "0.0.0.0",
 				"help": "Response IP expected from DNS server if the protocol is DNS.",
+				"multiple_values": false,
 				"name": "dns-match-ip",
 				"type": "ipv4-address"
 			},
@@ -70,6 +72,7 @@
 				"category": "unitary",
 				"default": "www.example.com",
 				"help": "Fully qualified domain name to resolve for the DNS probe.",
+				"multiple_values": false,
 				"name": "dns-request-domain",
 				"size": 255,
 				"type": "string"
@@ -80,6 +83,7 @@
 				"help": "Number of failures before server is considered lost (1 - 3600, default = 5).",
 				"max-value": 3600,
 				"min-value": 1,
+				"multiple_values": false,
 				"name": "failtime",
 				"type": "integer"
 			},
@@ -87,6 +91,7 @@
 				"category": "unitary",
 				"default": "",
 				"help": "Full path and file name on the FTP server to download for FTP health-check to probe.",
+				"multiple_values": false,
 				"name": "ftp-file",
 				"size": 254,
 				"type": "string"
@@ -115,6 +120,7 @@
 				"help": "HA election priority (1 - 50).",
 				"max-value": 50,
 				"min-value": 1,
+				"multiple_values": false,
 				"name": "ha-priority",
 				"type": "integer"
 			},
@@ -122,6 +128,7 @@
 				"category": "unitary",
 				"default": "Chrome/ Safari/",
 				"help": "String in the http-agent field in the HTTP header.",
+				"multiple_values": false,
 				"name": "http-agent",
 				"size": 1024,
 				"type": "string"
@@ -130,6 +137,7 @@
 				"category": "unitary",
 				"default": "/",
 				"help": "URL used to communicate with the server if the protocol if the protocol is HTTP.",
+				"multiple_values": false,
 				"name": "http-get",
 				"size": 1024,
 				"type": "string"
@@ -138,6 +146,7 @@
 				"category": "unitary",
 				"default": "",
 				"help": "Response string expected from the server if the protocol is HTTP.",
+				"multiple_values": false,
 				"name": "http-match",
 				"size": 1024,
 				"type": "string"
@@ -148,6 +157,7 @@
 				"help": "Status check interval in milliseconds, or the time between attempting to connect to the server (500 - 3600*1000 msec, default = 500).",
 				"max-value": 3600000,
 				"min-value": 500,
+				"multiple_values": false,
 				"name": "interval",
 				"type": "integer"
 			},
@@ -163,6 +173,7 @@
 						"help": "Member sequence number.",
 						"max-value": 4294967295,
 						"min-value": 0,
+						"multiple_values": false,
 						"name": "seq-num",
 						"required": true,
 						"type": "integer"
@@ -181,6 +192,7 @@
 				"category": "unitary",
 				"default": "",
 				"help": "Status check or health check name.",
+				"multiple_values": false,
 				"name": "name",
 				"required": true,
 				"size": 35,
@@ -189,15 +201,17 @@
 			"packet-size": {
 				"category": "unitary",
 				"default": 64,
-				"help": "Packet size of a twamp test session,",
+				"help": "Packet size of a TWAMP test session.",
 				"max-value": 1024,
 				"min-value": 64,
+				"multiple_values": false,
 				"name": "packet-size",
 				"type": "integer"
 			},
 			"password": {
 				"category": "unitary",
-				"help": "Twamp controller password in authentication mode",
+				"help": "TWAMP controller password in authentication mode.",
+				"multiple_values": false,
 				"name": "password",
 				"size": 128,
 				"type": "password"
@@ -205,9 +219,10 @@
 			"port": {
 				"category": "unitary",
 				"default": 0,
-				"help": "Port number used to communicate with the server over the selected protocol (0-65535, default = 0, auto select. http, tcp-connect: 80, udp-echo, tcp-echo: 7, dns: 53, ftp: 21, twamp: 862).",
+				"help": "Port number used to communicate with the server over the selected protocol (0 - 65535, default = 0, auto select. http, tcp-connect: 80, udp-echo, tcp-echo: 7, dns: 53, ftp: 21, twamp: 862).",
 				"max-value": 65535,
 				"min-value": 0,
+				"multiple_values": false,
 				"name": "port",
 				"type": "integer"
 			},
@@ -217,6 +232,7 @@
 				"help": "Number of most recent probes that should be used to calculate latency and jitter (5 - 30, default = 30).",
 				"max-value": 30,
 				"min-value": 5,
+				"multiple_values": false,
 				"name": "probe-count",
 				"type": "integer"
 			},
@@ -244,6 +260,7 @@
 				"help": "Time to wait before a probe packet is considered lost (500 - 3600*1000 msec, default = 500).",
 				"max-value": 3600000,
 				"min-value": 500,
+				"multiple_values": false,
 				"name": "probe-timeout",
 				"type": "integer"
 			},
@@ -313,6 +330,7 @@
 				"help": "Number of successful responses received before server is considered recovered (1 - 3600, default = 5).",
 				"max-value": 3600,
 				"min-value": 1,
+				"multiple_values": false,
 				"name": "recoverytime",
 				"type": "integer"
 			},
@@ -338,6 +356,8 @@
 				"category": "unitary",
 				"default": "",
 				"help": "IP address or FQDN name of the server.",
+				"max_num_values": 2,
+				"multiple_values": true,
 				"name": "server",
 				"size": 79,
 				"type": "string"
@@ -351,6 +371,7 @@
 						"help": "SLA ID.",
 						"max-value": 32,
 						"min-value": 1,
+						"multiple_values": false,
 						"name": "id",
 						"required": true,
 						"type": "integer"
@@ -361,6 +382,7 @@
 						"help": "Jitter for SLA to make decision in milliseconds. (0 - 10000000, default = 5).",
 						"max-value": 10000000,
 						"min-value": 0,
+						"multiple_values": false,
 						"name": "jitter-threshold",
 						"type": "integer"
 					},
@@ -370,6 +392,7 @@
 						"help": "Latency for SLA to make decision in milliseconds. (0 - 10000000, default = 5).",
 						"max-value": 10000000,
 						"min-value": 0,
+						"multiple_values": false,
 						"name": "latency-threshold",
 						"type": "integer"
 					},
@@ -401,6 +424,7 @@
 						"help": "Packet loss for SLA to make decision in percentage. (0 - 100, default = 0).",
 						"max-value": 100,
 						"min-value": 0,
+						"multiple_values": false,
 						"name": "packetloss-threshold",
 						"type": "integer"
 					}
@@ -419,6 +443,7 @@
 				"help": "Time interval in seconds that SLA fail log messages will be generated (0 - 3600, default = 0).",
 				"max-value": 3600,
 				"min-value": 0,
+				"multiple_values": false,
 				"name": "sla-fail-log-period",
 				"type": "integer"
 			},
@@ -428,6 +453,7 @@
 				"help": "Time interval in seconds that SLA pass log messages will be generated (0 - 3600, default = 0).",
 				"max-value": 3600,
 				"min-value": 0,
+				"multiple_values": false,
 				"name": "sla-pass-log-period",
 				"type": "integer"
 			},
@@ -455,6 +481,7 @@
 				"help": "Alert threshold for jitter (ms, default = 0).",
 				"max-value": 4294967295,
 				"min-value": 0,
+				"multiple_values": false,
 				"name": "threshold-alert-jitter",
 				"type": "integer"
 			},
@@ -464,6 +491,7 @@
 				"help": "Alert threshold for latency (ms, default = 0).",
 				"max-value": 4294967295,
 				"min-value": 0,
+				"multiple_values": false,
 				"name": "threshold-alert-latency",
 				"type": "integer"
 			},
@@ -473,6 +501,7 @@
 				"help": "Alert threshold for packet loss (percentage, default = 0).",
 				"max-value": 100,
 				"min-value": 0,
+				"multiple_values": false,
 				"name": "threshold-alert-packetloss",
 				"type": "integer"
 			},
@@ -482,6 +511,7 @@
 				"help": "Warning threshold for jitter (ms, default = 0).",
 				"max-value": 4294967295,
 				"min-value": 0,
+				"multiple_values": false,
 				"name": "threshold-warning-jitter",
 				"type": "integer"
 			},
@@ -491,6 +521,7 @@
 				"help": "Warning threshold for latency (ms, default = 0).",
 				"max-value": 4294967295,
 				"min-value": 0,
+				"multiple_values": false,
 				"name": "threshold-warning-latency",
 				"type": "integer"
 			},
@@ -500,6 +531,7 @@
 				"help": "Warning threshold for packet loss (percentage, default = 0).",
 				"max-value": 100,
 				"min-value": 0,
+				"multiple_values": false,
 				"name": "threshold-warning-packetloss",
 				"type": "integer"
 			},
@@ -543,6 +575,7 @@
 				"category": "unitary",
 				"default": "",
 				"help": "The user name to access probe server.",
+				"multiple_values": false,
 				"name": "user",
 				"size": 64,
 				"type": "string"
@@ -558,9 +591,9 @@
 		"path": "system",
 		"q_type": 477
 	},
-	"revision": "c47afc208e6922e7baa78a9c2702c673",
-	"serial": "FGTAZRAQCG14L19D",
+	"revision": "ec8b2effd872e1e15355de181b7673e5",
+	"serial": "FGTAZRI5HXAAGI90",
 	"status": "success",
 	"vdom": "root",
-	"version": "v7.0.3"
+	"version": "v7.0.4"
 }

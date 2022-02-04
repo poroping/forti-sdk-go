@@ -1,9 +1,9 @@
 {
 	"addedIn": "v6.2.7",
-	"build": 237,
+	"build": 301,
 	"http_method": "GET",
 	"http_status": 200,
-	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3",
+	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3,v7.0.4",
 	"name": "ocvpn",
 	"path": "vpn",
 	"results": {
@@ -72,6 +72,7 @@
 				],
 				"default": "",
 				"help": "EAP authentication user group.",
+				"multiple_values": false,
 				"name": "eap-users",
 				"required": true,
 				"size": 35,
@@ -91,6 +92,7 @@
 								],
 								"default": "",
 								"help": "Authentication user group for FortiClient access.",
+								"multiple_values": false,
 								"name": "auth-group",
 								"required": true,
 								"size": 35,
@@ -100,6 +102,7 @@
 								"category": "unitary",
 								"default": "",
 								"help": "Group name.",
+								"multiple_values": false,
 								"name": "name",
 								"required": true,
 								"size": 35,
@@ -115,6 +118,7 @@
 										],
 										"default": "",
 										"help": "Overlay name.",
+										"multiple_values": false,
 										"name": "overlay-name",
 										"required": true,
 										"size": 79,
@@ -144,6 +148,7 @@
 					"psksecret": {
 						"category": "unitary",
 						"help": "Pre-shared secret for FortiClient PSK authentication (ASCII string or hexadecimal encoded with a leading 0x).",
+						"multiple_values": false,
 						"name": "psksecret",
 						"required": true,
 						"type": "password-3"
@@ -168,6 +173,7 @@
 					}
 				},
 				"help": "Configure FortiClient settings.",
+				"multiple_values": false,
 				"name": "forticlient-access"
 			},
 			"ip-allocation-block": {
@@ -175,6 +181,7 @@
 				"category": "unitary",
 				"default": "10.254.0.0 255.255.0.0",
 				"help": "Class B subnet reserved for private IP address assignment.",
+				"multiple_values": false,
 				"name": "ip-allocation-block",
 				"type": "ipv4-classnet-any"
 			},
@@ -298,6 +305,7 @@
 						"category": "unitary",
 						"default": "",
 						"help": "Overlay name.",
+						"multiple_values": false,
 						"name": "overlay-name",
 						"required": true,
 						"size": 63,
@@ -312,6 +320,7 @@
 								"help": "ID.",
 								"max-value": 4294967295,
 								"min-value": 0,
+								"multiple_values": false,
 								"name": "id",
 								"required": true,
 								"type": "integer"
@@ -323,6 +332,7 @@
 								],
 								"default": "",
 								"help": "LAN interface.",
+								"multiple_values": false,
 								"name": "interface",
 								"required": true,
 								"size": 15,
@@ -332,6 +342,7 @@
 								"category": "unitary",
 								"default": "0.0.0.0 0.0.0.0",
 								"help": "IPv4 address and subnet mask.",
+								"multiple_values": false,
 								"name": "subnet",
 								"required": true,
 								"type": "ipv4-classnet-any"
@@ -380,6 +391,7 @@
 				"help": "Overlay Controller VPN polling interval.",
 				"max-value": 120,
 				"min-value": 30,
+				"multiple_values": false,
 				"name": "poll-interval",
 				"type": "integer"
 			},
@@ -432,6 +444,7 @@
 				],
 				"default": "virtual-wan-link",
 				"help": "Set SD-WAN zone.",
+				"multiple_values": false,
 				"name": "sdwan-zone",
 				"required": true,
 				"size": 35,
@@ -466,6 +479,7 @@
 						],
 						"default": "",
 						"help": "Interface name.",
+						"multiple_values": false,
 						"name": "name",
 						"required": true,
 						"size": 79,
@@ -483,13 +497,14 @@
 			}
 		},
 		"help": "Configure Overlay Controller VPN settings.",
+		"multiple_values": false,
 		"name": "ocvpn",
 		"path": "vpn",
 		"q_type": 63
 	},
-	"revision": "78ee061304af9c5d17bcae6474808d97",
-	"serial": "FGTAZRAQCG14L19D",
+	"revision": "e338e35a484eaafc990a69dd13ff4f76",
+	"serial": "FGTAZRI5HXAAGI90",
 	"status": "success",
 	"vdom": "root",
-	"version": "v7.0.3"
+	"version": "v7.0.4"
 }

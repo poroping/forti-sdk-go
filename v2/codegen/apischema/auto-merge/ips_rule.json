@@ -1,9 +1,9 @@
 {
 	"addedIn": "v6.2.7",
-	"build": 237,
+	"build": 301,
 	"http_method": "GET",
 	"http_status": 200,
-	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3",
+	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3,v7.0.4",
 	"name": "rule",
 	"path": "ips",
 	"results": {
@@ -33,6 +33,7 @@
 				"category": "unitary",
 				"default": "",
 				"help": "Vulnerable applications.",
+				"multiple_values": false,
 				"name": "application",
 				"readonly": true,
 				"type": "user"
@@ -43,6 +44,7 @@
 				"help": "Date.",
 				"max-value": 4294967295,
 				"min-value": 0,
+				"multiple_values": false,
 				"name": "date",
 				"readonly": true,
 				"type": "integer"
@@ -51,6 +53,7 @@
 				"category": "unitary",
 				"default": "",
 				"help": "Group.",
+				"multiple_values": false,
 				"name": "group",
 				"readonly": true,
 				"size": 63,
@@ -60,6 +63,7 @@
 				"category": "unitary",
 				"default": "",
 				"help": "Vulnerable location.",
+				"multiple_values": true,
 				"name": "location",
 				"readonly": true,
 				"type": "user"
@@ -111,6 +115,7 @@
 						"help": "ID.",
 						"max-value": 4294967295,
 						"min-value": 0,
+						"multiple_values": false,
 						"name": "id",
 						"readonly": true,
 						"type": "integer"
@@ -121,6 +126,7 @@
 						"help": "Meta ID.",
 						"max-value": 4294967295,
 						"min-value": 0,
+						"multiple_values": false,
 						"name": "metaid",
 						"readonly": true,
 						"type": "integer"
@@ -131,6 +137,7 @@
 						"help": "Value ID.",
 						"max-value": 4294967295,
 						"min-value": 0,
+						"multiple_values": false,
 						"name": "valueid",
 						"readonly": true,
 						"type": "integer"
@@ -149,6 +156,7 @@
 				"category": "unitary",
 				"default": "",
 				"help": "Rule name.",
+				"multiple_values": false,
 				"name": "name",
 				"size": 63,
 				"type": "string"
@@ -157,6 +165,7 @@
 				"category": "unitary",
 				"default": "",
 				"help": "Vulnerable operation systems.",
+				"multiple_values": false,
 				"name": "os",
 				"readonly": true,
 				"type": "user"
@@ -167,6 +176,7 @@
 				"help": "Revision.",
 				"max-value": 4294967295,
 				"min-value": 0,
+				"multiple_values": false,
 				"name": "rev",
 				"readonly": true,
 				"type": "integer"
@@ -177,6 +187,7 @@
 				"help": "Rule ID.",
 				"max-value": 4294967295,
 				"min-value": 0,
+				"multiple_values": false,
 				"name": "rule-id",
 				"readonly": true,
 				"type": "integer"
@@ -185,6 +196,7 @@
 				"category": "unitary",
 				"default": "",
 				"help": "Vulnerable service.",
+				"multiple_values": false,
 				"name": "service",
 				"readonly": true,
 				"type": "user"
@@ -193,6 +205,7 @@
 				"category": "unitary",
 				"default": "",
 				"help": "Severity.",
+				"multiple_values": false,
 				"name": "severity",
 				"readonly": true,
 				"type": "user"
@@ -228,9 +241,9 @@
 		"q_type": 235,
 		"readonly": true
 	},
-	"revision": "a86bdf2148c559853d31695e39cc393e",
-	"serial": "FGTAZRAQCG14L19D",
+	"revision": "2cd1284ee33d710a0456eda6199beca6",
+	"serial": "FGTAZRI5HXAAGI90",
 	"status": "success",
 	"vdom": "root",
-	"version": "v7.0.3"
+	"version": "v7.0.4"
 }

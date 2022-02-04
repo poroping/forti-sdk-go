@@ -1,9 +1,9 @@
 {
 	"addedIn": "v6.2.7",
-	"build": 237,
+	"build": 301,
 	"http_method": "GET",
 	"http_status": 200,
-	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3",
+	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3,v7.0.4",
 	"name": "manualkey-interface",
 	"path": "vpn.ipsec",
 	"results": {
@@ -67,6 +67,7 @@
 				"category": "unitary",
 				"default": "",
 				"help": "Hexadecimal authentication key in 16-digit (8-byte) segments separated by hyphens.",
+				"multiple_values": false,
 				"name": "auth-key",
 				"required": true,
 				"type": "user"
@@ -126,6 +127,7 @@
 				"category": "unitary",
 				"default": "",
 				"help": "Hexadecimal encryption key in 16-digit (8-byte) segments separated by hyphens.",
+				"multiple_values": false,
 				"name": "enc-key",
 				"required": true,
 				"type": "user"
@@ -137,6 +139,7 @@
 				],
 				"default": "",
 				"help": "Name of the physical, aggregate, or VLAN interface.",
+				"multiple_values": false,
 				"name": "interface",
 				"required": true,
 				"size": 15,
@@ -164,6 +167,7 @@
 				"category": "unitary",
 				"default": "0.0.0.0",
 				"help": "IPv4 address of the local gateway's external interface.",
+				"multiple_values": false,
 				"name": "local-gw",
 				"type": "ipv4-address-any"
 			},
@@ -171,6 +175,7 @@
 				"category": "unitary",
 				"default": "::",
 				"help": "Local IPv6 address of VPN gateway.",
+				"multiple_values": false,
 				"name": "local-gw6",
 				"type": "ipv6-address"
 			},
@@ -178,6 +183,7 @@
 				"category": "unitary",
 				"default": "",
 				"help": "Local SPI, a hexadecimal 8-digit (4-byte) tag. Discerns between two traffic streams with different encryption rules.",
+				"multiple_values": false,
 				"name": "local-spi",
 				"required": true,
 				"type": "user"
@@ -186,6 +192,7 @@
 				"category": "unitary",
 				"default": "",
 				"help": "IPsec tunnel name.",
+				"multiple_values": false,
 				"name": "name",
 				"size": 15,
 				"type": "string"
@@ -212,6 +219,7 @@
 				"category": "unitary",
 				"default": "0.0.0.0",
 				"help": "IPv4 address of the remote gateway's external interface.",
+				"multiple_values": false,
 				"name": "remote-gw",
 				"required": true,
 				"type": "ipv4-address"
@@ -220,6 +228,7 @@
 				"category": "unitary",
 				"default": "::",
 				"help": "Remote IPv6 address of VPN gateway.",
+				"multiple_values": false,
 				"name": "remote-gw6",
 				"required": true,
 				"type": "ipv6-address"
@@ -228,6 +237,7 @@
 				"category": "unitary",
 				"default": "",
 				"help": "Remote SPI, a hexadecimal 8-digit (4-byte) tag. Discerns between two traffic streams with different encryption rules.",
+				"multiple_values": false,
 				"name": "remote-spi",
 				"required": true,
 				"type": "user"
@@ -243,9 +253,9 @@
 		"path": "vpn.ipsec",
 		"q_type": 183
 	},
-	"revision": "78ee061304af9c5d17bcae6474808d97",
-	"serial": "FGTAZRAQCG14L19D",
+	"revision": "e338e35a484eaafc990a69dd13ff4f76",
+	"serial": "FGTAZRI5HXAAGI90",
 	"status": "success",
 	"vdom": "root",
-	"version": "v7.0.3"
+	"version": "v7.0.4"
 }

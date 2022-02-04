@@ -1,9 +1,9 @@
 {
 	"addedIn": "v6.2.7",
-	"build": 237,
+	"build": 301,
 	"http_method": "GET",
 	"http_status": 200,
-	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3",
+	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3,v7.0.4",
 	"name": "profile",
 	"path": "antivirus",
 	"results": {
@@ -20,6 +20,7 @@
 				"help": "Only submit files matching this DLP file-pattern to FortiSandbox.",
 				"max-value": 4294967295,
 				"min-value": 0,
+				"multiple_values": false,
 				"name": "analytics-accept-filetype",
 				"type": "integer"
 			},
@@ -64,6 +65,7 @@
 				"help": "Do not submit files matching this DLP file-pattern to FortiSandbox.",
 				"max-value": 4294967295,
 				"min-value": 0,
+				"multiple_values": false,
 				"name": "analytics-ignore-filetype",
 				"type": "integer"
 			},
@@ -73,6 +75,7 @@
 				"help": "Maximum size of files that can be uploaded to FortiSandbox.",
 				"max-value": 26214,
 				"min-value": 1,
+				"multiple_values": false,
 				"name": "analytics-max-upload",
 				"type": "integer"
 			},
@@ -280,7 +283,7 @@
 						"addedIn": "v7.0.1",
 						"category": "unitary",
 						"default": "disable",
-						"help": "Enable/disable scanning of files by FortiAI server.",
+						"help": "Enable/disable scanning of files by FortiAI.",
 						"multiple_values": false,
 						"name": "fortiai",
 						"options": [
@@ -365,11 +368,13 @@
 					}
 				},
 				"help": "Configure CIFS AntiVirus options.",
+				"multiple_values": false,
 				"name": "cifs"
 			},
 			"comment": {
 				"category": "unitary",
 				"help": "Comment.",
+				"multiple_values": false,
 				"name": "comment",
 				"size": 255,
 				"type": "var-string"
@@ -730,6 +735,7 @@
 					}
 				},
 				"help": "AV Content Disarm and Reconstruction settings.",
+				"multiple_values": false,
 				"name": "content-disarm"
 			},
 			"ems-threat-feed": {
@@ -780,6 +786,7 @@
 						],
 						"default": "",
 						"help": "External blocklist.",
+						"multiple_values": false,
 						"name": "name",
 						"size": 79,
 						"type": "string"
@@ -1075,7 +1082,7 @@
 						"addedIn": "v7.0.1",
 						"category": "unitary",
 						"default": "disable",
-						"help": "Enable/disable scanning of files by FortiAI server.",
+						"help": "Enable/disable scanning of files by FortiAI.",
 						"multiple_values": false,
 						"name": "fortiai",
 						"options": [
@@ -1160,6 +1167,7 @@
 					}
 				},
 				"help": "Configure FTP AntiVirus options.",
+				"multiple_values": false,
 				"name": "ftp"
 			},
 			"http": {
@@ -1335,7 +1343,7 @@
 						"addedIn": "v7.0.1",
 						"category": "unitary",
 						"default": "disable",
-						"help": "Enable/disable scanning of files by FortiAI server.",
+						"help": "Enable/disable scanning of files by FortiAI.",
 						"multiple_values": false,
 						"name": "fortiai",
 						"options": [
@@ -1420,6 +1428,7 @@
 					}
 				},
 				"help": "Configure HTTP AntiVirus options.",
+				"multiple_values": false,
 				"name": "http"
 			},
 			"imap": {
@@ -1613,7 +1622,7 @@
 						"addedIn": "v7.0.1",
 						"category": "unitary",
 						"default": "disable",
-						"help": "Enable/disable scanning of files by FortiAI server.",
+						"help": "Enable/disable scanning of files by FortiAI.",
 						"multiple_values": false,
 						"name": "fortiai",
 						"options": [
@@ -1698,6 +1707,7 @@
 					}
 				},
 				"help": "Configure IMAP AntiVirus options.",
+				"multiple_values": false,
 				"name": "imap"
 			},
 			"mapi": {
@@ -1873,7 +1883,7 @@
 						"addedIn": "v7.0.1",
 						"category": "unitary",
 						"default": "disable",
-						"help": "Enable/disable scanning of files by FortiAI server.",
+						"help": "Enable/disable scanning of files by FortiAI.",
 						"multiple_values": false,
 						"name": "fortiai",
 						"options": [
@@ -1958,6 +1968,7 @@
 					}
 				},
 				"help": "Configure MAPI AntiVirus options.",
+				"multiple_values": false,
 				"name": "mapi"
 			},
 			"mobile-malware-db": {
@@ -1985,6 +1996,7 @@
 						"category": "unitary",
 						"default": "5m",
 						"help": "Duration of quarantine.",
+						"multiple_values": false,
 						"name": "expiry",
 						"type": "user"
 					},
@@ -2026,12 +2038,14 @@
 					}
 				},
 				"help": "Configure AntiVirus quarantine settings.",
+				"multiple_values": false,
 				"name": "nac-quar"
 			},
 			"name": {
 				"category": "unitary",
 				"default": "",
 				"help": "Profile name.",
+				"multiple_values": false,
 				"name": "name",
 				"required": true,
 				"size": 35,
@@ -2192,7 +2206,7 @@
 						"addedIn": "v7.0.1",
 						"category": "unitary",
 						"default": "disable",
-						"help": "Enable/disable scanning of files by FortiAI server.",
+						"help": "Enable/disable scanning of files by FortiAI.",
 						"multiple_values": false,
 						"name": "fortiai",
 						"options": [
@@ -2277,6 +2291,7 @@
 					}
 				},
 				"help": "Configure NNTP AntiVirus options.",
+				"multiple_values": false,
 				"name": "nntp"
 			},
 			"outbreak-prevention": {
@@ -2533,7 +2548,7 @@
 						"addedIn": "v7.0.1",
 						"category": "unitary",
 						"default": "disable",
-						"help": "Enable/disable scanning of files by FortiAI server.",
+						"help": "Enable/disable scanning of files by FortiAI.",
 						"multiple_values": false,
 						"name": "fortiai",
 						"options": [
@@ -2618,6 +2633,7 @@
 					}
 				},
 				"help": "Configure POP3 AntiVirus options.",
+				"multiple_values": false,
 				"name": "pop3"
 			},
 			"replacemsg-group": {
@@ -2627,6 +2643,7 @@
 				],
 				"default": "",
 				"help": "Replacement message group customized for this profile.",
+				"multiple_values": false,
 				"name": "replacemsg-group",
 				"size": 35,
 				"type": "string"
@@ -2634,7 +2651,7 @@
 			"scan-mode": {
 				"category": "unitary",
 				"default": "default",
-				"help": "Choose between default scan mode and legacy scan mode. ",
+				"help": "Configure scan mode (default or legacy).",
 				"multiple_values": false,
 				"name": "scan-mode",
 				"options": [
@@ -2840,7 +2857,7 @@
 						"addedIn": "v7.0.1",
 						"category": "unitary",
 						"default": "disable",
-						"help": "Enable/disable scanning of files by FortiAI server.",
+						"help": "Enable/disable scanning of files by FortiAI.",
 						"multiple_values": false,
 						"name": "fortiai",
 						"options": [
@@ -2925,6 +2942,7 @@
 					}
 				},
 				"help": "Configure SMTP AntiVirus options.",
+				"multiple_values": false,
 				"name": "smtp"
 			},
 			"ssh": {
@@ -3082,7 +3100,7 @@
 						"addedIn": "v7.0.1",
 						"category": "unitary",
 						"default": "disable",
-						"help": "Enable/disable scanning of files by FortiAI server.",
+						"help": "Enable/disable scanning of files by FortiAI.",
 						"multiple_values": false,
 						"name": "fortiai",
 						"options": [
@@ -3167,6 +3185,7 @@
 					}
 				},
 				"help": "Configure SFTP and SCP AntiVirus options.",
+				"multiple_values": false,
 				"name": "ssh"
 			}
 		},
@@ -3180,9 +3199,9 @@
 		"path": "antivirus",
 		"q_type": 434
 	},
-	"revision": "423c1d967041b6152c81e83cbcc66aaa",
-	"serial": "FGTAZRAQCG14L19D",
+	"revision": "df8b7c64aba8ed48a5ed708e32acb19d",
+	"serial": "FGTAZRI5HXAAGI90",
 	"status": "success",
 	"vdom": "root",
-	"version": "v7.0.3"
+	"version": "v7.0.4"
 }

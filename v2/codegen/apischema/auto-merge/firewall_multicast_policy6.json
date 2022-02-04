@@ -1,9 +1,9 @@
 {
 	"addedIn": "v6.2.7",
-	"build": 237,
+	"build": 301,
 	"http_method": "GET",
 	"http_status": 200,
-	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3",
+	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3,v7.0.4",
 	"name": "multicast-policy6",
 	"path": "firewall",
 	"results": {
@@ -50,6 +50,7 @@
 				"addedIn": "v7.0.0",
 				"category": "unitary",
 				"help": "Comment.",
+				"multiple_values": false,
 				"name": "comments",
 				"size": 1023,
 				"type": "var-string"
@@ -64,6 +65,7 @@
 						],
 						"default": "",
 						"help": "Address name.",
+						"multiple_values": false,
 						"name": "name",
 						"required": true,
 						"size": 79,
@@ -88,6 +90,7 @@
 				],
 				"default": "",
 				"help": "IPv6 destination interface name.",
+				"multiple_values": false,
 				"name": "dstintf",
 				"required": true,
 				"size": 35,
@@ -99,6 +102,7 @@
 				"help": "Integer value for ending TCP/UDP/SCTP destination port in range (1 - 65535, default = 65535).",
 				"max-value": 65535,
 				"min-value": 0,
+				"multiple_values": false,
 				"name": "end-port",
 				"type": "integer"
 			},
@@ -108,6 +112,7 @@
 				"help": "Policy ID (0 - 4294967294).",
 				"max-value": 4294967294,
 				"min-value": 0,
+				"multiple_values": false,
 				"name": "id",
 				"type": "integer"
 			},
@@ -134,6 +139,7 @@
 				"category": "unitary",
 				"default": "",
 				"help": "Policy name.",
+				"multiple_values": false,
 				"name": "name",
 				"size": 35,
 				"type": "string"
@@ -144,6 +150,7 @@
 				"help": "Integer value for the protocol type as defined by IANA (0 - 255, default = 0).",
 				"max-value": 255,
 				"min-value": 0,
+				"multiple_values": false,
 				"name": "protocol",
 				"type": "integer"
 			},
@@ -158,6 +165,7 @@
 						],
 						"default": "",
 						"help": "Address name.",
+						"multiple_values": false,
 						"name": "name",
 						"required": true,
 						"size": 79,
@@ -182,6 +190,7 @@
 				],
 				"default": "",
 				"help": "IPv6 source interface name.",
+				"multiple_values": false,
 				"name": "srcintf",
 				"required": true,
 				"size": 35,
@@ -193,6 +202,7 @@
 				"help": "Integer value for starting TCP/UDP/SCTP destination port in range (1 - 65535, default = 1).",
 				"max-value": 65535,
 				"min-value": 0,
+				"multiple_values": false,
 				"name": "start-port",
 				"type": "integer"
 			},
@@ -219,6 +229,7 @@
 				"category": "unitary",
 				"default": "00000000-0000-0000-0000-000000000000",
 				"help": "Universally Unique Identifier (UUID; automatically assigned but can be manually reset).",
+				"multiple_values": false,
 				"name": "uuid",
 				"type": "uuid"
 			}
@@ -233,9 +244,9 @@
 		"path": "firewall",
 		"q_type": 55
 	},
-	"revision": "78ee061304af9c5d17bcae6474808d97",
-	"serial": "FGTAZRAQCG14L19D",
+	"revision": "e338e35a484eaafc990a69dd13ff4f76",
+	"serial": "FGTAZRI5HXAAGI90",
 	"status": "success",
 	"vdom": "root",
-	"version": "v7.0.3"
+	"version": "v7.0.4"
 }

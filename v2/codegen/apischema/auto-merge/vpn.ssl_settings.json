@@ -1,9 +1,9 @@
 {
 	"addedIn": "v6.2.7",
-	"build": 237,
+	"build": 301,
 	"http_method": "GET",
 	"http_status": 200,
-	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3",
+	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3,v7.0.4",
 	"name": "settings",
 	"path": "vpn.ssl",
 	"results": {
@@ -61,6 +61,7 @@
 				"help": "SSL-VPN authentication timeout (1 - 259200 sec (3 days), 0 for no timeout).",
 				"max-value": 259200,
 				"min-value": 0,
+				"multiple_values": false,
 				"name": "auth-timeout",
 				"type": "integer"
 			},
@@ -151,6 +152,7 @@
 								],
 								"default": "",
 								"help": "Group name.",
+								"multiple_values": false,
 								"name": "name",
 								"required": true,
 								"size": 79,
@@ -172,6 +174,7 @@
 						"help": "ID (0 - 4294967295).",
 						"max-value": 4294967295,
 						"min-value": 0,
+						"multiple_values": false,
 						"name": "id",
 						"type": "integer"
 					},
@@ -182,6 +185,7 @@
 						],
 						"default": "",
 						"help": "SSL-VPN portal.",
+						"multiple_values": false,
 						"name": "portal",
 						"size": 35,
 						"type": "string"
@@ -193,6 +197,7 @@
 						],
 						"default": "",
 						"help": "SSL-VPN realm.",
+						"multiple_values": false,
 						"name": "realm",
 						"size": 35,
 						"type": "string"
@@ -209,6 +214,7 @@
 								],
 								"default": "",
 								"help": "Address name.",
+								"multiple_values": false,
 								"name": "name",
 								"required": true,
 								"size": 79,
@@ -254,6 +260,7 @@
 								],
 								"default": "",
 								"help": "IPv6 address name.",
+								"multiple_values": false,
 								"name": "name",
 								"required": true,
 								"size": 79,
@@ -298,6 +305,7 @@
 								],
 								"default": "",
 								"help": "Interface name.",
+								"multiple_values": false,
 								"name": "name",
 								"required": true,
 								"size": 35,
@@ -320,6 +328,7 @@
 						],
 						"default": "",
 						"help": "Name of user peer.",
+						"multiple_values": false,
 						"name": "user-peer",
 						"size": 35,
 						"type": "string"
@@ -334,6 +343,7 @@
 								],
 								"default": "",
 								"help": "User name.",
+								"multiple_values": false,
 								"name": "name",
 								"required": true,
 								"size": 79,
@@ -525,6 +535,7 @@
 				],
 				"default": "",
 				"help": "Default SSL-VPN portal.",
+				"multiple_values": false,
 				"name": "default-portal",
 				"size": 35,
 				"type": "string"
@@ -535,6 +546,7 @@
 				"help": "Compression level (0~9).",
 				"max-value": 9,
 				"min-value": 0,
+				"multiple_values": false,
 				"name": "deflate-compression-level",
 				"type": "integer"
 			},
@@ -544,6 +556,7 @@
 				"help": "Minimum amount of data that triggers compression (200 - 65535 bytes).",
 				"max-value": 65535,
 				"min-value": 200,
+				"multiple_values": false,
 				"name": "deflate-min-data-size",
 				"type": "integer"
 			},
@@ -551,6 +564,7 @@
 				"category": "unitary",
 				"default": "0.0.0.0",
 				"help": "DNS server 1.",
+				"multiple_values": false,
 				"name": "dns-server1",
 				"type": "ipv4-address"
 			},
@@ -558,12 +572,14 @@
 				"category": "unitary",
 				"default": "0.0.0.0",
 				"help": "DNS server 2.",
+				"multiple_values": false,
 				"name": "dns-server2",
 				"type": "ipv4-address"
 			},
 			"dns-suffix": {
 				"category": "unitary",
 				"help": "DNS suffix used for SSL-VPN clients.",
+				"multiple_values": false,
 				"name": "dns-suffix",
 				"size": 253,
 				"type": "var-string"
@@ -574,6 +590,7 @@
 				"help": "SSLVPN maximum DTLS hello timeout (10 - 60 sec, default = 10).",
 				"max-value": 60,
 				"min-value": 10,
+				"multiple_values": false,
 				"name": "dtls-hello-timeout",
 				"type": "integer"
 			},
@@ -787,6 +804,7 @@
 				"help": "SSL-VPN session is disconnected if an HTTP request body is not received within this time (1 - 60 sec, default = 20).",
 				"max-value": 4294967295,
 				"min-value": 0,
+				"multiple_values": false,
 				"name": "http-request-body-timeout",
 				"type": "integer"
 			},
@@ -796,6 +814,7 @@
 				"help": "SSL-VPN session is disconnected if an HTTP request header is not received within this time (1 - 60 sec, default = 20).",
 				"max-value": 4294967295,
 				"min-value": 0,
+				"multiple_values": false,
 				"name": "http-request-header-timeout",
 				"type": "integer"
 			},
@@ -823,6 +842,7 @@
 				"help": "SSL-VPN disconnects if idle for specified time in seconds.",
 				"max-value": 259200,
 				"min-value": 0,
+				"multiple_values": false,
 				"name": "idle-timeout",
 				"type": "integer"
 			},
@@ -830,6 +850,7 @@
 				"category": "unitary",
 				"default": "::",
 				"help": "IPv6 DNS server 1.",
+				"multiple_values": false,
 				"name": "ipv6-dns-server1",
 				"type": "ipv6-address"
 			},
@@ -837,6 +858,7 @@
 				"category": "unitary",
 				"default": "::",
 				"help": "IPv6 DNS server 2.",
+				"multiple_values": false,
 				"name": "ipv6-dns-server2",
 				"type": "ipv6-address"
 			},
@@ -844,6 +866,7 @@
 				"category": "unitary",
 				"default": "::",
 				"help": "IPv6 WINS server 1.",
+				"multiple_values": false,
 				"name": "ipv6-wins-server1",
 				"type": "ipv6-address"
 			},
@@ -851,6 +874,7 @@
 				"category": "unitary",
 				"default": "::",
 				"help": "IPv6 WINS server 2.",
+				"multiple_values": false,
 				"name": "ipv6-wins-server2",
 				"type": "ipv6-address"
 			},
@@ -860,6 +884,7 @@
 				"help": "SSL-VPN maximum login attempt times before block (0 - 10, default = 2, 0 = no limit).",
 				"max-value": 4294967295,
 				"min-value": 0,
+				"multiple_values": false,
 				"name": "login-attempt-limit",
 				"type": "integer"
 			},
@@ -869,6 +894,7 @@
 				"help": "Time for which a user is blocked from logging in after too many failed login attempts (0 - 86400 sec, default = 60).",
 				"max-value": 4294967295,
 				"min-value": 0,
+				"multiple_values": false,
 				"name": "login-block-time",
 				"type": "integer"
 			},
@@ -878,6 +904,7 @@
 				"help": "SSLVPN maximum login timeout (10 - 180 sec, default = 30).",
 				"max-value": 180,
 				"min-value": 10,
+				"multiple_values": false,
 				"name": "login-timeout",
 				"type": "integer"
 			},
@@ -887,6 +914,7 @@
 				"help": "SSL-VPN access port (1 - 65535).",
 				"max-value": 65535,
 				"min-value": 1,
+				"multiple_values": false,
 				"name": "port",
 				"type": "integer"
 			},
@@ -948,9 +976,10 @@
 				"addedIn": "v7.0.1",
 				"category": "unitary",
 				"default": 8020,
-				"help": "SAML local redirect port in the machine running FCT (0 - 65535). 0 is to disable redirection on FGT side.",
+				"help": "SAML local redirect port in the machine running FortiClient (0 - 65535). 0 is to disable redirection on FGT side.",
 				"max-value": 65535,
 				"min-value": 0,
+				"multiple_values": false,
 				"name": "saml-redirect-port",
 				"type": "integer"
 			},
@@ -961,6 +990,7 @@
 				],
 				"default": "",
 				"help": "Name of the server certificate to be used for SSL-VPNs.",
+				"multiple_values": false,
 				"name": "servercert",
 				"size": 35,
 				"type": "string"
@@ -977,6 +1007,7 @@
 						],
 						"default": "",
 						"help": "Address name.",
+						"multiple_values": false,
 						"name": "name",
 						"required": true,
 						"size": 79,
@@ -1022,6 +1053,7 @@
 						],
 						"default": "",
 						"help": "IPv6 address name.",
+						"multiple_values": false,
 						"name": "name",
 						"required": true,
 						"size": 79,
@@ -1066,6 +1098,7 @@
 						],
 						"default": "",
 						"help": "Interface name.",
+						"multiple_values": false,
 						"name": "name",
 						"required": true,
 						"size": 35,
@@ -1331,6 +1364,7 @@
 						],
 						"default": "",
 						"help": "Address name.",
+						"multiple_values": false,
 						"name": "name",
 						"required": true,
 						"size": 79,
@@ -1357,6 +1391,7 @@
 						],
 						"default": "",
 						"help": "Address name.",
+						"multiple_values": false,
 						"name": "name",
 						"required": true,
 						"size": 79,
@@ -1378,6 +1413,7 @@
 				"help": "Time out value to clean up user session after tunnel connection is dropped (1 - 255 sec, default=30).",
 				"max-value": 255,
 				"min-value": 1,
+				"multiple_values": false,
 				"name": "tunnel-user-session-timeout",
 				"type": "integer"
 			},
@@ -1424,6 +1460,7 @@
 				],
 				"default": "",
 				"help": "Name of user peer.",
+				"multiple_values": false,
 				"name": "user-peer",
 				"size": 35,
 				"type": "string"
@@ -1432,6 +1469,7 @@
 				"category": "unitary",
 				"default": "0.0.0.0",
 				"help": "WINS server 1.",
+				"multiple_values": false,
 				"name": "wins-server1",
 				"type": "ipv4-address"
 			},
@@ -1439,6 +1477,7 @@
 				"category": "unitary",
 				"default": "0.0.0.0",
 				"help": "WINS server 2.",
+				"multiple_values": false,
 				"name": "wins-server2",
 				"type": "ipv4-address"
 			},
@@ -1462,13 +1501,14 @@
 			}
 		},
 		"help": "Configure SSL-VPN.",
+		"multiple_values": false,
 		"name": "settings",
 		"path": "vpn.ssl",
 		"q_type": 148
 	},
-	"revision": "5a78955211ebb1641b50c9360238cb5c",
-	"serial": "FGTAZRAQCG14L19D",
+	"revision": "1af996ea72fbf3755ecb12a854d78106",
+	"serial": "FGTAZRI5HXAAGI90",
 	"status": "success",
 	"vdom": "root",
-	"version": "v7.0.3"
+	"version": "v7.0.4"
 }

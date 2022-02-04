@@ -1,9 +1,9 @@
 {
 	"addedIn": "v7.0.0",
-	"build": 237,
+	"build": 301,
 	"http_method": "GET",
 	"http_status": 200,
-	"mergedVersions": "v7.0.0,v7.0.1,v7.0.2,v7.0.3",
+	"mergedVersions": "v7.0.0,v7.0.1,v7.0.2,v7.0.3,v7.0.4",
 	"name": "access-proxy",
 	"path": "firewall",
 	"results": {
@@ -19,6 +19,7 @@
 						"help": "Time in minutes that client web browsers should keep a cookie. Default is 60 minutes. 0 = no time limit.",
 						"max-value": 525600,
 						"min-value": 0,
+						"multiple_values": false,
 						"name": "http-cookie-age",
 						"type": "integer"
 					},
@@ -26,6 +27,7 @@
 						"category": "unitary",
 						"default": "",
 						"help": "Domain that HTTP cookie persistence should apply to.",
+						"multiple_values": false,
 						"name": "http-cookie-domain",
 						"size": 35,
 						"type": "string"
@@ -54,6 +56,7 @@
 						"help": "Generation of HTTP cookie to be accepted. Changing invalidates all existing cookies.",
 						"max-value": 4294967295,
 						"min-value": 0,
+						"multiple_values": false,
 						"name": "http-cookie-generation",
 						"type": "integer"
 					},
@@ -61,6 +64,7 @@
 						"category": "unitary",
 						"default": "",
 						"help": "Limit HTTP cookie persistence to the specified path.",
+						"multiple_values": false,
 						"name": "http-cookie-path",
 						"size": 35,
 						"type": "string"
@@ -68,7 +72,7 @@
 					"http-cookie-share": {
 						"category": "unitary",
 						"default": "same-ip",
-						"help": "Control sharing of cookies across API Gateway. same-ip means a cookie from one virtual server can be used by another. Disable stops cookie sharing.",
+						"help": "Control sharing of cookies across API Gateway. Use of same-ip means a cookie from one virtual server can be used by another. Disable stops cookie sharing.",
 						"multiple_values": false,
 						"name": "http-cookie-share",
 						"options": [
@@ -107,6 +111,7 @@
 						"help": "API Gateway ID.",
 						"max-value": 4294967295,
 						"min-value": 0,
+						"multiple_values": false,
 						"name": "id",
 						"type": "integer"
 					},
@@ -189,9 +194,20 @@
 								],
 								"default": "",
 								"help": "Address or address group of the real server.",
+								"multiple_values": false,
 								"name": "address",
 								"required": true,
 								"size": 79,
+								"type": "string"
+							},
+							"domain": {
+								"addedIn": "v7.0.4",
+								"category": "unitary",
+								"default": "",
+								"help": "Wildcard domain name of the real server.",
+								"multiple_values": false,
+								"name": "domain",
+								"size": 255,
 								"type": "string"
 							},
 							"health-check": {
@@ -257,6 +273,7 @@
 								"category": "unitary",
 								"default": "",
 								"help": "HTTP server domain name in HTTP header.",
+								"multiple_values": false,
 								"name": "http-host",
 								"size": 63,
 								"type": "string"
@@ -267,6 +284,7 @@
 								"help": "Real server ID.",
 								"max-value": 4294967295,
 								"min-value": 0,
+								"multiple_values": false,
 								"name": "id",
 								"type": "integer"
 							},
@@ -274,6 +292,7 @@
 								"category": "unitary",
 								"default": "0.0.0.0",
 								"help": "IP address of the real server.",
+								"multiple_values": false,
 								"name": "ip",
 								"required": true,
 								"type": "ipv4-address-any"
@@ -282,6 +301,7 @@
 								"category": "unitary",
 								"default": "",
 								"help": "Port for communicating with the real server.",
+								"multiple_values": false,
 								"name": "mappedport",
 								"type": "user"
 							},
@@ -291,6 +311,7 @@
 								"help": "Port for communicating with the real server.",
 								"max-value": 65535,
 								"min-value": 1,
+								"multiple_values": false,
 								"name": "port",
 								"type": "integer"
 							},
@@ -302,6 +323,7 @@
 								],
 								"default": "",
 								"help": "Set access-proxy SSH client certificate profile.",
+								"multiple_values": false,
 								"name": "ssh-client-cert",
 								"size": 79,
 								"type": "string"
@@ -317,6 +339,7 @@
 										],
 										"default": "",
 										"help": "Server host key name.",
+										"multiple_values": false,
 										"name": "name",
 										"size": 79,
 										"type": "string"
@@ -397,6 +420,7 @@
 								"help": "Weight of the real server. If weighted load balancing is enabled, the server with the highest weight gets more connections.",
 								"max-value": 255,
 								"min-value": 1,
+								"multiple_values": false,
 								"name": "weight",
 								"type": "integer"
 							}
@@ -435,6 +459,7 @@
 						],
 						"default": "",
 						"help": "SAML service provider configuration for VIP authentication.",
+						"multiple_values": false,
 						"name": "saml-server",
 						"size": 35,
 						"type": "string"
@@ -461,6 +486,10 @@
 							{
 								"help": "SAML-SP",
 								"name": "samlsp"
+							},
+							{
+								"help": "VPN-SSL-WEB-PORTAL",
+								"name": "web-portal"
 							}
 						],
 						"required": true,
@@ -792,6 +821,7 @@
 								"help": "SSL/TLS cipher suites priority.",
 								"max-value": 4294967295,
 								"min-value": 0,
+								"multiple_values": false,
 								"name": "priority",
 								"type": "integer"
 							},
@@ -916,10 +946,24 @@
 						],
 						"type": "option"
 					},
+					"ssl-vpn-web-portal": {
+						"addedIn": "v7.0.4",
+						"category": "unitary",
+						"datasource": [
+							"vpn.ssl.web.portal.name"
+						],
+						"default": "",
+						"help": "SSL-VPN web portal.",
+						"multiple_values": false,
+						"name": "ssl-vpn-web-portal",
+						"size": 35,
+						"type": "string"
+					},
 					"url-map": {
 						"category": "unitary",
 						"default": "/",
 						"help": "URL pattern to match.",
+						"multiple_values": false,
 						"name": "url-map",
 						"required": true,
 						"size": 511,
@@ -955,6 +999,7 @@
 						],
 						"default": "",
 						"help": "Virtual host.",
+						"multiple_values": false,
 						"name": "virtual-host",
 						"size": 79,
 						"type": "string"
@@ -978,6 +1023,7 @@
 						"help": "Time in minutes that client web browsers should keep a cookie. Default is 60 minutes. 0 = no time limit.",
 						"max-value": 525600,
 						"min-value": 0,
+						"multiple_values": false,
 						"name": "http-cookie-age",
 						"type": "integer"
 					},
@@ -985,6 +1031,7 @@
 						"category": "unitary",
 						"default": "",
 						"help": "Domain that HTTP cookie persistence should apply to.",
+						"multiple_values": false,
 						"name": "http-cookie-domain",
 						"size": 35,
 						"type": "string"
@@ -1013,6 +1060,7 @@
 						"help": "Generation of HTTP cookie to be accepted. Changing invalidates all existing cookies.",
 						"max-value": 4294967295,
 						"min-value": 0,
+						"multiple_values": false,
 						"name": "http-cookie-generation",
 						"type": "integer"
 					},
@@ -1020,6 +1068,7 @@
 						"category": "unitary",
 						"default": "",
 						"help": "Limit HTTP cookie persistence to the specified path.",
+						"multiple_values": false,
 						"name": "http-cookie-path",
 						"size": 35,
 						"type": "string"
@@ -1027,7 +1076,7 @@
 					"http-cookie-share": {
 						"category": "unitary",
 						"default": "same-ip",
-						"help": "Control sharing of cookies across API Gateway. same-ip means a cookie from one virtual server can be used by another. Disable stops cookie sharing.",
+						"help": "Control sharing of cookies across API Gateway. Use of same-ip means a cookie from one virtual server can be used by another. Disable stops cookie sharing.",
 						"multiple_values": false,
 						"name": "http-cookie-share",
 						"options": [
@@ -1066,6 +1115,7 @@
 						"help": "API Gateway ID.",
 						"max-value": 4294967295,
 						"min-value": 0,
+						"multiple_values": false,
 						"name": "id",
 						"type": "integer"
 					},
@@ -1148,9 +1198,20 @@
 								],
 								"default": "",
 								"help": "Address or address group of the real server.",
+								"multiple_values": false,
 								"name": "address",
 								"required": true,
 								"size": 79,
+								"type": "string"
+							},
+							"domain": {
+								"addedIn": "v7.0.4",
+								"category": "unitary",
+								"default": "",
+								"help": "Wildcard domain name of the real server.",
+								"multiple_values": false,
+								"name": "domain",
+								"size": 255,
 								"type": "string"
 							},
 							"health-check": {
@@ -1215,6 +1276,7 @@
 								"category": "unitary",
 								"default": "",
 								"help": "HTTP server domain name in HTTP header.",
+								"multiple_values": false,
 								"name": "http-host",
 								"size": 63,
 								"type": "string"
@@ -1225,6 +1287,7 @@
 								"help": "Real server ID.",
 								"max-value": 4294967295,
 								"min-value": 0,
+								"multiple_values": false,
 								"name": "id",
 								"type": "integer"
 							},
@@ -1232,6 +1295,7 @@
 								"category": "unitary",
 								"default": "::",
 								"help": "IPv6 address of the real server.",
+								"multiple_values": false,
 								"name": "ip",
 								"required": true,
 								"type": "ipv6-address"
@@ -1240,6 +1304,7 @@
 								"category": "unitary",
 								"default": "",
 								"help": "Port for communicating with the real server.",
+								"multiple_values": false,
 								"name": "mappedport",
 								"type": "user"
 							},
@@ -1249,6 +1314,7 @@
 								"help": "Port for communicating with the real server.",
 								"max-value": 65535,
 								"min-value": 1,
+								"multiple_values": false,
 								"name": "port",
 								"type": "integer"
 							},
@@ -1259,6 +1325,7 @@
 								],
 								"default": "",
 								"help": "Set access-proxy SSH client certificate profile.",
+								"multiple_values": false,
 								"name": "ssh-client-cert",
 								"size": 79,
 								"type": "string"
@@ -1273,6 +1340,7 @@
 										],
 										"default": "",
 										"help": "Server host key name.",
+										"multiple_values": false,
 										"name": "name",
 										"size": 79,
 										"type": "string"
@@ -1351,6 +1419,7 @@
 								"help": "Weight of the real server. If weighted load balancing is enabled, the server with the highest weight gets more connections.",
 								"max-value": 255,
 								"min-value": 1,
+								"multiple_values": false,
 								"name": "weight",
 								"type": "integer"
 							}
@@ -1389,6 +1458,7 @@
 						],
 						"default": "",
 						"help": "SAML service provider configuration for VIP authentication.",
+						"multiple_values": false,
 						"name": "saml-server",
 						"size": 35,
 						"type": "string"
@@ -1415,6 +1485,10 @@
 							{
 								"help": "SAML-SP",
 								"name": "samlsp"
+							},
+							{
+								"help": "VPN-SSL-WEB-PORTAL",
+								"name": "web-portal"
 							}
 						],
 						"required": true,
@@ -1746,6 +1820,7 @@
 								"help": "SSL/TLS cipher suites priority.",
 								"max-value": 4294967295,
 								"min-value": 0,
+								"multiple_values": false,
 								"name": "priority",
 								"type": "integer"
 							},
@@ -1870,10 +1945,24 @@
 						],
 						"type": "option"
 					},
+					"ssl-vpn-web-portal": {
+						"addedIn": "v7.0.4",
+						"category": "unitary",
+						"datasource": [
+							"vpn.ssl.web.portal.name"
+						],
+						"default": "",
+						"help": "SSL-VPN web portal.",
+						"multiple_values": false,
+						"name": "ssl-vpn-web-portal",
+						"size": 35,
+						"type": "string"
+					},
 					"url-map": {
 						"category": "unitary",
 						"default": "/",
 						"help": "URL pattern to match.",
+						"multiple_values": false,
 						"name": "url-map",
 						"required": true,
 						"size": 511,
@@ -1909,6 +1998,7 @@
 						],
 						"default": "",
 						"help": "Virtual host.",
+						"multiple_values": false,
 						"name": "virtual-host",
 						"size": 79,
 						"type": "string"
@@ -1921,6 +2011,38 @@
 				"mkey": "id",
 				"mkey_type": "integer",
 				"name": "api-gateway6"
+			},
+			"auth-portal": {
+				"addedIn": "v7.0.4",
+				"category": "unitary",
+				"default": "disable",
+				"help": "Enable/disable authentication portal.",
+				"multiple_values": false,
+				"name": "auth-portal",
+				"options": [
+					{
+						"help": "Disable authentication portal.",
+						"name": "disable"
+					},
+					{
+						"help": "Enable authentication portal.",
+						"name": "enable"
+					}
+				],
+				"type": "option"
+			},
+			"auth-virtual-host": {
+				"addedIn": "v7.0.4",
+				"category": "unitary",
+				"datasource": [
+					"firewall.access-proxy-virtual-host.name"
+				],
+				"default": "",
+				"help": "Virtual host for authentication portal.",
+				"multiple_values": false,
+				"name": "auth-virtual-host",
+				"size": 79,
+				"type": "string"
 			},
 			"client-cert": {
 				"category": "unitary",
@@ -1948,6 +2070,7 @@
 				],
 				"default": "",
 				"help": "Decrypted traffic mirror.",
+				"multiple_values": false,
 				"name": "decrypted-traffic-mirror",
 				"size": 35,
 				"type": "string"
@@ -2028,6 +2151,7 @@
 				"category": "unitary",
 				"default": "",
 				"help": "Access Proxy name.",
+				"multiple_values": false,
 				"name": "name",
 				"size": 79,
 				"type": "string"
@@ -2321,6 +2445,7 @@
 				],
 				"default": "",
 				"help": "Virtual IP name.",
+				"multiple_values": false,
 				"name": "vip",
 				"required": true,
 				"size": 79,
@@ -2337,9 +2462,9 @@
 		"path": "firewall",
 		"q_type": 44
 	},
-	"revision": "78ee061304af9c5d17bcae6474808d97",
-	"serial": "FGTAZRAQCG14L19D",
+	"revision": "e338e35a484eaafc990a69dd13ff4f76",
+	"serial": "FGTAZRI5HXAAGI90",
 	"status": "success",
 	"vdom": "root",
-	"version": "v7.0.3"
+	"version": "v7.0.4"
 }

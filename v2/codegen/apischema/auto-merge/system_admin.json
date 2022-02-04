@@ -1,9 +1,9 @@
 {
 	"addedIn": "v6.2.7",
-	"build": 237,
+	"build": 301,
 	"http_method": "GET",
 	"http_status": 200,
-	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3",
+	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3,v7.0.4",
 	"name": "admin",
 	"path": "system",
 	"results": {
@@ -17,6 +17,7 @@
 				],
 				"default": "",
 				"help": "Access profile for this administrator. Access profiles control administrator access to FortiGate features.",
+				"multiple_values": false,
 				"name": "accprofile",
 				"size": 35,
 				"type": "string"
@@ -60,6 +61,7 @@
 			"comments": {
 				"category": "unitary",
 				"help": "Comment.",
+				"multiple_values": false,
 				"name": "comments",
 				"size": 255,
 				"type": "var-string"
@@ -68,6 +70,7 @@
 				"category": "unitary",
 				"default": "",
 				"help": "This administrator's email address.",
+				"multiple_values": false,
 				"name": "email-to",
 				"size": 63,
 				"type": "string"
@@ -94,6 +97,7 @@
 				"category": "unitary",
 				"default": "",
 				"help": "This administrator's FortiToken serial number.",
+				"multiple_values": false,
 				"name": "fortitoken",
 				"size": 16,
 				"type": "string"
@@ -123,6 +127,7 @@
 				],
 				"default": "",
 				"help": "Guest management portal language.",
+				"multiple_values": false,
 				"name": "guest-lang",
 				"size": 35,
 				"type": "string"
@@ -134,6 +139,7 @@
 						"category": "unitary",
 						"default": "",
 						"help": "Select guest user groups.",
+						"multiple_values": false,
 						"name": "name",
 						"required": true,
 						"size": 79,
@@ -153,6 +159,7 @@
 				"category": "unitary",
 				"default": "::/0",
 				"help": "Any IPv6 address from which the administrator can connect to the FortiGate unit. Default allows access from any IPv6 address.",
+				"multiple_values": false,
 				"name": "ip6-trusthost1",
 				"type": "ipv6-prefix"
 			},
@@ -160,6 +167,7 @@
 				"category": "unitary",
 				"default": "::/0",
 				"help": "Any IPv6 address from which the administrator can connect to the FortiGate unit. Default allows access from any IPv6 address.",
+				"multiple_values": false,
 				"name": "ip6-trusthost10",
 				"type": "ipv6-prefix"
 			},
@@ -167,6 +175,7 @@
 				"category": "unitary",
 				"default": "::/0",
 				"help": "Any IPv6 address from which the administrator can connect to the FortiGate unit. Default allows access from any IPv6 address.",
+				"multiple_values": false,
 				"name": "ip6-trusthost2",
 				"type": "ipv6-prefix"
 			},
@@ -174,6 +183,7 @@
 				"category": "unitary",
 				"default": "::/0",
 				"help": "Any IPv6 address from which the administrator can connect to the FortiGate unit. Default allows access from any IPv6 address.",
+				"multiple_values": false,
 				"name": "ip6-trusthost3",
 				"type": "ipv6-prefix"
 			},
@@ -181,6 +191,7 @@
 				"category": "unitary",
 				"default": "::/0",
 				"help": "Any IPv6 address from which the administrator can connect to the FortiGate unit. Default allows access from any IPv6 address.",
+				"multiple_values": false,
 				"name": "ip6-trusthost4",
 				"type": "ipv6-prefix"
 			},
@@ -188,6 +199,7 @@
 				"category": "unitary",
 				"default": "::/0",
 				"help": "Any IPv6 address from which the administrator can connect to the FortiGate unit. Default allows access from any IPv6 address.",
+				"multiple_values": false,
 				"name": "ip6-trusthost5",
 				"type": "ipv6-prefix"
 			},
@@ -195,6 +207,7 @@
 				"category": "unitary",
 				"default": "::/0",
 				"help": "Any IPv6 address from which the administrator can connect to the FortiGate unit. Default allows access from any IPv6 address.",
+				"multiple_values": false,
 				"name": "ip6-trusthost6",
 				"type": "ipv6-prefix"
 			},
@@ -202,6 +215,7 @@
 				"category": "unitary",
 				"default": "::/0",
 				"help": "Any IPv6 address from which the administrator can connect to the FortiGate unit. Default allows access from any IPv6 address.",
+				"multiple_values": false,
 				"name": "ip6-trusthost7",
 				"type": "ipv6-prefix"
 			},
@@ -209,6 +223,7 @@
 				"category": "unitary",
 				"default": "::/0",
 				"help": "Any IPv6 address from which the administrator can connect to the FortiGate unit. Default allows access from any IPv6 address.",
+				"multiple_values": false,
 				"name": "ip6-trusthost8",
 				"type": "ipv6-prefix"
 			},
@@ -216,6 +231,7 @@
 				"category": "unitary",
 				"default": "::/0",
 				"help": "Any IPv6 address from which the administrator can connect to the FortiGate unit. Default allows access from any IPv6 address.",
+				"multiple_values": false,
 				"name": "ip6-trusthost9",
 				"type": "ipv6-prefix"
 			},
@@ -223,6 +239,7 @@
 				"category": "unitary",
 				"default": "",
 				"help": "User name.",
+				"multiple_values": false,
 				"name": "name",
 				"size": 64,
 				"type": "string"
@@ -230,6 +247,7 @@
 			"password": {
 				"category": "unitary",
 				"help": "Admin user password.",
+				"multiple_values": false,
 				"name": "password",
 				"required": true,
 				"size": 128,
@@ -239,6 +257,7 @@
 				"category": "unitary",
 				"default": "",
 				"help": "Password expire time.",
+				"multiple_values": false,
 				"name": "password-expire",
 				"type": "user"
 			},
@@ -264,6 +283,7 @@
 				"category": "unitary",
 				"default": "",
 				"help": "Name of peer group defined under config user group which has PKI members. Used for peer certificate authentication (for HTTPS admin access).",
+				"multiple_values": false,
 				"name": "peer-group",
 				"required": true,
 				"size": 35,
@@ -309,6 +329,7 @@
 				"category": "unitary",
 				"default": "",
 				"help": "User group name used for remote auth.",
+				"multiple_values": false,
 				"name": "remote-group",
 				"required": true,
 				"size": 35,
@@ -318,6 +339,7 @@
 				"category": "unitary",
 				"default": "",
 				"help": "Firewall schedule used to restrict when the administrator can log in. No schedule means no restrictions.",
+				"multiple_values": false,
 				"name": "schedule",
 				"size": 35,
 				"type": "string"
@@ -329,6 +351,7 @@
 				],
 				"default": "",
 				"help": "Custom SMS server to send SMS messages to.",
+				"multiple_values": false,
 				"name": "sms-custom-server",
 				"size": 35,
 				"type": "string"
@@ -337,6 +360,7 @@
 				"category": "unitary",
 				"default": "",
 				"help": "Phone number on which the administrator receives SMS messages.",
+				"multiple_values": false,
 				"name": "sms-phone",
 				"size": 15,
 				"type": "string"
@@ -366,6 +390,7 @@
 				],
 				"default": "",
 				"help": "Select the certificate to be used by the FortiGate for authentication with an SSH client.",
+				"multiple_values": false,
 				"name": "ssh-certificate",
 				"size": 35,
 				"type": "string"
@@ -374,6 +399,7 @@
 				"category": "unitary",
 				"default": "",
 				"help": "Public key of an SSH client. The client is authenticated without being asked for credentials. Create the public-private key pair in the SSH client application.",
+				"multiple_values": false,
 				"name": "ssh-public-key1",
 				"type": "user"
 			},
@@ -381,6 +407,7 @@
 				"category": "unitary",
 				"default": "",
 				"help": "Public key of an SSH client. The client is authenticated without being asked for credentials. Create the public-private key pair in the SSH client application.",
+				"multiple_values": false,
 				"name": "ssh-public-key2",
 				"type": "user"
 			},
@@ -388,6 +415,7 @@
 				"category": "unitary",
 				"default": "",
 				"help": "Public key of an SSH client. The client is authenticated without being asked for credentials. Create the public-private key pair in the SSH client application.",
+				"multiple_values": false,
 				"name": "ssh-public-key3",
 				"type": "user"
 			},
@@ -395,6 +423,7 @@
 				"category": "unitary",
 				"default": "0.0.0.0 0.0.0.0",
 				"help": "Any IPv4 address or subnet address and netmask from which the administrator can connect to the FortiGate unit. Default allows access from any IPv4 address.",
+				"multiple_values": false,
 				"name": "trusthost1",
 				"type": "ipv4-classnet"
 			},
@@ -402,6 +431,7 @@
 				"category": "unitary",
 				"default": "0.0.0.0 0.0.0.0",
 				"help": "Any IPv4 address or subnet address and netmask from which the administrator can connect to the FortiGate unit. Default allows access from any IPv4 address.",
+				"multiple_values": false,
 				"name": "trusthost10",
 				"type": "ipv4-classnet"
 			},
@@ -409,6 +439,7 @@
 				"category": "unitary",
 				"default": "0.0.0.0 0.0.0.0",
 				"help": "Any IPv4 address or subnet address and netmask from which the administrator can connect to the FortiGate unit. Default allows access from any IPv4 address.",
+				"multiple_values": false,
 				"name": "trusthost2",
 				"type": "ipv4-classnet"
 			},
@@ -416,6 +447,7 @@
 				"category": "unitary",
 				"default": "0.0.0.0 0.0.0.0",
 				"help": "Any IPv4 address or subnet address and netmask from which the administrator can connect to the FortiGate unit. Default allows access from any IPv4 address.",
+				"multiple_values": false,
 				"name": "trusthost3",
 				"type": "ipv4-classnet"
 			},
@@ -423,6 +455,7 @@
 				"category": "unitary",
 				"default": "0.0.0.0 0.0.0.0",
 				"help": "Any IPv4 address or subnet address and netmask from which the administrator can connect to the FortiGate unit. Default allows access from any IPv4 address.",
+				"multiple_values": false,
 				"name": "trusthost4",
 				"type": "ipv4-classnet"
 			},
@@ -430,6 +463,7 @@
 				"category": "unitary",
 				"default": "0.0.0.0 0.0.0.0",
 				"help": "Any IPv4 address or subnet address and netmask from which the administrator can connect to the FortiGate unit. Default allows access from any IPv4 address.",
+				"multiple_values": false,
 				"name": "trusthost5",
 				"type": "ipv4-classnet"
 			},
@@ -437,6 +471,7 @@
 				"category": "unitary",
 				"default": "0.0.0.0 0.0.0.0",
 				"help": "Any IPv4 address or subnet address and netmask from which the administrator can connect to the FortiGate unit. Default allows access from any IPv4 address.",
+				"multiple_values": false,
 				"name": "trusthost6",
 				"type": "ipv4-classnet"
 			},
@@ -444,6 +479,7 @@
 				"category": "unitary",
 				"default": "0.0.0.0 0.0.0.0",
 				"help": "Any IPv4 address or subnet address and netmask from which the administrator can connect to the FortiGate unit. Default allows access from any IPv4 address.",
+				"multiple_values": false,
 				"name": "trusthost7",
 				"type": "ipv4-classnet"
 			},
@@ -451,6 +487,7 @@
 				"category": "unitary",
 				"default": "0.0.0.0 0.0.0.0",
 				"help": "Any IPv4 address or subnet address and netmask from which the administrator can connect to the FortiGate unit. Default allows access from any IPv4 address.",
+				"multiple_values": false,
 				"name": "trusthost8",
 				"type": "ipv4-classnet"
 			},
@@ -458,6 +495,7 @@
 				"category": "unitary",
 				"default": "0.0.0.0 0.0.0.0",
 				"help": "Any IPv4 address or subnet address and netmask from which the administrator can connect to the FortiGate unit. Default allows access from any IPv4 address.",
+				"multiple_values": false,
 				"name": "trusthost9",
 				"type": "ipv4-classnet"
 			},
@@ -541,6 +579,7 @@
 						],
 						"default": "",
 						"help": "Virtual domain name.",
+						"multiple_values": false,
 						"name": "name",
 						"required": true,
 						"size": 79,
@@ -585,9 +624,9 @@
 		"path": "system",
 		"q_type": 9
 	},
-	"revision": "dc2ff334d4ea43f3ce3ece5fb63bdf32",
-	"serial": "FGTAZRAQCG14L19D",
+	"revision": "746d684304f797f77595d36cce9b2d8b",
+	"serial": "FGTAZRI5HXAAGI90",
 	"status": "success",
 	"vdom": "root",
-	"version": "v7.0.3"
+	"version": "v7.0.4"
 }

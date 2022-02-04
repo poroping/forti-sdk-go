@@ -1,9 +1,9 @@
 {
 	"addedIn": "v7.0.0",
-	"build": 237,
+	"build": 301,
 	"http_method": "GET",
 	"http_status": 200,
-	"mergedVersions": "v7.0.0,v7.0.1,v7.0.2,v7.0.3",
+	"mergedVersions": "v7.0.0,v7.0.1,v7.0.2,v7.0.3,v7.0.4",
 	"name": "block-allow-list",
 	"path": "emailfilter",
 	"results": {
@@ -13,6 +13,7 @@
 			"comment": {
 				"category": "unitary",
 				"help": "Optional comments.",
+				"multiple_values": false,
 				"name": "comment",
 				"size": 255,
 				"type": "var-string"
@@ -66,6 +67,7 @@
 						"category": "unitary",
 						"default": "",
 						"help": "Email address pattern.",
+						"multiple_values": false,
 						"name": "email-pattern",
 						"required": true,
 						"size": 127,
@@ -77,6 +79,7 @@
 						"help": "Entry ID.",
 						"max-value": 4294967295,
 						"min-value": 0,
+						"multiple_values": false,
 						"name": "id",
 						"required": true,
 						"type": "integer"
@@ -85,6 +88,7 @@
 						"category": "unitary",
 						"default": "0.0.0.0 0.0.0.0",
 						"help": "IPv4 network address/subnet mask bits.",
+						"multiple_values": false,
 						"name": "ip4-subnet",
 						"required": true,
 						"type": "ipv4-classnet"
@@ -93,6 +97,7 @@
 						"category": "unitary",
 						"default": "::/128",
 						"help": "IPv6 network address/subnet mask bits.",
+						"multiple_values": false,
 						"name": "ip6-subnet",
 						"required": true,
 						"type": "ipv6-network"
@@ -170,6 +175,7 @@
 				"help": "ID.",
 				"max-value": 4294967295,
 				"min-value": 0,
+				"multiple_values": false,
 				"name": "id",
 				"required": true,
 				"type": "integer"
@@ -178,6 +184,7 @@
 				"category": "unitary",
 				"default": "",
 				"help": "Name of table.",
+				"multiple_values": false,
 				"name": "name",
 				"required": true,
 				"size": 63,
@@ -194,9 +201,9 @@
 		"path": "emailfilter",
 		"q_type": 96
 	},
-	"revision": "83663ccb232ef404eaac5a256049cd0b",
-	"serial": "FGTAZRAQCG14L19D",
+	"revision": "437e8be3a9784954dfbe87b61e193b58",
+	"serial": "FGTAZRI5HXAAGI90",
 	"status": "success",
 	"vdom": "root",
-	"version": "v7.0.3"
+	"version": "v7.0.4"
 }

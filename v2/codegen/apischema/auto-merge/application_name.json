@@ -1,9 +1,9 @@
 {
 	"addedIn": "v6.2.7",
-	"build": 237,
+	"build": 301,
 	"http_method": "GET",
 	"http_status": 200,
-	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3",
+	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3,v7.0.4",
 	"name": "name",
 	"path": "application",
 	"results": {
@@ -14,6 +14,7 @@
 				"category": "unitary",
 				"default": "",
 				"help": "Application behavior.",
+				"multiple_values": false,
 				"name": "behavior",
 				"readonly": true,
 				"type": "user"
@@ -24,6 +25,7 @@
 				"help": "Application category ID.",
 				"max-value": 4294967295,
 				"min-value": 0,
+				"multiple_values": false,
 				"name": "category",
 				"readonly": true,
 				"required": true,
@@ -35,6 +37,7 @@
 				"help": "Application ID.",
 				"max-value": 4294967295,
 				"min-value": 0,
+				"multiple_values": false,
 				"name": "id",
 				"readonly": true,
 				"type": "integer"
@@ -48,6 +51,7 @@
 						"help": "ID.",
 						"max-value": 4294967295,
 						"min-value": 0,
+						"multiple_values": false,
 						"name": "id",
 						"readonly": true,
 						"type": "integer"
@@ -58,6 +62,7 @@
 						"help": "Meta ID.",
 						"max-value": 4294967295,
 						"min-value": 0,
+						"multiple_values": false,
 						"name": "metaid",
 						"readonly": true,
 						"type": "integer"
@@ -68,6 +73,7 @@
 						"help": "Value ID.",
 						"max-value": 4294967295,
 						"min-value": 0,
+						"multiple_values": false,
 						"name": "valueid",
 						"readonly": true,
 						"type": "integer"
@@ -86,6 +92,7 @@
 				"category": "unitary",
 				"default": "",
 				"help": "Application name.",
+				"multiple_values": false,
 				"name": "name",
 				"size": 63,
 				"type": "string"
@@ -107,6 +114,7 @@
 						"category": "unitary",
 						"default": "",
 						"help": "Parameter default value.",
+						"multiple_values": false,
 						"name": "default value",
 						"readonly": true,
 						"size": 199,
@@ -116,6 +124,7 @@
 						"category": "unitary",
 						"default": "",
 						"help": "Parameter name.",
+						"multiple_values": false,
 						"name": "name",
 						"readonly": true,
 						"size": 31,
@@ -137,6 +146,7 @@
 				"help": "Application popularity.",
 				"max-value": 255,
 				"min-value": 0,
+				"multiple_values": false,
 				"name": "popularity",
 				"readonly": true,
 				"type": "integer"
@@ -145,6 +155,7 @@
 				"category": "unitary",
 				"default": "",
 				"help": "Application protocol.",
+				"multiple_values": false,
 				"name": "protocol",
 				"readonly": true,
 				"type": "user"
@@ -155,6 +166,7 @@
 				"help": "Application risk.",
 				"max-value": 255,
 				"min-value": 0,
+				"multiple_values": false,
 				"name": "risk",
 				"readonly": true,
 				"type": "integer"
@@ -173,6 +185,7 @@
 				"category": "unitary",
 				"default": "",
 				"help": "Application technology.",
+				"multiple_values": false,
 				"name": "technology",
 				"readonly": true,
 				"type": "user"
@@ -181,6 +194,7 @@
 				"category": "unitary",
 				"default": "",
 				"help": "Application vendor.",
+				"multiple_values": false,
 				"name": "vendor",
 				"readonly": true,
 				"type": "user"
@@ -191,6 +205,7 @@
 				"help": "Application weight.",
 				"max-value": 255,
 				"min-value": 0,
+				"multiple_values": false,
 				"name": "weight",
 				"readonly": true,
 				"type": "integer"
@@ -207,9 +222,9 @@
 		"q_type": 366,
 		"readonly": true
 	},
-	"revision": "3de030a2bdb21ca112bddb5aeeac95eb",
-	"serial": "FGTAZRAQCG14L19D",
+	"revision": "4e35d13c15fdcc0a822e0d76d22836b6",
+	"serial": "FGTAZRI5HXAAGI90",
 	"status": "success",
 	"vdom": "root",
-	"version": "v7.0.3"
+	"version": "v7.0.4"
 }

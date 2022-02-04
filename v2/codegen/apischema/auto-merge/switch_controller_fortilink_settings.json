@@ -1,9 +1,9 @@
 {
 	"addedIn": "v7.0.0",
-	"build": 237,
+	"build": 301,
 	"http_method": "GET",
 	"http_status": 200,
-	"mergedVersions": "v7.0.0,v7.0.1,v7.0.2,v7.0.3",
+	"mergedVersions": "v7.0.0,v7.0.1,v7.0.2,v7.0.3,v7.0.4",
 	"name": "fortilink-settings",
 	"path": "switch-controller",
 	"results": {
@@ -18,6 +18,7 @@
 				],
 				"default": "",
 				"help": "FortiLink interface to which this fortilink-setting belongs.",
+				"multiple_values": false,
 				"name": "fortilink",
 				"size": 15,
 				"type": "string"
@@ -28,6 +29,7 @@
 				"help": "Time interval(minutes) to be included in the inactive devices expiry calculation (mac age-out + inactive-time + periodic scan interval).",
 				"max-value": 1440,
 				"min-value": 1,
+				"multiple_values": false,
 				"name": "inactive-timer",
 				"type": "integer"
 			},
@@ -68,6 +70,7 @@
 								"name": "enable"
 							}
 						],
+						"removedIn": "v7.0.4",
 						"type": "option"
 					},
 					"lan-segment": {
@@ -96,6 +99,7 @@
 						"help": "Member change flag.",
 						"max-value": 255,
 						"min-value": 0,
+						"multiple_values": false,
 						"name": "member-change",
 						"readonly": true,
 						"type": "integer"
@@ -108,6 +112,7 @@
 						],
 						"default": "",
 						"help": "Configure NAC LAN interface.",
+						"multiple_values": false,
 						"name": "nac-lan-interface",
 						"required": true,
 						"size": 15,
@@ -124,6 +129,7 @@
 								],
 								"default": "",
 								"help": "VLAN interface name.",
+								"multiple_values": false,
 								"name": "vlan-name",
 								"required": true,
 								"size": 79,
@@ -147,6 +153,7 @@
 						],
 						"default": "",
 						"help": "Default NAC Onboarding VLAN when NAC devices are discovered.",
+						"multiple_values": false,
 						"name": "onboarding-vlan",
 						"required": true,
 						"size": 15,
@@ -157,6 +164,7 @@
 						"category": "unitary",
 						"default": "",
 						"help": "Parent key name.",
+						"multiple_values": false,
 						"name": "parent-key",
 						"readonly": true,
 						"size": 35,
@@ -164,12 +172,14 @@
 					}
 				},
 				"help": "NAC specific configuration.",
+				"multiple_values": false,
 				"name": "nac-ports"
 			},
 			"name": {
 				"category": "unitary",
 				"default": "",
 				"help": "FortiLink settings name.",
+				"multiple_values": false,
 				"name": "name",
 				"size": 35,
 				"type": "string"
@@ -185,9 +195,9 @@
 		"path": "switch-controller",
 		"q_type": 323
 	},
-	"revision": "59e548485aa3dcabaf13b4d424b010c6",
-	"serial": "FGTAZRAQCG14L19D",
+	"revision": "140857e2c0c844ad33634983ba2f9e95",
+	"serial": "FGTAZRI5HXAAGI90",
 	"status": "success",
 	"vdom": "root",
-	"version": "v7.0.3"
+	"version": "v7.0.4"
 }

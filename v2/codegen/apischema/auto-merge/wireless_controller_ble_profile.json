@@ -1,9 +1,9 @@
 {
 	"addedIn": "v6.2.7",
-	"build": 237,
+	"build": 301,
 	"http_method": "GET",
 	"http_status": 200,
-	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3",
+	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3,v7.0.4",
 	"name": "ble-profile",
 	"path": "wireless-controller",
 	"results": {
@@ -38,6 +38,7 @@
 				"help": "Beacon interval (default = 100 msec).",
 				"max-value": 3500,
 				"min-value": 40,
+				"multiple_values": false,
 				"name": "beacon-interval",
 				"type": "integer"
 			},
@@ -63,6 +64,7 @@
 				"category": "unitary",
 				"default": "",
 				"help": "Comment.",
+				"multiple_values": false,
 				"name": "comment",
 				"size": 63,
 				"type": "string"
@@ -71,6 +73,7 @@
 				"category": "unitary",
 				"default": "abcdef",
 				"help": "Eddystone instance ID.",
+				"multiple_values": false,
 				"name": "eddystone-instance",
 				"size": 12,
 				"type": "string"
@@ -79,6 +82,7 @@
 				"category": "unitary",
 				"default": "0102030405",
 				"help": "Eddystone namespace ID.",
+				"multiple_values": false,
 				"name": "eddystone-namespace",
 				"size": 20,
 				"type": "string"
@@ -87,6 +91,7 @@
 				"category": "unitary",
 				"default": "http://www.fortinet.com",
 				"help": "Eddystone URL.",
+				"multiple_values": false,
 				"name": "eddystone-url",
 				"size": 127,
 				"type": "string"
@@ -95,6 +100,7 @@
 				"category": "unitary",
 				"default": "005ea414-cbd1-11e5-9956-625662870761",
 				"help": "Universally Unique Identifier (UUID; automatically assigned but can be manually reset).",
+				"multiple_values": false,
 				"name": "ibeacon-uuid",
 				"size": 63,
 				"type": "string"
@@ -105,6 +111,7 @@
 				"help": "Major ID.",
 				"max-value": 65535,
 				"min-value": 0,
+				"multiple_values": false,
 				"name": "major-id",
 				"type": "integer"
 			},
@@ -114,6 +121,7 @@
 				"help": "Minor ID.",
 				"max-value": 65535,
 				"min-value": 0,
+				"multiple_values": false,
 				"name": "minor-id",
 				"type": "integer"
 			},
@@ -121,6 +129,7 @@
 				"category": "unitary",
 				"default": "",
 				"help": "Bluetooth Low Energy profile name.",
+				"multiple_values": false,
 				"name": "name",
 				"size": 35,
 				"type": "string"
@@ -198,9 +207,9 @@
 		"path": "wireless-controller",
 		"q_type": 278
 	},
-	"revision": "5a78955211ebb1641b50c9360238cb5c",
-	"serial": "FGTAZRAQCG14L19D",
+	"revision": "1af996ea72fbf3755ecb12a854d78106",
+	"serial": "FGTAZRI5HXAAGI90",
 	"status": "success",
 	"vdom": "root",
-	"version": "v7.0.3"
+	"version": "v7.0.4"
 }

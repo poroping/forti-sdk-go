@@ -1,9 +1,9 @@
 {
 	"addedIn": "v7.0.0",
-	"build": 237,
+	"build": 301,
 	"http_method": "GET",
 	"http_status": 200,
-	"mergedVersions": "v7.0.0,v7.0.1,v7.0.2,v7.0.3",
+	"mergedVersions": "v7.0.0,v7.0.1,v7.0.2,v7.0.3,v7.0.4",
 	"name": "client",
 	"path": "vpn.ssl",
 	"results": {
@@ -17,6 +17,7 @@
 				],
 				"default": "",
 				"help": "Certificate to offer to SSL-VPN server if it requests one.",
+				"multiple_values": false,
 				"name": "certificate",
 				"size": 35,
 				"type": "string"
@@ -24,6 +25,7 @@
 			"comment": {
 				"category": "unitary",
 				"help": "Comment.",
+				"multiple_values": false,
 				"name": "comment",
 				"size": 255,
 				"type": "var-string"
@@ -34,6 +36,7 @@
 				"help": "Distance for routes added by SSL-VPN (1 - 255).",
 				"max-value": 255,
 				"min-value": 1,
+				"multiple_values": false,
 				"name": "distance",
 				"type": "integer"
 			},
@@ -44,6 +47,7 @@
 				],
 				"default": "",
 				"help": "SSL interface to send/receive traffic over.",
+				"multiple_values": false,
 				"name": "interface",
 				"required": true,
 				"size": 15,
@@ -53,6 +57,7 @@
 				"category": "unitary",
 				"default": "",
 				"help": "SSL-VPN tunnel name.",
+				"multiple_values": false,
 				"name": "name",
 				"required": true,
 				"size": 35,
@@ -66,6 +71,7 @@
 				],
 				"default": "",
 				"help": "Authenticate peer's certificate with the peer/peergrp.",
+				"multiple_values": false,
 				"name": "peer",
 				"required": true,
 				"size": 35,
@@ -77,21 +83,24 @@
 				"help": "SSL-VPN server port.",
 				"max-value": 65535,
 				"min-value": 1,
+				"multiple_values": false,
 				"name": "port",
 				"type": "integer"
 			},
 			"priority": {
 				"category": "unitary",
-				"default": 0,
-				"help": "Priority for routes added by SSL-VPN (0 - 4294967295).",
-				"max-value": 4294967295,
-				"min-value": 0,
+				"default": 1,
+				"help": "Priority for routes added by SSL-VPN (1 - 65535).",
+				"max-value": 65535,
+				"min-value": 1,
+				"multiple_values": false,
 				"name": "priority",
 				"type": "integer"
 			},
 			"psk": {
 				"category": "unitary",
 				"help": "Pre-shared secret to authenticate with the server (ASCII string or hexadecimal encoded with a leading 0x).",
+				"multiple_values": false,
 				"name": "psk",
 				"required": true,
 				"type": "password-3"
@@ -101,6 +110,7 @@
 				"category": "unitary",
 				"default": "",
 				"help": "Realm name configured on SSL-VPN server.",
+				"multiple_values": false,
 				"name": "realm",
 				"size": 35,
 				"type": "string"
@@ -109,6 +119,7 @@
 				"category": "unitary",
 				"default": "",
 				"help": "IPv4, IPv6 or DNS address of the SSL-VPN server.",
+				"multiple_values": false,
 				"name": "server",
 				"required": true,
 				"size": 63,
@@ -118,6 +129,7 @@
 				"category": "unitary",
 				"default": "",
 				"help": "IPv4 or IPv6 address to use as a source for the SSL-VPN connection to the server.",
+				"multiple_values": false,
 				"name": "source-ip",
 				"size": 63,
 				"type": "string"
@@ -144,13 +156,14 @@
 				"category": "unitary",
 				"default": "",
 				"help": "Username to offer to the peer to authenticate the client.",
+				"multiple_values": false,
 				"name": "user",
 				"required": true,
 				"size": 35,
 				"type": "string"
 			}
 		},
-		"help": "client",
+		"help": "Client.",
 		"max_table_size_global": 512,
 		"max_table_size_item": 0,
 		"max_table_size_vdom": 256,
@@ -161,9 +174,9 @@
 		"path": "vpn.ssl",
 		"q_type": 529
 	},
-	"revision": "78ee061304af9c5d17bcae6474808d97",
-	"serial": "FGTAZRAQCG14L19D",
+	"revision": "e338e35a484eaafc990a69dd13ff4f76",
+	"serial": "FGTAZRI5HXAAGI90",
 	"status": "success",
 	"vdom": "root",
-	"version": "v7.0.3"
+	"version": "v7.0.4"
 }

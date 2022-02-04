@@ -1,9 +1,9 @@
 {
 	"addedIn": "v6.2.7",
-	"build": 237,
+	"build": 301,
 	"http_method": "GET",
 	"http_status": 200,
-	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3",
+	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3,v7.0.4",
 	"name": "proxy-address",
 	"path": "firewall",
 	"results": {
@@ -34,9 +34,10 @@
 					"id": {
 						"category": "unitary",
 						"default": 0,
-						"help": "Fortiguard category id.",
+						"help": "FortiGuard category ID.",
 						"max-value": 4294967295,
 						"min-value": 0,
+						"multiple_values": false,
 						"name": "id",
 						"type": "integer"
 					}
@@ -56,12 +57,14 @@
 				"help": "Integer value to determine the color of the icon in the GUI (1 - 32, default = 0, which sets value to 1).",
 				"max-value": 32,
 				"min-value": 0,
+				"multiple_values": false,
 				"name": "color",
 				"type": "integer"
 			},
 			"comment": {
 				"category": "unitary",
 				"help": "Optional comments.",
+				"multiple_values": false,
 				"name": "comment",
 				"size": 255,
 				"type": "var-string"
@@ -70,6 +73,7 @@
 				"category": "unitary",
 				"default": "",
 				"help": "HTTP header name as a regular expression.",
+				"multiple_values": false,
 				"name": "header",
 				"size": 255,
 				"type": "string"
@@ -99,6 +103,7 @@
 						"category": "unitary",
 						"default": "",
 						"help": "HTTP header regular expression.",
+						"multiple_values": false,
 						"name": "header",
 						"required": true,
 						"size": 255,
@@ -108,6 +113,7 @@
 						"category": "unitary",
 						"default": "",
 						"help": "HTTP header.",
+						"multiple_values": false,
 						"name": "header-name",
 						"required": true,
 						"size": 79,
@@ -119,6 +125,7 @@
 						"help": "ID.",
 						"max-value": 4294967295,
 						"min-value": 0,
+						"multiple_values": false,
 						"name": "id",
 						"type": "integer"
 					}
@@ -135,6 +142,7 @@
 				"category": "unitary",
 				"default": "",
 				"help": "Name of HTTP header.",
+				"multiple_values": false,
 				"name": "header-name",
 				"size": 79,
 				"type": "string"
@@ -148,6 +156,7 @@
 				],
 				"default": "",
 				"help": "Address object for the host.",
+				"multiple_values": false,
 				"name": "host",
 				"required": true,
 				"size": 79,
@@ -157,6 +166,7 @@
 				"category": "unitary",
 				"default": "",
 				"help": "Host name as a regular expression.",
+				"multiple_values": false,
 				"name": "host-regex",
 				"size": 255,
 				"type": "string"
@@ -208,6 +218,7 @@
 				"category": "unitary",
 				"default": "",
 				"help": "Address name.",
+				"multiple_values": false,
 				"name": "name",
 				"size": 35,
 				"type": "string"
@@ -216,6 +227,7 @@
 				"category": "unitary",
 				"default": "",
 				"help": "URL path as a regular expression.",
+				"multiple_values": false,
 				"name": "path",
 				"size": 255,
 				"type": "string"
@@ -224,6 +236,7 @@
 				"category": "unitary",
 				"default": "",
 				"help": "Match the query part of the URL as a regular expression.",
+				"multiple_values": false,
 				"name": "query",
 				"size": 255,
 				"type": "string"
@@ -256,6 +269,7 @@
 						],
 						"default": "",
 						"help": "Tag category.",
+						"multiple_values": false,
 						"name": "category",
 						"size": 63,
 						"type": "string"
@@ -264,6 +278,7 @@
 						"category": "unitary",
 						"default": "",
 						"help": "Tagging entry name.",
+						"multiple_values": false,
 						"name": "name",
 						"size": 63,
 						"type": "string"
@@ -278,6 +293,7 @@
 								],
 								"default": "",
 								"help": "Tag name.",
+								"multiple_values": false,
 								"name": "name",
 								"size": 79,
 								"type": "string"
@@ -378,6 +394,7 @@
 				"category": "unitary",
 				"default": "00000000-0000-0000-0000-000000000000",
 				"help": "Universally Unique Identifier (UUID; automatically assigned but can be manually reset).",
+				"multiple_values": false,
 				"name": "uuid",
 				"type": "uuid"
 			},
@@ -410,9 +427,9 @@
 		"path": "firewall",
 		"q_type": 486
 	},
-	"revision": "78ee061304af9c5d17bcae6474808d97",
-	"serial": "FGTAZRAQCG14L19D",
+	"revision": "e338e35a484eaafc990a69dd13ff4f76",
+	"serial": "FGTAZRI5HXAAGI90",
 	"status": "success",
 	"vdom": "root",
-	"version": "v7.0.3"
+	"version": "v7.0.4"
 }

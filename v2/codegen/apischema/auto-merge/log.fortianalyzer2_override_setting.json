@@ -1,9 +1,9 @@
 {
 	"addedIn": "v6.2.7",
-	"build": 237,
+	"build": 301,
 	"http_method": "GET",
 	"http_status": 200,
-	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3",
+	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3,v7.0.4",
 	"name": "override-setting",
 	"path": "log.fortianalyzer2",
 	"results": {
@@ -35,6 +35,7 @@
 				],
 				"default": "",
 				"help": "Certificate used to communicate with FortiAnalyzer.",
+				"multiple_values": false,
 				"name": "certificate",
 				"size": 35,
 				"type": "string"
@@ -63,6 +64,7 @@
 				"help": "FortiAnalyzer connection time-out in seconds (for status and log buffer).",
 				"max-value": 3600,
 				"min-value": 1,
+				"multiple_values": false,
 				"name": "conn-timeout",
 				"type": "integer"
 			},
@@ -113,6 +115,7 @@
 				],
 				"default": "",
 				"help": "Specify outgoing interface to reach server.",
+				"multiple_values": false,
 				"name": "interface",
 				"removedIn": "v6.4.0",
 				"required": true,
@@ -166,6 +169,7 @@
 				"help": "FortiAnalyzer maximum log rate in MBps (0 = unlimited).",
 				"max-value": 100000,
 				"min-value": 0,
+				"multiple_values": false,
 				"name": "max-log-rate",
 				"type": "integer"
 			},
@@ -175,6 +179,7 @@
 				"help": "Time between FortiAnalyzer connection retries in seconds (for status and log buffer).",
 				"max-value": 86400,
 				"min-value": 1,
+				"multiple_values": false,
 				"name": "monitor-failure-retry-period",
 				"type": "integer"
 			},
@@ -184,6 +189,7 @@
 				"help": "Time between OFTP keepalives in seconds (for status and log buffer).",
 				"max-value": 120,
 				"min-value": 1,
+				"multiple_values": false,
 				"name": "monitor-keepalive-period",
 				"type": "integer"
 			},
@@ -192,6 +198,7 @@
 				"category": "unitary",
 				"default": "",
 				"help": "Preshared-key used for auto-authorization on FortiAnalyzer.",
+				"multiple_values": false,
 				"name": "preshared-key",
 				"size": 63,
 				"type": "string"
@@ -239,6 +246,7 @@
 						"category": "unitary",
 						"default": "",
 						"help": "Serial Number.",
+						"multiple_values": false,
 						"name": "name",
 						"required": true,
 						"size": 79,
@@ -258,6 +266,7 @@
 				"category": "unitary",
 				"default": "",
 				"help": "The remote FortiAnalyzer.",
+				"multiple_values": false,
 				"name": "server",
 				"required": true,
 				"size": 127,
@@ -267,6 +276,7 @@
 				"category": "unitary",
 				"default": "",
 				"help": "Source IPv4 or IPv6 address used to communicate with FortiAnalyzer.",
+				"multiple_values": false,
 				"name": "source-ip",
 				"size": 63,
 				"type": "string"
@@ -323,6 +333,7 @@
 				"category": "unitary",
 				"default": "",
 				"help": "Day of week (month) to upload logs.",
+				"multiple_values": false,
 				"name": "upload-day",
 				"type": "user"
 			},
@@ -378,6 +389,7 @@
 				"category": "unitary",
 				"default": "",
 				"help": "Time to upload logs (hh:mm).",
+				"multiple_values": false,
 				"name": "upload-time",
 				"type": "user"
 			},
@@ -401,13 +413,14 @@
 			}
 		},
 		"help": "Override FortiAnalyzer settings.",
+		"multiple_values": false,
 		"name": "override-setting",
 		"path": "log.fortianalyzer2",
 		"q_type": 403
 	},
-	"revision": "78ee061304af9c5d17bcae6474808d97",
-	"serial": "FGTAZRAQCG14L19D",
+	"revision": "e338e35a484eaafc990a69dd13ff4f76",
+	"serial": "FGTAZRI5HXAAGI90",
 	"status": "success",
 	"vdom": "root",
-	"version": "v7.0.3"
+	"version": "v7.0.4"
 }

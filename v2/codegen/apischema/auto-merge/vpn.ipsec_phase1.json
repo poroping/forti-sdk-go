@@ -1,9 +1,9 @@
 {
 	"addedIn": "v6.2.7",
-	"build": 237,
+	"build": 301,
 	"http_method": "GET",
 	"http_status": 200,
-	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3",
+	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3,v7.0.4",
 	"name": "phase1",
 	"path": "vpn.ipsec",
 	"results": {
@@ -147,6 +147,7 @@
 			"authpasswd": {
 				"category": "unitary",
 				"help": "XAuth password (max 35 characters).",
+				"multiple_values": false,
 				"name": "authpasswd",
 				"required": true,
 				"size": 128,
@@ -156,6 +157,7 @@
 				"category": "unitary",
 				"default": "",
 				"help": "XAuth user name.",
+				"multiple_values": false,
 				"name": "authusr",
 				"required": true,
 				"size": 64,
@@ -168,6 +170,7 @@
 				],
 				"default": "",
 				"help": "Authentication user group.",
+				"multiple_values": false,
 				"name": "authusrgrp",
 				"size": 35,
 				"type": "string"
@@ -197,6 +200,7 @@
 						"category": "unitary",
 						"default": "",
 						"help": "Address of backup gateway.",
+						"multiple_values": false,
 						"name": "address",
 						"required": true,
 						"size": 79,
@@ -215,6 +219,7 @@
 			"banner": {
 				"category": "unitary",
 				"help": "Message that unity client should display after connecting.",
+				"multiple_values": false,
 				"name": "banner",
 				"size": 1024,
 				"type": "var-string"
@@ -247,6 +252,7 @@
 						],
 						"default": "",
 						"help": "Certificate name.",
+						"multiple_values": false,
 						"name": "name",
 						"required": true,
 						"size": 79,
@@ -320,6 +326,7 @@
 			"comments": {
 				"category": "unitary",
 				"help": "Comment.",
+				"multiple_values": false,
 				"name": "comments",
 				"size": 255,
 				"type": "var-string"
@@ -328,6 +335,7 @@
 				"category": "unitary",
 				"default": "0.0.0.0",
 				"help": "Relay agent gateway IP address to use in the giaddr field of DHCP requests.",
+				"multiple_values": false,
 				"name": "dhcp-ra-giaddr",
 				"type": "ipv4-address"
 			},
@@ -335,6 +343,7 @@
 				"category": "unitary",
 				"default": "::",
 				"help": "Relay agent IPv6 link address to use in DHCP6 requests.",
+				"multiple_values": false,
 				"name": "dhcp6-ra-linkaddr",
 				"type": "ipv6-address"
 			},
@@ -441,6 +450,7 @@
 				"help": "Distance for routes added by IKE (1 - 255).",
 				"max-value": 255,
 				"min-value": 1,
+				"multiple_values": false,
 				"name": "distance",
 				"type": "integer"
 			},
@@ -466,6 +476,7 @@
 				"category": "unitary",
 				"default": "",
 				"help": "Instruct unity clients about the single default DNS domain.",
+				"multiple_values": false,
 				"name": "domain",
 				"size": 63,
 				"type": "string"
@@ -498,6 +509,7 @@
 				"help": "Number of DPD retry attempts.",
 				"max-value": 10,
 				"min-value": 0,
+				"multiple_values": false,
 				"name": "dpd-retrycount",
 				"type": "integer"
 			},
@@ -505,6 +517,7 @@
 				"category": "unitary",
 				"default": "",
 				"help": "DPD retry interval.",
+				"multiple_values": false,
 				"name": "dpd-retryinterval",
 				"type": "user"
 			},
@@ -533,6 +546,7 @@
 				],
 				"default": "",
 				"help": "Peer group excluded from EAP authentication.",
+				"multiple_values": false,
 				"name": "eap-exclude-peergrp",
 				"size": 35,
 				"type": "string"
@@ -605,6 +619,7 @@
 				"help": "Number of base Forward Error Correction packets (1 - 20).",
 				"max-value": 20,
 				"min-value": 1,
+				"multiple_values": false,
 				"name": "fec-base",
 				"type": "integer"
 			},
@@ -655,6 +670,7 @@
 				],
 				"default": "",
 				"help": "SD-WAN health check.",
+				"multiple_values": false,
 				"name": "fec-health-check",
 				"size": 35,
 				"type": "string"
@@ -682,6 +698,7 @@
 				"category": "unitary",
 				"default": "",
 				"help": "Forward Error Correction (FEC) mapping profile.",
+				"multiple_values": false,
 				"name": "fec-mapping-profile",
 				"size": 35,
 				"type": "string"
@@ -692,6 +709,7 @@
 				"help": "Timeout in milliseconds before dropping Forward Error Correction packets (1 - 1000).",
 				"max-value": 1000,
 				"min-value": 1,
+				"multiple_values": false,
 				"name": "fec-receive-timeout",
 				"type": "integer"
 			},
@@ -701,6 +719,7 @@
 				"help": "Number of redundant Forward Error Correction packets (1 - 5 for reed-solomon, 1 for xor).",
 				"max-value": 5,
 				"min-value": 1,
+				"multiple_values": false,
 				"name": "fec-redundant",
 				"type": "integer"
 			},
@@ -710,6 +729,7 @@
 				"help": "Timeout in milliseconds before sending Forward Error Correction packets (1 - 1000).",
 				"max-value": 1000,
 				"min-value": 1,
+				"multiple_values": false,
 				"name": "fec-send-timeout",
 				"type": "integer"
 			},
@@ -755,6 +775,7 @@
 				"help": "IKE fragmentation MTU (500 - 16000).",
 				"max-value": 16000,
 				"min-value": 500,
+				"multiple_values": false,
 				"name": "fragmentation-mtu",
 				"type": "integer"
 			},
@@ -778,7 +799,8 @@
 			},
 			"group-authentication-secret": {
 				"category": "unitary",
-				"help": "Password for IKEv2 IDi group authentication.  (ASCII string or hexadecimal indicated by a leading 0x.)",
+				"help": "Password for IKEv2 ID group authentication. ASCII string or hexadecimal indicated by a leading 0x.",
+				"multiple_values": false,
 				"name": "group-authentication-secret",
 				"required": true,
 				"type": "password-3"
@@ -825,6 +847,7 @@
 				"help": "IPsec tunnel idle timeout in minutes (5 - 43200).",
 				"max-value": 43200,
 				"min-value": 5,
+				"multiple_values": false,
 				"name": "idle-timeoutinterval",
 				"type": "integer"
 			},
@@ -871,6 +894,7 @@
 				],
 				"default": "",
 				"help": "Local physical, aggregate, or VLAN outgoing interface.",
+				"multiple_values": false,
 				"name": "interface",
 				"required": true,
 				"size": 35,
@@ -883,6 +907,7 @@
 				"help": "IP address reuse delay interval in seconds (0 - 28800).",
 				"max-value": 28800,
 				"min-value": 0,
+				"multiple_values": false,
 				"name": "ip-delay-interval",
 				"type": "integer"
 			},
@@ -890,6 +915,7 @@
 				"category": "unitary",
 				"default": "0.0.0.0",
 				"help": "IPv4 DNS server 1.",
+				"multiple_values": false,
 				"name": "ipv4-dns-server1",
 				"type": "ipv4-address"
 			},
@@ -897,6 +923,7 @@
 				"category": "unitary",
 				"default": "0.0.0.0",
 				"help": "IPv4 DNS server 2.",
+				"multiple_values": false,
 				"name": "ipv4-dns-server2",
 				"type": "ipv4-address"
 			},
@@ -904,6 +931,7 @@
 				"category": "unitary",
 				"default": "0.0.0.0",
 				"help": "IPv4 DNS server 3.",
+				"multiple_values": false,
 				"name": "ipv4-dns-server3",
 				"type": "ipv4-address"
 			},
@@ -911,6 +939,7 @@
 				"category": "unitary",
 				"default": "0.0.0.0",
 				"help": "End of IPv4 range.",
+				"multiple_values": false,
 				"name": "ipv4-end-ip",
 				"required": true,
 				"type": "ipv4-address"
@@ -922,6 +951,7 @@
 						"category": "unitary",
 						"default": "0.0.0.0",
 						"help": "End of IPv4 exclusive range.",
+						"multiple_values": false,
 						"name": "end-ip",
 						"required": true,
 						"type": "ipv4-address"
@@ -932,6 +962,7 @@
 						"help": "ID.",
 						"max-value": 4294967295,
 						"min-value": 0,
+						"multiple_values": false,
 						"name": "id",
 						"required": true,
 						"type": "integer"
@@ -940,6 +971,7 @@
 						"category": "unitary",
 						"default": "0.0.0.0",
 						"help": "Start of IPv4 exclusive range.",
+						"multiple_values": false,
 						"name": "start-ip",
 						"required": true,
 						"type": "ipv4-address"
@@ -961,6 +993,7 @@
 				],
 				"default": "",
 				"help": "IPv4 address name.",
+				"multiple_values": false,
 				"name": "ipv4-name",
 				"size": 79,
 				"type": "string"
@@ -969,6 +1002,7 @@
 				"category": "unitary",
 				"default": "255.255.255.255",
 				"help": "IPv4 Netmask.",
+				"multiple_values": false,
 				"name": "ipv4-netmask",
 				"type": "ipv4-netmask"
 			},
@@ -980,6 +1014,7 @@
 				],
 				"default": "",
 				"help": "IPv4 subnets that should not be sent over the IPsec tunnel.",
+				"multiple_values": false,
 				"name": "ipv4-split-exclude",
 				"size": 79,
 				"type": "string"
@@ -992,6 +1027,7 @@
 				],
 				"default": "",
 				"help": "IPv4 split-include subnets.",
+				"multiple_values": false,
 				"name": "ipv4-split-include",
 				"size": 79,
 				"type": "string"
@@ -1000,6 +1036,7 @@
 				"category": "unitary",
 				"default": "0.0.0.0",
 				"help": "Start of IPv4 range.",
+				"multiple_values": false,
 				"name": "ipv4-start-ip",
 				"required": true,
 				"type": "ipv4-address"
@@ -1008,6 +1045,7 @@
 				"category": "unitary",
 				"default": "0.0.0.0",
 				"help": "WINS server 1.",
+				"multiple_values": false,
 				"name": "ipv4-wins-server1",
 				"type": "ipv4-address"
 			},
@@ -1015,6 +1053,7 @@
 				"category": "unitary",
 				"default": "0.0.0.0",
 				"help": "WINS server 2.",
+				"multiple_values": false,
 				"name": "ipv4-wins-server2",
 				"type": "ipv4-address"
 			},
@@ -1022,6 +1061,7 @@
 				"category": "unitary",
 				"default": "::",
 				"help": "IPv6 DNS server 1.",
+				"multiple_values": false,
 				"name": "ipv6-dns-server1",
 				"type": "ipv6-address"
 			},
@@ -1029,6 +1069,7 @@
 				"category": "unitary",
 				"default": "::",
 				"help": "IPv6 DNS server 2.",
+				"multiple_values": false,
 				"name": "ipv6-dns-server2",
 				"type": "ipv6-address"
 			},
@@ -1036,6 +1077,7 @@
 				"category": "unitary",
 				"default": "::",
 				"help": "IPv6 DNS server 3.",
+				"multiple_values": false,
 				"name": "ipv6-dns-server3",
 				"type": "ipv6-address"
 			},
@@ -1043,6 +1085,7 @@
 				"category": "unitary",
 				"default": "::",
 				"help": "End of IPv6 range.",
+				"multiple_values": false,
 				"name": "ipv6-end-ip",
 				"required": true,
 				"type": "ipv6-address"
@@ -1054,6 +1097,7 @@
 						"category": "unitary",
 						"default": "::",
 						"help": "End of IPv6 exclusive range.",
+						"multiple_values": false,
 						"name": "end-ip",
 						"required": true,
 						"type": "ipv6-address"
@@ -1064,6 +1108,7 @@
 						"help": "ID.",
 						"max-value": 4294967295,
 						"min-value": 0,
+						"multiple_values": false,
 						"name": "id",
 						"required": true,
 						"type": "integer"
@@ -1072,6 +1117,7 @@
 						"category": "unitary",
 						"default": "::",
 						"help": "Start of IPv6 exclusive range.",
+						"multiple_values": false,
 						"name": "start-ip",
 						"required": true,
 						"type": "ipv6-address"
@@ -1093,6 +1139,7 @@
 				],
 				"default": "",
 				"help": "IPv6 address name.",
+				"multiple_values": false,
 				"name": "ipv6-name",
 				"size": 79,
 				"type": "string"
@@ -1103,6 +1150,7 @@
 				"help": "IPv6 prefix.",
 				"max-value": 128,
 				"min-value": 1,
+				"multiple_values": false,
 				"name": "ipv6-prefix",
 				"type": "integer"
 			},
@@ -1114,6 +1162,7 @@
 				],
 				"default": "",
 				"help": "IPv6 subnets that should not be sent over the IPsec tunnel.",
+				"multiple_values": false,
 				"name": "ipv6-split-exclude",
 				"size": 79,
 				"type": "string"
@@ -1126,6 +1175,7 @@
 				],
 				"default": "",
 				"help": "IPv6 split-include subnets.",
+				"multiple_values": false,
 				"name": "ipv6-split-include",
 				"size": 79,
 				"type": "string"
@@ -1134,6 +1184,7 @@
 				"category": "unitary",
 				"default": "::",
 				"help": "Start of IPv6 range.",
+				"multiple_values": false,
 				"name": "ipv6-start-ip",
 				"required": true,
 				"type": "ipv6-address"
@@ -1144,6 +1195,7 @@
 				"help": "NAT-T keep alive interval.",
 				"max-value": 900,
 				"min-value": 10,
+				"multiple_values": false,
 				"name": "keepalive",
 				"type": "integer"
 			},
@@ -1153,6 +1205,7 @@
 				"help": "Time to wait in seconds before phase 1 encryption key expires.",
 				"max-value": 172800,
 				"min-value": 120,
+				"multiple_values": false,
 				"name": "keylife",
 				"type": "integer"
 			},
@@ -1160,6 +1213,7 @@
 				"category": "unitary",
 				"default": "0.0.0.0",
 				"help": "Local VPN gateway.",
+				"multiple_values": false,
 				"name": "local-gw",
 				"type": "ipv4-address"
 			},
@@ -1167,6 +1221,7 @@
 				"category": "unitary",
 				"default": "",
 				"help": "Local ID.",
+				"multiple_values": false,
 				"name": "localid",
 				"size": 63,
 				"type": "string"
@@ -1287,6 +1342,7 @@
 				"category": "unitary",
 				"default": "",
 				"help": "IPsec remote gateway name.",
+				"multiple_values": false,
 				"name": "name",
 				"size": 35,
 				"type": "string"
@@ -1319,6 +1375,7 @@
 				"help": "IKE SA negotiation timeout in seconds (1 - 300).",
 				"max-value": 300,
 				"min-value": 1,
+				"multiple_values": false,
 				"name": "negotiate-timeout",
 				"type": "integer"
 			},
@@ -1377,6 +1434,7 @@
 				],
 				"default": "",
 				"help": "Accept this peer certificate.",
+				"multiple_values": false,
 				"name": "peer",
 				"required": true,
 				"size": 35,
@@ -1389,6 +1447,7 @@
 				],
 				"default": "",
 				"help": "Accept this peer certificate group.",
+				"multiple_values": false,
 				"name": "peergrp",
 				"required": true,
 				"size": 35,
@@ -1398,6 +1457,7 @@
 				"category": "unitary",
 				"default": "",
 				"help": "Accept this peer identity.",
+				"multiple_values": false,
 				"name": "peerid",
 				"required": true,
 				"size": 255,
@@ -1459,6 +1519,7 @@
 				"category": "unitary",
 				"default": "",
 				"help": "IKEv2 Postquantum Preshared Key Identity.",
+				"multiple_values": false,
 				"name": "ppk-identity",
 				"size": 35,
 				"type": "string"
@@ -1466,16 +1527,18 @@
 			"ppk-secret": {
 				"category": "unitary",
 				"help": "IKEv2 Postquantum Preshared Key (ASCII string or hexadecimal encoded with a leading 0x).",
+				"multiple_values": false,
 				"name": "ppk-secret",
 				"required": true,
 				"type": "password-3"
 			},
 			"priority": {
 				"category": "unitary",
-				"default": 0,
-				"help": "Priority for routes added by IKE (0 - 4294967295).",
-				"max-value": 4294967295,
-				"min-value": 0,
+				"default": 1,
+				"help": "Priority for routes added by IKE (1 - 65535).",
+				"max-value": 65535,
+				"min-value": 1,
+				"multiple_values": false,
 				"name": "priority",
 				"type": "integer"
 			},
@@ -1722,6 +1785,7 @@
 			"psksecret": {
 				"category": "unitary",
 				"help": "Pre-shared secret for PSK authentication (ASCII string or hexadecimal encoded with a leading 0x).",
+				"multiple_values": false,
 				"name": "psksecret",
 				"required": true,
 				"type": "password-3"
@@ -1729,6 +1793,7 @@
 			"psksecret-remote": {
 				"category": "unitary",
 				"help": "Pre-shared secret for remote side PSK authentication (ASCII string or hexadecimal encoded with a leading 0x).",
+				"multiple_values": false,
 				"name": "psksecret-remote",
 				"required": true,
 				"type": "password-3"
@@ -1773,6 +1838,7 @@
 				"category": "unitary",
 				"default": "0.0.0.0",
 				"help": "Remote VPN gateway.",
+				"multiple_values": false,
 				"name": "remote-gw",
 				"required": true,
 				"type": "ipv4-address"
@@ -1780,7 +1846,8 @@
 			"remotegw-ddns": {
 				"category": "unitary",
 				"default": "",
-				"help": "Domain name of remote gateway (eg. name.DDNS.com).",
+				"help": "Domain name of remote gateway. For example, name.ddns.com.",
+				"multiple_values": false,
 				"name": "remotegw-ddns",
 				"required": true,
 				"size": 63,
@@ -1876,6 +1943,7 @@
 				],
 				"default": "",
 				"help": "Split-include services.",
+				"multiple_values": false,
 				"name": "split-include-service",
 				"size": 79,
 				"type": "string"
@@ -1949,6 +2017,7 @@
 				],
 				"default": "",
 				"help": "User group name for dialup peers.",
+				"multiple_values": false,
 				"name": "usrgrp",
 				"required": true,
 				"size": 35,
@@ -2057,9 +2126,9 @@
 		"path": "vpn.ipsec",
 		"q_type": 57
 	},
-	"revision": "78ee061304af9c5d17bcae6474808d97",
-	"serial": "FGTAZRAQCG14L19D",
+	"revision": "e338e35a484eaafc990a69dd13ff4f76",
+	"serial": "FGTAZRI5HXAAGI90",
 	"status": "success",
 	"vdom": "root",
-	"version": "v7.0.3"
+	"version": "v7.0.4"
 }

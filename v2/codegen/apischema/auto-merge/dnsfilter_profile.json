@@ -1,9 +1,9 @@
 {
 	"addedIn": "v6.2.7",
-	"build": 237,
+	"build": 301,
 	"http_method": "GET",
 	"http_status": 200,
-	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3",
+	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3,v7.0.4",
 	"name": "profile",
 	"path": "dnsfilter",
 	"results": {
@@ -53,6 +53,7 @@
 			"comment": {
 				"category": "unitary",
 				"help": "Comment.",
+				"multiple_values": false,
 				"name": "comment",
 				"size": 255,
 				"type": "var-string"
@@ -83,6 +84,7 @@
 						"category": "unitary",
 						"default": "0.0.0.0",
 						"help": "IPv4 address or subnet on the external network to substitute for the resolved address in DNS query replies. Can be single IP address or subnet on the external network, but number of addresses must equal number of mapped IP addresses in src.",
+						"multiple_values": false,
 						"name": "dst",
 						"type": "ipv4-address"
 					},
@@ -90,6 +92,7 @@
 						"category": "unitary",
 						"default": "::",
 						"help": "IPv6 address or subnet on the external network to substitute for the resolved address in DNS query replies. Can be single IP address or subnet on the external network, but number of addresses must equal number of mapped IP addresses in src6.",
+						"multiple_values": false,
 						"name": "dst6",
 						"type": "ipv6-address"
 					},
@@ -99,6 +102,7 @@
 						"help": "ID.",
 						"max-value": 4294967295,
 						"min-value": 0,
+						"multiple_values": false,
 						"name": "id",
 						"type": "integer"
 					},
@@ -106,6 +110,7 @@
 						"category": "unitary",
 						"default": "255.255.255.255",
 						"help": "If src and dst are subnets rather than single IP addresses, enter the netmask for both src and dst.",
+						"multiple_values": false,
 						"name": "netmask",
 						"type": "ipv4-netmask"
 					},
@@ -115,6 +120,7 @@
 						"help": "If src6 and dst6 are subnets rather than single IP addresses, enter the prefix for both src6 and dst6 (1 - 128, default = 128).",
 						"max-value": 128,
 						"min-value": 1,
+						"multiple_values": false,
 						"name": "prefix",
 						"type": "integer"
 					},
@@ -122,6 +128,7 @@
 						"category": "unitary",
 						"default": "0.0.0.0",
 						"help": "IPv4 address or subnet on the internal network to compare with the resolved address in DNS query replies. If the resolved address matches, the resolved address is substituted with dst.",
+						"multiple_values": false,
 						"name": "src",
 						"type": "ipv4-address"
 					},
@@ -129,6 +136,7 @@
 						"category": "unitary",
 						"default": "::",
 						"help": "IPv6 address or subnet on the internal network to compare with the resolved address in DNS query replies. If the resolved address matches, the resolved address is substituted with dst6.",
+						"multiple_values": false,
 						"name": "src6",
 						"type": "ipv6-address"
 					},
@@ -171,11 +179,13 @@
 						"help": "DNS domain filter table ID.",
 						"max-value": 4294967295,
 						"min-value": 0,
+						"multiple_values": false,
 						"name": "domain-filter-table",
 						"type": "integer"
 					}
 				},
 				"help": "Domain filter settings.",
+				"multiple_values": false,
 				"name": "domain-filter"
 			},
 			"external-ip-blocklist": {
@@ -188,6 +198,7 @@
 						],
 						"default": "",
 						"help": "External domain block list name.",
+						"multiple_values": false,
 						"name": "name",
 						"size": 79,
 						"type": "string"
@@ -232,6 +243,7 @@
 								"help": "Category number.",
 								"max-value": 255,
 								"min-value": 0,
+								"multiple_values": false,
 								"name": "category",
 								"type": "integer"
 							},
@@ -241,6 +253,7 @@
 								"help": "ID number.",
 								"max-value": 255,
 								"min-value": 0,
+								"multiple_values": false,
 								"name": "id",
 								"type": "integer"
 							},
@@ -291,6 +304,7 @@
 					}
 				},
 				"help": "FortiGuard DNS Filter settings.",
+				"multiple_values": false,
 				"name": "ftgd-dns"
 			},
 			"log-all-domain": {
@@ -315,6 +329,7 @@
 				"category": "unitary",
 				"default": "",
 				"help": "Profile name.",
+				"multiple_values": false,
 				"name": "name",
 				"required": true,
 				"size": 35,
@@ -324,6 +339,7 @@
 				"category": "unitary",
 				"default": "0.0.0.0",
 				"help": "IPv4 address of the SDNS redirect portal.",
+				"multiple_values": false,
 				"name": "redirect-portal",
 				"type": "ipv4-address"
 			},
@@ -331,6 +347,7 @@
 				"category": "unitary",
 				"default": "::",
 				"help": "IPv6 address of the SDNS redirect portal.",
+				"multiple_values": false,
 				"name": "redirect-portal6",
 				"type": "ipv6-address"
 			},
@@ -417,9 +434,9 @@
 		"path": "dnsfilter",
 		"q_type": 491
 	},
-	"revision": "5a78955211ebb1641b50c9360238cb5c",
-	"serial": "FGTAZRAQCG14L19D",
+	"revision": "1af996ea72fbf3755ecb12a854d78106",
+	"serial": "FGTAZRI5HXAAGI90",
 	"status": "success",
 	"vdom": "root",
-	"version": "v7.0.3"
+	"version": "v7.0.4"
 }

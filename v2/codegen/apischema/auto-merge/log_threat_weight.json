@@ -1,9 +1,9 @@
 {
 	"addedIn": "v6.2.7",
-	"build": 237,
+	"build": 301,
 	"http_method": "GET",
 	"http_status": 200,
-	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3",
+	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3,v7.0.4",
 	"name": "threat-weight",
 	"path": "log",
 	"results": {
@@ -19,6 +19,7 @@
 						"help": "Application category.",
 						"max-value": 65535,
 						"min-value": 0,
+						"multiple_values": false,
 						"name": "category",
 						"required": true,
 						"type": "integer"
@@ -29,6 +30,7 @@
 						"help": "Entry ID.",
 						"max-value": 255,
 						"min-value": 0,
+						"multiple_values": false,
 						"name": "id",
 						"type": "integer"
 					},
@@ -168,6 +170,7 @@
 						"category": "unitary",
 						"default": "",
 						"help": "Country code.",
+						"multiple_values": false,
 						"name": "country",
 						"required": true,
 						"size": 2,
@@ -179,6 +182,7 @@
 						"help": "Entry ID.",
 						"max-value": 255,
 						"min-value": 0,
+						"multiple_values": false,
 						"name": "id",
 						"type": "integer"
 					},
@@ -376,6 +380,7 @@
 					}
 				},
 				"help": "IPS threat weight settings.",
+				"multiple_values": false,
 				"name": "ips"
 			},
 			"level": {
@@ -387,6 +392,7 @@
 						"help": "Critical level score value (1 - 100).",
 						"max-value": 100,
 						"min-value": 1,
+						"multiple_values": false,
 						"name": "critical",
 						"type": "integer"
 					},
@@ -396,6 +402,7 @@
 						"help": "High level score value (1 - 100).",
 						"max-value": 100,
 						"min-value": 1,
+						"multiple_values": false,
 						"name": "high",
 						"type": "integer"
 					},
@@ -405,6 +412,7 @@
 						"help": "Low level score value (1 - 100).",
 						"max-value": 100,
 						"min-value": 1,
+						"multiple_values": false,
 						"name": "low",
 						"type": "integer"
 					},
@@ -414,11 +422,13 @@
 						"help": "Medium level score value (1 - 100).",
 						"max-value": 100,
 						"min-value": 1,
+						"multiple_values": false,
 						"name": "medium",
 						"type": "integer"
 					}
 				},
 				"help": "Score mapping for threat weight levels.",
+				"multiple_values": false,
 				"name": "level"
 			},
 			"malware": {
@@ -789,7 +799,7 @@
 					"virus-file-type-executable": {
 						"category": "unitary",
 						"default": "medium",
-						"help": "Threat weight score for virus (filetype executable) detected.",
+						"help": "Threat weight score for virus (file type executable) detected.",
 						"multiple_values": false,
 						"name": "virus-file-type-executable",
 						"options": [
@@ -908,6 +918,7 @@
 					}
 				},
 				"help": "Anti-virus malware threat weight settings.",
+				"multiple_values": false,
 				"name": "malware"
 			},
 			"status": {
@@ -967,6 +978,7 @@
 						"help": "Threat weight score for web category filtering matches.",
 						"max-value": 255,
 						"min-value": 0,
+						"multiple_values": false,
 						"name": "category",
 						"required": true,
 						"type": "integer"
@@ -977,6 +989,7 @@
 						"help": "Entry ID.",
 						"max-value": 255,
 						"min-value": 0,
+						"multiple_values": false,
 						"name": "id",
 						"type": "integer"
 					},
@@ -1021,13 +1034,14 @@
 			}
 		},
 		"help": "Configure threat weight settings.",
+		"multiple_values": false,
 		"name": "threat-weight",
 		"path": "log",
 		"q_type": 461
 	},
-	"revision": "22c573ef906abcf27e1034726da16d9a",
-	"serial": "FGTAZRAQCG14L19D",
+	"revision": "a34bad87afb99fef2597eff78ce53129",
+	"serial": "FGTAZRI5HXAAGI90",
 	"status": "success",
 	"vdom": "root",
-	"version": "v7.0.3"
+	"version": "v7.0.4"
 }

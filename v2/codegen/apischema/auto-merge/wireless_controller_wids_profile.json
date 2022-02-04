@@ -1,9 +1,9 @@
 {
 	"addedIn": "v6.2.7",
-	"build": 237,
+	"build": 301,
 	"http_method": "GET",
 	"http_status": 200,
-	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3",
+	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3,v7.0.4",
 	"name": "wids-profile",
 	"path": "wireless-controller",
 	"results": {
@@ -40,6 +40,7 @@
 						],
 						"default": "",
 						"help": "Schedule name.",
+						"multiple_values": false,
 						"name": "name",
 						"required": true,
 						"size": 35,
@@ -61,6 +62,7 @@
 				"help": "Listen time on scanning a channel (10 - 1000 msec, default = 30).",
 				"max-value": 1000,
 				"min-value": 10,
+				"multiple_values": false,
 				"name": "ap-bgscan-duration",
 				"type": "integer"
 			},
@@ -70,6 +72,7 @@
 				"help": "Wait time for channel inactivity before scanning this channel (0 - 1000 msec, default = 20).",
 				"max-value": 1000,
 				"min-value": 0,
+				"multiple_values": false,
 				"name": "ap-bgscan-idle",
 				"type": "integer"
 			},
@@ -79,6 +82,7 @@
 				"help": "Period between successive channel scans (1 - 600 sec, default = 3).",
 				"max-value": 600,
 				"min-value": 1,
+				"multiple_values": false,
 				"name": "ap-bgscan-intv",
 				"type": "integer"
 			},
@@ -88,6 +92,7 @@
 				"help": "Period between background scans (10 - 3600 sec, default = 600).",
 				"max-value": 3600,
 				"min-value": 10,
+				"multiple_values": false,
 				"name": "ap-bgscan-period",
 				"type": "integer"
 			},
@@ -97,6 +102,7 @@
 				"help": "Period between background scan reports (15 - 600 sec, default = 30).",
 				"max-value": 600,
 				"min-value": 15,
+				"multiple_values": false,
 				"name": "ap-bgscan-report-intv",
 				"type": "integer"
 			},
@@ -106,6 +112,7 @@
 				"help": "Period between foreground scan reports (15 - 600 sec, default = 15).",
 				"max-value": 600,
 				"min-value": 15,
+				"multiple_values": false,
 				"name": "ap-fgscan-report-intv",
 				"type": "integer"
 			},
@@ -149,6 +156,7 @@
 				"category": "unitary",
 				"default": "-90",
 				"help": "Minimum signal level/threshold in dBm required for the AP to report detected rogue AP (-95 to -20, default = -90).",
+				"multiple_values": false,
 				"name": "ap-scan-threshold",
 				"size": 7,
 				"type": "string"
@@ -177,6 +185,7 @@
 				"help": "The threshold value for association frame flooding.",
 				"max-value": 100,
 				"min-value": 1,
+				"multiple_values": false,
 				"name": "assoc-flood-thresh",
 				"type": "integer"
 			},
@@ -186,6 +195,7 @@
 				"help": "Number of seconds after which a station is considered not connected.",
 				"max-value": 120,
 				"min-value": 5,
+				"multiple_values": false,
 				"name": "assoc-flood-time",
 				"type": "integer"
 			},
@@ -213,6 +223,7 @@
 				"help": "The threshold value for authentication frame flooding.",
 				"max-value": 100,
 				"min-value": 1,
+				"multiple_values": false,
 				"name": "auth-flood-thresh",
 				"type": "integer"
 			},
@@ -222,6 +233,7 @@
 				"help": "Number of seconds after which a station is considered not connected.",
 				"max-value": 120,
 				"min-value": 5,
+				"multiple_values": false,
 				"name": "auth-flood-time",
 				"type": "integer"
 			},
@@ -247,6 +259,7 @@
 				"category": "unitary",
 				"default": "",
 				"help": "Comment.",
+				"multiple_values": false,
 				"name": "comment",
 				"size": 63,
 				"type": "string"
@@ -275,6 +288,7 @@
 				"help": "Threshold value per second to deauth unknown src for DoS attack (0: no limit).",
 				"max-value": 65535,
 				"min-value": 0,
+				"multiple_values": false,
 				"name": "deauth-unknown-src-thresh",
 				"type": "integer"
 			},
@@ -302,6 +316,7 @@
 				"help": "The detection interval for EAPOL-Failure flooding (1 - 3600 sec).",
 				"max-value": 3600,
 				"min-value": 1,
+				"multiple_values": false,
 				"name": "eapol-fail-intv",
 				"type": "integer"
 			},
@@ -311,6 +326,7 @@
 				"help": "The threshold value for EAPOL-Failure flooding in specified interval.",
 				"max-value": 100,
 				"min-value": 2,
+				"multiple_values": false,
 				"name": "eapol-fail-thresh",
 				"type": "integer"
 			},
@@ -338,6 +354,7 @@
 				"help": "The detection interval for EAPOL-Logoff flooding (1 - 3600 sec).",
 				"max-value": 3600,
 				"min-value": 1,
+				"multiple_values": false,
 				"name": "eapol-logoff-intv",
 				"type": "integer"
 			},
@@ -347,6 +364,7 @@
 				"help": "The threshold value for EAPOL-Logoff flooding in specified interval.",
 				"max-value": 100,
 				"min-value": 2,
+				"multiple_values": false,
 				"name": "eapol-logoff-thresh",
 				"type": "integer"
 			},
@@ -374,6 +392,7 @@
 				"help": "The detection interval for premature EAPOL-Failure flooding (1 - 3600 sec).",
 				"max-value": 3600,
 				"min-value": 1,
+				"multiple_values": false,
 				"name": "eapol-pre-fail-intv",
 				"type": "integer"
 			},
@@ -383,6 +402,7 @@
 				"help": "The threshold value for premature EAPOL-Failure flooding in specified interval.",
 				"max-value": 100,
 				"min-value": 2,
+				"multiple_values": false,
 				"name": "eapol-pre-fail-thresh",
 				"type": "integer"
 			},
@@ -410,6 +430,7 @@
 				"help": "The detection interval for premature EAPOL-Success flooding (1 - 3600 sec).",
 				"max-value": 3600,
 				"min-value": 1,
+				"multiple_values": false,
 				"name": "eapol-pre-succ-intv",
 				"type": "integer"
 			},
@@ -419,6 +440,7 @@
 				"help": "The threshold value for premature EAPOL-Success flooding in specified interval.",
 				"max-value": 100,
 				"min-value": 2,
+				"multiple_values": false,
 				"name": "eapol-pre-succ-thresh",
 				"type": "integer"
 			},
@@ -446,6 +468,7 @@
 				"help": "The detection interval for EAPOL-Start flooding (1 - 3600 sec).",
 				"max-value": 3600,
 				"min-value": 1,
+				"multiple_values": false,
 				"name": "eapol-start-intv",
 				"type": "integer"
 			},
@@ -455,6 +478,7 @@
 				"help": "The threshold value for EAPOL-Start flooding in specified interval.",
 				"max-value": 100,
 				"min-value": 2,
+				"multiple_values": false,
 				"name": "eapol-start-thresh",
 				"type": "integer"
 			},
@@ -482,6 +506,7 @@
 				"help": "The detection interval for EAPOL-Success flooding (1 - 3600 sec).",
 				"max-value": 3600,
 				"min-value": 1,
+				"multiple_values": false,
 				"name": "eapol-succ-intv",
 				"type": "integer"
 			},
@@ -491,6 +516,7 @@
 				"help": "The threshold value for EAPOL-Success flooding in specified interval.",
 				"max-value": 100,
 				"min-value": 2,
+				"multiple_values": false,
 				"name": "eapol-succ-thresh",
 				"type": "integer"
 			},
@@ -536,6 +562,7 @@
 				"help": "Threshold value for long duration attack detection (1000 - 32767 usec, default = 8200).",
 				"max-value": 32767,
 				"min-value": 1000,
+				"multiple_values": false,
 				"name": "long-duration-thresh",
 				"type": "integer"
 			},
@@ -543,6 +570,7 @@
 				"category": "unitary",
 				"default": "",
 				"help": "WIDS profile name.",
+				"multiple_values": false,
 				"name": "name",
 				"size": 35,
 				"type": "string"
@@ -652,9 +680,9 @@
 		"path": "wireless-controller",
 		"q_type": 268
 	},
-	"revision": "5272cc9b59fadf231005d3a8aae1bd29",
-	"serial": "FGTAZRAQCG14L19D",
+	"revision": "95690dfb57fbd481f05b0da3048910a9",
+	"serial": "FGTAZRI5HXAAGI90",
 	"status": "success",
 	"vdom": "root",
-	"version": "v7.0.3"
+	"version": "v7.0.4"
 }

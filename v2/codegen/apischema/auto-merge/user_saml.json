@@ -1,9 +1,9 @@
 {
 	"addedIn": "v6.2.7",
-	"build": 237,
+	"build": 301,
 	"http_method": "GET",
 	"http_status": 200,
-	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3",
+	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3,v7.0.4",
 	"name": "saml",
 	"path": "user",
 	"results": {
@@ -36,15 +36,27 @@
 				],
 				"default": "",
 				"help": "Certificate to sign SAML messages.",
+				"multiple_values": false,
 				"name": "cert",
 				"size": 35,
 				"type": "string"
+			},
+			"clock-tolerance": {
+				"addedIn": "v7.0.4",
+				"category": "unitary",
+				"default": 15,
+				"help": "Clock skew tolerance in seconds (0 - 300, default = 15, 0 = no tolerance).",
+				"max-value": 300,
+				"min-value": 0,
+				"multiple_values": false,
+				"name": "clock-tolerance",
+				"type": "integer"
 			},
 			"digest-method": {
 				"addedIn": "v7.0.0",
 				"category": "unitary",
 				"default": "sha1",
-				"help": "Digest Method Algorithm. (default = sha1).",
+				"help": "Digest method algorithm (default = sha1).",
 				"multiple_values": false,
 				"name": "digest-method",
 				"options": [
@@ -63,6 +75,7 @@
 				"category": "unitary",
 				"default": "",
 				"help": "SP entity ID.",
+				"multiple_values": false,
 				"name": "entity-id",
 				"required": true,
 				"size": 255,
@@ -163,6 +176,7 @@
 				"category": "unitary",
 				"default": "",
 				"help": "Group name in assertion statement.",
+				"multiple_values": false,
 				"name": "group-name",
 				"size": 255,
 				"type": "string"
@@ -174,6 +188,7 @@
 				],
 				"default": "",
 				"help": "IDP Certificate name.",
+				"multiple_values": false,
 				"name": "idp-cert",
 				"required": true,
 				"size": 35,
@@ -183,6 +198,7 @@
 				"category": "unitary",
 				"default": "",
 				"help": "IDP entity ID.",
+				"multiple_values": false,
 				"name": "idp-entity-id",
 				"required": true,
 				"size": 255,
@@ -192,6 +208,7 @@
 				"category": "unitary",
 				"default": "",
 				"help": "IDP single logout url.",
+				"multiple_values": false,
 				"name": "idp-single-logout-url",
 				"size": 255,
 				"type": "string"
@@ -200,6 +217,7 @@
 				"category": "unitary",
 				"default": "",
 				"help": "IDP single sign-on URL.",
+				"multiple_values": false,
 				"name": "idp-single-sign-on-url",
 				"required": true,
 				"size": 255,
@@ -228,6 +246,7 @@
 				"category": "unitary",
 				"default": "",
 				"help": "SAML server entry name.",
+				"multiple_values": false,
 				"name": "name",
 				"size": 35,
 				"type": "string"
@@ -236,6 +255,7 @@
 				"category": "unitary",
 				"default": "",
 				"help": "SP single logout URL.",
+				"multiple_values": false,
 				"name": "single-logout-url",
 				"size": 255,
 				"type": "string"
@@ -244,6 +264,7 @@
 				"category": "unitary",
 				"default": "",
 				"help": "SP single sign-on URL.",
+				"multiple_values": false,
 				"name": "single-sign-on-url",
 				"required": true,
 				"size": 255,
@@ -344,6 +365,7 @@
 				"category": "unitary",
 				"default": "",
 				"help": "User name in assertion statement.",
+				"multiple_values": false,
 				"name": "user-name",
 				"size": 255,
 				"type": "string"
@@ -359,9 +381,9 @@
 		"path": "user",
 		"q_type": 29
 	},
-	"revision": "83663ccb232ef404eaac5a256049cd0b",
-	"serial": "FGTAZRAQCG14L19D",
+	"revision": "437e8be3a9784954dfbe87b61e193b58",
+	"serial": "FGTAZRI5HXAAGI90",
 	"status": "success",
 	"vdom": "root",
-	"version": "v7.0.3"
+	"version": "v7.0.4"
 }

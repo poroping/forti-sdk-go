@@ -1,9 +1,9 @@
 {
 	"addedIn": "v6.2.7",
-	"build": 237,
+	"build": 301,
 	"http_method": "GET",
 	"http_status": 200,
-	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3",
+	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3,v7.0.4",
 	"name": "internet-service-ipbl-reason",
 	"path": "firewall",
 	"results": {
@@ -13,22 +13,24 @@
 			"id": {
 				"category": "unitary",
 				"default": 0,
-				"help": "IP blocklist reason ID.",
+				"help": "IP block list reason ID.",
 				"max-value": 4294967295,
 				"min-value": 0,
+				"multiple_values": false,
 				"name": "id",
 				"type": "integer"
 			},
 			"name": {
 				"category": "unitary",
 				"default": "",
-				"help": "IP blocklist reason name.",
+				"help": "IP block list reason name.",
+				"multiple_values": false,
 				"name": "name",
 				"size": 63,
 				"type": "string"
 			}
 		},
-		"help": "IP blocklist reason.",
+		"help": "IP block list reason.",
 		"max_table_size_global": 0,
 		"max_table_size_item": 0,
 		"max_table_size_vdom": 0,
@@ -39,9 +41,9 @@
 		"q_type": 353,
 		"readonly": true
 	},
-	"revision": "22c573ef906abcf27e1034726da16d9a",
-	"serial": "FGTAZRAQCG14L19D",
+	"revision": "8cd7a4018054413eee0ffb94ddfffdbc",
+	"serial": "FGTAZRI5HXAAGI90",
 	"status": "success",
 	"vdom": "root",
-	"version": "v7.0.3"
+	"version": "v7.0.4"
 }

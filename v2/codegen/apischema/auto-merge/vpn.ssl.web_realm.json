@@ -1,9 +1,9 @@
 {
 	"addedIn": "v6.2.7",
-	"build": 237,
+	"build": 301,
 	"http_method": "GET",
 	"http_status": 200,
-	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3",
+	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3,v7.0.4",
 	"name": "realm",
 	"path": "vpn.ssl.web",
 	"results": {
@@ -13,6 +13,7 @@
 			"login-page": {
 				"category": "unitary",
 				"help": "Replacement HTML for SSL-VPN login page.",
+				"multiple_values": false,
 				"name": "login-page",
 				"size": 32768,
 				"type": "var-string"
@@ -23,6 +24,7 @@
 				"help": "Maximum concurrent users (0 - 65535, 0 means unlimited).",
 				"max-value": 65535,
 				"min-value": 0,
+				"multiple_values": false,
 				"name": "max-concurrent-user",
 				"type": "integer"
 			},
@@ -31,6 +33,7 @@
 				"category": "unitary",
 				"default": "0.0.0.0",
 				"help": "IP address used as a NAS-IP to communicate with the RADIUS server.",
+				"multiple_values": false,
 				"name": "nas-ip",
 				"type": "ipv4-address"
 			},
@@ -41,6 +44,7 @@
 				"help": "RADIUS service port number (0 - 65535, 0 means user.radius.radius-port).",
 				"max-value": 65535,
 				"min-value": 0,
+				"multiple_values": false,
 				"name": "radius-port",
 				"type": "integer"
 			},
@@ -52,6 +56,7 @@
 				],
 				"default": "",
 				"help": "RADIUS server associated with realm.",
+				"multiple_values": false,
 				"name": "radius-server",
 				"size": 35,
 				"type": "string"
@@ -60,6 +65,7 @@
 				"category": "unitary",
 				"default": "",
 				"help": "URL path to access SSL-VPN login page.",
+				"multiple_values": false,
 				"name": "url-path",
 				"size": 35,
 				"type": "string"
@@ -67,6 +73,7 @@
 			"virtual-host": {
 				"category": "unitary",
 				"help": "Virtual host name for realm.",
+				"multiple_values": false,
 				"name": "virtual-host",
 				"size": 255,
 				"type": "var-string"
@@ -98,6 +105,7 @@
 				],
 				"default": "",
 				"help": "Name of the server certificate to used for this realm.",
+				"multiple_values": false,
 				"name": "virtual-host-server-cert",
 				"size": 35,
 				"type": "string"
@@ -113,9 +121,9 @@
 		"path": "vpn.ssl.web",
 		"q_type": 152
 	},
-	"revision": "78ee061304af9c5d17bcae6474808d97",
-	"serial": "FGTAZRAQCG14L19D",
+	"revision": "e338e35a484eaafc990a69dd13ff4f76",
+	"serial": "FGTAZRI5HXAAGI90",
 	"status": "success",
 	"vdom": "root",
-	"version": "v7.0.3"
+	"version": "v7.0.4"
 }

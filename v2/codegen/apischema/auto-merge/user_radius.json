@@ -1,9 +1,9 @@
 {
 	"addedIn": "v6.2.7",
-	"build": 237,
+	"build": 301,
 	"http_method": "GET",
 	"http_status": 200,
-	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3",
+	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3,v7.0.4",
 	"name": "radius",
 	"path": "user",
 	"results": {
@@ -19,6 +19,7 @@
 						"help": "ID (0 - 4294967295).",
 						"max-value": 4294967295,
 						"min-value": 0,
+						"multiple_values": false,
 						"name": "id",
 						"type": "integer"
 					},
@@ -29,6 +30,7 @@
 						],
 						"default": "",
 						"help": "Specify outgoing interface to reach server.",
+						"multiple_values": false,
 						"name": "interface",
 						"removedIn": "v6.4.0",
 						"required": true,
@@ -64,12 +66,14 @@
 						"help": "RADIUS accounting port number.",
 						"max-value": 65535,
 						"min-value": 0,
+						"multiple_values": false,
 						"name": "port",
 						"type": "integer"
 					},
 					"secret": {
 						"category": "unitary",
 						"help": "Secret key.",
+						"multiple_values": false,
 						"name": "secret",
 						"required": true,
 						"size": 128,
@@ -78,7 +82,8 @@
 					"server": {
 						"category": "unitary",
 						"default": "",
-						"help": "{\u003cname_str|ip_str\u003e} Server CN domain name or IP.",
+						"help": "Server CN domain name or IP address.",
+						"multiple_values": false,
 						"name": "server",
 						"required": true,
 						"size": 63,
@@ -88,6 +93,7 @@
 						"category": "unitary",
 						"default": "",
 						"help": "Source IP address for communications to the RADIUS server.",
+						"multiple_values": false,
 						"name": "source-ip",
 						"size": 63,
 						"type": "string"
@@ -143,6 +149,7 @@
 				"help": "Time in seconds between each accounting interim update message.",
 				"max-value": 86400,
 				"min-value": 60,
+				"multiple_values": false,
 				"name": "acct-interim-interval",
 				"type": "integer"
 			},
@@ -201,6 +208,7 @@
 						"category": "unitary",
 						"default": "",
 						"help": "Class name.",
+						"multiple_values": false,
 						"name": "name",
 						"size": 79,
 						"type": "string"
@@ -259,6 +267,7 @@
 				],
 				"default": "",
 				"help": "Specify outgoing interface to reach server.",
+				"multiple_values": false,
 				"name": "interface",
 				"removedIn": "v6.4.0",
 				"required": true,
@@ -292,6 +301,7 @@
 				"category": "unitary",
 				"default": "",
 				"help": "RADIUS server entry name.",
+				"multiple_values": false,
 				"name": "name",
 				"size": 35,
 				"type": "string"
@@ -300,6 +310,7 @@
 				"category": "unitary",
 				"default": "0.0.0.0",
 				"help": "IP address used to communicate with the RADIUS server and used as NAS-IP-Address and Called-Station-ID attributes.",
+				"multiple_values": false,
 				"name": "nas-ip",
 				"type": "ipv4-address"
 			},
@@ -363,6 +374,7 @@
 				"help": "RADIUS service port number.",
 				"max-value": 65535,
 				"min-value": 0,
+				"multiple_values": false,
 				"name": "radius-port",
 				"type": "integer"
 			},
@@ -391,6 +403,7 @@
 				"help": "Time in seconds before the logged out user is removed from the \"user context list\" of logged on users.",
 				"max-value": 4294967295,
 				"min-value": 0,
+				"multiple_values": false,
 				"name": "rsso-context-timeout",
 				"required": true,
 				"type": "integer"
@@ -398,7 +411,7 @@
 			"rsso-endpoint-attribute": {
 				"category": "unitary",
 				"default": "Calling-Station-Id",
-				"help": "RADIUS attributes used to extract the user end point identifer from the RADIUS Start record.",
+				"help": "RADIUS attributes used to extract the user end point identifier from the RADIUS Start record.",
 				"multiple_values": false,
 				"name": "rsso-endpoint-attribute",
 				"options": [
@@ -673,6 +686,7 @@
 				"help": "Time interval in seconds that group event log messages will be generated for dynamic profile events.",
 				"max-value": 4294967295,
 				"min-value": 0,
+				"multiple_values": false,
 				"name": "rsso-log-period",
 				"required": true,
 				"type": "integer"
@@ -702,6 +716,7 @@
 				"help": "UDP port to listen on for RADIUS Start and Stop records.",
 				"max-value": 65535,
 				"min-value": 0,
+				"multiple_values": false,
 				"name": "rsso-radius-server-port",
 				"required": true,
 				"type": "integer"
@@ -709,6 +724,7 @@
 			"rsso-secret": {
 				"category": "unitary",
 				"help": "RADIUS secret used by the RADIUS accounting server.",
+				"multiple_values": false,
 				"name": "rsso-secret",
 				"required": true,
 				"size": 31,
@@ -736,6 +752,7 @@
 			"secondary-secret": {
 				"category": "unitary",
 				"help": "Secret key to access the secondary server.",
+				"multiple_values": false,
 				"name": "secondary-secret",
 				"size": 128,
 				"type": "password"
@@ -743,7 +760,8 @@
 			"secondary-server": {
 				"category": "unitary",
 				"default": "",
-				"help": "{\u003cname_str|ip_str\u003e} secondary RADIUS CN domain name or IP.",
+				"help": "Secondary RADIUS CN domain name or IP address.",
+				"multiple_values": false,
 				"name": "secondary-server",
 				"size": 63,
 				"type": "string"
@@ -751,6 +769,7 @@
 			"secret": {
 				"category": "unitary",
 				"help": "Pre-shared secret key used to access the primary RADIUS server.",
+				"multiple_values": false,
 				"name": "secret",
 				"required": true,
 				"size": 128,
@@ -760,6 +779,7 @@
 				"category": "unitary",
 				"default": "",
 				"help": "Primary RADIUS server CN domain name or IP address.",
+				"multiple_values": false,
 				"name": "server",
 				"required": true,
 				"size": 63,
@@ -769,6 +789,7 @@
 				"category": "unitary",
 				"default": "",
 				"help": "Source IP address for communications to the RADIUS server.",
+				"multiple_values": false,
 				"name": "source-ip",
 				"size": 63,
 				"type": "string"
@@ -876,6 +897,7 @@
 				"category": "unitary",
 				"default": "",
 				"help": "Key prefix for SSO group value in the SSO attribute.",
+				"multiple_values": false,
 				"name": "sso-attribute-key",
 				"size": 35,
 				"type": "string"
@@ -906,6 +928,7 @@
 				"help": "Switch controller accounting message Framed-IP detection from DHCP snooping (seconds, default=2).",
 				"max-value": 600,
 				"min-value": 2,
+				"multiple_values": false,
 				"name": "switch-controller-acct-fast-framedip-detect",
 				"type": "integer"
 			},
@@ -967,6 +990,7 @@
 			"tertiary-secret": {
 				"category": "unitary",
 				"help": "Secret key to access the tertiary server.",
+				"multiple_values": false,
 				"name": "tertiary-secret",
 				"size": 128,
 				"type": "password"
@@ -974,7 +998,8 @@
 			"tertiary-server": {
 				"category": "unitary",
 				"default": "",
-				"help": "{\u003cname_str|ip_str\u003e} tertiary RADIUS CN domain name or IP.",
+				"help": "Tertiary RADIUS CN domain name or IP address.",
+				"multiple_values": false,
 				"name": "tertiary-server",
 				"size": 63,
 				"type": "string"
@@ -985,6 +1010,7 @@
 				"help": "Time in seconds between re-sending authentication requests.",
 				"max-value": 300,
 				"min-value": 1,
+				"multiple_values": false,
 				"name": "timeout",
 				"type": "integer"
 			},
@@ -1035,9 +1061,9 @@
 		"path": "user",
 		"q_type": 27
 	},
-	"revision": "83663ccb232ef404eaac5a256049cd0b",
-	"serial": "FGTAZRAQCG14L19D",
+	"revision": "437e8be3a9784954dfbe87b61e193b58",
+	"serial": "FGTAZRI5HXAAGI90",
 	"status": "success",
 	"vdom": "root",
-	"version": "v7.0.3"
+	"version": "v7.0.4"
 }

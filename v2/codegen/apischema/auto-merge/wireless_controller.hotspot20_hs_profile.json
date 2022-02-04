@@ -1,9 +1,9 @@
 {
 	"addedIn": "v6.2.7",
-	"build": 237,
+	"build": 301,
 	"http_method": "GET",
 	"http_status": 200,
-	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3",
+	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3,v7.0.4",
 	"name": "hs-profile",
 	"path": "wireless-controller.hotspot20",
 	"results": {
@@ -17,6 +17,7 @@
 				],
 				"default": "",
 				"help": "3GPP PLMN name.",
+				"multiple_values": false,
 				"name": "3gpp-plmn",
 				"size": 35,
 				"type": "string"
@@ -143,6 +144,7 @@
 				],
 				"default": "",
 				"help": "Advice of charge.",
+				"multiple_values": false,
 				"name": "advice-of-charge",
 				"size": 35,
 				"type": "string"
@@ -153,6 +155,7 @@
 				"help": "ANQP Domain ID (0-65535).",
 				"max-value": 65535,
 				"min-value": 0,
+				"multiple_values": false,
 				"name": "anqp-domain-id",
 				"type": "integer"
 			},
@@ -181,6 +184,7 @@
 				],
 				"default": "",
 				"help": "Connection capability name.",
+				"multiple_values": false,
 				"name": "conn-cap",
 				"size": 35,
 				"type": "string"
@@ -191,6 +195,7 @@
 				"help": "Deauthentication request timeout (in seconds).",
 				"max-value": 120,
 				"min-value": 30,
+				"multiple_values": false,
 				"name": "deauth-request-timeout",
 				"type": "integer"
 			},
@@ -216,6 +221,7 @@
 				"category": "unitary",
 				"default": "",
 				"help": "Domain name.",
+				"multiple_values": false,
 				"name": "domain-name",
 				"size": 255,
 				"type": "string"
@@ -226,6 +232,7 @@
 				"help": "GAS comeback delay (0 or 100 - 10000 milliseconds, default = 500).",
 				"max-value": 10000,
 				"min-value": 100,
+				"multiple_values": false,
 				"name": "gas-comeback-delay",
 				"type": "integer"
 			},
@@ -235,6 +242,7 @@
 				"help": "GAS fragmentation limit (512 - 4096, default = 1024).",
 				"max-value": 4096,
 				"min-value": 512,
+				"multiple_values": false,
 				"name": "gas-fragmentation-limit",
 				"type": "integer"
 			},
@@ -242,6 +250,7 @@
 				"category": "unitary",
 				"default": "00:00:00:00:00:00",
 				"help": "Homogeneous extended service set identifier (HESSID).",
+				"multiple_values": false,
 				"name": "hessid",
 				"type": "mac-address"
 			},
@@ -252,6 +261,7 @@
 				],
 				"default": "",
 				"help": "IP address type name.",
+				"multiple_values": false,
 				"name": "ip-addr-type",
 				"size": 35,
 				"type": "string"
@@ -281,6 +291,7 @@
 				],
 				"default": "",
 				"help": "NAI realm list name.",
+				"multiple_values": false,
 				"name": "nai-realm",
 				"size": 35,
 				"type": "string"
@@ -289,6 +300,7 @@
 				"category": "unitary",
 				"default": "",
 				"help": "Hotspot profile name.",
+				"multiple_values": false,
 				"name": "name",
 				"size": 35,
 				"type": "string"
@@ -300,6 +312,7 @@
 				],
 				"default": "",
 				"help": "Network authentication name.",
+				"multiple_values": false,
 				"name": "network-auth",
 				"size": 35,
 				"type": "string"
@@ -311,6 +324,7 @@
 				],
 				"default": "",
 				"help": "Operator friendly name.",
+				"multiple_values": false,
 				"name": "oper-friendly-name",
 				"size": 35,
 				"type": "string"
@@ -323,6 +337,7 @@
 				],
 				"default": "",
 				"help": "Operator icon.",
+				"multiple_values": false,
 				"name": "oper-icon",
 				"size": 35,
 				"type": "string"
@@ -337,6 +352,7 @@
 						],
 						"default": "",
 						"help": "OSU provider name.",
+						"multiple_values": false,
 						"name": "name",
 						"required": true,
 						"size": 35,
@@ -360,6 +376,7 @@
 				],
 				"default": "",
 				"help": "OSU Provider NAI.",
+				"multiple_values": false,
 				"name": "osu-provider-nai",
 				"size": 35,
 				"type": "string"
@@ -368,6 +385,7 @@
 				"category": "unitary",
 				"default": "",
 				"help": "Online sign up (OSU) SSID.",
+				"multiple_values": false,
 				"name": "osu-ssid",
 				"size": 255,
 				"type": "string"
@@ -415,6 +433,7 @@
 				],
 				"default": "",
 				"help": "QoS MAP set ID.",
+				"multiple_values": false,
 				"name": "qos-map",
 				"size": 35,
 				"type": "string"
@@ -426,6 +445,7 @@
 				"help": "Hotspot 2.0 Release number (1, 2, 3, default = 2).",
 				"max-value": 3,
 				"min-value": 1,
+				"multiple_values": false,
 				"name": "release",
 				"type": "integer"
 			},
@@ -436,6 +456,7 @@
 				],
 				"default": "",
 				"help": "Roaming consortium list name.",
+				"multiple_values": false,
 				"name": "roaming-consortium",
 				"size": 35,
 				"type": "string"
@@ -448,6 +469,7 @@
 				],
 				"default": "",
 				"help": "Terms and conditions.",
+				"multiple_values": false,
 				"name": "terms-and-conditions",
 				"size": 35,
 				"type": "string"
@@ -517,6 +539,7 @@
 				],
 				"default": "",
 				"help": "Venue name.",
+				"multiple_values": false,
 				"name": "venue-name",
 				"size": 35,
 				"type": "string"
@@ -759,6 +782,7 @@
 				],
 				"default": "",
 				"help": "Venue name.",
+				"multiple_values": false,
 				"name": "venue-url",
 				"size": 35,
 				"type": "string"
@@ -770,6 +794,7 @@
 				],
 				"default": "",
 				"help": "WAN metric name.",
+				"multiple_values": false,
 				"name": "wan-metrics",
 				"size": 35,
 				"type": "string"
@@ -803,9 +828,9 @@
 		"path": "wireless-controller.hotspot20",
 		"q_type": 283
 	},
-	"revision": "78ee061304af9c5d17bcae6474808d97",
-	"serial": "FGTAZRAQCG14L19D",
+	"revision": "e338e35a484eaafc990a69dd13ff4f76",
+	"serial": "FGTAZRI5HXAAGI90",
 	"status": "success",
 	"vdom": "root",
-	"version": "v7.0.3"
+	"version": "v7.0.4"
 }

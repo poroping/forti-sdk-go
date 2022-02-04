@@ -1,9 +1,9 @@
 {
 	"addedIn": "v6.2.7",
-	"build": 237,
+	"build": 301,
 	"http_method": "GET",
 	"http_status": 200,
-	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3",
+	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3,v7.0.4",
 	"name": "group",
 	"path": "firewall.service",
 	"results": {
@@ -16,12 +16,14 @@
 				"help": "Color of icon on the GUI.",
 				"max-value": 32,
 				"min-value": 0,
+				"multiple_values": false,
 				"name": "color",
 				"type": "integer"
 			},
 			"comment": {
 				"category": "unitary",
 				"help": "Comment.",
+				"multiple_values": false,
 				"name": "comment",
 				"size": 255,
 				"type": "var-string"
@@ -56,6 +58,7 @@
 						],
 						"default": "",
 						"help": "Address name.",
+						"multiple_values": false,
 						"name": "name",
 						"required": true,
 						"size": 79,
@@ -75,6 +78,7 @@
 				"category": "unitary",
 				"default": "",
 				"help": "Address group name.",
+				"multiple_values": false,
 				"name": "name",
 				"required": true,
 				"size": 79,
@@ -109,9 +113,9 @@
 		"path": "firewall.service",
 		"q_type": 37
 	},
-	"revision": "05550fb8b0b9613485314ac4db958928",
-	"serial": "FGTAZRAQCG14L19D",
+	"revision": "237197625220ae7857546fa121a12d45",
+	"serial": "FGTAZRI5HXAAGI90",
 	"status": "success",
 	"vdom": "root",
-	"version": "v7.0.3"
+	"version": "v7.0.4"
 }

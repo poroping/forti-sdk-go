@@ -1,9 +1,9 @@
 {
 	"addedIn": "v6.2.7",
-	"build": 237,
+	"build": 301,
 	"http_method": "GET",
 	"http_status": 200,
-	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3",
+	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3,v7.0.4",
 	"name": "user-group-bookmark",
 	"path": "vpn.ssl.web",
 	"results": {
@@ -16,6 +16,7 @@
 					"additional-params": {
 						"category": "unitary",
 						"help": "Additional parameters.",
+						"multiple_values": false,
 						"name": "additional-params",
 						"size": 128,
 						"type": "var-string"
@@ -90,6 +91,7 @@
 					"description": {
 						"category": "unitary",
 						"help": "Description.",
+						"multiple_values": false,
 						"name": "description",
 						"size": 128,
 						"type": "var-string"
@@ -98,6 +100,7 @@
 						"addedIn": "v6.4.2",
 						"category": "unitary",
 						"help": "Login domain.",
+						"multiple_values": false,
 						"name": "domain",
 						"size": 128,
 						"type": "var-string"
@@ -105,6 +108,7 @@
 					"folder": {
 						"category": "unitary",
 						"help": "Network shared file folder parameter.",
+						"multiple_values": false,
 						"name": "folder",
 						"size": 128,
 						"type": "var-string"
@@ -116,6 +120,7 @@
 								"category": "unitary",
 								"default": "",
 								"help": "Name.",
+								"multiple_values": false,
 								"name": "name",
 								"size": 35,
 								"type": "string"
@@ -123,6 +128,7 @@
 							"value": {
 								"category": "unitary",
 								"help": "Value.",
+								"multiple_values": false,
 								"name": "value",
 								"size": 63,
 								"type": "var-string"
@@ -136,9 +142,21 @@
 						"mkey_type": "string",
 						"name": "form-data"
 					},
+					"height": {
+						"addedIn": "v7.0.4",
+						"category": "unitary",
+						"default": 768,
+						"help": "Screen height (range from 480 - 65535, default = 768).",
+						"max-value": 65535,
+						"min-value": 480,
+						"multiple_values": false,
+						"name": "height",
+						"type": "integer"
+					},
 					"host": {
 						"category": "unitary",
 						"help": "Host name/IP parameter.",
+						"multiple_values": false,
 						"name": "host",
 						"size": 128,
 						"type": "var-string"
@@ -404,6 +422,7 @@
 					"load-balancing-info": {
 						"category": "unitary",
 						"help": "The load balancing information or cookie which should be provided to the connection broker.",
+						"multiple_values": false,
 						"name": "load-balancing-info",
 						"size": 511,
 						"type": "var-string"
@@ -411,6 +430,7 @@
 					"logon-password": {
 						"category": "unitary",
 						"help": "Logon password.",
+						"multiple_values": false,
 						"name": "logon-password",
 						"size": 128,
 						"type": "password"
@@ -418,6 +438,7 @@
 					"logon-user": {
 						"category": "unitary",
 						"help": "Logon user.",
+						"multiple_values": false,
 						"name": "logon-user",
 						"size": 35,
 						"type": "var-string"
@@ -426,6 +447,7 @@
 						"category": "unitary",
 						"default": "",
 						"help": "Bookmark name.",
+						"multiple_values": false,
 						"name": "name",
 						"size": 35,
 						"type": "string"
@@ -436,12 +458,14 @@
 						"help": "Remote port.",
 						"max-value": 65535,
 						"min-value": 0,
+						"multiple_values": false,
 						"name": "port",
 						"type": "integer"
 					},
 					"preconnection-blob": {
 						"category": "unitary",
 						"help": "An arbitrary string which identifies the RDP source.",
+						"multiple_values": false,
 						"name": "preconnection-blob",
 						"size": 511,
 						"type": "var-string"
@@ -452,6 +476,7 @@
 						"help": "The numeric ID of the RDP source (0-4294967295).",
 						"max-value": 4294967295,
 						"min-value": 0,
+						"multiple_values": false,
 						"name": "preconnection-id",
 						"type": "integer"
 					},
@@ -674,6 +699,7 @@
 					"sso-password": {
 						"category": "unitary",
 						"help": "SSO password.",
+						"multiple_values": false,
 						"name": "sso-password",
 						"size": 128,
 						"type": "password"
@@ -681,6 +707,7 @@
 					"sso-username": {
 						"category": "unitary",
 						"help": "SSO user name.",
+						"multiple_values": false,
 						"name": "sso-username",
 						"size": 35,
 						"type": "var-string"
@@ -688,9 +715,21 @@
 					"url": {
 						"category": "unitary",
 						"help": "URL parameter.",
+						"multiple_values": false,
 						"name": "url",
 						"size": 128,
 						"type": "var-string"
+					},
+					"width": {
+						"addedIn": "v7.0.4",
+						"category": "unitary",
+						"default": 1024,
+						"help": "Screen width (range from 640 - 65535, default = 1024).",
+						"max-value": 65535,
+						"min-value": 640,
+						"multiple_values": false,
+						"name": "width",
+						"type": "integer"
 					}
 				},
 				"help": "Bookmark table.",
@@ -708,6 +747,7 @@
 				],
 				"default": "",
 				"help": "Group name.",
+				"multiple_values": false,
 				"name": "name",
 				"size": 64,
 				"type": "string"
@@ -723,9 +763,9 @@
 		"path": "vpn.ssl.web",
 		"q_type": 155
 	},
-	"revision": "78ee061304af9c5d17bcae6474808d97",
-	"serial": "FGTAZRAQCG14L19D",
+	"revision": "e338e35a484eaafc990a69dd13ff4f76",
+	"serial": "FGTAZRI5HXAAGI90",
 	"status": "success",
 	"vdom": "root",
-	"version": "v7.0.3"
+	"version": "v7.0.4"
 }

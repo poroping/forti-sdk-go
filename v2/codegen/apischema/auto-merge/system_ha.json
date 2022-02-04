@@ -1,9 +1,9 @@
 {
 	"addedIn": "v6.2.7",
-	"build": 237,
+	"build": 301,
 	"http_method": "GET",
 	"http_status": 200,
-	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3",
+	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3,v7.0.4",
 	"name": "ha",
 	"path": "system",
 	"results": {
@@ -16,6 +16,7 @@
 				"help": "Number of gratuitous ARPs (1 - 60). Lower to reduce traffic. Higher to reduce failover time.",
 				"max-value": 60,
 				"min-value": 1,
+				"multiple_values": false,
 				"name": "arps",
 				"type": "integer"
 			},
@@ -25,6 +26,7 @@
 				"help": "Time between gratuitous ARPs  (1 - 20 sec). Lower to reduce failover time. Higher to reduce traffic.",
 				"max-value": 20,
 				"min-value": 1,
+				"multiple_values": false,
 				"name": "arps-interval",
 				"type": "integer"
 			},
@@ -50,6 +52,7 @@
 				"category": "unitary",
 				"default": "",
 				"help": "Dynamic weighted load balancing CPU usage weight and high and low thresholds.",
+				"multiple_values": false,
 				"name": "cpu-threshold",
 				"type": "user"
 			},
@@ -78,6 +81,7 @@
 				"help": "Time to wait before failover (0 - 300 sec, default = 0), to avoid flip.",
 				"max-value": 300,
 				"min-value": 0,
+				"multiple_values": false,
 				"name": "failover-hold-time",
 				"type": "integer"
 			},
@@ -85,6 +89,7 @@
 				"category": "unitary",
 				"default": "",
 				"help": "Dynamic weighted load balancing weight and high and low number of FTP proxy sessions.",
+				"multiple_values": false,
 				"name": "ftp-proxy-threshold",
 				"type": "user"
 			},
@@ -112,6 +117,7 @@
 				"help": "HA group ID  (0 - 1023). Must be the same for all members.",
 				"max-value": 1023,
 				"min-value": 0,
+				"multiple_values": false,
 				"name": "group-id",
 				"type": "integer"
 			},
@@ -119,6 +125,7 @@
 				"category": "unitary",
 				"default": "",
 				"help": "Cluster group name. Must be the same for all members.",
+				"multiple_values": false,
 				"name": "group-name",
 				"size": 32,
 				"type": "string"
@@ -145,6 +152,7 @@
 				"category": "unitary",
 				"default": "8890",
 				"help": "HA heartbeat packet Ethertype (4-digit hex).",
+				"multiple_values": false,
 				"name": "ha-eth-type",
 				"size": 4,
 				"type": "string"
@@ -156,6 +164,7 @@
 						"category": "unitary",
 						"default": "0.0.0.0 0.0.0.0",
 						"help": "Default route destination for reserved HA management interface.",
+						"multiple_values": false,
 						"name": "dst",
 						"type": "ipv4-classnet"
 					},
@@ -163,6 +172,7 @@
 						"category": "unitary",
 						"default": "0.0.0.0",
 						"help": "Default route gateway for reserved HA management interface.",
+						"multiple_values": false,
 						"name": "gateway",
 						"type": "ipv4-address"
 					},
@@ -170,6 +180,7 @@
 						"category": "unitary",
 						"default": "::",
 						"help": "Default IPv6 gateway for reserved HA management interface.",
+						"multiple_values": false,
 						"name": "gateway6",
 						"type": "ipv6-address"
 					},
@@ -179,6 +190,7 @@
 						"help": "Table ID.",
 						"max-value": 4294967295,
 						"min-value": 0,
+						"multiple_values": false,
 						"name": "id",
 						"type": "integer"
 					},
@@ -189,6 +201,7 @@
 						],
 						"default": "",
 						"help": "Interface to reserve for HA management.",
+						"multiple_values": false,
 						"name": "interface",
 						"required": true,
 						"size": 15,
@@ -227,6 +240,7 @@
 				"help": "Normally you would only reduce this value for failover testing.",
 				"max-value": 65535,
 				"min-value": 1,
+				"multiple_values": false,
 				"name": "ha-uptime-diff-margin",
 				"type": "integer"
 			},
@@ -236,6 +250,7 @@
 				"help": "Time between sending heartbeat packets (1 - 20). Increase to reduce false positives.",
 				"max-value": 20,
 				"min-value": 1,
+				"multiple_values": false,
 				"name": "hb-interval",
 				"type": "integer"
 			},
@@ -264,6 +279,7 @@
 				"help": "Number of lost heartbeats to signal a failure (1 - 60). Increase to reduce false positives.",
 				"max-value": 60,
 				"min-value": 1,
+				"multiple_values": false,
 				"name": "hb-lost-threshold",
 				"type": "integer"
 			},
@@ -271,6 +287,7 @@
 				"category": "unitary",
 				"default": "",
 				"help": "Heartbeat interfaces. Must be the same for all members.",
+				"multiple_values": true,
 				"name": "hbdev",
 				"type": "user"
 			},
@@ -278,6 +295,7 @@
 				"category": "unitary",
 				"default": "8891",
 				"help": "Transparent mode HA heartbeat packet Ethertype (4-digit hex).",
+				"multiple_values": false,
 				"name": "hc-eth-type",
 				"size": 4,
 				"type": "string"
@@ -288,6 +306,7 @@
 				"help": "Time to wait before changing from hello to work state (5 - 300 sec).",
 				"max-value": 300,
 				"min-value": 5,
+				"multiple_values": false,
 				"name": "hello-holddown",
 				"type": "integer"
 			},
@@ -295,6 +314,7 @@
 				"category": "unitary",
 				"default": "",
 				"help": "Dynamic weighted load balancing weight and high and low number of HTTP proxy sessions.",
+				"multiple_values": false,
 				"name": "http-proxy-threshold",
 				"type": "user"
 			},
@@ -302,6 +322,7 @@
 				"category": "unitary",
 				"default": "",
 				"help": "Dynamic weighted load balancing weight and high and low number of IMAP proxy sessions.",
+				"multiple_values": false,
 				"name": "imap-proxy-threshold",
 				"type": "user"
 			},
@@ -325,7 +346,8 @@
 			},
 			"key": {
 				"category": "unitary",
-				"help": "key",
+				"help": "Key.",
+				"multiple_values": false,
 				"name": "key",
 				"size": 16,
 				"type": "password"
@@ -334,6 +356,7 @@
 				"category": "unitary",
 				"default": "8893",
 				"help": "Telnet session HA heartbeat packet Ethertype (4-digit hex).",
+				"multiple_values": false,
 				"name": "l2ep-eth-type",
 				"size": 4,
 				"type": "string"
@@ -436,6 +459,7 @@
 				"help": "Time to wait between subsequent memory based failovers in minutes (6 - 2147483647, default = 6).",
 				"max-value": 2147483647,
 				"min-value": 6,
+				"multiple_values": false,
 				"name": "memory-failover-flip-timeout",
 				"type": "integer"
 			},
@@ -446,6 +470,7 @@
 				"help": "Duration of high memory usage before memory based failover is triggered in seconds (1 - 300, default = 60).",
 				"max-value": 300,
 				"min-value": 1,
+				"multiple_values": false,
 				"name": "memory-failover-monitor-period",
 				"type": "integer"
 			},
@@ -456,6 +481,7 @@
 				"help": "Rate at which memory usage is sampled in order to measure memory usage in seconds (1 - 60, default = 1).",
 				"max-value": 60,
 				"min-value": 1,
+				"multiple_values": false,
 				"name": "memory-failover-sample-rate",
 				"type": "integer"
 			},
@@ -466,6 +492,7 @@
 				"help": "Memory usage threshold to trigger memory based failover (0 means using conserve mode threshold in system.global).",
 				"max-value": 95,
 				"min-value": 0,
+				"multiple_values": false,
 				"name": "memory-failover-threshold",
 				"type": "integer"
 			},
@@ -473,6 +500,7 @@
 				"category": "unitary",
 				"default": "",
 				"help": "Dynamic weighted load balancing memory usage weight and high and low thresholds.",
+				"multiple_values": false,
 				"name": "memory-threshold",
 				"type": "user"
 			},
@@ -505,6 +533,8 @@
 				],
 				"default": "",
 				"help": "Interfaces to check for port monitoring (or link failure).",
+				"max_num_values": 64,
+				"multiple_values": true,
 				"name": "monitor",
 				"type": "user"
 			},
@@ -514,6 +544,7 @@
 				"help": "HA multicast TTL on primary (5 - 3600 sec).",
 				"max-value": 3600,
 				"min-value": 5,
+				"multiple_values": false,
 				"name": "multicast-ttl",
 				"type": "integer"
 			},
@@ -521,6 +552,7 @@
 				"category": "unitary",
 				"default": "",
 				"help": "Dynamic weighted load balancing weight and high and low number of NNTP proxy sessions.",
+				"multiple_values": false,
 				"name": "nntp-proxy-threshold",
 				"type": "user"
 			},
@@ -548,12 +580,14 @@
 				"help": "Delay negotiating if override is enabled (0 - 3600 sec). Reduces how often the cluster negotiates.",
 				"max-value": 3600,
 				"min-value": 0,
+				"multiple_values": false,
 				"name": "override-wait-time",
 				"type": "integer"
 			},
 			"password": {
 				"category": "unitary",
 				"help": "Cluster password. Must be the same for all members.",
+				"multiple_values": false,
 				"name": "password",
 				"size": 128,
 				"type": "password"
@@ -564,6 +598,7 @@
 				"help": "Remote IP monitoring failover threshold (0 - 50).",
 				"max-value": 50,
 				"min-value": 0,
+				"multiple_values": false,
 				"name": "pingserver-failover-threshold",
 				"type": "integer"
 			},
@@ -573,6 +608,7 @@
 				"help": "Time to wait in minutes before renegotiating after a remote IP monitoring failover.",
 				"max-value": 2147483647,
 				"min-value": 6,
+				"multiple_values": false,
 				"name": "pingserver-flip-timeout",
 				"type": "integer"
 			},
@@ -583,6 +619,8 @@
 				],
 				"default": "",
 				"help": "Interfaces to check for remote IP monitoring.",
+				"max_num_values": 64,
+				"multiple_values": true,
 				"name": "pingserver-monitor-interface",
 				"type": "user"
 			},
@@ -627,6 +665,7 @@
 				"category": "unitary",
 				"default": "",
 				"help": "Dynamic weighted load balancing weight and high and low number of POP3 proxy sessions.",
+				"multiple_values": false,
 				"name": "pop3-proxy-threshold",
 				"type": "user"
 			},
@@ -636,6 +675,7 @@
 				"help": "Increase the priority to select the primary unit (0 - 255).",
 				"max-value": 255,
 				"min-value": 0,
+				"multiple_values": false,
 				"name": "priority",
 				"type": "integer"
 			},
@@ -645,6 +685,7 @@
 				"help": "Time to wait between routing table updates to the cluster (0 - 3600 sec).",
 				"max-value": 3600,
 				"min-value": 0,
+				"multiple_values": false,
 				"name": "route-hold",
 				"type": "integer"
 			},
@@ -654,6 +695,7 @@
 				"help": "TTL for primary unit routes (5 - 3600 sec). Increase to maintain active routes during failover.",
 				"max-value": 3600,
 				"min-value": 5,
+				"multiple_values": false,
 				"name": "route-ttl",
 				"type": "integer"
 			},
@@ -663,6 +705,7 @@
 				"help": "Time to wait before sending new routes to the cluster (0 - 3600 sec).",
 				"max-value": 3600,
 				"min-value": 0,
+				"multiple_values": false,
 				"name": "route-wait",
 				"type": "integer"
 			},
@@ -718,6 +761,8 @@
 						],
 						"default": "",
 						"help": "Interfaces to check for port monitoring (or link failure).",
+						"max_num_values": 64,
+						"multiple_values": true,
 						"name": "monitor",
 						"type": "user"
 					},
@@ -745,6 +790,7 @@
 						"help": "Delay negotiating if override is enabled (0 - 3600 sec). Reduces how often the cluster negotiates.",
 						"max-value": 3600,
 						"min-value": 0,
+						"multiple_values": false,
 						"name": "override-wait-time",
 						"type": "integer"
 					},
@@ -754,6 +800,7 @@
 						"help": "Remote IP monitoring failover threshold (0 - 50).",
 						"max-value": 50,
 						"min-value": 0,
+						"multiple_values": false,
 						"name": "pingserver-failover-threshold",
 						"type": "integer"
 					},
@@ -764,6 +811,8 @@
 						],
 						"default": "",
 						"help": "Interfaces to check for remote IP monitoring.",
+						"max_num_values": 64,
+						"multiple_values": true,
 						"name": "pingserver-monitor-interface",
 						"type": "user"
 					},
@@ -810,6 +859,7 @@
 						"help": "Increase the priority to select the primary unit (0 - 255).",
 						"max-value": 255,
 						"min-value": 0,
+						"multiple_values": false,
 						"name": "priority",
 						"type": "integer"
 					},
@@ -819,6 +869,7 @@
 						"help": "Cluster ID.",
 						"max-value": 255,
 						"min-value": 0,
+						"multiple_values": false,
 						"name": "vcluster-id",
 						"readonly": true,
 						"type": "integer"
@@ -827,11 +878,13 @@
 						"category": "unitary",
 						"default": "",
 						"help": "VDOMs in virtual cluster 2.",
+						"multiple_values": false,
 						"name": "vdom",
 						"type": "user"
 					}
 				},
 				"help": "Configure virtual cluster 2.",
+				"multiple_values": false,
 				"name": "secondary-vcluster"
 			},
 			"session-pickup": {
@@ -931,6 +984,8 @@
 				],
 				"default": "",
 				"help": "Offload session-sync process to kernel and sync sessions using connected interface(s) directly.",
+				"max_num_values": 8,
+				"multiple_values": true,
 				"name": "session-sync-dev",
 				"type": "user"
 			},
@@ -938,6 +993,7 @@
 				"category": "unitary",
 				"default": "",
 				"help": "Dynamic weighted load balancing weight and high and low number of SMTP proxy sessions.",
+				"multiple_values": false,
 				"name": "smtp-proxy-threshold",
 				"type": "user"
 			},
@@ -1036,6 +1092,7 @@
 				"category": "unitary",
 				"default": "0.0.0.0",
 				"help": "Default route gateway for unicast interface.",
+				"multiple_values": false,
 				"name": "unicast-gateway",
 				"type": "ipv4-address"
 			},
@@ -1063,6 +1120,7 @@
 				"category": "unitary",
 				"default": "0.0.0.0",
 				"help": "Unicast heartbeat netmask.",
+				"multiple_values": false,
 				"name": "unicast-hb-netmask",
 				"type": "ipv4-netmask"
 			},
@@ -1071,6 +1129,7 @@
 				"category": "unitary",
 				"default": "0.0.0.0",
 				"help": "Unicast heartbeat peer IP.",
+				"multiple_values": false,
 				"name": "unicast-hb-peerip",
 				"type": "ipv4-address"
 			},
@@ -1084,6 +1143,7 @@
 						"help": "Table ID.",
 						"max-value": 4294967295,
 						"min-value": 0,
+						"multiple_values": false,
 						"name": "id",
 						"type": "integer"
 					},
@@ -1091,6 +1151,7 @@
 						"category": "unitary",
 						"default": "0.0.0.0",
 						"help": "Unicast peer IP.",
+						"multiple_values": false,
 						"name": "peer-ip",
 						"type": "ipv4-address"
 					}
@@ -1129,6 +1190,7 @@
 				"help": "Number of minutes the primary HA unit waits before the secondary HA unit is considered upgraded and the system is started before starting its own upgrade (1 - 300, default = 30).",
 				"max-value": 300,
 				"min-value": 1,
+				"multiple_values": false,
 				"name": "uninterruptible-primary-wait",
 				"type": "integer"
 			},
@@ -1156,6 +1218,7 @@
 				"help": "Cluster ID.",
 				"max-value": 255,
 				"min-value": 0,
+				"multiple_values": false,
 				"name": "vcluster-id",
 				"readonly": true,
 				"type": "integer"
@@ -1182,25 +1245,28 @@
 				"category": "unitary",
 				"default": "",
 				"help": "VDOMs in virtual cluster 1.",
+				"multiple_values": false,
 				"name": "vdom",
 				"type": "user"
 			},
 			"weight": {
 				"category": "unitary",
 				"default": "0 40",
-				"help": "Weight-round-robin weight for each cluster unit. Syntax \u003cpriority\u003e \u003cweight\u003e.",
+				"help": "Weighted round robin weight for each cluster unit. Syntax \u003cpriority\u003e \u003cweight\u003e.",
+				"multiple_values": false,
 				"name": "weight",
 				"type": "user"
 			}
 		},
 		"help": "Configure HA.",
+		"multiple_values": false,
 		"name": "ha",
 		"path": "system",
 		"q_type": 5
 	},
-	"revision": "5a78955211ebb1641b50c9360238cb5c",
-	"serial": "FGTAZRAQCG14L19D",
+	"revision": "1af996ea72fbf3755ecb12a854d78106",
+	"serial": "FGTAZRI5HXAAGI90",
 	"status": "success",
 	"vdom": "root",
-	"version": "v7.0.3"
+	"version": "v7.0.4"
 }

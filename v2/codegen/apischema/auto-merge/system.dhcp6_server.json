@@ -1,9 +1,9 @@
 {
 	"addedIn": "v6.2.7",
-	"build": 237,
+	"build": 301,
 	"http_method": "GET",
 	"http_status": 200,
-	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3",
+	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3,v7.0.4",
 	"name": "server",
 	"path": "system.dhcp6",
 	"results": {
@@ -17,6 +17,7 @@
 				"help": "IAID of obtained delegated-prefix from the upstream interface.",
 				"max-value": 4294967295,
 				"min-value": 0,
+				"multiple_values": false,
 				"name": "delegated-prefix-iaid",
 				"required": true,
 				"type": "integer"
@@ -43,6 +44,7 @@
 				"category": "unitary",
 				"default": "::",
 				"help": "DNS server 1.",
+				"multiple_values": false,
 				"name": "dns-server1",
 				"type": "ipv6-address"
 			},
@@ -50,6 +52,7 @@
 				"category": "unitary",
 				"default": "::",
 				"help": "DNS server 2.",
+				"multiple_values": false,
 				"name": "dns-server2",
 				"type": "ipv6-address"
 			},
@@ -57,6 +60,7 @@
 				"category": "unitary",
 				"default": "::",
 				"help": "DNS server 3.",
+				"multiple_values": false,
 				"name": "dns-server3",
 				"type": "ipv6-address"
 			},
@@ -64,13 +68,14 @@
 				"category": "unitary",
 				"default": "::",
 				"help": "DNS server 4.",
+				"multiple_values": false,
 				"name": "dns-server4",
 				"type": "ipv6-address"
 			},
 			"dns-service": {
 				"category": "unitary",
 				"default": "specify",
-				"help": " Options for assigning DNS servers to DHCPv6 clients.",
+				"help": "Options for assigning DNS servers to DHCPv6 clients.",
 				"multiple_values": false,
 				"name": "dns-service",
 				"options": [
@@ -93,6 +98,7 @@
 				"category": "unitary",
 				"default": "",
 				"help": "Domain name suffix for the IP addresses that the DHCP server assigns to clients.",
+				"multiple_values": false,
 				"name": "domain",
 				"size": 35,
 				"type": "string"
@@ -103,6 +109,7 @@
 				"help": "ID.",
 				"max-value": 4294967295,
 				"min-value": 0,
+				"multiple_values": false,
 				"name": "id",
 				"required": true,
 				"type": "integer"
@@ -114,6 +121,7 @@
 				],
 				"default": "",
 				"help": "DHCP server can assign IP configurations to clients connected to this interface.",
+				"multiple_values": false,
 				"name": "interface",
 				"required": true,
 				"size": 15,
@@ -144,6 +152,7 @@
 						"category": "unitary",
 						"default": "::",
 						"help": "End of IP range.",
+						"multiple_values": false,
 						"name": "end-ip",
 						"required": true,
 						"type": "ipv6-address"
@@ -154,6 +163,7 @@
 						"help": "ID.",
 						"max-value": 4294967295,
 						"min-value": 0,
+						"multiple_values": false,
 						"name": "id",
 						"required": true,
 						"type": "integer"
@@ -162,6 +172,7 @@
 						"category": "unitary",
 						"default": "::",
 						"help": "Start of IP range.",
+						"multiple_values": false,
 						"name": "start-ip",
 						"required": true,
 						"type": "ipv6-address"
@@ -181,6 +192,7 @@
 				"help": "Lease time in seconds, 0 means unlimited.",
 				"max-value": 8640000,
 				"min-value": 300,
+				"multiple_values": false,
 				"name": "lease-time",
 				"type": "integer"
 			},
@@ -188,6 +200,7 @@
 				"category": "unitary",
 				"default": "",
 				"help": "Option 1.",
+				"multiple_values": false,
 				"name": "option1",
 				"type": "user"
 			},
@@ -195,6 +208,7 @@
 				"category": "unitary",
 				"default": "",
 				"help": "Option 2.",
+				"multiple_values": false,
 				"name": "option2",
 				"type": "user"
 			},
@@ -202,6 +216,7 @@
 				"category": "unitary",
 				"default": "",
 				"help": "Option 3.",
+				"multiple_values": false,
 				"name": "option3",
 				"type": "user"
 			},
@@ -231,6 +246,7 @@
 						"category": "unitary",
 						"default": "::",
 						"help": "End of prefix range.",
+						"multiple_values": false,
 						"name": "end-prefix",
 						"required": true,
 						"type": "ipv6-address"
@@ -241,6 +257,7 @@
 						"help": "ID.",
 						"max-value": 4294967295,
 						"min-value": 0,
+						"multiple_values": false,
 						"name": "id",
 						"required": true,
 						"type": "integer"
@@ -251,6 +268,7 @@
 						"help": "Prefix length.",
 						"max-value": 128,
 						"min-value": 1,
+						"multiple_values": false,
 						"name": "prefix-length",
 						"required": true,
 						"type": "integer"
@@ -259,6 +277,7 @@
 						"category": "unitary",
 						"default": "::",
 						"help": "Start of prefix range.",
+						"multiple_values": false,
 						"name": "start-prefix",
 						"required": true,
 						"type": "ipv6-address"
@@ -312,6 +331,7 @@
 				"category": "unitary",
 				"default": "::/0",
 				"help": "Subnet or subnet-id if the IP mode is delegated.",
+				"multiple_values": false,
 				"name": "subnet",
 				"required": true,
 				"type": "ipv6-prefix"
@@ -323,6 +343,7 @@
 				],
 				"default": "",
 				"help": "Interface name from where delegated information is provided.",
+				"multiple_values": false,
 				"name": "upstream-interface",
 				"required": true,
 				"size": 15,
@@ -339,9 +360,9 @@
 		"path": "system.dhcp6",
 		"q_type": 447
 	},
-	"revision": "78ee061304af9c5d17bcae6474808d97",
-	"serial": "FGTAZRAQCG14L19D",
+	"revision": "e338e35a484eaafc990a69dd13ff4f76",
+	"serial": "FGTAZRI5HXAAGI90",
 	"status": "success",
 	"vdom": "root",
-	"version": "v7.0.3"
+	"version": "v7.0.4"
 }

@@ -1,9 +1,9 @@
 {
 	"addedIn": "v6.2.7",
-	"build": 237,
+	"build": 301,
 	"http_method": "GET",
 	"http_status": 200,
-	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3",
+	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3,v7.0.4",
 	"name": "ssl-ssh-profile",
 	"path": "firewall",
 	"results": {
@@ -74,6 +74,7 @@
 				],
 				"default": "Fortinet_CA_SSL",
 				"help": "CA certificate used by SSL Inspection.",
+				"multiple_values": false,
 				"name": "caname",
 				"required": true,
 				"size": 35,
@@ -82,6 +83,7 @@
 			"comment": {
 				"category": "unitary",
 				"help": "Optional comments.",
+				"multiple_values": false,
 				"name": "comment",
 				"size": 255,
 				"type": "var-string"
@@ -297,7 +299,7 @@
 					"unsupported-ssl-version": {
 						"addedIn": "v7.0.1",
 						"category": "unitary",
-						"default": "allow",
+						"default": "block",
 						"help": "Action based on the SSL version used being unsupported.",
 						"multiple_values": false,
 						"name": "unsupported-ssl-version",
@@ -309,10 +311,6 @@
 							{
 								"help": "Block the session when the version is not supported.",
 								"name": "block"
-							},
-							{
-								"help": "Inspect the session when the version is not supported.",
-								"name": "inspect"
 							}
 						],
 						"type": "option"
@@ -341,6 +339,7 @@
 					}
 				},
 				"help": "Configure DNS over TLS options.",
+				"multiple_values": false,
 				"name": "dot"
 			},
 			"ftps": {
@@ -478,12 +477,45 @@
 						"removedIn": "v6.4.0",
 						"type": "option"
 					},
+					"min-allowed-ssl-version": {
+						"addedIn": "v7.0.4",
+						"category": "unitary",
+						"default": "tls-1.1",
+						"help": "Minimum SSL version to be allowed.",
+						"multiple_values": false,
+						"name": "min-allowed-ssl-version",
+						"options": [
+							{
+								"help": "SSL 3.0.",
+								"name": "ssl-3.0"
+							},
+							{
+								"help": "TLS 1.0.",
+								"name": "tls-1.0"
+							},
+							{
+								"help": "TLS 1.1.",
+								"name": "tls-1.1"
+							},
+							{
+								"help": "TLS 1.2.",
+								"name": "tls-1.2"
+							},
+							{
+								"help": "TLS 1.3.",
+								"name": "tls-1.3"
+							}
+						],
+						"type": "option"
+					},
 					"ports": {
 						"category": "unitary",
 						"default": "",
 						"help": "Ports to use for scanning (1 - 65535, default = 443).",
 						"max-value": 65535,
+						"max_num_values": 20,
 						"min-value": 1,
+						"multiple_values": true,
 						"name": "ports",
 						"required": true,
 						"type": "integer"
@@ -614,7 +646,7 @@
 					"unsupported-ssl-version": {
 						"addedIn": "v7.0.1",
 						"category": "unitary",
-						"default": "allow",
+						"default": "block",
 						"help": "Action based on the SSL version used being unsupported.",
 						"multiple_values": false,
 						"name": "unsupported-ssl-version",
@@ -626,10 +658,6 @@
 							{
 								"help": "Block the session when the version is not supported.",
 								"name": "block"
-							},
-							{
-								"help": "Inspect the session when the version is not supported.",
-								"name": "inspect"
 							}
 						],
 						"type": "option"
@@ -658,6 +686,7 @@
 					}
 				},
 				"help": "Configure FTPS options.",
+				"multiple_values": false,
 				"name": "ftps"
 			},
 			"https": {
@@ -814,12 +843,45 @@
 						"removedIn": "v6.4.0",
 						"type": "option"
 					},
+					"min-allowed-ssl-version": {
+						"addedIn": "v7.0.4",
+						"category": "unitary",
+						"default": "tls-1.1",
+						"help": "Minimum SSL version to be allowed.",
+						"multiple_values": false,
+						"name": "min-allowed-ssl-version",
+						"options": [
+							{
+								"help": "SSL 3.0.",
+								"name": "ssl-3.0"
+							},
+							{
+								"help": "TLS 1.0.",
+								"name": "tls-1.0"
+							},
+							{
+								"help": "TLS 1.1.",
+								"name": "tls-1.1"
+							},
+							{
+								"help": "TLS 1.2.",
+								"name": "tls-1.2"
+							},
+							{
+								"help": "TLS 1.3.",
+								"name": "tls-1.3"
+							}
+						],
+						"type": "option"
+					},
 					"ports": {
 						"category": "unitary",
 						"default": "",
 						"help": "Ports to use for scanning (1 - 65535, default = 443).",
 						"max-value": 65535,
+						"max_num_values": 20,
 						"min-value": 1,
+						"multiple_values": true,
 						"name": "ports",
 						"required": true,
 						"type": "integer"
@@ -973,7 +1035,7 @@
 					"unsupported-ssl-version": {
 						"addedIn": "v7.0.1",
 						"category": "unitary",
-						"default": "allow",
+						"default": "block",
 						"help": "Action based on the SSL version used being unsupported.",
 						"multiple_values": false,
 						"name": "unsupported-ssl-version",
@@ -985,10 +1047,6 @@
 							{
 								"help": "Block the session when the version is not supported.",
 								"name": "block"
-							},
-							{
-								"help": "Inspect the session when the version is not supported.",
-								"name": "inspect"
 							}
 						],
 						"type": "option"
@@ -1017,6 +1075,7 @@
 					}
 				},
 				"help": "Configure HTTPS options.",
+				"multiple_values": false,
 				"name": "https"
 			},
 			"imaps": {
@@ -1159,7 +1218,9 @@
 						"default": "",
 						"help": "Ports to use for scanning (1 - 65535, default = 443).",
 						"max-value": 65535,
+						"max_num_values": 20,
 						"min-value": 1,
+						"multiple_values": true,
 						"name": "ports",
 						"required": true,
 						"type": "integer"
@@ -1309,7 +1370,7 @@
 					"unsupported-ssl-version": {
 						"addedIn": "v7.0.1",
 						"category": "unitary",
-						"default": "allow",
+						"default": "block",
 						"help": "Action based on the SSL version used being unsupported.",
 						"multiple_values": false,
 						"name": "unsupported-ssl-version",
@@ -1321,10 +1382,6 @@
 							{
 								"help": "Block the session when the version is not supported.",
 								"name": "block"
-							},
-							{
-								"help": "Inspect the session when the version is not supported.",
-								"name": "inspect"
 							}
 						],
 						"type": "option"
@@ -1353,6 +1410,7 @@
 					}
 				},
 				"help": "Configure IMAPS options.",
+				"multiple_values": false,
 				"name": "imaps"
 			},
 			"mapi-over-https": {
@@ -1377,6 +1435,7 @@
 				"category": "unitary",
 				"default": "",
 				"help": "Name.",
+				"multiple_values": false,
 				"name": "name",
 				"required": true,
 				"size": 35,
@@ -1522,7 +1581,9 @@
 						"default": "",
 						"help": "Ports to use for scanning (1 - 65535, default = 443).",
 						"max-value": 65535,
+						"max_num_values": 20,
 						"min-value": 1,
+						"multiple_values": true,
 						"name": "ports",
 						"required": true,
 						"type": "integer"
@@ -1672,7 +1733,7 @@
 					"unsupported-ssl-version": {
 						"addedIn": "v7.0.1",
 						"category": "unitary",
-						"default": "allow",
+						"default": "block",
 						"help": "Action based on the SSL version used being unsupported.",
 						"multiple_values": false,
 						"name": "unsupported-ssl-version",
@@ -1684,10 +1745,6 @@
 							{
 								"help": "Block the session when the version is not supported.",
 								"name": "block"
-							},
-							{
-								"help": "Inspect the session when the version is not supported.",
-								"name": "inspect"
 							}
 						],
 						"type": "option"
@@ -1716,6 +1773,7 @@
 					}
 				},
 				"help": "Configure POP3S options.",
+				"multiple_values": false,
 				"name": "pop3s"
 			},
 			"rpc-over-https": {
@@ -1746,6 +1804,7 @@
 						],
 						"default": "Fortinet_SSL",
 						"help": "Certificate list.",
+						"multiple_values": false,
 						"name": "name",
 						"size": 35,
 						"type": "string"
@@ -1754,7 +1813,7 @@
 				"datasource": [
 					"vpn.certificate.local.name"
 				],
-				"default": "�lY\u000f",
+				"default": "",
 				"help": "Certificate used by SSL Inspection to replace server certificate.",
 				"max_table_size_global": 0,
 				"max_table_size_item": 0,
@@ -1926,7 +1985,9 @@
 						"default": "",
 						"help": "Ports to use for scanning (1 - 65535, default = 443).",
 						"max-value": 65535,
+						"max_num_values": 20,
 						"min-value": 1,
+						"multiple_values": true,
 						"name": "ports",
 						"required": true,
 						"type": "integer"
@@ -2076,7 +2137,7 @@
 					"unsupported-ssl-version": {
 						"addedIn": "v7.0.1",
 						"category": "unitary",
-						"default": "allow",
+						"default": "block",
 						"help": "Action based on the SSL version used being unsupported.",
 						"multiple_values": false,
 						"name": "unsupported-ssl-version",
@@ -2088,10 +2149,6 @@
 							{
 								"help": "Block the session when the version is not supported.",
 								"name": "block"
-							},
-							{
-								"help": "Inspect the session when the version is not supported.",
-								"name": "inspect"
 							}
 						],
 						"type": "option"
@@ -2120,6 +2177,7 @@
 					}
 				},
 				"help": "Configure SMTPS options.",
+				"multiple_values": false,
 				"name": "smtps"
 			},
 			"ssh": {
@@ -2148,7 +2206,9 @@
 						"default": "",
 						"help": "Ports to use for scanning (1 - 65535, default = 443).",
 						"max-value": 65535,
+						"max_num_values": 20,
 						"min-value": 1,
+						"multiple_values": true,
 						"name": "ports",
 						"required": true,
 						"type": "integer"
@@ -2246,6 +2306,7 @@
 					}
 				},
 				"help": "Configure SSH options.",
+				"multiple_values": false,
 				"name": "ssh"
 			},
 			"ssl": {
@@ -2424,6 +2485,37 @@
 						"removedIn": "v6.4.0",
 						"type": "option"
 					},
+					"min-allowed-ssl-version": {
+						"addedIn": "v7.0.4",
+						"category": "unitary",
+						"default": "tls-1.1",
+						"help": "Minimum SSL version to be allowed.",
+						"multiple_values": false,
+						"name": "min-allowed-ssl-version",
+						"options": [
+							{
+								"help": "SSL 3.0.",
+								"name": "ssl-3.0"
+							},
+							{
+								"help": "TLS 1.0.",
+								"name": "tls-1.0"
+							},
+							{
+								"help": "TLS 1.1.",
+								"name": "tls-1.1"
+							},
+							{
+								"help": "TLS 1.2.",
+								"name": "tls-1.2"
+							},
+							{
+								"help": "TLS 1.3.",
+								"name": "tls-1.3"
+							}
+						],
+						"type": "option"
+					},
 					"revoked-server-cert": {
 						"addedIn": "v6.4.0",
 						"category": "unitary",
@@ -2532,7 +2624,7 @@
 					"unsupported-ssl-version": {
 						"addedIn": "v7.0.1",
 						"category": "unitary",
-						"default": "allow",
+						"default": "block",
 						"help": "Action based on the SSL version used being unsupported.",
 						"multiple_values": false,
 						"name": "unsupported-ssl-version",
@@ -2544,10 +2636,6 @@
 							{
 								"help": "Block the session when the version is not supported.",
 								"name": "block"
-							},
-							{
-								"help": "Inspect the session when the version is not supported.",
-								"name": "inspect"
 							}
 						],
 						"type": "option"
@@ -2576,6 +2664,7 @@
 					}
 				},
 				"help": "Configure SSL options.",
+				"multiple_values": false,
 				"name": "ssl"
 			},
 			"ssl-anomalies-log": {
@@ -2627,6 +2716,7 @@
 						],
 						"default": "",
 						"help": "IPv4 address object.",
+						"multiple_values": false,
 						"name": "address",
 						"size": 79,
 						"type": "string"
@@ -2639,6 +2729,7 @@
 						],
 						"default": "",
 						"help": "IPv6 address object.",
+						"multiple_values": false,
 						"name": "address6",
 						"size": 79,
 						"type": "string"
@@ -2649,6 +2740,7 @@
 						"help": "FortiGuard category ID.",
 						"max-value": 255,
 						"min-value": 0,
+						"multiple_values": false,
 						"name": "fortiguard-category",
 						"type": "integer"
 					},
@@ -2658,6 +2750,7 @@
 						"help": "ID number.",
 						"max-value": 512,
 						"min-value": 0,
+						"multiple_values": false,
 						"name": "id",
 						"type": "integer"
 					},
@@ -2665,6 +2758,7 @@
 						"category": "unitary",
 						"default": "",
 						"help": "Exempt servers by regular expression.",
+						"multiple_values": false,
 						"name": "regex",
 						"size": 255,
 						"type": "string"
@@ -2708,6 +2802,7 @@
 						],
 						"default": "",
 						"help": "Exempt servers by wildcard FQDN.",
+						"multiple_values": false,
 						"name": "wildcard-fqdn",
 						"size": 79,
 						"type": "string"
@@ -2896,6 +2991,7 @@
 						"help": "SSL server ID.",
 						"max-value": 4294967295,
 						"min-value": 0,
+						"multiple_values": false,
 						"name": "id",
 						"type": "integer"
 					},
@@ -2948,6 +3044,7 @@
 						"category": "unitary",
 						"default": "0.0.0.0",
 						"help": "IPv4 address of the SSL server.",
+						"multiple_values": false,
 						"name": "ip",
 						"required": true,
 						"type": "ipv4-address-any"
@@ -3150,6 +3247,7 @@
 				],
 				"default": "Fortinet_CA_Untrusted",
 				"help": "Untrusted CA certificate used by SSL Inspection.",
+				"multiple_values": false,
 				"name": "untrusted-caname",
 				"required": true,
 				"size": 35,
@@ -3203,9 +3301,9 @@
 		"path": "firewall",
 		"q_type": 433
 	},
-	"revision": "5aff751a4e588236d845a855aaa6f17e",
-	"serial": "FGTAZRAQCG14L19D",
+	"revision": "702aa67c58211921a063899f72dd0b6e",
+	"serial": "FGTAZRI5HXAAGI90",
 	"status": "success",
 	"vdom": "root",
-	"version": "v7.0.3"
+	"version": "v7.0.4"
 }

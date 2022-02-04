@@ -1,9 +1,9 @@
 {
 	"addedIn": "v6.2.7",
-	"build": 237,
+	"build": 301,
 	"http_method": "GET",
 	"http_status": 200,
-	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3",
+	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3,v7.0.4",
 	"name": "profile",
 	"path": "icap",
 	"results": {
@@ -88,6 +88,7 @@
 						"category": "unitary",
 						"default": "",
 						"help": "HTTP header content.",
+						"multiple_values": false,
 						"name": "content",
 						"size": 255,
 						"type": "string"
@@ -98,6 +99,7 @@
 						"help": "HTTP forwarded header ID.",
 						"max-value": 4294967295,
 						"min-value": 0,
+						"multiple_values": false,
 						"name": "id",
 						"type": "integer"
 					},
@@ -105,6 +107,7 @@
 						"category": "unitary",
 						"default": "",
 						"help": "HTTP forwarded header name.",
+						"multiple_values": false,
 						"name": "name",
 						"size": 79,
 						"type": "string"
@@ -164,6 +167,7 @@
 				"category": "unitary",
 				"default": "",
 				"help": "ICAP profile name.",
+				"multiple_values": false,
 				"name": "name",
 				"size": 35,
 				"type": "string"
@@ -192,6 +196,7 @@
 				"help": "Preview data length to be sent to ICAP server.",
 				"max-value": 4096,
 				"min-value": 0,
+				"multiple_values": false,
 				"name": "preview-data-length",
 				"type": "integer"
 			},
@@ -202,6 +207,7 @@
 				],
 				"default": "",
 				"help": "Replacement message group.",
+				"multiple_values": false,
 				"name": "replacemsg-group",
 				"size": 35,
 				"type": "string"
@@ -246,6 +252,7 @@
 				"category": "unitary",
 				"default": "",
 				"help": "Path component of the ICAP URI that identifies the HTTP request processing service.",
+				"multiple_values": false,
 				"name": "request-path",
 				"size": 127,
 				"type": "string"
@@ -257,6 +264,7 @@
 				],
 				"default": "",
 				"help": "ICAP server to use for an HTTP request.",
+				"multiple_values": false,
 				"name": "request-server",
 				"required": true,
 				"size": 35,
@@ -328,6 +336,7 @@
 								"category": "unitary",
 								"default": "",
 								"help": "HTTP header regular expression.",
+								"multiple_values": false,
 								"name": "header",
 								"required": true,
 								"size": 255,
@@ -337,6 +346,7 @@
 								"category": "unitary",
 								"default": "",
 								"help": "HTTP header.",
+								"multiple_values": false,
 								"name": "header-name",
 								"required": true,
 								"size": 79,
@@ -348,6 +358,7 @@
 								"help": "ID.",
 								"max-value": 4294967295,
 								"min-value": 0,
+								"multiple_values": false,
 								"name": "id",
 								"type": "integer"
 							}
@@ -369,6 +380,7 @@
 						],
 						"default": "",
 						"help": "Address object for the host.",
+						"multiple_values": false,
 						"name": "host",
 						"required": true,
 						"size": 79,
@@ -383,11 +395,12 @@
 								"help": "HTTP response status code.",
 								"max-value": 599,
 								"min-value": 100,
+								"multiple_values": false,
 								"name": "code",
 								"type": "integer"
 							}
 						},
-						"default": 3628638868,
+						"default": 2014143124,
 						"help": "HTTP response status code.",
 						"max_table_size_global": 0,
 						"max_table_size_item": 0,
@@ -402,6 +415,7 @@
 						"category": "unitary",
 						"default": "",
 						"help": "Address name.",
+						"multiple_values": false,
 						"name": "name",
 						"size": 63,
 						"type": "string"
@@ -455,13 +469,14 @@
 				"category": "unitary",
 				"default": "",
 				"help": "Path component of the ICAP URI that identifies the HTTP response processing service.",
+				"multiple_values": false,
 				"name": "response-path",
 				"size": 127,
 				"type": "string"
 			},
 			"response-req-hdr": {
 				"category": "unitary",
-				"default": "disable",
+				"default": "enable",
 				"help": "Enable/disable addition of req-hdr for ICAP response modification (respmod) processing.",
 				"multiple_values": false,
 				"name": "response-req-hdr",
@@ -484,6 +499,7 @@
 				],
 				"default": "",
 				"help": "ICAP server to use for an HTTP response.",
+				"multiple_values": false,
 				"name": "response-server",
 				"required": true,
 				"size": 35,
@@ -496,6 +512,7 @@
 				"help": "Scan progress interval value.",
 				"max-value": 30,
 				"min-value": 5,
+				"multiple_values": false,
 				"name": "scan-progress-interval",
 				"type": "integer"
 			},
@@ -528,9 +545,9 @@
 		"path": "icap",
 		"q_type": 453
 	},
-	"revision": "e5866ad0a5702724ed08d68d9ab69251",
-	"serial": "FGTAZRAQCG14L19D",
+	"revision": "d65fa02ecb712eb9a1d846ff1d667b4a",
+	"serial": "FGTAZRI5HXAAGI90",
 	"status": "success",
 	"vdom": "root",
-	"version": "v7.0.3"
+	"version": "v7.0.4"
 }

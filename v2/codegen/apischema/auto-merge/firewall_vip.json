@@ -1,9 +1,9 @@
 {
 	"addedIn": "v6.2.7",
-	"build": 237,
+	"build": 301,
 	"http_method": "GET",
 	"http_status": 200,
-	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3",
+	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3,v7.0.4",
 	"name": "vip",
 	"path": "firewall",
 	"results": {
@@ -53,12 +53,14 @@
 				"help": "Color of icon on the GUI.",
 				"max-value": 32,
 				"min-value": 0,
+				"multiple_values": false,
 				"name": "color",
 				"type": "integer"
 			},
 			"comment": {
 				"category": "unitary",
 				"help": "Comment.",
+				"multiple_values": false,
 				"name": "comment",
 				"size": 255,
 				"type": "var-string"
@@ -69,6 +71,7 @@
 				"help": "DNS mapping TTL (Set to zero to use TTL in DNS response, default = 0).",
 				"max-value": 604800,
 				"min-value": 0,
+				"multiple_values": false,
 				"name": "dns-mapping-ttl",
 				"type": "integer"
 			},
@@ -83,6 +86,7 @@
 						],
 						"default": "",
 						"help": "Address name.",
+						"multiple_values": false,
 						"name": "name",
 						"required": true,
 						"size": 79,
@@ -105,6 +109,7 @@
 				],
 				"default": "",
 				"help": "Interface connected to the source network that receives the packets that will be forwarded to the destination network.",
+				"multiple_values": false,
 				"name": "extintf",
 				"required": true,
 				"size": 35,
@@ -114,6 +119,7 @@
 				"category": "unitary",
 				"default": "",
 				"help": "IP address or address range on the external interface that you want to map to an address or address range on the destination network.",
+				"multiple_values": false,
 				"name": "extip",
 				"required": true,
 				"type": "user"
@@ -122,6 +128,7 @@
 				"category": "unitary",
 				"default": "",
 				"help": "Incoming port number range that you want to map to a port number range on the destination network.",
+				"multiple_values": false,
 				"name": "extport",
 				"required": true,
 				"type": "user"
@@ -132,6 +139,7 @@
 				"help": "Enable to have the VIP send gratuitous ARPs. 0=disabled. Set from 5 up to 8640000 seconds to enable.",
 				"max-value": 8640000,
 				"min-value": 5,
+				"multiple_values": false,
 				"name": "gratuitous-arp-interval",
 				"type": "integer"
 			},
@@ -141,6 +149,7 @@
 				"help": "Time in minutes that client web browsers should keep a cookie. Default is 60 minutes. 0 = no time limit.",
 				"max-value": 525600,
 				"min-value": 0,
+				"multiple_values": false,
 				"name": "http-cookie-age",
 				"type": "integer"
 			},
@@ -148,6 +157,7 @@
 				"category": "unitary",
 				"default": "",
 				"help": "Domain that HTTP cookie persistence should apply to.",
+				"multiple_values": false,
 				"name": "http-cookie-domain",
 				"size": 35,
 				"type": "string"
@@ -176,6 +186,7 @@
 				"help": "Generation of HTTP cookie to be accepted. Changing invalidates all existing cookies.",
 				"max-value": 4294967295,
 				"min-value": 0,
+				"multiple_values": false,
 				"name": "http-cookie-generation",
 				"type": "integer"
 			},
@@ -183,6 +194,7 @@
 				"category": "unitary",
 				"default": "",
 				"help": "Limit HTTP cookie persistence to the specified path.",
+				"multiple_values": false,
 				"name": "http-cookie-path",
 				"size": 35,
 				"type": "string"
@@ -190,7 +202,7 @@
 			"http-cookie-share": {
 				"category": "unitary",
 				"default": "same-ip",
-				"help": "Control sharing of cookies across virtual servers. same-ip means a cookie from one virtual server can be used by another. Disable stops cookie sharing.",
+				"help": "Control sharing of cookies across virtual servers. Use of same-ip means a cookie from one virtual server can be used by another. Disable stops cookie sharing.",
 				"multiple_values": false,
 				"name": "http-cookie-share",
 				"options": [
@@ -227,6 +239,7 @@
 				"category": "unitary",
 				"default": "",
 				"help": "For HTTP multiplexing, enter a custom HTTPS header name. The original client IP address is added to this header. If empty, X-Forwarded-For is used.",
+				"multiple_values": false,
 				"name": "http-ip-header-name",
 				"size": 35,
 				"type": "string"
@@ -252,7 +265,7 @@
 			"http-redirect": {
 				"category": "unitary",
 				"default": "disable",
-				"help": "Enable/disable redirection of HTTP to HTTPS",
+				"help": "Enable/disable redirection of HTTP to HTTPS.",
 				"multiple_values": false,
 				"name": "http-redirect",
 				"options": [
@@ -291,6 +304,7 @@
 				"help": "Custom defined ID.",
 				"max-value": 65535,
 				"min-value": 0,
+				"multiple_values": false,
 				"name": "id",
 				"type": "integer"
 			},
@@ -298,7 +312,8 @@
 				"addedIn": "v7.0.1",
 				"category": "unitary",
 				"default": "",
-				"help": "Start-mapped-IPv6-address [-end mapped-IPv6-address].",
+				"help": "Range of mapped IPv6 addresses. Specify the start IPv6 address followed by a space and the end IPv6 address.",
+				"multiple_values": false,
 				"name": "ipv6-mappedip",
 				"required": true,
 				"type": "user"
@@ -308,6 +323,7 @@
 				"category": "unitary",
 				"default": "",
 				"help": "IPv6 port number range on the destination network to which the external port number range is mapped.",
+				"multiple_values": false,
 				"name": "ipv6-mappedport",
 				"type": "user"
 			},
@@ -356,6 +372,7 @@
 				],
 				"default": "",
 				"help": "Mapped FQDN address name.",
+				"multiple_values": false,
 				"name": "mapped-addr",
 				"size": 79,
 				"type": "string"
@@ -367,6 +384,7 @@
 						"category": "unitary",
 						"default": "",
 						"help": "Mapped IP range.",
+						"multiple_values": false,
 						"name": "range",
 						"required": true,
 						"size": 79,
@@ -387,6 +405,7 @@
 				"category": "unitary",
 				"default": "",
 				"help": "Port number range on the destination network to which the external port number range is mapped.",
+				"multiple_values": false,
 				"name": "mappedport",
 				"type": "user"
 			},
@@ -396,6 +415,7 @@
 				"help": "Maximum number of incomplete connections.",
 				"max-value": 100000,
 				"min-value": 0,
+				"multiple_values": false,
 				"name": "max-embryonic-connections",
 				"type": "integer"
 			},
@@ -409,6 +429,7 @@
 						],
 						"default": "",
 						"help": "Health monitor name.",
+						"multiple_values": false,
 						"name": "name",
 						"required": true,
 						"size": 79,
@@ -428,6 +449,7 @@
 				"category": "unitary",
 				"default": "",
 				"help": "Virtual IP name.",
+				"multiple_values": false,
 				"name": "name",
 				"size": 79,
 				"type": "string"
@@ -601,6 +623,7 @@
 						],
 						"default": "",
 						"help": "Dynamic address of the real server.",
+						"multiple_values": false,
 						"name": "address",
 						"required": true,
 						"size": 79,
@@ -610,6 +633,7 @@
 						"category": "unitary",
 						"default": "",
 						"help": "Only clients in this IP range can connect to this real server.",
+						"multiple_values": false,
 						"name": "client-ip",
 						"type": "user"
 					},
@@ -641,6 +665,7 @@
 						"help": "Time in seconds that the health check monitor continues to monitor and unresponsive server that should be active.",
 						"max-value": 65535,
 						"min-value": 30,
+						"multiple_values": false,
 						"name": "holddown-interval",
 						"type": "integer"
 					},
@@ -648,6 +673,7 @@
 						"category": "unitary",
 						"default": "",
 						"help": "HTTP server domain name in HTTP header.",
+						"multiple_values": false,
 						"name": "http-host",
 						"size": 63,
 						"type": "string"
@@ -658,6 +684,7 @@
 						"help": "Real server ID.",
 						"max-value": 4294967295,
 						"min-value": 0,
+						"multiple_values": false,
 						"name": "id",
 						"type": "integer"
 					},
@@ -665,6 +692,7 @@
 						"category": "unitary",
 						"default": "",
 						"help": "IP address of the real server.",
+						"multiple_values": false,
 						"name": "ip",
 						"required": true,
 						"type": "user"
@@ -675,6 +703,7 @@
 						"help": "Max number of active connections that can be directed to the real server. When reached, sessions are sent to other real servers.",
 						"max-value": 2147483647,
 						"min-value": 0,
+						"multiple_values": false,
 						"name": "max-connections",
 						"type": "integer"
 					},
@@ -688,6 +717,7 @@
 								],
 								"default": "",
 								"help": "Health monitor name.",
+								"multiple_values": false,
 								"name": "name",
 								"required": true,
 								"size": 79,
@@ -715,6 +745,7 @@
 						"help": "Port for communicating with the real server. Required if port forwarding is enabled.",
 						"max-value": 65535,
 						"min-value": 1,
+						"multiple_values": false,
 						"name": "port",
 						"type": "integer"
 					},
@@ -766,6 +797,7 @@
 						"help": "Weight of the real server. If weighted load balancing is enabled, the server with the highest weight gets more connections.",
 						"max-value": 255,
 						"min-value": 1,
+						"multiple_values": false,
 						"name": "weight",
 						"type": "integer"
 					}
@@ -836,6 +868,7 @@
 						],
 						"default": "",
 						"help": "Service name.",
+						"multiple_values": false,
 						"name": "name",
 						"required": true,
 						"size": 79,
@@ -858,6 +891,7 @@
 						"category": "unitary",
 						"default": "",
 						"help": "Source-filter range.",
+						"multiple_values": false,
 						"name": "range",
 						"required": true,
 						"size": 79,
@@ -883,6 +917,7 @@
 						],
 						"default": "",
 						"help": "Interface name.",
+						"multiple_values": false,
 						"name": "interface-name",
 						"size": 79,
 						"type": "string"
@@ -896,6 +931,25 @@
 				"mkey": "interface-name",
 				"mkey_type": "string",
 				"name": "srcintf-filter"
+			},
+			"ssl-accept-ffdhe-groups": {
+				"addedIn": "v7.0.4",
+				"category": "unitary",
+				"default": "enable",
+				"help": "Enable/disable FFDHE cipher suite for SSL key exchange.",
+				"multiple_values": false,
+				"name": "ssl-accept-ffdhe-groups",
+				"options": [
+					{
+						"help": "Accept FFDHE groups.",
+						"name": "enable"
+					},
+					{
+						"help": "Do not accept FFDHE groups.",
+						"name": "disable"
+					}
+				],
+				"type": "option"
 			},
 			"ssl-algorithm": {
 				"category": "unitary",
@@ -930,6 +984,7 @@
 				],
 				"default": "",
 				"help": "The name of the certificate to use for SSL handshake.",
+				"multiple_values": false,
 				"name": "ssl-certificate",
 				"required": true,
 				"size": 35,
@@ -1239,6 +1294,7 @@
 						"help": "SSL/TLS cipher suites priority.",
 						"max-value": 4294967295,
 						"min-value": 0,
+						"multiple_values": false,
 						"name": "priority",
 						"type": "integer"
 					},
@@ -1305,6 +1361,7 @@
 				"help": "Maximum length of data in MB before triggering a client rekey (0 = disable).",
 				"max-value": 1048576,
 				"min-value": 200,
+				"multiple_values": false,
 				"name": "ssl-client-rekey-count",
 				"type": "integer"
 			},
@@ -1336,6 +1393,7 @@
 				"help": "Maximum number of client to FortiGate SSL session states to keep.",
 				"max-value": 10000,
 				"min-value": 1,
+				"multiple_values": false,
 				"name": "ssl-client-session-state-max",
 				"type": "integer"
 			},
@@ -1345,6 +1403,7 @@
 				"help": "Number of minutes to keep client to FortiGate SSL session state.",
 				"max-value": 14400,
 				"min-value": 1,
+				"multiple_values": false,
 				"name": "ssl-client-session-state-timeout",
 				"type": "integer"
 			},
@@ -1433,9 +1492,10 @@
 			"ssl-hpkp-age": {
 				"category": "unitary",
 				"default": 5184000,
-				"help": "Number of seconds the client should honour the HPKP setting.",
+				"help": "Number of seconds the client should honor the HPKP setting.",
 				"max-value": 157680000,
 				"min-value": 60,
+				"multiple_values": false,
 				"name": "ssl-hpkp-age",
 				"type": "integer"
 			},
@@ -1447,6 +1507,7 @@
 				],
 				"default": "",
 				"help": "Certificate to generate backup HPKP pin from.",
+				"multiple_values": false,
 				"name": "ssl-hpkp-backup",
 				"size": 79,
 				"type": "string"
@@ -1477,6 +1538,7 @@
 				],
 				"default": "",
 				"help": "Certificate to generate primary HPKP pin from.",
+				"multiple_values": false,
 				"name": "ssl-hpkp-primary",
 				"size": 79,
 				"type": "string"
@@ -1484,6 +1546,7 @@
 			"ssl-hpkp-report-uri": {
 				"category": "unitary",
 				"help": "URL to report HPKP violations to.",
+				"multiple_values": false,
 				"name": "ssl-hpkp-report-uri",
 				"size": 255,
 				"type": "var-string"
@@ -1509,9 +1572,10 @@
 			"ssl-hsts-age": {
 				"category": "unitary",
 				"default": 5184000,
-				"help": "Number of seconds the client should honour the HSTS setting.",
+				"help": "Number of seconds the client should honor the HSTS setting.",
 				"max-value": 157680000,
 				"min-value": 60,
+				"multiple_values": false,
 				"name": "ssl-hsts-age",
 				"type": "integer"
 			},
@@ -2021,6 +2085,7 @@
 						"help": "SSL/TLS cipher suites priority.",
 						"max-value": 4294967295,
 						"min-value": 0,
+						"multiple_values": false,
 						"name": "priority",
 						"type": "integer"
 					},
@@ -2137,6 +2202,7 @@
 				"help": "Maximum number of FortiGate to Server SSL session states to keep.",
 				"max-value": 10000,
 				"min-value": 1,
+				"multiple_values": false,
 				"name": "ssl-server-session-state-max",
 				"type": "integer"
 			},
@@ -2146,6 +2212,7 @@
 				"help": "Number of minutes to keep FortiGate to Server SSL session state.",
 				"max-value": 14400,
 				"min-value": 1,
+				"multiple_values": false,
 				"name": "ssl-server-session-state-timeout",
 				"type": "integer"
 			},
@@ -2232,6 +2299,7 @@
 				"category": "unitary",
 				"default": "00000000-0000-0000-0000-000000000000",
 				"help": "Universally Unique Identifier (UUID; automatically assigned but can be manually reset).",
+				"multiple_values": false,
 				"name": "uuid",
 				"type": "uuid"
 			},
@@ -2282,9 +2350,9 @@
 		"path": "firewall",
 		"q_type": 42
 	},
-	"revision": "78ee061304af9c5d17bcae6474808d97",
-	"serial": "FGTAZRAQCG14L19D",
+	"revision": "e338e35a484eaafc990a69dd13ff4f76",
+	"serial": "FGTAZRI5HXAAGI90",
 	"status": "success",
 	"vdom": "root",
-	"version": "v7.0.3"
+	"version": "v7.0.4"
 }

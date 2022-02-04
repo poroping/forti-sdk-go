@@ -1,9 +1,9 @@
 {
 	"addedIn": "v6.2.7",
-	"build": 237,
+	"build": 301,
 	"http_method": "GET",
 	"http_status": 200,
-	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3",
+	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3,v7.0.4",
 	"name": "filepattern",
 	"path": "dlp",
 	"results": {
@@ -13,6 +13,7 @@
 			"comment": {
 				"category": "unitary",
 				"help": "Optional comments.",
+				"multiple_values": false,
 				"name": "comment",
 				"size": 255,
 				"type": "var-string"
@@ -286,6 +287,7 @@
 						"category": "unitary",
 						"default": "",
 						"help": "Add a file name pattern.",
+						"multiple_values": false,
 						"name": "pattern",
 						"size": 79,
 						"type": "string"
@@ -305,6 +307,7 @@
 				"help": "ID.",
 				"max-value": 4294967295,
 				"min-value": 0,
+				"multiple_values": false,
 				"name": "id",
 				"required": true,
 				"type": "integer"
@@ -313,6 +316,7 @@
 				"category": "unitary",
 				"default": "",
 				"help": "Name of table containing the file pattern list.",
+				"multiple_values": false,
 				"name": "name",
 				"required": true,
 				"size": 63,
@@ -329,9 +333,9 @@
 		"path": "dlp",
 		"q_type": 240
 	},
-	"revision": "19786264790bf535e0833581e879a5df",
-	"serial": "FGTAZRAQCG14L19D",
+	"revision": "e844750803a74402844bd958b95c1f88",
+	"serial": "FGTAZRI5HXAAGI90",
 	"status": "success",
 	"vdom": "root",
-	"version": "v7.0.3"
+	"version": "v7.0.4"
 }

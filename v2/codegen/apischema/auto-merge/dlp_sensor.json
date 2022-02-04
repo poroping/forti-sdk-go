@@ -1,9 +1,9 @@
 {
 	"addedIn": "v6.2.7",
-	"build": 237,
+	"build": 301,
 	"http_method": "GET",
 	"http_status": 200,
-	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3",
+	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3,v7.0.4",
 	"name": "sensor",
 	"path": "dlp",
 	"results": {
@@ -13,6 +13,7 @@
 			"comment": {
 				"category": "unitary",
 				"help": "Comment.",
+				"multiple_values": false,
 				"name": "comment",
 				"size": 255,
 				"type": "var-string"
@@ -123,6 +124,7 @@
 						"category": "unitary",
 						"default": "",
 						"help": "Enter a company identifier watermark to match. Only watermarks that your company has placed on the files are matched.",
+						"multiple_values": false,
 						"name": "company-identifier",
 						"size": 35,
 						"type": "string"
@@ -130,7 +132,8 @@
 					"expiry": {
 						"category": "unitary",
 						"default": "5m",
-						"help": "Quarantine duration in days, hours, minutes format (dddhhmm).",
+						"help": "Quarantine duration in days, hours, minutes (format = dddhhmm).",
+						"multiple_values": false,
 						"name": "expiry",
 						"type": "user"
 					},
@@ -140,6 +143,7 @@
 						"help": "Match files this size or larger (0 - 4294967295 kbytes).",
 						"max-value": 4294967295,
 						"min-value": 0,
+						"multiple_values": false,
 						"name": "file-size",
 						"type": "integer"
 					},
@@ -152,6 +156,7 @@
 						"help": "Select the number of a DLP file pattern table to match.",
 						"max-value": 4294967295,
 						"min-value": 0,
+						"multiple_values": false,
 						"name": "file-type",
 						"type": "integer"
 					},
@@ -203,6 +208,7 @@
 						"help": "ID.",
 						"max-value": 4294967295,
 						"min-value": 0,
+						"multiple_values": false,
 						"name": "id",
 						"type": "integer"
 					},
@@ -212,6 +218,7 @@
 						"help": "Percentage of fingerprints in the fingerprint databases designated with the selected sensitivity to match.",
 						"max-value": 100,
 						"min-value": 1,
+						"multiple_values": false,
 						"name": "match-percentage",
 						"type": "integer"
 					},
@@ -219,6 +226,7 @@
 						"category": "unitary",
 						"default": "",
 						"help": "Filter name.",
+						"multiple_values": false,
 						"name": "name",
 						"size": 35,
 						"type": "string"
@@ -277,6 +285,7 @@
 						"category": "unitary",
 						"default": "",
 						"help": "Enter a regular expression to match (max. 255 characters).",
+						"multiple_values": false,
 						"name": "regexp",
 						"size": 255,
 						"type": "string"
@@ -291,6 +300,7 @@
 								],
 								"default": "",
 								"help": "Select a DLP sensitivity.",
+								"multiple_values": false,
 								"name": "name",
 								"size": 35,
 								"type": "string"
@@ -338,7 +348,7 @@
 					"type": {
 						"category": "unitary",
 						"default": "file",
-						"help": "Select whether to check the content of messages (an email message) or files (downloaded files or email attachments). ",
+						"help": "Select whether to check the content of messages (an email message) or files (downloaded files or email attachments).",
 						"multiple_values": false,
 						"name": "type",
 						"options": [
@@ -434,6 +444,7 @@
 				"category": "unitary",
 				"default": "",
 				"help": "Name of the DLP sensor.",
+				"multiple_values": false,
 				"name": "name",
 				"required": true,
 				"size": 35,
@@ -455,6 +466,7 @@
 				],
 				"default": "",
 				"help": "Replacement message group used by this DLP sensor.",
+				"multiple_values": false,
 				"name": "replacemsg-group",
 				"size": 35,
 				"type": "string"
@@ -520,9 +532,9 @@
 		"path": "dlp",
 		"q_type": 241
 	},
-	"revision": "9502a46606ed08d8fb79ceaae4ddc006",
-	"serial": "FGTAZRAQCG14L19D",
+	"revision": "8c883006518c0117f1c022afefbdd1b9",
+	"serial": "FGTAZRI5HXAAGI90",
 	"status": "success",
 	"vdom": "root",
-	"version": "v7.0.3"
+	"version": "v7.0.4"
 }

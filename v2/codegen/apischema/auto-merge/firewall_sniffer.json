@@ -1,9 +1,9 @@
 {
 	"addedIn": "v6.2.7",
-	"build": 237,
+	"build": 301,
 	"http_method": "GET",
 	"http_status": 200,
-	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3",
+	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3,v7.0.4",
 	"name": "sniffer",
 	"path": "firewall",
 	"results": {
@@ -53,6 +53,7 @@
 						"category": "unitary",
 						"default": "",
 						"help": "Anomaly name.",
+						"multiple_values": false,
 						"name": "name",
 						"size": 63,
 						"type": "string"
@@ -79,6 +80,7 @@
 						"category": "unitary",
 						"default": "5m",
 						"help": "Duration of quarantine. (Format ###d##h##m, minimum 1m, maximum 364d23h59m, default = 5m). Requires quarantine set to attacker.",
+						"multiple_values": false,
 						"name": "quarantine-expiry",
 						"type": "user"
 					},
@@ -124,6 +126,7 @@
 						"help": "Anomaly threshold. Number of detected instances per minute that triggers the anomaly action.",
 						"max-value": 2147483647,
 						"min-value": 1,
+						"multiple_values": false,
 						"name": "threshold",
 						"type": "integer"
 					},
@@ -133,6 +136,7 @@
 						"help": "Number of detected instances per minute which triggers action (1 - 2147483647, default = 1000). Note that each anomaly has a different threshold value assigned to it.",
 						"max-value": 4294967295,
 						"min-value": 0,
+						"multiple_values": false,
 						"name": "threshold(default)",
 						"readonly": true,
 						"type": "integer"
@@ -153,6 +157,7 @@
 				],
 				"default": "",
 				"help": "Name of an existing application list.",
+				"multiple_values": false,
 				"name": "application-list",
 				"required": true,
 				"size": 35,
@@ -183,6 +188,7 @@
 				],
 				"default": "",
 				"help": "Name of an existing antivirus profile.",
+				"multiple_values": false,
 				"name": "av-profile",
 				"required": true,
 				"size": 35,
@@ -213,6 +219,7 @@
 				],
 				"default": "",
 				"help": "Name of an existing DLP sensor.",
+				"multiple_values": false,
 				"name": "dlp-sensor",
 				"required": true,
 				"size": 35,
@@ -261,6 +268,7 @@
 				],
 				"default": "",
 				"help": "Name of an existing email filter profile.",
+				"multiple_values": false,
 				"name": "emailfilter-profile",
 				"required": true,
 				"size": 35,
@@ -292,6 +300,7 @@
 				],
 				"default": "",
 				"help": "Name of an existing file-filter profile.",
+				"multiple_values": false,
 				"name": "file-filter-profile",
 				"required": true,
 				"size": 35,
@@ -320,6 +329,7 @@
 				"category": "unitary",
 				"default": "",
 				"help": "Hosts to filter for in sniffer traffic (Format examples: 1.1.1.1, 2.2.2.0/24, 3.3.3.3/255.255.255.0, 4.4.4.0-4.4.4.240).",
+				"multiple_values": false,
 				"name": "host",
 				"size": 63,
 				"type": "string"
@@ -330,6 +340,7 @@
 				"help": "Sniffer ID (0 - 9999).",
 				"max-value": 9999,
 				"min-value": 0,
+				"multiple_values": false,
 				"name": "id",
 				"type": "integer"
 			},
@@ -340,6 +351,7 @@
 				],
 				"default": "",
 				"help": "Interface name that traffic sniffing will take place on.",
+				"multiple_values": false,
 				"name": "interface",
 				"required": true,
 				"size": 35,
@@ -356,6 +368,7 @@
 						],
 						"default": "",
 						"help": "Threat feed name.",
+						"multiple_values": false,
 						"name": "name",
 						"required": true,
 						"size": 79,
@@ -415,6 +428,7 @@
 				],
 				"default": "",
 				"help": "Name of an existing IPS sensor.",
+				"multiple_values": false,
 				"name": "ips-sensor",
 				"required": true,
 				"size": 35,
@@ -484,6 +498,7 @@
 				"help": "Maximum packet count (1 - 1000000, default = 4000).",
 				"max-value": 1000000,
 				"min-value": 1,
+				"multiple_values": false,
 				"name": "max-packet-count",
 				"type": "integer"
 			},
@@ -509,6 +524,7 @@
 				"category": "unitary",
 				"default": "",
 				"help": "Ports to sniff (Format examples: 10, :20, 30:40, 50-, 100-200).",
+				"multiple_values": false,
 				"name": "port",
 				"size": 63,
 				"type": "string"
@@ -517,6 +533,7 @@
 				"category": "unitary",
 				"default": "",
 				"help": "Integer value for the protocol type as defined by IANA (0 - 255).",
+				"multiple_values": false,
 				"name": "protocol",
 				"size": 63,
 				"type": "string"
@@ -543,6 +560,7 @@
 				"category": "unitary",
 				"default": "",
 				"help": "List of VLANs to sniff.",
+				"multiple_values": false,
 				"name": "vlan",
 				"size": 63,
 				"type": "string"
@@ -554,6 +572,7 @@
 				],
 				"default": "",
 				"help": "Name of an existing web filter profile.",
+				"multiple_values": false,
 				"name": "webfilter-profile",
 				"required": true,
 				"size": 35,
@@ -588,9 +607,9 @@
 		"path": "firewall",
 		"q_type": 377
 	},
-	"revision": "78ee061304af9c5d17bcae6474808d97",
-	"serial": "FGTAZRAQCG14L19D",
+	"revision": "e338e35a484eaafc990a69dd13ff4f76",
+	"serial": "FGTAZRI5HXAAGI90",
 	"status": "success",
 	"vdom": "root",
-	"version": "v7.0.3"
+	"version": "v7.0.4"
 }

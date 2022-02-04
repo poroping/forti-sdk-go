@@ -1,9 +1,9 @@
 {
 	"addedIn": "v7.0.0",
-	"build": 237,
+	"build": 301,
 	"http_method": "GET",
 	"http_status": 200,
-	"mergedVersions": "v7.0.0,v7.0.1,v7.0.2,v7.0.3",
+	"mergedVersions": "v7.0.0,v7.0.1,v7.0.2,v7.0.3,v7.0.4",
 	"name": "automation",
 	"path": "system.replacemsg",
 	"results": {
@@ -13,6 +13,7 @@
 			"buffer": {
 				"category": "unitary",
 				"help": "Message string.",
+				"multiple_values": false,
 				"name": "buffer",
 				"size": 32768,
 				"type": "var-string"
@@ -65,6 +66,7 @@
 				"category": "unitary",
 				"default": "",
 				"help": "Message type.",
+				"multiple_values": false,
 				"name": "msg-type",
 				"required": true,
 				"size": 28,
@@ -82,9 +84,9 @@
 		"q_type": 532,
 		"readonly": true
 	},
-	"revision": "5a78955211ebb1641b50c9360238cb5c",
-	"serial": "FGTAZRAQCG14L19D",
+	"revision": "1af996ea72fbf3755ecb12a854d78106",
+	"serial": "FGTAZRI5HXAAGI90",
 	"status": "success",
 	"vdom": "root",
-	"version": "v7.0.3"
+	"version": "v7.0.4"
 }

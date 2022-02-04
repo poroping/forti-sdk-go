@@ -1,9 +1,9 @@
 {
 	"addedIn": "v7.0.0",
-	"build": 237,
+	"build": 301,
 	"http_method": "GET",
 	"http_status": 200,
-	"mergedVersions": "v7.0.0,v7.0.1,v7.0.2,v7.0.3",
+	"mergedVersions": "v7.0.0,v7.0.1,v7.0.2,v7.0.3,v7.0.4",
 	"name": "acme",
 	"path": "system",
 	"results": {
@@ -17,6 +17,7 @@
 						"category": "unitary",
 						"default": "",
 						"help": "Account ca_url.",
+						"multiple_values": false,
 						"name": "ca_url",
 						"required": true,
 						"size": 255,
@@ -26,6 +27,7 @@
 						"category": "unitary",
 						"default": "",
 						"help": "Account email.",
+						"multiple_values": false,
 						"name": "email",
 						"required": true,
 						"size": 255,
@@ -35,6 +37,7 @@
 						"category": "unitary",
 						"default": "",
 						"help": "Account id.",
+						"multiple_values": false,
 						"name": "id",
 						"size": 255,
 						"type": "string"
@@ -43,6 +46,7 @@
 						"category": "unitary",
 						"default": "",
 						"help": "Account Private Key.",
+						"multiple_values": false,
 						"name": "privatekey",
 						"required": true,
 						"size": 8191,
@@ -52,6 +56,7 @@
 						"category": "unitary",
 						"default": "",
 						"help": "Account status.",
+						"multiple_values": false,
 						"name": "status",
 						"required": true,
 						"size": 127,
@@ -61,6 +66,7 @@
 						"category": "unitary",
 						"default": "",
 						"help": "Account url.",
+						"multiple_values": false,
 						"name": "url",
 						"required": true,
 						"size": 511,
@@ -85,6 +91,7 @@
 						],
 						"default": "",
 						"help": "Interface name.",
+						"multiple_values": false,
 						"name": "interface-name",
 						"required": true,
 						"size": 79,
@@ -102,13 +109,14 @@
 			}
 		},
 		"help": "Configure ACME client.",
+		"multiple_values": false,
 		"name": "acme",
 		"path": "system",
 		"q_type": 536
 	},
-	"revision": "78ee061304af9c5d17bcae6474808d97",
-	"serial": "FGTAZRAQCG14L19D",
+	"revision": "e338e35a484eaafc990a69dd13ff4f76",
+	"serial": "FGTAZRI5HXAAGI90",
 	"status": "success",
 	"vdom": "root",
-	"version": "v7.0.3"
+	"version": "v7.0.4"
 }

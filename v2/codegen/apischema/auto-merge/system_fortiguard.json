@@ -1,9 +1,9 @@
 {
 	"addedIn": "v6.2.7",
-	"build": 237,
+	"build": 301,
 	"http_method": "GET",
 	"http_status": 200,
-	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3",
+	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3,v7.0.4",
 	"name": "fortiguard",
 	"path": "system",
 	"results": {
@@ -31,9 +31,10 @@
 			"antispam-cache-mpercent": {
 				"category": "unitary",
 				"default": 2,
-				"help": "Maximum percent of FortiGate memory the antispam cache is allowed to use (1 - 15%).",
+				"help": "Maximum percentage of FortiGate memory the antispam cache is allowed to use (1 - 15).",
 				"max-value": 15,
 				"min-value": 1,
+				"multiple_values": false,
 				"name": "antispam-cache-mpercent",
 				"type": "integer"
 			},
@@ -43,6 +44,7 @@
 				"help": "Time-to-live for antispam cache entries in seconds (300 - 86400). Lower times reduce the cache size. Higher times may improve performance since the cache will have more entries.",
 				"max-value": 86400,
 				"min-value": 300,
+				"multiple_values": false,
 				"name": "antispam-cache-ttl",
 				"type": "integer"
 			},
@@ -52,6 +54,7 @@
 				"help": "Expiration date of the FortiGuard antispam contract.",
 				"max-value": 4294967295,
 				"min-value": 0,
+				"multiple_values": false,
 				"name": "antispam-expiration",
 				"readonly": true,
 				"type": "integer"
@@ -80,6 +83,7 @@
 				"help": "Interval of time between license checks for the FortiGuard antispam contract.",
 				"max-value": 4294967295,
 				"min-value": 0,
+				"multiple_values": false,
 				"name": "antispam-license",
 				"readonly": true,
 				"type": "integer"
@@ -90,6 +94,7 @@
 				"help": "Antispam query time out (1 - 30 sec, default = 7).",
 				"max-value": 30,
 				"min-value": 1,
+				"multiple_values": false,
 				"name": "antispam-timeout",
 				"required": true,
 				"type": "integer"
@@ -99,6 +104,7 @@
 				"category": "unitary",
 				"default": "0.0.0.0",
 				"help": "IP address of the FortiGuard anycast DNS rating server.",
+				"multiple_values": false,
 				"name": "anycast-sdns-server-ip",
 				"type": "ipv4-address"
 			},
@@ -109,6 +115,7 @@
 				"help": "Port to connect to on the FortiGuard anycast DNS rating server.",
 				"max-value": 65535,
 				"min-value": 1,
+				"multiple_values": false,
 				"name": "anycast-sdns-server-port",
 				"type": "integer"
 			},
@@ -135,6 +142,7 @@
 				"category": "unitary",
 				"default": "0.0.0.0",
 				"help": "IP address of the FortiDDNS server.",
+				"multiple_values": false,
 				"name": "ddns-server-ip",
 				"type": "ipv4-address"
 			},
@@ -143,6 +151,7 @@
 				"category": "unitary",
 				"default": "::",
 				"help": "IPv6 address of the FortiDDNS server.",
+				"multiple_values": false,
 				"name": "ddns-server-ip6",
 				"type": "ipv6-address"
 			},
@@ -152,6 +161,7 @@
 				"help": "Port used to communicate with FortiDDNS servers.",
 				"max-value": 65535,
 				"min-value": 1,
+				"multiple_values": false,
 				"name": "ddns-server-port",
 				"type": "integer"
 			},
@@ -202,6 +212,7 @@
 				],
 				"default": "",
 				"help": "Specify outgoing interface to reach server.",
+				"multiple_values": false,
 				"name": "interface",
 				"removedIn": "v6.4.0",
 				"required": true,
@@ -237,6 +248,7 @@
 				"help": "Number of servers to alternate between as first FortiGuard option.",
 				"max-value": 266,
 				"min-value": 1,
+				"multiple_values": false,
 				"name": "load-balance-servers",
 				"type": "integer"
 			},
@@ -264,6 +276,7 @@
 				"help": "Maximum percent of memory FortiGuard Virus Outbreak Prevention cache can use (1 - 15%, default = 2).",
 				"max-value": 15,
 				"min-value": 1,
+				"multiple_values": false,
 				"name": "outbreak-prevention-cache-mpercent",
 				"type": "integer"
 			},
@@ -273,6 +286,7 @@
 				"help": "Time-to-live for FortiGuard Virus Outbreak Prevention cache entries (300 - 86400 sec, default = 300).",
 				"max-value": 86400,
 				"min-value": 300,
+				"multiple_values": false,
 				"name": "outbreak-prevention-cache-ttl",
 				"type": "integer"
 			},
@@ -282,6 +296,7 @@
 				"help": "Expiration date of FortiGuard Virus Outbreak Prevention contract.",
 				"max-value": 4294967295,
 				"min-value": 0,
+				"multiple_values": false,
 				"name": "outbreak-prevention-expiration",
 				"readonly": true,
 				"type": "integer"
@@ -310,6 +325,7 @@
 				"help": "Interval of time between license checks for FortiGuard Virus Outbreak Prevention contract.",
 				"max-value": 4294967295,
 				"min-value": 0,
+				"multiple_values": false,
 				"name": "outbreak-prevention-license",
 				"readonly": true,
 				"type": "integer"
@@ -320,6 +336,7 @@
 				"help": "FortiGuard Virus Outbreak Prevention time out (1 - 30 sec, default = 7).",
 				"max-value": 30,
 				"min-value": 1,
+				"multiple_values": false,
 				"name": "outbreak-prevention-timeout",
 				"required": true,
 				"type": "integer"
@@ -394,6 +411,7 @@
 			"proxy-password": {
 				"category": "unitary",
 				"help": "Proxy user password.",
+				"multiple_values": false,
 				"name": "proxy-password",
 				"size": 128,
 				"type": "password"
@@ -402,6 +420,7 @@
 				"category": "unitary",
 				"default": "0.0.0.0",
 				"help": "IP address of the proxy server.",
+				"multiple_values": false,
 				"name": "proxy-server-ip",
 				"type": "ipv4-address"
 			},
@@ -411,6 +430,7 @@
 				"help": "Port used to communicate with the proxy server.",
 				"max-value": 65535,
 				"min-value": 0,
+				"multiple_values": false,
 				"name": "proxy-server-port",
 				"type": "integer"
 			},
@@ -418,6 +438,7 @@
 				"category": "unitary",
 				"default": "",
 				"help": "Proxy user name.",
+				"multiple_values": false,
 				"name": "proxy-username",
 				"size": 64,
 				"type": "string"
@@ -426,6 +447,7 @@
 				"category": "unitary",
 				"default": "",
 				"help": "Cloud sandbox region.",
+				"multiple_values": false,
 				"name": "sandbox-region",
 				"size": 63,
 				"type": "string"
@@ -449,6 +471,7 @@
 				"category": "unitary",
 				"default": "",
 				"help": "IP address of the FortiGuard DNS rating server.",
+				"multiple_values": true,
 				"name": "sdns-server-ip",
 				"type": "user"
 			},
@@ -458,6 +481,7 @@
 				"help": "Port to connect to on the FortiGuard DNS rating server.",
 				"max-value": 65535,
 				"min-value": 1,
+				"multiple_values": false,
 				"name": "sdns-server-port",
 				"type": "integer"
 			},
@@ -465,6 +489,7 @@
 				"category": "unitary",
 				"default": "0.0.0.0",
 				"help": "Source IPv4 address used to communicate with FortiGuard.",
+				"multiple_values": false,
 				"name": "source-ip",
 				"type": "ipv4-address"
 			},
@@ -472,6 +497,7 @@
 				"category": "unitary",
 				"default": "::",
 				"help": "Source IPv6 address used to communicate with FortiGuard.",
+				"multiple_values": false,
 				"name": "source-ip6",
 				"type": "ipv6-address"
 			},
@@ -580,6 +606,7 @@
 				"help": "Expiration date of the FortiGuard video filter contract.",
 				"max-value": 4294967295,
 				"min-value": 0,
+				"multiple_values": false,
 				"name": "videofilter-expiration",
 				"readonly": true,
 				"type": "integer"
@@ -591,6 +618,7 @@
 				"help": "Interval of time between license checks for the FortiGuard video filter contract.",
 				"max-value": 4294967295,
 				"min-value": 0,
+				"multiple_values": false,
 				"name": "videofilter-license",
 				"readonly": true,
 				"type": "integer"
@@ -619,6 +647,7 @@
 				"help": "Time-to-live for web filter cache entries in seconds (300 - 86400).",
 				"max-value": 86400,
 				"min-value": 300,
+				"multiple_values": false,
 				"name": "webfilter-cache-ttl",
 				"type": "integer"
 			},
@@ -628,6 +657,7 @@
 				"help": "Expiration date of the FortiGuard web filter contract.",
 				"max-value": 4294967295,
 				"min-value": 0,
+				"multiple_values": false,
 				"name": "webfilter-expiration",
 				"readonly": true,
 				"type": "integer"
@@ -656,6 +686,7 @@
 				"help": "Interval of time between license checks for the FortiGuard web filter contract.",
 				"max-value": 4294967295,
 				"min-value": 0,
+				"multiple_values": false,
 				"name": "webfilter-license",
 				"readonly": true,
 				"type": "integer"
@@ -666,19 +697,21 @@
 				"help": "Web filter query time out (1 - 30 sec, default = 7).",
 				"max-value": 30,
 				"min-value": 1,
+				"multiple_values": false,
 				"name": "webfilter-timeout",
 				"required": true,
 				"type": "integer"
 			}
 		},
 		"help": "Configure FortiGuard services.",
+		"multiple_values": false,
 		"name": "fortiguard",
 		"path": "system",
 		"q_type": 196
 	},
-	"revision": "dc2ff334d4ea43f3ce3ece5fb63bdf32",
-	"serial": "FGTAZRAQCG14L19D",
+	"revision": "6fe1b58b227957de34a8a7fa5689f98e",
+	"serial": "FGTAZRI5HXAAGI90",
 	"status": "success",
 	"vdom": "root",
-	"version": "v7.0.3"
+	"version": "v7.0.4"
 }

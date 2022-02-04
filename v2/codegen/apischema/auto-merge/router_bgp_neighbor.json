@@ -1,10 +1,10 @@
 {
 	"addedIn": "v6.2.7",
-	"build": 237,
+	"build": 301,
 	"child_path": "neighbor",
 	"http_method": "GET",
 	"http_status": 200,
-	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3",
+	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3,v7.0.4",
 	"name": "bgp",
 	"path": "router",
 	"results": {
@@ -105,6 +105,7 @@
 				"help": "Number of IPv4 additional paths that can be advertised to this neighbor.",
 				"max-value": 255,
 				"min-value": 2,
+				"multiple_values": false,
 				"name": "adv-additional-path",
 				"type": "integer"
 			},
@@ -114,6 +115,7 @@
 				"help": "Number of IPv6 additional paths that can be advertised to this neighbor.",
 				"max-value": 255,
 				"min-value": 2,
+				"multiple_values": false,
 				"name": "adv-additional-path6",
 				"type": "integer"
 			},
@@ -123,6 +125,7 @@
 				"help": "Minimum interval (sec) between sending updates.",
 				"max-value": 600,
 				"min-value": 0,
+				"multiple_values": false,
 				"name": "advertisement-interval",
 				"type": "integer"
 			},
@@ -132,6 +135,7 @@
 				"help": "IPv4 The maximum number of occurrence of my AS number allowed.",
 				"max-value": 10,
 				"min-value": 1,
+				"multiple_values": false,
 				"name": "allowas-in",
 				"type": "integer"
 			},
@@ -177,6 +181,7 @@
 				"help": "IPv6 The maximum number of occurrence of my AS number allowed.",
 				"max-value": 10,
 				"min-value": 1,
+				"multiple_values": false,
 				"name": "allowas-in6",
 				"type": "integer"
 			},
@@ -448,18 +453,39 @@
 						],
 						"default": "",
 						"help": "Name of advertising route map.",
+						"multiple_values": false,
 						"name": "advertise-routemap",
 						"required": true,
 						"size": 35,
 						"type": "string"
 					},
 					"condition-routemap": {
-						"category": "unitary",
+						"category": "table",
+						"children": {
+							"name": {
+								"category": "unitary",
+								"datasource": [
+									"router.route-map.name"
+								],
+								"default": "",
+								"help": "route map",
+								"multiple_values": false,
+								"name": "name",
+								"size": 79,
+								"type": "string"
+							}
+						},
 						"datasource": [
 							"router.route-map.name"
 						],
 						"default": "",
-						"help": "Name of condition route map.",
+						"help": "List of conditional route maps.",
+						"max_table_size_global": 0,
+						"max_table_size_item": 0,
+						"max_table_size_vdom": 0,
+						"member_table": true,
+						"mkey": "name",
+						"mkey_type": "string",
 						"name": "condition-routemap",
 						"required": true,
 						"size": 35,
@@ -503,18 +529,39 @@
 						],
 						"default": "",
 						"help": "Name of advertising route map.",
+						"multiple_values": false,
 						"name": "advertise-routemap",
 						"required": true,
 						"size": 35,
 						"type": "string"
 					},
 					"condition-routemap": {
-						"category": "unitary",
+						"category": "table",
+						"children": {
+							"name": {
+								"category": "unitary",
+								"datasource": [
+									"router.route-map.name"
+								],
+								"default": "",
+								"help": "route map",
+								"multiple_values": false,
+								"name": "name",
+								"size": 79,
+								"type": "string"
+							}
+						},
 						"datasource": [
 							"router.route-map.name"
 						],
 						"default": "",
-						"help": "Name of condition route map.",
+						"help": "List of conditional route maps.",
+						"max_table_size_global": 0,
+						"max_table_size_item": 0,
+						"max_table_size_vdom": 0,
+						"member_table": true,
+						"mkey": "name",
+						"mkey_type": "string",
 						"name": "condition-routemap",
 						"required": true,
 						"size": 35,
@@ -553,6 +600,7 @@
 				"help": "Interval (sec) for connect timer.",
 				"max-value": 65535,
 				"min-value": 0,
+				"multiple_values": false,
 				"name": "connect-timer",
 				"type": "integer"
 			},
@@ -563,6 +611,7 @@
 				],
 				"default": "",
 				"help": "Route map to specify criteria to originate IPv4 default.",
+				"multiple_values": false,
 				"name": "default-originate-routemap",
 				"size": 35,
 				"type": "string"
@@ -574,6 +623,7 @@
 				],
 				"default": "",
 				"help": "Route map to specify criteria to originate IPv6 default.",
+				"multiple_values": false,
 				"name": "default-originate-routemap6",
 				"size": 35,
 				"type": "string"
@@ -582,6 +632,7 @@
 				"category": "unitary",
 				"default": "",
 				"help": "Description.",
+				"multiple_values": false,
 				"name": "description",
 				"size": 63,
 				"type": "string"
@@ -593,6 +644,7 @@
 				],
 				"default": "",
 				"help": "Filter for IPv4 updates from this neighbor.",
+				"multiple_values": false,
 				"name": "distribute-list-in",
 				"size": 35,
 				"type": "string"
@@ -604,6 +656,7 @@
 				],
 				"default": "",
 				"help": "Filter for IPv6 updates from this neighbor.",
+				"multiple_values": false,
 				"name": "distribute-list-in6",
 				"size": 35,
 				"type": "string"
@@ -615,6 +668,7 @@
 				],
 				"default": "",
 				"help": "Filter for IPv4 updates to this neighbor.",
+				"multiple_values": false,
 				"name": "distribute-list-out",
 				"size": 35,
 				"type": "string"
@@ -626,6 +680,7 @@
 				],
 				"default": "",
 				"help": "Filter for IPv6 updates to this neighbor.",
+				"multiple_values": false,
 				"name": "distribute-list-out6",
 				"size": 35,
 				"type": "string"
@@ -633,7 +688,7 @@
 			"dont-capability-negotiate": {
 				"category": "unitary",
 				"default": "disable",
-				"help": "Don't negotiate capabilities with this neighbor",
+				"help": "Do not negotiate capabilities with this neighbor.",
 				"multiple_values": false,
 				"name": "dont-capability-negotiate",
 				"options": [
@@ -672,6 +727,7 @@
 				"help": "EBGP multihop TTL for this peer.",
 				"max-value": 255,
 				"min-value": 1,
+				"multiple_values": false,
 				"name": "ebgp-multihop-ttl",
 				"type": "integer"
 			},
@@ -682,6 +738,7 @@
 				],
 				"default": "",
 				"help": "BGP filter for IPv4 inbound routes.",
+				"multiple_values": false,
 				"name": "filter-list-in",
 				"size": 35,
 				"type": "string"
@@ -693,6 +750,7 @@
 				],
 				"default": "",
 				"help": "BGP filter for IPv6 inbound routes.",
+				"multiple_values": false,
 				"name": "filter-list-in6",
 				"size": 35,
 				"type": "string"
@@ -704,6 +762,7 @@
 				],
 				"default": "",
 				"help": "BGP filter for IPv4 outbound routes.",
+				"multiple_values": false,
 				"name": "filter-list-out",
 				"size": 35,
 				"type": "string"
@@ -715,6 +774,7 @@
 				],
 				"default": "",
 				"help": "BGP filter for IPv6 outbound routes.",
+				"multiple_values": false,
 				"name": "filter-list-out6",
 				"size": 35,
 				"type": "string"
@@ -725,6 +785,7 @@
 				"help": "Interval (sec) before peer considered dead.",
 				"max-value": 65535,
 				"min-value": 3,
+				"multiple_values": false,
 				"name": "holdtime-timer",
 				"type": "integer"
 			},
@@ -735,6 +796,7 @@
 				],
 				"default": "",
 				"help": "Specify outgoing interface for peer connection. For IPv6 peer, the interface should have link-local address.",
+				"multiple_values": false,
 				"name": "interface",
 				"size": 15,
 				"type": "string"
@@ -743,6 +805,7 @@
 				"category": "unitary",
 				"default": "",
 				"help": "IP/IPv6 address of neighbor.",
+				"multiple_values": false,
 				"name": "ip",
 				"required": true,
 				"size": 45,
@@ -754,6 +817,7 @@
 				"help": "Keep alive timer interval (sec).",
 				"max-value": 65535,
 				"min-value": 0,
+				"multiple_values": false,
 				"name": "keep-alive-timer",
 				"type": "integer"
 			},
@@ -781,6 +845,7 @@
 				"help": "Local AS number of neighbor.",
 				"max-value": 4294967295,
 				"min-value": 0,
+				"multiple_values": false,
 				"name": "local-as",
 				"type": "integer"
 			},
@@ -826,6 +891,7 @@
 				"help": "Maximum number of IPv4 prefixes to accept from this peer.",
 				"max-value": 4294967295,
 				"min-value": 1,
+				"multiple_values": false,
 				"name": "maximum-prefix",
 				"type": "integer"
 			},
@@ -835,6 +901,7 @@
 				"help": "Maximum IPv4 prefix threshold value (1 - 100 percent).",
 				"max-value": 100,
 				"min-value": 1,
+				"multiple_values": false,
 				"name": "maximum-prefix-threshold",
 				"type": "integer"
 			},
@@ -844,6 +911,7 @@
 				"help": "Maximum IPv6 prefix threshold value (1 - 100 percent).",
 				"max-value": 100,
 				"min-value": 1,
+				"multiple_values": false,
 				"name": "maximum-prefix-threshold6",
 				"type": "integer"
 			},
@@ -889,6 +957,7 @@
 				"help": "Maximum number of IPv6 prefixes to accept from this peer.",
 				"max-value": 4294967295,
 				"min-value": 1,
+				"multiple_values": false,
 				"name": "maximum-prefix6",
 				"type": "integer"
 			},
@@ -1005,6 +1074,7 @@
 			"password": {
 				"category": "unitary",
 				"help": "Password used in MD5 authentication.",
+				"multiple_values": false,
 				"name": "password",
 				"size": 128,
 				"type": "password"
@@ -1016,6 +1086,7 @@
 				],
 				"default": "",
 				"help": "IPv4 Inbound filter for updates from this neighbor.",
+				"multiple_values": false,
 				"name": "prefix-list-in",
 				"size": 35,
 				"type": "string"
@@ -1027,6 +1098,7 @@
 				],
 				"default": "",
 				"help": "IPv6 Inbound filter for updates from this neighbor.",
+				"multiple_values": false,
 				"name": "prefix-list-in6",
 				"size": 35,
 				"type": "string"
@@ -1038,6 +1110,7 @@
 				],
 				"default": "",
 				"help": "IPv4 Outbound filter for updates to this neighbor.",
+				"multiple_values": false,
 				"name": "prefix-list-out",
 				"size": 35,
 				"type": "string"
@@ -1049,6 +1122,7 @@
 				],
 				"default": "",
 				"help": "IPv6 Outbound filter for updates to this neighbor.",
+				"multiple_values": false,
 				"name": "prefix-list-out6",
 				"size": 35,
 				"type": "string"
@@ -1059,6 +1133,7 @@
 				"help": "AS number of neighbor.",
 				"max-value": 4294967295,
 				"min-value": 1,
+				"multiple_values": false,
 				"name": "remote-as",
 				"required": true,
 				"type": "integer"
@@ -1105,6 +1180,7 @@
 				"help": "Graceful restart delay time (sec, 0 = global default).",
 				"max-value": 3600,
 				"min-value": 0,
+				"multiple_values": false,
 				"name": "restart-time",
 				"type": "integer"
 			},
@@ -1114,6 +1190,7 @@
 				"help": "Time to retain stale routes.",
 				"max-value": 65535,
 				"min-value": 0,
+				"multiple_values": false,
 				"name": "retain-stale-time",
 				"type": "integer"
 			},
@@ -1124,6 +1201,7 @@
 				],
 				"default": "",
 				"help": "IPv4 Inbound route map filter.",
+				"multiple_values": false,
 				"name": "route-map-in",
 				"size": 35,
 				"type": "string"
@@ -1135,6 +1213,7 @@
 				],
 				"default": "",
 				"help": "IPv6 Inbound route map filter.",
+				"multiple_values": false,
 				"name": "route-map-in6",
 				"size": 35,
 				"type": "string"
@@ -1146,6 +1225,7 @@
 				],
 				"default": "",
 				"help": "IPv4 outbound route map filter.",
+				"multiple_values": false,
 				"name": "route-map-out",
 				"size": 35,
 				"type": "string"
@@ -1157,6 +1237,7 @@
 				],
 				"default": "",
 				"help": "IPv4 outbound route map filter if the peer is preferred.",
+				"multiple_values": false,
 				"name": "route-map-out-preferable",
 				"size": 35,
 				"type": "string"
@@ -1168,6 +1249,7 @@
 				],
 				"default": "",
 				"help": "IPv6 Outbound route map filter.",
+				"multiple_values": false,
 				"name": "route-map-out6",
 				"size": 35,
 				"type": "string"
@@ -1179,6 +1261,7 @@
 				],
 				"default": "",
 				"help": "IPv6 outbound route map filter if the peer is preferred.",
+				"multiple_values": false,
 				"name": "route-map-out6-preferable",
 				"size": 35,
 				"type": "string"
@@ -1404,6 +1487,7 @@
 				],
 				"default": "",
 				"help": "IPv4 Route map to selectively unsuppress suppressed routes.",
+				"multiple_values": false,
 				"name": "unsuppress-map",
 				"size": 35,
 				"type": "string"
@@ -1415,6 +1499,7 @@
 				],
 				"default": "",
 				"help": "IPv6 Route map to selectively unsuppress suppressed routes.",
+				"multiple_values": false,
 				"name": "unsuppress-map6",
 				"size": 35,
 				"type": "string"
@@ -1426,6 +1511,7 @@
 				],
 				"default": "",
 				"help": "Interface to use as source IP/IPv6 address of TCP connections.",
+				"multiple_values": false,
 				"name": "update-source",
 				"size": 15,
 				"type": "string"
@@ -1436,6 +1522,7 @@
 				"help": "Neighbor weight.",
 				"max-value": 65535,
 				"min-value": 0,
+				"multiple_values": false,
 				"name": "weight",
 				"type": "integer"
 			}
@@ -1450,9 +1537,9 @@
 		"path": "router",
 		"q_type": 131
 	},
-	"revision": "9243f71c30c6697d8deac29b80f5fede",
-	"serial": "FGTAZRAQCG14L19D",
+	"revision": "2300bf664b13ba20500ed3ee8809bf7f",
+	"serial": "FGTAZRI5HXAAGI90",
 	"status": "success",
 	"vdom": "root",
-	"version": "v7.0.3"
+	"version": "v7.0.4"
 }

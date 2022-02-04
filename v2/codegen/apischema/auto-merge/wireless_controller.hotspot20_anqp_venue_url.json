@@ -1,9 +1,9 @@
 {
 	"addedIn": "v7.0.2",
-	"build": 237,
+	"build": 301,
 	"http_method": "GET",
 	"http_status": 200,
-	"mergedVersions": "v7.0.2,v7.0.3",
+	"mergedVersions": "v7.0.2,v7.0.3,v7.0.4",
 	"name": "anqp-venue-url",
 	"path": "wireless-controller.hotspot20",
 	"results": {
@@ -14,6 +14,7 @@
 				"category": "unitary",
 				"default": "",
 				"help": "Name of venue url.",
+				"multiple_values": false,
 				"name": "name",
 				"size": 35,
 				"type": "string"
@@ -27,6 +28,7 @@
 						"help": "URL index.",
 						"max-value": 10,
 						"min-value": 1,
+						"multiple_values": false,
 						"name": "index",
 						"type": "integer"
 					},
@@ -36,6 +38,7 @@
 						"help": "Venue number.",
 						"max-value": 255,
 						"min-value": 0,
+						"multiple_values": false,
 						"name": "number",
 						"required": true,
 						"type": "integer"
@@ -44,6 +47,7 @@
 						"category": "unitary",
 						"default": "",
 						"help": "Venue URL value.",
+						"multiple_values": false,
 						"name": "value",
 						"required": true,
 						"size": 254,
@@ -69,9 +73,9 @@
 		"path": "wireless-controller.hotspot20",
 		"q_type": 285
 	},
-	"revision": "78ee061304af9c5d17bcae6474808d97",
-	"serial": "FGTAZRAQCG14L19D",
+	"revision": "e338e35a484eaafc990a69dd13ff4f76",
+	"serial": "FGTAZRI5HXAAGI90",
 	"status": "success",
 	"vdom": "root",
-	"version": "v7.0.3"
+	"version": "v7.0.4"
 }

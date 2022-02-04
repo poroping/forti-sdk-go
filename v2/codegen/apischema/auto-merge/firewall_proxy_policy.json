@@ -1,9 +1,9 @@
 {
 	"addedIn": "v6.2.7",
-	"build": 237,
+	"build": 301,
 	"http_method": "GET",
 	"http_status": 200,
-	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3",
+	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3,v7.0.4",
 	"name": "proxy-policy",
 	"path": "firewall",
 	"results": {
@@ -21,6 +21,7 @@
 						],
 						"default": "",
 						"help": "Access Proxy name.",
+						"multiple_values": false,
 						"name": "name",
 						"required": true,
 						"size": 79,
@@ -47,6 +48,7 @@
 						],
 						"default": "",
 						"help": "Access proxy name.",
+						"multiple_values": false,
 						"name": "name",
 						"required": true,
 						"size": 79,
@@ -91,6 +93,7 @@
 				],
 				"default": "",
 				"help": "Name of an existing Application list.",
+				"multiple_values": false,
 				"name": "application-list",
 				"size": 35,
 				"type": "string"
@@ -102,9 +105,29 @@
 				],
 				"default": "",
 				"help": "Name of an existing Antivirus profile.",
+				"multiple_values": false,
 				"name": "av-profile",
 				"size": 35,
 				"type": "string"
+			},
+			"block-notification": {
+				"addedIn": "v7.0.4",
+				"category": "unitary",
+				"default": "disable",
+				"help": "Enable/disable block notification.",
+				"multiple_values": false,
+				"name": "block-notification",
+				"options": [
+					{
+						"help": "Enable setting.",
+						"name": "enable"
+					},
+					{
+						"help": "Disable setting.",
+						"name": "disable"
+					}
+				],
+				"type": "option"
 			},
 			"cifs-profile": {
 				"category": "unitary",
@@ -113,6 +136,7 @@
 				],
 				"default": "",
 				"help": "Name of an existing CIFS profile.",
+				"multiple_values": false,
 				"name": "cifs-profile",
 				"size": 35,
 				"type": "string"
@@ -120,6 +144,7 @@
 			"comments": {
 				"category": "unitary",
 				"help": "Optional comments.",
+				"multiple_values": false,
 				"name": "comments",
 				"size": 1023,
 				"type": "var-string"
@@ -132,6 +157,7 @@
 				],
 				"default": "",
 				"help": "Decrypted traffic mirror.",
+				"multiple_values": false,
 				"name": "decrypted-traffic-mirror",
 				"size": 35,
 				"type": "string"
@@ -188,6 +214,7 @@
 				],
 				"default": "",
 				"help": "Name of an existing DLP sensor.",
+				"multiple_values": false,
 				"name": "dlp-sensor",
 				"size": 35,
 				"type": "string"
@@ -208,6 +235,7 @@
 						],
 						"default": "",
 						"help": "Address name.",
+						"multiple_values": false,
 						"name": "name",
 						"size": 79,
 						"type": "string"
@@ -254,6 +282,7 @@
 						],
 						"default": "",
 						"help": "Address name.",
+						"multiple_values": false,
 						"name": "name",
 						"required": true,
 						"size": 79,
@@ -281,6 +310,7 @@
 						],
 						"default": "",
 						"help": "Interface name.",
+						"multiple_values": false,
 						"name": "name",
 						"required": true,
 						"size": 79,
@@ -304,6 +334,7 @@
 				],
 				"default": "",
 				"help": "Name of an existing email filter profile.",
+				"multiple_values": false,
 				"name": "emailfilter-profile",
 				"size": 35,
 				"type": "string"
@@ -316,6 +347,7 @@
 				],
 				"default": "",
 				"help": "Name of an existing file-filter profile.",
+				"multiple_values": false,
 				"name": "file-filter-profile",
 				"size": 35,
 				"type": "string"
@@ -330,6 +362,7 @@
 						],
 						"default": "",
 						"help": "Group name.",
+						"multiple_values": false,
 						"name": "name",
 						"required": true,
 						"size": 79,
@@ -370,6 +403,7 @@
 				],
 				"default": "",
 				"help": "Name of an existing ICAP profile.",
+				"multiple_values": false,
 				"name": "icap-profile",
 				"size": 35,
 				"type": "string"
@@ -402,6 +436,7 @@
 						],
 						"default": "",
 						"help": "Custom Internet Service name.",
+						"multiple_values": false,
 						"name": "name",
 						"required": true,
 						"size": 79,
@@ -427,6 +462,7 @@
 						],
 						"default": "",
 						"help": "Custom Internet Service group name.",
+						"multiple_values": false,
 						"name": "name",
 						"required": true,
 						"size": 79,
@@ -452,6 +488,7 @@
 						],
 						"default": "",
 						"help": "Internet Service group name.",
+						"multiple_values": false,
 						"name": "name",
 						"required": true,
 						"size": 79,
@@ -503,6 +540,7 @@
 						],
 						"default": "",
 						"help": "Internet Service name.",
+						"multiple_values": false,
 						"name": "name",
 						"size": 79,
 						"type": "string"
@@ -542,6 +580,7 @@
 				],
 				"default": "",
 				"help": "Name of an existing IPS sensor.",
+				"multiple_values": false,
 				"name": "ips-sensor",
 				"size": 35,
 				"type": "string"
@@ -591,6 +630,7 @@
 				"category": "unitary",
 				"default": "",
 				"help": "Policy name.",
+				"multiple_values": false,
 				"name": "name",
 				"size": 35,
 				"type": "string"
@@ -601,6 +641,7 @@
 				"help": "Policy ID.",
 				"max-value": 4294967295,
 				"min-value": 0,
+				"multiple_values": false,
 				"name": "policyid",
 				"type": "integer"
 			},
@@ -614,6 +655,7 @@
 						],
 						"default": "",
 						"help": "IP pool name.",
+						"multiple_values": false,
 						"name": "name",
 						"required": true,
 						"size": 79,
@@ -636,6 +678,7 @@
 				],
 				"default": "",
 				"help": "Name of profile group.",
+				"multiple_values": false,
 				"name": "profile-group",
 				"size": 35,
 				"type": "string"
@@ -647,6 +690,7 @@
 				],
 				"default": "default",
 				"help": "Name of an existing Protocol options profile.",
+				"multiple_values": false,
 				"name": "profile-protocol-options",
 				"size": 35,
 				"type": "string"
@@ -711,6 +755,7 @@
 			"redirect-url": {
 				"category": "unitary",
 				"help": "Redirect URL for further explicit web proxy processing.",
+				"multiple_values": false,
 				"name": "redirect-url",
 				"size": 1023,
 				"type": "var-string"
@@ -722,6 +767,7 @@
 				],
 				"default": "",
 				"help": "Authentication replacement message override group.",
+				"multiple_values": false,
 				"name": "replacemsg-override-group",
 				"size": 35,
 				"type": "string"
@@ -735,6 +781,7 @@
 				],
 				"default": "",
 				"help": "Name of schedule object.",
+				"multiple_values": false,
 				"name": "schedule",
 				"required": true,
 				"size": 35,
@@ -748,6 +795,7 @@
 				],
 				"default": "",
 				"help": "Name of an existing SCTP filter profile.",
+				"multiple_values": false,
 				"name": "sctp-filter-profile",
 				"size": 35,
 				"type": "string"
@@ -763,6 +811,7 @@
 						],
 						"default": "",
 						"help": "Service name.",
+						"multiple_values": false,
 						"name": "name",
 						"required": true,
 						"size": 79,
@@ -802,6 +851,7 @@
 				"help": "TTL in seconds for sessions accepted by this policy (0 means use the system default session TTL).",
 				"max-value": 2764800,
 				"min-value": 300,
+				"multiple_values": false,
 				"name": "session-ttl",
 				"type": "integer"
 			},
@@ -819,6 +869,7 @@
 						],
 						"default": "",
 						"help": "Address name.",
+						"multiple_values": false,
 						"name": "name",
 						"required": true,
 						"size": 79,
@@ -864,6 +915,7 @@
 						],
 						"default": "",
 						"help": "Address name.",
+						"multiple_values": false,
 						"name": "name",
 						"required": true,
 						"size": 79,
@@ -891,6 +943,7 @@
 						],
 						"default": "",
 						"help": "Interface name.",
+						"multiple_values": false,
 						"name": "name",
 						"required": true,
 						"size": 79,
@@ -914,6 +967,7 @@
 				],
 				"default": "",
 				"help": "Name of an existing SSH filter profile.",
+				"multiple_values": false,
 				"name": "ssh-filter-profile",
 				"size": 35,
 				"type": "string"
@@ -943,6 +997,7 @@
 				],
 				"default": "no-inspection",
 				"help": "Name of an existing SSL SSH profile.",
+				"multiple_values": false,
 				"name": "ssl-ssh-profile",
 				"size": 35,
 				"type": "string"
@@ -994,6 +1049,7 @@
 						],
 						"default": "",
 						"help": "Group name.",
+						"multiple_values": false,
 						"name": "name",
 						"required": true,
 						"size": 79,
@@ -1031,6 +1087,7 @@
 				"category": "unitary",
 				"default": "00000000-0000-0000-0000-000000000000",
 				"help": "Universally Unique Identifier (UUID; automatically assigned but can be manually reset).",
+				"multiple_values": false,
 				"name": "uuid",
 				"type": "uuid"
 			},
@@ -1042,6 +1099,7 @@
 				],
 				"default": "",
 				"help": "Name of an existing VideoFilter profile.",
+				"multiple_values": false,
 				"name": "videofilter-profile",
 				"size": 35,
 				"type": "string"
@@ -1054,6 +1112,7 @@
 				],
 				"default": "",
 				"help": "Name of an existing VoIP profile.",
+				"multiple_values": false,
 				"name": "voip-profile",
 				"size": 35,
 				"type": "string"
@@ -1065,6 +1124,7 @@
 				],
 				"default": "",
 				"help": "Name of an existing Web application firewall profile.",
+				"multiple_values": false,
 				"name": "waf-profile",
 				"size": 35,
 				"type": "string"
@@ -1112,6 +1172,7 @@
 				],
 				"default": "",
 				"help": "Name of an existing Web filter profile.",
+				"multiple_values": false,
 				"name": "webfilter-profile",
 				"size": 35,
 				"type": "string"
@@ -1124,6 +1185,7 @@
 				],
 				"default": "",
 				"help": "Web proxy forward server name.",
+				"multiple_values": false,
 				"name": "webproxy-forward-server",
 				"size": 63,
 				"type": "string"
@@ -1135,6 +1197,7 @@
 				],
 				"default": "",
 				"help": "Name of web proxy profile.",
+				"multiple_values": false,
 				"name": "webproxy-profile",
 				"size": 63,
 				"type": "string"
@@ -1151,6 +1214,7 @@
 						],
 						"default": "",
 						"help": "EMS Tag name.",
+						"multiple_values": false,
 						"name": "name",
 						"required": true,
 						"size": 79,
@@ -1196,9 +1260,9 @@
 		"path": "firewall",
 		"q_type": 476
 	},
-	"revision": "78ee061304af9c5d17bcae6474808d97",
-	"serial": "FGTAZRAQCG14L19D",
+	"revision": "e338e35a484eaafc990a69dd13ff4f76",
+	"serial": "FGTAZRI5HXAAGI90",
 	"status": "success",
 	"vdom": "root",
-	"version": "v7.0.3"
+	"version": "v7.0.4"
 }

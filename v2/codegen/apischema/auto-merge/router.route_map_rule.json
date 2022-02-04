@@ -2,10 +2,10 @@
 	"FullPath": null,
 	"action": "schema",
 	"addedIn": "v6.2.7",
-	"build": 234,
+	"build": 301,
 	"http_method": "GET",
 	"http_status": 200,
-	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3",
+	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3,v7.0.4",
 	"name": "rule",
 	"path": "router.route-map",
 	"results": {
@@ -36,6 +36,7 @@
 				"help": "Rule ID.",
 				"max-value": 4294967295,
 				"min-value": 0,
+				"multiple_values": false,
 				"name": "id",
 				"required": true,
 				"type": "integer"
@@ -47,6 +48,7 @@
 				],
 				"default": "",
 				"help": "Match BGP AS path list.",
+				"multiple_values": false,
 				"name": "match-as-path",
 				"size": 35,
 				"type": "string"
@@ -58,6 +60,7 @@
 				],
 				"default": "",
 				"help": "Match BGP community list.",
+				"multiple_values": false,
 				"name": "match-community",
 				"size": 35,
 				"type": "string"
@@ -98,6 +101,7 @@
 				],
 				"default": "",
 				"help": "Match interface configuration.",
+				"multiple_values": false,
 				"name": "match-interface",
 				"size": 15,
 				"type": "string"
@@ -110,6 +114,7 @@
 				],
 				"default": "",
 				"help": "Match IP address permitted by access-list or prefix-list.",
+				"multiple_values": false,
 				"name": "match-ip-address",
 				"size": 35,
 				"type": "string"
@@ -122,6 +127,7 @@
 				],
 				"default": "",
 				"help": "Match next hop IP address passed by access-list or prefix-list.",
+				"multiple_values": false,
 				"name": "match-ip-nexthop",
 				"size": 35,
 				"type": "string"
@@ -134,6 +140,7 @@
 				],
 				"default": "",
 				"help": "Match IPv6 address permitted by access-list6 or prefix-list6.",
+				"multiple_values": false,
 				"name": "match-ip6-address",
 				"size": 35,
 				"type": "string"
@@ -146,6 +153,7 @@
 				],
 				"default": "",
 				"help": "Match next hop IPv6 address passed by access-list6 or prefix-list6.",
+				"multiple_values": false,
 				"name": "match-ip6-nexthop",
 				"size": 35,
 				"type": "string"
@@ -156,6 +164,7 @@
 				"help": "Match metric for redistribute routes.",
 				"max-value": 4294967295,
 				"min-value": 0,
+				"multiple_values": false,
 				"name": "match-metric",
 				"type": "integer"
 			},
@@ -213,6 +222,7 @@
 				"help": "Match tag.",
 				"max-value": 4294967295,
 				"min-value": 0,
+				"multiple_values": false,
 				"name": "match-tag",
 				"type": "integer"
 			},
@@ -223,6 +233,7 @@
 				"help": "Match VRF ID.",
 				"max-value": 31,
 				"min-value": 0,
+				"multiple_values": false,
 				"name": "match-vrf",
 				"type": "integer"
 			},
@@ -232,6 +243,7 @@
 				"help": "BGP aggregator AS.",
 				"max-value": 4294967295,
 				"min-value": 0,
+				"multiple_values": false,
 				"name": "set-aggregator-as",
 				"type": "integer"
 			},
@@ -239,6 +251,7 @@
 				"category": "unitary",
 				"default": "0.0.0.0",
 				"help": "BGP aggregator IP.",
+				"multiple_values": false,
 				"name": "set-aggregator-ip",
 				"required": true,
 				"type": "ipv4-address-any"
@@ -249,7 +262,8 @@
 					"as": {
 						"category": "unitary",
 						"default": "",
-						"help": "AS number (0 - 4294967295). NOTE: Use quotes for repeating numbers, e.g.: \"1 1 2\"\n",
+						"help": "AS number (0 - 4294967295). Use quotes for repeating numbers, For example, \"1 1 2\".",
+						"multiple_values": false,
 						"name": "as",
 						"size": 79,
 						"type": "string"
@@ -307,6 +321,7 @@
 						"category": "unitary",
 						"default": "",
 						"help": "Attribute: AA|AA:NN|internet|local-AS|no-advertise|no-export.",
+						"multiple_values": false,
 						"name": "community",
 						"size": 79,
 						"type": "string"
@@ -346,6 +361,7 @@
 				],
 				"default": "",
 				"help": "Delete communities matching community list.",
+				"multiple_values": false,
 				"name": "set-community-delete",
 				"size": 35,
 				"type": "string"
@@ -356,6 +372,7 @@
 				"help": "Maximum duration to suppress a route (1 - 255 min, 0 = unset).",
 				"max-value": 255,
 				"min-value": 0,
+				"multiple_values": false,
 				"name": "set-dampening-max-suppress",
 				"type": "integer"
 			},
@@ -365,6 +382,7 @@
 				"help": "Reachability half-life time for the penalty (1 - 45 min, 0 = unset).",
 				"max-value": 45,
 				"min-value": 0,
+				"multiple_values": false,
 				"name": "set-dampening-reachability-half-life",
 				"type": "integer"
 			},
@@ -374,6 +392,7 @@
 				"help": "Value to start reusing a route (1 - 20000, 0 = unset).",
 				"max-value": 20000,
 				"min-value": 0,
+				"multiple_values": false,
 				"name": "set-dampening-reuse",
 				"type": "integer"
 			},
@@ -383,15 +402,17 @@
 				"help": "Value to start suppressing a route (1 - 20000, 0 = unset).",
 				"max-value": 20000,
 				"min-value": 0,
+				"multiple_values": false,
 				"name": "set-dampening-suppress",
 				"type": "integer"
 			},
 			"set-dampening-unreachability-half-life": {
 				"category": "unitary",
 				"default": 0,
-				"help": "Unreachability Half-life time for the penalty (1 - 45 min, 0 = unset)",
+				"help": "Unreachability Half-life time for the penalty (1 - 45 min, 0 = unset).",
 				"max-value": 45,
 				"min-value": 0,
+				"multiple_values": false,
 				"name": "set-dampening-unreachability-half-life",
 				"type": "integer"
 			},
@@ -402,6 +423,7 @@
 						"category": "unitary",
 						"default": "",
 						"help": "AA:NN.",
+						"multiple_values": false,
 						"name": "community",
 						"size": 79,
 						"type": "string"
@@ -422,7 +444,8 @@
 					"community": {
 						"category": "unitary",
 						"default": "",
-						"help": "AA:NN",
+						"help": "Community (format = AA:NN).",
+						"multiple_values": false,
 						"name": "community",
 						"size": 79,
 						"type": "string"
@@ -452,6 +475,7 @@
 				"category": "unitary",
 				"default": "",
 				"help": "IP address of next hop.",
+				"multiple_values": false,
 				"name": "set-ip-nexthop",
 				"type": "ipv4-address"
 			},
@@ -459,6 +483,7 @@
 				"category": "unitary",
 				"default": "",
 				"help": "IPv6 global address of next hop.",
+				"multiple_values": false,
 				"name": "set-ip6-nexthop",
 				"type": "ipv6-address"
 			},
@@ -466,6 +491,7 @@
 				"category": "unitary",
 				"default": "",
 				"help": "IPv6 local address of next hop.",
+				"multiple_values": false,
 				"name": "set-ip6-nexthop-local",
 				"type": "ipv6-address"
 			},
@@ -475,6 +501,7 @@
 				"help": "BGP local preference path attribute.",
 				"max-value": 4294967295,
 				"min-value": 0,
+				"multiple_values": false,
 				"name": "set-local-preference",
 				"type": "integer"
 			},
@@ -484,6 +511,7 @@
 				"help": "Metric value.",
 				"max-value": 4294967295,
 				"min-value": 0,
+				"multiple_values": false,
 				"name": "set-metric",
 				"type": "integer"
 			},
@@ -539,6 +567,7 @@
 				"category": "unitary",
 				"default": "",
 				"help": "BGP originator ID attribute.",
+				"multiple_values": false,
 				"name": "set-originator-id",
 				"type": "ipv4-address-any"
 			},
@@ -548,6 +577,7 @@
 				"help": "Route tag for routing table.",
 				"max-value": 4294967295,
 				"min-value": 0,
+				"multiple_values": false,
 				"name": "set-route-tag",
 				"type": "integer"
 			},
@@ -557,6 +587,7 @@
 				"help": "Tag value.",
 				"max-value": 4294967295,
 				"min-value": 0,
+				"multiple_values": false,
 				"name": "set-tag",
 				"type": "integer"
 			},
@@ -566,6 +597,7 @@
 				"help": "BGP weight for routing table.",
 				"max-value": 4294967295,
 				"min-value": 0,
+				"multiple_values": false,
 				"name": "set-weight",
 				"type": "integer"
 			}
@@ -580,9 +612,9 @@
 		"path": "router.route-map",
 		"q_type": -1
 	},
-	"revision": "613dd5729d1e646cc63fd0953c704eaf",
-	"serial": "FGTAZRUXK0PKY206",
+	"revision": "a3ff41535173669b613c7913b376c7ee",
+	"serial": "FGTAZRI5HXAAGI90",
 	"status": "success",
 	"vdom": "root",
-	"version": "v7.0.3"
+	"version": "v7.0.4"
 }

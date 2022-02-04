@@ -1,9 +1,9 @@
 {
 	"addedIn": "v6.2.7",
-	"build": 237,
+	"build": 301,
 	"http_method": "GET",
 	"http_status": 200,
-	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3",
+	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3,v7.0.4",
 	"name": "alarm",
 	"path": "system",
 	"results": {
@@ -37,6 +37,7 @@
 						"help": "Admin authentication failure threshold.",
 						"max-value": 1024,
 						"min-value": 0,
+						"multiple_values": false,
 						"name": "admin-auth-failure-threshold",
 						"type": "integer"
 					},
@@ -46,6 +47,7 @@
 						"help": "Admin authentication lockout threshold.",
 						"max-value": 1024,
 						"min-value": 0,
+						"multiple_values": false,
 						"name": "admin-auth-lockout-threshold",
 						"type": "integer"
 					},
@@ -55,6 +57,7 @@
 						"help": "Decryption failure threshold.",
 						"max-value": 1024,
 						"min-value": 0,
+						"multiple_values": false,
 						"name": "decryption-failure-threshold",
 						"type": "integer"
 					},
@@ -64,6 +67,7 @@
 						"help": "Encryption failure threshold.",
 						"max-value": 1024,
 						"min-value": 0,
+						"multiple_values": false,
 						"name": "encryption-failure-threshold",
 						"type": "integer"
 					},
@@ -73,6 +77,7 @@
 						"help": "Firewall policy ID.",
 						"max-value": 4294967295,
 						"min-value": 0,
+						"multiple_values": false,
 						"name": "fw-policy-id",
 						"type": "integer"
 					},
@@ -82,6 +87,7 @@
 						"help": "Firewall policy ID threshold.",
 						"max-value": 1024,
 						"min-value": 0,
+						"multiple_values": false,
 						"name": "fw-policy-id-threshold",
 						"type": "integer"
 					},
@@ -92,6 +98,7 @@
 								"category": "unitary",
 								"default": "0.0.0.0",
 								"help": "Destination IP (0=all).",
+								"multiple_values": false,
 								"name": "dst-ip",
 								"type": "ipv4-address"
 							},
@@ -101,6 +108,7 @@
 								"help": "Destination port (0=all).",
 								"max-value": 65535,
 								"min-value": 0,
+								"multiple_values": false,
 								"name": "dst-port",
 								"type": "integer"
 							},
@@ -110,6 +118,7 @@
 								"help": "Firewall policy violations ID.",
 								"max-value": 4294967295,
 								"min-value": 0,
+								"multiple_values": false,
 								"name": "id",
 								"type": "integer"
 							},
@@ -117,6 +126,7 @@
 								"category": "unitary",
 								"default": "0.0.0.0",
 								"help": "Source IP (0=all).",
+								"multiple_values": false,
 								"name": "src-ip",
 								"type": "ipv4-address"
 							},
@@ -126,6 +136,7 @@
 								"help": "Source port (0=all).",
 								"max-value": 65535,
 								"min-value": 0,
+								"multiple_values": false,
 								"name": "src-port",
 								"type": "integer"
 							},
@@ -135,6 +146,7 @@
 								"help": "Firewall policy violation threshold.",
 								"max-value": 1024,
 								"min-value": 0,
+								"multiple_values": false,
 								"name": "threshold",
 								"type": "integer"
 							}
@@ -153,6 +165,7 @@
 						"help": "Group ID.",
 						"max-value": 4294967295,
 						"min-value": 0,
+						"multiple_values": false,
 						"name": "id",
 						"type": "integer"
 					},
@@ -162,6 +175,7 @@
 						"help": "Log full warning threshold.",
 						"max-value": 1024,
 						"min-value": 0,
+						"multiple_values": false,
 						"name": "log-full-warning-threshold",
 						"type": "integer"
 					},
@@ -171,6 +185,7 @@
 						"help": "Time period in seconds (0 = from start up).",
 						"max-value": 4294967295,
 						"min-value": 0,
+						"multiple_values": false,
 						"name": "period",
 						"type": "integer"
 					},
@@ -180,6 +195,7 @@
 						"help": "Replay attempt threshold.",
 						"max-value": 1024,
 						"min-value": 0,
+						"multiple_values": false,
 						"name": "replay-attempt-threshold",
 						"type": "integer"
 					},
@@ -189,6 +205,7 @@
 						"help": "Self-test failure threshold.",
 						"max-value": 1,
 						"min-value": 0,
+						"multiple_values": false,
 						"name": "self-test-failure-threshold",
 						"type": "integer"
 					},
@@ -198,6 +215,7 @@
 						"help": "User authentication failure threshold.",
 						"max-value": 1024,
 						"min-value": 0,
+						"multiple_values": false,
 						"name": "user-auth-failure-threshold",
 						"type": "integer"
 					},
@@ -207,6 +225,7 @@
 						"help": "User authentication lockout threshold.",
 						"max-value": 1024,
 						"min-value": 0,
+						"multiple_values": false,
 						"name": "user-auth-lockout-threshold",
 						"type": "integer"
 					}
@@ -239,13 +258,14 @@
 			}
 		},
 		"help": "Configure alarm.",
+		"multiple_values": false,
 		"name": "alarm",
 		"path": "system",
 		"q_type": 220
 	},
-	"revision": "78ee061304af9c5d17bcae6474808d97",
-	"serial": "FGTAZRAQCG14L19D",
+	"revision": "e338e35a484eaafc990a69dd13ff4f76",
+	"serial": "FGTAZRI5HXAAGI90",
 	"status": "success",
 	"vdom": "root",
-	"version": "v7.0.3"
+	"version": "v7.0.4"
 }

@@ -1,9 +1,9 @@
 {
 	"addedIn": "v6.2.7",
-	"build": 237,
+	"build": 301,
 	"http_method": "GET",
 	"http_status": 200,
-	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3",
+	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3,v7.0.4",
 	"name": "user",
 	"path": "system.snmp",
 	"results": {
@@ -47,6 +47,7 @@
 			"auth-pwd": {
 				"category": "unitary",
 				"help": "Password for authentication protocol.",
+				"multiple_values": false,
 				"name": "auth-pwd",
 				"required": true,
 				"size": 128,
@@ -236,6 +237,7 @@
 				"category": "unitary",
 				"default": "",
 				"help": "SNMP user name.",
+				"multiple_values": false,
 				"name": "name",
 				"required": true,
 				"size": 32,
@@ -245,6 +247,8 @@
 				"category": "unitary",
 				"default": "",
 				"help": "SNMP managers to send notifications (traps) to.",
+				"max_num_values": 16,
+				"multiple_values": true,
 				"name": "notify-hosts",
 				"type": "ipv4-address"
 			},
@@ -252,6 +256,8 @@
 				"category": "unitary",
 				"default": "",
 				"help": "IPv6 SNMP managers to send notifications (traps) to.",
+				"max_num_values": 16,
+				"multiple_values": true,
 				"name": "notify-hosts6",
 				"type": "ipv6-address"
 			},
@@ -284,6 +290,7 @@
 			"priv-pwd": {
 				"category": "unitary",
 				"help": "Password for privacy (encryption) protocol.",
+				"multiple_values": false,
 				"name": "priv-pwd",
 				"required": true,
 				"size": 128,
@@ -313,6 +320,7 @@
 				"help": "SNMPv3 query port (default = 161).",
 				"max-value": 65535,
 				"min-value": 0,
+				"multiple_values": false,
 				"name": "query-port",
 				"type": "integer"
 			},
@@ -342,6 +350,7 @@
 				"category": "unitary",
 				"default": "0.0.0.0",
 				"help": "Source IP for SNMP trap.",
+				"multiple_values": false,
 				"name": "source-ip",
 				"type": "ipv4-address"
 			},
@@ -349,6 +358,7 @@
 				"category": "unitary",
 				"default": "::",
 				"help": "Source IPv6 for SNMP trap.",
+				"multiple_values": false,
 				"name": "source-ipv6",
 				"type": "ipv6-address"
 			},
@@ -376,6 +386,7 @@
 				"help": "SNMPv3 local trap port (default = 162).",
 				"max-value": 65535,
 				"min-value": 0,
+				"multiple_values": false,
 				"name": "trap-lport",
 				"type": "integer"
 			},
@@ -385,6 +396,7 @@
 				"help": "SNMPv3 trap remote port (default = 162).",
 				"max-value": 65535,
 				"min-value": 0,
+				"multiple_values": false,
 				"name": "trap-rport",
 				"type": "integer"
 			},
@@ -417,9 +429,9 @@
 		"path": "system.snmp",
 		"q_type": 260
 	},
-	"revision": "78ee061304af9c5d17bcae6474808d97",
-	"serial": "FGTAZRAQCG14L19D",
+	"revision": "e338e35a484eaafc990a69dd13ff4f76",
+	"serial": "FGTAZRI5HXAAGI90",
 	"status": "success",
 	"vdom": "root",
-	"version": "v7.0.3"
+	"version": "v7.0.4"
 }

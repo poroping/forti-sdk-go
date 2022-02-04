@@ -1,9 +1,9 @@
 {
 	"addedIn": "v6.2.7",
-	"build": 237,
+	"build": 301,
 	"http_method": "GET",
 	"http_status": 200,
-	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3",
+	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3,v7.0.4",
 	"name": "managed-switch",
 	"path": "switch-controller",
 	"results": {
@@ -55,6 +55,7 @@
 						"help": "Maximum number of authentication attempts (0 - 15, default = 3).",
 						"max-value": 15,
 						"min-value": 0,
+						"multiple_values": false,
 						"name": "max-reauth-attempt",
 						"type": "integer"
 					},
@@ -64,6 +65,7 @@
 						"help": "Reauthentication time interval (1 - 1440 min, default = 60, 0 = disable).",
 						"max-value": 1440,
 						"min-value": 0,
+						"multiple_values": false,
 						"name": "reauth-period",
 						"type": "integer"
 					},
@@ -74,11 +76,13 @@
 						"help": "802.1X Tx period (seconds, default=30).",
 						"max-value": 60,
 						"min-value": 4,
+						"multiple_values": false,
 						"name": "tx-period",
 						"type": "integer"
 					}
 				},
 				"help": "Configuration method to edit FortiSwitch 802.1X global settings.",
+				"multiple_values": false,
 				"name": "802-1X-settings"
 			},
 			"access-profile": {
@@ -88,6 +92,7 @@
 				],
 				"default": "default",
 				"help": "FortiSwitch access profile.",
+				"multiple_values": false,
 				"name": "access-profile",
 				"size": 31,
 				"type": "string"
@@ -99,6 +104,7 @@
 						"category": "unitary",
 						"default": "",
 						"help": "List of FortiSwitch commands.",
+						"multiple_values": false,
 						"name": "command-entry",
 						"size": 35,
 						"type": "string"
@@ -110,6 +116,7 @@
 						],
 						"default": "",
 						"help": "Names of commands to be pushed to this FortiSwitch device, as configured under config switch-controller custom-command.",
+						"multiple_values": false,
 						"name": "command-name",
 						"required": true,
 						"size": 35,
@@ -130,6 +137,7 @@
 				"help": "Delayed restart triggered for this FortiSwitch.",
 				"max-value": 255,
 				"min-value": 0,
+				"multiple_values": false,
 				"name": "delayed-restart-trigger",
 				"type": "integer"
 			},
@@ -137,6 +145,7 @@
 				"category": "unitary",
 				"default": "",
 				"help": "Description.",
+				"multiple_values": false,
 				"name": "description",
 				"size": 63,
 				"type": "string"
@@ -170,6 +179,7 @@
 				"help": "Directly connected FortiSwitch.",
 				"max-value": 1,
 				"min-value": 0,
+				"multiple_values": false,
 				"name": "directly-connected",
 				"readonly": true,
 				"type": "integer"
@@ -180,6 +190,7 @@
 				"help": "List of features this FortiSwitch supports (not configurable) that is sent to the FortiGate device for subsequent configuration initiated by the FortiGate device.",
 				"max-value": 4294967295,
 				"min-value": 0,
+				"multiple_values": false,
 				"name": "dynamic-capability",
 				"type": "user"
 			},
@@ -189,6 +200,7 @@
 				"help": "Dynamically discovered FortiSwitch.",
 				"max-value": 1,
 				"min-value": 0,
+				"multiple_values": false,
 				"name": "dynamically-discovered",
 				"readonly": true,
 				"type": "integer"
@@ -212,11 +224,31 @@
 				],
 				"type": "option"
 			},
+			"firmware-provision-latest": {
+				"addedIn": "v7.0.4",
+				"category": "unitary",
+				"default": "disable",
+				"help": "Enable/disable one-time automatic provisioning of the latest firmware version.",
+				"multiple_values": false,
+				"name": "firmware-provision-latest",
+				"options": [
+					{
+						"help": "Do not automatically provision the latest available firmware.",
+						"name": "disable"
+					},
+					{
+						"help": "Automatically attempt a one-time upgrade to the latest available firmware version.",
+						"name": "once"
+					}
+				],
+				"type": "option"
+			},
 			"firmware-provision-version": {
 				"addedIn": "v7.0.0",
 				"category": "unitary",
 				"default": "",
 				"help": "Firmware version to provision to this FortiSwitch on bootup (major.minor.build, i.e. 6.2.1234).",
+				"multiple_values": false,
 				"name": "firmware-provision-version",
 				"size": 35,
 				"type": "string"
@@ -225,6 +257,7 @@
 				"category": "unitary",
 				"default": "00000000",
 				"help": "Flow-tracking netflow ipfix switch identity in hex format(00000000-FFFFFFFF default=0).",
+				"multiple_values": false,
 				"name": "flow-identity",
 				"type": "user"
 			},
@@ -256,7 +289,8 @@
 					"system.interface.name"
 				],
 				"default": "",
-				"help": "Fortiswitch WAN1 peer port.",
+				"help": "FortiSwitch WAN1 peer port.",
+				"multiple_values": false,
 				"name": "fsw-wan1-peer",
 				"required": true,
 				"size": 35,
@@ -271,6 +305,7 @@
 						"help": "Maximum time to retain a multicast snooping entry for which no packets have been seen (15 - 3600 sec, default = 300).",
 						"max-value": 3600,
 						"min-value": 15,
+						"multiple_values": false,
 						"name": "aging-time",
 						"type": "integer"
 					},
@@ -358,15 +393,17 @@
 								"category": "unitary",
 								"default": "0.0.0.0",
 								"help": "IGMP snooping querier address.",
+								"multiple_values": false,
 								"name": "querier-addr",
 								"type": "ipv4-address"
 							},
 							"version": {
 								"category": "unitary",
 								"default": 2,
-								"help": "IGMP snooping querier version.",
+								"help": "IGMP snooping querying version.",
 								"max-value": 3,
 								"min-value": 2,
+								"multiple_values": false,
 								"name": "version",
 								"type": "integer"
 							},
@@ -377,6 +414,7 @@
 								],
 								"default": "default",
 								"help": "List of FortiSwitch VLANs.",
+								"multiple_values": false,
 								"name": "vlan-name",
 								"size": 15,
 								"type": "string"
@@ -392,6 +430,7 @@
 					}
 				},
 				"help": "Configure FortiSwitch IGMP snooping global settings.",
+				"multiple_values": false,
 				"name": "igmp-snooping"
 			},
 			"ip-source-guard": {
@@ -405,6 +444,7 @@
 								"category": "unitary",
 								"default": "",
 								"help": "Configure binding pair.",
+								"multiple_values": false,
 								"name": "entry-name",
 								"required": true,
 								"size": 16,
@@ -414,6 +454,7 @@
 								"category": "unitary",
 								"default": "0.0.0.0",
 								"help": "Source IP for this rule.",
+								"multiple_values": false,
 								"name": "ip",
 								"required": true,
 								"type": "ipv4-address-any"
@@ -422,6 +463,7 @@
 								"category": "unitary",
 								"default": "00:00:00:00:00:00",
 								"help": "MAC address for this rule.",
+								"multiple_values": false,
 								"name": "mac",
 								"required": true,
 								"type": "mac-address"
@@ -440,6 +482,7 @@
 						"category": "unitary",
 						"default": "",
 						"help": "Description.",
+						"multiple_values": false,
 						"name": "description",
 						"size": 63,
 						"type": "string"
@@ -448,6 +491,7 @@
 						"category": "unitary",
 						"default": "",
 						"help": "Ingress interface to which source guard is bound.",
+						"multiple_values": false,
 						"name": "port",
 						"size": 15,
 						"type": "string"
@@ -468,6 +512,7 @@
 				"help": "Layer 3 management discovered.",
 				"max-value": 1,
 				"min-value": 0,
+				"multiple_values": false,
 				"name": "l3-discovered",
 				"readonly": true,
 				"type": "integer"
@@ -479,6 +524,7 @@
 				"help": "FortiSwitch maximum allowed trunk members.",
 				"max-value": 255,
 				"min-value": 0,
+				"multiple_values": false,
 				"name": "max-allowed-trunk-members",
 				"type": "integer"
 			},
@@ -507,6 +553,7 @@
 						"category": "unitary",
 						"default": "",
 						"help": "Destination port.",
+						"multiple_values": false,
 						"name": "dst",
 						"size": 63,
 						"type": "string"
@@ -515,6 +562,7 @@
 						"category": "unitary",
 						"default": "",
 						"help": "Mirror name.",
+						"multiple_values": false,
 						"name": "name",
 						"size": 63,
 						"type": "string"
@@ -526,6 +574,7 @@
 								"category": "unitary",
 								"default": "",
 								"help": "Interface name.",
+								"multiple_values": false,
 								"name": "name",
 								"required": true,
 								"size": 79,
@@ -548,6 +597,7 @@
 								"category": "unitary",
 								"default": "",
 								"help": "Interface name.",
+								"multiple_values": false,
 								"name": "name",
 								"required": true,
 								"size": 79,
@@ -612,6 +662,7 @@
 				"category": "unitary",
 				"default": "",
 				"help": "Managed-switch name.",
+				"multiple_values": false,
 				"name": "name",
 				"size": 35,
 				"type": "string"
@@ -692,6 +743,7 @@
 				"category": "unitary",
 				"default": "",
 				"help": "VDOM which owner of port belongs to.",
+				"multiple_values": false,
 				"name": "owner-vdom",
 				"size": 31,
 				"type": "string"
@@ -702,6 +754,7 @@
 				"help": "PoE detection type for FortiSwitch.",
 				"max-value": 255,
 				"min-value": 0,
+				"multiple_values": false,
 				"name": "poe-detection-type",
 				"readonly": true,
 				"type": "integer"
@@ -797,13 +850,14 @@
 								],
 								"default": "",
 								"help": "VLAN name.",
+								"multiple_values": false,
 								"name": "vlan-name",
 								"required": true,
 								"size": 79,
 								"type": "string"
 							}
 						},
-						"help": "Configure switch port tagged vlans",
+						"help": "Configure switch port tagged VLANs.",
 						"max_table_size_global": 0,
 						"max_table_size_item": 0,
 						"max_table_size_vdom": 0,
@@ -870,6 +924,7 @@
 						"category": "unitary",
 						"default": "",
 						"help": "Description for port.",
+						"multiple_values": false,
 						"name": "description",
 						"size": 63,
 						"type": "string"
@@ -982,6 +1037,7 @@
 						],
 						"default": "",
 						"help": "Export managed-switch port to a tenant VDOM.",
+						"multiple_values": false,
 						"name": "export-to",
 						"size": 31,
 						"type": "string"
@@ -993,6 +1049,7 @@
 						],
 						"default": "",
 						"help": "Switch controller export port to pool-list.",
+						"multiple_values": false,
 						"name": "export-to-pool",
 						"size": 35,
 						"type": "string"
@@ -1004,6 +1061,7 @@
 						"help": "FEC capable.",
 						"max-value": 1,
 						"min-value": 0,
+						"multiple_values": false,
 						"name": "fec-capable",
 						"type": "integer"
 					},
@@ -1034,6 +1092,7 @@
 						"category": "unitary",
 						"default": "",
 						"help": "FGT peer device name.",
+						"multiple_values": false,
 						"name": "fgt-peer-device-name",
 						"readonly": true,
 						"size": 16,
@@ -1043,6 +1102,7 @@
 						"category": "unitary",
 						"default": "",
 						"help": "FGT peer port name.",
+						"multiple_values": false,
 						"name": "fgt-peer-port-name",
 						"readonly": true,
 						"size": 15,
@@ -1054,6 +1114,7 @@
 						"help": "Fiber-port.",
 						"max-value": 1,
 						"min-value": 0,
+						"multiple_values": false,
 						"name": "fiber-port",
 						"readonly": true,
 						"type": "integer"
@@ -1064,6 +1125,7 @@
 						"help": "Port properties flags.",
 						"max-value": 4294967295,
 						"min-value": 0,
+						"multiple_values": false,
 						"name": "flags",
 						"readonly": true,
 						"type": "integer"
@@ -1101,6 +1163,7 @@
 						"help": "FortiLink uplink port.",
 						"max-value": 1,
 						"min-value": 0,
+						"multiple_values": false,
 						"name": "fortilink-port",
 						"readonly": true,
 						"type": "integer"
@@ -1170,6 +1233,7 @@
 								],
 								"default": "",
 								"help": "FortiSwitch port tag name when exported to a virtual port pool or matched to dynamic port policy.",
+								"multiple_values": false,
 								"name": "tag-name",
 								"size": 63,
 								"type": "string"
@@ -1207,6 +1271,7 @@
 						"category": "unitary",
 						"default": "",
 						"help": "ISL local trunk name.",
+						"multiple_values": false,
 						"name": "isl-local-trunk-name",
 						"readonly": true,
 						"size": 15,
@@ -1216,6 +1281,7 @@
 						"category": "unitary",
 						"default": "",
 						"help": "ISL peer device name.",
+						"multiple_values": false,
 						"name": "isl-peer-device-name",
 						"readonly": true,
 						"size": 16,
@@ -1225,6 +1291,7 @@
 						"category": "unitary",
 						"default": "",
 						"help": "ISL peer port name.",
+						"multiple_values": false,
 						"name": "isl-peer-port-name",
 						"readonly": true,
 						"size": 15,
@@ -1233,7 +1300,7 @@
 					"lacp-speed": {
 						"category": "unitary",
 						"default": "slow",
-						"help": "end Link Aggregation Control Protocol (LACP) messages every 30 seconds (slow) or every second (fast).",
+						"help": "End Link Aggregation Control Protocol (LACP) messages every 30 seconds (slow) or every second (fast).",
 						"multiple_values": false,
 						"name": "lacp-speed",
 						"options": [
@@ -1254,6 +1321,7 @@
 						"help": "Limit the number of dynamic MAC addresses on this Port (1 - 128, 0 = no limit, default).",
 						"max-value": 128,
 						"min-value": 0,
+						"multiple_values": false,
 						"name": "learning-limit",
 						"type": "integer"
 					},
@@ -1264,6 +1332,7 @@
 						],
 						"default": "default-auto-isl",
 						"help": "LLDP port TLV profile.",
+						"multiple_values": false,
 						"name": "lldp-profile",
 						"size": 63,
 						"type": "string"
@@ -1318,6 +1387,7 @@
 						"help": "Loop-guard timeout (0 - 120 min, default = 45).",
 						"max-value": 120,
 						"min-value": 0,
+						"multiple_values": false,
 						"name": "loop-guard-timeout",
 						"type": "integer"
 					},
@@ -1325,6 +1395,7 @@
 						"category": "unitary",
 						"default": "00:00:00:00:00:00",
 						"help": "Port/Trunk MAC.",
+						"multiple_values": false,
 						"name": "mac-addr",
 						"type": "mac-address"
 					},
@@ -1333,6 +1404,7 @@
 						"category": "unitary",
 						"default": "",
 						"help": "Matched interface tags in the dynamic port policy.",
+						"multiple_values": false,
 						"name": "matched-dpp-intf-tags",
 						"size": 63,
 						"type": "string"
@@ -1342,6 +1414,7 @@
 						"category": "unitary",
 						"default": "",
 						"help": "Matched child policy in the dynamic port policy.",
+						"multiple_values": false,
 						"name": "matched-dpp-policy",
 						"size": 63,
 						"type": "string"
@@ -1349,9 +1422,10 @@
 					"max-bundle": {
 						"category": "unitary",
 						"default": 24,
-						"help": "Maximum size of LAG bundle (1 - 24, default = 24)",
+						"help": "Maximum size of LAG bundle (1 - 24, default = 24).",
 						"max-value": 24,
 						"min-value": 1,
+						"multiple_values": false,
 						"name": "max-bundle",
 						"type": "integer"
 					},
@@ -1380,6 +1454,7 @@
 						"help": "MCLAG-ICL port.",
 						"max-value": 1,
 						"min-value": 0,
+						"multiple_values": false,
 						"name": "mclag-icl-port",
 						"readonly": true,
 						"type": "integer"
@@ -1389,6 +1464,7 @@
 						"category": "unitary",
 						"default": "",
 						"help": "Media type.",
+						"multiple_values": false,
 						"name": "media-type",
 						"readonly": true,
 						"size": 31,
@@ -1419,6 +1495,7 @@
 								"category": "unitary",
 								"default": "",
 								"help": "Interface name from available options.",
+								"multiple_values": false,
 								"name": "member-name",
 								"required": true,
 								"size": 79,
@@ -1437,9 +1514,10 @@
 					"min-bundle": {
 						"category": "unitary",
 						"default": 1,
-						"help": "Minimum size of LAG bundle (1 - 24, default = 1)",
+						"help": "Minimum size of LAG bundle (1 - 24, default = 1).",
 						"max-value": 24,
 						"min-value": 1,
+						"multiple_values": false,
 						"name": "min-bundle",
 						"type": "integer"
 					},
@@ -1472,6 +1550,7 @@
 						"help": "General peer to peer tunnel port.",
 						"max-value": 1,
 						"min-value": 0,
+						"multiple_values": false,
 						"name": "p2p-port",
 						"readonly": true,
 						"type": "integer"
@@ -1482,6 +1561,7 @@
 						"help": "Packet sampling rate (0 - 99999 p/sec).",
 						"max-value": 99999,
 						"min-value": 0,
+						"multiple_values": false,
 						"name": "packet-sample-rate",
 						"type": "integer"
 					},
@@ -1510,6 +1590,7 @@
 						"help": "Configure ingress pause metering rate, in kbps (default = 0, disabled).",
 						"max-value": 2147483647,
 						"min-value": 128,
+						"multiple_values": false,
 						"name": "pause-meter",
 						"type": "integer"
 					},
@@ -1542,6 +1623,7 @@
 						"help": "PoE capable.",
 						"max-value": 1,
 						"min-value": 0,
+						"multiple_values": false,
 						"name": "poe-capable",
 						"type": "integer"
 					},
@@ -1550,6 +1632,7 @@
 						"category": "unitary",
 						"default": "",
 						"help": "PoE maximum power.",
+						"multiple_values": false,
 						"name": "poe-max-power",
 						"readonly": true,
 						"size": 35,
@@ -1578,6 +1661,7 @@
 						"category": "unitary",
 						"default": "",
 						"help": "PoE standard supported.",
+						"multiple_values": false,
 						"name": "poe-standard",
 						"readonly": true,
 						"size": 63,
@@ -1605,6 +1689,7 @@
 						"category": "unitary",
 						"default": "",
 						"help": "Switch port name.",
+						"multiple_values": false,
 						"name": "port-name",
 						"required": true,
 						"size": 15,
@@ -1616,6 +1701,7 @@
 						"help": "Port number.",
 						"max-value": 64,
 						"min-value": 1,
+						"multiple_values": false,
 						"name": "port-number",
 						"readonly": true,
 						"type": "integer"
@@ -1624,6 +1710,7 @@
 						"category": "unitary",
 						"default": "",
 						"help": "Switch port name.",
+						"multiple_values": false,
 						"name": "port-owner",
 						"size": 15,
 						"type": "string"
@@ -1636,6 +1723,7 @@
 						],
 						"default": "",
 						"help": "Switch controller dynamic port policy from available options.",
+						"multiple_values": false,
 						"name": "port-policy",
 						"size": 63,
 						"type": "string"
@@ -1646,6 +1734,7 @@
 						"help": "Port prefix type.",
 						"max-value": 1,
 						"min-value": 0,
+						"multiple_values": false,
 						"name": "port-prefix-type",
 						"readonly": true,
 						"type": "integer"
@@ -1657,6 +1746,7 @@
 						],
 						"default": "",
 						"help": "Switch controller authentication policy to apply to this managed switch from available options.",
+						"multiple_values": false,
 						"name": "port-security-policy",
 						"size": 31,
 						"type": "string"
@@ -1703,6 +1793,7 @@
 						],
 						"default": "default",
 						"help": "PTP policy configuration.",
+						"multiple_values": false,
 						"name": "ptp-policy",
 						"size": 63,
 						"type": "string"
@@ -1714,6 +1805,7 @@
 						],
 						"default": "default",
 						"help": "Switch controller QoS policy from available options.",
+						"multiple_values": false,
 						"name": "qos-policy",
 						"size": 63,
 						"type": "string"
@@ -1762,9 +1854,10 @@
 					"sflow-counter-interval": {
 						"category": "unitary",
 						"default": 0,
-						"help": "sFlow sampling counter polling interval (0 - 255 sec).",
+						"help": "sFlow sampling counter polling interval in seconds (0 - 255).",
 						"max-value": 255,
 						"min-value": 0,
+						"multiple_values": false,
 						"name": "sflow-counter-interval",
 						"type": "integer"
 					},
@@ -1880,6 +1973,7 @@
 						"help": "Stacking port.",
 						"max-value": 1,
 						"min-value": 0,
+						"multiple_values": false,
 						"name": "stacking-port",
 						"readonly": true,
 						"type": "integer"
@@ -1927,6 +2021,7 @@
 						],
 						"default": "default",
 						"help": "Switch controller storm control policy from available options.",
+						"multiple_values": false,
 						"name": "storm-control-policy",
 						"size": 63,
 						"type": "string"
@@ -1955,6 +2050,7 @@
 						"help": "BPDU Guard disabling protection (0 - 120 min).",
 						"max-value": 120,
 						"min-value": 0,
+						"multiple_values": false,
 						"name": "stp-bpdu-guard-timeout",
 						"type": "integer"
 					},
@@ -1998,6 +2094,7 @@
 						"category": "unitary",
 						"default": "",
 						"help": "Switch id.",
+						"multiple_values": false,
 						"name": "switch-id",
 						"readonly": true,
 						"size": 16,
@@ -2031,13 +2128,14 @@
 								],
 								"default": "",
 								"help": "VLAN name.",
+								"multiple_values": false,
 								"name": "vlan-name",
 								"required": true,
 								"size": 79,
 								"type": "string"
 							}
 						},
-						"help": "Configure switch port untagged vlans",
+						"help": "Configure switch port untagged VLANs.",
 						"max_table_size_global": 0,
 						"max_table_size_item": 0,
 						"max_table_size_vdom": 0,
@@ -2053,6 +2151,7 @@
 						],
 						"default": "",
 						"help": "Assign switch ports to a VLAN.",
+						"multiple_values": false,
 						"name": "vlan",
 						"size": 15,
 						"type": "string"
@@ -2072,6 +2171,7 @@
 				"help": "Pre-provisioned managed switch.",
 				"max-value": 255,
 				"min-value": 0,
+				"multiple_values": false,
 				"name": "pre-provisioned",
 				"type": "integer"
 			},
@@ -2101,6 +2201,7 @@
 				"help": "Set QoS RED/WRED drop probability.",
 				"max-value": 100,
 				"min-value": 0,
+				"multiple_values": false,
 				"name": "qos-red-probability",
 				"type": "integer"
 			},
@@ -2235,6 +2336,7 @@
 						"category": "unitary",
 						"default": "",
 						"help": "Remote log name.",
+						"multiple_values": false,
 						"name": "name",
 						"required": true,
 						"size": 35,
@@ -2246,6 +2348,7 @@
 						"help": "Remote syslog server listening port.",
 						"max-value": 65535,
 						"min-value": 0,
+						"multiple_values": false,
 						"name": "port",
 						"type": "integer"
 					},
@@ -2253,6 +2356,7 @@
 						"category": "unitary",
 						"default": "",
 						"help": "IPv4 address of the remote syslog server.",
+						"multiple_values": false,
 						"name": "server",
 						"required": true,
 						"size": 63,
@@ -2369,6 +2473,7 @@
 								"help": "Host entry ID.",
 								"max-value": 4294967295,
 								"min-value": 0,
+								"multiple_values": false,
 								"name": "id",
 								"required": true,
 								"type": "integer"
@@ -2377,6 +2482,7 @@
 								"category": "unitary",
 								"default": "",
 								"help": "IPv4 address of the SNMP manager (host).",
+								"multiple_values": false,
 								"name": "ip",
 								"required": true,
 								"type": "user"
@@ -2396,6 +2502,7 @@
 						"help": "SNMP community ID.",
 						"max-value": 4294967295,
 						"min-value": 0,
+						"multiple_values": false,
 						"name": "id",
 						"required": true,
 						"type": "integer"
@@ -2404,6 +2511,7 @@
 						"category": "unitary",
 						"default": "",
 						"help": "SNMP community name.",
+						"multiple_values": false,
 						"name": "name",
 						"required": true,
 						"size": 35,
@@ -2415,6 +2523,7 @@
 						"help": "SNMP v1 query port (default = 161).",
 						"max-value": 65535,
 						"min-value": 0,
+						"multiple_values": false,
 						"name": "query-v1-port",
 						"type": "integer"
 					},
@@ -2442,6 +2551,7 @@
 						"help": "SNMP v2c query port (default = 161).",
 						"max-value": 65535,
 						"min-value": 0,
+						"multiple_values": false,
 						"name": "query-v2c-port",
 						"type": "integer"
 					},
@@ -2487,6 +2597,7 @@
 						"help": "SNMP v2c trap local port (default = 162).",
 						"max-value": 65535,
 						"min-value": 0,
+						"multiple_values": false,
 						"name": "trap-v1-lport",
 						"type": "integer"
 					},
@@ -2496,6 +2607,7 @@
 						"help": "SNMP v2c trap remote port (default = 162).",
 						"max-value": 65535,
 						"min-value": 0,
+						"multiple_values": false,
 						"name": "trap-v1-rport",
 						"type": "integer"
 					},
@@ -2523,6 +2635,7 @@
 						"help": "SNMP v2c trap local port (default = 162).",
 						"max-value": 65535,
 						"min-value": 0,
+						"multiple_values": false,
 						"name": "trap-v2c-lport",
 						"type": "integer"
 					},
@@ -2532,6 +2645,7 @@
 						"help": "SNMP v2c trap remote port (default = 162).",
 						"max-value": 65535,
 						"min-value": 0,
+						"multiple_values": false,
 						"name": "trap-v2c-rport",
 						"type": "integer"
 					},
@@ -2569,6 +2683,7 @@
 						"category": "unitary",
 						"default": "",
 						"help": "Contact information.",
+						"multiple_values": false,
 						"name": "contact-info",
 						"size": 35,
 						"type": "string"
@@ -2577,6 +2692,7 @@
 						"category": "unitary",
 						"default": "",
 						"help": "System description.",
+						"multiple_values": false,
 						"name": "description",
 						"size": 35,
 						"type": "string"
@@ -2585,6 +2701,7 @@
 						"category": "unitary",
 						"default": "",
 						"help": "Local SNMP engine ID string (max 24 char).",
+						"multiple_values": false,
 						"name": "engine-id",
 						"size": 24,
 						"type": "string"
@@ -2593,6 +2710,7 @@
 						"category": "unitary",
 						"default": "",
 						"help": "System location.",
+						"multiple_values": false,
 						"name": "location",
 						"size": 35,
 						"type": "string"
@@ -2617,6 +2735,7 @@
 					}
 				},
 				"help": "Configuration method to edit Simple Network Management Protocol (SNMP) system info.",
+				"multiple_values": false,
 				"name": "snmp-sysinfo"
 			},
 			"snmp-trap-threshold": {
@@ -2628,6 +2747,7 @@
 						"help": "CPU usage when trap is sent.",
 						"max-value": 4294967295,
 						"min-value": 0,
+						"multiple_values": false,
 						"name": "trap-high-cpu-threshold",
 						"type": "integer"
 					},
@@ -2637,6 +2757,7 @@
 						"help": "Log disk usage when trap is sent.",
 						"max-value": 4294967295,
 						"min-value": 0,
+						"multiple_values": false,
 						"name": "trap-log-full-threshold",
 						"type": "integer"
 					},
@@ -2646,11 +2767,13 @@
 						"help": "Memory usage when trap is sent.",
 						"max-value": 4294967295,
 						"min-value": 0,
+						"multiple_values": false,
 						"name": "trap-low-memory-threshold",
 						"type": "integer"
 					}
 				},
 				"help": "Configuration method to edit Simple Network Management Protocol (SNMP) trap threshold values.",
+				"multiple_values": false,
 				"name": "snmp-trap-threshold"
 			},
 			"snmp-user": {
@@ -2693,6 +2816,7 @@
 					"auth-pwd": {
 						"category": "unitary",
 						"help": "Password for authentication protocol.",
+						"multiple_values": false,
 						"name": "auth-pwd",
 						"required": true,
 						"size": 128,
@@ -2702,6 +2826,7 @@
 						"category": "unitary",
 						"default": "",
 						"help": "SNMP user name.",
+						"multiple_values": false,
 						"name": "name",
 						"size": 32,
 						"type": "string"
@@ -2743,6 +2868,7 @@
 					"priv-pwd": {
 						"category": "unitary",
 						"help": "Password for privacy (encryption) protocol.",
+						"multiple_values": false,
 						"name": "priv-pwd",
 						"required": true,
 						"size": 128,
@@ -2772,6 +2898,7 @@
 						"help": "SNMPv3 query port (default = 161).",
 						"max-value": 65535,
 						"min-value": 0,
+						"multiple_values": false,
 						"name": "query-port",
 						"type": "integer"
 					},
@@ -2810,6 +2937,7 @@
 				"category": "unitary",
 				"default": "",
 				"help": "Staged image version for FortiSwitch.",
+				"multiple_values": false,
 				"name": "staged-image-version",
 				"size": 127,
 				"type": "string"
@@ -2821,6 +2949,7 @@
 						"category": "unitary",
 						"default": "",
 						"help": "Description.",
+						"multiple_values": false,
 						"name": "description",
 						"size": 63,
 						"type": "string"
@@ -2828,9 +2957,10 @@
 					"id": {
 						"category": "unitary",
 						"default": 0,
-						"help": "Id",
+						"help": "ID.",
 						"max-value": 4294967295,
 						"min-value": 0,
+						"multiple_values": false,
 						"name": "id",
 						"type": "integer"
 					},
@@ -2838,6 +2968,7 @@
 						"category": "unitary",
 						"default": "",
 						"help": "Interface name.",
+						"multiple_values": false,
 						"name": "interface",
 						"size": 35,
 						"type": "string"
@@ -2846,6 +2977,7 @@
 						"category": "unitary",
 						"default": "00:00:00:00:00:00",
 						"help": "MAC address.",
+						"multiple_values": false,
 						"name": "mac",
 						"type": "mac-address"
 					},
@@ -2874,6 +3006,7 @@
 						],
 						"default": "",
 						"help": "Vlan.",
+						"multiple_values": false,
 						"name": "vlan",
 						"size": 15,
 						"type": "string"
@@ -2932,6 +3065,7 @@
 						"help": "Rate in packets per second at which storm traffic is controlled (1 - 10000000, default = 500). Storm control drops excess traffic data rates beyond this threshold.",
 						"max-value": 10000000,
 						"min-value": 1,
+						"multiple_values": false,
 						"name": "rate",
 						"type": "integer"
 					},
@@ -2973,6 +3107,7 @@
 					}
 				},
 				"help": "Configuration method to edit FortiSwitch storm control for measuring traffic activity using data rates to prevent traffic disruption.",
+				"multiple_values": false,
 				"name": "storm-control"
 			},
 			"stp-instance": {
@@ -2982,6 +3117,7 @@
 						"category": "unitary",
 						"default": "",
 						"help": "Instance ID.",
+						"multiple_values": false,
 						"name": "id",
 						"size": 2,
 						"type": "string"
@@ -3078,6 +3214,7 @@
 						"help": "Period of time a port is in listening and learning state (4 - 30 sec, default = 15).",
 						"max-value": 30,
 						"min-value": 4,
+						"multiple_values": false,
 						"name": "forward-time",
 						"type": "integer"
 					},
@@ -3087,6 +3224,7 @@
 						"help": "Period of time between successive STP frame Bridge Protocol Data Units (BPDUs) sent on a port (1 - 10 sec, default = 2).",
 						"max-value": 10,
 						"min-value": 1,
+						"multiple_values": false,
 						"name": "hello-time",
 						"type": "integer"
 					},
@@ -3114,6 +3252,7 @@
 						"help": "Maximum time before a bridge port saves its configuration BPDU information (6 - 40 sec, default = 20).",
 						"max-value": 40,
 						"min-value": 6,
+						"multiple_values": false,
 						"name": "max-age",
 						"type": "integer"
 					},
@@ -3123,6 +3262,7 @@
 						"help": "Maximum number of hops between the root bridge and the furthest bridge (1- 40, default = 20).",
 						"max-value": 40,
 						"min-value": 1,
+						"multiple_values": false,
 						"name": "max-hops",
 						"type": "integer"
 					},
@@ -3130,6 +3270,7 @@
 						"category": "unitary",
 						"default": "",
 						"help": "Name of local STP settings configuration.",
+						"multiple_values": false,
 						"name": "name",
 						"size": 31,
 						"type": "string"
@@ -3140,6 +3281,7 @@
 						"help": "Pending time (1 - 15 sec, default = 4).",
 						"max-value": 15,
 						"min-value": 1,
+						"multiple_values": false,
 						"name": "pending-timer",
 						"type": "integer"
 					},
@@ -3149,17 +3291,20 @@
 						"help": "STP revision number (0 - 65535).",
 						"max-value": 65535,
 						"min-value": 0,
+						"multiple_values": false,
 						"name": "revision",
 						"type": "integer"
 					}
 				},
 				"help": "Configuration method to edit Spanning Tree Protocol (STP) settings used to prevent bridge loops.",
+				"multiple_values": false,
 				"name": "stp-settings"
 			},
 			"switch-device-tag": {
 				"category": "unitary",
 				"default": "",
 				"help": "User definable label/tag.",
+				"multiple_values": false,
 				"name": "switch-device-tag",
 				"size": 32,
 				"type": "string"
@@ -3169,6 +3314,7 @@
 				"category": "unitary",
 				"default": "",
 				"help": "DHCP option43 key.",
+				"multiple_values": false,
 				"name": "switch-dhcp_opt43_key",
 				"size": 63,
 				"type": "string"
@@ -3177,6 +3323,7 @@
 				"category": "unitary",
 				"default": "",
 				"help": "Managed-switch id.",
+				"multiple_values": false,
 				"name": "switch-id",
 				"required": true,
 				"size": 16,
@@ -3265,6 +3412,7 @@
 					}
 				},
 				"help": "Configuration method to edit FortiSwitch logging settings (logs are transferred to and inserted into the FortiGate event log).",
+				"multiple_values": false,
 				"name": "switch-log"
 			},
 			"switch-profile": {
@@ -3274,6 +3422,7 @@
 				],
 				"default": "default",
 				"help": "FortiSwitch profile.",
+				"multiple_values": false,
 				"name": "switch-profile",
 				"size": 35,
 				"type": "string"
@@ -3283,6 +3432,7 @@
 				"category": "unitary",
 				"default": "",
 				"help": "TDR supported.",
+				"multiple_values": false,
 				"name": "tdr-supported",
 				"readonly": true,
 				"size": 31,
@@ -3312,6 +3462,7 @@
 				"help": "FortiSwitch version.",
 				"max-value": 255,
 				"min-value": 0,
+				"multiple_values": false,
 				"name": "version",
 				"type": "integer"
 			}
@@ -3326,9 +3477,9 @@
 		"path": "switch-controller",
 		"q_type": 308
 	},
-	"revision": "78ee061304af9c5d17bcae6474808d97",
-	"serial": "FGTAZRAQCG14L19D",
+	"revision": "e338e35a484eaafc990a69dd13ff4f76",
+	"serial": "FGTAZRI5HXAAGI90",
 	"status": "success",
 	"vdom": "root",
-	"version": "v7.0.3"
+	"version": "v7.0.4"
 }

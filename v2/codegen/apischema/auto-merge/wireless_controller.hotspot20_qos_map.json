@@ -1,9 +1,9 @@
 {
 	"addedIn": "v6.2.7",
-	"build": 237,
+	"build": 301,
 	"http_method": "GET",
 	"http_status": 200,
-	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3",
+	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3,v7.0.4",
 	"name": "qos-map",
 	"path": "wireless-controller.hotspot20",
 	"results": {
@@ -19,6 +19,7 @@
 						"help": "DSCP value.",
 						"max-value": 63,
 						"min-value": 0,
+						"multiple_values": false,
 						"name": "dscp",
 						"type": "integer"
 					},
@@ -28,6 +29,7 @@
 						"help": "DSCP exception index.",
 						"max-value": 21,
 						"min-value": 1,
+						"multiple_values": false,
 						"name": "index",
 						"type": "integer"
 					},
@@ -37,6 +39,7 @@
 						"help": "User priority.",
 						"max-value": 7,
 						"min-value": 0,
+						"multiple_values": false,
 						"name": "up",
 						"type": "integer"
 					}
@@ -58,6 +61,7 @@
 						"help": "DSCP high value.",
 						"max-value": 63,
 						"min-value": 0,
+						"multiple_values": false,
 						"name": "high",
 						"type": "integer"
 					},
@@ -67,6 +71,7 @@
 						"help": "DSCP range index.",
 						"max-value": 8,
 						"min-value": 1,
+						"multiple_values": false,
 						"name": "index",
 						"type": "integer"
 					},
@@ -76,6 +81,7 @@
 						"help": "DSCP low value.",
 						"max-value": 63,
 						"min-value": 0,
+						"multiple_values": false,
 						"name": "low",
 						"type": "integer"
 					},
@@ -85,6 +91,7 @@
 						"help": "User priority.",
 						"max-value": 7,
 						"min-value": 0,
+						"multiple_values": false,
 						"name": "up",
 						"required": true,
 						"type": "integer"
@@ -102,6 +109,7 @@
 				"category": "unitary",
 				"default": "",
 				"help": "QOS-MAP name.",
+				"multiple_values": false,
 				"name": "name",
 				"size": 35,
 				"type": "string"
@@ -117,9 +125,9 @@
 		"path": "wireless-controller.hotspot20",
 		"q_type": 294
 	},
-	"revision": "78ee061304af9c5d17bcae6474808d97",
-	"serial": "FGTAZRAQCG14L19D",
+	"revision": "e338e35a484eaafc990a69dd13ff4f76",
+	"serial": "FGTAZRI5HXAAGI90",
 	"status": "success",
 	"vdom": "root",
-	"version": "v7.0.3"
+	"version": "v7.0.4"
 }

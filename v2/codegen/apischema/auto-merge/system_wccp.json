@@ -1,9 +1,9 @@
 {
 	"addedIn": "v6.2.7",
-	"build": 237,
+	"build": 301,
 	"http_method": "GET",
 	"http_status": 200,
-	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3",
+	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3,v7.0.4",
 	"name": "wccp",
 	"path": "system",
 	"results": {
@@ -32,6 +32,7 @@
 				"category": "unitary",
 				"default": "0.0.0.0",
 				"help": "Assignment destination address mask.",
+				"multiple_values": false,
 				"name": "assignment-dstaddr-mask",
 				"type": "ipv4-netmask-any"
 			},
@@ -61,6 +62,7 @@
 				"category": "unitary",
 				"default": "0.0.23.65",
 				"help": "Assignment source address mask.",
+				"multiple_values": false,
 				"name": "assignment-srcaddr-mask",
 				"type": "ipv4-netmask-any"
 			},
@@ -70,6 +72,7 @@
 				"help": "Assignment of hash weight/ratio for the WCCP cache engine.",
 				"max-value": 255,
 				"min-value": 0,
+				"multiple_values": false,
 				"name": "assignment-weight",
 				"type": "integer"
 			},
@@ -113,6 +116,7 @@
 				"category": "unitary",
 				"default": "0.0.0.0",
 				"help": "IP address known to all routers. If the addresses are the same, use the default 0.0.0.0.",
+				"multiple_values": false,
 				"name": "cache-id",
 				"type": "ipv4-address"
 			},
@@ -142,12 +146,14 @@
 				"category": "unitary",
 				"default": "0.0.0.0",
 				"help": "IP multicast address used by the cache routers. For the FortiGate to ignore multicast WCCP traffic, use the default 0.0.0.0.",
+				"multiple_values": false,
 				"name": "group-address",
 				"type": "ipv4-address-multicast"
 			},
 			"password": {
 				"category": "unitary",
 				"help": "Password for MD5 authentication.",
+				"multiple_values": false,
 				"name": "password",
 				"size": 128,
 				"type": "password"
@@ -156,6 +162,7 @@
 				"category": "unitary",
 				"default": "",
 				"help": "Service ports.",
+				"multiple_values": true,
 				"name": "ports",
 				"type": "user"
 			},
@@ -209,6 +216,7 @@
 				"help": "Service priority.",
 				"max-value": 255,
 				"min-value": 0,
+				"multiple_values": false,
 				"name": "priority",
 				"type": "integer"
 			},
@@ -218,13 +226,14 @@
 				"help": "Service protocol.",
 				"max-value": 255,
 				"min-value": 0,
+				"multiple_values": false,
 				"name": "protocol",
 				"type": "integer"
 			},
 			"return-method": {
 				"category": "unitary",
 				"default": "GRE",
-				"help": " Method used to decline a redirected packet and return it to the FortiGate.",
+				"help": "Method used to decline a redirected packet and return it to the FortiGate unit.",
 				"multiple_values": false,
 				"name": "return-method",
 				"options": [
@@ -247,6 +256,7 @@
 				"category": "unitary",
 				"default": "0.0.0.0",
 				"help": "IP address known to all cache engines. If all cache engines connect to the same FortiGate interface, use the default 0.0.0.0.",
+				"multiple_values": false,
 				"name": "router-id",
 				"type": "ipv4-address"
 			},
@@ -254,6 +264,7 @@
 				"category": "unitary",
 				"default": "",
 				"help": "IP addresses of one or more WCCP routers.",
+				"multiple_values": true,
 				"name": "router-list",
 				"type": "user"
 			},
@@ -261,6 +272,7 @@
 				"category": "unitary",
 				"default": "",
 				"help": "IP addresses and netmasks for up to four cache servers.",
+				"multiple_values": true,
 				"name": "server-list",
 				"type": "user"
 			},
@@ -286,6 +298,7 @@
 				"category": "unitary",
 				"default": "",
 				"help": "Service ID.",
+				"multiple_values": false,
 				"name": "service-id",
 				"size": 3,
 				"type": "string"
@@ -323,9 +336,9 @@
 		"path": "system",
 		"q_type": 251
 	},
-	"revision": "78ee061304af9c5d17bcae6474808d97",
-	"serial": "FGTAZRAQCG14L19D",
+	"revision": "e338e35a484eaafc990a69dd13ff4f76",
+	"serial": "FGTAZRI5HXAAGI90",
 	"status": "success",
 	"vdom": "root",
-	"version": "v7.0.3"
+	"version": "v7.0.4"
 }

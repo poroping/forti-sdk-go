@@ -1,9 +1,9 @@
 {
 	"addedIn": "v6.2.7",
-	"build": 237,
+	"build": 301,
 	"http_method": "GET",
 	"http_status": 200,
-	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3",
+	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3,v7.0.4",
 	"name": "link-monitor",
 	"path": "system",
 	"results": {
@@ -38,6 +38,7 @@
 				"help": "Traffic class ID.",
 				"max-value": 4294967295,
 				"min-value": 0,
+				"multiple_values": false,
 				"name": "class-id",
 				"type": "integer"
 			},
@@ -46,6 +47,7 @@
 				"category": "unitary",
 				"default": "",
 				"help": "Differentiated services code point (DSCP) in the IP header of the probe packet.",
+				"multiple_values": false,
 				"name": "diffservcode",
 				"type": "user"
 			},
@@ -56,15 +58,17 @@
 				"help": "Threshold weight to trigger link failure alert.",
 				"max-value": 255,
 				"min-value": 0,
+				"multiple_values": false,
 				"name": "fail-weight",
 				"type": "integer"
 			},
 			"failtime": {
 				"category": "unitary",
 				"default": 5,
-				"help": "Number of retry attempts before the server is considered down (1 - 10, default = 5)",
+				"help": "Number of retry attempts before the server is considered down (1 - 10, default = 5).",
 				"max-value": 3600,
 				"min-value": 1,
+				"multiple_values": false,
 				"name": "failtime",
 				"type": "integer"
 			},
@@ -72,6 +76,7 @@
 				"category": "unitary",
 				"default": "0.0.0.0",
 				"help": "Gateway IP address used to probe the server.",
+				"multiple_values": false,
 				"name": "gateway-ip",
 				"type": "ipv4-address-any"
 			},
@@ -79,6 +84,7 @@
 				"category": "unitary",
 				"default": "::",
 				"help": "Gateway IPv6 address used to probe the server.",
+				"multiple_values": false,
 				"name": "gateway-ip6",
 				"type": "ipv6-address"
 			},
@@ -88,6 +94,7 @@
 				"help": "HA election priority (1 - 50).",
 				"max-value": 50,
 				"min-value": 1,
+				"multiple_values": false,
 				"name": "ha-priority",
 				"type": "integer"
 			},
@@ -95,6 +102,7 @@
 				"category": "unitary",
 				"default": "Chrome/ Safari/",
 				"help": "String in the http-agent field in the HTTP header.",
+				"multiple_values": false,
 				"name": "http-agent",
 				"size": 1024,
 				"type": "string"
@@ -103,6 +111,7 @@
 				"category": "unitary",
 				"default": "/",
 				"help": "If you are monitoring an HTML server you can send an HTTP-GET request with a custom string. Use this option to define the string.",
+				"multiple_values": false,
 				"name": "http-get",
 				"required": true,
 				"size": 1024,
@@ -112,6 +121,7 @@
 				"category": "unitary",
 				"default": "",
 				"help": "String that you expect to see in the HTTP-GET requests of the traffic to be monitored.",
+				"multiple_values": false,
 				"name": "http-match",
 				"size": 1024,
 				"type": "string"
@@ -122,6 +132,7 @@
 				"help": "Detection interval in milliseconds (500 - 3600 * 1000 msec, default = 500).",
 				"max-value": 3600000,
 				"min-value": 500,
+				"multiple_values": false,
 				"name": "interval",
 				"type": "integer"
 			},
@@ -129,6 +140,7 @@
 				"category": "unitary",
 				"default": "",
 				"help": "Link monitor name.",
+				"multiple_values": false,
 				"name": "name",
 				"size": 35,
 				"type": "string"
@@ -136,15 +148,17 @@
 			"packet-size": {
 				"category": "unitary",
 				"default": 64,
-				"help": "Packet size of a twamp test session,",
+				"help": "Packet size of a TWAMP test session.",
 				"max-value": 1024,
 				"min-value": 64,
+				"multiple_values": false,
 				"name": "packet-size",
 				"type": "integer"
 			},
 			"password": {
 				"category": "unitary",
-				"help": "Twamp controller password in authentication mode",
+				"help": "TWAMP controller password in authentication mode.",
+				"multiple_values": false,
 				"name": "password",
 				"size": 128,
 				"type": "password"
@@ -155,6 +169,7 @@
 				"help": "Port number of the traffic to be used to monitor the server.",
 				"max-value": 65535,
 				"min-value": 1,
+				"multiple_values": false,
 				"name": "port",
 				"type": "integer"
 			},
@@ -165,6 +180,7 @@
 				"help": "Number of most recent probes that should be used to calculate latency and jitter (5 - 30, default = 30).",
 				"max-value": 30,
 				"min-value": 5,
+				"multiple_values": false,
 				"name": "probe-count",
 				"type": "integer"
 			},
@@ -174,6 +190,7 @@
 				"help": "Time to wait before a probe packet is considered lost (500 - 5000 msec, default = 500).",
 				"max-value": 5000,
 				"min-value": 500,
+				"multiple_values": false,
 				"name": "probe-timeout",
 				"type": "integer"
 			},
@@ -213,6 +230,7 @@
 				"help": "Number of successful responses received before server is considered recovered (1 - 10, default = 5).",
 				"max-value": 3600,
 				"min-value": 1,
+				"multiple_values": false,
 				"name": "recoverytime",
 				"type": "integer"
 			},
@@ -224,6 +242,7 @@
 						"category": "unitary",
 						"default": "",
 						"help": "IP and netmask (x.x.x.x/y).",
+						"multiple_values": false,
 						"name": "subnet",
 						"size": 79,
 						"type": "string"
@@ -263,6 +282,7 @@
 						"category": "unitary",
 						"default": "",
 						"help": "Server address.",
+						"multiple_values": false,
 						"name": "address",
 						"required": true,
 						"size": 79,
@@ -306,6 +326,7 @@
 						"category": "unitary",
 						"default": "",
 						"help": "IP address of the server to be monitored.",
+						"multiple_values": false,
 						"name": "dst",
 						"required": true,
 						"size": 64,
@@ -317,6 +338,7 @@
 						"help": "Server ID.",
 						"max-value": 32,
 						"min-value": 1,
+						"multiple_values": false,
 						"name": "id",
 						"required": true,
 						"type": "integer"
@@ -327,6 +349,7 @@
 						"help": "Port number of the traffic to be used to monitor the server.",
 						"max-value": 65535,
 						"min-value": 1,
+						"multiple_values": false,
 						"name": "port",
 						"type": "integer"
 					},
@@ -366,6 +389,7 @@
 						"help": "Weight of the monitor to this dst (0 - 255).",
 						"max-value": 255,
 						"min-value": 0,
+						"multiple_values": false,
 						"name": "weight",
 						"type": "integer"
 					}
@@ -401,6 +425,7 @@
 				"category": "unitary",
 				"default": "0.0.0.0",
 				"help": "Source IP address used in packet to the server.",
+				"multiple_values": false,
 				"name": "source-ip",
 				"type": "ipv4-address-any"
 			},
@@ -408,6 +433,7 @@
 				"category": "unitary",
 				"default": "::",
 				"help": "Source IPv6 address used in packet to the server.",
+				"multiple_values": false,
 				"name": "source-ip6",
 				"type": "ipv6-address"
 			},
@@ -418,6 +444,7 @@
 				],
 				"default": "",
 				"help": "Interface that receives the traffic to be monitored.",
+				"multiple_values": false,
 				"name": "srcintf",
 				"size": 15,
 				"type": "string"
@@ -506,9 +533,9 @@
 		"path": "system",
 		"q_type": 391
 	},
-	"revision": "78ee061304af9c5d17bcae6474808d97",
-	"serial": "FGTAZRAQCG14L19D",
+	"revision": "e338e35a484eaafc990a69dd13ff4f76",
+	"serial": "FGTAZRI5HXAAGI90",
 	"status": "success",
 	"vdom": "root",
-	"version": "v7.0.3"
+	"version": "v7.0.4"
 }

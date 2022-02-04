@@ -1,9 +1,9 @@
 {
 	"addedIn": "v6.2.7",
-	"build": 237,
+	"build": 301,
 	"http_method": "GET",
 	"http_status": 200,
-	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3",
+	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3,v7.0.4",
 	"name": "rip",
 	"path": "router",
 	"results": {
@@ -34,6 +34,7 @@
 				"help": "Default metric.",
 				"max-value": 16,
 				"min-value": 1,
+				"multiple_values": false,
 				"name": "default-metric",
 				"type": "integer"
 			},
@@ -47,6 +48,7 @@
 						],
 						"default": "",
 						"help": "Access list for route destination.",
+						"multiple_values": false,
 						"name": "access-list",
 						"size": 35,
 						"type": "string"
@@ -57,6 +59,7 @@
 						"help": "Distance (1 - 255).",
 						"max-value": 255,
 						"min-value": 1,
+						"multiple_values": false,
 						"name": "distance",
 						"required": true,
 						"type": "integer"
@@ -67,6 +70,7 @@
 						"help": "Distance ID.",
 						"max-value": 4294967295,
 						"min-value": 0,
+						"multiple_values": false,
 						"name": "id",
 						"required": true,
 						"type": "integer"
@@ -75,11 +79,12 @@
 						"category": "unitary",
 						"default": "0.0.0.0 0.0.0.0",
 						"help": "Distance prefix.",
+						"multiple_values": false,
 						"name": "prefix",
 						"type": "ipv4-classnet-any"
 					}
 				},
-				"help": "distance",
+				"help": "Distance.",
 				"max_table_size_global": 0,
 				"max_table_size_item": 0,
 				"max_table_size_vdom": 100,
@@ -115,6 +120,7 @@
 						"help": "Distribute list ID.",
 						"max-value": 4294967295,
 						"min-value": 0,
+						"multiple_values": false,
 						"name": "id",
 						"required": true,
 						"type": "integer"
@@ -126,6 +132,7 @@
 						],
 						"default": "",
 						"help": "Distribute list interface name.",
+						"multiple_values": false,
 						"name": "interface",
 						"size": 15,
 						"type": "string"
@@ -138,6 +145,7 @@
 						],
 						"default": "",
 						"help": "Distribute access/prefix list name.",
+						"multiple_values": false,
 						"name": "listname",
 						"required": true,
 						"size": 35,
@@ -146,7 +154,7 @@
 					"status": {
 						"category": "unitary",
 						"default": "disable",
-						"help": "status",
+						"help": "Status.",
 						"multiple_values": false,
 						"name": "status",
 						"options": [
@@ -176,6 +184,7 @@
 				"help": "Garbage timer in seconds.",
 				"max-value": 2147483647,
 				"min-value": 5,
+				"multiple_values": false,
 				"name": "garbage-timer",
 				"type": "integer"
 			},
@@ -189,6 +198,7 @@
 						],
 						"default": "",
 						"help": "Authentication key-chain name.",
+						"multiple_values": false,
 						"name": "auth-keychain",
 						"size": 35,
 						"type": "string"
@@ -218,6 +228,7 @@
 					"auth-string": {
 						"category": "unitary",
 						"help": "Authentication string/password.",
+						"multiple_values": false,
 						"name": "auth-string",
 						"size": 16,
 						"type": "password"
@@ -225,9 +236,10 @@
 					"flags": {
 						"category": "unitary",
 						"default": 8,
-						"help": "flags",
+						"help": "Flags.",
 						"max-value": 255,
 						"min-value": 0,
+						"multiple_values": false,
 						"name": "flags",
 						"readonly": true,
 						"type": "integer"
@@ -239,6 +251,7 @@
 						],
 						"default": "",
 						"help": "Interface name.",
+						"multiple_values": false,
 						"name": "name",
 						"size": 35,
 						"type": "string"
@@ -348,6 +361,7 @@
 				"help": "Maximum metric allowed to output(0 means 'not set').",
 				"max-value": 15,
 				"min-value": 0,
+				"multiple_values": false,
 				"name": "max-out-metric",
 				"type": "integer"
 			},
@@ -360,6 +374,7 @@
 						"help": "Neighbor entry ID.",
 						"max-value": 4294967295,
 						"min-value": 0,
+						"multiple_values": false,
 						"name": "id",
 						"type": "integer"
 					},
@@ -367,12 +382,13 @@
 						"category": "unitary",
 						"default": "0.0.0.0",
 						"help": "IP address.",
+						"multiple_values": false,
 						"name": "ip",
 						"required": true,
 						"type": "ipv4-address"
 					}
 				},
-				"help": "neighbor",
+				"help": "Neighbor.",
 				"max_table_size_global": 0,
 				"max_table_size_item": 0,
 				"max_table_size_vdom": 100,
@@ -389,6 +405,7 @@
 						"help": "Network entry ID.",
 						"max-value": 4294967295,
 						"min-value": 0,
+						"multiple_values": false,
 						"name": "id",
 						"type": "integer"
 					},
@@ -396,11 +413,12 @@
 						"category": "unitary",
 						"default": "0.0.0.0 0.0.0.0",
 						"help": "Network prefix.",
+						"multiple_values": false,
 						"name": "prefix",
 						"type": "ipv4-classnet"
 					}
 				},
-				"help": "network",
+				"help": "Network.",
 				"max_table_size_global": 0,
 				"max_table_size_item": 0,
 				"max_table_size_vdom": 100,
@@ -418,6 +436,7 @@
 						],
 						"default": "",
 						"help": "Access list name.",
+						"multiple_values": false,
 						"name": "access-list",
 						"required": true,
 						"size": 35,
@@ -448,6 +467,7 @@
 						"help": "Offset-list ID.",
 						"max-value": 4294967295,
 						"min-value": 0,
+						"multiple_values": false,
 						"name": "id",
 						"required": true,
 						"type": "integer"
@@ -459,6 +479,7 @@
 						],
 						"default": "",
 						"help": "Interface name.",
+						"multiple_values": false,
 						"name": "interface",
 						"size": 15,
 						"type": "string"
@@ -466,9 +487,10 @@
 					"offset": {
 						"category": "unitary",
 						"default": 0,
-						"help": "offset",
+						"help": "Offset.",
 						"max-value": 16,
 						"min-value": 1,
+						"multiple_values": false,
 						"name": "offset",
 						"required": true,
 						"type": "integer"
@@ -476,7 +498,7 @@
 					"status": {
 						"category": "unitary",
 						"default": "enable",
-						"help": "status",
+						"help": "Status.",
 						"multiple_values": false,
 						"name": "status",
 						"options": [
@@ -510,6 +532,7 @@
 						],
 						"default": "",
 						"help": "Passive interface name.",
+						"multiple_values": false,
 						"name": "name",
 						"required": true,
 						"size": 79,
@@ -544,6 +567,7 @@
 						"help": "Redistribute metric setting.",
 						"max-value": 16,
 						"min-value": 1,
+						"multiple_values": false,
 						"name": "metric",
 						"type": "integer"
 					},
@@ -551,6 +575,7 @@
 						"category": "unitary",
 						"default": "",
 						"help": "Redistribute name.",
+						"multiple_values": false,
 						"name": "name",
 						"required": true,
 						"size": 35,
@@ -563,6 +588,7 @@
 						],
 						"default": "",
 						"help": "Route map name.",
+						"multiple_values": false,
 						"name": "routemap",
 						"size": 35,
 						"type": "string"
@@ -570,7 +596,7 @@
 					"status": {
 						"category": "unitary",
 						"default": "disable",
-						"help": "status",
+						"help": "Status.",
 						"multiple_values": false,
 						"name": "status",
 						"options": [
@@ -601,6 +627,7 @@
 				"help": "Timeout timer in seconds.",
 				"max-value": 2147483647,
 				"min-value": 5,
+				"multiple_values": false,
 				"name": "timeout-timer",
 				"type": "integer"
 			},
@@ -610,6 +637,7 @@
 				"help": "Update timer in seconds.",
 				"max-value": 2147483647,
 				"min-value": 1,
+				"multiple_values": false,
 				"name": "update-timer",
 				"type": "integer"
 			},
@@ -633,13 +661,14 @@
 			}
 		},
 		"help": "Configure RIP.",
+		"multiple_values": false,
 		"name": "rip",
 		"path": "router",
 		"q_type": 107
 	},
-	"revision": "6a99ecb7470ab13dcf58ec1bd9f5285f",
-	"serial": "FGTAZRAQCG14L19D",
+	"revision": "6fe1b58b227957de34a8a7fa5689f98e",
+	"serial": "FGTAZRI5HXAAGI90",
 	"status": "success",
 	"vdom": "root",
-	"version": "v7.0.3"
+	"version": "v7.0.4"
 }

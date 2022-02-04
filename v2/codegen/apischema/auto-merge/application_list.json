@@ -1,9 +1,9 @@
 {
 	"addedIn": "v6.2.7",
-	"build": 237,
+	"build": 301,
 	"http_method": "GET",
 	"http_status": 200,
-	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3",
+	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3,v7.0.4",
 	"name": "list",
 	"path": "application",
 	"results": {
@@ -30,7 +30,8 @@
 			},
 			"comment": {
 				"category": "unitary",
-				"help": "comments",
+				"help": "Comments.",
+				"multiple_values": false,
 				"name": "comment",
 				"size": 255,
 				"type": "var-string"
@@ -80,6 +81,7 @@
 						"help": "Entry ID.",
 						"max-value": 4294967295,
 						"min-value": 0,
+						"multiple_values": false,
 						"name": "id",
 						"required": true,
 						"type": "integer"
@@ -90,6 +92,7 @@
 						"help": "Port number.",
 						"max-value": 65535,
 						"min-value": 0,
+						"multiple_values": false,
 						"name": "port",
 						"required": true,
 						"type": "integer"
@@ -231,6 +234,7 @@
 								"help": "Application IDs.",
 								"max-value": 4294967295,
 								"min-value": 0,
+								"multiple_values": false,
 								"name": "id",
 								"required": true,
 								"type": "integer"
@@ -249,6 +253,7 @@
 						"category": "unitary",
 						"default": "all",
 						"help": "Application behavior filter.",
+						"multiple_values": true,
 						"name": "behavior",
 						"type": "user"
 					},
@@ -261,6 +266,7 @@
 								"help": "Application category ID.",
 								"max-value": 4294967295,
 								"min-value": 0,
+								"multiple_values": false,
 								"name": "id",
 								"required": true,
 								"type": "integer"
@@ -284,6 +290,7 @@
 								"help": "Excluded application IDs.",
 								"max-value": 4294967295,
 								"min-value": 0,
+								"multiple_values": false,
 								"name": "id",
 								"required": true,
 								"type": "integer"
@@ -305,6 +312,7 @@
 						"help": "Entry ID.",
 						"max-value": 4294967295,
 						"min-value": 0,
+						"multiple_values": false,
 						"name": "id",
 						"type": "integer"
 					},
@@ -353,6 +361,7 @@
 								"help": "Parameter tuple ID.",
 								"max-value": 4294967295,
 								"min-value": 0,
+								"multiple_values": false,
 								"name": "id",
 								"type": "integer"
 							},
@@ -366,6 +375,7 @@
 										"help": "Parameter.",
 										"max-value": 4294967295,
 										"min-value": 0,
+										"multiple_values": false,
 										"name": "id",
 										"type": "integer"
 									},
@@ -373,6 +383,7 @@
 										"category": "unitary",
 										"default": "",
 										"help": "Parameter name.",
+										"multiple_values": false,
 										"name": "name",
 										"required": true,
 										"size": 31,
@@ -382,6 +393,7 @@
 										"category": "unitary",
 										"default": "",
 										"help": "Parameter value.",
+										"multiple_values": false,
 										"name": "value",
 										"required": true,
 										"size": 199,
@@ -420,6 +432,7 @@
 						],
 						"default": "",
 						"help": "Per-IP traffic shaper.",
+						"multiple_values": false,
 						"name": "per-ip-shaper",
 						"size": 35,
 						"type": "string"
@@ -458,6 +471,7 @@
 						"category": "unitary",
 						"default": "all",
 						"help": "Application protocol filter.",
+						"multiple_values": true,
 						"name": "protocols",
 						"type": "user"
 					},
@@ -483,6 +497,7 @@
 						"category": "unitary",
 						"default": "5m",
 						"help": "Duration of quarantine. (Format ###d##h##m, minimum 1m, maximum 364d23h59m, default = 5m). Requires quarantine set to attacker.",
+						"multiple_values": false,
 						"name": "quarantine-expiry",
 						"type": "user"
 					},
@@ -510,6 +525,7 @@
 						"help": "Count of the rate.",
 						"max-value": 65535,
 						"min-value": 0,
+						"multiple_values": false,
 						"name": "rate-count",
 						"type": "integer"
 					},
@@ -519,6 +535,7 @@
 						"help": "Duration (sec) of the rate.",
 						"max-value": 65535,
 						"min-value": 1,
+						"multiple_values": false,
 						"name": "rate-duration",
 						"type": "integer"
 					},
@@ -579,6 +596,7 @@
 								"help": "Risk, or impact, of allowing traffic from this application to occur (1 - 5; Low, Elevated, Medium, High, and Critical).",
 								"max-value": 4294967295,
 								"min-value": 0,
+								"multiple_values": false,
 								"name": "level",
 								"required": true,
 								"type": "integer"
@@ -599,6 +617,7 @@
 						"help": "Session TTL (0 = default).",
 						"max-value": 4294967295,
 						"min-value": 0,
+						"multiple_values": false,
 						"name": "session-ttl",
 						"type": "integer"
 					},
@@ -609,6 +628,7 @@
 						],
 						"default": "",
 						"help": "Traffic shaper.",
+						"multiple_values": false,
 						"name": "shaper",
 						"size": 35,
 						"type": "string"
@@ -620,6 +640,7 @@
 						],
 						"default": "",
 						"help": "Reverse traffic shaper.",
+						"multiple_values": false,
 						"name": "shaper-reverse",
 						"size": 35,
 						"type": "string"
@@ -651,6 +672,7 @@
 						"category": "unitary",
 						"default": "all",
 						"help": "Application technology filter.",
+						"multiple_values": true,
 						"name": "technology",
 						"type": "user"
 					},
@@ -658,6 +680,7 @@
 						"category": "unitary",
 						"default": "all",
 						"help": "Application vendor filter.",
+						"multiple_values": true,
 						"name": "vendor",
 						"type": "user"
 					}
@@ -710,6 +733,7 @@
 				"category": "unitary",
 				"default": "",
 				"help": "List name.",
+				"multiple_values": false,
 				"name": "name",
 				"required": true,
 				"size": 35,
@@ -808,7 +832,7 @@
 				"addedIn": "v7.0.0",
 				"category": "unitary",
 				"default": "",
-				"help": "P2P applications to be blocklisted.",
+				"help": "P2P applications to be block listed.",
 				"multiple_values": true,
 				"name": "p2p-block-list",
 				"options": [
@@ -834,6 +858,7 @@
 				],
 				"default": "",
 				"help": "Replacement message group.",
+				"multiple_values": false,
 				"name": "replacemsg-group",
 				"size": 35,
 				"type": "string"
@@ -885,9 +910,9 @@
 		"path": "application",
 		"q_type": 365
 	},
-	"revision": "3f5aa861c460c6e34db2105046b8c00e",
-	"serial": "FGTAZRAQCG14L19D",
+	"revision": "b0b714876273e0c89bf4eabade4cc41f",
+	"serial": "FGTAZRI5HXAAGI90",
 	"status": "success",
 	"vdom": "root",
-	"version": "v7.0.3"
+	"version": "v7.0.4"
 }

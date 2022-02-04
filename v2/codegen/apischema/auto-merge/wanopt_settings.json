@@ -1,9 +1,9 @@
 {
 	"addedIn": "v6.2.7",
-	"build": 237,
+	"build": 301,
 	"http_method": "GET",
 	"http_status": 200,
-	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3",
+	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3,v7.0.4",
 	"name": "settings",
 	"path": "wanopt",
 	"results": {
@@ -32,6 +32,7 @@
 				"category": "unitary",
 				"default": "default-id",
 				"help": "Local host ID (must also be entered in the remote FortiGate's peer list).",
+				"multiple_values": false,
 				"name": "host-id",
 				"required": true,
 				"size": 35,
@@ -61,13 +62,14 @@
 			}
 		},
 		"help": "Configure WAN optimization settings.",
+		"multiple_values": false,
 		"name": "settings",
 		"path": "wanopt",
 		"q_type": 336
 	},
-	"revision": "5a78955211ebb1641b50c9360238cb5c",
-	"serial": "FGTAZRAQCG14L19D",
+	"revision": "1af996ea72fbf3755ecb12a854d78106",
+	"serial": "FGTAZRI5HXAAGI90",
 	"status": "success",
 	"vdom": "root",
-	"version": "v7.0.3"
+	"version": "v7.0.4"
 }

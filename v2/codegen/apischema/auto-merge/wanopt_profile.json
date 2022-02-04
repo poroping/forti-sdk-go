@@ -1,9 +1,9 @@
 {
 	"addedIn": "v6.2.7",
-	"build": 237,
+	"build": 301,
 	"http_method": "GET",
 	"http_status": 200,
-	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3",
+	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3,v7.0.4",
 	"name": "profile",
 	"path": "wanopt",
 	"results": {
@@ -17,6 +17,7 @@
 				],
 				"default": "",
 				"help": "Optionally add an authentication group to restrict access to the WAN Optimization tunnel to peers in the authentication group.",
+				"multiple_values": false,
 				"name": "auth-group",
 				"size": 35,
 				"type": "string"
@@ -91,7 +92,7 @@
 						"addedIn": "v6.4.0",
 						"category": "unitary",
 						"default": "protocol",
-						"help": "Select Protocol specific optimitation or generic TCP optimization.",
+						"help": "Select protocol specific optimization or generic TCP optimization.",
 						"multiple_values": false,
 						"name": "protocol-opt",
 						"options": [
@@ -166,11 +167,13 @@
 					}
 				},
 				"help": "Enable/disable CIFS (Windows sharing) WAN Optimization and configure CIFS WAN Optimization features.",
+				"multiple_values": false,
 				"name": "cifs"
 			},
 			"comments": {
 				"category": "unitary",
 				"help": "Comment.",
+				"multiple_values": false,
 				"name": "comments",
 				"size": 255,
 				"type": "var-string"
@@ -245,7 +248,7 @@
 						"addedIn": "v6.4.0",
 						"category": "unitary",
 						"default": "protocol",
-						"help": "Select Protocol specific optimitation or generic TCP optimization.",
+						"help": "Select protocol specific optimization or generic TCP optimization.",
 						"multiple_values": false,
 						"name": "protocol-opt",
 						"options": [
@@ -339,6 +342,7 @@
 					}
 				},
 				"help": "Enable/disable FTP WAN Optimization and configure FTP WAN Optimization features.",
+				"multiple_values": false,
 				"name": "ftp"
 			},
 			"http": {
@@ -411,7 +415,7 @@
 						"addedIn": "v6.4.0",
 						"category": "unitary",
 						"default": "protocol",
-						"help": "Select Protocol specific optimitation or generic TCP optimization.",
+						"help": "Select protocol specific optimization or generic TCP optimization.",
 						"multiple_values": false,
 						"name": "protocol-opt",
 						"options": [
@@ -553,6 +557,7 @@
 					}
 				},
 				"help": "Enable/disable HTTP WAN Optimization and configure HTTP WAN Optimization features.",
+				"multiple_values": false,
 				"name": "http"
 			},
 			"mapi": {
@@ -663,12 +668,14 @@
 					}
 				},
 				"help": "Enable/disable MAPI email WAN Optimization and configure MAPI WAN Optimization features.",
+				"multiple_values": false,
 				"name": "mapi"
 			},
 			"name": {
 				"category": "unitary",
 				"default": "",
 				"help": "Profile name.",
+				"multiple_values": false,
 				"name": "name",
 				"size": 35,
 				"type": "string"
@@ -734,6 +741,7 @@
 						"category": "unitary",
 						"default": "",
 						"help": "Port numbers or port number ranges for TCP. Only packets with a destination port number that matches this port number or range are accepted by this profile.",
+						"multiple_values": false,
 						"name": "port",
 						"type": "user"
 					},
@@ -779,6 +787,7 @@
 						"help": "Port numbers or port number ranges on which to expect HTTPS traffic for SSL/TLS offloading.",
 						"max-value": 65535,
 						"min-value": 1,
+						"multiple_values": false,
 						"name": "ssl-port",
 						"type": "user"
 					},
@@ -824,6 +833,7 @@
 					}
 				},
 				"help": "Enable/disable TCP WAN Optimization and configure TCP WAN Optimization features.",
+				"multiple_values": false,
 				"name": "tcp"
 			},
 			"transparent": {
@@ -855,9 +865,9 @@
 		"path": "wanopt",
 		"q_type": 334
 	},
-	"revision": "9502a46606ed08d8fb79ceaae4ddc006",
-	"serial": "FGTAZRAQCG14L19D",
+	"revision": "8c883006518c0117f1c022afefbdd1b9",
+	"serial": "FGTAZRI5HXAAGI90",
 	"status": "success",
 	"vdom": "root",
-	"version": "v7.0.3"
+	"version": "v7.0.4"
 }

@@ -1,10 +1,10 @@
 {
 	"addedIn": "v6.4.0",
-	"build": 237,
+	"build": 301,
 	"child_path": "isis-interface",
 	"http_method": "GET",
 	"http_status": 200,
-	"mergedVersions": "v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3",
+	"mergedVersions": "v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3,v7.0.4",
 	"name": "isis",
 	"path": "router",
 	"results": {
@@ -18,6 +18,7 @@
 				],
 				"default": "",
 				"help": "Authentication key-chain for level 1 PDUs.",
+				"multiple_values": false,
 				"name": "auth-keychain-l1",
 				"size": 35,
 				"type": "string"
@@ -29,6 +30,7 @@
 				],
 				"default": "",
 				"help": "Authentication key-chain for level 2 PDUs.",
+				"multiple_values": false,
 				"name": "auth-keychain-l2",
 				"size": 35,
 				"type": "string"
@@ -72,6 +74,7 @@
 			"auth-password-l1": {
 				"category": "unitary",
 				"help": "Authentication password for level 1 PDUs.",
+				"multiple_values": false,
 				"name": "auth-password-l1",
 				"size": 128,
 				"type": "password"
@@ -79,6 +82,7 @@
 			"auth-password-l2": {
 				"category": "unitary",
 				"help": "Authentication password for level 2 PDUs.",
+				"multiple_values": false,
 				"name": "auth-password-l2",
 				"size": 128,
 				"type": "password"
@@ -122,7 +126,7 @@
 			"circuit-type": {
 				"category": "unitary",
 				"default": "level-1-2",
-				"help": "IS-IS interface's circuit type",
+				"help": "IS-IS interface's circuit type.",
 				"multiple_values": false,
 				"name": "circuit-type",
 				"options": [
@@ -147,6 +151,7 @@
 				"help": "Level 1 CSNP interval.",
 				"max-value": 65535,
 				"min-value": 1,
+				"multiple_values": false,
 				"name": "csnp-interval-l1",
 				"type": "integer"
 			},
@@ -156,6 +161,7 @@
 				"help": "Level 2 CSNP interval.",
 				"max-value": 65535,
 				"min-value": 1,
+				"multiple_values": false,
 				"name": "csnp-interval-l2",
 				"type": "integer"
 			},
@@ -165,6 +171,7 @@
 				"help": "Level 1 hello interval.",
 				"max-value": 65535,
 				"min-value": 0,
+				"multiple_values": false,
 				"name": "hello-interval-l1",
 				"type": "integer"
 			},
@@ -174,6 +181,7 @@
 				"help": "Level 2 hello interval.",
 				"max-value": 65535,
 				"min-value": 0,
+				"multiple_values": false,
 				"name": "hello-interval-l2",
 				"type": "integer"
 			},
@@ -183,6 +191,7 @@
 				"help": "Level 1 multiplier for Hello holding time.",
 				"max-value": 100,
 				"min-value": 2,
+				"multiple_values": false,
 				"name": "hello-multiplier-l1",
 				"type": "integer"
 			},
@@ -192,6 +201,7 @@
 				"help": "Level 2 multiplier for Hello holding time.",
 				"max-value": 100,
 				"min-value": 2,
+				"multiple_values": false,
 				"name": "hello-multiplier-l2",
 				"type": "integer"
 			},
@@ -219,6 +229,7 @@
 				"help": "LSP transmission interval (milliseconds).",
 				"max-value": 4294967295,
 				"min-value": 1,
+				"multiple_values": false,
 				"name": "lsp-interval",
 				"type": "integer"
 			},
@@ -228,6 +239,7 @@
 				"help": "LSP retransmission interval (sec).",
 				"max-value": 65535,
 				"min-value": 1,
+				"multiple_values": false,
 				"name": "lsp-retransmit-interval",
 				"type": "integer"
 			},
@@ -255,6 +267,7 @@
 				"help": "Mesh group ID \u003c0-4294967295\u003e, 0: mesh-group blocked.",
 				"max-value": 4294967295,
 				"min-value": 0,
+				"multiple_values": false,
 				"name": "mesh-group-id",
 				"type": "integer"
 			},
@@ -264,6 +277,7 @@
 				"help": "Level 1 metric for interface.",
 				"max-value": 63,
 				"min-value": 1,
+				"multiple_values": false,
 				"name": "metric-l1",
 				"type": "integer"
 			},
@@ -273,6 +287,7 @@
 				"help": "Level 2 metric for interface.",
 				"max-value": 63,
 				"min-value": 1,
+				"multiple_values": false,
 				"name": "metric-l2",
 				"type": "integer"
 			},
@@ -283,6 +298,7 @@
 				],
 				"default": "",
 				"help": "IS-IS interface name.",
+				"multiple_values": false,
 				"name": "name",
 				"size": 15,
 				"type": "string"
@@ -290,7 +306,7 @@
 			"network-type": {
 				"category": "unitary",
 				"default": "",
-				"help": "IS-IS interface's network type",
+				"help": "IS-IS interface's network type.",
 				"multiple_values": false,
 				"name": "network-type",
 				"options": [
@@ -315,6 +331,7 @@
 				"help": "Level 1 priority.",
 				"max-value": 127,
 				"min-value": 0,
+				"multiple_values": false,
 				"name": "priority-l1",
 				"type": "integer"
 			},
@@ -324,6 +341,7 @@
 				"help": "Level 2 priority.",
 				"max-value": 127,
 				"min-value": 0,
+				"multiple_values": false,
 				"name": "priority-l2",
 				"type": "integer"
 			},
@@ -369,6 +387,7 @@
 				"help": "Level 1 wide metric for interface.",
 				"max-value": 16777214,
 				"min-value": 1,
+				"multiple_values": false,
 				"name": "wide-metric-l1",
 				"type": "integer"
 			},
@@ -378,6 +397,7 @@
 				"help": "Level 2 wide metric for interface.",
 				"max-value": 16777214,
 				"min-value": 1,
+				"multiple_values": false,
 				"name": "wide-metric-l2",
 				"type": "integer"
 			}
@@ -392,9 +412,9 @@
 		"path": "router",
 		"q_type": 124
 	},
-	"revision": "9243f71c30c6697d8deac29b80f5fede",
-	"serial": "FGTAZRAQCG14L19D",
+	"revision": "2300bf664b13ba20500ed3ee8809bf7f",
+	"serial": "FGTAZRI5HXAAGI90",
 	"status": "success",
 	"vdom": "root",
-	"version": "v7.0.3"
+	"version": "v7.0.4"
 }
