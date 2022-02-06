@@ -15,7 +15,7 @@ type WirelessControllerWtpProfile struct {
 	DtlsInKernel                   *string                                          `json:"dtls-in-kernel,omitempty"`
 	DtlsPolicy                     *string                                          `json:"dtls-policy,omitempty"`
 	EnergyEfficientEthernet        *string                                          `json:"energy-efficient-ethernet,omitempty"`
-	EslSesDongle                   *[]WirelessControllerWtpProfileEslSesDongle      `json:"esl-ses-dongle,omitempty"`
+	EslSesDongle                   *WirelessControllerWtpProfileEslSesDongle        `json:"esl-ses-dongle,omitempty"`
 	ExtInfoEnable                  *string                                          `json:"ext-info-enable,omitempty"`
 	FrequencyHandoff               *string                                          `json:"frequency-handoff,omitempty"`
 	HandoffRoaming                 *string                                          `json:"handoff-roaming,omitempty"`
@@ -23,8 +23,8 @@ type WirelessControllerWtpProfile struct {
 	HandoffStaThresh               *int64                                           `json:"handoff-sta-thresh,omitempty"`
 	IndoorOutdoorDeployment        *string                                          `json:"indoor-outdoor-deployment,omitempty"`
 	IpFragmentPreventing           *string                                          `json:"ip-fragment-preventing,omitempty"`
-	Lan                            *[]WirelessControllerWtpProfileLan               `json:"lan,omitempty"`
-	Lbs                            *[]WirelessControllerWtpProfileLbs               `json:"lbs,omitempty"`
+	Lan                            *WirelessControllerWtpProfileLan                 `json:"lan,omitempty"`
+	Lbs                            *WirelessControllerWtpProfileLbs                 `json:"lbs,omitempty"`
 	LedSchedules                   *[]WirelessControllerWtpProfileLedSchedules      `json:"led-schedules,omitempty"`
 	LedState                       *string                                          `json:"led-state,omitempty"`
 	Lldp                           *string                                          `json:"lldp,omitempty"`
@@ -32,12 +32,12 @@ type WirelessControllerWtpProfile struct {
 	LoginPasswdChange              *string                                          `json:"login-passwd-change,omitempty"`
 	MaxClients                     *int64                                           `json:"max-clients,omitempty"`
 	Name                           *string                                          `json:"name,omitempty"`
-	Platform                       *[]WirelessControllerWtpProfilePlatform          `json:"platform,omitempty"`
+	Platform                       *WirelessControllerWtpProfilePlatform            `json:"platform,omitempty"`
 	PoeMode                        *string                                          `json:"poe-mode,omitempty"`
-	Radio1                         *[]WirelessControllerWtpProfileRadio1            `json:"radio-1,omitempty"`
-	Radio2                         *[]WirelessControllerWtpProfileRadio2            `json:"radio-2,omitempty"`
-	Radio3                         *[]WirelessControllerWtpProfileRadio3            `json:"radio-3,omitempty"`
-	Radio4                         *[]WirelessControllerWtpProfileRadio4            `json:"radio-4,omitempty"`
+	Radio1                         *WirelessControllerWtpProfileRadio1              `json:"radio-1,omitempty"`
+	Radio2                         *WirelessControllerWtpProfileRadio2              `json:"radio-2,omitempty"`
+	Radio3                         *WirelessControllerWtpProfileRadio3              `json:"radio-3,omitempty"`
+	Radio4                         *WirelessControllerWtpProfileRadio4              `json:"radio-4,omitempty"`
 	SplitTunnelingAcl              *[]WirelessControllerWtpProfileSplitTunnelingAcl `json:"split-tunneling-acl,omitempty"`
 	SplitTunnelingAclLocalApSubnet *string                                          `json:"split-tunneling-acl-local-ap-subnet,omitempty"`
 	SplitTunnelingAclPath          *string                                          `json:"split-tunneling-acl-path,omitempty"`

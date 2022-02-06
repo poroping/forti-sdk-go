@@ -20,7 +20,7 @@ type WanoptContentDeliveryNetworkRuleHostDomainNameSuffix struct {
 }
 
 type WanoptContentDeliveryNetworkRuleRules struct {
-	ContentId    *[]WanoptContentDeliveryNetworkRuleRulesContentId    `json:"content-id,omitempty"`
+	ContentId    *WanoptContentDeliveryNetworkRuleRulesContentId      `json:"content-id,omitempty"`
 	MatchEntries *[]WanoptContentDeliveryNetworkRuleRulesMatchEntries `json:"match-entries,omitempty"`
 	MatchMode    *string                                              `json:"match-mode,omitempty"`
 	Name         *string                                              `json:"name,omitempty"`

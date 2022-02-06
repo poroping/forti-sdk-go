@@ -3,10 +3,10 @@ package models
 const RouterMulticast6Path = "router/multicast6/"
 
 type RouterMulticast6 struct {
-	Interface        *[]RouterMulticast6Interface   `json:"interface,omitempty"`
-	MulticastPmtu    *string                        `json:"multicast-pmtu,omitempty"`
-	MulticastRouting *string                        `json:"multicast-routing,omitempty"`
-	PimSmGlobal      *[]RouterMulticast6PimSmGlobal `json:"pim-sm-global,omitempty"`
+	Interface        *[]RouterMulticast6Interface `json:"interface,omitempty"`
+	MulticastPmtu    *string                      `json:"multicast-pmtu,omitempty"`
+	MulticastRouting *string                      `json:"multicast-routing,omitempty"`
+	PimSmGlobal      *RouterMulticast6PimSmGlobal `json:"pim-sm-global,omitempty"`
 }
 
 type RouterMulticast6Interface struct {

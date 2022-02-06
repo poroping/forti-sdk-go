@@ -3,20 +3,20 @@ package models
 const FirewallAccessProxyPath = "firewall/access-proxy/"
 
 type FirewallAccessProxy struct {
-	ApiGateway               *[]FirewallAccessProxyApiGateway               `json:"api-gateway,omitempty"`
-	ApiGateway6              *[]FirewallAccessProxyApiGateway6              `json:"api-gateway6,omitempty"`
-	AuthPortal               *string                                        `json:"auth-portal,omitempty"`
-	AuthVirtualHost          *string                                        `json:"auth-virtual-host,omitempty"`
-	ClientCert               *string                                        `json:"client-cert,omitempty"`
-	DecryptedTrafficMirror   *string                                        `json:"decrypted-traffic-mirror,omitempty"`
-	EmptyCertAction          *string                                        `json:"empty-cert-action,omitempty"`
-	LdbMethod                *string                                        `json:"ldb-method,omitempty"`
-	LogBlockedTraffic        *string                                        `json:"log-blocked-traffic,omitempty"`
-	Name                     *string                                        `json:"name,omitempty"`
-	Realservers              *[]FirewallAccessProxyRealservers              `json:"realservers,omitempty"`
-	ServerPubkeyAuth         *string                                        `json:"server-pubkey-auth,omitempty"`
-	ServerPubkeyAuthSettings *[]FirewallAccessProxyServerPubkeyAuthSettings `json:"server-pubkey-auth-settings,omitempty"`
-	Vip                      *string                                        `json:"vip,omitempty"`
+	ApiGateway               *[]FirewallAccessProxyApiGateway             `json:"api-gateway,omitempty"`
+	ApiGateway6              *[]FirewallAccessProxyApiGateway6            `json:"api-gateway6,omitempty"`
+	AuthPortal               *string                                      `json:"auth-portal,omitempty"`
+	AuthVirtualHost          *string                                      `json:"auth-virtual-host,omitempty"`
+	ClientCert               *string                                      `json:"client-cert,omitempty"`
+	DecryptedTrafficMirror   *string                                      `json:"decrypted-traffic-mirror,omitempty"`
+	EmptyCertAction          *string                                      `json:"empty-cert-action,omitempty"`
+	LdbMethod                *string                                      `json:"ldb-method,omitempty"`
+	LogBlockedTraffic        *string                                      `json:"log-blocked-traffic,omitempty"`
+	Name                     *string                                      `json:"name,omitempty"`
+	Realservers              *[]FirewallAccessProxyRealservers            `json:"realservers,omitempty"`
+	ServerPubkeyAuth         *string                                      `json:"server-pubkey-auth,omitempty"`
+	ServerPubkeyAuthSettings *FirewallAccessProxyServerPubkeyAuthSettings `json:"server-pubkey-auth-settings,omitempty"`
+	Vip                      *string                                      `json:"vip,omitempty"`
 }
 
 type FirewallAccessProxyApiGateway struct {

@@ -14,7 +14,7 @@ type WirelessControllerWtp struct {
 	ImageDownload                  *string                                   `json:"image-download,omitempty"`
 	Index                          *int64                                    `json:"index,omitempty"`
 	IpFragmentPreventing           *string                                   `json:"ip-fragment-preventing,omitempty"`
-	Lan                            *[]WirelessControllerWtpLan               `json:"lan,omitempty"`
+	Lan                            *WirelessControllerWtpLan                 `json:"lan,omitempty"`
 	LedState                       *string                                   `json:"led-state,omitempty"`
 	Location                       *string                                   `json:"location,omitempty"`
 	LoginPasswd                    *string                                   `json:"login-passwd,omitempty"`
@@ -28,10 +28,10 @@ type WirelessControllerWtp struct {
 	OverrideLoginPasswdChange      *string                                   `json:"override-login-passwd-change,omitempty"`
 	OverrideSplitTunnel            *string                                   `json:"override-split-tunnel,omitempty"`
 	OverrideWanPortMode            *string                                   `json:"override-wan-port-mode,omitempty"`
-	Radio1                         *[]WirelessControllerWtpRadio1            `json:"radio-1,omitempty"`
-	Radio2                         *[]WirelessControllerWtpRadio2            `json:"radio-2,omitempty"`
-	Radio3                         *[]WirelessControllerWtpRadio3            `json:"radio-3,omitempty"`
-	Radio4                         *[]WirelessControllerWtpRadio4            `json:"radio-4,omitempty"`
+	Radio1                         *WirelessControllerWtpRadio1              `json:"radio-1,omitempty"`
+	Radio2                         *WirelessControllerWtpRadio2              `json:"radio-2,omitempty"`
+	Radio3                         *WirelessControllerWtpRadio3              `json:"radio-3,omitempty"`
+	Radio4                         *WirelessControllerWtpRadio4              `json:"radio-4,omitempty"`
 	Region                         *string                                   `json:"region,omitempty"`
 	RegionX                        *string                                   `json:"region-x,omitempty"`
 	RegionY                        *string                                   `json:"region-y,omitempty"`

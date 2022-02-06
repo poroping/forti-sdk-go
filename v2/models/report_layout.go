@@ -14,7 +14,7 @@ type ReportLayout struct {
 	MaxPdfReport    *int64                  `json:"max-pdf-report,omitempty"`
 	Name            *string                 `json:"name,omitempty"`
 	Options         *string                 `json:"options,omitempty"`
-	Page            *[]ReportLayoutPage     `json:"page,omitempty"`
+	Page            *ReportLayoutPage       `json:"page,omitempty"`
 	ScheduleType    *string                 `json:"schedule-type,omitempty"`
 	StyleTheme      *string                 `json:"style-theme,omitempty"`
 	Subtitle        *string                 `json:"subtitle,omitempty"`
@@ -61,12 +61,12 @@ type ReportLayoutBodyItemParameters struct {
 }
 
 type ReportLayoutPage struct {
-	ColumnBreakBefore *string                   `json:"column-break-before,omitempty"`
-	Footer            *[]ReportLayoutPageFooter `json:"footer,omitempty"`
-	Header            *[]ReportLayoutPageHeader `json:"header,omitempty"`
-	Options           *string                   `json:"options,omitempty"`
-	PageBreakBefore   *string                   `json:"page-break-before,omitempty"`
-	Paper             *string                   `json:"paper,omitempty"`
+	ColumnBreakBefore *string                 `json:"column-break-before,omitempty"`
+	Footer            *ReportLayoutPageFooter `json:"footer,omitempty"`
+	Header            *ReportLayoutPageHeader `json:"header,omitempty"`
+	Options           *string                 `json:"options,omitempty"`
+	PageBreakBefore   *string                 `json:"page-break-before,omitempty"`
+	Paper             *string                 `json:"paper,omitempty"`
 }
 
 type ReportLayoutPageFooter struct {

@@ -107,7 +107,7 @@ type WirelessControllerVap struct {
 	PortMacauthReauthTimeout            *int64                                          `json:"port-macauth-reauth-timeout,omitempty"`
 	PortMacauthTimeout                  *int64                                          `json:"port-macauth-timeout,omitempty"`
 	PortalMessageOverrideGroup          *string                                         `json:"portal-message-override-group,omitempty"`
-	PortalMessageOverrides              *[]WirelessControllerVapPortalMessageOverrides  `json:"portal-message-overrides,omitempty"`
+	PortalMessageOverrides              *WirelessControllerVapPortalMessageOverrides    `json:"portal-message-overrides,omitempty"`
 	PortalType                          *string                                         `json:"portal-type,omitempty"`
 	PrimaryWagProfile                   *string                                         `json:"primary-wag-profile,omitempty"`
 	ProbeRespSuppression                *string                                         `json:"probe-resp-suppression,omitempty"`

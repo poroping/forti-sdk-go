@@ -3,21 +3,21 @@ package models
 const WebfilterProfilePath = "webfilter/profile/"
 
 type WebfilterProfile struct {
-	Antiphish                 *[]WebfilterProfileAntiphish            `json:"antiphish,omitempty"`
+	Antiphish                 *WebfilterProfileAntiphish              `json:"antiphish,omitempty"`
 	Comment                   *string                                 `json:"comment,omitempty"`
 	ExtendedLog               *string                                 `json:"extended-log,omitempty"`
 	FeatureSet                *string                                 `json:"feature-set,omitempty"`
-	FileFilter                *[]WebfilterProfileFileFilter           `json:"file-filter,omitempty"`
-	FtgdWf                    *[]WebfilterProfileFtgdWf               `json:"ftgd-wf,omitempty"`
+	FileFilter                *WebfilterProfileFileFilter             `json:"file-filter,omitempty"`
+	FtgdWf                    *WebfilterProfileFtgdWf                 `json:"ftgd-wf,omitempty"`
 	HttpsReplacemsg           *string                                 `json:"https-replacemsg,omitempty"`
 	LogAllUrl                 *string                                 `json:"log-all-url,omitempty"`
 	Name                      *string                                 `json:"name,omitempty"`
 	Options                   *string                                 `json:"options,omitempty"`
-	Override                  *[]WebfilterProfileOverride             `json:"override,omitempty"`
+	Override                  *WebfilterProfileOverride               `json:"override,omitempty"`
 	OvrdPerm                  *string                                 `json:"ovrd-perm,omitempty"`
 	PostAction                *string                                 `json:"post-action,omitempty"`
 	ReplacemsgGroup           *string                                 `json:"replacemsg-group,omitempty"`
-	Web                       *[]WebfilterProfileWeb                  `json:"web,omitempty"`
+	Web                       *WebfilterProfileWeb                    `json:"web,omitempty"`
 	WebAntiphishingLog        *string                                 `json:"web-antiphishing-log,omitempty"`
 	WebContentLog             *string                                 `json:"web-content-log,omitempty"`
 	WebExtendedAllActionLog   *string                                 `json:"web-extended-all-action-log,omitempty"`

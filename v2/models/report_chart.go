@@ -5,7 +5,7 @@ const ReportChartPath = "report/chart/"
 type ReportChart struct {
 	Background      *string                       `json:"background,omitempty"`
 	Category        *string                       `json:"category,omitempty"`
-	CategorySeries  *[]ReportChartCategorySeries  `json:"category-series,omitempty"`
+	CategorySeries  *ReportChartCategorySeries    `json:"category-series,omitempty"`
 	ColorPalette    *string                       `json:"color-palette,omitempty"`
 	Column          *[]ReportChartColumn          `json:"column,omitempty"`
 	Comments        *string                       `json:"comments,omitempty"`
@@ -23,9 +23,9 @@ type ReportChart struct {
 	Title           *string                       `json:"title,omitempty"`
 	TitleFontSize   *int64                        `json:"title-font-size,omitempty"`
 	Type            *string                       `json:"type,omitempty"`
-	ValueSeries     *[]ReportChartValueSeries     `json:"value-series,omitempty"`
-	XSeries         *[]ReportChartXSeries         `json:"x-series,omitempty"`
-	YSeries         *[]ReportChartYSeries         `json:"y-series,omitempty"`
+	ValueSeries     *ReportChartValueSeries       `json:"value-series,omitempty"`
+	XSeries         *ReportChartXSeries           `json:"x-series,omitempty"`
+	YSeries         *ReportChartYSeries           `json:"y-series,omitempty"`
 }
 
 type ReportChartCategorySeries struct {

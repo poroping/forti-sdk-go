@@ -3,11 +3,11 @@ package models
 const RouterMulticastPath = "router/multicast/"
 
 type RouterMulticast struct {
-	Interface        *[]RouterMulticastInterface   `json:"interface,omitempty"`
-	MulticastRouting *string                       `json:"multicast-routing,omitempty"`
-	PimSmGlobal      *[]RouterMulticastPimSmGlobal `json:"pim-sm-global,omitempty"`
-	RouteLimit       *int64                        `json:"route-limit,omitempty"`
-	RouteThreshold   *int64                        `json:"route-threshold,omitempty"`
+	Interface        *[]RouterMulticastInterface `json:"interface,omitempty"`
+	MulticastRouting *string                     `json:"multicast-routing,omitempty"`
+	PimSmGlobal      *RouterMulticastPimSmGlobal `json:"pim-sm-global,omitempty"`
+	RouteLimit       *int64                      `json:"route-limit,omitempty"`
+	RouteThreshold   *int64                      `json:"route-threshold,omitempty"`
 }
 
 type RouterMulticastInterface struct {
@@ -16,7 +16,7 @@ type RouterMulticastInterface struct {
 	DrPriority           *int64                               `json:"dr-priority,omitempty"`
 	HelloHoldtime        *int64                               `json:"hello-holdtime,omitempty"`
 	HelloInterval        *int64                               `json:"hello-interval,omitempty"`
-	Igmp                 *[]RouterMulticastInterfaceIgmp      `json:"igmp,omitempty"`
+	Igmp                 *RouterMulticastInterfaceIgmp        `json:"igmp,omitempty"`
 	JoinGroup            *[]RouterMulticastInterfaceJoinGroup `json:"join-group,omitempty"`
 	MulticastFlow        *string                              `json:"multicast-flow,omitempty"`
 	Name                 *string                              `json:"name,omitempty"`

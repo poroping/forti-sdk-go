@@ -7,20 +7,20 @@ type SystemNpu struct {
 	DedicatedManagementAffinity *string                         `json:"dedicated-management-affinity,omitempty"`
 	DedicatedManagementCpu      *string                         `json:"dedicated-management-cpu,omitempty"`
 	DefaultQosType              *string                         `json:"default-qos-type,omitempty"`
-	DosOptions                  *[]SystemNpuDosOptions          `json:"dos-options,omitempty"`
+	DosOptions                  *SystemNpuDosOptions            `json:"dos-options,omitempty"`
 	DoubleLevelMcastOffload     *string                         `json:"double-level-mcast-offload,omitempty"`
 	DseTimeout                  *int64                          `json:"dse-timeout,omitempty"`
 	DswDtsProfile               *[]SystemNpuDswDtsProfile       `json:"dsw-dts-profile,omitempty"`
 	DswQueueDtsProfile          *[]SystemNpuDswQueueDtsProfile  `json:"dsw-queue-dts-profile,omitempty"`
 	Fastpath                    *string                         `json:"fastpath,omitempty"`
-	FpAnomaly                   *[]SystemNpuFpAnomaly           `json:"fp-anomaly,omitempty"`
+	FpAnomaly                   *SystemNpuFpAnomaly             `json:"fp-anomaly,omitempty"`
 	GtpSupport                  *string                         `json:"gtp-support,omitempty"`
 	HashTblSpread               *string                         `json:"hash-tbl-spread,omitempty"`
-	Hpe                         *[]SystemNpuHpe                 `json:"hpe,omitempty"`
+	Hpe                         *SystemNpuHpe                   `json:"hpe,omitempty"`
 	HtabDediQueueNr             *int64                          `json:"htab-dedi-queue-nr,omitempty"`
 	HtabMsgQueue                *string                         `json:"htab-msg-queue,omitempty"`
 	InboundDscpCopyPort         *[]SystemNpuInboundDscpCopyPort `json:"inbound-dscp-copy-port,omitempty"`
-	IpReassembly                *[]SystemNpuIpReassembly        `json:"ip-reassembly,omitempty"`
+	IpReassembly                *SystemNpuIpReassembly          `json:"ip-reassembly,omitempty"`
 	IppoolOverloadHigh          *int64                          `json:"ippool-overload-high,omitempty"`
 	IppoolOverloadLow           *int64                          `json:"ippool-overload-low,omitempty"`
 	IpsecDecSubengineMask       *string                         `json:"ipsec-dec-subengine-mask,omitempty"`
@@ -29,18 +29,18 @@ type SystemNpu struct {
 	IpsecMtuOverride            *string                         `json:"ipsec-mtu-override,omitempty"`
 	IpsecObNpSel                *string                         `json:"ipsec-ob-np-sel,omitempty"`
 	IpsecOverVlink              *string                         `json:"ipsec-over-vlink,omitempty"`
-	IsfNpQueues                 *[]SystemNpuIsfNpQueues         `json:"isf-np-queues,omitempty"`
+	IsfNpQueues                 *SystemNpuIsfNpQueues           `json:"isf-np-queues,omitempty"`
 	MaxSessionTimeout           *int64                          `json:"max-session-timeout,omitempty"`
 	McastSessionAccounting      *string                         `json:"mcast-session-accounting,omitempty"`
 	NapiBreakInterval           *int64                          `json:"napi-break-interval,omitempty"`
-	NpQueues                    *[]SystemNpuNpQueues            `json:"np-queues,omitempty"`
+	NpQueues                    *SystemNpuNpQueues              `json:"np-queues,omitempty"`
 	Np6CpsOptimizationMode      *string                         `json:"np6-cps-optimization-mode,omitempty"`
 	PbaEim                      *string                         `json:"pba-eim,omitempty"`
 	PerSessionAccounting        *string                         `json:"per-session-accounting,omitempty"`
 	PolicyOffloadLevel          *string                         `json:"policy-offload-level,omitempty"`
 	PortCpuMap                  *[]SystemNpuPortCpuMap          `json:"port-cpu-map,omitempty"`
 	PortNpuMap                  *[]SystemNpuPortNpuMap          `json:"port-npu-map,omitempty"`
-	PriorityProtocol            *[]SystemNpuPriorityProtocol    `json:"priority-protocol,omitempty"`
+	PriorityProtocol            *SystemNpuPriorityProtocol      `json:"priority-protocol,omitempty"`
 	QosMode                     *string                         `json:"qos-mode,omitempty"`
 	RdpOffload                  *string                         `json:"rdp-offload,omitempty"`
 	RecoverNp6Link              *string                         `json:"recover-np6-link,omitempty"`

@@ -53,7 +53,7 @@ type SystemInterface struct {
 	DropFragment                          *string                                  `json:"drop-fragment,omitempty"`
 	DropOverlappedFragment                *string                                  `json:"drop-overlapped-fragment,omitempty"`
 	EgressCos                             *string                                  `json:"egress-cos,omitempty"`
-	EgressQueues                          *[]SystemInterfaceEgressQueues           `json:"egress-queues,omitempty"`
+	EgressQueues                          *SystemInterfaceEgressQueues             `json:"egress-queues,omitempty"`
 	EgressShapingProfile                  *string                                  `json:"egress-shaping-profile,omitempty"`
 	Eip                                   *string                                  `json:"eip,omitempty"`
 	EstimatedDownstreamBandwidth          *int64                                   `json:"estimated-downstream-bandwidth,omitempty"`
@@ -89,7 +89,7 @@ type SystemInterface struct {
 	Ipmac                                 *string                                  `json:"ipmac,omitempty"`
 	IpsSnifferMode                        *string                                  `json:"ips-sniffer-mode,omitempty"`
 	Ipunnumbered                          *string                                  `json:"ipunnumbered,omitempty"`
-	Ipv6                                  *[]SystemInterfaceIpv6                   `json:"ipv6,omitempty"`
+	Ipv6                                  *SystemInterfaceIpv6                     `json:"ipv6,omitempty"`
 	L2forward                             *string                                  `json:"l2forward,omitempty"`
 	LacpHaSlave                           *string                                  `json:"lacp-ha-slave,omitempty"`
 	LacpMode                              *string                                  `json:"lacp-mode,omitempty"`

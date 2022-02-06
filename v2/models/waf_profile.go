@@ -3,15 +3,15 @@ package models
 const WafProfilePath = "waf/profile/"
 
 type WafProfile struct {
-	AddressList *[]WafProfileAddressList `json:"address-list,omitempty"`
-	Comment     *string                  `json:"comment,omitempty"`
-	Constraint  *[]WafProfileConstraint  `json:"constraint,omitempty"`
-	ExtendedLog *string                  `json:"extended-log,omitempty"`
-	External    *string                  `json:"external,omitempty"`
-	Method      *[]WafProfileMethod      `json:"method,omitempty"`
-	Name        *string                  `json:"name,omitempty"`
-	Signature   *[]WafProfileSignature   `json:"signature,omitempty"`
-	UrlAccess   *[]WafProfileUrlAccess   `json:"url-access,omitempty"`
+	AddressList *WafProfileAddressList `json:"address-list,omitempty"`
+	Comment     *string                `json:"comment,omitempty"`
+	Constraint  *WafProfileConstraint  `json:"constraint,omitempty"`
+	ExtendedLog *string                `json:"extended-log,omitempty"`
+	External    *string                `json:"external,omitempty"`
+	Method      *WafProfileMethod      `json:"method,omitempty"`
+	Name        *string                `json:"name,omitempty"`
+	Signature   *WafProfileSignature   `json:"signature,omitempty"`
+	UrlAccess   *[]WafProfileUrlAccess `json:"url-access,omitempty"`
 }
 
 type WafProfileAddressList struct {
@@ -31,20 +31,20 @@ type WafProfileAddressListTrustedAddress struct {
 }
 
 type WafProfileConstraint struct {
-	ContentLength   *[]WafProfileConstraintContentLength   `json:"content-length,omitempty"`
-	Exception       *[]WafProfileConstraintException       `json:"exception,omitempty"`
-	HeaderLength    *[]WafProfileConstraintHeaderLength    `json:"header-length,omitempty"`
-	Hostname        *[]WafProfileConstraintHostname        `json:"hostname,omitempty"`
-	LineLength      *[]WafProfileConstraintLineLength      `json:"line-length,omitempty"`
-	Malformed       *[]WafProfileConstraintMalformed       `json:"malformed,omitempty"`
-	MaxCookie       *[]WafProfileConstraintMaxCookie       `json:"max-cookie,omitempty"`
-	MaxHeaderLine   *[]WafProfileConstraintMaxHeaderLine   `json:"max-header-line,omitempty"`
-	MaxRangeSegment *[]WafProfileConstraintMaxRangeSegment `json:"max-range-segment,omitempty"`
-	MaxUrlParam     *[]WafProfileConstraintMaxUrlParam     `json:"max-url-param,omitempty"`
-	Method          *[]WafProfileConstraintMethod          `json:"method,omitempty"`
-	ParamLength     *[]WafProfileConstraintParamLength     `json:"param-length,omitempty"`
-	UrlParamLength  *[]WafProfileConstraintUrlParamLength  `json:"url-param-length,omitempty"`
-	Version         *[]WafProfileConstraintVersion         `json:"version,omitempty"`
+	ContentLength   *WafProfileConstraintContentLength   `json:"content-length,omitempty"`
+	Exception       *[]WafProfileConstraintException     `json:"exception,omitempty"`
+	HeaderLength    *WafProfileConstraintHeaderLength    `json:"header-length,omitempty"`
+	Hostname        *WafProfileConstraintHostname        `json:"hostname,omitempty"`
+	LineLength      *WafProfileConstraintLineLength      `json:"line-length,omitempty"`
+	Malformed       *WafProfileConstraintMalformed       `json:"malformed,omitempty"`
+	MaxCookie       *WafProfileConstraintMaxCookie       `json:"max-cookie,omitempty"`
+	MaxHeaderLine   *WafProfileConstraintMaxHeaderLine   `json:"max-header-line,omitempty"`
+	MaxRangeSegment *WafProfileConstraintMaxRangeSegment `json:"max-range-segment,omitempty"`
+	MaxUrlParam     *WafProfileConstraintMaxUrlParam     `json:"max-url-param,omitempty"`
+	Method          *WafProfileConstraintMethod          `json:"method,omitempty"`
+	ParamLength     *WafProfileConstraintParamLength     `json:"param-length,omitempty"`
+	UrlParamLength  *WafProfileConstraintUrlParamLength  `json:"url-param-length,omitempty"`
+	Version         *WafProfileConstraintVersion         `json:"version,omitempty"`
 }
 
 type WafProfileConstraintContentLength struct {

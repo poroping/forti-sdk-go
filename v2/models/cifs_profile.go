@@ -4,7 +4,7 @@ const CifsProfilePath = "cifs/profile/"
 
 type CifsProfile struct {
 	DomainController     *string                    `json:"domain-controller,omitempty"`
-	FileFilter           *[]CifsProfileFileFilter   `json:"file-filter,omitempty"`
+	FileFilter           *CifsProfileFileFilter     `json:"file-filter,omitempty"`
 	Name                 *string                    `json:"name,omitempty"`
 	ServerCredentialType *string                    `json:"server-credential-type,omitempty"`
 	ServerKeytab         *[]CifsProfileServerKeytab `json:"server-keytab,omitempty"`

@@ -3,16 +3,16 @@ package models
 const SystemLldpNetworkPolicyPath = "system.lldp/network-policy/"
 
 type SystemLldpNetworkPolicy struct {
-	Comment             *string                                       `json:"comment,omitempty"`
-	Guest               *[]SystemLldpNetworkPolicyGuest               `json:"guest,omitempty"`
-	GuestVoiceSignaling *[]SystemLldpNetworkPolicyGuestVoiceSignaling `json:"guest-voice-signaling,omitempty"`
-	Name                *string                                       `json:"name,omitempty"`
-	Softphone           *[]SystemLldpNetworkPolicySoftphone           `json:"softphone,omitempty"`
-	StreamingVideo      *[]SystemLldpNetworkPolicyStreamingVideo      `json:"streaming-video,omitempty"`
-	VideoConferencing   *[]SystemLldpNetworkPolicyVideoConferencing   `json:"video-conferencing,omitempty"`
-	VideoSignaling      *[]SystemLldpNetworkPolicyVideoSignaling      `json:"video-signaling,omitempty"`
-	Voice               *[]SystemLldpNetworkPolicyVoice               `json:"voice,omitempty"`
-	VoiceSignaling      *[]SystemLldpNetworkPolicyVoiceSignaling      `json:"voice-signaling,omitempty"`
+	Comment             *string                                     `json:"comment,omitempty"`
+	Guest               *SystemLldpNetworkPolicyGuest               `json:"guest,omitempty"`
+	GuestVoiceSignaling *SystemLldpNetworkPolicyGuestVoiceSignaling `json:"guest-voice-signaling,omitempty"`
+	Name                *string                                     `json:"name,omitempty"`
+	Softphone           *SystemLldpNetworkPolicySoftphone           `json:"softphone,omitempty"`
+	StreamingVideo      *SystemLldpNetworkPolicyStreamingVideo      `json:"streaming-video,omitempty"`
+	VideoConferencing   *SystemLldpNetworkPolicyVideoConferencing   `json:"video-conferencing,omitempty"`
+	VideoSignaling      *SystemLldpNetworkPolicyVideoSignaling      `json:"video-signaling,omitempty"`
+	Voice               *SystemLldpNetworkPolicyVoice               `json:"voice,omitempty"`
+	VoiceSignaling      *SystemLldpNetworkPolicyVoiceSignaling      `json:"voice-signaling,omitempty"`
 }
 
 type SystemLldpNetworkPolicyGuest struct {

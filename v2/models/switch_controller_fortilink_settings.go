@@ -3,11 +3,11 @@ package models
 const SwitchControllerFortilinkSettingsPath = "switch-controller/fortilink-settings/"
 
 type SwitchControllerFortilinkSettings struct {
-	Fortilink     *string                                      `json:"fortilink,omitempty"`
-	InactiveTimer *int64                                       `json:"inactive-timer,omitempty"`
-	LinkDownFlush *string                                      `json:"link-down-flush,omitempty"`
-	NacPorts      *[]SwitchControllerFortilinkSettingsNacPorts `json:"nac-ports,omitempty"`
-	Name          *string                                      `json:"name,omitempty"`
+	Fortilink     *string                                    `json:"fortilink,omitempty"`
+	InactiveTimer *int64                                     `json:"inactive-timer,omitempty"`
+	LinkDownFlush *string                                    `json:"link-down-flush,omitempty"`
+	NacPorts      *SwitchControllerFortilinkSettingsNacPorts `json:"nac-ports,omitempty"`
+	Name          *string                                    `json:"name,omitempty"`
 }
 
 type SwitchControllerFortilinkSettingsNacPorts struct {

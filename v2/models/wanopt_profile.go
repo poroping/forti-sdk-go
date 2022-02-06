@@ -3,15 +3,15 @@ package models
 const WanoptProfilePath = "wanopt/profile/"
 
 type WanoptProfile struct {
-	AuthGroup   *string              `json:"auth-group,omitempty"`
-	Cifs        *[]WanoptProfileCifs `json:"cifs,omitempty"`
-	Comments    *string              `json:"comments,omitempty"`
-	Ftp         *[]WanoptProfileFtp  `json:"ftp,omitempty"`
-	Http        *[]WanoptProfileHttp `json:"http,omitempty"`
-	Mapi        *[]WanoptProfileMapi `json:"mapi,omitempty"`
-	Name        *string              `json:"name,omitempty"`
-	Tcp         *[]WanoptProfileTcp  `json:"tcp,omitempty"`
-	Transparent *string              `json:"transparent,omitempty"`
+	AuthGroup   *string            `json:"auth-group,omitempty"`
+	Cifs        *WanoptProfileCifs `json:"cifs,omitempty"`
+	Comments    *string            `json:"comments,omitempty"`
+	Ftp         *WanoptProfileFtp  `json:"ftp,omitempty"`
+	Http        *WanoptProfileHttp `json:"http,omitempty"`
+	Mapi        *WanoptProfileMapi `json:"mapi,omitempty"`
+	Name        *string            `json:"name,omitempty"`
+	Tcp         *WanoptProfileTcp  `json:"tcp,omitempty"`
+	Transparent *string            `json:"transparent,omitempty"`
 }
 
 type WanoptProfileCifs struct {

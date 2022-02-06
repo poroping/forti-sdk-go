@@ -8,19 +8,19 @@ type FirewallSslSshProfile struct {
 	BlockBlocklistedCertificates *string                            `json:"block-blocklisted-certificates,omitempty"`
 	Caname                       *string                            `json:"caname,omitempty"`
 	Comment                      *string                            `json:"comment,omitempty"`
-	Dot                          *[]FirewallSslSshProfileDot        `json:"dot,omitempty"`
-	Ftps                         *[]FirewallSslSshProfileFtps       `json:"ftps,omitempty"`
-	Https                        *[]FirewallSslSshProfileHttps      `json:"https,omitempty"`
-	Imaps                        *[]FirewallSslSshProfileImaps      `json:"imaps,omitempty"`
+	Dot                          *FirewallSslSshProfileDot          `json:"dot,omitempty"`
+	Ftps                         *FirewallSslSshProfileFtps         `json:"ftps,omitempty"`
+	Https                        *FirewallSslSshProfileHttps        `json:"https,omitempty"`
+	Imaps                        *FirewallSslSshProfileImaps        `json:"imaps,omitempty"`
 	MapiOverHttps                *string                            `json:"mapi-over-https,omitempty"`
 	Name                         *string                            `json:"name,omitempty"`
-	Pop3s                        *[]FirewallSslSshProfilePop3s      `json:"pop3s,omitempty"`
+	Pop3s                        *FirewallSslSshProfilePop3s        `json:"pop3s,omitempty"`
 	RpcOverHttps                 *string                            `json:"rpc-over-https,omitempty"`
 	ServerCert                   *[]FirewallSslSshProfileServerCert `json:"server-cert,omitempty"`
 	ServerCertMode               *string                            `json:"server-cert-mode,omitempty"`
-	Smtps                        *[]FirewallSslSshProfileSmtps      `json:"smtps,omitempty"`
-	Ssh                          *[]FirewallSslSshProfileSsh        `json:"ssh,omitempty"`
-	Ssl                          *[]FirewallSslSshProfileSsl        `json:"ssl,omitempty"`
+	Smtps                        *FirewallSslSshProfileSmtps        `json:"smtps,omitempty"`
+	Ssh                          *FirewallSslSshProfileSsh          `json:"ssh,omitempty"`
+	Ssl                          *FirewallSslSshProfileSsl          `json:"ssl,omitempty"`
 	SslAnomaliesLog              *string                            `json:"ssl-anomalies-log,omitempty"`
 	SslAnomalyLog                *string                            `json:"ssl-anomaly-log,omitempty"`
 	SslExempt                    *[]FirewallSslSshProfileSslExempt  `json:"ssl-exempt,omitempty"`

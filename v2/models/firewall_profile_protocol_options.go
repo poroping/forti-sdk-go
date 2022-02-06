@@ -3,24 +3,24 @@ package models
 const FirewallProfileProtocolOptionsPath = "firewall/profile-protocol-options/"
 
 type FirewallProfileProtocolOptions struct {
-	Cifs                  *[]FirewallProfileProtocolOptionsCifs          `json:"cifs,omitempty"`
-	Comment               *string                                        `json:"comment,omitempty"`
-	Dns                   *[]FirewallProfileProtocolOptionsDns           `json:"dns,omitempty"`
-	FeatureSet            *string                                        `json:"feature-set,omitempty"`
-	Ftp                   *[]FirewallProfileProtocolOptionsFtp           `json:"ftp,omitempty"`
-	Http                  *[]FirewallProfileProtocolOptionsHttp          `json:"http,omitempty"`
-	Imap                  *[]FirewallProfileProtocolOptionsImap          `json:"imap,omitempty"`
-	MailSignature         *[]FirewallProfileProtocolOptionsMailSignature `json:"mail-signature,omitempty"`
-	Mapi                  *[]FirewallProfileProtocolOptionsMapi          `json:"mapi,omitempty"`
-	Name                  *string                                        `json:"name,omitempty"`
-	Nntp                  *[]FirewallProfileProtocolOptionsNntp          `json:"nntp,omitempty"`
-	OversizeLog           *string                                        `json:"oversize-log,omitempty"`
-	Pop3                  *[]FirewallProfileProtocolOptionsPop3          `json:"pop3,omitempty"`
-	ReplacemsgGroup       *string                                        `json:"replacemsg-group,omitempty"`
-	RpcOverHttp           *string                                        `json:"rpc-over-http,omitempty"`
-	Smtp                  *[]FirewallProfileProtocolOptionsSmtp          `json:"smtp,omitempty"`
-	Ssh                   *[]FirewallProfileProtocolOptionsSsh           `json:"ssh,omitempty"`
-	SwitchingProtocolsLog *string                                        `json:"switching-protocols-log,omitempty"`
+	Cifs                  *FirewallProfileProtocolOptionsCifs          `json:"cifs,omitempty"`
+	Comment               *string                                      `json:"comment,omitempty"`
+	Dns                   *FirewallProfileProtocolOptionsDns           `json:"dns,omitempty"`
+	FeatureSet            *string                                      `json:"feature-set,omitempty"`
+	Ftp                   *FirewallProfileProtocolOptionsFtp           `json:"ftp,omitempty"`
+	Http                  *FirewallProfileProtocolOptionsHttp          `json:"http,omitempty"`
+	Imap                  *FirewallProfileProtocolOptionsImap          `json:"imap,omitempty"`
+	MailSignature         *FirewallProfileProtocolOptionsMailSignature `json:"mail-signature,omitempty"`
+	Mapi                  *FirewallProfileProtocolOptionsMapi          `json:"mapi,omitempty"`
+	Name                  *string                                      `json:"name,omitempty"`
+	Nntp                  *FirewallProfileProtocolOptionsNntp          `json:"nntp,omitempty"`
+	OversizeLog           *string                                      `json:"oversize-log,omitempty"`
+	Pop3                  *FirewallProfileProtocolOptionsPop3          `json:"pop3,omitempty"`
+	ReplacemsgGroup       *string                                      `json:"replacemsg-group,omitempty"`
+	RpcOverHttp           *string                                      `json:"rpc-over-http,omitempty"`
+	Smtp                  *FirewallProfileProtocolOptionsSmtp          `json:"smtp,omitempty"`
+	Ssh                   *FirewallProfileProtocolOptionsSsh           `json:"ssh,omitempty"`
+	SwitchingProtocolsLog *string                                      `json:"switching-protocols-log,omitempty"`
 }
 
 type FirewallProfileProtocolOptionsCifs struct {

@@ -7,9 +7,9 @@ type DnsfilterProfile struct {
 	BlockBotnet         *string                                `json:"block-botnet,omitempty"`
 	Comment             *string                                `json:"comment,omitempty"`
 	DnsTranslation      *[]DnsfilterProfileDnsTranslation      `json:"dns-translation,omitempty"`
-	DomainFilter        *[]DnsfilterProfileDomainFilter        `json:"domain-filter,omitempty"`
+	DomainFilter        *DnsfilterProfileDomainFilter          `json:"domain-filter,omitempty"`
 	ExternalIpBlocklist *[]DnsfilterProfileExternalIpBlocklist `json:"external-ip-blocklist,omitempty"`
-	FtgdDns             *[]DnsfilterProfileFtgdDns             `json:"ftgd-dns,omitempty"`
+	FtgdDns             *DnsfilterProfileFtgdDns               `json:"ftgd-dns,omitempty"`
 	LogAllDomain        *string                                `json:"log-all-domain,omitempty"`
 	Name                *string                                `json:"name,omitempty"`
 	RedirectPortal      *string                                `json:"redirect-portal,omitempty"`

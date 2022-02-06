@@ -14,7 +14,7 @@ type SystemClusterSync struct {
 	Peerip                  *string                                     `json:"peerip,omitempty"`
 	Peervd                  *string                                     `json:"peervd,omitempty"`
 	SecondaryAddIpsecRoutes *string                                     `json:"secondary-add-ipsec-routes,omitempty"`
-	SessionSyncFilter       *[]SystemClusterSyncSessionSyncFilter       `json:"session-sync-filter,omitempty"`
+	SessionSyncFilter       *SystemClusterSyncSessionSyncFilter         `json:"session-sync-filter,omitempty"`
 	SlaveAddIkeRoutes       *string                                     `json:"slave-add-ike-routes,omitempty"`
 	SyncId                  *int64                                      `json:"sync-id,omitempty"`
 	Syncvd                  *[]SystemClusterSyncSyncvd                  `json:"syncvd,omitempty"`

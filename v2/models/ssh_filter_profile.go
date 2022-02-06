@@ -5,7 +5,7 @@ const SshFilterProfilePath = "ssh-filter/profile/"
 type SshFilterProfile struct {
 	Block             *string                          `json:"block,omitempty"`
 	DefaultCommandLog *string                          `json:"default-command-log,omitempty"`
-	FileFilter        *[]SshFilterProfileFileFilter    `json:"file-filter,omitempty"`
+	FileFilter        *SshFilterProfileFileFilter      `json:"file-filter,omitempty"`
 	Log               *string                          `json:"log,omitempty"`
 	Name              *string                          `json:"name,omitempty"`
 	ShellCommands     *[]SshFilterProfileShellCommands `json:"shell-commands,omitempty"`
