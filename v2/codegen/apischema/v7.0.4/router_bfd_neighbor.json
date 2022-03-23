@@ -1,0 +1,51 @@
+{
+    "http_method": "GET",
+    "revision": "3e297bc5f43599769245bb4444f27bc9",
+    "results": {
+        "name": "neighbor",
+        "category": "table",
+        "help": "Neighbor.",
+        "mkey": "ip",
+        "mkey_type": "ipv4-address",
+        "children": {
+            "ip": {
+                "name": "ip",
+                "category": "unitary",
+                "type": "ipv4-address",
+                "help": "IPv4 address of the BFD neighbor.",
+                "required": true,
+                "default": "0.0.0.0",
+                "multiple_values": false
+            },
+            "interface": {
+                "name": "interface",
+                "category": "unitary",
+                "type": "string",
+                "help": "Interface name.",
+                "required": true,
+                "datasource": [
+                    "system.interface.name"
+                ],
+                "size": 15,
+                "default": "",
+                "multiple_values": false
+            }
+        },
+        "max_table_size_vdom": 256,
+        "max_table_size_global": 512,
+        "max_table_size_item": 0,
+        "path": "router",
+        "q_type": 372,
+        "access_group": "netgrp"
+    },
+    "vdom": "root",
+    "path": "router",
+    "name": "bfd",
+    "action": "schema",
+    "child_path": "neighbor",
+    "status": "success",
+    "http_status": 200,
+    "serial": "FGTAZRI5HXAAGI90",
+    "version": "v7.0.4",
+    "build": 301
+}

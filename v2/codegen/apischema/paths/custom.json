@@ -15,6 +15,7 @@
     "router/ospf6/ospf6-interface",
     "router/ospf6/redistribute",
     "router/ospf6/summary-address",
+    "router/bfd/neighbor",
     "router/bgp/neighbor",
     "router/bgp/network",
     "router/bgp/network6",

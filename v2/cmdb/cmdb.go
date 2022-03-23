@@ -1003,6 +1003,11 @@ type Endpoints interface {
 	ReadRouterBfd6(mkey string, params *models.CmdbRequestParams) (*models.RouterBfd6, error)
 	UpdateRouterBfd6(mkey string, payload *models.RouterBfd6, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
 	DeleteRouterBfd6(mkey string, params *models.CmdbRequestParams) error
+	CreateRouterBfdNeighbor(payload *models.RouterBfdNeighbor, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	ReadRouterBfdNeighbor(mkey string, params *models.CmdbRequestParams) (*models.RouterBfdNeighbor, error)
+	UpdateRouterBfdNeighbor(mkey string, payload *models.RouterBfdNeighbor, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	DeleteRouterBfdNeighbor(mkey string, params *models.CmdbRequestParams) error
+	ListRouterBfdNeighbor(params *models.CmdbRequestParams) (*[]models.RouterBfdNeighbor, error)
 	CreateRouterBgp(payload *models.RouterBgp, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
 	ReadRouterBgp(mkey string, params *models.CmdbRequestParams) (*models.RouterBgp, error)
 	UpdateRouterBgp(mkey string, payload *models.RouterBgp, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
