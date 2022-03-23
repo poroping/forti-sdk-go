@@ -342,7 +342,20 @@ func parseErrorCode(errorCode int64, errorString string) string {
 // -15 duplicate entry
 // -23 cannot delete, target referenced
 // -651 "enables" // missing required attribute // attribute incorrect
-//
+//current vf=root:0
+// Subnets overlap between 'TESTV6' with primary IP of 'TESTACCINT'
+// node_check_object fail! for ip 169.254.72.255 255.255.255.255
+
+// value parse error before '255.255.255.255'
+// Command fail. Return code -54
+// Error: error code: -56 context: No additional context available
+// cli_error: current vf=BUTT:1
+// node_check_object fail! for phase1name is empty.
+// Attribute 'phase1name' MUST be set.
+// Command fail. Return code -56
+// A tunnel interface cannot be deleted directly.
+// command_cli_delete:6672 delete table entry vpn-example unset oper error ret=-160
+// Command fail. Return code -160
 
 func newRequest(c config.Config, r *models.CmdbRequest) (*http.Request, error) {
 	headers := buildHeaders(c, r)
