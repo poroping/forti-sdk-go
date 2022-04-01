@@ -371,9 +371,12 @@ func typeLookup(s string) string {
 		"password_aes256":        "*string",
 		"uuid":                   "*string",
 		"ether-type":             "*string",
+		"datatime":               "*string",
 	}
 	s, ok := m[s]
 	if !ok {
+		// s = "FIXMEEEEEE"
+		// return s
 		log.Fatalf("Type not found %s", s)
 	}
 	return s
