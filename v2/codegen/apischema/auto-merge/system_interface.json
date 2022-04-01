@@ -1,9 +1,9 @@
 {
 	"addedIn": "v6.2.7",
-	"build": 301,
+	"build": 1157,
 	"http_method": "GET",
 	"http_status": 200,
-	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3,v7.0.4",
+	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3,v7.0.4,v7.2.0",
 	"name": "interface",
 	"path": "system",
 	"results": {
@@ -857,6 +857,89 @@
 				],
 				"type": "option"
 			},
+			"eap-ca-cert": {
+				"addedIn": "v7.2.0",
+				"category": "unitary",
+				"datasource": [
+					"certificate.ca.name"
+				],
+				"default": "",
+				"help": "EAP CA certificate name.",
+				"multiple_values": false,
+				"name": "eap-ca-cert",
+				"size": 79,
+				"type": "string"
+			},
+			"eap-identity": {
+				"addedIn": "v7.2.0",
+				"category": "unitary",
+				"default": "",
+				"help": "EAP identity.",
+				"multiple_values": false,
+				"name": "eap-identity",
+				"size": 35,
+				"type": "string"
+			},
+			"eap-method": {
+				"addedIn": "v7.2.0",
+				"category": "unitary",
+				"default": "",
+				"help": "EAP method.",
+				"multiple_values": false,
+				"name": "eap-method",
+				"options": [
+					{
+						"help": "TLS.",
+						"name": "tls"
+					},
+					{
+						"help": "PEAP.",
+						"name": "peap"
+					}
+				],
+				"type": "option"
+			},
+			"eap-password": {
+				"addedIn": "v7.2.0",
+				"category": "unitary",
+				"help": "EAP password.",
+				"multiple_values": false,
+				"name": "eap-password",
+				"size": 128,
+				"type": "password"
+			},
+			"eap-supplicant": {
+				"addedIn": "v7.2.0",
+				"category": "unitary",
+				"default": "disable",
+				"help": "Enable/disable EAP-Supplicant.",
+				"multiple_values": false,
+				"name": "eap-supplicant",
+				"options": [
+					{
+						"help": "Enable EAP Supplicant.",
+						"name": "enable"
+					},
+					{
+						"help": "Disable EAP Supplicant.",
+						"name": "disable"
+					}
+				],
+				"type": "option"
+			},
+			"eap-user-cert": {
+				"addedIn": "v7.2.0",
+				"category": "unitary",
+				"datasource": [
+					"certificate.local.name"
+				],
+				"default": "",
+				"help": "EAP user certificate name.",
+				"multiple_values": false,
+				"name": "eap-user-cert",
+				"size": 35,
+				"type": "string"
+			},
 			"egress-cos": {
 				"category": "unitary",
 				"help": "Override outgoing CoS in user VLAN tag.",
@@ -1374,6 +1457,19 @@
 				"multiple_values": false,
 				"name": "idle-timeout",
 				"type": "integer"
+			},
+			"ike-saml-server": {
+				"addedIn": "v7.2.0",
+				"category": "unitary",
+				"datasource": [
+					"user.saml.name"
+				],
+				"default": "",
+				"help": "Configure IKE authentication SAML server.",
+				"multiple_values": false,
+				"name": "ike-saml-server",
+				"size": 35,
+				"type": "string"
 			},
 			"inbandwidth": {
 				"category": "unitary",
@@ -4283,8 +4379,8 @@
 				"category": "unitary",
 				"default": 0,
 				"help": "TCP maximum segment size. 0 means do not change segment size.",
-				"max-value": 4294967295,
-				"min-value": 0,
+				"max-value": 65535,
+				"min-value": 48,
 				"multiple_values": false,
 				"name": "tcp-mss",
 				"type": "integer"
@@ -4503,7 +4599,7 @@
 				"category": "unitary",
 				"default": 0,
 				"help": "Virtual Routing Forwarding ID.",
-				"max-value": 31,
+				"max-value": 63,
 				"min-value": 0,
 				"multiple_values": false,
 				"name": "vrf",
@@ -4786,9 +4882,9 @@
 		"path": "system",
 		"q_type": 0
 	},
-	"revision": "73524d1661d36c728221d224a4746dcd",
-	"serial": "FGTAZRI5HXAAGI90",
+	"revision": "c234a25b7729b1785c85949cd93a8200",
+	"serial": "FGTAZRIPD-OKNB34",
 	"status": "success",
 	"vdom": "root",
-	"version": "v7.0.4"
+	"version": "v7.2.0"
 }

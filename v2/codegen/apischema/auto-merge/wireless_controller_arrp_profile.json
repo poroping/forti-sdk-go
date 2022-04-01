@@ -1,9 +1,9 @@
 {
 	"addedIn": "v6.4.2",
-	"build": 301,
+	"build": 1157,
 	"http_method": "GET",
 	"http_status": 200,
-	"mergedVersions": "v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3,v7.0.4",
+	"mergedVersions": "v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3,v7.0.4,v7.2.0",
 	"name": "arrp-profile",
 	"path": "wireless-controller",
 	"results": {
@@ -279,11 +279,11 @@
 		"mkey_type": "string",
 		"name": "arrp-profile",
 		"path": "wireless-controller",
-		"q_type": 272
+		"q_type": 275
 	},
-	"revision": "1af996ea72fbf3755ecb12a854d78106",
-	"serial": "FGTAZRI5HXAAGI90",
+	"revision": "5aaca7175b5b74c5babe5981f58baa16",
+	"serial": "FGTAZRIPD-OKNB34",
 	"status": "success",
 	"vdom": "root",
-	"version": "v7.0.4"
+	"version": "v7.2.0"
 }

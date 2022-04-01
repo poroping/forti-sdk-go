@@ -1,9 +1,9 @@
 {
 	"addedIn": "v7.0.0",
-	"build": 301,
+	"build": 1157,
 	"http_method": "GET",
 	"http_status": 200,
-	"mergedVersions": "v7.0.0,v7.0.1,v7.0.2,v7.0.3,v7.0.4",
+	"mergedVersions": "v7.0.0,v7.0.1,v7.0.2,v7.0.3,v7.0.4,v7.2.0",
 	"name": "automation",
 	"path": "system.replacemsg",
 	"results": {
@@ -81,12 +81,12 @@
 		"mkey_type": "string",
 		"name": "automation",
 		"path": "system.replacemsg",
-		"q_type": 532,
+		"q_type": 536,
 		"readonly": true
 	},
-	"revision": "1af996ea72fbf3755ecb12a854d78106",
-	"serial": "FGTAZRI5HXAAGI90",
+	"revision": "5aaca7175b5b74c5babe5981f58baa16",
+	"serial": "FGTAZRIPD-OKNB34",
 	"status": "success",
 	"vdom": "root",
-	"version": "v7.0.4"
+	"version": "v7.2.0"
 }

@@ -1,9 +1,9 @@
 {
 	"addedIn": "v6.2.7",
-	"build": 301,
+	"build": 1157,
 	"http_method": "GET",
 	"http_status": 200,
-	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3,v7.0.4",
+	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3,v7.0.4,v7.2.0",
 	"name": "user",
 	"path": "system.snmp",
 	"results": {
@@ -233,6 +233,19 @@
 				],
 				"type": "option"
 			},
+			"mib-view": {
+				"addedIn": "v7.2.0",
+				"category": "unitary",
+				"datasource": [
+					"system.snmp.mib-view.name"
+				],
+				"default": "",
+				"help": "SNMP access control MIB view.",
+				"multiple_values": false,
+				"name": "mib-view",
+				"size": 32,
+				"type": "string"
+			},
 			"name": {
 				"category": "unitary",
 				"default": "",
@@ -319,7 +332,7 @@
 				"default": 161,
 				"help": "SNMPv3 query port (default = 161).",
 				"max-value": 65535,
-				"min-value": 0,
+				"min-value": 1,
 				"multiple_values": false,
 				"name": "query-port",
 				"type": "integer"
@@ -385,7 +398,7 @@
 				"default": 162,
 				"help": "SNMPv3 local trap port (default = 162).",
 				"max-value": 65535,
-				"min-value": 0,
+				"min-value": 1,
 				"multiple_values": false,
 				"name": "trap-lport",
 				"type": "integer"
@@ -395,7 +408,7 @@
 				"default": 162,
 				"help": "SNMPv3 trap remote port (default = 162).",
 				"max-value": 65535,
-				"min-value": 0,
+				"min-value": 1,
 				"multiple_values": false,
 				"name": "trap-rport",
 				"type": "integer"
@@ -417,6 +430,33 @@
 					}
 				],
 				"type": "option"
+			},
+			"vdoms": {
+				"addedIn": "v7.2.0",
+				"category": "table",
+				"children": {
+					"name": {
+						"category": "unitary",
+						"datasource": [
+							"system.vdom.name"
+						],
+						"default": "",
+						"help": "VDOM name",
+						"multiple_values": false,
+						"name": "name",
+						"required": true,
+						"size": 79,
+						"type": "string"
+					}
+				},
+				"help": "SNMP access control VDOMs.",
+				"max_table_size_global": 0,
+				"max_table_size_item": 0,
+				"max_table_size_vdom": 0,
+				"member_table": true,
+				"mkey": "name",
+				"mkey_type": "string",
+				"name": "vdoms"
 			}
 		},
 		"help": "SNMP user configuration.",
@@ -427,11 +467,11 @@
 		"mkey_type": "string",
 		"name": "user",
 		"path": "system.snmp",
-		"q_type": 260
+		"q_type": 263
 	},
-	"revision": "e338e35a484eaafc990a69dd13ff4f76",
-	"serial": "FGTAZRI5HXAAGI90",
+	"revision": "f7f9f0c7010a0528b972ed831ae64831",
+	"serial": "FGTAZRIPD-OKNB34",
 	"status": "success",
 	"vdom": "root",
-	"version": "v7.0.4"
+	"version": "v7.2.0"
 }

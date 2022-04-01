@@ -1,9 +1,9 @@
 {
 	"addedIn": "v7.0.2",
-	"build": 301,
+	"build": 1157,
 	"http_method": "GET",
 	"http_status": 200,
-	"mergedVersions": "v7.0.2,v7.0.3,v7.0.4",
+	"mergedVersions": "v7.0.2,v7.0.3,v7.0.4,v7.2.0",
 	"name": "anqp-venue-url",
 	"path": "wireless-controller.hotspot20",
 	"results": {
@@ -71,11 +71,11 @@
 		"mkey_type": "string",
 		"name": "anqp-venue-url",
 		"path": "wireless-controller.hotspot20",
-		"q_type": 285
+		"q_type": 286
 	},
-	"revision": "e338e35a484eaafc990a69dd13ff4f76",
-	"serial": "FGTAZRI5HXAAGI90",
+	"revision": "f7f9f0c7010a0528b972ed831ae64831",
+	"serial": "FGTAZRIPD-OKNB34",
 	"status": "success",
 	"vdom": "root",
-	"version": "v7.0.4"
+	"version": "v7.2.0"
 }

@@ -1,9 +1,9 @@
 {
 	"addedIn": "v6.2.7",
-	"build": 301,
+	"build": 1157,
 	"http_method": "GET",
 	"http_status": 200,
-	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3,v7.0.4",
+	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3,v7.0.4,v7.2.0",
 	"name": "automation-trigger",
 	"path": "system",
 	"results": {
@@ -77,6 +77,30 @@
 					{
 						"help": "Fabric connector event.",
 						"name": "fabric-event"
+					},
+					{
+						"help": "IPS logs.",
+						"name": "ips-logs"
+					},
+					{
+						"help": "Anomaly logs.",
+						"name": "anomaly-logs"
+					},
+					{
+						"help": "Virus logs.",
+						"name": "virus-logs"
+					},
+					{
+						"help": "SSH logs.",
+						"name": "ssh-logs"
+					},
+					{
+						"help": "Webfilter violation.",
+						"name": "webfilter-violation"
+					},
+					{
+						"help": "Traffic violation.",
+						"name": "traffic-violation"
 					}
 				],
 				"type": "option"
@@ -409,6 +433,32 @@
 					}
 				],
 				"type": "option"
+			},
+			"vdom": {
+				"addedIn": "v7.2.0",
+				"category": "table",
+				"children": {
+					"name": {
+						"category": "unitary",
+						"datasource": [
+							"system.vdom.name"
+						],
+						"default": "",
+						"help": "Virtual domain name.",
+						"multiple_values": false,
+						"name": "name",
+						"size": 79,
+						"type": "string"
+					}
+				},
+				"help": "Virtual domain(s) that this trigger is valid for.",
+				"max_table_size_global": 0,
+				"max_table_size_item": 0,
+				"max_table_size_vdom": 0,
+				"member_table": true,
+				"mkey": "name",
+				"mkey_type": "string",
+				"name": "vdom"
 			}
 		},
 		"help": "Trigger for automation stitches.",
@@ -419,11 +469,11 @@
 		"mkey_type": "string",
 		"name": "automation-trigger",
 		"path": "system",
-		"q_type": 497
+		"q_type": 502
 	},
-	"revision": "a33639847466af4b28b24031debd6082",
-	"serial": "FGTAZRI5HXAAGI90",
+	"revision": "2b1e6fd28fbb39308ad921f6c0c296e4",
+	"serial": "FGTAZRIPD-OKNB34",
 	"status": "success",
 	"vdom": "root",
-	"version": "v7.0.4"
+	"version": "v7.2.0"
 }

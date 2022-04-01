@@ -1,9 +1,9 @@
 {
 	"addedIn": "v6.2.7",
-	"build": 301,
+	"build": 1157,
 	"http_method": "GET",
 	"http_status": 200,
-	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3,v7.0.4",
+	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3,v7.0.4,v7.2.0",
 	"name": "ca",
 	"path": "vpn.certificate",
 	"results": {
@@ -145,9 +145,9 @@
 		"path": "vpn.certificate",
 		"q_type": 169
 	},
-	"revision": "7059dfe0a093d72d55d076db1328ce24",
-	"serial": "FGTAZRI5HXAAGI90",
+	"revision": "663a3130635a3d9bcd4f4c8da2a02335",
+	"serial": "FGTAZRIPD-OKNB34",
 	"status": "success",
 	"vdom": "root",
-	"version": "v7.0.4"
+	"version": "v7.2.0"
 }

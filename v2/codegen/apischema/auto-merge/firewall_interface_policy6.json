@@ -1,9 +1,9 @@
 {
 	"addedIn": "v6.2.7",
-	"build": 301,
+	"build": 1157,
 	"http_method": "GET",
 	"http_status": 200,
-	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3,v7.0.4",
+	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3,v7.0.4,v7.2.0",
 	"name": "interface-policy6",
 	"path": "firewall",
 	"results": {
@@ -80,6 +80,39 @@
 				"size": 1023,
 				"type": "var-string"
 			},
+			"dlp-profile": {
+				"addedIn": "v7.2.0",
+				"category": "unitary",
+				"datasource": [
+					"dlp.profile.name"
+				],
+				"default": "",
+				"help": "DLP profile name.",
+				"multiple_values": false,
+				"name": "dlp-profile",
+				"required": true,
+				"size": 35,
+				"type": "string"
+			},
+			"dlp-profile-status": {
+				"addedIn": "v7.2.0",
+				"category": "unitary",
+				"default": "disable",
+				"help": "Enable/disable DLP.",
+				"multiple_values": false,
+				"name": "dlp-profile-status",
+				"options": [
+					{
+						"help": "Enable setting.",
+						"name": "enable"
+					},
+					{
+						"help": "Disable setting.",
+						"name": "disable"
+					}
+				],
+				"type": "option"
+			},
 			"dlp-sensor": {
 				"category": "unitary",
 				"datasource": [
@@ -89,6 +122,7 @@
 				"help": "DLP sensor name.",
 				"multiple_values": false,
 				"name": "dlp-sensor",
+				"removedIn": "v7.2.0",
 				"required": true,
 				"size": 35,
 				"type": "string"
@@ -109,6 +143,7 @@
 						"name": "disable"
 					}
 				],
+				"removedIn": "v7.2.0",
 				"type": "option"
 			},
 			"dsri": {
@@ -378,11 +413,11 @@
 		"mkey_type": "integer",
 		"name": "interface-policy6",
 		"path": "firewall",
-		"q_type": 379
+		"q_type": 380
 	},
-	"revision": "e338e35a484eaafc990a69dd13ff4f76",
-	"serial": "FGTAZRI5HXAAGI90",
+	"revision": "f7f9f0c7010a0528b972ed831ae64831",
+	"serial": "FGTAZRIPD-OKNB34",
 	"status": "success",
 	"vdom": "root",
-	"version": "v7.0.4"
+	"version": "v7.2.0"
 }

@@ -1,10 +1,10 @@
 {
 	"addedIn": "v6.2.7",
-	"build": 301,
+	"build": 1157,
 	"child_path": "neighbor-group",
 	"http_method": "GET",
 	"http_status": 200,
-	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3,v7.0.4",
+	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3,v7.0.4,v7.2.0",
 	"name": "bgp",
 	"path": "router",
 	"results": {
@@ -17,6 +17,25 @@
 				"help": "Enable/disable address family IPv4 for this neighbor.",
 				"multiple_values": false,
 				"name": "activate",
+				"options": [
+					{
+						"help": "Enable setting.",
+						"name": "enable"
+					},
+					{
+						"help": "Disable setting.",
+						"name": "disable"
+					}
+				],
+				"type": "option"
+			},
+			"activate-vpnv4": {
+				"addedIn": "v7.2.0",
+				"category": "unitary",
+				"default": "enable",
+				"help": "Enable/disable address family VPNv4 for this neighbor.",
+				"multiple_values": false,
+				"name": "activate-vpnv4",
 				"options": [
 					{
 						"help": "Enable setting.",
@@ -73,6 +92,33 @@
 				],
 				"type": "option"
 			},
+			"additional-path-vpnv4": {
+				"addedIn": "v7.2.0",
+				"category": "unitary",
+				"default": "disable",
+				"help": "Enable/disable VPNv4 additional-path capability.",
+				"multiple_values": false,
+				"name": "additional-path-vpnv4",
+				"options": [
+					{
+						"help": "Enable sending additional paths.",
+						"name": "send"
+					},
+					{
+						"help": "Enable receiving additional paths.",
+						"name": "receive"
+					},
+					{
+						"help": "Enable sending and receiving additional paths.",
+						"name": "both"
+					},
+					{
+						"help": "Disable additional paths.",
+						"name": "disable"
+					}
+				],
+				"type": "option"
+			},
 			"additional-path6": {
 				"category": "unitary",
 				"default": "disable",
@@ -107,6 +153,17 @@
 				"min-value": 2,
 				"multiple_values": false,
 				"name": "adv-additional-path",
+				"type": "integer"
+			},
+			"adv-additional-path-vpnv4": {
+				"addedIn": "v7.2.0",
+				"category": "unitary",
+				"default": 2,
+				"help": "Number of VPNv4 additional paths that can be advertised to this neighbor.",
+				"max-value": 255,
+				"min-value": 2,
+				"multiple_values": false,
+				"name": "adv-additional-path-vpnv4",
 				"type": "integer"
 			},
 			"adv-additional-path6": {
@@ -175,6 +232,17 @@
 				],
 				"type": "option"
 			},
+			"allowas-in-vpnv4": {
+				"addedIn": "v7.2.0",
+				"category": "unitary",
+				"default": 0,
+				"help": "The maximum number of occurrence of my AS number allowed for VPNv4 route.",
+				"max-value": 10,
+				"min-value": 1,
+				"multiple_values": false,
+				"name": "allowas-in-vpnv4",
+				"type": "integer"
+			},
 			"allowas-in6": {
 				"category": "unitary",
 				"default": 0,
@@ -227,6 +295,29 @@
 				"help": "IPv4 List of attributes that should be unchanged.",
 				"multiple_values": true,
 				"name": "attribute-unchanged",
+				"options": [
+					{
+						"help": "AS path.",
+						"name": "as-path"
+					},
+					{
+						"help": "MED.",
+						"name": "med"
+					},
+					{
+						"help": "Next hop.",
+						"name": "next-hop"
+					}
+				],
+				"type": "option"
+			},
+			"attribute-unchanged-vpnv4": {
+				"addedIn": "v7.2.0",
+				"category": "unitary",
+				"default": "",
+				"help": "List of attributes that should be unchanged for VPNv4 route.",
+				"multiple_values": true,
+				"name": "attribute-unchanged-vpnv4",
 				"options": [
 					{
 						"help": "AS path.",
@@ -343,6 +434,25 @@
 				"help": "Enable/disable advertise IPv4 graceful restart capability to this neighbor.",
 				"multiple_values": false,
 				"name": "capability-graceful-restart",
+				"options": [
+					{
+						"help": "Enable setting.",
+						"name": "enable"
+					},
+					{
+						"help": "Disable setting.",
+						"name": "disable"
+					}
+				],
+				"type": "option"
+			},
+			"capability-graceful-restart-vpnv4": {
+				"addedIn": "v7.2.0",
+				"category": "unitary",
+				"default": "disable",
+				"help": "Enable/disable advertise VPNv4 graceful restart capability to this neighbor.",
+				"multiple_values": false,
+				"name": "capability-graceful-restart-vpnv4",
 				"options": [
 					{
 						"help": "Enable setting.",
@@ -498,6 +608,19 @@
 				"size": 35,
 				"type": "string"
 			},
+			"distribute-list-in-vpnv4": {
+				"addedIn": "v7.2.0",
+				"category": "unitary",
+				"datasource": [
+					"router.access-list.name"
+				],
+				"default": "",
+				"help": "Filter for VPNv4 updates from this neighbor.",
+				"multiple_values": false,
+				"name": "distribute-list-in-vpnv4",
+				"size": 35,
+				"type": "string"
+			},
 			"distribute-list-in6": {
 				"category": "unitary",
 				"datasource": [
@@ -519,6 +642,19 @@
 				"help": "Filter for IPv4 updates to this neighbor.",
 				"multiple_values": false,
 				"name": "distribute-list-out",
+				"size": 35,
+				"type": "string"
+			},
+			"distribute-list-out-vpnv4": {
+				"addedIn": "v7.2.0",
+				"category": "unitary",
+				"datasource": [
+					"router.access-list.name"
+				],
+				"default": "",
+				"help": "Filter for VPNv4 updates to this neighbor.",
+				"multiple_values": false,
+				"name": "distribute-list-out-vpnv4",
 				"size": 35,
 				"type": "string"
 			},
@@ -744,6 +880,17 @@
 				"name": "maximum-prefix-threshold",
 				"type": "integer"
 			},
+			"maximum-prefix-threshold-vpnv4": {
+				"addedIn": "v7.2.0",
+				"category": "unitary",
+				"default": 75,
+				"help": "Maximum VPNv4 prefix threshold value (1 - 100 percent).",
+				"max-value": 100,
+				"min-value": 1,
+				"multiple_values": false,
+				"name": "maximum-prefix-threshold-vpnv4",
+				"type": "integer"
+			},
 			"maximum-prefix-threshold6": {
 				"category": "unitary",
 				"default": 75,
@@ -754,12 +901,42 @@
 				"name": "maximum-prefix-threshold6",
 				"type": "integer"
 			},
+			"maximum-prefix-vpnv4": {
+				"addedIn": "v7.2.0",
+				"category": "unitary",
+				"default": 0,
+				"help": "Maximum number of VPNv4 prefixes to accept from this peer.",
+				"max-value": 4294967295,
+				"min-value": 1,
+				"multiple_values": false,
+				"name": "maximum-prefix-vpnv4",
+				"type": "integer"
+			},
 			"maximum-prefix-warning-only": {
 				"category": "unitary",
 				"default": "disable",
 				"help": "Enable/disable IPv4 Only give warning message when limit is exceeded.",
 				"multiple_values": false,
 				"name": "maximum-prefix-warning-only",
+				"options": [
+					{
+						"help": "Enable setting.",
+						"name": "enable"
+					},
+					{
+						"help": "Disable setting.",
+						"name": "disable"
+					}
+				],
+				"type": "option"
+			},
+			"maximum-prefix-warning-only-vpnv4": {
+				"addedIn": "v7.2.0",
+				"category": "unitary",
+				"default": "disable",
+				"help": "Enable/disable only giving warning message when limit is exceeded for VPNv4 routes.",
+				"multiple_values": false,
+				"name": "maximum-prefix-warning-only-vpnv4",
 				"options": [
 					{
 						"help": "Enable setting.",
@@ -866,6 +1043,25 @@
 				],
 				"type": "option"
 			},
+			"next-hop-self-vpnv4": {
+				"addedIn": "v7.2.0",
+				"category": "unitary",
+				"default": "disable",
+				"help": "Enable/disable setting VPNv4 next-hop to interface's IP address for this neighbor.",
+				"multiple_values": false,
+				"name": "next-hop-self-vpnv4",
+				"options": [
+					{
+						"help": "Enable setting.",
+						"name": "enable"
+					},
+					{
+						"help": "Disable setting.",
+						"name": "disable"
+					}
+				],
+				"type": "option"
+			},
 			"next-hop-self6": {
 				"category": "unitary",
 				"default": "disable",
@@ -932,6 +1128,19 @@
 				"size": 35,
 				"type": "string"
 			},
+			"prefix-list-in-vpnv4": {
+				"addedIn": "v7.2.0",
+				"category": "unitary",
+				"datasource": [
+					"router.prefix-list.name"
+				],
+				"default": "",
+				"help": "Inbound filter for VPNv4 updates from this neighbor.",
+				"multiple_values": false,
+				"name": "prefix-list-in-vpnv4",
+				"size": 35,
+				"type": "string"
+			},
 			"prefix-list-in6": {
 				"category": "unitary",
 				"datasource": [
@@ -953,6 +1162,19 @@
 				"help": "IPv4 Outbound filter for updates to this neighbor.",
 				"multiple_values": false,
 				"name": "prefix-list-out",
+				"size": 35,
+				"type": "string"
+			},
+			"prefix-list-out-vpnv4": {
+				"addedIn": "v7.2.0",
+				"category": "unitary",
+				"datasource": [
+					"router.prefix-list.name"
+				],
+				"default": "",
+				"help": "Outbound filter for VPNv4 updates to this neighbor.",
+				"multiple_values": false,
+				"name": "prefix-list-out-vpnv4",
 				"size": 35,
 				"type": "string"
 			},
@@ -985,6 +1207,25 @@
 				"help": "Enable/disable remove private AS number from IPv4 outbound updates.",
 				"multiple_values": false,
 				"name": "remove-private-as",
+				"options": [
+					{
+						"help": "Enable setting.",
+						"name": "enable"
+					},
+					{
+						"help": "Disable setting.",
+						"name": "disable"
+					}
+				],
+				"type": "option"
+			},
+			"remove-private-as-vpnv4": {
+				"addedIn": "v7.2.0",
+				"category": "unitary",
+				"default": "disable",
+				"help": "Enable/disable remove private AS number from VPNv4 outbound updates.",
+				"multiple_values": false,
+				"name": "remove-private-as-vpnv4",
 				"options": [
 					{
 						"help": "Enable setting.",
@@ -1047,6 +1288,19 @@
 				"size": 35,
 				"type": "string"
 			},
+			"route-map-in-vpnv4": {
+				"addedIn": "v7.2.0",
+				"category": "unitary",
+				"datasource": [
+					"router.route-map.name"
+				],
+				"default": "",
+				"help": "VPNv4 inbound route map filter.",
+				"multiple_values": false,
+				"name": "route-map-in-vpnv4",
+				"size": 35,
+				"type": "string"
+			},
 			"route-map-in6": {
 				"category": "unitary",
 				"datasource": [
@@ -1083,6 +1337,32 @@
 				"size": 35,
 				"type": "string"
 			},
+			"route-map-out-vpnv4": {
+				"addedIn": "v7.2.0",
+				"category": "unitary",
+				"datasource": [
+					"router.route-map.name"
+				],
+				"default": "",
+				"help": "VPNv4 outbound route map filter.",
+				"multiple_values": false,
+				"name": "route-map-out-vpnv4",
+				"size": 35,
+				"type": "string"
+			},
+			"route-map-out-vpnv4-preferable": {
+				"addedIn": "v7.2.0",
+				"category": "unitary",
+				"datasource": [
+					"router.route-map.name"
+				],
+				"default": "",
+				"help": "VPNv4 outbound route map filter if the peer is preferred.",
+				"multiple_values": false,
+				"name": "route-map-out-vpnv4-preferable",
+				"size": 35,
+				"type": "string"
+			},
 			"route-map-out6": {
 				"category": "unitary",
 				"datasource": [
@@ -1113,6 +1393,25 @@
 				"help": "Enable/disable IPv4 AS route reflector client.",
 				"multiple_values": false,
 				"name": "route-reflector-client",
+				"options": [
+					{
+						"help": "Enable setting.",
+						"name": "enable"
+					},
+					{
+						"help": "Disable setting.",
+						"name": "disable"
+					}
+				],
+				"type": "option"
+			},
+			"route-reflector-client-vpnv4": {
+				"addedIn": "v7.2.0",
+				"category": "unitary",
+				"default": "disable",
+				"help": "Enable/disable VPNv4 AS route reflector client for this neighbor.",
+				"multiple_values": false,
+				"name": "route-reflector-client-vpnv4",
 				"options": [
 					{
 						"help": "Enable setting.",
@@ -1161,6 +1460,25 @@
 				],
 				"type": "option"
 			},
+			"route-server-client-vpnv4": {
+				"addedIn": "v7.2.0",
+				"category": "unitary",
+				"default": "disable",
+				"help": "Enable/disable VPNv4 AS route server client for this neighbor.",
+				"multiple_values": false,
+				"name": "route-server-client-vpnv4",
+				"options": [
+					{
+						"help": "Enable setting.",
+						"name": "enable"
+					},
+					{
+						"help": "Disable setting.",
+						"name": "disable"
+					}
+				],
+				"type": "option"
+			},
 			"route-server-client6": {
 				"category": "unitary",
 				"default": "disable",
@@ -1185,6 +1503,33 @@
 				"help": "IPv4 Send community attribute to neighbor.",
 				"multiple_values": false,
 				"name": "send-community",
+				"options": [
+					{
+						"help": "Standard.",
+						"name": "standard"
+					},
+					{
+						"help": "Extended.",
+						"name": "extended"
+					},
+					{
+						"help": "Both.",
+						"name": "both"
+					},
+					{
+						"help": "Disable",
+						"name": "disable"
+					}
+				],
+				"type": "option"
+			},
+			"send-community-vpnv4": {
+				"addedIn": "v7.2.0",
+				"category": "unitary",
+				"default": "both",
+				"help": "Send community attribute to neighbor for VPNv4 address family.",
+				"multiple_values": false,
+				"name": "send-community-vpnv4",
 				"options": [
 					{
 						"help": "Standard.",
@@ -1255,6 +1600,25 @@
 				"help": "Enable/disable allow IPv4 inbound soft reconfiguration.",
 				"multiple_values": false,
 				"name": "soft-reconfiguration",
+				"options": [
+					{
+						"help": "Enable setting.",
+						"name": "enable"
+					},
+					{
+						"help": "Disable setting.",
+						"name": "disable"
+					}
+				],
+				"type": "option"
+			},
+			"soft-reconfiguration-vpnv4": {
+				"addedIn": "v7.2.0",
+				"category": "unitary",
+				"default": "disable",
+				"help": "Enable/disable allow VPNv4 inbound soft reconfiguration.",
+				"multiple_values": false,
+				"name": "soft-reconfiguration-vpnv4",
 				"options": [
 					{
 						"help": "Enable setting.",
@@ -1378,9 +1742,9 @@
 		"path": "router",
 		"q_type": 131
 	},
-	"revision": "2300bf664b13ba20500ed3ee8809bf7f",
-	"serial": "FGTAZRI5HXAAGI90",
+	"revision": "8023aeaaa301ccda902574ef2a3a0973",
+	"serial": "FGTAZRIPD-OKNB34",
 	"status": "success",
 	"vdom": "root",
-	"version": "v7.0.4"
+	"version": "v7.2.0"
 }

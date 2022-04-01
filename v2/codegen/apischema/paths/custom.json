@@ -29,6 +29,8 @@
     "router/bgp/aggregate-address6",
     "router/bgp/vrf-leak",
     "router/bgp/vrf-leak6",
+    "router/bgp/vrf",
+    "router/bgp/vrf6",
     "router/rip/distance",
     "router/rip/distribute-list",
     "router/rip/neighbor",

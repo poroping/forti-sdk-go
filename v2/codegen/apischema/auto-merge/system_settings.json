@@ -1,9 +1,9 @@
 {
 	"addedIn": "v6.2.7",
-	"build": 301,
+	"build": 1157,
 	"http_method": "GET",
 	"http_status": 200,
-	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3,v7.0.4",
+	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3,v7.0.4,v7.2.0",
 	"name": "settings",
 	"path": "system",
 	"results": {
@@ -273,6 +273,36 @@
 				"options": [],
 				"removedIn": "v6.4.2",
 				"type": "option"
+			},
+			"default-app-port-as-service": {
+				"addedIn": "v7.2.0",
+				"category": "unitary",
+				"default": "enable",
+				"help": "Enable/disable policy service enforcement based on application default ports.",
+				"multiple_values": false,
+				"name": "default-app-port-as-service",
+				"options": [
+					{
+						"help": "Enable setting.",
+						"name": "enable"
+					},
+					{
+						"help": "Disable setting.",
+						"name": "disable"
+					}
+				],
+				"type": "option"
+			},
+			"default-policy-expiry-days": {
+				"addedIn": "v7.2.0",
+				"category": "unitary",
+				"default": 30,
+				"help": "Default policy expiry in days (0 - 365 days, default = 30).",
+				"max-value": 365,
+				"min-value": 0,
+				"multiple_values": false,
+				"name": "default-policy-expiry-days",
+				"type": "integer"
 			},
 			"default-voip-alg-mode": {
 				"category": "unitary",
@@ -781,6 +811,29 @@
 				],
 				"type": "option"
 			},
+			"gui-enforce-change-summary": {
+				"addedIn": "v7.2.0",
+				"category": "unitary",
+				"default": "require",
+				"help": "Enforce change summaries for select tables in the GUI.",
+				"multiple_values": false,
+				"name": "gui-enforce-change-summary",
+				"options": [
+					{
+						"help": "No change summary requirement.",
+						"name": "disable"
+					},
+					{
+						"help": "Change summary required.",
+						"name": "require"
+					},
+					{
+						"help": "Change summary optional.",
+						"name": "optional"
+					}
+				],
+				"type": "option"
+			},
 			"gui-explicit-proxy": {
 				"category": "unitary",
 				"default": "disable",
@@ -1048,6 +1101,25 @@
 					},
 					{
 						"help": "Disable object colors on the GUI.",
+						"name": "disable"
+					}
+				],
+				"type": "option"
+			},
+			"gui-ot": {
+				"addedIn": "v7.2.0",
+				"category": "unitary",
+				"default": "disable",
+				"help": "Enable/disable Show Operational Technology Purdue Model.",
+				"multiple_values": false,
+				"name": "gui-ot",
+				"options": [
+					{
+						"help": "Enable Show Operational Technology Purdue Model.",
+						"name": "enable"
+					},
+					{
+						"help": "Disable Show Operational Technology Purdue Model.",
 						"name": "disable"
 					}
 				],
@@ -2030,6 +2102,26 @@
 				],
 				"type": "option"
 			},
+			"vdom-type": {
+				"addedIn": "v7.2.0",
+				"category": "unitary",
+				"default": "traffic",
+				"help": "VDOM type (traffic or admin).",
+				"multiple_values": false,
+				"name": "vdom-type",
+				"options": [
+					{
+						"help": "Change to traffic type",
+						"name": "traffic"
+					},
+					{
+						"help": "Change to admin type",
+						"name": "admin"
+					}
+				],
+				"required": true,
+				"type": "option"
+			},
 			"vpn-stats-log": {
 				"category": "unitary",
 				"default": "ipsec pptp l2tp ssl",
@@ -2091,9 +2183,9 @@
 		"path": "system",
 		"q_type": 139
 	},
-	"revision": "e338e35a484eaafc990a69dd13ff4f76",
-	"serial": "FGTAZRI5HXAAGI90",
+	"revision": "5aaca7175b5b74c5babe5981f58baa16",
+	"serial": "FGTAZRIPD-OKNB34",
 	"status": "success",
 	"vdom": "root",
-	"version": "v7.0.4"
+	"version": "v7.2.0"
 }

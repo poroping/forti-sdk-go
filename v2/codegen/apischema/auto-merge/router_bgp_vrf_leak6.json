@@ -7,6 +7,7 @@
 	"mergedVersions": "v7.0.1,v7.0.2,v7.0.3,v7.0.4",
 	"name": "bgp",
 	"path": "router",
+	"removedIn": "v7.2.0",
 	"results": {
 		"access_group": "netgrp",
 		"category": "table",

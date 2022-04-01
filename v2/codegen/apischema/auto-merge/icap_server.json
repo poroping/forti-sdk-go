@@ -1,15 +1,78 @@
 {
 	"addedIn": "v6.2.7",
-	"build": 301,
+	"build": 1157,
 	"http_method": "GET",
 	"http_status": 200,
-	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3,v7.0.4",
+	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3,v7.0.4,v7.2.0",
 	"name": "server",
 	"path": "icap",
 	"results": {
 		"access_group": "utmgrp",
 		"category": "table",
 		"children": {
+			"addr-type": {
+				"addedIn": "v7.2.0",
+				"category": "unitary",
+				"default": "ip4",
+				"help": "Address type of the remote ICAP server: IPv4, IPv6 or FQDN.",
+				"multiple_values": false,
+				"name": "addr-type",
+				"options": [
+					{
+						"help": "Use an IPv4 address for the remote ICAP server.",
+						"name": "ip4"
+					},
+					{
+						"help": "Use an IPv6 address for the remote ICAP server.",
+						"name": "ip6"
+					},
+					{
+						"help": "Use the FQDN for the forwarding proxy server.",
+						"name": "fqdn"
+					}
+				],
+				"type": "option"
+			},
+			"fqdn": {
+				"addedIn": "v7.2.0",
+				"category": "unitary",
+				"default": "",
+				"help": "ICAP remote server Fully Qualified Domain Name (FQDN).",
+				"multiple_values": false,
+				"name": "fqdn",
+				"size": 255,
+				"type": "string"
+			},
+			"healthcheck": {
+				"addedIn": "v7.2.0",
+				"category": "unitary",
+				"default": "disable",
+				"help": "Enable/disable ICAP remote server health checking. Attempts to connect to the remote ICAP server to verify that the server is operating normally.",
+				"multiple_values": false,
+				"name": "healthcheck",
+				"options": [
+					{
+						"help": "Disable health checking.",
+						"name": "disable"
+					},
+					{
+						"help": "Enable health checking.",
+						"name": "enable"
+					}
+				],
+				"type": "option"
+			},
+			"healthcheck-service": {
+				"addedIn": "v7.2.0",
+				"category": "unitary",
+				"default": "",
+				"help": "ICAP Service name to use for health checks.",
+				"multiple_values": false,
+				"name": "healthcheck-service",
+				"required": true,
+				"size": 127,
+				"type": "string"
+			},
 			"ip-address": {
 				"category": "unitary",
 				"default": "0.0.0.0",
@@ -35,6 +98,7 @@
 						"name": "6"
 					}
 				],
+				"removedIn": "v7.2.0",
 				"type": "option"
 			},
 			"ip6-address": {
@@ -62,7 +126,7 @@
 				"help": "Server name.",
 				"multiple_values": false,
 				"name": "name",
-				"size": 35,
+				"size": 63,
 				"type": "string"
 			},
 			"port": {
@@ -84,12 +148,12 @@
 				"name": "secure",
 				"options": [
 					{
-						"help": "Enable secure connection to ICAP server.",
-						"name": "enable"
+						"help": "Disable connection to secure ICAP server.",
+						"name": "disable"
 					},
 					{
-						"help": "Disable secure connection to ICAP server.",
-						"name": "disable"
+						"help": "Enable connection to secure ICAP server.",
+						"name": "enable"
 					}
 				],
 				"type": "option"
@@ -98,13 +162,13 @@
 				"addedIn": "v7.0.0",
 				"category": "unitary",
 				"datasource": [
-					"vpn.certificate.ca.name"
+					"certificate.ca.name"
 				],
 				"default": "",
 				"help": "CA certificate name.",
 				"multiple_values": false,
 				"name": "ssl-cert",
-				"size": 255,
+				"size": 79,
 				"type": "string"
 			}
 		},
@@ -116,11 +180,11 @@
 		"mkey_type": "string",
 		"name": "server",
 		"path": "icap",
-		"q_type": 451
+		"q_type": 452
 	},
-	"revision": "158a923525badbf574f17da05e5a2185",
-	"serial": "FGTAZRI5HXAAGI90",
+	"revision": "c61e66d14946ca4a4368309fef8742d7",
+	"serial": "FGTAZRIPD-OKNB34",
 	"status": "success",
 	"vdom": "root",
-	"version": "v7.0.4"
+	"version": "v7.2.0"
 }

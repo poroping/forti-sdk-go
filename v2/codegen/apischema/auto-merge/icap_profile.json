@@ -1,15 +1,45 @@
 {
 	"addedIn": "v6.2.7",
-	"build": 301,
+	"build": 1157,
 	"http_method": "GET",
 	"http_status": 200,
-	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3,v7.0.4",
+	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3,v7.0.4,v7.2.0",
 	"name": "profile",
 	"path": "icap",
 	"results": {
 		"access_group": "utmgrp",
 		"category": "table",
 		"children": {
+			"204-response": {
+				"addedIn": "v7.2.0",
+				"category": "unitary",
+				"default": "disable",
+				"help": "Enable/disable allowance of 204 response from ICAP server.",
+				"multiple_values": false,
+				"name": "204-response",
+				"options": [
+					{
+						"help": "Disable allowance of 204 response from ICAP server.",
+						"name": "disable"
+					},
+					{
+						"help": "Enable allowance of 204 response from ICAP server.",
+						"name": "enable"
+					}
+				],
+				"type": "option"
+			},
+			"204-size-limit": {
+				"addedIn": "v7.2.0",
+				"category": "unitary",
+				"default": 1,
+				"help": "204 response size limit to be saved by ICAP client in megabytes (1 - 10, default = 1 MB).",
+				"max-value": 10,
+				"min-value": 1,
+				"multiple_values": false,
+				"name": "204-size-limit",
+				"type": "integer"
+			},
 			"chunk-encap": {
 				"addedIn": "v7.0.2",
 				"category": "unitary",
@@ -43,6 +73,69 @@
 					}
 				],
 				"type": "option"
+			},
+			"file-transfer": {
+				"addedIn": "v7.2.0",
+				"category": "unitary",
+				"default": "",
+				"help": "Configure the file transfer protocols to pass transferred files to an ICAP server as REQMOD.",
+				"multiple_values": true,
+				"name": "file-transfer",
+				"options": [
+					{
+						"help": "Forward file transfer with SSH protocol to ICAP server for further processing.",
+						"name": "ssh"
+					},
+					{
+						"help": "Forward file transfer with FTP protocol to ICAP server for further processing.",
+						"name": "ftp"
+					}
+				],
+				"type": "option"
+			},
+			"file-transfer-failure": {
+				"addedIn": "v7.2.0",
+				"category": "unitary",
+				"default": "error",
+				"help": "Action to take if the ICAP server cannot be contacted when processing a file transfer.",
+				"multiple_values": false,
+				"name": "file-transfer-failure",
+				"options": [
+					{
+						"help": "Error.",
+						"name": "error"
+					},
+					{
+						"help": "Bypass.",
+						"name": "bypass"
+					}
+				],
+				"type": "option"
+			},
+			"file-transfer-path": {
+				"addedIn": "v7.2.0",
+				"category": "unitary",
+				"default": "",
+				"help": "Path component of the ICAP URI that identifies the file transfer processing service.",
+				"multiple_values": false,
+				"name": "file-transfer-path",
+				"size": 127,
+				"type": "string"
+			},
+			"file-transfer-server": {
+				"addedIn": "v7.2.0",
+				"category": "unitary",
+				"datasource": [
+					"icap.server.name",
+					"icap.server-group.name"
+				],
+				"default": "",
+				"help": "ICAP server to use for a file transfer.",
+				"multiple_values": false,
+				"name": "file-transfer-server",
+				"required": true,
+				"size": 63,
+				"type": "string"
 			},
 			"icap-block-log": {
 				"addedIn": "v7.0.1",
@@ -123,7 +216,7 @@
 			},
 			"methods": {
 				"category": "unitary",
-				"default": "delete get head options post put trace other",
+				"default": "delete get head options post put trace connect other",
 				"help": "The allowed HTTP methods that will be sent to ICAP server for further processing.",
 				"multiple_values": true,
 				"name": "methods",
@@ -155,6 +248,10 @@
 					{
 						"help": "Forward HTTP request or response with TRACE method to ICAP server for further processing.",
 						"name": "trace"
+					},
+					{
+						"help": "Forward HTTP request or response with CONNECT method to ICAP server for further processing.",
+						"name": "connect"
 					},
 					{
 						"help": "Forward HTTP request or response with All other methods to ICAP server for further processing.",
@@ -260,14 +357,15 @@
 			"request-server": {
 				"category": "unitary",
 				"datasource": [
-					"icap.server.name"
+					"icap.server.name",
+					"icap.server-group.name"
 				],
 				"default": "",
 				"help": "ICAP server to use for an HTTP request.",
 				"multiple_values": false,
 				"name": "request-server",
 				"required": true,
-				"size": 35,
+				"size": 63,
 				"type": "string"
 			},
 			"respmod-default-action": {
@@ -279,11 +377,11 @@
 				"name": "respmod-default-action",
 				"options": [
 					{
-						"help": "Forward response to icap server unless a rule specifies not to.",
+						"help": "Forward response to ICAP server unless a rule specifies not to.",
 						"name": "forward"
 					},
 					{
-						"help": "Don't forward request to icap server unless a rule specifies to forward the request.",
+						"help": "Don't forward request to ICAP server unless a rule specifies to forward the request.",
 						"name": "bypass"
 					}
 				],
@@ -400,7 +498,7 @@
 								"type": "integer"
 							}
 						},
-						"default": 2014143124,
+						"default": 2452857492,
 						"help": "HTTP response status code.",
 						"max_table_size_global": 0,
 						"max_table_size_item": 0,
@@ -495,14 +593,15 @@
 			"response-server": {
 				"category": "unitary",
 				"datasource": [
-					"icap.server.name"
+					"icap.server.name",
+					"icap.server-group.name"
 				],
 				"default": "",
 				"help": "ICAP server to use for an HTTP response.",
 				"multiple_values": false,
 				"name": "response-server",
 				"required": true,
-				"size": 35,
+				"size": 63,
 				"type": "string"
 			},
 			"scan-progress-interval": {
@@ -533,6 +632,17 @@
 					}
 				],
 				"type": "option"
+			},
+			"timeout": {
+				"addedIn": "v7.2.0",
+				"category": "unitary",
+				"default": 30,
+				"help": "Time (in seconds) that ICAP client waits for the response from ICAP server.",
+				"max-value": 3600,
+				"min-value": 30,
+				"multiple_values": false,
+				"name": "timeout",
+				"type": "integer"
 			}
 		},
 		"help": "Configure ICAP profiles.",
@@ -543,11 +653,11 @@
 		"mkey_type": "string",
 		"name": "profile",
 		"path": "icap",
-		"q_type": 453
+		"q_type": 454
 	},
-	"revision": "d65fa02ecb712eb9a1d846ff1d667b4a",
-	"serial": "FGTAZRI5HXAAGI90",
+	"revision": "f7fe814ab31b35c3001ba0b65166d017",
+	"serial": "FGTAZRIPD-OKNB34",
 	"status": "success",
 	"vdom": "root",
-	"version": "v7.0.4"
+	"version": "v7.2.0"
 }

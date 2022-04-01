@@ -1,9 +1,9 @@
 {
 	"addedIn": "v6.2.7",
-	"build": 301,
+	"build": 1157,
 	"http_method": "GET",
 	"http_status": 200,
-	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3,v7.0.4",
+	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3,v7.0.4,v7.2.0",
 	"name": "profile",
 	"path": "antivirus",
 	"results": {
@@ -17,7 +17,7 @@
 					"dlp.filepattern.id"
 				],
 				"default": 0,
-				"help": "Only submit files matching this DLP file-pattern to FortiSandbox.",
+				"help": "Only submit files matching this DLP file-pattern to FortiSandbox (post-transfer scan only).",
 				"max-value": 4294967295,
 				"min-value": 0,
 				"multiple_values": false,
@@ -62,7 +62,7 @@
 					"dlp.filepattern.id"
 				],
 				"default": 0,
-				"help": "Do not submit files matching this DLP file-pattern to FortiSandbox.",
+				"help": "Do not submit files matching this DLP file-pattern to FortiSandbox (post-transfer scan only).",
 				"max-value": 4294967295,
 				"min-value": 0,
 				"multiple_values": false,
@@ -77,6 +77,7 @@
 				"min-value": 1,
 				"multiple_values": false,
 				"name": "analytics-max-upload",
+				"removedIn": "v7.2.0",
 				"type": "integer"
 			},
 			"analytics-wl-filetype": {
@@ -297,6 +298,53 @@
 							},
 							{
 								"help": "Log the FortiAI detected infections.",
+								"name": "monitor"
+							}
+						],
+						"removedIn": "v7.2.0",
+						"type": "option"
+					},
+					"fortindr": {
+						"addedIn": "v7.2.0",
+						"category": "unitary",
+						"default": "disable",
+						"help": "Enable scanning of files by FortiNDR.",
+						"multiple_values": false,
+						"name": "fortindr",
+						"options": [
+							{
+								"help": "Disable.",
+								"name": "disable"
+							},
+							{
+								"help": "Block the FortiNDR detected infections.",
+								"name": "block"
+							},
+							{
+								"help": "Log the FortiNDR detected infections.",
+								"name": "monitor"
+							}
+						],
+						"type": "option"
+					},
+					"fortisandbox": {
+						"addedIn": "v7.2.0",
+						"category": "unitary",
+						"default": "disable",
+						"help": "Enable scanning of files by FortiSandbox.",
+						"multiple_values": false,
+						"name": "fortisandbox",
+						"options": [
+							{
+								"help": "Disable.",
+								"name": "disable"
+							},
+							{
+								"help": "Block the FortiSandbox detected infections.",
+								"name": "block"
+							},
+							{
+								"help": "Log the FortiSandbox detected infections.",
 								"name": "monitor"
 							}
 						],
@@ -880,6 +928,7 @@
 						"name": "ignore"
 					}
 				],
+				"removedIn": "v7.2.0",
 				"type": "option"
 			},
 			"fortiai-timeout-action": {
@@ -900,6 +949,133 @@
 					},
 					{
 						"help": "Do nothing on FortiAI scan timeout.",
+						"name": "ignore"
+					}
+				],
+				"removedIn": "v7.2.0",
+				"type": "option"
+			},
+			"fortindr-error-action": {
+				"addedIn": "v7.2.0",
+				"category": "unitary",
+				"default": "log-only",
+				"help": "Action to take if FortiNDR encounters an error.",
+				"multiple_values": false,
+				"name": "fortindr-error-action",
+				"options": [
+					{
+						"help": "Log FortiNDR error, but allow the file.",
+						"name": "log-only"
+					},
+					{
+						"help": "Block the file on FortiNDR error.",
+						"name": "block"
+					},
+					{
+						"help": "Do nothing on FortiNDR error.",
+						"name": "ignore"
+					}
+				],
+				"type": "option"
+			},
+			"fortindr-timeout-action": {
+				"addedIn": "v7.2.0",
+				"category": "unitary",
+				"default": "log-only",
+				"help": "Action to take if FortiNDR encounters a scan timeout.",
+				"multiple_values": false,
+				"name": "fortindr-timeout-action",
+				"options": [
+					{
+						"help": "Log FortiNDR scan timeout, but allow the file.",
+						"name": "log-only"
+					},
+					{
+						"help": "Block the file on FortiNDR scan timeout.",
+						"name": "block"
+					},
+					{
+						"help": "Do nothing on FortiNDR scan timeout.",
+						"name": "ignore"
+					}
+				],
+				"type": "option"
+			},
+			"fortisandbox-error-action": {
+				"addedIn": "v7.2.0",
+				"category": "unitary",
+				"default": "log-only",
+				"help": "Action to take if FortiSandbox inline scan encounters an error.",
+				"multiple_values": false,
+				"name": "fortisandbox-error-action",
+				"options": [
+					{
+						"help": "Log FortiSandbox inline scan error, but allow the file.",
+						"name": "log-only"
+					},
+					{
+						"help": "Block the file on FortiSandbox inline scan error.",
+						"name": "block"
+					},
+					{
+						"help": "Do nothing on FortiSandbox inline scan error.",
+						"name": "ignore"
+					}
+				],
+				"type": "option"
+			},
+			"fortisandbox-max-upload": {
+				"addedIn": "v7.2.0",
+				"category": "unitary",
+				"default": 10,
+				"help": "Maximum size of files that can be uploaded to FortiSandbox.",
+				"max-value": 26214,
+				"min-value": 1,
+				"multiple_values": false,
+				"name": "fortisandbox-max-upload",
+				"type": "integer"
+			},
+			"fortisandbox-mode": {
+				"addedIn": "v7.2.0",
+				"category": "unitary",
+				"default": "analytics-everything",
+				"help": "FortiSandbox scan modes.",
+				"multiple_values": false,
+				"name": "fortisandbox-mode",
+				"options": [
+					{
+						"help": "FortiSandbox inline scan.",
+						"name": "inline"
+					},
+					{
+						"help": "FortiSandbox post-transfer scan: submit supported files if heuristics or other methods determine they are suspicious.",
+						"name": "analytics-suspicious"
+					},
+					{
+						"help": "FortiSandbox post-transfer scan: submit supported files and known infected files.",
+						"name": "analytics-everything"
+					}
+				],
+				"type": "option"
+			},
+			"fortisandbox-timeout-action": {
+				"addedIn": "v7.2.0",
+				"category": "unitary",
+				"default": "log-only",
+				"help": "Action to take if FortiSandbox inline scan encounters a scan timeout.",
+				"multiple_values": false,
+				"name": "fortisandbox-timeout-action",
+				"options": [
+					{
+						"help": "Log FortiSandbox inline scan timeout, but allow the file.",
+						"name": "log-only"
+					},
+					{
+						"help": "Block the file on FortiSandbox inline scan timeout.",
+						"name": "block"
+					},
+					{
+						"help": "Do nothing on FortiSandbox inline scan timeout.",
 						"name": "ignore"
 					}
 				],
@@ -925,6 +1101,7 @@
 						"name": "everything"
 					}
 				],
+				"removedIn": "v7.2.0",
 				"type": "option"
 			},
 			"ftp": {
@@ -1096,6 +1273,53 @@
 							},
 							{
 								"help": "Log the FortiAI detected infections.",
+								"name": "monitor"
+							}
+						],
+						"removedIn": "v7.2.0",
+						"type": "option"
+					},
+					"fortindr": {
+						"addedIn": "v7.2.0",
+						"category": "unitary",
+						"default": "disable",
+						"help": "Enable scanning of files by FortiNDR.",
+						"multiple_values": false,
+						"name": "fortindr",
+						"options": [
+							{
+								"help": "Disable.",
+								"name": "disable"
+							},
+							{
+								"help": "Block the FortiNDR detected infections.",
+								"name": "block"
+							},
+							{
+								"help": "Log the FortiNDR detected infections.",
+								"name": "monitor"
+							}
+						],
+						"type": "option"
+					},
+					"fortisandbox": {
+						"addedIn": "v7.2.0",
+						"category": "unitary",
+						"default": "disable",
+						"help": "Enable scanning of files by FortiSandbox.",
+						"multiple_values": false,
+						"name": "fortisandbox",
+						"options": [
+							{
+								"help": "Disable.",
+								"name": "disable"
+							},
+							{
+								"help": "Block the FortiSandbox detected infections.",
+								"name": "block"
+							},
+							{
+								"help": "Log the FortiSandbox detected infections.",
 								"name": "monitor"
 							}
 						],
@@ -1357,6 +1581,53 @@
 							},
 							{
 								"help": "Log the FortiAI detected infections.",
+								"name": "monitor"
+							}
+						],
+						"removedIn": "v7.2.0",
+						"type": "option"
+					},
+					"fortindr": {
+						"addedIn": "v7.2.0",
+						"category": "unitary",
+						"default": "disable",
+						"help": "Enable scanning of files by FortiNDR.",
+						"multiple_values": false,
+						"name": "fortindr",
+						"options": [
+							{
+								"help": "Disable.",
+								"name": "disable"
+							},
+							{
+								"help": "Block the FortiNDR detected infections.",
+								"name": "block"
+							},
+							{
+								"help": "Log the FortiNDR detected infections.",
+								"name": "monitor"
+							}
+						],
+						"type": "option"
+					},
+					"fortisandbox": {
+						"addedIn": "v7.2.0",
+						"category": "unitary",
+						"default": "disable",
+						"help": "Enable scanning of files by FortiSandbox.",
+						"multiple_values": false,
+						"name": "fortisandbox",
+						"options": [
+							{
+								"help": "Disable.",
+								"name": "disable"
+							},
+							{
+								"help": "Block the FortiSandbox detected infections.",
+								"name": "block"
+							},
+							{
+								"help": "Log the FortiSandbox detected infections.",
 								"name": "monitor"
 							}
 						],
@@ -1639,6 +1910,53 @@
 								"name": "monitor"
 							}
 						],
+						"removedIn": "v7.2.0",
+						"type": "option"
+					},
+					"fortindr": {
+						"addedIn": "v7.2.0",
+						"category": "unitary",
+						"default": "disable",
+						"help": "Enable scanning of files by FortiNDR.",
+						"multiple_values": false,
+						"name": "fortindr",
+						"options": [
+							{
+								"help": "Disable.",
+								"name": "disable"
+							},
+							{
+								"help": "Block the FortiNDR detected infections.",
+								"name": "block"
+							},
+							{
+								"help": "Log the FortiNDR detected infections.",
+								"name": "monitor"
+							}
+						],
+						"type": "option"
+					},
+					"fortisandbox": {
+						"addedIn": "v7.2.0",
+						"category": "unitary",
+						"default": "disable",
+						"help": "Enable scanning of files by FortiSandbox.",
+						"multiple_values": false,
+						"name": "fortisandbox",
+						"options": [
+							{
+								"help": "Disable.",
+								"name": "disable"
+							},
+							{
+								"help": "Block the FortiSandbox detected infections.",
+								"name": "block"
+							},
+							{
+								"help": "Log the FortiSandbox detected infections.",
+								"name": "monitor"
+							}
+						],
 						"type": "option"
 					},
 					"options": {
@@ -1897,6 +2215,53 @@
 							},
 							{
 								"help": "Log the FortiAI detected infections.",
+								"name": "monitor"
+							}
+						],
+						"removedIn": "v7.2.0",
+						"type": "option"
+					},
+					"fortindr": {
+						"addedIn": "v7.2.0",
+						"category": "unitary",
+						"default": "disable",
+						"help": "Enable scanning of files by FortiNDR.",
+						"multiple_values": false,
+						"name": "fortindr",
+						"options": [
+							{
+								"help": "Disable.",
+								"name": "disable"
+							},
+							{
+								"help": "Block the FortiNDR detected infections.",
+								"name": "block"
+							},
+							{
+								"help": "Log the FortiNDR detected infections.",
+								"name": "monitor"
+							}
+						],
+						"type": "option"
+					},
+					"fortisandbox": {
+						"addedIn": "v7.2.0",
+						"category": "unitary",
+						"default": "disable",
+						"help": "Enable scanning of files by FortiSandbox.",
+						"multiple_values": false,
+						"name": "fortisandbox",
+						"options": [
+							{
+								"help": "Disable.",
+								"name": "disable"
+							},
+							{
+								"help": "Block the FortiSandbox detected infections.",
+								"name": "block"
+							},
+							{
+								"help": "Log the FortiSandbox detected infections.",
 								"name": "monitor"
 							}
 						],
@@ -2220,6 +2585,53 @@
 							},
 							{
 								"help": "Log the FortiAI detected infections.",
+								"name": "monitor"
+							}
+						],
+						"removedIn": "v7.2.0",
+						"type": "option"
+					},
+					"fortindr": {
+						"addedIn": "v7.2.0",
+						"category": "unitary",
+						"default": "disable",
+						"help": "Enable scanning of files by FortiNDR.",
+						"multiple_values": false,
+						"name": "fortindr",
+						"options": [
+							{
+								"help": "Disable.",
+								"name": "disable"
+							},
+							{
+								"help": "Block the FortiNDR detected infections.",
+								"name": "block"
+							},
+							{
+								"help": "Log the FortiNDR detected infections.",
+								"name": "monitor"
+							}
+						],
+						"type": "option"
+					},
+					"fortisandbox": {
+						"addedIn": "v7.2.0",
+						"category": "unitary",
+						"default": "disable",
+						"help": "Enable scanning of files by FortiSandbox.",
+						"multiple_values": false,
+						"name": "fortisandbox",
+						"options": [
+							{
+								"help": "Disable.",
+								"name": "disable"
+							},
+							{
+								"help": "Block the FortiSandbox detected infections.",
+								"name": "block"
+							},
+							{
+								"help": "Log the FortiSandbox detected infections.",
 								"name": "monitor"
 							}
 						],
@@ -2565,6 +2977,53 @@
 								"name": "monitor"
 							}
 						],
+						"removedIn": "v7.2.0",
+						"type": "option"
+					},
+					"fortindr": {
+						"addedIn": "v7.2.0",
+						"category": "unitary",
+						"default": "disable",
+						"help": "Enable scanning of files by FortiNDR.",
+						"multiple_values": false,
+						"name": "fortindr",
+						"options": [
+							{
+								"help": "Disable.",
+								"name": "disable"
+							},
+							{
+								"help": "Block the FortiNDR detected infections.",
+								"name": "block"
+							},
+							{
+								"help": "Log the FortiNDR detected infections.",
+								"name": "monitor"
+							}
+						],
+						"type": "option"
+					},
+					"fortisandbox": {
+						"addedIn": "v7.2.0",
+						"category": "unitary",
+						"default": "disable",
+						"help": "Enable scanning of files by FortiSandbox.",
+						"multiple_values": false,
+						"name": "fortisandbox",
+						"options": [
+							{
+								"help": "Disable.",
+								"name": "disable"
+							},
+							{
+								"help": "Block the FortiSandbox detected infections.",
+								"name": "block"
+							},
+							{
+								"help": "Log the FortiSandbox detected infections.",
+								"name": "monitor"
+							}
+						],
 						"type": "option"
 					},
 					"options": {
@@ -2874,6 +3333,53 @@
 								"name": "monitor"
 							}
 						],
+						"removedIn": "v7.2.0",
+						"type": "option"
+					},
+					"fortindr": {
+						"addedIn": "v7.2.0",
+						"category": "unitary",
+						"default": "disable",
+						"help": "Enable scanning of files by FortiNDR.",
+						"multiple_values": false,
+						"name": "fortindr",
+						"options": [
+							{
+								"help": "Disable.",
+								"name": "disable"
+							},
+							{
+								"help": "Block the FortiNDR detected infections.",
+								"name": "block"
+							},
+							{
+								"help": "Log the FortiNDR detected infections.",
+								"name": "monitor"
+							}
+						],
+						"type": "option"
+					},
+					"fortisandbox": {
+						"addedIn": "v7.2.0",
+						"category": "unitary",
+						"default": "disable",
+						"help": "Enable scanning of files by FortiSandbox.",
+						"multiple_values": false,
+						"name": "fortisandbox",
+						"options": [
+							{
+								"help": "Disable.",
+								"name": "disable"
+							},
+							{
+								"help": "Block the FortiSandbox detected infections.",
+								"name": "block"
+							},
+							{
+								"help": "Log the FortiSandbox detected infections.",
+								"name": "monitor"
+							}
+						],
 						"type": "option"
 					},
 					"options": {
@@ -3117,6 +3623,53 @@
 								"name": "monitor"
 							}
 						],
+						"removedIn": "v7.2.0",
+						"type": "option"
+					},
+					"fortindr": {
+						"addedIn": "v7.2.0",
+						"category": "unitary",
+						"default": "disable",
+						"help": "Enable scanning of files by FortiNDR.",
+						"multiple_values": false,
+						"name": "fortindr",
+						"options": [
+							{
+								"help": "Disable.",
+								"name": "disable"
+							},
+							{
+								"help": "Block the FortiNDR detected infections.",
+								"name": "block"
+							},
+							{
+								"help": "Log the FortiNDR detected infections.",
+								"name": "monitor"
+							}
+						],
+						"type": "option"
+					},
+					"fortisandbox": {
+						"addedIn": "v7.2.0",
+						"category": "unitary",
+						"default": "disable",
+						"help": "Enable scanning of files by FortiSandbox.",
+						"multiple_values": false,
+						"name": "fortisandbox",
+						"options": [
+							{
+								"help": "Disable.",
+								"name": "disable"
+							},
+							{
+								"help": "Block the FortiSandbox detected infections.",
+								"name": "block"
+							},
+							{
+								"help": "Log the FortiSandbox detected infections.",
+								"name": "monitor"
+							}
+						],
 						"type": "option"
 					},
 					"options": {
@@ -3197,11 +3750,11 @@
 		"mkey_type": "string",
 		"name": "profile",
 		"path": "antivirus",
-		"q_type": 434
+		"q_type": 435
 	},
-	"revision": "df8b7c64aba8ed48a5ed708e32acb19d",
-	"serial": "FGTAZRI5HXAAGI90",
+	"revision": "f3222d97fa57ac45f033ee4643b33008",
+	"serial": "FGTAZRIPD-OKNB34",
 	"status": "success",
 	"vdom": "root",
-	"version": "v7.0.4"
+	"version": "v7.2.0"
 }

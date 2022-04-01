@@ -1,9 +1,9 @@
 {
 	"addedIn": "v7.0.0",
-	"build": 301,
+	"build": 1157,
 	"http_method": "GET",
 	"http_status": 200,
-	"mergedVersions": "v7.0.0,v7.0.1,v7.0.2,v7.0.3,v7.0.4",
+	"mergedVersions": "v7.0.0,v7.0.1,v7.0.2,v7.0.3,v7.0.4,v7.2.0",
 	"name": "block-allow-list",
 	"path": "emailfilter",
 	"results": {
@@ -69,6 +69,7 @@
 						"help": "Email address pattern.",
 						"multiple_values": false,
 						"name": "email-pattern",
+						"removedIn": "v7.2.0",
 						"required": true,
 						"size": 127,
 						"type": "string"
@@ -101,6 +102,17 @@
 						"name": "ip6-subnet",
 						"required": true,
 						"type": "ipv6-network"
+					},
+					"pattern": {
+						"addedIn": "v7.2.0",
+						"category": "unitary",
+						"default": "",
+						"help": "Pattern to match.",
+						"multiple_values": false,
+						"name": "pattern",
+						"required": true,
+						"size": 127,
+						"type": "string"
 					},
 					"pattern-type": {
 						"category": "unitary",
@@ -152,8 +164,16 @@
 								"name": "ip"
 							},
 							{
-								"help": "By email address.",
-								"name": "email"
+								"help": "By email recipient.",
+								"name": "email-to"
+							},
+							{
+								"help": "By email sender.",
+								"name": "email-from"
+							},
+							{
+								"help": "By email subject.",
+								"name": "subject"
 							}
 						],
 						"required": true,
@@ -201,9 +221,9 @@
 		"path": "emailfilter",
 		"q_type": 96
 	},
-	"revision": "437e8be3a9784954dfbe87b61e193b58",
-	"serial": "FGTAZRI5HXAAGI90",
+	"revision": "2b1edd375b3b6c80a44abbde4eddbd95",
+	"serial": "FGTAZRIPD-OKNB34",
 	"status": "success",
 	"vdom": "root",
-	"version": "v7.0.4"
+	"version": "v7.2.0"
 }

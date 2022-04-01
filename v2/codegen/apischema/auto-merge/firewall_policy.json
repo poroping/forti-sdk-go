@@ -1,9 +1,9 @@
 {
 	"addedIn": "v6.2.7",
-	"build": 301,
+	"build": 1157,
 	"http_method": "GET",
 	"http_status": 200,
-	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3,v7.0.4",
+	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3,v7.0.4,v7.2.0",
 	"name": "policy",
 	"path": "firewall",
 	"results": {
@@ -402,6 +402,19 @@
 				],
 				"type": "option"
 			},
+			"dlp-profile": {
+				"addedIn": "v7.2.0",
+				"category": "unitary",
+				"datasource": [
+					"dlp.profile.name"
+				],
+				"default": "",
+				"help": "Name of an existing DLP profile.",
+				"multiple_values": false,
+				"name": "dlp-profile",
+				"size": 35,
+				"type": "string"
+			},
 			"dlp-sensor": {
 				"category": "unitary",
 				"datasource": [
@@ -411,6 +424,7 @@
 				"help": "Name of an existing DLP sensor.",
 				"multiple_values": false,
 				"name": "dlp-sensor",
+				"removedIn": "v7.2.0",
 				"size": 35,
 				"type": "string"
 			},
@@ -1573,6 +1587,34 @@
 					}
 				],
 				"type": "option"
+			},
+			"policy-expiry": {
+				"addedIn": "v7.2.0",
+				"category": "unitary",
+				"default": "disable",
+				"help": "Enable/disable policy expiry.",
+				"multiple_values": false,
+				"name": "policy-expiry",
+				"options": [
+					{
+						"help": "Enable policy expiry.",
+						"name": "enable"
+					},
+					{
+						"help": "Disable polcy expiry.",
+						"name": "disable"
+					}
+				],
+				"type": "option"
+			},
+			"policy-expiry-date": {
+				"addedIn": "v7.2.0",
+				"category": "unitary",
+				"default": "0000-00-00 00:00:00",
+				"help": "Policy expiry date (YYYY-MM-DD HH:MM:SS).",
+				"multiple_values": false,
+				"name": "policy-expiry-date",
+				"type": "datetime"
 			},
 			"policyid": {
 				"category": "unitary",
@@ -2763,9 +2805,9 @@
 		"path": "firewall",
 		"q_type": 53
 	},
-	"revision": "e338e35a484eaafc990a69dd13ff4f76",
-	"serial": "FGTAZRI5HXAAGI90",
+	"revision": "f7f9f0c7010a0528b972ed831ae64831",
+	"serial": "FGTAZRIPD-OKNB34",
 	"status": "success",
 	"vdom": "root",
-	"version": "v7.0.4"
+	"version": "v7.2.0"
 }

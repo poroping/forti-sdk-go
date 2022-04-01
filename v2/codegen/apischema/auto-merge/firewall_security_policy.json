@@ -1,9 +1,9 @@
 {
 	"addedIn": "v6.2.7",
-	"build": 301,
+	"build": 1157,
 	"http_method": "GET",
 	"http_status": 200,
-	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3,v7.0.4",
+	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3,v7.0.4,v7.2.0",
 	"name": "security-policy",
 	"path": "firewall",
 	"results": {
@@ -146,6 +146,19 @@
 				"size": 1023,
 				"type": "var-string"
 			},
+			"dlp-profile": {
+				"addedIn": "v7.2.0",
+				"category": "unitary",
+				"datasource": [
+					"dlp.profile.name"
+				],
+				"default": "",
+				"help": "Name of an existing DLP profile.",
+				"multiple_values": false,
+				"name": "dlp-profile",
+				"size": 35,
+				"type": "string"
+			},
 			"dlp-sensor": {
 				"category": "unitary",
 				"datasource": [
@@ -155,6 +168,7 @@
 				"help": "Name of an existing DLP sensor.",
 				"multiple_values": false,
 				"name": "dlp-sensor",
+				"removedIn": "v7.2.0",
 				"size": 35,
 				"type": "string"
 			},
@@ -1180,7 +1194,7 @@
 				"type": "option"
 			},
 			"url-category": {
-				"category": "table",
+				"category": "unitary",
 				"children": {
 					"id": {
 						"category": "unitary",
@@ -1192,16 +1206,20 @@
 						"name": "id",
 						"required": true,
 						"type": "integer"
-					}
+					},
+					"removedIn": "v7.2.0"
 				},
-				"help": "URL category ID list.",
+				"default": "",
+				"help": "URL categories or groups.",
 				"max_table_size_global": 0,
 				"max_table_size_item": 0,
 				"max_table_size_vdom": 0,
 				"member_table": true,
 				"mkey": "id",
 				"mkey_type": "integer",
-				"name": "url-category"
+				"multiple_values": true,
+				"name": "url-category",
+				"type": "user"
 			},
 			"users": {
 				"category": "table",
@@ -1283,11 +1301,11 @@
 		"mkey_type": "integer",
 		"name": "security-policy",
 		"path": "firewall",
-		"q_type": 526
+		"q_type": 530
 	},
-	"revision": "e338e35a484eaafc990a69dd13ff4f76",
-	"serial": "FGTAZRI5HXAAGI90",
+	"revision": "f7f9f0c7010a0528b972ed831ae64831",
+	"serial": "FGTAZRIPD-OKNB34",
 	"status": "success",
 	"vdom": "root",
-	"version": "v7.0.4"
+	"version": "v7.2.0"
 }

@@ -1,9 +1,9 @@
 {
 	"addedIn": "v6.2.7",
-	"build": 301,
+	"build": 1157,
 	"http_method": "GET",
 	"http_status": 200,
-	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3,v7.0.4",
+	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3,v7.0.4,v7.2.0",
 	"name": "ospf6",
 	"path": "router",
 	"results": {
@@ -1197,6 +1197,55 @@
 				"name": "redistribute",
 				"readonly": true
 			},
+			"restart-mode": {
+				"addedIn": "v7.2.0",
+				"category": "unitary",
+				"default": "none",
+				"help": "OSPFv3 restart mode (graceful or none).",
+				"multiple_values": false,
+				"name": "restart-mode",
+				"options": [
+					{
+						"help": "Disable hitless restart.",
+						"name": "none"
+					},
+					{
+						"help": "Enable graceful restart mode.",
+						"name": "graceful-restart"
+					}
+				],
+				"type": "option"
+			},
+			"restart-on-topology-change": {
+				"addedIn": "v7.2.0",
+				"category": "unitary",
+				"default": "disable",
+				"help": "Enable/disable continuing graceful restart upon topology change.",
+				"multiple_values": false,
+				"name": "restart-on-topology-change",
+				"options": [
+					{
+						"help": "Continue graceful restart upon topology change.",
+						"name": "enable"
+					},
+					{
+						"help": "Exit graceful restart upon topology change.",
+						"name": "disable"
+					}
+				],
+				"type": "option"
+			},
+			"restart-period": {
+				"addedIn": "v7.2.0",
+				"category": "unitary",
+				"default": 120,
+				"help": "Graceful restart period in seconds.",
+				"max-value": 3600,
+				"min-value": 1,
+				"multiple_values": false,
+				"name": "restart-period",
+				"type": "integer"
+			},
 			"router-id": {
 				"category": "unitary",
 				"default": "0.0.0.0",
@@ -1278,11 +1327,11 @@
 		"multiple_values": false,
 		"name": "ospf6",
 		"path": "router",
-		"q_type": 386
+		"q_type": 387
 	},
-	"revision": "6fe1b58b227957de34a8a7fa5689f98e",
-	"serial": "FGTAZRI5HXAAGI90",
+	"revision": "f56a054ed6f1d884968716384f19a32c",
+	"serial": "FGTAZRIPD-OKNB34",
 	"status": "success",
 	"vdom": "root",
-	"version": "v7.0.4"
+	"version": "v7.2.0"
 }
