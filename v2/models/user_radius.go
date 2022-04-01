@@ -9,6 +9,7 @@ type UserRadius struct {
 	AllUsergroup                           *string                       `json:"all-usergroup,omitempty"`
 	AuthType                               *string                       `json:"auth-type,omitempty"`
 	Class                                  *[]UserRadiusClass            `json:"class,omitempty"`
+	Delimiter                              *string                       `json:"delimiter,omitempty"`
 	GroupOverrideAttrType                  *string                       `json:"group-override-attr-type,omitempty"`
 	H3cCompatibility                       *string                       `json:"h3c-compatibility,omitempty"`
 	Interface                              *string                       `json:"interface,omitempty"`

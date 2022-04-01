@@ -8,6 +8,8 @@ type FirewallInterfacePolicy6 struct {
 	AvProfile                *string                             `json:"av-profile,omitempty"`
 	AvProfileStatus          *string                             `json:"av-profile-status,omitempty"`
 	Comments                 *string                             `json:"comments,omitempty"`
+	DlpProfile               *string                             `json:"dlp-profile,omitempty"`
+	DlpProfileStatus         *string                             `json:"dlp-profile-status,omitempty"`
 	DlpSensor                *string                             `json:"dlp-sensor,omitempty"`
 	DlpSensorStatus          *string                             `json:"dlp-sensor-status,omitempty"`
 	Dsri                     *string                             `json:"dsri,omitempty"`

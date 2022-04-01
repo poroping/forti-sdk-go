@@ -24,6 +24,7 @@ type FirewallSslSshProfile struct {
 	SslAnomaliesLog              *string                            `json:"ssl-anomalies-log,omitempty"`
 	SslAnomalyLog                *string                            `json:"ssl-anomaly-log,omitempty"`
 	SslExempt                    *[]FirewallSslSshProfileSslExempt  `json:"ssl-exempt,omitempty"`
+	SslExemptionIpRating         *string                            `json:"ssl-exemption-ip-rating,omitempty"`
 	SslExemptionLog              *string                            `json:"ssl-exemption-log,omitempty"`
 	SslExemptionsLog             *string                            `json:"ssl-exemptions-log,omitempty"`
 	SslHandshakeLog              *string                            `json:"ssl-handshake-log,omitempty"`

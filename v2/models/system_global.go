@@ -35,6 +35,7 @@ type SystemGlobal struct {
 	AuthCert                             *string `json:"auth-cert,omitempty"`
 	AuthHttpPort                         *int64  `json:"auth-http-port,omitempty"`
 	AuthHttpsPort                        *int64  `json:"auth-https-port,omitempty"`
+	AuthIkeSamlPort                      *int64  `json:"auth-ike-saml-port,omitempty"`
 	AuthKeepalive                        *string `json:"auth-keepalive,omitempty"`
 	AuthSessionLimit                     *string `json:"auth-session-limit,omitempty"`
 	AutoAuthExtensionDevice              *string `json:"auto-auth-extension-device,omitempty"`
@@ -98,6 +99,7 @@ type SystemGlobal struct {
 	GuiRestApiCache                      *string `json:"gui-rest-api-cache,omitempty"`
 	GuiTheme                             *string `json:"gui-theme,omitempty"`
 	GuiWirelessOpensecurity              *string `json:"gui-wireless-opensecurity,omitempty"`
+	GuiWorkflowManagement                *string `json:"gui-workflow-management,omitempty"`
 	HaAffinity                           *string `json:"ha-affinity,omitempty"`
 	HonorDf                              *string `json:"honor-df,omitempty"`
 	Hostname                             *string `json:"hostname,omitempty"`

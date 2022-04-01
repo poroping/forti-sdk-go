@@ -16,6 +16,9 @@ type RouterOspf6 struct {
 	Ospf6Interface               *[]RouterOspf6Ospf6Interface   `json:"ospf6-interface,omitempty"`
 	PassiveInterface             *[]RouterOspf6PassiveInterface `json:"passive-interface,omitempty"`
 	Redistribute                 *[]RouterOspf6Redistribute     `json:"redistribute,omitempty"`
+	RestartMode                  *string                        `json:"restart-mode,omitempty"`
+	RestartOnTopologyChange      *string                        `json:"restart-on-topology-change,omitempty"`
+	RestartPeriod                *int64                         `json:"restart-period,omitempty"`
 	RouterId                     *string                        `json:"router-id,omitempty"`
 	SpfTimers                    *string                        `json:"spf-timers,omitempty"`
 	SummaryAddress               *[]RouterOspf6SummaryAddress   `json:"summary-address,omitempty"`

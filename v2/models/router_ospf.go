@@ -29,6 +29,7 @@ type RouterOspf struct {
 	PassiveInterface              *[]RouterOspfPassiveInterface `json:"passive-interface,omitempty"`
 	Redistribute                  *[]RouterOspfRedistribute     `json:"redistribute,omitempty"`
 	RestartMode                   *string                       `json:"restart-mode,omitempty"`
+	RestartOnTopologyChange       *string                       `json:"restart-on-topology-change,omitempty"`
 	RestartPeriod                 *int64                        `json:"restart-period,omitempty"`
 	Rfc1583Compatible             *string                       `json:"rfc1583-compatible,omitempty"`
 	RouterId                      *string                       `json:"router-id,omitempty"`

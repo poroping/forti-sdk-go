@@ -43,6 +43,7 @@ type SystemAutomationAction struct {
 	Method                        *string                               `json:"method,omitempty"`
 	MinimumInterval               *int64                                `json:"minimum-interval,omitempty"`
 	Name                          *string                               `json:"name,omitempty"`
+	OutputSize                    *int64                                `json:"output-size,omitempty"`
 	Port                          *int64                                `json:"port,omitempty"`
 	Protocol                      *string                               `json:"protocol,omitempty"`
 	ReplacementMessage            *string                               `json:"replacement-message,omitempty"`
@@ -51,6 +52,7 @@ type SystemAutomationAction struct {
 	Script                        *string                               `json:"script,omitempty"`
 	SdnConnector                  *[]SystemAutomationActionSdnConnector `json:"sdn-connector,omitempty"`
 	SecurityTag                   *string                               `json:"security-tag,omitempty"`
+	Timeout                       *int64                                `json:"timeout,omitempty"`
 	TlsCertificate                *string                               `json:"tls-certificate,omitempty"`
 	Uri                           *string                               `json:"uri,omitempty"`
 	VerifyHostCert                *string                               `json:"verify-host-cert,omitempty"`

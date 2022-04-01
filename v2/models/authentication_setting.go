@@ -16,8 +16,13 @@ type AuthenticationSetting struct {
 	CertCaptivePortal     *string                            `json:"cert-captive-portal,omitempty"`
 	CertCaptivePortalIp   *string                            `json:"cert-captive-portal-ip,omitempty"`
 	CertCaptivePortalPort *int64                             `json:"cert-captive-portal-port,omitempty"`
+	CookieMaxAge          *int64                             `json:"cookie-max-age,omitempty"`
+	CookieRefreshDiv      *int64                             `json:"cookie-refresh-div,omitempty"`
 	DevRange              *[]AuthenticationSettingDevRange   `json:"dev-range,omitempty"`
+	IpAuthCookie          *string                            `json:"ip-auth-cookie,omitempty"`
+	PersistentCookie      *string                            `json:"persistent-cookie,omitempty"`
 	SsoAuthScheme         *string                            `json:"sso-auth-scheme,omitempty"`
+	UpdateTime            *string                            `json:"update-time,omitempty"`
 	UserCertCa            *[]AuthenticationSettingUserCertCa `json:"user-cert-ca,omitempty"`
 }
 

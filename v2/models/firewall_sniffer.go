@@ -8,6 +8,8 @@ type FirewallSniffer struct {
 	ApplicationListStatus    *string                        `json:"application-list-status,omitempty"`
 	AvProfile                *string                        `json:"av-profile,omitempty"`
 	AvProfileStatus          *string                        `json:"av-profile-status,omitempty"`
+	DlpProfile               *string                        `json:"dlp-profile,omitempty"`
+	DlpProfileStatus         *string                        `json:"dlp-profile-status,omitempty"`
 	DlpSensor                *string                        `json:"dlp-sensor,omitempty"`
 	DlpSensorStatus          *string                        `json:"dlp-sensor-status,omitempty"`
 	Dsri                     *string                        `json:"dsri,omitempty"`

@@ -28,6 +28,7 @@ type SystemLinkMonitor struct {
 	Server                 *[]SystemLinkMonitorServer     `json:"server,omitempty"`
 	ServerConfig           *string                        `json:"server-config,omitempty"`
 	ServerList             *[]SystemLinkMonitorServerList `json:"server-list,omitempty"`
+	ServerType             *string                        `json:"server-type,omitempty"`
 	ServiceDetection       *string                        `json:"service-detection,omitempty"`
 	SourceIp               *string                        `json:"source-ip,omitempty"`
 	SourceIp6              *string                        `json:"source-ip6,omitempty"`

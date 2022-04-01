@@ -12,6 +12,7 @@ type EndpointControlFctems struct {
 	FortinetoneCloudAuthentication *string `json:"fortinetone-cloud-authentication,omitempty"`
 	HttpsPort                      *int64  `json:"https-port,omitempty"`
 	Name                           *string `json:"name,omitempty"`
+	OutOfSyncThreshold             *int64  `json:"out-of-sync-threshold,omitempty"`
 	PreserveSslSession             *string `json:"preserve-ssl-session,omitempty"`
 	PullAvatars                    *string `json:"pull-avatars,omitempty"`
 	PullMalwareHash                *string `json:"pull-malware-hash,omitempty"`

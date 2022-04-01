@@ -9,6 +9,8 @@ type VpnSslWebPortal struct {
 	Clipboard                        *string                                            `json:"clipboard,omitempty"`
 	CustomLang                       *string                                            `json:"custom-lang,omitempty"`
 	CustomizeForticlientDownloadUrl  *string                                            `json:"customize-forticlient-download-url,omitempty"`
+	DefaultWindowHeight              *int64                                             `json:"default-window-height,omitempty"`
+	DefaultWindowWidth               *int64                                             `json:"default-window-width,omitempty"`
 	DisplayBookmark                  *string                                            `json:"display-bookmark,omitempty"`
 	DisplayConnectionTools           *string                                            `json:"display-connection-tools,omitempty"`
 	DisplayHistory                   *string                                            `json:"display-history,omitempty"`

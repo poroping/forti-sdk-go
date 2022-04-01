@@ -9,6 +9,7 @@ type WirelessControllerInterController struct {
 	InterControllerMode *string                                                 `json:"inter-controller-mode,omitempty"`
 	InterControllerPeer *[]WirelessControllerInterControllerInterControllerPeer `json:"inter-controller-peer,omitempty"`
 	InterControllerPri  *string                                                 `json:"inter-controller-pri,omitempty"`
+	L3Roaming           *string                                                 `json:"l3-roaming,omitempty"`
 }
 
 type WirelessControllerInterControllerInterControllerPeer struct {

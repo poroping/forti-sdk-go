@@ -5,6 +5,8 @@ const SystemAcmePath = "system/acme/"
 type SystemAcme struct {
 	Accounts  *[]SystemAcmeAccounts  `json:"accounts,omitempty"`
 	Interface *[]SystemAcmeInterface `json:"interface,omitempty"`
+	SourceIp  *string                `json:"source-ip,omitempty"`
+	SourceIp6 *string                `json:"source-ip6,omitempty"`
 }
 
 type SystemAcmeAccounts struct {

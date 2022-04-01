@@ -9,6 +9,7 @@ type VpnSslSettings struct {
 	AuthenticationRule         *[]VpnSslSettingsAuthenticationRule `json:"authentication-rule,omitempty"`
 	AutoTunnelStaticRoute      *string                             `json:"auto-tunnel-static-route,omitempty"`
 	BannedCipher               *string                             `json:"banned-cipher,omitempty"`
+	BrowserLanguageDetection   *string                             `json:"browser-language-detection,omitempty"`
 	CheckReferer               *string                             `json:"check-referer,omitempty"`
 	Ciphersuite                *string                             `json:"ciphersuite,omitempty"`
 	ClientSigalgs              *string                             `json:"client-sigalgs,omitempty"`
@@ -70,6 +71,7 @@ type VpnSslSettings struct {
 	UnsafeLegacyRenegotiation  *string                             `json:"unsafe-legacy-renegotiation,omitempty"`
 	UrlObscuration             *string                             `json:"url-obscuration,omitempty"`
 	UserPeer                   *string                             `json:"user-peer,omitempty"`
+	WebModeSnat                *string                             `json:"web-mode-snat,omitempty"`
 	WinsServer1                *string                             `json:"wins-server1,omitempty"`
 	WinsServer2                *string                             `json:"wins-server2,omitempty"`
 	XContentTypeOptions        *string                             `json:"x-content-type-options,omitempty"`

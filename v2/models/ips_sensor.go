@@ -18,8 +18,11 @@ type IpsSensorEntries struct {
 	Action           *string                     `json:"action,omitempty"`
 	Application      *string                     `json:"application,omitempty"`
 	Cve              *[]IpsSensorEntriesCve      `json:"cve,omitempty"`
+	DefaultAction    *string                     `json:"default-action,omitempty"`
+	DefaultStatus    *string                     `json:"default-status,omitempty"`
 	ExemptIp         *[]IpsSensorEntriesExemptIp `json:"exempt-ip,omitempty"`
 	Id               *int64                      `json:"id,omitempty"`
+	LastModified     *string                     `json:"last-modified,omitempty"`
 	Location         *string                     `json:"location,omitempty"`
 	Log              *string                     `json:"log,omitempty"`
 	LogAttackContext *string                     `json:"log-attack-context,omitempty"`
@@ -36,6 +39,7 @@ type IpsSensorEntries struct {
 	Rule             *[]IpsSensorEntriesRule     `json:"rule,omitempty"`
 	Severity         *string                     `json:"severity,omitempty"`
 	Status           *string                     `json:"status,omitempty"`
+	VulnType         *[]IpsSensorEntriesVulnType `json:"vuln-type,omitempty"`
 }
 
 type IpsSensorEntriesCve struct {
@@ -49,6 +53,10 @@ type IpsSensorEntriesExemptIp struct {
 }
 
 type IpsSensorEntriesRule struct {
+	Id *int64 `json:"id,omitempty"`
+}
+
+type IpsSensorEntriesVulnType struct {
 	Id *int64 `json:"id,omitempty"`
 }
 

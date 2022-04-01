@@ -78,7 +78,9 @@ type SystemHa struct {
 	UnicastStatus                 *string                     `json:"unicast-status,omitempty"`
 	UninterruptiblePrimaryWait    *int64                      `json:"uninterruptible-primary-wait,omitempty"`
 	UninterruptibleUpgrade        *string                     `json:"uninterruptible-upgrade,omitempty"`
+	Vcluster                      *[]SystemHaVcluster         `json:"vcluster,omitempty"`
 	VclusterId                    *int64                      `json:"vcluster-id,omitempty"`
+	VclusterStatus                *string                     `json:"vcluster-status,omitempty"`
 	Vcluster2                     *string                     `json:"vcluster2,omitempty"`
 	Vdom                          *string                     `json:"vdom,omitempty"`
 	Weight                        *string                     `json:"weight,omitempty"`
@@ -108,4 +110,20 @@ type SystemHaSecondaryVcluster struct {
 type SystemHaUnicastPeers struct {
 	Id     *int64  `json:"id,omitempty"`
 	PeerIp *string `json:"peer-ip,omitempty"`
+}
+
+type SystemHaVcluster struct {
+	Monitor                     *string                 `json:"monitor,omitempty"`
+	Override                    *string                 `json:"override,omitempty"`
+	OverrideWaitTime            *int64                  `json:"override-wait-time,omitempty"`
+	PingserverFailoverThreshold *int64                  `json:"pingserver-failover-threshold,omitempty"`
+	PingserverMonitorInterface  *string                 `json:"pingserver-monitor-interface,omitempty"`
+	PingserverSlaveForceReset   *string                 `json:"pingserver-slave-force-reset,omitempty"`
+	Priority                    *int64                  `json:"priority,omitempty"`
+	VclusterId                  *int64                  `json:"vcluster-id,omitempty"`
+	Vdom                        *[]SystemHaVclusterVdom `json:"vdom,omitempty"`
+}
+
+type SystemHaVclusterVdom struct {
+	Name *string `json:"name,omitempty"`
 }

@@ -20,6 +20,8 @@ type SystemSettings struct {
 	CentralNat                     *string                                  `json:"central-nat,omitempty"`
 	Comments                       *string                                  `json:"comments,omitempty"`
 	ConsolidatedFirewallMode       *string                                  `json:"consolidated-firewall-mode,omitempty"`
+	DefaultAppPortAsService        *string                                  `json:"default-app-port-as-service,omitempty"`
+	DefaultPolicyExpiryDays        *int64                                   `json:"default-policy-expiry-days,omitempty"`
 	DefaultVoipAlgMode             *string                                  `json:"default-voip-alg-mode,omitempty"`
 	DenyTcpWithIcmp                *string                                  `json:"deny-tcp-with-icmp,omitempty"`
 	Device                         *string                                  `json:"device,omitempty"`
@@ -51,6 +53,7 @@ type SystemSettings struct {
 	GuiEmailCollection             *string                                  `json:"gui-email-collection,omitempty"`
 	GuiEndpointControl             *string                                  `json:"gui-endpoint-control,omitempty"`
 	GuiEndpointControlAdvanced     *string                                  `json:"gui-endpoint-control-advanced,omitempty"`
+	GuiEnforceChangeSummary        *string                                  `json:"gui-enforce-change-summary,omitempty"`
 	GuiExplicitProxy               *string                                  `json:"gui-explicit-proxy,omitempty"`
 	GuiFileFilter                  *string                                  `json:"gui-file-filter,omitempty"`
 	GuiFortiapSplitTunneling       *string                                  `json:"gui-fortiap-split-tunneling,omitempty"`
@@ -66,6 +69,7 @@ type SystemSettings struct {
 	GuiMultipleUtmProfiles         *string                                  `json:"gui-multiple-utm-profiles,omitempty"`
 	GuiNat4664                     *string                                  `json:"gui-nat46-64,omitempty"`
 	GuiObjectColors                *string                                  `json:"gui-object-colors,omitempty"`
+	GuiOt                          *string                                  `json:"gui-ot,omitempty"`
 	GuiPerPolicyDisclaimer         *string                                  `json:"gui-per-policy-disclaimer,omitempty"`
 	GuiPolicyBasedIpsec            *string                                  `json:"gui-policy-based-ipsec,omitempty"`
 	GuiPolicyDisclaimer            *string                                  `json:"gui-policy-disclaimer,omitempty"`
@@ -124,6 +128,7 @@ type SystemSettings struct {
 	TcpSessionWithoutSyn           *string                                  `json:"tcp-session-without-syn,omitempty"`
 	Utf8SpamTagging                *string                                  `json:"utf8-spam-tagging,omitempty"`
 	V4EcmpMode                     *string                                  `json:"v4-ecmp-mode,omitempty"`
+	VdomType                       *string                                  `json:"vdom-type,omitempty"`
 	VpnStatsLog                    *string                                  `json:"vpn-stats-log,omitempty"`
 	VpnStatsPeriod                 *int64                                   `json:"vpn-stats-period,omitempty"`
 	WccpCacheEngine                *string                                  `json:"wccp-cache-engine,omitempty"`

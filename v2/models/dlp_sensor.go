@@ -3,17 +3,27 @@ package models
 const DlpSensorPath = "dlp/sensor/"
 
 type DlpSensor struct {
-	Comment          *string            `json:"comment,omitempty"`
-	DlpLog           *string            `json:"dlp-log,omitempty"`
-	ExtendedLog      *string            `json:"extended-log,omitempty"`
-	FeatureSet       *string            `json:"feature-set,omitempty"`
-	Filter           *[]DlpSensorFilter `json:"filter,omitempty"`
-	FullArchiveProto *string            `json:"full-archive-proto,omitempty"`
-	NacQuarLog       *string            `json:"nac-quar-log,omitempty"`
-	Name             *string            `json:"name,omitempty"`
-	Options          *string            `json:"options,omitempty"`
-	ReplacemsgGroup  *string            `json:"replacemsg-group,omitempty"`
-	SummaryProto     *string            `json:"summary-proto,omitempty"`
+	Comment          *string             `json:"comment,omitempty"`
+	DlpLog           *string             `json:"dlp-log,omitempty"`
+	Entries          *[]DlpSensorEntries `json:"entries,omitempty"`
+	Eval             *string             `json:"eval,omitempty"`
+	ExtendedLog      *string             `json:"extended-log,omitempty"`
+	FeatureSet       *string             `json:"feature-set,omitempty"`
+	Filter           *[]DlpSensorFilter  `json:"filter,omitempty"`
+	FullArchiveProto *string             `json:"full-archive-proto,omitempty"`
+	MatchType        *string             `json:"match-type,omitempty"`
+	NacQuarLog       *string             `json:"nac-quar-log,omitempty"`
+	Name             *string             `json:"name,omitempty"`
+	Options          *string             `json:"options,omitempty"`
+	ReplacemsgGroup  *string             `json:"replacemsg-group,omitempty"`
+	SummaryProto     *string             `json:"summary-proto,omitempty"`
+}
+
+type DlpSensorEntries struct {
+	Count      *int64  `json:"count,omitempty"`
+	Dictionary *string `json:"dictionary,omitempty"`
+	Id         *int64  `json:"id,omitempty"`
+	Status     *string `json:"status,omitempty"`
 }
 
 type DlpSensorFilter struct {

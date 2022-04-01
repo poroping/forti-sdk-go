@@ -49,6 +49,8 @@ type LogThreatWeightMalware struct {
 	EmsThreatFeed           *string `json:"ems-threat-feed,omitempty"`
 	FileBlocked             *string `json:"file-blocked,omitempty"`
 	Fortiai                 *string `json:"fortiai,omitempty"`
+	Fortindr                *string `json:"fortindr,omitempty"`
+	Fortisandbox            *string `json:"fortisandbox,omitempty"`
 	FsaHighRisk             *string `json:"fsa-high-risk,omitempty"`
 	FsaMalicious            *string `json:"fsa-malicious,omitempty"`
 	FsaMediumRisk           *string `json:"fsa-medium-risk,omitempty"`

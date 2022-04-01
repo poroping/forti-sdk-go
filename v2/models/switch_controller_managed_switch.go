@@ -60,6 +60,7 @@ type SwitchControllerManagedSwitch struct {
 type SwitchControllerManagedSwitch8021XSettings struct {
 	LinkDownAuth     *string `json:"link-down-auth,omitempty"`
 	LocalOverride    *string `json:"local-override,omitempty"`
+	MabReauth        *string `json:"mab-reauth,omitempty"`
 	MaxReauthAttempt *int64  `json:"max-reauth-attempt,omitempty"`
 	ReauthPeriod     *int64  `json:"reauth-period,omitempty"`
 	TxPeriod         *int64  `json:"tx-period,omitempty"`
@@ -135,6 +136,10 @@ type SwitchControllerManagedSwitchPorts struct {
 	FgtPeerPortName          *string                                            `json:"fgt-peer-port-name,omitempty"`
 	FiberPort                *int64                                             `json:"fiber-port,omitempty"`
 	Flags                    *int64                                             `json:"flags,omitempty"`
+	FlapDuration             *int64                                             `json:"flap-duration,omitempty"`
+	FlapRate                 *int64                                             `json:"flap-rate,omitempty"`
+	FlapTimeout              *int64                                             `json:"flap-timeout,omitempty"`
+	Flapguard                *string                                            `json:"flapguard,omitempty"`
 	FlowControl              *string                                            `json:"flow-control,omitempty"`
 	FortilinkPort            *int64                                             `json:"fortilink-port,omitempty"`
 	IgmpSnooping             *string                                            `json:"igmp-snooping,omitempty"`

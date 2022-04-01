@@ -65,6 +65,7 @@ type SystemAccprofileUtmgrpPermission struct {
 	FileFilter         *string `json:"file-filter,omitempty"`
 	Icap               *string `json:"icap,omitempty"`
 	Ips                *string `json:"ips,omitempty"`
+	Videofilter        *string `json:"videofilter,omitempty"`
 	Voip               *string `json:"voip,omitempty"`
 	Waf                *string `json:"waf,omitempty"`
 	Webfilter          *string `json:"webfilter,omitempty"`

@@ -7,8 +7,11 @@ type WirelessControllerVap struct {
 	AcctInterimInterval                 *int64                                          `json:"acct-interim-interval,omitempty"`
 	AdditionalAkms                      *string                                         `json:"additional-akms,omitempty"`
 	AddressGroup                        *string                                         `json:"address-group,omitempty"`
+	AddressGroupPolicy                  *string                                         `json:"address-group-policy,omitempty"`
 	AntivirusProfile                    *string                                         `json:"antivirus-profile,omitempty"`
+	ApplicationDetectionEngine          *string                                         `json:"application-detection-engine,omitempty"`
 	ApplicationList                     *string                                         `json:"application-list,omitempty"`
+	ApplicationReportIntv               *int64                                          `json:"application-report-intv,omitempty"`
 	AtfWeight                           *int64                                          `json:"atf-weight,omitempty"`
 	Auth                                *string                                         `json:"auth,omitempty"`
 	AuthCert                            *string                                         `json:"auth-cert,omitempty"`
@@ -60,6 +63,7 @@ type WirelessControllerVap struct {
 	Ipv6Rules                           *string                                         `json:"ipv6-rules,omitempty"`
 	Key                                 *string                                         `json:"key,omitempty"`
 	Keyindex                            *int64                                          `json:"keyindex,omitempty"`
+	L3Roaming                           *string                                         `json:"l3-roaming,omitempty"`
 	Ldpc                                *string                                         `json:"ldpc,omitempty"`
 	LocalAuthentication                 *string                                         `json:"local-authentication,omitempty"`
 	LocalBridging                       *string                                         `json:"local-bridging,omitempty"`

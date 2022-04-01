@@ -22,6 +22,12 @@ type AntivirusProfile struct {
 	FeatureSet                    *string                              `json:"feature-set,omitempty"`
 	FortiaiErrorAction            *string                              `json:"fortiai-error-action,omitempty"`
 	FortiaiTimeoutAction          *string                              `json:"fortiai-timeout-action,omitempty"`
+	FortindrErrorAction           *string                              `json:"fortindr-error-action,omitempty"`
+	FortindrTimeoutAction         *string                              `json:"fortindr-timeout-action,omitempty"`
+	FortisandboxErrorAction       *string                              `json:"fortisandbox-error-action,omitempty"`
+	FortisandboxMaxUpload         *int64                               `json:"fortisandbox-max-upload,omitempty"`
+	FortisandboxMode              *string                              `json:"fortisandbox-mode,omitempty"`
+	FortisandboxTimeoutAction     *string                              `json:"fortisandbox-timeout-action,omitempty"`
 	FtgdAnalytics                 *string                              `json:"ftgd-analytics,omitempty"`
 	Ftp                           *AntivirusProfileFtp                 `json:"ftp,omitempty"`
 	Http                          *AntivirusProfileHttp                `json:"http,omitempty"`
@@ -47,6 +53,8 @@ type AntivirusProfileCifs struct {
 	Emulator           *string `json:"emulator,omitempty"`
 	ExternalBlocklist  *string `json:"external-blocklist,omitempty"`
 	Fortiai            *string `json:"fortiai,omitempty"`
+	Fortindr           *string `json:"fortindr,omitempty"`
+	Fortisandbox       *string `json:"fortisandbox,omitempty"`
 	Options            *string `json:"options,omitempty"`
 	OutbreakPrevention *string `json:"outbreak-prevention,omitempty"`
 	Quarantine         *string `json:"quarantine,omitempty"`
@@ -85,6 +93,8 @@ type AntivirusProfileFtp struct {
 	Emulator           *string `json:"emulator,omitempty"`
 	ExternalBlocklist  *string `json:"external-blocklist,omitempty"`
 	Fortiai            *string `json:"fortiai,omitempty"`
+	Fortindr           *string `json:"fortindr,omitempty"`
+	Fortisandbox       *string `json:"fortisandbox,omitempty"`
 	Options            *string `json:"options,omitempty"`
 	OutbreakPrevention *string `json:"outbreak-prevention,omitempty"`
 	Quarantine         *string `json:"quarantine,omitempty"`
@@ -98,6 +108,8 @@ type AntivirusProfileHttp struct {
 	Emulator           *string `json:"emulator,omitempty"`
 	ExternalBlocklist  *string `json:"external-blocklist,omitempty"`
 	Fortiai            *string `json:"fortiai,omitempty"`
+	Fortindr           *string `json:"fortindr,omitempty"`
+	Fortisandbox       *string `json:"fortisandbox,omitempty"`
 	Options            *string `json:"options,omitempty"`
 	OutbreakPrevention *string `json:"outbreak-prevention,omitempty"`
 	Quarantine         *string `json:"quarantine,omitempty"`
@@ -112,6 +124,8 @@ type AntivirusProfileImap struct {
 	Executables        *string `json:"executables,omitempty"`
 	ExternalBlocklist  *string `json:"external-blocklist,omitempty"`
 	Fortiai            *string `json:"fortiai,omitempty"`
+	Fortindr           *string `json:"fortindr,omitempty"`
+	Fortisandbox       *string `json:"fortisandbox,omitempty"`
 	Options            *string `json:"options,omitempty"`
 	OutbreakPrevention *string `json:"outbreak-prevention,omitempty"`
 	Quarantine         *string `json:"quarantine,omitempty"`
@@ -125,6 +139,8 @@ type AntivirusProfileMapi struct {
 	Executables        *string `json:"executables,omitempty"`
 	ExternalBlocklist  *string `json:"external-blocklist,omitempty"`
 	Fortiai            *string `json:"fortiai,omitempty"`
+	Fortindr           *string `json:"fortindr,omitempty"`
+	Fortisandbox       *string `json:"fortisandbox,omitempty"`
 	Options            *string `json:"options,omitempty"`
 	OutbreakPrevention *string `json:"outbreak-prevention,omitempty"`
 	Quarantine         *string `json:"quarantine,omitempty"`
@@ -143,6 +159,8 @@ type AntivirusProfileNntp struct {
 	Emulator           *string `json:"emulator,omitempty"`
 	ExternalBlocklist  *string `json:"external-blocklist,omitempty"`
 	Fortiai            *string `json:"fortiai,omitempty"`
+	Fortindr           *string `json:"fortindr,omitempty"`
+	Fortisandbox       *string `json:"fortisandbox,omitempty"`
 	Options            *string `json:"options,omitempty"`
 	OutbreakPrevention *string `json:"outbreak-prevention,omitempty"`
 	Quarantine         *string `json:"quarantine,omitempty"`
@@ -162,6 +180,8 @@ type AntivirusProfilePop3 struct {
 	Executables        *string `json:"executables,omitempty"`
 	ExternalBlocklist  *string `json:"external-blocklist,omitempty"`
 	Fortiai            *string `json:"fortiai,omitempty"`
+	Fortindr           *string `json:"fortindr,omitempty"`
+	Fortisandbox       *string `json:"fortisandbox,omitempty"`
 	Options            *string `json:"options,omitempty"`
 	OutbreakPrevention *string `json:"outbreak-prevention,omitempty"`
 	Quarantine         *string `json:"quarantine,omitempty"`
@@ -176,6 +196,8 @@ type AntivirusProfileSmtp struct {
 	Executables        *string `json:"executables,omitempty"`
 	ExternalBlocklist  *string `json:"external-blocklist,omitempty"`
 	Fortiai            *string `json:"fortiai,omitempty"`
+	Fortindr           *string `json:"fortindr,omitempty"`
+	Fortisandbox       *string `json:"fortisandbox,omitempty"`
 	Options            *string `json:"options,omitempty"`
 	OutbreakPrevention *string `json:"outbreak-prevention,omitempty"`
 	Quarantine         *string `json:"quarantine,omitempty"`
@@ -188,6 +210,8 @@ type AntivirusProfileSsh struct {
 	Emulator           *string `json:"emulator,omitempty"`
 	ExternalBlocklist  *string `json:"external-blocklist,omitempty"`
 	Fortiai            *string `json:"fortiai,omitempty"`
+	Fortindr           *string `json:"fortindr,omitempty"`
+	Fortisandbox       *string `json:"fortisandbox,omitempty"`
 	Options            *string `json:"options,omitempty"`
 	OutbreakPrevention *string `json:"outbreak-prevention,omitempty"`
 	Quarantine         *string `json:"quarantine,omitempty"`

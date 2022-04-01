@@ -14,6 +14,7 @@ type FirewallProxyPolicy struct {
 	DecryptedTrafficMirror     *string                                          `json:"decrypted-traffic-mirror,omitempty"`
 	DeviceOwnership            *string                                          `json:"device-ownership,omitempty"`
 	Disclaimer                 *string                                          `json:"disclaimer,omitempty"`
+	DlpProfile                 *string                                          `json:"dlp-profile,omitempty"`
 	DlpSensor                  *string                                          `json:"dlp-sensor,omitempty"`
 	Dstaddr                    *[]FirewallProxyPolicyDstaddr                    `json:"dstaddr,omitempty"`
 	DstaddrNegate              *string                                          `json:"dstaddr-negate,omitempty"`

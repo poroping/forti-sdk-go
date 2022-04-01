@@ -49,6 +49,7 @@ type RouterRouteMapRule struct {
 	SetMetricType                      *string                                 `json:"set-metric-type,omitempty"`
 	SetOrigin                          *string                                 `json:"set-origin,omitempty"`
 	SetOriginatorId                    *string                                 `json:"set-originator-id,omitempty"`
+	SetPriority                        *int64                                  `json:"set-priority,omitempty"`
 	SetRouteTag                        *int64                                  `json:"set-route-tag,omitempty"`
 	SetTag                             *int64                                  `json:"set-tag,omitempty"`
 	SetWeight                          *int64                                  `json:"set-weight,omitempty"`

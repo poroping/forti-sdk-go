@@ -52,6 +52,12 @@ type SystemInterface struct {
 	DnsServerProtocol                     *string                                  `json:"dns-server-protocol,omitempty"`
 	DropFragment                          *string                                  `json:"drop-fragment,omitempty"`
 	DropOverlappedFragment                *string                                  `json:"drop-overlapped-fragment,omitempty"`
+	EapCaCert                             *string                                  `json:"eap-ca-cert,omitempty"`
+	EapIdentity                           *string                                  `json:"eap-identity,omitempty"`
+	EapMethod                             *string                                  `json:"eap-method,omitempty"`
+	EapPassword                           *string                                  `json:"eap-password,omitempty"`
+	EapSupplicant                         *string                                  `json:"eap-supplicant,omitempty"`
+	EapUserCert                           *string                                  `json:"eap-user-cert,omitempty"`
 	EgressCos                             *string                                  `json:"egress-cos,omitempty"`
 	EgressQueues                          *SystemInterfaceEgressQueues             `json:"egress-queues,omitempty"`
 	EgressShapingProfile                  *string                                  `json:"egress-shaping-profile,omitempty"`
@@ -78,6 +84,7 @@ type SystemInterface struct {
 	IcmpSendRedirect                      *string                                  `json:"icmp-send-redirect,omitempty"`
 	IdentAccept                           *string                                  `json:"ident-accept,omitempty"`
 	IdleTimeout                           *int64                                   `json:"idle-timeout,omitempty"`
+	IkeSamlServer                         *string                                  `json:"ike-saml-server,omitempty"`
 	Inbandwidth                           *int64                                   `json:"inbandwidth,omitempty"`
 	IngressCos                            *string                                  `json:"ingress-cos,omitempty"`
 	IngressShapingProfile                 *string                                  `json:"ingress-shaping-profile,omitempty"`

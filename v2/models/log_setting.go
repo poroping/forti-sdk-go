@@ -16,6 +16,7 @@ type LogSetting struct {
 	LocalInDenyBroadcast *string                      `json:"local-in-deny-broadcast,omitempty"`
 	LocalInDenyUnicast   *string                      `json:"local-in-deny-unicast,omitempty"`
 	LocalOut             *string                      `json:"local-out,omitempty"`
+	LocalOutIocDetection *string                      `json:"local-out-ioc-detection,omitempty"`
 	LogInvalidPacket     *string                      `json:"log-invalid-packet,omitempty"`
 	LogPolicyComment     *string                      `json:"log-policy-comment,omitempty"`
 	LogPolicyName        *string                      `json:"log-policy-name,omitempty"`

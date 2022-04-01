@@ -3,8 +3,14 @@ package models
 const IcapProfilePath = "icap/profile/"
 
 type IcapProfile struct {
+	The204Response         *string                           `json:"204-response,omitempty"`
+	The204SizeLimit        *int64                            `json:"204-size-limit,omitempty"`
 	ChunkEncap             *string                           `json:"chunk-encap,omitempty"`
 	ExtensionFeature       *string                           `json:"extension-feature,omitempty"`
+	FileTransfer           *string                           `json:"file-transfer,omitempty"`
+	FileTransferFailure    *string                           `json:"file-transfer-failure,omitempty"`
+	FileTransferPath       *string                           `json:"file-transfer-path,omitempty"`
+	FileTransferServer     *string                           `json:"file-transfer-server,omitempty"`
 	IcapBlockLog           *string                           `json:"icap-block-log,omitempty"`
 	IcapHeaders            *[]IcapProfileIcapHeaders         `json:"icap-headers,omitempty"`
 	Methods                *string                           `json:"methods,omitempty"`
@@ -25,6 +31,7 @@ type IcapProfile struct {
 	ResponseServer         *string                           `json:"response-server,omitempty"`
 	ScanProgressInterval   *int64                            `json:"scan-progress-interval,omitempty"`
 	StreamingContentBypass *string                           `json:"streaming-content-bypass,omitempty"`
+	Timeout                *int64                            `json:"timeout,omitempty"`
 }
 
 type IcapProfileIcapHeaders struct {

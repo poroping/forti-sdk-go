@@ -70,11 +70,13 @@ type FirewallProfileProtocolOptionsFtp struct {
 }
 
 type FirewallProfileProtocolOptionsHttp struct {
+	AddressIpRating              *string `json:"address-ip-rating,omitempty"`
 	BlockPageStatusCode          *int64  `json:"block-page-status-code,omitempty"`
 	ComfortAmount                *int64  `json:"comfort-amount,omitempty"`
 	ComfortInterval              *int64  `json:"comfort-interval,omitempty"`
 	FortinetBar                  *string `json:"fortinet-bar,omitempty"`
 	FortinetBarPort              *int64  `json:"fortinet-bar-port,omitempty"`
+	H2c                          *string `json:"h2c,omitempty"`
 	InspectAll                   *string `json:"inspect-all,omitempty"`
 	Options                      *string `json:"options,omitempty"`
 	OversizeLimit                *int64  `json:"oversize-limit,omitempty"`

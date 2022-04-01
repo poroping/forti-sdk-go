@@ -20,6 +20,7 @@ type FirewallMulticastPolicy struct {
 	Srcintf         *string                           `json:"srcintf,omitempty"`
 	StartPort       *int64                            `json:"start-port,omitempty"`
 	Status          *string                           `json:"status,omitempty"`
+	TrafficShaper   *string                           `json:"traffic-shaper,omitempty"`
 	Uuid            *string                           `json:"uuid,omitempty"`
 }
 

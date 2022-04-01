@@ -1067,6 +1067,16 @@ type Endpoints interface {
 	UpdateRouterBgpRedistribute6(mkey string, payload *models.RouterBgpRedistribute6, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
 	DeleteRouterBgpRedistribute6(mkey string, params *models.CmdbRequestParams) error
 	ListRouterBgpRedistribute6(params *models.CmdbRequestParams) (*[]models.RouterBgpRedistribute6, error)
+	CreateRouterBgpVrf(payload *models.RouterBgpVrf, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	ReadRouterBgpVrf(mkey string, params *models.CmdbRequestParams) (*models.RouterBgpVrf, error)
+	UpdateRouterBgpVrf(mkey string, payload *models.RouterBgpVrf, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	DeleteRouterBgpVrf(mkey string, params *models.CmdbRequestParams) error
+	ListRouterBgpVrf(params *models.CmdbRequestParams) (*[]models.RouterBgpVrf, error)
+	CreateRouterBgpVrf6(payload *models.RouterBgpVrf6, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	ReadRouterBgpVrf6(mkey string, params *models.CmdbRequestParams) (*models.RouterBgpVrf6, error)
+	UpdateRouterBgpVrf6(mkey string, payload *models.RouterBgpVrf6, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	DeleteRouterBgpVrf6(mkey string, params *models.CmdbRequestParams) error
+	ListRouterBgpVrf6(params *models.CmdbRequestParams) (*[]models.RouterBgpVrf6, error)
 	CreateRouterBgpVrfLeak(payload *models.RouterBgpVrfLeak, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
 	ReadRouterBgpVrfLeak(mkey string, params *models.CmdbRequestParams) (*models.RouterBgpVrfLeak, error)
 	UpdateRouterBgpVrfLeak(mkey string, payload *models.RouterBgpVrfLeak, params *models.CmdbRequestParams) (*models.CmdbResponse, error)

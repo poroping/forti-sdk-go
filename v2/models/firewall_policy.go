@@ -27,6 +27,7 @@ type FirewallPolicy struct {
 	DiffservcodeForward           *string                                        `json:"diffservcode-forward,omitempty"`
 	DiffservcodeRev               *string                                        `json:"diffservcode-rev,omitempty"`
 	Disclaimer                    *string                                        `json:"disclaimer,omitempty"`
+	DlpProfile                    *string                                        `json:"dlp-profile,omitempty"`
 	DlpSensor                     *string                                        `json:"dlp-sensor,omitempty"`
 	DnsfilterProfile              *string                                        `json:"dnsfilter-profile,omitempty"`
 	Dsri                          *string                                        `json:"dsri,omitempty"`
@@ -88,6 +89,8 @@ type FirewallPolicy struct {
 	PerIpShaper                   *string                                        `json:"per-ip-shaper,omitempty"`
 	PermitAnyHost                 *string                                        `json:"permit-any-host,omitempty"`
 	PermitStunHost                *string                                        `json:"permit-stun-host,omitempty"`
+	PolicyExpiry                  *string                                        `json:"policy-expiry,omitempty"`
+	PolicyExpiryDate              *string                                        `json:"policy-expiry-date,omitempty"`
 	Policyid                      *int64                                         `json:"policyid,omitempty"`
 	Poolname                      *[]FirewallPolicyPoolname                      `json:"poolname,omitempty"`
 	Poolname6                     *[]FirewallPolicyPoolname6                     `json:"poolname6,omitempty"`

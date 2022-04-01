@@ -11,6 +11,7 @@ type FirewallSecurityPolicy struct {
 	AvProfile                     *string                                                `json:"av-profile,omitempty"`
 	CifsProfile                   *string                                                `json:"cifs-profile,omitempty"`
 	Comments                      *string                                                `json:"comments,omitempty"`
+	DlpProfile                    *string                                                `json:"dlp-profile,omitempty"`
 	DlpSensor                     *string                                                `json:"dlp-sensor,omitempty"`
 	DnsfilterProfile              *string                                                `json:"dnsfilter-profile,omitempty"`
 	Dstaddr                       *[]FirewallSecurityPolicyDstaddr                       `json:"dstaddr,omitempty"`
@@ -62,7 +63,7 @@ type FirewallSecurityPolicy struct {
 	SshFilterProfile              *string                                                `json:"ssh-filter-profile,omitempty"`
 	SslSshProfile                 *string                                                `json:"ssl-ssh-profile,omitempty"`
 	Status                        *string                                                `json:"status,omitempty"`
-	UrlCategory                   *[]FirewallSecurityPolicyUrlCategory                   `json:"url-category,omitempty"`
+	UrlCategory                   *string                                                `json:"url-category,omitempty"`
 	Users                         *[]FirewallSecurityPolicyUsers                         `json:"users,omitempty"`
 	Uuid                          *string                                                `json:"uuid,omitempty"`
 	VideofilterProfile            *string                                                `json:"videofilter-profile,omitempty"`
@@ -164,10 +165,6 @@ type FirewallSecurityPolicySrcaddr6 struct {
 
 type FirewallSecurityPolicySrcintf struct {
 	Name *string `json:"name,omitempty"`
-}
-
-type FirewallSecurityPolicyUrlCategory struct {
-	Id *int64 `json:"id,omitempty"`
 }
 
 type FirewallSecurityPolicyUsers struct {

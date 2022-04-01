@@ -7,6 +7,8 @@ type UserLdap struct {
 	AccountKeyProcessing    *string `json:"account-key-processing,omitempty"`
 	Antiphish               *string `json:"antiphish,omitempty"`
 	CaCert                  *string `json:"ca-cert,omitempty"`
+	ClientCert              *string `json:"client-cert,omitempty"`
+	ClientCertAuth          *string `json:"client-cert-auth,omitempty"`
 	Cnid                    *string `json:"cnid,omitempty"`
 	Dn                      *string `json:"dn,omitempty"`
 	GroupFilter             *string `json:"group-filter,omitempty"`

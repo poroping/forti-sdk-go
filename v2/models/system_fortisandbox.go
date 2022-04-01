@@ -6,6 +6,7 @@ type SystemFortisandbox struct {
 	Email                 *string `json:"email,omitempty"`
 	EncAlgorithm          *string `json:"enc-algorithm,omitempty"`
 	Forticloud            *string `json:"forticloud,omitempty"`
+	InlineScan            *string `json:"inline-scan,omitempty"`
 	Interface             *string `json:"interface,omitempty"`
 	InterfaceSelectMethod *string `json:"interface-select-method,omitempty"`
 	Server                *string `json:"server,omitempty"`
