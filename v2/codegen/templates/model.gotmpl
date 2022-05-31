@@ -16,7 +16,7 @@ type {{.fpath}} struct {	{{range $key, $value := .children}}
 	}
 {{range $key, $value := .children}}{{if or (eq $value.category "complex") (eq $value.category "table")}}
 {{template "generatetype" $value}}{{end}}{{end}}
-{{if .never}}{{if .readonly}}{{if (eq .category "table")}}{{template "defaultfuncs" . }}{{end}}{{end}}{{end}}
+{{if .readonly}}{{if .readonly}}{{if (eq .category "table")}}{{template "defaultfuncs" . }}{{end}}{{end}}{{end}}
 {{end}}
 
 {{ define "defaultfuncs" }}

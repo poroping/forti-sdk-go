@@ -381,10 +381,24 @@ type RouterBgpRedistribute struct {
 	Status   *string `json:"status,omitempty"`
 }
 
+//defaultfuncs
+func (def *RouterBgpRedistribute) Defaults() {
+	def.Name = ""
+	def.RouteMap = ""
+	def.Status = "disable"
+}
+
 type RouterBgpRedistribute6 struct {
 	Name     *string `json:"name,omitempty"`
 	RouteMap *string `json:"route-map,omitempty"`
 	Status   *string `json:"status,omitempty"`
+}
+
+//defaultfuncs
+func (def *RouterBgpRedistribute6) defaults() {
+	def.Name = ""
+	def.RouteMap = ""
+	def.Status = "disable"
 }
 
 type RouterBgpVrf struct {
@@ -403,6 +417,12 @@ type RouterBgpVrfExportRt struct {
 
 type RouterBgpVrfImportRt struct {
 	RouteTarget *string `json:"route-target,omitempty"`
+}
+
+type RouterBgpVrfLeakTarget struct {
+	Interface *string `json:"interface,omitempty"`
+	RouteMap  *string `json:"route-map,omitempty"`
+	Vrf       *string `json:"vrf,omitempty"`
 }
 
 type RouterBgpVrfLeak struct {

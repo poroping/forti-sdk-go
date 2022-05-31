@@ -152,6 +152,14 @@ type VpnSslWebPortalOsCheckList struct {
 	Tolerance        *int64  `json:"tolerance,omitempty"`
 }
 
+//defaultfuncs
+func (def *VpnSslWebPortalOsCheckList) defaults() {
+	def.Action = "allow"
+	def.LatestPatchLevel = "0"
+	def.Name = ""
+	def.Tolerance = "0"
+}
+
 type VpnSslWebPortalSplitDns struct {
 	DnsServer1     *string `json:"dns-server1,omitempty"`
 	DnsServer2     *string `json:"dns-server2,omitempty"`

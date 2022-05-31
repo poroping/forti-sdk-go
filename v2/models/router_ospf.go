@@ -154,6 +154,16 @@ type RouterOspfRedistribute struct {
 	Tag        *int64  `json:"tag,omitempty"`
 }
 
+//defaultfuncs
+func (def *RouterOspfRedistribute) defaults() {
+	def.Metric = "0"
+	def.MetricType = "2"
+	def.Name = ""
+	def.Routemap = ""
+	def.Status = "disable"
+	def.Tag = "0"
+}
+
 type RouterOspfSummaryAddress struct {
 	Advertise *string `json:"advertise,omitempty"`
 	Id        *int64  `json:"id,omitempty"`

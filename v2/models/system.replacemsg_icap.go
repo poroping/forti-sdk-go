@@ -8,3 +8,11 @@ type SystemReplacemsgIcap struct {
 	Header  *string `json:"header,omitempty"`
 	MsgType *string `json:"msg-type,omitempty"`
 }
+
+//defaultfuncs
+func (def *SystemReplacemsgIcap) defaults() {
+	def.Buffer = "<no value>"
+	def.Format = ""
+	def.Header = ""
+	def.MsgType = ""
+}

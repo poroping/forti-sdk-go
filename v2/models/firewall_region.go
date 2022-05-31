@@ -11,3 +11,9 @@ type FirewallRegion struct {
 type FirewallRegionCity struct {
 	Id *int64 `json:"id,omitempty"`
 }
+
+//defaultfuncs
+func (def *FirewallRegion) defaults() {
+	def.Id = "0"
+	def.Name = ""
+}

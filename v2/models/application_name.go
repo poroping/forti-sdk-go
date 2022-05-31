@@ -25,7 +25,36 @@ type ApplicationNameMetadata struct {
 	Valueid *int64 `json:"valueid,omitempty"`
 }
 
+//defaultfuncs
+func (def *ApplicationNameMetadata) defaults() {
+	def.Id = "0"
+	def.Metaid = "0"
+	def.Valueid = "0"
+}
+
 type ApplicationNameParameters struct {
 	DefaultValue *string `json:"default value,omitempty"`
 	Name         *string `json:"name,omitempty"`
+}
+
+//defaultfuncs
+func (def *ApplicationNameParameters) defaults() {
+	def.DefaultValue = ""
+	def.Name = ""
+}
+
+//defaultfuncs
+func (def *ApplicationName) defaults() {
+	def.Behavior = ""
+	def.Category = "0"
+	def.Id = "0"
+	def.Name = ""
+	def.Parameter = "<no value>"
+	def.Popularity = "0"
+	def.Protocol = ""
+	def.Risk = "0"
+	def.SubCategory = "<no value>"
+	def.Technology = ""
+	def.Vendor = ""
+	def.Weight = "0"
 }

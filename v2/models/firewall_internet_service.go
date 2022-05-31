@@ -16,3 +16,19 @@ type FirewallInternetService struct {
 	Singularity        *int64  `json:"singularity,omitempty"`
 	SldId              *int64  `json:"sld-id,omitempty"`
 }
+
+//defaultfuncs
+func (def *FirewallInternetService) defaults() {
+	def.Database = "isdb"
+	def.Direction = "both"
+	def.ExtraIpRangeNumber = "0"
+	def.IconId = "0"
+	def.Id = "0"
+	def.IpNumber = "0"
+	def.IpRangeNumber = "0"
+	def.Name = ""
+	def.Obsolete = "0"
+	def.Reputation = "<no value>"
+	def.Singularity = "0"
+	def.SldId = "<no value>"
+}

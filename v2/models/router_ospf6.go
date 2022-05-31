@@ -123,6 +123,15 @@ type RouterOspf6Redistribute struct {
 	Status     *string `json:"status,omitempty"`
 }
 
+//defaultfuncs
+func (def *RouterOspf6Redistribute) defaults() {
+	def.Metric = "0"
+	def.MetricType = "2"
+	def.Name = ""
+	def.Routemap = ""
+	def.Status = "disable"
+}
+
 type RouterOspf6SummaryAddress struct {
 	Advertise *string `json:"advertise,omitempty"`
 	Id        *int64  `json:"id,omitempty"`

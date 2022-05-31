@@ -94,6 +94,8 @@ func (c *Client) DeleteRouterBgpRedistribute(mkey string, params *models.CmdbReq
 	req.HTTPMethod = "DELETE"
 	req.Mkey = &mkey
 	req.Payload = nil
+	defs := &models.RouterBgpRedistribute{}
+	defs.Defaults()
 	req.Path = models.CmdbBasePath + models.RouterBgpRedistributePath + url.QueryEscape(mkey) + "/"
 	req.Params = *params
 

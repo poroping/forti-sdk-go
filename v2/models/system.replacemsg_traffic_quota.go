@@ -8,3 +8,11 @@ type SystemReplacemsgTrafficQuota struct {
 	Header  *string `json:"header,omitempty"`
 	MsgType *string `json:"msg-type,omitempty"`
 }
+
+//defaultfuncs
+func (def *SystemReplacemsgTrafficQuota) defaults() {
+	def.Buffer = "<no value>"
+	def.Format = ""
+	def.Header = ""
+	def.MsgType = ""
+}

@@ -77,3 +77,11 @@ type RouterRipngRedistribute struct {
 	Routemap *string `json:"routemap,omitempty"`
 	Status   *string `json:"status,omitempty"`
 }
+
+//defaultfuncs
+func (def *RouterRipngRedistribute) defaults() {
+	def.Metric = "0"
+	def.Name = ""
+	def.Routemap = ""
+	def.Status = "disable"
+}

@@ -219,6 +219,15 @@ type WafProfileSignatureMainClass struct {
 	Status   *string `json:"status,omitempty"`
 }
 
+//defaultfuncs
+func (def *WafProfileSignatureMainClass) defaults() {
+	def.Action = "allow"
+	def.Id = "0"
+	def.Log = "enable"
+	def.Severity = "medium"
+	def.Status = "disable"
+}
+
 type WafProfileUrlAccess struct {
 	AccessPattern *[]WafProfileUrlAccessAccessPattern `json:"access-pattern,omitempty"`
 	Action        *string                             `json:"action,omitempty"`

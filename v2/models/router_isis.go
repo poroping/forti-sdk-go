@@ -93,6 +93,16 @@ type RouterIsisRedistribute struct {
 	Status     *string `json:"status,omitempty"`
 }
 
+//defaultfuncs
+func (def *RouterIsisRedistribute) defaults() {
+	def.Level = "level-2"
+	def.Metric = "0"
+	def.MetricType = "internal"
+	def.Protocol = ""
+	def.Routemap = ""
+	def.Status = "disable"
+}
+
 type RouterIsisRedistribute6 struct {
 	Level      *string `json:"level,omitempty"`
 	Metric     *int64  `json:"metric,omitempty"`
@@ -100,6 +110,16 @@ type RouterIsisRedistribute6 struct {
 	Protocol   *string `json:"protocol,omitempty"`
 	Routemap   *string `json:"routemap,omitempty"`
 	Status     *string `json:"status,omitempty"`
+}
+
+//defaultfuncs
+func (def *RouterIsisRedistribute6) defaults() {
+	def.Level = "level-2"
+	def.Metric = "0"
+	def.MetricType = "internal"
+	def.Protocol = ""
+	def.Routemap = ""
+	def.Status = "disable"
 }
 
 type RouterIsisSummaryAddress struct {

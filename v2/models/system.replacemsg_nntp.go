@@ -8,3 +8,11 @@ type SystemReplacemsgNntp struct {
 	Header  *string `json:"header,omitempty"`
 	MsgType *string `json:"msg-type,omitempty"`
 }
+
+//defaultfuncs
+func (def *SystemReplacemsgNntp) defaults() {
+	def.Buffer = "<no value>"
+	def.Format = "<no value>"
+	def.Header = "<no value>"
+	def.MsgType = "<no value>"
+}

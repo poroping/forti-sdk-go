@@ -6,3 +6,9 @@ type FirewallInternetServiceReputation struct {
 	Description *string `json:"description,omitempty"`
 	Id          *int64  `json:"id,omitempty"`
 }
+
+//defaultfuncs
+func (def *FirewallInternetServiceReputation) defaults() {
+	def.Description = ""
+	def.Id = "0"
+}

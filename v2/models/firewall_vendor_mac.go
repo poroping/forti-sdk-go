@@ -8,3 +8,11 @@ type FirewallVendorMac struct {
 	Name      *string `json:"name,omitempty"`
 	Obsolete  *int64  `json:"obsolete,omitempty"`
 }
+
+//defaultfuncs
+func (def *FirewallVendorMac) defaults() {
+	def.Id = "0"
+	def.MacNumber = "0"
+	def.Name = ""
+	def.Obsolete = "0"
+}

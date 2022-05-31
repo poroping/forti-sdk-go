@@ -25,3 +25,28 @@ type IpsRuleMetadata struct {
 	Metaid  *int64 `json:"metaid,omitempty"`
 	Valueid *int64 `json:"valueid,omitempty"`
 }
+
+//defaultfuncs
+func (def *IpsRuleMetadata) defaults() {
+	def.Id = "0"
+	def.Metaid = "0"
+	def.Valueid = "0"
+}
+
+//defaultfuncs
+func (def *IpsRule) defaults() {
+	def.Action = "pass"
+	def.Application = ""
+	def.Date = "0"
+	def.Group = ""
+	def.Location = ""
+	def.Log = "enable"
+	def.LogPacket = "disable"
+	def.Name = ""
+	def.Os = ""
+	def.Rev = "0"
+	def.RuleId = "0"
+	def.Service = ""
+	def.Severity = ""
+	def.Status = "enable"
+}
