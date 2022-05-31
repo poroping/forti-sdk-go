@@ -70,7 +70,8 @@ func NewClientBase(auth *auth.Auth) (*FortiSDKClient, error) {
 		req.Path = models.MonitorBasePath + "system/status/"
 		res, err := request.Read(&c.Config, req)
 		if err != nil || res == nil {
-			log.Print("[WARN] Error attempting to determine FortiOS version, skipping.")
+			log.Print("[WARN] Error attempting to determine FortiOS version, this check can be skipped.")
+			return c, err
 		}
 		if res.Version != nil {
 			log.Printf("[INFO] FortiOS version detected as %s", *res.Version)
