@@ -8,57 +8,39 @@ type SystemNpu struct {
 	DedicatedManagementCpu      *string                         `json:"dedicated-management-cpu,omitempty"`
 	DefaultQosType              *string                         `json:"default-qos-type,omitempty"`
 	DosOptions                  *SystemNpuDosOptions            `json:"dos-options,omitempty"`
-	DoubleLevelMcastOffload     *string                         `json:"double-level-mcast-offload,omitempty"`
-	DseTimeout                  *int64                          `json:"dse-timeout,omitempty"`
 	DswDtsProfile               *[]SystemNpuDswDtsProfile       `json:"dsw-dts-profile,omitempty"`
 	DswQueueDtsProfile          *[]SystemNpuDswQueueDtsProfile  `json:"dsw-queue-dts-profile,omitempty"`
-	Fastpath                    *string                         `json:"fastpath,omitempty"`
 	FpAnomaly                   *SystemNpuFpAnomaly             `json:"fp-anomaly,omitempty"`
 	GtpSupport                  *string                         `json:"gtp-support,omitempty"`
 	HashTblSpread               *string                         `json:"hash-tbl-spread,omitempty"`
 	Hpe                         *SystemNpuHpe                   `json:"hpe,omitempty"`
 	HtabDediQueueNr             *int64                          `json:"htab-dedi-queue-nr,omitempty"`
 	HtabMsgQueue                *string                         `json:"htab-msg-queue,omitempty"`
+	HtxIcmpCsumChk              *string                         `json:"htx-icmp-csum-chk,omitempty"`
 	InboundDscpCopyPort         *[]SystemNpuInboundDscpCopyPort `json:"inbound-dscp-copy-port,omitempty"`
 	IpReassembly                *SystemNpuIpReassembly          `json:"ip-reassembly,omitempty"`
-	IppoolOverloadHigh          *int64                          `json:"ippool-overload-high,omitempty"`
-	IppoolOverloadLow           *int64                          `json:"ippool-overload-low,omitempty"`
-	IpsecDecSubengineMask       *string                         `json:"ipsec-dec-subengine-mask,omitempty"`
-	IpsecEncSubengineMask       *string                         `json:"ipsec-enc-subengine-mask,omitempty"`
-	IpsecInboundCache           *string                         `json:"ipsec-inbound-cache,omitempty"`
 	IpsecMtuOverride            *string                         `json:"ipsec-mtu-override,omitempty"`
 	IpsecObNpSel                *string                         `json:"ipsec-ob-np-sel,omitempty"`
-	IpsecOverVlink              *string                         `json:"ipsec-over-vlink,omitempty"`
-	IsfNpQueues                 *SystemNpuIsfNpQueues           `json:"isf-np-queues,omitempty"`
 	MaxSessionTimeout           *int64                          `json:"max-session-timeout,omitempty"`
-	McastSessionAccounting      *string                         `json:"mcast-session-accounting,omitempty"`
 	NapiBreakInterval           *int64                          `json:"napi-break-interval,omitempty"`
 	NpQueues                    *SystemNpuNpQueues              `json:"np-queues,omitempty"`
-	Np6CpsOptimizationMode      *string                         `json:"np6-cps-optimization-mode,omitempty"`
-	PbaEim                      *string                         `json:"pba-eim,omitempty"`
+	PerPolicyAccounting         *string                         `json:"per-policy-accounting,omitempty"`
 	PerSessionAccounting        *string                         `json:"per-session-accounting,omitempty"`
 	PolicyOffloadLevel          *string                         `json:"policy-offload-level,omitempty"`
-	PortCpuMap                  *[]SystemNpuPortCpuMap          `json:"port-cpu-map,omitempty"`
 	PortNpuMap                  *[]SystemNpuPortNpuMap          `json:"port-npu-map,omitempty"`
-	PriorityProtocol            *SystemNpuPriorityProtocol      `json:"priority-protocol,omitempty"`
-	QosMode                     *string                         `json:"qos-mode,omitempty"`
-	RdpOffload                  *string                         `json:"rdp-offload,omitempty"`
-	RecoverNp6Link              *string                         `json:"recover-np6-link,omitempty"`
+	QtmBufMode                  *string                         `json:"qtm-buf-mode,omitempty"`
 	SessionAcctInterval         *int64                          `json:"session-acct-interval,omitempty"`
-	SseBackpressure             *string                         `json:"sse-backpressure,omitempty"`
-	StripClearTextPadding       *string                         `json:"strip-clear-text-padding,omitempty"`
-	StripEspPadding             *string                         `json:"strip-esp-padding,omitempty"`
-	SwNpBandwidth               *string                         `json:"sw-np-bandwidth,omitempty"`
-	TcpRstTimeout               *int64                          `json:"tcp-rst-timeout,omitempty"`
-	TcpTimeoutProfile           *[]SystemNpuTcpTimeoutProfile   `json:"tcp-timeout-profile,omitempty"`
-	UdpTimeoutProfile           *[]SystemNpuUdpTimeoutProfile   `json:"udp-timeout-profile,omitempty"`
 	VlanLookupCache             *string                         `json:"vlan-lookup-cache,omitempty"`
 }
+
+const SystemNpuDosOptionsPath = "system/npu/dos-options/"
 
 type SystemNpuDosOptions struct {
 	NpuDosMeterMode *string `json:"npu-dos-meter-mode,omitempty"`
 	NpuDosTpeMode   *string `json:"npu-dos-tpe-mode,omitempty"`
 }
+
+const SystemNpuDswDtsProfilePath = "system/npu/dsw-dts-profile/"
 
 type SystemNpuDswDtsProfile struct {
 	Action    *string `json:"action,omitempty"`
@@ -67,6 +49,8 @@ type SystemNpuDswDtsProfile struct {
 	Step      *int64  `json:"step,omitempty"`
 }
 
+const SystemNpuDswQueueDtsProfilePath = "system/npu/dsw-queue-dts-profile/"
+
 type SystemNpuDswQueueDtsProfile struct {
 	Iport       *string `json:"iport,omitempty"`
 	Name        *string `json:"name,omitempty"`
@@ -74,6 +58,8 @@ type SystemNpuDswQueueDtsProfile struct {
 	ProfileId   *int64  `json:"profile-id,omitempty"`
 	QueueSelect *int64  `json:"queue-select,omitempty"`
 }
+
+const SystemNpuFpAnomalyPath = "system/npu/fp-anomaly/"
 
 type SystemNpuFpAnomaly struct {
 	IcmpCsumErr      *string `json:"icmp-csum-err,omitempty"`
@@ -113,6 +99,8 @@ type SystemNpuFpAnomaly struct {
 	UdpLand          *string `json:"udp-land,omitempty"`
 }
 
+const SystemNpuHpePath = "system/npu/hpe/"
+
 type SystemNpuHpe struct {
 	AllProtocol  *int64  `json:"all-protocol,omitempty"`
 	ArpMax       *int64  `json:"arp-max,omitempty"`
@@ -131,9 +119,13 @@ type SystemNpuHpe struct {
 	UdpMax       *int64  `json:"udp-max,omitempty"`
 }
 
+const SystemNpuInboundDscpCopyPortPath = "system/npu/inbound-dscp-copy-port/"
+
 type SystemNpuInboundDscpCopyPort struct {
 	Interface *string `json:"interface,omitempty"`
 }
+
+const SystemNpuIpReassemblyPath = "system/npu/ip-reassembly/"
 
 type SystemNpuIpReassembly struct {
 	MaxTimeout *int64  `json:"max-timeout,omitempty"`
@@ -141,16 +133,7 @@ type SystemNpuIpReassembly struct {
 	Status     *string `json:"status,omitempty"`
 }
 
-type SystemNpuIsfNpQueues struct {
-	Cos0 *string `json:"cos0,omitempty"`
-	Cos1 *string `json:"cos1,omitempty"`
-	Cos2 *string `json:"cos2,omitempty"`
-	Cos3 *string `json:"cos3,omitempty"`
-	Cos4 *string `json:"cos4,omitempty"`
-	Cos5 *string `json:"cos5,omitempty"`
-	Cos6 *string `json:"cos6,omitempty"`
-	Cos7 *string `json:"cos7,omitempty"`
-}
+const SystemNpuNpQueuesPath = "system/npu/np-queues/"
 
 type SystemNpuNpQueues struct {
 	EthernetType *[]SystemNpuNpQueuesEthernetType `json:"ethernet-type,omitempty"`
@@ -160,6 +143,8 @@ type SystemNpuNpQueues struct {
 	Scheduler    *[]SystemNpuNpQueuesScheduler    `json:"scheduler,omitempty"`
 }
 
+const SystemNpuNpQueuesEthernetTypePath = "system/npu/np-queues/ethernet-type/"
+
 type SystemNpuNpQueuesEthernetType struct {
 	Name   *string `json:"name,omitempty"`
 	Queue  *int64  `json:"queue,omitempty"`
@@ -167,12 +152,16 @@ type SystemNpuNpQueuesEthernetType struct {
 	Weight *int64  `json:"weight,omitempty"`
 }
 
+const SystemNpuNpQueuesIpProtocolPath = "system/npu/np-queues/ip-protocol/"
+
 type SystemNpuNpQueuesIpProtocol struct {
 	Name     *string `json:"name,omitempty"`
 	Protocol *int64  `json:"protocol,omitempty"`
 	Queue    *int64  `json:"queue,omitempty"`
 	Weight   *int64  `json:"weight,omitempty"`
 }
+
+const SystemNpuNpQueuesIpServicePath = "system/npu/np-queues/ip-service/"
 
 type SystemNpuNpQueuesIpService struct {
 	Dport    *int64  `json:"dport,omitempty"`
@@ -182,6 +171,8 @@ type SystemNpuNpQueuesIpService struct {
 	Sport    *int64  `json:"sport,omitempty"`
 	Weight   *int64  `json:"weight,omitempty"`
 }
+
+const SystemNpuNpQueuesProfilePath = "system/npu/np-queues/profile/"
 
 type SystemNpuNpQueuesProfile struct {
 	Cos0   *string `json:"cos0,omitempty"`
@@ -261,38 +252,16 @@ type SystemNpuNpQueuesProfile struct {
 	Weight *int64  `json:"weight,omitempty"`
 }
 
+const SystemNpuNpQueuesSchedulerPath = "system/npu/np-queues/scheduler/"
+
 type SystemNpuNpQueuesScheduler struct {
 	Mode *string `json:"mode,omitempty"`
 	Name *string `json:"name,omitempty"`
 }
 
-type SystemNpuPortCpuMap struct {
-	CpuCore   *string `json:"cpu-core,omitempty"`
-	Interface *string `json:"interface,omitempty"`
-}
+const SystemNpuPortNpuMapPath = "system/npu/port-npu-map/"
 
 type SystemNpuPortNpuMap struct {
 	Interface     *string `json:"interface,omitempty"`
 	NpuGroupIndex *int64  `json:"npu-group-index,omitempty"`
-}
-
-type SystemNpuPriorityProtocol struct {
-	Bfd  *string `json:"bfd,omitempty"`
-	Bgp  *string `json:"bgp,omitempty"`
-	Slbc *string `json:"slbc,omitempty"`
-}
-
-type SystemNpuTcpTimeoutProfile struct {
-	CloseWait *int64 `json:"close-wait,omitempty"`
-	FinWait   *int64 `json:"fin-wait,omitempty"`
-	Id        *int64 `json:"id,omitempty"`
-	SynSent   *int64 `json:"syn-sent,omitempty"`
-	SynWait   *int64 `json:"syn-wait,omitempty"`
-	TcpIdle   *int64 `json:"tcp-idle,omitempty"`
-	TimeWait  *int64 `json:"time-wait,omitempty"`
-}
-
-type SystemNpuUdpTimeoutProfile struct {
-	Id      *int64 `json:"id,omitempty"`
-	UdpIdle *int64 `json:"udp-idle,omitempty"`
 }

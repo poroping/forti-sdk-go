@@ -7,6 +7,8 @@ type RouterKeyChain struct {
 	Name *string              `json:"name,omitempty"`
 }
 
+const RouterKeyChainKeyPath = "router/key-chain/key/"
+
 type RouterKeyChainKey struct {
 	AcceptLifetime *string `json:"accept-lifetime,omitempty"`
 	Algorithm      *string `json:"algorithm,omitempty"`

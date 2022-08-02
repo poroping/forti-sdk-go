@@ -13,6 +13,8 @@ type FileFilterProfile struct {
 	ScanArchiveContents *string                   `json:"scan-archive-contents,omitempty"`
 }
 
+const FileFilterProfileRulesPath = "file-filter/profile/rules/"
+
 type FileFilterProfileRules struct {
 	Action            *string                           `json:"action,omitempty"`
 	Comment           *string                           `json:"comment,omitempty"`
@@ -22,6 +24,8 @@ type FileFilterProfileRules struct {
 	PasswordProtected *string                           `json:"password-protected,omitempty"`
 	Protocol          *string                           `json:"protocol,omitempty"`
 }
+
+const FileFilterProfileRulesFileTypePath = "file-filter/profile/rules/file-type/"
 
 type FileFilterProfileRulesFileType struct {
 	Name *string `json:"name,omitempty"`

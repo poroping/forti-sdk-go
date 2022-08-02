@@ -17,6 +17,8 @@ type LogSyslogd3OverrideFilter struct {
 	ZtnaTraffic      *string                               `json:"ztna-traffic,omitempty"`
 }
 
+const LogSyslogd3OverrideFilterFreeStylePath = "log.syslogd3/override-filter/free-style/"
+
 type LogSyslogd3OverrideFilterFreeStyle struct {
 	Category   *string `json:"category,omitempty"`
 	Filter     *string `json:"filter,omitempty"`

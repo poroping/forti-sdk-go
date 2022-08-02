@@ -7,6 +7,8 @@ type SystemNdProxy struct {
 	Status *string                `json:"status,omitempty"`
 }
 
+const SystemNdProxyMemberPath = "system/nd-proxy/member/"
+
 type SystemNdProxyMember struct {
 	InterfaceName *string `json:"interface-name,omitempty"`
 }

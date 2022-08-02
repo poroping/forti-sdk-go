@@ -13,9 +13,13 @@ type SystemVxlan struct {
 	Vni          *int64                  `json:"vni,omitempty"`
 }
 
+const SystemVxlanRemoteIpPath = "system/vxlan/remote-ip/"
+
 type SystemVxlanRemoteIp struct {
 	Ip *string `json:"ip,omitempty"`
 }
+
+const SystemVxlanRemoteIp6Path = "system/vxlan/remote-ip6/"
 
 type SystemVxlanRemoteIp6 struct {
 	Ip6 *string `json:"ip6,omitempty"`

@@ -6,7 +6,6 @@ type EmailfilterProfile struct {
 	Comment                   *string                          `json:"comment,omitempty"`
 	External                  *string                          `json:"external,omitempty"`
 	FeatureSet                *string                          `json:"feature-set,omitempty"`
-	FileFilter                *EmailfilterProfileFileFilter    `json:"file-filter,omitempty"`
 	Gmail                     *EmailfilterProfileGmail         `json:"gmail,omitempty"`
 	Imap                      *EmailfilterProfileImap          `json:"imap,omitempty"`
 	Mapi                      *EmailfilterProfileMapi          `json:"mapi,omitempty"`
@@ -30,73 +29,62 @@ type EmailfilterProfile struct {
 	YahooMail                 *EmailfilterProfileYahooMail     `json:"yahoo-mail,omitempty"`
 }
 
-type EmailfilterProfileFileFilter struct {
-	Entries             *[]EmailfilterProfileFileFilterEntries `json:"entries,omitempty"`
-	Log                 *string                                `json:"log,omitempty"`
-	ScanArchiveContents *string                                `json:"scan-archive-contents,omitempty"`
-	Status              *string                                `json:"status,omitempty"`
-}
-
-type EmailfilterProfileFileFilterEntries struct {
-	Action            *string                                        `json:"action,omitempty"`
-	Comment           *string                                        `json:"comment,omitempty"`
-	FileType          *[]EmailfilterProfileFileFilterEntriesFileType `json:"file-type,omitempty"`
-	Filter            *string                                        `json:"filter,omitempty"`
-	PasswordProtected *string                                        `json:"password-protected,omitempty"`
-	Protocol          *string                                        `json:"protocol,omitempty"`
-}
-
-type EmailfilterProfileFileFilterEntriesFileType struct {
-	Name *string `json:"name,omitempty"`
-}
+const EmailfilterProfileGmailPath = "emailfilter/profile/gmail/"
 
 type EmailfilterProfileGmail struct {
-	Log    *string `json:"log,omitempty"`
 	LogAll *string `json:"log-all,omitempty"`
 }
 
+const EmailfilterProfileImapPath = "emailfilter/profile/imap/"
+
 type EmailfilterProfileImap struct {
 	Action  *string `json:"action,omitempty"`
-	Log     *string `json:"log,omitempty"`
 	LogAll  *string `json:"log-all,omitempty"`
 	TagMsg  *string `json:"tag-msg,omitempty"`
 	TagType *string `json:"tag-type,omitempty"`
 }
 
+const EmailfilterProfileMapiPath = "emailfilter/profile/mapi/"
+
 type EmailfilterProfileMapi struct {
 	Action *string `json:"action,omitempty"`
-	Log    *string `json:"log,omitempty"`
 	LogAll *string `json:"log-all,omitempty"`
 }
 
+const EmailfilterProfileMsnHotmailPath = "emailfilter/profile/msn-hotmail/"
+
 type EmailfilterProfileMsnHotmail struct {
-	Log    *string `json:"log,omitempty"`
 	LogAll *string `json:"log-all,omitempty"`
 }
+
+const EmailfilterProfileOtherWebmailsPath = "emailfilter/profile/other-webmails/"
 
 type EmailfilterProfileOtherWebmails struct {
 	LogAll *string `json:"log-all,omitempty"`
 }
 
+const EmailfilterProfilePop3Path = "emailfilter/profile/pop3/"
+
 type EmailfilterProfilePop3 struct {
 	Action  *string `json:"action,omitempty"`
-	Log     *string `json:"log,omitempty"`
 	LogAll  *string `json:"log-all,omitempty"`
 	TagMsg  *string `json:"tag-msg,omitempty"`
 	TagType *string `json:"tag-type,omitempty"`
 }
 
+const EmailfilterProfileSmtpPath = "emailfilter/profile/smtp/"
+
 type EmailfilterProfileSmtp struct {
 	Action        *string `json:"action,omitempty"`
 	Hdrip         *string `json:"hdrip,omitempty"`
 	LocalOverride *string `json:"local-override,omitempty"`
-	Log           *string `json:"log,omitempty"`
 	LogAll        *string `json:"log-all,omitempty"`
 	TagMsg        *string `json:"tag-msg,omitempty"`
 	TagType       *string `json:"tag-type,omitempty"`
 }
 
+const EmailfilterProfileYahooMailPath = "emailfilter/profile/yahoo-mail/"
+
 type EmailfilterProfileYahooMail struct {
-	Log    *string `json:"log,omitempty"`
 	LogAll *string `json:"log-all,omitempty"`
 }

@@ -7,6 +7,8 @@ type WirelessControllerHotspot20H2qpOperatorName struct {
 	ValueList *[]WirelessControllerHotspot20H2qpOperatorNameValueList `json:"value-list,omitempty"`
 }
 
+const WirelessControllerHotspot20H2qpOperatorNameValueListPath = "wireless-controller.hotspot20/h2qp-operator-name/value-list/"
+
 type WirelessControllerHotspot20H2qpOperatorNameValueList struct {
 	Index *int64  `json:"index,omitempty"`
 	Lang  *string `json:"lang,omitempty"`

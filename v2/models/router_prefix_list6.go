@@ -8,6 +8,8 @@ type RouterPrefixList6 struct {
 	Rule     *[]RouterPrefixList6Rule `json:"rule,omitempty"`
 }
 
+const RouterPrefixList6RulePath = "router/prefix-list6/rule/"
+
 type RouterPrefixList6Rule struct {
 	Action  *string `json:"action,omitempty"`
 	Flags   *int64  `json:"flags,omitempty"`

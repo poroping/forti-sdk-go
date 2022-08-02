@@ -56,9 +56,13 @@ type SystemAdmin struct {
 	Wildcard                *string                       `json:"wildcard,omitempty"`
 }
 
+const SystemAdminGuestUsergroupsPath = "system/admin/guest-usergroups/"
+
 type SystemAdminGuestUsergroups struct {
 	Name *string `json:"name,omitempty"`
 }
+
+const SystemAdminVdomPath = "system/admin/vdom/"
 
 type SystemAdminVdom struct {
 	Name *string `json:"name,omitempty"`

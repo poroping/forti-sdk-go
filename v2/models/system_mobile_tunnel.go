@@ -20,6 +20,8 @@ type SystemMobileTunnel struct {
 	TunnelMode       *string                      `json:"tunnel-mode,omitempty"`
 }
 
+const SystemMobileTunnelNetworkPath = "system/mobile-tunnel/network/"
+
 type SystemMobileTunnelNetwork struct {
 	Id        *int64  `json:"id,omitempty"`
 	Interface *string `json:"interface,omitempty"`

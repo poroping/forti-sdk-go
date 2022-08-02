@@ -24,33 +24,49 @@ type FirewallCentralSnatMap struct {
 	Uuid       *string                             `json:"uuid,omitempty"`
 }
 
+const FirewallCentralSnatMapDstAddrPath = "firewall/central-snat-map/dst-addr/"
+
 type FirewallCentralSnatMapDstAddr struct {
 	Name *string `json:"name,omitempty"`
 }
+
+const FirewallCentralSnatMapDstAddr6Path = "firewall/central-snat-map/dst-addr6/"
 
 type FirewallCentralSnatMapDstAddr6 struct {
 	Name *string `json:"name,omitempty"`
 }
 
+const FirewallCentralSnatMapDstintfPath = "firewall/central-snat-map/dstintf/"
+
 type FirewallCentralSnatMapDstintf struct {
 	Name *string `json:"name,omitempty"`
 }
+
+const FirewallCentralSnatMapNatIppoolPath = "firewall/central-snat-map/nat-ippool/"
 
 type FirewallCentralSnatMapNatIppool struct {
 	Name *string `json:"name,omitempty"`
 }
 
+const FirewallCentralSnatMapNatIppool6Path = "firewall/central-snat-map/nat-ippool6/"
+
 type FirewallCentralSnatMapNatIppool6 struct {
 	Name *string `json:"name,omitempty"`
 }
+
+const FirewallCentralSnatMapOrigAddrPath = "firewall/central-snat-map/orig-addr/"
 
 type FirewallCentralSnatMapOrigAddr struct {
 	Name *string `json:"name,omitempty"`
 }
 
+const FirewallCentralSnatMapOrigAddr6Path = "firewall/central-snat-map/orig-addr6/"
+
 type FirewallCentralSnatMapOrigAddr6 struct {
 	Name *string `json:"name,omitempty"`
 }
+
+const FirewallCentralSnatMapSrcintfPath = "firewall/central-snat-map/srcintf/"
 
 type FirewallCentralSnatMapSrcintf struct {
 	Name *string `json:"name,omitempty"`

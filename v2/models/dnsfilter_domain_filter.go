@@ -9,6 +9,8 @@ type DnsfilterDomainFilter struct {
 	Name    *string                         `json:"name,omitempty"`
 }
 
+const DnsfilterDomainFilterEntriesPath = "dnsfilter/domain-filter/entries/"
+
 type DnsfilterDomainFilterEntries struct {
 	Action *string `json:"action,omitempty"`
 	Domain *string `json:"domain,omitempty"`

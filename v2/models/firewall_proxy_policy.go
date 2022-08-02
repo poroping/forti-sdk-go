@@ -14,7 +14,6 @@ type FirewallProxyPolicy struct {
 	DecryptedTrafficMirror     *string                                          `json:"decrypted-traffic-mirror,omitempty"`
 	DeviceOwnership            *string                                          `json:"device-ownership,omitempty"`
 	Disclaimer                 *string                                          `json:"disclaimer,omitempty"`
-	DlpProfile                 *string                                          `json:"dlp-profile,omitempty"`
 	DlpSensor                  *string                                          `json:"dlp-sensor,omitempty"`
 	Dstaddr                    *[]FirewallProxyPolicyDstaddr                    `json:"dstaddr,omitempty"`
 	DstaddrNegate              *string                                          `json:"dstaddr-negate,omitempty"`
@@ -29,7 +28,6 @@ type FirewallProxyPolicy struct {
 	InternetServiceCustom      *[]FirewallProxyPolicyInternetServiceCustom      `json:"internet-service-custom,omitempty"`
 	InternetServiceCustomGroup *[]FirewallProxyPolicyInternetServiceCustomGroup `json:"internet-service-custom-group,omitempty"`
 	InternetServiceGroup       *[]FirewallProxyPolicyInternetServiceGroup       `json:"internet-service-group,omitempty"`
-	InternetServiceId          *[]FirewallProxyPolicyInternetServiceId          `json:"internet-service-id,omitempty"`
 	InternetServiceName        *[]FirewallProxyPolicyInternetServiceName        `json:"internet-service-name,omitempty"`
 	InternetServiceNegate      *string                                          `json:"internet-service-negate,omitempty"`
 	IpsSensor                  *string                                          `json:"ips-sensor,omitempty"`
@@ -64,8 +62,6 @@ type FirewallProxyPolicy struct {
 	VideofilterProfile         *string                                          `json:"videofilter-profile,omitempty"`
 	VoipProfile                *string                                          `json:"voip-profile,omitempty"`
 	WafProfile                 *string                                          `json:"waf-profile,omitempty"`
-	Webcache                   *string                                          `json:"webcache,omitempty"`
-	WebcacheHttps              *string                                          `json:"webcache-https,omitempty"`
 	WebfilterProfile           *string                                          `json:"webfilter-profile,omitempty"`
 	WebproxyForwardServer      *string                                          `json:"webproxy-forward-server,omitempty"`
 	WebproxyProfile            *string                                          `json:"webproxy-profile,omitempty"`
@@ -73,73 +69,103 @@ type FirewallProxyPolicy struct {
 	ZtnaTagsMatchLogic         *string                                          `json:"ztna-tags-match-logic,omitempty"`
 }
 
+const FirewallProxyPolicyAccessProxyPath = "firewall/proxy-policy/access-proxy/"
+
 type FirewallProxyPolicyAccessProxy struct {
 	Name *string `json:"name,omitempty"`
 }
+
+const FirewallProxyPolicyAccessProxy6Path = "firewall/proxy-policy/access-proxy6/"
 
 type FirewallProxyPolicyAccessProxy6 struct {
 	Name *string `json:"name,omitempty"`
 }
 
+const FirewallProxyPolicyDstaddrPath = "firewall/proxy-policy/dstaddr/"
+
 type FirewallProxyPolicyDstaddr struct {
 	Name *string `json:"name,omitempty"`
 }
+
+const FirewallProxyPolicyDstaddr6Path = "firewall/proxy-policy/dstaddr6/"
 
 type FirewallProxyPolicyDstaddr6 struct {
 	Name *string `json:"name,omitempty"`
 }
 
+const FirewallProxyPolicyDstintfPath = "firewall/proxy-policy/dstintf/"
+
 type FirewallProxyPolicyDstintf struct {
 	Name *string `json:"name,omitempty"`
 }
+
+const FirewallProxyPolicyGroupsPath = "firewall/proxy-policy/groups/"
 
 type FirewallProxyPolicyGroups struct {
 	Name *string `json:"name,omitempty"`
 }
 
+const FirewallProxyPolicyInternetServiceCustomPath = "firewall/proxy-policy/internet-service-custom/"
+
 type FirewallProxyPolicyInternetServiceCustom struct {
 	Name *string `json:"name,omitempty"`
 }
+
+const FirewallProxyPolicyInternetServiceCustomGroupPath = "firewall/proxy-policy/internet-service-custom-group/"
 
 type FirewallProxyPolicyInternetServiceCustomGroup struct {
 	Name *string `json:"name,omitempty"`
 }
 
+const FirewallProxyPolicyInternetServiceGroupPath = "firewall/proxy-policy/internet-service-group/"
+
 type FirewallProxyPolicyInternetServiceGroup struct {
 	Name *string `json:"name,omitempty"`
 }
 
-type FirewallProxyPolicyInternetServiceId struct {
-	Id *int64 `json:"id,omitempty"`
-}
+const FirewallProxyPolicyInternetServiceNamePath = "firewall/proxy-policy/internet-service-name/"
 
 type FirewallProxyPolicyInternetServiceName struct {
 	Name *string `json:"name,omitempty"`
 }
 
+const FirewallProxyPolicyPoolnamePath = "firewall/proxy-policy/poolname/"
+
 type FirewallProxyPolicyPoolname struct {
 	Name *string `json:"name,omitempty"`
 }
+
+const FirewallProxyPolicyServicePath = "firewall/proxy-policy/service/"
 
 type FirewallProxyPolicyService struct {
 	Name *string `json:"name,omitempty"`
 }
 
+const FirewallProxyPolicySrcaddrPath = "firewall/proxy-policy/srcaddr/"
+
 type FirewallProxyPolicySrcaddr struct {
 	Name *string `json:"name,omitempty"`
 }
+
+const FirewallProxyPolicySrcaddr6Path = "firewall/proxy-policy/srcaddr6/"
 
 type FirewallProxyPolicySrcaddr6 struct {
 	Name *string `json:"name,omitempty"`
 }
 
+const FirewallProxyPolicySrcintfPath = "firewall/proxy-policy/srcintf/"
+
 type FirewallProxyPolicySrcintf struct {
 	Name *string `json:"name,omitempty"`
 }
 
+const FirewallProxyPolicyUsersPath = "firewall/proxy-policy/users/"
+
 type FirewallProxyPolicyUsers struct {
 	Name *string `json:"name,omitempty"`
 }
+
+const FirewallProxyPolicyZtnaEmsTagPath = "firewall/proxy-policy/ztna-ems-tag/"
 
 type FirewallProxyPolicyZtnaEmsTag struct {
 	Name *string `json:"name,omitempty"`

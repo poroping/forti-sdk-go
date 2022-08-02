@@ -32,6 +32,8 @@ type WebProxyExplicit struct {
 	UnknownHttpVersion      *string                      `json:"unknown-http-version,omitempty"`
 }
 
+const WebProxyExplicitPacPolicyPath = "web-proxy/explicit/pac-policy/"
+
 type WebProxyExplicitPacPolicy struct {
 	Comments    *string                              `json:"comments,omitempty"`
 	Dstaddr     *[]WebProxyExplicitPacPolicyDstaddr  `json:"dstaddr,omitempty"`
@@ -43,13 +45,19 @@ type WebProxyExplicitPacPolicy struct {
 	Status      *string                              `json:"status,omitempty"`
 }
 
+const WebProxyExplicitPacPolicyDstaddrPath = "web-proxy/explicit/pac-policy/dstaddr/"
+
 type WebProxyExplicitPacPolicyDstaddr struct {
 	Name *string `json:"name,omitempty"`
 }
 
+const WebProxyExplicitPacPolicySrcaddrPath = "web-proxy/explicit/pac-policy/srcaddr/"
+
 type WebProxyExplicitPacPolicySrcaddr struct {
 	Name *string `json:"name,omitempty"`
 }
+
+const WebProxyExplicitPacPolicySrcaddr6Path = "web-proxy/explicit/pac-policy/srcaddr6/"
 
 type WebProxyExplicitPacPolicySrcaddr6 struct {
 	Name *string `json:"name,omitempty"`

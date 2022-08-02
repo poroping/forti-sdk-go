@@ -8,6 +8,8 @@ type FirewallInternetServiceCustomGroup struct {
 	Name    *string                                     `json:"name,omitempty"`
 }
 
+const FirewallInternetServiceCustomGroupMemberPath = "firewall/internet-service-custom-group/member/"
+
 type FirewallInternetServiceCustomGroupMember struct {
 	Name *string `json:"name,omitempty"`
 }

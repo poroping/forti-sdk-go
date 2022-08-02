@@ -51,10 +51,14 @@ type WirelessControllerWtpProfile struct {
 	WanPortMode                    *string                                          `json:"wan-port-mode,omitempty"`
 }
 
+const WirelessControllerWtpProfileDenyMacListPath = "wireless-controller/wtp-profile/deny-mac-list/"
+
 type WirelessControllerWtpProfileDenyMacList struct {
 	Id  *int64  `json:"id,omitempty"`
 	Mac *string `json:"mac,omitempty"`
 }
+
+const WirelessControllerWtpProfileEslSesDonglePath = "wireless-controller/wtp-profile/esl-ses-dongle/"
 
 type WirelessControllerWtpProfileEslSesDongle struct {
 	ApcAddrType         *string `json:"apc-addr-type,omitempty"`
@@ -69,6 +73,8 @@ type WirelessControllerWtpProfileEslSesDongle struct {
 	TlsCertVerification *string `json:"tls-cert-verification,omitempty"`
 	TlsFqdnVerification *string `json:"tls-fqdn-verification,omitempty"`
 }
+
+const WirelessControllerWtpProfileLanPath = "wireless-controller/wtp-profile/lan/"
 
 type WirelessControllerWtpProfileLan struct {
 	PortEslMode *string `json:"port-esl-mode,omitempty"`
@@ -92,6 +98,8 @@ type WirelessControllerWtpProfileLan struct {
 	Port8Mode   *string `json:"port8-mode,omitempty"`
 	Port8Ssid   *string `json:"port8-ssid,omitempty"`
 }
+
+const WirelessControllerWtpProfileLbsPath = "wireless-controller/wtp-profile/lbs/"
 
 type WirelessControllerWtpProfileLbs struct {
 	Aeroscout                   *string `json:"aeroscout,omitempty"`
@@ -120,9 +128,13 @@ type WirelessControllerWtpProfileLbs struct {
 	StationLocate               *string `json:"station-locate,omitempty"`
 }
 
+const WirelessControllerWtpProfileLedSchedulesPath = "wireless-controller/wtp-profile/led-schedules/"
+
 type WirelessControllerWtpProfileLedSchedules struct {
 	Name *string `json:"name,omitempty"`
 }
+
+const WirelessControllerWtpProfilePlatformPath = "wireless-controller/wtp-profile/platform/"
 
 type WirelessControllerWtpProfilePlatform struct {
 	Ddscan *string `json:"ddscan,omitempty"`
@@ -130,10 +142,11 @@ type WirelessControllerWtpProfilePlatform struct {
 	Type   *string `json:"type,omitempty"`
 }
 
+const WirelessControllerWtpProfileRadio1Path = "wireless-controller/wtp-profile/radio-1/"
+
 type WirelessControllerWtpProfileRadio1 struct {
 	AirtimeFairness           *string                                      `json:"airtime-fairness,omitempty"`
 	Amsdu                     *string                                      `json:"amsdu,omitempty"`
-	ApHandoff                 *string                                      `json:"ap-handoff,omitempty"`
 	ApSnifferAddr             *string                                      `json:"ap-sniffer-addr,omitempty"`
 	ApSnifferBufsize          *int64                                       `json:"ap-sniffer-bufsize,omitempty"`
 	ApSnifferChan             *int64                                       `json:"ap-sniffer-chan,omitempty"`
@@ -148,7 +161,7 @@ type WirelessControllerWtpProfileRadio1 struct {
 	AutoPowerLow              *int64                                       `json:"auto-power-low,omitempty"`
 	AutoPowerTarget           *string                                      `json:"auto-power-target,omitempty"`
 	Band                      *string                                      `json:"band,omitempty"`
-	Band5gType                *string                                      `json:"band-5g-type,omitempty"`
+	Band5GType                *string                                      `json:"band-5g-type,omitempty"`
 	BandwidthAdmissionControl *string                                      `json:"bandwidth-admission-control,omitempty"`
 	BandwidthCapacity         *int64                                       `json:"bandwidth-capacity,omitempty"`
 	BeaconInterval            *int64                                       `json:"beacon-interval,omitempty"`
@@ -165,7 +178,6 @@ type WirelessControllerWtpProfileRadio1 struct {
 	DrmaSensitivity           *string                                      `json:"drma-sensitivity,omitempty"`
 	Dtim                      *int64                                       `json:"dtim,omitempty"`
 	FragThreshold             *int64                                       `json:"frag-threshold,omitempty"`
-	FrequencyHandoff          *string                                      `json:"frequency-handoff,omitempty"`
 	IperfProtocol             *string                                      `json:"iperf-protocol,omitempty"`
 	IperfServerPort           *int64                                       `json:"iperf-server-port,omitempty"`
 	MaxClients                *int64                                       `json:"max-clients,omitempty"`
@@ -188,7 +200,6 @@ type WirelessControllerWtpProfileRadio1 struct {
 	SamPassword               *string                                      `json:"sam-password,omitempty"`
 	SamReportIntv             *int64                                       `json:"sam-report-intv,omitempty"`
 	SamSecurityType           *string                                      `json:"sam-security-type,omitempty"`
-	SamServer                 *string                                      `json:"sam-server,omitempty"`
 	SamServerFqdn             *string                                      `json:"sam-server-fqdn,omitempty"`
 	SamServerIp               *string                                      `json:"sam-server-ip,omitempty"`
 	SamServerType             *string                                      `json:"sam-server-type,omitempty"`
@@ -196,7 +207,6 @@ type WirelessControllerWtpProfileRadio1 struct {
 	SamTest                   *string                                      `json:"sam-test,omitempty"`
 	SamUsername               *string                                      `json:"sam-username,omitempty"`
 	ShortGuardInterval        *string                                      `json:"short-guard-interval,omitempty"`
-	SpectrumAnalysis          *string                                      `json:"spectrum-analysis,omitempty"`
 	TransmitOptimize          *string                                      `json:"transmit-optimize,omitempty"`
 	VapAll                    *string                                      `json:"vap-all,omitempty"`
 	Vaps                      *[]WirelessControllerWtpProfileRadio1Vaps    `json:"vaps,omitempty"`
@@ -204,18 +214,23 @@ type WirelessControllerWtpProfileRadio1 struct {
 	ZeroWaitDfs               *string                                      `json:"zero-wait-dfs,omitempty"`
 }
 
+const WirelessControllerWtpProfileRadio1ChannelPath = "wireless-controller/wtp-profile/radio-1/channel/"
+
 type WirelessControllerWtpProfileRadio1Channel struct {
 	Chan *string `json:"chan,omitempty"`
 }
+
+const WirelessControllerWtpProfileRadio1VapsPath = "wireless-controller/wtp-profile/radio-1/vaps/"
 
 type WirelessControllerWtpProfileRadio1Vaps struct {
 	Name *string `json:"name,omitempty"`
 }
 
+const WirelessControllerWtpProfileRadio2Path = "wireless-controller/wtp-profile/radio-2/"
+
 type WirelessControllerWtpProfileRadio2 struct {
 	AirtimeFairness           *string                                      `json:"airtime-fairness,omitempty"`
 	Amsdu                     *string                                      `json:"amsdu,omitempty"`
-	ApHandoff                 *string                                      `json:"ap-handoff,omitempty"`
 	ApSnifferAddr             *string                                      `json:"ap-sniffer-addr,omitempty"`
 	ApSnifferBufsize          *int64                                       `json:"ap-sniffer-bufsize,omitempty"`
 	ApSnifferChan             *int64                                       `json:"ap-sniffer-chan,omitempty"`
@@ -230,7 +245,7 @@ type WirelessControllerWtpProfileRadio2 struct {
 	AutoPowerLow              *int64                                       `json:"auto-power-low,omitempty"`
 	AutoPowerTarget           *string                                      `json:"auto-power-target,omitempty"`
 	Band                      *string                                      `json:"band,omitempty"`
-	Band5gType                *string                                      `json:"band-5g-type,omitempty"`
+	Band5GType                *string                                      `json:"band-5g-type,omitempty"`
 	BandwidthAdmissionControl *string                                      `json:"bandwidth-admission-control,omitempty"`
 	BandwidthCapacity         *int64                                       `json:"bandwidth-capacity,omitempty"`
 	BeaconInterval            *int64                                       `json:"beacon-interval,omitempty"`
@@ -247,7 +262,6 @@ type WirelessControllerWtpProfileRadio2 struct {
 	DrmaSensitivity           *string                                      `json:"drma-sensitivity,omitempty"`
 	Dtim                      *int64                                       `json:"dtim,omitempty"`
 	FragThreshold             *int64                                       `json:"frag-threshold,omitempty"`
-	FrequencyHandoff          *string                                      `json:"frequency-handoff,omitempty"`
 	IperfProtocol             *string                                      `json:"iperf-protocol,omitempty"`
 	IperfServerPort           *int64                                       `json:"iperf-server-port,omitempty"`
 	MaxClients                *int64                                       `json:"max-clients,omitempty"`
@@ -270,7 +284,6 @@ type WirelessControllerWtpProfileRadio2 struct {
 	SamPassword               *string                                      `json:"sam-password,omitempty"`
 	SamReportIntv             *int64                                       `json:"sam-report-intv,omitempty"`
 	SamSecurityType           *string                                      `json:"sam-security-type,omitempty"`
-	SamServer                 *string                                      `json:"sam-server,omitempty"`
 	SamServerFqdn             *string                                      `json:"sam-server-fqdn,omitempty"`
 	SamServerIp               *string                                      `json:"sam-server-ip,omitempty"`
 	SamServerType             *string                                      `json:"sam-server-type,omitempty"`
@@ -278,7 +291,6 @@ type WirelessControllerWtpProfileRadio2 struct {
 	SamTest                   *string                                      `json:"sam-test,omitempty"`
 	SamUsername               *string                                      `json:"sam-username,omitempty"`
 	ShortGuardInterval        *string                                      `json:"short-guard-interval,omitempty"`
-	SpectrumAnalysis          *string                                      `json:"spectrum-analysis,omitempty"`
 	TransmitOptimize          *string                                      `json:"transmit-optimize,omitempty"`
 	VapAll                    *string                                      `json:"vap-all,omitempty"`
 	Vaps                      *[]WirelessControllerWtpProfileRadio2Vaps    `json:"vaps,omitempty"`
@@ -286,18 +298,23 @@ type WirelessControllerWtpProfileRadio2 struct {
 	ZeroWaitDfs               *string                                      `json:"zero-wait-dfs,omitempty"`
 }
 
+const WirelessControllerWtpProfileRadio2ChannelPath = "wireless-controller/wtp-profile/radio-2/channel/"
+
 type WirelessControllerWtpProfileRadio2Channel struct {
 	Chan *string `json:"chan,omitempty"`
 }
+
+const WirelessControllerWtpProfileRadio2VapsPath = "wireless-controller/wtp-profile/radio-2/vaps/"
 
 type WirelessControllerWtpProfileRadio2Vaps struct {
 	Name *string `json:"name,omitempty"`
 }
 
+const WirelessControllerWtpProfileRadio3Path = "wireless-controller/wtp-profile/radio-3/"
+
 type WirelessControllerWtpProfileRadio3 struct {
 	AirtimeFairness           *string                                      `json:"airtime-fairness,omitempty"`
 	Amsdu                     *string                                      `json:"amsdu,omitempty"`
-	ApHandoff                 *string                                      `json:"ap-handoff,omitempty"`
 	ApSnifferAddr             *string                                      `json:"ap-sniffer-addr,omitempty"`
 	ApSnifferBufsize          *int64                                       `json:"ap-sniffer-bufsize,omitempty"`
 	ApSnifferChan             *int64                                       `json:"ap-sniffer-chan,omitempty"`
@@ -312,7 +329,7 @@ type WirelessControllerWtpProfileRadio3 struct {
 	AutoPowerLow              *int64                                       `json:"auto-power-low,omitempty"`
 	AutoPowerTarget           *string                                      `json:"auto-power-target,omitempty"`
 	Band                      *string                                      `json:"band,omitempty"`
-	Band5gType                *string                                      `json:"band-5g-type,omitempty"`
+	Band5GType                *string                                      `json:"band-5g-type,omitempty"`
 	BandwidthAdmissionControl *string                                      `json:"bandwidth-admission-control,omitempty"`
 	BandwidthCapacity         *int64                                       `json:"bandwidth-capacity,omitempty"`
 	BeaconInterval            *int64                                       `json:"beacon-interval,omitempty"`
@@ -329,7 +346,6 @@ type WirelessControllerWtpProfileRadio3 struct {
 	DrmaSensitivity           *string                                      `json:"drma-sensitivity,omitempty"`
 	Dtim                      *int64                                       `json:"dtim,omitempty"`
 	FragThreshold             *int64                                       `json:"frag-threshold,omitempty"`
-	FrequencyHandoff          *string                                      `json:"frequency-handoff,omitempty"`
 	IperfProtocol             *string                                      `json:"iperf-protocol,omitempty"`
 	IperfServerPort           *int64                                       `json:"iperf-server-port,omitempty"`
 	MaxClients                *int64                                       `json:"max-clients,omitempty"`
@@ -352,7 +368,6 @@ type WirelessControllerWtpProfileRadio3 struct {
 	SamPassword               *string                                      `json:"sam-password,omitempty"`
 	SamReportIntv             *int64                                       `json:"sam-report-intv,omitempty"`
 	SamSecurityType           *string                                      `json:"sam-security-type,omitempty"`
-	SamServer                 *string                                      `json:"sam-server,omitempty"`
 	SamServerFqdn             *string                                      `json:"sam-server-fqdn,omitempty"`
 	SamServerIp               *string                                      `json:"sam-server-ip,omitempty"`
 	SamServerType             *string                                      `json:"sam-server-type,omitempty"`
@@ -360,7 +375,6 @@ type WirelessControllerWtpProfileRadio3 struct {
 	SamTest                   *string                                      `json:"sam-test,omitempty"`
 	SamUsername               *string                                      `json:"sam-username,omitempty"`
 	ShortGuardInterval        *string                                      `json:"short-guard-interval,omitempty"`
-	SpectrumAnalysis          *string                                      `json:"spectrum-analysis,omitempty"`
 	TransmitOptimize          *string                                      `json:"transmit-optimize,omitempty"`
 	VapAll                    *string                                      `json:"vap-all,omitempty"`
 	Vaps                      *[]WirelessControllerWtpProfileRadio3Vaps    `json:"vaps,omitempty"`
@@ -368,18 +382,23 @@ type WirelessControllerWtpProfileRadio3 struct {
 	ZeroWaitDfs               *string                                      `json:"zero-wait-dfs,omitempty"`
 }
 
+const WirelessControllerWtpProfileRadio3ChannelPath = "wireless-controller/wtp-profile/radio-3/channel/"
+
 type WirelessControllerWtpProfileRadio3Channel struct {
 	Chan *string `json:"chan,omitempty"`
 }
+
+const WirelessControllerWtpProfileRadio3VapsPath = "wireless-controller/wtp-profile/radio-3/vaps/"
 
 type WirelessControllerWtpProfileRadio3Vaps struct {
 	Name *string `json:"name,omitempty"`
 }
 
+const WirelessControllerWtpProfileRadio4Path = "wireless-controller/wtp-profile/radio-4/"
+
 type WirelessControllerWtpProfileRadio4 struct {
 	AirtimeFairness           *string                                      `json:"airtime-fairness,omitempty"`
 	Amsdu                     *string                                      `json:"amsdu,omitempty"`
-	ApHandoff                 *string                                      `json:"ap-handoff,omitempty"`
 	ApSnifferAddr             *string                                      `json:"ap-sniffer-addr,omitempty"`
 	ApSnifferBufsize          *int64                                       `json:"ap-sniffer-bufsize,omitempty"`
 	ApSnifferChan             *int64                                       `json:"ap-sniffer-chan,omitempty"`
@@ -394,7 +413,7 @@ type WirelessControllerWtpProfileRadio4 struct {
 	AutoPowerLow              *int64                                       `json:"auto-power-low,omitempty"`
 	AutoPowerTarget           *string                                      `json:"auto-power-target,omitempty"`
 	Band                      *string                                      `json:"band,omitempty"`
-	Band5gType                *string                                      `json:"band-5g-type,omitempty"`
+	Band5GType                *string                                      `json:"band-5g-type,omitempty"`
 	BandwidthAdmissionControl *string                                      `json:"bandwidth-admission-control,omitempty"`
 	BandwidthCapacity         *int64                                       `json:"bandwidth-capacity,omitempty"`
 	BeaconInterval            *int64                                       `json:"beacon-interval,omitempty"`
@@ -411,7 +430,6 @@ type WirelessControllerWtpProfileRadio4 struct {
 	DrmaSensitivity           *string                                      `json:"drma-sensitivity,omitempty"`
 	Dtim                      *int64                                       `json:"dtim,omitempty"`
 	FragThreshold             *int64                                       `json:"frag-threshold,omitempty"`
-	FrequencyHandoff          *string                                      `json:"frequency-handoff,omitempty"`
 	IperfProtocol             *string                                      `json:"iperf-protocol,omitempty"`
 	IperfServerPort           *int64                                       `json:"iperf-server-port,omitempty"`
 	MaxClients                *int64                                       `json:"max-clients,omitempty"`
@@ -434,7 +452,6 @@ type WirelessControllerWtpProfileRadio4 struct {
 	SamPassword               *string                                      `json:"sam-password,omitempty"`
 	SamReportIntv             *int64                                       `json:"sam-report-intv,omitempty"`
 	SamSecurityType           *string                                      `json:"sam-security-type,omitempty"`
-	SamServer                 *string                                      `json:"sam-server,omitempty"`
 	SamServerFqdn             *string                                      `json:"sam-server-fqdn,omitempty"`
 	SamServerIp               *string                                      `json:"sam-server-ip,omitempty"`
 	SamServerType             *string                                      `json:"sam-server-type,omitempty"`
@@ -442,7 +459,6 @@ type WirelessControllerWtpProfileRadio4 struct {
 	SamTest                   *string                                      `json:"sam-test,omitempty"`
 	SamUsername               *string                                      `json:"sam-username,omitempty"`
 	ShortGuardInterval        *string                                      `json:"short-guard-interval,omitempty"`
-	SpectrumAnalysis          *string                                      `json:"spectrum-analysis,omitempty"`
 	TransmitOptimize          *string                                      `json:"transmit-optimize,omitempty"`
 	VapAll                    *string                                      `json:"vap-all,omitempty"`
 	Vaps                      *[]WirelessControllerWtpProfileRadio4Vaps    `json:"vaps,omitempty"`
@@ -450,13 +466,19 @@ type WirelessControllerWtpProfileRadio4 struct {
 	ZeroWaitDfs               *string                                      `json:"zero-wait-dfs,omitempty"`
 }
 
+const WirelessControllerWtpProfileRadio4ChannelPath = "wireless-controller/wtp-profile/radio-4/channel/"
+
 type WirelessControllerWtpProfileRadio4Channel struct {
 	Chan *string `json:"chan,omitempty"`
 }
 
+const WirelessControllerWtpProfileRadio4VapsPath = "wireless-controller/wtp-profile/radio-4/vaps/"
+
 type WirelessControllerWtpProfileRadio4Vaps struct {
 	Name *string `json:"name,omitempty"`
 }
+
+const WirelessControllerWtpProfileSplitTunnelingAclPath = "wireless-controller/wtp-profile/split-tunneling-acl/"
 
 type WirelessControllerWtpProfileSplitTunnelingAcl struct {
 	DestIp *string `json:"dest-ip,omitempty"`

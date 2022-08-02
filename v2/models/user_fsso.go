@@ -27,7 +27,6 @@ type UserFsso struct {
 	Server3               *string `json:"server3,omitempty"`
 	Server4               *string `json:"server4,omitempty"`
 	Server5               *string `json:"server5,omitempty"`
-	Sni                   *string `json:"sni,omitempty"`
 	SourceIp              *string `json:"source-ip,omitempty"`
 	SourceIp6             *string `json:"source-ip6,omitempty"`
 	Ssl                   *string `json:"ssl,omitempty"`

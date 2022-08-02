@@ -17,6 +17,8 @@ type SystemSpeedTestSchedule struct {
 	UpdateOutbandwidthMinimum *int64                              `json:"update-outbandwidth-minimum,omitempty"`
 }
 
+const SystemSpeedTestScheduleSchedulesPath = "system/speed-test-schedule/schedules/"
+
 type SystemSpeedTestScheduleSchedules struct {
 	Name *string `json:"name,omitempty"`
 }

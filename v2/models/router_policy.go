@@ -28,29 +28,43 @@ type RouterPolicy struct {
 	TosMask               *string                              `json:"tos-mask,omitempty"`
 }
 
+const RouterPolicyDstPath = "router/policy/dst/"
+
 type RouterPolicyDst struct {
 	Subnet *string `json:"subnet,omitempty"`
 }
+
+const RouterPolicyDstaddrPath = "router/policy/dstaddr/"
 
 type RouterPolicyDstaddr struct {
 	Name *string `json:"name,omitempty"`
 }
 
+const RouterPolicyInputDevicePath = "router/policy/input-device/"
+
 type RouterPolicyInputDevice struct {
 	Name *string `json:"name,omitempty"`
 }
+
+const RouterPolicyInternetServiceCustomPath = "router/policy/internet-service-custom/"
 
 type RouterPolicyInternetServiceCustom struct {
 	Name *string `json:"name,omitempty"`
 }
 
+const RouterPolicyInternetServiceIdPath = "router/policy/internet-service-id/"
+
 type RouterPolicyInternetServiceId struct {
 	Id *int64 `json:"id,omitempty"`
 }
 
+const RouterPolicySrcPath = "router/policy/src/"
+
 type RouterPolicySrc struct {
 	Subnet *string `json:"subnet,omitempty"`
 }
+
+const RouterPolicySrcaddrPath = "router/policy/srcaddr/"
 
 type RouterPolicySrcaddr struct {
 	Name *string `json:"name,omitempty"`

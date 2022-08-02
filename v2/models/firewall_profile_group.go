@@ -6,7 +6,6 @@ type FirewallProfileGroup struct {
 	ApplicationList        *string `json:"application-list,omitempty"`
 	AvProfile              *string `json:"av-profile,omitempty"`
 	CifsProfile            *string `json:"cifs-profile,omitempty"`
-	DlpProfile             *string `json:"dlp-profile,omitempty"`
 	DlpSensor              *string `json:"dlp-sensor,omitempty"`
 	DnsfilterProfile       *string `json:"dnsfilter-profile,omitempty"`
 	EmailfilterProfile     *string `json:"emailfilter-profile,omitempty"`

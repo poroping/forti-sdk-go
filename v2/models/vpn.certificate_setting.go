@@ -33,6 +33,8 @@ type VpnCertificateSetting struct {
 	SubjectSet            *string                               `json:"subject-set,omitempty"`
 }
 
+const VpnCertificateSettingCrlVerificationPath = "vpn.certificate/setting/crl-verification/"
+
 type VpnCertificateSettingCrlVerification struct {
 	ChainCrlAbsence *string `json:"chain-crl-absence,omitempty"`
 	Expiry          *string `json:"expiry,omitempty"`

@@ -9,11 +9,15 @@ type UserQuarantine struct {
 	TrafficPolicy  *string                  `json:"traffic-policy,omitempty"`
 }
 
+const UserQuarantineTargetsPath = "user/quarantine/targets/"
+
 type UserQuarantineTargets struct {
 	Description *string                      `json:"description,omitempty"`
 	Entry       *string                      `json:"entry,omitempty"`
 	Macs        *[]UserQuarantineTargetsMacs `json:"macs,omitempty"`
 }
+
+const UserQuarantineTargetsMacsPath = "user/quarantine/targets/macs/"
 
 type UserQuarantineTargetsMacs struct {
 	Description *string `json:"description,omitempty"`

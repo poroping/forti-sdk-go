@@ -7,6 +7,8 @@ type VpnIpsecFec struct {
 	Name     *string                `json:"name,omitempty"`
 }
 
+const VpnIpsecFecMappingsPath = "vpn.ipsec/fec/mappings/"
+
 type VpnIpsecFecMappings struct {
 	BandwidthBiThreshold   *int64 `json:"bandwidth-bi-threshold,omitempty"`
 	BandwidthDownThreshold *int64 `json:"bandwidth-down-threshold,omitempty"`

@@ -9,7 +9,8 @@ type SwitchControllerSwitchGroup struct {
 	Name        *string                               `json:"name,omitempty"`
 }
 
+const SwitchControllerSwitchGroupMembersPath = "switch-controller/switch-group/members/"
+
 type SwitchControllerSwitchGroupMembers struct {
-	Name     *string `json:"name,omitempty"`
 	SwitchId *string `json:"switch-id,omitempty"`
 }

@@ -10,6 +10,8 @@ type FirewallAddress6Template struct {
 	SubnetSegmentCount *int64                                   `json:"subnet-segment-count,omitempty"`
 }
 
+const FirewallAddress6TemplateSubnetSegmentPath = "firewall/address6-template/subnet-segment/"
+
 type FirewallAddress6TemplateSubnetSegment struct {
 	Bits      *int64                                         `json:"bits,omitempty"`
 	Exclusive *string                                        `json:"exclusive,omitempty"`
@@ -17,6 +19,8 @@ type FirewallAddress6TemplateSubnetSegment struct {
 	Name      *string                                        `json:"name,omitempty"`
 	Values    *[]FirewallAddress6TemplateSubnetSegmentValues `json:"values,omitempty"`
 }
+
+const FirewallAddress6TemplateSubnetSegmentValuesPath = "firewall/address6-template/subnet-segment/values/"
 
 type FirewallAddress6TemplateSubnetSegmentValues struct {
 	Name  *string `json:"name,omitempty"`

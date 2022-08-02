@@ -4,7 +4,6 @@ const VpnSslClientPath = "vpn.ssl/client/"
 
 type VpnSslClient struct {
 	Certificate *string `json:"certificate,omitempty"`
-	ClassId     *int64  `json:"class-id,omitempty"`
 	Comment     *string `json:"comment,omitempty"`
 	Distance    *int64  `json:"distance,omitempty"`
 	Interface   *string `json:"interface,omitempty"`

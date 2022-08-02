@@ -11,6 +11,8 @@ type VpnSslWebHostCheckSoftware struct {
 	Version       *string                                    `json:"version,omitempty"`
 }
 
+const VpnSslWebHostCheckSoftwareCheckItemListPath = "vpn.ssl.web/host-check-software/check-item-list/"
+
 type VpnSslWebHostCheckSoftwareCheckItemList struct {
 	Action  *string                                        `json:"action,omitempty"`
 	Id      *int64                                         `json:"id,omitempty"`
@@ -19,6 +21,8 @@ type VpnSslWebHostCheckSoftwareCheckItemList struct {
 	Type    *string                                        `json:"type,omitempty"`
 	Version *string                                        `json:"version,omitempty"`
 }
+
+const VpnSslWebHostCheckSoftwareCheckItemListMd5sPath = "vpn.ssl.web/host-check-software/check-item-list/md5s/"
 
 type VpnSslWebHostCheckSoftwareCheckItemListMd5s struct {
 	Id *string `json:"id,omitempty"`

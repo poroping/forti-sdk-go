@@ -15,6 +15,8 @@ type FirewallAccessProxy6 struct {
 	Vip                    *string                            `json:"vip,omitempty"`
 }
 
+const FirewallAccessProxy6ApiGatewayPath = "firewall/access-proxy6/api-gateway/"
+
 type FirewallAccessProxy6ApiGateway struct {
 	HttpCookieAge            *int64                                           `json:"http-cookie-age,omitempty"`
 	HttpCookieDomain         *string                                          `json:"http-cookie-domain,omitempty"`
@@ -41,6 +43,8 @@ type FirewallAccessProxy6ApiGateway struct {
 	VirtualHost              *string                                          `json:"virtual-host,omitempty"`
 }
 
+const FirewallAccessProxy6ApiGatewayRealserversPath = "firewall/access-proxy6/api-gateway/realservers/"
+
 type FirewallAccessProxy6ApiGatewayRealservers struct {
 	AddrType             *string                                                `json:"addr-type,omitempty"`
 	Address              *string                                                `json:"address,omitempty"`
@@ -61,15 +65,21 @@ type FirewallAccessProxy6ApiGatewayRealservers struct {
 	Weight               *int64                                                 `json:"weight,omitempty"`
 }
 
+const FirewallAccessProxy6ApiGatewayRealserversSshHostKeyPath = "firewall/access-proxy6/api-gateway/realservers/ssh-host-key/"
+
 type FirewallAccessProxy6ApiGatewayRealserversSshHostKey struct {
 	Name *string `json:"name,omitempty"`
 }
+
+const FirewallAccessProxy6ApiGatewaySslCipherSuitesPath = "firewall/access-proxy6/api-gateway/ssl-cipher-suites/"
 
 type FirewallAccessProxy6ApiGatewaySslCipherSuites struct {
 	Cipher   *string `json:"cipher,omitempty"`
 	Priority *int64  `json:"priority,omitempty"`
 	Versions *string `json:"versions,omitempty"`
 }
+
+const FirewallAccessProxy6ApiGateway6Path = "firewall/access-proxy6/api-gateway6/"
 
 type FirewallAccessProxy6ApiGateway6 struct {
 	HttpCookieAge            *int64                                            `json:"http-cookie-age,omitempty"`
@@ -97,6 +107,8 @@ type FirewallAccessProxy6ApiGateway6 struct {
 	VirtualHost              *string                                           `json:"virtual-host,omitempty"`
 }
 
+const FirewallAccessProxy6ApiGateway6RealserversPath = "firewall/access-proxy6/api-gateway6/realservers/"
+
 type FirewallAccessProxy6ApiGateway6Realservers struct {
 	AddrType             *string                                                 `json:"addr-type,omitempty"`
 	Address              *string                                                 `json:"address,omitempty"`
@@ -117,9 +129,13 @@ type FirewallAccessProxy6ApiGateway6Realservers struct {
 	Weight               *int64                                                  `json:"weight,omitempty"`
 }
 
+const FirewallAccessProxy6ApiGateway6RealserversSshHostKeyPath = "firewall/access-proxy6/api-gateway6/realservers/ssh-host-key/"
+
 type FirewallAccessProxy6ApiGateway6RealserversSshHostKey struct {
 	Name *string `json:"name,omitempty"`
 }
+
+const FirewallAccessProxy6ApiGateway6SslCipherSuitesPath = "firewall/access-proxy6/api-gateway6/ssl-cipher-suites/"
 
 type FirewallAccessProxy6ApiGateway6SslCipherSuites struct {
 	Cipher   *string `json:"cipher,omitempty"`

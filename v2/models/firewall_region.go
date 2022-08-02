@@ -8,6 +8,14 @@ type FirewallRegion struct {
 	Name *string               `json:"name,omitempty"`
 }
 
+const FirewallRegionCityPath = "firewall/region/city/"
+
 type FirewallRegionCity struct {
 	Id *int64 `json:"id,omitempty"`
+}
+
+// Set FirewallRegion values to defaults
+func (def *FirewallRegion) Defaults() {
+	def.Id = intPtr(0)
+	def.Name = stringPtr("")
 }

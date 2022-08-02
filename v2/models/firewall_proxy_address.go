@@ -21,12 +21,15 @@ type FirewallProxyAddress struct {
 	Type            *string                            `json:"type,omitempty"`
 	Ua              *string                            `json:"ua,omitempty"`
 	Uuid            *string                            `json:"uuid,omitempty"`
-	Visibility      *string                            `json:"visibility,omitempty"`
 }
+
+const FirewallProxyAddressCategoryPath = "firewall/proxy-address/category/"
 
 type FirewallProxyAddressCategory struct {
 	Id *int64 `json:"id,omitempty"`
 }
+
+const FirewallProxyAddressHeaderGroupPath = "firewall/proxy-address/header-group/"
 
 type FirewallProxyAddressHeaderGroup struct {
 	CaseSensitivity *string `json:"case-sensitivity,omitempty"`
@@ -35,11 +38,15 @@ type FirewallProxyAddressHeaderGroup struct {
 	Id              *int64  `json:"id,omitempty"`
 }
 
+const FirewallProxyAddressTaggingPath = "firewall/proxy-address/tagging/"
+
 type FirewallProxyAddressTagging struct {
 	Category *string                            `json:"category,omitempty"`
 	Name     *string                            `json:"name,omitempty"`
 	Tags     *[]FirewallProxyAddressTaggingTags `json:"tags,omitempty"`
 }
+
+const FirewallProxyAddressTaggingTagsPath = "firewall/proxy-address/tagging/tags/"
 
 type FirewallProxyAddressTaggingTags struct {
 	Name *string `json:"name,omitempty"`

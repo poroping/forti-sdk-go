@@ -23,8 +23,9 @@ type SystemAutomationTrigger struct {
 	TriggerMinute       *int64                           `json:"trigger-minute,omitempty"`
 	TriggerType         *string                          `json:"trigger-type,omitempty"`
 	TriggerWeekday      *string                          `json:"trigger-weekday,omitempty"`
-	Vdom                *[]SystemAutomationTriggerVdom   `json:"vdom,omitempty"`
 }
+
+const SystemAutomationTriggerFieldsPath = "system/automation-trigger/fields/"
 
 type SystemAutomationTriggerFields struct {
 	Id    *int64  `json:"id,omitempty"`
@@ -32,10 +33,8 @@ type SystemAutomationTriggerFields struct {
 	Value *string `json:"value,omitempty"`
 }
 
+const SystemAutomationTriggerLogidPath = "system/automation-trigger/logid/"
+
 type SystemAutomationTriggerLogid struct {
 	Id *int64 `json:"id,omitempty"`
-}
-
-type SystemAutomationTriggerVdom struct {
-	Name *string `json:"name,omitempty"`
 }

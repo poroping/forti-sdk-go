@@ -10,8 +10,9 @@ type SwitchControllerFortilinkSettings struct {
 	Name          *string                                    `json:"name,omitempty"`
 }
 
+const SwitchControllerFortilinkSettingsNacPortsPath = "switch-controller/fortilink-settings/nac-ports/"
+
 type SwitchControllerFortilinkSettingsNacPorts struct {
-	BounceNacPort   *string                                                     `json:"bounce-nac-port,omitempty"`
 	LanSegment      *string                                                     `json:"lan-segment,omitempty"`
 	MemberChange    *int64                                                      `json:"member-change,omitempty"`
 	NacLanInterface *string                                                     `json:"nac-lan-interface,omitempty"`
@@ -19,6 +20,8 @@ type SwitchControllerFortilinkSettingsNacPorts struct {
 	OnboardingVlan  *string                                                     `json:"onboarding-vlan,omitempty"`
 	ParentKey       *string                                                     `json:"parent-key,omitempty"`
 }
+
+const SwitchControllerFortilinkSettingsNacPortsNacSegmentVlansPath = "switch-controller/fortilink-settings/nac-ports/nac-segment-vlans/"
 
 type SwitchControllerFortilinkSettingsNacPortsNacSegmentVlans struct {
 	VlanName *string `json:"vlan-name,omitempty"`

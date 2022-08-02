@@ -20,13 +20,16 @@ type FirewallMulticastPolicy struct {
 	Srcintf         *string                           `json:"srcintf,omitempty"`
 	StartPort       *int64                            `json:"start-port,omitempty"`
 	Status          *string                           `json:"status,omitempty"`
-	TrafficShaper   *string                           `json:"traffic-shaper,omitempty"`
 	Uuid            *string                           `json:"uuid,omitempty"`
 }
+
+const FirewallMulticastPolicyDstaddrPath = "firewall/multicast-policy/dstaddr/"
 
 type FirewallMulticastPolicyDstaddr struct {
 	Name *string `json:"name,omitempty"`
 }
+
+const FirewallMulticastPolicySrcaddrPath = "firewall/multicast-policy/srcaddr/"
 
 type FirewallMulticastPolicySrcaddr struct {
 	Name *string `json:"name,omitempty"`

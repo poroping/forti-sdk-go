@@ -32,9 +32,13 @@ type FirewallServiceCustom struct {
 	Visibility        *string                             `json:"visibility,omitempty"`
 }
 
+const FirewallServiceCustomAppCategoryPath = "firewall.service/custom/app-category/"
+
 type FirewallServiceCustomAppCategory struct {
 	Id *int64 `json:"id,omitempty"`
 }
+
+const FirewallServiceCustomApplicationPath = "firewall.service/custom/application/"
 
 type FirewallServiceCustomApplication struct {
 	Id *int64 `json:"id,omitempty"`

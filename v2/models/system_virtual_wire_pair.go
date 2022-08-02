@@ -9,6 +9,8 @@ type SystemVirtualWirePair struct {
 	WildcardVlan *string                        `json:"wildcard-vlan,omitempty"`
 }
 
+const SystemVirtualWirePairMemberPath = "system/virtual-wire-pair/member/"
+
 type SystemVirtualWirePairMember struct {
 	InterfaceName *string `json:"interface-name,omitempty"`
 }

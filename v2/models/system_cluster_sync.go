@@ -9,7 +9,6 @@ type SystemClusterSync struct {
 	IkeHeartbeatInterval    *int64                                      `json:"ike-heartbeat-interval,omitempty"`
 	IkeMonitor              *string                                     `json:"ike-monitor,omitempty"`
 	IkeMonitorInterval      *int64                                      `json:"ike-monitor-interval,omitempty"`
-	IkeSeqjumpSpeed         *int64                                      `json:"ike-seqjump-speed,omitempty"`
 	IpsecTunnelSync         *string                                     `json:"ipsec-tunnel-sync,omitempty"`
 	Peerip                  *string                                     `json:"peerip,omitempty"`
 	Peervd                  *string                                     `json:"peervd,omitempty"`
@@ -20,9 +19,13 @@ type SystemClusterSync struct {
 	Syncvd                  *[]SystemClusterSyncSyncvd                  `json:"syncvd,omitempty"`
 }
 
+const SystemClusterSyncDownIntfsBeforeSessSyncPath = "system/cluster-sync/down-intfs-before-sess-sync/"
+
 type SystemClusterSyncDownIntfsBeforeSessSync struct {
 	Name *string `json:"name,omitempty"`
 }
+
+const SystemClusterSyncSessionSyncFilterPath = "system/cluster-sync/session-sync-filter/"
 
 type SystemClusterSyncSessionSyncFilter struct {
 	CustomService *[]SystemClusterSyncSessionSyncFilterCustomService `json:"custom-service,omitempty"`
@@ -34,11 +37,15 @@ type SystemClusterSyncSessionSyncFilter struct {
 	Srcintf       *string                                            `json:"srcintf,omitempty"`
 }
 
+const SystemClusterSyncSessionSyncFilterCustomServicePath = "system/cluster-sync/session-sync-filter/custom-service/"
+
 type SystemClusterSyncSessionSyncFilterCustomService struct {
 	DstPortRange *string `json:"dst-port-range,omitempty"`
 	Id           *int64  `json:"id,omitempty"`
 	SrcPortRange *string `json:"src-port-range,omitempty"`
 }
+
+const SystemClusterSyncSyncvdPath = "system/cluster-sync/syncvd/"
 
 type SystemClusterSyncSyncvd struct {
 	Name *string `json:"name,omitempty"`

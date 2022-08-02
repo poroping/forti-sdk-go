@@ -9,6 +9,8 @@ type EmailfilterBword struct {
 	Name    *string                    `json:"name,omitempty"`
 }
 
+const EmailfilterBwordEntriesPath = "emailfilter/bword/entries/"
+
 type EmailfilterBwordEntries struct {
 	Action      *string `json:"action,omitempty"`
 	Id          *int64  `json:"id,omitempty"`

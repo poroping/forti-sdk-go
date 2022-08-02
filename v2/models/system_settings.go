@@ -19,9 +19,6 @@ type SystemSettings struct {
 	BlockLandAttack                *string                                  `json:"block-land-attack,omitempty"`
 	CentralNat                     *string                                  `json:"central-nat,omitempty"`
 	Comments                       *string                                  `json:"comments,omitempty"`
-	ConsolidatedFirewallMode       *string                                  `json:"consolidated-firewall-mode,omitempty"`
-	DefaultAppPortAsService        *string                                  `json:"default-app-port-as-service,omitempty"`
-	DefaultPolicyExpiryDays        *int64                                   `json:"default-policy-expiry-days,omitempty"`
 	DefaultVoipAlgMode             *string                                  `json:"default-voip-alg-mode,omitempty"`
 	DenyTcpWithIcmp                *string                                  `json:"deny-tcp-with-icmp,omitempty"`
 	Device                         *string                                  `json:"device,omitempty"`
@@ -46,14 +43,11 @@ type SystemSettings struct {
 	GuiDhcpAdvanced                *string                                  `json:"gui-dhcp-advanced,omitempty"`
 	GuiDnsDatabase                 *string                                  `json:"gui-dns-database,omitempty"`
 	GuiDnsfilter                   *string                                  `json:"gui-dnsfilter,omitempty"`
-	GuiDomainIpReputation          *string                                  `json:"gui-domain-ip-reputation,omitempty"`
 	GuiDosPolicy                   *string                                  `json:"gui-dos-policy,omitempty"`
-	GuiDynamicProfileDisplay       *string                                  `json:"gui-dynamic-profile-display,omitempty"`
 	GuiDynamicRouting              *string                                  `json:"gui-dynamic-routing,omitempty"`
 	GuiEmailCollection             *string                                  `json:"gui-email-collection,omitempty"`
 	GuiEndpointControl             *string                                  `json:"gui-endpoint-control,omitempty"`
 	GuiEndpointControlAdvanced     *string                                  `json:"gui-endpoint-control-advanced,omitempty"`
-	GuiEnforceChangeSummary        *string                                  `json:"gui-enforce-change-summary,omitempty"`
 	GuiExplicitProxy               *string                                  `json:"gui-explicit-proxy,omitempty"`
 	GuiFileFilter                  *string                                  `json:"gui-file-filter,omitempty"`
 	GuiFortiapSplitTunneling       *string                                  `json:"gui-fortiap-split-tunneling,omitempty"`
@@ -63,14 +57,10 @@ type SystemSettings struct {
 	GuiIps                         *string                                  `json:"gui-ips,omitempty"`
 	GuiLoadBalance                 *string                                  `json:"gui-load-balance,omitempty"`
 	GuiLocalInPolicy               *string                                  `json:"gui-local-in-policy,omitempty"`
-	GuiLocalReports                *string                                  `json:"gui-local-reports,omitempty"`
 	GuiMulticastPolicy             *string                                  `json:"gui-multicast-policy,omitempty"`
 	GuiMultipleInterfacePolicy     *string                                  `json:"gui-multiple-interface-policy,omitempty"`
-	GuiMultipleUtmProfiles         *string                                  `json:"gui-multiple-utm-profiles,omitempty"`
 	GuiNat4664                     *string                                  `json:"gui-nat46-64,omitempty"`
 	GuiObjectColors                *string                                  `json:"gui-object-colors,omitempty"`
-	GuiOt                          *string                                  `json:"gui-ot,omitempty"`
-	GuiPerPolicyDisclaimer         *string                                  `json:"gui-per-policy-disclaimer,omitempty"`
 	GuiPolicyBasedIpsec            *string                                  `json:"gui-policy-based-ipsec,omitempty"`
 	GuiPolicyDisclaimer            *string                                  `json:"gui-policy-disclaimer,omitempty"`
 	GuiReplacementMessageGroups    *string                                  `json:"gui-replacement-message-groups,omitempty"`
@@ -86,7 +76,6 @@ type SystemSettings struct {
 	GuiVpn                         *string                                  `json:"gui-vpn,omitempty"`
 	GuiWafProfile                  *string                                  `json:"gui-waf-profile,omitempty"`
 	GuiWanLoadBalancing            *string                                  `json:"gui-wan-load-balancing,omitempty"`
-	GuiWanoptCache                 *string                                  `json:"gui-wanopt-cache,omitempty"`
 	GuiWebfilter                   *string                                  `json:"gui-webfilter,omitempty"`
 	GuiWebfilterAdvanced           *string                                  `json:"gui-webfilter-advanced,omitempty"`
 	GuiWirelessController          *string                                  `json:"gui-wireless-controller,omitempty"`
@@ -98,7 +87,6 @@ type SystemSettings struct {
 	IkePort                        *int64                                   `json:"ike-port,omitempty"`
 	IkeQuickCrashDetect            *string                                  `json:"ike-quick-crash-detect,omitempty"`
 	IkeSessionResume               *string                                  `json:"ike-session-resume,omitempty"`
-	ImplicitAllowDns               *string                                  `json:"implicit-allow-dns,omitempty"`
 	Ip                             *string                                  `json:"ip,omitempty"`
 	Ip6                            *string                                  `json:"ip6,omitempty"`
 	LinkDownAccess                 *string                                  `json:"link-down-access,omitempty"`
@@ -113,6 +101,7 @@ type SystemSettings struct {
 	MulticastTtlNotchange          *string                                  `json:"multicast-ttl-notchange,omitempty"`
 	NgfwMode                       *string                                  `json:"ngfw-mode,omitempty"`
 	Opmode                         *string                                  `json:"opmode,omitempty"`
+	PolicyOffloadLevel             *string                                  `json:"policy-offload-level,omitempty"`
 	PrpTrailerAction               *string                                  `json:"prp-trailer-action,omitempty"`
 	SccpPort                       *int64                                   `json:"sccp-port,omitempty"`
 	SctpSessionWithoutInit         *string                                  `json:"sctp-session-without-init,omitempty"`
@@ -128,11 +117,12 @@ type SystemSettings struct {
 	TcpSessionWithoutSyn           *string                                  `json:"tcp-session-without-syn,omitempty"`
 	Utf8SpamTagging                *string                                  `json:"utf8-spam-tagging,omitempty"`
 	V4EcmpMode                     *string                                  `json:"v4-ecmp-mode,omitempty"`
-	VdomType                       *string                                  `json:"vdom-type,omitempty"`
 	VpnStatsLog                    *string                                  `json:"vpn-stats-log,omitempty"`
 	VpnStatsPeriod                 *int64                                   `json:"vpn-stats-period,omitempty"`
 	WccpCacheEngine                *string                                  `json:"wccp-cache-engine,omitempty"`
 }
+
+const SystemSettingsGuiDefaultPolicyColumnsPath = "system/settings/gui-default-policy-columns/"
 
 type SystemSettingsGuiDefaultPolicyColumns struct {
 	Name *string `json:"name,omitempty"`

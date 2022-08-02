@@ -9,8 +9,6 @@ type VpnSslWebPortal struct {
 	Clipboard                        *string                                            `json:"clipboard,omitempty"`
 	CustomLang                       *string                                            `json:"custom-lang,omitempty"`
 	CustomizeForticlientDownloadUrl  *string                                            `json:"customize-forticlient-download-url,omitempty"`
-	DefaultWindowHeight              *int64                                             `json:"default-window-height,omitempty"`
-	DefaultWindowWidth               *int64                                             `json:"default-window-width,omitempty"`
 	DisplayBookmark                  *string                                            `json:"display-bookmark,omitempty"`
 	DisplayConnectionTools           *string                                            `json:"display-connection-tools,omitempty"`
 	DisplayHistory                   *string                                            `json:"display-history,omitempty"`
@@ -64,7 +62,6 @@ type VpnSslWebPortal struct {
 	SplitTunnelingRoutingAddress     *[]VpnSslWebPortalSplitTunnelingRoutingAddress     `json:"split-tunneling-routing-address,omitempty"`
 	SplitTunnelingRoutingNegate      *string                                            `json:"split-tunneling-routing-negate,omitempty"`
 	Theme                            *string                                            `json:"theme,omitempty"`
-	TransformBackwardSlashes         *string                                            `json:"transform-backward-slashes,omitempty"`
 	TunnelMode                       *string                                            `json:"tunnel-mode,omitempty"`
 	UseSdwan                         *string                                            `json:"use-sdwan,omitempty"`
 	UserBookmark                     *string                                            `json:"user-bookmark,omitempty"`
@@ -75,10 +72,14 @@ type VpnSslWebPortal struct {
 	WinsServer2                      *string                                            `json:"wins-server2,omitempty"`
 }
 
+const VpnSslWebPortalBookmarkGroupPath = "vpn.ssl.web/portal/bookmark-group/"
+
 type VpnSslWebPortalBookmarkGroup struct {
 	Bookmarks *[]VpnSslWebPortalBookmarkGroupBookmarks `json:"bookmarks,omitempty"`
 	Name      *string                                  `json:"name,omitempty"`
 }
+
+const VpnSslWebPortalBookmarkGroupBookmarksPath = "vpn.ssl.web/portal/bookmark-group/bookmarks/"
 
 type VpnSslWebPortalBookmarkGroupBookmarks struct {
 	AdditionalParams      *string                                          `json:"additional-params,omitempty"`
@@ -91,7 +92,6 @@ type VpnSslWebPortalBookmarkGroupBookmarks struct {
 	Height                *int64                                           `json:"height,omitempty"`
 	Host                  *string                                          `json:"host,omitempty"`
 	KeyboardLayout        *string                                          `json:"keyboard-layout,omitempty"`
-	ListeningPort         *int64                                           `json:"listening-port,omitempty"`
 	LoadBalancingInfo     *string                                          `json:"load-balancing-info,omitempty"`
 	LogonPassword         *string                                          `json:"logon-password,omitempty"`
 	LogonUser             *string                                          `json:"logon-user,omitempty"`
@@ -99,12 +99,9 @@ type VpnSslWebPortalBookmarkGroupBookmarks struct {
 	Port                  *int64                                           `json:"port,omitempty"`
 	PreconnectionBlob     *string                                          `json:"preconnection-blob,omitempty"`
 	PreconnectionId       *int64                                           `json:"preconnection-id,omitempty"`
-	RemotePort            *int64                                           `json:"remote-port,omitempty"`
 	RestrictedAdmin       *string                                          `json:"restricted-admin,omitempty"`
 	Security              *string                                          `json:"security,omitempty"`
 	SendPreconnectionId   *string                                          `json:"send-preconnection-id,omitempty"`
-	ServerLayout          *string                                          `json:"server-layout,omitempty"`
-	ShowStatusWindow      *string                                          `json:"show-status-window,omitempty"`
 	Sso                   *string                                          `json:"sso,omitempty"`
 	SsoCredential         *string                                          `json:"sso-credential,omitempty"`
 	SsoCredentialSentOnce *string                                          `json:"sso-credential-sent-once,omitempty"`
@@ -114,26 +111,38 @@ type VpnSslWebPortalBookmarkGroupBookmarks struct {
 	Width                 *int64                                           `json:"width,omitempty"`
 }
 
+const VpnSslWebPortalBookmarkGroupBookmarksFormDataPath = "vpn.ssl.web/portal/bookmark-group/bookmarks/form-data/"
+
 type VpnSslWebPortalBookmarkGroupBookmarksFormData struct {
 	Name  *string `json:"name,omitempty"`
 	Value *string `json:"value,omitempty"`
 }
 
+const VpnSslWebPortalHostCheckPolicyPath = "vpn.ssl.web/portal/host-check-policy/"
+
 type VpnSslWebPortalHostCheckPolicy struct {
 	Name *string `json:"name,omitempty"`
 }
+
+const VpnSslWebPortalIpPoolsPath = "vpn.ssl.web/portal/ip-pools/"
 
 type VpnSslWebPortalIpPools struct {
 	Name *string `json:"name,omitempty"`
 }
 
+const VpnSslWebPortalIpv6PoolsPath = "vpn.ssl.web/portal/ipv6-pools/"
+
 type VpnSslWebPortalIpv6Pools struct {
 	Name *string `json:"name,omitempty"`
 }
 
+const VpnSslWebPortalIpv6SplitTunnelingRoutingAddressPath = "vpn.ssl.web/portal/ipv6-split-tunneling-routing-address/"
+
 type VpnSslWebPortalIpv6SplitTunnelingRoutingAddress struct {
 	Name *string `json:"name,omitempty"`
 }
+
+const VpnSslWebPortalMacAddrCheckRulePath = "vpn.ssl.web/portal/mac-addr-check-rule/"
 
 type VpnSslWebPortalMacAddrCheckRule struct {
 	MacAddrList *[]VpnSslWebPortalMacAddrCheckRuleMacAddrList `json:"mac-addr-list,omitempty"`
@@ -141,9 +150,13 @@ type VpnSslWebPortalMacAddrCheckRule struct {
 	Name        *string                                       `json:"name,omitempty"`
 }
 
+const VpnSslWebPortalMacAddrCheckRuleMacAddrListPath = "vpn.ssl.web/portal/mac-addr-check-rule/mac-addr-list/"
+
 type VpnSslWebPortalMacAddrCheckRuleMacAddrList struct {
 	Addr *string `json:"addr,omitempty"`
 }
+
+const VpnSslWebPortalOsCheckListPath = "vpn.ssl.web/portal/os-check-list/"
 
 type VpnSslWebPortalOsCheckList struct {
 	Action           *string `json:"action,omitempty"`
@@ -151,6 +164,16 @@ type VpnSslWebPortalOsCheckList struct {
 	Name             *string `json:"name,omitempty"`
 	Tolerance        *int64  `json:"tolerance,omitempty"`
 }
+
+// Set VpnSslWebPortalOsCheckList values to defaults
+func (def *VpnSslWebPortalOsCheckList) Defaults() {
+	def.Action = stringPtr("allow")
+	def.LatestPatchLevel = stringPtr("0")
+	def.Name = stringPtr("")
+	def.Tolerance = intPtr(0)
+}
+
+const VpnSslWebPortalSplitDnsPath = "vpn.ssl.web/portal/split-dns/"
 
 type VpnSslWebPortalSplitDns struct {
 	DnsServer1     *string `json:"dns-server1,omitempty"`
@@ -160,6 +183,8 @@ type VpnSslWebPortalSplitDns struct {
 	Ipv6DnsServer1 *string `json:"ipv6-dns-server1,omitempty"`
 	Ipv6DnsServer2 *string `json:"ipv6-dns-server2,omitempty"`
 }
+
+const VpnSslWebPortalSplitTunnelingRoutingAddressPath = "vpn.ssl.web/portal/split-tunneling-routing-address/"
 
 type VpnSslWebPortalSplitTunnelingRoutingAddress struct {
 	Name *string `json:"name,omitempty"`

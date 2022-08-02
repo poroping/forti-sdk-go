@@ -23,12 +23,16 @@ type ApplicationList struct {
 	UnknownApplicationLog         *string                                  `json:"unknown-application-log,omitempty"`
 }
 
+const ApplicationListDefaultNetworkServicesPath = "application/list/default-network-services/"
+
 type ApplicationListDefaultNetworkServices struct {
 	Id              *int64  `json:"id,omitempty"`
 	Port            *int64  `json:"port,omitempty"`
 	Services        *string `json:"services,omitempty"`
 	ViolationAction *string `json:"violation-action,omitempty"`
 }
+
+const ApplicationListEntriesPath = "application/list/entries/"
 
 type ApplicationListEntries struct {
 	Action           *string                              `json:"action,omitempty"`
@@ -54,28 +58,36 @@ type ApplicationListEntries struct {
 	SessionTtl       *int64                               `json:"session-ttl,omitempty"`
 	Shaper           *string                              `json:"shaper,omitempty"`
 	ShaperReverse    *string                              `json:"shaper-reverse,omitempty"`
-	SubCategory      *[]ApplicationListEntriesSubCategory `json:"sub-category,omitempty"`
 	Technology       *string                              `json:"technology,omitempty"`
 	Vendor           *string                              `json:"vendor,omitempty"`
 }
+
+const ApplicationListEntriesApplicationPath = "application/list/entries/application/"
 
 type ApplicationListEntriesApplication struct {
 	Id *int64 `json:"id,omitempty"`
 }
 
+const ApplicationListEntriesCategoryPath = "application/list/entries/category/"
+
 type ApplicationListEntriesCategory struct {
 	Id *int64 `json:"id,omitempty"`
 }
+
+const ApplicationListEntriesExclusionPath = "application/list/entries/exclusion/"
 
 type ApplicationListEntriesExclusion struct {
 	Id *int64 `json:"id,omitempty"`
 }
 
+const ApplicationListEntriesParametersPath = "application/list/entries/parameters/"
+
 type ApplicationListEntriesParameters struct {
 	Id      *int64                                     `json:"id,omitempty"`
 	Members *[]ApplicationListEntriesParametersMembers `json:"members,omitempty"`
-	Value   *string                                    `json:"value,omitempty"`
 }
+
+const ApplicationListEntriesParametersMembersPath = "application/list/entries/parameters/members/"
 
 type ApplicationListEntriesParametersMembers struct {
 	Id    *int64  `json:"id,omitempty"`
@@ -83,10 +95,8 @@ type ApplicationListEntriesParametersMembers struct {
 	Value *string `json:"value,omitempty"`
 }
 
+const ApplicationListEntriesRiskPath = "application/list/entries/risk/"
+
 type ApplicationListEntriesRisk struct {
 	Level *int64 `json:"level,omitempty"`
-}
-
-type ApplicationListEntriesSubCategory struct {
-	Id *int64 `json:"id,omitempty"`
 }

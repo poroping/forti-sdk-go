@@ -21,10 +21,11 @@ type RouterStatic struct {
 	SeqNum                *int64                   `json:"seq-num,omitempty"`
 	Src                   *string                  `json:"src,omitempty"`
 	Status                *string                  `json:"status,omitempty"`
-	VirtualWanLink        *string                  `json:"virtual-wan-link,omitempty"`
 	Vrf                   *int64                   `json:"vrf,omitempty"`
 	Weight                *int64                   `json:"weight,omitempty"`
 }
+
+const RouterStaticSdwanZonePath = "router/static/sdwan-zone/"
 
 type RouterStaticSdwanZone struct {
 	Name *string `json:"name,omitempty"`

@@ -7,6 +7,8 @@ type WirelessControllerHotspot20AnqpRoamingConsortium struct {
 	OiList *[]WirelessControllerHotspot20AnqpRoamingConsortiumOiList `json:"oi-list,omitempty"`
 }
 
+const WirelessControllerHotspot20AnqpRoamingConsortiumOiListPath = "wireless-controller.hotspot20/anqp-roaming-consortium/oi-list/"
+
 type WirelessControllerHotspot20AnqpRoamingConsortiumOiList struct {
 	Comment *string `json:"comment,omitempty"`
 	Index   *int64  `json:"index,omitempty"`

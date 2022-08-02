@@ -10,6 +10,8 @@ type UserKrbKeytab struct {
 	Principal  *string                    `json:"principal,omitempty"`
 }
 
+const UserKrbKeytabLdapServerPath = "user/krb-keytab/ldap-server/"
+
 type UserKrbKeytabLdapServer struct {
 	Name *string `json:"name,omitempty"`
 }

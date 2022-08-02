@@ -3,6 +3,7 @@ package models
 const SystemGreTunnelPath = "system/gre-tunnel/"
 
 type SystemGreTunnel struct {
+	AutoAsicOffload            *string `json:"auto-asic-offload,omitempty"`
 	ChecksumReception          *string `json:"checksum-reception,omitempty"`
 	ChecksumTransmission       *string `json:"checksum-transmission,omitempty"`
 	Diffservcode               *string `json:"diffservcode,omitempty"`

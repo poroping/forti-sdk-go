@@ -24,7 +24,6 @@ type FirewallSslSshProfile struct {
 	SslAnomaliesLog              *string                            `json:"ssl-anomalies-log,omitempty"`
 	SslAnomalyLog                *string                            `json:"ssl-anomaly-log,omitempty"`
 	SslExempt                    *[]FirewallSslSshProfileSslExempt  `json:"ssl-exempt,omitempty"`
-	SslExemptionIpRating         *string                            `json:"ssl-exemption-ip-rating,omitempty"`
 	SslExemptionLog              *string                            `json:"ssl-exemption-log,omitempty"`
 	SslExemptionsLog             *string                            `json:"ssl-exemptions-log,omitempty"`
 	SslHandshakeLog              *string                            `json:"ssl-handshake-log,omitempty"`
@@ -36,6 +35,8 @@ type FirewallSslSshProfile struct {
 	UseSslServer                 *string                            `json:"use-ssl-server,omitempty"`
 	Whitelist                    *string                            `json:"whitelist,omitempty"`
 }
+
+const FirewallSslSshProfileDotPath = "firewall/ssl-ssh-profile/dot/"
 
 type FirewallSslSshProfileDot struct {
 	CertValidationFailure     *string `json:"cert-validation-failure,omitempty"`
@@ -52,106 +53,105 @@ type FirewallSslSshProfileDot struct {
 	UntrustedServerCert       *string `json:"untrusted-server-cert,omitempty"`
 }
 
+const FirewallSslSshProfileFtpsPath = "firewall/ssl-ssh-profile/ftps/"
+
 type FirewallSslSshProfileFtps struct {
 	CertValidationFailure     *string `json:"cert-validation-failure,omitempty"`
 	CertValidationTimeout     *string `json:"cert-validation-timeout,omitempty"`
-	ClientCertRequest         *string `json:"client-cert-request,omitempty"`
 	ClientCertificate         *string `json:"client-certificate,omitempty"`
 	ExpiredServerCert         *string `json:"expired-server-cert,omitempty"`
-	InvalidServerCert         *string `json:"invalid-server-cert,omitempty"`
 	MinAllowedSslVersion      *string `json:"min-allowed-ssl-version,omitempty"`
 	Ports                     *int64  `json:"ports,omitempty"`
 	RevokedServerCert         *string `json:"revoked-server-cert,omitempty"`
 	SniServerCertCheck        *string `json:"sni-server-cert-check,omitempty"`
 	Status                    *string `json:"status,omitempty"`
-	UnsupportedSsl            *string `json:"unsupported-ssl,omitempty"`
 	UnsupportedSslCipher      *string `json:"unsupported-ssl-cipher,omitempty"`
 	UnsupportedSslNegotiation *string `json:"unsupported-ssl-negotiation,omitempty"`
 	UnsupportedSslVersion     *string `json:"unsupported-ssl-version,omitempty"`
 	UntrustedServerCert       *string `json:"untrusted-server-cert,omitempty"`
 }
+
+const FirewallSslSshProfileHttpsPath = "firewall/ssl-ssh-profile/https/"
 
 type FirewallSslSshProfileHttps struct {
 	CertProbeFailure          *string `json:"cert-probe-failure,omitempty"`
 	CertValidationFailure     *string `json:"cert-validation-failure,omitempty"`
 	CertValidationTimeout     *string `json:"cert-validation-timeout,omitempty"`
-	ClientCertRequest         *string `json:"client-cert-request,omitempty"`
 	ClientCertificate         *string `json:"client-certificate,omitempty"`
 	ExpiredServerCert         *string `json:"expired-server-cert,omitempty"`
-	InvalidServerCert         *string `json:"invalid-server-cert,omitempty"`
 	MinAllowedSslVersion      *string `json:"min-allowed-ssl-version,omitempty"`
 	Ports                     *int64  `json:"ports,omitempty"`
 	ProxyAfterTcpHandshake    *string `json:"proxy-after-tcp-handshake,omitempty"`
 	RevokedServerCert         *string `json:"revoked-server-cert,omitempty"`
 	SniServerCertCheck        *string `json:"sni-server-cert-check,omitempty"`
 	Status                    *string `json:"status,omitempty"`
-	UnsupportedSsl            *string `json:"unsupported-ssl,omitempty"`
 	UnsupportedSslCipher      *string `json:"unsupported-ssl-cipher,omitempty"`
 	UnsupportedSslNegotiation *string `json:"unsupported-ssl-negotiation,omitempty"`
 	UnsupportedSslVersion     *string `json:"unsupported-ssl-version,omitempty"`
 	UntrustedServerCert       *string `json:"untrusted-server-cert,omitempty"`
 }
+
+const FirewallSslSshProfileImapsPath = "firewall/ssl-ssh-profile/imaps/"
 
 type FirewallSslSshProfileImaps struct {
 	CertValidationFailure     *string `json:"cert-validation-failure,omitempty"`
 	CertValidationTimeout     *string `json:"cert-validation-timeout,omitempty"`
-	ClientCertRequest         *string `json:"client-cert-request,omitempty"`
 	ClientCertificate         *string `json:"client-certificate,omitempty"`
 	ExpiredServerCert         *string `json:"expired-server-cert,omitempty"`
-	InvalidServerCert         *string `json:"invalid-server-cert,omitempty"`
 	Ports                     *int64  `json:"ports,omitempty"`
 	ProxyAfterTcpHandshake    *string `json:"proxy-after-tcp-handshake,omitempty"`
 	RevokedServerCert         *string `json:"revoked-server-cert,omitempty"`
 	SniServerCertCheck        *string `json:"sni-server-cert-check,omitempty"`
 	Status                    *string `json:"status,omitempty"`
-	UnsupportedSsl            *string `json:"unsupported-ssl,omitempty"`
 	UnsupportedSslCipher      *string `json:"unsupported-ssl-cipher,omitempty"`
 	UnsupportedSslNegotiation *string `json:"unsupported-ssl-negotiation,omitempty"`
 	UnsupportedSslVersion     *string `json:"unsupported-ssl-version,omitempty"`
 	UntrustedServerCert       *string `json:"untrusted-server-cert,omitempty"`
 }
 
+const FirewallSslSshProfilePop3sPath = "firewall/ssl-ssh-profile/pop3s/"
+
 type FirewallSslSshProfilePop3s struct {
 	CertValidationFailure     *string `json:"cert-validation-failure,omitempty"`
 	CertValidationTimeout     *string `json:"cert-validation-timeout,omitempty"`
-	ClientCertRequest         *string `json:"client-cert-request,omitempty"`
 	ClientCertificate         *string `json:"client-certificate,omitempty"`
 	ExpiredServerCert         *string `json:"expired-server-cert,omitempty"`
-	InvalidServerCert         *string `json:"invalid-server-cert,omitempty"`
 	Ports                     *int64  `json:"ports,omitempty"`
 	ProxyAfterTcpHandshake    *string `json:"proxy-after-tcp-handshake,omitempty"`
 	RevokedServerCert         *string `json:"revoked-server-cert,omitempty"`
 	SniServerCertCheck        *string `json:"sni-server-cert-check,omitempty"`
 	Status                    *string `json:"status,omitempty"`
-	UnsupportedSsl            *string `json:"unsupported-ssl,omitempty"`
 	UnsupportedSslCipher      *string `json:"unsupported-ssl-cipher,omitempty"`
 	UnsupportedSslNegotiation *string `json:"unsupported-ssl-negotiation,omitempty"`
 	UnsupportedSslVersion     *string `json:"unsupported-ssl-version,omitempty"`
 	UntrustedServerCert       *string `json:"untrusted-server-cert,omitempty"`
 }
+
+const FirewallSslSshProfileServerCertPath = "firewall/ssl-ssh-profile/server-cert/"
 
 type FirewallSslSshProfileServerCert struct {
 	Name *string `json:"name,omitempty"`
 }
 
+const FirewallSslSshProfileSmtpsPath = "firewall/ssl-ssh-profile/smtps/"
+
 type FirewallSslSshProfileSmtps struct {
 	CertValidationFailure     *string `json:"cert-validation-failure,omitempty"`
 	CertValidationTimeout     *string `json:"cert-validation-timeout,omitempty"`
-	ClientCertRequest         *string `json:"client-cert-request,omitempty"`
 	ClientCertificate         *string `json:"client-certificate,omitempty"`
 	ExpiredServerCert         *string `json:"expired-server-cert,omitempty"`
-	InvalidServerCert         *string `json:"invalid-server-cert,omitempty"`
 	Ports                     *int64  `json:"ports,omitempty"`
 	ProxyAfterTcpHandshake    *string `json:"proxy-after-tcp-handshake,omitempty"`
 	RevokedServerCert         *string `json:"revoked-server-cert,omitempty"`
 	SniServerCertCheck        *string `json:"sni-server-cert-check,omitempty"`
 	Status                    *string `json:"status,omitempty"`
-	UnsupportedSsl            *string `json:"unsupported-ssl,omitempty"`
 	UnsupportedSslCipher      *string `json:"unsupported-ssl-cipher,omitempty"`
 	UnsupportedSslNegotiation *string `json:"unsupported-ssl-negotiation,omitempty"`
 	UnsupportedSslVersion     *string `json:"unsupported-ssl-version,omitempty"`
 	UntrustedServerCert       *string `json:"untrusted-server-cert,omitempty"`
 }
+
+const FirewallSslSshProfileSshPath = "firewall/ssl-ssh-profile/ssh/"
 
 type FirewallSslSshProfileSsh struct {
 	InspectAll             *string `json:"inspect-all,omitempty"`
@@ -163,24 +163,25 @@ type FirewallSslSshProfileSsh struct {
 	UnsupportedVersion     *string `json:"unsupported-version,omitempty"`
 }
 
+const FirewallSslSshProfileSslPath = "firewall/ssl-ssh-profile/ssl/"
+
 type FirewallSslSshProfileSsl struct {
 	CertProbeFailure          *string `json:"cert-probe-failure,omitempty"`
 	CertValidationFailure     *string `json:"cert-validation-failure,omitempty"`
 	CertValidationTimeout     *string `json:"cert-validation-timeout,omitempty"`
-	ClientCertRequest         *string `json:"client-cert-request,omitempty"`
 	ClientCertificate         *string `json:"client-certificate,omitempty"`
 	ExpiredServerCert         *string `json:"expired-server-cert,omitempty"`
 	InspectAll                *string `json:"inspect-all,omitempty"`
-	InvalidServerCert         *string `json:"invalid-server-cert,omitempty"`
 	MinAllowedSslVersion      *string `json:"min-allowed-ssl-version,omitempty"`
 	RevokedServerCert         *string `json:"revoked-server-cert,omitempty"`
 	SniServerCertCheck        *string `json:"sni-server-cert-check,omitempty"`
-	UnsupportedSsl            *string `json:"unsupported-ssl,omitempty"`
 	UnsupportedSslCipher      *string `json:"unsupported-ssl-cipher,omitempty"`
 	UnsupportedSslNegotiation *string `json:"unsupported-ssl-negotiation,omitempty"`
 	UnsupportedSslVersion     *string `json:"unsupported-ssl-version,omitempty"`
 	UntrustedServerCert       *string `json:"untrusted-server-cert,omitempty"`
 }
+
+const FirewallSslSshProfileSslExemptPath = "firewall/ssl-ssh-profile/ssl-exempt/"
 
 type FirewallSslSshProfileSslExempt struct {
 	Address            *string `json:"address,omitempty"`
@@ -192,19 +193,15 @@ type FirewallSslSshProfileSslExempt struct {
 	WildcardFqdn       *string `json:"wildcard-fqdn,omitempty"`
 }
 
+const FirewallSslSshProfileSslServerPath = "firewall/ssl-ssh-profile/ssl-server/"
+
 type FirewallSslSshProfileSslServer struct {
-	FtpsClientCertRequest     *string `json:"ftps-client-cert-request,omitempty"`
 	FtpsClientCertificate     *string `json:"ftps-client-certificate,omitempty"`
-	HttpsClientCertRequest    *string `json:"https-client-cert-request,omitempty"`
 	HttpsClientCertificate    *string `json:"https-client-certificate,omitempty"`
 	Id                        *int64  `json:"id,omitempty"`
-	ImapsClientCertRequest    *string `json:"imaps-client-cert-request,omitempty"`
 	ImapsClientCertificate    *string `json:"imaps-client-certificate,omitempty"`
 	Ip                        *string `json:"ip,omitempty"`
-	Pop3sClientCertRequest    *string `json:"pop3s-client-cert-request,omitempty"`
 	Pop3sClientCertificate    *string `json:"pop3s-client-certificate,omitempty"`
-	SmtpsClientCertRequest    *string `json:"smtps-client-cert-request,omitempty"`
 	SmtpsClientCertificate    *string `json:"smtps-client-certificate,omitempty"`
-	SslOtherClientCertRequest *string `json:"ssl-other-client-cert-request,omitempty"`
 	SslOtherClientCertificate *string `json:"ssl-other-client-certificate,omitempty"`
 }

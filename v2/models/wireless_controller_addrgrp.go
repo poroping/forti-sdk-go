@@ -8,6 +8,8 @@ type WirelessControllerAddrgrp struct {
 	Id            *string                               `json:"id,omitempty"`
 }
 
+const WirelessControllerAddrgrpAddressesPath = "wireless-controller/addrgrp/addresses/"
+
 type WirelessControllerAddrgrpAddresses struct {
 	Id *string `json:"id,omitempty"`
 }

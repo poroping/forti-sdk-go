@@ -9,7 +9,6 @@ type VpnSslSettings struct {
 	AuthenticationRule         *[]VpnSslSettingsAuthenticationRule `json:"authentication-rule,omitempty"`
 	AutoTunnelStaticRoute      *string                             `json:"auto-tunnel-static-route,omitempty"`
 	BannedCipher               *string                             `json:"banned-cipher,omitempty"`
-	BrowserLanguageDetection   *string                             `json:"browser-language-detection,omitempty"`
 	CheckReferer               *string                             `json:"check-referer,omitempty"`
 	Ciphersuite                *string                             `json:"ciphersuite,omitempty"`
 	ClientSigalgs              *string                             `json:"client-sigalgs,omitempty"`
@@ -24,7 +23,7 @@ type VpnSslSettings struct {
 	DtlsMinProtoVer            *string                             `json:"dtls-min-proto-ver,omitempty"`
 	DtlsTunnel                 *string                             `json:"dtls-tunnel,omitempty"`
 	DualStackMode              *string                             `json:"dual-stack-mode,omitempty"`
-	Encode2fSequence           *string                             `json:"encode-2f-sequence,omitempty"`
+	Encode2FSequence           *string                             `json:"encode-2f-sequence,omitempty"`
 	EncryptAndStorePassword    *string                             `json:"encrypt-and-store-password,omitempty"`
 	ForceTwoFactorAuth         *string                             `json:"force-two-factor-auth,omitempty"`
 	HeaderXForwardedFor        *string                             `json:"header-x-forwarded-for,omitempty"`
@@ -45,7 +44,6 @@ type VpnSslSettings struct {
 	Port                       *int64                              `json:"port,omitempty"`
 	PortPrecedence             *string                             `json:"port-precedence,omitempty"`
 	Reqclientcert              *string                             `json:"reqclientcert,omitempty"`
-	RouteSourceInterface       *string                             `json:"route-source-interface,omitempty"`
 	SamlRedirectPort           *int64                              `json:"saml-redirect-port,omitempty"`
 	Servercert                 *string                             `json:"servercert,omitempty"`
 	SourceAddress              *[]VpnSslSettingsSourceAddress      `json:"source-address,omitempty"`
@@ -58,10 +56,6 @@ type VpnSslSettings struct {
 	SslMaxProtoVer             *string                             `json:"ssl-max-proto-ver,omitempty"`
 	SslMinProtoVer             *string                             `json:"ssl-min-proto-ver,omitempty"`
 	Status                     *string                             `json:"status,omitempty"`
-	Tlsv10                     *string                             `json:"tlsv1-0,omitempty"`
-	Tlsv11                     *string                             `json:"tlsv1-1,omitempty"`
-	Tlsv12                     *string                             `json:"tlsv1-2,omitempty"`
-	Tlsv13                     *string                             `json:"tlsv1-3,omitempty"`
 	TransformBackwardSlashes   *string                             `json:"transform-backward-slashes,omitempty"`
 	TunnelAddrAssignedMethod   *string                             `json:"tunnel-addr-assigned-method,omitempty"`
 	TunnelConnectWithoutReauth *string                             `json:"tunnel-connect-without-reauth,omitempty"`
@@ -71,11 +65,12 @@ type VpnSslSettings struct {
 	UnsafeLegacyRenegotiation  *string                             `json:"unsafe-legacy-renegotiation,omitempty"`
 	UrlObscuration             *string                             `json:"url-obscuration,omitempty"`
 	UserPeer                   *string                             `json:"user-peer,omitempty"`
-	WebModeSnat                *string                             `json:"web-mode-snat,omitempty"`
 	WinsServer1                *string                             `json:"wins-server1,omitempty"`
 	WinsServer2                *string                             `json:"wins-server2,omitempty"`
 	XContentTypeOptions        *string                             `json:"x-content-type-options,omitempty"`
 }
+
+const VpnSslSettingsAuthenticationRulePath = "vpn.ssl/settings/authentication-rule/"
 
 type VpnSslSettingsAuthenticationRule struct {
 	Auth                 *string                                            `json:"auth,omitempty"`
@@ -94,41 +89,61 @@ type VpnSslSettingsAuthenticationRule struct {
 	Users                *[]VpnSslSettingsAuthenticationRuleUsers           `json:"users,omitempty"`
 }
 
+const VpnSslSettingsAuthenticationRuleGroupsPath = "vpn.ssl/settings/authentication-rule/groups/"
+
 type VpnSslSettingsAuthenticationRuleGroups struct {
 	Name *string `json:"name,omitempty"`
 }
+
+const VpnSslSettingsAuthenticationRuleSourceAddressPath = "vpn.ssl/settings/authentication-rule/source-address/"
 
 type VpnSslSettingsAuthenticationRuleSourceAddress struct {
 	Name *string `json:"name,omitempty"`
 }
 
+const VpnSslSettingsAuthenticationRuleSourceAddress6Path = "vpn.ssl/settings/authentication-rule/source-address6/"
+
 type VpnSslSettingsAuthenticationRuleSourceAddress6 struct {
 	Name *string `json:"name,omitempty"`
 }
+
+const VpnSslSettingsAuthenticationRuleSourceInterfacePath = "vpn.ssl/settings/authentication-rule/source-interface/"
 
 type VpnSslSettingsAuthenticationRuleSourceInterface struct {
 	Name *string `json:"name,omitempty"`
 }
 
+const VpnSslSettingsAuthenticationRuleUsersPath = "vpn.ssl/settings/authentication-rule/users/"
+
 type VpnSslSettingsAuthenticationRuleUsers struct {
 	Name *string `json:"name,omitempty"`
 }
+
+const VpnSslSettingsSourceAddressPath = "vpn.ssl/settings/source-address/"
 
 type VpnSslSettingsSourceAddress struct {
 	Name *string `json:"name,omitempty"`
 }
 
+const VpnSslSettingsSourceAddress6Path = "vpn.ssl/settings/source-address6/"
+
 type VpnSslSettingsSourceAddress6 struct {
 	Name *string `json:"name,omitempty"`
 }
+
+const VpnSslSettingsSourceInterfacePath = "vpn.ssl/settings/source-interface/"
 
 type VpnSslSettingsSourceInterface struct {
 	Name *string `json:"name,omitempty"`
 }
 
+const VpnSslSettingsTunnelIpPoolsPath = "vpn.ssl/settings/tunnel-ip-pools/"
+
 type VpnSslSettingsTunnelIpPools struct {
 	Name *string `json:"name,omitempty"`
 }
+
+const VpnSslSettingsTunnelIpv6PoolsPath = "vpn.ssl/settings/tunnel-ipv6-pools/"
 
 type VpnSslSettingsTunnelIpv6Pools struct {
 	Name *string `json:"name,omitempty"`

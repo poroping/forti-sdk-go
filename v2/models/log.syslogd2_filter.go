@@ -17,6 +17,8 @@ type LogSyslogd2Filter struct {
 	ZtnaTraffic      *string                       `json:"ztna-traffic,omitempty"`
 }
 
+const LogSyslogd2FilterFreeStylePath = "log.syslogd2/filter/free-style/"
+
 type LogSyslogd2FilterFreeStyle struct {
 	Category   *string `json:"category,omitempty"`
 	Filter     *string `json:"filter,omitempty"`

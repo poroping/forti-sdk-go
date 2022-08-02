@@ -7,7 +7,7 @@ type WirelessControllerGlobal struct {
 	ApLogServerIp         *string `json:"ap-log-server-ip,omitempty"`
 	ApLogServerPort       *int64  `json:"ap-log-server-port,omitempty"`
 	ControlMessageOffload *string `json:"control-message-offload,omitempty"`
-	DataEthernetII        *string `json:"data-ethernet-II,omitempty"`
+	DataEthernetIi        *string `json:"data-ethernet-II,omitempty"`
 	DiscoveryMcAddr       *string `json:"discovery-mc-addr,omitempty"`
 	FiappEthType          *int64  `json:"fiapp-eth-type,omitempty"`
 	ImageDownload         *string `json:"image-download,omitempty"`

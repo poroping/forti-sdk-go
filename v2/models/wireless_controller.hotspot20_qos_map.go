@@ -8,11 +8,15 @@ type WirelessControllerHotspot20QosMap struct {
 	Name       *string                                        `json:"name,omitempty"`
 }
 
+const WirelessControllerHotspot20QosMapDscpExceptPath = "wireless-controller.hotspot20/qos-map/dscp-except/"
+
 type WirelessControllerHotspot20QosMapDscpExcept struct {
 	Dscp  *int64 `json:"dscp,omitempty"`
 	Index *int64 `json:"index,omitempty"`
 	Up    *int64 `json:"up,omitempty"`
 }
+
+const WirelessControllerHotspot20QosMapDscpRangePath = "wireless-controller.hotspot20/qos-map/dscp-range/"
 
 type WirelessControllerHotspot20QosMapDscpRange struct {
 	High  *int64 `json:"high,omitempty"`

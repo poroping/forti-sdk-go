@@ -7,6 +7,8 @@ type WirelessControllerHotspot20H2qpAdviceOfCharge struct {
 	Name    *string                                                 `json:"name,omitempty"`
 }
 
+const WirelessControllerHotspot20H2qpAdviceOfChargeAocListPath = "wireless-controller.hotspot20/h2qp-advice-of-charge/aoc-list/"
+
 type WirelessControllerHotspot20H2qpAdviceOfChargeAocList struct {
 	NaiRealm         *string                                                         `json:"nai-realm,omitempty"`
 	NaiRealmEncoding *string                                                         `json:"nai-realm-encoding,omitempty"`
@@ -14,6 +16,8 @@ type WirelessControllerHotspot20H2qpAdviceOfChargeAocList struct {
 	PlanInfo         *[]WirelessControllerHotspot20H2qpAdviceOfChargeAocListPlanInfo `json:"plan-info,omitempty"`
 	Type             *string                                                         `json:"type,omitempty"`
 }
+
+const WirelessControllerHotspot20H2qpAdviceOfChargeAocListPlanInfoPath = "wireless-controller.hotspot20/h2qp-advice-of-charge/aoc-list/plan-info/"
 
 type WirelessControllerHotspot20H2qpAdviceOfChargeAocListPlanInfo struct {
 	Currency *string `json:"currency,omitempty"`

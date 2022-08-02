@@ -29,6 +29,8 @@ type UserGroup struct {
 	UserName               *string            `json:"user-name,omitempty"`
 }
 
+const UserGroupGuestPath = "user/group/guest/"
+
 type UserGroupGuest struct {
 	Comment     *string `json:"comment,omitempty"`
 	Company     *string `json:"company,omitempty"`
@@ -42,11 +44,15 @@ type UserGroupGuest struct {
 	UserId      *string `json:"user-id,omitempty"`
 }
 
+const UserGroupMatchPath = "user/group/match/"
+
 type UserGroupMatch struct {
 	GroupName  *string `json:"group-name,omitempty"`
 	Id         *int64  `json:"id,omitempty"`
 	ServerName *string `json:"server-name,omitempty"`
 }
+
+const UserGroupMemberPath = "user/group/member/"
 
 type UserGroupMember struct {
 	Name *string `json:"name,omitempty"`

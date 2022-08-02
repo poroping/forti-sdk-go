@@ -46,6 +46,8 @@ type RouterIsis struct {
 	SummaryAddress6      *[]RouterIsisSummaryAddress6 `json:"summary-address6,omitempty"`
 }
 
+const RouterIsisIsisInterfacePath = "router/isis/isis-interface/"
+
 type RouterIsisIsisInterface struct {
 	AuthKeychainL1        *string `json:"auth-keychain-l1,omitempty"`
 	AuthKeychainL2        *string `json:"auth-keychain-l2,omitempty"`
@@ -79,10 +81,14 @@ type RouterIsisIsisInterface struct {
 	WideMetricL2          *int64  `json:"wide-metric-l2,omitempty"`
 }
 
+const RouterIsisIsisNetPath = "router/isis/isis-net/"
+
 type RouterIsisIsisNet struct {
 	Id  *int64  `json:"id,omitempty"`
 	Net *string `json:"net,omitempty"`
 }
+
+const RouterIsisRedistributePath = "router/isis/redistribute/"
 
 type RouterIsisRedistribute struct {
 	Level      *string `json:"level,omitempty"`
@@ -93,6 +99,18 @@ type RouterIsisRedistribute struct {
 	Status     *string `json:"status,omitempty"`
 }
 
+// Set RouterIsisRedistribute values to defaults
+func (def *RouterIsisRedistribute) Defaults() {
+	def.Level = stringPtr("level-2")
+	def.Metric = intPtr(0)
+	def.MetricType = stringPtr("internal")
+	def.Protocol = stringPtr("")
+	def.Routemap = stringPtr("")
+	def.Status = stringPtr("disable")
+}
+
+const RouterIsisRedistribute6Path = "router/isis/redistribute6/"
+
 type RouterIsisRedistribute6 struct {
 	Level      *string `json:"level,omitempty"`
 	Metric     *int64  `json:"metric,omitempty"`
@@ -102,11 +120,25 @@ type RouterIsisRedistribute6 struct {
 	Status     *string `json:"status,omitempty"`
 }
 
+// Set RouterIsisRedistribute6 values to defaults
+func (def *RouterIsisRedistribute6) Defaults() {
+	def.Level = stringPtr("level-2")
+	def.Metric = intPtr(0)
+	def.MetricType = stringPtr("internal")
+	def.Protocol = stringPtr("")
+	def.Routemap = stringPtr("")
+	def.Status = stringPtr("disable")
+}
+
+const RouterIsisSummaryAddressPath = "router/isis/summary-address/"
+
 type RouterIsisSummaryAddress struct {
 	Id     *int64  `json:"id,omitempty"`
 	Level  *string `json:"level,omitempty"`
 	Prefix *string `json:"prefix,omitempty"`
 }
+
+const RouterIsisSummaryAddress6Path = "router/isis/summary-address6/"
 
 type RouterIsisSummaryAddress6 struct {
 	Id      *int64  `json:"id,omitempty"`

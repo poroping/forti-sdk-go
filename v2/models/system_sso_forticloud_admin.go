@@ -7,6 +7,8 @@ type SystemSsoForticloudAdmin struct {
 	Vdom *[]SystemSsoForticloudAdminVdom `json:"vdom,omitempty"`
 }
 
+const SystemSsoForticloudAdminVdomPath = "system/sso-forticloud-admin/vdom/"
+
 type SystemSsoForticloudAdminVdom struct {
 	Name *string `json:"name,omitempty"`
 }

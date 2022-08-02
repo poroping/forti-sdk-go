@@ -12,6 +12,8 @@ type SystemNat64 struct {
 	Status                         *string                       `json:"status,omitempty"`
 }
 
+const SystemNat64SecondaryPrefixPath = "system/nat64/secondary-prefix/"
+
 type SystemNat64SecondaryPrefix struct {
 	Name        *string `json:"name,omitempty"`
 	Nat64Prefix *string `json:"nat64-prefix,omitempty"`

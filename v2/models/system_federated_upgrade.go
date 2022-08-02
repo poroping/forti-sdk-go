@@ -11,6 +11,8 @@ type SystemFederatedUpgrade struct {
 	UpgradeId     *int64                            `json:"upgrade-id,omitempty"`
 }
 
+const SystemFederatedUpgradeNodeListPath = "system/federated-upgrade/node-list/"
+
 type SystemFederatedUpgradeNodeList struct {
 	CoordinatingFortigate *string `json:"coordinating-fortigate,omitempty"`
 	DeviceType            *string `json:"device-type,omitempty"`

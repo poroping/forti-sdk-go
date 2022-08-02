@@ -8,3 +8,11 @@ type SystemReplacemsgUtm struct {
 	Header  *string `json:"header,omitempty"`
 	MsgType *string `json:"msg-type,omitempty"`
 }
+
+// Set SystemReplacemsgUtm values to defaults
+func (def *SystemReplacemsgUtm) Defaults() {
+	def.Buffer = stringPtr("<no value>")
+	def.Format = stringPtr("")
+	def.Header = stringPtr("")
+	def.MsgType = stringPtr("")
+}

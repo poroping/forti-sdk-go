@@ -13,7 +13,6 @@ type SystemDdns struct {
 	DdnsPassword     *string                       `json:"ddns-password,omitempty"`
 	DdnsServer       *string                       `json:"ddns-server,omitempty"`
 	DdnsServerAddr   *[]SystemDdnsDdnsServerAddr   `json:"ddns-server-addr,omitempty"`
-	DdnsServerIp     *string                       `json:"ddns-server-ip,omitempty"`
 	DdnsSn           *string                       `json:"ddns-sn,omitempty"`
 	DdnsTtl          *int64                        `json:"ddns-ttl,omitempty"`
 	DdnsUsername     *string                       `json:"ddns-username,omitempty"`
@@ -26,9 +25,13 @@ type SystemDdns struct {
 	UsePublicIp      *string                       `json:"use-public-ip,omitempty"`
 }
 
+const SystemDdnsDdnsServerAddrPath = "system/ddns/ddns-server-addr/"
+
 type SystemDdnsDdnsServerAddr struct {
 	Addr *string `json:"addr,omitempty"`
 }
+
+const SystemDdnsMonitorInterfacePath = "system/ddns/monitor-interface/"
 
 type SystemDdnsMonitorInterface struct {
 	InterfaceName *string `json:"interface-name,omitempty"`

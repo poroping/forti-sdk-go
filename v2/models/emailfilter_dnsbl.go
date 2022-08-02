@@ -9,6 +9,8 @@ type EmailfilterDnsbl struct {
 	Name    *string                    `json:"name,omitempty"`
 }
 
+const EmailfilterDnsblEntriesPath = "emailfilter/dnsbl/entries/"
+
 type EmailfilterDnsblEntries struct {
 	Action *string `json:"action,omitempty"`
 	Id     *int64  `json:"id,omitempty"`

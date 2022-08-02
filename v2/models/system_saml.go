@@ -23,6 +23,8 @@ type SystemSaml struct {
 	Tolerance          *int64                        `json:"tolerance,omitempty"`
 }
 
+const SystemSamlServiceProvidersPath = "system/saml/service-providers/"
+
 type SystemSamlServiceProviders struct {
 	AssertionAttributes *[]SystemSamlServiceProvidersAssertionAttributes `json:"assertion-attributes,omitempty"`
 	IdpEntityId         *string                                          `json:"idp-entity-id,omitempty"`
@@ -37,6 +39,8 @@ type SystemSamlServiceProviders struct {
 	SpSingleLogoutUrl   *string                                          `json:"sp-single-logout-url,omitempty"`
 	SpSingleSignOnUrl   *string                                          `json:"sp-single-sign-on-url,omitempty"`
 }
+
+const SystemSamlServiceProvidersAssertionAttributesPath = "system/saml/service-providers/assertion-attributes/"
 
 type SystemSamlServiceProvidersAssertionAttributes struct {
 	Name *string `json:"name,omitempty"`

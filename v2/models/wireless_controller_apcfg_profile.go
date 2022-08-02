@@ -13,6 +13,8 @@ type WirelessControllerApcfgProfile struct {
 	Name        *string                                      `json:"name,omitempty"`
 }
 
+const WirelessControllerApcfgProfileCommandListPath = "wireless-controller/apcfg-profile/command-list/"
+
 type WirelessControllerApcfgProfileCommandList struct {
 	Id          *int64  `json:"id,omitempty"`
 	Name        *string `json:"name,omitempty"`

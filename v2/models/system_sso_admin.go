@@ -8,6 +8,8 @@ type SystemSsoAdmin struct {
 	Vdom       *[]SystemSsoAdminVdom `json:"vdom,omitempty"`
 }
 
+const SystemSsoAdminVdomPath = "system/sso-admin/vdom/"
+
 type SystemSsoAdminVdom struct {
 	Name *string `json:"name,omitempty"`
 }

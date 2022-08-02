@@ -11,6 +11,8 @@ type WebfilterUrlfilter struct {
 	OneArmIpsUrlfilter *string                      `json:"one-arm-ips-urlfilter,omitempty"`
 }
 
+const WebfilterUrlfilterEntriesPath = "webfilter/urlfilter/entries/"
+
 type WebfilterUrlfilterEntries struct {
 	Action           *string `json:"action,omitempty"`
 	AntiphishAction  *string `json:"antiphish-action,omitempty"`

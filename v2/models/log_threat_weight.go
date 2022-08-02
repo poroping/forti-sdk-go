@@ -16,17 +16,23 @@ type LogThreatWeight struct {
 	Web                      *[]LogThreatWeightWeb         `json:"web,omitempty"`
 }
 
+const LogThreatWeightApplicationPath = "log/threat-weight/application/"
+
 type LogThreatWeightApplication struct {
 	Category *int64  `json:"category,omitempty"`
 	Id       *int64  `json:"id,omitempty"`
 	Level    *string `json:"level,omitempty"`
 }
 
+const LogThreatWeightGeolocationPath = "log/threat-weight/geolocation/"
+
 type LogThreatWeightGeolocation struct {
 	Country *string `json:"country,omitempty"`
 	Id      *int64  `json:"id,omitempty"`
 	Level   *string `json:"level,omitempty"`
 }
+
+const LogThreatWeightIpsPath = "log/threat-weight/ips/"
 
 type LogThreatWeightIps struct {
 	CriticalSeverity *string `json:"critical-severity,omitempty"`
@@ -36,6 +42,8 @@ type LogThreatWeightIps struct {
 	MediumSeverity   *string `json:"medium-severity,omitempty"`
 }
 
+const LogThreatWeightLevelPath = "log/threat-weight/level/"
+
 type LogThreatWeightLevel struct {
 	Critical *int64 `json:"critical,omitempty"`
 	High     *int64 `json:"high,omitempty"`
@@ -43,14 +51,14 @@ type LogThreatWeightLevel struct {
 	Medium   *int64 `json:"medium,omitempty"`
 }
 
+const LogThreatWeightMalwarePath = "log/threat-weight/malware/"
+
 type LogThreatWeightMalware struct {
 	CommandBlocked          *string `json:"command-blocked,omitempty"`
 	ContentDisarm           *string `json:"content-disarm,omitempty"`
 	EmsThreatFeed           *string `json:"ems-threat-feed,omitempty"`
 	FileBlocked             *string `json:"file-blocked,omitempty"`
 	Fortiai                 *string `json:"fortiai,omitempty"`
-	Fortindr                *string `json:"fortindr,omitempty"`
-	Fortisandbox            *string `json:"fortisandbox,omitempty"`
 	FsaHighRisk             *string `json:"fsa-high-risk,omitempty"`
 	FsaMalicious            *string `json:"fsa-malicious,omitempty"`
 	FsaMediumRisk           *string `json:"fsa-medium-risk,omitempty"`
@@ -63,6 +71,8 @@ type LogThreatWeightMalware struct {
 	VirusOutbreakPrevention *string `json:"virus-outbreak-prevention,omitempty"`
 	VirusScanError          *string `json:"virus-scan-error,omitempty"`
 }
+
+const LogThreatWeightWebPath = "log/threat-weight/web/"
 
 type LogThreatWeightWeb struct {
 	Category *int64  `json:"category,omitempty"`

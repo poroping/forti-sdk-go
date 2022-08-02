@@ -31,7 +31,6 @@ type SwitchControllerManagedSwitch struct {
 	OverrideSnmpUser          *string                                         `json:"override-snmp-user,omitempty"`
 	OwnerVdom                 *string                                         `json:"owner-vdom,omitempty"`
 	PoeDetectionType          *int64                                          `json:"poe-detection-type,omitempty"`
-	PoeLldpDetection          *string                                         `json:"poe-lldp-detection,omitempty"`
 	PoePreStandardDetection   *string                                         `json:"poe-pre-standard-detection,omitempty"`
 	Ports                     *[]SwitchControllerManagedSwitchPorts           `json:"ports,omitempty"`
 	PreProvisioned            *int64                                          `json:"pre-provisioned,omitempty"`
@@ -57,19 +56,24 @@ type SwitchControllerManagedSwitch struct {
 	Version                   *int64                                          `json:"version,omitempty"`
 }
 
+const SwitchControllerManagedSwitch8021XSettingsPath = "switch-controller/managed-switch/802-1x-settings/"
+
 type SwitchControllerManagedSwitch8021XSettings struct {
 	LinkDownAuth     *string `json:"link-down-auth,omitempty"`
 	LocalOverride    *string `json:"local-override,omitempty"`
-	MabReauth        *string `json:"mab-reauth,omitempty"`
 	MaxReauthAttempt *int64  `json:"max-reauth-attempt,omitempty"`
 	ReauthPeriod     *int64  `json:"reauth-period,omitempty"`
 	TxPeriod         *int64  `json:"tx-period,omitempty"`
 }
 
+const SwitchControllerManagedSwitchCustomCommandPath = "switch-controller/managed-switch/custom-command/"
+
 type SwitchControllerManagedSwitchCustomCommand struct {
 	CommandEntry *string `json:"command-entry,omitempty"`
 	CommandName  *string `json:"command-name,omitempty"`
 }
+
+const SwitchControllerManagedSwitchIgmpSnoopingPath = "switch-controller/managed-switch/igmp-snooping/"
 
 type SwitchControllerManagedSwitchIgmpSnooping struct {
 	AgingTime             *int64                                            `json:"aging-time,omitempty"`
@@ -77,6 +81,8 @@ type SwitchControllerManagedSwitchIgmpSnooping struct {
 	LocalOverride         *string                                           `json:"local-override,omitempty"`
 	Vlans                 *[]SwitchControllerManagedSwitchIgmpSnoopingVlans `json:"vlans,omitempty"`
 }
+
+const SwitchControllerManagedSwitchIgmpSnoopingVlansPath = "switch-controller/managed-switch/igmp-snooping/vlans/"
 
 type SwitchControllerManagedSwitchIgmpSnoopingVlans struct {
 	Proxy       *string `json:"proxy,omitempty"`
@@ -86,17 +92,23 @@ type SwitchControllerManagedSwitchIgmpSnoopingVlans struct {
 	VlanName    *string `json:"vlan-name,omitempty"`
 }
 
+const SwitchControllerManagedSwitchIpSourceGuardPath = "switch-controller/managed-switch/ip-source-guard/"
+
 type SwitchControllerManagedSwitchIpSourceGuard struct {
 	BindingEntry *[]SwitchControllerManagedSwitchIpSourceGuardBindingEntry `json:"binding-entry,omitempty"`
 	Description  *string                                                   `json:"description,omitempty"`
 	Port         *string                                                   `json:"port,omitempty"`
 }
 
+const SwitchControllerManagedSwitchIpSourceGuardBindingEntryPath = "switch-controller/managed-switch/ip-source-guard/binding-entry/"
+
 type SwitchControllerManagedSwitchIpSourceGuardBindingEntry struct {
 	EntryName *string `json:"entry-name,omitempty"`
 	Ip        *string `json:"ip,omitempty"`
 	Mac       *string `json:"mac,omitempty"`
 }
+
+const SwitchControllerManagedSwitchMirrorPath = "switch-controller/managed-switch/mirror/"
 
 type SwitchControllerManagedSwitchMirror struct {
 	Dst             *string                                          `json:"dst,omitempty"`
@@ -107,13 +119,19 @@ type SwitchControllerManagedSwitchMirror struct {
 	SwitchingPacket *string                                          `json:"switching-packet,omitempty"`
 }
 
+const SwitchControllerManagedSwitchMirrorSrcEgressPath = "switch-controller/managed-switch/mirror/src-egress/"
+
 type SwitchControllerManagedSwitchMirrorSrcEgress struct {
 	Name *string `json:"name,omitempty"`
 }
 
+const SwitchControllerManagedSwitchMirrorSrcIngressPath = "switch-controller/managed-switch/mirror/src-ingress/"
+
 type SwitchControllerManagedSwitchMirrorSrcIngress struct {
 	Name *string `json:"name,omitempty"`
 }
+
+const SwitchControllerManagedSwitchPortsPath = "switch-controller/managed-switch/ports/"
 
 type SwitchControllerManagedSwitchPorts struct {
 	AccessMode               *string                                            `json:"access-mode,omitempty"`
@@ -136,13 +154,8 @@ type SwitchControllerManagedSwitchPorts struct {
 	FgtPeerPortName          *string                                            `json:"fgt-peer-port-name,omitempty"`
 	FiberPort                *int64                                             `json:"fiber-port,omitempty"`
 	Flags                    *int64                                             `json:"flags,omitempty"`
-	FlapDuration             *int64                                             `json:"flap-duration,omitempty"`
-	FlapRate                 *int64                                             `json:"flap-rate,omitempty"`
-	FlapTimeout              *int64                                             `json:"flap-timeout,omitempty"`
-	Flapguard                *string                                            `json:"flapguard,omitempty"`
 	FlowControl              *string                                            `json:"flow-control,omitempty"`
 	FortilinkPort            *int64                                             `json:"fortilink-port,omitempty"`
-	IgmpSnooping             *string                                            `json:"igmp-snooping,omitempty"`
 	IgmpsFloodReports        *string                                            `json:"igmps-flood-reports,omitempty"`
 	IgmpsFloodTraffic        *string                                            `json:"igmps-flood-traffic,omitempty"`
 	InterfaceTags            *[]SwitchControllerManagedSwitchPortsInterfaceTags `json:"interface-tags,omitempty"`
@@ -204,25 +217,37 @@ type SwitchControllerManagedSwitchPorts struct {
 	Vlan                     *string                                            `json:"vlan,omitempty"`
 }
 
+const SwitchControllerManagedSwitchPortsAllowedVlansPath = "switch-controller/managed-switch/ports/allowed-vlans/"
+
 type SwitchControllerManagedSwitchPortsAllowedVlans struct {
 	VlanName *string `json:"vlan-name,omitempty"`
 }
+
+const SwitchControllerManagedSwitchPortsExportTagsPath = "switch-controller/managed-switch/ports/export-tags/"
 
 type SwitchControllerManagedSwitchPortsExportTags struct {
 	TagName *string `json:"tag-name,omitempty"`
 }
 
+const SwitchControllerManagedSwitchPortsInterfaceTagsPath = "switch-controller/managed-switch/ports/interface-tags/"
+
 type SwitchControllerManagedSwitchPortsInterfaceTags struct {
 	TagName *string `json:"tag-name,omitempty"`
 }
+
+const SwitchControllerManagedSwitchPortsMembersPath = "switch-controller/managed-switch/ports/members/"
 
 type SwitchControllerManagedSwitchPortsMembers struct {
 	MemberName *string `json:"member-name,omitempty"`
 }
 
+const SwitchControllerManagedSwitchPortsUntaggedVlansPath = "switch-controller/managed-switch/ports/untagged-vlans/"
+
 type SwitchControllerManagedSwitchPortsUntaggedVlans struct {
 	VlanName *string `json:"vlan-name,omitempty"`
 }
+
+const SwitchControllerManagedSwitchRemoteLogPath = "switch-controller/managed-switch/remote-log/"
 
 type SwitchControllerManagedSwitchRemoteLog struct {
 	Csv      *string `json:"csv,omitempty"`
@@ -233,6 +258,8 @@ type SwitchControllerManagedSwitchRemoteLog struct {
 	Severity *string `json:"severity,omitempty"`
 	Status   *string `json:"status,omitempty"`
 }
+
+const SwitchControllerManagedSwitchSnmpCommunityPath = "switch-controller/managed-switch/snmp-community/"
 
 type SwitchControllerManagedSwitchSnmpCommunity struct {
 	Events         *string                                            `json:"events,omitempty"`
@@ -252,10 +279,14 @@ type SwitchControllerManagedSwitchSnmpCommunity struct {
 	TrapV2cStatus  *string                                            `json:"trap-v2c-status,omitempty"`
 }
 
+const SwitchControllerManagedSwitchSnmpCommunityHostsPath = "switch-controller/managed-switch/snmp-community/hosts/"
+
 type SwitchControllerManagedSwitchSnmpCommunityHosts struct {
 	Id *int64  `json:"id,omitempty"`
 	Ip *string `json:"ip,omitempty"`
 }
+
+const SwitchControllerManagedSwitchSnmpSysinfoPath = "switch-controller/managed-switch/snmp-sysinfo/"
 
 type SwitchControllerManagedSwitchSnmpSysinfo struct {
 	ContactInfo *string `json:"contact-info,omitempty"`
@@ -265,11 +296,15 @@ type SwitchControllerManagedSwitchSnmpSysinfo struct {
 	Status      *string `json:"status,omitempty"`
 }
 
+const SwitchControllerManagedSwitchSnmpTrapThresholdPath = "switch-controller/managed-switch/snmp-trap-threshold/"
+
 type SwitchControllerManagedSwitchSnmpTrapThreshold struct {
 	TrapHighCpuThreshold   *int64 `json:"trap-high-cpu-threshold,omitempty"`
 	TrapLogFullThreshold   *int64 `json:"trap-log-full-threshold,omitempty"`
 	TrapLowMemoryThreshold *int64 `json:"trap-low-memory-threshold,omitempty"`
 }
+
+const SwitchControllerManagedSwitchSnmpUserPath = "switch-controller/managed-switch/snmp-user/"
 
 type SwitchControllerManagedSwitchSnmpUser struct {
 	AuthProto     *string `json:"auth-proto,omitempty"`
@@ -282,6 +317,8 @@ type SwitchControllerManagedSwitchSnmpUser struct {
 	SecurityLevel *string `json:"security-level,omitempty"`
 }
 
+const SwitchControllerManagedSwitchStaticMacPath = "switch-controller/managed-switch/static-mac/"
+
 type SwitchControllerManagedSwitchStaticMac struct {
 	Description *string `json:"description,omitempty"`
 	Id          *int64  `json:"id,omitempty"`
@@ -291,6 +328,8 @@ type SwitchControllerManagedSwitchStaticMac struct {
 	Vlan        *string `json:"vlan,omitempty"`
 }
 
+const SwitchControllerManagedSwitchStormControlPath = "switch-controller/managed-switch/storm-control/"
+
 type SwitchControllerManagedSwitchStormControl struct {
 	Broadcast        *string `json:"broadcast,omitempty"`
 	LocalOverride    *string `json:"local-override,omitempty"`
@@ -299,10 +338,14 @@ type SwitchControllerManagedSwitchStormControl struct {
 	UnknownUnicast   *string `json:"unknown-unicast,omitempty"`
 }
 
+const SwitchControllerManagedSwitchStpInstancePath = "switch-controller/managed-switch/stp-instance/"
+
 type SwitchControllerManagedSwitchStpInstance struct {
 	Id       *string `json:"id,omitempty"`
 	Priority *string `json:"priority,omitempty"`
 }
+
+const SwitchControllerManagedSwitchStpSettingsPath = "switch-controller/managed-switch/stp-settings/"
 
 type SwitchControllerManagedSwitchStpSettings struct {
 	ForwardTime   *int64  `json:"forward-time,omitempty"`
@@ -314,6 +357,8 @@ type SwitchControllerManagedSwitchStpSettings struct {
 	PendingTimer  *int64  `json:"pending-timer,omitempty"`
 	Revision      *int64  `json:"revision,omitempty"`
 }
+
+const SwitchControllerManagedSwitchSwitchLogPath = "switch-controller/managed-switch/switch-log/"
 
 type SwitchControllerManagedSwitchSwitchLog struct {
 	LocalOverride *string `json:"local-override,omitempty"`

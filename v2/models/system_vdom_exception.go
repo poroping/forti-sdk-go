@@ -9,6 +9,8 @@ type SystemVdomException struct {
 	Vdom   *[]SystemVdomExceptionVdom `json:"vdom,omitempty"`
 }
 
+const SystemVdomExceptionVdomPath = "system/vdom-exception/vdom/"
+
 type SystemVdomExceptionVdom struct {
 	Name *string `json:"name,omitempty"`
 }

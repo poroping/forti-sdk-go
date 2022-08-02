@@ -8,6 +8,8 @@ type RouterCommunityList struct {
 	Type *string                    `json:"type,omitempty"`
 }
 
+const RouterCommunityListRulePath = "router/community-list/rule/"
+
 type RouterCommunityListRule struct {
 	Action *string `json:"action,omitempty"`
 	Id     *int64  `json:"id,omitempty"`

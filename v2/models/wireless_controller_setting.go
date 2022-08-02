@@ -19,9 +19,13 @@ type WirelessControllerSetting struct {
 	WfaCompatibility                 *string                                            `json:"wfa-compatibility,omitempty"`
 }
 
+const WirelessControllerSettingDarrpOptimizeSchedulesPath = "wireless-controller/setting/darrp-optimize-schedules/"
+
 type WirelessControllerSettingDarrpOptimizeSchedules struct {
 	Name *string `json:"name,omitempty"`
 }
+
+const WirelessControllerSettingOffendingSsidPath = "wireless-controller/setting/offending-ssid/"
 
 type WirelessControllerSettingOffendingSsid struct {
 	Action      *string `json:"action,omitempty"`

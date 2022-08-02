@@ -15,7 +15,6 @@ type LogDiskSetting struct {
 	MaxLogFileSize             *int64  `json:"max-log-file-size,omitempty"`
 	MaxPolicyPacketCaptureSize *int64  `json:"max-policy-packet-capture-size,omitempty"`
 	MaximumLogAge              *int64  `json:"maximum-log-age,omitempty"`
-	ReportQuota                *int64  `json:"report-quota,omitempty"`
 	RollDay                    *string `json:"roll-day,omitempty"`
 	RollSchedule               *string `json:"roll-schedule,omitempty"`
 	RollTime                   *string `json:"roll-time,omitempty"`

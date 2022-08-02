@@ -17,6 +17,8 @@ type LogNullDeviceFilter struct {
 	ZtnaTraffic      *string                         `json:"ztna-traffic,omitempty"`
 }
 
+const LogNullDeviceFilterFreeStylePath = "log.null-device/filter/free-style/"
+
 type LogNullDeviceFilterFreeStyle struct {
 	Category   *string `json:"category,omitempty"`
 	Filter     *string `json:"filter,omitempty"`

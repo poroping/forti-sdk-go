@@ -80,9 +80,13 @@ type FirewallVip6 struct {
 	WebsphereServer              *string                              `json:"websphere-server,omitempty"`
 }
 
+const FirewallVip6MonitorPath = "firewall/vip6/monitor/"
+
 type FirewallVip6Monitor struct {
 	Name *string `json:"name,omitempty"`
 }
+
+const FirewallVip6RealserversPath = "firewall/vip6/realservers/"
 
 type FirewallVip6Realservers struct {
 	ClientIp         *string                           `json:"client-ip,omitempty"`
@@ -98,19 +102,27 @@ type FirewallVip6Realservers struct {
 	Weight           *int64                            `json:"weight,omitempty"`
 }
 
+const FirewallVip6RealserversMonitorPath = "firewall/vip6/realservers/monitor/"
+
 type FirewallVip6RealserversMonitor struct {
 	Name *string `json:"name,omitempty"`
 }
 
+const FirewallVip6SrcFilterPath = "firewall/vip6/src-filter/"
+
 type FirewallVip6SrcFilter struct {
 	Range *string `json:"range,omitempty"`
 }
+
+const FirewallVip6SslCipherSuitesPath = "firewall/vip6/ssl-cipher-suites/"
 
 type FirewallVip6SslCipherSuites struct {
 	Cipher   *string `json:"cipher,omitempty"`
 	Priority *int64  `json:"priority,omitempty"`
 	Versions *string `json:"versions,omitempty"`
 }
+
+const FirewallVip6SslServerCipherSuitesPath = "firewall/vip6/ssl-server-cipher-suites/"
 
 type FirewallVip6SslServerCipherSuites struct {
 	Cipher   *string `json:"cipher,omitempty"`

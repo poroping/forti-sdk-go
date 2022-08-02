@@ -11,6 +11,8 @@ type WirelessControllerSnmp struct {
 	User                 *[]WirelessControllerSnmpUser      `json:"user,omitempty"`
 }
 
+const WirelessControllerSnmpCommunityPath = "wireless-controller/snmp/community/"
+
 type WirelessControllerSnmpCommunity struct {
 	Hosts          *[]WirelessControllerSnmpCommunityHosts `json:"hosts,omitempty"`
 	Id             *int64                                  `json:"id,omitempty"`
@@ -22,10 +24,14 @@ type WirelessControllerSnmpCommunity struct {
 	TrapV2cStatus  *string                                 `json:"trap-v2c-status,omitempty"`
 }
 
+const WirelessControllerSnmpCommunityHostsPath = "wireless-controller/snmp/community/hosts/"
+
 type WirelessControllerSnmpCommunityHosts struct {
 	Id *int64  `json:"id,omitempty"`
 	Ip *string `json:"ip,omitempty"`
 }
+
+const WirelessControllerSnmpUserPath = "wireless-controller/snmp/user/"
 
 type WirelessControllerSnmpUser struct {
 	AuthProto     *string `json:"auth-proto,omitempty"`

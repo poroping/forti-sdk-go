@@ -3,15 +3,15 @@ package models
 const AlertemailSettingPath = "alertemail/setting/"
 
 type AlertemailSetting struct {
-	FDSLicenseExpiringDays            *int64  `json:"FDS-license-expiring-days,omitempty"`
-	FDSLicenseExpiringWarning         *string `json:"FDS-license-expiring-warning,omitempty"`
-	FDSUpdateLogs                     *string `json:"FDS-update-logs,omitempty"`
-	FIPSCCErrors                      *string `json:"FIPS-CC-errors,omitempty"`
-	FSSODisconnectLogs                *string `json:"FSSO-disconnect-logs,omitempty"`
-	HALogs                            *string `json:"HA-logs,omitempty"`
-	IPSLogs                           *string `json:"IPS-logs,omitempty"`
-	IPsecErrorsLogs                   *string `json:"IPsec-errors-logs,omitempty"`
-	PPPErrorsLogs                     *string `json:"PPP-errors-logs,omitempty"`
+	FdsLicenseExpiringDays            *int64  `json:"FDS-license-expiring-days,omitempty"`
+	FdsLicenseExpiringWarning         *string `json:"FDS-license-expiring-warning,omitempty"`
+	FdsUpdateLogs                     *string `json:"FDS-update-logs,omitempty"`
+	FipsCcErrors                      *string `json:"FIPS-CC-errors,omitempty"`
+	FssoDisconnectLogs                *string `json:"FSSO-disconnect-logs,omitempty"`
+	HaLogs                            *string `json:"HA-logs,omitempty"`
+	IpsLogs                           *string `json:"IPS-logs,omitempty"`
+	IpsecErrorsLogs                   *string `json:"IPsec-errors-logs,omitempty"`
+	PppErrorsLogs                     *string `json:"PPP-errors-logs,omitempty"`
 	AdminLoginLogs                    *string `json:"admin-login-logs,omitempty"`
 	AlertInterval                     *int64  `json:"alert-interval,omitempty"`
 	AmcInterfaceBypassMode            *string `json:"amc-interface-bypass-mode,omitempty"`

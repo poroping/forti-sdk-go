@@ -9,6 +9,8 @@ type WirelessControllerAccessControlList struct {
 	Name            *string                                               `json:"name,omitempty"`
 }
 
+const WirelessControllerAccessControlListLayer3Ipv4RulesPath = "wireless-controller/access-control-list/layer3-ipv4-rules/"
+
 type WirelessControllerAccessControlListLayer3Ipv4Rules struct {
 	Action   *string `json:"action,omitempty"`
 	Comment  *string `json:"comment,omitempty"`
@@ -19,6 +21,8 @@ type WirelessControllerAccessControlListLayer3Ipv4Rules struct {
 	Srcaddr  *string `json:"srcaddr,omitempty"`
 	Srcport  *int64  `json:"srcport,omitempty"`
 }
+
+const WirelessControllerAccessControlListLayer3Ipv6RulesPath = "wireless-controller/access-control-list/layer3-ipv6-rules/"
 
 type WirelessControllerAccessControlListLayer3Ipv6Rules struct {
 	Action   *string `json:"action,omitempty"`

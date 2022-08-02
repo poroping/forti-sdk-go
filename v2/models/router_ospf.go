@@ -29,13 +29,14 @@ type RouterOspf struct {
 	PassiveInterface              *[]RouterOspfPassiveInterface `json:"passive-interface,omitempty"`
 	Redistribute                  *[]RouterOspfRedistribute     `json:"redistribute,omitempty"`
 	RestartMode                   *string                       `json:"restart-mode,omitempty"`
-	RestartOnTopologyChange       *string                       `json:"restart-on-topology-change,omitempty"`
 	RestartPeriod                 *int64                        `json:"restart-period,omitempty"`
 	Rfc1583Compatible             *string                       `json:"rfc1583-compatible,omitempty"`
 	RouterId                      *string                       `json:"router-id,omitempty"`
 	SpfTimers                     *string                       `json:"spf-timers,omitempty"`
 	SummaryAddress                *[]RouterOspfSummaryAddress   `json:"summary-address,omitempty"`
 }
+
+const RouterOspfAreaPath = "router/ospf/area/"
 
 type RouterOspfArea struct {
 	Authentication                            *string                      `json:"authentication,omitempty"`
@@ -55,11 +56,15 @@ type RouterOspfArea struct {
 	VirtualLink                               *[]RouterOspfAreaVirtualLink `json:"virtual-link,omitempty"`
 }
 
+const RouterOspfAreaFilterListPath = "router/ospf/area/filter-list/"
+
 type RouterOspfAreaFilterList struct {
 	Direction *string `json:"direction,omitempty"`
 	Id        *int64  `json:"id,omitempty"`
 	List      *string `json:"list,omitempty"`
 }
+
+const RouterOspfAreaRangePath = "router/ospf/area/range/"
 
 type RouterOspfAreaRange struct {
 	Advertise        *string `json:"advertise,omitempty"`
@@ -68,6 +73,8 @@ type RouterOspfAreaRange struct {
 	Substitute       *string `json:"substitute,omitempty"`
 	SubstituteStatus *string `json:"substitute-status,omitempty"`
 }
+
+const RouterOspfAreaVirtualLinkPath = "router/ospf/area/virtual-link/"
 
 type RouterOspfAreaVirtualLink struct {
 	Authentication     *string                             `json:"authentication,omitempty"`
@@ -83,16 +90,22 @@ type RouterOspfAreaVirtualLink struct {
 	TransmitDelay      *int64                              `json:"transmit-delay,omitempty"`
 }
 
+const RouterOspfAreaVirtualLinkMd5KeysPath = "router/ospf/area/virtual-link/md5-keys/"
+
 type RouterOspfAreaVirtualLinkMd5Keys struct {
 	Id        *int64  `json:"id,omitempty"`
 	KeyString *string `json:"key-string,omitempty"`
 }
+
+const RouterOspfDistributeListPath = "router/ospf/distribute-list/"
 
 type RouterOspfDistributeList struct {
 	AccessList *string `json:"access-list,omitempty"`
 	Id         *int64  `json:"id,omitempty"`
 	Protocol   *string `json:"protocol,omitempty"`
 }
+
+const RouterOspfNeighborPath = "router/ospf/neighbor/"
 
 type RouterOspfNeighbor struct {
 	Cost         *int64  `json:"cost,omitempty"`
@@ -102,12 +115,16 @@ type RouterOspfNeighbor struct {
 	Priority     *int64  `json:"priority,omitempty"`
 }
 
+const RouterOspfNetworkPath = "router/ospf/network/"
+
 type RouterOspfNetwork struct {
 	Area     *string `json:"area,omitempty"`
 	Comments *string `json:"comments,omitempty"`
 	Id       *int64  `json:"id,omitempty"`
 	Prefix   *string `json:"prefix,omitempty"`
 }
+
+const RouterOspfOspfInterfacePath = "router/ospf/ospf-interface/"
 
 type RouterOspfOspfInterface struct {
 	Authentication     *string                           `json:"authentication,omitempty"`
@@ -136,14 +153,20 @@ type RouterOspfOspfInterface struct {
 	TransmitDelay      *int64                            `json:"transmit-delay,omitempty"`
 }
 
+const RouterOspfOspfInterfaceMd5KeysPath = "router/ospf/ospf-interface/md5-keys/"
+
 type RouterOspfOspfInterfaceMd5Keys struct {
 	Id        *int64  `json:"id,omitempty"`
 	KeyString *string `json:"key-string,omitempty"`
 }
 
+const RouterOspfPassiveInterfacePath = "router/ospf/passive-interface/"
+
 type RouterOspfPassiveInterface struct {
 	Name *string `json:"name,omitempty"`
 }
+
+const RouterOspfRedistributePath = "router/ospf/redistribute/"
 
 type RouterOspfRedistribute struct {
 	Metric     *int64  `json:"metric,omitempty"`
@@ -153,6 +176,18 @@ type RouterOspfRedistribute struct {
 	Status     *string `json:"status,omitempty"`
 	Tag        *int64  `json:"tag,omitempty"`
 }
+
+// Set RouterOspfRedistribute values to defaults
+func (def *RouterOspfRedistribute) Defaults() {
+	def.Metric = intPtr(0)
+	def.MetricType = stringPtr("2")
+	def.Name = stringPtr("")
+	def.Routemap = stringPtr("")
+	def.Status = stringPtr("disable")
+	def.Tag = intPtr(0)
+}
+
+const RouterOspfSummaryAddressPath = "router/ospf/summary-address/"
 
 type RouterOspfSummaryAddress struct {
 	Advertise *string `json:"advertise,omitempty"`

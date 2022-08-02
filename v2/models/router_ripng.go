@@ -20,10 +20,14 @@ type RouterRipng struct {
 	UpdateTimer                 *int64                         `json:"update-timer,omitempty"`
 }
 
+const RouterRipngAggregateAddressPath = "router/ripng/aggregate-address/"
+
 type RouterRipngAggregateAddress struct {
 	Id      *int64  `json:"id,omitempty"`
 	Prefix6 *string `json:"prefix6,omitempty"`
 }
+
+const RouterRipngDistancePath = "router/ripng/distance/"
 
 type RouterRipngDistance struct {
 	AccessList6 *string `json:"access-list6,omitempty"`
@@ -31,6 +35,8 @@ type RouterRipngDistance struct {
 	Id          *int64  `json:"id,omitempty"`
 	Prefix6     *string `json:"prefix6,omitempty"`
 }
+
+const RouterRipngDistributeListPath = "router/ripng/distribute-list/"
 
 type RouterRipngDistributeList struct {
 	Direction *string `json:"direction,omitempty"`
@@ -40,6 +46,8 @@ type RouterRipngDistributeList struct {
 	Status    *string `json:"status,omitempty"`
 }
 
+const RouterRipngInterfacePath = "router/ripng/interface/"
+
 type RouterRipngInterface struct {
 	Flags              *int64  `json:"flags,omitempty"`
 	Name               *string `json:"name,omitempty"`
@@ -47,16 +55,22 @@ type RouterRipngInterface struct {
 	SplitHorizonStatus *string `json:"split-horizon-status,omitempty"`
 }
 
+const RouterRipngNeighborPath = "router/ripng/neighbor/"
+
 type RouterRipngNeighbor struct {
 	Id        *int64  `json:"id,omitempty"`
 	Interface *string `json:"interface,omitempty"`
 	Ip6       *string `json:"ip6,omitempty"`
 }
 
+const RouterRipngNetworkPath = "router/ripng/network/"
+
 type RouterRipngNetwork struct {
 	Id     *int64  `json:"id,omitempty"`
 	Prefix *string `json:"prefix,omitempty"`
 }
+
+const RouterRipngOffsetListPath = "router/ripng/offset-list/"
 
 type RouterRipngOffsetList struct {
 	AccessList6 *string `json:"access-list6,omitempty"`
@@ -67,13 +81,25 @@ type RouterRipngOffsetList struct {
 	Status      *string `json:"status,omitempty"`
 }
 
+const RouterRipngPassiveInterfacePath = "router/ripng/passive-interface/"
+
 type RouterRipngPassiveInterface struct {
 	Name *string `json:"name,omitempty"`
 }
+
+const RouterRipngRedistributePath = "router/ripng/redistribute/"
 
 type RouterRipngRedistribute struct {
 	Metric   *int64  `json:"metric,omitempty"`
 	Name     *string `json:"name,omitempty"`
 	Routemap *string `json:"routemap,omitempty"`
 	Status   *string `json:"status,omitempty"`
+}
+
+// Set RouterRipngRedistribute values to defaults
+func (def *RouterRipngRedistribute) Defaults() {
+	def.Metric = intPtr(0)
+	def.Name = stringPtr("")
+	def.Routemap = stringPtr("")
+	def.Status = stringPtr("disable")
 }

@@ -3,7 +3,7 @@ package models
 const WirelessControllerHotspot20HsProfilePath = "wireless-controller.hotspot20/hs-profile/"
 
 type WirelessControllerHotspot20HsProfile struct {
-	The3gppPlmn           *string                                            `json:"3gpp-plmn,omitempty"`
+	The3GppPlmn           *string                                            `json:"3gpp-plmn,omitempty"`
 	AccessNetworkAsra     *string                                            `json:"access-network-asra,omitempty"`
 	AccessNetworkEsr      *string                                            `json:"access-network-esr,omitempty"`
 	AccessNetworkInternet *string                                            `json:"access-network-internet,omitempty"`
@@ -42,6 +42,8 @@ type WirelessControllerHotspot20HsProfile struct {
 	WanMetrics            *string                                            `json:"wan-metrics,omitempty"`
 	WnmSleepMode          *string                                            `json:"wnm-sleep-mode,omitempty"`
 }
+
+const WirelessControllerHotspot20HsProfileOsuProviderPath = "wireless-controller.hotspot20/hs-profile/osu-provider/"
 
 type WirelessControllerHotspot20HsProfileOsuProvider struct {
 	Name *string `json:"name,omitempty"`

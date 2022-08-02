@@ -105,3 +105,11 @@ type CmdbError400 struct {
 	Build      *int64  `json:"build,omitempty"`
 	HTTPMethod *string `json:"http_method,omitempty"`
 }
+
+func intPtr(i int64) *int64 {
+	return &i
+}
+
+func stringPtr(s string) *string {
+	return &s
+}

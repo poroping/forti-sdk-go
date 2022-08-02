@@ -15,22 +15,29 @@ type FirewallAddrgrp struct {
 	Tagging       *[]FirewallAddrgrpTagging       `json:"tagging,omitempty"`
 	Type          *string                         `json:"type,omitempty"`
 	Uuid          *string                         `json:"uuid,omitempty"`
-	Visibility    *string                         `json:"visibility,omitempty"`
 }
+
+const FirewallAddrgrpExcludeMemberPath = "firewall/addrgrp/exclude-member/"
 
 type FirewallAddrgrpExcludeMember struct {
 	Name *string `json:"name,omitempty"`
 }
 
+const FirewallAddrgrpMemberPath = "firewall/addrgrp/member/"
+
 type FirewallAddrgrpMember struct {
 	Name *string `json:"name,omitempty"`
 }
+
+const FirewallAddrgrpTaggingPath = "firewall/addrgrp/tagging/"
 
 type FirewallAddrgrpTagging struct {
 	Category *string                       `json:"category,omitempty"`
 	Name     *string                       `json:"name,omitempty"`
 	Tags     *[]FirewallAddrgrpTaggingTags `json:"tags,omitempty"`
 }
+
+const FirewallAddrgrpTaggingTagsPath = "firewall/addrgrp/tagging/tags/"
 
 type FirewallAddrgrpTaggingTags struct {
 	Name *string `json:"name,omitempty"`

@@ -9,7 +9,6 @@ type UserRadius struct {
 	AllUsergroup                           *string                       `json:"all-usergroup,omitempty"`
 	AuthType                               *string                       `json:"auth-type,omitempty"`
 	Class                                  *[]UserRadiusClass            `json:"class,omitempty"`
-	Delimiter                              *string                       `json:"delimiter,omitempty"`
 	GroupOverrideAttrType                  *string                       `json:"group-override-attr-type,omitempty"`
 	H3cCompatibility                       *string                       `json:"h3c-compatibility,omitempty"`
 	Interface                              *string                       `json:"interface,omitempty"`
@@ -49,6 +48,8 @@ type UserRadius struct {
 	UsernameCaseSensitive                  *string                       `json:"username-case-sensitive,omitempty"`
 }
 
+const UserRadiusAccountingServerPath = "user/radius/accounting-server/"
+
 type UserRadiusAccountingServer struct {
 	Id                    *int64  `json:"id,omitempty"`
 	Interface             *string `json:"interface,omitempty"`
@@ -59,6 +60,8 @@ type UserRadiusAccountingServer struct {
 	SourceIp              *string `json:"source-ip,omitempty"`
 	Status                *string `json:"status,omitempty"`
 }
+
+const UserRadiusClassPath = "user/radius/class/"
 
 type UserRadiusClass struct {
 	Name *string `json:"name,omitempty"`

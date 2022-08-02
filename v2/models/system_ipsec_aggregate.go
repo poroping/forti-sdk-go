@@ -8,6 +8,8 @@ type SystemIpsecAggregate struct {
 	Name      *string                       `json:"name,omitempty"`
 }
 
+const SystemIpsecAggregateMemberPath = "system/ipsec-aggregate/member/"
+
 type SystemIpsecAggregateMember struct {
 	TunnelName *string `json:"tunnel-name,omitempty"`
 }

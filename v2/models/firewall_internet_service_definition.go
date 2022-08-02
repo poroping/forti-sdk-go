@@ -7,6 +7,8 @@ type FirewallInternetServiceDefinition struct {
 	Id    *int64                                    `json:"id,omitempty"`
 }
 
+const FirewallInternetServiceDefinitionEntryPath = "firewall/internet-service-definition/entry/"
+
 type FirewallInternetServiceDefinitionEntry struct {
 	CategoryId *int64                                             `json:"category-id,omitempty"`
 	Name       *string                                            `json:"name,omitempty"`
@@ -14,6 +16,8 @@ type FirewallInternetServiceDefinitionEntry struct {
 	Protocol   *int64                                             `json:"protocol,omitempty"`
 	SeqNum     *int64                                             `json:"seq-num,omitempty"`
 }
+
+const FirewallInternetServiceDefinitionEntryPortRangePath = "firewall/internet-service-definition/entry/port-range/"
 
 type FirewallInternetServiceDefinitionEntryPortRange struct {
 	EndPort   *int64 `json:"end-port,omitempty"`

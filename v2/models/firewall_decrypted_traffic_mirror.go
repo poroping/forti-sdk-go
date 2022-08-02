@@ -10,6 +10,8 @@ type FirewallDecryptedTrafficMirror struct {
 	TrafficType   *string                                    `json:"traffic-type,omitempty"`
 }
 
+const FirewallDecryptedTrafficMirrorInterfacePath = "firewall/decrypted-traffic-mirror/interface/"
+
 type FirewallDecryptedTrafficMirrorInterface struct {
 	Name *string `json:"name,omitempty"`
 }

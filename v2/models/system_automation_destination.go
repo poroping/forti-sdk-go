@@ -9,6 +9,8 @@ type SystemAutomationDestination struct {
 	Type        *string                                   `json:"type,omitempty"`
 }
 
+const SystemAutomationDestinationDestinationPath = "system/automation-destination/destination/"
+
 type SystemAutomationDestinationDestination struct {
 	Name *string `json:"name,omitempty"`
 }

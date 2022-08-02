@@ -7,6 +7,8 @@ type WirelessControllerHotspot20Icon struct {
 	Name     *string                                    `json:"name,omitempty"`
 }
 
+const WirelessControllerHotspot20IconIconListPath = "wireless-controller.hotspot20/icon/icon-list/"
+
 type WirelessControllerHotspot20IconIconList struct {
 	File   *string `json:"file,omitempty"`
 	Height *int64  `json:"height,omitempty"`

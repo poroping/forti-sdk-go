@@ -9,6 +9,8 @@ type DlpFilepattern struct {
 	Name    *string                  `json:"name,omitempty"`
 }
 
+const DlpFilepatternEntriesPath = "dlp/filepattern/entries/"
+
 type DlpFilepatternEntries struct {
 	FileType   *string `json:"file-type,omitempty"`
 	FilterType *string `json:"filter-type,omitempty"`

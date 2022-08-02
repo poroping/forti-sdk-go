@@ -23,9 +23,10 @@ type SystemAccprofile struct {
 	Utmgrp               *string                           `json:"utmgrp,omitempty"`
 	UtmgrpPermission     *SystemAccprofileUtmgrpPermission `json:"utmgrp-permission,omitempty"`
 	Vpngrp               *string                           `json:"vpngrp,omitempty"`
-	Wanoptgrp            *string                           `json:"wanoptgrp,omitempty"`
 	Wifi                 *string                           `json:"wifi,omitempty"`
 }
+
+const SystemAccprofileFwgrpPermissionPath = "system/accprofile/fwgrp-permission/"
 
 type SystemAccprofileFwgrpPermission struct {
 	Address  *string `json:"address,omitempty"`
@@ -35,6 +36,8 @@ type SystemAccprofileFwgrpPermission struct {
 	Service  *string `json:"service,omitempty"`
 }
 
+const SystemAccprofileLoggrpPermissionPath = "system/accprofile/loggrp-permission/"
+
 type SystemAccprofileLoggrpPermission struct {
 	Config       *string `json:"config,omitempty"`
 	DataAccess   *string `json:"data-access,omitempty"`
@@ -42,11 +45,15 @@ type SystemAccprofileLoggrpPermission struct {
 	ThreatWeight *string `json:"threat-weight,omitempty"`
 }
 
+const SystemAccprofileNetgrpPermissionPath = "system/accprofile/netgrp-permission/"
+
 type SystemAccprofileNetgrpPermission struct {
 	Cfg           *string `json:"cfg,omitempty"`
 	PacketCapture *string `json:"packet-capture,omitempty"`
 	RouteCfg      *string `json:"route-cfg,omitempty"`
 }
+
+const SystemAccprofileSysgrpPermissionPath = "system/accprofile/sysgrp-permission/"
 
 type SystemAccprofileSysgrpPermission struct {
 	Admin *string `json:"admin,omitempty"`
@@ -54,6 +61,8 @@ type SystemAccprofileSysgrpPermission struct {
 	Mnt   *string `json:"mnt,omitempty"`
 	Upd   *string `json:"upd,omitempty"`
 }
+
+const SystemAccprofileUtmgrpPermissionPath = "system/accprofile/utmgrp-permission/"
 
 type SystemAccprofileUtmgrpPermission struct {
 	Antivirus          *string `json:"antivirus,omitempty"`
@@ -65,7 +74,6 @@ type SystemAccprofileUtmgrpPermission struct {
 	FileFilter         *string `json:"file-filter,omitempty"`
 	Icap               *string `json:"icap,omitempty"`
 	Ips                *string `json:"ips,omitempty"`
-	Videofilter        *string `json:"videofilter,omitempty"`
 	Voip               *string `json:"voip,omitempty"`
 	Waf                *string `json:"waf,omitempty"`
 	Webfilter          *string `json:"webfilter,omitempty"`

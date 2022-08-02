@@ -29,9 +29,13 @@ type UserNacPolicy struct {
 	UserGroup        *string                     `json:"user-group,omitempty"`
 }
 
+const UserNacPolicySwitchGroupPath = "user/nac-policy/switch-group/"
+
 type UserNacPolicySwitchGroup struct {
 	Name *string `json:"name,omitempty"`
 }
+
+const UserNacPolicySwitchScopePath = "user/nac-policy/switch-scope/"
 
 type UserNacPolicySwitchScope struct {
 	SwitchId *string `json:"switch-id,omitempty"`

@@ -9,6 +9,8 @@ type EmailfilterIptrust struct {
 	Name    *string                      `json:"name,omitempty"`
 }
 
+const EmailfilterIptrustEntriesPath = "emailfilter/iptrust/entries/"
+
 type EmailfilterIptrustEntries struct {
 	AddrType  *string `json:"addr-type,omitempty"`
 	Id        *int64  `json:"id,omitempty"`

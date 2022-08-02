@@ -3,7 +3,7 @@ package models
 const SwitchControllerPortPolicyPath = "switch-controller/port-policy/"
 
 type SwitchControllerPortPolicy struct {
-	The8021x       *string `json:"802-1x,omitempty"`
+	The8021X       *string `json:"802-1x,omitempty"`
 	BouncePortLink *string `json:"bounce-port-link,omitempty"`
 	Description    *string `json:"description,omitempty"`
 	Fortilink      *string `json:"fortilink,omitempty"`

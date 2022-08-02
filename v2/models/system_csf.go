@@ -27,11 +27,15 @@ type SystemCsf struct {
 	UpstreamPort                 *int64                      `json:"upstream-port,omitempty"`
 }
 
+const SystemCsfFabricConnectorPath = "system/csf/fabric-connector/"
+
 type SystemCsfFabricConnector struct {
 	Accprofile               *string `json:"accprofile,omitempty"`
 	ConfigurationWriteAccess *string `json:"configuration-write-access,omitempty"`
 	Serial                   *string `json:"serial,omitempty"`
 }
+
+const SystemCsfFabricDevicePath = "system/csf/fabric-device/"
 
 type SystemCsfFabricDevice struct {
 	AccessToken *string `json:"access-token,omitempty"`
@@ -39,6 +43,8 @@ type SystemCsfFabricDevice struct {
 	HttpsPort   *int64  `json:"https-port,omitempty"`
 	Name        *string `json:"name,omitempty"`
 }
+
+const SystemCsfTrustedListPath = "system/csf/trusted-list/"
 
 type SystemCsfTrustedList struct {
 	Action                  *string `json:"action,omitempty"`

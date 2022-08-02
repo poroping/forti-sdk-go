@@ -8,6 +8,8 @@ type WirelessControllerBonjourProfile struct {
 	PolicyList *[]WirelessControllerBonjourProfilePolicyList `json:"policy-list,omitempty"`
 }
 
+const WirelessControllerBonjourProfilePolicyListPath = "wireless-controller/bonjour-profile/policy-list/"
+
 type WirelessControllerBonjourProfilePolicyList struct {
 	Description *string `json:"description,omitempty"`
 	FromVlan    *string `json:"from-vlan,omitempty"`

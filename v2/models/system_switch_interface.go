@@ -15,9 +15,13 @@ type SystemSwitchInterface struct {
 	Vdom              *string                                `json:"vdom,omitempty"`
 }
 
+const SystemSwitchInterfaceMemberPath = "system/switch-interface/member/"
+
 type SystemSwitchInterfaceMember struct {
 	InterfaceName *string `json:"interface-name,omitempty"`
 }
+
+const SystemSwitchInterfaceSpanSourcePortPath = "system/switch-interface/span-source-port/"
 
 type SystemSwitchInterfaceSpanSourcePort struct {
 	InterfaceName *string `json:"interface-name,omitempty"`

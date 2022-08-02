@@ -10,6 +10,8 @@ type FirewallShapingProfile struct {
 	Type           *string                                 `json:"type,omitempty"`
 }
 
+const FirewallShapingProfileShapingEntriesPath = "firewall/shaping-profile/shaping-entries/"
+
 type FirewallShapingProfileShapingEntries struct {
 	BurstInMsec                   *int64  `json:"burst-in-msec,omitempty"`
 	CburstInMsec                  *int64  `json:"cburst-in-msec,omitempty"`

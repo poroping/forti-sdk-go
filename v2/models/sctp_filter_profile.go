@@ -8,6 +8,8 @@ type SctpFilterProfile struct {
 	PpidFilters *[]SctpFilterProfilePpidFilters `json:"ppid-filters,omitempty"`
 }
 
+const SctpFilterProfilePpidFiltersPath = "sctp-filter/profile/ppid-filters/"
+
 type SctpFilterProfilePpidFilters struct {
 	Action  *string `json:"action,omitempty"`
 	Comment *string `json:"comment,omitempty"`

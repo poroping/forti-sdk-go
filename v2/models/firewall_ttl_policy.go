@@ -13,9 +13,13 @@ type FirewallTtlPolicy struct {
 	Ttl      *string                     `json:"ttl,omitempty"`
 }
 
+const FirewallTtlPolicyServicePath = "firewall/ttl-policy/service/"
+
 type FirewallTtlPolicyService struct {
 	Name *string `json:"name,omitempty"`
 }
+
+const FirewallTtlPolicySrcaddrPath = "firewall/ttl-policy/srcaddr/"
 
 type FirewallTtlPolicySrcaddr struct {
 	Name *string `json:"name,omitempty"`

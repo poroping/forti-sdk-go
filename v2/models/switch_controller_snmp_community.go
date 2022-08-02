@@ -20,6 +20,8 @@ type SwitchControllerSnmpCommunity struct {
 	TrapV2cStatus  *string                               `json:"trap-v2c-status,omitempty"`
 }
 
+const SwitchControllerSnmpCommunityHostsPath = "switch-controller/snmp-community/hosts/"
+
 type SwitchControllerSnmpCommunityHosts struct {
 	Id *int64  `json:"id,omitempty"`
 	Ip *string `json:"ip,omitempty"`

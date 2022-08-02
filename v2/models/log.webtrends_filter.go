@@ -17,6 +17,8 @@ type LogWebtrendsFilter struct {
 	ZtnaTraffic      *string                        `json:"ztna-traffic,omitempty"`
 }
 
+const LogWebtrendsFilterFreeStylePath = "log.webtrends/filter/free-style/"
+
 type LogWebtrendsFilterFreeStyle struct {
 	Category   *string `json:"category,omitempty"`
 	Filter     *string `json:"filter,omitempty"`

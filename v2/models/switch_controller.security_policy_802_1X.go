@@ -1,6 +1,6 @@
 package models
 
-const SwitchControllerSecurityPolicy8021XPath = "switch-controller.security-policy/802-1X/"
+const SwitchControllerSecurityPolicy8021XPath = "switch-controller.security-policy/802-1x/"
 
 type SwitchControllerSecurityPolicy8021X struct {
 	AuthFailVlan            *string                                         `json:"auth-fail-vlan,omitempty"`
@@ -22,6 +22,8 @@ type SwitchControllerSecurityPolicy8021X struct {
 	SecurityMode            *string                                         `json:"security-mode,omitempty"`
 	UserGroup               *[]SwitchControllerSecurityPolicy8021XUserGroup `json:"user-group,omitempty"`
 }
+
+const SwitchControllerSecurityPolicy8021XUserGroupPath = "switch-controller.security-policy/802-1x/user-group/"
 
 type SwitchControllerSecurityPolicy8021XUserGroup struct {
 	Name *string `json:"name,omitempty"`

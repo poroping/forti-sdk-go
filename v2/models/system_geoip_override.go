@@ -10,11 +10,15 @@ type SystemGeoipOverride struct {
 	Name        *string                        `json:"name,omitempty"`
 }
 
+const SystemGeoipOverrideIpRangePath = "system/geoip-override/ip-range/"
+
 type SystemGeoipOverrideIpRange struct {
 	EndIp   *string `json:"end-ip,omitempty"`
 	Id      *int64  `json:"id,omitempty"`
 	StartIp *string `json:"start-ip,omitempty"`
 }
+
+const SystemGeoipOverrideIp6RangePath = "system/geoip-override/ip6-range/"
 
 type SystemGeoipOverrideIp6Range struct {
 	EndIp   *string `json:"end-ip,omitempty"`

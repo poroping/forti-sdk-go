@@ -9,7 +9,8 @@ type FirewallInternetServiceGroup struct {
 	Name      *string                               `json:"name,omitempty"`
 }
 
+const FirewallInternetServiceGroupMemberPath = "firewall/internet-service-group/member/"
+
 type FirewallInternetServiceGroupMember struct {
-	Id   *int64  `json:"id,omitempty"`
 	Name *string `json:"name,omitempty"`
 }

@@ -11,6 +11,8 @@ type FirewallServiceGroup struct {
 	Proxy        *string                       `json:"proxy,omitempty"`
 }
 
+const FirewallServiceGroupMemberPath = "firewall.service/group/member/"
+
 type FirewallServiceGroupMember struct {
 	Name *string `json:"name,omitempty"`
 }

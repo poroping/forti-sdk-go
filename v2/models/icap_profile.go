@@ -3,14 +3,8 @@ package models
 const IcapProfilePath = "icap/profile/"
 
 type IcapProfile struct {
-	The204Response         *string                           `json:"204-response,omitempty"`
-	The204SizeLimit        *int64                            `json:"204-size-limit,omitempty"`
 	ChunkEncap             *string                           `json:"chunk-encap,omitempty"`
 	ExtensionFeature       *string                           `json:"extension-feature,omitempty"`
-	FileTransfer           *string                           `json:"file-transfer,omitempty"`
-	FileTransferFailure    *string                           `json:"file-transfer-failure,omitempty"`
-	FileTransferPath       *string                           `json:"file-transfer-path,omitempty"`
-	FileTransferServer     *string                           `json:"file-transfer-server,omitempty"`
 	IcapBlockLog           *string                           `json:"icap-block-log,omitempty"`
 	IcapHeaders            *[]IcapProfileIcapHeaders         `json:"icap-headers,omitempty"`
 	Methods                *string                           `json:"methods,omitempty"`
@@ -31,8 +25,9 @@ type IcapProfile struct {
 	ResponseServer         *string                           `json:"response-server,omitempty"`
 	ScanProgressInterval   *int64                            `json:"scan-progress-interval,omitempty"`
 	StreamingContentBypass *string                           `json:"streaming-content-bypass,omitempty"`
-	Timeout                *int64                            `json:"timeout,omitempty"`
 }
+
+const IcapProfileIcapHeadersPath = "icap/profile/icap-headers/"
 
 type IcapProfileIcapHeaders struct {
 	Base64Encoding *string `json:"base64-encoding,omitempty"`
@@ -40,6 +35,8 @@ type IcapProfileIcapHeaders struct {
 	Id             *int64  `json:"id,omitempty"`
 	Name           *string `json:"name,omitempty"`
 }
+
+const IcapProfileRespmodForwardRulesPath = "icap/profile/respmod-forward-rules/"
 
 type IcapProfileRespmodForwardRules struct {
 	Action             *string                                             `json:"action,omitempty"`
@@ -49,12 +46,16 @@ type IcapProfileRespmodForwardRules struct {
 	Name               *string                                             `json:"name,omitempty"`
 }
 
+const IcapProfileRespmodForwardRulesHeaderGroupPath = "icap/profile/respmod-forward-rules/header-group/"
+
 type IcapProfileRespmodForwardRulesHeaderGroup struct {
 	CaseSensitivity *string `json:"case-sensitivity,omitempty"`
 	Header          *string `json:"header,omitempty"`
 	HeaderName      *string `json:"header-name,omitempty"`
 	Id              *int64  `json:"id,omitempty"`
 }
+
+const IcapProfileRespmodForwardRulesHttpRespStatusCodePath = "icap/profile/respmod-forward-rules/http-resp-status-code/"
 
 type IcapProfileRespmodForwardRulesHttpRespStatusCode struct {
 	Code *int64 `json:"code,omitempty"`

@@ -17,9 +17,13 @@ type SystemNtp struct {
 	Type           *string               `json:"type,omitempty"`
 }
 
+const SystemNtpInterfacePath = "system/ntp/interface/"
+
 type SystemNtpInterface struct {
 	InterfaceName *string `json:"interface-name,omitempty"`
 }
+
+const SystemNtpNtpserverPath = "system/ntp/ntpserver/"
 
 type SystemNtpNtpserver struct {
 	Authentication        *string `json:"authentication,omitempty"`

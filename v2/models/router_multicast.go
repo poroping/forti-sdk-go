@@ -10,6 +10,8 @@ type RouterMulticast struct {
 	RouteThreshold   *int64                      `json:"route-threshold,omitempty"`
 }
 
+const RouterMulticastInterfacePath = "router/multicast/interface/"
+
 type RouterMulticastInterface struct {
 	Bfd                  *string                              `json:"bfd,omitempty"`
 	CiscoExcludeGenid    *string                              `json:"cisco-exclude-genid,omitempty"`
@@ -35,6 +37,8 @@ type RouterMulticastInterface struct {
 	TtlThreshold         *int64                               `json:"ttl-threshold,omitempty"`
 }
 
+const RouterMulticastInterfaceIgmpPath = "router/multicast/interface/igmp/"
+
 type RouterMulticastInterfaceIgmp struct {
 	AccessGroup             *string `json:"access-group,omitempty"`
 	ImmediateLeaveGroup     *string `json:"immediate-leave-group,omitempty"`
@@ -47,9 +51,13 @@ type RouterMulticastInterfaceIgmp struct {
 	Version                 *string `json:"version,omitempty"`
 }
 
+const RouterMulticastInterfaceJoinGroupPath = "router/multicast/interface/join-group/"
+
 type RouterMulticastInterfaceJoinGroup struct {
 	Address *string `json:"address,omitempty"`
 }
+
+const RouterMulticastPimSmGlobalPath = "router/multicast/pim-sm-global/"
 
 type RouterMulticastPimSmGlobal struct {
 	AcceptRegisterList         *string                                `json:"accept-register-list,omitempty"`
@@ -79,6 +87,8 @@ type RouterMulticastPimSmGlobal struct {
 	Ssm                        *string                                `json:"ssm,omitempty"`
 	SsmRange                   *string                                `json:"ssm-range,omitempty"`
 }
+
+const RouterMulticastPimSmGlobalRpAddressPath = "router/multicast/pim-sm-global/rp-address/"
 
 type RouterMulticastPimSmGlobalRpAddress struct {
 	Group     *string `json:"group,omitempty"`

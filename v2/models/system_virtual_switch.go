@@ -13,9 +13,9 @@ type SystemVirtualSwitch struct {
 	Vlan           *int64                     `json:"vlan,omitempty"`
 }
 
+const SystemVirtualSwitchPortPath = "system/virtual-switch/port/"
+
 type SystemVirtualSwitchPort struct {
-	Alias  *string `json:"alias,omitempty"`
-	Name   *string `json:"name,omitempty"`
-	Speed  *string `json:"speed,omitempty"`
-	Status *string `json:"status,omitempty"`
+	Alias *string `json:"alias,omitempty"`
+	Name  *string `json:"name,omitempty"`
 }

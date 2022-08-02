@@ -20,6 +20,8 @@ type LogSyslogd3Setting struct {
 	Status                *string                              `json:"status,omitempty"`
 }
 
+const LogSyslogd3SettingCustomFieldNamePath = "log.syslogd3/setting/custom-field-name/"
+
 type LogSyslogd3SettingCustomFieldName struct {
 	Custom *string `json:"custom,omitempty"`
 	Id     *int64  `json:"id,omitempty"`

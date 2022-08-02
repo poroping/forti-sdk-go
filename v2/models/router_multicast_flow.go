@@ -8,6 +8,8 @@ type RouterMulticastFlow struct {
 	Name     *string                     `json:"name,omitempty"`
 }
 
+const RouterMulticastFlowFlowsPath = "router/multicast-flow/flows/"
+
 type RouterMulticastFlowFlows struct {
 	GroupAddr  *string `json:"group-addr,omitempty"`
 	Id         *int64  `json:"id,omitempty"`

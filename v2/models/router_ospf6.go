@@ -16,13 +16,12 @@ type RouterOspf6 struct {
 	Ospf6Interface               *[]RouterOspf6Ospf6Interface   `json:"ospf6-interface,omitempty"`
 	PassiveInterface             *[]RouterOspf6PassiveInterface `json:"passive-interface,omitempty"`
 	Redistribute                 *[]RouterOspf6Redistribute     `json:"redistribute,omitempty"`
-	RestartMode                  *string                        `json:"restart-mode,omitempty"`
-	RestartOnTopologyChange      *string                        `json:"restart-on-topology-change,omitempty"`
-	RestartPeriod                *int64                         `json:"restart-period,omitempty"`
 	RouterId                     *string                        `json:"router-id,omitempty"`
 	SpfTimers                    *string                        `json:"spf-timers,omitempty"`
 	SummaryAddress               *[]RouterOspf6SummaryAddress   `json:"summary-address,omitempty"`
 }
+
+const RouterOspf6AreaPath = "router/ospf6/area/"
 
 type RouterOspf6Area struct {
 	Authentication                            *string                       `json:"authentication,omitempty"`
@@ -43,17 +42,23 @@ type RouterOspf6Area struct {
 	VirtualLink                               *[]RouterOspf6AreaVirtualLink `json:"virtual-link,omitempty"`
 }
 
+const RouterOspf6AreaIpsecKeysPath = "router/ospf6/area/ipsec-keys/"
+
 type RouterOspf6AreaIpsecKeys struct {
 	AuthKey *string `json:"auth-key,omitempty"`
 	EncKey  *string `json:"enc-key,omitempty"`
 	Spi     *int64  `json:"spi,omitempty"`
 }
 
+const RouterOspf6AreaRangePath = "router/ospf6/area/range/"
+
 type RouterOspf6AreaRange struct {
 	Advertise *string `json:"advertise,omitempty"`
 	Id        *int64  `json:"id,omitempty"`
 	Prefix6   *string `json:"prefix6,omitempty"`
 }
+
+const RouterOspf6AreaVirtualLinkPath = "router/ospf6/area/virtual-link/"
 
 type RouterOspf6AreaVirtualLink struct {
 	Authentication      *string                                `json:"authentication,omitempty"`
@@ -69,11 +74,15 @@ type RouterOspf6AreaVirtualLink struct {
 	TransmitDelay       *int64                                 `json:"transmit-delay,omitempty"`
 }
 
+const RouterOspf6AreaVirtualLinkIpsecKeysPath = "router/ospf6/area/virtual-link/ipsec-keys/"
+
 type RouterOspf6AreaVirtualLinkIpsecKeys struct {
 	AuthKey *string `json:"auth-key,omitempty"`
 	EncKey  *string `json:"enc-key,omitempty"`
 	Spi     *int64  `json:"spi,omitempty"`
 }
+
+const RouterOspf6Ospf6InterfacePath = "router/ospf6/ospf6-interface/"
 
 type RouterOspf6Ospf6Interface struct {
 	AreaId              *string                               `json:"area-id,omitempty"`
@@ -98,11 +107,15 @@ type RouterOspf6Ospf6Interface struct {
 	TransmitDelay       *int64                                `json:"transmit-delay,omitempty"`
 }
 
+const RouterOspf6Ospf6InterfaceIpsecKeysPath = "router/ospf6/ospf6-interface/ipsec-keys/"
+
 type RouterOspf6Ospf6InterfaceIpsecKeys struct {
 	AuthKey *string `json:"auth-key,omitempty"`
 	EncKey  *string `json:"enc-key,omitempty"`
 	Spi     *int64  `json:"spi,omitempty"`
 }
+
+const RouterOspf6Ospf6InterfaceNeighborPath = "router/ospf6/ospf6-interface/neighbor/"
 
 type RouterOspf6Ospf6InterfaceNeighbor struct {
 	Cost         *int64  `json:"cost,omitempty"`
@@ -111,9 +124,13 @@ type RouterOspf6Ospf6InterfaceNeighbor struct {
 	Priority     *int64  `json:"priority,omitempty"`
 }
 
+const RouterOspf6PassiveInterfacePath = "router/ospf6/passive-interface/"
+
 type RouterOspf6PassiveInterface struct {
 	Name *string `json:"name,omitempty"`
 }
+
+const RouterOspf6RedistributePath = "router/ospf6/redistribute/"
 
 type RouterOspf6Redistribute struct {
 	Metric     *int64  `json:"metric,omitempty"`
@@ -122,6 +139,17 @@ type RouterOspf6Redistribute struct {
 	Routemap   *string `json:"routemap,omitempty"`
 	Status     *string `json:"status,omitempty"`
 }
+
+// Set RouterOspf6Redistribute values to defaults
+func (def *RouterOspf6Redistribute) Defaults() {
+	def.Metric = intPtr(0)
+	def.MetricType = stringPtr("2")
+	def.Name = stringPtr("")
+	def.Routemap = stringPtr("")
+	def.Status = stringPtr("disable")
+}
+
+const RouterOspf6SummaryAddressPath = "router/ospf6/summary-address/"
 
 type RouterOspf6SummaryAddress struct {
 	Advertise *string `json:"advertise,omitempty"`

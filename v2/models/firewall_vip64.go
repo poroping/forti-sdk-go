@@ -23,9 +23,13 @@ type FirewallVip64 struct {
 	Uuid        *string                     `json:"uuid,omitempty"`
 }
 
+const FirewallVip64MonitorPath = "firewall/vip64/monitor/"
+
 type FirewallVip64Monitor struct {
 	Name *string `json:"name,omitempty"`
 }
+
+const FirewallVip64RealserversPath = "firewall/vip64/realservers/"
 
 type FirewallVip64Realservers struct {
 	ClientIp         *string                            `json:"client-ip,omitempty"`
@@ -40,9 +44,13 @@ type FirewallVip64Realservers struct {
 	Weight           *int64                             `json:"weight,omitempty"`
 }
 
+const FirewallVip64RealserversMonitorPath = "firewall/vip64/realservers/monitor/"
+
 type FirewallVip64RealserversMonitor struct {
 	Name *string `json:"name,omitempty"`
 }
+
+const FirewallVip64SrcFilterPath = "firewall/vip64/src-filter/"
 
 type FirewallVip64SrcFilter struct {
 	Range *string `json:"range,omitempty"`

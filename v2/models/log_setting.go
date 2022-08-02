@@ -9,17 +9,14 @@ type LogSetting struct {
 	DaemonLog            *string                      `json:"daemon-log,omitempty"`
 	ExpolicyImplicitLog  *string                      `json:"expolicy-implicit-log,omitempty"`
 	FazOverride          *string                      `json:"faz-override,omitempty"`
-	FortiviewWeeklyData  *string                      `json:"fortiview-weekly-data,omitempty"`
 	FwpolicyImplicitLog  *string                      `json:"fwpolicy-implicit-log,omitempty"`
 	Fwpolicy6ImplicitLog *string                      `json:"fwpolicy6-implicit-log,omitempty"`
 	LocalInAllow         *string                      `json:"local-in-allow,omitempty"`
 	LocalInDenyBroadcast *string                      `json:"local-in-deny-broadcast,omitempty"`
 	LocalInDenyUnicast   *string                      `json:"local-in-deny-unicast,omitempty"`
 	LocalOut             *string                      `json:"local-out,omitempty"`
-	LocalOutIocDetection *string                      `json:"local-out-ioc-detection,omitempty"`
 	LogInvalidPacket     *string                      `json:"log-invalid-packet,omitempty"`
 	LogPolicyComment     *string                      `json:"log-policy-comment,omitempty"`
-	LogPolicyName        *string                      `json:"log-policy-name,omitempty"`
 	LogUserInUpper       *string                      `json:"log-user-in-upper,omitempty"`
 	NeighborEvent        *string                      `json:"neighbor-event,omitempty"`
 	ResolveIp            *string                      `json:"resolve-ip,omitempty"`
@@ -29,6 +26,8 @@ type LogSetting struct {
 	SyslogOverride       *string                      `json:"syslog-override,omitempty"`
 	UserAnonymize        *string                      `json:"user-anonymize,omitempty"`
 }
+
+const LogSettingCustomLogFieldsPath = "log/setting/custom-log-fields/"
 
 type LogSettingCustomLogFields struct {
 	FieldId *string `json:"field-id,omitempty"`

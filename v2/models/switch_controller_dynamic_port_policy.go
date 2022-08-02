@@ -9,8 +9,10 @@ type SwitchControllerDynamicPortPolicy struct {
 	Policy      *[]SwitchControllerDynamicPortPolicyPolicy `json:"policy,omitempty"`
 }
 
+const SwitchControllerDynamicPortPolicyPolicyPath = "switch-controller/dynamic-port-policy/policy/"
+
 type SwitchControllerDynamicPortPolicyPolicy struct {
-	The8021x       *string                                                 `json:"802-1x,omitempty"`
+	The8021X       *string                                                 `json:"802-1x,omitempty"`
 	BouncePortLink *string                                                 `json:"bounce-port-link,omitempty"`
 	Category       *string                                                 `json:"category,omitempty"`
 	Description    *string                                                 `json:"description,omitempty"`
@@ -26,6 +28,8 @@ type SwitchControllerDynamicPortPolicyPolicy struct {
 	Type           *string                                                 `json:"type,omitempty"`
 	VlanPolicy     *string                                                 `json:"vlan-policy,omitempty"`
 }
+
+const SwitchControllerDynamicPortPolicyPolicyInterfaceTagsPath = "switch-controller/dynamic-port-policy/policy/interface-tags/"
 
 type SwitchControllerDynamicPortPolicyPolicyInterfaceTags struct {
 	TagName *string `json:"tag-name,omitempty"`

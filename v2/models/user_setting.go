@@ -26,6 +26,8 @@ type UserSetting struct {
 	RadiusSesTimeoutAct       *string                 `json:"radius-ses-timeout-act,omitempty"`
 }
 
+const UserSettingAuthPortsPath = "user/setting/auth-ports/"
+
 type UserSettingAuthPorts struct {
 	Id   *int64  `json:"id,omitempty"`
 	Port *int64  `json:"port,omitempty"`

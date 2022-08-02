@@ -7,6 +7,8 @@ type WirelessControllerHotspot20H2qpOsuProviderNai struct {
 	Name    *string                                                 `json:"name,omitempty"`
 }
 
+const WirelessControllerHotspot20H2qpOsuProviderNaiNaiListPath = "wireless-controller.hotspot20/h2qp-osu-provider-nai/nai-list/"
+
 type WirelessControllerHotspot20H2qpOsuProviderNaiNaiList struct {
 	Name   *string `json:"name,omitempty"`
 	OsuNai *string `json:"osu-nai,omitempty"`

@@ -9,8 +9,9 @@ type WirelessControllerInterController struct {
 	InterControllerMode *string                                                 `json:"inter-controller-mode,omitempty"`
 	InterControllerPeer *[]WirelessControllerInterControllerInterControllerPeer `json:"inter-controller-peer,omitempty"`
 	InterControllerPri  *string                                                 `json:"inter-controller-pri,omitempty"`
-	L3Roaming           *string                                                 `json:"l3-roaming,omitempty"`
 }
+
+const WirelessControllerInterControllerInterControllerPeerPath = "wireless-controller/inter-controller/inter-controller-peer/"
 
 type WirelessControllerInterControllerInterControllerPeer struct {
 	Id           *int64  `json:"id,omitempty"`

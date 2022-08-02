@@ -19,13 +19,19 @@ type FirewallLocalInPolicy struct {
 	Uuid           *string                         `json:"uuid,omitempty"`
 }
 
+const FirewallLocalInPolicyDstaddrPath = "firewall/local-in-policy/dstaddr/"
+
 type FirewallLocalInPolicyDstaddr struct {
 	Name *string `json:"name,omitempty"`
 }
 
+const FirewallLocalInPolicyServicePath = "firewall/local-in-policy/service/"
+
 type FirewallLocalInPolicyService struct {
 	Name *string `json:"name,omitempty"`
 }
+
+const FirewallLocalInPolicySrcaddrPath = "firewall/local-in-policy/srcaddr/"
 
 type FirewallLocalInPolicySrcaddr struct {
 	Name *string `json:"name,omitempty"`

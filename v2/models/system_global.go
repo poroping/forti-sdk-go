@@ -17,6 +17,7 @@ type SystemGlobal struct {
 	AdminLoginMax                        *int64  `json:"admin-login-max,omitempty"`
 	AdminMaintainer                      *string `json:"admin-maintainer,omitempty"`
 	AdminPort                            *int64  `json:"admin-port,omitempty"`
+	AdminResetButton                     *string `json:"admin-reset-button,omitempty"`
 	AdminRestrictLocal                   *string `json:"admin-restrict-local,omitempty"`
 	AdminScp                             *string `json:"admin-scp,omitempty"`
 	AdminServerCert                      *string `json:"admin-server-cert,omitempty"`
@@ -35,7 +36,6 @@ type SystemGlobal struct {
 	AuthCert                             *string `json:"auth-cert,omitempty"`
 	AuthHttpPort                         *int64  `json:"auth-http-port,omitempty"`
 	AuthHttpsPort                        *int64  `json:"auth-https-port,omitempty"`
-	AuthIkeSamlPort                      *int64  `json:"auth-ike-saml-port,omitempty"`
 	AuthKeepalive                        *string `json:"auth-keepalive,omitempty"`
 	AuthSessionLimit                     *string `json:"auth-session-limit,omitempty"`
 	AutoAuthExtensionDevice              *string `json:"auto-auth-extension-device,omitempty"`
@@ -59,11 +59,12 @@ type SystemGlobal struct {
 	CsrCaAttribute                       *string `json:"csr-ca-attribute,omitempty"`
 	DailyRestart                         *string `json:"daily-restart,omitempty"`
 	DefaultServiceSourcePort             *string `json:"default-service-source-port,omitempty"`
-	DeviceIdentificationActiveScanDelay  *int64  `json:"device-identification-active-scan-delay,omitempty"`
 	DeviceIdleTimeout                    *int64  `json:"device-idle-timeout,omitempty"`
 	DhParams                             *string `json:"dh-params,omitempty"`
 	DnsproxyWorkerCount                  *int64  `json:"dnsproxy-worker-count,omitempty"`
 	Dst                                  *string `json:"dst,omitempty"`
+	EarlyTcpNpuSession                   *string `json:"early-tcp-npu-session,omitempty"`
+	EditVdomPrompt                       *string `json:"edit-vdom-prompt,omitempty"`
 	ExtenderControllerReservedNetwork    *string `json:"extender-controller-reserved-network,omitempty"`
 	Failtime                             *int64  `json:"failtime,omitempty"`
 	FazDiskBufferSize                    *int64  `json:"faz-disk-buffer-size,omitempty"`
@@ -87,27 +88,24 @@ type SystemGlobal struct {
 	GuiDeviceLatitude                    *string `json:"gui-device-latitude,omitempty"`
 	GuiDeviceLongitude                   *string `json:"gui-device-longitude,omitempty"`
 	GuiDisplayHostname                   *string `json:"gui-display-hostname,omitempty"`
-	GuiFirmwareUpgradeSetupWarning       *string `json:"gui-firmware-upgrade-setup-warning,omitempty"`
 	GuiFirmwareUpgradeWarning            *string `json:"gui-firmware-upgrade-warning,omitempty"`
 	GuiForticareRegistrationSetupWarning *string `json:"gui-forticare-registration-setup-warning,omitempty"`
 	GuiFortigateCloudSandbox             *string `json:"gui-fortigate-cloud-sandbox,omitempty"`
 	GuiFortisandboxCloud                 *string `json:"gui-fortisandbox-cloud,omitempty"`
 	GuiIpv6                              *string `json:"gui-ipv6,omitempty"`
-	GuiLinesPerPage                      *int64  `json:"gui-lines-per-page,omitempty"`
 	GuiLocalOut                          *string `json:"gui-local-out,omitempty"`
 	GuiReplacementMessageGroups          *string `json:"gui-replacement-message-groups,omitempty"`
 	GuiRestApiCache                      *string `json:"gui-rest-api-cache,omitempty"`
 	GuiTheme                             *string `json:"gui-theme,omitempty"`
 	GuiWirelessOpensecurity              *string `json:"gui-wireless-opensecurity,omitempty"`
-	GuiWorkflowManagement                *string `json:"gui-workflow-management,omitempty"`
 	HaAffinity                           *string `json:"ha-affinity,omitempty"`
 	HonorDf                              *string `json:"honor-df,omitempty"`
 	Hostname                             *string `json:"hostname,omitempty"`
+	HyperScaleVdomNum                    *int64  `json:"hyper-scale-vdom-num,omitempty"`
 	IgmpStateLimit                       *int64  `json:"igmp-state-limit,omitempty"`
 	InternetServiceDatabase              *string `json:"internet-service-database,omitempty"`
 	Interval                             *int64  `json:"interval,omitempty"`
 	IpSrcPortRange                       *string `json:"ip-src-port-range,omitempty"`
-	IpsAffinity                          *string `json:"ips-affinity,omitempty"`
 	IpsecAsicOffload                     *string `json:"ipsec-asic-offload,omitempty"`
 	IpsecHaSeqjumpRate                   *int64  `json:"ipsec-ha-seqjump-rate,omitempty"`
 	IpsecHmacOffload                     *string `json:"ipsec-hmac-offload,omitempty"`
@@ -122,14 +120,12 @@ type SystemGlobal struct {
 	LldpTransmission                     *string `json:"lldp-transmission,omitempty"`
 	LogSslConnection                     *string `json:"log-ssl-connection,omitempty"`
 	LogUuidAddress                       *string `json:"log-uuid-address,omitempty"`
-	LogUuidPolicy                        *string `json:"log-uuid-policy,omitempty"`
 	LoginTimestamp                       *string `json:"login-timestamp,omitempty"`
 	LongVdomName                         *string `json:"long-vdom-name,omitempty"`
 	ManagementIp                         *string `json:"management-ip,omitempty"`
 	ManagementPort                       *int64  `json:"management-port,omitempty"`
 	ManagementPortUseAdminSport          *string `json:"management-port-use-admin-sport,omitempty"`
 	ManagementVdom                       *string `json:"management-vdom,omitempty"`
-	MaxDlpstatMemory                     *int64  `json:"max-dlpstat-memory,omitempty"`
 	MaxRouteCacheSize                    *int64  `json:"max-route-cache-size,omitempty"`
 	MemoryUseThresholdExtreme            *int64  `json:"memory-use-threshold-extreme,omitempty"`
 	MemoryUseThresholdGreen              *int64  `json:"memory-use-threshold-green,omitempty"`
@@ -138,7 +134,6 @@ type SystemGlobal struct {
 	MiglogdChildren                      *int64  `json:"miglogd-children,omitempty"`
 	MultiFactorAuthentication            *string `json:"multi-factor-authentication,omitempty"`
 	NdpMaxEntry                          *int64  `json:"ndp-max-entry,omitempty"`
-	PerUserBal                           *string `json:"per-user-bal,omitempty"`
 	PerUserBwl                           *string `json:"per-user-bwl,omitempty"`
 	PmtuDiscovery                        *string `json:"pmtu-discovery,omitempty"`
 	PolicyAuthConcurrent                 *int64  `json:"policy-auth-concurrent,omitempty"`
@@ -149,8 +144,7 @@ type SystemGlobal struct {
 	ProxyAuthLifetimeTimeout             *int64  `json:"proxy-auth-lifetime-timeout,omitempty"`
 	ProxyAuthTimeout                     *int64  `json:"proxy-auth-timeout,omitempty"`
 	ProxyCertUseMgmtVdom                 *string `json:"proxy-cert-use-mgmt-vdom,omitempty"`
-	ProxyCipherHardwareAcceleration      *string `json:"proxy-cipher-hardware-acceleration,omitempty"`
-	ProxyKxpHardwareAcceleration         *string `json:"proxy-kxp-hardware-acceleration,omitempty"`
+	ProxyHardwareAcceleration            *string `json:"proxy-hardware-acceleration,omitempty"`
 	ProxyReAuthenticationMode            *string `json:"proxy-re-authentication-mode,omitempty"`
 	ProxyResourceMode                    *string `json:"proxy-resource-mode,omitempty"`
 	ProxyWorkerCount                     *int64  `json:"proxy-worker-count,omitempty"`
@@ -169,11 +163,7 @@ type SystemGlobal struct {
 	SnatRouteChange                      *string `json:"snat-route-change,omitempty"`
 	SpecialFile23Support                 *string `json:"special-file-23-support,omitempty"`
 	SpeedtestServer                      *string `json:"speedtest-server,omitempty"`
-	SsdTrimDate                          *int64  `json:"ssd-trim-date,omitempty"`
-	SsdTrimFreq                          *string `json:"ssd-trim-freq,omitempty"`
-	SsdTrimHour                          *int64  `json:"ssd-trim-hour,omitempty"`
-	SsdTrimMin                           *int64  `json:"ssd-trim-min,omitempty"`
-	SsdTrimWeekday                       *string `json:"ssd-trim-weekday,omitempty"`
+	SplitPort                            *string `json:"split-port,omitempty"`
 	SshCbcCipher                         *string `json:"ssh-cbc-cipher,omitempty"`
 	SshEncAlgo                           *string `json:"ssh-enc-algo,omitempty"`
 	SshHmacMd5                           *string `json:"ssh-hmac-md5,omitempty"`
@@ -216,6 +206,7 @@ type SystemGlobal struct {
 	UserServerCert                       *string `json:"user-server-cert,omitempty"`
 	VdomMode                             *string `json:"vdom-mode,omitempty"`
 	VipArpRange                          *string `json:"vip-arp-range,omitempty"`
+	VirtualSwitchVlan                    *string `json:"virtual-switch-vlan,omitempty"`
 	WadAffinity                          *string `json:"wad-affinity,omitempty"`
 	WadCsvcCsCount                       *int64  `json:"wad-csvc-cs-count,omitempty"`
 	WadCsvcDbCount                       *int64  `json:"wad-csvc-db-count,omitempty"`
@@ -224,7 +215,7 @@ type SystemGlobal struct {
 	WadWorkerCount                       *int64  `json:"wad-worker-count,omitempty"`
 	WifiCaCertificate                    *string `json:"wifi-ca-certificate,omitempty"`
 	WifiCertificate                      *string `json:"wifi-certificate,omitempty"`
-	Wimax4gUsb                           *string `json:"wimax-4g-usb,omitempty"`
+	Wimax4GUsb                           *string `json:"wimax-4g-usb,omitempty"`
 	WirelessController                   *string `json:"wireless-controller,omitempty"`
 	WirelessControllerPort               *int64  `json:"wireless-controller-port,omitempty"`
 }

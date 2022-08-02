@@ -41,28 +41,37 @@ type FirewallAddress struct {
 	Tenant              *string                     `json:"tenant,omitempty"`
 	Type                *string                     `json:"type,omitempty"`
 	Uuid                *string                     `json:"uuid,omitempty"`
-	Visibility          *string                     `json:"visibility,omitempty"`
 	Wildcard            *string                     `json:"wildcard,omitempty"`
 	WildcardFqdn        *string                     `json:"wildcard-fqdn,omitempty"`
 }
+
+const FirewallAddressFssoGroupPath = "firewall/address/fsso-group/"
 
 type FirewallAddressFssoGroup struct {
 	Name *string `json:"name,omitempty"`
 }
 
+const FirewallAddressListPath = "firewall/address/list/"
+
 type FirewallAddressList struct {
 	Ip *string `json:"ip,omitempty"`
 }
 
+const FirewallAddressMacaddrPath = "firewall/address/macaddr/"
+
 type FirewallAddressMacaddr struct {
 	Macaddr *string `json:"macaddr,omitempty"`
 }
+
+const FirewallAddressTaggingPath = "firewall/address/tagging/"
 
 type FirewallAddressTagging struct {
 	Category *string                       `json:"category,omitempty"`
 	Name     *string                       `json:"name,omitempty"`
 	Tags     *[]FirewallAddressTaggingTags `json:"tags,omitempty"`
 }
+
+const FirewallAddressTaggingTagsPath = "firewall/address/tagging/tags/"
 
 type FirewallAddressTaggingTags struct {
 	Name *string `json:"name,omitempty"`

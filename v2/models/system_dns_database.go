@@ -21,6 +21,8 @@ type SystemDnsDatabase struct {
 	View          *string                      `json:"view,omitempty"`
 }
 
+const SystemDnsDatabaseDnsEntryPath = "system/dns-database/dns-entry/"
+
 type SystemDnsDatabaseDnsEntry struct {
 	CanonicalName *string `json:"canonical-name,omitempty"`
 	Hostname      *string `json:"hostname,omitempty"`

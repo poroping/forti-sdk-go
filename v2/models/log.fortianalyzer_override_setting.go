@@ -30,6 +30,8 @@ type LogFortianalyzerOverrideSetting struct {
 	UseManagementVdom         *string                                  `json:"use-management-vdom,omitempty"`
 }
 
+const LogFortianalyzerOverrideSettingSerialPath = "log.fortianalyzer/override-setting/serial/"
+
 type LogFortianalyzerOverrideSettingSerial struct {
 	Name *string `json:"name,omitempty"`
 }

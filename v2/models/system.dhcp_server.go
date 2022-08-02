@@ -55,17 +55,23 @@ type SystemDhcpServer struct {
 	WinsServer2               *string                            `json:"wins-server2,omitempty"`
 }
 
+const SystemDhcpServerExcludeRangePath = "system.dhcp/server/exclude-range/"
+
 type SystemDhcpServerExcludeRange struct {
 	EndIp   *string `json:"end-ip,omitempty"`
 	Id      *int64  `json:"id,omitempty"`
 	StartIp *string `json:"start-ip,omitempty"`
 }
 
+const SystemDhcpServerIpRangePath = "system.dhcp/server/ip-range/"
+
 type SystemDhcpServerIpRange struct {
 	EndIp   *string `json:"end-ip,omitempty"`
 	Id      *int64  `json:"id,omitempty"`
 	StartIp *string `json:"start-ip,omitempty"`
 }
+
+const SystemDhcpServerOptionsPath = "system.dhcp/server/options/"
 
 type SystemDhcpServerOptions struct {
 	Code  *int64  `json:"code,omitempty"`
@@ -74,6 +80,8 @@ type SystemDhcpServerOptions struct {
 	Type  *string `json:"type,omitempty"`
 	Value *string `json:"value,omitempty"`
 }
+
+const SystemDhcpServerReservedAddressPath = "system.dhcp/server/reserved-address/"
 
 type SystemDhcpServerReservedAddress struct {
 	Action        *string `json:"action,omitempty"`
@@ -88,9 +96,13 @@ type SystemDhcpServerReservedAddress struct {
 	Type          *string `json:"type,omitempty"`
 }
 
+const SystemDhcpServerTftpServerPath = "system.dhcp/server/tftp-server/"
+
 type SystemDhcpServerTftpServer struct {
 	TftpServer *string `json:"tftp-server,omitempty"`
 }
+
+const SystemDhcpServerVciStringPath = "system.dhcp/server/vci-string/"
 
 type SystemDhcpServerVciString struct {
 	VciString *string `json:"vci-string,omitempty"`

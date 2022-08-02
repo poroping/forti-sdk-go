@@ -26,6 +26,8 @@ type SystemCentralManagement struct {
 	Vdom                       *string                              `json:"vdom,omitempty"`
 }
 
+const SystemCentralManagementServerListPath = "system/central-management/server-list/"
+
 type SystemCentralManagementServerList struct {
 	AddrType       *string `json:"addr-type,omitempty"`
 	Fqdn           *string `json:"fqdn,omitempty"`

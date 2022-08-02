@@ -27,11 +27,15 @@ type SystemDhcp6Server struct {
 	UpstreamInterface   *string                         `json:"upstream-interface,omitempty"`
 }
 
+const SystemDhcp6ServerIpRangePath = "system.dhcp6/server/ip-range/"
+
 type SystemDhcp6ServerIpRange struct {
 	EndIp   *string `json:"end-ip,omitempty"`
 	Id      *int64  `json:"id,omitempty"`
 	StartIp *string `json:"start-ip,omitempty"`
 }
+
+const SystemDhcp6ServerPrefixRangePath = "system.dhcp6/server/prefix-range/"
 
 type SystemDhcp6ServerPrefixRange struct {
 	EndPrefix    *string `json:"end-prefix,omitempty"`

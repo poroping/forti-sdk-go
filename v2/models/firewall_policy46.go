@@ -28,17 +28,25 @@ type FirewallPolicy46 struct {
 	Uuid                 *string                     `json:"uuid,omitempty"`
 }
 
+const FirewallPolicy46DstaddrPath = "firewall/policy46/dstaddr/"
+
 type FirewallPolicy46Dstaddr struct {
 	Name *string `json:"name,omitempty"`
 }
+
+const FirewallPolicy46PoolnamePath = "firewall/policy46/poolname/"
 
 type FirewallPolicy46Poolname struct {
 	Name *string `json:"name,omitempty"`
 }
 
+const FirewallPolicy46ServicePath = "firewall/policy46/service/"
+
 type FirewallPolicy46Service struct {
 	Name *string `json:"name,omitempty"`
 }
+
+const FirewallPolicy46SrcaddrPath = "firewall/policy46/srcaddr/"
 
 type FirewallPolicy46Srcaddr struct {
 	Name *string `json:"name,omitempty"`

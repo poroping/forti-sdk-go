@@ -11,12 +11,16 @@ type VoipProfile struct {
 	Sip        *VoipProfileSip  `json:"sip,omitempty"`
 }
 
+const VoipProfileMsrpPath = "voip/profile/msrp/"
+
 type VoipProfileMsrp struct {
 	LogViolations    *string `json:"log-violations,omitempty"`
 	MaxMsgSize       *int64  `json:"max-msg-size,omitempty"`
 	MaxMsgSizeAction *string `json:"max-msg-size-action,omitempty"`
 	Status           *string `json:"status,omitempty"`
 }
+
+const VoipProfileSccpPath = "voip/profile/sccp/"
 
 type VoipProfileSccp struct {
 	BlockMcast     *string `json:"block-mcast,omitempty"`
@@ -26,6 +30,8 @@ type VoipProfileSccp struct {
 	Status         *string `json:"status,omitempty"`
 	VerifyHeader   *string `json:"verify-header,omitempty"`
 }
+
+const VoipProfileSipPath = "voip/profile/sip/"
 
 type VoipProfileSip struct {
 	AckRate                          *int64  `json:"ack-rate,omitempty"`

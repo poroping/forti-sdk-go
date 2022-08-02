@@ -19,7 +19,6 @@ type SystemInterface struct {
 	BfdDesiredMinTx                       *int64                                   `json:"bfd-desired-min-tx,omitempty"`
 	BfdDetectMult                         *int64                                   `json:"bfd-detect-mult,omitempty"`
 	BfdRequiredMinRx                      *int64                                   `json:"bfd-required-min-rx,omitempty"`
-	BroadcastForticlientDiscovery         *string                                  `json:"broadcast-forticlient-discovery,omitempty"`
 	BroadcastForward                      *string                                  `json:"broadcast-forward,omitempty"`
 	CliConnStatus                         *int64                                   `json:"cli-conn-status,omitempty"`
 	ClientOptions                         *[]SystemInterfaceClientOptions          `json:"client-options,omitempty"`
@@ -52,16 +51,7 @@ type SystemInterface struct {
 	DnsServerProtocol                     *string                                  `json:"dns-server-protocol,omitempty"`
 	DropFragment                          *string                                  `json:"drop-fragment,omitempty"`
 	DropOverlappedFragment                *string                                  `json:"drop-overlapped-fragment,omitempty"`
-	EapCaCert                             *string                                  `json:"eap-ca-cert,omitempty"`
-	EapIdentity                           *string                                  `json:"eap-identity,omitempty"`
-	EapMethod                             *string                                  `json:"eap-method,omitempty"`
-	EapPassword                           *string                                  `json:"eap-password,omitempty"`
-	EapSupplicant                         *string                                  `json:"eap-supplicant,omitempty"`
-	EapUserCert                           *string                                  `json:"eap-user-cert,omitempty"`
-	EgressCos                             *string                                  `json:"egress-cos,omitempty"`
-	EgressQueues                          *SystemInterfaceEgressQueues             `json:"egress-queues,omitempty"`
 	EgressShapingProfile                  *string                                  `json:"egress-shaping-profile,omitempty"`
-	Eip                                   *string                                  `json:"eip,omitempty"`
 	EstimatedDownstreamBandwidth          *int64                                   `json:"estimated-downstream-bandwidth,omitempty"`
 	EstimatedUpstreamBandwidth            *int64                                   `json:"estimated-upstream-bandwidth,omitempty"`
 	ExplicitFtpProxy                      *string                                  `json:"explicit-ftp-proxy,omitempty"`
@@ -78,15 +68,14 @@ type SystemInterface struct {
 	FortilinkSplitInterface               *string                                  `json:"fortilink-split-interface,omitempty"`
 	FortilinkStacking                     *string                                  `json:"fortilink-stacking,omitempty"`
 	ForwardDomain                         *int64                                   `json:"forward-domain,omitempty"`
+	ForwardErrorCorrection                *string                                  `json:"forward-error-correction,omitempty"`
 	Gwdetect                              *string                                  `json:"gwdetect,omitempty"`
 	HaPriority                            *int64                                   `json:"ha-priority,omitempty"`
 	IcmpAcceptRedirect                    *string                                  `json:"icmp-accept-redirect,omitempty"`
 	IcmpSendRedirect                      *string                                  `json:"icmp-send-redirect,omitempty"`
 	IdentAccept                           *string                                  `json:"ident-accept,omitempty"`
 	IdleTimeout                           *int64                                   `json:"idle-timeout,omitempty"`
-	IkeSamlServer                         *string                                  `json:"ike-saml-server,omitempty"`
 	Inbandwidth                           *int64                                   `json:"inbandwidth,omitempty"`
-	IngressCos                            *string                                  `json:"ingress-cos,omitempty"`
 	IngressShapingProfile                 *string                                  `json:"ingress-shaping-profile,omitempty"`
 	IngressSpilloverThreshold             *int64                                   `json:"ingress-spillover-threshold,omitempty"`
 	Interface                             *string                                  `json:"interface,omitempty"`
@@ -98,6 +87,8 @@ type SystemInterface struct {
 	Ipunnumbered                          *string                                  `json:"ipunnumbered,omitempty"`
 	Ipv6                                  *SystemInterfaceIpv6                     `json:"ipv6,omitempty"`
 	L2forward                             *string                                  `json:"l2forward,omitempty"`
+	L2tpClient                            *string                                  `json:"l2tp-client,omitempty"`
+	L2tpClientSettings                    *SystemInterfaceL2tpClientSettings       `json:"l2tp-client-settings,omitempty"`
 	LacpHaSlave                           *string                                  `json:"lacp-ha-slave,omitempty"`
 	LacpMode                              *string                                  `json:"lacp-mode,omitempty"`
 	LacpSpeed                             *string                                  `json:"lacp-speed,omitempty"`
@@ -124,6 +115,7 @@ type SystemInterface struct {
 	Ndiscforward                          *string                                  `json:"ndiscforward,omitempty"`
 	NetbiosForward                        *string                                  `json:"netbios-forward,omitempty"`
 	NetflowSampler                        *string                                  `json:"netflow-sampler,omitempty"`
+	NpQosProfile                          *int64                                   `json:"np-qos-profile,omitempty"`
 	Outbandwidth                          *int64                                   `json:"outbandwidth,omitempty"`
 	PadtRetryTimeout                      *int64                                   `json:"padt-retry-timeout,omitempty"`
 	Password                              *string                                  `json:"password,omitempty"`
@@ -144,13 +136,14 @@ type SystemInterface struct {
 	RedundantInterface                    *string                                  `json:"redundant-interface,omitempty"`
 	RemoteIp                              *string                                  `json:"remote-ip,omitempty"`
 	ReplacemsgOverrideGroup               *string                                  `json:"replacemsg-override-group,omitempty"`
-	RingRx                                *int64                                   `json:"ring-rx,omitempty"`
-	RingTx                                *int64                                   `json:"ring-tx,omitempty"`
 	Role                                  *string                                  `json:"role,omitempty"`
 	SampleDirection                       *string                                  `json:"sample-direction,omitempty"`
 	SampleRate                            *int64                                   `json:"sample-rate,omitempty"`
-	SecondaryIP                           *string                                  `json:"secondary-IP,omitempty"`
+	SecondaryIp                           *string                                  `json:"secondary-IP,omitempty"`
 	Secondaryip                           *[]SystemInterfaceSecondaryip            `json:"secondaryip,omitempty"`
+	Security8021XDynamicVlanId            *int64                                   `json:"security-8021x-dynamic-vlan-id,omitempty"`
+	Security8021XMaster                   *string                                  `json:"security-8021x-master,omitempty"`
+	Security8021XMode                     *string                                  `json:"security-8021x-mode,omitempty"`
 	SecurityExemptList                    *string                                  `json:"security-exempt-list,omitempty"`
 	SecurityExternalLogout                *string                                  `json:"security-external-logout,omitempty"`
 	SecurityExternalWeb                   *string                                  `json:"security-external-web,omitempty"`
@@ -165,6 +158,9 @@ type SystemInterface struct {
 	SpilloverThreshold                    *int64                                   `json:"spillover-threshold,omitempty"`
 	SrcCheck                              *string                                  `json:"src-check,omitempty"`
 	Status                                *string                                  `json:"status,omitempty"`
+	Stp                                   *string                                  `json:"stp,omitempty"`
+	StpHaSecondary                        *string                                  `json:"stp-ha-secondary,omitempty"`
+	StpHaSlave                            *string                                  `json:"stp-ha-slave,omitempty"`
 	Stpforward                            *string                                  `json:"stpforward,omitempty"`
 	StpforwardMode                        *string                                  `json:"stpforward-mode,omitempty"`
 	Subst                                 *string                                  `json:"subst,omitempty"`
@@ -193,6 +189,7 @@ type SystemInterface struct {
 	SystemIdType                          *string                                  `json:"system-id-type,omitempty"`
 	Tagging                               *[]SystemInterfaceTagging                `json:"tagging,omitempty"`
 	TcpMss                                *int64                                   `json:"tcp-mss,omitempty"`
+	Trunk                                 *string                                  `json:"trunk,omitempty"`
 	TrustIp1                              *string                                  `json:"trust-ip-1,omitempty"`
 	TrustIp2                              *string                                  `json:"trust-ip-2,omitempty"`
 	TrustIp3                              *string                                  `json:"trust-ip-3,omitempty"`
@@ -214,6 +211,8 @@ type SystemInterface struct {
 	WinsIp                                *string                                  `json:"wins-ip,omitempty"`
 }
 
+const SystemInterfaceClientOptionsPath = "system/interface/client-options/"
+
 type SystemInterfaceClientOptions struct {
 	Code  *int64  `json:"code,omitempty"`
 	Id    *int64  `json:"id,omitempty"`
@@ -222,25 +221,20 @@ type SystemInterfaceClientOptions struct {
 	Value *string `json:"value,omitempty"`
 }
 
+const SystemInterfaceDhcpSnoopingServerListPath = "system/interface/dhcp-snooping-server-list/"
+
 type SystemInterfaceDhcpSnoopingServerList struct {
 	Name     *string `json:"name,omitempty"`
 	ServerIp *string `json:"server-ip,omitempty"`
 }
 
-type SystemInterfaceEgressQueues struct {
-	Cos0 *string `json:"cos0,omitempty"`
-	Cos1 *string `json:"cos1,omitempty"`
-	Cos2 *string `json:"cos2,omitempty"`
-	Cos3 *string `json:"cos3,omitempty"`
-	Cos4 *string `json:"cos4,omitempty"`
-	Cos5 *string `json:"cos5,omitempty"`
-	Cos6 *string `json:"cos6,omitempty"`
-	Cos7 *string `json:"cos7,omitempty"`
-}
+const SystemInterfaceFailAlertInterfacesPath = "system/interface/fail-alert-interfaces/"
 
 type SystemInterfaceFailAlertInterfaces struct {
 	Name *string `json:"name,omitempty"`
 }
+
+const SystemInterfaceIpv6Path = "system/interface/ipv6/"
 
 type SystemInterfaceIpv6 struct {
 	Autoconf                *string                                      `json:"autoconf,omitempty"`
@@ -291,12 +285,16 @@ type SystemInterfaceIpv6 struct {
 	Vrrp6                   *[]SystemInterfaceIpv6Vrrp6                  `json:"vrrp6,omitempty"`
 }
 
+const SystemInterfaceIpv6Dhcp6IapdListPath = "system/interface/ipv6/dhcp6-iapd-list/"
+
 type SystemInterfaceIpv6Dhcp6IapdList struct {
 	Iaid          *int64  `json:"iaid,omitempty"`
 	PrefixHint    *string `json:"prefix-hint,omitempty"`
 	PrefixHintPlt *int64  `json:"prefix-hint-plt,omitempty"`
 	PrefixHintVlt *int64  `json:"prefix-hint-vlt,omitempty"`
 }
+
+const SystemInterfaceIpv6Ip6DelegatedPrefixListPath = "system/interface/ipv6/ip6-delegated-prefix-list/"
 
 type SystemInterfaceIpv6Ip6DelegatedPrefixList struct {
 	AutonomousFlag      *string `json:"autonomous-flag,omitempty"`
@@ -309,9 +307,13 @@ type SystemInterfaceIpv6Ip6DelegatedPrefixList struct {
 	UpstreamInterface   *string `json:"upstream-interface,omitempty"`
 }
 
+const SystemInterfaceIpv6Ip6ExtraAddrPath = "system/interface/ipv6/ip6-extra-addr/"
+
 type SystemInterfaceIpv6Ip6ExtraAddr struct {
 	Prefix *string `json:"prefix,omitempty"`
 }
+
+const SystemInterfaceIpv6Ip6PrefixListPath = "system/interface/ipv6/ip6-prefix-list/"
 
 type SystemInterfaceIpv6Ip6PrefixList struct {
 	AutonomousFlag    *string                                  `json:"autonomous-flag,omitempty"`
@@ -323,9 +325,13 @@ type SystemInterfaceIpv6Ip6PrefixList struct {
 	ValidLifeTime     *int64                                   `json:"valid-life-time,omitempty"`
 }
 
+const SystemInterfaceIpv6Ip6PrefixListDnsslPath = "system/interface/ipv6/ip6-prefix-list/dnssl/"
+
 type SystemInterfaceIpv6Ip6PrefixListDnssl struct {
 	Domain *string `json:"domain,omitempty"`
 }
+
+const SystemInterfaceIpv6Vrrp6Path = "system/interface/ipv6/vrrp6/"
 
 type SystemInterfaceIpv6Vrrp6 struct {
 	AcceptMode  *string `json:"accept-mode,omitempty"`
@@ -340,9 +346,29 @@ type SystemInterfaceIpv6Vrrp6 struct {
 	Vrip6       *string `json:"vrip6,omitempty"`
 }
 
+const SystemInterfaceL2tpClientSettingsPath = "system/interface/l2tp-client-settings/"
+
+type SystemInterfaceL2tpClientSettings struct {
+	AuthType  *string `json:"auth-type,omitempty"`
+	Defaultgw *string `json:"defaultgw,omitempty"`
+	Distance  *int64  `json:"distance,omitempty"`
+	Ip        *string `json:"ip,omitempty"`
+	Mtu       *int64  `json:"mtu,omitempty"`
+	Password  *string `json:"password,omitempty"`
+	PeerHost  *string `json:"peer-host,omitempty"`
+	PeerMask  *string `json:"peer-mask,omitempty"`
+	PeerPort  *int64  `json:"peer-port,omitempty"`
+	Priority  *int64  `json:"priority,omitempty"`
+	User      *string `json:"user,omitempty"`
+}
+
+const SystemInterfaceMemberPath = "system/interface/member/"
+
 type SystemInterfaceMember struct {
 	InterfaceName *string `json:"interface-name,omitempty"`
 }
+
+const SystemInterfaceSecondaryipPath = "system/interface/secondaryip/"
 
 type SystemInterfaceSecondaryip struct {
 	Allowaccess    *string `json:"allowaccess,omitempty"`
@@ -355,9 +381,13 @@ type SystemInterfaceSecondaryip struct {
 	PingServStatus *int64  `json:"ping-serv-status,omitempty"`
 }
 
+const SystemInterfaceSecurityGroupsPath = "system/interface/security-groups/"
+
 type SystemInterfaceSecurityGroups struct {
 	Name *string `json:"name,omitempty"`
 }
+
+const SystemInterfaceTaggingPath = "system/interface/tagging/"
 
 type SystemInterfaceTagging struct {
 	Category *string                       `json:"category,omitempty"`
@@ -365,9 +395,13 @@ type SystemInterfaceTagging struct {
 	Tags     *[]SystemInterfaceTaggingTags `json:"tags,omitempty"`
 }
 
+const SystemInterfaceTaggingTagsPath = "system/interface/tagging/tags/"
+
 type SystemInterfaceTaggingTags struct {
 	Name *string `json:"name,omitempty"`
 }
+
+const SystemInterfaceVrrpPath = "system/interface/vrrp/"
 
 type SystemInterfaceVrrp struct {
 	AcceptMode         *string                        `json:"accept-mode,omitempty"`
@@ -385,6 +419,8 @@ type SystemInterfaceVrrp struct {
 	Vrid               *int64                         `json:"vrid,omitempty"`
 	Vrip               *string                        `json:"vrip,omitempty"`
 }
+
+const SystemInterfaceVrrpProxyArpPath = "system/interface/vrrp/proxy-arp/"
 
 type SystemInterfaceVrrpProxyArp struct {
 	Id *int64  `json:"id,omitempty"`

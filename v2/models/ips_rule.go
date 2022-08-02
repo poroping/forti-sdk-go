@@ -20,8 +20,35 @@ type IpsRule struct {
 	Status      *string            `json:"status,omitempty"`
 }
 
+const IpsRuleMetadataPath = "ips/rule/metadata/"
+
 type IpsRuleMetadata struct {
 	Id      *int64 `json:"id,omitempty"`
 	Metaid  *int64 `json:"metaid,omitempty"`
 	Valueid *int64 `json:"valueid,omitempty"`
+}
+
+// Set IpsRuleMetadata values to defaults
+func (def *IpsRuleMetadata) Defaults() {
+	def.Id = intPtr(0)
+	def.Metaid = intPtr(0)
+	def.Valueid = intPtr(0)
+}
+
+// Set IpsRule values to defaults
+func (def *IpsRule) Defaults() {
+	def.Action = stringPtr("pass")
+	def.Application = stringPtr("")
+	def.Date = intPtr(0)
+	def.Group = stringPtr("")
+	def.Location = stringPtr("")
+	def.Log = stringPtr("enable")
+	def.LogPacket = stringPtr("disable")
+	def.Name = stringPtr("")
+	def.Os = stringPtr("")
+	def.Rev = intPtr(0)
+	def.RuleId = intPtr(0)
+	def.Service = stringPtr("")
+	def.Severity = stringPtr("")
+	def.Status = stringPtr("enable")
 }

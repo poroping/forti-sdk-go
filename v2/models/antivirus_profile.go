@@ -17,17 +17,10 @@ type AntivirusProfile struct {
 	EmsThreatFeed                 *string                              `json:"ems-threat-feed,omitempty"`
 	ExtendedLog                   *string                              `json:"extended-log,omitempty"`
 	ExternalBlocklist             *[]AntivirusProfileExternalBlocklist `json:"external-blocklist,omitempty"`
-	ExternalBlocklistArchiveScan  *string                              `json:"external-blocklist-archive-scan,omitempty"`
 	ExternalBlocklistEnableAll    *string                              `json:"external-blocklist-enable-all,omitempty"`
 	FeatureSet                    *string                              `json:"feature-set,omitempty"`
 	FortiaiErrorAction            *string                              `json:"fortiai-error-action,omitempty"`
 	FortiaiTimeoutAction          *string                              `json:"fortiai-timeout-action,omitempty"`
-	FortindrErrorAction           *string                              `json:"fortindr-error-action,omitempty"`
-	FortindrTimeoutAction         *string                              `json:"fortindr-timeout-action,omitempty"`
-	FortisandboxErrorAction       *string                              `json:"fortisandbox-error-action,omitempty"`
-	FortisandboxMaxUpload         *int64                               `json:"fortisandbox-max-upload,omitempty"`
-	FortisandboxMode              *string                              `json:"fortisandbox-mode,omitempty"`
-	FortisandboxTimeoutAction     *string                              `json:"fortisandbox-timeout-action,omitempty"`
 	FtgdAnalytics                 *string                              `json:"ftgd-analytics,omitempty"`
 	Ftp                           *AntivirusProfileFtp                 `json:"ftp,omitempty"`
 	Http                          *AntivirusProfileHttp                `json:"http,omitempty"`
@@ -46,6 +39,8 @@ type AntivirusProfile struct {
 	Ssh                           *AntivirusProfileSsh                 `json:"ssh,omitempty"`
 }
 
+const AntivirusProfileCifsPath = "antivirus/profile/cifs/"
+
 type AntivirusProfileCifs struct {
 	ArchiveBlock       *string `json:"archive-block,omitempty"`
 	ArchiveLog         *string `json:"archive-log,omitempty"`
@@ -53,12 +48,12 @@ type AntivirusProfileCifs struct {
 	Emulator           *string `json:"emulator,omitempty"`
 	ExternalBlocklist  *string `json:"external-blocklist,omitempty"`
 	Fortiai            *string `json:"fortiai,omitempty"`
-	Fortindr           *string `json:"fortindr,omitempty"`
-	Fortisandbox       *string `json:"fortisandbox,omitempty"`
 	Options            *string `json:"options,omitempty"`
 	OutbreakPrevention *string `json:"outbreak-prevention,omitempty"`
 	Quarantine         *string `json:"quarantine,omitempty"`
 }
+
+const AntivirusProfileContentDisarmPath = "antivirus/profile/content-disarm/"
 
 type AntivirusProfileContentDisarm struct {
 	CoverPage               *string `json:"cover-page,omitempty"`
@@ -82,9 +77,13 @@ type AntivirusProfileContentDisarm struct {
 	PdfJavacode             *string `json:"pdf-javacode,omitempty"`
 }
 
+const AntivirusProfileExternalBlocklistPath = "antivirus/profile/external-blocklist/"
+
 type AntivirusProfileExternalBlocklist struct {
 	Name *string `json:"name,omitempty"`
 }
+
+const AntivirusProfileFtpPath = "antivirus/profile/ftp/"
 
 type AntivirusProfileFtp struct {
 	ArchiveBlock       *string `json:"archive-block,omitempty"`
@@ -93,12 +92,12 @@ type AntivirusProfileFtp struct {
 	Emulator           *string `json:"emulator,omitempty"`
 	ExternalBlocklist  *string `json:"external-blocklist,omitempty"`
 	Fortiai            *string `json:"fortiai,omitempty"`
-	Fortindr           *string `json:"fortindr,omitempty"`
-	Fortisandbox       *string `json:"fortisandbox,omitempty"`
 	Options            *string `json:"options,omitempty"`
 	OutbreakPrevention *string `json:"outbreak-prevention,omitempty"`
 	Quarantine         *string `json:"quarantine,omitempty"`
 }
+
+const AntivirusProfileHttpPath = "antivirus/profile/http/"
 
 type AntivirusProfileHttp struct {
 	ArchiveBlock       *string `json:"archive-block,omitempty"`
@@ -108,12 +107,12 @@ type AntivirusProfileHttp struct {
 	Emulator           *string `json:"emulator,omitempty"`
 	ExternalBlocklist  *string `json:"external-blocklist,omitempty"`
 	Fortiai            *string `json:"fortiai,omitempty"`
-	Fortindr           *string `json:"fortindr,omitempty"`
-	Fortisandbox       *string `json:"fortisandbox,omitempty"`
 	Options            *string `json:"options,omitempty"`
 	OutbreakPrevention *string `json:"outbreak-prevention,omitempty"`
 	Quarantine         *string `json:"quarantine,omitempty"`
 }
+
+const AntivirusProfileImapPath = "antivirus/profile/imap/"
 
 type AntivirusProfileImap struct {
 	ArchiveBlock       *string `json:"archive-block,omitempty"`
@@ -124,12 +123,12 @@ type AntivirusProfileImap struct {
 	Executables        *string `json:"executables,omitempty"`
 	ExternalBlocklist  *string `json:"external-blocklist,omitempty"`
 	Fortiai            *string `json:"fortiai,omitempty"`
-	Fortindr           *string `json:"fortindr,omitempty"`
-	Fortisandbox       *string `json:"fortisandbox,omitempty"`
 	Options            *string `json:"options,omitempty"`
 	OutbreakPrevention *string `json:"outbreak-prevention,omitempty"`
 	Quarantine         *string `json:"quarantine,omitempty"`
 }
+
+const AntivirusProfileMapiPath = "antivirus/profile/mapi/"
 
 type AntivirusProfileMapi struct {
 	ArchiveBlock       *string `json:"archive-block,omitempty"`
@@ -139,18 +138,20 @@ type AntivirusProfileMapi struct {
 	Executables        *string `json:"executables,omitempty"`
 	ExternalBlocklist  *string `json:"external-blocklist,omitempty"`
 	Fortiai            *string `json:"fortiai,omitempty"`
-	Fortindr           *string `json:"fortindr,omitempty"`
-	Fortisandbox       *string `json:"fortisandbox,omitempty"`
 	Options            *string `json:"options,omitempty"`
 	OutbreakPrevention *string `json:"outbreak-prevention,omitempty"`
 	Quarantine         *string `json:"quarantine,omitempty"`
 }
+
+const AntivirusProfileNacQuarPath = "antivirus/profile/nac-quar/"
 
 type AntivirusProfileNacQuar struct {
 	Expiry   *string `json:"expiry,omitempty"`
 	Infected *string `json:"infected,omitempty"`
 	Log      *string `json:"log,omitempty"`
 }
+
+const AntivirusProfileNntpPath = "antivirus/profile/nntp/"
 
 type AntivirusProfileNntp struct {
 	ArchiveBlock       *string `json:"archive-block,omitempty"`
@@ -159,17 +160,19 @@ type AntivirusProfileNntp struct {
 	Emulator           *string `json:"emulator,omitempty"`
 	ExternalBlocklist  *string `json:"external-blocklist,omitempty"`
 	Fortiai            *string `json:"fortiai,omitempty"`
-	Fortindr           *string `json:"fortindr,omitempty"`
-	Fortisandbox       *string `json:"fortisandbox,omitempty"`
 	Options            *string `json:"options,omitempty"`
 	OutbreakPrevention *string `json:"outbreak-prevention,omitempty"`
 	Quarantine         *string `json:"quarantine,omitempty"`
 }
 
+const AntivirusProfileOutbreakPreventionPath = "antivirus/profile/outbreak-prevention/"
+
 type AntivirusProfileOutbreakPrevention struct {
 	ExternalBlocklist *string `json:"external-blocklist,omitempty"`
 	FtgdService       *string `json:"ftgd-service,omitempty"`
 }
+
+const AntivirusProfilePop3Path = "antivirus/profile/pop3/"
 
 type AntivirusProfilePop3 struct {
 	ArchiveBlock       *string `json:"archive-block,omitempty"`
@@ -180,12 +183,12 @@ type AntivirusProfilePop3 struct {
 	Executables        *string `json:"executables,omitempty"`
 	ExternalBlocklist  *string `json:"external-blocklist,omitempty"`
 	Fortiai            *string `json:"fortiai,omitempty"`
-	Fortindr           *string `json:"fortindr,omitempty"`
-	Fortisandbox       *string `json:"fortisandbox,omitempty"`
 	Options            *string `json:"options,omitempty"`
 	OutbreakPrevention *string `json:"outbreak-prevention,omitempty"`
 	Quarantine         *string `json:"quarantine,omitempty"`
 }
+
+const AntivirusProfileSmtpPath = "antivirus/profile/smtp/"
 
 type AntivirusProfileSmtp struct {
 	ArchiveBlock       *string `json:"archive-block,omitempty"`
@@ -196,12 +199,12 @@ type AntivirusProfileSmtp struct {
 	Executables        *string `json:"executables,omitempty"`
 	ExternalBlocklist  *string `json:"external-blocklist,omitempty"`
 	Fortiai            *string `json:"fortiai,omitempty"`
-	Fortindr           *string `json:"fortindr,omitempty"`
-	Fortisandbox       *string `json:"fortisandbox,omitempty"`
 	Options            *string `json:"options,omitempty"`
 	OutbreakPrevention *string `json:"outbreak-prevention,omitempty"`
 	Quarantine         *string `json:"quarantine,omitempty"`
 }
+
+const AntivirusProfileSshPath = "antivirus/profile/ssh/"
 
 type AntivirusProfileSsh struct {
 	ArchiveBlock       *string `json:"archive-block,omitempty"`
@@ -210,8 +213,6 @@ type AntivirusProfileSsh struct {
 	Emulator           *string `json:"emulator,omitempty"`
 	ExternalBlocklist  *string `json:"external-blocklist,omitempty"`
 	Fortiai            *string `json:"fortiai,omitempty"`
-	Fortindr           *string `json:"fortindr,omitempty"`
-	Fortisandbox       *string `json:"fortisandbox,omitempty"`
 	Options            *string `json:"options,omitempty"`
 	OutbreakPrevention *string `json:"outbreak-prevention,omitempty"`
 	Quarantine         *string `json:"quarantine,omitempty"`

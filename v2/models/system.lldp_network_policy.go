@@ -15,6 +15,8 @@ type SystemLldpNetworkPolicy struct {
 	VoiceSignaling      *SystemLldpNetworkPolicyVoiceSignaling      `json:"voice-signaling,omitempty"`
 }
 
+const SystemLldpNetworkPolicyGuestPath = "system.lldp/network-policy/guest/"
+
 type SystemLldpNetworkPolicyGuest struct {
 	Dscp     *int64  `json:"dscp,omitempty"`
 	Priority *int64  `json:"priority,omitempty"`
@@ -22,6 +24,8 @@ type SystemLldpNetworkPolicyGuest struct {
 	Tag      *string `json:"tag,omitempty"`
 	Vlan     *int64  `json:"vlan,omitempty"`
 }
+
+const SystemLldpNetworkPolicyGuestVoiceSignalingPath = "system.lldp/network-policy/guest-voice-signaling/"
 
 type SystemLldpNetworkPolicyGuestVoiceSignaling struct {
 	Dscp     *int64  `json:"dscp,omitempty"`
@@ -31,6 +35,8 @@ type SystemLldpNetworkPolicyGuestVoiceSignaling struct {
 	Vlan     *int64  `json:"vlan,omitempty"`
 }
 
+const SystemLldpNetworkPolicySoftphonePath = "system.lldp/network-policy/softphone/"
+
 type SystemLldpNetworkPolicySoftphone struct {
 	Dscp     *int64  `json:"dscp,omitempty"`
 	Priority *int64  `json:"priority,omitempty"`
@@ -38,6 +44,8 @@ type SystemLldpNetworkPolicySoftphone struct {
 	Tag      *string `json:"tag,omitempty"`
 	Vlan     *int64  `json:"vlan,omitempty"`
 }
+
+const SystemLldpNetworkPolicyStreamingVideoPath = "system.lldp/network-policy/streaming-video/"
 
 type SystemLldpNetworkPolicyStreamingVideo struct {
 	Dscp     *int64  `json:"dscp,omitempty"`
@@ -47,6 +55,8 @@ type SystemLldpNetworkPolicyStreamingVideo struct {
 	Vlan     *int64  `json:"vlan,omitempty"`
 }
 
+const SystemLldpNetworkPolicyVideoConferencingPath = "system.lldp/network-policy/video-conferencing/"
+
 type SystemLldpNetworkPolicyVideoConferencing struct {
 	Dscp     *int64  `json:"dscp,omitempty"`
 	Priority *int64  `json:"priority,omitempty"`
@@ -54,6 +64,8 @@ type SystemLldpNetworkPolicyVideoConferencing struct {
 	Tag      *string `json:"tag,omitempty"`
 	Vlan     *int64  `json:"vlan,omitempty"`
 }
+
+const SystemLldpNetworkPolicyVideoSignalingPath = "system.lldp/network-policy/video-signaling/"
 
 type SystemLldpNetworkPolicyVideoSignaling struct {
 	Dscp     *int64  `json:"dscp,omitempty"`
@@ -63,6 +75,8 @@ type SystemLldpNetworkPolicyVideoSignaling struct {
 	Vlan     *int64  `json:"vlan,omitempty"`
 }
 
+const SystemLldpNetworkPolicyVoicePath = "system.lldp/network-policy/voice/"
+
 type SystemLldpNetworkPolicyVoice struct {
 	Dscp     *int64  `json:"dscp,omitempty"`
 	Priority *int64  `json:"priority,omitempty"`
@@ -70,6 +84,8 @@ type SystemLldpNetworkPolicyVoice struct {
 	Tag      *string `json:"tag,omitempty"`
 	Vlan     *int64  `json:"vlan,omitempty"`
 }
+
+const SystemLldpNetworkPolicyVoiceSignalingPath = "system.lldp/network-policy/voice-signaling/"
 
 type SystemLldpNetworkPolicyVoiceSignaling struct {
 	Dscp     *int64  `json:"dscp,omitempty"`

@@ -20,9 +20,13 @@ type FirewallMulticastPolicy6 struct {
 	Uuid            *string                            `json:"uuid,omitempty"`
 }
 
+const FirewallMulticastPolicy6DstaddrPath = "firewall/multicast-policy6/dstaddr/"
+
 type FirewallMulticastPolicy6Dstaddr struct {
 	Name *string `json:"name,omitempty"`
 }
+
+const FirewallMulticastPolicy6SrcaddrPath = "firewall/multicast-policy6/srcaddr/"
 
 type FirewallMulticastPolicy6Srcaddr struct {
 	Name *string `json:"name,omitempty"`

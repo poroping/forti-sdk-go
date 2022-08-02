@@ -14,6 +14,8 @@ type FirewallAccessProxySshClientCert struct {
 	SourceAddress         *string                                          `json:"source-address,omitempty"`
 }
 
+const FirewallAccessProxySshClientCertCertExtensionPath = "firewall/access-proxy-ssh-client-cert/cert-extension/"
+
 type FirewallAccessProxySshClientCertCertExtension struct {
 	Critical *string `json:"critical,omitempty"`
 	Data     *string `json:"data,omitempty"`

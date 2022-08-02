@@ -8,3 +8,11 @@ type SystemReplacemsgHttp struct {
 	Header  *string `json:"header,omitempty"`
 	MsgType *string `json:"msg-type,omitempty"`
 }
+
+// Set SystemReplacemsgHttp values to defaults
+func (def *SystemReplacemsgHttp) Defaults() {
+	def.Buffer = stringPtr("<no value>")
+	def.Format = stringPtr("")
+	def.Header = stringPtr("")
+	def.MsgType = stringPtr("")
+}

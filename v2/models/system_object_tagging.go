@@ -12,6 +12,8 @@ type SystemObjectTagging struct {
 	Tags      *[]SystemObjectTaggingTags `json:"tags,omitempty"`
 }
 
+const SystemObjectTaggingTagsPath = "system/object-tagging/tags/"
+
 type SystemObjectTaggingTags struct {
 	Name *string `json:"name,omitempty"`
 }

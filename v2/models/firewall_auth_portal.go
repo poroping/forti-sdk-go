@@ -9,6 +9,8 @@ type FirewallAuthPortal struct {
 	PortalAddr6        *string                     `json:"portal-addr6,omitempty"`
 }
 
+const FirewallAuthPortalGroupsPath = "firewall/auth-portal/groups/"
+
 type FirewallAuthPortalGroups struct {
 	Name *string `json:"name,omitempty"`
 }

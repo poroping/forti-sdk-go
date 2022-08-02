@@ -9,6 +9,8 @@ type VpnIpsecConcentrator struct {
 	SrcCheck *string                       `json:"src-check,omitempty"`
 }
 
+const VpnIpsecConcentratorMemberPath = "vpn.ipsec/concentrator/member/"
+
 type VpnIpsecConcentratorMember struct {
 	Name *string `json:"name,omitempty"`
 }

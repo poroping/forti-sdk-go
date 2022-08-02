@@ -53,6 +53,8 @@ type WirelessControllerWidsProfile struct {
 	WirelessBridge           *string                                                  `json:"wireless-bridge,omitempty"`
 }
 
+const WirelessControllerWidsProfileApBgscanDisableSchedulesPath = "wireless-controller/wids-profile/ap-bgscan-disable-schedules/"
+
 type WirelessControllerWidsProfileApBgscanDisableSchedules struct {
 	Name *string `json:"name,omitempty"`
 }

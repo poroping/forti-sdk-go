@@ -16,6 +16,8 @@ type ExtenderControllerExtenderProfile struct {
 	Name                *string                                        `json:"name,omitempty"`
 }
 
+const ExtenderControllerExtenderProfileCellularPath = "extender-controller/extender-profile/cellular/"
+
 type ExtenderControllerExtenderProfileCellular struct {
 	ControllerReport *ExtenderControllerExtenderProfileCellularControllerReport `json:"controller-report,omitempty"`
 	Dataplan         *[]ExtenderControllerExtenderProfileCellularDataplan       `json:"dataplan,omitempty"`
@@ -24,15 +26,21 @@ type ExtenderControllerExtenderProfileCellular struct {
 	SmsNotification  *ExtenderControllerExtenderProfileCellularSmsNotification  `json:"sms-notification,omitempty"`
 }
 
+const ExtenderControllerExtenderProfileCellularControllerReportPath = "extender-controller/extender-profile/cellular/controller-report/"
+
 type ExtenderControllerExtenderProfileCellularControllerReport struct {
 	Interval        *int64  `json:"interval,omitempty"`
 	SignalThreshold *int64  `json:"signal-threshold,omitempty"`
 	Status          *string `json:"status,omitempty"`
 }
 
+const ExtenderControllerExtenderProfileCellularDataplanPath = "extender-controller/extender-profile/cellular/dataplan/"
+
 type ExtenderControllerExtenderProfileCellularDataplan struct {
 	Name *string `json:"name,omitempty"`
 }
+
+const ExtenderControllerExtenderProfileCellularModem1Path = "extender-controller/extender-profile/cellular/modem1/"
 
 type ExtenderControllerExtenderProfileCellularModem1 struct {
 	AutoSwitch       *ExtenderControllerExtenderProfileCellularModem1AutoSwitch `json:"auto-switch,omitempty"`
@@ -48,6 +56,8 @@ type ExtenderControllerExtenderProfileCellularModem1 struct {
 	Sim2PinCode      *string                                                    `json:"sim2-pin-code,omitempty"`
 }
 
+const ExtenderControllerExtenderProfileCellularModem1AutoSwitchPath = "extender-controller/extender-profile/cellular/modem1/auto-switch/"
+
 type ExtenderControllerExtenderProfileCellularModem1AutoSwitch struct {
 	Dataplan            *string `json:"dataplan,omitempty"`
 	Disconnect          *string `json:"disconnect,omitempty"`
@@ -58,6 +68,8 @@ type ExtenderControllerExtenderProfileCellularModem1AutoSwitch struct {
 	SwitchBackTime      *string `json:"switch-back-time,omitempty"`
 	SwitchBackTimer     *int64  `json:"switch-back-timer,omitempty"`
 }
+
+const ExtenderControllerExtenderProfileCellularModem2Path = "extender-controller/extender-profile/cellular/modem2/"
 
 type ExtenderControllerExtenderProfileCellularModem2 struct {
 	AutoSwitch       *ExtenderControllerExtenderProfileCellularModem2AutoSwitch `json:"auto-switch,omitempty"`
@@ -73,6 +85,8 @@ type ExtenderControllerExtenderProfileCellularModem2 struct {
 	Sim2PinCode      *string                                                    `json:"sim2-pin-code,omitempty"`
 }
 
+const ExtenderControllerExtenderProfileCellularModem2AutoSwitchPath = "extender-controller/extender-profile/cellular/modem2/auto-switch/"
+
 type ExtenderControllerExtenderProfileCellularModem2AutoSwitch struct {
 	Dataplan            *string `json:"dataplan,omitempty"`
 	Disconnect          *string `json:"disconnect,omitempty"`
@@ -84,11 +98,15 @@ type ExtenderControllerExtenderProfileCellularModem2AutoSwitch struct {
 	SwitchBackTimer     *int64  `json:"switch-back-timer,omitempty"`
 }
 
+const ExtenderControllerExtenderProfileCellularSmsNotificationPath = "extender-controller/extender-profile/cellular/sms-notification/"
+
 type ExtenderControllerExtenderProfileCellularSmsNotification struct {
 	Alert    *ExtenderControllerExtenderProfileCellularSmsNotificationAlert      `json:"alert,omitempty"`
 	Receiver *[]ExtenderControllerExtenderProfileCellularSmsNotificationReceiver `json:"receiver,omitempty"`
 	Status   *string                                                             `json:"status,omitempty"`
 }
+
+const ExtenderControllerExtenderProfileCellularSmsNotificationAlertPath = "extender-controller/extender-profile/cellular/sms-notification/alert/"
 
 type ExtenderControllerExtenderProfileCellularSmsNotificationAlert struct {
 	DataExhausted       *string `json:"data-exhausted,omitempty"`
@@ -100,12 +118,16 @@ type ExtenderControllerExtenderProfileCellularSmsNotificationAlert struct {
 	SystemReboot        *string `json:"system-reboot,omitempty"`
 }
 
+const ExtenderControllerExtenderProfileCellularSmsNotificationReceiverPath = "extender-controller/extender-profile/cellular/sms-notification/receiver/"
+
 type ExtenderControllerExtenderProfileCellularSmsNotificationReceiver struct {
 	Alert       *string `json:"alert,omitempty"`
 	Name        *string `json:"name,omitempty"`
 	PhoneNumber *string `json:"phone-number,omitempty"`
 	Status      *string `json:"status,omitempty"`
 }
+
+const ExtenderControllerExtenderProfileLanExtensionPath = "extender-controller/extender-profile/lan-extension/"
 
 type ExtenderControllerExtenderProfileLanExtension struct {
 	Backhaul          *[]ExtenderControllerExtenderProfileLanExtensionBackhaul `json:"backhaul,omitempty"`
@@ -114,6 +136,8 @@ type ExtenderControllerExtenderProfileLanExtension struct {
 	IpsecTunnel       *string                                                  `json:"ipsec-tunnel,omitempty"`
 	LinkLoadbalance   *string                                                  `json:"link-loadbalance,omitempty"`
 }
+
+const ExtenderControllerExtenderProfileLanExtensionBackhaulPath = "extender-controller/extender-profile/lan-extension/backhaul/"
 
 type ExtenderControllerExtenderProfileLanExtensionBackhaul struct {
 	Name   *string `json:"name,omitempty"`

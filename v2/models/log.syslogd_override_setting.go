@@ -20,6 +20,8 @@ type LogSyslogdOverrideSetting struct {
 	Status                *string                                     `json:"status,omitempty"`
 }
 
+const LogSyslogdOverrideSettingCustomFieldNamePath = "log.syslogd/override-setting/custom-field-name/"
+
 type LogSyslogdOverrideSettingCustomFieldName struct {
 	Custom *string `json:"custom,omitempty"`
 	Id     *int64  `json:"id,omitempty"`

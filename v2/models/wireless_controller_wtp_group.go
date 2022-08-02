@@ -8,6 +8,8 @@ type WirelessControllerWtpGroup struct {
 	Wtps         *[]WirelessControllerWtpGroupWtps `json:"wtps,omitempty"`
 }
 
+const WirelessControllerWtpGroupWtpsPath = "wireless-controller/wtp-group/wtps/"
+
 type WirelessControllerWtpGroupWtps struct {
 	WtpId *string `json:"wtp-id,omitempty"`
 }

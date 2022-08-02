@@ -20,14 +20,16 @@ type WebProxyGlobal struct {
 	SslCaCert                    *string                                `json:"ssl-ca-cert,omitempty"`
 	SslCert                      *string                                `json:"ssl-cert,omitempty"`
 	StrictWebCheck               *string                                `json:"strict-web-check,omitempty"`
-	TunnelNonHttp                *string                                `json:"tunnel-non-http,omitempty"`
-	UnknownHttpVersion           *string                                `json:"unknown-http-version,omitempty"`
 	WebproxyProfile              *string                                `json:"webproxy-profile,omitempty"`
 }
+
+const WebProxyGlobalLearnClientIpSrcaddrPath = "web-proxy/global/learn-client-ip-srcaddr/"
 
 type WebProxyGlobalLearnClientIpSrcaddr struct {
 	Name *string `json:"name,omitempty"`
 }
+
+const WebProxyGlobalLearnClientIpSrcaddr6Path = "web-proxy/global/learn-client-ip-srcaddr6/"
 
 type WebProxyGlobalLearnClientIpSrcaddr6 struct {
 	Name *string `json:"name,omitempty"`

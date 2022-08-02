@@ -17,6 +17,8 @@ type WebProxyProfile struct {
 	StripEncoding              *string                   `json:"strip-encoding,omitempty"`
 }
 
+const WebProxyProfileHeadersPath = "web-proxy/profile/headers/"
+
 type WebProxyProfileHeaders struct {
 	Action         *string                           `json:"action,omitempty"`
 	AddOption      *string                           `json:"add-option,omitempty"`
@@ -29,9 +31,13 @@ type WebProxyProfileHeaders struct {
 	Protocol       *string                           `json:"protocol,omitempty"`
 }
 
+const WebProxyProfileHeadersDstaddrPath = "web-proxy/profile/headers/dstaddr/"
+
 type WebProxyProfileHeadersDstaddr struct {
 	Name *string `json:"name,omitempty"`
 }
+
+const WebProxyProfileHeadersDstaddr6Path = "web-proxy/profile/headers/dstaddr6/"
 
 type WebProxyProfileHeadersDstaddr6 struct {
 	Name *string `json:"name,omitempty"`

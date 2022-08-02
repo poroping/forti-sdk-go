@@ -8,6 +8,8 @@ type SystemSpeedTestServer struct {
 	Timestamp *int64                       `json:"timestamp,omitempty"`
 }
 
+const SystemSpeedTestServerHostPath = "system/speed-test-server/host/"
+
 type SystemSpeedTestServerHost struct {
 	Id       *int64  `json:"id,omitempty"`
 	Ip       *string `json:"ip,omitempty"`

@@ -8,8 +8,6 @@ type FirewallInterfacePolicy struct {
 	AvProfile                *string                           `json:"av-profile,omitempty"`
 	AvProfileStatus          *string                           `json:"av-profile-status,omitempty"`
 	Comments                 *string                           `json:"comments,omitempty"`
-	DlpProfile               *string                           `json:"dlp-profile,omitempty"`
-	DlpProfileStatus         *string                           `json:"dlp-profile-status,omitempty"`
 	DlpSensor                *string                           `json:"dlp-sensor,omitempty"`
 	DlpSensorStatus          *string                           `json:"dlp-sensor-status,omitempty"`
 	Dsri                     *string                           `json:"dsri,omitempty"`
@@ -28,13 +26,19 @@ type FirewallInterfacePolicy struct {
 	WebfilterProfileStatus   *string                           `json:"webfilter-profile-status,omitempty"`
 }
 
+const FirewallInterfacePolicyDstaddrPath = "firewall/interface-policy/dstaddr/"
+
 type FirewallInterfacePolicyDstaddr struct {
 	Name *string `json:"name,omitempty"`
 }
 
+const FirewallInterfacePolicyServicePath = "firewall/interface-policy/service/"
+
 type FirewallInterfacePolicyService struct {
 	Name *string `json:"name,omitempty"`
 }
+
+const FirewallInterfacePolicySrcaddrPath = "firewall/interface-policy/srcaddr/"
 
 type FirewallInterfacePolicySrcaddr struct {
 	Name *string `json:"name,omitempty"`

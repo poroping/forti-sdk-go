@@ -4,7 +4,6 @@ const AuthenticationSchemePath = "authentication/scheme/"
 
 type AuthenticationScheme struct {
 	DomainController *string                             `json:"domain-controller,omitempty"`
-	EmsDeviceOwner   *string                             `json:"ems-device-owner,omitempty"`
 	FssoAgentForNtlm *string                             `json:"fsso-agent-for-ntlm,omitempty"`
 	FssoGuest        *string                             `json:"fsso-guest,omitempty"`
 	KerberosKeytab   *string                             `json:"kerberos-keytab,omitempty"`
@@ -18,6 +17,8 @@ type AuthenticationScheme struct {
 	UserCert         *string                             `json:"user-cert,omitempty"`
 	UserDatabase     *[]AuthenticationSchemeUserDatabase `json:"user-database,omitempty"`
 }
+
+const AuthenticationSchemeUserDatabasePath = "authentication/scheme/user-database/"
 
 type AuthenticationSchemeUserDatabase struct {
 	Name *string `json:"name,omitempty"`

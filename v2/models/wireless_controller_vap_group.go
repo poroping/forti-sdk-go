@@ -8,6 +8,8 @@ type WirelessControllerVapGroup struct {
 	Vaps    *[]WirelessControllerVapGroupVaps `json:"vaps,omitempty"`
 }
 
+const WirelessControllerVapGroupVapsPath = "wireless-controller/vap-group/vaps/"
+
 type WirelessControllerVapGroupVaps struct {
 	Name *string `json:"name,omitempty"`
 }

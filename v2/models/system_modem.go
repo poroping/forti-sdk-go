@@ -15,9 +15,9 @@ type SystemModem struct {
 	DialCmd3        *string `json:"dial-cmd3,omitempty"`
 	DialOnDemand    *string `json:"dial-on-demand,omitempty"`
 	Distance        *int64  `json:"distance,omitempty"`
-	DontSendCR1     *string `json:"dont-send-CR1,omitempty"`
-	DontSendCR2     *string `json:"dont-send-CR2,omitempty"`
-	DontSendCR3     *string `json:"dont-send-CR3,omitempty"`
+	DontSendCr1     *string `json:"dont-send-CR1,omitempty"`
+	DontSendCr2     *string `json:"dont-send-CR2,omitempty"`
+	DontSendCr3     *string `json:"dont-send-CR3,omitempty"`
 	ExtraInit1      *string `json:"extra-init1,omitempty"`
 	ExtraInit2      *string `json:"extra-init2,omitempty"`
 	ExtraInit3      *string `json:"extra-init3,omitempty"`

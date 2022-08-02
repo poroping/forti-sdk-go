@@ -27,6 +27,8 @@ type UserDomainController struct {
 	Username              *string                            `json:"username,omitempty"`
 }
 
+const UserDomainControllerExtraServerPath = "user/domain-controller/extra-server/"
+
 type UserDomainControllerExtraServer struct {
 	Id              *int64  `json:"id,omitempty"`
 	IpAddress       *string `json:"ip-address,omitempty"`
@@ -34,6 +36,8 @@ type UserDomainControllerExtraServer struct {
 	SourceIpAddress *string `json:"source-ip-address,omitempty"`
 	SourcePort      *int64  `json:"source-port,omitempty"`
 }
+
+const UserDomainControllerLdapServerPath = "user/domain-controller/ldap-server/"
 
 type UserDomainControllerLdapServer struct {
 	Name *string `json:"name,omitempty"`

@@ -23,6 +23,7 @@ type VpnIpsecPhase2Interface struct {
 	DstSubnet              *string `json:"dst-subnet,omitempty"`
 	DstSubnet6             *string `json:"dst-subnet6,omitempty"`
 	Encapsulation          *string `json:"encapsulation,omitempty"`
+	InboundDscpCopy        *string `json:"inbound-dscp-copy,omitempty"`
 	InitiatorTsNarrow      *string `json:"initiator-ts-narrow,omitempty"`
 	Ipv4Df                 *string `json:"ipv4-df,omitempty"`
 	Keepalive              *string `json:"keepalive,omitempty"`

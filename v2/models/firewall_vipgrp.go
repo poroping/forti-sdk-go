@@ -11,6 +11,8 @@ type FirewallVipgrp struct {
 	Uuid      *string                 `json:"uuid,omitempty"`
 }
 
+const FirewallVipgrpMemberPath = "firewall/vipgrp/member/"
+
 type FirewallVipgrpMember struct {
 	Name *string `json:"name,omitempty"`
 }

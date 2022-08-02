@@ -8,6 +8,8 @@ type SystemAlarm struct {
 	Status  *string              `json:"status,omitempty"`
 }
 
+const SystemAlarmGroupsPath = "system/alarm/groups/"
+
 type SystemAlarmGroups struct {
 	AdminAuthFailureThreshold  *int64                                 `json:"admin-auth-failure-threshold,omitempty"`
 	AdminAuthLockoutThreshold  *int64                                 `json:"admin-auth-lockout-threshold,omitempty"`
@@ -24,6 +26,8 @@ type SystemAlarmGroups struct {
 	UserAuthFailureThreshold   *int64                                 `json:"user-auth-failure-threshold,omitempty"`
 	UserAuthLockoutThreshold   *int64                                 `json:"user-auth-lockout-threshold,omitempty"`
 }
+
+const SystemAlarmGroupsFwPolicyViolationsPath = "system/alarm/groups/fw-policy-violations/"
 
 type SystemAlarmGroupsFwPolicyViolations struct {
 	DstIp     *string `json:"dst-ip,omitempty"`

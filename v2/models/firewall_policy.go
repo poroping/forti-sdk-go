@@ -5,9 +5,6 @@ const FirewallPolicyPath = "firewall/policy/"
 type FirewallPolicy struct {
 	Action                        *string                                        `json:"action,omitempty"`
 	AntiReplay                    *string                                        `json:"anti-replay,omitempty"`
-	AppCategory                   *[]FirewallPolicyAppCategory                   `json:"app-category,omitempty"`
-	AppGroup                      *[]FirewallPolicyAppGroup                      `json:"app-group,omitempty"`
-	Application                   *[]FirewallPolicyApplication                   `json:"application,omitempty"`
 	ApplicationList               *string                                        `json:"application-list,omitempty"`
 	AuthCert                      *string                                        `json:"auth-cert,omitempty"`
 	AuthPath                      *string                                        `json:"auth-path,omitempty"`
@@ -27,7 +24,6 @@ type FirewallPolicy struct {
 	DiffservcodeForward           *string                                        `json:"diffservcode-forward,omitempty"`
 	DiffservcodeRev               *string                                        `json:"diffservcode-rev,omitempty"`
 	Disclaimer                    *string                                        `json:"disclaimer,omitempty"`
-	DlpProfile                    *string                                        `json:"dlp-profile,omitempty"`
 	DlpSensor                     *string                                        `json:"dlp-sensor,omitempty"`
 	DnsfilterProfile              *string                                        `json:"dnsfilter-profile,omitempty"`
 	Dsri                          *string                                        `json:"dsri,omitempty"`
@@ -42,7 +38,6 @@ type FirewallPolicy struct {
 	FileFilterProfile             *string                                        `json:"file-filter-profile,omitempty"`
 	FirewallSessionDirty          *string                                        `json:"firewall-session-dirty,omitempty"`
 	Fixedport                     *string                                        `json:"fixedport,omitempty"`
-	Fsso                          *string                                        `json:"fsso,omitempty"`
 	FssoAgentForNtlm              *string                                        `json:"fsso-agent-for-ntlm,omitempty"`
 	FssoGroups                    *[]FirewallPolicyFssoGroups                    `json:"fsso-groups,omitempty"`
 	GeoipAnycast                  *string                                        `json:"geoip-anycast,omitempty"`
@@ -57,14 +52,12 @@ type FirewallPolicy struct {
 	InternetServiceCustom         *[]FirewallPolicyInternetServiceCustom         `json:"internet-service-custom,omitempty"`
 	InternetServiceCustomGroup    *[]FirewallPolicyInternetServiceCustomGroup    `json:"internet-service-custom-group,omitempty"`
 	InternetServiceGroup          *[]FirewallPolicyInternetServiceGroup          `json:"internet-service-group,omitempty"`
-	InternetServiceId             *[]FirewallPolicyInternetServiceId             `json:"internet-service-id,omitempty"`
 	InternetServiceName           *[]FirewallPolicyInternetServiceName           `json:"internet-service-name,omitempty"`
 	InternetServiceNegate         *string                                        `json:"internet-service-negate,omitempty"`
 	InternetServiceSrc            *string                                        `json:"internet-service-src,omitempty"`
 	InternetServiceSrcCustom      *[]FirewallPolicyInternetServiceSrcCustom      `json:"internet-service-src-custom,omitempty"`
 	InternetServiceSrcCustomGroup *[]FirewallPolicyInternetServiceSrcCustomGroup `json:"internet-service-src-custom-group,omitempty"`
 	InternetServiceSrcGroup       *[]FirewallPolicyInternetServiceSrcGroup       `json:"internet-service-src-group,omitempty"`
-	InternetServiceSrcId          *[]FirewallPolicyInternetServiceSrcId          `json:"internet-service-src-id,omitempty"`
 	InternetServiceSrcName        *[]FirewallPolicyInternetServiceSrcName        `json:"internet-service-src-name,omitempty"`
 	InternetServiceSrcNegate      *string                                        `json:"internet-service-src-negate,omitempty"`
 	Ippool                        *string                                        `json:"ippool,omitempty"`
@@ -89,8 +82,6 @@ type FirewallPolicy struct {
 	PerIpShaper                   *string                                        `json:"per-ip-shaper,omitempty"`
 	PermitAnyHost                 *string                                        `json:"permit-any-host,omitempty"`
 	PermitStunHost                *string                                        `json:"permit-stun-host,omitempty"`
-	PolicyExpiry                  *string                                        `json:"policy-expiry,omitempty"`
-	PolicyExpiryDate              *string                                        `json:"policy-expiry-date,omitempty"`
 	Policyid                      *int64                                         `json:"policyid,omitempty"`
 	Poolname                      *[]FirewallPolicyPoolname                      `json:"poolname,omitempty"`
 	Poolname6                     *[]FirewallPolicyPoolname6                     `json:"poolname6,omitempty"`
@@ -102,7 +93,6 @@ type FirewallPolicy struct {
 	ReplacemsgOverrideGroup       *string                                        `json:"replacemsg-override-group,omitempty"`
 	ReputationDirection           *string                                        `json:"reputation-direction,omitempty"`
 	ReputationMinimum             *int64                                         `json:"reputation-minimum,omitempty"`
-	Rsso                          *string                                        `json:"rsso,omitempty"`
 	RtpAddr                       *[]FirewallPolicyRtpAddr                       `json:"rtp-addr,omitempty"`
 	RtpNat                        *string                                        `json:"rtp-nat,omitempty"`
 	Schedule                      *string                                        `json:"schedule,omitempty"`
@@ -121,8 +111,6 @@ type FirewallPolicy struct {
 	Srcintf                       *[]FirewallPolicySrcintf                       `json:"srcintf,omitempty"`
 	SshFilterProfile              *string                                        `json:"ssh-filter-profile,omitempty"`
 	SshPolicyRedirect             *string                                        `json:"ssh-policy-redirect,omitempty"`
-	SslMirror                     *string                                        `json:"ssl-mirror,omitempty"`
-	SslMirrorIntf                 *[]FirewallPolicySslMirrorIntf                 `json:"ssl-mirror-intf,omitempty"`
 	SslSshProfile                 *string                                        `json:"ssl-ssh-profile,omitempty"`
 	Status                        *string                                        `json:"status,omitempty"`
 	TcpMssReceiver                *int64                                         `json:"tcp-mss-receiver,omitempty"`
@@ -134,7 +122,6 @@ type FirewallPolicy struct {
 	TosNegate                     *string                                        `json:"tos-negate,omitempty"`
 	TrafficShaper                 *string                                        `json:"traffic-shaper,omitempty"`
 	TrafficShaperReverse          *string                                        `json:"traffic-shaper-reverse,omitempty"`
-	UrlCategory                   *[]FirewallPolicyUrlCategory                   `json:"url-category,omitempty"`
 	Users                         *[]FirewallPolicyUsers                         `json:"users,omitempty"`
 	UtmStatus                     *string                                        `json:"utm-status,omitempty"`
 	Uuid                          *string                                        `json:"uuid,omitempty"`
@@ -145,154 +132,172 @@ type FirewallPolicy struct {
 	VoipProfile                   *string                                        `json:"voip-profile,omitempty"`
 	Vpntunnel                     *string                                        `json:"vpntunnel,omitempty"`
 	WafProfile                    *string                                        `json:"waf-profile,omitempty"`
-	Wanopt                        *string                                        `json:"wanopt,omitempty"`
-	WanoptDetection               *string                                        `json:"wanopt-detection,omitempty"`
-	WanoptPassiveOpt              *string                                        `json:"wanopt-passive-opt,omitempty"`
-	WanoptPeer                    *string                                        `json:"wanopt-peer,omitempty"`
-	WanoptProfile                 *string                                        `json:"wanopt-profile,omitempty"`
 	Wccp                          *string                                        `json:"wccp,omitempty"`
-	Webcache                      *string                                        `json:"webcache,omitempty"`
-	WebcacheHttps                 *string                                        `json:"webcache-https,omitempty"`
 	WebfilterProfile              *string                                        `json:"webfilter-profile,omitempty"`
 	WebproxyForwardServer         *string                                        `json:"webproxy-forward-server,omitempty"`
 	WebproxyProfile               *string                                        `json:"webproxy-profile,omitempty"`
-	Wsso                          *string                                        `json:"wsso,omitempty"`
 	ZtnaEmsTag                    *[]FirewallPolicyZtnaEmsTag                    `json:"ztna-ems-tag,omitempty"`
 	ZtnaGeoTag                    *[]FirewallPolicyZtnaGeoTag                    `json:"ztna-geo-tag,omitempty"`
 	ZtnaStatus                    *string                                        `json:"ztna-status,omitempty"`
 }
 
-type FirewallPolicyAppCategory struct {
-	Id *int64 `json:"id,omitempty"`
-}
-
-type FirewallPolicyAppGroup struct {
-	Name *string `json:"name,omitempty"`
-}
-
-type FirewallPolicyApplication struct {
-	Id *int64 `json:"id,omitempty"`
-}
+const FirewallPolicyCustomLogFieldsPath = "firewall/policy/custom-log-fields/"
 
 type FirewallPolicyCustomLogFields struct {
 	FieldId *string `json:"field-id,omitempty"`
 }
 
+const FirewallPolicyDstaddrPath = "firewall/policy/dstaddr/"
+
 type FirewallPolicyDstaddr struct {
 	Name *string `json:"name,omitempty"`
 }
+
+const FirewallPolicyDstaddr6Path = "firewall/policy/dstaddr6/"
 
 type FirewallPolicyDstaddr6 struct {
 	Name *string `json:"name,omitempty"`
 }
 
+const FirewallPolicyDstintfPath = "firewall/policy/dstintf/"
+
 type FirewallPolicyDstintf struct {
 	Name *string `json:"name,omitempty"`
 }
+
+const FirewallPolicyFssoGroupsPath = "firewall/policy/fsso-groups/"
 
 type FirewallPolicyFssoGroups struct {
 	Name *string `json:"name,omitempty"`
 }
 
+const FirewallPolicyGroupsPath = "firewall/policy/groups/"
+
 type FirewallPolicyGroups struct {
 	Name *string `json:"name,omitempty"`
 }
+
+const FirewallPolicyInternetServiceCustomPath = "firewall/policy/internet-service-custom/"
 
 type FirewallPolicyInternetServiceCustom struct {
 	Name *string `json:"name,omitempty"`
 }
 
+const FirewallPolicyInternetServiceCustomGroupPath = "firewall/policy/internet-service-custom-group/"
+
 type FirewallPolicyInternetServiceCustomGroup struct {
 	Name *string `json:"name,omitempty"`
 }
+
+const FirewallPolicyInternetServiceGroupPath = "firewall/policy/internet-service-group/"
 
 type FirewallPolicyInternetServiceGroup struct {
 	Name *string `json:"name,omitempty"`
 }
 
-type FirewallPolicyInternetServiceId struct {
-	Id *int64 `json:"id,omitempty"`
-}
+const FirewallPolicyInternetServiceNamePath = "firewall/policy/internet-service-name/"
 
 type FirewallPolicyInternetServiceName struct {
 	Name *string `json:"name,omitempty"`
 }
 
+const FirewallPolicyInternetServiceSrcCustomPath = "firewall/policy/internet-service-src-custom/"
+
 type FirewallPolicyInternetServiceSrcCustom struct {
 	Name *string `json:"name,omitempty"`
 }
+
+const FirewallPolicyInternetServiceSrcCustomGroupPath = "firewall/policy/internet-service-src-custom-group/"
 
 type FirewallPolicyInternetServiceSrcCustomGroup struct {
 	Name *string `json:"name,omitempty"`
 }
 
+const FirewallPolicyInternetServiceSrcGroupPath = "firewall/policy/internet-service-src-group/"
+
 type FirewallPolicyInternetServiceSrcGroup struct {
 	Name *string `json:"name,omitempty"`
 }
 
-type FirewallPolicyInternetServiceSrcId struct {
-	Id *int64 `json:"id,omitempty"`
-}
+const FirewallPolicyInternetServiceSrcNamePath = "firewall/policy/internet-service-src-name/"
 
 type FirewallPolicyInternetServiceSrcName struct {
 	Name *string `json:"name,omitempty"`
 }
 
+const FirewallPolicyNtlmEnabledBrowsersPath = "firewall/policy/ntlm-enabled-browsers/"
+
 type FirewallPolicyNtlmEnabledBrowsers struct {
 	UserAgentString *string `json:"user-agent-string,omitempty"`
 }
+
+const FirewallPolicyPoolnamePath = "firewall/policy/poolname/"
 
 type FirewallPolicyPoolname struct {
 	Name *string `json:"name,omitempty"`
 }
 
+const FirewallPolicyPoolname6Path = "firewall/policy/poolname6/"
+
 type FirewallPolicyPoolname6 struct {
 	Name *string `json:"name,omitempty"`
 }
+
+const FirewallPolicyRtpAddrPath = "firewall/policy/rtp-addr/"
 
 type FirewallPolicyRtpAddr struct {
 	Name *string `json:"name,omitempty"`
 }
 
+const FirewallPolicyServicePath = "firewall/policy/service/"
+
 type FirewallPolicyService struct {
 	Name *string `json:"name,omitempty"`
 }
+
+const FirewallPolicySgtPath = "firewall/policy/sgt/"
 
 type FirewallPolicySgt struct {
 	Id *int64 `json:"id,omitempty"`
 }
 
+const FirewallPolicySrcVendorMacPath = "firewall/policy/src-vendor-mac/"
+
 type FirewallPolicySrcVendorMac struct {
 	Id *int64 `json:"id,omitempty"`
 }
+
+const FirewallPolicySrcaddrPath = "firewall/policy/srcaddr/"
 
 type FirewallPolicySrcaddr struct {
 	Name *string `json:"name,omitempty"`
 }
 
+const FirewallPolicySrcaddr6Path = "firewall/policy/srcaddr6/"
+
 type FirewallPolicySrcaddr6 struct {
 	Name *string `json:"name,omitempty"`
 }
+
+const FirewallPolicySrcintfPath = "firewall/policy/srcintf/"
 
 type FirewallPolicySrcintf struct {
 	Name *string `json:"name,omitempty"`
 }
 
-type FirewallPolicySslMirrorIntf struct {
-	Name *string `json:"name,omitempty"`
-}
-
-type FirewallPolicyUrlCategory struct {
-	Id *int64 `json:"id,omitempty"`
-}
+const FirewallPolicyUsersPath = "firewall/policy/users/"
 
 type FirewallPolicyUsers struct {
 	Name *string `json:"name,omitempty"`
 }
 
+const FirewallPolicyZtnaEmsTagPath = "firewall/policy/ztna-ems-tag/"
+
 type FirewallPolicyZtnaEmsTag struct {
 	Name *string `json:"name,omitempty"`
 }
+
+const FirewallPolicyZtnaGeoTagPath = "firewall/policy/ztna-geo-tag/"
 
 type FirewallPolicyZtnaGeoTag struct {
 	Name *string `json:"name,omitempty"`

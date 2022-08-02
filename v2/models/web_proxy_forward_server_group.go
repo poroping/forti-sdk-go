@@ -10,6 +10,8 @@ type WebProxyForwardServerGroup struct {
 	ServerList      *[]WebProxyForwardServerGroupServerList `json:"server-list,omitempty"`
 }
 
+const WebProxyForwardServerGroupServerListPath = "web-proxy/forward-server-group/server-list/"
+
 type WebProxyForwardServerGroupServerList struct {
 	Name   *string `json:"name,omitempty"`
 	Weight *int64  `json:"weight,omitempty"`

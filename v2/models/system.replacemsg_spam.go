@@ -8,3 +8,11 @@ type SystemReplacemsgSpam struct {
 	Header  *string `json:"header,omitempty"`
 	MsgType *string `json:"msg-type,omitempty"`
 }
+
+// Set SystemReplacemsgSpam values to defaults
+func (def *SystemReplacemsgSpam) Defaults() {
+	def.Buffer = stringPtr("<no value>")
+	def.Format = stringPtr("")
+	def.Header = stringPtr("")
+	def.MsgType = stringPtr("")
+}

@@ -27,7 +27,6 @@ type SystemAutomationAction struct {
 	AzureFunctionAuthorization    *string                               `json:"azure-function-authorization,omitempty"`
 	Delay                         *int64                                `json:"delay,omitempty"`
 	Description                   *string                               `json:"description,omitempty"`
-	EmailBody                     *string                               `json:"email-body,omitempty"`
 	EmailFrom                     *string                               `json:"email-from,omitempty"`
 	EmailSubject                  *string                               `json:"email-subject,omitempty"`
 	EmailTo                       *[]SystemAutomationActionEmailTo      `json:"email-to,omitempty"`
@@ -43,7 +42,6 @@ type SystemAutomationAction struct {
 	Method                        *string                               `json:"method,omitempty"`
 	MinimumInterval               *int64                                `json:"minimum-interval,omitempty"`
 	Name                          *string                               `json:"name,omitempty"`
-	OutputSize                    *int64                                `json:"output-size,omitempty"`
 	Port                          *int64                                `json:"port,omitempty"`
 	Protocol                      *string                               `json:"protocol,omitempty"`
 	ReplacementMessage            *string                               `json:"replacement-message,omitempty"`
@@ -52,19 +50,24 @@ type SystemAutomationAction struct {
 	Script                        *string                               `json:"script,omitempty"`
 	SdnConnector                  *[]SystemAutomationActionSdnConnector `json:"sdn-connector,omitempty"`
 	SecurityTag                   *string                               `json:"security-tag,omitempty"`
-	Timeout                       *int64                                `json:"timeout,omitempty"`
 	TlsCertificate                *string                               `json:"tls-certificate,omitempty"`
 	Uri                           *string                               `json:"uri,omitempty"`
 	VerifyHostCert                *string                               `json:"verify-host-cert,omitempty"`
 }
 
+const SystemAutomationActionEmailToPath = "system/automation-action/email-to/"
+
 type SystemAutomationActionEmailTo struct {
 	Name *string `json:"name,omitempty"`
 }
 
+const SystemAutomationActionHeadersPath = "system/automation-action/headers/"
+
 type SystemAutomationActionHeaders struct {
 	Header *string `json:"header,omitempty"`
 }
+
+const SystemAutomationActionSdnConnectorPath = "system/automation-action/sdn-connector/"
 
 type SystemAutomationActionSdnConnector struct {
 	Name *string `json:"name,omitempty"`

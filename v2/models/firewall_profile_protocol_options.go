@@ -6,7 +6,6 @@ type FirewallProfileProtocolOptions struct {
 	Cifs                  *FirewallProfileProtocolOptionsCifs          `json:"cifs,omitempty"`
 	Comment               *string                                      `json:"comment,omitempty"`
 	Dns                   *FirewallProfileProtocolOptionsDns           `json:"dns,omitempty"`
-	FeatureSet            *string                                      `json:"feature-set,omitempty"`
 	Ftp                   *FirewallProfileProtocolOptionsFtp           `json:"ftp,omitempty"`
 	Http                  *FirewallProfileProtocolOptionsHttp          `json:"http,omitempty"`
 	Imap                  *FirewallProfileProtocolOptionsImap          `json:"imap,omitempty"`
@@ -22,6 +21,8 @@ type FirewallProfileProtocolOptions struct {
 	Ssh                   *FirewallProfileProtocolOptionsSsh           `json:"ssh,omitempty"`
 	SwitchingProtocolsLog *string                                      `json:"switching-protocols-log,omitempty"`
 }
+
+const FirewallProfileProtocolOptionsCifsPath = "firewall/profile-protocol-options/cifs/"
 
 type FirewallProfileProtocolOptionsCifs struct {
 	DomainController          *string                                           `json:"domain-controller,omitempty"`
@@ -40,15 +41,21 @@ type FirewallProfileProtocolOptionsCifs struct {
 	UncompressedOversizeLimit *int64                                            `json:"uncompressed-oversize-limit,omitempty"`
 }
 
+const FirewallProfileProtocolOptionsCifsServerKeytabPath = "firewall/profile-protocol-options/cifs/server-keytab/"
+
 type FirewallProfileProtocolOptionsCifsServerKeytab struct {
 	Keytab    *string `json:"keytab,omitempty"`
 	Principal *string `json:"principal,omitempty"`
 }
 
+const FirewallProfileProtocolOptionsDnsPath = "firewall/profile-protocol-options/dns/"
+
 type FirewallProfileProtocolOptionsDns struct {
 	Ports  *int64  `json:"ports,omitempty"`
 	Status *string `json:"status,omitempty"`
 }
+
+const FirewallProfileProtocolOptionsFtpPath = "firewall/profile-protocol-options/ftp/"
 
 type FirewallProfileProtocolOptionsFtp struct {
 	ComfortAmount                *int64  `json:"comfort-amount,omitempty"`
@@ -69,14 +76,12 @@ type FirewallProfileProtocolOptionsFtp struct {
 	UncompressedOversizeLimit    *int64  `json:"uncompressed-oversize-limit,omitempty"`
 }
 
+const FirewallProfileProtocolOptionsHttpPath = "firewall/profile-protocol-options/http/"
+
 type FirewallProfileProtocolOptionsHttp struct {
-	AddressIpRating              *string `json:"address-ip-rating,omitempty"`
 	BlockPageStatusCode          *int64  `json:"block-page-status-code,omitempty"`
 	ComfortAmount                *int64  `json:"comfort-amount,omitempty"`
 	ComfortInterval              *int64  `json:"comfort-interval,omitempty"`
-	FortinetBar                  *string `json:"fortinet-bar,omitempty"`
-	FortinetBarPort              *int64  `json:"fortinet-bar-port,omitempty"`
-	H2c                          *string `json:"h2c,omitempty"`
 	InspectAll                   *string `json:"inspect-all,omitempty"`
 	Options                      *string `json:"options,omitempty"`
 	OversizeLimit                *int64  `json:"oversize-limit,omitempty"`
@@ -102,6 +107,8 @@ type FirewallProfileProtocolOptionsHttp struct {
 	UnknownHttpVersion           *string `json:"unknown-http-version,omitempty"`
 }
 
+const FirewallProfileProtocolOptionsImapPath = "firewall/profile-protocol-options/imap/"
+
 type FirewallProfileProtocolOptionsImap struct {
 	InspectAll                *string `json:"inspect-all,omitempty"`
 	Options                   *string `json:"options,omitempty"`
@@ -115,10 +122,14 @@ type FirewallProfileProtocolOptionsImap struct {
 	UncompressedOversizeLimit *int64  `json:"uncompressed-oversize-limit,omitempty"`
 }
 
+const FirewallProfileProtocolOptionsMailSignaturePath = "firewall/profile-protocol-options/mail-signature/"
+
 type FirewallProfileProtocolOptionsMailSignature struct {
 	Signature *string `json:"signature,omitempty"`
 	Status    *string `json:"status,omitempty"`
 }
+
+const FirewallProfileProtocolOptionsMapiPath = "firewall/profile-protocol-options/mapi/"
 
 type FirewallProfileProtocolOptionsMapi struct {
 	Options                   *string `json:"options,omitempty"`
@@ -129,6 +140,8 @@ type FirewallProfileProtocolOptionsMapi struct {
 	UncompressedNestLimit     *int64  `json:"uncompressed-nest-limit,omitempty"`
 	UncompressedOversizeLimit *int64  `json:"uncompressed-oversize-limit,omitempty"`
 }
+
+const FirewallProfileProtocolOptionsNntpPath = "firewall/profile-protocol-options/nntp/"
 
 type FirewallProfileProtocolOptionsNntp struct {
 	InspectAll                *string `json:"inspect-all,omitempty"`
@@ -141,6 +154,8 @@ type FirewallProfileProtocolOptionsNntp struct {
 	UncompressedNestLimit     *int64  `json:"uncompressed-nest-limit,omitempty"`
 	UncompressedOversizeLimit *int64  `json:"uncompressed-oversize-limit,omitempty"`
 }
+
+const FirewallProfileProtocolOptionsPop3Path = "firewall/profile-protocol-options/pop3/"
 
 type FirewallProfileProtocolOptionsPop3 struct {
 	InspectAll                *string `json:"inspect-all,omitempty"`
@@ -155,6 +170,8 @@ type FirewallProfileProtocolOptionsPop3 struct {
 	UncompressedOversizeLimit *int64  `json:"uncompressed-oversize-limit,omitempty"`
 }
 
+const FirewallProfileProtocolOptionsSmtpPath = "firewall/profile-protocol-options/smtp/"
+
 type FirewallProfileProtocolOptionsSmtp struct {
 	InspectAll                *string `json:"inspect-all,omitempty"`
 	Options                   *string `json:"options,omitempty"`
@@ -168,6 +185,8 @@ type FirewallProfileProtocolOptionsSmtp struct {
 	UncompressedNestLimit     *int64  `json:"uncompressed-nest-limit,omitempty"`
 	UncompressedOversizeLimit *int64  `json:"uncompressed-oversize-limit,omitempty"`
 }
+
+const FirewallProfileProtocolOptionsSshPath = "firewall/profile-protocol-options/ssh/"
 
 type FirewallProfileProtocolOptionsSsh struct {
 	ComfortAmount                *int64  `json:"comfort-amount,omitempty"`

@@ -20,6 +20,8 @@ type SystemVdomDns struct {
 	VdomDns               *string                        `json:"vdom-dns,omitempty"`
 }
 
+const SystemVdomDnsServerHostnamePath = "system/vdom-dns/server-hostname/"
+
 type SystemVdomDnsServerHostname struct {
 	Hostname *string `json:"hostname,omitempty"`
 }

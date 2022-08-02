@@ -18,6 +18,8 @@ type UserFssoPolling struct {
 	User             *string                 `json:"user,omitempty"`
 }
 
+const UserFssoPollingAdgrpPath = "user/fsso-polling/adgrp/"
+
 type UserFssoPollingAdgrp struct {
 	Name *string `json:"name,omitempty"`
 }

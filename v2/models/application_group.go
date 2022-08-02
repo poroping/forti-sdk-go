@@ -16,13 +16,19 @@ type ApplicationGroup struct {
 	Vendor      *string                        `json:"vendor,omitempty"`
 }
 
+const ApplicationGroupApplicationPath = "application/group/application/"
+
 type ApplicationGroupApplication struct {
 	Id *int64 `json:"id,omitempty"`
 }
 
+const ApplicationGroupCategoryPath = "application/group/category/"
+
 type ApplicationGroupCategory struct {
 	Id *int64 `json:"id,omitempty"`
 }
+
+const ApplicationGroupRiskPath = "application/group/risk/"
 
 type ApplicationGroupRisk struct {
 	Level *int64 `json:"level,omitempty"`

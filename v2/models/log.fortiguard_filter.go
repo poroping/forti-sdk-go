@@ -17,6 +17,8 @@ type LogFortiguardFilter struct {
 	ZtnaTraffic      *string                         `json:"ztna-traffic,omitempty"`
 }
 
+const LogFortiguardFilterFreeStylePath = "log.fortiguard/filter/free-style/"
+
 type LogFortiguardFilterFreeStyle struct {
 	Category   *string `json:"category,omitempty"`
 	Filter     *string `json:"filter,omitempty"`

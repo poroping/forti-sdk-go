@@ -8,6 +8,8 @@ type RouterAccessList6 struct {
 	Rule     *[]RouterAccessList6Rule `json:"rule,omitempty"`
 }
 
+const RouterAccessList6RulePath = "router/access-list6/rule/"
+
 type RouterAccessList6Rule struct {
 	Action     *string `json:"action,omitempty"`
 	ExactMatch *string `json:"exact-match,omitempty"`

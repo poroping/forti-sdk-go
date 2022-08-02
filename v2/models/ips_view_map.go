@@ -9,3 +9,12 @@ type IpsViewMap struct {
 	VdomId     *int64  `json:"vdom-id,omitempty"`
 	Which      *string `json:"which,omitempty"`
 }
+
+// Set IpsViewMap values to defaults
+func (def *IpsViewMap) Defaults() {
+	def.Id = intPtr(0)
+	def.IdPolicyId = intPtr(0)
+	def.PolicyId = intPtr(0)
+	def.VdomId = intPtr(0)
+	def.Which = stringPtr("firewall")
+}

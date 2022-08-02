@@ -17,6 +17,8 @@ type SwitchControllerLldpProfile struct {
 	Name                  *string                                          `json:"name,omitempty"`
 }
 
+const SwitchControllerLldpProfileCustomTlvsPath = "switch-controller/lldp-profile/custom-tlvs/"
+
 type SwitchControllerLldpProfileCustomTlvs struct {
 	InformationString *string `json:"information-string,omitempty"`
 	Name              *string `json:"name,omitempty"`
@@ -24,11 +26,15 @@ type SwitchControllerLldpProfileCustomTlvs struct {
 	Subtype           *int64  `json:"subtype,omitempty"`
 }
 
+const SwitchControllerLldpProfileMedLocationServicePath = "switch-controller/lldp-profile/med-location-service/"
+
 type SwitchControllerLldpProfileMedLocationService struct {
 	Name          *string `json:"name,omitempty"`
 	Status        *string `json:"status,omitempty"`
 	SysLocationId *string `json:"sys-location-id,omitempty"`
 }
+
+const SwitchControllerLldpProfileMedNetworkPolicyPath = "switch-controller/lldp-profile/med-network-policy/"
 
 type SwitchControllerLldpProfileMedNetworkPolicy struct {
 	AssignVlan *string `json:"assign-vlan,omitempty"`

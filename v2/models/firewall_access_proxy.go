@@ -3,21 +3,19 @@ package models
 const FirewallAccessProxyPath = "firewall/access-proxy/"
 
 type FirewallAccessProxy struct {
-	ApiGateway               *[]FirewallAccessProxyApiGateway             `json:"api-gateway,omitempty"`
-	ApiGateway6              *[]FirewallAccessProxyApiGateway6            `json:"api-gateway6,omitempty"`
-	AuthPortal               *string                                      `json:"auth-portal,omitempty"`
-	AuthVirtualHost          *string                                      `json:"auth-virtual-host,omitempty"`
-	ClientCert               *string                                      `json:"client-cert,omitempty"`
-	DecryptedTrafficMirror   *string                                      `json:"decrypted-traffic-mirror,omitempty"`
-	EmptyCertAction          *string                                      `json:"empty-cert-action,omitempty"`
-	LdbMethod                *string                                      `json:"ldb-method,omitempty"`
-	LogBlockedTraffic        *string                                      `json:"log-blocked-traffic,omitempty"`
-	Name                     *string                                      `json:"name,omitempty"`
-	Realservers              *[]FirewallAccessProxyRealservers            `json:"realservers,omitempty"`
-	ServerPubkeyAuth         *string                                      `json:"server-pubkey-auth,omitempty"`
-	ServerPubkeyAuthSettings *FirewallAccessProxyServerPubkeyAuthSettings `json:"server-pubkey-auth-settings,omitempty"`
-	Vip                      *string                                      `json:"vip,omitempty"`
+	ApiGateway             *[]FirewallAccessProxyApiGateway  `json:"api-gateway,omitempty"`
+	ApiGateway6            *[]FirewallAccessProxyApiGateway6 `json:"api-gateway6,omitempty"`
+	AuthPortal             *string                           `json:"auth-portal,omitempty"`
+	AuthVirtualHost        *string                           `json:"auth-virtual-host,omitempty"`
+	ClientCert             *string                           `json:"client-cert,omitempty"`
+	DecryptedTrafficMirror *string                           `json:"decrypted-traffic-mirror,omitempty"`
+	EmptyCertAction        *string                           `json:"empty-cert-action,omitempty"`
+	LogBlockedTraffic      *string                           `json:"log-blocked-traffic,omitempty"`
+	Name                   *string                           `json:"name,omitempty"`
+	Vip                    *string                           `json:"vip,omitempty"`
 }
+
+const FirewallAccessProxyApiGatewayPath = "firewall/access-proxy/api-gateway/"
 
 type FirewallAccessProxyApiGateway struct {
 	HttpCookieAge            *int64                                          `json:"http-cookie-age,omitempty"`
@@ -45,6 +43,8 @@ type FirewallAccessProxyApiGateway struct {
 	VirtualHost              *string                                         `json:"virtual-host,omitempty"`
 }
 
+const FirewallAccessProxyApiGatewayRealserversPath = "firewall/access-proxy/api-gateway/realservers/"
+
 type FirewallAccessProxyApiGatewayRealservers struct {
 	AddrType             *string                                               `json:"addr-type,omitempty"`
 	Address              *string                                               `json:"address,omitempty"`
@@ -65,15 +65,21 @@ type FirewallAccessProxyApiGatewayRealservers struct {
 	Weight               *int64                                                `json:"weight,omitempty"`
 }
 
+const FirewallAccessProxyApiGatewayRealserversSshHostKeyPath = "firewall/access-proxy/api-gateway/realservers/ssh-host-key/"
+
 type FirewallAccessProxyApiGatewayRealserversSshHostKey struct {
 	Name *string `json:"name,omitempty"`
 }
+
+const FirewallAccessProxyApiGatewaySslCipherSuitesPath = "firewall/access-proxy/api-gateway/ssl-cipher-suites/"
 
 type FirewallAccessProxyApiGatewaySslCipherSuites struct {
 	Cipher   *string `json:"cipher,omitempty"`
 	Priority *int64  `json:"priority,omitempty"`
 	Versions *string `json:"versions,omitempty"`
 }
+
+const FirewallAccessProxyApiGateway6Path = "firewall/access-proxy/api-gateway6/"
 
 type FirewallAccessProxyApiGateway6 struct {
 	HttpCookieAge            *int64                                           `json:"http-cookie-age,omitempty"`
@@ -101,6 +107,8 @@ type FirewallAccessProxyApiGateway6 struct {
 	VirtualHost              *string                                          `json:"virtual-host,omitempty"`
 }
 
+const FirewallAccessProxyApiGateway6RealserversPath = "firewall/access-proxy/api-gateway6/realservers/"
+
 type FirewallAccessProxyApiGateway6Realservers struct {
 	AddrType             *string                                                `json:"addr-type,omitempty"`
 	Address              *string                                                `json:"address,omitempty"`
@@ -121,38 +129,16 @@ type FirewallAccessProxyApiGateway6Realservers struct {
 	Weight               *int64                                                 `json:"weight,omitempty"`
 }
 
+const FirewallAccessProxyApiGateway6RealserversSshHostKeyPath = "firewall/access-proxy/api-gateway6/realservers/ssh-host-key/"
+
 type FirewallAccessProxyApiGateway6RealserversSshHostKey struct {
 	Name *string `json:"name,omitempty"`
 }
+
+const FirewallAccessProxyApiGateway6SslCipherSuitesPath = "firewall/access-proxy/api-gateway6/ssl-cipher-suites/"
 
 type FirewallAccessProxyApiGateway6SslCipherSuites struct {
 	Cipher   *string `json:"cipher,omitempty"`
 	Priority *int64  `json:"priority,omitempty"`
 	Versions *string `json:"versions,omitempty"`
-}
-
-type FirewallAccessProxyRealservers struct {
-	Id     *int64  `json:"id,omitempty"`
-	Ip     *string `json:"ip,omitempty"`
-	Port   *int64  `json:"port,omitempty"`
-	Status *string `json:"status,omitempty"`
-	Weight *int64  `json:"weight,omitempty"`
-}
-
-type FirewallAccessProxyServerPubkeyAuthSettings struct {
-	AuthCa                *string                                                     `json:"auth-ca,omitempty"`
-	CertExtension         *[]FirewallAccessProxyServerPubkeyAuthSettingsCertExtension `json:"cert-extension,omitempty"`
-	PermitAgentForwarding *string                                                     `json:"permit-agent-forwarding,omitempty"`
-	PermitPortForwarding  *string                                                     `json:"permit-port-forwarding,omitempty"`
-	PermitPty             *string                                                     `json:"permit-pty,omitempty"`
-	PermitUserRc          *string                                                     `json:"permit-user-rc,omitempty"`
-	PermitX11Forwarding   *string                                                     `json:"permit-x11-forwarding,omitempty"`
-	SourceAddress         *string                                                     `json:"source-address,omitempty"`
-}
-
-type FirewallAccessProxyServerPubkeyAuthSettingsCertExtension struct {
-	Critical *string `json:"critical,omitempty"`
-	Data     *string `json:"data,omitempty"`
-	Name     *string `json:"name,omitempty"`
-	Type     *string `json:"type,omitempty"`
 }

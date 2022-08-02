@@ -9,6 +9,8 @@ type FirewallScheduleGroup struct {
 	Name         *string                        `json:"name,omitempty"`
 }
 
+const FirewallScheduleGroupMemberPath = "firewall.schedule/group/member/"
+
 type FirewallScheduleGroupMember struct {
 	Name *string `json:"name,omitempty"`
 }

@@ -27,6 +27,8 @@ type WirelessControllerArrpProfile struct {
 	WeightWeatherChannel   *int64                                                 `json:"weight-weather-channel,omitempty"`
 }
 
+const WirelessControllerArrpProfileDarrpOptimizeSchedulesPath = "wireless-controller/arrp-profile/darrp-optimize-schedules/"
+
 type WirelessControllerArrpProfileDarrpOptimizeSchedules struct {
 	Name *string `json:"name,omitempty"`
 }

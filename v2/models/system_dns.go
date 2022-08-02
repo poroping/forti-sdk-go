@@ -26,9 +26,13 @@ type SystemDns struct {
 	Timeout                *int64                     `json:"timeout,omitempty"`
 }
 
+const SystemDnsDomainPath = "system/dns/domain/"
+
 type SystemDnsDomain struct {
 	Domain *string `json:"domain,omitempty"`
 }
+
+const SystemDnsServerHostnamePath = "system/dns/server-hostname/"
 
 type SystemDnsServerHostname struct {
 	Hostname *string `json:"hostname,omitempty"`

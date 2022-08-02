@@ -9,6 +9,8 @@ type WebfilterContent struct {
 	Name    *string                    `json:"name,omitempty"`
 }
 
+const WebfilterContentEntriesPath = "webfilter/content/entries/"
+
 type WebfilterContentEntries struct {
 	Action      *string `json:"action,omitempty"`
 	Lang        *string `json:"lang,omitempty"`

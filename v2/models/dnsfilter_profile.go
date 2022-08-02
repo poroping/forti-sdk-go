@@ -20,6 +20,8 @@ type DnsfilterProfile struct {
 	YoutubeRestrict     *string                                `json:"youtube-restrict,omitempty"`
 }
 
+const DnsfilterProfileDnsTranslationPath = "dnsfilter/profile/dns-translation/"
+
 type DnsfilterProfileDnsTranslation struct {
 	AddrType *string `json:"addr-type,omitempty"`
 	Dst      *string `json:"dst,omitempty"`
@@ -32,18 +34,26 @@ type DnsfilterProfileDnsTranslation struct {
 	Status   *string `json:"status,omitempty"`
 }
 
+const DnsfilterProfileDomainFilterPath = "dnsfilter/profile/domain-filter/"
+
 type DnsfilterProfileDomainFilter struct {
 	DomainFilterTable *int64 `json:"domain-filter-table,omitempty"`
 }
+
+const DnsfilterProfileExternalIpBlocklistPath = "dnsfilter/profile/external-ip-blocklist/"
 
 type DnsfilterProfileExternalIpBlocklist struct {
 	Name *string `json:"name,omitempty"`
 }
 
+const DnsfilterProfileFtgdDnsPath = "dnsfilter/profile/ftgd-dns/"
+
 type DnsfilterProfileFtgdDns struct {
 	Filters *[]DnsfilterProfileFtgdDnsFilters `json:"filters,omitempty"`
 	Options *string                           `json:"options,omitempty"`
 }
+
+const DnsfilterProfileFtgdDnsFiltersPath = "dnsfilter/profile/ftgd-dns/filters/"
 
 type DnsfilterProfileFtgdDnsFilters struct {
 	Action   *string `json:"action,omitempty"`

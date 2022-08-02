@@ -20,21 +20,31 @@ type AuthenticationRule struct {
 	WebPortal        *string                       `json:"web-portal,omitempty"`
 }
 
+const AuthenticationRuleDstaddrPath = "authentication/rule/dstaddr/"
+
 type AuthenticationRuleDstaddr struct {
 	Name *string `json:"name,omitempty"`
 }
+
+const AuthenticationRuleDstaddr6Path = "authentication/rule/dstaddr6/"
 
 type AuthenticationRuleDstaddr6 struct {
 	Name *string `json:"name,omitempty"`
 }
 
+const AuthenticationRuleSrcaddrPath = "authentication/rule/srcaddr/"
+
 type AuthenticationRuleSrcaddr struct {
 	Name *string `json:"name,omitempty"`
 }
 
+const AuthenticationRuleSrcaddr6Path = "authentication/rule/srcaddr6/"
+
 type AuthenticationRuleSrcaddr6 struct {
 	Name *string `json:"name,omitempty"`
 }
+
+const AuthenticationRuleSrcintfPath = "authentication/rule/srcintf/"
 
 type AuthenticationRuleSrcintf struct {
 	Name *string `json:"name,omitempty"`

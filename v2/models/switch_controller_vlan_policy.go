@@ -13,9 +13,13 @@ type SwitchControllerVlanPolicy struct {
 	Vlan            *string                                    `json:"vlan,omitempty"`
 }
 
+const SwitchControllerVlanPolicyAllowedVlansPath = "switch-controller/vlan-policy/allowed-vlans/"
+
 type SwitchControllerVlanPolicyAllowedVlans struct {
 	VlanName *string `json:"vlan-name,omitempty"`
 }
+
+const SwitchControllerVlanPolicyUntaggedVlansPath = "switch-controller/vlan-policy/untagged-vlans/"
 
 type SwitchControllerVlanPolicyUntaggedVlans struct {
 	VlanName *string `json:"vlan-name,omitempty"`

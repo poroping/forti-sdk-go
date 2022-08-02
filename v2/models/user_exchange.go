@@ -18,6 +18,8 @@ type UserExchange struct {
 	Username           *string              `json:"username,omitempty"`
 }
 
+const UserExchangeKdcIpPath = "user/exchange/kdc-ip/"
+
 type UserExchangeKdcIp struct {
 	Ipv4 *string `json:"ipv4,omitempty"`
 }

@@ -12,7 +12,19 @@ type FirewallInternetService struct {
 	IpRangeNumber      *int64  `json:"ip-range-number,omitempty"`
 	Name               *string `json:"name,omitempty"`
 	Obsolete           *int64  `json:"obsolete,omitempty"`
-	Reputation         *int64  `json:"reputation,omitempty"`
 	Singularity        *int64  `json:"singularity,omitempty"`
-	SldId              *int64  `json:"sld-id,omitempty"`
+}
+
+// Set FirewallInternetService values to defaults
+func (def *FirewallInternetService) Defaults() {
+	def.Database = stringPtr("isdb")
+	def.Direction = stringPtr("both")
+	def.ExtraIpRangeNumber = intPtr(0)
+	def.IconId = intPtr(0)
+	def.Id = intPtr(0)
+	def.IpNumber = intPtr(0)
+	def.IpRangeNumber = intPtr(0)
+	def.Name = stringPtr("")
+	def.Obsolete = intPtr(0)
+	def.Singularity = intPtr(0)
 }

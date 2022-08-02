@@ -7,7 +7,6 @@ type WebfilterProfile struct {
 	Comment                   *string                                 `json:"comment,omitempty"`
 	ExtendedLog               *string                                 `json:"extended-log,omitempty"`
 	FeatureSet                *string                                 `json:"feature-set,omitempty"`
-	FileFilter                *WebfilterProfileFileFilter             `json:"file-filter,omitempty"`
 	FtgdWf                    *WebfilterProfileFtgdWf                 `json:"ftgd-wf,omitempty"`
 	HttpsReplacemsg           *string                                 `json:"https-replacemsg,omitempty"`
 	LogAllUrl                 *string                                 `json:"log-all-url,omitempty"`
@@ -42,6 +41,8 @@ type WebfilterProfile struct {
 	YoutubeChannelStatus      *string                                 `json:"youtube-channel-status,omitempty"`
 }
 
+const WebfilterProfileAntiphishPath = "webfilter/profile/antiphish/"
+
 type WebfilterProfileAntiphish struct {
 	Authentication    *string                                       `json:"authentication,omitempty"`
 	CheckBasicAuth    *string                                       `json:"check-basic-auth,omitempty"`
@@ -56,11 +57,15 @@ type WebfilterProfileAntiphish struct {
 	Status            *string                                       `json:"status,omitempty"`
 }
 
+const WebfilterProfileAntiphishCustomPatternsPath = "webfilter/profile/antiphish/custom-patterns/"
+
 type WebfilterProfileAntiphishCustomPatterns struct {
 	Category *string `json:"category,omitempty"`
 	Pattern  *string `json:"pattern,omitempty"`
 	Type     *string `json:"type,omitempty"`
 }
+
+const WebfilterProfileAntiphishInspectionEntriesPath = "webfilter/profile/antiphish/inspection-entries/"
 
 type WebfilterProfileAntiphishInspectionEntries struct {
 	Action             *string `json:"action,omitempty"`
@@ -68,26 +73,7 @@ type WebfilterProfileAntiphishInspectionEntries struct {
 	Name               *string `json:"name,omitempty"`
 }
 
-type WebfilterProfileFileFilter struct {
-	Entries             *[]WebfilterProfileFileFilterEntries `json:"entries,omitempty"`
-	Log                 *string                              `json:"log,omitempty"`
-	ScanArchiveContents *string                              `json:"scan-archive-contents,omitempty"`
-	Status              *string                              `json:"status,omitempty"`
-}
-
-type WebfilterProfileFileFilterEntries struct {
-	Action            *string                                      `json:"action,omitempty"`
-	Comment           *string                                      `json:"comment,omitempty"`
-	Direction         *string                                      `json:"direction,omitempty"`
-	FileType          *[]WebfilterProfileFileFilterEntriesFileType `json:"file-type,omitempty"`
-	Filter            *string                                      `json:"filter,omitempty"`
-	PasswordProtected *string                                      `json:"password-protected,omitempty"`
-	Protocol          *string                                      `json:"protocol,omitempty"`
-}
-
-type WebfilterProfileFileFilterEntriesFileType struct {
-	Name *string `json:"name,omitempty"`
-}
+const WebfilterProfileFtgdWfPath = "webfilter/profile/ftgd-wf/"
 
 type WebfilterProfileFtgdWf struct {
 	ExemptQuota        *string                          `json:"exempt-quota,omitempty"`
@@ -98,9 +84,10 @@ type WebfilterProfileFtgdWf struct {
 	Quota              *[]WebfilterProfileFtgdWfQuota   `json:"quota,omitempty"`
 	RateCrlUrls        *string                          `json:"rate-crl-urls,omitempty"`
 	RateCssUrls        *string                          `json:"rate-css-urls,omitempty"`
-	RateImageUrls      *string                          `json:"rate-image-urls,omitempty"`
 	RateJavascriptUrls *string                          `json:"rate-javascript-urls,omitempty"`
 }
+
+const WebfilterProfileFtgdWfFiltersPath = "webfilter/profile/ftgd-wf/filters/"
 
 type WebfilterProfileFtgdWfFilters struct {
 	Action              *string                                    `json:"action,omitempty"`
@@ -114,9 +101,13 @@ type WebfilterProfileFtgdWfFilters struct {
 	WarningPrompt       *string                                    `json:"warning-prompt,omitempty"`
 }
 
+const WebfilterProfileFtgdWfFiltersAuthUsrGrpPath = "webfilter/profile/ftgd-wf/filters/auth-usr-grp/"
+
 type WebfilterProfileFtgdWfFiltersAuthUsrGrp struct {
 	Name *string `json:"name,omitempty"`
 }
+
+const WebfilterProfileFtgdWfQuotaPath = "webfilter/profile/ftgd-wf/quota/"
 
 type WebfilterProfileFtgdWfQuota struct {
 	Category           *string `json:"category,omitempty"`
@@ -127,6 +118,8 @@ type WebfilterProfileFtgdWfQuota struct {
 	Unit               *string `json:"unit,omitempty"`
 	Value              *int64  `json:"value,omitempty"`
 }
+
+const WebfilterProfileOverridePath = "webfilter/profile/override/"
 
 type WebfilterProfileOverride struct {
 	OvrdCookie       *string                                  `json:"ovrd-cookie,omitempty"`
@@ -139,13 +132,19 @@ type WebfilterProfileOverride struct {
 	ProfileType      *string                                  `json:"profile-type,omitempty"`
 }
 
+const WebfilterProfileOverrideOvrdUserGroupPath = "webfilter/profile/override/ovrd-user-group/"
+
 type WebfilterProfileOverrideOvrdUserGroup struct {
 	Name *string `json:"name,omitempty"`
 }
 
+const WebfilterProfileOverrideProfilePath = "webfilter/profile/override/profile/"
+
 type WebfilterProfileOverrideProfile struct {
 	Name *string `json:"name,omitempty"`
 }
+
+const WebfilterProfileWebPath = "webfilter/profile/web/"
 
 type WebfilterProfileWeb struct {
 	Allowlist         *string                            `json:"allowlist,omitempty"`
@@ -163,13 +162,19 @@ type WebfilterProfileWeb struct {
 	YoutubeRestrict   *string                            `json:"youtube-restrict,omitempty"`
 }
 
+const WebfilterProfileWebKeywordMatchPath = "webfilter/profile/web/keyword-match/"
+
 type WebfilterProfileWebKeywordMatch struct {
 	Pattern *string `json:"pattern,omitempty"`
 }
 
+const WebfilterProfileWispServersPath = "webfilter/profile/wisp-servers/"
+
 type WebfilterProfileWispServers struct {
 	Name *string `json:"name,omitempty"`
 }
+
+const WebfilterProfileYoutubeChannelFilterPath = "webfilter/profile/youtube-channel-filter/"
 
 type WebfilterProfileYoutubeChannelFilter struct {
 	ChannelId *string `json:"channel-id,omitempty"`

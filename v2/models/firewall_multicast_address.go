@@ -12,14 +12,17 @@ type FirewallMulticastAddress struct {
 	Subnet              *string                            `json:"subnet,omitempty"`
 	Tagging             *[]FirewallMulticastAddressTagging `json:"tagging,omitempty"`
 	Type                *string                            `json:"type,omitempty"`
-	Visibility          *string                            `json:"visibility,omitempty"`
 }
+
+const FirewallMulticastAddressTaggingPath = "firewall/multicast-address/tagging/"
 
 type FirewallMulticastAddressTagging struct {
 	Category *string                                `json:"category,omitempty"`
 	Name     *string                                `json:"name,omitempty"`
 	Tags     *[]FirewallMulticastAddressTaggingTags `json:"tags,omitempty"`
 }
+
+const FirewallMulticastAddressTaggingTagsPath = "firewall/multicast-address/tagging/tags/"
 
 type FirewallMulticastAddressTaggingTags struct {
 	Name *string `json:"name,omitempty"`

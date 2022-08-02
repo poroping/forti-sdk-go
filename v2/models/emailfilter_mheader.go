@@ -9,6 +9,8 @@ type EmailfilterMheader struct {
 	Name    *string                      `json:"name,omitempty"`
 }
 
+const EmailfilterMheaderEntriesPath = "emailfilter/mheader/entries/"
+
 type EmailfilterMheaderEntries struct {
 	Action      *string `json:"action,omitempty"`
 	Fieldbody   *string `json:"fieldbody,omitempty"`

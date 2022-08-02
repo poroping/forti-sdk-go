@@ -27,6 +27,8 @@ type LogFortianalyzerCloudSetting struct {
 	UploadTime                *string                               `json:"upload-time,omitempty"`
 }
 
+const LogFortianalyzerCloudSettingSerialPath = "log.fortianalyzer-cloud/setting/serial/"
+
 type LogFortianalyzerCloudSettingSerial struct {
 	Name *string `json:"name,omitempty"`
 }

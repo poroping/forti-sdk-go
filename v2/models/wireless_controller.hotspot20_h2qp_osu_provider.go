@@ -12,11 +12,15 @@ type WirelessControllerHotspot20H2qpOsuProvider struct {
 	ServiceDescription *[]WirelessControllerHotspot20H2qpOsuProviderServiceDescription `json:"service-description,omitempty"`
 }
 
+const WirelessControllerHotspot20H2qpOsuProviderFriendlyNamePath = "wireless-controller.hotspot20/h2qp-osu-provider/friendly-name/"
+
 type WirelessControllerHotspot20H2qpOsuProviderFriendlyName struct {
 	FriendlyName *string `json:"friendly-name,omitempty"`
 	Index        *int64  `json:"index,omitempty"`
 	Lang         *string `json:"lang,omitempty"`
 }
+
+const WirelessControllerHotspot20H2qpOsuProviderServiceDescriptionPath = "wireless-controller.hotspot20/h2qp-osu-provider/service-description/"
 
 type WirelessControllerHotspot20H2qpOsuProviderServiceDescription struct {
 	Lang               *string `json:"lang,omitempty"`

@@ -88,17 +88,25 @@ type FirewallVip struct {
 	WebsphereServer              *string                             `json:"websphere-server,omitempty"`
 }
 
+const FirewallVipExtaddrPath = "firewall/vip/extaddr/"
+
 type FirewallVipExtaddr struct {
 	Name *string `json:"name,omitempty"`
 }
+
+const FirewallVipMappedipPath = "firewall/vip/mappedip/"
 
 type FirewallVipMappedip struct {
 	Range *string `json:"range,omitempty"`
 }
 
+const FirewallVipMonitorPath = "firewall/vip/monitor/"
+
 type FirewallVipMonitor struct {
 	Name *string `json:"name,omitempty"`
 }
+
+const FirewallVipRealserversPath = "firewall/vip/realservers/"
 
 type FirewallVipRealservers struct {
 	Address          *string                          `json:"address,omitempty"`
@@ -116,27 +124,39 @@ type FirewallVipRealservers struct {
 	Weight           *int64                           `json:"weight,omitempty"`
 }
 
+const FirewallVipRealserversMonitorPath = "firewall/vip/realservers/monitor/"
+
 type FirewallVipRealserversMonitor struct {
 	Name *string `json:"name,omitempty"`
 }
+
+const FirewallVipServicePath = "firewall/vip/service/"
 
 type FirewallVipService struct {
 	Name *string `json:"name,omitempty"`
 }
 
+const FirewallVipSrcFilterPath = "firewall/vip/src-filter/"
+
 type FirewallVipSrcFilter struct {
 	Range *string `json:"range,omitempty"`
 }
 
+const FirewallVipSrcintfFilterPath = "firewall/vip/srcintf-filter/"
+
 type FirewallVipSrcintfFilter struct {
 	InterfaceName *string `json:"interface-name,omitempty"`
 }
+
+const FirewallVipSslCipherSuitesPath = "firewall/vip/ssl-cipher-suites/"
 
 type FirewallVipSslCipherSuites struct {
 	Cipher   *string `json:"cipher,omitempty"`
 	Priority *int64  `json:"priority,omitempty"`
 	Versions *string `json:"versions,omitempty"`
 }
+
+const FirewallVipSslServerCipherSuitesPath = "firewall/vip/ssl-server-cipher-suites/"
 
 type FirewallVipSslServerCipherSuites struct {
 	Cipher   *string `json:"cipher,omitempty"`

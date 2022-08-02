@@ -18,6 +18,8 @@ type RouterPolicy6 struct {
 	TosMask      *string                     `json:"tos-mask,omitempty"`
 }
 
+const RouterPolicy6InputDevicePath = "router/policy6/input-device/"
+
 type RouterPolicy6InputDevice struct {
 	Name *string `json:"name,omitempty"`
 }

@@ -28,17 +28,25 @@ type WirelessControllerQosProfile struct {
 	WmmVoDscp                 *int64                                   `json:"wmm-vo-dscp,omitempty"`
 }
 
+const WirelessControllerQosProfileDscpWmmBePath = "wireless-controller/qos-profile/dscp-wmm-be/"
+
 type WirelessControllerQosProfileDscpWmmBe struct {
 	Id *int64 `json:"id,omitempty"`
 }
+
+const WirelessControllerQosProfileDscpWmmBkPath = "wireless-controller/qos-profile/dscp-wmm-bk/"
 
 type WirelessControllerQosProfileDscpWmmBk struct {
 	Id *int64 `json:"id,omitempty"`
 }
 
+const WirelessControllerQosProfileDscpWmmViPath = "wireless-controller/qos-profile/dscp-wmm-vi/"
+
 type WirelessControllerQosProfileDscpWmmVi struct {
 	Id *int64 `json:"id,omitempty"`
 }
+
+const WirelessControllerQosProfileDscpWmmVoPath = "wireless-controller/qos-profile/dscp-wmm-vo/"
 
 type WirelessControllerQosProfileDscpWmmVo struct {
 	Id *int64 `json:"id,omitempty"`

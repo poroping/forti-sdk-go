@@ -9,6 +9,8 @@ type SwitchControllerLocation struct {
 	Name         *string                               `json:"name,omitempty"`
 }
 
+const SwitchControllerLocationAddressCivicPath = "switch-controller/location/address-civic/"
+
 type SwitchControllerLocationAddressCivic struct {
 	Additional         *string `json:"additional,omitempty"`
 	AdditionalCode     *string `json:"additional-code,omitempty"`
@@ -46,6 +48,8 @@ type SwitchControllerLocationAddressCivic struct {
 	Zip                *string `json:"zip,omitempty"`
 }
 
+const SwitchControllerLocationCoordinatesPath = "switch-controller/location/coordinates/"
+
 type SwitchControllerLocationCoordinates struct {
 	Altitude     *string `json:"altitude,omitempty"`
 	AltitudeUnit *string `json:"altitude-unit,omitempty"`
@@ -54,6 +58,8 @@ type SwitchControllerLocationCoordinates struct {
 	Longitude    *string `json:"longitude,omitempty"`
 	ParentKey    *string `json:"parent-key,omitempty"`
 }
+
+const SwitchControllerLocationElinNumberPath = "switch-controller/location/elin-number/"
 
 type SwitchControllerLocationElinNumber struct {
 	ElinNum   *string `json:"elin-num,omitempty"`

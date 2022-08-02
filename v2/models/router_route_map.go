@@ -8,6 +8,8 @@ type RouterRouteMap struct {
 	Rule     *[]RouterRouteMapRule `json:"rule,omitempty"`
 }
 
+const RouterRouteMapRulePath = "router/route-map/rule/"
+
 type RouterRouteMapRule struct {
 	Action                             *string                                 `json:"action,omitempty"`
 	Id                                 *int64                                  `json:"id,omitempty"`
@@ -49,23 +51,30 @@ type RouterRouteMapRule struct {
 	SetMetricType                      *string                                 `json:"set-metric-type,omitempty"`
 	SetOrigin                          *string                                 `json:"set-origin,omitempty"`
 	SetOriginatorId                    *string                                 `json:"set-originator-id,omitempty"`
-	SetPriority                        *int64                                  `json:"set-priority,omitempty"`
 	SetRouteTag                        *int64                                  `json:"set-route-tag,omitempty"`
 	SetTag                             *int64                                  `json:"set-tag,omitempty"`
 	SetWeight                          *int64                                  `json:"set-weight,omitempty"`
 }
 
+const RouterRouteMapRuleSetAspathPath = "router/route-map/rule/set-aspath/"
+
 type RouterRouteMapRuleSetAspath struct {
 	As *string `json:"as,omitempty"`
 }
+
+const RouterRouteMapRuleSetCommunityPath = "router/route-map/rule/set-community/"
 
 type RouterRouteMapRuleSetCommunity struct {
 	Community *string `json:"community,omitempty"`
 }
 
+const RouterRouteMapRuleSetExtcommunityRtPath = "router/route-map/rule/set-extcommunity-rt/"
+
 type RouterRouteMapRuleSetExtcommunityRt struct {
 	Community *string `json:"community,omitempty"`
 }
+
+const RouterRouteMapRuleSetExtcommunitySooPath = "router/route-map/rule/set-extcommunity-soo/"
 
 type RouterRouteMapRuleSetExtcommunitySoo struct {
 	Community *string `json:"community,omitempty"`

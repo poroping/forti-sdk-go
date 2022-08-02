@@ -11,5 +11,4 @@ type SystemStorage struct {
 	Size        *int64  `json:"size,omitempty"`
 	Status      *string `json:"status,omitempty"`
 	Usage       *string `json:"usage,omitempty"`
-	WanoptMode  *string `json:"wanopt-mode,omitempty"`
 }

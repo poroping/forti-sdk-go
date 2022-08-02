@@ -11,6 +11,8 @@ type VideofilterYoutubeChannelFilter struct {
 	Name          *string                                   `json:"name,omitempty"`
 }
 
+const VideofilterYoutubeChannelFilterEntriesPath = "videofilter/youtube-channel-filter/entries/"
+
 type VideofilterYoutubeChannelFilterEntries struct {
 	Action    *string `json:"action,omitempty"`
 	ChannelId *string `json:"channel-id,omitempty"`

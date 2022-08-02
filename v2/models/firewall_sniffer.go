@@ -8,8 +8,6 @@ type FirewallSniffer struct {
 	ApplicationListStatus    *string                        `json:"application-list-status,omitempty"`
 	AvProfile                *string                        `json:"av-profile,omitempty"`
 	AvProfileStatus          *string                        `json:"av-profile-status,omitempty"`
-	DlpProfile               *string                        `json:"dlp-profile,omitempty"`
-	DlpProfileStatus         *string                        `json:"dlp-profile-status,omitempty"`
 	DlpSensor                *string                        `json:"dlp-sensor,omitempty"`
 	DlpSensorStatus          *string                        `json:"dlp-sensor-status,omitempty"`
 	Dsri                     *string                        `json:"dsri,omitempty"`
@@ -37,17 +35,28 @@ type FirewallSniffer struct {
 	WebfilterProfileStatus   *string                        `json:"webfilter-profile-status,omitempty"`
 }
 
+const FirewallSnifferAnomalyPath = "firewall/sniffer/anomaly/"
+
 type FirewallSnifferAnomaly struct {
-	Action           *string `json:"action,omitempty"`
-	Log              *string `json:"log,omitempty"`
-	Name             *string `json:"name,omitempty"`
-	Quarantine       *string `json:"quarantine,omitempty"`
-	QuarantineExpiry *string `json:"quarantine-expiry,omitempty"`
-	QuarantineLog    *string `json:"quarantine-log,omitempty"`
-	Status           *string `json:"status,omitempty"`
-	Threshold        *int64  `json:"threshold,omitempty"`
-	Thresholddefault *int64  `json:"threshold(default),omitempty"`
+	Action                 *string `json:"action,omitempty"`
+	Log                    *string `json:"log,omitempty"`
+	Name                   *string `json:"name,omitempty"`
+	Quarantine             *string `json:"quarantine,omitempty"`
+	QuarantineExpiry       *string `json:"quarantine-expiry,omitempty"`
+	QuarantineLog          *string `json:"quarantine-log,omitempty"`
+	Status                 *string `json:"status,omitempty"`
+	SynproxyTcpMss         *string `json:"synproxy-tcp-mss,omitempty"`
+	SynproxyTcpSack        *string `json:"synproxy-tcp-sack,omitempty"`
+	SynproxyTcpTimestamp   *string `json:"synproxy-tcp-timestamp,omitempty"`
+	SynproxyTcpWindow      *string `json:"synproxy-tcp-window,omitempty"`
+	SynproxyTcpWindowscale *string `json:"synproxy-tcp-windowscale,omitempty"`
+	SynproxyTos            *string `json:"synproxy-tos,omitempty"`
+	SynproxyTtl            *string `json:"synproxy-ttl,omitempty"`
+	Threshold              *int64  `json:"threshold,omitempty"`
+	Thresholddefault       *int64  `json:"threshold(default),omitempty"`
 }
+
+const FirewallSnifferIpThreatfeedPath = "firewall/sniffer/ip-threatfeed/"
 
 type FirewallSnifferIpThreatfeed struct {
 	Name *string `json:"name,omitempty"`

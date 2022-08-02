@@ -12,6 +12,8 @@ type SystemPtp struct {
 	Status          *string                     `json:"status,omitempty"`
 }
 
+const SystemPtpServerInterfacePath = "system/ptp/server-interface/"
+
 type SystemPtpServerInterface struct {
 	DelayMechanism      *string `json:"delay-mechanism,omitempty"`
 	Id                  *int64  `json:"id,omitempty"`

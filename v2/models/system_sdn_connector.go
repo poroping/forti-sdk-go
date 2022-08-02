@@ -14,7 +14,6 @@ type SystemSdnConnector struct {
 	ExternalAccountList *[]SystemSdnConnectorExternalAccountList `json:"external-account-list,omitempty"`
 	ExternalIp          *[]SystemSdnConnectorExternalIp          `json:"external-ip,omitempty"`
 	ForwardingRule      *[]SystemSdnConnectorForwardingRule      `json:"forwarding-rule,omitempty"`
-	GcpProject          *string                                  `json:"gcp-project,omitempty"`
 	GcpProjectList      *[]SystemSdnConnectorGcpProjectList      `json:"gcp-project-list,omitempty"`
 	GroupName           *string                                  `json:"group-name,omitempty"`
 	HaStatus            *string                                  `json:"ha-status,omitempty"`
@@ -54,37 +53,53 @@ type SystemSdnConnector struct {
 	VpcId               *string                                  `json:"vpc-id,omitempty"`
 }
 
+const SystemSdnConnectorExternalAccountListPath = "system/sdn-connector/external-account-list/"
+
 type SystemSdnConnectorExternalAccountList struct {
 	RegionList *[]SystemSdnConnectorExternalAccountListRegionList `json:"region-list,omitempty"`
 	RoleArn    *string                                            `json:"role-arn,omitempty"`
 }
 
+const SystemSdnConnectorExternalAccountListRegionListPath = "system/sdn-connector/external-account-list/region-list/"
+
 type SystemSdnConnectorExternalAccountListRegionList struct {
 	Region *string `json:"region,omitempty"`
 }
 
+const SystemSdnConnectorExternalIpPath = "system/sdn-connector/external-ip/"
+
 type SystemSdnConnectorExternalIp struct {
 	Name *string `json:"name,omitempty"`
 }
+
+const SystemSdnConnectorForwardingRulePath = "system/sdn-connector/forwarding-rule/"
 
 type SystemSdnConnectorForwardingRule struct {
 	RuleName *string `json:"rule-name,omitempty"`
 	Target   *string `json:"target,omitempty"`
 }
 
+const SystemSdnConnectorGcpProjectListPath = "system/sdn-connector/gcp-project-list/"
+
 type SystemSdnConnectorGcpProjectList struct {
 	GcpZoneList *[]SystemSdnConnectorGcpProjectListGcpZoneList `json:"gcp-zone-list,omitempty"`
 	Id          *string                                        `json:"id,omitempty"`
 }
 
+const SystemSdnConnectorGcpProjectListGcpZoneListPath = "system/sdn-connector/gcp-project-list/gcp-zone-list/"
+
 type SystemSdnConnectorGcpProjectListGcpZoneList struct {
 	Name *string `json:"name,omitempty"`
 }
+
+const SystemSdnConnectorNicPath = "system/sdn-connector/nic/"
 
 type SystemSdnConnectorNic struct {
 	Ip   *[]SystemSdnConnectorNicIp `json:"ip,omitempty"`
 	Name *string                    `json:"name,omitempty"`
 }
+
+const SystemSdnConnectorNicIpPath = "system/sdn-connector/nic/ip/"
 
 type SystemSdnConnectorNicIp struct {
 	Name          *string `json:"name,omitempty"`
@@ -92,9 +107,13 @@ type SystemSdnConnectorNicIp struct {
 	ResourceGroup *string `json:"resource-group,omitempty"`
 }
 
+const SystemSdnConnectorRoutePath = "system/sdn-connector/route/"
+
 type SystemSdnConnectorRoute struct {
 	Name *string `json:"name,omitempty"`
 }
+
+const SystemSdnConnectorRouteTablePath = "system/sdn-connector/route-table/"
 
 type SystemSdnConnectorRouteTable struct {
 	Name           *string                              `json:"name,omitempty"`
@@ -103,10 +122,14 @@ type SystemSdnConnectorRouteTable struct {
 	SubscriptionId *string                              `json:"subscription-id,omitempty"`
 }
 
+const SystemSdnConnectorRouteTableRoutePath = "system/sdn-connector/route-table/route/"
+
 type SystemSdnConnectorRouteTableRoute struct {
 	Name    *string `json:"name,omitempty"`
 	NextHop *string `json:"next-hop,omitempty"`
 }
+
+const SystemSdnConnectorServerListPath = "system/sdn-connector/server-list/"
 
 type SystemSdnConnectorServerList struct {
 	Ip *string `json:"ip,omitempty"`

@@ -46,7 +46,6 @@ type SystemFortiguard struct {
 	UpdateFfdb                      *string `json:"update-ffdb,omitempty"`
 	UpdateServerLocation            *string `json:"update-server-location,omitempty"`
 	UpdateUwdb                      *string `json:"update-uwdb,omitempty"`
-	Vdom                            *string `json:"vdom,omitempty"`
 	VideofilterExpiration           *int64  `json:"videofilter-expiration,omitempty"`
 	VideofilterLicense              *int64  `json:"videofilter-license,omitempty"`
 	WebfilterCache                  *string `json:"webfilter-cache,omitempty"`
