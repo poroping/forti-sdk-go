@@ -90,14 +90,9 @@ func (c *Client) UpdateSystemReplacemsgMail(mkey string, payload *models.SystemR
 }
 
 func (c *Client) DeleteSystemReplacemsgMail(mkey string, params *models.CmdbRequestParams) error {
-	req := &models.CmdbRequest{}
-	req.HTTPMethod = "DELETE"
-	req.Mkey = &mkey
-	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.SystemReplacemsgMailPath + url.QueryEscape(mkey) + "/"
-	req.Params = *params
-
-	err := request.Delete(c.config, req)
+	payload := &models.SystemReplacemsgMail{}
+	payload.Defaults()
+	_, err := c.UpdateSystemReplacemsgMail("", payload, params)
 	return err
 }
 

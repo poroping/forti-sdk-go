@@ -10,7 +10,7 @@ import (
 	"github.com/poroping/forti-sdk-go/v2/request"
 )
 
-func (c *Client) CreateSystem3gModemCustom(payload *models.System3gModemCustom, params *models.CmdbRequestParams) (*models.CmdbResponse, error) {
+func (c *Client) CreateSystem3GModemCustom(payload *models.System3GModemCustom, params *models.CmdbRequestParams) (*models.CmdbResponse, error) {
 	body, err := json.Marshal(payload)
 	if err != nil {
 		return nil, err
@@ -19,20 +19,20 @@ func (c *Client) CreateSystem3gModemCustom(payload *models.System3gModemCustom, 
 	mkey := ""
 	if payload.Id != nil && *params.AllowAppend {
 		mkey = strconv.Itoa(int(*payload.Id))
-		read, err := c.ReadSystem3gModemCustom(mkey, params)
+		read, err := c.ReadSystem3GModemCustom(mkey, params)
 		if err != nil {
 			return nil, err
 		}
 		if read != nil {
-			log.Printf("[WARN] Resource at path %q with mkey %q detected upon CREATE with flag set to to overwrite. Changing to UPDATE.", models.System3gModemCustomPath, mkey)
-			return c.UpdateSystem3gModemCustom(mkey, payload, params)
+			log.Printf("[WARN] Resource at path %q with mkey %q detected upon CREATE with flag set to to overwrite. Changing to UPDATE.", models.System3GModemCustomPath, mkey)
+			return c.UpdateSystem3GModemCustom(mkey, payload, params)
 		}
 	}
 
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "POST"
 	req.Payload = body
-	req.Path = models.CmdbBasePath + models.System3gModemCustomPath
+	req.Path = models.CmdbBasePath + models.System3GModemCustomPath
 	req.Params = *params
 
 	res, err := request.CreateUpdate(c.config, req)
@@ -42,12 +42,12 @@ func (c *Client) CreateSystem3gModemCustom(payload *models.System3gModemCustom, 
 	return res, nil
 }
 
-func (c *Client) ReadSystem3gModemCustom(mkey string, params *models.CmdbRequestParams) (*models.System3gModemCustom, error) {
+func (c *Client) ReadSystem3GModemCustom(mkey string, params *models.CmdbRequestParams) (*models.System3GModemCustom, error) {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "GET"
 	req.Mkey = &mkey
 	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.System3gModemCustomPath + url.QueryEscape(mkey) + "/"
+	req.Path = models.CmdbBasePath + models.System3GModemCustomPath + url.QueryEscape(mkey) + "/"
 	req.Params = *params
 
 	res, err := request.Read(c.config, req)
@@ -62,7 +62,7 @@ func (c *Client) ReadSystem3gModemCustom(mkey string, params *models.CmdbRequest
 		if err != nil {
 			return nil, err
 		}
-		v := models.System3gModemCustom{}
+		v := models.System3GModemCustom{}
 		json.Unmarshal(jsontmp, &v)
 		return &v, nil
 	}
@@ -70,7 +70,7 @@ func (c *Client) ReadSystem3gModemCustom(mkey string, params *models.CmdbRequest
 	return nil, err
 }
 
-func (c *Client) UpdateSystem3gModemCustom(mkey string, payload *models.System3gModemCustom, params *models.CmdbRequestParams) (*models.CmdbResponse, error) {
+func (c *Client) UpdateSystem3GModemCustom(mkey string, payload *models.System3GModemCustom, params *models.CmdbRequestParams) (*models.CmdbResponse, error) {
 	body, err := json.Marshal(payload)
 	if err != nil {
 		return nil, err
@@ -80,7 +80,7 @@ func (c *Client) UpdateSystem3gModemCustom(mkey string, payload *models.System3g
 	req.HTTPMethod = "PUT"
 	req.Mkey = &mkey
 	req.Payload = body
-	req.Path = models.CmdbBasePath + models.System3gModemCustomPath + url.QueryEscape(mkey) + "/"
+	req.Path = models.CmdbBasePath + models.System3GModemCustomPath + url.QueryEscape(mkey) + "/"
 	req.Params = *params
 
 	res, err := request.CreateUpdate(c.config, req)
@@ -90,23 +90,23 @@ func (c *Client) UpdateSystem3gModemCustom(mkey string, payload *models.System3g
 	return res, nil
 }
 
-func (c *Client) DeleteSystem3gModemCustom(mkey string, params *models.CmdbRequestParams) error {
+func (c *Client) DeleteSystem3GModemCustom(mkey string, params *models.CmdbRequestParams) error {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "DELETE"
 	req.Mkey = &mkey
 	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.System3gModemCustomPath + url.QueryEscape(mkey) + "/"
+	req.Path = models.CmdbBasePath + models.System3GModemCustomPath + url.QueryEscape(mkey) + "/"
 	req.Params = *params
 
 	err := request.Delete(c.config, req)
 	return err
 }
 
-func (c *Client) ListSystem3gModemCustom(params *models.CmdbRequestParams) (*[]models.System3gModemCustom, error) {
+func (c *Client) ListSystem3GModemCustom(params *models.CmdbRequestParams) (*[]models.System3GModemCustom, error) {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "GET"
 	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.System3gModemCustomPath
+	req.Path = models.CmdbBasePath + models.System3GModemCustomPath
 	req.Params = *params
 
 	res, err := request.Read(c.config, req)
@@ -121,7 +121,7 @@ func (c *Client) ListSystem3gModemCustom(params *models.CmdbRequestParams) (*[]m
 		if err != nil {
 			return nil, err
 		}
-		v := []models.System3gModemCustom{}
+		v := []models.System3GModemCustom{}
 		json.Unmarshal(jsontmp, &v)
 		return &v, nil
 	}

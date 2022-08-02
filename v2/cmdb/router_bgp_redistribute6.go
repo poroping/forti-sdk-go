@@ -90,14 +90,9 @@ func (c *Client) UpdateRouterBgpRedistribute6(mkey string, payload *models.Route
 }
 
 func (c *Client) DeleteRouterBgpRedistribute6(mkey string, params *models.CmdbRequestParams) error {
-	req := &models.CmdbRequest{}
-	req.HTTPMethod = "DELETE"
-	req.Mkey = &mkey
-	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.RouterBgpRedistribute6Path + url.QueryEscape(mkey) + "/"
-	req.Params = *params
-
-	err := request.Delete(c.config, req)
+	payload := &models.RouterBgpRedistribute6{}
+	payload.Defaults()
+	_, err := c.UpdateRouterBgpRedistribute6("", payload, params)
 	return err
 }
 

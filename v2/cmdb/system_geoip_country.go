@@ -90,14 +90,9 @@ func (c *Client) UpdateSystemGeoipCountry(mkey string, payload *models.SystemGeo
 }
 
 func (c *Client) DeleteSystemGeoipCountry(mkey string, params *models.CmdbRequestParams) error {
-	req := &models.CmdbRequest{}
-	req.HTTPMethod = "DELETE"
-	req.Mkey = &mkey
-	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.SystemGeoipCountryPath + url.QueryEscape(mkey) + "/"
-	req.Params = *params
-
-	err := request.Delete(c.config, req)
+	payload := &models.SystemGeoipCountry{}
+	payload.Defaults()
+	_, err := c.UpdateSystemGeoipCountry("", payload, params)
 	return err
 }
 

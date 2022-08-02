@@ -10,7 +10,7 @@ import (
 	"github.com/poroping/forti-sdk-go/v2/request"
 )
 
-func (c *Client) CreateFirewallDoSPolicy(payload *models.FirewallDoSPolicy, params *models.CmdbRequestParams) (*models.CmdbResponse, error) {
+func (c *Client) CreateFirewallDosPolicy(payload *models.FirewallDosPolicy, params *models.CmdbRequestParams) (*models.CmdbResponse, error) {
 	body, err := json.Marshal(payload)
 	if err != nil {
 		return nil, err
@@ -19,20 +19,20 @@ func (c *Client) CreateFirewallDoSPolicy(payload *models.FirewallDoSPolicy, para
 	mkey := ""
 	if payload.Policyid != nil && *params.AllowAppend {
 		mkey = strconv.Itoa(int(*payload.Policyid))
-		read, err := c.ReadFirewallDoSPolicy(mkey, params)
+		read, err := c.ReadFirewallDosPolicy(mkey, params)
 		if err != nil {
 			return nil, err
 		}
 		if read != nil {
-			log.Printf("[WARN] Resource at path %q with mkey %q detected upon CREATE with flag set to to overwrite. Changing to UPDATE.", models.FirewallDoSPolicyPath, mkey)
-			return c.UpdateFirewallDoSPolicy(mkey, payload, params)
+			log.Printf("[WARN] Resource at path %q with mkey %q detected upon CREATE with flag set to to overwrite. Changing to UPDATE.", models.FirewallDosPolicyPath, mkey)
+			return c.UpdateFirewallDosPolicy(mkey, payload, params)
 		}
 	}
 
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "POST"
 	req.Payload = body
-	req.Path = models.CmdbBasePath + models.FirewallDoSPolicyPath
+	req.Path = models.CmdbBasePath + models.FirewallDosPolicyPath
 	req.Params = *params
 
 	res, err := request.CreateUpdate(c.config, req)
@@ -42,12 +42,12 @@ func (c *Client) CreateFirewallDoSPolicy(payload *models.FirewallDoSPolicy, para
 	return res, nil
 }
 
-func (c *Client) ReadFirewallDoSPolicy(mkey string, params *models.CmdbRequestParams) (*models.FirewallDoSPolicy, error) {
+func (c *Client) ReadFirewallDosPolicy(mkey string, params *models.CmdbRequestParams) (*models.FirewallDosPolicy, error) {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "GET"
 	req.Mkey = &mkey
 	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.FirewallDoSPolicyPath + url.QueryEscape(mkey) + "/"
+	req.Path = models.CmdbBasePath + models.FirewallDosPolicyPath + url.QueryEscape(mkey) + "/"
 	req.Params = *params
 
 	res, err := request.Read(c.config, req)
@@ -62,7 +62,7 @@ func (c *Client) ReadFirewallDoSPolicy(mkey string, params *models.CmdbRequestPa
 		if err != nil {
 			return nil, err
 		}
-		v := models.FirewallDoSPolicy{}
+		v := models.FirewallDosPolicy{}
 		json.Unmarshal(jsontmp, &v)
 		return &v, nil
 	}
@@ -70,7 +70,7 @@ func (c *Client) ReadFirewallDoSPolicy(mkey string, params *models.CmdbRequestPa
 	return nil, err
 }
 
-func (c *Client) UpdateFirewallDoSPolicy(mkey string, payload *models.FirewallDoSPolicy, params *models.CmdbRequestParams) (*models.CmdbResponse, error) {
+func (c *Client) UpdateFirewallDosPolicy(mkey string, payload *models.FirewallDosPolicy, params *models.CmdbRequestParams) (*models.CmdbResponse, error) {
 	body, err := json.Marshal(payload)
 	if err != nil {
 		return nil, err
@@ -80,7 +80,7 @@ func (c *Client) UpdateFirewallDoSPolicy(mkey string, payload *models.FirewallDo
 	req.HTTPMethod = "PUT"
 	req.Mkey = &mkey
 	req.Payload = body
-	req.Path = models.CmdbBasePath + models.FirewallDoSPolicyPath + url.QueryEscape(mkey) + "/"
+	req.Path = models.CmdbBasePath + models.FirewallDosPolicyPath + url.QueryEscape(mkey) + "/"
 	req.Params = *params
 
 	res, err := request.CreateUpdate(c.config, req)
@@ -90,23 +90,23 @@ func (c *Client) UpdateFirewallDoSPolicy(mkey string, payload *models.FirewallDo
 	return res, nil
 }
 
-func (c *Client) DeleteFirewallDoSPolicy(mkey string, params *models.CmdbRequestParams) error {
+func (c *Client) DeleteFirewallDosPolicy(mkey string, params *models.CmdbRequestParams) error {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "DELETE"
 	req.Mkey = &mkey
 	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.FirewallDoSPolicyPath + url.QueryEscape(mkey) + "/"
+	req.Path = models.CmdbBasePath + models.FirewallDosPolicyPath + url.QueryEscape(mkey) + "/"
 	req.Params = *params
 
 	err := request.Delete(c.config, req)
 	return err
 }
 
-func (c *Client) ListFirewallDoSPolicy(params *models.CmdbRequestParams) (*[]models.FirewallDoSPolicy, error) {
+func (c *Client) ListFirewallDosPolicy(params *models.CmdbRequestParams) (*[]models.FirewallDosPolicy, error) {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "GET"
 	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.FirewallDoSPolicyPath
+	req.Path = models.CmdbBasePath + models.FirewallDosPolicyPath
 	req.Params = *params
 
 	res, err := request.Read(c.config, req)
@@ -121,7 +121,7 @@ func (c *Client) ListFirewallDoSPolicy(params *models.CmdbRequestParams) (*[]mod
 		if err != nil {
 			return nil, err
 		}
-		v := []models.FirewallDoSPolicy{}
+		v := []models.FirewallDosPolicy{}
 		json.Unmarshal(jsontmp, &v)
 		return &v, nil
 	}

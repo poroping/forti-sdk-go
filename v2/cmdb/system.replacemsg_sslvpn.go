@@ -90,14 +90,9 @@ func (c *Client) UpdateSystemReplacemsgSslvpn(mkey string, payload *models.Syste
 }
 
 func (c *Client) DeleteSystemReplacemsgSslvpn(mkey string, params *models.CmdbRequestParams) error {
-	req := &models.CmdbRequest{}
-	req.HTTPMethod = "DELETE"
-	req.Mkey = &mkey
-	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.SystemReplacemsgSslvpnPath + url.QueryEscape(mkey) + "/"
-	req.Params = *params
-
-	err := request.Delete(c.config, req)
+	payload := &models.SystemReplacemsgSslvpn{}
+	payload.Defaults()
+	_, err := c.UpdateSystemReplacemsgSslvpn("", payload, params)
 	return err
 }
 

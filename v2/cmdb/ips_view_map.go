@@ -91,14 +91,9 @@ func (c *Client) UpdateIpsViewMap(mkey string, payload *models.IpsViewMap, param
 }
 
 func (c *Client) DeleteIpsViewMap(mkey string, params *models.CmdbRequestParams) error {
-	req := &models.CmdbRequest{}
-	req.HTTPMethod = "DELETE"
-	req.Mkey = &mkey
-	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.IpsViewMapPath + url.QueryEscape(mkey) + "/"
-	req.Params = *params
-
-	err := request.Delete(c.config, req)
+	payload := &models.IpsViewMap{}
+	payload.Defaults()
+	_, err := c.UpdateIpsViewMap("", payload, params)
 	return err
 }
 

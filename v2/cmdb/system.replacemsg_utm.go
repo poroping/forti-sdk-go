@@ -90,14 +90,9 @@ func (c *Client) UpdateSystemReplacemsgUtm(mkey string, payload *models.SystemRe
 }
 
 func (c *Client) DeleteSystemReplacemsgUtm(mkey string, params *models.CmdbRequestParams) error {
-	req := &models.CmdbRequest{}
-	req.HTTPMethod = "DELETE"
-	req.Mkey = &mkey
-	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.SystemReplacemsgUtmPath + url.QueryEscape(mkey) + "/"
-	req.Params = *params
-
-	err := request.Delete(c.config, req)
+	payload := &models.SystemReplacemsgUtm{}
+	payload.Defaults()
+	_, err := c.UpdateSystemReplacemsgUtm("", payload, params)
 	return err
 }
 

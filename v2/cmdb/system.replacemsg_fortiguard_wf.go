@@ -90,14 +90,9 @@ func (c *Client) UpdateSystemReplacemsgFortiguardWf(mkey string, payload *models
 }
 
 func (c *Client) DeleteSystemReplacemsgFortiguardWf(mkey string, params *models.CmdbRequestParams) error {
-	req := &models.CmdbRequest{}
-	req.HTTPMethod = "DELETE"
-	req.Mkey = &mkey
-	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.SystemReplacemsgFortiguardWfPath + url.QueryEscape(mkey) + "/"
-	req.Params = *params
-
-	err := request.Delete(c.config, req)
+	payload := &models.SystemReplacemsgFortiguardWf{}
+	payload.Defaults()
+	_, err := c.UpdateSystemReplacemsgFortiguardWf("", payload, params)
 	return err
 }
 

@@ -90,14 +90,9 @@ func (c *Client) UpdateApplicationName(mkey string, payload *models.ApplicationN
 }
 
 func (c *Client) DeleteApplicationName(mkey string, params *models.CmdbRequestParams) error {
-	req := &models.CmdbRequest{}
-	req.HTTPMethod = "DELETE"
-	req.Mkey = &mkey
-	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.ApplicationNamePath + url.QueryEscape(mkey) + "/"
-	req.Params = *params
-
-	err := request.Delete(c.config, req)
+	payload := &models.ApplicationName{}
+	payload.Defaults()
+	_, err := c.UpdateApplicationName("", payload, params)
 	return err
 }
 

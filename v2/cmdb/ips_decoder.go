@@ -90,14 +90,9 @@ func (c *Client) UpdateIpsDecoder(mkey string, payload *models.IpsDecoder, param
 }
 
 func (c *Client) DeleteIpsDecoder(mkey string, params *models.CmdbRequestParams) error {
-	req := &models.CmdbRequest{}
-	req.HTTPMethod = "DELETE"
-	req.Mkey = &mkey
-	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.IpsDecoderPath + url.QueryEscape(mkey) + "/"
-	req.Params = *params
-
-	err := request.Delete(c.config, req)
+	payload := &models.IpsDecoder{}
+	payload.Defaults()
+	_, err := c.UpdateIpsDecoder("", payload, params)
 	return err
 }
 

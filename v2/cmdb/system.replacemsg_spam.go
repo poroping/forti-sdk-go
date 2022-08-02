@@ -90,14 +90,9 @@ func (c *Client) UpdateSystemReplacemsgSpam(mkey string, payload *models.SystemR
 }
 
 func (c *Client) DeleteSystemReplacemsgSpam(mkey string, params *models.CmdbRequestParams) error {
-	req := &models.CmdbRequest{}
-	req.HTTPMethod = "DELETE"
-	req.Mkey = &mkey
-	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.SystemReplacemsgSpamPath + url.QueryEscape(mkey) + "/"
-	req.Params = *params
-
-	err := request.Delete(c.config, req)
+	payload := &models.SystemReplacemsgSpam{}
+	payload.Defaults()
+	_, err := c.UpdateSystemReplacemsgSpam("", payload, params)
 	return err
 }
 

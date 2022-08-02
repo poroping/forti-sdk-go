@@ -91,14 +91,9 @@ func (c *Client) UpdateFirewallRegion(mkey string, payload *models.FirewallRegio
 }
 
 func (c *Client) DeleteFirewallRegion(mkey string, params *models.CmdbRequestParams) error {
-	req := &models.CmdbRequest{}
-	req.HTTPMethod = "DELETE"
-	req.Mkey = &mkey
-	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.FirewallRegionPath + url.QueryEscape(mkey) + "/"
-	req.Params = *params
-
-	err := request.Delete(c.config, req)
+	payload := &models.FirewallRegion{}
+	payload.Defaults()
+	_, err := c.UpdateFirewallRegion("", payload, params)
 	return err
 }
 

@@ -9,7 +9,7 @@ import (
 	"github.com/poroping/forti-sdk-go/v2/request"
 )
 
-func (c *Client) CreateWirelessControllerHotspot20Anqp3gppCellular(payload *models.WirelessControllerHotspot20Anqp3gppCellular, params *models.CmdbRequestParams) (*models.CmdbResponse, error) {
+func (c *Client) CreateWirelessControllerHotspot20Anqp3GppCellular(payload *models.WirelessControllerHotspot20Anqp3GppCellular, params *models.CmdbRequestParams) (*models.CmdbResponse, error) {
 	body, err := json.Marshal(payload)
 	if err != nil {
 		return nil, err
@@ -18,20 +18,20 @@ func (c *Client) CreateWirelessControllerHotspot20Anqp3gppCellular(payload *mode
 	mkey := ""
 	if payload.Name != nil && *params.AllowAppend {
 		mkey = *payload.Name
-		read, err := c.ReadWirelessControllerHotspot20Anqp3gppCellular(mkey, params)
+		read, err := c.ReadWirelessControllerHotspot20Anqp3GppCellular(mkey, params)
 		if err != nil {
 			return nil, err
 		}
 		if read != nil {
-			log.Printf("[WARN] Resource at path %q with mkey %q detected upon CREATE with flag set to to overwrite. Changing to UPDATE.", models.WirelessControllerHotspot20Anqp3gppCellularPath, mkey)
-			return c.UpdateWirelessControllerHotspot20Anqp3gppCellular(mkey, payload, params)
+			log.Printf("[WARN] Resource at path %q with mkey %q detected upon CREATE with flag set to to overwrite. Changing to UPDATE.", models.WirelessControllerHotspot20Anqp3GppCellularPath, mkey)
+			return c.UpdateWirelessControllerHotspot20Anqp3GppCellular(mkey, payload, params)
 		}
 	}
 
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "POST"
 	req.Payload = body
-	req.Path = models.CmdbBasePath + models.WirelessControllerHotspot20Anqp3gppCellularPath
+	req.Path = models.CmdbBasePath + models.WirelessControllerHotspot20Anqp3GppCellularPath
 	req.Params = *params
 
 	res, err := request.CreateUpdate(c.config, req)
@@ -41,12 +41,12 @@ func (c *Client) CreateWirelessControllerHotspot20Anqp3gppCellular(payload *mode
 	return res, nil
 }
 
-func (c *Client) ReadWirelessControllerHotspot20Anqp3gppCellular(mkey string, params *models.CmdbRequestParams) (*models.WirelessControllerHotspot20Anqp3gppCellular, error) {
+func (c *Client) ReadWirelessControllerHotspot20Anqp3GppCellular(mkey string, params *models.CmdbRequestParams) (*models.WirelessControllerHotspot20Anqp3GppCellular, error) {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "GET"
 	req.Mkey = &mkey
 	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.WirelessControllerHotspot20Anqp3gppCellularPath + url.QueryEscape(mkey) + "/"
+	req.Path = models.CmdbBasePath + models.WirelessControllerHotspot20Anqp3GppCellularPath + url.QueryEscape(mkey) + "/"
 	req.Params = *params
 
 	res, err := request.Read(c.config, req)
@@ -61,7 +61,7 @@ func (c *Client) ReadWirelessControllerHotspot20Anqp3gppCellular(mkey string, pa
 		if err != nil {
 			return nil, err
 		}
-		v := models.WirelessControllerHotspot20Anqp3gppCellular{}
+		v := models.WirelessControllerHotspot20Anqp3GppCellular{}
 		json.Unmarshal(jsontmp, &v)
 		return &v, nil
 	}
@@ -69,7 +69,7 @@ func (c *Client) ReadWirelessControllerHotspot20Anqp3gppCellular(mkey string, pa
 	return nil, err
 }
 
-func (c *Client) UpdateWirelessControllerHotspot20Anqp3gppCellular(mkey string, payload *models.WirelessControllerHotspot20Anqp3gppCellular, params *models.CmdbRequestParams) (*models.CmdbResponse, error) {
+func (c *Client) UpdateWirelessControllerHotspot20Anqp3GppCellular(mkey string, payload *models.WirelessControllerHotspot20Anqp3GppCellular, params *models.CmdbRequestParams) (*models.CmdbResponse, error) {
 	body, err := json.Marshal(payload)
 	if err != nil {
 		return nil, err
@@ -79,7 +79,7 @@ func (c *Client) UpdateWirelessControllerHotspot20Anqp3gppCellular(mkey string, 
 	req.HTTPMethod = "PUT"
 	req.Mkey = &mkey
 	req.Payload = body
-	req.Path = models.CmdbBasePath + models.WirelessControllerHotspot20Anqp3gppCellularPath + url.QueryEscape(mkey) + "/"
+	req.Path = models.CmdbBasePath + models.WirelessControllerHotspot20Anqp3GppCellularPath + url.QueryEscape(mkey) + "/"
 	req.Params = *params
 
 	res, err := request.CreateUpdate(c.config, req)
@@ -89,23 +89,23 @@ func (c *Client) UpdateWirelessControllerHotspot20Anqp3gppCellular(mkey string, 
 	return res, nil
 }
 
-func (c *Client) DeleteWirelessControllerHotspot20Anqp3gppCellular(mkey string, params *models.CmdbRequestParams) error {
+func (c *Client) DeleteWirelessControllerHotspot20Anqp3GppCellular(mkey string, params *models.CmdbRequestParams) error {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "DELETE"
 	req.Mkey = &mkey
 	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.WirelessControllerHotspot20Anqp3gppCellularPath + url.QueryEscape(mkey) + "/"
+	req.Path = models.CmdbBasePath + models.WirelessControllerHotspot20Anqp3GppCellularPath + url.QueryEscape(mkey) + "/"
 	req.Params = *params
 
 	err := request.Delete(c.config, req)
 	return err
 }
 
-func (c *Client) ListWirelessControllerHotspot20Anqp3gppCellular(params *models.CmdbRequestParams) (*[]models.WirelessControllerHotspot20Anqp3gppCellular, error) {
+func (c *Client) ListWirelessControllerHotspot20Anqp3GppCellular(params *models.CmdbRequestParams) (*[]models.WirelessControllerHotspot20Anqp3GppCellular, error) {
 	req := &models.CmdbRequest{}
 	req.HTTPMethod = "GET"
 	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.WirelessControllerHotspot20Anqp3gppCellularPath
+	req.Path = models.CmdbBasePath + models.WirelessControllerHotspot20Anqp3GppCellularPath
 	req.Params = *params
 
 	res, err := request.Read(c.config, req)
@@ -120,7 +120,7 @@ func (c *Client) ListWirelessControllerHotspot20Anqp3gppCellular(params *models.
 		if err != nil {
 			return nil, err
 		}
-		v := []models.WirelessControllerHotspot20Anqp3gppCellular{}
+		v := []models.WirelessControllerHotspot20Anqp3GppCellular{}
 		json.Unmarshal(jsontmp, &v)
 		return &v, nil
 	}

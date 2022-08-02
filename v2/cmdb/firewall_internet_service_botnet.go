@@ -91,14 +91,9 @@ func (c *Client) UpdateFirewallInternetServiceBotnet(mkey string, payload *model
 }
 
 func (c *Client) DeleteFirewallInternetServiceBotnet(mkey string, params *models.CmdbRequestParams) error {
-	req := &models.CmdbRequest{}
-	req.HTTPMethod = "DELETE"
-	req.Mkey = &mkey
-	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.FirewallInternetServiceBotnetPath + url.QueryEscape(mkey) + "/"
-	req.Params = *params
-
-	err := request.Delete(c.config, req)
+	payload := &models.FirewallInternetServiceBotnet{}
+	payload.Defaults()
+	_, err := c.UpdateFirewallInternetServiceBotnet("", payload, params)
 	return err
 }
 

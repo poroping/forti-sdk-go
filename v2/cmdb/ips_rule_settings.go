@@ -91,14 +91,9 @@ func (c *Client) UpdateIpsRuleSettings(mkey string, payload *models.IpsRuleSetti
 }
 
 func (c *Client) DeleteIpsRuleSettings(mkey string, params *models.CmdbRequestParams) error {
-	req := &models.CmdbRequest{}
-	req.HTTPMethod = "DELETE"
-	req.Mkey = &mkey
-	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.IpsRuleSettingsPath + url.QueryEscape(mkey) + "/"
-	req.Params = *params
-
-	err := request.Delete(c.config, req)
+	payload := &models.IpsRuleSettings{}
+	payload.Defaults()
+	_, err := c.UpdateIpsRuleSettings("", payload, params)
 	return err
 }
 

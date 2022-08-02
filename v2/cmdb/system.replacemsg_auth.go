@@ -90,14 +90,9 @@ func (c *Client) UpdateSystemReplacemsgAuth(mkey string, payload *models.SystemR
 }
 
 func (c *Client) DeleteSystemReplacemsgAuth(mkey string, params *models.CmdbRequestParams) error {
-	req := &models.CmdbRequest{}
-	req.HTTPMethod = "DELETE"
-	req.Mkey = &mkey
-	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.SystemReplacemsgAuthPath + url.QueryEscape(mkey) + "/"
-	req.Params = *params
-
-	err := request.Delete(c.config, req)
+	payload := &models.SystemReplacemsgAuth{}
+	payload.Defaults()
+	_, err := c.UpdateSystemReplacemsgAuth("", payload, params)
 	return err
 }
 

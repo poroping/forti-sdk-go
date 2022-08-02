@@ -91,14 +91,9 @@ func (c *Client) UpdateFirewallVendorMac(mkey string, payload *models.FirewallVe
 }
 
 func (c *Client) DeleteFirewallVendorMac(mkey string, params *models.CmdbRequestParams) error {
-	req := &models.CmdbRequest{}
-	req.HTTPMethod = "DELETE"
-	req.Mkey = &mkey
-	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.FirewallVendorMacPath + url.QueryEscape(mkey) + "/"
-	req.Params = *params
-
-	err := request.Delete(c.config, req)
+	payload := &models.FirewallVendorMac{}
+	payload.Defaults()
+	_, err := c.UpdateFirewallVendorMac("", payload, params)
 	return err
 }
 

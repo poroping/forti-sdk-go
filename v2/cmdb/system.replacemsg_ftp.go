@@ -90,14 +90,9 @@ func (c *Client) UpdateSystemReplacemsgFtp(mkey string, payload *models.SystemRe
 }
 
 func (c *Client) DeleteSystemReplacemsgFtp(mkey string, params *models.CmdbRequestParams) error {
-	req := &models.CmdbRequest{}
-	req.HTTPMethod = "DELETE"
-	req.Mkey = &mkey
-	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.SystemReplacemsgFtpPath + url.QueryEscape(mkey) + "/"
-	req.Params = *params
-
-	err := request.Delete(c.config, req)
+	payload := &models.SystemReplacemsgFtp{}
+	payload.Defaults()
+	_, err := c.UpdateSystemReplacemsgFtp("", payload, params)
 	return err
 }
 

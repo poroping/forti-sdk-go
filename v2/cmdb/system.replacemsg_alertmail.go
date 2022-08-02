@@ -90,14 +90,9 @@ func (c *Client) UpdateSystemReplacemsgAlertmail(mkey string, payload *models.Sy
 }
 
 func (c *Client) DeleteSystemReplacemsgAlertmail(mkey string, params *models.CmdbRequestParams) error {
-	req := &models.CmdbRequest{}
-	req.HTTPMethod = "DELETE"
-	req.Mkey = &mkey
-	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.SystemReplacemsgAlertmailPath + url.QueryEscape(mkey) + "/"
-	req.Params = *params
-
-	err := request.Delete(c.config, req)
+	payload := &models.SystemReplacemsgAlertmail{}
+	payload.Defaults()
+	_, err := c.UpdateSystemReplacemsgAlertmail("", payload, params)
 	return err
 }
 

@@ -90,14 +90,9 @@ func (c *Client) UpdateSystemReplacemsgNacQuar(mkey string, payload *models.Syst
 }
 
 func (c *Client) DeleteSystemReplacemsgNacQuar(mkey string, params *models.CmdbRequestParams) error {
-	req := &models.CmdbRequest{}
-	req.HTTPMethod = "DELETE"
-	req.Mkey = &mkey
-	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.SystemReplacemsgNacQuarPath + url.QueryEscape(mkey) + "/"
-	req.Params = *params
-
-	err := request.Delete(c.config, req)
+	payload := &models.SystemReplacemsgNacQuar{}
+	payload.Defaults()
+	_, err := c.UpdateSystemReplacemsgNacQuar("", payload, params)
 	return err
 }
 

@@ -90,14 +90,9 @@ func (c *Client) UpdateSystemReplacemsgIcap(mkey string, payload *models.SystemR
 }
 
 func (c *Client) DeleteSystemReplacemsgIcap(mkey string, params *models.CmdbRequestParams) error {
-	req := &models.CmdbRequest{}
-	req.HTTPMethod = "DELETE"
-	req.Mkey = &mkey
-	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.SystemReplacemsgIcapPath + url.QueryEscape(mkey) + "/"
-	req.Params = *params
-
-	err := request.Delete(c.config, req)
+	payload := &models.SystemReplacemsgIcap{}
+	payload.Defaults()
+	_, err := c.UpdateSystemReplacemsgIcap("", payload, params)
 	return err
 }
 

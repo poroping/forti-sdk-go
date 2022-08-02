@@ -90,14 +90,9 @@ func (c *Client) UpdateSystemReplacemsgTrafficQuota(mkey string, payload *models
 }
 
 func (c *Client) DeleteSystemReplacemsgTrafficQuota(mkey string, params *models.CmdbRequestParams) error {
-	req := &models.CmdbRequest{}
-	req.HTTPMethod = "DELETE"
-	req.Mkey = &mkey
-	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.SystemReplacemsgTrafficQuotaPath + url.QueryEscape(mkey) + "/"
-	req.Params = *params
-
-	err := request.Delete(c.config, req)
+	payload := &models.SystemReplacemsgTrafficQuota{}
+	payload.Defaults()
+	_, err := c.UpdateSystemReplacemsgTrafficQuota("", payload, params)
 	return err
 }
 

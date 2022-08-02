@@ -91,14 +91,9 @@ func (c *Client) UpdateFirewallCity(mkey string, payload *models.FirewallCity, p
 }
 
 func (c *Client) DeleteFirewallCity(mkey string, params *models.CmdbRequestParams) error {
-	req := &models.CmdbRequest{}
-	req.HTTPMethod = "DELETE"
-	req.Mkey = &mkey
-	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.FirewallCityPath + url.QueryEscape(mkey) + "/"
-	req.Params = *params
-
-	err := request.Delete(c.config, req)
+	payload := &models.FirewallCity{}
+	payload.Defaults()
+	_, err := c.UpdateFirewallCity("", payload, params)
 	return err
 }
 

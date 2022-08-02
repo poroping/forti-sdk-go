@@ -90,14 +90,9 @@ func (c *Client) UpdateSystemReplacemsgAdmin(mkey string, payload *models.System
 }
 
 func (c *Client) DeleteSystemReplacemsgAdmin(mkey string, params *models.CmdbRequestParams) error {
-	req := &models.CmdbRequest{}
-	req.HTTPMethod = "DELETE"
-	req.Mkey = &mkey
-	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.SystemReplacemsgAdminPath + url.QueryEscape(mkey) + "/"
-	req.Params = *params
-
-	err := request.Delete(c.config, req)
+	payload := &models.SystemReplacemsgAdmin{}
+	payload.Defaults()
+	_, err := c.UpdateSystemReplacemsgAdmin("", payload, params)
 	return err
 }
 

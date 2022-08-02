@@ -91,14 +91,9 @@ func (c *Client) UpdateFirewallInternetServiceIpblVendor(mkey string, payload *m
 }
 
 func (c *Client) DeleteFirewallInternetServiceIpblVendor(mkey string, params *models.CmdbRequestParams) error {
-	req := &models.CmdbRequest{}
-	req.HTTPMethod = "DELETE"
-	req.Mkey = &mkey
-	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.FirewallInternetServiceIpblVendorPath + url.QueryEscape(mkey) + "/"
-	req.Params = *params
-
-	err := request.Delete(c.config, req)
+	payload := &models.FirewallInternetServiceIpblVendor{}
+	payload.Defaults()
+	_, err := c.UpdateFirewallInternetServiceIpblVendor("", payload, params)
 	return err
 }
 

@@ -91,14 +91,9 @@ func (c *Client) UpdateApplicationRuleSettings(mkey string, payload *models.Appl
 }
 
 func (c *Client) DeleteApplicationRuleSettings(mkey string, params *models.CmdbRequestParams) error {
-	req := &models.CmdbRequest{}
-	req.HTTPMethod = "DELETE"
-	req.Mkey = &mkey
-	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.ApplicationRuleSettingsPath + url.QueryEscape(mkey) + "/"
-	req.Params = *params
-
-	err := request.Delete(c.config, req)
+	payload := &models.ApplicationRuleSettings{}
+	payload.Defaults()
+	_, err := c.UpdateApplicationRuleSettings("", payload, params)
 	return err
 }
 

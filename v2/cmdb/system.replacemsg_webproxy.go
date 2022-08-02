@@ -90,14 +90,9 @@ func (c *Client) UpdateSystemReplacemsgWebproxy(mkey string, payload *models.Sys
 }
 
 func (c *Client) DeleteSystemReplacemsgWebproxy(mkey string, params *models.CmdbRequestParams) error {
-	req := &models.CmdbRequest{}
-	req.HTTPMethod = "DELETE"
-	req.Mkey = &mkey
-	req.Payload = nil
-	req.Path = models.CmdbBasePath + models.SystemReplacemsgWebproxyPath + url.QueryEscape(mkey) + "/"
-	req.Params = *params
-
-	err := request.Delete(c.config, req)
+	payload := &models.SystemReplacemsgWebproxy{}
+	payload.Defaults()
+	_, err := c.UpdateSystemReplacemsgWebproxy("", payload, params)
 	return err
 }
 
