@@ -1,0 +1,27 @@
+{{define "models"}}
+{{template "modelfile" .}}
+{{end}}
+
+{{define "modelfile"}}
+package models
+
+{{template "generatetype" .}}
+{{end}}
+
+{{define "generatetype"}}
+{{if .FullPath}}const {{(mixedCase .FullPath)}}Path = "{{(urlPath .FullPath)}}/"{{end}}
+
+type {{(mixedCase .FullPath)}} struct {	{{range $key, $value := .Children}}	
+	{{if $value.NameBeginWithInt}}The{{end}}{{(mixedCase $value.Name)}}	{{if or (eq (deref $value.Category) "complex") (eq (deref $value.Category) "table")}}*{{if eq (deref $value.Category) "table"}}[]{{end}}{{(mixedCase $value.FullPath)}}{{else}}{{(typeLookup $value.Type)}}{{end}}	`json:"{{$value.Name}},omitempty"`{{end}}
+	}
+{{range $key, $value := .Children}}{{if or (eq (deref $value.Category) "complex") (eq (deref $value.Category) "table")}}
+{{template "generatetype" $value}}{{end}}{{end}}
+{{if .ReadOnly}}{{if (eq (deref .Category) "table")}}{{template "defaultfuncs" . }}{{end}}{{end}}
+{{end}}
+
+{{ define "defaultfuncs" }}
+// Set {{(mixedCase .FullPath)}} values to defaults
+func(def *{{(mixedCase .FullPath)}}) Defaults(){ {{range $key, $value := .Children}}{{if eq (deref $value.Category) "unitary"}}
+	def.{{if $value.NameBeginWithInt}}The{{end}}{{(mixedCase $value.Name)}} = {{if eq (deref $value.Type) "integer"}}intPtr({{$value.Default}}){{else}}stringPtr("{{$value.Default}}"){{end}}{{end}}{{end}}
+	}
+{{ end }}

@@ -1,0 +1,29 @@
+{{ define "cmdbClient" }}
+package cmdb
+
+import (
+	"github.com/poroping/forti-sdk-go/v2/config"
+	"github.com/poroping/forti-sdk-go/v2/models"
+)
+
+func New(config *config.Config) Endpoints {
+	return &Client{config: config}
+}
+
+type Client struct {
+	config *config.Config
+}
+
+type Endpoints interface {
+	{{range .}}
+	Create{{(mixedCase .Path)}}(payload *models.{{(mixedCase .Path)}}, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	Read{{(mixedCase .Path)}}(mkey string, params *models.CmdbRequestParams) (*models.{{(mixedCase .Path)}}, error)
+	Update{{(mixedCase .Path)}}(mkey string, payload *models.{{(mixedCase .Path)}}, params *models.CmdbRequestParams) (*models.CmdbResponse, error)
+	Delete{{(mixedCase .Path)}}(mkey string, params *models.CmdbRequestParams) error{{ if eq .Category "table" }}
+	List{{(mixedCase .Path)}}(params *models.CmdbRequestParams) (*[]models.{{(mixedCase .Path)}}, error){{ end }}
+	{{- end}}
+
+}
+
+
+{{ end }}
