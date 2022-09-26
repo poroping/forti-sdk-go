@@ -371,7 +371,7 @@ func typeLookup(s string) string {
 		"password_aes256":        "*string",
 		"uuid":                   "*string",
 		"ether-type":             "*string",
-		"datatime":               "*string",
+		"datetime":               "*string",
 	}
 	s, ok := m[s]
 	if !ok {

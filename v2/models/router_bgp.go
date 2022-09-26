@@ -405,15 +405,15 @@ type RouterBgpVrfImportRt struct {
 	RouteTarget *string `json:"route-target,omitempty"`
 }
 
-type RouterBgpVrfLeak struct {
-	Target *[]RouterBgpVrfLeakTarget `json:"target,omitempty"`
-	Vrf    *string                   `json:"vrf,omitempty"`
-}
-
 type RouterBgpVrfLeakTarget struct {
 	Interface *string `json:"interface,omitempty"`
 	RouteMap  *string `json:"route-map,omitempty"`
 	Vrf       *string `json:"vrf,omitempty"`
+}
+
+type RouterBgpVrfLeak struct {
+	Target *[]RouterBgpVrfLeakTarget `json:"target,omitempty"`
+	Vrf    *string                   `json:"vrf,omitempty"`
 }
 
 type RouterBgpVrfLeak6 struct {
