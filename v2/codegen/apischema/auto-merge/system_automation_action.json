@@ -1,9 +1,9 @@
 {
 	"addedIn": "v6.2.7",
-	"build": 1157,
+	"build": 1639,
 	"http_method": "GET",
 	"http_status": 200,
-	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3,v7.0.4,v7.2.0",
+	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3,v7.0.4,v7.0.5,v7.0.6,v7.2.0,v7.2.1,v7.2.8",
 	"name": "automation-action",
 	"path": "system",
 	"results": {
@@ -45,6 +45,10 @@
 					{
 						"help": "Disable interface.",
 						"name": "disable-ssid"
+					},
+					{
+						"help": "Perform immediate system operations on this FortiGate unit.",
+						"name": "system-actions"
 					},
 					{
 						"help": "Quarantine host.",
@@ -464,7 +468,8 @@
 				"member_table": true,
 				"mkey": "header",
 				"mkey_type": "string",
-				"name": "headers"
+				"name": "headers",
+				"removedIn": "v7.0.6"
 			},
 			"http-body": {
 				"category": "unitary",
@@ -473,6 +478,48 @@
 				"name": "http-body",
 				"size": 4095,
 				"type": "var-string"
+			},
+			"http-headers": {
+				"addedIn": "v7.0.6",
+				"category": "table",
+				"children": {
+					"id": {
+						"category": "unitary",
+						"default": 0,
+						"help": "Entry ID.",
+						"max-value": 4294967295,
+						"min-value": 0,
+						"multiple_values": false,
+						"name": "id",
+						"type": "integer"
+					},
+					"key": {
+						"category": "unitary",
+						"help": "Request header key.",
+						"multiple_values": false,
+						"name": "key",
+						"required": true,
+						"size": 1023,
+						"type": "var-string"
+					},
+					"value": {
+						"category": "unitary",
+						"help": "Request header value.",
+						"multiple_values": false,
+						"name": "value",
+						"required": true,
+						"size": 4095,
+						"type": "var-string"
+					}
+				},
+				"help": "Request headers.",
+				"max_table_size_global": 0,
+				"max_table_size_item": 0,
+				"max_table_size_vdom": 0,
+				"mkey": "id",
+				"mkey_type": "integer",
+				"name": "http-headers",
+				"removedIn": "v7.2.0"
 			},
 			"message": {
 				"addedIn": "v6.4.0",
@@ -691,6 +738,30 @@
 				"size": 255,
 				"type": "string"
 			},
+			"system-action": {
+				"addedIn": "v7.2.1",
+				"category": "unitary",
+				"default": "",
+				"help": "System action type.",
+				"multiple_values": false,
+				"name": "system-action",
+				"options": [
+					{
+						"help": "Reboot this FortiGate unit.",
+						"name": "reboot"
+					},
+					{
+						"help": "Shutdown this FortiGate unit.",
+						"name": "shutdown"
+					},
+					{
+						"help": "Backup current configuration to the disk revisions.",
+						"name": "backup-config"
+					}
+				],
+				"required": true,
+				"type": "option"
+			},
 			"timeout": {
 				"addedIn": "v7.2.0",
 				"category": "unitary",
@@ -750,12 +821,13 @@
 		"mkey": "name",
 		"mkey_type": "string",
 		"name": "automation-action",
+		"object_range": "global",
 		"path": "system",
-		"q_type": 504
+		"q_type": 515
 	},
-	"revision": "e745df13905a9a74edfc6726d9b91794",
-	"serial": "FGTAZRIPD-OKNB34",
+	"revision": "09d85d5e14918b348eabdb4c679670bb",
+	"serial": "FG180FTK20900788",
 	"status": "success",
 	"vdom": "root",
-	"version": "v7.2.0"
+	"version": "v7.2.8"
 }

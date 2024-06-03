@@ -1,9 +1,9 @@
 {
 	"addedIn": "v6.2.7",
-	"build": 1157,
+	"build": 1639,
 	"http_method": "GET",
 	"http_status": 200,
-	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3,v7.0.4,v7.2.0",
+	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3,v7.0.4,v7.0.5,v7.0.6,v7.2.0,v7.2.1,v7.2.8",
 	"name": "wtp-profile",
 	"path": "wireless-controller",
 	"results": {
@@ -216,6 +216,10 @@
 						"name": "DK"
 					},
 					{
+						"help": "DJIBOUTI",
+						"name": "DJ"
+					},
+					{
 						"help": "DOMINICA",
 						"name": "DM"
 					},
@@ -268,8 +272,16 @@
 						"name": "FR"
 					},
 					{
+						"help": "GABON",
+						"name": "GA"
+					},
+					{
 						"help": "GEORGIA",
 						"name": "GE"
+					},
+					{
+						"help": "GAMBIA",
+						"name": "GM"
 					},
 					{
 						"help": "GERMANY",
@@ -404,6 +416,10 @@
 						"name": "LS"
 					},
 					{
+						"help": "LIBERIA",
+						"name": "LR"
+					},
+					{
 						"help": "LIBYA",
 						"name": "LY"
 					},
@@ -488,6 +504,10 @@
 						"name": "MC"
 					},
 					{
+						"help": "MONGOLIA",
+						"name": "MN"
+					},
+					{
 						"help": "MOROCCO",
 						"name": "MA"
 					},
@@ -530,6 +550,10 @@
 					{
 						"help": "NIGER",
 						"name": "NE"
+					},
+					{
+						"help": "NIGERIA",
+						"name": "NG"
 					},
 					{
 						"help": "NORWAY",
@@ -660,6 +684,10 @@
 						"name": "SI"
 					},
 					{
+						"help": "SOMALIA",
+						"name": "SO"
+					},
+					{
 						"help": "SOUTH AFRICA",
 						"name": "ZA"
 					},
@@ -672,12 +700,16 @@
 						"name": "LK"
 					},
 					{
-						"help": "SWEDEN",
-						"name": "SE"
-					},
-					{
 						"help": "SURINAME",
 						"name": "SR"
+					},
+					{
+						"help": "SWAZILAND",
+						"name": "SZ"
+					},
+					{
+						"help": "SWEDEN",
+						"name": "SE"
 					},
 					{
 						"help": "SWITZERLAND",
@@ -1308,8 +1340,8 @@
 				"category": "unitary",
 				"default": 0,
 				"help": "Threshold value for AP handoff.",
-				"max-value": 4294967295,
-				"min-value": 0,
+				"max-value": 60,
+				"min-value": 5,
 				"multiple_values": false,
 				"name": "handoff-sta-thresh",
 				"type": "integer"
@@ -2194,16 +2226,16 @@
 					"ddscan": {
 						"category": "unitary",
 						"default": "disable",
-						"help": "Enable/disable use of one radio for dedicated dual-band scanning to detect RF characterization and wireless threat management.",
+						"help": "Enable/disable use of one radio for dedicated full-band scanning to detect RF characterization and wireless threat management.",
 						"multiple_values": false,
 						"name": "ddscan",
 						"options": [
 							{
-								"help": "Enable dedicated dual-band scan mode.",
+								"help": "Enable dedicated full-band scan mode.",
 								"name": "enable"
 							},
 							{
-								"help": "Disable dedicated dual-band scan mode.",
+								"help": "Disable dedicated full-band scan mode.",
 								"name": "disable"
 							}
 						],
@@ -2423,16 +2455,32 @@
 								"name": "431F"
 							},
 							{
+								"help": "FAP431FL.",
+								"name": "431FL"
+							},
+							{
 								"help": "FAP432F.",
 								"name": "432F"
+							},
+							{
+								"help": "FAP432FR.",
+								"name": "432FR"
 							},
 							{
 								"help": "FAP433F.",
 								"name": "433F"
 							},
 							{
+								"help": "FAP433FL.",
+								"name": "433FL"
+							},
+							{
 								"help": "FAP231F.",
 								"name": "231F"
+							},
+							{
+								"help": "FAP231FL.",
+								"name": "231FL"
 							},
 							{
 								"help": "FAP234F.",
@@ -2445,6 +2493,30 @@
 							{
 								"help": "FAP831F.",
 								"name": "831F"
+							},
+							{
+								"help": "FAP231G.",
+								"name": "231G"
+							},
+							{
+								"help": "FAP233G.",
+								"name": "233G"
+							},
+							{
+								"help": "FAP234G.",
+								"name": "234G"
+							},
+							{
+								"help": "FAP431G.",
+								"name": "431G"
+							},
+							{
+								"help": "FAP432G.",
+								"name": "432G"
+							},
+							{
+								"help": "FAP433G.",
+								"name": "433G"
 							},
 							{
 								"help": "FAPU421EV.",
@@ -2497,6 +2569,14 @@
 							{
 								"help": "FAPU432F.",
 								"name": "U432F"
+							},
+							{
+								"help": "FAPU231G.",
+								"name": "U231G"
+							},
+							{
+								"help": "FAPU441G.",
+								"name": "U441G"
 							}
 						],
 						"type": "option"
@@ -2547,6 +2627,25 @@
 			"radio-1": {
 				"category": "complex",
 				"children": {
+					"80211d": {
+						"addedIn": "v7.2.1",
+						"category": "unitary",
+						"default": "enable",
+						"help": "Enable/disable 802.11d countryie(default = enable).",
+						"multiple_values": false,
+						"name": "80211d",
+						"options": [
+							{
+								"help": "Enable 802.11d countryie.",
+								"name": "enable"
+							},
+							{
+								"help": "Disable 802.11d countryie.",
+								"name": "disable"
+							}
+						],
+						"type": "option"
+					},
 					"airtime-fairness": {
 						"category": "unitary",
 						"default": "disable",
@@ -2822,6 +2921,10 @@
 							{
 								"help": "802.11ac at 2.4GHz.",
 								"name": "802.11ac-2G"
+							},
+							{
+								"help": "802.11ax at 6GHz.",
+								"name": "802.11ax-6G"
 							},
 							{
 								"help": "802.11n/g at 2.4GHz.",
@@ -3251,6 +3354,49 @@
 							{
 								"help": "Radio 1 operates as a station that can connect to a neighboring AP for connectivity and health check.",
 								"name": "sam"
+							}
+						],
+						"type": "option"
+					},
+					"optional-antenna": {
+						"addedIn": "v7.2.8",
+						"category": "unitary",
+						"default": "none",
+						"help": "Optional antenna used on FAP (default = none).",
+						"multiple_values": false,
+						"name": "optional-antenna",
+						"options": [
+							{
+								"help": "None.",
+								"name": "none"
+							},
+							{
+								"help": "6 dBi(2.4GHz) and 6 dBi(5GHz).",
+								"name": "FANT-04ABGN-0606-O-N"
+							},
+							{
+								"help": "14 dBi(2.4GHz) and 14 dBi(5GHz).",
+								"name": "FANT-04ABGN-1414-P-N"
+							},
+							{
+								"help": "8 dBi(2.4GHz) and 6.5 dBi(5GHz).",
+								"name": "FANT-04ABGN-8065-P-N"
+							},
+							{
+								"help": "6 dBi(2.4GHz) and 6 dBi(5GHz).",
+								"name": "FANT-04ABGN-0606-O-R"
+							},
+							{
+								"help": "6 dBi(2.4GHz) and 6 dBi(5GHz).",
+								"name": "FANT-04ABGN-0606-P-R"
+							},
+							{
+								"help": "12 dBi(2.4GHz) and 13 dBi(5GHz).",
+								"name": "FANT-10ACAX-1213-D-N"
+							},
+							{
+								"help": "12 dBi(2.4GHz) and 13 dBi(5GHz).",
+								"name": "FANT-08ABGN-1213-D-R"
 							}
 						],
 						"type": "option"
@@ -3731,6 +3877,25 @@
 			"radio-2": {
 				"category": "complex",
 				"children": {
+					"80211d": {
+						"addedIn": "v7.2.1",
+						"category": "unitary",
+						"default": "enable",
+						"help": "Enable/disable 802.11d countryie(default = enable).",
+						"multiple_values": false,
+						"name": "80211d",
+						"options": [
+							{
+								"help": "Enable 802.11d countryie.",
+								"name": "enable"
+							},
+							{
+								"help": "Disable 802.11d countryie.",
+								"name": "disable"
+							}
+						],
+						"type": "option"
+					},
 					"airtime-fairness": {
 						"category": "unitary",
 						"default": "disable",
@@ -4006,6 +4171,10 @@
 							{
 								"help": "802.11ac at 2.4GHz.",
 								"name": "802.11ac-2G"
+							},
+							{
+								"help": "802.11ax at 6GHz.",
+								"name": "802.11ax-6G"
 							},
 							{
 								"help": "802.11n/g at 2.4GHz.",
@@ -4435,6 +4604,49 @@
 							{
 								"help": "Radio 2 operates as a station that can connect to a neighboring AP for connectivity and health check.",
 								"name": "sam"
+							}
+						],
+						"type": "option"
+					},
+					"optional-antenna": {
+						"addedIn": "v7.2.8",
+						"category": "unitary",
+						"default": "none",
+						"help": "Optional antenna used on FAP (default = none).",
+						"multiple_values": false,
+						"name": "optional-antenna",
+						"options": [
+							{
+								"help": "None.",
+								"name": "none"
+							},
+							{
+								"help": "6 dBi(2.4GHz) and 6 dBi(5GHz).",
+								"name": "FANT-04ABGN-0606-O-N"
+							},
+							{
+								"help": "14 dBi(2.4GHz) and 14 dBi(5GHz).",
+								"name": "FANT-04ABGN-1414-P-N"
+							},
+							{
+								"help": "8 dBi(2.4GHz) and 6.5 dBi(5GHz).",
+								"name": "FANT-04ABGN-8065-P-N"
+							},
+							{
+								"help": "6 dBi(2.4GHz) and 6 dBi(5GHz).",
+								"name": "FANT-04ABGN-0606-O-R"
+							},
+							{
+								"help": "6 dBi(2.4GHz) and 6 dBi(5GHz).",
+								"name": "FANT-04ABGN-0606-P-R"
+							},
+							{
+								"help": "12 dBi(2.4GHz) and 13 dBi(5GHz).",
+								"name": "FANT-10ACAX-1213-D-N"
+							},
+							{
+								"help": "12 dBi(2.4GHz) and 13 dBi(5GHz).",
+								"name": "FANT-08ABGN-1213-D-R"
 							}
 						],
 						"type": "option"
@@ -4915,6 +5127,25 @@
 			"radio-3": {
 				"category": "complex",
 				"children": {
+					"80211d": {
+						"addedIn": "v7.2.1",
+						"category": "unitary",
+						"default": "enable",
+						"help": "Enable/disable 802.11d countryie(default = enable).",
+						"multiple_values": false,
+						"name": "80211d",
+						"options": [
+							{
+								"help": "Enable 802.11d countryie.",
+								"name": "enable"
+							},
+							{
+								"help": "Disable 802.11d countryie.",
+								"name": "disable"
+							}
+						],
+						"type": "option"
+					},
 					"airtime-fairness": {
 						"category": "unitary",
 						"default": "disable",
@@ -5190,6 +5421,10 @@
 							{
 								"help": "802.11ac at 2.4GHz.",
 								"name": "802.11ac-2G"
+							},
+							{
+								"help": "802.11ax at 6GHz.",
+								"name": "802.11ax-6G"
 							},
 							{
 								"help": "802.11n/g at 2.4GHz.",
@@ -5619,6 +5854,49 @@
 							{
 								"help": "Radio 3 operates as a station that can connect to a neighboring AP for connectivity and health check.",
 								"name": "sam"
+							}
+						],
+						"type": "option"
+					},
+					"optional-antenna": {
+						"addedIn": "v7.2.8",
+						"category": "unitary",
+						"default": "none",
+						"help": "Optional antenna used on FAP (default = none).",
+						"multiple_values": false,
+						"name": "optional-antenna",
+						"options": [
+							{
+								"help": "None.",
+								"name": "none"
+							},
+							{
+								"help": "6 dBi(2.4GHz) and 6 dBi(5GHz).",
+								"name": "FANT-04ABGN-0606-O-N"
+							},
+							{
+								"help": "14 dBi(2.4GHz) and 14 dBi(5GHz).",
+								"name": "FANT-04ABGN-1414-P-N"
+							},
+							{
+								"help": "8 dBi(2.4GHz) and 6.5 dBi(5GHz).",
+								"name": "FANT-04ABGN-8065-P-N"
+							},
+							{
+								"help": "6 dBi(2.4GHz) and 6 dBi(5GHz).",
+								"name": "FANT-04ABGN-0606-O-R"
+							},
+							{
+								"help": "6 dBi(2.4GHz) and 6 dBi(5GHz).",
+								"name": "FANT-04ABGN-0606-P-R"
+							},
+							{
+								"help": "12 dBi(2.4GHz) and 13 dBi(5GHz).",
+								"name": "FANT-10ACAX-1213-D-N"
+							},
+							{
+								"help": "12 dBi(2.4GHz) and 13 dBi(5GHz).",
+								"name": "FANT-08ABGN-1213-D-R"
 							}
 						],
 						"type": "option"
@@ -6099,6 +6377,25 @@
 			"radio-4": {
 				"category": "complex",
 				"children": {
+					"80211d": {
+						"addedIn": "v7.2.1",
+						"category": "unitary",
+						"default": "enable",
+						"help": "Enable/disable 802.11d countryie(default = enable).",
+						"multiple_values": false,
+						"name": "80211d",
+						"options": [
+							{
+								"help": "Enable 802.11d countryie.",
+								"name": "enable"
+							},
+							{
+								"help": "Disable 802.11d countryie.",
+								"name": "disable"
+							}
+						],
+						"type": "option"
+					},
 					"airtime-fairness": {
 						"category": "unitary",
 						"default": "disable",
@@ -6374,6 +6671,10 @@
 							{
 								"help": "802.11ac at 2.4GHz.",
 								"name": "802.11ac-2G"
+							},
+							{
+								"help": "802.11ax at 6GHz.",
+								"name": "802.11ax-6G"
 							},
 							{
 								"help": "802.11n/g at 2.4GHz.",
@@ -6803,6 +7104,49 @@
 							{
 								"help": "Radio 3 operates as a station that can connect to a neighboring AP for connectivity and health check.",
 								"name": "sam"
+							}
+						],
+						"type": "option"
+					},
+					"optional-antenna": {
+						"addedIn": "v7.2.8",
+						"category": "unitary",
+						"default": "none",
+						"help": "Optional antenna used on FAP (default = none).",
+						"multiple_values": false,
+						"name": "optional-antenna",
+						"options": [
+							{
+								"help": "None.",
+								"name": "none"
+							},
+							{
+								"help": "6 dBi(2.4GHz) and 6 dBi(5GHz).",
+								"name": "FANT-04ABGN-0606-O-N"
+							},
+							{
+								"help": "14 dBi(2.4GHz) and 14 dBi(5GHz).",
+								"name": "FANT-04ABGN-1414-P-N"
+							},
+							{
+								"help": "8 dBi(2.4GHz) and 6.5 dBi(5GHz).",
+								"name": "FANT-04ABGN-8065-P-N"
+							},
+							{
+								"help": "6 dBi(2.4GHz) and 6 dBi(5GHz).",
+								"name": "FANT-04ABGN-0606-O-R"
+							},
+							{
+								"help": "6 dBi(2.4GHz) and 6 dBi(5GHz).",
+								"name": "FANT-04ABGN-0606-P-R"
+							},
+							{
+								"help": "12 dBi(2.4GHz) and 13 dBi(5GHz).",
+								"name": "FANT-10ACAX-1213-D-N"
+							},
+							{
+								"help": "12 dBi(2.4GHz) and 13 dBi(5GHz).",
+								"name": "FANT-08ABGN-1213-D-R"
 							}
 						],
 						"type": "option"
@@ -7471,12 +7815,13 @@
 		"mkey": "name",
 		"mkey_type": "string",
 		"name": "wtp-profile",
+		"object_range": "vdom",
 		"path": "wireless-controller",
-		"q_type": 272
+		"q_type": 279
 	},
-	"revision": "f7f9f0c7010a0528b972ed831ae64831",
-	"serial": "FGTAZRIPD-OKNB34",
+	"revision": "2131c48edd53df0aa10b0be32545dfe1",
+	"serial": "FG180FTK20900788",
 	"status": "success",
 	"vdom": "root",
-	"version": "v7.2.0"
+	"version": "v7.2.8"
 }

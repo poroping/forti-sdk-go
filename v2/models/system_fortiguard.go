@@ -12,12 +12,18 @@ type SystemFortiguard struct {
 	AntispamTimeout                 *int64  `json:"antispam-timeout,omitempty"`
 	AnycastSdnsServerIp             *string `json:"anycast-sdns-server-ip,omitempty"`
 	AnycastSdnsServerPort           *int64  `json:"anycast-sdns-server-port,omitempty"`
+	AutoFirmwareUpgrade             *string `json:"auto-firmware-upgrade,omitempty"`
+	AutoFirmwareUpgradeDay          *string `json:"auto-firmware-upgrade-day,omitempty"`
+	AutoFirmwareUpgradeDelay        *int64  `json:"auto-firmware-upgrade-delay,omitempty"`
+	AutoFirmwareUpgradeEndHour      *int64  `json:"auto-firmware-upgrade-end-hour,omitempty"`
+	AutoFirmwareUpgradeStartHour    *int64  `json:"auto-firmware-upgrade-start-hour,omitempty"`
 	AutoJoinForticloud              *string `json:"auto-join-forticloud,omitempty"`
 	DdnsServerIp                    *string `json:"ddns-server-ip,omitempty"`
 	DdnsServerIp6                   *string `json:"ddns-server-ip6,omitempty"`
 	DdnsServerPort                  *int64  `json:"ddns-server-port,omitempty"`
 	FortiguardAnycast               *string `json:"fortiguard-anycast,omitempty"`
 	FortiguardAnycastSource         *string `json:"fortiguard-anycast-source,omitempty"`
+	GuiPromptAutoUpgrade            *string `json:"gui-prompt-auto-upgrade,omitempty"`
 	Interface                       *string `json:"interface,omitempty"`
 	InterfaceSelectMethod           *string `json:"interface-select-method,omitempty"`
 	LoadBalanceServers              *int64  `json:"load-balance-servers,omitempty"`
@@ -35,6 +41,7 @@ type SystemFortiguard struct {
 	ProxyServerIp                   *string `json:"proxy-server-ip,omitempty"`
 	ProxyServerPort                 *int64  `json:"proxy-server-port,omitempty"`
 	ProxyUsername                   *string `json:"proxy-username,omitempty"`
+	SandboxInlineScan               *string `json:"sandbox-inline-scan,omitempty"`
 	SandboxRegion                   *string `json:"sandbox-region,omitempty"`
 	SdnsOptions                     *string `json:"sdns-options,omitempty"`
 	SdnsServerIp                    *string `json:"sdns-server-ip,omitempty"`

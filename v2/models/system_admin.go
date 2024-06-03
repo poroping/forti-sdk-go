@@ -23,6 +23,7 @@ type SystemAdmin struct {
 	Ip6Trusthost7           *string                       `json:"ip6-trusthost7,omitempty"`
 	Ip6Trusthost8           *string                       `json:"ip6-trusthost8,omitempty"`
 	Ip6Trusthost9           *string                       `json:"ip6-trusthost9,omitempty"`
+	List                    *string                       `json:"list,omitempty"`
 	Name                    *string                       `json:"name,omitempty"`
 	Password                *string                       `json:"password,omitempty"`
 	PasswordExpire          *string                       `json:"password-expire,omitempty"`
@@ -39,6 +40,7 @@ type SystemAdmin struct {
 	SshPublicKey1           *string                       `json:"ssh-public-key1,omitempty"`
 	SshPublicKey2           *string                       `json:"ssh-public-key2,omitempty"`
 	SshPublicKey3           *string                       `json:"ssh-public-key3,omitempty"`
+	Status                  *string                       `json:"status,omitempty"`
 	Trusthost1              *string                       `json:"trusthost1,omitempty"`
 	Trusthost10             *string                       `json:"trusthost10,omitempty"`
 	Trusthost2              *string                       `json:"trusthost2,omitempty"`
@@ -53,6 +55,7 @@ type SystemAdmin struct {
 	TwoFactorAuthentication *string                       `json:"two-factor-authentication,omitempty"`
 	TwoFactorNotification   *string                       `json:"two-factor-notification,omitempty"`
 	Vdom                    *[]SystemAdminVdom            `json:"vdom,omitempty"`
+	VdomOverride            *string                       `json:"vdom-override,omitempty"`
 	Wildcard                *string                       `json:"wildcard,omitempty"`
 }
 

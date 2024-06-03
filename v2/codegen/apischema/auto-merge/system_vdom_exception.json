@@ -1,9 +1,9 @@
 {
 	"addedIn": "v6.2.7",
-	"build": 1157,
+	"build": 1639,
 	"http_method": "GET",
 	"http_status": 200,
-	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3,v7.0.4,v7.2.0",
+	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3,v7.0.4,v7.0.5,v7.0.6,v7.2.0,v7.2.1,v7.2.8",
 	"name": "vdom-exception",
 	"path": "system",
 	"results": {
@@ -108,76 +108,12 @@
 						"name": "user.radius"
 					},
 					{
-						"help": "system.cluster-sync",
-						"name": "system.cluster-sync"
+						"help": "log.syslogd.setting",
+						"name": "log.syslogd.setting"
 					},
 					{
-						"help": "system.standalone-cluster",
-						"name": "system.standalone-cluster"
-					},
-					{
-						"help": "system.interface",
-						"name": "system.interface"
-					},
-					{
-						"help": "vpn.ipsec.phase1-interface",
-						"name": "vpn.ipsec.phase1-interface"
-					},
-					{
-						"help": "vpn.ipsec.phase2-interface",
-						"name": "vpn.ipsec.phase2-interface"
-					},
-					{
-						"help": "router.bgp",
-						"name": "router.bgp"
-					},
-					{
-						"help": "router.route-map",
-						"name": "router.route-map"
-					},
-					{
-						"help": "router.prefix-list",
-						"name": "router.prefix-list"
-					},
-					{
-						"help": "firewall.ippool",
-						"name": "firewall.ippool"
-					},
-					{
-						"help": "firewall.ippool6",
-						"name": "firewall.ippool6"
-					},
-					{
-						"help": "router.static",
-						"name": "router.static"
-					},
-					{
-						"help": "router.static6",
-						"name": "router.static6"
-					},
-					{
-						"help": "firewall.vip",
-						"name": "firewall.vip"
-					},
-					{
-						"help": "firewall.vip6",
-						"name": "firewall.vip6"
-					},
-					{
-						"help": "system.sdwan",
-						"name": "system.sdwan"
-					},
-					{
-						"help": "system.saml",
-						"name": "system.saml"
-					},
-					{
-						"help": "router.policy",
-						"name": "router.policy"
-					},
-					{
-						"help": "router.policy6",
-						"name": "router.policy6"
+						"help": "log.syslogd.override-setting",
+						"name": "log.syslogd.override-setting"
 					}
 				],
 				"required": true,
@@ -238,12 +174,13 @@
 		"mkey": "id",
 		"mkey_type": "integer",
 		"name": "vdom-exception",
+		"object_range": "global",
 		"path": "system",
-		"q_type": 517
+		"q_type": 530
 	},
-	"revision": "f7f9f0c7010a0528b972ed831ae64831",
-	"serial": "FGTAZRIPD-OKNB34",
+	"revision": "2131c48edd53df0aa10b0be32545dfe1",
+	"serial": "FG180FTK20900788",
 	"status": "success",
 	"vdom": "root",
-	"version": "v7.2.0"
+	"version": "v7.2.8"
 }

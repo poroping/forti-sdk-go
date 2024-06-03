@@ -1,9 +1,9 @@
 {
 	"addedIn": "v6.4.2",
-	"build": 1157,
+	"build": 1639,
 	"http_method": "GET",
 	"http_status": 200,
-	"mergedVersions": "v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3,v7.0.4,v7.2.0",
+	"mergedVersions": "v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3,v7.0.4,v7.0.5,v7.0.6,v7.2.0,v7.2.1,v7.2.8",
 	"name": "profile",
 	"path": "file-filter",
 	"results": {
@@ -244,7 +244,7 @@
 				},
 				"help": "File filter rules.",
 				"max_table_size_global": 0,
-				"max_table_size_item": 4000,
+				"max_table_size_item": 3000,
 				"max_table_size_vdom": 0,
 				"mkey": "name",
 				"mkey_type": "string",
@@ -270,18 +270,19 @@
 			}
 		},
 		"help": "Configure file-filter profiles.",
-		"max_table_size_global": 1500,
+		"max_table_size_global": 1000,
 		"max_table_size_item": 0,
-		"max_table_size_vdom": 1500,
+		"max_table_size_vdom": 1000,
 		"mkey": "name",
 		"mkey_type": "string",
 		"name": "profile",
+		"object_range": "global-vdom",
 		"path": "file-filter",
-		"q_type": 438
+		"q_type": 441
 	},
-	"revision": "8023aeaaa301ccda902574ef2a3a0973",
-	"serial": "FGTAZRIPD-OKNB34",
+	"revision": "21ab8fd0e76fc87410dae2b9ebb507bb",
+	"serial": "FG180FTK20900788",
 	"status": "success",
 	"vdom": "root",
-	"version": "v7.2.0"
+	"version": "v7.2.8"
 }

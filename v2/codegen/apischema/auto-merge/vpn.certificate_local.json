@@ -1,9 +1,9 @@
 {
 	"addedIn": "v6.2.7",
-	"build": 1157,
+	"build": 1639,
 	"http_method": "GET",
 	"http_status": 200,
-	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3,v7.0.4,v7.2.0",
+	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3,v7.0.4,v7.0.5,v7.0.6,v7.2.0,v7.2.1,v7.2.8",
 	"name": "local",
 	"path": "vpn.certificate",
 	"results": {
@@ -168,6 +168,21 @@
 				"name": "csr",
 				"type": "user"
 			},
+			"details": {
+				"addedIn": "v7.2.1",
+				"category": "info-read-only",
+				"children": {
+					"\u003ccertficate name\u003e": {
+						"category": "info-read-only",
+						"help": "Local certificate name.",
+						"name": "\u003ccertficate name\u003e",
+						"type": "value"
+					}
+				},
+				"help": "Print local certificate detailed information.",
+				"name": "details",
+				"type": "key"
+			},
 			"enroll-protocol": {
 				"category": "unitary",
 				"default": "none",
@@ -266,6 +281,25 @@
 				"required": true,
 				"type": "user"
 			},
+			"private-key-retain": {
+				"addedIn": "v7.2.1",
+				"category": "unitary",
+				"default": "disable",
+				"help": "Enable/disable retention of private key during SCEP renewal (default = disable).",
+				"multiple_values": false,
+				"name": "private-key-retain",
+				"options": [
+					{
+						"help": "Keep the existing private key during SCEP renewal.",
+						"name": "enable"
+					},
+					{
+						"help": "Generate a new private key during SCEP renewal.",
+						"name": "disable"
+					}
+				],
+				"type": "option"
+			},
 			"range": {
 				"category": "unitary",
 				"default": "vdom",
@@ -348,12 +382,13 @@
 		"mkey": "name",
 		"mkey_type": "string",
 		"name": "local",
+		"object_range": "vdom",
 		"path": "vpn.certificate",
-		"q_type": 168
+		"q_type": 175
 	},
-	"revision": "dabc440578d6817071928e23f8354000",
-	"serial": "FGTAZRIPD-OKNB34",
+	"revision": "2cded9637248c471fc7c69dffecc48b6",
+	"serial": "FG180FTK20900788",
 	"status": "success",
 	"vdom": "root",
-	"version": "v7.2.0"
+	"version": "v7.2.8"
 }

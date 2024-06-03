@@ -32,21 +32,29 @@ type FirewallSniffer struct {
 	Port                     *string                        `json:"port,omitempty"`
 	Protocol                 *string                        `json:"protocol,omitempty"`
 	Status                   *string                        `json:"status,omitempty"`
+	Uuid                     *string                        `json:"uuid,omitempty"`
 	Vlan                     *string                        `json:"vlan,omitempty"`
 	WebfilterProfile         *string                        `json:"webfilter-profile,omitempty"`
 	WebfilterProfileStatus   *string                        `json:"webfilter-profile-status,omitempty"`
 }
 
 type FirewallSnifferAnomaly struct {
-	Action           *string `json:"action,omitempty"`
-	Log              *string `json:"log,omitempty"`
-	Name             *string `json:"name,omitempty"`
-	Quarantine       *string `json:"quarantine,omitempty"`
-	QuarantineExpiry *string `json:"quarantine-expiry,omitempty"`
-	QuarantineLog    *string `json:"quarantine-log,omitempty"`
-	Status           *string `json:"status,omitempty"`
-	Threshold        *int64  `json:"threshold,omitempty"`
-	Thresholddefault *int64  `json:"threshold(default),omitempty"`
+	Action                 *string `json:"action,omitempty"`
+	Log                    *string `json:"log,omitempty"`
+	Name                   *string `json:"name,omitempty"`
+	Quarantine             *string `json:"quarantine,omitempty"`
+	QuarantineExpiry       *string `json:"quarantine-expiry,omitempty"`
+	QuarantineLog          *string `json:"quarantine-log,omitempty"`
+	Status                 *string `json:"status,omitempty"`
+	SynproxyTcpMss         *string `json:"synproxy-tcp-mss,omitempty"`
+	SynproxyTcpSack        *string `json:"synproxy-tcp-sack,omitempty"`
+	SynproxyTcpTimestamp   *string `json:"synproxy-tcp-timestamp,omitempty"`
+	SynproxyTcpWindow      *string `json:"synproxy-tcp-window,omitempty"`
+	SynproxyTcpWindowscale *string `json:"synproxy-tcp-windowscale,omitempty"`
+	SynproxyTos            *string `json:"synproxy-tos,omitempty"`
+	SynproxyTtl            *string `json:"synproxy-ttl,omitempty"`
+	Threshold              *int64  `json:"threshold,omitempty"`
+	Thresholddefault       *int64  `json:"threshold(default),omitempty"`
 }
 
 type FirewallSnifferIpThreatfeed struct {

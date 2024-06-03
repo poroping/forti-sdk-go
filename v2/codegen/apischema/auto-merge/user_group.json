@@ -1,9 +1,9 @@
 {
 	"addedIn": "v6.2.7",
-	"build": 1157,
+	"build": 1639,
 	"http_method": "GET",
 	"http_status": 200,
-	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3,v7.0.4,v7.2.0",
+	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3,v7.0.4,v7.0.5,v7.0.6,v7.2.0,v7.2.1,v7.2.8",
 	"name": "group",
 	"path": "user",
 	"results": {
@@ -78,11 +78,11 @@
 				"name": "email",
 				"options": [
 					{
-						"help": "Enable setting.",
+						"help": "Disable setting.",
 						"name": "disable"
 					},
 					{
-						"help": "Disable setting.",
+						"help": "Enable setting.",
 						"name": "enable"
 					}
 				],
@@ -293,7 +293,8 @@
 							"user.radius.name",
 							"user.ldap.name",
 							"user.tacacs+.name",
-							"user.saml.name"
+							"user.saml.name",
+							"user.external-identity-provider.name"
 						],
 						"default": "",
 						"help": "Name of remote auth server.",
@@ -334,6 +335,7 @@
 							"user.tacacs+.name",
 							"user.ldap.name",
 							"user.saml.name",
+							"user.external-identity-provider.name",
 							"user.adgrp.name",
 							"user.pop3.name",
 							"user.certificate.name"
@@ -347,7 +349,7 @@
 						"type": "string"
 					}
 				},
-				"help": "Names of users, peers, LDAP severs, or RADIUS servers to add to the user group.",
+				"help": "Names of users, peers, LDAP severs, RADIUS servers or external idp servers to add to the user group.",
 				"max_table_size_global": 0,
 				"max_table_size_item": 3000,
 				"max_table_size_vdom": 0,
@@ -364,11 +366,11 @@
 				"name": "mobile-phone",
 				"options": [
 					{
-						"help": "Enable setting.",
+						"help": "Disable setting.",
 						"name": "disable"
 					},
 					{
-						"help": "Disable setting.",
+						"help": "Enable setting.",
 						"name": "enable"
 					}
 				],
@@ -382,11 +384,11 @@
 				"name": "multiple-guest-add",
 				"options": [
 					{
-						"help": "Enable setting.",
+						"help": "Disable setting.",
 						"name": "disable"
 					},
 					{
-						"help": "Disable setting.",
+						"help": "Enable setting.",
 						"name": "enable"
 					}
 				],
@@ -514,11 +516,11 @@
 				"name": "user-name",
 				"options": [
 					{
-						"help": "Enable setting.",
+						"help": "Disable setting.",
 						"name": "disable"
 					},
 					{
-						"help": "Disable setting.",
+						"help": "Enable setting.",
 						"name": "enable"
 					}
 				],
@@ -528,16 +530,17 @@
 		"help": "Configure user groups.",
 		"max_table_size_global": 0,
 		"max_table_size_item": 0,
-		"max_table_size_vdom": 5000,
+		"max_table_size_vdom": 2000,
 		"mkey": "name",
 		"mkey_type": "string",
 		"name": "group",
+		"object_range": "vdom",
 		"path": "user",
-		"q_type": 30
+		"q_type": 31
 	},
-	"revision": "6fbb1eeb11f1b08bcc064d6d418c1c45",
-	"serial": "FGTAZRIPD-OKNB34",
+	"revision": "67b6095a04cbf9fa17e5a4ab7fadb677",
+	"serial": "FG180FTK20900788",
 	"status": "success",
 	"vdom": "root",
-	"version": "v7.2.0"
+	"version": "v7.2.8"
 }

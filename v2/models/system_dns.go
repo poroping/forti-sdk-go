@@ -10,6 +10,8 @@ type SystemDns struct {
 	DnsCacheTtl            *int64                     `json:"dns-cache-ttl,omitempty"`
 	DnsOverTls             *string                    `json:"dns-over-tls,omitempty"`
 	Domain                 *[]SystemDnsDomain         `json:"domain,omitempty"`
+	FqdnCacheTtl           *int64                     `json:"fqdn-cache-ttl,omitempty"`
+	FqdnMinRefresh         *int64                     `json:"fqdn-min-refresh,omitempty"`
 	Interface              *string                    `json:"interface,omitempty"`
 	InterfaceSelectMethod  *string                    `json:"interface-select-method,omitempty"`
 	Ip6Primary             *string                    `json:"ip6-primary,omitempty"`

@@ -1,9 +1,9 @@
 {
 	"addedIn": "v6.2.7",
-	"build": 1157,
+	"build": 1639,
 	"http_method": "GET",
 	"http_status": 200,
-	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3,v7.0.4,v7.2.0",
+	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3,v7.0.4,v7.0.5,v7.0.6,v7.2.0,v7.2.1,v7.2.8",
 	"name": "global",
 	"path": "switch-controller",
 	"results": {
@@ -341,6 +341,25 @@
 				],
 				"type": "option"
 			},
+			"vlan-identity": {
+				"addedIn": "v7.2.8",
+				"category": "unitary",
+				"default": "name",
+				"help": "Identity of the VLAN. Commonly used for RADIUS Tunnel-Private-Group-Id.",
+				"multiple_values": false,
+				"name": "vlan-identity",
+				"options": [
+					{
+						"help": "Configure the VLAN description to that of the FortiOS interface description if available; otherwise use the interface name.",
+						"name": "description"
+					},
+					{
+						"help": "Configure the VLAN description to that of the FortiOS interface name.",
+						"name": "name"
+					}
+				],
+				"type": "option"
+			},
 			"vlan-optimization": {
 				"category": "unitary",
 				"default": "enable",
@@ -363,12 +382,13 @@
 		"help": "Configure FortiSwitch global settings.",
 		"multiple_values": false,
 		"name": "global",
+		"object_range": "vdom",
 		"path": "switch-controller",
-		"q_type": 323
+		"q_type": 330
 	},
-	"revision": "f7f9f0c7010a0528b972ed831ae64831",
-	"serial": "FGTAZRIPD-OKNB34",
+	"revision": "2131c48edd53df0aa10b0be32545dfe1",
+	"serial": "FG180FTK20900788",
 	"status": "success",
 	"vdom": "root",
-	"version": "v7.2.0"
+	"version": "v7.2.8"
 }

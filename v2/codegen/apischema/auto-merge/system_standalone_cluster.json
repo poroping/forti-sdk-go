@@ -1,15 +1,266 @@
 {
 	"addedIn": "v6.4.0",
-	"build": 1157,
+	"build": 1639,
 	"http_method": "GET",
 	"http_status": 200,
-	"mergedVersions": "v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3,v7.0.4,v7.2.0",
+	"mergedVersions": "v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3,v7.0.4,v7.0.5,v7.0.6,v7.2.0,v7.2.1,v7.2.8",
 	"name": "standalone-cluster",
 	"path": "system",
 	"results": {
 		"access_group": "sysgrp",
 		"category": "complex",
 		"children": {
+			"cluster-peer": {
+				"addedIn": "v7.2.1",
+				"category": "table",
+				"children": {
+					"down-intfs-before-sess-sync": {
+						"category": "table",
+						"children": {
+							"name": {
+								"category": "unitary",
+								"datasource": [
+									"system.interface.name"
+								],
+								"default": "",
+								"help": "Interface name.",
+								"multiple_values": false,
+								"name": "name",
+								"required": true,
+								"size": 79,
+								"type": "string"
+							}
+						},
+						"help": "List of interfaces to be turned down before session synchronization is complete.",
+						"max_table_size_global": 0,
+						"max_table_size_item": 0,
+						"max_table_size_vdom": 0,
+						"member_table": true,
+						"mkey": "name",
+						"mkey_type": "string",
+						"name": "down-intfs-before-sess-sync"
+					},
+					"hb-interval": {
+						"category": "unitary",
+						"default": 2,
+						"help": "Heartbeat interval (1 - 20 (100*ms). Increase to reduce false positives.",
+						"max-value": 20,
+						"min-value": 1,
+						"multiple_values": false,
+						"name": "hb-interval",
+						"type": "integer"
+					},
+					"hb-lost-threshold": {
+						"category": "unitary",
+						"default": 10,
+						"help": "Lost heartbeat threshold (1 - 60). Increase to reduce false positives.",
+						"max-value": 60,
+						"min-value": 1,
+						"multiple_values": false,
+						"name": "hb-lost-threshold",
+						"type": "integer"
+					},
+					"ipsec-tunnel-sync": {
+						"category": "unitary",
+						"default": "enable",
+						"help": "Enable/disable IPsec tunnel synchronization.",
+						"multiple_values": false,
+						"name": "ipsec-tunnel-sync",
+						"options": [
+							{
+								"help": "Enable IPsec tunnel synchronization.",
+								"name": "enable"
+							},
+							{
+								"help": "Disable IPsec tunnel synchronization.",
+								"name": "disable"
+							}
+						],
+						"type": "option"
+					},
+					"peerip": {
+						"category": "unitary",
+						"default": "0.0.0.0",
+						"help": "IP address of the interface on the peer unit that is used for the session synchronization link.",
+						"multiple_values": false,
+						"name": "peerip",
+						"type": "ipv4-address"
+					},
+					"peervd": {
+						"category": "unitary",
+						"datasource": [
+							"system.vdom.name"
+						],
+						"default": "root",
+						"help": "VDOM that contains the session synchronization link interface on the peer unit. Usually both peers would have the same peervd.",
+						"multiple_values": false,
+						"name": "peervd",
+						"size": 31,
+						"type": "string"
+					},
+					"secondary-add-ipsec-routes": {
+						"category": "unitary",
+						"default": "enable",
+						"help": "Enable/disable IKE route announcement on the backup unit.",
+						"multiple_values": false,
+						"name": "secondary-add-ipsec-routes",
+						"options": [
+							{
+								"help": "Add IKE routes to the backup unit.",
+								"name": "enable"
+							},
+							{
+								"help": "Do not add IKE routes to the backup unit.",
+								"name": "disable"
+							}
+						],
+						"type": "option"
+					},
+					"session-sync-filter": {
+						"category": "complex",
+						"children": {
+							"custom-service": {
+								"category": "table",
+								"children": {
+									"dst-port-range": {
+										"category": "unitary",
+										"default": "0-0",
+										"help": "Custom service destination port range.",
+										"multiple_values": false,
+										"name": "dst-port-range",
+										"type": "user"
+									},
+									"id": {
+										"category": "unitary",
+										"default": 0,
+										"help": "Custom service ID.",
+										"max-value": 4294967295,
+										"min-value": 0,
+										"multiple_values": false,
+										"name": "id",
+										"type": "integer"
+									},
+									"src-port-range": {
+										"category": "unitary",
+										"default": "0-0",
+										"help": "Custom service source port range.",
+										"multiple_values": false,
+										"name": "src-port-range",
+										"type": "user"
+									}
+								},
+								"help": "Only sessions using these custom services are synchronized. Use source and destination port ranges to define these custom services.",
+								"max_table_size_global": 0,
+								"max_table_size_item": 0,
+								"max_table_size_vdom": 0,
+								"mkey": "id",
+								"mkey_type": "integer",
+								"name": "custom-service"
+							},
+							"dstaddr": {
+								"category": "unitary",
+								"default": "0.0.0.0 0.0.0.0",
+								"help": "Only sessions to this IPv4 address are synchronized.",
+								"multiple_values": false,
+								"name": "dstaddr",
+								"type": "ipv4-classnet-any"
+							},
+							"dstaddr6": {
+								"category": "unitary",
+								"default": "::/0",
+								"help": "Only sessions to this IPv6 address are synchronized.",
+								"multiple_values": false,
+								"name": "dstaddr6",
+								"type": "ipv6-network"
+							},
+							"dstintf": {
+								"category": "unitary",
+								"datasource": [
+									"system.interface.name"
+								],
+								"default": "",
+								"help": "Only sessions to this interface are synchronized.",
+								"multiple_values": false,
+								"name": "dstintf",
+								"size": 15,
+								"type": "string"
+							},
+							"srcaddr": {
+								"category": "unitary",
+								"default": "0.0.0.0 0.0.0.0",
+								"help": "Only sessions from this IPv4 address are synchronized.",
+								"multiple_values": false,
+								"name": "srcaddr",
+								"type": "ipv4-classnet-any"
+							},
+							"srcaddr6": {
+								"category": "unitary",
+								"default": "::/0",
+								"help": "Only sessions from this IPv6 address are synchronized.",
+								"multiple_values": false,
+								"name": "srcaddr6",
+								"type": "ipv6-network"
+							},
+							"srcintf": {
+								"category": "unitary",
+								"datasource": [
+									"system.interface.name"
+								],
+								"default": "",
+								"help": "Only sessions from this interface are synchronized.",
+								"multiple_values": false,
+								"name": "srcintf",
+								"size": 15,
+								"type": "string"
+							}
+						},
+						"help": "Add one or more filters if you only want to synchronize some sessions. Use the filter to configure the types of sessions to synchronize.",
+						"name": "session-sync-filter"
+					},
+					"sync-id": {
+						"category": "unitary",
+						"default": 0,
+						"help": "Sync ID.",
+						"max-value": 4294967295,
+						"min-value": 0,
+						"multiple_values": false,
+						"name": "sync-id",
+						"type": "integer"
+					},
+					"syncvd": {
+						"category": "table",
+						"children": {
+							"name": {
+								"category": "unitary",
+								"datasource": [
+									"system.vdom.name"
+								],
+								"default": "",
+								"help": "VDOM name.",
+								"multiple_values": false,
+								"name": "name",
+								"size": 79,
+								"type": "string"
+							}
+						},
+						"help": "Sessions from these VDOMs are synchronized using this session synchronization configuration.",
+						"max_table_size_global": 0,
+						"max_table_size_item": 0,
+						"max_table_size_vdom": 0,
+						"member_table": true,
+						"mkey": "name",
+						"mkey_type": "string",
+						"name": "syncvd"
+					}
+				},
+				"help": "Configure FortiGate Session Life Support Protocol (FGSP) session synchronization.",
+				"max_table_size_global": 256,
+				"max_table_size_item": 0,
+				"max_table_size_vdom": 0,
+				"mkey": "sync-id",
+				"mkey_type": "integer",
+				"name": "cluster-peer"
+			},
 			"encryption": {
 				"category": "unitary",
 				"default": "disable",
@@ -90,12 +341,13 @@
 		"help": "Configure FortiGate Session Life Support Protocol (FGSP) cluster attributes.",
 		"multiple_values": false,
 		"name": "standalone-cluster",
+		"object_range": "global",
 		"path": "system",
-		"q_type": 249
+		"q_type": 256
 	},
-	"revision": "f7f9f0c7010a0528b972ed831ae64831",
-	"serial": "FGTAZRIPD-OKNB34",
+	"revision": "49774f6664cb7d94d918ac34b28a59bc",
+	"serial": "FG180FTK20900788",
 	"status": "success",
 	"vdom": "root",
-	"version": "v7.2.0"
+	"version": "v7.2.8"
 }

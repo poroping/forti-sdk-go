@@ -1,9 +1,9 @@
 {
 	"addedIn": "v7.0.1",
-	"build": 1157,
+	"build": 1639,
 	"http_method": "GET",
 	"http_status": 200,
-	"mergedVersions": "v7.0.1,v7.0.2,v7.0.3,v7.0.4,v7.2.0",
+	"mergedVersions": "v7.0.1,v7.0.2,v7.0.3,v7.0.4,v7.0.5,v7.0.6,v7.2.0,v7.2.1,v7.2.8",
 	"name": "certificate",
 	"path": "user",
 	"results": {
@@ -99,12 +99,13 @@
 		"mkey": "name",
 		"mkey_type": "string",
 		"name": "certificate",
+		"object_range": "vdom",
 		"path": "user",
 		"q_type": 22
 	},
-	"revision": "2b1edd375b3b6c80a44abbde4eddbd95",
-	"serial": "FGTAZRIPD-OKNB34",
+	"revision": "b047111358f77031b3a8a596629b7956",
+	"serial": "FG180FTK20900788",
 	"status": "success",
 	"vdom": "root",
-	"version": "v7.2.0"
+	"version": "v7.2.8"
 }

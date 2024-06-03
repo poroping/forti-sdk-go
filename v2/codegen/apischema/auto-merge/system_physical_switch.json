@@ -1,10 +1,10 @@
 {
 	"FullPath": null,
 	"addedIn": "v6.4.6",
-	"build": 234,
+	"build": 1639,
 	"http_method": "GET",
 	"http_status": 200,
-	"mergedVersions": "v6.4.6,v7.0.2",
+	"mergedVersions": "v6.4.6,v7.0.2,v7.2.8",
 	"name": "physical-switch",
 	"path": "system",
 	"removedIn": "v6.4.7",
@@ -36,6 +36,7 @@
 				"help": "Layer 2 table age timer value.",
 				"max-value": 4294967295,
 				"min-value": 0,
+				"multiple_values": false,
 				"name": "age-val",
 				"type": "integer"
 			},
@@ -43,6 +44,7 @@
 				"category": "unitary",
 				"default": "",
 				"help": "Name.",
+				"multiple_values": false,
 				"name": "name",
 				"required": true,
 				"size": 15,
@@ -56,12 +58,13 @@
 		"mkey": "name",
 		"mkey_type": "string",
 		"name": "physical-switch",
+		"object_range": "global",
 		"path": "system",
-		"q_type": 224
+		"q_type": 234
 	},
-	"revision": "fd654e0358f22c0eaec219ba6b02841d",
-	"serial": "FGT60FTK20028507",
+	"revision": "9e079d18eeff27cb2512acac67957bf0",
+	"serial": "FG180FTK20900788",
 	"status": "success",
 	"vdom": "root",
-	"version": "v7.0.2"
+	"version": "v7.2.8"
 }

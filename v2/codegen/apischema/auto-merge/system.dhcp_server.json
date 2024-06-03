@@ -1,9 +1,9 @@
 {
 	"addedIn": "v6.2.7",
-	"build": 1157,
+	"build": 1639,
 	"http_method": "GET",
 	"http_status": 200,
-	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3,v7.0.4,v7.2.0",
+	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3,v7.0.4,v7.0.5,v7.0.6,v7.2.0,v7.2.1,v7.2.8",
 	"name": "server",
 	"path": "system.dhcp",
 	"results": {
@@ -81,7 +81,7 @@
 				"help": "DDNS update key (base 64 encoding).",
 				"multiple_values": false,
 				"name": "ddns-key",
-				"type": "user"
+				"type": "password_aes256"
 			},
 			"ddns-keyname": {
 				"category": "unitary",
@@ -268,6 +268,17 @@
 						"required": true,
 						"type": "integer"
 					},
+					"lease-time": {
+						"addedIn": "v7.2.8",
+						"category": "unitary",
+						"default": 0,
+						"help": "Lease time in seconds, 0 means default lease time.",
+						"max-value": 8640000,
+						"min-value": 300,
+						"multiple_values": false,
+						"name": "lease-time",
+						"type": "integer"
+					},
 					"start-ip": {
 						"category": "unitary",
 						"default": "0.0.0.0",
@@ -276,6 +287,92 @@
 						"name": "start-ip",
 						"required": true,
 						"type": "ipv4-address"
+					},
+					"uci-match": {
+						"addedIn": "v7.2.8",
+						"category": "unitary",
+						"default": "disable",
+						"help": "Enable/disable user class identifier (UCI) matching. When enabled only DHCP requests with a matching UCI are served with this range.",
+						"multiple_values": false,
+						"name": "uci-match",
+						"options": [
+							{
+								"help": "Disable UCI matching.",
+								"name": "disable"
+							},
+							{
+								"help": "Enable UCI matching.",
+								"name": "enable"
+							}
+						],
+						"type": "option"
+					},
+					"uci-string": {
+						"addedIn": "v7.2.8",
+						"category": "table",
+						"children": {
+							"uci-string": {
+								"category": "unitary",
+								"default": "",
+								"help": "UCI strings.",
+								"multiple_values": false,
+								"name": "uci-string",
+								"required": true,
+								"size": 255,
+								"type": "string"
+							}
+						},
+						"help": "One or more UCI strings in quotes separated by spaces.",
+						"max_table_size_global": 0,
+						"max_table_size_item": 0,
+						"max_table_size_vdom": 0,
+						"member_table": true,
+						"mkey": "uci-string",
+						"mkey_type": "string",
+						"name": "uci-string"
+					},
+					"vci-match": {
+						"addedIn": "v7.2.1",
+						"category": "unitary",
+						"default": "disable",
+						"help": "Enable/disable vendor class identifier (VCI) matching. When enabled only DHCP requests with a matching VCI are served with this range.",
+						"multiple_values": false,
+						"name": "vci-match",
+						"options": [
+							{
+								"help": "Disable VCI matching.",
+								"name": "disable"
+							},
+							{
+								"help": "Enable VCI matching.",
+								"name": "enable"
+							}
+						],
+						"type": "option"
+					},
+					"vci-string": {
+						"addedIn": "v7.2.1",
+						"category": "table",
+						"children": {
+							"vci-string": {
+								"category": "unitary",
+								"default": "",
+								"help": "VCI strings.",
+								"multiple_values": false,
+								"name": "vci-string",
+								"required": true,
+								"size": 255,
+								"type": "string"
+							}
+						},
+						"help": "One or more VCI strings in quotes separated by spaces.",
+						"max_table_size_global": 0,
+						"max_table_size_item": 0,
+						"max_table_size_vdom": 0,
+						"member_table": true,
+						"mkey": "vci-string",
+						"mkey_type": "string",
+						"name": "vci-string"
 					}
 				},
 				"help": "Exclude one or more ranges of IP addresses from being assigned to clients.",
@@ -378,6 +475,17 @@
 						"required": true,
 						"type": "integer"
 					},
+					"lease-time": {
+						"addedIn": "v7.2.8",
+						"category": "unitary",
+						"default": 0,
+						"help": "Lease time in seconds, 0 means default lease time.",
+						"max-value": 8640000,
+						"min-value": 300,
+						"multiple_values": false,
+						"name": "lease-time",
+						"type": "integer"
+					},
 					"start-ip": {
 						"category": "unitary",
 						"default": "0.0.0.0",
@@ -386,11 +494,97 @@
 						"name": "start-ip",
 						"required": true,
 						"type": "ipv4-address"
+					},
+					"uci-match": {
+						"addedIn": "v7.2.8",
+						"category": "unitary",
+						"default": "disable",
+						"help": "Enable/disable user class identifier (UCI) matching. When enabled only DHCP requests with a matching UCI are served with this range.",
+						"multiple_values": false,
+						"name": "uci-match",
+						"options": [
+							{
+								"help": "Disable UCI matching.",
+								"name": "disable"
+							},
+							{
+								"help": "Enable UCI matching.",
+								"name": "enable"
+							}
+						],
+						"type": "option"
+					},
+					"uci-string": {
+						"addedIn": "v7.2.8",
+						"category": "table",
+						"children": {
+							"uci-string": {
+								"category": "unitary",
+								"default": "",
+								"help": "UCI strings.",
+								"multiple_values": false,
+								"name": "uci-string",
+								"required": true,
+								"size": 255,
+								"type": "string"
+							}
+						},
+						"help": "One or more UCI strings in quotes separated by spaces.",
+						"max_table_size_global": 0,
+						"max_table_size_item": 0,
+						"max_table_size_vdom": 0,
+						"member_table": true,
+						"mkey": "uci-string",
+						"mkey_type": "string",
+						"name": "uci-string"
+					},
+					"vci-match": {
+						"addedIn": "v7.2.1",
+						"category": "unitary",
+						"default": "disable",
+						"help": "Enable/disable vendor class identifier (VCI) matching. When enabled only DHCP requests with a matching VCI are served with this range.",
+						"multiple_values": false,
+						"name": "vci-match",
+						"options": [
+							{
+								"help": "Disable VCI matching.",
+								"name": "disable"
+							},
+							{
+								"help": "Enable VCI matching.",
+								"name": "enable"
+							}
+						],
+						"type": "option"
+					},
+					"vci-string": {
+						"addedIn": "v7.2.1",
+						"category": "table",
+						"children": {
+							"vci-string": {
+								"category": "unitary",
+								"default": "",
+								"help": "VCI strings.",
+								"multiple_values": false,
+								"name": "vci-string",
+								"required": true,
+								"size": 255,
+								"type": "string"
+							}
+						},
+						"help": "One or more VCI strings in quotes separated by spaces.",
+						"max_table_size_global": 0,
+						"max_table_size_item": 0,
+						"max_table_size_vdom": 0,
+						"member_table": true,
+						"mkey": "vci-string",
+						"mkey_type": "string",
+						"name": "vci-string"
 					}
 				},
 				"help": "DHCP IP range configuration.",
 				"max_table_size_global": 0,
-				"max_table_size_item": 3,
+				"max_table_size_item": 10,
 				"max_table_size_vdom": 0,
 				"mkey": "id",
 				"mkey_type": "integer",
@@ -556,6 +750,49 @@
 						],
 						"type": "option"
 					},
+					"uci-match": {
+						"addedIn": "v7.2.8",
+						"category": "unitary",
+						"default": "disable",
+						"help": "Enable/disable user class identifier (UCI) matching. When enabled only DHCP requests with a matching UCI are served with this option.",
+						"multiple_values": false,
+						"name": "uci-match",
+						"options": [
+							{
+								"help": "Disable UCI matching.",
+								"name": "disable"
+							},
+							{
+								"help": "Enable UCI matching.",
+								"name": "enable"
+							}
+						],
+						"type": "option"
+					},
+					"uci-string": {
+						"addedIn": "v7.2.8",
+						"category": "table",
+						"children": {
+							"uci-string": {
+								"category": "unitary",
+								"default": "",
+								"help": "UCI strings.",
+								"multiple_values": false,
+								"name": "uci-string",
+								"required": true,
+								"size": 255,
+								"type": "string"
+							}
+						},
+						"help": "One or more UCI strings in quotes separated by spaces.",
+						"max_table_size_global": 0,
+						"max_table_size_item": 0,
+						"max_table_size_vdom": 0,
+						"member_table": true,
+						"mkey": "uci-string",
+						"mkey_type": "string",
+						"name": "uci-string"
+					},
 					"value": {
 						"category": "unitary",
 						"default": "",
@@ -564,6 +801,49 @@
 						"name": "value",
 						"size": 312,
 						"type": "string"
+					},
+					"vci-match": {
+						"addedIn": "v7.2.1",
+						"category": "unitary",
+						"default": "disable",
+						"help": "Enable/disable vendor class identifier (VCI) matching. When enabled only DHCP requests with a matching VCI are served with this option.",
+						"multiple_values": false,
+						"name": "vci-match",
+						"options": [
+							{
+								"help": "Disable VCI matching.",
+								"name": "disable"
+							},
+							{
+								"help": "Enable VCI matching.",
+								"name": "enable"
+							}
+						],
+						"type": "option"
+					},
+					"vci-string": {
+						"addedIn": "v7.2.1",
+						"category": "table",
+						"children": {
+							"vci-string": {
+								"category": "unitary",
+								"default": "",
+								"help": "VCI strings.",
+								"multiple_values": false,
+								"name": "vci-string",
+								"required": true,
+								"size": 255,
+								"type": "string"
+							}
+						},
+						"help": "One or more VCI strings in quotes separated by spaces.",
+						"max_table_size_global": 0,
+						"max_table_size_item": 0,
+						"max_table_size_vdom": 0,
+						"member_table": true,
+						"mkey": "vci-string",
+						"mkey_type": "string",
+						"name": "vci-string"
 					}
 				},
 				"help": "DHCP options.",
@@ -936,7 +1216,7 @@
 						"name": "30"
 					},
 					{
-						"help": "(GMT+2:00) Athens, Sofia, Vilnius",
+						"help": "(GMT+2:00) Kyiv, Athens, Sofia, Vilnius",
 						"name": "31"
 					},
 					{
@@ -984,6 +1264,10 @@
 						"name": "85"
 					},
 					{
+						"help": "(GMT+3:00) St. Petersburg, Volgograd",
+						"name": "39"
+					},
+					{
 						"help": "(GMT+3:30) Tehran",
 						"name": "41"
 					},
@@ -996,12 +1280,12 @@
 						"name": "43"
 					},
 					{
-						"help": "(GMT+3:00) St. Petersburg, Volgograd",
-						"name": "39"
-					},
-					{
 						"help": "(GMT+4:30) Kabul",
 						"name": "44"
+					},
+					{
+						"help": "(GMT+5:00) Ekaterinburg",
+						"name": "45"
 					},
 					{
 						"help": "(GMT+5:00) Islamabad, Karachi, Tashkent",
@@ -1018,10 +1302,6 @@
 					{
 						"help": "(GMT+5:45) Kathmandu",
 						"name": "48"
-					},
-					{
-						"help": "(GMT+5:00) Ekaterinburg",
-						"name": "45"
 					},
 					{
 						"help": "(GMT+6:00) Almaty, Novosibirsk",
@@ -1068,16 +1348,16 @@
 						"name": "60"
 					},
 					{
+						"help": "(GMT+9:00) Yakutsk",
+						"name": "61"
+					},
+					{
 						"help": "(GMT+9:30) Adelaide",
 						"name": "62"
 					},
 					{
 						"help": "(GMT+9:30) Darwin",
 						"name": "63"
-					},
-					{
-						"help": "(GMT+9:00) Yakutsk",
-						"name": "61"
 					},
 					{
 						"help": "(GMT+10:00) Brisbane",
@@ -1264,16 +1544,17 @@
 		"help": "Configure DHCP servers.",
 		"max_table_size_global": 0,
 		"max_table_size_item": 0,
-		"max_table_size_vdom": 4192,
+		"max_table_size_vdom": 1024,
 		"mkey": "id",
 		"mkey_type": "integer",
 		"name": "server",
+		"object_range": "vdom",
 		"path": "system.dhcp",
-		"q_type": 100
+		"q_type": 104
 	},
-	"revision": "5aaca7175b5b74c5babe5981f58baa16",
-	"serial": "FGTAZRIPD-OKNB34",
+	"revision": "b710b2b12541ab8e88b17ae1823bdf1a",
+	"serial": "FG180FTK20900788",
 	"status": "success",
 	"vdom": "root",
-	"version": "v7.2.0"
+	"version": "v7.2.8"
 }

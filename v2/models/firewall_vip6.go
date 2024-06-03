@@ -33,6 +33,7 @@ type FirewallVip6 struct {
 	NatSourceVip                 *string                              `json:"nat-source-vip,omitempty"`
 	Nat64                        *string                              `json:"nat64,omitempty"`
 	Nat66                        *string                              `json:"nat66,omitempty"`
+	NdpReply                     *string                              `json:"ndp-reply,omitempty"`
 	OutlookWebAccess             *string                              `json:"outlook-web-access,omitempty"`
 	Persistence                  *string                              `json:"persistence,omitempty"`
 	Portforward                  *string                              `json:"portforward,omitempty"`
@@ -71,6 +72,7 @@ type FirewallVip6 struct {
 	SslServerCipherSuites        *[]FirewallVip6SslServerCipherSuites `json:"ssl-server-cipher-suites,omitempty"`
 	SslServerMaxVersion          *string                              `json:"ssl-server-max-version,omitempty"`
 	SslServerMinVersion          *string                              `json:"ssl-server-min-version,omitempty"`
+	SslServerRenegotiation       *string                              `json:"ssl-server-renegotiation,omitempty"`
 	SslServerSessionStateMax     *int64                               `json:"ssl-server-session-state-max,omitempty"`
 	SslServerSessionStateTimeout *int64                               `json:"ssl-server-session-state-timeout,omitempty"`
 	SslServerSessionStateType    *string                              `json:"ssl-server-session-state-type,omitempty"`
@@ -95,6 +97,7 @@ type FirewallVip6Realservers struct {
 	Monitor          *[]FirewallVip6RealserversMonitor `json:"monitor,omitempty"`
 	Port             *int64                            `json:"port,omitempty"`
 	Status           *string                           `json:"status,omitempty"`
+	TranslateHost    *string                           `json:"translate-host,omitempty"`
 	Weight           *int64                            `json:"weight,omitempty"`
 }
 

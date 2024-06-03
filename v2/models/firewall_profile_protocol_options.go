@@ -53,6 +53,7 @@ type FirewallProfileProtocolOptionsDns struct {
 type FirewallProfileProtocolOptionsFtp struct {
 	ComfortAmount                *int64  `json:"comfort-amount,omitempty"`
 	ComfortInterval              *int64  `json:"comfort-interval,omitempty"`
+	ExplicitFtpTls               *string `json:"explicit-ftp-tls,omitempty"`
 	InspectAll                   *string `json:"inspect-all,omitempty"`
 	Options                      *string `json:"options,omitempty"`
 	OversizeLimit                *int64  `json:"oversize-limit,omitempty"`
@@ -99,7 +100,9 @@ type FirewallProfileProtocolOptionsHttp struct {
 	TunnelNonHttp                *string `json:"tunnel-non-http,omitempty"`
 	UncompressedNestLimit        *int64  `json:"uncompressed-nest-limit,omitempty"`
 	UncompressedOversizeLimit    *int64  `json:"uncompressed-oversize-limit,omitempty"`
+	UnknownContentEncoding       *string `json:"unknown-content-encoding,omitempty"`
 	UnknownHttpVersion           *string `json:"unknown-http-version,omitempty"`
+	VerifyDnsForPolicyMatching   *string `json:"verify-dns-for-policy-matching,omitempty"`
 }
 
 type FirewallProfileProtocolOptionsImap struct {

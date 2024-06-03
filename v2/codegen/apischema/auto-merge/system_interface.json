@@ -1,9 +1,9 @@
 {
 	"addedIn": "v6.2.7",
-	"build": 1157,
+	"build": 1639,
 	"http_method": "GET",
 	"http_status": 200,
-	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3,v7.0.4,v7.2.0",
+	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3,v7.0.4,v7.0.5,v7.0.6,v7.2.0,v7.2.1,v7.2.8",
 	"name": "interface",
 	"path": "system",
 	"results": {
@@ -29,6 +29,25 @@
 				"size": 15,
 				"type": "string"
 			},
+			"aggregate-type": {
+				"addedIn": "v7.2.1",
+				"category": "unitary",
+				"default": "physical",
+				"help": "Type of aggregation.",
+				"multiple_values": false,
+				"name": "aggregate-type",
+				"options": [
+					{
+						"help": "Physical interface aggregation.",
+						"name": "physical"
+					},
+					{
+						"help": "VXLAN interface aggregation.",
+						"name": "vxlan"
+					}
+				],
+				"type": "option"
+			},
 			"algorithm": {
 				"category": "unitary",
 				"default": "L4",
@@ -47,6 +66,10 @@
 					{
 						"help": "Use layer 4 information for distribution.",
 						"name": "L4"
+					},
+					{
+						"help": "Use source MAC address for distribution.",
+						"name": "Source-MAC"
 					}
 				],
 				"type": "option"
@@ -423,6 +446,21 @@
 				"name": "color",
 				"type": "integer"
 			},
+			"cross-check": {
+				"addedIn": "v7.2.8",
+				"category": "info-read-only",
+				"children": {
+					"intf": {
+						"category": "info-read-only",
+						"help": "Interface name.",
+						"name": "intf",
+						"type": "value"
+					}
+				},
+				"help": "Cross-checking interface configuration.",
+				"name": "cross-check",
+				"type": "key"
+			},
 			"dedicated-to": {
 				"category": "unitary",
 				"default": "none",
@@ -558,7 +596,7 @@
 			"dhcp-classless-route-addition": {
 				"addedIn": "v7.0.1",
 				"category": "unitary",
-				"default": "enable",
+				"default": "disable",
 				"help": "Enable/disable addition of classless static routes retrieved from DHCP server.",
 				"multiple_values": false,
 				"name": "dhcp-classless-route-addition",
@@ -942,6 +980,7 @@
 			},
 			"egress-cos": {
 				"category": "unitary",
+				"default": "disable",
 				"help": "Override outgoing CoS in user VLAN tag.",
 				"multiple_values": false,
 				"name": "egress-cos",
@@ -994,7 +1033,9 @@
 						"datasource": [
 							"system.isf-queue-profile.name"
 						],
+						"default": "",
 						"help": "CoS profile name for CoS 0.",
+						"multiple_values": false,
 						"name": "cos0",
 						"size": 35,
 						"type": "string"
@@ -1004,7 +1045,9 @@
 						"datasource": [
 							"system.isf-queue-profile.name"
 						],
+						"default": "",
 						"help": "CoS profile name for CoS 1.",
+						"multiple_values": false,
 						"name": "cos1",
 						"size": 35,
 						"type": "string"
@@ -1014,7 +1057,9 @@
 						"datasource": [
 							"system.isf-queue-profile.name"
 						],
+						"default": "",
 						"help": "CoS profile name for CoS 2.",
+						"multiple_values": false,
 						"name": "cos2",
 						"size": 35,
 						"type": "string"
@@ -1024,7 +1069,9 @@
 						"datasource": [
 							"system.isf-queue-profile.name"
 						],
+						"default": "",
 						"help": "CoS profile name for CoS 3.",
+						"multiple_values": false,
 						"name": "cos3",
 						"size": 35,
 						"type": "string"
@@ -1034,7 +1081,9 @@
 						"datasource": [
 							"system.isf-queue-profile.name"
 						],
+						"default": "",
 						"help": "CoS profile name for CoS 4.",
+						"multiple_values": false,
 						"name": "cos4",
 						"size": 35,
 						"type": "string"
@@ -1044,7 +1093,9 @@
 						"datasource": [
 							"system.isf-queue-profile.name"
 						],
+						"default": "",
 						"help": "CoS profile name for CoS 5.",
+						"multiple_values": false,
 						"name": "cos5",
 						"size": 35,
 						"type": "string"
@@ -1054,7 +1105,9 @@
 						"datasource": [
 							"system.isf-queue-profile.name"
 						],
+						"default": "",
 						"help": "CoS profile name for CoS 6.",
+						"multiple_values": false,
 						"name": "cos6",
 						"size": 35,
 						"type": "string"
@@ -1064,7 +1117,9 @@
 						"datasource": [
 							"system.isf-queue-profile.name"
 						],
+						"default": "",
 						"help": "CoS profile name for CoS 7.",
+						"multiple_values": false,
 						"name": "cos7",
 						"size": 35,
 						"type": "string"
@@ -1094,6 +1149,7 @@
 				"multiple_values": false,
 				"name": "eip",
 				"readonly": true,
+				"removedIn": "v7.2.8",
 				"type": "ipv4-address-any"
 			},
 			"estimated-downstream-bandwidth": {
@@ -1205,7 +1261,7 @@
 						"multiple_values": false,
 						"name": "name",
 						"required": true,
-						"size": 79,
+						"size": 15,
 						"type": "string"
 					}
 				},
@@ -1366,6 +1422,52 @@
 				"name": "forward-domain",
 				"type": "integer"
 			},
+			"forward-error-correction": {
+				"addedIn": "v7.2.8",
+				"category": "unitary",
+				"default": "none",
+				"help": "Configure forward error correction (FEC).",
+				"multiple_values": false,
+				"name": "forward-error-correction",
+				"options": [
+					{
+						"help": "none",
+						"name": "none"
+					},
+					{
+						"help": "Disable forward error correction (FEC).",
+						"name": "disable"
+					},
+					{
+						"help": "Reed-Solomon (FEC CL91).",
+						"name": "cl91-rs-fec"
+					},
+					{
+						"help": "Fire-Code (FEC CL74).",
+						"name": "cl74-fc-fec"
+					},
+					{
+						"help": "Negotaite forward error correction (FEC).",
+						"name": "auto"
+					}
+				],
+				"type": "option"
+			},
+			"group": {
+				"addedIn": "v7.2.8",
+				"category": "info-read-only",
+				"children": {
+					"\u003cinterface\u003e": {
+						"category": "info-read-only",
+						"help": "Interface name.",
+						"name": "\u003cinterface\u003e",
+						"type": "value"
+					}
+				},
+				"help": "Print interface group information.",
+				"name": "group",
+				"type": "key"
+			},
 			"gwdetect": {
 				"category": "unitary",
 				"default": "disable",
@@ -1474,8 +1576,8 @@
 			"inbandwidth": {
 				"category": "unitary",
 				"default": 0,
-				"help": "Bandwidth limit for incoming traffic (0 - 16776000 kbps), 0 means unlimited.",
-				"max-value": 16776000,
+				"help": "Bandwidth limit for incoming traffic (0 - 100000000 kbps), 0 means unlimited.",
+				"max-value": 100000000,
 				"min-value": 0,
 				"multiple_values": false,
 				"name": "inbandwidth",
@@ -1483,6 +1585,7 @@
 			},
 			"ingress-cos": {
 				"category": "unitary",
+				"default": "disable",
 				"help": "Override incoming CoS in user VLAN tag on VLAN interface or assign a priority VLAN tag on physical interface.",
 				"multiple_values": false,
 				"name": "ingress-cos",
@@ -1836,6 +1939,25 @@
 							},
 							{
 								"help": "Enable DHCPv6 relay.",
+								"name": "enable"
+							}
+						],
+						"type": "option"
+					},
+					"dhcp6-relay-source-interface": {
+						"addedIn": "v7.2.8",
+						"category": "unitary",
+						"default": "disable",
+						"help": "Enable/disable use of address on this interface as the source address of the relay message.",
+						"multiple_values": false,
+						"name": "dhcp6-relay-source-interface",
+						"options": [
+							{
+								"help": "Use address of the egress interface as source address of the relay message.",
+								"name": "disable"
+							},
+							{
+								"help": "Use address of this interface as source address of the relay message.",
 								"name": "enable"
 							}
 						],
@@ -2695,6 +2817,25 @@
 				],
 				"type": "option"
 			},
+			"lacp-ha-secondary": {
+				"addedIn": "v7.2.1",
+				"category": "unitary",
+				"default": "enable",
+				"help": "LACP HA secondary member.",
+				"multiple_values": false,
+				"name": "lacp-ha-secondary",
+				"options": [
+					{
+						"help": "Allow HA secondary member to send/receive LACP messages.",
+						"name": "enable"
+					},
+					{
+						"help": "Block HA secondary member from sending/receiving LACP messages.",
+						"name": "disable"
+					}
+				],
+				"type": "option"
+			},
 			"lacp-ha-slave": {
 				"category": "unitary",
 				"default": "enable",
@@ -2711,6 +2852,7 @@
 						"name": "disable"
 					}
 				],
+				"removedIn": "v7.2.1",
 				"type": "option"
 			},
 			"lacp-mode": {
@@ -2936,23 +3078,87 @@
 				"name": "measured-upstream-bandwidth",
 				"type": "integer"
 			},
+			"media-type": {
+				"addedIn": "v7.2.8",
+				"category": "info-read-only",
+				"children": {
+					"\u003cinterface\u003e": {
+						"category": "info-read-only",
+						"help": "Interface name.",
+						"name": "\u003cinterface\u003e",
+						"type": "value"
+					}
+				},
+				"help": "Print interface media type.",
+				"name": "media-type",
+				"type": "key"
+			},
 			"mediatype": {
 				"category": "unitary",
+				"default": "none",
 				"help": "Select SFP media interface type",
 				"multiple_values": false,
 				"name": "mediatype",
 				"options": [
 					{
-						"help": "SFP using SerDes Media Interface",
-						"name": "serdes-sfp"
+						"help": "none",
+						"name": "none"
 					},
 					{
-						"help": "SFP using SGMII Media Interface",
-						"name": "sgmii-sfp"
+						"help": "Use GMII transceiver",
+						"name": "gmii"
 					},
 					{
-						"help": "Copper SFP using SerDes media Interface.",
-						"name": "serdes-copper-sfp"
+						"help": "Use SGMII Interface",
+						"name": "sgmii"
+					},
+					{
+						"help": "Use Short Range transceiver",
+						"name": "sr"
+					},
+					{
+						"help": "Use Long Range transceiver",
+						"name": "lr"
+					},
+					{
+						"help": "Use Copper transceiver",
+						"name": "cr"
+					},
+					{
+						"help": "Use Short Range transceiver(2 lane)",
+						"name": "sr2"
+					},
+					{
+						"help": "Use Long Range transceiver(2 lane)",
+						"name": "lr2"
+					},
+					{
+						"help": "Use Copper transceiver(2 lane)",
+						"name": "cr2"
+					},
+					{
+						"help": "Use Short Range transceiver(4 lane)",
+						"name": "sr4"
+					},
+					{
+						"help": "Use Long Range transceiver(4 lane)",
+						"name": "lr4"
+					},
+					{
+						"help": "Use Copper transceiver(4 lane)",
+						"name": "cr4"
+					},
+					{
+						"help": "Use Short Range transceiver(8 lane)",
+						"name": "sr8"
+					},
+					{
+						"help": "Use Long Range transceiver(8 lane)",
+						"name": "lr8"
+					},
+					{
+						"help": "Use Copper transceiver(8 lane)",
+						"name": "cr8"
 					}
 				],
 				"removedIn": "v6.4.0",
@@ -3151,11 +3357,22 @@
 				],
 				"type": "option"
 			},
+			"np-qos-profile": {
+				"addedIn": "v7.2.8",
+				"category": "unitary",
+				"default": 0,
+				"help": "NP QoS profile ID.",
+				"max-value": 15,
+				"min-value": 0,
+				"multiple_values": false,
+				"name": "np-qos-profile",
+				"type": "integer"
+			},
 			"outbandwidth": {
 				"category": "unitary",
 				"default": 0,
-				"help": "Bandwidth limit for outgoing traffic (0 - 16776000 kbps), 0 means unlimited.",
-				"max-value": 16776000,
+				"help": "Bandwidth limit for outgoing traffic (0 - 100000000 kbps).",
+				"max-value": 100000000,
 				"min-value": 0,
 				"multiple_values": false,
 				"name": "outbandwidth",
@@ -3178,6 +3395,21 @@
 				"name": "password",
 				"size": 128,
 				"type": "password"
+			},
+			"physical": {
+				"addedIn": "v7.2.1",
+				"category": "info-read-only",
+				"children": {
+					"\u003cinterface\u003e": {
+						"category": "info-read-only",
+						"help": "Interface name.",
+						"name": "\u003cinterface\u003e",
+						"type": "value"
+					}
+				},
+				"help": "Print physical interface information.",
+				"name": "physical",
+				"type": "key"
 			},
 			"ping-serv-status": {
 				"category": "unitary",
@@ -3412,6 +3644,7 @@
 				"min-value": 0,
 				"multiple_values": false,
 				"name": "ring-rx",
+				"removedIn": "v7.2.8",
 				"type": "integer"
 			},
 			"ring-tx": {
@@ -3423,6 +3656,7 @@
 				"min-value": 0,
 				"multiple_values": false,
 				"name": "ring-tx",
+				"removedIn": "v7.2.8",
 				"type": "integer"
 			},
 			"role": {
@@ -3652,11 +3886,59 @@
 				},
 				"help": "Second IP address of interface.",
 				"max_table_size_global": 0,
-				"max_table_size_item": 32,
+				"max_table_size_item": 256,
 				"max_table_size_vdom": 0,
 				"mkey": "id",
 				"mkey_type": "integer",
 				"name": "secondaryip"
+			},
+			"security-8021x-dynamic-vlan-id": {
+				"addedIn": "v7.2.8",
+				"category": "unitary",
+				"default": 0,
+				"help": "VLAN ID for virtual switch.",
+				"max-value": 4094,
+				"min-value": 0,
+				"multiple_values": false,
+				"name": "security-8021x-dynamic-vlan-id",
+				"type": "integer"
+			},
+			"security-8021x-master": {
+				"addedIn": "v7.2.8",
+				"category": "unitary",
+				"default": "",
+				"help": "802.1X master virtual-switch.",
+				"multiple_values": false,
+				"name": "security-8021x-master",
+				"size": 15,
+				"type": "string"
+			},
+			"security-8021x-mode": {
+				"addedIn": "v7.2.8",
+				"category": "unitary",
+				"default": "default",
+				"help": "802.1X mode.",
+				"multiple_values": false,
+				"name": "security-8021x-mode",
+				"options": [
+					{
+						"help": "802.1X default mode.",
+						"name": "default"
+					},
+					{
+						"help": "802.1X dynamic VLAN (master) mode.",
+						"name": "dynamic-vlan"
+					},
+					{
+						"help": "802.1X fallback (master) mode.",
+						"name": "fallback"
+					},
+					{
+						"help": "802.1X slave mode.",
+						"name": "slave"
+					}
+				],
+				"type": "option"
 			},
 			"security-exempt-list": {
 				"category": "unitary",
@@ -3829,12 +4111,80 @@
 						"name": "100half"
 					},
 					{
+						"help": "100M auto-negotiation.",
+						"name": "100auto"
+					},
+					{
 						"help": "1000M full-duplex.",
 						"name": "1000full"
 					},
 					{
-						"help": "1000M auto adjust.",
+						"help": "1000M auto-negotiation.",
 						"name": "1000auto"
+					},
+					{
+						"help": "2500M auto-negotiation.",
+						"name": "2500auto"
+					},
+					{
+						"help": "5000M auto-negotiation.",
+						"name": "5000auto"
+					},
+					{
+						"help": "10G full-duplex.",
+						"name": "10000full"
+					},
+					{
+						"help": "10G auto-negotiation.",
+						"name": "10000auto"
+					},
+					{
+						"help": "25G full-duplex.",
+						"name": "25000full"
+					},
+					{
+						"help": "25G auto-negotiation.",
+						"name": "25000auto"
+					},
+					{
+						"help": "40G full-duplex.",
+						"name": "40000full"
+					},
+					{
+						"help": "40G auto-negotiation.",
+						"name": "40000auto"
+					},
+					{
+						"help": "50G full-duplex.",
+						"name": "50000full"
+					},
+					{
+						"help": "50G auto-negotiation.",
+						"name": "50000auto"
+					},
+					{
+						"help": "100G full-duplex.",
+						"name": "100Gfull"
+					},
+					{
+						"help": "100G auto-negotiation.",
+						"name": "100Gauto"
+					},
+					{
+						"help": "200G full-duplex.",
+						"name": "200Gfull"
+					},
+					{
+						"help": "200G auto-negotiation.",
+						"name": "200Gauto"
+					},
+					{
+						"help": "400G full-duplex.",
+						"name": "400Gfull"
+					},
+					{
+						"help": "400G auto-negotiation.",
+						"name": "400Gauto"
 					}
 				],
 				"type": "option"
@@ -3881,6 +4231,48 @@
 					{
 						"help": "Shut the interface down.",
 						"name": "down"
+					}
+				],
+				"type": "option"
+			},
+			"stp": {
+				"addedIn": "v7.2.8",
+				"category": "unitary",
+				"default": "disable",
+				"help": "Enable/disable STP.",
+				"multiple_values": false,
+				"name": "stp",
+				"options": [
+					{
+						"help": "Disable STP.",
+						"name": "disable"
+					},
+					{
+						"help": "Enable STP.",
+						"name": "enable"
+					}
+				],
+				"type": "option"
+			},
+			"stp-ha-secondary": {
+				"addedIn": "v7.2.8",
+				"category": "unitary",
+				"default": "priority-adjust",
+				"help": "Control STP behavior on HA secondary.",
+				"multiple_values": false,
+				"name": "stp-ha-secondary",
+				"options": [
+					{
+						"help": "Disable STP negotiation on HA secondary.",
+						"name": "disable"
+					},
+					{
+						"help": "Enable STP negotiation on HA secondary.",
+						"name": "enable"
+					},
+					{
+						"help": "Enable STP negotiation on HA secondary and make priority lower than HA primary.",
+						"name": "priority-adjust"
 					}
 				],
 				"type": "option"
@@ -4237,6 +4629,25 @@
 				"size": 35,
 				"type": "string"
 			},
+			"switch-controller-netflow-collect": {
+				"addedIn": "v7.2.1",
+				"category": "unitary",
+				"default": "disable",
+				"help": "NetFlow collection and processing.",
+				"multiple_values": false,
+				"name": "switch-controller-netflow-collect",
+				"options": [
+					{
+						"help": "Disable NetFlow collection.",
+						"name": "disable"
+					},
+					{
+						"help": "Enable NetFlow collection.",
+						"name": "enable"
+					}
+				],
+				"type": "option"
+			},
 			"switch-controller-rspan-mode": {
 				"category": "unitary",
 				"default": "disable",
@@ -4385,6 +4796,40 @@
 				"name": "tcp-mss",
 				"type": "integer"
 			},
+			"transceiver": {
+				"addedIn": "v7.2.8",
+				"category": "info-read-only",
+				"children": {
+					"\u003cintface\u003e": {
+						"category": "info-read-only",
+						"help": "Interface name.",
+						"name": "\u003cintface\u003e",
+						"type": "value"
+					}
+				},
+				"help": "Print optical transceiver information.",
+				"name": "transceiver",
+				"type": "key"
+			},
+			"trunk": {
+				"addedIn": "v7.2.8",
+				"category": "unitary",
+				"default": "disable",
+				"help": "Enable/disable VLAN trunk.",
+				"multiple_values": false,
+				"name": "trunk",
+				"options": [
+					{
+						"help": "Enable VLAN trunk on this interface.",
+						"name": "enable"
+					},
+					{
+						"help": "Disable VLAN trunk on this interface.",
+						"name": "disable"
+					}
+				],
+				"type": "option"
+			},
 			"trust-ip-1": {
 				"category": "unitary",
 				"default": "0.0.0.0 0.0.0.0",
@@ -4471,6 +4916,10 @@
 					{
 						"help": "Software switch interface.",
 						"name": "switch"
+					},
+					{
+						"help": "Hardware switch interface.",
+						"name": "hard-switch"
 					},
 					{
 						"help": "VAP interface.",
@@ -4599,7 +5048,7 @@
 				"category": "unitary",
 				"default": 0,
 				"help": "Virtual Routing Forwarding ID.",
-				"max-value": 63,
+				"max-value": 251,
 				"min-value": 0,
 				"multiple_values": false,
 				"name": "vrf",
@@ -4879,12 +5328,13 @@
 		"mkey": "name",
 		"mkey_type": "string",
 		"name": "interface",
+		"object_range": "both",
 		"path": "system",
 		"q_type": 0
 	},
-	"revision": "c234a25b7729b1785c85949cd93a8200",
-	"serial": "FGTAZRIPD-OKNB34",
+	"revision": "e5db89cbf0f5b5704fc3a3da1dfc1108",
+	"serial": "FG180FTK20900788",
 	"status": "success",
 	"vdom": "root",
-	"version": "v7.2.0"
+	"version": "v7.2.8"
 }

@@ -1,9 +1,9 @@
 {
 	"addedIn": "v6.2.7",
-	"build": 1157,
+	"build": 1639,
 	"http_method": "GET",
 	"http_status": 200,
-	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3,v7.0.4,v7.2.0",
+	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3,v7.0.4,v7.0.5,v7.0.6,v7.2.0,v7.2.1,v7.2.8",
 	"name": "filepattern",
 	"path": "dlp",
 	"results": {
@@ -324,18 +324,19 @@
 			}
 		},
 		"help": "Configure file patterns used by DLP blocking.",
-		"max_table_size_global": 12500,
+		"max_table_size_global": 5000,
 		"max_table_size_item": 0,
-		"max_table_size_vdom": 12500,
+		"max_table_size_vdom": 5000,
 		"mkey": "id",
 		"mkey_type": "integer",
 		"name": "filepattern",
+		"object_range": "vdom",
 		"path": "dlp",
-		"q_type": 240
+		"q_type": 250
 	},
-	"revision": "013a3036e6e00b22292475bf0b6fae4e",
-	"serial": "FGTAZRIPD-OKNB34",
+	"revision": "176a442487081fb17c5768718a28af16",
+	"serial": "FG180FTK20900788",
 	"status": "success",
 	"vdom": "root",
-	"version": "v7.2.0"
+	"version": "v7.2.8"
 }

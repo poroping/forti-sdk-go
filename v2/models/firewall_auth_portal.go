@@ -7,6 +7,7 @@ type FirewallAuthPortal struct {
 	IdentityBasedRoute *string                     `json:"identity-based-route,omitempty"`
 	PortalAddr         *string                     `json:"portal-addr,omitempty"`
 	PortalAddr6        *string                     `json:"portal-addr6,omitempty"`
+	ProxyAuth          *string                     `json:"proxy-auth,omitempty"`
 }
 
 type FirewallAuthPortalGroups struct {

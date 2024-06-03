@@ -1,9 +1,9 @@
 {
 	"addedIn": "v6.2.7",
-	"build": 1157,
+	"build": 1639,
 	"http_method": "GET",
 	"http_status": 200,
-	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3,v7.0.4,v7.2.0",
+	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3,v7.0.4,v7.0.5,v7.0.6,v7.2.0,v7.2.1,v7.2.8",
 	"name": "onetime",
 	"path": "firewall.schedule",
 	"results": {
@@ -27,6 +27,15 @@
 				"multiple_values": false,
 				"name": "end",
 				"required": true,
+				"type": "user"
+			},
+			"end-utc": {
+				"addedIn": "v7.2.8",
+				"category": "unitary",
+				"default": "",
+				"help": "Schedule end date and time, in epoch format.",
+				"multiple_values": false,
+				"name": "end-utc",
 				"type": "user"
 			},
 			"expiration-days": {
@@ -76,6 +85,15 @@
 				"name": "start",
 				"required": true,
 				"type": "user"
+			},
+			"start-utc": {
+				"addedIn": "v7.2.8",
+				"category": "unitary",
+				"default": "",
+				"help": "Schedule start date and time, in epoch format.",
+				"multiple_values": false,
+				"name": "start-utc",
+				"type": "user"
 			}
 		},
 		"help": "Onetime schedule configuration.",
@@ -85,12 +103,13 @@
 		"mkey": "name",
 		"mkey_type": "string",
 		"name": "onetime",
+		"object_range": "vdom",
 		"path": "firewall.schedule",
-		"q_type": 38
+		"q_type": 39
 	},
-	"revision": "2b1edd375b3b6c80a44abbde4eddbd95",
-	"serial": "FGTAZRIPD-OKNB34",
+	"revision": "b047111358f77031b3a8a596629b7956",
+	"serial": "FG180FTK20900788",
 	"status": "success",
 	"vdom": "root",
-	"version": "v7.2.0"
+	"version": "v7.2.8"
 }

@@ -19,7 +19,9 @@ type SystemNpu struct {
 	Hpe                         *SystemNpuHpe                   `json:"hpe,omitempty"`
 	HtabDediQueueNr             *int64                          `json:"htab-dedi-queue-nr,omitempty"`
 	HtabMsgQueue                *string                         `json:"htab-msg-queue,omitempty"`
+	HtxIcmpCsumChk              *string                         `json:"htx-icmp-csum-chk,omitempty"`
 	InboundDscpCopyPort         *[]SystemNpuInboundDscpCopyPort `json:"inbound-dscp-copy-port,omitempty"`
+	IpFragmentOffload           *string                         `json:"ip-fragment-offload,omitempty"`
 	IpReassembly                *SystemNpuIpReassembly          `json:"ip-reassembly,omitempty"`
 	IppoolOverloadHigh          *int64                          `json:"ippool-overload-high,omitempty"`
 	IppoolOverloadLow           *int64                          `json:"ippool-overload-low,omitempty"`
@@ -35,16 +37,20 @@ type SystemNpu struct {
 	NapiBreakInterval           *int64                          `json:"napi-break-interval,omitempty"`
 	NpQueues                    *SystemNpuNpQueues              `json:"np-queues,omitempty"`
 	Np6CpsOptimizationMode      *string                         `json:"np6-cps-optimization-mode,omitempty"`
+	NpuGroupEffectiveScope      *int64                          `json:"npu-group-effective-scope,omitempty"`
 	PbaEim                      *string                         `json:"pba-eim,omitempty"`
+	PerPolicyAccounting         *string                         `json:"per-policy-accounting,omitempty"`
 	PerSessionAccounting        *string                         `json:"per-session-accounting,omitempty"`
 	PolicyOffloadLevel          *string                         `json:"policy-offload-level,omitempty"`
 	PortCpuMap                  *[]SystemNpuPortCpuMap          `json:"port-cpu-map,omitempty"`
 	PortNpuMap                  *[]SystemNpuPortNpuMap          `json:"port-npu-map,omitempty"`
 	PriorityProtocol            *SystemNpuPriorityProtocol      `json:"priority-protocol,omitempty"`
 	QosMode                     *string                         `json:"qos-mode,omitempty"`
+	QtmBufMode                  *string                         `json:"qtm-buf-mode,omitempty"`
 	RdpOffload                  *string                         `json:"rdp-offload,omitempty"`
 	RecoverNp6Link              *string                         `json:"recover-np6-link,omitempty"`
 	SessionAcctInterval         *int64                          `json:"session-acct-interval,omitempty"`
+	ShapingStats                *string                         `json:"shaping-stats,omitempty"`
 	SseBackpressure             *string                         `json:"sse-backpressure,omitempty"`
 	StripClearTextPadding       *string                         `json:"strip-clear-text-padding,omitempty"`
 	StripEspPadding             *string                         `json:"strip-esp-padding,omitempty"`
@@ -101,6 +107,7 @@ type SystemNpuFpAnomaly struct {
 	Ipv6ProtoErr     *string `json:"ipv6-proto-err,omitempty"`
 	Ipv6SaddrErr     *string `json:"ipv6-saddr-err,omitempty"`
 	Ipv6Unknopt      *string `json:"ipv6-unknopt,omitempty"`
+	SctpCsumErr      *string `json:"sctp-csum-err,omitempty"`
 	TcpCsumErr       *string `json:"tcp-csum-err,omitempty"`
 	TcpFinNoack      *string `json:"tcp-fin-noack,omitempty"`
 	TcpFinOnly       *string `json:"tcp-fin-only,omitempty"`

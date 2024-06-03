@@ -5,6 +5,7 @@ const IpsDecoderPath = "ips/decoder/"
 type IpsDecoder struct {
 	Name      *string                `json:"name,omitempty"`
 	Parameter *[]IpsDecoderParameter `json:"parameter,omitempty"`
+	Status    *string                `json:"status,omitempty"`
 }
 
 type IpsDecoderParameter struct {

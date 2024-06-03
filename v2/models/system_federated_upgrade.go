@@ -3,17 +3,19 @@ package models
 const SystemFederatedUpgradePath = "system/federated-upgrade/"
 
 type SystemFederatedUpgrade struct {
-	FailureDevice *string                           `json:"failure-device,omitempty"`
-	FailureReason *string                           `json:"failure-reason,omitempty"`
-	NextPathIndex *int64                            `json:"next-path-index,omitempty"`
-	NodeList      *[]SystemFederatedUpgradeNodeList `json:"node-list,omitempty"`
-	Status        *string                           `json:"status,omitempty"`
-	UpgradeId     *int64                            `json:"upgrade-id,omitempty"`
+	FailureDevice      *string                           `json:"failure-device,omitempty"`
+	FailureReason      *string                           `json:"failure-reason,omitempty"`
+	HaRebootController *string                           `json:"ha-reboot-controller,omitempty"`
+	NextPathIndex      *int64                            `json:"next-path-index,omitempty"`
+	NodeList           *[]SystemFederatedUpgradeNodeList `json:"node-list,omitempty"`
+	Status             *string                           `json:"status,omitempty"`
+	UpgradeId          *int64                            `json:"upgrade-id,omitempty"`
 }
 
 type SystemFederatedUpgradeNodeList struct {
 	CoordinatingFortigate *string `json:"coordinating-fortigate,omitempty"`
 	DeviceType            *string `json:"device-type,omitempty"`
+	MaximumMinutes        *int64  `json:"maximum-minutes,omitempty"`
 	Serial                *string `json:"serial,omitempty"`
 	SetupTime             *string `json:"setup-time,omitempty"`
 	Time                  *string `json:"time,omitempty"`

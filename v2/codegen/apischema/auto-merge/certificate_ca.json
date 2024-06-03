@@ -1,9 +1,9 @@
 {
 	"addedIn": "v6.2.7",
-	"build": 1157,
+	"build": 1639,
 	"http_method": "GET",
 	"http_status": 200,
-	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3,v7.0.4,v7.2.0",
+	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3,v7.0.4,v7.0.5,v7.0.6,v7.2.0,v7.2.1,v7.2.8",
 	"name": "ca",
 	"path": "certificate",
 	"results": {
@@ -49,6 +49,21 @@
 				"size": 255,
 				"type": "string"
 			},
+			"details": {
+				"addedIn": "v7.2.1",
+				"category": "info-read-only",
+				"children": {
+					"\u003cCA certficate name\u003e": {
+						"category": "info-read-only",
+						"help": "CA certificate name.",
+						"name": "\u003cCA certficate name\u003e",
+						"type": "value"
+					}
+				},
+				"help": "Print CA certificate detailed information.",
+				"name": "details",
+				"type": "key"
+			},
 			"name": {
 				"category": "unitary",
 				"default": "",
@@ -58,6 +73,25 @@
 				"required": true,
 				"size": 79,
 				"type": "string"
+			},
+			"obsolete": {
+				"addedIn": "v7.2.1",
+				"category": "unitary",
+				"default": "disable",
+				"help": "Enable/disable this CA as obsoleted.",
+				"multiple_values": false,
+				"name": "obsolete",
+				"options": [
+					{
+						"help": "Alive.",
+						"name": "disable"
+					},
+					{
+						"help": "Obsolete.",
+						"name": "enable"
+					}
+				],
+				"type": "option"
 			},
 			"range": {
 				"category": "unitary",
@@ -142,12 +176,13 @@
 		"mkey": "name",
 		"mkey_type": "string",
 		"name": "ca",
+		"object_range": "global",
 		"path": "certificate",
-		"q_type": 165
+		"q_type": 172
 	},
-	"revision": "524e01be6c8583293e233ebedd78fbac",
-	"serial": "FGTAZRIPD-OKNB34",
+	"revision": "6519458b98f946f1736852223d7a2524",
+	"serial": "FG180FTK20900788",
 	"status": "success",
 	"vdom": "root",
-	"version": "v7.2.0"
+	"version": "v7.2.8"
 }

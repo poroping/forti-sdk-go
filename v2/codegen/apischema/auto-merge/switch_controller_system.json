@@ -1,9 +1,9 @@
 {
 	"addedIn": "v6.2.7",
-	"build": 1157,
+	"build": 1639,
 	"http_method": "GET",
 	"http_status": 200,
-	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3,v7.0.4,v7.2.0",
+	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3,v7.0.4,v7.0.5,v7.0.6,v7.2.0,v7.2.1,v7.2.8",
 	"name": "system",
 	"path": "switch-controller",
 	"results": {
@@ -23,9 +23,9 @@
 			"dynamic-periodic-interval": {
 				"addedIn": "v7.0.0",
 				"category": "unitary",
-				"default": 15,
+				"default": 60,
 				"help": "Periodic time interval to run Dynamic port policy engine (5 - 60 sec, default = 15).",
-				"max-value": 60,
+				"max-value": 180,
 				"min-value": 5,
 				"multiple_values": false,
 				"name": "dynamic-periodic-interval",
@@ -78,9 +78,9 @@
 			"nac-periodic-interval": {
 				"addedIn": "v7.0.0",
 				"category": "unitary",
-				"default": 15,
+				"default": 60,
 				"help": "Periodic time interval to run NAC engine (5 - 60 sec, default = 15).",
-				"max-value": 60,
+				"max-value": 180,
 				"min-value": 5,
 				"multiple_values": false,
 				"name": "nac-periodic-interval",
@@ -90,7 +90,7 @@
 				"category": "unitary",
 				"default": 1,
 				"help": "Maximum number of parallel processes.",
-				"max-value": 300,
+				"max-value": 196,
 				"min-value": 1,
 				"multiple_values": false,
 				"name": "parallel-process",
@@ -123,11 +123,15 @@
 				"name": "tunnel-mode",
 				"options": [
 					{
-						"help": "Allow for backward compatible ciphers.",
+						"help": "Least restrictive. Supports the widest variety of hardware and software versions.",
 						"name": "compatible"
 					},
 					{
-						"help": "Follow system.strong-crypto ciphers.",
+						"help": "Moderate level of security. Supports recent generations of hardware and latest software versions.",
+						"name": "moderate"
+					},
+					{
+						"help": "Highest level of security. Supports only the latest generation of hardware and latest software version.",
 						"name": "strict"
 					}
 				],
@@ -137,12 +141,13 @@
 		"help": "Configure system-wide switch controller settings.",
 		"multiple_values": false,
 		"name": "system",
+		"object_range": "global",
 		"path": "switch-controller",
-		"q_type": 328
+		"q_type": 335
 	},
-	"revision": "f7f9f0c7010a0528b972ed831ae64831",
-	"serial": "FGTAZRIPD-OKNB34",
+	"revision": "2131c48edd53df0aa10b0be32545dfe1",
+	"serial": "FG180FTK20900788",
 	"status": "success",
 	"vdom": "root",
-	"version": "v7.2.0"
+	"version": "v7.2.8"
 }

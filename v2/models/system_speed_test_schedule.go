@@ -6,6 +6,7 @@ type SystemSpeedTestSchedule struct {
 	Diffserv                  *string                             `json:"diffserv,omitempty"`
 	DynamicServer             *string                             `json:"dynamic-server,omitempty"`
 	Interface                 *string                             `json:"interface,omitempty"`
+	Mode                      *string                             `json:"mode,omitempty"`
 	Schedules                 *[]SystemSpeedTestScheduleSchedules `json:"schedules,omitempty"`
 	ServerName                *string                             `json:"server-name,omitempty"`
 	Status                    *string                             `json:"status,omitempty"`

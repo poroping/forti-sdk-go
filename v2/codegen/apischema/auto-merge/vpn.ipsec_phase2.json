@@ -1,9 +1,9 @@
 {
 	"addedIn": "v6.2.7",
-	"build": 1157,
+	"build": 1639,
 	"http_method": "GET",
 	"http_status": 200,
-	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3,v7.0.4,v7.2.0",
+	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3,v7.0.4,v7.0.5,v7.0.6,v7.2.0,v7.2.1,v7.2.8",
 	"name": "phase2",
 	"path": "vpn.ipsec",
 	"results": {
@@ -311,6 +311,30 @@
 						"name": "transport-mode"
 					}
 				],
+				"type": "option"
+			},
+			"inbound-dscp-copy": {
+				"addedIn": "v7.0.6",
+				"category": "unitary",
+				"default": "phase1",
+				"help": "Enable/disable copying of the DSCP in the ESP header to the inner IP header.",
+				"multiple_values": false,
+				"name": "inbound-dscp-copy",
+				"options": [
+					{
+						"help": "copy the DCSP in the ESP header to the inner IP Header according to the phase1 inbound_dscp_copy setting.",
+						"name": "phase1"
+					},
+					{
+						"help": "Enable copying of the DSCP in the ESP header to the inner IP header.",
+						"name": "enable"
+					},
+					{
+						"help": "Disable copying of the DSCP in the ESP header to the inner IP header.",
+						"name": "disable"
+					}
+				],
+				"removedIn": "v7.2.0",
 				"type": "option"
 			},
 			"initiator-ts-narrow": {
@@ -950,18 +974,19 @@
 			}
 		},
 		"help": "Configure VPN autokey tunnel.",
-		"max_table_size_global": 40000,
+		"max_table_size_global": 20000,
 		"max_table_size_item": 0,
-		"max_table_size_vdom": 40000,
+		"max_table_size_vdom": 20000,
 		"mkey": "name",
 		"mkey_type": "string",
 		"name": "phase2",
+		"object_range": "vdom",
 		"path": "vpn.ipsec",
-		"q_type": 58
+		"q_type": 65
 	},
-	"revision": "f7f9f0c7010a0528b972ed831ae64831",
-	"serial": "FGTAZRIPD-OKNB34",
+	"revision": "2131c48edd53df0aa10b0be32545dfe1",
+	"serial": "FG180FTK20900788",
 	"status": "success",
 	"vdom": "root",
-	"version": "v7.2.0"
+	"version": "v7.2.8"
 }

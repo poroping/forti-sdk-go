@@ -1,10 +1,10 @@
 {
 	"FullPath": null,
 	"addedIn": "v6.2.7",
-	"build": 234,
+	"build": 1639,
 	"http_method": "GET",
 	"http_status": 200,
-	"mergedVersions": "v6.2.7,v6.4.6,v7.0.2",
+	"mergedVersions": "v6.2.7,v6.4.6,v7.0.2,v7.2.8",
 	"name": "custom",
 	"path": "system.3g-modem",
 	"removedIn": "v6.4.0",
@@ -16,6 +16,7 @@
 				"category": "unitary",
 				"default": "",
 				"help": "USB interface class in hexadecimal format (00-ff).",
+				"multiple_values": false,
 				"name": "class-id",
 				"type": "user"
 			},
@@ -25,6 +26,7 @@
 				"help": "ID.",
 				"max-value": 4294967295,
 				"min-value": 0,
+				"multiple_values": false,
 				"name": "id",
 				"type": "integer"
 			},
@@ -32,6 +34,7 @@
 				"category": "unitary",
 				"default": "",
 				"help": "Init string in hexadecimal format (even length).",
+				"multiple_values": false,
 				"name": "init-string",
 				"size": 127,
 				"type": "string"
@@ -40,6 +43,7 @@
 				"category": "unitary",
 				"default": "",
 				"help": "MODEM model name.",
+				"multiple_values": false,
 				"name": "model",
 				"size": 35,
 				"type": "string"
@@ -47,7 +51,8 @@
 			"modeswitch-string": {
 				"category": "unitary",
 				"default": "",
-				"help": "USB modeswitch arguments. e.g: '-v 1410 -p 9030 -V 1410 -P 9032 -u 3'",
+				"help": "USB modeswitch arguments. For example: '-v 1410 -p 9030 -V 1410 -P 9032 -u 3'.",
+				"multiple_values": false,
 				"name": "modeswitch-string",
 				"size": 127,
 				"type": "string"
@@ -56,6 +61,7 @@
 				"category": "unitary",
 				"default": "",
 				"help": "USB product ID in hexadecimal format (0000-ffff).",
+				"multiple_values": false,
 				"name": "product-id",
 				"type": "user"
 			},
@@ -63,6 +69,7 @@
 				"category": "unitary",
 				"default": "",
 				"help": "MODEM vendor name.",
+				"multiple_values": false,
 				"name": "vendor",
 				"size": 35,
 				"type": "string"
@@ -71,6 +78,7 @@
 				"category": "unitary",
 				"default": "",
 				"help": "USB vendor ID in hexadecimal format (0000-ffff).",
+				"multiple_values": false,
 				"name": "vendor-id",
 				"type": "user"
 			}
@@ -82,12 +90,13 @@
 		"mkey": "id",
 		"mkey_type": "integer",
 		"name": "custom",
+		"object_range": "vdom",
 		"path": "system.3g-modem",
-		"q_type": 98
+		"q_type": 106
 	},
-	"revision": "47b8c4edf13acbfdaf9c6d3c5a4acce2",
-	"serial": "FGT60FTK20028507",
+	"revision": "2131c48edd53df0aa10b0be32545dfe1",
+	"serial": "FG180FTK20900788",
 	"status": "success",
 	"vdom": "root",
-	"version": "v7.0.2"
+	"version": "v7.2.8"
 }

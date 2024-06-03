@@ -21,6 +21,7 @@ type SwitchControllerGlobal struct {
 	SnDnsResolution                  *string                                   `json:"sn-dns-resolution,omitempty"`
 	UpdateUserDevice                 *string                                   `json:"update-user-device,omitempty"`
 	VlanAllMode                      *string                                   `json:"vlan-all-mode,omitempty"`
+	VlanIdentity                     *string                                   `json:"vlan-identity,omitempty"`
 	VlanOptimization                 *string                                   `json:"vlan-optimization,omitempty"`
 }
 

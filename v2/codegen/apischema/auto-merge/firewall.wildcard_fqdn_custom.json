@@ -1,9 +1,9 @@
 {
 	"addedIn": "v6.2.7",
-	"build": 1157,
+	"build": 1639,
 	"http_method": "GET",
 	"http_status": 200,
-	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3,v7.0.4,v7.2.0",
+	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3,v7.0.4,v7.0.5,v7.0.6,v7.2.0,v7.2.1,v7.2.8",
 	"name": "custom",
 	"path": "firewall.wildcard-fqdn",
 	"results": {
@@ -74,18 +74,19 @@
 			}
 		},
 		"help": "Config global/VDOM Wildcard FQDN address.",
-		"max_table_size_global": 100000,
+		"max_table_size_global": 40000,
 		"max_table_size_item": 0,
-		"max_table_size_vdom": 100000,
+		"max_table_size_vdom": 40000,
 		"mkey": "name",
 		"mkey_type": "string",
 		"name": "custom",
+		"object_range": "global-vdom",
 		"path": "firewall.wildcard-fqdn",
-		"q_type": 48
+		"q_type": 51
 	},
-	"revision": "65cd3d6ef4ae33e1b6ca2fd2dbbe03b0",
-	"serial": "FGTAZRIPD-OKNB34",
+	"revision": "7336f750fb88d1819399fec9b2bade6d",
+	"serial": "FG180FTK20900788",
 	"status": "success",
 	"vdom": "root",
-	"version": "v7.2.0"
+	"version": "v7.2.8"
 }

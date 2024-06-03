@@ -1,9 +1,9 @@
 {
 	"addedIn": "v6.2.7",
-	"build": 1157,
+	"build": 1639,
 	"http_method": "GET",
 	"http_status": 200,
-	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3,v7.0.4,v7.2.0",
+	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3,v7.0.4,v7.0.5,v7.0.6,v7.2.0,v7.2.1,v7.2.8",
 	"name": "override-setting",
 	"path": "log.fortianalyzer",
 	"results": {
@@ -27,6 +27,16 @@
 					}
 				],
 				"type": "option"
+			},
+			"alt-server": {
+				"addedIn": "v7.2.8",
+				"category": "unitary",
+				"default": "",
+				"help": "Alternate FortiAnalyzer.",
+				"multiple_values": false,
+				"name": "alt-server",
+				"size": 127,
+				"type": "string"
 			},
 			"certificate": {
 				"category": "unitary",
@@ -86,6 +96,25 @@
 					{
 						"help": "Encrypt logs using all encryption algorithms.",
 						"name": "low"
+					}
+				],
+				"type": "option"
+			},
+			"fallback-to-primary": {
+				"addedIn": "v7.2.8",
+				"category": "unitary",
+				"default": "enable",
+				"help": "Enable/disable this FortiGate unit to fallback to the primary FortiAnalyzer when it is available.",
+				"multiple_values": false,
+				"name": "fallback-to-primary",
+				"options": [
+					{
+						"help": "Enable this FortiGate unit to fallback to the primary FortiAnalyzer when it is available.",
+						"name": "enable"
+					},
+					{
+						"help": "Disable this FortiGate unit to fallback to the primary FortiAnalyzer when it is available.",
+						"name": "disable"
 					}
 				],
 				"type": "option"
@@ -272,6 +301,20 @@
 				"size": 127,
 				"type": "string"
 			},
+			"server-cert-ca": {
+				"addedIn": "v7.2.8",
+				"category": "unitary",
+				"datasource": [
+					"certificate.ca.name",
+					"vpn.certificate.ca.name"
+				],
+				"default": "",
+				"help": "Mandatory CA on FortiGate in certificate chain of server.",
+				"multiple_values": false,
+				"name": "server-cert-ca",
+				"size": 79,
+				"type": "string"
+			},
 			"source-ip": {
 				"category": "unitary",
 				"default": "",
@@ -419,12 +462,13 @@
 		"help": "Override FortiAnalyzer settings.",
 		"multiple_values": false,
 		"name": "override-setting",
+		"object_range": "vdom",
 		"path": "log.fortianalyzer",
-		"q_type": 403
+		"q_type": 408
 	},
-	"revision": "f7f9f0c7010a0528b972ed831ae64831",
-	"serial": "FGTAZRIPD-OKNB34",
+	"revision": "2131c48edd53df0aa10b0be32545dfe1",
+	"serial": "FG180FTK20900788",
 	"status": "success",
 	"vdom": "root",
-	"version": "v7.2.0"
+	"version": "v7.2.8"
 }

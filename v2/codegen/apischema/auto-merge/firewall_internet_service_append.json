@@ -1,9 +1,9 @@
 {
 	"addedIn": "v6.2.7",
-	"build": 1157,
+	"build": 1639,
 	"http_method": "GET",
 	"http_status": 200,
-	"mergedVersions": "v6.2.7,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3,v7.0.4,v7.2.0",
+	"mergedVersions": "v6.2.7,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3,v7.0.4,v7.0.5,v7.0.6,v7.2.0,v7.2.1,v7.2.8",
 	"name": "internet-service-append",
 	"path": "firewall",
 	"removedIn": "v6.4.0",
@@ -11,12 +11,35 @@
 		"access_group": "fwgrp",
 		"category": "complex",
 		"children": {
+			"addr-mode": {
+				"addedIn": "v7.2.1",
+				"category": "unitary",
+				"default": "ipv4",
+				"help": "Address mode (IPv4 or IPv6).",
+				"multiple_values": false,
+				"name": "addr-mode",
+				"options": [
+					{
+						"help": "IPv4 mode.",
+						"name": "ipv4"
+					},
+					{
+						"help": "IPv6 mode.",
+						"name": "ipv6"
+					},
+					{
+						"help": "Both IPv4 and IPv6 mode.",
+						"name": "both"
+					}
+				],
+				"type": "option"
+			},
 			"append-port": {
 				"category": "unitary",
 				"default": 0,
 				"help": "Appending TCP/UDP/SCTP destination port (1 to 65535).",
 				"max-value": 65535,
-				"min-value": 1,
+				"min-value": 0,
 				"multiple_values": false,
 				"name": "append-port",
 				"type": "integer"
@@ -35,12 +58,13 @@
 		"help": "Configure additional port mappings for Internet Services.",
 		"multiple_values": false,
 		"name": "internet-service-append",
+		"object_range": "global",
 		"path": "firewall",
 		"q_type": 349
 	},
-	"revision": "f7f9f0c7010a0528b972ed831ae64831",
-	"serial": "FGTAZRIPD-OKNB34",
+	"revision": "2131c48edd53df0aa10b0be32545dfe1",
+	"serial": "FG180FTK20900788",
 	"status": "success",
 	"vdom": "root",
-	"version": "v7.2.0"
+	"version": "v7.2.8"
 }

@@ -3,28 +3,34 @@ package models
 const SystemCsfPath = "system/csf/"
 
 type SystemCsf struct {
-	AcceptAuthByCert             *string                     `json:"accept-auth-by-cert,omitempty"`
-	AuthorizationRequestType     *string                     `json:"authorization-request-type,omitempty"`
-	Certificate                  *string                     `json:"certificate,omitempty"`
-	ConfigurationSync            *string                     `json:"configuration-sync,omitempty"`
-	DownstreamAccess             *string                     `json:"downstream-access,omitempty"`
-	DownstreamAccprofile         *string                     `json:"downstream-accprofile,omitempty"`
-	FabricConnector              *[]SystemCsfFabricConnector `json:"fabric-connector,omitempty"`
-	FabricDevice                 *[]SystemCsfFabricDevice    `json:"fabric-device,omitempty"`
-	FabricObjectUnification      *string                     `json:"fabric-object-unification,omitempty"`
-	FabricWorkers                *int64                      `json:"fabric-workers,omitempty"`
-	ForticloudAccountEnforcement *string                     `json:"forticloud-account-enforcement,omitempty"`
-	GroupName                    *string                     `json:"group-name,omitempty"`
-	GroupPassword                *string                     `json:"group-password,omitempty"`
-	LogUnification               *string                     `json:"log-unification,omitempty"`
-	ManagementIp                 *string                     `json:"management-ip,omitempty"`
-	ManagementPort               *int64                      `json:"management-port,omitempty"`
-	SamlConfigurationSync        *string                     `json:"saml-configuration-sync,omitempty"`
-	Status                       *string                     `json:"status,omitempty"`
-	TrustedList                  *[]SystemCsfTrustedList     `json:"trusted-list,omitempty"`
-	Upstream                     *string                     `json:"upstream,omitempty"`
-	UpstreamIp                   *string                     `json:"upstream-ip,omitempty"`
-	UpstreamPort                 *int64                      `json:"upstream-port,omitempty"`
+	AcceptAuthByCert              *string                     `json:"accept-auth-by-cert,omitempty"`
+	AuthorizationRequestType      *string                     `json:"authorization-request-type,omitempty"`
+	Certificate                   *string                     `json:"certificate,omitempty"`
+	ConfigurationSync             *string                     `json:"configuration-sync,omitempty"`
+	DownstreamAccess              *string                     `json:"downstream-access,omitempty"`
+	DownstreamAccprofile          *string                     `json:"downstream-accprofile,omitempty"`
+	FabricConnector               *[]SystemCsfFabricConnector `json:"fabric-connector,omitempty"`
+	FabricDevice                  *[]SystemCsfFabricDevice    `json:"fabric-device,omitempty"`
+	FabricObjectUnification       *string                     `json:"fabric-object-unification,omitempty"`
+	FabricWorkers                 *int64                      `json:"fabric-workers,omitempty"`
+	FileMgmt                      *string                     `json:"file-mgmt,omitempty"`
+	FileQuota                     *int64                      `json:"file-quota,omitempty"`
+	FileQuotaWarning              *int64                      `json:"file-quota-warning,omitempty"`
+	ForticloudAccountEnforcement  *string                     `json:"forticloud-account-enforcement,omitempty"`
+	GroupName                     *string                     `json:"group-name,omitempty"`
+	GroupPassword                 *string                     `json:"group-password,omitempty"`
+	LogUnification                *string                     `json:"log-unification,omitempty"`
+	ManagementIp                  *string                     `json:"management-ip,omitempty"`
+	ManagementPort                *int64                      `json:"management-port,omitempty"`
+	SamlConfigurationSync         *string                     `json:"saml-configuration-sync,omitempty"`
+	SourceIp                      *string                     `json:"source-ip,omitempty"`
+	Status                        *string                     `json:"status,omitempty"`
+	TrustedList                   *[]SystemCsfTrustedList     `json:"trusted-list,omitempty"`
+	Upstream                      *string                     `json:"upstream,omitempty"`
+	UpstreamInterface             *string                     `json:"upstream-interface,omitempty"`
+	UpstreamInterfaceSelectMethod *string                     `json:"upstream-interface-select-method,omitempty"`
+	UpstreamIp                    *string                     `json:"upstream-ip,omitempty"`
+	UpstreamPort                  *int64                      `json:"upstream-port,omitempty"`
 }
 
 type SystemCsfFabricConnector struct {
@@ -46,6 +52,7 @@ type SystemCsfTrustedList struct {
 	Certificate             *string `json:"certificate,omitempty"`
 	DownstreamAuthorization *string `json:"downstream-authorization,omitempty"`
 	HaMembers               *string `json:"ha-members,omitempty"`
+	Index                   *int64  `json:"index,omitempty"`
 	Name                    *string `json:"name,omitempty"`
 	Serial                  *string `json:"serial,omitempty"`
 }

@@ -1,9 +1,9 @@
 {
 	"addedIn": "v6.2.7",
-	"build": 1157,
+	"build": 1639,
 	"http_method": "GET",
 	"http_status": 200,
-	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3,v7.0.4,v7.2.0",
+	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3,v7.0.4,v7.0.5,v7.0.6,v7.2.0,v7.2.1,v7.2.8",
 	"name": "static",
 	"path": "router",
 	"results": {
@@ -260,6 +260,17 @@
 				],
 				"type": "option"
 			},
+			"tag": {
+				"addedIn": "v7.2.8",
+				"category": "unitary",
+				"default": 0,
+				"help": "Route tag.",
+				"max-value": 4294967295,
+				"min-value": 0,
+				"multiple_values": false,
+				"name": "tag",
+				"type": "integer"
+			},
 			"virtual-wan-link": {
 				"category": "unitary",
 				"help": "Enable/disable egress through the virtual-wan-link.",
@@ -280,9 +291,9 @@
 			},
 			"vrf": {
 				"category": "unitary",
-				"default": 0,
+				"default": "unspecified",
 				"help": "Virtual Routing Forwarding ID.",
-				"max-value": 63,
+				"max-value": 251,
 				"min-value": 0,
 				"multiple_values": false,
 				"name": "vrf",
@@ -306,12 +317,13 @@
 		"mkey": "seq-num",
 		"mkey_type": "integer",
 		"name": "static",
+		"object_range": "vdom",
 		"path": "router",
 		"q_type": 2
 	},
-	"revision": "795d6027c813de9a1aae550aecc06773",
-	"serial": "FGTAZRIPD-OKNB34",
+	"revision": "90892cdc7a19c0650f22b39d30f7d2e6",
+	"serial": "FG180FTK20900788",
 	"status": "success",
 	"vdom": "root",
-	"version": "v7.2.0"
+	"version": "v7.2.8"
 }

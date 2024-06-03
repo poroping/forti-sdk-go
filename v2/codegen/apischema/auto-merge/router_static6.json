@@ -1,9 +1,9 @@
 {
 	"addedIn": "v6.2.7",
-	"build": 1157,
+	"build": 1639,
 	"http_method": "GET",
 	"http_status": 200,
-	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3,v7.0.4,v7.2.0",
+	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3,v7.0.4,v7.0.5,v7.0.6,v7.2.0,v7.2.1,v7.2.8",
 	"name": "static6",
 	"path": "router",
 	"results": {
@@ -95,6 +95,20 @@
 				"name": "dst",
 				"required": true,
 				"type": "ipv6-network"
+			},
+			"dstaddr": {
+				"addedIn": "v7.2.1",
+				"category": "unitary",
+				"datasource": [
+					"firewall.address6.name",
+					"firewall.addrgrp6.name"
+				],
+				"default": "",
+				"help": "Name of firewall address or address group.",
+				"multiple_values": false,
+				"name": "dstaddr",
+				"size": 79,
+				"type": "string"
 			},
 			"dynamic-gateway": {
 				"addedIn": "v7.0.0",
@@ -248,10 +262,21 @@
 				"category": "unitary",
 				"default": 0,
 				"help": "Virtual Routing Forwarding ID.",
-				"max-value": 63,
+				"max-value": 251,
 				"min-value": 0,
 				"multiple_values": false,
 				"name": "vrf",
+				"type": "integer"
+			},
+			"weight": {
+				"addedIn": "v7.2.1",
+				"category": "unitary",
+				"default": 0,
+				"help": "Administrative weight (0 - 255).",
+				"max-value": 255,
+				"min-value": 0,
+				"multiple_values": false,
+				"name": "weight",
 				"type": "integer"
 			}
 		},
@@ -262,12 +287,13 @@
 		"mkey": "seq-num",
 		"mkey_type": "integer",
 		"name": "static6",
+		"object_range": "vdom",
 		"path": "router",
 		"q_type": 3
 	},
-	"revision": "f7f9f0c7010a0528b972ed831ae64831",
-	"serial": "FGTAZRIPD-OKNB34",
+	"revision": "2131c48edd53df0aa10b0be32545dfe1",
+	"serial": "FG180FTK20900788",
 	"status": "success",
 	"vdom": "root",
-	"version": "v7.2.0"
+	"version": "v7.2.8"
 }

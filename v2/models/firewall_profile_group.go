@@ -13,6 +13,7 @@ type FirewallProfileGroup struct {
 	FileFilterProfile      *string `json:"file-filter-profile,omitempty"`
 	IcapProfile            *string `json:"icap-profile,omitempty"`
 	IpsSensor              *string `json:"ips-sensor,omitempty"`
+	IpsVoipFilter          *string `json:"ips-voip-filter,omitempty"`
 	Name                   *string `json:"name,omitempty"`
 	ProfileProtocolOptions *string `json:"profile-protocol-options,omitempty"`
 	SctpFilterProfile      *string `json:"sctp-filter-profile,omitempty"`

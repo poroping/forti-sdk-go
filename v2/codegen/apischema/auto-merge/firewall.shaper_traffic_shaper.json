@@ -1,9 +1,9 @@
 {
 	"addedIn": "v6.2.7",
-	"build": 1157,
+	"build": 1639,
 	"http_method": "GET",
 	"http_status": 200,
-	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3,v7.0.4,v7.2.0",
+	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3,v7.0.4,v7.0.5,v7.0.6,v7.2.0,v7.2.1,v7.2.8",
 	"name": "traffic-shaper",
 	"path": "firewall.shaper",
 	"results": {
@@ -80,7 +80,7 @@
 				"category": "unitary",
 				"default": 0,
 				"help": "Exceed bandwidth used for DSCP multi-stage marking. Units depend on the bandwidth-unit setting.",
-				"max-value": 16776000,
+				"max-value": 100000000,
 				"min-value": 0,
 				"multiple_values": false,
 				"name": "exceed-bandwidth",
@@ -110,8 +110,8 @@
 			"guaranteed-bandwidth": {
 				"category": "unitary",
 				"default": 0,
-				"help": "Amount of bandwidth guaranteed for this shaper (0 - 16776000). Units depend on the bandwidth-unit setting.",
-				"max-value": 16776000,
+				"help": "Amount of bandwidth guaranteed for this shaper (0 - 100000000). Units depend on the bandwidth-unit setting.",
+				"max-value": 100000000,
 				"min-value": 0,
 				"multiple_values": false,
 				"name": "guaranteed-bandwidth",
@@ -120,8 +120,8 @@
 			"maximum-bandwidth": {
 				"category": "unitary",
 				"default": 0,
-				"help": "Upper bandwidth limit enforced by this shaper (0 - 16776000). 0 means no limit. Units depend on the bandwidth-unit setting.",
-				"max-value": 16776000,
+				"help": "Upper bandwidth limit enforced by this shaper (0 - 100000000). 0 means no limit. Units depend on the bandwidth-unit setting.",
+				"max-value": 100000000,
 				"min-value": 0,
 				"multiple_values": false,
 				"name": "maximum-bandwidth",
@@ -202,12 +202,13 @@
 		"mkey": "name",
 		"mkey_type": "string",
 		"name": "traffic-shaper",
+		"object_range": "vdom",
 		"path": "firewall.shaper",
-		"q_type": 259
+		"q_type": 266
 	},
-	"revision": "36bff629c1ac3610ebd00bc7609e095b",
-	"serial": "FGTAZRIPD-OKNB34",
+	"revision": "0bd72ede04f66dafea23e6b355c650f4",
+	"serial": "FG180FTK20900788",
 	"status": "success",
 	"vdom": "root",
-	"version": "v7.2.0"
+	"version": "v7.2.8"
 }

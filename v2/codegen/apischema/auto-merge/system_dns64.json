@@ -1,9 +1,9 @@
 {
 	"addedIn": "v7.0.1",
-	"build": 1157,
+	"build": 1639,
 	"http_method": "GET",
 	"http_status": 200,
-	"mergedVersions": "v7.0.1,v7.0.2,v7.0.3,v7.0.4,v7.2.0",
+	"mergedVersions": "v7.0.1,v7.0.2,v7.0.3,v7.0.4,v7.0.5,v7.0.6,v7.2.0,v7.2.1,v7.2.8",
 	"name": "dns64",
 	"path": "system",
 	"results": {
@@ -59,12 +59,13 @@
 		"help": "Configure DNS64.",
 		"multiple_values": false,
 		"name": "dns64",
+		"object_range": "vdom",
 		"path": "system",
-		"q_type": 430
+		"q_type": 433
 	},
-	"revision": "f7f9f0c7010a0528b972ed831ae64831",
-	"serial": "FGTAZRIPD-OKNB34",
+	"revision": "2131c48edd53df0aa10b0be32545dfe1",
+	"serial": "FG180FTK20900788",
 	"status": "success",
 	"vdom": "root",
-	"version": "v7.2.0"
+	"version": "v7.2.8"
 }

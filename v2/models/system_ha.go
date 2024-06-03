@@ -68,6 +68,7 @@ type SystemHa struct {
 	SsdFailover                   *string                     `json:"ssd-failover,omitempty"`
 	StandaloneConfigSync          *string                     `json:"standalone-config-sync,omitempty"`
 	StandaloneMgmtVdom            *string                     `json:"standalone-mgmt-vdom,omitempty"`
+	Status                        *string                     `json:"status,omitempty"`
 	SyncConfig                    *string                     `json:"sync-config,omitempty"`
 	SyncPacketBalance             *string                     `json:"sync-packet-balance,omitempty"`
 	UnicastGateway                *string                     `json:"unicast-gateway,omitempty"`
@@ -113,15 +114,16 @@ type SystemHaUnicastPeers struct {
 }
 
 type SystemHaVcluster struct {
-	Monitor                     *string                 `json:"monitor,omitempty"`
-	Override                    *string                 `json:"override,omitempty"`
-	OverrideWaitTime            *int64                  `json:"override-wait-time,omitempty"`
-	PingserverFailoverThreshold *int64                  `json:"pingserver-failover-threshold,omitempty"`
-	PingserverMonitorInterface  *string                 `json:"pingserver-monitor-interface,omitempty"`
-	PingserverSlaveForceReset   *string                 `json:"pingserver-slave-force-reset,omitempty"`
-	Priority                    *int64                  `json:"priority,omitempty"`
-	VclusterId                  *int64                  `json:"vcluster-id,omitempty"`
-	Vdom                        *[]SystemHaVclusterVdom `json:"vdom,omitempty"`
+	Monitor                       *string                 `json:"monitor,omitempty"`
+	Override                      *string                 `json:"override,omitempty"`
+	OverrideWaitTime              *int64                  `json:"override-wait-time,omitempty"`
+	PingserverFailoverThreshold   *int64                  `json:"pingserver-failover-threshold,omitempty"`
+	PingserverMonitorInterface    *string                 `json:"pingserver-monitor-interface,omitempty"`
+	PingserverSecondaryForceReset *string                 `json:"pingserver-secondary-force-reset,omitempty"`
+	PingserverSlaveForceReset     *string                 `json:"pingserver-slave-force-reset,omitempty"`
+	Priority                      *int64                  `json:"priority,omitempty"`
+	VclusterId                    *int64                  `json:"vcluster-id,omitempty"`
+	Vdom                          *[]SystemHaVclusterVdom `json:"vdom,omitempty"`
 }
 
 type SystemHaVclusterVdom struct {

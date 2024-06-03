@@ -13,6 +13,7 @@ type ApplicationName struct {
 	Popularity  *int64                       `json:"popularity,omitempty"`
 	Protocol    *string                      `json:"protocol,omitempty"`
 	Risk        *int64                       `json:"risk,omitempty"`
+	Status      *string                      `json:"status,omitempty"`
 	SubCategory *int64                       `json:"sub-category,omitempty"`
 	Technology  *string                      `json:"technology,omitempty"`
 	Vendor      *string                      `json:"vendor,omitempty"`

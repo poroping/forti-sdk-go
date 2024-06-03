@@ -1,9 +1,9 @@
 {
 	"addedIn": "v6.2.7",
-	"build": 1157,
+	"build": 1639,
 	"http_method": "GET",
 	"http_status": 200,
-	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3,v7.0.4,v7.2.0",
+	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3,v7.0.4,v7.0.5,v7.0.6,v7.2.0,v7.2.1,v7.2.8",
 	"name": "radius",
 	"path": "user",
 	"results": {
@@ -316,6 +316,79 @@
 				"removedIn": "v6.4.0",
 				"type": "option"
 			},
+			"mac-case": {
+				"addedIn": "v7.2.1",
+				"category": "unitary",
+				"default": "lowercase",
+				"help": "MAC authentication case (default = lowercase).",
+				"multiple_values": false,
+				"name": "mac-case",
+				"options": [
+					{
+						"help": "Use uppercase MAC.",
+						"name": "uppercase"
+					},
+					{
+						"help": "Use lowercase MAC.",
+						"name": "lowercase"
+					}
+				],
+				"type": "option"
+			},
+			"mac-password-delimiter": {
+				"addedIn": "v7.2.1",
+				"category": "unitary",
+				"default": "hyphen",
+				"help": "MAC authentication password delimiter (default = hyphen).",
+				"multiple_values": false,
+				"name": "mac-password-delimiter",
+				"options": [
+					{
+						"help": "Use hyphen as delimiter for MAC authentication password.",
+						"name": "hyphen"
+					},
+					{
+						"help": "Use single hyphen as delimiter for MAC authentication password.",
+						"name": "single-hyphen"
+					},
+					{
+						"help": "Use colon as delimiter for MAC authentication password.",
+						"name": "colon"
+					},
+					{
+						"help": "No delimiter for MAC authentication password.",
+						"name": "none"
+					}
+				],
+				"type": "option"
+			},
+			"mac-username-delimiter": {
+				"addedIn": "v7.2.1",
+				"category": "unitary",
+				"default": "hyphen",
+				"help": "MAC authentication username delimiter (default = hyphen).",
+				"multiple_values": false,
+				"name": "mac-username-delimiter",
+				"options": [
+					{
+						"help": "Use hyphen as delimiter for MAC authentication username.",
+						"name": "hyphen"
+					},
+					{
+						"help": "Use single hyphen as delimiter for MAC authentication username.",
+						"name": "single-hyphen"
+					},
+					{
+						"help": "Use colon as delimiter for MAC authentication username.",
+						"name": "colon"
+					},
+					{
+						"help": "No delimiter for MAC authentication username.",
+						"name": "none"
+					}
+				],
+				"type": "option"
+			},
 			"name": {
 				"category": "unitary",
 				"default": "",
@@ -324,6 +397,39 @@
 				"name": "name",
 				"size": 35,
 				"type": "string"
+			},
+			"nas-id": {
+				"addedIn": "v7.2.8",
+				"category": "unitary",
+				"default": "",
+				"help": "Custom NAS identifier.",
+				"multiple_values": false,
+				"name": "nas-id",
+				"size": 255,
+				"type": "string"
+			},
+			"nas-id-type": {
+				"addedIn": "v7.2.8",
+				"category": "unitary",
+				"default": "legacy",
+				"help": "NAS identifier type configuration (default = legacy).",
+				"multiple_values": false,
+				"name": "nas-id-type",
+				"options": [
+					{
+						"help": "NAS-ID value is the value previously used by each daemon.",
+						"name": "legacy"
+					},
+					{
+						"help": "NAS-ID value is customized.",
+						"name": "custom"
+					},
+					{
+						"help": "NAS-ID value is hostname or HA group name if applicable.",
+						"name": "hostname"
+					}
+				],
+				"type": "option"
 			},
 			"nas-ip": {
 				"category": "unitary",
@@ -1077,12 +1183,13 @@
 		"mkey": "name",
 		"mkey_type": "string",
 		"name": "radius",
+		"object_range": "vdom",
 		"path": "user",
-		"q_type": 27
+		"q_type": 28
 	},
-	"revision": "2b1edd375b3b6c80a44abbde4eddbd95",
-	"serial": "FGTAZRIPD-OKNB34",
+	"revision": "258d48367547985d876f7486285f8956",
+	"serial": "FG180FTK20900788",
 	"status": "success",
 	"vdom": "root",
-	"version": "v7.2.0"
+	"version": "v7.2.8"
 }

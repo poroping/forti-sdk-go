@@ -1,9 +1,9 @@
 {
 	"addedIn": "v7.0.0",
-	"build": 1157,
+	"build": 1639,
 	"http_method": "GET",
 	"http_status": 200,
-	"mergedVersions": "v7.0.0,v7.0.1,v7.0.2,v7.0.3,v7.0.4,v7.2.0",
+	"mergedVersions": "v7.0.0,v7.0.1,v7.0.2,v7.0.3,v7.0.4,v7.0.5,v7.0.6,v7.2.0,v7.2.1,v7.2.8",
 	"name": "youtube-channel-filter",
 	"path": "videofilter",
 	"results": {
@@ -39,6 +39,7 @@
 						"name": "block"
 					}
 				],
+				"removedIn": "v7.2.8",
 				"type": "option"
 			},
 			"entries": {
@@ -118,7 +119,7 @@
 			"log": {
 				"addedIn": "v7.0.1",
 				"category": "unitary",
-				"default": "disable",
+				"default": "enable",
 				"help": "Enable/disable logging.",
 				"multiple_values": false,
 				"name": "log",
@@ -142,6 +143,26 @@
 				"name": "name",
 				"size": 35,
 				"type": "string"
+			},
+			"override-category": {
+				"addedIn": "v7.0.6",
+				"category": "unitary",
+				"default": "disable",
+				"help": "Enable/disable overriding category filtering result.",
+				"multiple_values": false,
+				"name": "override-category",
+				"options": [
+					{
+						"help": "Enable overriding category filtering result.",
+						"name": "enable"
+					},
+					{
+						"help": "Disable overriding category filtering result.",
+						"name": "disable"
+					}
+				],
+				"removedIn": "v7.2.0",
+				"type": "option"
 			}
 		},
 		"help": "Configure YouTube channel filter.",
@@ -151,12 +172,13 @@
 		"mkey": "id",
 		"mkey_type": "integer",
 		"name": "youtube-channel-filter",
+		"object_range": "vdom",
 		"path": "videofilter",
-		"q_type": 93
+		"q_type": 97
 	},
-	"revision": "f7f9f0c7010a0528b972ed831ae64831",
-	"serial": "FGTAZRIPD-OKNB34",
+	"revision": "2131c48edd53df0aa10b0be32545dfe1",
+	"serial": "FG180FTK20900788",
 	"status": "success",
 	"vdom": "root",
-	"version": "v7.2.0"
+	"version": "v7.2.8"
 }

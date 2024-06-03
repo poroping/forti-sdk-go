@@ -3,6 +3,7 @@ package models
 const VpnCertificateSettingPath = "vpn.certificate/setting/"
 
 type VpnCertificateSetting struct {
+	CertExpireWarning     *int64                                `json:"cert-expire-warning,omitempty"`
 	CertnameDsa1024       *string                               `json:"certname-dsa1024,omitempty"`
 	CertnameDsa2048       *string                               `json:"certname-dsa2048,omitempty"`
 	CertnameEcdsa256      *string                               `json:"certname-ecdsa256,omitempty"`
@@ -25,6 +26,11 @@ type VpnCertificateSetting struct {
 	OcspDefaultServer     *string                               `json:"ocsp-default-server,omitempty"`
 	OcspOption            *string                               `json:"ocsp-option,omitempty"`
 	OcspStatus            *string                               `json:"ocsp-status,omitempty"`
+	Proxy                 *string                               `json:"proxy,omitempty"`
+	ProxyPassword         *string                               `json:"proxy-password,omitempty"`
+	ProxyPort             *int64                                `json:"proxy-port,omitempty"`
+	ProxyUsername         *string                               `json:"proxy-username,omitempty"`
+	SourceIp              *string                               `json:"source-ip,omitempty"`
 	SslMinProtoVersion    *string                               `json:"ssl-min-proto-version,omitempty"`
 	SslOcspSourceIp       *string                               `json:"ssl-ocsp-source-ip,omitempty"`
 	StrictCrlCheck        *string                               `json:"strict-crl-check,omitempty"`

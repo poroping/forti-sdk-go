@@ -1,9 +1,9 @@
 {
 	"addedIn": "v6.2.7",
-	"build": 1157,
+	"build": 1639,
 	"http_method": "GET",
 	"http_status": 200,
-	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3,v7.0.4,v7.2.0",
+	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3,v7.0.4,v7.0.5,v7.0.6,v7.2.0,v7.2.1,v7.2.8",
 	"name": "remote",
 	"path": "vpn.certificate",
 	"results": {
@@ -76,12 +76,13 @@
 		"mkey": "name",
 		"mkey_type": "string",
 		"name": "remote",
+		"object_range": "vdom",
 		"path": "vpn.certificate",
-		"q_type": 171
+		"q_type": 178
 	},
-	"revision": "a4d2088ce648685ca03303d4441c1362",
-	"serial": "FGTAZRIPD-OKNB34",
+	"revision": "587c7c1bd34d25674f92bf3f7be28401",
+	"serial": "FG180FTK20900788",
 	"status": "success",
 	"vdom": "root",
-	"version": "v7.2.0"
+	"version": "v7.2.8"
 }

@@ -47,6 +47,7 @@ type VpnSslSettings struct {
 	Reqclientcert              *string                             `json:"reqclientcert,omitempty"`
 	RouteSourceInterface       *string                             `json:"route-source-interface,omitempty"`
 	SamlRedirectPort           *int64                              `json:"saml-redirect-port,omitempty"`
+	ServerHostname             *string                             `json:"server-hostname,omitempty"`
 	Servercert                 *string                             `json:"servercert,omitempty"`
 	SourceAddress              *[]VpnSslSettingsSourceAddress      `json:"source-address,omitempty"`
 	SourceAddressNegate        *string                             `json:"source-address-negate,omitempty"`
@@ -75,6 +76,7 @@ type VpnSslSettings struct {
 	WinsServer1                *string                             `json:"wins-server1,omitempty"`
 	WinsServer2                *string                             `json:"wins-server2,omitempty"`
 	XContentTypeOptions        *string                             `json:"x-content-type-options,omitempty"`
+	ZtnaTrustedClient          *string                             `json:"ztna-trusted-client,omitempty"`
 }
 
 type VpnSslSettingsAuthenticationRule struct {

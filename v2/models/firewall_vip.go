@@ -22,7 +22,10 @@ type FirewallVip struct {
 	HttpIpHeader                 *string                             `json:"http-ip-header,omitempty"`
 	HttpIpHeaderName             *string                             `json:"http-ip-header-name,omitempty"`
 	HttpMultiplex                *string                             `json:"http-multiplex,omitempty"`
+	HttpMultiplexMaxRequest      *int64                              `json:"http-multiplex-max-request,omitempty"`
+	HttpMultiplexTtl             *int64                              `json:"http-multiplex-ttl,omitempty"`
 	HttpRedirect                 *string                             `json:"http-redirect,omitempty"`
+	HttpSupportedMaxVersion      *string                             `json:"http-supported-max-version,omitempty"`
 	HttpsCookieSecure            *string                             `json:"https-cookie-secure,omitempty"`
 	Id                           *int64                              `json:"id,omitempty"`
 	Ipv6Mappedip                 *string                             `json:"ipv6-mappedip,omitempty"`
@@ -78,6 +81,7 @@ type FirewallVip struct {
 	SslServerCipherSuites        *[]FirewallVipSslServerCipherSuites `json:"ssl-server-cipher-suites,omitempty"`
 	SslServerMaxVersion          *string                             `json:"ssl-server-max-version,omitempty"`
 	SslServerMinVersion          *string                             `json:"ssl-server-min-version,omitempty"`
+	SslServerRenegotiation       *string                             `json:"ssl-server-renegotiation,omitempty"`
 	SslServerSessionStateMax     *int64                              `json:"ssl-server-session-state-max,omitempty"`
 	SslServerSessionStateTimeout *int64                              `json:"ssl-server-session-state-timeout,omitempty"`
 	SslServerSessionStateType    *string                             `json:"ssl-server-session-state-type,omitempty"`
@@ -112,6 +116,7 @@ type FirewallVipRealservers struct {
 	Monitor          *[]FirewallVipRealserversMonitor `json:"monitor,omitempty"`
 	Port             *int64                           `json:"port,omitempty"`
 	Status           *string                          `json:"status,omitempty"`
+	TranslateHost    *string                          `json:"translate-host,omitempty"`
 	Type             *string                          `json:"type,omitempty"`
 	Weight           *int64                           `json:"weight,omitempty"`
 }

@@ -56,23 +56,61 @@ type SystemDhcpServer struct {
 }
 
 type SystemDhcpServerExcludeRange struct {
-	EndIp   *string `json:"end-ip,omitempty"`
-	Id      *int64  `json:"id,omitempty"`
-	StartIp *string `json:"start-ip,omitempty"`
+	EndIp     *string                                  `json:"end-ip,omitempty"`
+	Id        *int64                                   `json:"id,omitempty"`
+	LeaseTime *int64                                   `json:"lease-time,omitempty"`
+	StartIp   *string                                  `json:"start-ip,omitempty"`
+	UciMatch  *string                                  `json:"uci-match,omitempty"`
+	UciString *[]SystemDhcpServerExcludeRangeUciString `json:"uci-string,omitempty"`
+	VciMatch  *string                                  `json:"vci-match,omitempty"`
+	VciString *[]SystemDhcpServerExcludeRangeVciString `json:"vci-string,omitempty"`
+}
+
+type SystemDhcpServerExcludeRangeUciString struct {
+	UciString *string `json:"uci-string,omitempty"`
+}
+
+type SystemDhcpServerExcludeRangeVciString struct {
+	VciString *string `json:"vci-string,omitempty"`
 }
 
 type SystemDhcpServerIpRange struct {
-	EndIp   *string `json:"end-ip,omitempty"`
-	Id      *int64  `json:"id,omitempty"`
-	StartIp *string `json:"start-ip,omitempty"`
+	EndIp     *string                             `json:"end-ip,omitempty"`
+	Id        *int64                              `json:"id,omitempty"`
+	LeaseTime *int64                              `json:"lease-time,omitempty"`
+	StartIp   *string                             `json:"start-ip,omitempty"`
+	UciMatch  *string                             `json:"uci-match,omitempty"`
+	UciString *[]SystemDhcpServerIpRangeUciString `json:"uci-string,omitempty"`
+	VciMatch  *string                             `json:"vci-match,omitempty"`
+	VciString *[]SystemDhcpServerIpRangeVciString `json:"vci-string,omitempty"`
+}
+
+type SystemDhcpServerIpRangeUciString struct {
+	UciString *string `json:"uci-string,omitempty"`
+}
+
+type SystemDhcpServerIpRangeVciString struct {
+	VciString *string `json:"vci-string,omitempty"`
 }
 
 type SystemDhcpServerOptions struct {
-	Code  *int64  `json:"code,omitempty"`
-	Id    *int64  `json:"id,omitempty"`
-	Ip    *string `json:"ip,omitempty"`
-	Type  *string `json:"type,omitempty"`
-	Value *string `json:"value,omitempty"`
+	Code      *int64                              `json:"code,omitempty"`
+	Id        *int64                              `json:"id,omitempty"`
+	Ip        *string                             `json:"ip,omitempty"`
+	Type      *string                             `json:"type,omitempty"`
+	UciMatch  *string                             `json:"uci-match,omitempty"`
+	UciString *[]SystemDhcpServerOptionsUciString `json:"uci-string,omitempty"`
+	Value     *string                             `json:"value,omitempty"`
+	VciMatch  *string                             `json:"vci-match,omitempty"`
+	VciString *[]SystemDhcpServerOptionsVciString `json:"vci-string,omitempty"`
+}
+
+type SystemDhcpServerOptionsUciString struct {
+	UciString *string `json:"uci-string,omitempty"`
+}
+
+type SystemDhcpServerOptionsVciString struct {
+	VciString *string `json:"vci-string,omitempty"`
 }
 
 type SystemDhcpServerReservedAddress struct {

@@ -1,9 +1,9 @@
 {
 	"addedIn": "v6.2.7",
-	"build": 1157,
+	"build": 1639,
 	"http_method": "GET",
 	"http_status": 200,
-	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3,v7.0.4,v7.2.0",
+	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3,v7.0.4,v7.0.5,v7.0.6,v7.2.0,v7.2.1,v7.2.8",
 	"name": "isis",
 	"path": "router",
 	"results": {
@@ -1320,12 +1320,13 @@
 		"help": "Configure IS-IS.",
 		"multiple_values": false,
 		"name": "isis",
+		"object_range": "vdom",
 		"path": "router",
-		"q_type": 124
+		"q_type": 129
 	},
-	"revision": "8023aeaaa301ccda902574ef2a3a0973",
-	"serial": "FGTAZRIPD-OKNB34",
+	"revision": "6219dc62bd55cba660a13175179151a4",
+	"serial": "FG180FTK20900788",
 	"status": "success",
 	"vdom": "root",
-	"version": "v7.2.0"
+	"version": "v7.2.8"
 }

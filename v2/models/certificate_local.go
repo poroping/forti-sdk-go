@@ -18,6 +18,7 @@ type CertificateLocal struct {
 	CmpServerCert             *string `json:"cmp-server-cert,omitempty"`
 	Comments                  *string `json:"comments,omitempty"`
 	Csr                       *string `json:"csr,omitempty"`
+	Details                   *string `json:"details,omitempty"`
 	EnrollProtocol            *string `json:"enroll-protocol,omitempty"`
 	IkeLocalid                *string `json:"ike-localid,omitempty"`
 	IkeLocalidType            *string `json:"ike-localid-type,omitempty"`
@@ -25,6 +26,7 @@ type CertificateLocal struct {
 	NameEncoding              *string `json:"name-encoding,omitempty"`
 	Password                  *string `json:"password,omitempty"`
 	PrivateKey                *string `json:"private-key,omitempty"`
+	PrivateKeyRetain          *string `json:"private-key-retain,omitempty"`
 	Range                     *string `json:"range,omitempty"`
 	ScepPassword              *string `json:"scep-password,omitempty"`
 	ScepUrl                   *string `json:"scep-url,omitempty"`

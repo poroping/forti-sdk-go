@@ -1,11 +1,11 @@
 {
 	"action": "schema",
 	"addedIn": "v6.4.0",
-	"build": 1157,
+	"build": 1639,
 	"child_path": "neighbor",
 	"http_method": "GET",
 	"http_status": 200,
-	"mergedVersions": "v6.4.0,v7.0.4,v7.2.0",
+	"mergedVersions": "v6.4.0,v7.0.4,v7.0.5,v7.0.6,v7.2.0,v7.2.1,v7.2.8",
 	"name": "bfd",
 	"path": "router",
 	"removedIn": "v6.4.2",
@@ -43,12 +43,13 @@
 		"mkey": "ip",
 		"mkey_type": "ipv4-address",
 		"name": "neighbor",
+		"object_range": "vdom",
 		"path": "router",
-		"q_type": 388
+		"q_type": 392
 	},
-	"revision": "f7f9f0c7010a0528b972ed831ae64831",
-	"serial": "FGTAZRIPD-OKNB34",
+	"revision": "2131c48edd53df0aa10b0be32545dfe1",
+	"serial": "FG180FTK20900788",
 	"status": "success",
 	"vdom": "root",
-	"version": "v7.2.0"
+	"version": "v7.2.8"
 }

@@ -1,15 +1,52 @@
 {
 	"addedIn": "v7.0.2",
-	"build": 1157,
+	"build": 1639,
 	"http_method": "GET",
 	"http_status": 200,
-	"mergedVersions": "v7.0.2,v7.0.3,v7.0.4,v7.2.0",
+	"mergedVersions": "v7.0.2,v7.0.3,v7.0.4,v7.0.5,v7.0.6,v7.2.0,v7.2.1,v7.2.8",
 	"name": "setting",
 	"path": "log.tacacs+accounting3",
 	"results": {
 		"access_group": "loggrp",
 		"category": "complex",
 		"children": {
+			"interface": {
+				"addedIn": "v7.2.8",
+				"category": "unitary",
+				"datasource": [
+					"system.interface.name"
+				],
+				"default": "",
+				"help": "Specify outgoing interface to reach server.",
+				"multiple_values": false,
+				"name": "interface",
+				"required": true,
+				"size": 15,
+				"type": "string"
+			},
+			"interface-select-method": {
+				"addedIn": "v7.2.8",
+				"category": "unitary",
+				"default": "auto",
+				"help": "Specify how to select outgoing interface to reach server.",
+				"multiple_values": false,
+				"name": "interface-select-method",
+				"options": [
+					{
+						"help": "Set outgoing interface automatically.",
+						"name": "auto"
+					},
+					{
+						"help": "Set outgoing interface by SD-WAN or policy routing rules.",
+						"name": "sdwan"
+					},
+					{
+						"help": "Set outgoing interface manually.",
+						"name": "specify"
+					}
+				],
+				"type": "option"
+			},
 			"server": {
 				"category": "unitary",
 				"default": "",
@@ -27,6 +64,16 @@
 				"name": "server-key",
 				"size": 128,
 				"type": "password"
+			},
+			"source-ip": {
+				"addedIn": "v7.2.8",
+				"category": "unitary",
+				"default": "",
+				"help": "Source IP address for communication to TACACS+ server.",
+				"multiple_values": false,
+				"name": "source-ip",
+				"size": 63,
+				"type": "string"
 			},
 			"status": {
 				"category": "unitary",
@@ -50,12 +97,13 @@
 		"help": "Settings for TACACS+ accounting.",
 		"multiple_values": false,
 		"name": "setting",
+		"object_range": "vdom",
 		"path": "log.tacacs+accounting3",
-		"q_type": 77
+		"q_type": 85
 	},
-	"revision": "f7f9f0c7010a0528b972ed831ae64831",
-	"serial": "FGTAZRIPD-OKNB34",
+	"revision": "2131c48edd53df0aa10b0be32545dfe1",
+	"serial": "FG180FTK20900788",
 	"status": "success",
 	"vdom": "root",
-	"version": "v7.2.0"
+	"version": "v7.2.8"
 }

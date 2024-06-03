@@ -1,9 +1,9 @@
 {
 	"addedIn": "v6.2.7",
-	"build": 1157,
+	"build": 1639,
 	"http_method": "GET",
 	"http_status": 200,
-	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3,v7.0.4,v7.2.0",
+	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3,v7.0.4,v7.0.5,v7.0.6,v7.2.0,v7.2.1,v7.2.8",
 	"name": "vdom-netflow",
 	"path": "system",
 	"results": {
@@ -12,11 +12,13 @@
 		"children": {
 			"collector-ip": {
 				"category": "unitary",
-				"default": "0.0.0.0",
+				"default": "",
 				"help": "NetFlow collector IP address.",
 				"multiple_values": false,
 				"name": "collector-ip",
-				"type": "ipv4-address"
+				"removedIn": "v7.2.8",
+				"size": 63,
+				"type": "string"
 			},
 			"collector-port": {
 				"category": "unitary",
@@ -26,18 +28,106 @@
 				"min-value": 0,
 				"multiple_values": false,
 				"name": "collector-port",
+				"removedIn": "v7.2.8",
 				"type": "integer"
+			},
+			"collectors": {
+				"addedIn": "v7.2.8",
+				"category": "table",
+				"children": {
+					"collector-ip": {
+						"category": "unitary",
+						"default": "",
+						"help": "Collector IP.",
+						"multiple_values": false,
+						"name": "collector-ip",
+						"required": true,
+						"size": 63,
+						"type": "string"
+					},
+					"collector-port": {
+						"category": "unitary",
+						"default": 2055,
+						"help": "NetFlow collector port number.",
+						"max-value": 65535,
+						"min-value": 0,
+						"multiple_values": false,
+						"name": "collector-port",
+						"type": "integer"
+					},
+					"id": {
+						"category": "unitary",
+						"default": 0,
+						"help": "ID.",
+						"max-value": 6,
+						"min-value": 1,
+						"multiple_values": false,
+						"name": "id",
+						"required": true,
+						"type": "integer"
+					},
+					"interface": {
+						"category": "unitary",
+						"datasource": [
+							"system.interface.name"
+						],
+						"default": "",
+						"help": "Specify outgoing interface to reach server.",
+						"multiple_values": false,
+						"name": "interface",
+						"required": true,
+						"size": 15,
+						"type": "string"
+					},
+					"interface-select-method": {
+						"category": "unitary",
+						"default": "auto",
+						"help": "Specify how to select outgoing interface to reach server.",
+						"multiple_values": false,
+						"name": "interface-select-method",
+						"options": [
+							{
+								"help": "Set outgoing interface automatically.",
+								"name": "auto"
+							},
+							{
+								"help": "Set outgoing interface by SD-WAN or policy routing rules.",
+								"name": "sdwan"
+							},
+							{
+								"help": "Set outgoing interface manually.",
+								"name": "specify"
+							}
+						],
+						"type": "option"
+					},
+					"source-ip": {
+						"category": "unitary",
+						"default": "",
+						"help": "Source IP address for communication with the NetFlow agent.",
+						"multiple_values": false,
+						"name": "source-ip",
+						"size": 63,
+						"type": "string"
+					}
+				},
+				"help": "Netflow collectors.",
+				"max_table_size_global": 0,
+				"max_table_size_item": 0,
+				"max_table_size_vdom": 6,
+				"mkey": "id",
+				"mkey_type": "integer",
+				"name": "collectors"
 			},
 			"interface": {
 				"addedIn": "v7.0.1",
 				"category": "unitary",
-				"datasource": [
-					"system.interface.name"
-				],
+				"datasource": [],
 				"default": "",
 				"help": "Specify outgoing interface to reach server.",
 				"multiple_values": false,
 				"name": "interface",
+				"removedIn": "v7.2.8",
 				"required": true,
 				"size": 15,
 				"type": "string"
@@ -63,15 +153,18 @@
 						"name": "specify"
 					}
 				],
+				"removedIn": "v7.2.8",
 				"type": "option"
 			},
 			"source-ip": {
 				"category": "unitary",
-				"default": "0.0.0.0",
+				"default": "",
 				"help": "Source IP address for communication with the NetFlow agent.",
 				"multiple_values": false,
 				"name": "source-ip",
-				"type": "ipv4-address"
+				"removedIn": "v7.2.8",
+				"size": 63,
+				"type": "string"
 			},
 			"vdom-netflow": {
 				"category": "unitary",
@@ -95,12 +188,13 @@
 		"help": "Configure NetFlow per VDOM.",
 		"multiple_values": false,
 		"name": "vdom-netflow",
+		"object_range": "vdom",
 		"path": "system",
-		"q_type": 429
+		"q_type": 432
 	},
-	"revision": "f7f9f0c7010a0528b972ed831ae64831",
-	"serial": "FGTAZRIPD-OKNB34",
+	"revision": "2131c48edd53df0aa10b0be32545dfe1",
+	"serial": "FG180FTK20900788",
 	"status": "success",
 	"vdom": "root",
-	"version": "v7.2.0"
+	"version": "v7.2.8"
 }

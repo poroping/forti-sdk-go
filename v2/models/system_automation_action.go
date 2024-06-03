@@ -38,6 +38,7 @@ type SystemAutomationAction struct {
 	GcpProject                    *string                               `json:"gcp-project,omitempty"`
 	Headers                       *[]SystemAutomationActionHeaders      `json:"headers,omitempty"`
 	HttpBody                      *string                               `json:"http-body,omitempty"`
+	HttpHeaders                   *[]SystemAutomationActionHttpHeaders  `json:"http-headers,omitempty"`
 	Message                       *string                               `json:"message,omitempty"`
 	MessageType                   *string                               `json:"message-type,omitempty"`
 	Method                        *string                               `json:"method,omitempty"`
@@ -52,6 +53,7 @@ type SystemAutomationAction struct {
 	Script                        *string                               `json:"script,omitempty"`
 	SdnConnector                  *[]SystemAutomationActionSdnConnector `json:"sdn-connector,omitempty"`
 	SecurityTag                   *string                               `json:"security-tag,omitempty"`
+	SystemAction                  *string                               `json:"system-action,omitempty"`
 	Timeout                       *int64                                `json:"timeout,omitempty"`
 	TlsCertificate                *string                               `json:"tls-certificate,omitempty"`
 	Uri                           *string                               `json:"uri,omitempty"`
@@ -64,6 +66,12 @@ type SystemAutomationActionEmailTo struct {
 
 type SystemAutomationActionHeaders struct {
 	Header *string `json:"header,omitempty"`
+}
+
+type SystemAutomationActionHttpHeaders struct {
+	Id    *int64  `json:"id,omitempty"`
+	Key   *string `json:"key,omitempty"`
+	Value *string `json:"value,omitempty"`
 }
 
 type SystemAutomationActionSdnConnector struct {

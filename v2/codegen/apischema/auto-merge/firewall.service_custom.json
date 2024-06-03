@@ -1,9 +1,9 @@
 {
 	"addedIn": "v6.2.7",
-	"build": 1157,
+	"build": 1639,
 	"http_method": "GET",
 	"http_status": 200,
-	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3,v7.0.4,v7.2.0",
+	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3,v7.0.4,v7.0.5,v7.0.6,v7.2.0,v7.2.1,v7.2.8",
 	"name": "custom",
 	"path": "firewall.service",
 	"results": {
@@ -419,7 +419,7 @@
 			"udp-idle-timer": {
 				"category": "unitary",
 				"default": 0,
-				"help": "UDP half close timeout (0 - 86400 sec, 0 = default).",
+				"help": "Number of seconds before an idle UDP connection times out (0 - 86400 sec, 0 = default).",
 				"max-value": 86400,
 				"min-value": 0,
 				"multiple_values": false,
@@ -450,22 +450,24 @@
 						"name": "disable"
 					}
 				],
+				"removedIn": "v7.2.8",
 				"type": "option"
 			}
 		},
 		"help": "Configure custom services.",
 		"max_table_size_global": 0,
 		"max_table_size_item": 0,
-		"max_table_size_vdom": 32768,
+		"max_table_size_vdom": 10240,
 		"mkey": "name",
 		"mkey_type": "string",
 		"name": "custom",
+		"object_range": "vdom",
 		"path": "firewall.service",
-		"q_type": 36
+		"q_type": 37
 	},
-	"revision": "0bb8dc7590ee9f1dd55fd31dc744bb38",
-	"serial": "FGTAZRIPD-OKNB34",
+	"revision": "3acbe68438a1e7c4686398809f738367",
+	"serial": "FG180FTK20900788",
 	"status": "success",
 	"vdom": "root",
-	"version": "v7.2.0"
+	"version": "v7.2.8"
 }

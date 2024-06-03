@@ -1,9 +1,9 @@
 {
 	"addedIn": "v7.0.0",
-	"build": 1157,
+	"build": 1639,
 	"http_method": "GET",
 	"http_status": 200,
-	"mergedVersions": "v7.0.0,v7.0.1,v7.0.2,v7.0.3,v7.0.4,v7.2.0",
+	"mergedVersions": "v7.0.0,v7.0.1,v7.0.2,v7.0.3,v7.0.4,v7.0.5,v7.0.6,v7.2.0,v7.2.1,v7.2.8",
 	"name": "fortilink-settings",
 	"path": "switch-controller",
 	"results": {
@@ -192,12 +192,13 @@
 		"mkey": "name",
 		"mkey_type": "string",
 		"name": "fortilink-settings",
+		"object_range": "vdom",
 		"path": "switch-controller",
-		"q_type": 324
+		"q_type": 331
 	},
-	"revision": "645e8387601c337f3bc7e2416933fe22",
-	"serial": "FGTAZRIPD-OKNB34",
+	"revision": "b9241dbae33b6232e233d93020674b04",
+	"serial": "FG180FTK20900788",
 	"status": "success",
 	"vdom": "root",
-	"version": "v7.2.0"
+	"version": "v7.2.8"
 }

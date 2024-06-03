@@ -17,6 +17,7 @@ type SystemAutomationTrigger struct {
 	Name                *string                          `json:"name,omitempty"`
 	ReportType          *string                          `json:"report-type,omitempty"`
 	Serial              *string                          `json:"serial,omitempty"`
+	TriggerDatetime     *string                          `json:"trigger-datetime,omitempty"`
 	TriggerDay          *int64                           `json:"trigger-day,omitempty"`
 	TriggerFrequency    *string                          `json:"trigger-frequency,omitempty"`
 	TriggerHour         *int64                           `json:"trigger-hour,omitempty"`

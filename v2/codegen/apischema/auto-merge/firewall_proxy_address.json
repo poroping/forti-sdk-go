@@ -1,15 +1,39 @@
 {
 	"addedIn": "v6.2.7",
-	"build": 1157,
+	"build": 1639,
 	"http_method": "GET",
 	"http_status": 200,
-	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3,v7.0.4,v7.2.0",
+	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3,v7.0.4,v7.0.5,v7.0.6,v7.2.0,v7.2.1,v7.2.8",
 	"name": "proxy-address",
 	"path": "firewall",
 	"results": {
 		"access_group": "fwgrp",
 		"category": "table",
 		"children": {
+			"application": {
+				"addedIn": "v7.2.1",
+				"category": "table",
+				"children": {
+					"name": {
+						"category": "unitary",
+						"default": "",
+						"help": "SaaS application name.",
+						"multiple_values": false,
+						"name": "name",
+						"size": 79,
+						"type": "string"
+					}
+				},
+				"help": "SaaS application.",
+				"max_table_size_global": 0,
+				"max_table_size_item": 0,
+				"max_table_size_vdom": 0,
+				"member_table": true,
+				"mkey": "name",
+				"mkey_type": "string",
+				"name": "application",
+				"required": true
+			},
 			"case-sensitivity": {
 				"category": "unitary",
 				"default": "disable",
@@ -220,7 +244,7 @@
 				"help": "Address name.",
 				"multiple_values": false,
 				"name": "name",
-				"size": 35,
+				"size": 79,
 				"type": "string"
 			},
 			"path": {
@@ -355,6 +379,10 @@
 					{
 						"help": "HTTP advanced destination criteria.",
 						"name": "dst-advanced"
+					},
+					{
+						"help": "SaaS application.",
+						"name": "saas"
 					}
 				],
 				"type": "option"
@@ -363,7 +391,7 @@
 				"category": "unitary",
 				"default": "",
 				"help": "Names of browsers to be used as user agent.",
-				"max_num_values": 5,
+				"max_num_values": 7,
 				"multiple_values": true,
 				"name": "ua",
 				"options": [
@@ -384,11 +412,39 @@
 						"name": "safari"
 					},
 					{
+						"help": "Microsoft Internet Explorer.",
+						"name": "ie"
+					},
+					{
+						"help": "Microsoft Edge.",
+						"name": "edge"
+					},
+					{
 						"help": "Other browsers.",
 						"name": "other"
 					}
 				],
 				"type": "option"
+			},
+			"ua-max-ver": {
+				"addedIn": "v7.2.8",
+				"category": "unitary",
+				"default": "",
+				"help": "Maximum version of the user agent specified in dotted notation. For example, use 120 with the ua field set to \"chrome\" to require Google Chrome's maximum version must be 120.",
+				"multiple_values": false,
+				"name": "ua-max-ver",
+				"size": 63,
+				"type": "string"
+			},
+			"ua-min-ver": {
+				"addedIn": "v7.2.8",
+				"category": "unitary",
+				"default": "",
+				"help": "Minimum version of the user agent specified in dotted notation. For example, use 90.0.1 with the ua field set to \"chrome\" to require Google Chrome's minimum version must be 90.0.1.",
+				"multiple_values": false,
+				"name": "ua-min-ver",
+				"size": 63,
+				"type": "string"
 			},
 			"uuid": {
 				"category": "unitary",
@@ -424,12 +480,13 @@
 		"mkey": "name",
 		"mkey_type": "string",
 		"name": "proxy-address",
+		"object_range": "vdom",
 		"path": "firewall",
-		"q_type": 491
+		"q_type": 498
 	},
-	"revision": "f7f9f0c7010a0528b972ed831ae64831",
-	"serial": "FGTAZRIPD-OKNB34",
+	"revision": "7193c6c67a621b3f6bc7cb4ded97f2a8",
+	"serial": "FG180FTK20900788",
 	"status": "success",
 	"vdom": "root",
-	"version": "v7.2.0"
+	"version": "v7.2.8"
 }

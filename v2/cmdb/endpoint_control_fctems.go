@@ -4,6 +4,7 @@ import (
 	"encoding/json"
 	"log"
 	"net/url"
+	"strconv"
 
 	"github.com/poroping/forti-sdk-go/v2/models"
 	"github.com/poroping/forti-sdk-go/v2/request"
@@ -16,8 +17,8 @@ func (c *Client) CreateEndpointControlFctems(payload *models.EndpointControlFcte
 	}
 
 	mkey := ""
-	if payload.Name != nil && *params.AllowAppend {
-		mkey = *payload.Name
+	if payload.EmsId != nil && *params.AllowAppend {
+		mkey = strconv.Itoa(int(*payload.EmsId))
 		read, err := c.ReadEndpointControlFctems(mkey, params)
 		if err != nil {
 			return nil, err

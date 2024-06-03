@@ -1,9 +1,9 @@
 {
 	"addedIn": "v6.2.7",
-	"build": 1157,
+	"build": 1639,
 	"http_method": "GET",
 	"http_status": 200,
-	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3,v7.0.4,v7.2.0",
+	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3,v7.0.4,v7.0.5,v7.0.6,v7.2.0,v7.2.1,v7.2.8",
 	"name": "setting",
 	"path": "wireless-controller",
 	"results": {
@@ -203,6 +203,10 @@
 						"name": "DK"
 					},
 					{
+						"help": "DJIBOUTI",
+						"name": "DJ"
+					},
+					{
 						"help": "DOMINICA",
 						"name": "DM"
 					},
@@ -255,8 +259,16 @@
 						"name": "FR"
 					},
 					{
+						"help": "GABON",
+						"name": "GA"
+					},
+					{
 						"help": "GEORGIA",
 						"name": "GE"
+					},
+					{
+						"help": "GAMBIA",
+						"name": "GM"
 					},
 					{
 						"help": "GERMANY",
@@ -391,6 +403,10 @@
 						"name": "LS"
 					},
 					{
+						"help": "LIBERIA",
+						"name": "LR"
+					},
+					{
 						"help": "LIBYA",
 						"name": "LY"
 					},
@@ -475,6 +491,10 @@
 						"name": "MC"
 					},
 					{
+						"help": "MONGOLIA",
+						"name": "MN"
+					},
+					{
 						"help": "MOROCCO",
 						"name": "MA"
 					},
@@ -517,6 +537,10 @@
 					{
 						"help": "NIGER",
 						"name": "NE"
+					},
+					{
+						"help": "NIGERIA",
+						"name": "NG"
 					},
 					{
 						"help": "NORWAY",
@@ -647,6 +671,10 @@
 						"name": "SI"
 					},
 					{
+						"help": "SOMALIA",
+						"name": "SO"
+					},
+					{
 						"help": "SOUTH AFRICA",
 						"name": "ZA"
 					},
@@ -659,12 +687,16 @@
 						"name": "LK"
 					},
 					{
-						"help": "SWEDEN",
-						"name": "SE"
-					},
-					{
 						"help": "SURINAME",
 						"name": "SR"
+					},
+					{
+						"help": "SWAZILAND",
+						"name": "SZ"
+					},
+					{
+						"help": "SWEDEN",
+						"name": "SE"
 					},
 					{
 						"help": "SWITZERLAND",
@@ -1015,12 +1047,13 @@
 		"help": "VDOM wireless controller configuration.",
 		"multiple_values": false,
 		"name": "setting",
+		"object_range": "vdom",
 		"path": "wireless-controller",
-		"q_type": 268
+		"q_type": 275
 	},
-	"revision": "2774cd50c4fcd0851b22ba40708ca2af",
-	"serial": "FGTAZRIPD-OKNB34",
+	"revision": "9c45ba092d671cee780ace4bcf8f3c63",
+	"serial": "FG180FTK20900788",
 	"status": "success",
 	"vdom": "root",
-	"version": "v7.2.0"
+	"version": "v7.2.8"
 }

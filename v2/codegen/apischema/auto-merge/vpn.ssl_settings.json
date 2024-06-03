@@ -1,9 +1,9 @@
 {
 	"addedIn": "v6.2.7",
-	"build": 1157,
+	"build": 1639,
 	"http_method": "GET",
 	"http_status": 200,
-	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3,v7.0.4,v7.2.0",
+	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3,v7.0.4,v7.0.5,v7.0.6,v7.2.0,v7.2.1,v7.2.8",
 	"name": "settings",
 	"path": "vpn.ssl",
 	"results": {
@@ -1002,6 +1002,16 @@
 				"name": "saml-redirect-port",
 				"type": "integer"
 			},
+			"server-hostname": {
+				"addedIn": "v7.2.8",
+				"category": "unitary",
+				"default": "",
+				"help": "Server hostname for HTTPS. When set, will be used for SSL VPN web proxy host header for any redirection.",
+				"multiple_values": false,
+				"name": "server-hostname",
+				"size": 255,
+				"type": "string"
+			},
 			"servercert": {
 				"category": "unitary",
 				"datasource": [
@@ -1485,7 +1495,7 @@
 				"type": "string"
 			},
 			"web-mode-snat": {
-				"addedIn": "v7.2.0",
+				"addedIn": "v7.0.6",
 				"category": "unitary",
 				"default": "disable",
 				"help": "Enable/disable use of IP pools defined in firewall policy while using web-mode.",
@@ -1501,6 +1511,7 @@
 						"name": "disable"
 					}
 				],
+				"removedIn": "v7.2.8",
 				"type": "option"
 			},
 			"wins-server1": {
@@ -1536,17 +1547,37 @@
 					}
 				],
 				"type": "option"
+			},
+			"ztna-trusted-client": {
+				"addedIn": "v7.2.1",
+				"category": "unitary",
+				"default": "disable",
+				"help": "Enable/disable verification of device certificate for SSLVPN ZTNA session.",
+				"multiple_values": false,
+				"name": "ztna-trusted-client",
+				"options": [
+					{
+						"help": "Enable verification of device certificate for SSLVPN ZTNA session.",
+						"name": "enable"
+					},
+					{
+						"help": "Disable verification of device certificate for SSLVPN ZTNA session.",
+						"name": "disable"
+					}
+				],
+				"type": "option"
 			}
 		},
 		"help": "Configure SSL-VPN.",
 		"multiple_values": false,
 		"name": "settings",
+		"object_range": "vdom",
 		"path": "vpn.ssl",
-		"q_type": 148
+		"q_type": 154
 	},
-	"revision": "5aaca7175b5b74c5babe5981f58baa16",
-	"serial": "FGTAZRIPD-OKNB34",
+	"revision": "b710b2b12541ab8e88b17ae1823bdf1a",
+	"serial": "FG180FTK20900788",
 	"status": "success",
 	"vdom": "root",
-	"version": "v7.2.0"
+	"version": "v7.2.8"
 }

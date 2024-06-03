@@ -1,9 +1,9 @@
 {
 	"addedIn": "v7.0.0",
-	"build": 1157,
+	"build": 1639,
 	"http_method": "GET",
 	"http_status": 200,
-	"mergedVersions": "v7.0.0,v7.0.1,v7.0.2,v7.0.3,v7.0.4,v7.2.0",
+	"mergedVersions": "v7.0.0,v7.0.1,v7.0.2,v7.0.3,v7.0.4,v7.0.5,v7.0.6,v7.2.0,v7.2.1,v7.2.8",
 	"name": "automation",
 	"path": "system.replacemsg",
 	"results": {
@@ -20,7 +20,7 @@
 			},
 			"format": {
 				"category": "unitary",
-				"default": "",
+				"default": "none",
 				"help": "Format flag.",
 				"multiple_values": false,
 				"name": "format",
@@ -42,7 +42,7 @@
 			},
 			"header": {
 				"category": "unitary",
-				"default": "",
+				"default": "none",
 				"help": "Header flag.",
 				"multiple_values": false,
 				"name": "header",
@@ -80,13 +80,14 @@
 		"mkey": "msg-type",
 		"mkey_type": "string",
 		"name": "automation",
+		"object_range": "global",
 		"path": "system.replacemsg",
-		"q_type": 536,
+		"q_type": 551,
 		"readonly": true
 	},
-	"revision": "5aaca7175b5b74c5babe5981f58baa16",
-	"serial": "FGTAZRIPD-OKNB34",
+	"revision": "b710b2b12541ab8e88b17ae1823bdf1a",
+	"serial": "FG180FTK20900788",
 	"status": "success",
 	"vdom": "root",
-	"version": "v7.2.0"
+	"version": "v7.2.8"
 }

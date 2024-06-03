@@ -10,13 +10,19 @@ type FirewallInternetServiceCustom struct {
 }
 
 type FirewallInternetServiceCustomEntry struct {
+	AddrMode  *string                                        `json:"addr-mode,omitempty"`
 	Dst       *[]FirewallInternetServiceCustomEntryDst       `json:"dst,omitempty"`
+	Dst6      *[]FirewallInternetServiceCustomEntryDst6      `json:"dst6,omitempty"`
 	Id        *int64                                         `json:"id,omitempty"`
 	PortRange *[]FirewallInternetServiceCustomEntryPortRange `json:"port-range,omitempty"`
 	Protocol  *int64                                         `json:"protocol,omitempty"`
 }
 
 type FirewallInternetServiceCustomEntryDst struct {
+	Name *string `json:"name,omitempty"`
+}
+
+type FirewallInternetServiceCustomEntryDst6 struct {
 	Name *string `json:"name,omitempty"`
 }
 

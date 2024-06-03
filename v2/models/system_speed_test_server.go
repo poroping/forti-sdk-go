@@ -9,9 +9,12 @@ type SystemSpeedTestServer struct {
 }
 
 type SystemSpeedTestServerHost struct {
-	Id       *int64  `json:"id,omitempty"`
-	Ip       *string `json:"ip,omitempty"`
-	Password *string `json:"password,omitempty"`
-	Port     *int64  `json:"port,omitempty"`
-	User     *string `json:"user,omitempty"`
+	Distance  *int64  `json:"distance,omitempty"`
+	Id        *int64  `json:"id,omitempty"`
+	Ip        *string `json:"ip,omitempty"`
+	Latitude  *string `json:"latitude,omitempty"`
+	Longitude *string `json:"longitude,omitempty"`
+	Password  *string `json:"password,omitempty"`
+	Port      *int64  `json:"port,omitempty"`
+	User      *string `json:"user,omitempty"`
 }

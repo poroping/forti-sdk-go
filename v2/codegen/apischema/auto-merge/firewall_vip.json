@@ -1,9 +1,9 @@
 {
 	"addedIn": "v6.2.7",
-	"build": 1157,
+	"build": 1639,
 	"http_method": "GET",
 	"http_status": 200,
-	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3,v7.0.4,v7.2.0",
+	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3,v7.0.4,v7.0.5,v7.0.6,v7.2.0,v7.2.1,v7.2.8",
 	"name": "vip",
 	"path": "firewall",
 	"results": {
@@ -262,6 +262,28 @@
 				],
 				"type": "option"
 			},
+			"http-multiplex-max-request": {
+				"addedIn": "v7.2.8",
+				"category": "unitary",
+				"default": 0,
+				"help": "Maximum number of requests that a multiplex server can handle before disconnecting sessions (default = unlimited).",
+				"max-value": 2147483647,
+				"min-value": 0,
+				"multiple_values": false,
+				"name": "http-multiplex-max-request",
+				"type": "integer"
+			},
+			"http-multiplex-ttl": {
+				"addedIn": "v7.2.8",
+				"category": "unitary",
+				"default": 15,
+				"help": "Time-to-live for idle connections to servers.",
+				"max-value": 2147483647,
+				"min-value": 0,
+				"multiple_values": false,
+				"name": "http-multiplex-ttl",
+				"type": "integer"
+			},
 			"http-redirect": {
 				"category": "unitary",
 				"default": "disable",
@@ -276,6 +298,25 @@
 					{
 						"help": "Disable redirection of HTTP to HTTPS.",
 						"name": "disable"
+					}
+				],
+				"type": "option"
+			},
+			"http-supported-max-version": {
+				"addedIn": "v7.2.8",
+				"category": "unitary",
+				"default": "http2",
+				"help": "Maximum supported HTTP versions. default = HTTP2",
+				"multiple_values": false,
+				"name": "http-supported-max-version",
+				"options": [
+					{
+						"help": "Support HTTP 1.1 and HTTP1.",
+						"name": "http1"
+					},
+					{
+						"help": "Support HTTP2, HTTP 1.1, and HTTP1.",
+						"name": "http2"
 					}
 				],
 				"type": "option"
@@ -771,6 +812,25 @@
 						],
 						"type": "option"
 					},
+					"translate-host": {
+						"addedIn": "v7.2.8",
+						"category": "unitary",
+						"default": "enable",
+						"help": "Enable/disable translation of hostname/IP from virtual server to real server.",
+						"multiple_values": false,
+						"name": "translate-host",
+						"options": [
+							{
+								"help": "Enable virtual hostname/IP translation.",
+								"name": "enable"
+							},
+							{
+								"help": "Disable virtual hostname/IP translation.",
+								"name": "disable"
+							}
+						],
+						"type": "option"
+					},
 					"type": {
 						"addedIn": "v6.4.0",
 						"category": "unitary",
@@ -804,7 +864,7 @@
 				},
 				"help": "Select the real servers that this server load balancing VIP will distribute traffic to.",
 				"max_table_size_global": 0,
-				"max_table_size_item": 256,
+				"max_table_size_item": 64,
 				"max_table_size_vdom": 0,
 				"mkey": "id",
 				"mkey_type": "integer",
@@ -2196,6 +2256,25 @@
 				],
 				"type": "option"
 			},
+			"ssl-server-renegotiation": {
+				"addedIn": "v7.2.8",
+				"category": "unitary",
+				"default": "enable",
+				"help": "Enable/disable secure renegotiation to comply with RFC 5746.",
+				"multiple_values": false,
+				"name": "ssl-server-renegotiation",
+				"options": [
+					{
+						"help": "Enable secure renegotiation.",
+						"name": "enable"
+					},
+					{
+						"help": "Disable secure renegotiation.",
+						"name": "disable"
+					}
+				],
+				"type": "option"
+			},
 			"ssl-server-session-state-max": {
 				"category": "unitary",
 				"default": 100,
@@ -2347,12 +2426,13 @@
 		"mkey": "name",
 		"mkey_type": "string",
 		"name": "vip",
+		"object_range": "vdom",
 		"path": "firewall",
-		"q_type": 42
+		"q_type": 44
 	},
-	"revision": "f7f9f0c7010a0528b972ed831ae64831",
-	"serial": "FGTAZRIPD-OKNB34",
+	"revision": "2131c48edd53df0aa10b0be32545dfe1",
+	"serial": "FG180FTK20900788",
 	"status": "success",
 	"vdom": "root",
-	"version": "v7.2.0"
+	"version": "v7.2.8"
 }

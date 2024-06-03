@@ -1,9 +1,9 @@
 {
 	"addedIn": "v6.2.7",
-	"build": 1157,
+	"build": 1639,
 	"http_method": "GET",
 	"http_status": 200,
-	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3,v7.0.4,v7.2.0",
+	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3,v7.0.4,v7.0.5,v7.0.6,v7.2.0,v7.2.1,v7.2.8",
 	"name": "local",
 	"path": "user",
 	"results": {
@@ -96,7 +96,7 @@
 			"name": {
 				"category": "unitary",
 				"default": "",
-				"help": "User name.",
+				"help": "Local user name.",
 				"multiple_values": false,
 				"name": "name",
 				"size": 64,
@@ -403,12 +403,13 @@
 		"mkey": "name",
 		"mkey_type": "string",
 		"name": "local",
+		"object_range": "vdom",
 		"path": "user",
 		"q_type": 21
 	},
-	"revision": "a39fd37b7ff3a059b9475a24044c952f",
-	"serial": "FGTAZRIPD-OKNB34",
+	"revision": "d9a7f2a858ba9c9888f169f387730291",
+	"serial": "FG180FTK20900788",
 	"status": "success",
 	"vdom": "root",
-	"version": "v7.2.0"
+	"version": "v7.2.8"
 }

@@ -18,5 +18,6 @@ type LogEventfilter struct {
 	User             *string `json:"user,omitempty"`
 	Vpn              *string `json:"vpn,omitempty"`
 	WanOpt           *string `json:"wan-opt,omitempty"`
+	Webproxy         *string `json:"webproxy,omitempty"`
 	WirelessActivity *string `json:"wireless-activity,omitempty"`
 }

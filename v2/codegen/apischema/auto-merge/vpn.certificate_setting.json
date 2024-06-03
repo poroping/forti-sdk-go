@@ -1,15 +1,26 @@
 {
 	"addedIn": "v6.2.7",
-	"build": 1157,
+	"build": 1639,
 	"http_method": "GET",
 	"http_status": 200,
-	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3,v7.0.4,v7.2.0",
+	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3,v7.0.4,v7.0.5,v7.0.6,v7.2.0,v7.2.1,v7.2.8",
 	"name": "setting",
 	"path": "vpn.certificate",
 	"results": {
 		"access_group": "vpngrp",
 		"category": "complex",
 		"children": {
+			"cert-expire-warning": {
+				"addedIn": "v7.2.1",
+				"category": "unitary",
+				"default": 14,
+				"help": "Number of days before a certificate expires to send a warning. Set to 0 to disable sending of the warning (0 - 100, default = 14).",
+				"max-value": 100,
+				"min-value": 0,
+				"multiple_values": false,
+				"name": "cert-expire-warning",
+				"type": "integer"
+			},
 			"certname-dsa1024": {
 				"category": "unitary",
 				"datasource": [
@@ -398,6 +409,56 @@
 				],
 				"type": "option"
 			},
+			"proxy": {
+				"addedIn": "v7.2.8",
+				"category": "unitary",
+				"default": "",
+				"help": "Proxy server FQDN or IP for OCSP/CA queries during certificate verification.",
+				"multiple_values": false,
+				"name": "proxy",
+				"size": 127,
+				"type": "string"
+			},
+			"proxy-password": {
+				"addedIn": "v7.2.8",
+				"category": "unitary",
+				"help": "Proxy server password.",
+				"multiple_values": false,
+				"name": "proxy-password",
+				"size": 128,
+				"type": "password"
+			},
+			"proxy-port": {
+				"addedIn": "v7.2.8",
+				"category": "unitary",
+				"default": 8080,
+				"help": "Proxy server port (1 - 65535, default = 8080).",
+				"max-value": 65535,
+				"min-value": 1,
+				"multiple_values": false,
+				"name": "proxy-port",
+				"type": "integer"
+			},
+			"proxy-username": {
+				"addedIn": "v7.2.8",
+				"category": "unitary",
+				"default": "",
+				"help": "Proxy server user name.",
+				"multiple_values": false,
+				"name": "proxy-username",
+				"size": 63,
+				"type": "string"
+			},
+			"source-ip": {
+				"addedIn": "v7.2.8",
+				"category": "unitary",
+				"default": "",
+				"help": "Source IP address for dynamic AIA and OCSP queries.",
+				"multiple_values": false,
+				"name": "source-ip",
+				"size": 63,
+				"type": "string"
+			},
 			"ssl-min-proto-version": {
 				"category": "unitary",
 				"default": "default",
@@ -434,6 +495,7 @@
 				"help": "Source IP address to use to communicate with the OCSP server.",
 				"multiple_values": false,
 				"name": "ssl-ocsp-source-ip",
+				"removedIn": "v7.2.8",
 				"type": "ipv4-address"
 			},
 			"strict-crl-check": {
@@ -514,12 +576,13 @@
 		"help": "VPN certificate setting.",
 		"multiple_values": false,
 		"name": "setting",
+		"object_range": "vdom",
 		"path": "vpn.certificate",
-		"q_type": 215
+		"q_type": 222
 	},
-	"revision": "5aaca7175b5b74c5babe5981f58baa16",
-	"serial": "FGTAZRIPD-OKNB34",
+	"revision": "b710b2b12541ab8e88b17ae1823bdf1a",
+	"serial": "FG180FTK20900788",
 	"status": "success",
 	"vdom": "root",
-	"version": "v7.2.0"
+	"version": "v7.2.8"
 }

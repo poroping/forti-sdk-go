@@ -24,6 +24,7 @@ type FirewallInterfacePolicy6 struct {
 	Service6                 *[]FirewallInterfacePolicy6Service6 `json:"service6,omitempty"`
 	Srcaddr6                 *[]FirewallInterfacePolicy6Srcaddr6 `json:"srcaddr6,omitempty"`
 	Status                   *string                             `json:"status,omitempty"`
+	Uuid                     *string                             `json:"uuid,omitempty"`
 	WebfilterProfile         *string                             `json:"webfilter-profile,omitempty"`
 	WebfilterProfileStatus   *string                             `json:"webfilter-profile-status,omitempty"`
 }

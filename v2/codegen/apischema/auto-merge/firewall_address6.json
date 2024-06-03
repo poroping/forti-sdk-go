@@ -1,9 +1,9 @@
 {
 	"addedIn": "v6.2.7",
-	"build": 1157,
+	"build": 1639,
 	"http_method": "GET",
 	"http_status": 200,
-	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3,v7.0.4,v7.2.0",
+	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3,v7.0.4,v7.0.5,v7.0.6,v7.2.0,v7.2.1,v7.2.8",
 	"name": "address6",
 	"path": "firewall",
 	"results": {
@@ -63,6 +63,16 @@
 				"name": "end-mac",
 				"removedIn": "v6.4.0",
 				"type": "mac-address"
+			},
+			"epg-name": {
+				"addedIn": "v7.2.1",
+				"category": "unitary",
+				"default": "",
+				"help": "Endpoint group name.",
+				"multiple_values": false,
+				"name": "epg-name",
+				"size": 255,
+				"type": "string"
 			},
 			"fabric-object": {
 				"addedIn": "v6.4.5",
@@ -199,6 +209,16 @@
 				"multiple_values": false,
 				"name": "sdn",
 				"size": 35,
+				"type": "string"
+			},
+			"sdn-tag": {
+				"addedIn": "v7.2.1",
+				"category": "unitary",
+				"default": "",
+				"help": "SDN Tag.",
+				"multiple_values": false,
+				"name": "sdn-tag",
+				"size": 15,
 				"type": "string"
 			},
 			"start-ip": {
@@ -339,6 +359,16 @@
 				"size": 63,
 				"type": "string"
 			},
+			"tenant": {
+				"addedIn": "v7.2.1",
+				"category": "unitary",
+				"default": "",
+				"help": "Tenant.",
+				"multiple_values": false,
+				"name": "tenant",
+				"size": 35,
+				"type": "string"
+			},
 			"type": {
 				"category": "unitary",
 				"default": "ipprefix",
@@ -405,18 +435,19 @@
 			}
 		},
 		"help": "Configure IPv6 firewall addresses.",
-		"max_table_size_global": 100000,
+		"max_table_size_global": 40000,
 		"max_table_size_item": 0,
-		"max_table_size_vdom": 100000,
+		"max_table_size_vdom": 40000,
 		"mkey": "name",
 		"mkey_type": "string",
 		"name": "address6",
+		"object_range": "vdom",
 		"path": "firewall",
-		"q_type": 202
+		"q_type": 209
 	},
-	"revision": "4bad99e30e022174e19d7d7164801876",
-	"serial": "FGTAZRIPD-OKNB34",
+	"revision": "2db492a39400f4ba7f726bac2a131b39",
+	"serial": "FG180FTK20900788",
 	"status": "success",
 	"vdom": "root",
-	"version": "v7.2.0"
+	"version": "v7.2.8"
 }

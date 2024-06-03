@@ -1,9 +1,9 @@
 {
 	"addedIn": "v6.2.7",
-	"build": 1157,
+	"build": 1639,
 	"http_method": "GET",
 	"http_status": 200,
-	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3,v7.0.4,v7.2.0",
+	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3,v7.0.4,v7.0.5,v7.0.6,v7.2.0,v7.2.1,v7.2.8",
 	"name": "name",
 	"path": "application",
 	"results": {
@@ -171,6 +171,29 @@
 				"readonly": true,
 				"type": "integer"
 			},
+			"status": {
+				"addedIn": "v7.2.1",
+				"category": "info-read-only",
+				"children": {
+					"\u003capplication list name\u003e": {
+						"category": "info-read-only",
+						"children": {
+							"\u003capplication entry name\u003e": {
+								"category": "info-read-only",
+								"help": "application entry name",
+								"name": "\u003capplication entry name\u003e",
+								"type": "value"
+							}
+						},
+						"help": "Application list name.",
+						"name": "\u003capplication list name\u003e",
+						"type": "value"
+					}
+				},
+				"help": "print all application information",
+				"name": "status",
+				"type": "key"
+			},
 			"sub-category": {
 				"category": "unitary",
 				"help": "Application sub-category ID.",
@@ -218,13 +241,14 @@
 		"mkey": "name",
 		"mkey_type": "string",
 		"name": "name",
+		"object_range": "global",
 		"path": "application",
-		"q_type": 367,
+		"q_type": 369,
 		"readonly": true
 	},
-	"revision": "60071851bbbec16c813fd040f3fabbe1",
-	"serial": "FGTAZRIPD-OKNB34",
+	"revision": "a1871b797f9a5ae8197a4b13fb86bc5c",
+	"serial": "FG180FTK20900788",
 	"status": "success",
 	"vdom": "root",
-	"version": "v7.2.0"
+	"version": "v7.2.8"
 }

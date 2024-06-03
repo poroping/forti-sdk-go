@@ -1,9 +1,9 @@
 {
 	"addedIn": "v6.2.7",
-	"build": 1157,
+	"build": 1639,
 	"http_method": "GET",
 	"http_status": 200,
-	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3,v7.0.4,v7.2.0",
+	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3,v7.0.4,v7.0.5,v7.0.6,v7.2.0,v7.2.1,v7.2.8",
 	"name": "ippool",
 	"path": "firewall",
 	"results": {
@@ -82,6 +82,125 @@
 				"required": true,
 				"type": "integer"
 			},
+			"cgn-block-size": {
+				"addedIn": "v7.2.8",
+				"category": "unitary",
+				"default": 128,
+				"help": "Number of ports in a block(64 to 4096 in unit of 64, default = 128).",
+				"max-value": 4096,
+				"min-value": 64,
+				"multiple_values": false,
+				"name": "cgn-block-size",
+				"type": "integer"
+			},
+			"cgn-client-endip": {
+				"addedIn": "v7.2.8",
+				"category": "unitary",
+				"help": "Final client IPv4 address (inclusive) (format xxx.xxx.xxx.xxx, Default: 0.0.0.0).",
+				"multiple_values": false,
+				"name": "cgn-client-endip",
+				"size": 255,
+				"type": "var-string"
+			},
+			"cgn-client-ipv6shift": {
+				"addedIn": "v7.2.8",
+				"category": "unitary",
+				"default": 0,
+				"help": "IPv6 shift for fixed-allocation.(default 0)",
+				"max-value": 127,
+				"min-value": 0,
+				"multiple_values": false,
+				"name": "cgn-client-ipv6shift",
+				"type": "integer"
+			},
+			"cgn-client-startip": {
+				"addedIn": "v7.2.8",
+				"category": "unitary",
+				"help": "First client IPv4 address (inclusive) (format xxx.xxx.xxx.xxx, Default: 0.0.0.0).",
+				"multiple_values": false,
+				"name": "cgn-client-startip",
+				"size": 255,
+				"type": "var-string"
+			},
+			"cgn-fixedalloc": {
+				"addedIn": "v7.2.8",
+				"category": "unitary",
+				"default": "disable",
+				"help": "Enable/disable fixed-allocation mode.",
+				"multiple_values": false,
+				"name": "cgn-fixedalloc",
+				"options": [
+					{
+						"help": "Disable fixed-allocation mode.",
+						"name": "disable"
+					},
+					{
+						"help": "Enable fixed-allocation mode.",
+						"name": "enable"
+					}
+				],
+				"type": "option"
+			},
+			"cgn-overload": {
+				"addedIn": "v7.2.8",
+				"category": "unitary",
+				"default": "disable",
+				"help": "Enable/disable overload mode.",
+				"multiple_values": false,
+				"name": "cgn-overload",
+				"options": [
+					{
+						"help": "Disable overload mode.",
+						"name": "disable"
+					},
+					{
+						"help": "Enable overload mode.",
+						"name": "enable"
+					}
+				],
+				"type": "option"
+			},
+			"cgn-port-end": {
+				"addedIn": "v7.2.8",
+				"category": "unitary",
+				"default": 65530,
+				"help": "Ending public port can be allocated. ",
+				"max-value": 65535,
+				"min-value": 1024,
+				"multiple_values": false,
+				"name": "cgn-port-end",
+				"type": "integer"
+			},
+			"cgn-port-start": {
+				"addedIn": "v7.2.8",
+				"category": "unitary",
+				"default": 5117,
+				"help": "Starting public port can be allocated. ",
+				"max-value": 65535,
+				"min-value": 1024,
+				"multiple_values": false,
+				"name": "cgn-port-start",
+				"type": "integer"
+			},
+			"cgn-spa": {
+				"addedIn": "v7.2.8",
+				"category": "unitary",
+				"default": "disable",
+				"help": "Enable/disable single port allocation mode.",
+				"multiple_values": false,
+				"name": "cgn-spa",
+				"options": [
+					{
+						"help": "Disable SPA mode.",
+						"name": "disable"
+					},
+					{
+						"help": "Enable SPA mode.",
+						"name": "enable"
+					}
+				],
+				"type": "option"
+			},
 			"comments": {
 				"category": "unitary",
 				"help": "Comment.",
@@ -110,6 +229,29 @@
 				"name": "endport",
 				"required": true,
 				"type": "integer"
+			},
+			"exclude-ip": {
+				"addedIn": "v7.2.8",
+				"category": "table",
+				"children": {
+					"subnet": {
+						"category": "unitary",
+						"default": "",
+						"help": "Exclude IPs",
+						"multiple_values": false,
+						"name": "subnet",
+						"size": 79,
+						"type": "string"
+					}
+				},
+				"help": "Exclude IPs x.x.x.x.",
+				"max_table_size_global": 0,
+				"max_table_size_item": 0,
+				"max_table_size_vdom": 0,
+				"member_table": true,
+				"mkey": "subnet",
+				"mkey_type": "string",
+				"name": "exclude-ip"
 			},
 			"name": {
 				"category": "unitary",
@@ -154,7 +296,7 @@
 				"category": "unitary",
 				"default": 30,
 				"help": "Port block allocation timeout (seconds).",
-				"max-value": 300,
+				"max-value": 86400,
 				"min-value": 3,
 				"multiple_values": false,
 				"name": "pba-timeout",
@@ -183,7 +325,7 @@
 				"category": "unitary",
 				"default": 0,
 				"help": "Number of port for each user (32 - 60416, default = 0, which is auto).",
-				"max-value": 60416,
+				"max-value": 60417,
 				"min-value": 32,
 				"multiple_values": false,
 				"name": "port-per-user",
@@ -229,6 +371,25 @@
 				"required": true,
 				"type": "integer"
 			},
+			"subnet-broadcast-in-ippool": {
+				"addedIn": "v7.2.8",
+				"category": "unitary",
+				"default": "enable",
+				"help": "Enable/disable inclusion of the subnetwork address and broadcast IP address in the NAT64 IP pool.",
+				"multiple_values": false,
+				"name": "subnet-broadcast-in-ippool",
+				"options": [
+					{
+						"help": "Do not include the subnetwork address and broadcast IP address in the NAT64 IP pool.",
+						"name": "disable"
+					},
+					{
+						"help": "Include the subnetwork address and broadcast IP address in the NAT64 IP pool.",
+						"name": "enable"
+					}
+				],
+				"type": "option"
+			},
 			"type": {
 				"category": "unitary",
 				"default": "overload",
@@ -251,24 +412,51 @@
 					{
 						"help": "Port block allocation.",
 						"name": "port-block-allocation"
+					},
+					{
+						"help": "CGN NAT resource allocation",
+						"name": "cgn-resource-allocation"
 					}
 				],
 				"type": "option"
+			},
+			"utilization-alarm-clear": {
+				"addedIn": "v7.2.8",
+				"category": "unitary",
+				"default": 80,
+				"help": "Pool utilization alarm clear threshold (40-100).",
+				"max-value": 100,
+				"min-value": 40,
+				"multiple_values": false,
+				"name": "utilization-alarm-clear",
+				"type": "integer"
+			},
+			"utilization-alarm-raise": {
+				"addedIn": "v7.2.8",
+				"category": "unitary",
+				"default": 100,
+				"help": "Pool utilization alarm raise threshold (50-100).",
+				"max-value": 100,
+				"min-value": 50,
+				"multiple_values": false,
+				"name": "utilization-alarm-raise",
+				"type": "integer"
 			}
 		},
 		"help": "Configure IPv4 IP pools.",
 		"max_table_size_global": 0,
 		"max_table_size_item": 0,
-		"max_table_size_vdom": 32768,
+		"max_table_size_vdom": 2048,
 		"mkey": "name",
 		"mkey_type": "string",
 		"name": "ippool",
+		"object_range": "vdom",
 		"path": "firewall",
-		"q_type": 40
+		"q_type": 41
 	},
-	"revision": "f7f9f0c7010a0528b972ed831ae64831",
-	"serial": "FGTAZRIPD-OKNB34",
+	"revision": "2131c48edd53df0aa10b0be32545dfe1",
+	"serial": "FG180FTK20900788",
 	"status": "success",
 	"vdom": "root",
-	"version": "v7.2.0"
+	"version": "v7.2.8"
 }

@@ -6,6 +6,8 @@ type WirelessControllerWtp struct {
 	Admin                          *string                                   `json:"admin,omitempty"`
 	Allowaccess                    *string                                   `json:"allowaccess,omitempty"`
 	ApcfgProfile                   *string                                   `json:"apcfg-profile,omitempty"`
+	BleMajorId                     *int64                                    `json:"ble-major-id,omitempty"`
+	BleMinorId                     *int64                                    `json:"ble-minor-id,omitempty"`
 	BonjourProfile                 *string                                   `json:"bonjour-profile,omitempty"`
 	CoordinateLatitude             *string                                   `json:"coordinate-latitude,omitempty"`
 	CoordinateLongitude            *string                                   `json:"coordinate-longitude,omitempty"`

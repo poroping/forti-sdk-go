@@ -9,6 +9,7 @@ type FirewallInternetServiceAddition struct {
 }
 
 type FirewallInternetServiceAdditionEntry struct {
+	AddrMode  *string                                          `json:"addr-mode,omitempty"`
 	Id        *int64                                           `json:"id,omitempty"`
 	PortRange *[]FirewallInternetServiceAdditionEntryPortRange `json:"port-range,omitempty"`
 	Protocol  *int64                                           `json:"protocol,omitempty"`

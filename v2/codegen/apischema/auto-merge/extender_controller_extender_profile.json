@@ -3,9 +3,10 @@
 	"build": 1157,
 	"http_method": "GET",
 	"http_status": 200,
-	"mergedVersions": "v7.0.2,v7.0.3,v7.0.4,v7.2.0",
+	"mergedVersions": "v7.0.2,v7.0.3,v7.0.4,v7.0.5,v7.0.6,v7.2.0",
 	"name": "extender-profile",
 	"path": "extender-controller",
+	"removedIn": "v7.2.1",
 	"results": {
 		"access_group": "sysgrp",
 		"category": "table",

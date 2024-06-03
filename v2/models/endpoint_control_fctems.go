@@ -9,8 +9,12 @@ type EndpointControlFctems struct {
 	Capabilities                   *string `json:"capabilities,omitempty"`
 	Certificate                    *string `json:"certificate,omitempty"`
 	CloudServerType                *string `json:"cloud-server-type,omitempty"`
+	DirtyReason                    *string `json:"dirty-reason,omitempty"`
+	EmsId                          *int64  `json:"ems-id,omitempty"`
 	FortinetoneCloudAuthentication *string `json:"fortinetone-cloud-authentication,omitempty"`
 	HttpsPort                      *int64  `json:"https-port,omitempty"`
+	Interface                      *string `json:"interface,omitempty"`
+	InterfaceSelectMethod          *string `json:"interface-select-method,omitempty"`
 	Name                           *string `json:"name,omitempty"`
 	OutOfSyncThreshold             *int64  `json:"out-of-sync-threshold,omitempty"`
 	PreserveSslSession             *string `json:"preserve-ssl-session,omitempty"`
@@ -22,6 +26,9 @@ type EndpointControlFctems struct {
 	SerialNumber                   *string `json:"serial-number,omitempty"`
 	Server                         *string `json:"server,omitempty"`
 	SourceIp                       *string `json:"source-ip,omitempty"`
+	Status                         *string `json:"status,omitempty"`
 	StatusCheckInterval            *int64  `json:"status-check-interval,omitempty"`
+	TenantId                       *string `json:"tenant-id,omitempty"`
+	TrustCaCn                      *string `json:"trust-ca-cn,omitempty"`
 	WebsocketOverride              *string `json:"websocket-override,omitempty"`
 }

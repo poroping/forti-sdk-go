@@ -1,9 +1,9 @@
 {
 	"addedIn": "v6.2.7",
-	"build": 1157,
+	"build": 1639,
 	"http_method": "GET",
 	"http_status": 200,
-	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3,v7.0.4,v7.2.0",
+	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3,v7.0.4,v7.0.5,v7.0.6,v7.2.0,v7.2.1,v7.2.8",
 	"name": "accprofile",
 	"path": "system",
 	"results": {
@@ -649,6 +649,44 @@
 				],
 				"type": "option"
 			},
+			"system-execute-ssh": {
+				"addedIn": "v7.2.1",
+				"category": "unitary",
+				"default": "enable",
+				"help": "Enable/disable permission to execute SSH commands.",
+				"multiple_values": false,
+				"name": "system-execute-ssh",
+				"options": [
+					{
+						"help": "Enable permission to execute SSH commands.",
+						"name": "enable"
+					},
+					{
+						"help": "Disable permission to execute SSH commands.",
+						"name": "disable"
+					}
+				],
+				"type": "option"
+			},
+			"system-execute-telnet": {
+				"addedIn": "v7.2.1",
+				"category": "unitary",
+				"default": "enable",
+				"help": "Enable/disable permission to execute TELNET commands.",
+				"multiple_values": false,
+				"name": "system-execute-telnet",
+				"options": [
+					{
+						"help": "Enable permission to execute TELNET commands.",
+						"name": "enable"
+					},
+					{
+						"help": "Disable permission to execute TELNET commands.",
+						"name": "disable"
+					}
+				],
+				"type": "option"
+			},
 			"utmgrp": {
 				"category": "unitary",
 				"default": "none",
@@ -722,6 +760,29 @@
 						],
 						"type": "option"
 					},
+					"data-leak-prevention": {
+						"addedIn": "v7.2.8",
+						"category": "unitary",
+						"default": "none",
+						"help": "DLP profiles and settings.",
+						"multiple_values": false,
+						"name": "data-leak-prevention",
+						"options": [
+							{
+								"help": "No access.",
+								"name": "none"
+							},
+							{
+								"help": "Read access.",
+								"name": "read"
+							},
+							{
+								"help": "Read/write access.",
+								"name": "read-write"
+							}
+						],
+						"type": "option"
+					},
 					"data-loss-prevention": {
 						"category": "unitary",
 						"default": "none",
@@ -742,6 +803,7 @@
 								"name": "read-write"
 							}
 						],
+						"removedIn": "v7.2.8",
 						"type": "option"
 					},
 					"dnsfilter": {
@@ -1013,6 +1075,7 @@
 						"name": "read-write"
 					}
 				],
+				"removedIn": "v7.2.8",
 				"type": "option"
 			},
 			"wifi": {
@@ -1045,12 +1108,13 @@
 		"mkey": "name",
 		"mkey_type": "string",
 		"name": "accprofile",
+		"object_range": "global",
 		"path": "system",
 		"q_type": 10
 	},
-	"revision": "4742d37ccd6ab38873215e20ca1fcd6b",
-	"serial": "FGTAZRIPD-OKNB34",
+	"revision": "4b6acbd1f5f2697afbaba09405050a9b",
+	"serial": "FG180FTK20900788",
 	"status": "success",
 	"vdom": "root",
-	"version": "v7.2.0"
+	"version": "v7.2.8"
 }

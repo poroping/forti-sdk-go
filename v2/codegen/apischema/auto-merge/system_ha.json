@@ -1,9 +1,9 @@
 {
 	"addedIn": "v6.2.7",
-	"build": 1157,
+	"build": 1639,
 	"http_method": "GET",
 	"http_status": 200,
-	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3,v7.0.4,v7.2.0",
+	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3,v7.0.4,v7.0.5,v7.0.6,v7.2.0,v7.2.1,v7.2.8",
 	"name": "ha",
 	"path": "system",
 	"results": {
@@ -114,7 +114,7 @@
 			"group-id": {
 				"category": "unitary",
 				"default": 0,
-				"help": "HA group ID  (0 - 1023;  or 0 - 7 when vcluster is enabled). Must be the same for all members.",
+				"help": "HA group ID  (0 - 1023;  or 0 - 7 when there are more than 2 vclusters). Must be the same for all members.",
 				"max-value": 1023,
 				"min-value": 0,
 				"multiple_values": false,
@@ -133,16 +133,16 @@
 			"ha-direct": {
 				"category": "unitary",
 				"default": "disable",
-				"help": "Enable/disable using ha-mgmt interface for syslog, SNMP, remote authentication (RADIUS), FortiAnalyzer, FortiSandbox, sFlow, and Netflow.",
+				"help": "Enable/disable using ha-mgmt interface for syslog, remote authentication (RADIUS), FortiAnalyzer, FortiSandbox, sFlow, and Netflow.",
 				"multiple_values": false,
 				"name": "ha-direct",
 				"options": [
 					{
-						"help": "Enable using ha-mgmt interface for syslog, SNMP, remote authentication (RADIUS), FortiAnalyzer, FortiSandbox, sFlow, and Netflow.",
+						"help": "Enable using ha-mgmt interface for syslog, remote authentication (RADIUS), FortiAnalyzer, FortiSandbox, sFlow, and Netflow.",
 						"name": "enable"
 					},
 					{
-						"help": "Disable using ha-mgmt interface for syslog, SNMP, remote authentication (RADIUS), FortiAnalyzer, FortiSandbox, sFlow, and Netflow.",
+						"help": "Disable using ha-mgmt interface for syslog, remote authentication (RADIUS), FortiAnalyzer, FortiSandbox, sFlow, and Netflow.",
 						"name": "disable"
 					}
 				],
@@ -275,7 +275,7 @@
 			},
 			"hb-lost-threshold": {
 				"category": "unitary",
-				"default": 20,
+				"default": 6,
 				"help": "Number of lost heartbeats to signal a failure (1 - 60). Increase to reduce false positives.",
 				"max-value": 60,
 				"min-value": 1,
@@ -633,11 +633,11 @@
 				"name": "pingserver-secondary-force-reset",
 				"options": [
 					{
-						"help": "Enable force reset of secondary after PING server failure.",
+						"help": "Enable force reset of secondary member after PING server failure.",
 						"name": "enable"
 					},
 					{
-						"help": "Disable force reset of secondary after PING server failure.",
+						"help": "Disable force reset of secondary member after PING server failure.",
 						"name": "disable"
 					}
 				],
@@ -721,10 +721,6 @@
 					{
 						"help": "None.",
 						"name": "none"
-					},
-					{
-						"help": "Hub.",
-						"name": "hub"
 					},
 					{
 						"help": "Least connection.",
@@ -1016,6 +1012,7 @@
 						"name": "disable"
 					}
 				],
+				"removedIn": "v7.2.8",
 				"type": "option"
 			},
 			"standalone-config-sync": {
@@ -1053,6 +1050,13 @@
 					}
 				],
 				"type": "option"
+			},
+			"status": {
+				"addedIn": "v7.2.1",
+				"category": "info-read-only",
+				"help": "list ha status information",
+				"name": "status",
+				"type": "key"
 			},
 			"sync-config": {
 				"category": "unitary",
@@ -1097,6 +1101,7 @@
 				"help": "Default route gateway for unicast interface.",
 				"multiple_values": false,
 				"name": "unicast-gateway",
+				"removedIn": "v7.2.8",
 				"type": "ipv4-address"
 			},
 			"unicast-hb": {
@@ -1116,6 +1121,7 @@
 						"name": "disable"
 					}
 				],
+				"removedIn": "v7.2.8",
 				"type": "option"
 			},
 			"unicast-hb-netmask": {
@@ -1125,6 +1131,7 @@
 				"help": "Unicast heartbeat netmask.",
 				"multiple_values": false,
 				"name": "unicast-hb-netmask",
+				"removedIn": "v7.2.8",
 				"type": "ipv4-netmask"
 			},
 			"unicast-hb-peerip": {
@@ -1134,6 +1141,7 @@
 				"help": "Unicast heartbeat peer IP.",
 				"multiple_values": false,
 				"name": "unicast-hb-peerip",
+				"removedIn": "v7.2.8",
 				"type": "ipv4-address"
 			},
 			"unicast-peers": {
@@ -1165,7 +1173,8 @@
 				"max_table_size_vdom": 0,
 				"mkey": "id",
 				"mkey_type": "integer",
-				"name": "unicast-peers"
+				"name": "unicast-peers",
+				"removedIn": "v7.2.8"
 			},
 			"unicast-status": {
 				"addedIn": "v7.0.0",
@@ -1184,6 +1193,7 @@
 						"name": "disable"
 					}
 				],
+				"removedIn": "v7.2.8",
 				"type": "option"
 			},
 			"uninterruptible-primary-wait": {
@@ -1281,6 +1291,25 @@
 						"name": "pingserver-monitor-interface",
 						"type": "user"
 					},
+					"pingserver-secondary-force-reset": {
+						"addedIn": "v7.2.1",
+						"category": "unitary",
+						"default": "enable",
+						"help": "Enable to force the cluster to negotiate after a remote IP monitoring failover.",
+						"multiple_values": false,
+						"name": "pingserver-secondary-force-reset",
+						"options": [
+							{
+								"help": "Enable force reset of secondary member after PING server failure.",
+								"name": "enable"
+							},
+							{
+								"help": "Disable force reset of secondary member after PING server failure.",
+								"name": "disable"
+							}
+						],
+						"type": "option"
+					},
 					"pingserver-slave-force-reset": {
 						"category": "unitary",
 						"default": "enable",
@@ -1297,6 +1326,7 @@
 								"name": "disable"
 							}
 						],
+						"removedIn": "v7.2.1",
 						"type": "option"
 					},
 					"priority": {
@@ -1425,12 +1455,13 @@
 		"help": "Configure HA.",
 		"multiple_values": false,
 		"name": "ha",
+		"object_range": "global",
 		"path": "system",
 		"q_type": 5
 	},
-	"revision": "5aaca7175b5b74c5babe5981f58baa16",
-	"serial": "FGTAZRIPD-OKNB34",
+	"revision": "ef40198bb2e221d97193a7eda250843c",
+	"serial": "FG180FTK20900788",
 	"status": "success",
 	"vdom": "root",
-	"version": "v7.2.0"
+	"version": "v7.2.8"
 }

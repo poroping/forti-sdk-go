@@ -1,9 +1,9 @@
 {
 	"addedIn": "v6.2.7",
-	"build": 1157,
+	"build": 1639,
 	"http_method": "GET",
 	"http_status": 200,
-	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3,v7.0.4,v7.2.0",
+	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3,v7.0.4,v7.0.5,v7.0.6,v7.2.0,v7.2.1,v7.2.8",
 	"name": "managed-switch",
 	"path": "switch-controller",
 	"results": {
@@ -94,7 +94,7 @@
 						"default": 30,
 						"help": "802.1X Tx period (seconds, default=30).",
 						"max-value": 60,
-						"min-value": 4,
+						"min-value": 12,
 						"multiple_values": false,
 						"name": "tx-period",
 						"type": "integer"
@@ -191,6 +191,69 @@
 					}
 				],
 				"type": "option"
+			},
+			"dhcp-snooping-static-client": {
+				"addedIn": "v7.2.8",
+				"category": "table",
+				"children": {
+					"ip": {
+						"category": "unitary",
+						"default": "0.0.0.0",
+						"help": "Client static IP address.",
+						"multiple_values": false,
+						"name": "ip",
+						"required": true,
+						"type": "ipv4-address"
+					},
+					"mac": {
+						"category": "unitary",
+						"default": "00:00:00:00:00:00",
+						"help": "Client MAC address.",
+						"multiple_values": false,
+						"name": "mac",
+						"required": true,
+						"type": "mac-address"
+					},
+					"name": {
+						"category": "unitary",
+						"default": "",
+						"help": "Client name.",
+						"multiple_values": false,
+						"name": "name",
+						"size": 35,
+						"type": "string"
+					},
+					"port": {
+						"category": "unitary",
+						"default": "",
+						"help": "Interface name.",
+						"multiple_values": false,
+						"name": "port",
+						"required": true,
+						"size": 15,
+						"type": "string"
+					},
+					"vlan": {
+						"category": "unitary",
+						"datasource": [
+							"system.interface.name"
+						],
+						"default": "",
+						"help": "VLAN name.",
+						"multiple_values": false,
+						"name": "vlan",
+						"required": true,
+						"size": 15,
+						"type": "string"
+					}
+				},
+				"help": "Configure FortiSwitch DHCP snooping static clients.",
+				"max_table_size_global": 0,
+				"max_table_size_item": 0,
+				"max_table_size_vdom": 0,
+				"mkey": "name",
+				"mkey_type": "string",
+				"name": "dhcp-snooping-static-client"
 			},
 			"directly-connected": {
 				"category": "unitary",
@@ -1257,6 +1320,25 @@
 						"removedIn": "v6.4.0",
 						"type": "option"
 					},
+					"igmp-snooping-flood-reports": {
+						"addedIn": "v7.2.1",
+						"category": "unitary",
+						"default": "disable",
+						"help": "Enable/disable flooding of IGMP reports to this interface when igmp-snooping enabled.",
+						"multiple_values": false,
+						"name": "igmp-snooping-flood-reports",
+						"options": [
+							{
+								"help": "Enable flooding of IGMP snooping reports to this interface.",
+								"name": "enable"
+							},
+							{
+								"help": "Disable flooding of IGMP snooping reports to this interface.",
+								"name": "disable"
+							}
+						],
+						"type": "option"
+					},
 					"igmps-flood-reports": {
 						"category": "unitary",
 						"default": "disable",
@@ -1273,6 +1355,7 @@
 								"name": "disable"
 							}
 						],
+						"removedIn": "v7.2.1",
 						"type": "option"
 					},
 					"igmps-flood-traffic": {
@@ -1291,6 +1374,7 @@
 								"name": "disable"
 							}
 						],
+						"removedIn": "v7.2.1",
 						"type": "option"
 					},
 					"interface-tags": {
@@ -1500,6 +1584,25 @@
 						"name": "max-bundle",
 						"type": "integer"
 					},
+					"mcast-snooping-flood-traffic": {
+						"addedIn": "v7.2.1",
+						"category": "unitary",
+						"default": "disable",
+						"help": "Enable/disable flooding of IGMP snooping traffic to this interface.",
+						"multiple_values": false,
+						"name": "mcast-snooping-flood-traffic",
+						"options": [
+							{
+								"help": "Enable flooding of IGMP snooping traffic to this interface.",
+								"name": "enable"
+							},
+							{
+								"help": "Disable flooding of IGMP snooping traffic to this interface.",
+								"name": "disable"
+							}
+						],
+						"type": "option"
+					},
 					"mclag": {
 						"category": "unitary",
 						"default": "disable",
@@ -1708,6 +1811,90 @@
 						"readonly": true,
 						"size": 35,
 						"type": "string"
+					},
+					"poe-mode-bt-cabable": {
+						"addedIn": "v7.2.8",
+						"category": "unitary",
+						"default": 0,
+						"help": "PoE mode IEEE 802.3BT capable.",
+						"max-value": 1,
+						"min-value": 0,
+						"multiple_values": false,
+						"name": "poe-mode-bt-cabable",
+						"type": "integer"
+					},
+					"poe-port-mode": {
+						"addedIn": "v7.2.8",
+						"category": "unitary",
+						"default": "ieee802-3at",
+						"help": "Configure PoE port mode.",
+						"multiple_values": false,
+						"name": "poe-port-mode",
+						"options": [
+							{
+								"help": "IEEE802.3 AF.",
+								"name": "ieee802-3af"
+							},
+							{
+								"help": "IEEE802.3 AT.",
+								"name": "ieee802-3at"
+							},
+							{
+								"help": "IEEE802.3 BT.",
+								"name": "ieee802-3bt"
+							}
+						],
+						"type": "option"
+					},
+					"poe-port-power": {
+						"addedIn": "v7.2.8",
+						"category": "unitary",
+						"default": "normal",
+						"help": "Configure PoE port power.",
+						"multiple_values": false,
+						"name": "poe-port-power",
+						"options": [
+							{
+								"help": "Power not delivered during boot.",
+								"name": "normal"
+							},
+							{
+								"help": "Power delivered during soft reboot.",
+								"name": "perpetual"
+							},
+							{
+								"help": "Early power delivered during cold boot.",
+								"name": "perpetual-fast"
+							}
+						],
+						"type": "option"
+					},
+					"poe-port-priority": {
+						"addedIn": "v7.2.8",
+						"category": "unitary",
+						"default": "low-priority",
+						"help": "Configure PoE port priority.",
+						"multiple_values": false,
+						"name": "poe-port-priority",
+						"options": [
+							{
+								"help": "Critical Priority.",
+								"name": "critical-priority"
+							},
+							{
+								"help": "High Priority.",
+								"name": "high-priority"
+							},
+							{
+								"help": "Low Priority.",
+								"name": "low-priority"
+							},
+							{
+								"help": "Medium Priority.",
+								"name": "medium-priority"
+							}
+						],
+						"type": "option"
 					},
 					"poe-pre-standard-detection": {
 						"category": "unitary",
@@ -1956,28 +2143,28 @@
 								"name": "100full"
 							},
 							{
-								"help": "Auto-negotiation (1G full-duplex only).",
-								"name": "1000auto"
-							},
-							{
-								"help": "1G full-duplex (fiber SFPs only)",
-								"name": "1000fiber"
-							},
-							{
 								"help": "1G full-duplex",
 								"name": "1000full"
 							},
 							{
 								"help": "10G full-duplex",
-								"name": "10000"
-							},
-							{
-								"help": "40G full-duplex",
-								"name": "40000"
+								"name": "10000full"
 							},
 							{
 								"help": "Auto-negotiation.",
 								"name": "auto"
+							},
+							{
+								"help": "Auto-negotiation (1G full-duplex only).",
+								"name": "1000auto"
+							},
+							{
+								"help": "1G full-duplex (fiber SFPs only)",
+								"name": "1000full-fiber"
+							},
+							{
+								"help": "40G full-duplex",
+								"name": "40000full"
 							},
 							{
 								"help": "Auto Module.",
@@ -1998,6 +2185,10 @@
 							{
 								"help": "Auto-Negotiation (2.5Gbps Only).",
 								"name": "2500auto"
+							},
+							{
+								"help": "2.5Gbps full-duplex.",
+								"name": "2500full"
 							},
 							{
 								"help": "25Gbps full-duplex.",
@@ -2024,16 +2215,36 @@
 								"name": "100000cr4"
 							},
 							{
+								"help": "40Gbps SFI interface.",
+								"name": "40000sr4"
+							},
+							{
+								"help": "40Gbps copper interface.",
+								"name": "40000cr4"
+							},
+							{
+								"help": "Auto-Negotiation (40Gbps Only).",
+								"name": "40000auto"
+							},
+							{
 								"help": "25Gbps copper interface.",
-								"name": "25000cr4"
+								"name": "25000cr"
 							},
 							{
 								"help": "25Gbps SFI interface.",
-								"name": "25000sr4"
+								"name": "25000sr"
+							},
+							{
+								"help": "50Gbps copper interface.",
+								"name": "50000cr"
+							},
+							{
+								"help": "50Gbps SFI interface.",
+								"name": "50000sr"
 							},
 							{
 								"help": "5Gbps full-duplex.",
-								"name": "5000full"
+								"name": "5000auto"
 							}
 						],
 						"type": "option"
@@ -3541,16 +3752,17 @@
 		"help": "Configure FortiSwitch devices that are managed by this FortiGate.",
 		"max_table_size_global": 0,
 		"max_table_size_item": 0,
-		"max_table_size_vdom": 300,
+		"max_table_size_vdom": 196,
 		"mkey": "switch-id",
 		"mkey_type": "string",
 		"name": "managed-switch",
+		"object_range": "vdom",
 		"path": "switch-controller",
-		"q_type": 309
+		"q_type": 316
 	},
-	"revision": "f7f9f0c7010a0528b972ed831ae64831",
-	"serial": "FGTAZRIPD-OKNB34",
+	"revision": "2131c48edd53df0aa10b0be32545dfe1",
+	"serial": "FG180FTK20900788",
 	"status": "success",
 	"vdom": "root",
-	"version": "v7.2.0"
+	"version": "v7.2.8"
 }

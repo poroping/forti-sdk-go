@@ -10,6 +10,7 @@ type WirelessControllerVap struct {
 	AddressGroupPolicy                  *string                                         `json:"address-group-policy,omitempty"`
 	AntivirusProfile                    *string                                         `json:"antivirus-profile,omitempty"`
 	ApplicationDetectionEngine          *string                                         `json:"application-detection-engine,omitempty"`
+	ApplicationDscpMarking              *string                                         `json:"application-dscp-marking,omitempty"`
 	ApplicationList                     *string                                         `json:"application-list,omitempty"`
 	ApplicationReportIntv               *int64                                          `json:"application-report-intv,omitempty"`
 	AtfWeight                           *int64                                          `json:"atf-weight,omitempty"`
@@ -25,6 +26,7 @@ type WirelessControllerVap struct {
 	BstmRssiDisassocTimer               *int64                                          `json:"bstm-rssi-disassoc-timer,omitempty"`
 	CaptivePortalAcName                 *string                                         `json:"captive-portal-ac-name,omitempty"`
 	CaptivePortalAuthTimeout            *int64                                          `json:"captive-portal-auth-timeout,omitempty"`
+	CaptivePortalFwAccounting           *string                                         `json:"captive-portal-fw-accounting,omitempty"`
 	CaptivePortalMacauthRadiusSecret    *string                                         `json:"captive-portal-macauth-radius-secret,omitempty"`
 	CaptivePortalMacauthRadiusServer    *string                                         `json:"captive-portal-macauth-radius-server,omitempty"`
 	CaptivePortalRadiusSecret           *string                                         `json:"captive-portal-radius-secret,omitempty"`
@@ -64,6 +66,7 @@ type WirelessControllerVap struct {
 	Key                                 *string                                         `json:"key,omitempty"`
 	Keyindex                            *int64                                          `json:"keyindex,omitempty"`
 	L3Roaming                           *string                                         `json:"l3-roaming,omitempty"`
+	L3RoamingMode                       *string                                         `json:"l3-roaming-mode,omitempty"`
 	Ldpc                                *string                                         `json:"ldpc,omitempty"`
 	LocalAuthentication                 *string                                         `json:"local-authentication,omitempty"`
 	LocalBridging                       *string                                         `json:"local-bridging,omitempty"`
@@ -124,21 +127,27 @@ type WirelessControllerVap struct {
 	Radio5gThreshold                    *string                                         `json:"radio-5g-threshold,omitempty"`
 	RadioSensitivity                    *string                                         `json:"radio-sensitivity,omitempty"`
 	RadiusMacAuth                       *string                                         `json:"radius-mac-auth,omitempty"`
+	RadiusMacAuthBlockInterval          *int64                                          `json:"radius-mac-auth-block-interval,omitempty"`
 	RadiusMacAuthServer                 *string                                         `json:"radius-mac-auth-server,omitempty"`
 	RadiusMacAuthUsergroups             *[]WirelessControllerVapRadiusMacAuthUsergroups `json:"radius-mac-auth-usergroups,omitempty"`
 	RadiusMacMpskAuth                   *string                                         `json:"radius-mac-mpsk-auth,omitempty"`
 	RadiusMacMpskTimeout                *int64                                          `json:"radius-mac-mpsk-timeout,omitempty"`
 	RadiusServer                        *string                                         `json:"radius-server,omitempty"`
 	Rates11a                            *string                                         `json:"rates-11a,omitempty"`
+	Rates11acMcsMap                     *string                                         `json:"rates-11ac-mcs-map,omitempty"`
 	Rates11acSs12                       *string                                         `json:"rates-11ac-ss12,omitempty"`
 	Rates11acSs34                       *string                                         `json:"rates-11ac-ss34,omitempty"`
+	Rates11axMcsMap                     *string                                         `json:"rates-11ax-mcs-map,omitempty"`
 	Rates11axSs12                       *string                                         `json:"rates-11ax-ss12,omitempty"`
 	Rates11axSs34                       *string                                         `json:"rates-11ax-ss34,omitempty"`
 	Rates11bg                           *string                                         `json:"rates-11bg,omitempty"`
 	Rates11nSs12                        *string                                         `json:"rates-11n-ss12,omitempty"`
 	Rates11nSs34                        *string                                         `json:"rates-11n-ss34,omitempty"`
 	SaeGroups                           *string                                         `json:"sae-groups,omitempty"`
+	SaeH2eOnly                          *string                                         `json:"sae-h2e-only,omitempty"`
 	SaePassword                         *string                                         `json:"sae-password,omitempty"`
+	SaePk                               *string                                         `json:"sae-pk,omitempty"`
+	SaePrivateKey                       *string                                         `json:"sae-private-key,omitempty"`
 	ScanBotnetConnections               *string                                         `json:"scan-botnet-connections,omitempty"`
 	Schedule                            *[]WirelessControllerVapSchedule                `json:"schedule,omitempty"`
 	SecondaryWagProfile                 *string                                         `json:"secondary-wag-profile,omitempty"`
@@ -151,6 +160,7 @@ type WirelessControllerVap struct {
 	StickyClientRemove                  *string                                         `json:"sticky-client-remove,omitempty"`
 	StickyClientThreshold2g             *string                                         `json:"sticky-client-threshold-2g,omitempty"`
 	StickyClientThreshold5g             *string                                         `json:"sticky-client-threshold-5g,omitempty"`
+	StickyClientThreshold6g             *string                                         `json:"sticky-client-threshold-6g,omitempty"`
 	TargetWakeTime                      *string                                         `json:"target-wake-time,omitempty"`
 	TkipCounterMeasure                  *string                                         `json:"tkip-counter-measure,omitempty"`
 	TunnelEchoInterval                  *int64                                          `json:"tunnel-echo-interval,omitempty"`

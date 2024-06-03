@@ -11,9 +11,11 @@ type WebProxyGlobal struct {
 	LearnClientIpFromHeader      *string                                `json:"learn-client-ip-from-header,omitempty"`
 	LearnClientIpSrcaddr         *[]WebProxyGlobalLearnClientIpSrcaddr  `json:"learn-client-ip-srcaddr,omitempty"`
 	LearnClientIpSrcaddr6        *[]WebProxyGlobalLearnClientIpSrcaddr6 `json:"learn-client-ip-srcaddr6,omitempty"`
+	LogPolicyPending             *string                                `json:"log-policy-pending,omitempty"`
 	MaxMessageLength             *int64                                 `json:"max-message-length,omitempty"`
 	MaxRequestLength             *int64                                 `json:"max-request-length,omitempty"`
 	MaxWafBodyCacheLength        *int64                                 `json:"max-waf-body-cache-length,omitempty"`
+	PolicyCategoryDeepInspect    *string                                `json:"policy-category-deep-inspect,omitempty"`
 	ProxyFqdn                    *string                                `json:"proxy-fqdn,omitempty"`
 	SrcAffinityExemptAddr        *string                                `json:"src-affinity-exempt-addr,omitempty"`
 	SrcAffinityExemptAddr6       *string                                `json:"src-affinity-exempt-addr6,omitempty"`

@@ -13,7 +13,7 @@ type RouterBgp struct {
 	AggregateAddress                *[]RouterBgpAggregateAddress   `json:"aggregate-address,omitempty"`
 	AggregateAddress6               *[]RouterBgpAggregateAddress6  `json:"aggregate-address6,omitempty"`
 	AlwaysCompareMed                *string                        `json:"always-compare-med,omitempty"`
-	As                              *int64                         `json:"as,omitempty"`
+	As                              *string                        `json:"as,omitempty"`
 	BestpathAsPathIgnore            *string                        `json:"bestpath-as-path-ignore,omitempty"`
 	BestpathCmpConfedAspath         *string                        `json:"bestpath-cmp-confed-aspath,omitempty"`
 	BestpathCmpRouterid             *string                        `json:"bestpath-cmp-routerid,omitempty"`
@@ -56,6 +56,7 @@ type RouterBgp struct {
 	Network                         *[]RouterBgpNetwork            `json:"network,omitempty"`
 	NetworkImportCheck              *string                        `json:"network-import-check,omitempty"`
 	Network6                        *[]RouterBgpNetwork6           `json:"network6,omitempty"`
+	RecursiveInheritPriority        *string                        `json:"recursive-inherit-priority,omitempty"`
 	RecursiveNextHop                *string                        `json:"recursive-next-hop,omitempty"`
 	Redistribute                    *[]RouterBgpRedistribute       `json:"redistribute,omitempty"`
 	Redistribute6                   *[]RouterBgpRedistribute6      `json:"redistribute6,omitempty"`
@@ -149,7 +150,7 @@ type RouterBgpNeighbor struct {
 	Ip                             *string                                   `json:"ip,omitempty"`
 	KeepAliveTimer                 *int64                                    `json:"keep-alive-timer,omitempty"`
 	LinkDownFailover               *string                                   `json:"link-down-failover,omitempty"`
-	LocalAs                        *int64                                    `json:"local-as,omitempty"`
+	LocalAs                        *string                                   `json:"local-as,omitempty"`
 	LocalAsNoPrepend               *string                                   `json:"local-as-no-prepend,omitempty"`
 	LocalAsReplaceAs               *string                                   `json:"local-as-replace-as,omitempty"`
 	MaximumPrefix                  *int64                                    `json:"maximum-prefix,omitempty"`
@@ -175,7 +176,7 @@ type RouterBgpNeighbor struct {
 	PrefixListOut                  *string                                   `json:"prefix-list-out,omitempty"`
 	PrefixListOutVpnv4             *string                                   `json:"prefix-list-out-vpnv4,omitempty"`
 	PrefixListOut6                 *string                                   `json:"prefix-list-out6,omitempty"`
-	RemoteAs                       *int64                                    `json:"remote-as,omitempty"`
+	RemoteAs                       *string                                   `json:"remote-as,omitempty"`
 	RemovePrivateAs                *string                                   `json:"remove-private-as,omitempty"`
 	RemovePrivateAsVpnv4           *string                                   `json:"remove-private-as-vpnv4,omitempty"`
 	RemovePrivateAs6               *string                                   `json:"remove-private-as6,omitempty"`
@@ -283,7 +284,7 @@ type RouterBgpNeighborGroup struct {
 	Interface                      *string `json:"interface,omitempty"`
 	KeepAliveTimer                 *int64  `json:"keep-alive-timer,omitempty"`
 	LinkDownFailover               *string `json:"link-down-failover,omitempty"`
-	LocalAs                        *int64  `json:"local-as,omitempty"`
+	LocalAs                        *string `json:"local-as,omitempty"`
 	LocalAsNoPrepend               *string `json:"local-as-no-prepend,omitempty"`
 	LocalAsReplaceAs               *string `json:"local-as-replace-as,omitempty"`
 	MaximumPrefix                  *int64  `json:"maximum-prefix,omitempty"`
@@ -303,13 +304,14 @@ type RouterBgpNeighborGroup struct {
 	NextHopSelf6                   *string `json:"next-hop-self6,omitempty"`
 	OverrideCapability             *string `json:"override-capability,omitempty"`
 	Passive                        *string `json:"passive,omitempty"`
+	Password                       *string `json:"password,omitempty"`
 	PrefixListIn                   *string `json:"prefix-list-in,omitempty"`
 	PrefixListInVpnv4              *string `json:"prefix-list-in-vpnv4,omitempty"`
 	PrefixListIn6                  *string `json:"prefix-list-in6,omitempty"`
 	PrefixListOut                  *string `json:"prefix-list-out,omitempty"`
 	PrefixListOutVpnv4             *string `json:"prefix-list-out-vpnv4,omitempty"`
 	PrefixListOut6                 *string `json:"prefix-list-out6,omitempty"`
-	RemoteAs                       *int64  `json:"remote-as,omitempty"`
+	RemoteAs                       *string `json:"remote-as,omitempty"`
 	RemovePrivateAs                *string `json:"remove-private-as,omitempty"`
 	RemovePrivateAsVpnv4           *string `json:"remove-private-as-vpnv4,omitempty"`
 	RemovePrivateAs6               *string `json:"remove-private-as6,omitempty"`
@@ -405,15 +407,15 @@ type RouterBgpVrfImportRt struct {
 	RouteTarget *string `json:"route-target,omitempty"`
 }
 
+type RouterBgpVrfLeak struct {
+	Target *[]RouterBgpVrfLeakTarget `json:"target,omitempty"`
+	Vrf    *string                   `json:"vrf,omitempty"`
+}
+
 type RouterBgpVrfLeakTarget struct {
 	Interface *string `json:"interface,omitempty"`
 	RouteMap  *string `json:"route-map,omitempty"`
 	Vrf       *string `json:"vrf,omitempty"`
-}
-
-type RouterBgpVrfLeak struct {
-	Target *[]RouterBgpVrfLeakTarget `json:"target,omitempty"`
-	Vrf    *string                   `json:"vrf,omitempty"`
 }
 
 type RouterBgpVrfLeak6 struct {

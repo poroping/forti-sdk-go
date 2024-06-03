@@ -3,6 +3,7 @@ package models
 const SystemSnmpSysinfoPath = "system.snmp/sysinfo/"
 
 type SystemSnmpSysinfo struct {
+	AppendIndex            *string `json:"append-index,omitempty"`
 	ContactInfo            *string `json:"contact-info,omitempty"`
 	Description            *string `json:"description,omitempty"`
 	EngineId               *string `json:"engine-id,omitempty"`

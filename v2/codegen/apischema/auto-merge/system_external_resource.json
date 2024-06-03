@@ -1,9 +1,9 @@
 {
 	"addedIn": "v6.2.7",
-	"build": 1157,
+	"build": 1639,
 	"http_method": "GET",
 	"http_status": 200,
-	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3,v7.0.4,v7.2.0",
+	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3,v7.0.4,v7.0.5,v7.0.6,v7.2.0,v7.2.1,v7.2.8",
 	"name": "external-resource",
 	"path": "system",
 	"results": {
@@ -104,6 +104,29 @@
 				"size": 511,
 				"type": "string"
 			},
+			"server-identity-check": {
+				"addedIn": "v7.2.8",
+				"category": "unitary",
+				"default": "none",
+				"help": "Certificate verification option.",
+				"multiple_values": false,
+				"name": "server-identity-check",
+				"options": [
+					{
+						"help": "No certificate verification.",
+						"name": "none"
+					},
+					{
+						"help": "Check server certifcate only.",
+						"name": "basic"
+					},
+					{
+						"help": "Check server certificate and verify the domain matches in the server certificate.",
+						"name": "full"
+					}
+				],
+				"type": "option"
+			},
 			"source-ip": {
 				"category": "unitary",
 				"default": "0.0.0.0",
@@ -156,6 +179,25 @@
 				],
 				"type": "option"
 			},
+			"update-method": {
+				"addedIn": "v7.2.1",
+				"category": "unitary",
+				"default": "feed",
+				"help": "External resource update method.",
+				"multiple_values": false,
+				"name": "update-method",
+				"options": [
+					{
+						"help": "FortiGate unit will pull update from the external resource.",
+						"name": "feed"
+					},
+					{
+						"help": "External Resource update is pushed to the FortiGate unit through the FortiGate unit's RESTAPI/CLI.",
+						"name": "push"
+					}
+				],
+				"type": "option"
+			},
 			"user-agent": {
 				"addedIn": "v6.4.2",
 				"category": "unitary",
@@ -164,8 +206,8 @@
 				"multiple_values": false,
 				"name": "user-agent",
 				"required": true,
-				"size": 127,
-				"type": "string"
+				"size": 255,
+				"type": "var-string"
 			},
 			"username": {
 				"category": "unitary",
@@ -193,12 +235,13 @@
 		"mkey": "name",
 		"mkey_type": "string",
 		"name": "external-resource",
+		"object_range": "global-vdom",
 		"path": "system",
-		"q_type": 521
+		"q_type": 534
 	},
-	"revision": "f7f9f0c7010a0528b972ed831ae64831",
-	"serial": "FGTAZRIPD-OKNB34",
+	"revision": "7587c9cba85a9426cdcc19e047db6b42",
+	"serial": "FG180FTK20900788",
 	"status": "success",
 	"vdom": "root",
-	"version": "v7.2.0"
+	"version": "v7.2.8"
 }

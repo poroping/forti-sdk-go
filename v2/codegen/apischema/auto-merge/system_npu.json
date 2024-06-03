@@ -1,10 +1,10 @@
 {
 	"FullPath": null,
 	"addedIn": "v6.2.7",
-	"build": 234,
+	"build": 1639,
 	"http_method": "GET",
 	"http_status": 200,
-	"mergedVersions": "v6.2.7,v6.4.6,v7.0.2",
+	"mergedVersions": "v6.2.7,v6.4.6,v7.0.2,v7.2.8",
 	"name": "npu",
 	"path": "system",
 	"removedIn": "v6.4.0",
@@ -34,7 +34,8 @@
 				"addedIn": "v7.0.2",
 				"category": "unitary",
 				"default": "1",
-				"help": "Affinity setting for management deamons (hexadecimal value up to 256 bits in the format of xxxxxxxxxxxxxxxx).",
+				"help": "Affinity setting for management daemons (hexadecimal value up to 256 bits in the format of xxxxxxxxxxxxxxxx).",
+				"multiple_values": false,
 				"name": "dedicated-management-affinity",
 				"size": 79,
 				"type": "string"
@@ -72,6 +73,10 @@
 					{
 						"help": "QoS type shaping.",
 						"name": "shaping"
+					},
+					{
+						"help": "Enhanced QoS type policing.",
+						"name": "policing-enhanced"
 					}
 				],
 				"removedIn": "v7.0.2",
@@ -84,16 +89,16 @@
 					"npu-dos-meter-mode": {
 						"category": "unitary",
 						"default": "global",
-						"help": "Set DoS meter npu offloading mode.",
+						"help": "Set DoS meter NPU offloading mode.",
 						"multiple_values": false,
 						"name": "npu-dos-meter-mode",
 						"options": [
 							{
-								"help": "install dos meter to all nps.",
+								"help": "Install DoS meter to all NPs.",
 								"name": "global"
 							},
 							{
-								"help": "install dos meter to the np which traffic goes.",
+								"help": "Install DoS meter only to the NP assigned to the traffic.",
 								"name": "local"
 							}
 						],
@@ -102,16 +107,16 @@
 					"npu-dos-tpe-mode": {
 						"category": "unitary",
 						"default": "enable",
-						"help": "Enable/Disable inserting DoS meter id to session table.",
+						"help": "Enable/disable insertion of DoS meter ID to session table.",
 						"multiple_values": false,
 						"name": "npu-dos-tpe-mode",
 						"options": [
 							{
-								"help": "insert dos meter id to session table.",
+								"help": "Enable insertion of DoS meter ID to session table.",
 								"name": "enable"
 							},
 							{
-								"help": "don't insert dos meter id to session table.",
+								"help": "Disable insertion of DoS meter ID to session table.",
 								"name": "disable"
 							}
 						],
@@ -203,6 +208,7 @@
 						"help": "Set NPU DSW DTS profile min-limt.",
 						"max-value": 2048,
 						"min-value": 32,
+						"multiple_values": false,
 						"name": "min-limit",
 						"required": true,
 						"type": "integer"
@@ -213,6 +219,7 @@
 						"help": "Set NPU DSW DTS profile profile id.",
 						"max-value": 32,
 						"min-value": 1,
+						"multiple_values": false,
 						"name": "profile-id",
 						"required": true,
 						"type": "integer"
@@ -223,6 +230,7 @@
 						"help": "Set NPU DSW DTS profile step.",
 						"max-value": 64,
 						"min-value": 0,
+						"multiple_values": false,
 						"name": "step",
 						"required": true,
 						"type": "integer"
@@ -243,134 +251,134 @@
 				"children": {
 					"iport": {
 						"category": "unitary",
-						"default": "EIF0",
+						"default": "eif0",
 						"help": "Set NPU DSW DTS in port.",
 						"multiple_values": false,
 						"name": "iport",
 						"options": [
 							{
 								"help": "DSW IPORT EIF0.",
-								"name": "EIF0"
+								"name": "eif0"
 							},
 							{
 								"help": "DSW IPORT EIF1.",
-								"name": "EIF1"
+								"name": "eif1"
 							},
 							{
 								"help": "DSW IPORT EIF2.",
-								"name": "EIF2"
+								"name": "eif2"
 							},
 							{
 								"help": "DSW IPORT EIF3.",
-								"name": "EIF3"
+								"name": "eif3"
 							},
 							{
 								"help": "DSW IPORT EIF4.",
-								"name": "EIF4"
+								"name": "eif4"
 							},
 							{
 								"help": "DSW IPORT EIF5.",
-								"name": "EIF5"
+								"name": "eif5"
 							},
 							{
 								"help": "DSW IPORT EIF6.",
-								"name": "EIF6"
+								"name": "eif6"
 							},
 							{
 								"help": "DSW IPORT EIF7.",
-								"name": "EIF7"
+								"name": "eif7"
 							},
 							{
 								"help": "DSW IPORT HTX0.",
-								"name": "HTX0"
+								"name": "htx0"
 							},
 							{
 								"help": "DSW IPORT HTX1.",
-								"name": "HTX1"
+								"name": "htx1"
 							},
 							{
 								"help": "DSW IPORT SSE0.",
-								"name": "SSE0"
+								"name": "sse0"
 							},
 							{
 								"help": "DSW IPORT SSE1.",
-								"name": "SSE1"
+								"name": "sse1"
 							},
 							{
 								"help": "DSW IPORT SSE2.",
-								"name": "SSE2"
+								"name": "sse2"
 							},
 							{
 								"help": "DSW IPORT SSE3.",
-								"name": "SSE3"
+								"name": "sse3"
 							},
 							{
 								"help": "DSW IPORT RLT.",
-								"name": "RLT"
+								"name": "rlt"
 							},
 							{
 								"help": "DSW IPORT DFR.",
-								"name": "DFR"
+								"name": "dfr"
 							},
 							{
 								"help": "DSW IPORT IPSECI.",
-								"name": "IPSECI"
+								"name": "ipseci"
 							},
 							{
 								"help": "DSW IPORT IPSECO.",
-								"name": "IPSECO"
+								"name": "ipseco"
 							},
 							{
 								"help": "DSW IPORT IPTI.",
-								"name": "IPTI"
+								"name": "ipti"
 							},
 							{
 								"help": "DSW IPORT IPTO.",
-								"name": "IPTO"
+								"name": "ipto"
 							},
 							{
 								"help": "DSW IPORT VEP0.",
-								"name": "VEP0"
+								"name": "vep0"
 							},
 							{
 								"help": "DSW IPORT VEP2.",
-								"name": "VEP2"
+								"name": "vep2"
 							},
 							{
 								"help": "DSW IPORT VEP4.",
-								"name": "VEP4"
+								"name": "vep4"
 							},
 							{
 								"help": "DSW IPORT VEP6.",
-								"name": "VEP6"
+								"name": "vep6"
 							},
 							{
 								"help": "DSW IPORT IVS.",
-								"name": "IVS"
+								"name": "ivs"
 							},
 							{
 								"help": "DSW IPORT L2TI1.",
-								"name": "L2TI1"
+								"name": "l2ti1"
 							},
 							{
 								"help": "DSW IPORT L2TO.",
-								"name": "L2TO"
+								"name": "l2to"
 							},
 							{
 								"help": "DSW IPORT L2TI0.",
-								"name": "L2TI0"
+								"name": "l2ti0"
 							},
 							{
 								"help": "DSW IPORT PLE.",
-								"name": "PLE"
+								"name": "ple"
 							},
 							{
 								"help": "DSW IPORT SPATH.",
-								"name": "SPATH"
+								"name": "spath"
 							},
 							{
 								"help": "DSW IPORT QTM.",
-								"name": "QTM"
+								"name": "qtm"
 							}
 						],
 						"required": true,
@@ -380,6 +388,7 @@
 						"category": "unitary",
 						"default": "",
 						"help": "Name.",
+						"multiple_values": false,
 						"name": "name",
 						"required": true,
 						"size": 35,
@@ -387,138 +396,138 @@
 					},
 					"oport": {
 						"category": "unitary",
-						"default": "EIF0",
+						"default": "eif0",
 						"help": "Set NPU DSW DTS out port.",
 						"multiple_values": false,
 						"name": "oport",
 						"options": [
 							{
 								"help": "DSW OPORT EIF0.",
-								"name": "EIF0"
+								"name": "eif0"
 							},
 							{
 								"help": "DSW OPORT EIF1.",
-								"name": "EIF1"
+								"name": "eif1"
 							},
 							{
 								"help": "DSW OPORT EIF2.",
-								"name": "EIF2"
+								"name": "eif2"
 							},
 							{
 								"help": "DSW OPORT EIF3.",
-								"name": "EIF3"
+								"name": "eif3"
 							},
 							{
 								"help": "DSW OPORT EIF4.",
-								"name": "EIF4"
+								"name": "eif4"
 							},
 							{
 								"help": "DSW OPORT EIF5.",
-								"name": "EIF5"
+								"name": "eif5"
 							},
 							{
 								"help": "DSW OPORT EIF6.",
-								"name": "EIF6"
+								"name": "eif6"
 							},
 							{
 								"help": "DSW OPORT EIF7.",
-								"name": "EIF7"
+								"name": "eif7"
 							},
 							{
 								"help": "DSW OPORT HRX.",
-								"name": "HRX"
+								"name": "hrx"
 							},
 							{
 								"help": "DSW OPORT SSE0.",
-								"name": "SSE0"
+								"name": "sse0"
 							},
 							{
 								"help": "DSW OPORT SSE1.",
-								"name": "SSE1"
+								"name": "sse1"
 							},
 							{
 								"help": "DSW OPORT SSE2.",
-								"name": "SSE2"
+								"name": "sse2"
 							},
 							{
 								"help": "DSW OPORT SSE3.",
-								"name": "SSE3"
+								"name": "sse3"
 							},
 							{
 								"help": "DSW OPORT RLT.",
-								"name": "RLT"
+								"name": "rlt"
 							},
 							{
 								"help": "DSW OPORT DFR.",
-								"name": "DFR"
+								"name": "dfr"
 							},
 							{
 								"help": "DSW OPORT IPSECI.",
-								"name": "IPSECI"
+								"name": "ipseci"
 							},
 							{
 								"help": "DSW OPORT IPSECO.",
-								"name": "IPSECO"
+								"name": "ipseco"
 							},
 							{
 								"help": "DSW OPORT IPTI.",
-								"name": "IPTI"
+								"name": "ipti"
 							},
 							{
 								"help": "DSW OPORT IPTO.",
-								"name": "IPTO"
+								"name": "ipto"
 							},
 							{
 								"help": "DSW OPORT VEP0.",
-								"name": "VEP0"
+								"name": "vep0"
 							},
 							{
 								"help": "DSW OPORT VEP2.",
-								"name": "VEP2"
+								"name": "vep2"
 							},
 							{
 								"help": "DSW OPORT VEP4.",
-								"name": "VEP4"
+								"name": "vep4"
 							},
 							{
 								"help": "DSW OPORT VEP6.",
-								"name": "VEP6"
+								"name": "vep6"
 							},
 							{
 								"help": "DSW OPORT IVS.",
-								"name": "IVS"
+								"name": "ivs"
 							},
 							{
 								"help": "DSW OPORT L2TI1.",
-								"name": "L2TI1"
+								"name": "l2ti1"
 							},
 							{
 								"help": "DSW OPORT L2TO.",
-								"name": "L2TO"
+								"name": "l2to"
 							},
 							{
 								"help": "DSW OPORT L2TI0.",
-								"name": "L2TI0"
+								"name": "l2ti0"
 							},
 							{
 								"help": "DSW OPORT PLE.",
-								"name": "PLE"
+								"name": "ple"
 							},
 							{
 								"help": "DSW OPORT SYNK.",
-								"name": "SYNK"
+								"name": "sync"
 							},
 							{
 								"help": "DSW OPORT NSS.",
-								"name": "NSS"
+								"name": "nss"
 							},
 							{
 								"help": "DSW OPORT TSK.",
-								"name": "TSK"
+								"name": "tsk"
 							},
 							{
 								"help": "DSW OPORT QTM.",
-								"name": "QTM"
+								"name": "qtm"
 							}
 						],
 						"required": true,
@@ -527,9 +536,10 @@
 					"profile-id": {
 						"category": "unitary",
 						"default": 0,
-						"help": "Set NPU DSW DTS profile id.",
+						"help": "Set NPU DSW DTS profile ID.",
 						"max-value": 32,
 						"min-value": 1,
+						"multiple_values": false,
 						"name": "profile-id",
 						"required": true,
 						"type": "integer"
@@ -537,9 +547,10 @@
 					"queue-select": {
 						"category": "unitary",
 						"default": 0,
-						"help": "Set NPU DSW DTS queue id select(0 - reset to default).",
+						"help": "Set NPU DSW DTS queue ID select (0 - reset to default).",
 						"max-value": 4095,
 						"min-value": 0,
+						"multiple_values": false,
 						"name": "queue-select",
 						"required": true,
 						"type": "integer"
@@ -1118,6 +1129,29 @@
 						],
 						"type": "option"
 					},
+					"sctp-csum-err": {
+						"addedIn": "v7.2.8",
+						"category": "unitary",
+						"default": "drop",
+						"help": "Invalid IPv4 SCTP checksum anomalies.",
+						"multiple_values": false,
+						"name": "sctp-csum-err",
+						"options": [
+							{
+								"help": "Allow IPv4 invalid SCTP checksum.",
+								"name": "allow"
+							},
+							{
+								"help": "Drop IPv4 invalid SCTP checksum.",
+								"name": "drop"
+							},
+							{
+								"help": "Forward IPv4 invalid SCTP checksum to main CPU for processing.",
+								"name": "trap-to-host"
+							}
+						],
+						"type": "option"
+					},
 					"tcp-csum-err": {
 						"category": "unitary",
 						"default": "drop",
@@ -1382,18 +1416,20 @@
 					"all-protocol": {
 						"category": "unitary",
 						"default": 400000,
-						"help": "Maximum packet rate of each host queue except high priority traffic(1K - 40M pps, default = 400K pps), set 0 to disable.",
-						"max-value": 40000000,
+						"help": "Maximum packet rate of each host queue except high priority traffic(1K - 32M pps, default = 400K pps), set 0 to disable.",
+						"max-value": 32000000,
 						"min-value": 0,
+						"multiple_values": false,
 						"name": "all-protocol",
 						"type": "integer"
 					},
 					"arp-max": {
 						"category": "unitary",
-						"default": 20000,
-						"help": "Maximum ARP packet rate (1K - 40M pps, default = 20K pps).",
-						"max-value": 40000000,
+						"default": 5000,
+						"help": "Maximum ARP packet rate (1K - 32M pps, default = 5K pps). Entry is valid when ARP is removed from high-priority traffic.",
+						"max-value": 32000000,
 						"min-value": 1000,
+						"multiple_values": false,
 						"name": "arp-max",
 						"type": "integer"
 					},
@@ -1417,109 +1453,121 @@
 					},
 					"esp-max": {
 						"category": "unitary",
-						"default": 20000,
-						"help": "Maximum ESP packet rate (1K - 40M pps, default = 20K pps).",
-						"max-value": 40000000,
+						"default": 5000,
+						"help": "Maximum ESP packet rate (1K - 32M pps, default = 5K pps).",
+						"max-value": 32000000,
 						"min-value": 1000,
+						"multiple_values": false,
 						"name": "esp-max",
 						"type": "integer"
 					},
 					"high-priority": {
 						"category": "unitary",
 						"default": 400000,
-						"help": "Maximum packet rate for high priority traffic packets (1K - 40M pps, default = 400K pps).",
-						"max-value": 40000000,
+						"help": "Maximum packet rate for high priority traffic packets (1K - 32M pps, default = 400K pps).",
+						"max-value": 32000000,
 						"min-value": 1000,
+						"multiple_values": false,
 						"name": "high-priority",
 						"type": "integer"
 					},
 					"icmp-max": {
 						"category": "unitary",
-						"default": 20000,
-						"help": "Maximum ICMP packet rate (1K - 40M pps, default = 20K pps).",
-						"max-value": 40000000,
+						"default": 5000,
+						"help": "Maximum ICMP packet rate (1K - 32M pps, default = 5K pps).",
+						"max-value": 32000000,
 						"min-value": 1000,
+						"multiple_values": false,
 						"name": "icmp-max",
 						"type": "integer"
 					},
 					"ip-frag-max": {
 						"category": "unitary",
-						"default": 20000,
-						"help": "Maximum fragmented IP packet rate (1K - 40M pps, default = 20K pps).",
-						"max-value": 40000000,
+						"default": 5000,
+						"help": "Maximum fragmented IP packet rate (1K - 32M pps, default = 5K pps).",
+						"max-value": 32000000,
 						"min-value": 1000,
+						"multiple_values": false,
 						"name": "ip-frag-max",
 						"type": "integer"
 					},
 					"ip-others-max": {
 						"category": "unitary",
-						"default": 20000,
-						"help": "Maximum IP packet rate for other packets (packet types that cannot be set with other options) (1K - 1G pps, default = 20K pps).",
-						"max-value": 40000000,
+						"default": 5000,
+						"help": "Maximum IP packet rate for other packets (packet types that cannot be set with other options) (1K - 32G pps, default = 5K pps).",
+						"max-value": 32000000,
 						"min-value": 1000,
+						"multiple_values": false,
 						"name": "ip-others-max",
 						"type": "integer"
 					},
 					"l2-others-max": {
 						"category": "unitary",
-						"default": 20000,
-						"help": "Maximum L2 packet rate for L2 packets that are not ARP packets (1K - 40M pps, default = 20K pps).",
-						"max-value": 40000000,
+						"default": 5000,
+						"help": "Maximum L2 packet rate for L2 packets that are not ARP packets (1K - 32M pps, default = 5K pps).",
+						"max-value": 32000000,
 						"min-value": 1000,
+						"multiple_values": false,
 						"name": "l2-others-max",
 						"type": "integer"
 					},
 					"sctp-max": {
 						"category": "unitary",
-						"default": 20000,
-						"help": "Maximum SCTP packet rate (1K - 40M pps, default = 20K pps).",
-						"max-value": 40000000,
+						"default": 5000,
+						"help": "Maximum SCTP packet rate (1K - 32M pps, default = 5K pps).",
+						"max-value": 32000000,
 						"min-value": 1000,
+						"multiple_values": false,
 						"name": "sctp-max",
 						"type": "integer"
 					},
 					"tcp-max": {
 						"category": "unitary",
 						"default": 40000,
-						"help": "Maximum TCP packet rate (1K - 40M pps, default = 40K pps).",
-						"max-value": 40000000,
+						"help": "Maximum TCP packet rate (1K - 32M pps, default = 40K pps).",
+						"max-value": 32000000,
 						"min-value": 1000,
+						"multiple_values": false,
 						"name": "tcp-max",
 						"type": "integer"
 					},
 					"tcpfin-rst-max": {
 						"category": "unitary",
 						"default": 40000,
-						"help": "Maximum TCP carries FIN or RST flags packet rate (1K - 40M pps, default = 40K pps).",
-						"max-value": 40000000,
+						"help": "Maximum TCP carries FIN or RST flags packet rate (1K - 32M pps, default = 40K pps).",
+						"max-value": 32000000,
 						"min-value": 1000,
+						"multiple_values": false,
 						"name": "tcpfin-rst-max",
 						"type": "integer"
 					},
 					"tcpsyn-ack-max": {
 						"category": "unitary",
 						"default": 40000,
-						"help": "Maximum TCP carries SYN and ACK flags packet rate (1K - 40M pps, default = 40K pps).",
-						"max-value": 40000000,
+						"help": "Maximum TCP carries SYN and ACK flags packet rate (1K - 32M pps, default = 40K pps).",
+						"max-value": 32000000,
 						"min-value": 1000,
+						"multiple_values": false,
 						"name": "tcpsyn-ack-max",
 						"type": "integer"
 					},
 					"tcpsyn-max": {
 						"category": "unitary",
 						"default": 40000,
-						"help": "Maximum TCP SYN packet rate (1K - 40M pps, default = 40K pps).",
-						"max-value": 40000000,
+						"help": "Maximum TCP SYN packet rate (1K - 40M pps, default = 32K pps).",
+						"max-value": 32000000,
 						"min-value": 1000,
+						"multiple_values": false,
 						"name": "tcpsyn-max",
 						"type": "integer"
 					},
 					"udp-max": {
 						"category": "unitary",
 						"default": 40000,
-						"help": "Maximum UDP packet rate (1K - 40M pps, default = 40K pps).",
-						"max-value": 40000000,
+						"help": "Maximum UDP packet rate (1K - 32M pps, default = 40K pps).",
+						"max-value": 32000000,
 						"min-value": 1000,
+						"multiple_values": false,
 						"name": "udp-max",
 						"type": "integer"
 					}
@@ -1539,6 +1587,7 @@
 				"help": "Set the number of dedicate queue for hash table messages.",
 				"max-value": 2,
 				"min-value": 1,
+				"multiple_values": false,
 				"name": "htab-dedi-queue-nr",
 				"removedIn": "v7.0.2",
 				"type": "integer"
@@ -1567,6 +1616,25 @@
 				"removedIn": "v7.0.2",
 				"type": "option"
 			},
+			"htx-icmp-csum-chk": {
+				"addedIn": "v7.2.8",
+				"category": "unitary",
+				"default": "drop",
+				"help": "Set HTX icmp csum checking mode.",
+				"multiple_values": false,
+				"name": "htx-icmp-csum-chk",
+				"options": [
+					{
+						"help": "Drop bad icmp csum.",
+						"name": "drop"
+					},
+					{
+						"help": "Pass bad icmp csum.",
+						"name": "pass"
+					}
+				],
+				"type": "option"
+			},
 			"inbound-dscp-copy-port": {
 				"addedIn": "v6.4.6",
 				"category": "table",
@@ -1575,6 +1643,7 @@
 						"category": "unitary",
 						"default": "",
 						"help": "Physical interface name.",
+						"multiple_values": false,
 						"name": "interface",
 						"size": 15,
 						"type": "string"
@@ -1590,6 +1659,25 @@
 				"name": "inbound-dscp-copy-port",
 				"removedIn": "v7.0.2"
 			},
+			"ip-fragment-offload": {
+				"addedIn": "v7.2.8",
+				"category": "unitary",
+				"default": "enable",
+				"help": "Enable/disable NP7 NPU IP fragment offload.",
+				"multiple_values": false,
+				"name": "ip-fragment-offload",
+				"options": [
+					{
+						"help": "Disable IP fragment offload.",
+						"name": "disable"
+					},
+					{
+						"help": "Enable IP fragment offload.",
+						"name": "enable"
+					}
+				],
+				"type": "option"
+			},
 			"ip-reassembly": {
 				"addedIn": "v6.4.6",
 				"category": "complex",
@@ -1600,6 +1688,7 @@
 						"help": "Maximum timeout value for IP reassembly (5 us - 600,000,000 us).",
 						"max-value": 600000000,
 						"min-value": 5,
+						"multiple_values": false,
 						"name": "max-timeout",
 						"type": "integer"
 					},
@@ -1609,6 +1698,7 @@
 						"help": "Minimum timeout value for IP reassembly (5 us - 600,000,000 us).",
 						"max-value": 600000000,
 						"min-value": 5,
+						"multiple_values": false,
 						"name": "min-timeout",
 						"type": "integer"
 					},
@@ -1717,14 +1807,14 @@
 			"ipsec-ob-np-sel": {
 				"addedIn": "v6.4.6",
 				"category": "unitary",
-				"default": "RR",
+				"default": "rr",
 				"help": "IPsec NP selection for OB SA offloading.",
 				"multiple_values": false,
 				"name": "ipsec-ob-np-sel",
 				"options": [
 					{
 						"help": "Round Robin.",
-						"name": "RR"
+						"name": "rr"
 					},
 					{
 						"help": "NPU of the first packet.",
@@ -1764,7 +1854,9 @@
 						"datasource": [
 							"system.isf-queue-profile.name"
 						],
+						"default": "",
 						"help": "CoS profile name for CoS 0.",
+						"multiple_values": false,
 						"name": "cos0",
 						"size": 35,
 						"type": "string"
@@ -1774,7 +1866,9 @@
 						"datasource": [
 							"system.isf-queue-profile.name"
 						],
+						"default": "",
 						"help": "CoS profile name for CoS 1.",
+						"multiple_values": false,
 						"name": "cos1",
 						"size": 35,
 						"type": "string"
@@ -1784,7 +1878,9 @@
 						"datasource": [
 							"system.isf-queue-profile.name"
 						],
+						"default": "",
 						"help": "CoS profile name for CoS 2.",
+						"multiple_values": false,
 						"name": "cos2",
 						"size": 35,
 						"type": "string"
@@ -1794,7 +1890,9 @@
 						"datasource": [
 							"system.isf-queue-profile.name"
 						],
+						"default": "",
 						"help": "CoS profile name for CoS 3.",
+						"multiple_values": false,
 						"name": "cos3",
 						"size": 35,
 						"type": "string"
@@ -1804,7 +1902,9 @@
 						"datasource": [
 							"system.isf-queue-profile.name"
 						],
+						"default": "",
 						"help": "CoS profile name for CoS 4.",
+						"multiple_values": false,
 						"name": "cos4",
 						"size": 35,
 						"type": "string"
@@ -1814,7 +1914,9 @@
 						"datasource": [
 							"system.isf-queue-profile.name"
 						],
+						"default": "",
 						"help": "CoS profile name for CoS 5.",
+						"multiple_values": false,
 						"name": "cos5",
 						"size": 35,
 						"type": "string"
@@ -1824,7 +1926,9 @@
 						"datasource": [
 							"system.isf-queue-profile.name"
 						],
+						"default": "",
 						"help": "CoS profile name for CoS 6.",
+						"multiple_values": false,
 						"name": "cos6",
 						"size": 35,
 						"type": "string"
@@ -1834,7 +1938,9 @@
 						"datasource": [
 							"system.isf-queue-profile.name"
 						],
+						"default": "",
 						"help": "CoS profile name for CoS 7.",
+						"multiple_values": false,
 						"name": "cos7",
 						"size": 35,
 						"type": "string"
@@ -1851,6 +1957,7 @@
 				"help": "Maximum time interval for refreshing NPU-offloaded sessions (10 - 1000 sec, default 40 sec).",
 				"max-value": 1000,
 				"min-value": 10,
+				"multiple_values": false,
 				"name": "max-session-timeout",
 				"removedIn": "v7.0.2",
 				"type": "integer"
@@ -1884,6 +1991,7 @@
 				"help": " NAPI break interval (default 0).",
 				"max-value": 65535,
 				"min-value": 0,
+				"multiple_values": false,
 				"name": "napi-break-interval",
 				"removedIn": "v7.0.2",
 				"required": true,
@@ -1900,6 +2008,7 @@
 								"category": "unitary",
 								"default": "",
 								"help": "Ethernet Type Name.",
+								"multiple_values": false,
 								"name": "name",
 								"size": 35,
 								"type": "string"
@@ -1910,6 +2019,7 @@
 								"help": "Queue Number.",
 								"max-value": 11,
 								"min-value": 0,
+								"multiple_values": false,
 								"name": "queue",
 								"type": "integer"
 							},
@@ -1917,6 +2027,7 @@
 								"category": "unitary",
 								"default": "0",
 								"help": "Ethernet Type.",
+								"multiple_values": false,
 								"name": "type",
 								"type": "ether-type"
 							},
@@ -1926,6 +2037,7 @@
 								"help": "Class Weight.",
 								"max-value": 15,
 								"min-value": 0,
+								"multiple_values": false,
 								"name": "weight",
 								"type": "integer"
 							}
@@ -1945,6 +2057,7 @@
 								"category": "unitary",
 								"default": "",
 								"help": "IP Protocol Name.",
+								"multiple_values": false,
 								"name": "name",
 								"size": 35,
 								"type": "string"
@@ -1955,6 +2068,7 @@
 								"help": "IP Protocol.",
 								"max-value": 255,
 								"min-value": 0,
+								"multiple_values": false,
 								"name": "protocol",
 								"type": "integer"
 							},
@@ -1964,6 +2078,7 @@
 								"help": "Queue Number.",
 								"max-value": 11,
 								"min-value": 0,
+								"multiple_values": false,
 								"name": "queue",
 								"type": "integer"
 							},
@@ -1973,6 +2088,7 @@
 								"help": "Class Weight.",
 								"max-value": 15,
 								"min-value": 0,
+								"multiple_values": false,
 								"name": "weight",
 								"type": "integer"
 							}
@@ -1991,16 +2107,18 @@
 							"dport": {
 								"category": "unitary",
 								"default": 0,
-								"help": "Destination Port.",
+								"help": "Destination port.",
 								"max-value": 65535,
 								"min-value": 0,
+								"multiple_values": false,
 								"name": "dport",
 								"type": "integer"
 							},
 							"name": {
 								"category": "unitary",
 								"default": "",
-								"help": "IP Service Name.",
+								"help": "IP service name.",
+								"multiple_values": false,
 								"name": "name",
 								"size": 35,
 								"type": "string"
@@ -2008,36 +2126,40 @@
 							"protocol": {
 								"category": "unitary",
 								"default": 0,
-								"help": "IP Protocol.",
+								"help": "IP protocol.",
 								"max-value": 255,
 								"min-value": 0,
+								"multiple_values": false,
 								"name": "protocol",
 								"type": "integer"
 							},
 							"queue": {
 								"category": "unitary",
 								"default": 0,
-								"help": "Queue Number.",
+								"help": "Queue number.",
 								"max-value": 11,
 								"min-value": 0,
+								"multiple_values": false,
 								"name": "queue",
 								"type": "integer"
 							},
 							"sport": {
 								"category": "unitary",
 								"default": 0,
-								"help": "Source Port.",
+								"help": "Source port.",
 								"max-value": 65535,
 								"min-value": 0,
+								"multiple_values": false,
 								"name": "sport",
 								"type": "integer"
 							},
 							"weight": {
 								"category": "unitary",
 								"default": 13,
-								"help": "Class Weight.",
+								"help": "Class weight.",
 								"max-value": 15,
 								"min-value": 0,
+								"multiple_values": false,
 								"name": "weight",
 								"type": "integer"
 							}
@@ -2061,35 +2183,35 @@
 								"name": "cos0",
 								"options": [
 									{
-										"help": "queue No. 0.",
+										"help": "Queue number 0.",
 										"name": "queue0"
 									},
 									{
-										"help": "queue No. 1.",
+										"help": "Queue number 1.",
 										"name": "queue1"
 									},
 									{
-										"help": "queue No. 2.",
+										"help": "Queue number 2.",
 										"name": "queue2"
 									},
 									{
-										"help": "queue No. 3.",
+										"help": "Queue number 3.",
 										"name": "queue3"
 									},
 									{
-										"help": "queue No. 4.",
+										"help": "Queue number 4.",
 										"name": "queue4"
 									},
 									{
-										"help": "queue No. 5.",
+										"help": "Queue number 5.",
 										"name": "queue5"
 									},
 									{
-										"help": "queue No. 6.",
+										"help": "Queue number 6.",
 										"name": "queue6"
 									},
 									{
-										"help": "queue No. 7.",
+										"help": "Queue number 7.",
 										"name": "queue7"
 									}
 								],
@@ -2103,35 +2225,35 @@
 								"name": "cos1",
 								"options": [
 									{
-										"help": "queue No. 0.",
+										"help": "Queue number 0.",
 										"name": "queue0"
 									},
 									{
-										"help": "queue No. 1.",
+										"help": "Queue number 1.",
 										"name": "queue1"
 									},
 									{
-										"help": "queue No. 2.",
+										"help": "Queue number 2.",
 										"name": "queue2"
 									},
 									{
-										"help": "queue No. 3.",
+										"help": "Queue number 3.",
 										"name": "queue3"
 									},
 									{
-										"help": "queue No. 4.",
+										"help": "Queue number 4.",
 										"name": "queue4"
 									},
 									{
-										"help": "queue No. 5.",
+										"help": "Queue number 5.",
 										"name": "queue5"
 									},
 									{
-										"help": "queue No. 6.",
+										"help": "Queue number 6.",
 										"name": "queue6"
 									},
 									{
-										"help": "queue No. 7.",
+										"help": "Queue number 7.",
 										"name": "queue7"
 									}
 								],
@@ -2145,35 +2267,35 @@
 								"name": "cos2",
 								"options": [
 									{
-										"help": "queue No. 0.",
+										"help": "Queue number 0.",
 										"name": "queue0"
 									},
 									{
-										"help": "queue No. 1.",
+										"help": "Queue number 1.",
 										"name": "queue1"
 									},
 									{
-										"help": "queue No. 2.",
+										"help": "Queue number 2.",
 										"name": "queue2"
 									},
 									{
-										"help": "queue No. 3.",
+										"help": "Queue number 3.",
 										"name": "queue3"
 									},
 									{
-										"help": "queue No. 4.",
+										"help": "Queue number 4.",
 										"name": "queue4"
 									},
 									{
-										"help": "queue No. 5.",
+										"help": "Queue number 5.",
 										"name": "queue5"
 									},
 									{
-										"help": "queue No. 6.",
+										"help": "Queue number 6.",
 										"name": "queue6"
 									},
 									{
-										"help": "queue No. 7.",
+										"help": "Queue number 7.",
 										"name": "queue7"
 									}
 								],
@@ -2187,35 +2309,35 @@
 								"name": "cos3",
 								"options": [
 									{
-										"help": "queue No. 0.",
+										"help": "Queue number 0.",
 										"name": "queue0"
 									},
 									{
-										"help": "queue No. 1.",
+										"help": "Queue number 1.",
 										"name": "queue1"
 									},
 									{
-										"help": "queue No. 2.",
+										"help": "Queue number 2.",
 										"name": "queue2"
 									},
 									{
-										"help": "queue No. 3.",
+										"help": "Queue number 3.",
 										"name": "queue3"
 									},
 									{
-										"help": "queue No. 4.",
+										"help": "Queue number 4.",
 										"name": "queue4"
 									},
 									{
-										"help": "queue No. 5.",
+										"help": "Queue number 5.",
 										"name": "queue5"
 									},
 									{
-										"help": "queue No. 6.",
+										"help": "Queue number 6.",
 										"name": "queue6"
 									},
 									{
-										"help": "queue No. 7.",
+										"help": "Queue number 7.",
 										"name": "queue7"
 									}
 								],
@@ -2229,35 +2351,35 @@
 								"name": "cos4",
 								"options": [
 									{
-										"help": "queue No. 0.",
+										"help": "Queue number 0.",
 										"name": "queue0"
 									},
 									{
-										"help": "queue No. 1.",
+										"help": "Queue number 1.",
 										"name": "queue1"
 									},
 									{
-										"help": "queue No. 2.",
+										"help": "Queue number 2.",
 										"name": "queue2"
 									},
 									{
-										"help": "queue No. 3.",
+										"help": "Queue number 3.",
 										"name": "queue3"
 									},
 									{
-										"help": "queue No. 4.",
+										"help": "Queue number 4.",
 										"name": "queue4"
 									},
 									{
-										"help": "queue No. 5.",
+										"help": "Queue number 5.",
 										"name": "queue5"
 									},
 									{
-										"help": "queue No. 6.",
+										"help": "Queue number 6.",
 										"name": "queue6"
 									},
 									{
-										"help": "queue No. 7.",
+										"help": "Queue number 7.",
 										"name": "queue7"
 									}
 								],
@@ -2271,35 +2393,35 @@
 								"name": "cos5",
 								"options": [
 									{
-										"help": "queue No. 0.",
+										"help": "Queue number 0.",
 										"name": "queue0"
 									},
 									{
-										"help": "queue No. 1.",
+										"help": "Queue number 1.",
 										"name": "queue1"
 									},
 									{
-										"help": "queue No. 2.",
+										"help": "Queue number 2.",
 										"name": "queue2"
 									},
 									{
-										"help": "queue No. 3.",
+										"help": "Queue number 3.",
 										"name": "queue3"
 									},
 									{
-										"help": "queue No. 4.",
+										"help": "Queue number 4.",
 										"name": "queue4"
 									},
 									{
-										"help": "queue No. 5.",
+										"help": "Queue number 5.",
 										"name": "queue5"
 									},
 									{
-										"help": "queue No. 6.",
+										"help": "Queue number 6.",
 										"name": "queue6"
 									},
 									{
-										"help": "queue No. 7.",
+										"help": "Queue number 7.",
 										"name": "queue7"
 									}
 								],
@@ -2313,35 +2435,35 @@
 								"name": "cos6",
 								"options": [
 									{
-										"help": "queue No. 0.",
+										"help": "Queue number 0.",
 										"name": "queue0"
 									},
 									{
-										"help": "queue No. 1.",
+										"help": "Queue number 1.",
 										"name": "queue1"
 									},
 									{
-										"help": "queue No. 2.",
+										"help": "Queue number 2.",
 										"name": "queue2"
 									},
 									{
-										"help": "queue No. 3.",
+										"help": "Queue number 3.",
 										"name": "queue3"
 									},
 									{
-										"help": "queue No. 4.",
+										"help": "Queue number 4.",
 										"name": "queue4"
 									},
 									{
-										"help": "queue No. 5.",
+										"help": "Queue number 5.",
 										"name": "queue5"
 									},
 									{
-										"help": "queue No. 6.",
+										"help": "Queue number 6.",
 										"name": "queue6"
 									},
 									{
-										"help": "queue No. 7.",
+										"help": "Queue number 7.",
 										"name": "queue7"
 									}
 								],
@@ -2355,35 +2477,35 @@
 								"name": "cos7",
 								"options": [
 									{
-										"help": "queue No. 0.",
+										"help": "Queue number 0.",
 										"name": "queue0"
 									},
 									{
-										"help": "queue No. 1.",
+										"help": "Queue number 1.",
 										"name": "queue1"
 									},
 									{
-										"help": "queue No. 2.",
+										"help": "Queue number 2.",
 										"name": "queue2"
 									},
 									{
-										"help": "queue No. 3.",
+										"help": "Queue number 3.",
 										"name": "queue3"
 									},
 									{
-										"help": "queue No. 4.",
+										"help": "Queue number 4.",
 										"name": "queue4"
 									},
 									{
-										"help": "queue No. 5.",
+										"help": "Queue number 5.",
 										"name": "queue5"
 									},
 									{
-										"help": "queue No. 6.",
+										"help": "Queue number 6.",
 										"name": "queue6"
 									},
 									{
-										"help": "queue No. 7.",
+										"help": "Queue number 7.",
 										"name": "queue7"
 									}
 								],
@@ -2397,35 +2519,35 @@
 								"name": "dscp0",
 								"options": [
 									{
-										"help": "queue No. 0.",
+										"help": "Queue number 0.",
 										"name": "queue0"
 									},
 									{
-										"help": "queue No. 1.",
+										"help": "Queue number 1.",
 										"name": "queue1"
 									},
 									{
-										"help": "queue No. 2.",
+										"help": "Queue number 2.",
 										"name": "queue2"
 									},
 									{
-										"help": "queue No. 3.",
+										"help": "Queue number 3.",
 										"name": "queue3"
 									},
 									{
-										"help": "queue No. 4.",
+										"help": "Queue number 4.",
 										"name": "queue4"
 									},
 									{
-										"help": "queue No. 5.",
+										"help": "Queue number 5.",
 										"name": "queue5"
 									},
 									{
-										"help": "queue No. 6.",
+										"help": "Queue number 6.",
 										"name": "queue6"
 									},
 									{
-										"help": "queue No. 7.",
+										"help": "Queue number 7.",
 										"name": "queue7"
 									}
 								],
@@ -2439,35 +2561,35 @@
 								"name": "dscp1",
 								"options": [
 									{
-										"help": "queue No. 0.",
+										"help": "Queue number 0.",
 										"name": "queue0"
 									},
 									{
-										"help": "queue No. 1.",
+										"help": "Queue number 1.",
 										"name": "queue1"
 									},
 									{
-										"help": "queue No. 2.",
+										"help": "Queue number 2.",
 										"name": "queue2"
 									},
 									{
-										"help": "queue No. 3.",
+										"help": "Queue number 3.",
 										"name": "queue3"
 									},
 									{
-										"help": "queue No. 4.",
+										"help": "Queue number 4.",
 										"name": "queue4"
 									},
 									{
-										"help": "queue No. 5.",
+										"help": "Queue number 5.",
 										"name": "queue5"
 									},
 									{
-										"help": "queue No. 6.",
+										"help": "Queue number 6.",
 										"name": "queue6"
 									},
 									{
-										"help": "queue No. 7.",
+										"help": "Queue number 7.",
 										"name": "queue7"
 									}
 								],
@@ -2481,35 +2603,35 @@
 								"name": "dscp10",
 								"options": [
 									{
-										"help": "queue No. 0.",
+										"help": "Queue number 0.",
 										"name": "queue0"
 									},
 									{
-										"help": "queue No. 1.",
+										"help": "Queue number 1.",
 										"name": "queue1"
 									},
 									{
-										"help": "queue No. 2.",
+										"help": "Queue number 2.",
 										"name": "queue2"
 									},
 									{
-										"help": "queue No. 3.",
+										"help": "Queue number 3.",
 										"name": "queue3"
 									},
 									{
-										"help": "queue No. 4.",
+										"help": "Queue number 4.",
 										"name": "queue4"
 									},
 									{
-										"help": "queue No. 5.",
+										"help": "Queue number 5.",
 										"name": "queue5"
 									},
 									{
-										"help": "queue No. 6.",
+										"help": "Queue number 6.",
 										"name": "queue6"
 									},
 									{
-										"help": "queue No. 7.",
+										"help": "Queue number 7.",
 										"name": "queue7"
 									}
 								],
@@ -2523,35 +2645,35 @@
 								"name": "dscp11",
 								"options": [
 									{
-										"help": "queue No. 0.",
+										"help": "Queue number 0.",
 										"name": "queue0"
 									},
 									{
-										"help": "queue No. 1.",
+										"help": "Queue number 1.",
 										"name": "queue1"
 									},
 									{
-										"help": "queue No. 2.",
+										"help": "Queue number 2.",
 										"name": "queue2"
 									},
 									{
-										"help": "queue No. 3.",
+										"help": "Queue number 3.",
 										"name": "queue3"
 									},
 									{
-										"help": "queue No. 4.",
+										"help": "Queue number 4.",
 										"name": "queue4"
 									},
 									{
-										"help": "queue No. 5.",
+										"help": "Queue number 5.",
 										"name": "queue5"
 									},
 									{
-										"help": "queue No. 6.",
+										"help": "Queue number 6.",
 										"name": "queue6"
 									},
 									{
-										"help": "queue No. 7.",
+										"help": "Queue number 7.",
 										"name": "queue7"
 									}
 								],
@@ -2565,35 +2687,35 @@
 								"name": "dscp12",
 								"options": [
 									{
-										"help": "queue No. 0.",
+										"help": "Queue number 0.",
 										"name": "queue0"
 									},
 									{
-										"help": "queue No. 1.",
+										"help": "Queue number 1.",
 										"name": "queue1"
 									},
 									{
-										"help": "queue No. 2.",
+										"help": "Queue number 2.",
 										"name": "queue2"
 									},
 									{
-										"help": "queue No. 3.",
+										"help": "Queue number 3.",
 										"name": "queue3"
 									},
 									{
-										"help": "queue No. 4.",
+										"help": "Queue number 4.",
 										"name": "queue4"
 									},
 									{
-										"help": "queue No. 5.",
+										"help": "Queue number 5.",
 										"name": "queue5"
 									},
 									{
-										"help": "queue No. 6.",
+										"help": "Queue number 6.",
 										"name": "queue6"
 									},
 									{
-										"help": "queue No. 7.",
+										"help": "Queue number 7.",
 										"name": "queue7"
 									}
 								],
@@ -2607,35 +2729,35 @@
 								"name": "dscp13",
 								"options": [
 									{
-										"help": "queue No. 0.",
+										"help": "Queue number 0.",
 										"name": "queue0"
 									},
 									{
-										"help": "queue No. 1.",
+										"help": "Queue number 1.",
 										"name": "queue1"
 									},
 									{
-										"help": "queue No. 2.",
+										"help": "Queue number 2.",
 										"name": "queue2"
 									},
 									{
-										"help": "queue No. 3.",
+										"help": "Queue number 3.",
 										"name": "queue3"
 									},
 									{
-										"help": "queue No. 4.",
+										"help": "Queue number 4.",
 										"name": "queue4"
 									},
 									{
-										"help": "queue No. 5.",
+										"help": "Queue number 5.",
 										"name": "queue5"
 									},
 									{
-										"help": "queue No. 6.",
+										"help": "Queue number 6.",
 										"name": "queue6"
 									},
 									{
-										"help": "queue No. 7.",
+										"help": "Queue number 7.",
 										"name": "queue7"
 									}
 								],
@@ -2649,35 +2771,35 @@
 								"name": "dscp14",
 								"options": [
 									{
-										"help": "queue No. 0.",
+										"help": "Queue number 0.",
 										"name": "queue0"
 									},
 									{
-										"help": "queue No. 1.",
+										"help": "Queue number 1.",
 										"name": "queue1"
 									},
 									{
-										"help": "queue No. 2.",
+										"help": "Queue number 2.",
 										"name": "queue2"
 									},
 									{
-										"help": "queue No. 3.",
+										"help": "Queue number 3.",
 										"name": "queue3"
 									},
 									{
-										"help": "queue No. 4.",
+										"help": "Queue number 4.",
 										"name": "queue4"
 									},
 									{
-										"help": "queue No. 5.",
+										"help": "Queue number 5.",
 										"name": "queue5"
 									},
 									{
-										"help": "queue No. 6.",
+										"help": "Queue number 6.",
 										"name": "queue6"
 									},
 									{
-										"help": "queue No. 7.",
+										"help": "Queue number 7.",
 										"name": "queue7"
 									}
 								],
@@ -2691,35 +2813,35 @@
 								"name": "dscp15",
 								"options": [
 									{
-										"help": "queue No. 0.",
+										"help": "Queue number 0.",
 										"name": "queue0"
 									},
 									{
-										"help": "queue No. 1.",
+										"help": "Queue number 1.",
 										"name": "queue1"
 									},
 									{
-										"help": "queue No. 2.",
+										"help": "Queue number 2.",
 										"name": "queue2"
 									},
 									{
-										"help": "queue No. 3.",
+										"help": "Queue number 3.",
 										"name": "queue3"
 									},
 									{
-										"help": "queue No. 4.",
+										"help": "Queue number 4.",
 										"name": "queue4"
 									},
 									{
-										"help": "queue No. 5.",
+										"help": "Queue number 5.",
 										"name": "queue5"
 									},
 									{
-										"help": "queue No. 6.",
+										"help": "Queue number 6.",
 										"name": "queue6"
 									},
 									{
-										"help": "queue No. 7.",
+										"help": "Queue number 7.",
 										"name": "queue7"
 									}
 								],
@@ -2733,35 +2855,35 @@
 								"name": "dscp16",
 								"options": [
 									{
-										"help": "queue No. 0.",
+										"help": "Queue number 0.",
 										"name": "queue0"
 									},
 									{
-										"help": "queue No. 1.",
+										"help": "Queue number 1.",
 										"name": "queue1"
 									},
 									{
-										"help": "queue No. 2.",
+										"help": "Queue number 2.",
 										"name": "queue2"
 									},
 									{
-										"help": "queue No. 3.",
+										"help": "Queue number 3.",
 										"name": "queue3"
 									},
 									{
-										"help": "queue No. 4.",
+										"help": "Queue number 4.",
 										"name": "queue4"
 									},
 									{
-										"help": "queue No. 5.",
+										"help": "Queue number 5.",
 										"name": "queue5"
 									},
 									{
-										"help": "queue No. 6.",
+										"help": "Queue number 6.",
 										"name": "queue6"
 									},
 									{
-										"help": "queue No. 7.",
+										"help": "Queue number 7.",
 										"name": "queue7"
 									}
 								],
@@ -2775,35 +2897,35 @@
 								"name": "dscp17",
 								"options": [
 									{
-										"help": "queue No. 0.",
+										"help": "Queue number 0.",
 										"name": "queue0"
 									},
 									{
-										"help": "queue No. 1.",
+										"help": "Queue number 1.",
 										"name": "queue1"
 									},
 									{
-										"help": "queue No. 2.",
+										"help": "Queue number 2.",
 										"name": "queue2"
 									},
 									{
-										"help": "queue No. 3.",
+										"help": "Queue number 3.",
 										"name": "queue3"
 									},
 									{
-										"help": "queue No. 4.",
+										"help": "Queue number 4.",
 										"name": "queue4"
 									},
 									{
-										"help": "queue No. 5.",
+										"help": "Queue number 5.",
 										"name": "queue5"
 									},
 									{
-										"help": "queue No. 6.",
+										"help": "Queue number 6.",
 										"name": "queue6"
 									},
 									{
-										"help": "queue No. 7.",
+										"help": "Queue number 7.",
 										"name": "queue7"
 									}
 								],
@@ -2817,35 +2939,35 @@
 								"name": "dscp18",
 								"options": [
 									{
-										"help": "queue No. 0.",
+										"help": "Queue number 0.",
 										"name": "queue0"
 									},
 									{
-										"help": "queue No. 1.",
+										"help": "Queue number 1.",
 										"name": "queue1"
 									},
 									{
-										"help": "queue No. 2.",
+										"help": "Queue number 2.",
 										"name": "queue2"
 									},
 									{
-										"help": "queue No. 3.",
+										"help": "Queue number 3.",
 										"name": "queue3"
 									},
 									{
-										"help": "queue No. 4.",
+										"help": "Queue number 4.",
 										"name": "queue4"
 									},
 									{
-										"help": "queue No. 5.",
+										"help": "Queue number 5.",
 										"name": "queue5"
 									},
 									{
-										"help": "queue No. 6.",
+										"help": "Queue number 6.",
 										"name": "queue6"
 									},
 									{
-										"help": "queue No. 7.",
+										"help": "Queue number 7.",
 										"name": "queue7"
 									}
 								],
@@ -2859,35 +2981,35 @@
 								"name": "dscp19",
 								"options": [
 									{
-										"help": "queue No. 0.",
+										"help": "Queue number 0.",
 										"name": "queue0"
 									},
 									{
-										"help": "queue No. 1.",
+										"help": "Queue number 1.",
 										"name": "queue1"
 									},
 									{
-										"help": "queue No. 2.",
+										"help": "Queue number 2.",
 										"name": "queue2"
 									},
 									{
-										"help": "queue No. 3.",
+										"help": "Queue number 3.",
 										"name": "queue3"
 									},
 									{
-										"help": "queue No. 4.",
+										"help": "Queue number 4.",
 										"name": "queue4"
 									},
 									{
-										"help": "queue No. 5.",
+										"help": "Queue number 5.",
 										"name": "queue5"
 									},
 									{
-										"help": "queue No. 6.",
+										"help": "Queue number 6.",
 										"name": "queue6"
 									},
 									{
-										"help": "queue No. 7.",
+										"help": "Queue number 7.",
 										"name": "queue7"
 									}
 								],
@@ -2901,35 +3023,35 @@
 								"name": "dscp2",
 								"options": [
 									{
-										"help": "queue No. 0.",
+										"help": "Queue number 0.",
 										"name": "queue0"
 									},
 									{
-										"help": "queue No. 1.",
+										"help": "Queue number 1.",
 										"name": "queue1"
 									},
 									{
-										"help": "queue No. 2.",
+										"help": "Queue number 2.",
 										"name": "queue2"
 									},
 									{
-										"help": "queue No. 3.",
+										"help": "Queue number 3.",
 										"name": "queue3"
 									},
 									{
-										"help": "queue No. 4.",
+										"help": "Queue number 4.",
 										"name": "queue4"
 									},
 									{
-										"help": "queue No. 5.",
+										"help": "Queue number 5.",
 										"name": "queue5"
 									},
 									{
-										"help": "queue No. 6.",
+										"help": "Queue number 6.",
 										"name": "queue6"
 									},
 									{
-										"help": "queue No. 7.",
+										"help": "Queue number 7.",
 										"name": "queue7"
 									}
 								],
@@ -2943,35 +3065,35 @@
 								"name": "dscp20",
 								"options": [
 									{
-										"help": "queue No. 0.",
+										"help": "Queue number 0.",
 										"name": "queue0"
 									},
 									{
-										"help": "queue No. 1.",
+										"help": "Queue number 1.",
 										"name": "queue1"
 									},
 									{
-										"help": "queue No. 2.",
+										"help": "Queue number 2.",
 										"name": "queue2"
 									},
 									{
-										"help": "queue No. 3.",
+										"help": "Queue number 3.",
 										"name": "queue3"
 									},
 									{
-										"help": "queue No. 4.",
+										"help": "Queue number 4.",
 										"name": "queue4"
 									},
 									{
-										"help": "queue No. 5.",
+										"help": "Queue number 5.",
 										"name": "queue5"
 									},
 									{
-										"help": "queue No. 6.",
+										"help": "Queue number 6.",
 										"name": "queue6"
 									},
 									{
-										"help": "queue No. 7.",
+										"help": "Queue number 7.",
 										"name": "queue7"
 									}
 								],
@@ -2985,35 +3107,35 @@
 								"name": "dscp21",
 								"options": [
 									{
-										"help": "queue No. 0.",
+										"help": "Queue number 0.",
 										"name": "queue0"
 									},
 									{
-										"help": "queue No. 1.",
+										"help": "Queue number 1.",
 										"name": "queue1"
 									},
 									{
-										"help": "queue No. 2.",
+										"help": "Queue number 2.",
 										"name": "queue2"
 									},
 									{
-										"help": "queue No. 3.",
+										"help": "Queue number 3.",
 										"name": "queue3"
 									},
 									{
-										"help": "queue No. 4.",
+										"help": "Queue number 4.",
 										"name": "queue4"
 									},
 									{
-										"help": "queue No. 5.",
+										"help": "Queue number 5.",
 										"name": "queue5"
 									},
 									{
-										"help": "queue No. 6.",
+										"help": "Queue number 6.",
 										"name": "queue6"
 									},
 									{
-										"help": "queue No. 7.",
+										"help": "Queue number 7.",
 										"name": "queue7"
 									}
 								],
@@ -3027,35 +3149,35 @@
 								"name": "dscp22",
 								"options": [
 									{
-										"help": "queue No. 0.",
+										"help": "Queue number 0.",
 										"name": "queue0"
 									},
 									{
-										"help": "queue No. 1.",
+										"help": "Queue number 1.",
 										"name": "queue1"
 									},
 									{
-										"help": "queue No. 2.",
+										"help": "Queue number 2.",
 										"name": "queue2"
 									},
 									{
-										"help": "queue No. 3.",
+										"help": "Queue number 3.",
 										"name": "queue3"
 									},
 									{
-										"help": "queue No. 4.",
+										"help": "Queue number 4.",
 										"name": "queue4"
 									},
 									{
-										"help": "queue No. 5.",
+										"help": "Queue number 5.",
 										"name": "queue5"
 									},
 									{
-										"help": "queue No. 6.",
+										"help": "Queue number 6.",
 										"name": "queue6"
 									},
 									{
-										"help": "queue No. 7.",
+										"help": "Queue number 7.",
 										"name": "queue7"
 									}
 								],
@@ -3069,35 +3191,35 @@
 								"name": "dscp23",
 								"options": [
 									{
-										"help": "queue No. 0.",
+										"help": "Queue number 0.",
 										"name": "queue0"
 									},
 									{
-										"help": "queue No. 1.",
+										"help": "Queue number 1.",
 										"name": "queue1"
 									},
 									{
-										"help": "queue No. 2.",
+										"help": "Queue number 2.",
 										"name": "queue2"
 									},
 									{
-										"help": "queue No. 3.",
+										"help": "Queue number 3.",
 										"name": "queue3"
 									},
 									{
-										"help": "queue No. 4.",
+										"help": "Queue number 4.",
 										"name": "queue4"
 									},
 									{
-										"help": "queue No. 5.",
+										"help": "Queue number 5.",
 										"name": "queue5"
 									},
 									{
-										"help": "queue No. 6.",
+										"help": "Queue number 6.",
 										"name": "queue6"
 									},
 									{
-										"help": "queue No. 7.",
+										"help": "Queue number 7.",
 										"name": "queue7"
 									}
 								],
@@ -3111,35 +3233,35 @@
 								"name": "dscp24",
 								"options": [
 									{
-										"help": "queue No. 0.",
+										"help": "Queue number 0.",
 										"name": "queue0"
 									},
 									{
-										"help": "queue No. 1.",
+										"help": "Queue number 1.",
 										"name": "queue1"
 									},
 									{
-										"help": "queue No. 2.",
+										"help": "Queue number 2.",
 										"name": "queue2"
 									},
 									{
-										"help": "queue No. 3.",
+										"help": "Queue number 3.",
 										"name": "queue3"
 									},
 									{
-										"help": "queue No. 4.",
+										"help": "Queue number 4.",
 										"name": "queue4"
 									},
 									{
-										"help": "queue No. 5.",
+										"help": "Queue number 5.",
 										"name": "queue5"
 									},
 									{
-										"help": "queue No. 6.",
+										"help": "Queue number 6.",
 										"name": "queue6"
 									},
 									{
-										"help": "queue No. 7.",
+										"help": "Queue number 7.",
 										"name": "queue7"
 									}
 								],
@@ -3153,35 +3275,35 @@
 								"name": "dscp25",
 								"options": [
 									{
-										"help": "queue No. 0.",
+										"help": "Queue number 0.",
 										"name": "queue0"
 									},
 									{
-										"help": "queue No. 1.",
+										"help": "Queue number 1.",
 										"name": "queue1"
 									},
 									{
-										"help": "queue No. 2.",
+										"help": "Queue number 2.",
 										"name": "queue2"
 									},
 									{
-										"help": "queue No. 3.",
+										"help": "Queue number 3.",
 										"name": "queue3"
 									},
 									{
-										"help": "queue No. 4.",
+										"help": "Queue number 4.",
 										"name": "queue4"
 									},
 									{
-										"help": "queue No. 5.",
+										"help": "Queue number 5.",
 										"name": "queue5"
 									},
 									{
-										"help": "queue No. 6.",
+										"help": "Queue number 6.",
 										"name": "queue6"
 									},
 									{
-										"help": "queue No. 7.",
+										"help": "Queue number 7.",
 										"name": "queue7"
 									}
 								],
@@ -3195,35 +3317,35 @@
 								"name": "dscp26",
 								"options": [
 									{
-										"help": "queue No. 0.",
+										"help": "Queue number 0.",
 										"name": "queue0"
 									},
 									{
-										"help": "queue No. 1.",
+										"help": "Queue number 1.",
 										"name": "queue1"
 									},
 									{
-										"help": "queue No. 2.",
+										"help": "Queue number 2.",
 										"name": "queue2"
 									},
 									{
-										"help": "queue No. 3.",
+										"help": "Queue number 3.",
 										"name": "queue3"
 									},
 									{
-										"help": "queue No. 4.",
+										"help": "Queue number 4.",
 										"name": "queue4"
 									},
 									{
-										"help": "queue No. 5.",
+										"help": "Queue number 5.",
 										"name": "queue5"
 									},
 									{
-										"help": "queue No. 6.",
+										"help": "Queue number 6.",
 										"name": "queue6"
 									},
 									{
-										"help": "queue No. 7.",
+										"help": "Queue number 7.",
 										"name": "queue7"
 									}
 								],
@@ -3237,35 +3359,35 @@
 								"name": "dscp27",
 								"options": [
 									{
-										"help": "queue No. 0.",
+										"help": "Queue number 0.",
 										"name": "queue0"
 									},
 									{
-										"help": "queue No. 1.",
+										"help": "Queue number 1.",
 										"name": "queue1"
 									},
 									{
-										"help": "queue No. 2.",
+										"help": "Queue number 2.",
 										"name": "queue2"
 									},
 									{
-										"help": "queue No. 3.",
+										"help": "Queue number 3.",
 										"name": "queue3"
 									},
 									{
-										"help": "queue No. 4.",
+										"help": "Queue number 4.",
 										"name": "queue4"
 									},
 									{
-										"help": "queue No. 5.",
+										"help": "Queue number 5.",
 										"name": "queue5"
 									},
 									{
-										"help": "queue No. 6.",
+										"help": "Queue number 6.",
 										"name": "queue6"
 									},
 									{
-										"help": "queue No. 7.",
+										"help": "Queue number 7.",
 										"name": "queue7"
 									}
 								],
@@ -3279,35 +3401,35 @@
 								"name": "dscp28",
 								"options": [
 									{
-										"help": "queue No. 0.",
+										"help": "Queue number 0.",
 										"name": "queue0"
 									},
 									{
-										"help": "queue No. 1.",
+										"help": "Queue number 1.",
 										"name": "queue1"
 									},
 									{
-										"help": "queue No. 2.",
+										"help": "Queue number 2.",
 										"name": "queue2"
 									},
 									{
-										"help": "queue No. 3.",
+										"help": "Queue number 3.",
 										"name": "queue3"
 									},
 									{
-										"help": "queue No. 4.",
+										"help": "Queue number 4.",
 										"name": "queue4"
 									},
 									{
-										"help": "queue No. 5.",
+										"help": "Queue number 5.",
 										"name": "queue5"
 									},
 									{
-										"help": "queue No. 6.",
+										"help": "Queue number 6.",
 										"name": "queue6"
 									},
 									{
-										"help": "queue No. 7.",
+										"help": "Queue number 7.",
 										"name": "queue7"
 									}
 								],
@@ -3321,35 +3443,35 @@
 								"name": "dscp29",
 								"options": [
 									{
-										"help": "queue No. 0.",
+										"help": "Queue number 0.",
 										"name": "queue0"
 									},
 									{
-										"help": "queue No. 1.",
+										"help": "Queue number 1.",
 										"name": "queue1"
 									},
 									{
-										"help": "queue No. 2.",
+										"help": "Queue number 2.",
 										"name": "queue2"
 									},
 									{
-										"help": "queue No. 3.",
+										"help": "Queue number 3.",
 										"name": "queue3"
 									},
 									{
-										"help": "queue No. 4.",
+										"help": "Queue number 4.",
 										"name": "queue4"
 									},
 									{
-										"help": "queue No. 5.",
+										"help": "Queue number 5.",
 										"name": "queue5"
 									},
 									{
-										"help": "queue No. 6.",
+										"help": "Queue number 6.",
 										"name": "queue6"
 									},
 									{
-										"help": "queue No. 7.",
+										"help": "Queue number 7.",
 										"name": "queue7"
 									}
 								],
@@ -3363,35 +3485,35 @@
 								"name": "dscp3",
 								"options": [
 									{
-										"help": "queue No. 0.",
+										"help": "Queue number 0.",
 										"name": "queue0"
 									},
 									{
-										"help": "queue No. 1.",
+										"help": "Queue number 1.",
 										"name": "queue1"
 									},
 									{
-										"help": "queue No. 2.",
+										"help": "Queue number 2.",
 										"name": "queue2"
 									},
 									{
-										"help": "queue No. 3.",
+										"help": "Queue number 3.",
 										"name": "queue3"
 									},
 									{
-										"help": "queue No. 4.",
+										"help": "Queue number 4.",
 										"name": "queue4"
 									},
 									{
-										"help": "queue No. 5.",
+										"help": "Queue number 5.",
 										"name": "queue5"
 									},
 									{
-										"help": "queue No. 6.",
+										"help": "Queue number 6.",
 										"name": "queue6"
 									},
 									{
-										"help": "queue No. 7.",
+										"help": "Queue number 7.",
 										"name": "queue7"
 									}
 								],
@@ -3405,35 +3527,35 @@
 								"name": "dscp30",
 								"options": [
 									{
-										"help": "queue No. 0.",
+										"help": "Queue number 0.",
 										"name": "queue0"
 									},
 									{
-										"help": "queue No. 1.",
+										"help": "Queue number 1.",
 										"name": "queue1"
 									},
 									{
-										"help": "queue No. 2.",
+										"help": "Queue number 2.",
 										"name": "queue2"
 									},
 									{
-										"help": "queue No. 3.",
+										"help": "Queue number 3.",
 										"name": "queue3"
 									},
 									{
-										"help": "queue No. 4.",
+										"help": "Queue number 4.",
 										"name": "queue4"
 									},
 									{
-										"help": "queue No. 5.",
+										"help": "Queue number 5.",
 										"name": "queue5"
 									},
 									{
-										"help": "queue No. 6.",
+										"help": "Queue number 6.",
 										"name": "queue6"
 									},
 									{
-										"help": "queue No. 7.",
+										"help": "Queue number 7.",
 										"name": "queue7"
 									}
 								],
@@ -3447,35 +3569,35 @@
 								"name": "dscp31",
 								"options": [
 									{
-										"help": "queue No. 0.",
+										"help": "Queue number 0.",
 										"name": "queue0"
 									},
 									{
-										"help": "queue No. 1.",
+										"help": "Queue number 1.",
 										"name": "queue1"
 									},
 									{
-										"help": "queue No. 2.",
+										"help": "Queue number 2.",
 										"name": "queue2"
 									},
 									{
-										"help": "queue No. 3.",
+										"help": "Queue number 3.",
 										"name": "queue3"
 									},
 									{
-										"help": "queue No. 4.",
+										"help": "Queue number 4.",
 										"name": "queue4"
 									},
 									{
-										"help": "queue No. 5.",
+										"help": "Queue number 5.",
 										"name": "queue5"
 									},
 									{
-										"help": "queue No. 6.",
+										"help": "Queue number 6.",
 										"name": "queue6"
 									},
 									{
-										"help": "queue No. 7.",
+										"help": "Queue number 7.",
 										"name": "queue7"
 									}
 								],
@@ -3489,35 +3611,35 @@
 								"name": "dscp32",
 								"options": [
 									{
-										"help": "queue No. 0.",
+										"help": "Queue number 0.",
 										"name": "queue0"
 									},
 									{
-										"help": "queue No. 1.",
+										"help": "Queue number 1.",
 										"name": "queue1"
 									},
 									{
-										"help": "queue No. 2.",
+										"help": "Queue number 2.",
 										"name": "queue2"
 									},
 									{
-										"help": "queue No. 3.",
+										"help": "Queue number 3.",
 										"name": "queue3"
 									},
 									{
-										"help": "queue No. 4.",
+										"help": "Queue number 4.",
 										"name": "queue4"
 									},
 									{
-										"help": "queue No. 5.",
+										"help": "Queue number 5.",
 										"name": "queue5"
 									},
 									{
-										"help": "queue No. 6.",
+										"help": "Queue number 6.",
 										"name": "queue6"
 									},
 									{
-										"help": "queue No. 7.",
+										"help": "Queue number 7.",
 										"name": "queue7"
 									}
 								],
@@ -3531,35 +3653,35 @@
 								"name": "dscp33",
 								"options": [
 									{
-										"help": "queue No. 0.",
+										"help": "Queue number 0.",
 										"name": "queue0"
 									},
 									{
-										"help": "queue No. 1.",
+										"help": "Queue number 1.",
 										"name": "queue1"
 									},
 									{
-										"help": "queue No. 2.",
+										"help": "Queue number 2.",
 										"name": "queue2"
 									},
 									{
-										"help": "queue No. 3.",
+										"help": "Queue number 3.",
 										"name": "queue3"
 									},
 									{
-										"help": "queue No. 4.",
+										"help": "Queue number 4.",
 										"name": "queue4"
 									},
 									{
-										"help": "queue No. 5.",
+										"help": "Queue number 5.",
 										"name": "queue5"
 									},
 									{
-										"help": "queue No. 6.",
+										"help": "Queue number 6.",
 										"name": "queue6"
 									},
 									{
-										"help": "queue No. 7.",
+										"help": "Queue number 7.",
 										"name": "queue7"
 									}
 								],
@@ -3573,35 +3695,35 @@
 								"name": "dscp34",
 								"options": [
 									{
-										"help": "queue No. 0.",
+										"help": "Queue number 0.",
 										"name": "queue0"
 									},
 									{
-										"help": "queue No. 1.",
+										"help": "Queue number 1.",
 										"name": "queue1"
 									},
 									{
-										"help": "queue No. 2.",
+										"help": "Queue number 2.",
 										"name": "queue2"
 									},
 									{
-										"help": "queue No. 3.",
+										"help": "Queue number 3.",
 										"name": "queue3"
 									},
 									{
-										"help": "queue No. 4.",
+										"help": "Queue number 4.",
 										"name": "queue4"
 									},
 									{
-										"help": "queue No. 5.",
+										"help": "Queue number 5.",
 										"name": "queue5"
 									},
 									{
-										"help": "queue No. 6.",
+										"help": "Queue number 6.",
 										"name": "queue6"
 									},
 									{
-										"help": "queue No. 7.",
+										"help": "Queue number 7.",
 										"name": "queue7"
 									}
 								],
@@ -3615,35 +3737,35 @@
 								"name": "dscp35",
 								"options": [
 									{
-										"help": "queue No. 0.",
+										"help": "Queue number 0.",
 										"name": "queue0"
 									},
 									{
-										"help": "queue No. 1.",
+										"help": "Queue number 1.",
 										"name": "queue1"
 									},
 									{
-										"help": "queue No. 2.",
+										"help": "Queue number 2.",
 										"name": "queue2"
 									},
 									{
-										"help": "queue No. 3.",
+										"help": "Queue number 3.",
 										"name": "queue3"
 									},
 									{
-										"help": "queue No. 4.",
+										"help": "Queue number 4.",
 										"name": "queue4"
 									},
 									{
-										"help": "queue No. 5.",
+										"help": "Queue number 5.",
 										"name": "queue5"
 									},
 									{
-										"help": "queue No. 6.",
+										"help": "Queue number 6.",
 										"name": "queue6"
 									},
 									{
-										"help": "queue No. 7.",
+										"help": "Queue number 7.",
 										"name": "queue7"
 									}
 								],
@@ -3657,35 +3779,35 @@
 								"name": "dscp36",
 								"options": [
 									{
-										"help": "queue No. 0.",
+										"help": "Queue number 0.",
 										"name": "queue0"
 									},
 									{
-										"help": "queue No. 1.",
+										"help": "Queue number 1.",
 										"name": "queue1"
 									},
 									{
-										"help": "queue No. 2.",
+										"help": "Queue number 2.",
 										"name": "queue2"
 									},
 									{
-										"help": "queue No. 3.",
+										"help": "Queue number 3.",
 										"name": "queue3"
 									},
 									{
-										"help": "queue No. 4.",
+										"help": "Queue number 4.",
 										"name": "queue4"
 									},
 									{
-										"help": "queue No. 5.",
+										"help": "Queue number 5.",
 										"name": "queue5"
 									},
 									{
-										"help": "queue No. 6.",
+										"help": "Queue number 6.",
 										"name": "queue6"
 									},
 									{
-										"help": "queue No. 7.",
+										"help": "Queue number 7.",
 										"name": "queue7"
 									}
 								],
@@ -3699,35 +3821,35 @@
 								"name": "dscp37",
 								"options": [
 									{
-										"help": "queue No. 0.",
+										"help": "Queue number 0.",
 										"name": "queue0"
 									},
 									{
-										"help": "queue No. 1.",
+										"help": "Queue number 1.",
 										"name": "queue1"
 									},
 									{
-										"help": "queue No. 2.",
+										"help": "Queue number 2.",
 										"name": "queue2"
 									},
 									{
-										"help": "queue No. 3.",
+										"help": "Queue number 3.",
 										"name": "queue3"
 									},
 									{
-										"help": "queue No. 4.",
+										"help": "Queue number 4.",
 										"name": "queue4"
 									},
 									{
-										"help": "queue No. 5.",
+										"help": "Queue number 5.",
 										"name": "queue5"
 									},
 									{
-										"help": "queue No. 6.",
+										"help": "Queue number 6.",
 										"name": "queue6"
 									},
 									{
-										"help": "queue No. 7.",
+										"help": "Queue number 7.",
 										"name": "queue7"
 									}
 								],
@@ -3741,35 +3863,35 @@
 								"name": "dscp38",
 								"options": [
 									{
-										"help": "queue No. 0.",
+										"help": "Queue number 0.",
 										"name": "queue0"
 									},
 									{
-										"help": "queue No. 1.",
+										"help": "Queue number 1.",
 										"name": "queue1"
 									},
 									{
-										"help": "queue No. 2.",
+										"help": "Queue number 2.",
 										"name": "queue2"
 									},
 									{
-										"help": "queue No. 3.",
+										"help": "Queue number 3.",
 										"name": "queue3"
 									},
 									{
-										"help": "queue No. 4.",
+										"help": "Queue number 4.",
 										"name": "queue4"
 									},
 									{
-										"help": "queue No. 5.",
+										"help": "Queue number 5.",
 										"name": "queue5"
 									},
 									{
-										"help": "queue No. 6.",
+										"help": "Queue number 6.",
 										"name": "queue6"
 									},
 									{
-										"help": "queue No. 7.",
+										"help": "Queue number 7.",
 										"name": "queue7"
 									}
 								],
@@ -3783,35 +3905,35 @@
 								"name": "dscp39",
 								"options": [
 									{
-										"help": "queue No. 0.",
+										"help": "Queue number 0.",
 										"name": "queue0"
 									},
 									{
-										"help": "queue No. 1.",
+										"help": "Queue number 1.",
 										"name": "queue1"
 									},
 									{
-										"help": "queue No. 2.",
+										"help": "Queue number 2.",
 										"name": "queue2"
 									},
 									{
-										"help": "queue No. 3.",
+										"help": "Queue number 3.",
 										"name": "queue3"
 									},
 									{
-										"help": "queue No. 4.",
+										"help": "Queue number 4.",
 										"name": "queue4"
 									},
 									{
-										"help": "queue No. 5.",
+										"help": "Queue number 5.",
 										"name": "queue5"
 									},
 									{
-										"help": "queue No. 6.",
+										"help": "Queue number 6.",
 										"name": "queue6"
 									},
 									{
-										"help": "queue No. 7.",
+										"help": "Queue number 7.",
 										"name": "queue7"
 									}
 								],
@@ -3825,35 +3947,35 @@
 								"name": "dscp4",
 								"options": [
 									{
-										"help": "queue No. 0.",
+										"help": "Queue number 0.",
 										"name": "queue0"
 									},
 									{
-										"help": "queue No. 1.",
+										"help": "Queue number 1.",
 										"name": "queue1"
 									},
 									{
-										"help": "queue No. 2.",
+										"help": "Queue number 2.",
 										"name": "queue2"
 									},
 									{
-										"help": "queue No. 3.",
+										"help": "Queue number 3.",
 										"name": "queue3"
 									},
 									{
-										"help": "queue No. 4.",
+										"help": "Queue number 4.",
 										"name": "queue4"
 									},
 									{
-										"help": "queue No. 5.",
+										"help": "Queue number 5.",
 										"name": "queue5"
 									},
 									{
-										"help": "queue No. 6.",
+										"help": "Queue number 6.",
 										"name": "queue6"
 									},
 									{
-										"help": "queue No. 7.",
+										"help": "Queue number 7.",
 										"name": "queue7"
 									}
 								],
@@ -3867,35 +3989,35 @@
 								"name": "dscp40",
 								"options": [
 									{
-										"help": "queue No. 0.",
+										"help": "Queue number 0.",
 										"name": "queue0"
 									},
 									{
-										"help": "queue No. 1.",
+										"help": "Queue number 1.",
 										"name": "queue1"
 									},
 									{
-										"help": "queue No. 2.",
+										"help": "Queue number 2.",
 										"name": "queue2"
 									},
 									{
-										"help": "queue No. 3.",
+										"help": "Queue number 3.",
 										"name": "queue3"
 									},
 									{
-										"help": "queue No. 4.",
+										"help": "Queue number 4.",
 										"name": "queue4"
 									},
 									{
-										"help": "queue No. 5.",
+										"help": "Queue number 5.",
 										"name": "queue5"
 									},
 									{
-										"help": "queue No. 6.",
+										"help": "Queue number 6.",
 										"name": "queue6"
 									},
 									{
-										"help": "queue No. 7.",
+										"help": "Queue number 7.",
 										"name": "queue7"
 									}
 								],
@@ -3909,35 +4031,35 @@
 								"name": "dscp41",
 								"options": [
 									{
-										"help": "queue No. 0.",
+										"help": "Queue number 0.",
 										"name": "queue0"
 									},
 									{
-										"help": "queue No. 1.",
+										"help": "Queue number 1.",
 										"name": "queue1"
 									},
 									{
-										"help": "queue No. 2.",
+										"help": "Queue number 2.",
 										"name": "queue2"
 									},
 									{
-										"help": "queue No. 3.",
+										"help": "Queue number 3.",
 										"name": "queue3"
 									},
 									{
-										"help": "queue No. 4.",
+										"help": "Queue number 4.",
 										"name": "queue4"
 									},
 									{
-										"help": "queue No. 5.",
+										"help": "Queue number 5.",
 										"name": "queue5"
 									},
 									{
-										"help": "queue No. 6.",
+										"help": "Queue number 6.",
 										"name": "queue6"
 									},
 									{
-										"help": "queue No. 7.",
+										"help": "Queue number 7.",
 										"name": "queue7"
 									}
 								],
@@ -3951,35 +4073,35 @@
 								"name": "dscp42",
 								"options": [
 									{
-										"help": "queue No. 0.",
+										"help": "Queue number 0.",
 										"name": "queue0"
 									},
 									{
-										"help": "queue No. 1.",
+										"help": "Queue number 1.",
 										"name": "queue1"
 									},
 									{
-										"help": "queue No. 2.",
+										"help": "Queue number 2.",
 										"name": "queue2"
 									},
 									{
-										"help": "queue No. 3.",
+										"help": "Queue number 3.",
 										"name": "queue3"
 									},
 									{
-										"help": "queue No. 4.",
+										"help": "Queue number 4.",
 										"name": "queue4"
 									},
 									{
-										"help": "queue No. 5.",
+										"help": "Queue number 5.",
 										"name": "queue5"
 									},
 									{
-										"help": "queue No. 6.",
+										"help": "Queue number 6.",
 										"name": "queue6"
 									},
 									{
-										"help": "queue No. 7.",
+										"help": "Queue number 7.",
 										"name": "queue7"
 									}
 								],
@@ -3993,35 +4115,35 @@
 								"name": "dscp43",
 								"options": [
 									{
-										"help": "queue No. 0.",
+										"help": "Queue number 0.",
 										"name": "queue0"
 									},
 									{
-										"help": "queue No. 1.",
+										"help": "Queue number 1.",
 										"name": "queue1"
 									},
 									{
-										"help": "queue No. 2.",
+										"help": "Queue number 2.",
 										"name": "queue2"
 									},
 									{
-										"help": "queue No. 3.",
+										"help": "Queue number 3.",
 										"name": "queue3"
 									},
 									{
-										"help": "queue No. 4.",
+										"help": "Queue number 4.",
 										"name": "queue4"
 									},
 									{
-										"help": "queue No. 5.",
+										"help": "Queue number 5.",
 										"name": "queue5"
 									},
 									{
-										"help": "queue No. 6.",
+										"help": "Queue number 6.",
 										"name": "queue6"
 									},
 									{
-										"help": "queue No. 7.",
+										"help": "Queue number 7.",
 										"name": "queue7"
 									}
 								],
@@ -4035,35 +4157,35 @@
 								"name": "dscp44",
 								"options": [
 									{
-										"help": "queue No. 0.",
+										"help": "Queue number 0.",
 										"name": "queue0"
 									},
 									{
-										"help": "queue No. 1.",
+										"help": "Queue number 1.",
 										"name": "queue1"
 									},
 									{
-										"help": "queue No. 2.",
+										"help": "Queue number 2.",
 										"name": "queue2"
 									},
 									{
-										"help": "queue No. 3.",
+										"help": "Queue number 3.",
 										"name": "queue3"
 									},
 									{
-										"help": "queue No. 4.",
+										"help": "Queue number 4.",
 										"name": "queue4"
 									},
 									{
-										"help": "queue No. 5.",
+										"help": "Queue number 5.",
 										"name": "queue5"
 									},
 									{
-										"help": "queue No. 6.",
+										"help": "Queue number 6.",
 										"name": "queue6"
 									},
 									{
-										"help": "queue No. 7.",
+										"help": "Queue number 7.",
 										"name": "queue7"
 									}
 								],
@@ -4077,35 +4199,35 @@
 								"name": "dscp45",
 								"options": [
 									{
-										"help": "queue No. 0.",
+										"help": "Queue number 0.",
 										"name": "queue0"
 									},
 									{
-										"help": "queue No. 1.",
+										"help": "Queue number 1.",
 										"name": "queue1"
 									},
 									{
-										"help": "queue No. 2.",
+										"help": "Queue number 2.",
 										"name": "queue2"
 									},
 									{
-										"help": "queue No. 3.",
+										"help": "Queue number 3.",
 										"name": "queue3"
 									},
 									{
-										"help": "queue No. 4.",
+										"help": "Queue number 4.",
 										"name": "queue4"
 									},
 									{
-										"help": "queue No. 5.",
+										"help": "Queue number 5.",
 										"name": "queue5"
 									},
 									{
-										"help": "queue No. 6.",
+										"help": "Queue number 6.",
 										"name": "queue6"
 									},
 									{
-										"help": "queue No. 7.",
+										"help": "Queue number 7.",
 										"name": "queue7"
 									}
 								],
@@ -4119,35 +4241,35 @@
 								"name": "dscp46",
 								"options": [
 									{
-										"help": "queue No. 0.",
+										"help": "Queue number 0.",
 										"name": "queue0"
 									},
 									{
-										"help": "queue No. 1.",
+										"help": "Queue number 1.",
 										"name": "queue1"
 									},
 									{
-										"help": "queue No. 2.",
+										"help": "Queue number 2.",
 										"name": "queue2"
 									},
 									{
-										"help": "queue No. 3.",
+										"help": "Queue number 3.",
 										"name": "queue3"
 									},
 									{
-										"help": "queue No. 4.",
+										"help": "Queue number 4.",
 										"name": "queue4"
 									},
 									{
-										"help": "queue No. 5.",
+										"help": "Queue number 5.",
 										"name": "queue5"
 									},
 									{
-										"help": "queue No. 6.",
+										"help": "Queue number 6.",
 										"name": "queue6"
 									},
 									{
-										"help": "queue No. 7.",
+										"help": "Queue number 7.",
 										"name": "queue7"
 									}
 								],
@@ -4161,35 +4283,35 @@
 								"name": "dscp47",
 								"options": [
 									{
-										"help": "queue No. 0.",
+										"help": "Queue number 0.",
 										"name": "queue0"
 									},
 									{
-										"help": "queue No. 1.",
+										"help": "Queue number 1.",
 										"name": "queue1"
 									},
 									{
-										"help": "queue No. 2.",
+										"help": "Queue number 2.",
 										"name": "queue2"
 									},
 									{
-										"help": "queue No. 3.",
+										"help": "Queue number 3.",
 										"name": "queue3"
 									},
 									{
-										"help": "queue No. 4.",
+										"help": "Queue number 4.",
 										"name": "queue4"
 									},
 									{
-										"help": "queue No. 5.",
+										"help": "Queue number 5.",
 										"name": "queue5"
 									},
 									{
-										"help": "queue No. 6.",
+										"help": "Queue number 6.",
 										"name": "queue6"
 									},
 									{
-										"help": "queue No. 7.",
+										"help": "Queue number 7.",
 										"name": "queue7"
 									}
 								],
@@ -4203,35 +4325,35 @@
 								"name": "dscp48",
 								"options": [
 									{
-										"help": "queue No. 0.",
+										"help": "Queue number 0.",
 										"name": "queue0"
 									},
 									{
-										"help": "queue No. 1.",
+										"help": "Queue number 1.",
 										"name": "queue1"
 									},
 									{
-										"help": "queue No. 2.",
+										"help": "Queue number 2.",
 										"name": "queue2"
 									},
 									{
-										"help": "queue No. 3.",
+										"help": "Queue number 3.",
 										"name": "queue3"
 									},
 									{
-										"help": "queue No. 4.",
+										"help": "Queue number 4.",
 										"name": "queue4"
 									},
 									{
-										"help": "queue No. 5.",
+										"help": "Queue number 5.",
 										"name": "queue5"
 									},
 									{
-										"help": "queue No. 6.",
+										"help": "Queue number 6.",
 										"name": "queue6"
 									},
 									{
-										"help": "queue No. 7.",
+										"help": "Queue number 7.",
 										"name": "queue7"
 									}
 								],
@@ -4245,35 +4367,35 @@
 								"name": "dscp49",
 								"options": [
 									{
-										"help": "queue No. 0.",
+										"help": "Queue number 0.",
 										"name": "queue0"
 									},
 									{
-										"help": "queue No. 1.",
+										"help": "Queue number 1.",
 										"name": "queue1"
 									},
 									{
-										"help": "queue No. 2.",
+										"help": "Queue number 2.",
 										"name": "queue2"
 									},
 									{
-										"help": "queue No. 3.",
+										"help": "Queue number 3.",
 										"name": "queue3"
 									},
 									{
-										"help": "queue No. 4.",
+										"help": "Queue number 4.",
 										"name": "queue4"
 									},
 									{
-										"help": "queue No. 5.",
+										"help": "Queue number 5.",
 										"name": "queue5"
 									},
 									{
-										"help": "queue No. 6.",
+										"help": "Queue number 6.",
 										"name": "queue6"
 									},
 									{
-										"help": "queue No. 7.",
+										"help": "Queue number 7.",
 										"name": "queue7"
 									}
 								],
@@ -4287,35 +4409,35 @@
 								"name": "dscp5",
 								"options": [
 									{
-										"help": "queue No. 0.",
+										"help": "Queue number 0.",
 										"name": "queue0"
 									},
 									{
-										"help": "queue No. 1.",
+										"help": "Queue number 1.",
 										"name": "queue1"
 									},
 									{
-										"help": "queue No. 2.",
+										"help": "Queue number 2.",
 										"name": "queue2"
 									},
 									{
-										"help": "queue No. 3.",
+										"help": "Queue number 3.",
 										"name": "queue3"
 									},
 									{
-										"help": "queue No. 4.",
+										"help": "Queue number 4.",
 										"name": "queue4"
 									},
 									{
-										"help": "queue No. 5.",
+										"help": "Queue number 5.",
 										"name": "queue5"
 									},
 									{
-										"help": "queue No. 6.",
+										"help": "Queue number 6.",
 										"name": "queue6"
 									},
 									{
-										"help": "queue No. 7.",
+										"help": "Queue number 7.",
 										"name": "queue7"
 									}
 								],
@@ -4329,35 +4451,35 @@
 								"name": "dscp50",
 								"options": [
 									{
-										"help": "queue No. 0.",
+										"help": "Queue number 0.",
 										"name": "queue0"
 									},
 									{
-										"help": "queue No. 1.",
+										"help": "Queue number 1.",
 										"name": "queue1"
 									},
 									{
-										"help": "queue No. 2.",
+										"help": "Queue number 2.",
 										"name": "queue2"
 									},
 									{
-										"help": "queue No. 3.",
+										"help": "Queue number 3.",
 										"name": "queue3"
 									},
 									{
-										"help": "queue No. 4.",
+										"help": "Queue number 4.",
 										"name": "queue4"
 									},
 									{
-										"help": "queue No. 5.",
+										"help": "Queue number 5.",
 										"name": "queue5"
 									},
 									{
-										"help": "queue No. 6.",
+										"help": "Queue number 6.",
 										"name": "queue6"
 									},
 									{
-										"help": "queue No. 7.",
+										"help": "Queue number 7.",
 										"name": "queue7"
 									}
 								],
@@ -4371,35 +4493,35 @@
 								"name": "dscp51",
 								"options": [
 									{
-										"help": "queue No. 0.",
+										"help": "Queue number 0.",
 										"name": "queue0"
 									},
 									{
-										"help": "queue No. 1.",
+										"help": "Queue number 1.",
 										"name": "queue1"
 									},
 									{
-										"help": "queue No. 2.",
+										"help": "Queue number 2.",
 										"name": "queue2"
 									},
 									{
-										"help": "queue No. 3.",
+										"help": "Queue number 3.",
 										"name": "queue3"
 									},
 									{
-										"help": "queue No. 4.",
+										"help": "Queue number 4.",
 										"name": "queue4"
 									},
 									{
-										"help": "queue No. 5.",
+										"help": "Queue number 5.",
 										"name": "queue5"
 									},
 									{
-										"help": "queue No. 6.",
+										"help": "Queue number 6.",
 										"name": "queue6"
 									},
 									{
-										"help": "queue No. 7.",
+										"help": "Queue number 7.",
 										"name": "queue7"
 									}
 								],
@@ -4413,35 +4535,35 @@
 								"name": "dscp52",
 								"options": [
 									{
-										"help": "queue No. 0.",
+										"help": "Queue number 0.",
 										"name": "queue0"
 									},
 									{
-										"help": "queue No. 1.",
+										"help": "Queue number 1.",
 										"name": "queue1"
 									},
 									{
-										"help": "queue No. 2.",
+										"help": "Queue number 2.",
 										"name": "queue2"
 									},
 									{
-										"help": "queue No. 3.",
+										"help": "Queue number 3.",
 										"name": "queue3"
 									},
 									{
-										"help": "queue No. 4.",
+										"help": "Queue number 4.",
 										"name": "queue4"
 									},
 									{
-										"help": "queue No. 5.",
+										"help": "Queue number 5.",
 										"name": "queue5"
 									},
 									{
-										"help": "queue No. 6.",
+										"help": "Queue number 6.",
 										"name": "queue6"
 									},
 									{
-										"help": "queue No. 7.",
+										"help": "Queue number 7.",
 										"name": "queue7"
 									}
 								],
@@ -4455,35 +4577,35 @@
 								"name": "dscp53",
 								"options": [
 									{
-										"help": "queue No. 0.",
+										"help": "Queue number 0.",
 										"name": "queue0"
 									},
 									{
-										"help": "queue No. 1.",
+										"help": "Queue number 1.",
 										"name": "queue1"
 									},
 									{
-										"help": "queue No. 2.",
+										"help": "Queue number 2.",
 										"name": "queue2"
 									},
 									{
-										"help": "queue No. 3.",
+										"help": "Queue number 3.",
 										"name": "queue3"
 									},
 									{
-										"help": "queue No. 4.",
+										"help": "Queue number 4.",
 										"name": "queue4"
 									},
 									{
-										"help": "queue No. 5.",
+										"help": "Queue number 5.",
 										"name": "queue5"
 									},
 									{
-										"help": "queue No. 6.",
+										"help": "Queue number 6.",
 										"name": "queue6"
 									},
 									{
-										"help": "queue No. 7.",
+										"help": "Queue number 7.",
 										"name": "queue7"
 									}
 								],
@@ -4497,35 +4619,35 @@
 								"name": "dscp54",
 								"options": [
 									{
-										"help": "queue No. 0.",
+										"help": "Queue number 0.",
 										"name": "queue0"
 									},
 									{
-										"help": "queue No. 1.",
+										"help": "Queue number 1.",
 										"name": "queue1"
 									},
 									{
-										"help": "queue No. 2.",
+										"help": "Queue number 2.",
 										"name": "queue2"
 									},
 									{
-										"help": "queue No. 3.",
+										"help": "Queue number 3.",
 										"name": "queue3"
 									},
 									{
-										"help": "queue No. 4.",
+										"help": "Queue number 4.",
 										"name": "queue4"
 									},
 									{
-										"help": "queue No. 5.",
+										"help": "Queue number 5.",
 										"name": "queue5"
 									},
 									{
-										"help": "queue No. 6.",
+										"help": "Queue number 6.",
 										"name": "queue6"
 									},
 									{
-										"help": "queue No. 7.",
+										"help": "Queue number 7.",
 										"name": "queue7"
 									}
 								],
@@ -4539,35 +4661,35 @@
 								"name": "dscp55",
 								"options": [
 									{
-										"help": "queue No. 0.",
+										"help": "Queue number 0.",
 										"name": "queue0"
 									},
 									{
-										"help": "queue No. 1.",
+										"help": "Queue number 1.",
 										"name": "queue1"
 									},
 									{
-										"help": "queue No. 2.",
+										"help": "Queue number 2.",
 										"name": "queue2"
 									},
 									{
-										"help": "queue No. 3.",
+										"help": "Queue number 3.",
 										"name": "queue3"
 									},
 									{
-										"help": "queue No. 4.",
+										"help": "Queue number 4.",
 										"name": "queue4"
 									},
 									{
-										"help": "queue No. 5.",
+										"help": "Queue number 5.",
 										"name": "queue5"
 									},
 									{
-										"help": "queue No. 6.",
+										"help": "Queue number 6.",
 										"name": "queue6"
 									},
 									{
-										"help": "queue No. 7.",
+										"help": "Queue number 7.",
 										"name": "queue7"
 									}
 								],
@@ -4581,35 +4703,35 @@
 								"name": "dscp56",
 								"options": [
 									{
-										"help": "queue No. 0.",
+										"help": "Queue number 0.",
 										"name": "queue0"
 									},
 									{
-										"help": "queue No. 1.",
+										"help": "Queue number 1.",
 										"name": "queue1"
 									},
 									{
-										"help": "queue No. 2.",
+										"help": "Queue number 2.",
 										"name": "queue2"
 									},
 									{
-										"help": "queue No. 3.",
+										"help": "Queue number 3.",
 										"name": "queue3"
 									},
 									{
-										"help": "queue No. 4.",
+										"help": "Queue number 4.",
 										"name": "queue4"
 									},
 									{
-										"help": "queue No. 5.",
+										"help": "Queue number 5.",
 										"name": "queue5"
 									},
 									{
-										"help": "queue No. 6.",
+										"help": "Queue number 6.",
 										"name": "queue6"
 									},
 									{
-										"help": "queue No. 7.",
+										"help": "Queue number 7.",
 										"name": "queue7"
 									}
 								],
@@ -4623,35 +4745,35 @@
 								"name": "dscp57",
 								"options": [
 									{
-										"help": "queue No. 0.",
+										"help": "Queue number 0.",
 										"name": "queue0"
 									},
 									{
-										"help": "queue No. 1.",
+										"help": "Queue number 1.",
 										"name": "queue1"
 									},
 									{
-										"help": "queue No. 2.",
+										"help": "Queue number 2.",
 										"name": "queue2"
 									},
 									{
-										"help": "queue No. 3.",
+										"help": "Queue number 3.",
 										"name": "queue3"
 									},
 									{
-										"help": "queue No. 4.",
+										"help": "Queue number 4.",
 										"name": "queue4"
 									},
 									{
-										"help": "queue No. 5.",
+										"help": "Queue number 5.",
 										"name": "queue5"
 									},
 									{
-										"help": "queue No. 6.",
+										"help": "Queue number 6.",
 										"name": "queue6"
 									},
 									{
-										"help": "queue No. 7.",
+										"help": "Queue number 7.",
 										"name": "queue7"
 									}
 								],
@@ -4665,35 +4787,35 @@
 								"name": "dscp58",
 								"options": [
 									{
-										"help": "queue No. 0.",
+										"help": "Queue number 0.",
 										"name": "queue0"
 									},
 									{
-										"help": "queue No. 1.",
+										"help": "Queue number 1.",
 										"name": "queue1"
 									},
 									{
-										"help": "queue No. 2.",
+										"help": "Queue number 2.",
 										"name": "queue2"
 									},
 									{
-										"help": "queue No. 3.",
+										"help": "Queue number 3.",
 										"name": "queue3"
 									},
 									{
-										"help": "queue No. 4.",
+										"help": "Queue number 4.",
 										"name": "queue4"
 									},
 									{
-										"help": "queue No. 5.",
+										"help": "Queue number 5.",
 										"name": "queue5"
 									},
 									{
-										"help": "queue No. 6.",
+										"help": "Queue number 6.",
 										"name": "queue6"
 									},
 									{
-										"help": "queue No. 7.",
+										"help": "Queue number 7.",
 										"name": "queue7"
 									}
 								],
@@ -4707,35 +4829,35 @@
 								"name": "dscp59",
 								"options": [
 									{
-										"help": "queue No. 0.",
+										"help": "Queue number 0.",
 										"name": "queue0"
 									},
 									{
-										"help": "queue No. 1.",
+										"help": "Queue number 1.",
 										"name": "queue1"
 									},
 									{
-										"help": "queue No. 2.",
+										"help": "Queue number 2.",
 										"name": "queue2"
 									},
 									{
-										"help": "queue No. 3.",
+										"help": "Queue number 3.",
 										"name": "queue3"
 									},
 									{
-										"help": "queue No. 4.",
+										"help": "Queue number 4.",
 										"name": "queue4"
 									},
 									{
-										"help": "queue No. 5.",
+										"help": "Queue number 5.",
 										"name": "queue5"
 									},
 									{
-										"help": "queue No. 6.",
+										"help": "Queue number 6.",
 										"name": "queue6"
 									},
 									{
-										"help": "queue No. 7.",
+										"help": "Queue number 7.",
 										"name": "queue7"
 									}
 								],
@@ -4749,35 +4871,35 @@
 								"name": "dscp6",
 								"options": [
 									{
-										"help": "queue No. 0.",
+										"help": "Queue number 0.",
 										"name": "queue0"
 									},
 									{
-										"help": "queue No. 1.",
+										"help": "Queue number 1.",
 										"name": "queue1"
 									},
 									{
-										"help": "queue No. 2.",
+										"help": "Queue number 2.",
 										"name": "queue2"
 									},
 									{
-										"help": "queue No. 3.",
+										"help": "Queue number 3.",
 										"name": "queue3"
 									},
 									{
-										"help": "queue No. 4.",
+										"help": "Queue number 4.",
 										"name": "queue4"
 									},
 									{
-										"help": "queue No. 5.",
+										"help": "Queue number 5.",
 										"name": "queue5"
 									},
 									{
-										"help": "queue No. 6.",
+										"help": "Queue number 6.",
 										"name": "queue6"
 									},
 									{
-										"help": "queue No. 7.",
+										"help": "Queue number 7.",
 										"name": "queue7"
 									}
 								],
@@ -4791,35 +4913,35 @@
 								"name": "dscp60",
 								"options": [
 									{
-										"help": "queue No. 0.",
+										"help": "Queue number 0.",
 										"name": "queue0"
 									},
 									{
-										"help": "queue No. 1.",
+										"help": "Queue number 1.",
 										"name": "queue1"
 									},
 									{
-										"help": "queue No. 2.",
+										"help": "Queue number 2.",
 										"name": "queue2"
 									},
 									{
-										"help": "queue No. 3.",
+										"help": "Queue number 3.",
 										"name": "queue3"
 									},
 									{
-										"help": "queue No. 4.",
+										"help": "Queue number 4.",
 										"name": "queue4"
 									},
 									{
-										"help": "queue No. 5.",
+										"help": "Queue number 5.",
 										"name": "queue5"
 									},
 									{
-										"help": "queue No. 6.",
+										"help": "Queue number 6.",
 										"name": "queue6"
 									},
 									{
-										"help": "queue No. 7.",
+										"help": "Queue number 7.",
 										"name": "queue7"
 									}
 								],
@@ -4833,35 +4955,35 @@
 								"name": "dscp61",
 								"options": [
 									{
-										"help": "queue No. 0.",
+										"help": "Queue number 0.",
 										"name": "queue0"
 									},
 									{
-										"help": "queue No. 1.",
+										"help": "Queue number 1.",
 										"name": "queue1"
 									},
 									{
-										"help": "queue No. 2.",
+										"help": "Queue number 2.",
 										"name": "queue2"
 									},
 									{
-										"help": "queue No. 3.",
+										"help": "Queue number 3.",
 										"name": "queue3"
 									},
 									{
-										"help": "queue No. 4.",
+										"help": "Queue number 4.",
 										"name": "queue4"
 									},
 									{
-										"help": "queue No. 5.",
+										"help": "Queue number 5.",
 										"name": "queue5"
 									},
 									{
-										"help": "queue No. 6.",
+										"help": "Queue number 6.",
 										"name": "queue6"
 									},
 									{
-										"help": "queue No. 7.",
+										"help": "Queue number 7.",
 										"name": "queue7"
 									}
 								],
@@ -4875,35 +4997,35 @@
 								"name": "dscp62",
 								"options": [
 									{
-										"help": "queue No. 0.",
+										"help": "Queue number 0.",
 										"name": "queue0"
 									},
 									{
-										"help": "queue No. 1.",
+										"help": "Queue number 1.",
 										"name": "queue1"
 									},
 									{
-										"help": "queue No. 2.",
+										"help": "Queue number 2.",
 										"name": "queue2"
 									},
 									{
-										"help": "queue No. 3.",
+										"help": "Queue number 3.",
 										"name": "queue3"
 									},
 									{
-										"help": "queue No. 4.",
+										"help": "Queue number 4.",
 										"name": "queue4"
 									},
 									{
-										"help": "queue No. 5.",
+										"help": "Queue number 5.",
 										"name": "queue5"
 									},
 									{
-										"help": "queue No. 6.",
+										"help": "Queue number 6.",
 										"name": "queue6"
 									},
 									{
-										"help": "queue No. 7.",
+										"help": "Queue number 7.",
 										"name": "queue7"
 									}
 								],
@@ -4917,35 +5039,35 @@
 								"name": "dscp63",
 								"options": [
 									{
-										"help": "queue No. 0.",
+										"help": "Queue number 0.",
 										"name": "queue0"
 									},
 									{
-										"help": "queue No. 1.",
+										"help": "Queue number 1.",
 										"name": "queue1"
 									},
 									{
-										"help": "queue No. 2.",
+										"help": "Queue number 2.",
 										"name": "queue2"
 									},
 									{
-										"help": "queue No. 3.",
+										"help": "Queue number 3.",
 										"name": "queue3"
 									},
 									{
-										"help": "queue No. 4.",
+										"help": "Queue number 4.",
 										"name": "queue4"
 									},
 									{
-										"help": "queue No. 5.",
+										"help": "Queue number 5.",
 										"name": "queue5"
 									},
 									{
-										"help": "queue No. 6.",
+										"help": "Queue number 6.",
 										"name": "queue6"
 									},
 									{
-										"help": "queue No. 7.",
+										"help": "Queue number 7.",
 										"name": "queue7"
 									}
 								],
@@ -4959,35 +5081,35 @@
 								"name": "dscp7",
 								"options": [
 									{
-										"help": "queue No. 0.",
+										"help": "Queue number 0.",
 										"name": "queue0"
 									},
 									{
-										"help": "queue No. 1.",
+										"help": "Queue number 1.",
 										"name": "queue1"
 									},
 									{
-										"help": "queue No. 2.",
+										"help": "Queue number 2.",
 										"name": "queue2"
 									},
 									{
-										"help": "queue No. 3.",
+										"help": "Queue number 3.",
 										"name": "queue3"
 									},
 									{
-										"help": "queue No. 4.",
+										"help": "Queue number 4.",
 										"name": "queue4"
 									},
 									{
-										"help": "queue No. 5.",
+										"help": "Queue number 5.",
 										"name": "queue5"
 									},
 									{
-										"help": "queue No. 6.",
+										"help": "Queue number 6.",
 										"name": "queue6"
 									},
 									{
-										"help": "queue No. 7.",
+										"help": "Queue number 7.",
 										"name": "queue7"
 									}
 								],
@@ -5001,35 +5123,35 @@
 								"name": "dscp8",
 								"options": [
 									{
-										"help": "queue No. 0.",
+										"help": "Queue number 0.",
 										"name": "queue0"
 									},
 									{
-										"help": "queue No. 1.",
+										"help": "Queue number 1.",
 										"name": "queue1"
 									},
 									{
-										"help": "queue No. 2.",
+										"help": "Queue number 2.",
 										"name": "queue2"
 									},
 									{
-										"help": "queue No. 3.",
+										"help": "Queue number 3.",
 										"name": "queue3"
 									},
 									{
-										"help": "queue No. 4.",
+										"help": "Queue number 4.",
 										"name": "queue4"
 									},
 									{
-										"help": "queue No. 5.",
+										"help": "Queue number 5.",
 										"name": "queue5"
 									},
 									{
-										"help": "queue No. 6.",
+										"help": "Queue number 6.",
 										"name": "queue6"
 									},
 									{
-										"help": "queue No. 7.",
+										"help": "Queue number 7.",
 										"name": "queue7"
 									}
 								],
@@ -5043,35 +5165,35 @@
 								"name": "dscp9",
 								"options": [
 									{
-										"help": "queue No. 0.",
+										"help": "Queue number 0.",
 										"name": "queue0"
 									},
 									{
-										"help": "queue No. 1.",
+										"help": "Queue number 1.",
 										"name": "queue1"
 									},
 									{
-										"help": "queue No. 2.",
+										"help": "Queue number 2.",
 										"name": "queue2"
 									},
 									{
-										"help": "queue No. 3.",
+										"help": "Queue number 3.",
 										"name": "queue3"
 									},
 									{
-										"help": "queue No. 4.",
+										"help": "Queue number 4.",
 										"name": "queue4"
 									},
 									{
-										"help": "queue No. 5.",
+										"help": "Queue number 5.",
 										"name": "queue5"
 									},
 									{
-										"help": "queue No. 6.",
+										"help": "Queue number 6.",
 										"name": "queue6"
 									},
 									{
-										"help": "queue No. 7.",
+										"help": "Queue number 7.",
 										"name": "queue7"
 									}
 								],
@@ -5083,6 +5205,7 @@
 								"help": "Profile ID.",
 								"max-value": 255,
 								"min-value": 0,
+								"multiple_values": false,
 								"name": "id",
 								"required": true,
 								"type": "integer"
@@ -5111,6 +5234,7 @@
 								"help": "Class weight.",
 								"max-value": 15,
 								"min-value": 0,
+								"multiple_values": false,
 								"name": "weight",
 								"type": "integer"
 							}
@@ -5129,7 +5253,7 @@
 							"mode": {
 								"category": "unitary",
 								"default": "none",
-								"help": "Scheduler Mode.",
+								"help": "Scheduler mode.",
 								"multiple_values": false,
 								"name": "mode",
 								"options": [
@@ -5151,7 +5275,8 @@
 							"name": {
 								"category": "unitary",
 								"default": "",
-								"help": "Scheduler Name.",
+								"help": "Scheduler name.",
+								"multiple_values": false,
 								"name": "name",
 								"size": 35,
 								"type": "string"
@@ -5188,6 +5313,17 @@
 				"removedIn": "v6.4.6",
 				"type": "option"
 			},
+			"npu-group-effective-scope": {
+				"addedIn": "v7.2.8",
+				"category": "unitary",
+				"default": 255,
+				"help": "npu-group-effective-scope defines under which npu-group cmds such as list/purge will be excecuted. Default scope is for all four HS-ok groups. (0-3, default = 255).",
+				"max-value": 255,
+				"min-value": 0,
+				"multiple_values": false,
+				"name": "npu-group-effective-scope",
+				"type": "integer"
+			},
 			"pba-eim": {
 				"addedIn": "v6.4.6",
 				"category": "unitary",
@@ -5206,6 +5342,25 @@
 					}
 				],
 				"removedIn": "v7.0.2",
+				"type": "option"
+			},
+			"per-policy-accounting": {
+				"addedIn": "v7.2.8",
+				"category": "unitary",
+				"default": "disable",
+				"help": "Set per-policy accounting.",
+				"multiple_values": false,
+				"name": "per-policy-accounting",
+				"options": [
+					{
+						"help": "Disable per-policy hit count.",
+						"name": "disable"
+					},
+					{
+						"help": "Enable per-policy hit count",
+						"name": "enable"
+					}
+				],
 				"type": "option"
 			},
 			"per-session-accounting": {
@@ -5236,16 +5391,16 @@
 				"addedIn": "v6.4.6",
 				"category": "unitary",
 				"default": "disable",
-				"help": "Firewall Policy Offload Level(DISABLE/DOS/FULL).",
+				"help": "Configure firewall policy offload level.",
 				"multiple_values": false,
 				"name": "policy-offload-level",
 				"options": [
 					{
-						"help": "disable policy offloading",
+						"help": "Disable policy offloading",
 						"name": "disable"
 					},
 					{
-						"help": "only enable dos policy offloading",
+						"help": "Only enable DoS policy offloading",
 						"name": "dos-offload"
 					}
 				],
@@ -5288,7 +5443,8 @@
 					"interface": {
 						"category": "unitary",
 						"default": "",
-						"help": "Set npu interface port to NPU group map.",
+						"help": "Set NPU interface port for NPU group mapping.",
+						"multiple_values": false,
 						"name": "interface",
 						"required": true,
 						"size": 15,
@@ -5300,6 +5456,7 @@
 						"help": "Mapping NPU group index.",
 						"max-value": 4294967295,
 						"min-value": 0,
+						"multiple_values": false,
 						"name": "npu-group-index",
 						"required": true,
 						"type": "integer"
@@ -5378,6 +5535,7 @@
 			},
 			"qos-mode": {
 				"category": "unitary",
+				"default": "disable",
 				"help": "QoS mode on switch and NP.",
 				"multiple_values": false,
 				"name": "qos-mode",
@@ -5396,6 +5554,25 @@
 					}
 				],
 				"removedIn": "v6.4.6",
+				"type": "option"
+			},
+			"qtm-buf-mode": {
+				"addedIn": "v7.2.8",
+				"category": "unitary",
+				"default": "6ch",
+				"help": "QTM channel configuration for packet buffer.",
+				"multiple_values": false,
+				"name": "qtm-buf-mode",
+				"options": [
+					{
+						"help": "6 DRAM channels for packet buffer.",
+						"name": "6ch"
+					},
+					{
+						"help": "4 DRAM channels for packet buffer.",
+						"name": "4ch"
+					}
+				],
 				"type": "option"
 			},
 			"rdp-offload": {
@@ -5441,9 +5618,29 @@
 				"help": "Session accounting update interval (1 - 10 sec, default 5 sec).",
 				"max-value": 10,
 				"min-value": 1,
+				"multiple_values": false,
 				"name": "session-acct-interval",
 				"removedIn": "v7.0.2",
 				"type": "integer"
+			},
+			"shaping-stats": {
+				"addedIn": "v7.2.8",
+				"category": "unitary",
+				"default": "disable",
+				"help": "Enable/disable NP7 traffic shaping statistics (default = disable).",
+				"multiple_values": false,
+				"name": "shaping-stats",
+				"options": [
+					{
+						"help": "Disable NP7 traffic shaping statistics.",
+						"name": "disable"
+					},
+					{
+						"help": "Enable NP7 traffic shaping statistics.",
+						"name": "enable"
+					}
+				],
+				"type": "option"
 			},
 			"sse-backpressure": {
 				"category": "unitary",
@@ -5673,12 +5870,13 @@
 		},
 		"help": "Configure NPU attributes.",
 		"name": "npu",
+		"object_range": "global",
 		"path": "system",
-		"q_type": 445
+		"q_type": 469
 	},
-	"revision": "de3308b3e2398a64893efceba65b0541",
-	"serial": "FGT60FTK20028507",
+	"revision": "2131c48edd53df0aa10b0be32545dfe1",
+	"serial": "FG180FTK20900788",
 	"status": "success",
 	"vdom": "root",
-	"version": "v7.0.2"
+	"version": "v7.2.8"
 }

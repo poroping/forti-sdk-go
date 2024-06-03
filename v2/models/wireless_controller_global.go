@@ -3,6 +3,7 @@ package models
 const WirelessControllerGlobalPath = "wireless-controller/global/"
 
 type WirelessControllerGlobal struct {
+	AcdProcessCount       *int64  `json:"acd-process-count,omitempty"`
 	ApLogServer           *string `json:"ap-log-server,omitempty"`
 	ApLogServerIp         *string `json:"ap-log-server-ip,omitempty"`
 	ApLogServerPort       *int64  `json:"ap-log-server-port,omitempty"`

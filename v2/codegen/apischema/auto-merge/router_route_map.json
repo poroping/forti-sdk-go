@@ -1,9 +1,9 @@
 {
 	"addedIn": "v6.2.7",
-	"build": 1157,
+	"build": 1639,
 	"http_method": "GET",
 	"http_status": 200,
-	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3,v7.0.4,v7.2.0",
+	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3,v7.0.4,v7.0.5,v7.0.6,v7.2.0,v7.2.1,v7.2.8",
 	"name": "route-map",
 	"path": "router",
 	"results": {
@@ -98,6 +98,38 @@
 							},
 							{
 								"help": "Disable exact matching of communities.",
+								"name": "disable"
+							}
+						],
+						"type": "option"
+					},
+					"match-extcommunity": {
+						"addedIn": "v7.2.8",
+						"category": "unitary",
+						"datasource": [
+							"router.extcommunity-list.name"
+						],
+						"default": "",
+						"help": "Match BGP extended community list.",
+						"multiple_values": false,
+						"name": "match-extcommunity",
+						"size": 35,
+						"type": "string"
+					},
+					"match-extcommunity-exact": {
+						"addedIn": "v7.2.8",
+						"category": "unitary",
+						"default": "disable",
+						"help": "Enable/disable exact matching of extended communities.",
+						"multiple_values": false,
+						"name": "match-extcommunity-exact",
+						"options": [
+							{
+								"help": "Enable exact matching of extended communities.",
+								"name": "enable"
+							},
+							{
+								"help": "Disable exact matching of extended communities.",
 								"name": "disable"
 							}
 						],
@@ -251,7 +283,7 @@
 						"category": "unitary",
 						"default": "",
 						"help": "Match VRF ID.",
-						"max-value": 63,
+						"max-value": 251,
 						"min-value": 0,
 						"multiple_values": false,
 						"name": "match-vrf",
@@ -649,12 +681,13 @@
 		"mkey": "name",
 		"mkey_type": "string",
 		"name": "route-map",
+		"object_range": "vdom",
 		"path": "router",
-		"q_type": 106
+		"q_type": 110
 	},
-	"revision": "69bbda00340e2fbf6f33c4b6f8aac368",
-	"serial": "FGTAZRIPD-OKNB34",
+	"revision": "65c72e90b85dffaa868e9641c558b884",
+	"serial": "FG180FTK20900788",
 	"status": "success",
 	"vdom": "root",
-	"version": "v7.2.0"
+	"version": "v7.2.8"
 }

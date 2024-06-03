@@ -21,6 +21,7 @@ type RouterStatic struct {
 	SeqNum                *int64                   `json:"seq-num,omitempty"`
 	Src                   *string                  `json:"src,omitempty"`
 	Status                *string                  `json:"status,omitempty"`
+	Tag                   *int64                   `json:"tag,omitempty"`
 	VirtualWanLink        *string                  `json:"virtual-wan-link,omitempty"`
 	Vrf                   *int64                   `json:"vrf,omitempty"`
 	Weight                *int64                   `json:"weight,omitempty"`

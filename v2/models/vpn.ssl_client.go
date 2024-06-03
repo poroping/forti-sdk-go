@@ -8,6 +8,8 @@ type VpnSslClient struct {
 	Comment     *string `json:"comment,omitempty"`
 	Distance    *int64  `json:"distance,omitempty"`
 	Interface   *string `json:"interface,omitempty"`
+	Ipv4Subnets *string `json:"ipv4-subnets,omitempty"`
+	Ipv6Subnets *string `json:"ipv6-subnets,omitempty"`
 	Name        *string `json:"name,omitempty"`
 	Peer        *string `json:"peer,omitempty"`
 	Port        *int64  `json:"port,omitempty"`

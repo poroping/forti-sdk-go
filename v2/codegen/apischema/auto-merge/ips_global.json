@@ -1,9 +1,9 @@
 {
 	"addedIn": "v6.2.7",
-	"build": 1157,
+	"build": 1639,
 	"http_method": "GET",
 	"http_status": 200,
-	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3,v7.0.4,v7.2.0",
+	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3,v7.0.4,v7.0.5,v7.0.6,v7.2.0,v7.2.1,v7.2.8",
 	"name": "global",
 	"path": "ips",
 	"results": {
@@ -30,6 +30,7 @@
 			},
 			"cp-accel-mode": {
 				"category": "unitary",
+				"default": "advanced",
 				"help": "IPS Pattern matching acceleration/offloading to CPx processors.",
 				"multiple_values": false,
 				"name": "cp-accel-mode",
@@ -154,7 +155,8 @@
 			},
 			"ips-reserve-cpu": {
 				"category": "unitary",
-				"help": "Enable/disable IPS daemon's use of CPUs other than CPU 0",
+				"default": "disable",
+				"help": "Enable/disable IPS daemon's use of CPUs other than CPU 0.",
 				"multiple_values": false,
 				"name": "ips-reserve-cpu",
 				"options": [
@@ -183,6 +185,7 @@
 			},
 			"np-accel-mode": {
 				"category": "unitary",
+				"default": "basic",
 				"help": "Acceleration mode for IPS processing by NPx processors.",
 				"multiple_values": false,
 				"name": "np-accel-mode",
@@ -237,9 +240,9 @@
 			},
 			"socket-size": {
 				"category": "unitary",
-				"default": 64,
+				"default": 128,
 				"help": "IPS socket buffer size. Max and default value depend on available memory. Can be changed to tune performance.",
-				"max-value": 128,
+				"max-value": 256,
 				"min-value": 0,
 				"multiple_values": false,
 				"name": "socket-size",
@@ -358,12 +361,13 @@
 		"help": "Configure IPS global parameter.",
 		"multiple_values": false,
 		"name": "global",
+		"object_range": "global",
 		"path": "ips",
-		"q_type": 147
+		"q_type": 153
 	},
-	"revision": "5aaca7175b5b74c5babe5981f58baa16",
-	"serial": "FGTAZRIPD-OKNB34",
+	"revision": "9c45ba092d671cee780ace4bcf8f3c63",
+	"serial": "FG180FTK20900788",
 	"status": "success",
 	"vdom": "root",
-	"version": "v7.2.0"
+	"version": "v7.2.8"
 }

@@ -14,6 +14,8 @@ type RouterRouteMapRule struct {
 	MatchAsPath                        *string                                 `json:"match-as-path,omitempty"`
 	MatchCommunity                     *string                                 `json:"match-community,omitempty"`
 	MatchCommunityExact                *string                                 `json:"match-community-exact,omitempty"`
+	MatchExtcommunity                  *string                                 `json:"match-extcommunity,omitempty"`
+	MatchExtcommunityExact             *string                                 `json:"match-extcommunity-exact,omitempty"`
 	MatchFlags                         *int64                                  `json:"match-flags,omitempty"`
 	MatchInterface                     *string                                 `json:"match-interface,omitempty"`
 	MatchIpAddress                     *string                                 `json:"match-ip-address,omitempty"`

@@ -49,10 +49,12 @@ type VoipProfileSip struct {
 	BlockUpdate                      *string `json:"block-update,omitempty"`
 	ByeRate                          *int64  `json:"bye-rate,omitempty"`
 	ByeRateTrack                     *string `json:"bye-rate-track,omitempty"`
+	CallIdRegex                      *string `json:"call-id-regex,omitempty"`
 	CallKeepalive                    *int64  `json:"call-keepalive,omitempty"`
 	CancelRate                       *int64  `json:"cancel-rate,omitempty"`
 	CancelRateTrack                  *string `json:"cancel-rate-track,omitempty"`
 	ContactFixup                     *string `json:"contact-fixup,omitempty"`
+	ContentTypeRegex                 *string `json:"content-type-regex,omitempty"`
 	HntRestrictSourceIp              *string `json:"hnt-restrict-source-ip,omitempty"`
 	HostedNatTraversal               *string `json:"hosted-nat-traversal,omitempty"`
 	InfoRate                         *int64  `json:"info-rate,omitempty"`

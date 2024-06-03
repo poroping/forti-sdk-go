@@ -6,6 +6,7 @@ type FirewallCentralSnatMap struct {
 	Comments   *string                             `json:"comments,omitempty"`
 	DstAddr    *[]FirewallCentralSnatMapDstAddr    `json:"dst-addr,omitempty"`
 	DstAddr6   *[]FirewallCentralSnatMapDstAddr6   `json:"dst-addr6,omitempty"`
+	DstPort    *string                             `json:"dst-port,omitempty"`
 	Dstintf    *[]FirewallCentralSnatMapDstintf    `json:"dstintf,omitempty"`
 	Nat        *string                             `json:"nat,omitempty"`
 	NatIppool  *[]FirewallCentralSnatMapNatIppool  `json:"nat-ippool,omitempty"`

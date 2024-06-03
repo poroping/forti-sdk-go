@@ -1,9 +1,9 @@
 {
 	"addedIn": "v6.2.7",
-	"build": 1157,
+	"build": 1639,
 	"http_method": "GET",
 	"http_status": 200,
-	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3,v7.0.4,v7.2.0",
+	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3,v7.0.4,v7.0.5,v7.0.6,v7.2.0,v7.2.1,v7.2.8",
 	"name": "fortiguard",
 	"path": "system",
 	"results": {
@@ -119,6 +119,97 @@
 				"name": "anycast-sdns-server-port",
 				"type": "integer"
 			},
+			"auto-firmware-upgrade": {
+				"addedIn": "v7.2.1",
+				"category": "unitary",
+				"default": "disable",
+				"help": "Enable/disable automatic patch-level firmware upgrade from FortiGuard. The FortiGate unit searches for new patches only in the same major and minor version.",
+				"multiple_values": false,
+				"name": "auto-firmware-upgrade",
+				"options": [
+					{
+						"help": "Enable automatic patch-level firmware upgrade to latest version from FortiGuard.",
+						"name": "enable"
+					},
+					{
+						"help": "Disable automatic patch-level firmware upgrade to latest version from FortiGuard.",
+						"name": "disable"
+					}
+				],
+				"type": "option"
+			},
+			"auto-firmware-upgrade-day": {
+				"addedIn": "v7.2.1",
+				"category": "unitary",
+				"default": "",
+				"help": "Allowed day(s) of the week to install an automatic patch-level firmware upgrade from FortiGuard (default is none). Disallow any day of the week to use auto-firmware-upgrade-delay instead, which waits for designated days before installing an automatic patch-level firmware upgrade.",
+				"multiple_values": true,
+				"name": "auto-firmware-upgrade-day",
+				"options": [
+					{
+						"help": "Sunday.",
+						"name": "sunday"
+					},
+					{
+						"help": "Monday.",
+						"name": "monday"
+					},
+					{
+						"help": "Tuesday.",
+						"name": "tuesday"
+					},
+					{
+						"help": "Wednesday.",
+						"name": "wednesday"
+					},
+					{
+						"help": "Thursday.",
+						"name": "thursday"
+					},
+					{
+						"help": "Friday.",
+						"name": "friday"
+					},
+					{
+						"help": "Saturday.",
+						"name": "saturday"
+					}
+				],
+				"type": "option"
+			},
+			"auto-firmware-upgrade-delay": {
+				"addedIn": "v7.2.8",
+				"category": "unitary",
+				"default": 3,
+				"help": "Delay of day(s) before installing an automatic patch-level firmware upgrade from FortiGuard (default = 3). Set it 0 to use auto-firmware-upgrade-day instead, which selects allowed day(s) of the week for installing an automatic patch-level firmware upgrade.",
+				"max-value": 14,
+				"min-value": 0,
+				"multiple_values": false,
+				"name": "auto-firmware-upgrade-delay",
+				"type": "integer"
+			},
+			"auto-firmware-upgrade-end-hour": {
+				"addedIn": "v7.2.1",
+				"category": "unitary",
+				"default": 4,
+				"help": "End time in the designated time window for automatic patch-level firmware upgrade from FortiGuard in 24 hour time (0 ~ 23, default = 4). When the end time is smaller than the start time, the end time is interpreted as the next day. The actual upgrade time is selected randomly within the time window.",
+				"max-value": 23,
+				"min-value": 0,
+				"multiple_values": false,
+				"name": "auto-firmware-upgrade-end-hour",
+				"type": "integer"
+			},
+			"auto-firmware-upgrade-start-hour": {
+				"addedIn": "v7.2.1",
+				"category": "unitary",
+				"default": 1,
+				"help": "Start time in the designated time window for automatic patch-level firmware upgrade from FortiGuard in 24 hour time (0 ~ 23, default = 2). The actual upgrade time is selected randomly within the time window.",
+				"max-value": 23,
+				"min-value": 0,
+				"multiple_values": false,
+				"name": "auto-firmware-upgrade-start-hour",
+				"type": "integer"
+			},
 			"auto-join-forticloud": {
 				"addedIn": "v6.4.3",
 				"category": "unitary",
@@ -136,6 +227,7 @@
 						"name": "disable"
 					}
 				],
+				"removedIn": "v7.2.8",
 				"type": "option"
 			},
 			"ddns-server-ip": {
@@ -201,6 +293,25 @@
 					{
 						"help": "Use Fortinet's internal test servers to provide FortiGuard services in FortiGuard's anycast network.",
 						"name": "debug"
+					}
+				],
+				"type": "option"
+			},
+			"gui-prompt-auto-upgrade": {
+				"addedIn": "v7.2.8",
+				"category": "unitary",
+				"default": "disable",
+				"help": "Enable/disable prompting of automatic patch-level firmware upgrade recommendation.",
+				"multiple_values": false,
+				"name": "gui-prompt-auto-upgrade",
+				"options": [
+					{
+						"help": "Enable prompting of automatic patch-level firmware upgrade recommendation.",
+						"name": "enable"
+					},
+					{
+						"help": "Disable prompting of automatic patch-level firmware upgrade recommendation.",
+						"name": "disable"
 					}
 				],
 				"type": "option"
@@ -418,11 +529,12 @@
 			},
 			"proxy-server-ip": {
 				"category": "unitary",
-				"default": "0.0.0.0",
-				"help": "IP address of the proxy server.",
+				"default": "",
+				"help": "Hostname or IP address of the proxy server.",
 				"multiple_values": false,
 				"name": "proxy-server-ip",
-				"type": "ipv4-address"
+				"size": 63,
+				"type": "string"
 			},
 			"proxy-server-port": {
 				"category": "unitary",
@@ -443,10 +555,29 @@
 				"size": 64,
 				"type": "string"
 			},
+			"sandbox-inline-scan": {
+				"addedIn": "v7.2.1",
+				"category": "unitary",
+				"default": "disable",
+				"help": "Enable/disable FortiCloud Sandbox inline-scan.",
+				"multiple_values": false,
+				"name": "sandbox-inline-scan",
+				"options": [
+					{
+						"help": "Enable FortiCloud Sandbox inline scan.",
+						"name": "enable"
+					},
+					{
+						"help": "Disable FortiCloud Sandbox inline scan.",
+						"name": "disable"
+					}
+				],
+				"type": "option"
+			},
 			"sandbox-region": {
 				"category": "unitary",
 				"default": "",
-				"help": "Cloud sandbox region.",
+				"help": "FortiCloud Sandbox region.",
 				"multiple_values": false,
 				"name": "sandbox-region",
 				"size": 63,
@@ -719,12 +850,13 @@
 		"help": "Configure FortiGuard services.",
 		"multiple_values": false,
 		"name": "fortiguard",
+		"object_range": "global",
 		"path": "system",
-		"q_type": 196
+		"q_type": 203
 	},
-	"revision": "f56a054ed6f1d884968716384f19a32c",
-	"serial": "FGTAZRIPD-OKNB34",
+	"revision": "3eb3f8d2b6c7a88cc5cbec8299d314cd",
+	"serial": "FG180FTK20900788",
 	"status": "success",
 	"vdom": "root",
-	"version": "v7.2.0"
+	"version": "v7.2.8"
 }

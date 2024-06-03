@@ -8,6 +8,8 @@ type UserDomainController struct {
 	AdldsIpAddress        *string                            `json:"adlds-ip-address,omitempty"`
 	AdldsIp6              *string                            `json:"adlds-ip6,omitempty"`
 	AdldsPort             *int64                             `json:"adlds-port,omitempty"`
+	ChangeDetection       *string                            `json:"change-detection,omitempty"`
+	ChangeDetectionPeriod *int64                             `json:"change-detection-period,omitempty"`
 	DnsSrvLookup          *string                            `json:"dns-srv-lookup,omitempty"`
 	DomainName            *string                            `json:"domain-name,omitempty"`
 	ExtraServer           *[]UserDomainControllerExtraServer `json:"extra-server,omitempty"`

@@ -6,6 +6,7 @@ type IcapProfile struct {
 	The204Response         *string                           `json:"204-response,omitempty"`
 	The204SizeLimit        *int64                            `json:"204-size-limit,omitempty"`
 	ChunkEncap             *string                           `json:"chunk-encap,omitempty"`
+	Comment                *string                           `json:"comment,omitempty"`
 	ExtensionFeature       *string                           `json:"extension-feature,omitempty"`
 	FileTransfer           *string                           `json:"file-transfer,omitempty"`
 	FileTransferFailure    *string                           `json:"file-transfer-failure,omitempty"`

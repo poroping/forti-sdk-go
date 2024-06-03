@@ -1,9 +1,9 @@
 {
 	"addedIn": "v6.2.7",
-	"build": 1157,
+	"build": 1639,
 	"http_method": "GET",
 	"http_status": 200,
-	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3,v7.0.4,v7.2.0",
+	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3,v7.0.4,v7.0.5,v7.0.6,v7.2.0,v7.2.1,v7.2.8",
 	"name": "policy",
 	"path": "firewall",
 	"results": {
@@ -254,6 +254,7 @@
 						"name": "disable"
 					}
 				],
+				"removedIn": "v7.2.8",
 				"type": "option"
 			},
 			"cifs-profile": {
@@ -327,6 +328,25 @@
 					},
 					{
 						"help": "Disable TCP NPU session delay in order to guarantee packet order of 3-way handshake.",
+						"name": "disable"
+					}
+				],
+				"type": "option"
+			},
+			"diffserv-copy": {
+				"addedIn": "v7.2.1",
+				"category": "unitary",
+				"default": "disable",
+				"help": "Enable to copy packet's DiffServ values from session's original direction to its reply direction.",
+				"multiple_values": false,
+				"name": "diffserv-copy",
+				"options": [
+					{
+						"help": "Enable DSCP copy.",
+						"name": "enable"
+					},
+					{
+						"help": "Disable DSCP copy.",
 						"name": "disable"
 					}
 				],
@@ -491,7 +511,7 @@
 			"dstaddr-negate": {
 				"category": "unitary",
 				"default": "disable",
-				"help": "When enabled dstaddr/dstaddr6 specifies what the destination address must NOT be.",
+				"help": "When enabled dstaddr specifies what the destination address must NOT be.",
 				"multiple_values": false,
 				"name": "dstaddr-negate",
 				"options": [
@@ -536,6 +556,25 @@
 				"mkey": "name",
 				"mkey_type": "string",
 				"name": "dstaddr6"
+			},
+			"dstaddr6-negate": {
+				"addedIn": "v7.2.1",
+				"category": "unitary",
+				"default": "disable",
+				"help": "When enabled dstaddr6 specifies what the destination address must NOT be.",
+				"multiple_values": false,
+				"name": "dstaddr6-negate",
+				"options": [
+					{
+						"help": "Enable IPv6 destination address negate.",
+						"name": "enable"
+					},
+					{
+						"help": "Disable IPv6 destination address negate.",
+						"name": "disable"
+					}
+				],
+				"type": "option"
 			},
 			"dstintf": {
 				"category": "table",
@@ -1212,6 +1251,298 @@
 				],
 				"type": "option"
 			},
+			"internet-service6": {
+				"addedIn": "v7.2.1",
+				"category": "unitary",
+				"default": "disable",
+				"help": "Enable/disable use of IPv6 Internet Services for this policy. If enabled, destination address and service are not used.",
+				"multiple_values": false,
+				"name": "internet-service6",
+				"options": [
+					{
+						"help": "Enable use of IPv6 Internet Services in policy.",
+						"name": "enable"
+					},
+					{
+						"help": "Disable use of IPv6 Internet Services in policy.",
+						"name": "disable"
+					}
+				],
+				"type": "option"
+			},
+			"internet-service6-custom": {
+				"addedIn": "v7.2.1",
+				"category": "table",
+				"children": {
+					"name": {
+						"category": "unitary",
+						"datasource": [
+							"firewall.internet-service-custom.name"
+						],
+						"default": "",
+						"help": "Custom Internet Service name.",
+						"multiple_values": false,
+						"name": "name",
+						"required": true,
+						"size": 79,
+						"type": "string"
+					}
+				},
+				"help": "Custom IPv6 Internet Service name.",
+				"max_table_size_global": 0,
+				"max_table_size_item": 0,
+				"max_table_size_vdom": 0,
+				"member_table": true,
+				"mkey": "name",
+				"mkey_type": "string",
+				"name": "internet-service6-custom"
+			},
+			"internet-service6-custom-group": {
+				"addedIn": "v7.2.1",
+				"category": "table",
+				"children": {
+					"name": {
+						"category": "unitary",
+						"datasource": [
+							"firewall.internet-service-custom-group.name"
+						],
+						"default": "",
+						"help": "Custom Internet Service6 group name.",
+						"multiple_values": false,
+						"name": "name",
+						"required": true,
+						"size": 79,
+						"type": "string"
+					}
+				},
+				"help": "Custom Internet Service6 group name.",
+				"max_table_size_global": 0,
+				"max_table_size_item": 0,
+				"max_table_size_vdom": 0,
+				"member_table": true,
+				"mkey": "name",
+				"mkey_type": "string",
+				"name": "internet-service6-custom-group"
+			},
+			"internet-service6-group": {
+				"addedIn": "v7.2.1",
+				"category": "table",
+				"children": {
+					"name": {
+						"category": "unitary",
+						"datasource": [
+							"firewall.internet-service-group.name"
+						],
+						"default": "",
+						"help": "Internet Service group name.",
+						"multiple_values": false,
+						"name": "name",
+						"required": true,
+						"size": 79,
+						"type": "string"
+					}
+				},
+				"help": "Internet Service group name.",
+				"max_table_size_global": 0,
+				"max_table_size_item": 0,
+				"max_table_size_vdom": 0,
+				"member_table": true,
+				"mkey": "name",
+				"mkey_type": "string",
+				"name": "internet-service6-group"
+			},
+			"internet-service6-name": {
+				"addedIn": "v7.2.1",
+				"category": "table",
+				"children": {
+					"name": {
+						"category": "unitary",
+						"datasource": [
+							"firewall.internet-service-name.name"
+						],
+						"default": "",
+						"help": "IPv6 Internet Service name.",
+						"multiple_values": false,
+						"name": "name",
+						"required": true,
+						"size": 79,
+						"type": "string"
+					}
+				},
+				"help": "IPv6 Internet Service name.",
+				"max_table_size_global": 0,
+				"max_table_size_item": 0,
+				"max_table_size_vdom": 0,
+				"member_table": true,
+				"mkey": "name",
+				"mkey_type": "string",
+				"name": "internet-service6-name"
+			},
+			"internet-service6-negate": {
+				"addedIn": "v7.2.1",
+				"category": "unitary",
+				"default": "disable",
+				"help": "When enabled internet-service6 specifies what the service must NOT be.",
+				"multiple_values": false,
+				"name": "internet-service6-negate",
+				"options": [
+					{
+						"help": "Enable negated IPv6 Internet Service match.",
+						"name": "enable"
+					},
+					{
+						"help": "Disable negated IPv6 Internet Service match.",
+						"name": "disable"
+					}
+				],
+				"type": "option"
+			},
+			"internet-service6-src": {
+				"addedIn": "v7.2.1",
+				"category": "unitary",
+				"default": "disable",
+				"help": "Enable/disable use of IPv6 Internet Services in source for this policy. If enabled, source address is not used.",
+				"multiple_values": false,
+				"name": "internet-service6-src",
+				"options": [
+					{
+						"help": "Enable use of IPv6 Internet Services source in policy.",
+						"name": "enable"
+					},
+					{
+						"help": "Disable use of IPv6 Internet Services source in policy.",
+						"name": "disable"
+					}
+				],
+				"type": "option"
+			},
+			"internet-service6-src-custom": {
+				"addedIn": "v7.2.1",
+				"category": "table",
+				"children": {
+					"name": {
+						"category": "unitary",
+						"datasource": [
+							"firewall.internet-service-custom.name"
+						],
+						"default": "",
+						"help": "Custom Internet Service name.",
+						"multiple_values": false,
+						"name": "name",
+						"required": true,
+						"size": 79,
+						"type": "string"
+					}
+				},
+				"help": "Custom IPv6 Internet Service source name.",
+				"max_table_size_global": 0,
+				"max_table_size_item": 0,
+				"max_table_size_vdom": 0,
+				"member_table": true,
+				"mkey": "name",
+				"mkey_type": "string",
+				"name": "internet-service6-src-custom"
+			},
+			"internet-service6-src-custom-group": {
+				"addedIn": "v7.2.1",
+				"category": "table",
+				"children": {
+					"name": {
+						"category": "unitary",
+						"datasource": [
+							"firewall.internet-service-custom-group.name"
+						],
+						"default": "",
+						"help": "Custom Internet Service6 group name.",
+						"multiple_values": false,
+						"name": "name",
+						"required": true,
+						"size": 79,
+						"type": "string"
+					}
+				},
+				"help": "Custom Internet Service6 source group name.",
+				"max_table_size_global": 0,
+				"max_table_size_item": 0,
+				"max_table_size_vdom": 0,
+				"member_table": true,
+				"mkey": "name",
+				"mkey_type": "string",
+				"name": "internet-service6-src-custom-group"
+			},
+			"internet-service6-src-group": {
+				"addedIn": "v7.2.1",
+				"category": "table",
+				"children": {
+					"name": {
+						"category": "unitary",
+						"datasource": [
+							"firewall.internet-service-group.name"
+						],
+						"default": "",
+						"help": "Internet Service group name.",
+						"multiple_values": false,
+						"name": "name",
+						"required": true,
+						"size": 79,
+						"type": "string"
+					}
+				},
+				"help": "Internet Service6 source group name.",
+				"max_table_size_global": 0,
+				"max_table_size_item": 0,
+				"max_table_size_vdom": 0,
+				"member_table": true,
+				"mkey": "name",
+				"mkey_type": "string",
+				"name": "internet-service6-src-group"
+			},
+			"internet-service6-src-name": {
+				"addedIn": "v7.2.1",
+				"category": "table",
+				"children": {
+					"name": {
+						"category": "unitary",
+						"datasource": [
+							"firewall.internet-service-name.name"
+						],
+						"default": "",
+						"help": "Internet Service name.",
+						"multiple_values": false,
+						"name": "name",
+						"required": true,
+						"size": 79,
+						"type": "string"
+					}
+				},
+				"help": "IPv6 Internet Service source name.",
+				"max_table_size_global": 0,
+				"max_table_size_item": 0,
+				"max_table_size_vdom": 0,
+				"member_table": true,
+				"mkey": "name",
+				"mkey_type": "string",
+				"name": "internet-service6-src-name"
+			},
+			"internet-service6-src-negate": {
+				"addedIn": "v7.2.1",
+				"category": "unitary",
+				"default": "disable",
+				"help": "When enabled internet-service6-src specifies what the service must NOT be.",
+				"multiple_values": false,
+				"name": "internet-service6-src-negate",
+				"options": [
+					{
+						"help": "Enable negated IPv6 Internet Service source match.",
+						"name": "enable"
+					},
+					{
+						"help": "Disable negated IPv6 Internet Service source match.",
+						"name": "disable"
+					}
+				],
+				"type": "option"
+			},
 			"ippool": {
 				"category": "unitary",
 				"default": "disable",
@@ -1239,6 +1570,19 @@
 				"help": "Name of an existing IPS sensor.",
 				"multiple_values": false,
 				"name": "ips-sensor",
+				"size": 35,
+				"type": "string"
+			},
+			"ips-voip-filter": {
+				"addedIn": "v7.2.8",
+				"category": "unitary",
+				"datasource": [
+					"voip.profile.name"
+				],
+				"default": "",
+				"help": "Name of an existing VoIP (ips) profile.",
+				"multiple_values": false,
+				"name": "ips-voip-filter",
 				"size": 35,
 				"type": "string"
 			},
@@ -1284,7 +1628,7 @@
 			},
 			"match-vip": {
 				"category": "unitary",
-				"default": "disable",
+				"default": "enable",
 				"help": "Enable to match packets that have had their destination addresses changed by a VIP.",
 				"multiple_values": false,
 				"name": "match-vip",
@@ -1427,8 +1771,63 @@
 				],
 				"type": "option"
 			},
+			"network-service-dynamic": {
+				"addedIn": "v7.2.1",
+				"category": "table",
+				"children": {
+					"name": {
+						"category": "unitary",
+						"datasource": [
+							"firewall.network-service-dynamic.name"
+						],
+						"default": "",
+						"help": "Dynamic Network Service name.",
+						"multiple_values": false,
+						"name": "name",
+						"required": true,
+						"size": 79,
+						"type": "string"
+					}
+				},
+				"help": "Dynamic Network Service name.",
+				"max_table_size_global": 0,
+				"max_table_size_item": 0,
+				"max_table_size_vdom": 0,
+				"member_table": true,
+				"mkey": "name",
+				"mkey_type": "string",
+				"name": "network-service-dynamic"
+			},
+			"network-service-src-dynamic": {
+				"addedIn": "v7.2.1",
+				"category": "table",
+				"children": {
+					"name": {
+						"category": "unitary",
+						"datasource": [
+							"firewall.network-service-dynamic.name"
+						],
+						"default": "",
+						"help": "Dynamic Network Service name.",
+						"multiple_values": false,
+						"name": "name",
+						"required": true,
+						"size": 79,
+						"type": "string"
+					}
+				},
+				"help": "Dynamic Network Service source name.",
+				"max_table_size_global": 0,
+				"max_table_size_item": 0,
+				"max_table_size_vdom": 0,
+				"member_table": true,
+				"mkey": "name",
+				"mkey_type": "string",
+				"name": "network-service-src-dynamic"
+			},
 			"np-acceleration": {
 				"category": "unitary",
+				"default": "enable",
 				"help": "Enable/disable UTM Network Processor acceleration.",
 				"multiple_values": false,
 				"name": "np-acceleration",
@@ -1616,6 +2015,15 @@
 				"name": "policy-expiry-date",
 				"type": "datetime"
 			},
+			"policy-expiry-date-utc": {
+				"addedIn": "v7.2.8",
+				"category": "unitary",
+				"default": "",
+				"help": "Policy expiry date and time, in epoch format.",
+				"multiple_values": false,
+				"name": "policy-expiry-date-utc",
+				"type": "user"
+			},
 			"policyid": {
 				"category": "unitary",
 				"default": 0,
@@ -1778,6 +2186,25 @@
 				],
 				"type": "option"
 			},
+			"reputation-direction6": {
+				"addedIn": "v7.2.1",
+				"category": "unitary",
+				"default": "destination",
+				"help": "Direction of the initial traffic for IPv6 reputation to take effect.",
+				"multiple_values": false,
+				"name": "reputation-direction6",
+				"options": [
+					{
+						"help": "Check reputation for IPv6 source address.",
+						"name": "source"
+					},
+					{
+						"help": "Check reputation for IPv6 destination address.",
+						"name": "destination"
+					}
+				],
+				"type": "option"
+			},
 			"reputation-minimum": {
 				"category": "unitary",
 				"datasource": [
@@ -1789,6 +2216,20 @@
 				"min-value": 0,
 				"multiple_values": false,
 				"name": "reputation-minimum",
+				"type": "integer"
+			},
+			"reputation-minimum6": {
+				"addedIn": "v7.2.1",
+				"category": "unitary",
+				"datasource": [
+					"firewall.internet-service-reputation.id"
+				],
+				"default": 0,
+				"help": "IPv6 Minimum Reputation to take action.",
+				"max-value": 4294967295,
+				"min-value": 0,
+				"multiple_values": false,
+				"name": "reputation-minimum6",
 				"type": "integer"
 			},
 			"rsso": {
@@ -2075,7 +2516,7 @@
 			"srcaddr-negate": {
 				"category": "unitary",
 				"default": "disable",
-				"help": "When enabled srcaddr/srcaddr6 specifies what the source address must NOT be.",
+				"help": "When enabled srcaddr specifies what the source address must NOT be.",
 				"multiple_values": false,
 				"name": "srcaddr-negate",
 				"options": [
@@ -2118,6 +2559,25 @@
 				"mkey": "name",
 				"mkey_type": "string",
 				"name": "srcaddr6"
+			},
+			"srcaddr6-negate": {
+				"addedIn": "v7.2.1",
+				"category": "unitary",
+				"default": "disable",
+				"help": "When enabled srcaddr6 specifies what the source address must NOT be.",
+				"multiple_values": false,
+				"name": "srcaddr6-negate",
+				"options": [
+					{
+						"help": "Enable IPv6 source address negate.",
+						"name": "enable"
+					},
+					{
+						"help": "Disable IPv6 source address negate.",
+						"name": "disable"
+					}
+				],
+				"type": "option"
 			},
 			"srcintf": {
 				"category": "table",
@@ -2397,7 +2857,8 @@
 					"name": {
 						"category": "unitary",
 						"datasource": [
-							"user.local.name"
+							"user.local.name",
+							"user.certificate.name"
 						],
 						"default": "",
 						"help": "Names of individual users that can authenticate with this policy.",
@@ -2479,7 +2940,7 @@
 			"vlan-filter": {
 				"category": "unitary",
 				"default": "",
-				"help": "Set VLAN filters.",
+				"help": "VLAN ranges to allow",
 				"multiple_values": false,
 				"name": "vlan-filter",
 				"type": "user"
@@ -2490,7 +2951,7 @@
 					"voip.profile.name"
 				],
 				"default": "",
-				"help": "Name of an existing VoIP profile.",
+				"help": "Name of an existing VoIP (voipd) profile.",
 				"multiple_values": false,
 				"name": "voip-profile",
 				"size": 35,
@@ -2538,6 +2999,7 @@
 						"name": "disable"
 					}
 				],
+				"removedIn": "v7.2.8",
 				"type": "option"
 			},
 			"wanopt-detection": {
@@ -2560,6 +3022,7 @@
 						"name": "off"
 					}
 				],
+				"removedIn": "v7.2.8",
 				"type": "option"
 			},
 			"wanopt-passive-opt": {
@@ -2582,30 +3045,29 @@
 						"name": "non-transparent"
 					}
 				],
+				"removedIn": "v7.2.8",
 				"type": "option"
 			},
 			"wanopt-peer": {
 				"category": "unitary",
-				"datasource": [
-					"wanopt.peer.peer-host-id"
-				],
+				"datasource": [],
 				"default": "",
 				"help": "WAN optimization peer.",
 				"multiple_values": false,
 				"name": "wanopt-peer",
+				"removedIn": "v7.2.8",
 				"required": true,
 				"size": 35,
 				"type": "string"
 			},
 			"wanopt-profile": {
 				"category": "unitary",
-				"datasource": [
-					"wanopt.profile.name"
-				],
+				"datasource": [],
 				"default": "",
 				"help": "WAN optimization profile.",
 				"multiple_values": false,
 				"name": "wanopt-profile",
+				"removedIn": "v7.2.8",
 				"required": true,
 				"size": 35,
 				"type": "string"
@@ -2644,6 +3106,7 @@
 						"name": "disable"
 					}
 				],
+				"removedIn": "v7.2.8",
 				"type": "option"
 			},
 			"webcache-https": {
@@ -2662,6 +3125,7 @@
 						"name": "enable"
 					}
 				],
+				"removedIn": "v7.2.8",
 				"type": "option"
 			},
 			"webfilter-profile": {
@@ -2717,6 +3181,25 @@
 					}
 				],
 				"removedIn": "v6.4.0",
+				"type": "option"
+			},
+			"ztna-device-ownership": {
+				"addedIn": "v7.2.8",
+				"category": "unitary",
+				"default": "disable",
+				"help": "Enable/disable zero trust device ownership.",
+				"multiple_values": false,
+				"name": "ztna-device-ownership",
+				"options": [
+					{
+						"help": "Enable ZTNA device ownership check.",
+						"name": "enable"
+					},
+					{
+						"help": "Disable ZTNA device ownership check.",
+						"name": "disable"
+					}
+				],
 				"type": "option"
 			},
 			"ztna-ems-tag": {
@@ -2775,6 +3258,25 @@
 				"mkey_type": "string",
 				"name": "ztna-geo-tag"
 			},
+			"ztna-policy-redirect": {
+				"addedIn": "v7.2.8",
+				"category": "unitary",
+				"default": "disable",
+				"help": "Redirect ZTNA traffic to matching Access-Proxy proxy-policy.",
+				"multiple_values": false,
+				"name": "ztna-policy-redirect",
+				"options": [
+					{
+						"help": "Enable ZTNA proxy-policy redirect.",
+						"name": "enable"
+					},
+					{
+						"help": "Disable ZTNA proxy-policy redirect.",
+						"name": "disable"
+					}
+				],
+				"type": "option"
+			},
 			"ztna-status": {
 				"addedIn": "v7.0.0",
 				"category": "unitary",
@@ -2793,21 +3295,41 @@
 					}
 				],
 				"type": "option"
+			},
+			"ztna-tags-match-logic": {
+				"addedIn": "v7.2.8",
+				"category": "unitary",
+				"default": "or",
+				"help": "ZTNA tag matching logic.",
+				"multiple_values": false,
+				"name": "ztna-tags-match-logic",
+				"options": [
+					{
+						"help": "Match ZTNA tags using a logical OR operator.",
+						"name": "or"
+					},
+					{
+						"help": "Match ZTNA tags using a logical AND operator.",
+						"name": "and"
+					}
+				],
+				"type": "option"
 			}
 		},
 		"help": "Configure IPv4/IPv6 policies.",
-		"max_table_size_global": 200000,
+		"max_table_size_global": 100000,
 		"max_table_size_item": 0,
-		"max_table_size_vdom": 200000,
+		"max_table_size_vdom": 100000,
 		"mkey": "policyid",
 		"mkey_type": "integer",
 		"name": "policy",
+		"object_range": "vdom",
 		"path": "firewall",
-		"q_type": 53
+		"q_type": 56
 	},
-	"revision": "f7f9f0c7010a0528b972ed831ae64831",
-	"serial": "FGTAZRIPD-OKNB34",
+	"revision": "2131c48edd53df0aa10b0be32545dfe1",
+	"serial": "FG180FTK20900788",
 	"status": "success",
 	"vdom": "root",
-	"version": "v7.2.0"
+	"version": "v7.2.8"
 }

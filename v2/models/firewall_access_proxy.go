@@ -3,6 +3,7 @@ package models
 const FirewallAccessProxyPath = "firewall/access-proxy/"
 
 type FirewallAccessProxy struct {
+	AddVhostDomainToDnsdb    *string                                      `json:"add-vhost-domain-to-dnsdb,omitempty"`
 	ApiGateway               *[]FirewallAccessProxyApiGateway             `json:"api-gateway,omitempty"`
 	ApiGateway6              *[]FirewallAccessProxyApiGateway6            `json:"api-gateway6,omitempty"`
 	AuthPortal               *string                                      `json:"auth-portal,omitempty"`
@@ -10,16 +11,22 @@ type FirewallAccessProxy struct {
 	ClientCert               *string                                      `json:"client-cert,omitempty"`
 	DecryptedTrafficMirror   *string                                      `json:"decrypted-traffic-mirror,omitempty"`
 	EmptyCertAction          *string                                      `json:"empty-cert-action,omitempty"`
+	HttpSupportedMaxVersion  *string                                      `json:"http-supported-max-version,omitempty"`
 	LdbMethod                *string                                      `json:"ldb-method,omitempty"`
 	LogBlockedTraffic        *string                                      `json:"log-blocked-traffic,omitempty"`
 	Name                     *string                                      `json:"name,omitempty"`
 	Realservers              *[]FirewallAccessProxyRealservers            `json:"realservers,omitempty"`
 	ServerPubkeyAuth         *string                                      `json:"server-pubkey-auth,omitempty"`
 	ServerPubkeyAuthSettings *FirewallAccessProxyServerPubkeyAuthSettings `json:"server-pubkey-auth-settings,omitempty"`
+	SvrPoolMultiplex         *string                                      `json:"svr-pool-multiplex,omitempty"`
+	SvrPoolServerMaxRequest  *int64                                       `json:"svr-pool-server-max-request,omitempty"`
+	SvrPoolTtl               *int64                                       `json:"svr-pool-ttl,omitempty"`
+	UserAgentDetect          *string                                      `json:"user-agent-detect,omitempty"`
 	Vip                      *string                                      `json:"vip,omitempty"`
 }
 
 type FirewallAccessProxyApiGateway struct {
+	Application              *[]FirewallAccessProxyApiGatewayApplication     `json:"application,omitempty"`
 	HttpCookieAge            *int64                                          `json:"http-cookie-age,omitempty"`
 	HttpCookieDomain         *string                                         `json:"http-cookie-domain,omitempty"`
 	HttpCookieDomainFromHost *string                                         `json:"http-cookie-domain-from-host,omitempty"`
@@ -39,10 +46,15 @@ type FirewallAccessProxyApiGateway struct {
 	SslDhBits                *string                                         `json:"ssl-dh-bits,omitempty"`
 	SslMaxVersion            *string                                         `json:"ssl-max-version,omitempty"`
 	SslMinVersion            *string                                         `json:"ssl-min-version,omitempty"`
+	SslRenegotiation         *string                                         `json:"ssl-renegotiation,omitempty"`
 	SslVpnWebPortal          *string                                         `json:"ssl-vpn-web-portal,omitempty"`
 	UrlMap                   *string                                         `json:"url-map,omitempty"`
 	UrlMapType               *string                                         `json:"url-map-type,omitempty"`
 	VirtualHost              *string                                         `json:"virtual-host,omitempty"`
+}
+
+type FirewallAccessProxyApiGatewayApplication struct {
+	Name *string `json:"name,omitempty"`
 }
 
 type FirewallAccessProxyApiGatewayRealservers struct {
@@ -61,6 +73,7 @@ type FirewallAccessProxyApiGatewayRealservers struct {
 	SshHostKey           *[]FirewallAccessProxyApiGatewayRealserversSshHostKey `json:"ssh-host-key,omitempty"`
 	SshHostKeyValidation *string                                               `json:"ssh-host-key-validation,omitempty"`
 	Status               *string                                               `json:"status,omitempty"`
+	TranslateHost        *string                                               `json:"translate-host,omitempty"`
 	Type                 *string                                               `json:"type,omitempty"`
 	Weight               *int64                                                `json:"weight,omitempty"`
 }
@@ -76,6 +89,7 @@ type FirewallAccessProxyApiGatewaySslCipherSuites struct {
 }
 
 type FirewallAccessProxyApiGateway6 struct {
+	Application              *[]FirewallAccessProxyApiGateway6Application     `json:"application,omitempty"`
 	HttpCookieAge            *int64                                           `json:"http-cookie-age,omitempty"`
 	HttpCookieDomain         *string                                          `json:"http-cookie-domain,omitempty"`
 	HttpCookieDomainFromHost *string                                          `json:"http-cookie-domain-from-host,omitempty"`
@@ -95,10 +109,15 @@ type FirewallAccessProxyApiGateway6 struct {
 	SslDhBits                *string                                          `json:"ssl-dh-bits,omitempty"`
 	SslMaxVersion            *string                                          `json:"ssl-max-version,omitempty"`
 	SslMinVersion            *string                                          `json:"ssl-min-version,omitempty"`
+	SslRenegotiation         *string                                          `json:"ssl-renegotiation,omitempty"`
 	SslVpnWebPortal          *string                                          `json:"ssl-vpn-web-portal,omitempty"`
 	UrlMap                   *string                                          `json:"url-map,omitempty"`
 	UrlMapType               *string                                          `json:"url-map-type,omitempty"`
 	VirtualHost              *string                                          `json:"virtual-host,omitempty"`
+}
+
+type FirewallAccessProxyApiGateway6Application struct {
+	Name *string `json:"name,omitempty"`
 }
 
 type FirewallAccessProxyApiGateway6Realservers struct {
@@ -117,6 +136,7 @@ type FirewallAccessProxyApiGateway6Realservers struct {
 	SshHostKey           *[]FirewallAccessProxyApiGateway6RealserversSshHostKey `json:"ssh-host-key,omitempty"`
 	SshHostKeyValidation *string                                                `json:"ssh-host-key-validation,omitempty"`
 	Status               *string                                                `json:"status,omitempty"`
+	TranslateHost        *string                                                `json:"translate-host,omitempty"`
 	Type                 *string                                                `json:"type,omitempty"`
 	Weight               *int64                                                 `json:"weight,omitempty"`
 }

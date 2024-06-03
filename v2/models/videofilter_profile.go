@@ -5,7 +5,9 @@ const VideofilterProfilePath = "videofilter/profile/"
 type VideofilterProfile struct {
 	Comment              *string                               `json:"comment,omitempty"`
 	Dailymotion          *string                               `json:"dailymotion,omitempty"`
+	DefaultAction        *string                               `json:"default-action,omitempty"`
 	FortiguardCategory   *VideofilterProfileFortiguardCategory `json:"fortiguard-category,omitempty"`
+	Log                  *string                               `json:"log,omitempty"`
 	Name                 *string                               `json:"name,omitempty"`
 	ReplacemsgGroup      *string                               `json:"replacemsg-group,omitempty"`
 	Vimeo                *string                               `json:"vimeo,omitempty"`

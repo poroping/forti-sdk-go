@@ -77,6 +77,7 @@ type SystemSdwanHealthCheck struct {
 	Diffservcode               *string                          `json:"diffservcode,omitempty"`
 	DnsMatchIp                 *string                          `json:"dns-match-ip,omitempty"`
 	DnsRequestDomain           *string                          `json:"dns-request-domain,omitempty"`
+	EmbedMeasuredHealth        *string                          `json:"embed-measured-health,omitempty"`
 	Failtime                   *int64                           `json:"failtime,omitempty"`
 	FtpFile                    *string                          `json:"ftp-file,omitempty"`
 	FtpMode                    *string                          `json:"ftp-mode,omitempty"`
@@ -101,6 +102,7 @@ type SystemSdwanHealthCheck struct {
 	Server                     *string                          `json:"server,omitempty"`
 	Sla                        *[]SystemSdwanHealthCheckSla     `json:"sla,omitempty"`
 	SlaFailLogPeriod           *int64                           `json:"sla-fail-log-period,omitempty"`
+	SlaIdRedistribute          *int64                           `json:"sla-id-redistribute,omitempty"`
 	SlaPassLogPeriod           *int64                           `json:"sla-pass-log-period,omitempty"`
 	Source                     *string                          `json:"source,omitempty"`
 	SystemDns                  *string                          `json:"system-dns,omitempty"`
@@ -127,6 +129,8 @@ type SystemSdwanHealthCheckSla struct {
 	LinkCostFactor      *string `json:"link-cost-factor,omitempty"`
 	MosThreshold        *string `json:"mos-threshold,omitempty"`
 	PacketlossThreshold *int64  `json:"packetloss-threshold,omitempty"`
+	PriorityInSla       *int64  `json:"priority-in-sla,omitempty"`
+	PriorityOutSla      *int64  `json:"priority-out-sla,omitempty"`
 }
 
 type SystemSdwanMembers struct {
@@ -164,6 +168,7 @@ type SystemSdwanNeighborMember struct {
 
 type SystemSdwanService struct {
 	AddrMode                       *string                                             `json:"addr-mode,omitempty"`
+	AgentExclusive                 *string                                             `json:"agent-exclusive,omitempty"`
 	BandwidthWeight                *int64                                              `json:"bandwidth-weight,omitempty"`
 	Default                        *string                                             `json:"default,omitempty"`
 	DscpForward                    *string                                             `json:"dscp-forward,omitempty"`

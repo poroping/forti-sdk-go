@@ -1,9 +1,9 @@
 {
 	"addedIn": "v6.2.7",
-	"build": 1157,
+	"build": 1639,
 	"http_method": "GET",
 	"http_status": 200,
-	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3,v7.0.4,v7.2.0",
+	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3,v7.0.4,v7.0.5,v7.0.6,v7.2.0,v7.2.1,v7.2.8",
 	"name": "global",
 	"path": "system",
 	"results": {
@@ -38,6 +38,19 @@
 				"name": "admin-console-timeout",
 				"type": "integer"
 			},
+			"admin-forticloud-sso-default-profile": {
+				"addedIn": "v7.2.8",
+				"category": "unitary",
+				"datasource": [
+					"system.accprofile.name"
+				],
+				"default": "",
+				"help": "Override access profile.",
+				"multiple_values": false,
+				"name": "admin-forticloud-sso-default-profile",
+				"size": 35,
+				"type": "string"
+			},
 			"admin-forticloud-sso-login": {
 				"addedIn": "v7.0.0",
 				"category": "unitary",
@@ -56,6 +69,17 @@
 					}
 				],
 				"type": "option"
+			},
+			"admin-host": {
+				"addedIn": "v7.0.6",
+				"category": "unitary",
+				"default": "",
+				"help": "Administrative host for HTTP and HTTPS. When set, will be used in lieu of the client's Host header for any redirection.",
+				"multiple_values": false,
+				"name": "admin-host",
+				"removedIn": "v7.2.0",
+				"size": 255,
+				"type": "string"
 			},
 			"admin-hsts-max-age": {
 				"category": "unitary",
@@ -277,6 +301,7 @@
 						"name": "disable"
 					}
 				],
+				"removedIn": "v7.2.8",
 				"type": "option"
 			},
 			"admin-port": {
@@ -330,7 +355,7 @@
 				"datasource": [
 					"certificate.local.name"
 				],
-				"default": "self-sign",
+				"default": "Fortinet_GUI_Server",
 				"help": "Server certificate that the FortiGate uses for HTTPS administrative connections.",
 				"multiple_values": false,
 				"name": "admin-server-cert",
@@ -837,7 +862,7 @@
 			"cmdbsvr-affinity": {
 				"addedIn": "v7.0.1",
 				"category": "unitary",
-				"default": "0",
+				"default": "1",
 				"help": "Affinity setting for cmdbsvr (hexadecimal value up to 256 bits in the format of xxxxxxxxxxxxxxxx).",
 				"multiple_values": false,
 				"name": "cmdbsvr-affinity",
@@ -959,7 +984,7 @@
 				"category": "unitary",
 				"default": 1,
 				"help": "DNS proxy worker count. For a FortiGate with multiple logical CPUs, you can set the DNS process number from 1 to the number of logical CPUs.",
-				"max-value": 255,
+				"max-value": 16,
 				"min-value": 1,
 				"multiple_values": false,
 				"name": "dnsproxy-worker-count",
@@ -978,6 +1003,46 @@
 					},
 					{
 						"help": "Disable daylight saving time.",
+						"name": "disable"
+					}
+				],
+				"removedIn": "v7.2.1",
+				"type": "option"
+			},
+			"early-tcp-npu-session": {
+				"addedIn": "v7.0.6",
+				"category": "unitary",
+				"default": "disable",
+				"help": "Enable/disable early TCP NPU session.",
+				"multiple_values": false,
+				"name": "early-tcp-npu-session",
+				"options": [
+					{
+						"help": "Enable early TCP NPU session in order to guarantee packet order of 3-way handshake.",
+						"name": "enable"
+					},
+					{
+						"help": "Disable early TCP NPU session in order to guarantee packet order of 3-way handshake.",
+						"name": "disable"
+					}
+				],
+				"removedIn": "v7.2.0",
+				"type": "option"
+			},
+			"edit-vdom-prompt": {
+				"addedIn": "v7.2.8",
+				"category": "unitary",
+				"default": "disable",
+				"help": "Enable/disable edit new VDOM prompt.",
+				"multiple_values": false,
+				"name": "edit-vdom-prompt",
+				"options": [
+					{
+						"help": "Enable edit new VDOM prompt.",
+						"name": "enable"
+					},
+					{
+						"help": "Disable edit new VDOM prompt.",
 						"name": "disable"
 					}
 				],
@@ -1134,8 +1199,28 @@
 				],
 				"type": "option"
 			},
+			"fortiextender-provision-on-authorization": {
+				"addedIn": "v7.2.1",
+				"category": "unitary",
+				"default": "disable",
+				"help": "Enable/disable automatic provisioning of latest FortiExtender firmware on authorization.",
+				"multiple_values": false,
+				"name": "fortiextender-provision-on-authorization",
+				"options": [
+					{
+						"help": "Enable FortiExtender firmware provision on authorization.",
+						"name": "enable"
+					},
+					{
+						"help": "Disable FortiExtender firmware provision on authorization.",
+						"name": "disable"
+					}
+				],
+				"type": "option"
+			},
 			"fortiextender-vlan-mode": {
 				"category": "unitary",
+				"default": "disable",
 				"help": "Enable/disable FortiExtender VLAN mode.",
 				"multiple_values": false,
 				"name": "fortiextender-vlan-mode",
@@ -1216,12 +1301,51 @@
 						"name": "disable"
 					}
 				],
+				"removedIn": "v7.2.8",
+				"type": "option"
+			},
+			"gui-app-detection-sdwan": {
+				"addedIn": "v7.2.1",
+				"category": "unitary",
+				"default": "disable",
+				"help": "Enable/disable Allow app-detection based SD-WAN.",
+				"multiple_values": false,
+				"name": "gui-app-detection-sdwan",
+				"options": [
+					{
+						"help": "Display the feature in GUI.",
+						"name": "enable"
+					},
+					{
+						"help": "Do not display the feature in GUI.",
+						"name": "disable"
+					}
+				],
+				"type": "option"
+			},
+			"gui-auto-upgrade-setup-warning": {
+				"addedIn": "v7.2.8",
+				"category": "unitary",
+				"default": "enable",
+				"help": "Enable/disable the automatic patch upgrade setup prompt on the GUI.",
+				"multiple_values": false,
+				"name": "gui-auto-upgrade-setup-warning",
+				"options": [
+					{
+						"help": "Display the feature in GUI.",
+						"name": "enable"
+					},
+					{
+						"help": "Do not display the feature in GUI.",
+						"name": "disable"
+					}
+				],
 				"type": "option"
 			},
 			"gui-cdn-usage": {
 				"addedIn": "v7.0.4",
 				"category": "unitary",
-				"default": "enable",
+				"default": "disable",
 				"help": "Enable/disable Load GUI static files from a CDN.",
 				"multiple_values": false,
 				"name": "gui-cdn-usage",
@@ -1437,6 +1561,26 @@
 				],
 				"type": "option"
 			},
+			"gui-fortiguard-resource-fetch": {
+				"addedIn": "v7.0.6",
+				"category": "unitary",
+				"default": "enable",
+				"help": "Enable/disable retrieving static GUI resources from FortiGuard. Disabling it will improve GUI load time for air-gapped environments.",
+				"multiple_values": false,
+				"name": "gui-fortiguard-resource-fetch",
+				"options": [
+					{
+						"help": "Enable retrieving static GUI resources from FortiGuard.",
+						"name": "enable"
+					},
+					{
+						"help": "Disable retrieving static GUI resources from FortiGuard.",
+						"name": "disable"
+					}
+				],
+				"removedIn": "v7.2.0",
+				"type": "option"
+			},
 			"gui-fortisandbox-cloud": {
 				"category": "unitary",
 				"default": "disable",
@@ -1626,7 +1770,7 @@
 			"ha-affinity": {
 				"addedIn": "v7.0.1",
 				"category": "unitary",
-				"default": "0",
+				"default": "1",
 				"help": "Affinity setting for HA daemons (hexadecimal value up to 256 bits in the format of xxxxxxxxxxxxxxxx).",
 				"multiple_values": false,
 				"name": "ha-affinity",
@@ -1660,6 +1804,17 @@
 				"size": 35,
 				"type": "string"
 			},
+			"hyper-scale-vdom-num": {
+				"addedIn": "v7.2.8",
+				"category": "unitary",
+				"default": 250,
+				"help": "Number of VDOMs for hyper scale license.",
+				"max-value": 250,
+				"min-value": 1,
+				"multiple_values": false,
+				"name": "hyper-scale-vdom-num",
+				"type": "integer"
+			},
 			"igmp-state-limit": {
 				"category": "unitary",
 				"default": 3200,
@@ -1669,6 +1824,25 @@
 				"multiple_values": false,
 				"name": "igmp-state-limit",
 				"type": "integer"
+			},
+			"interface-subnet-usage": {
+				"addedIn": "v7.2.8",
+				"category": "unitary",
+				"default": "enable",
+				"help": "Enable/disable allowing use of interface-subnet setting in firewall addresses (default = enable).",
+				"multiple_values": false,
+				"name": "interface-subnet-usage",
+				"options": [
+					{
+						"help": "Disallow use of the interface-subnet setting in firewall addresses. Use in conjunction with the FortiGate REST API and when a large number of firewall addresses exist in the configuration.",
+						"name": "disable"
+					},
+					{
+						"help": "Allow use of the interface-subnet setting in firewall addresses.",
+						"name": "enable"
+					}
+				],
+				"type": "option"
 			},
 			"internet-service-database": {
 				"addedIn": "v7.0.4",
@@ -1689,6 +1863,10 @@
 					{
 						"help": "Full sized Internet Service database with all IP addresses.",
 						"name": "full"
+					},
+					{
+						"help": "Internet Service database with customer selected IP addresses.",
+						"name": "on-demand"
 					}
 				],
 				"type": "option"
@@ -1701,6 +1879,17 @@
 				"min-value": 0,
 				"multiple_values": false,
 				"name": "interval",
+				"type": "integer"
+			},
+			"ip-fragment-mem-thresholds": {
+				"addedIn": "v7.2.8",
+				"category": "unitary",
+				"default": 32,
+				"help": "Maximum memory (MB) used to reassemble IPv4/IPv6 fragments.",
+				"max-value": 2047,
+				"min-value": 32,
+				"multiple_values": false,
+				"name": "ip-fragment-mem-thresholds",
 				"type": "integer"
 			},
 			"ip-src-port-range": {
@@ -1718,11 +1907,13 @@
 				"help": "Affinity setting for IPS (hexadecimal value up to 256 bits in the format of xxxxxxxxxxxxxxxx; allowed CPUs must be less than total number of IPS engine daemons).",
 				"multiple_values": false,
 				"name": "ips-affinity",
+				"removedIn": "v7.2.8",
 				"size": 79,
 				"type": "string"
 			},
 			"ipsec-asic-offload": {
 				"category": "unitary",
+				"default": "enable",
 				"help": "Enable/disable ASIC offloading (hardware acceleration) for IPsec VPN traffic. Hardware acceleration can offload IPsec VPN sessions and accelerate encryption and decryption.",
 				"multiple_values": false,
 				"name": "ipsec-asic-offload",
@@ -1752,6 +1943,7 @@
 			},
 			"ipsec-hmac-offload": {
 				"category": "unitary",
+				"default": "enable",
 				"help": "Enable/disable offloading (hardware acceleration) of HMAC processing for IPsec VPN.",
 				"multiple_values": false,
 				"name": "ipsec-hmac-offload",
@@ -1766,6 +1958,26 @@
 					}
 				],
 				"removedIn": "v6.4.0",
+				"type": "option"
+			},
+			"ipsec-round-robin": {
+				"addedIn": "v7.0.6",
+				"category": "unitary",
+				"default": "disable",
+				"help": "Enable/disable round-robin redistribution to multiple CPUs for IPsec VPN traffic.",
+				"multiple_values": false,
+				"name": "ipsec-round-robin",
+				"options": [
+					{
+						"help": "Enable round-robin redistribution for IPsec VPN.",
+						"name": "enable"
+					},
+					{
+						"help": "Disable round-robin redistribution for IPsec VPN.",
+						"name": "disable"
+					}
+				],
+				"removedIn": "v7.2.0",
 				"type": "option"
 			},
 			"ipsec-soft-dec-async": {
@@ -1812,6 +2024,65 @@
 						"name": "disable"
 					}
 				],
+				"type": "option"
+			},
+			"ipv6-allow-local-in-silent-drop": {
+				"addedIn": "v7.2.8",
+				"category": "unitary",
+				"default": "enable",
+				"help": "Enable/disable silent drop of IPv6 local-in traffic.",
+				"multiple_values": false,
+				"name": "ipv6-allow-local-in-silent-drop",
+				"options": [
+					{
+						"help": "Enable silent drop of IPv6 local-in traffic.",
+						"name": "enable"
+					},
+					{
+						"help": "Disable silent drop of IPv6 local-in traffic.",
+						"name": "disable"
+					}
+				],
+				"type": "option"
+			},
+			"ipv6-allow-local-in-slient-drop": {
+				"addedIn": "v7.0.6",
+				"category": "unitary",
+				"default": "enable",
+				"help": "Enable/disable silent drop of IPv6 local-in traffic.",
+				"multiple_values": false,
+				"name": "ipv6-allow-local-in-slient-drop",
+				"options": [
+					{
+						"help": "Enable slient drop of IPv6 local-in traffic.",
+						"name": "enable"
+					},
+					{
+						"help": "Disable slient drop of IPv6 local-in traffic.",
+						"name": "disable"
+					}
+				],
+				"removedIn": "v7.2.0",
+				"type": "option"
+			},
+			"ipv6-allow-multicast-probe": {
+				"addedIn": "v7.0.6",
+				"category": "unitary",
+				"default": "disable",
+				"help": "Enable/disable IPv6 address probe through Multicast.",
+				"multiple_values": false,
+				"name": "ipv6-allow-multicast-probe",
+				"options": [
+					{
+						"help": "Enable probing of IPv6 address space through Multicast.",
+						"name": "enable"
+					},
+					{
+						"help": "Disable probing of IPv6 address space through Multicast.",
+						"name": "disable"
+					}
+				],
+				"removedIn": "v7.2.0",
 				"type": "option"
 			},
 			"ipv6-allow-traffic-redirect": {
@@ -1940,6 +2211,25 @@
 				],
 				"type": "option"
 			},
+			"log-single-cpu-high": {
+				"addedIn": "v7.2.8",
+				"category": "unitary",
+				"default": "disable",
+				"help": "Enable/disable logging the event of a single CPU core reaching CPU usage threshold.",
+				"multiple_values": false,
+				"name": "log-single-cpu-high",
+				"options": [
+					{
+						"help": "Enable logging the event of a single CPU core reaching CPU usage threshold.",
+						"name": "enable"
+					},
+					{
+						"help": "Disable logging the event of a single CPU core reaching CPU usage threshold.",
+						"name": "disable"
+					}
+				],
+				"type": "option"
+			},
 			"log-ssl-connection": {
 				"category": "unitary",
 				"default": "disable",
@@ -2014,6 +2304,7 @@
 			},
 			"long-vdom-name": {
 				"category": "unitary",
+				"default": "disable",
 				"help": "Enable/disable long VDOM name support.",
 				"multiple_values": false,
 				"name": "long-vdom-name",
@@ -2132,10 +2423,10 @@
 			"miglog-affinity": {
 				"category": "unitary",
 				"default": "0",
-				"help": "Affinity setting for logging (64-bit hexadecimal value in the format of xxxxxxxxxxxxxxxx).",
+				"help": "Affinity setting for logging (hexadecimal value up to 256 bits in the format of xxxxxxxxxxxxxxxx).",
 				"multiple_values": false,
 				"name": "miglog-affinity",
-				"size": 19,
+				"size": 79,
 				"type": "string"
 			},
 			"miglogd-children": {
@@ -2175,6 +2466,25 @@
 				"multiple_values": false,
 				"name": "ndp-max-entry",
 				"type": "integer"
+			},
+			"npu-neighbor-update": {
+				"addedIn": "v7.2.8",
+				"category": "unitary",
+				"default": "disable",
+				"help": "Enable/disable sending of ARP/ICMP6 probing packets to update neighbors for offloaded sessions.",
+				"multiple_values": false,
+				"name": "npu-neighbor-update",
+				"options": [
+					{
+						"help": "Enable sending of ARP/ICMP6 probing packets to update neighbors for offloaded sessions.",
+						"name": "enable"
+					},
+					{
+						"help": "Disable sending of ARP/ICMP6 probing packets to update neighbors for offloaded sessions.",
+						"name": "disable"
+					}
+				],
+				"type": "option"
 			},
 			"per-user-bal": {
 				"addedIn": "v7.0.0",
@@ -2373,6 +2683,48 @@
 				"removedIn": "v6.4.0",
 				"type": "option"
 			},
+			"proxy-hardware-acceleration": {
+				"addedIn": "v7.2.8",
+				"category": "unitary",
+				"default": "enable",
+				"help": "Enable/disable email proxy hardware acceleration.",
+				"multiple_values": false,
+				"name": "proxy-hardware-acceleration",
+				"options": [
+					{
+						"help": "Disable email proxy hardware acceleration.",
+						"name": "disable"
+					},
+					{
+						"help": "Enable email proxy hardware acceleration.",
+						"name": "enable"
+					}
+				],
+				"type": "option"
+			},
+			"proxy-keep-alive-mode": {
+				"addedIn": "v7.2.8",
+				"category": "unitary",
+				"default": "session",
+				"help": "Control if users must re-authenticate after a session is closed, traffic has been idle, or from the point at which the user was authenticated.",
+				"multiple_values": false,
+				"name": "proxy-keep-alive-mode",
+				"options": [
+					{
+						"help": "Proxy keep-alive timeout begins at the closure of the session.",
+						"name": "session"
+					},
+					{
+						"help": "Proxy keep-alive timeout begins after traffic has not been received.",
+						"name": "traffic"
+					},
+					{
+						"help": "Proxy keep-alive timeout begins when the user was authenticated.",
+						"name": "re-authentication"
+					}
+				],
+				"type": "option"
+			},
 			"proxy-kxp-hardware-acceleration": {
 				"category": "unitary",
 				"help": "Enable/disable using the content processor to accelerate KXP traffic.",
@@ -2411,7 +2763,19 @@
 						"name": "absolute"
 					}
 				],
+				"removedIn": "v7.2.8",
 				"type": "option"
+			},
+			"proxy-re-authentication-time": {
+				"addedIn": "v7.2.8",
+				"category": "unitary",
+				"default": 30,
+				"help": "The time limit that users must re-authenticate if proxy-keep-alive-mode is set to re-authenticate (1  - 86400 sec, default=30s.",
+				"max-value": 86400,
+				"min-value": 1,
+				"multiple_values": false,
+				"name": "proxy-re-authentication-time",
+				"type": "integer"
 			},
 			"proxy-resource-mode": {
 				"addedIn": "v7.0.0",
@@ -2436,7 +2800,7 @@
 				"category": "unitary",
 				"default": 0,
 				"help": "Proxy worker count.",
-				"max-value": 255,
+				"max-value": 16,
 				"min-value": 1,
 				"multiple_values": false,
 				"name": "proxy-worker-count",
@@ -2557,7 +2921,7 @@
 				"category": "unitary",
 				"default": 0,
 				"help": "Number of scanunits. The range and the default depend on the number of CPUs. Only available on FortiGate units with multiple CPUs.",
-				"max-value": 255,
+				"max-value": 16,
 				"min-value": 2,
 				"multiple_values": false,
 				"name": "scanunit-count",
@@ -2617,10 +2981,21 @@
 				],
 				"type": "option"
 			},
+			"sflowd-max-children-num": {
+				"addedIn": "v7.2.8",
+				"category": "unitary",
+				"default": 6,
+				"help": "Maximum number of sflowd child processes allowed to run.",
+				"max-value": 6,
+				"min-value": 0,
+				"multiple_values": false,
+				"name": "sflowd-max-children-num",
+				"type": "integer"
+			},
 			"snat-route-change": {
 				"category": "unitary",
 				"default": "disable",
-				"help": "Enable/disable the ability to change the static NAT route.",
+				"help": "Enable/disable the ability to change the source NAT route.",
 				"multiple_values": false,
 				"name": "snat-route-change",
 				"options": [
@@ -2638,16 +3013,16 @@
 			"special-file-23-support": {
 				"category": "unitary",
 				"default": "disable",
-				"help": "Enable/disable detection of those special format files when using Data Leak Protection.",
+				"help": "Enable/disable detection of those special format files when using Data Leak Prevention.",
 				"multiple_values": false,
 				"name": "special-file-23-support",
 				"options": [
 					{
-						"help": "Disable detection of those special format files when using Data Leak Protection.",
+						"help": "Disable detection of those special format files when using Data Leak Prevention.",
 						"name": "disable"
 					},
 					{
-						"help": "Enable detection of those special format files when using Data Leak Protection.",
+						"help": "Enable detection of those special format files when using Data Leak Prevention.",
 						"name": "enable"
 					}
 				],
@@ -2672,6 +3047,17 @@
 				],
 				"type": "option"
 			},
+			"split-port": {
+				"addedIn": "v7.2.8",
+				"category": "unitary",
+				"default": "",
+				"help": "Split port(s) to multiple 10Gbps ports.",
+				"max_num_values": 32,
+				"multiple_values": true,
+				"name": "split-port",
+				"size": 15,
+				"type": "string"
+			},
 			"ssd-trim-date": {
 				"category": "unitary",
 				"default": 1,
@@ -2680,6 +3066,7 @@
 				"min-value": 1,
 				"multiple_values": false,
 				"name": "ssd-trim-date",
+				"removedIn": "v7.2.8",
 				"type": "integer"
 			},
 			"ssd-trim-freq": {
@@ -2710,6 +3097,7 @@
 						"name": "monthly"
 					}
 				],
+				"removedIn": "v7.2.8",
 				"type": "option"
 			},
 			"ssd-trim-hour": {
@@ -2720,6 +3108,7 @@
 				"min-value": 0,
 				"multiple_values": false,
 				"name": "ssd-trim-hour",
+				"removedIn": "v7.2.8",
 				"type": "integer"
 			},
 			"ssd-trim-min": {
@@ -2730,6 +3119,7 @@
 				"min-value": 0,
 				"multiple_values": false,
 				"name": "ssd-trim-min",
+				"removedIn": "v7.2.8",
 				"type": "integer"
 			},
 			"ssd-trim-weekday": {
@@ -2768,6 +3158,7 @@
 						"name": "saturday"
 					}
 				],
+				"removedIn": "v7.2.8",
 				"type": "option"
 			},
 			"ssh-cbc-cipher": {
@@ -2792,7 +3183,7 @@
 			"ssh-enc-algo": {
 				"addedIn": "v7.0.2",
 				"category": "unitary",
-				"default": "chacha20-poly1305@openssh.com aes256-ctr aes256-gcm@openssh.com",
+				"default": "aes256-ctr aes256-gcm@openssh.com",
 				"help": "Select one or more SSH ciphers.",
 				"multiple_values": true,
 				"name": "ssh-enc-algo",
@@ -3150,7 +3541,7 @@
 				"category": "unitary",
 				"default": 0,
 				"help": "Maximum number of SSL-VPN processes. Upper limit for this value is the number of CPUs and depends on the model. Default value of zero means the SSLVPN daemon decides the number of worker processes.",
-				"max-value": 128,
+				"max-value": 16,
 				"min-value": 0,
 				"multiple_values": false,
 				"name": "sslvpn-max-worker-count",
@@ -3158,20 +3549,24 @@
 			},
 			"sslvpn-plugin-version-check": {
 				"category": "unitary",
-				"default": "enable",
-				"help": "Enable/disable checking browser's plugin version by SSL-VPN.",
+				"default": "disable",
+				"help": "sslvpn-plugin-version-check",
+				"missing_help": true,
 				"multiple_values": false,
 				"name": "sslvpn-plugin-version-check",
 				"options": [
 					{
-						"help": "Enable SSL-VPN automatic checking of browser plug-in version.",
+						"help": "enable",
+						"missing_help": true,
 						"name": "enable"
 					},
 					{
-						"help": "Disable SSL-VPN automatic checking of browser plug-in version.",
+						"help": "disable",
+						"missing_help": true,
 						"name": "disable"
 					}
 				],
+				"removedIn": "v7.2.8",
 				"type": "option"
 			},
 			"strict-dirty-session-check": {
@@ -3230,7 +3625,7 @@
 			},
 			"switch-controller-reserved-network": {
 				"category": "unitary",
-				"default": "10.255.0.0 255.255.0.0",
+				"default": "10.255.0.1 255.255.0.0",
 				"help": "Configure reserved network subnet for managed switches. This is available when the switch controller is enabled.",
 				"multiple_values": false,
 				"name": "switch-controller-reserved-network",
@@ -3245,6 +3640,16 @@
 				"multiple_values": false,
 				"name": "sys-perf-log-interval",
 				"type": "integer"
+			},
+			"syslog-affinity": {
+				"addedIn": "v7.2.8",
+				"category": "unitary",
+				"default": "0",
+				"help": "Affinity setting for syslog (hexadecimal value up to 256 bits in the format of xxxxxxxxxxxxxxxx).",
+				"multiple_values": false,
+				"name": "syslog-affinity",
+				"size": 79,
+				"type": "string"
 			},
 			"tcp-halfclose-timer": {
 				"category": "unitary",
@@ -3483,7 +3888,7 @@
 						"name": "30"
 					},
 					{
-						"help": "(GMT+2:00) Athens, Sofia, Vilnius",
+						"help": "(GMT+2:00) Kyiv, Athens, Sofia, Vilnius",
 						"name": "31"
 					},
 					{
@@ -3531,6 +3936,10 @@
 						"name": "85"
 					},
 					{
+						"help": "(GMT+3:00) St. Petersburg, Volgograd",
+						"name": "39"
+					},
+					{
 						"help": "(GMT+3:30) Tehran",
 						"name": "41"
 					},
@@ -3543,12 +3952,12 @@
 						"name": "43"
 					},
 					{
-						"help": "(GMT+3:00) St. Petersburg, Volgograd",
-						"name": "39"
-					},
-					{
 						"help": "(GMT+4:30) Kabul",
 						"name": "44"
+					},
+					{
+						"help": "(GMT+5:00) Ekaterinburg",
+						"name": "45"
 					},
 					{
 						"help": "(GMT+5:00) Islamabad, Karachi, Tashkent",
@@ -3565,10 +3974,6 @@
 					{
 						"help": "(GMT+5:45) Kathmandu",
 						"name": "48"
-					},
-					{
-						"help": "(GMT+5:00) Ekaterinburg",
-						"name": "45"
 					},
 					{
 						"help": "(GMT+6:00) Almaty, Novosibirsk",
@@ -3615,16 +4020,16 @@
 						"name": "60"
 					},
 					{
+						"help": "(GMT+9:00) Yakutsk",
+						"name": "61"
+					},
+					{
 						"help": "(GMT+9:30) Adelaide",
 						"name": "62"
 					},
 					{
 						"help": "(GMT+9:30) Darwin",
 						"name": "63"
-					},
-					{
-						"help": "(GMT+9:00) Yakutsk",
-						"name": "61"
 					},
 					{
 						"help": "(GMT+10:00) Brisbane",
@@ -3801,7 +4206,7 @@
 				"category": "unitary",
 				"default": 1,
 				"help": "URL filter daemon count.",
-				"max-value": 10,
+				"max-value": 2,
 				"min-value": 1,
 				"multiple_values": false,
 				"name": "url-filter-count",
@@ -3810,10 +4215,10 @@
 			"user-device-store-max-devices": {
 				"addedIn": "v6.4.3",
 				"category": "unitary",
-				"default": 73355,
+				"default": 253132,
 				"help": "Maximum number of devices allowed in user device store.",
-				"max-value": 104793,
-				"min-value": 36677,
+				"max-value": 361618,
+				"min-value": 126566,
 				"multiple_values": false,
 				"name": "user-device-store-max-devices",
 				"type": "integer"
@@ -3821,10 +4226,10 @@
 			"user-device-store-max-unified-mem": {
 				"addedIn": "v7.0.2",
 				"category": "unitary",
-				"default": 366778982,
+				"default": 1265664409,
 				"help": "Maximum unified memory allowed in user device store.",
-				"max-value": 733557964,
-				"min-value": 73355796,
+				"max-value": 2531328819,
+				"min-value": 253132881,
 				"multiple_values": false,
 				"name": "user-device-store-max-unified-mem",
 				"type": "integer"
@@ -3832,10 +4237,10 @@
 			"user-device-store-max-users": {
 				"addedIn": "v6.4.3",
 				"category": "unitary",
-				"default": 73355,
+				"default": 253132,
 				"help": "Maximum number of users allowed in user device store.",
-				"max-value": 104793,
-				"min-value": 36677,
+				"max-value": 361618,
+				"min-value": 126566,
 				"multiple_values": false,
 				"name": "user-device-store-max-users",
 				"type": "integer"
@@ -3849,22 +4254,20 @@
 				"help": "Certificate to use for https user authentication.",
 				"multiple_values": false,
 				"name": "user-server-cert",
+				"removedIn": "v7.2.1",
 				"size": 35,
 				"type": "string"
 			},
 			"vdom-mode": {
 				"category": "unitary",
-				"help": "Enable/disable support for split/multiple virtual domains (VDOMs).",
+				"default": "no-vdom",
+				"help": "Enable/disable support for multiple virtual domains (VDOMs).",
 				"multiple_values": false,
 				"name": "vdom-mode",
 				"options": [
 					{
-						"help": "Disable split/multiple VDOMs mode.",
+						"help": "Disable multiple VDOMs mode.",
 						"name": "no-vdom"
-					},
-					{
-						"help": "Enable split VDOMs mode.",
-						"name": "split-vdom"
 					},
 					{
 						"help": "Enable multiple VDOMs mode.",
@@ -3892,6 +4295,25 @@
 				],
 				"type": "option"
 			},
+			"virtual-switch-vlan": {
+				"addedIn": "v7.2.8",
+				"category": "unitary",
+				"default": "disable",
+				"help": "Enable/disable virtual switch VLAN.",
+				"multiple_values": false,
+				"name": "virtual-switch-vlan",
+				"options": [
+					{
+						"help": "Enable virtual switch VLAN.",
+						"name": "enable"
+					},
+					{
+						"help": "Disable virtual switch VLAN.",
+						"name": "disable"
+					}
+				],
+				"type": "option"
+			},
 			"wad-affinity": {
 				"category": "unitary",
 				"default": "0",
@@ -3915,7 +4337,7 @@
 				"category": "unitary",
 				"default": 0,
 				"help": "Number of concurrent WAD-cache-service byte-cache processes.",
-				"max-value": 255,
+				"max-value": 16,
 				"min-value": 0,
 				"multiple_values": false,
 				"name": "wad-csvc-db-count",
@@ -3930,6 +4352,49 @@
 				"multiple_values": false,
 				"name": "wad-memory-change-granularity",
 				"type": "integer"
+			},
+			"wad-restart-end-time": {
+				"addedIn": "v7.2.8",
+				"category": "unitary",
+				"default": "",
+				"help": "WAD workers daily restart end time (hh:mm).",
+				"multiple_values": false,
+				"name": "wad-restart-end-time",
+				"required": true,
+				"type": "user"
+			},
+			"wad-restart-mode": {
+				"addedIn": "v7.2.8",
+				"category": "unitary",
+				"default": "none",
+				"help": "WAD worker restart mode (default = none).",
+				"multiple_values": false,
+				"name": "wad-restart-mode",
+				"options": [
+					{
+						"help": "Disable restart of WAD workers.",
+						"name": "none"
+					},
+					{
+						"help": "Enable daily restart of WAD workers.",
+						"name": "time"
+					},
+					{
+						"help": "Enable restart of WAD workers based on memory usage.",
+						"name": "memory"
+					}
+				],
+				"type": "option"
+			},
+			"wad-restart-start-time": {
+				"addedIn": "v7.2.8",
+				"category": "unitary",
+				"default": "",
+				"help": "WAD workers daily restart time (hh:mm).",
+				"multiple_values": false,
+				"name": "wad-restart-start-time",
+				"required": true,
+				"type": "user"
 			},
 			"wad-source-affinity": {
 				"category": "unitary",
@@ -3953,7 +4418,7 @@
 				"category": "unitary",
 				"default": 0,
 				"help": "Number of explicit proxy WAN optimization daemon (WAD) processes. By default WAN optimization, explicit proxy, and web caching is handled by all of the CPU cores in a FortiGate unit.",
-				"max-value": 255,
+				"max-value": 16,
 				"min-value": 0,
 				"multiple_values": false,
 				"name": "wad-worker-count",
@@ -4033,12 +4498,13 @@
 		"help": "Configure global attributes.",
 		"multiple_values": false,
 		"name": "global",
+		"object_range": "global",
 		"path": "system",
 		"q_type": 11
 	},
-	"revision": "795d6027c813de9a1aae550aecc06773",
-	"serial": "FGTAZRIPD-OKNB34",
+	"revision": "3004b60041bac841a4188921799d0490",
+	"serial": "FG180FTK20900788",
 	"status": "success",
 	"vdom": "root",
-	"version": "v7.2.0"
+	"version": "v7.2.8"
 }

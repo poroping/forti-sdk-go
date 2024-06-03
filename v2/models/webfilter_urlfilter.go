@@ -7,6 +7,7 @@ type WebfilterUrlfilter struct {
 	Entries            *[]WebfilterUrlfilterEntries `json:"entries,omitempty"`
 	Id                 *int64                       `json:"id,omitempty"`
 	IpAddrBlock        *string                      `json:"ip-addr-block,omitempty"`
+	Ip4MappedIp6       *string                      `json:"ip4-mapped-ip6,omitempty"`
 	Name               *string                      `json:"name,omitempty"`
 	OneArmIpsUrlfilter *string                      `json:"one-arm-ips-urlfilter,omitempty"`
 }

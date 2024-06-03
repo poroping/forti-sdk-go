@@ -1,9 +1,9 @@
 {
 	"addedIn": "v6.2.7",
-	"build": 1157,
+	"build": 1639,
 	"http_method": "GET",
 	"http_status": 200,
-	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3,v7.0.4,v7.2.0",
+	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3,v7.0.4,v7.0.5,v7.0.6,v7.2.0,v7.2.1,v7.2.8",
 	"name": "webproxy",
 	"path": "system.replacemsg",
 	"results": {
@@ -20,7 +20,7 @@
 			},
 			"format": {
 				"category": "unitary",
-				"default": "",
+				"default": "none",
 				"help": "Format flag.",
 				"multiple_values": false,
 				"name": "format",
@@ -42,7 +42,7 @@
 			},
 			"header": {
 				"category": "unitary",
-				"default": "",
+				"default": "none",
 				"help": "Header flag.",
 				"multiple_values": false,
 				"name": "header",
@@ -80,13 +80,14 @@
 		"mkey": "msg-type",
 		"mkey_type": "string",
 		"name": "webproxy",
+		"object_range": "global",
 		"path": "system.replacemsg",
-		"q_type": 431,
+		"q_type": 434,
 		"readonly": true
 	},
-	"revision": "5e9948f3d0cebbc00b77a18a52266666",
-	"serial": "FGTAZRIPD-OKNB34",
+	"revision": "9e92854bda84b671bed0c7a2035a67cb",
+	"serial": "FG180FTK20900788",
 	"status": "success",
 	"vdom": "root",
-	"version": "v7.2.0"
+	"version": "v7.2.8"
 }

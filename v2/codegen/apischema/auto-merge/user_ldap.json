@@ -1,9 +1,9 @@
 {
 	"addedIn": "v6.2.7",
-	"build": 1157,
+	"build": 1639,
 	"http_method": "GET",
 	"http_status": 200,
-	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3,v7.0.4,v7.2.0",
+	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3,v7.0.4,v7.0.5,v7.0.6,v7.2.0,v7.2.1,v7.2.8",
 	"name": "ldap",
 	"path": "user",
 	"results": {
@@ -33,6 +33,29 @@
 					{
 						"help": "Strip domain string from UPN.",
 						"name": "strip"
+					}
+				],
+				"type": "option"
+			},
+			"account-key-upn-san": {
+				"addedIn": "v7.2.8",
+				"category": "unitary",
+				"default": "othername",
+				"help": "Define SAN in certificate for user principle name matching.",
+				"multiple_values": false,
+				"name": "account-key-upn-san",
+				"options": [
+					{
+						"help": "Other name in SAN.",
+						"name": "othername"
+					},
+					{
+						"help": "RFC822 Email address in SAN.",
+						"name": "rfc822name"
+					},
+					{
+						"help": "DNS name in SAN.",
+						"name": "dnsname"
 					}
 				],
 				"type": "option"
@@ -477,6 +500,16 @@
 				],
 				"type": "option"
 			},
+			"two-factor-filter": {
+				"addedIn": "v7.2.1",
+				"category": "unitary",
+				"default": "",
+				"help": "Filter used to synchronize users to FortiToken Cloud.",
+				"multiple_values": false,
+				"name": "two-factor-filter",
+				"size": 2047,
+				"type": "string"
+			},
 			"two-factor-notification": {
 				"category": "unitary",
 				"default": "",
@@ -547,12 +580,13 @@
 		"mkey": "name",
 		"mkey_type": "string",
 		"name": "ldap",
+		"object_range": "vdom",
 		"path": "user",
 		"q_type": 24
 	},
-	"revision": "2b1edd375b3b6c80a44abbde4eddbd95",
-	"serial": "FGTAZRIPD-OKNB34",
+	"revision": "c7486e2dc6f6c3bf00778a7ee036a0f7",
+	"serial": "FG180FTK20900788",
 	"status": "success",
 	"vdom": "root",
-	"version": "v7.2.0"
+	"version": "v7.2.8"
 }

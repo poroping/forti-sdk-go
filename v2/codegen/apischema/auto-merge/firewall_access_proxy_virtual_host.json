@@ -1,9 +1,9 @@
 {
 	"addedIn": "v7.0.0",
-	"build": 1157,
+	"build": 1639,
 	"http_method": "GET",
 	"http_status": 200,
-	"mergedVersions": "v7.0.0,v7.0.1,v7.0.2,v7.0.3,v7.0.4,v7.2.0",
+	"mergedVersions": "v7.0.0,v7.0.1,v7.0.2,v7.0.3,v7.0.4,v7.0.5,v7.0.6,v7.2.0,v7.2.1,v7.2.8",
 	"name": "access-proxy-virtual-host",
 	"path": "firewall",
 	"results": {
@@ -48,6 +48,19 @@
 				"size": 79,
 				"type": "string"
 			},
+			"replacemsg-group": {
+				"addedIn": "v7.2.1",
+				"category": "unitary",
+				"datasource": [
+					"system.replacemsg-group.name"
+				],
+				"default": "",
+				"help": "Access-proxy-virtual-host replacement message override group.",
+				"multiple_values": false,
+				"name": "replacemsg-group",
+				"size": 35,
+				"type": "string"
+			},
 			"ssl-certificate": {
 				"category": "unitary",
 				"datasource": [
@@ -68,12 +81,13 @@
 		"mkey": "name",
 		"mkey_type": "string",
 		"name": "access-proxy-virtual-host",
+		"object_range": "vdom",
 		"path": "firewall",
-		"q_type": 46
+		"q_type": 48
 	},
-	"revision": "f7f9f0c7010a0528b972ed831ae64831",
-	"serial": "FGTAZRIPD-OKNB34",
+	"revision": "2131c48edd53df0aa10b0be32545dfe1",
+	"serial": "FG180FTK20900788",
 	"status": "success",
 	"vdom": "root",
-	"version": "v7.2.0"
+	"version": "v7.2.8"
 }

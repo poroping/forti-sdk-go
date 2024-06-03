@@ -1,9 +1,9 @@
 {
 	"addedIn": "v6.2.7",
-	"build": 1157,
+	"build": 1639,
 	"http_method": "GET",
 	"http_status": 200,
-	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3,v7.0.4,v7.2.0",
+	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3,v7.0.4,v7.0.5,v7.0.6,v7.2.0,v7.2.1,v7.2.8",
 	"name": "DoS-policy6",
 	"path": "firewall",
 	"results": {
@@ -27,6 +27,10 @@
 							{
 								"help": "Block traffic if this anomaly is found.",
 								"name": "block"
+							},
+							{
+								"help": "Use a proxy to control the traffic flow.",
+								"name": "proxy"
 							}
 						],
 						"type": "option"
@@ -120,10 +124,291 @@
 						],
 						"type": "option"
 					},
+					"synproxy-tcp-mss": {
+						"addedIn": "v7.2.8",
+						"category": "unitary",
+						"default": "1460",
+						"help": "Determine TCP maximum segment size (MSS) value for packets replied by syn proxy module.",
+						"multiple_values": false,
+						"name": "synproxy-tcp-mss",
+						"options": [
+							{
+								"help": "MSS = 0 Bytes.",
+								"name": "0"
+							},
+							{
+								"help": "MSS = 256 Bytes.",
+								"name": "256"
+							},
+							{
+								"help": "MSS = 512 Bytes.",
+								"name": "512"
+							},
+							{
+								"help": "MSS = 1024 Bytes.",
+								"name": "1024"
+							},
+							{
+								"help": "MSS = 1300 Bytes.",
+								"name": "1300"
+							},
+							{
+								"help": "MSS = 1360 Bytes.",
+								"name": "1360"
+							},
+							{
+								"help": "MSS = 1460 Bytes, Default value.",
+								"name": "1460"
+							},
+							{
+								"help": "MSS = 1500 Bytes",
+								"name": "1500"
+							}
+						],
+						"type": "option"
+					},
+					"synproxy-tcp-sack": {
+						"addedIn": "v7.2.8",
+						"category": "unitary",
+						"default": "disable",
+						"help": "enable/disable TCP selective acknowledage (SACK) for packets replied by syn proxy module.",
+						"multiple_values": false,
+						"name": "synproxy-tcp-sack",
+						"options": [
+							{
+								"help": "enable TCP selective acknowledage (SACK).",
+								"name": "enable"
+							},
+							{
+								"help": "Disable TCP selective acknowledge (SACK).",
+								"name": "disable"
+							}
+						],
+						"type": "option"
+					},
+					"synproxy-tcp-timestamp": {
+						"addedIn": "v7.2.8",
+						"category": "unitary",
+						"default": "disable",
+						"help": "enable/disable TCP timestamp option for packets replied by syn proxy module.",
+						"multiple_values": false,
+						"name": "synproxy-tcp-timestamp",
+						"options": [
+							{
+								"help": "enable TCP timestamp option.",
+								"name": "enable"
+							},
+							{
+								"help": "Disable TCP timestamp option.",
+								"name": "disable"
+							}
+						],
+						"type": "option"
+					},
+					"synproxy-tcp-window": {
+						"addedIn": "v7.2.8",
+						"category": "unitary",
+						"default": "32768",
+						"help": "Determine TCP Window size for packets replied by syn proxy module.",
+						"multiple_values": false,
+						"name": "synproxy-tcp-window",
+						"options": [
+							{
+								"help": "TCP Window set to 4096 bytes.",
+								"name": "4096"
+							},
+							{
+								"help": "TCP Window set to 8192 bytes.",
+								"name": "8192"
+							},
+							{
+								"help": "TCP Window set to 16384 bytes.",
+								"name": "16384"
+							},
+							{
+								"help": "TCP Window set to 32768 bytes, Default value.",
+								"name": "32768"
+							}
+						],
+						"type": "option"
+					},
+					"synproxy-tcp-windowscale": {
+						"addedIn": "v7.2.8",
+						"category": "unitary",
+						"default": "0",
+						"help": "Determine TCP window scale option value for packets replied by syn proxy module.",
+						"multiple_values": false,
+						"name": "synproxy-tcp-windowscale",
+						"options": [
+							{
+								"help": "TCP window scale set to 0, Default value.",
+								"name": "0"
+							},
+							{
+								"help": "TCP window scale set to 1.",
+								"name": "1"
+							},
+							{
+								"help": "TCP window scale set to 2.",
+								"name": "2"
+							},
+							{
+								"help": "TCP window scale set to 3.",
+								"name": "3"
+							},
+							{
+								"help": "TCP window scale set to 4.",
+								"name": "4"
+							},
+							{
+								"help": "TCP window scale set to 5.",
+								"name": "5"
+							},
+							{
+								"help": "TCP window scale set to 6.",
+								"name": "6"
+							},
+							{
+								"help": "TCP window scale set to 7.",
+								"name": "7"
+							},
+							{
+								"help": "TCP window scale set to 8.",
+								"name": "8"
+							},
+							{
+								"help": "TCP window scale set to 9.",
+								"name": "9"
+							},
+							{
+								"help": "TCP window scale set to 10.",
+								"name": "10"
+							},
+							{
+								"help": "TCP window scale set to 11.",
+								"name": "11"
+							},
+							{
+								"help": "TCP window scale set to 12.",
+								"name": "12"
+							},
+							{
+								"help": "TCP window scale set to 13.",
+								"name": "13"
+							},
+							{
+								"help": "TCP window scale set to 14.",
+								"name": "14"
+							}
+						],
+						"type": "option"
+					},
+					"synproxy-tos": {
+						"addedIn": "v7.2.8",
+						"category": "unitary",
+						"default": "255",
+						"help": "Determine TCP differentiated services code point value (type of service).",
+						"multiple_values": false,
+						"name": "synproxy-tos",
+						"options": [
+							{
+								"help": "Differentiated services code point value set to 0.",
+								"name": "0"
+							},
+							{
+								"help": "Differentiated services code point value set to 10.",
+								"name": "10"
+							},
+							{
+								"help": "Differentiated services code point value set to 12.",
+								"name": "12"
+							},
+							{
+								"help": "Differentiated services code point value set to 14.",
+								"name": "14"
+							},
+							{
+								"help": "Differentiated services code point value set to 18.",
+								"name": "18"
+							},
+							{
+								"help": "Differentiated services code point value set to 20.",
+								"name": "20"
+							},
+							{
+								"help": "Differentiated services code point value set to 22.",
+								"name": "22"
+							},
+							{
+								"help": "Differentiated services code point value set to 26.",
+								"name": "26"
+							},
+							{
+								"help": "Differentiated services code point value set to 28.",
+								"name": "28"
+							},
+							{
+								"help": "Differentiated services code point value set to 30.",
+								"name": "30"
+							},
+							{
+								"help": "Differentiated services code point value set to 34.",
+								"name": "34"
+							},
+							{
+								"help": "Differentiated services code point value set to 36.",
+								"name": "36"
+							},
+							{
+								"help": "Differentiated services code point value set to 38.",
+								"name": "38"
+							},
+							{
+								"help": "Differentiated services code point value set to 40.",
+								"name": "40"
+							},
+							{
+								"help": "Differentiated services code point value set to 46.",
+								"name": "46"
+							},
+							{
+								"help": "Use SYN packet Differentiated services code point value. Default value.",
+								"name": "255"
+							}
+						],
+						"type": "option"
+					},
+					"synproxy-ttl": {
+						"addedIn": "v7.2.8",
+						"category": "unitary",
+						"default": "128",
+						"help": "Determine Time to live (TTL) value for packets replied by syn proxy module.",
+						"multiple_values": false,
+						"name": "synproxy-ttl",
+						"options": [
+							{
+								"help": "TTL set to 32.",
+								"name": "32"
+							},
+							{
+								"help": "TTL set to 64.",
+								"name": "64"
+							},
+							{
+								"help": "TTL set to 128, Default value.",
+								"name": "128"
+							},
+							{
+								"help": "TTL set to 255.",
+								"name": "255"
+							}
+						],
+						"type": "option"
+					},
 					"threshold": {
 						"category": "unitary",
 						"default": 0,
-						"help": "Anomaly threshold. Number of detected instances per minute that triggers the anomaly action.",
+						"help": "Anomaly threshold. Number of detected instances (packets per second or concurrent session number) that triggers the anomaly action.",
 						"max-value": 2147483647,
 						"min-value": 1,
 						"multiple_values": false,
@@ -133,7 +418,7 @@
 					"threshold(default)": {
 						"category": "unitary",
 						"default": 0,
-						"help": "Number of detected instances per minute which triggers action (1 - 2147483647, default = 1000). Note that each anomaly has a different threshold value assigned to it.",
+						"help": "Number of detected instances (packets per second or concurrent session number) which triggers action (1 - 2147483647, default = 1000). Note that each anomaly has a different threshold value assigned to it.",
 						"max-value": 4294967295,
 						"min-value": 0,
 						"multiple_values": false,
@@ -302,12 +587,13 @@
 		"mkey": "policyid",
 		"mkey_type": "integer",
 		"name": "DoS-policy6",
+		"object_range": "vdom",
 		"path": "firewall",
-		"q_type": 382
+		"q_type": 384
 	},
-	"revision": "f7f9f0c7010a0528b972ed831ae64831",
-	"serial": "FGTAZRIPD-OKNB34",
+	"revision": "2131c48edd53df0aa10b0be32545dfe1",
+	"serial": "FG180FTK20900788",
 	"status": "success",
 	"vdom": "root",
-	"version": "v7.2.0"
+	"version": "v7.2.8"
 }

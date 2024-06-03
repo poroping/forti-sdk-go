@@ -1,9 +1,9 @@
 {
 	"addedIn": "v6.4.2",
-	"build": 1157,
+	"build": 1639,
 	"http_method": "GET",
 	"http_status": 200,
-	"mergedVersions": "v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3,v7.0.4,v7.2.0",
+	"mergedVersions": "v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3,v7.0.4,v7.0.5,v7.0.6,v7.2.0,v7.2.1,v7.2.8",
 	"name": "arrp-profile",
 	"path": "wireless-controller",
 	"results": {
@@ -60,7 +60,7 @@
 			},
 			"include-dfs-channel": {
 				"category": "unitary",
-				"default": "disable",
+				"default": "enable",
 				"help": "Enable/disable use of DFS channel in DARRP channel selection phase 1 (default = disable).",
 				"multiple_values": false,
 				"name": "include-dfs-channel",
@@ -78,7 +78,7 @@
 			},
 			"include-weather-channel": {
 				"category": "unitary",
-				"default": "disable",
+				"default": "enable",
 				"help": "Enable/disable use of weather channel in DARRP channel selection phase 1 (default = disable).",
 				"multiple_values": false,
 				"name": "include-weather-channel",
@@ -212,7 +212,7 @@
 			},
 			"weight-dfs-channel": {
 				"category": "unitary",
-				"default": 500,
+				"default": 0,
 				"help": "Weight in DARRP channel score calculation for DFS channel (0 - 2000, default = 500).",
 				"max-value": 2000,
 				"min-value": 0,
@@ -262,7 +262,7 @@
 			},
 			"weight-weather-channel": {
 				"category": "unitary",
-				"default": 1000,
+				"default": 0,
 				"help": "Weight in DARRP channel score calculation for weather channel (0 - 2000, default = 1000).",
 				"max-value": 2000,
 				"min-value": 0,
@@ -278,12 +278,13 @@
 		"mkey": "name",
 		"mkey_type": "string",
 		"name": "arrp-profile",
+		"object_range": "vdom",
 		"path": "wireless-controller",
-		"q_type": 275
+		"q_type": 282
 	},
-	"revision": "5aaca7175b5b74c5babe5981f58baa16",
-	"serial": "FGTAZRIPD-OKNB34",
+	"revision": "b710b2b12541ab8e88b17ae1823bdf1a",
+	"serial": "FG180FTK20900788",
 	"status": "success",
 	"vdom": "root",
-	"version": "v7.2.0"
+	"version": "v7.2.8"
 }

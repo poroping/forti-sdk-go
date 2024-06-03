@@ -38,6 +38,7 @@ type VpnSslWebUserGroupBookmarkBookmarks struct {
 	SsoPassword           *string                                        `json:"sso-password,omitempty"`
 	SsoUsername           *string                                        `json:"sso-username,omitempty"`
 	Url                   *string                                        `json:"url,omitempty"`
+	VncKeyboardLayout     *string                                        `json:"vnc-keyboard-layout,omitempty"`
 	Width                 *int64                                         `json:"width,omitempty"`
 }
 

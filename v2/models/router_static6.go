@@ -10,6 +10,7 @@ type RouterStatic6 struct {
 	Devindex          *int64                    `json:"devindex,omitempty"`
 	Distance          *int64                    `json:"distance,omitempty"`
 	Dst               *string                   `json:"dst,omitempty"`
+	Dstaddr           *string                   `json:"dstaddr,omitempty"`
 	DynamicGateway    *string                   `json:"dynamic-gateway,omitempty"`
 	Gateway           *string                   `json:"gateway,omitempty"`
 	LinkMonitorExempt *string                   `json:"link-monitor-exempt,omitempty"`
@@ -20,6 +21,7 @@ type RouterStatic6 struct {
 	Status            *string                   `json:"status,omitempty"`
 	VirtualWanLink    *string                   `json:"virtual-wan-link,omitempty"`
 	Vrf               *int64                    `json:"vrf,omitempty"`
+	Weight            *int64                    `json:"weight,omitempty"`
 }
 
 type RouterStatic6SdwanZone struct {

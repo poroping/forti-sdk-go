@@ -1,10 +1,10 @@
 {
 	"FullPath": null,
 	"addedIn": "v6.4.6",
-	"build": 234,
+	"build": 1639,
 	"http_method": "GET",
 	"http_status": 200,
-	"mergedVersions": "v6.4.6,v7.0.2",
+	"mergedVersions": "v6.4.6,v7.0.2,v7.2.8",
 	"name": "virtual-switch",
 	"path": "system",
 	"removedIn": "v6.4.7",
@@ -16,6 +16,7 @@
 				"category": "unitary",
 				"default": "",
 				"help": "Name of the virtual switch.",
+				"multiple_values": false,
 				"name": "name",
 				"required": true,
 				"size": 15,
@@ -28,6 +29,7 @@
 				],
 				"default": "",
 				"help": "Physical switch parent.",
+				"multiple_values": false,
 				"name": "physical-switch",
 				"required": true,
 				"size": 15,
@@ -40,6 +42,7 @@
 						"category": "unitary",
 						"default": "",
 						"help": "Alias.",
+						"multiple_values": false,
 						"name": "alias",
 						"size": 25,
 						"type": "string"
@@ -51,6 +54,7 @@
 						],
 						"default": "",
 						"help": "Physical interface name.",
+						"multiple_values": false,
 						"name": "name",
 						"required": true,
 						"size": 15,
@@ -161,6 +165,7 @@
 						"name": "enable"
 					}
 				],
+				"removedIn": "v7.2.8",
 				"type": "option"
 			},
 			"span-dest-port": {
@@ -169,6 +174,7 @@
 				"default": "",
 				"help": "SPAN destination port.",
 				"name": "span-dest-port",
+				"removedIn": "v7.2.8",
 				"size": 15,
 				"type": "string"
 			},
@@ -193,6 +199,7 @@
 						"name": "both"
 					}
 				],
+				"removedIn": "v7.2.8",
 				"type": "option"
 			},
 			"span-source-port": {
@@ -201,6 +208,7 @@
 				"default": "",
 				"help": "SPAN source port.",
 				"name": "span-source-port",
+				"removedIn": "v7.2.8",
 				"size": 15,
 				"type": "string"
 			},
@@ -210,6 +218,7 @@
 				"help": "VLAN.",
 				"max-value": 4294967295,
 				"min-value": 0,
+				"multiple_values": false,
 				"name": "vlan",
 				"type": "integer"
 			}
@@ -221,12 +230,13 @@
 		"mkey": "name",
 		"mkey_type": "string",
 		"name": "virtual-switch",
+		"object_range": "global",
 		"path": "system",
-		"q_type": 225
+		"q_type": 235
 	},
-	"revision": "de3308b3e2398a64893efceba65b0541",
-	"serial": "FGT60FTK20028507",
+	"revision": "2131c48edd53df0aa10b0be32545dfe1",
+	"serial": "FG180FTK20900788",
 	"status": "success",
 	"vdom": "root",
-	"version": "v7.0.2"
+	"version": "v7.2.8"
 }

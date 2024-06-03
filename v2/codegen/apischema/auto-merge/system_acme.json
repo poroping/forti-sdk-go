@@ -1,15 +1,22 @@
 {
 	"addedIn": "v7.0.0",
-	"build": 1157,
+	"build": 1639,
 	"http_method": "GET",
 	"http_status": 200,
-	"mergedVersions": "v7.0.0,v7.0.1,v7.0.2,v7.0.3,v7.0.4,v7.2.0",
+	"mergedVersions": "v7.0.0,v7.0.1,v7.0.2,v7.0.3,v7.0.4,v7.0.5,v7.0.6,v7.2.0,v7.2.1,v7.2.8",
 	"name": "acme",
 	"path": "system",
 	"results": {
 		"access_group": "sysgrp",
 		"category": "complex",
 		"children": {
+			"acc-details": {
+				"addedIn": "v7.2.1",
+				"category": "info-read-only",
+				"help": "Print Account information and decrypted key.",
+				"name": "acc-details",
+				"type": "key"
+			},
 			"accounts": {
 				"category": "table",
 				"children": {
@@ -108,7 +115,7 @@
 				"name": "interface"
 			},
 			"source-ip": {
-				"addedIn": "v7.2.0",
+				"addedIn": "v7.0.6",
 				"category": "unitary",
 				"default": "0.0.0.0",
 				"help": "Source IPv4 address used to connect to the ACME server.",
@@ -117,24 +124,32 @@
 				"type": "ipv4-address"
 			},
 			"source-ip6": {
-				"addedIn": "v7.2.0",
+				"addedIn": "v7.0.6",
 				"category": "unitary",
 				"default": "::",
 				"help": "Source IPv6 address used to connect to the ACME server.",
 				"multiple_values": false,
 				"name": "source-ip6",
 				"type": "ipv6-address"
+			},
+			"status": {
+				"addedIn": "v7.2.1",
+				"category": "info-read-only",
+				"help": "Print information about the current status of the acme client.",
+				"name": "status",
+				"type": "key"
 			}
 		},
 		"help": "Configure ACME client.",
 		"multiple_values": false,
 		"name": "acme",
+		"object_range": "global",
 		"path": "system",
-		"q_type": 540
+		"q_type": 556
 	},
-	"revision": "f7f9f0c7010a0528b972ed831ae64831",
-	"serial": "FGTAZRIPD-OKNB34",
+	"revision": "2131c48edd53df0aa10b0be32545dfe1",
+	"serial": "FG180FTK20900788",
 	"status": "success",
 	"vdom": "root",
-	"version": "v7.2.0"
+	"version": "v7.2.8"
 }

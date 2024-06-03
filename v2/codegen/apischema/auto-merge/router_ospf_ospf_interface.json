@@ -1,10 +1,10 @@
 {
 	"addedIn": "v6.2.7",
-	"build": 1157,
+	"build": 1639,
 	"child_path": "ospf-interface",
 	"http_method": "GET",
 	"http_status": 200,
-	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3,v7.0.4,v7.2.0",
+	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3,v7.0.4,v7.0.5,v7.0.6,v7.2.0,v7.2.1,v7.2.8",
 	"name": "ospf",
 	"path": "router",
 	"results": {
@@ -351,12 +351,13 @@
 		"mkey": "name",
 		"mkey_type": "string",
 		"name": "ospf-interface",
+		"object_range": "vdom",
 		"path": "router",
-		"q_type": 122
+		"q_type": 127
 	},
-	"revision": "f56a054ed6f1d884968716384f19a32c",
-	"serial": "FGTAZRIPD-OKNB34",
+	"revision": "3004b60041bac841a4188921799d0490",
+	"serial": "FG180FTK20900788",
 	"status": "success",
 	"vdom": "root",
-	"version": "v7.2.0"
+	"version": "v7.2.8"
 }

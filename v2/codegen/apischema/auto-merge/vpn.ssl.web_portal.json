@@ -1,9 +1,9 @@
 {
 	"addedIn": "v6.2.7",
-	"build": 1157,
+	"build": 1639,
 	"http_method": "GET",
 	"http_status": 200,
-	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3,v7.0.4,v7.2.0",
+	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3,v7.0.4,v7.0.5,v7.0.6,v7.2.0,v7.2.1,v7.2.8",
 	"name": "portal",
 	"path": "vpn.ssl.web",
 	"results": {
@@ -309,7 +309,7 @@
 										"name": "es-var"
 									},
 									{
-										"help": "Finish.",
+										"help": "Finnish.",
 										"name": "fi"
 									},
 									{
@@ -333,7 +333,7 @@
 										"name": "fr-ch"
 									},
 									{
-										"help": "French, Belgian.",
+										"help": "French, Belgium.",
 										"name": "fr-be"
 									},
 									{
@@ -363,6 +363,10 @@
 									{
 										"help": "Korean.",
 										"name": "ko"
+									},
+									{
+										"help": "Latin American.",
+										"name": "la-am"
 									},
 									{
 										"help": "Lithuanian.",
@@ -589,6 +593,10 @@
 								"name": "security",
 								"options": [
 									{
+										"help": "Allow the server to choose the type of security.",
+										"name": "any"
+									},
+									{
 										"help": "Standard RDP encryption.",
 										"name": "rdp"
 									},
@@ -599,10 +607,6 @@
 									{
 										"help": "TLS encryption.",
 										"name": "tls"
-									},
-									{
-										"help": "Allow the server to choose the type of security.",
-										"name": "any"
 									}
 								],
 								"type": "option"
@@ -791,6 +795,97 @@
 								"size": 128,
 								"type": "var-string"
 							},
+							"vnc-keyboard-layout": {
+								"addedIn": "v7.2.8",
+								"category": "unitary",
+								"default": "default",
+								"help": "Keyboard layout.",
+								"multiple_values": false,
+								"name": "vnc-keyboard-layout",
+								"options": [
+									{
+										"help": "Default.",
+										"name": "default"
+									},
+									{
+										"help": "Danish.",
+										"name": "da"
+									},
+									{
+										"help": "Dutch.",
+										"name": "nl"
+									},
+									{
+										"help": "English, United Kingdom.",
+										"name": "en-uk"
+									},
+									{
+										"help": "English, United Kingdom Extended.",
+										"name": "en-uk-ext"
+									},
+									{
+										"help": "Finnish.",
+										"name": "fi"
+									},
+									{
+										"help": "French.",
+										"name": "fr"
+									},
+									{
+										"help": "French, Belgium.",
+										"name": "fr-be"
+									},
+									{
+										"help": "French, Canadian Multilingual Std.",
+										"name": "fr-ca-mul"
+									},
+									{
+										"help": "German.",
+										"name": "de"
+									},
+									{
+										"help": "German, Switzerland.",
+										"name": "de-ch"
+									},
+									{
+										"help": "Italian.",
+										"name": "it"
+									},
+									{
+										"help": "Italian (142).",
+										"name": "it-142"
+									},
+									{
+										"help": "Portuguese.",
+										"name": "pt"
+									},
+									{
+										"help": "Portuguese (Brazilian ABNT2).",
+										"name": "pt-br-abnt2"
+									},
+									{
+										"help": "Norwegian.",
+										"name": "no"
+									},
+									{
+										"help": "Scottish Gaelic.",
+										"name": "gd"
+									},
+									{
+										"help": "Spanish.",
+										"name": "es"
+									},
+									{
+										"help": "Swedish.",
+										"name": "sv"
+									},
+									{
+										"help": "United States-International.",
+										"name": "us-intl"
+									}
+								],
+								"type": "option"
+							},
 							"width": {
 								"addedIn": "v7.0.4",
 								"category": "unitary",
@@ -828,6 +923,25 @@
 				"mkey": "name",
 				"mkey_type": "string",
 				"name": "bookmark-group"
+			},
+			"client-src-range": {
+				"addedIn": "v7.2.8",
+				"category": "unitary",
+				"default": "disable",
+				"help": "Allow client to add source range for the tunnel traffic.",
+				"multiple_values": false,
+				"name": "client-src-range",
+				"options": [
+					{
+						"help": "Enable setting.",
+						"name": "enable"
+					},
+					{
+						"help": "Disable setting.",
+						"name": "disable"
+					}
+				],
+				"type": "option"
 			},
 			"clipboard": {
 				"addedIn": "v6.4.7",
@@ -880,7 +994,7 @@
 				"type": "option"
 			},
 			"default-window-height": {
-				"addedIn": "v7.2.0",
+				"addedIn": "v7.0.6",
 				"category": "unitary",
 				"default": 768,
 				"help": "Screen height (range from 0 - 65535, default = 768).",
@@ -891,7 +1005,7 @@
 				"type": "integer"
 			},
 			"default-window-width": {
-				"addedIn": "v7.2.0",
+				"addedIn": "v7.0.6",
 				"category": "unitary",
 				"default": 1024,
 				"help": "Screen width (range from 0 - 65535, default = 1024).",
@@ -900,6 +1014,44 @@
 				"multiple_values": false,
 				"name": "default-window-width",
 				"type": "integer"
+			},
+			"dhcp-ip-overlap": {
+				"addedIn": "v7.0.6",
+				"category": "unitary",
+				"default": "use-new",
+				"help": "Configure overlapping DHCP IP allocation assignment.",
+				"multiple_values": false,
+				"name": "dhcp-ip-overlap",
+				"options": [
+					{
+						"help": "Assign DHCP lease to new client and remove old client lease.",
+						"name": "use-new"
+					},
+					{
+						"help": "Preserve previous client IP allocation and disconnect new client.",
+						"name": "use-old"
+					}
+				],
+				"removedIn": "v7.2.0",
+				"type": "option"
+			},
+			"dhcp-ra-giaddr": {
+				"addedIn": "v7.2.8",
+				"category": "unitary",
+				"default": "0.0.0.0",
+				"help": "Relay agent gateway IP address to use in the giaddr field of DHCP requests.",
+				"multiple_values": false,
+				"name": "dhcp-ra-giaddr",
+				"type": "ipv4-address"
+			},
+			"dhcp6-ra-linkaddr": {
+				"addedIn": "v7.2.8",
+				"category": "unitary",
+				"default": "::",
+				"help": "Relay agent IPv6 link address to use in DHCP6 requests.",
+				"multiple_values": false,
+				"name": "dhcp6-ra-linkaddr",
+				"type": "ipv6-address"
 			},
 			"display-bookmark": {
 				"category": "unitary",
@@ -1155,8 +1307,16 @@
 						"name": "range"
 					},
 					{
-						"help": "Use IP the addresses associated with individual users or user groups (usually from external auth servers).",
+						"help": "Use the IP addresses associated with individual users or user groups (usually from external auth servers).",
 						"name": "user-group"
+					},
+					{
+						"help": "Use IP addresses obtained from external DHCP server.",
+						"name": "dhcp"
+					},
+					{
+						"help": "Do not assign IP address.",
+						"name": "no-ip"
 					}
 				],
 				"type": "option"
@@ -2098,12 +2258,13 @@
 		"mkey": "name",
 		"mkey_type": "string",
 		"name": "portal",
+		"object_range": "vdom",
 		"path": "vpn.ssl.web",
-		"q_type": 153
+		"q_type": 159
 	},
-	"revision": "795d6027c813de9a1aae550aecc06773",
-	"serial": "FGTAZRIPD-OKNB34",
+	"revision": "3eb3f8d2b6c7a88cc5cbec8299d314cd",
+	"serial": "FG180FTK20900788",
 	"status": "success",
 	"vdom": "root",
-	"version": "v7.2.0"
+	"version": "v7.2.8"
 }

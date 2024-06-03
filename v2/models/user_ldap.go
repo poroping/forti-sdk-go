@@ -5,6 +5,7 @@ const UserLdapPath = "user/ldap/"
 type UserLdap struct {
 	AccountKeyFilter        *string `json:"account-key-filter,omitempty"`
 	AccountKeyProcessing    *string `json:"account-key-processing,omitempty"`
+	AccountKeyUpnSan        *string `json:"account-key-upn-san,omitempty"`
 	Antiphish               *string `json:"antiphish,omitempty"`
 	CaCert                  *string `json:"ca-cert,omitempty"`
 	ClientCert              *string `json:"client-cert,omitempty"`
@@ -36,6 +37,7 @@ type UserLdap struct {
 	TertiaryServer          *string `json:"tertiary-server,omitempty"`
 	TwoFactor               *string `json:"two-factor,omitempty"`
 	TwoFactorAuthentication *string `json:"two-factor-authentication,omitempty"`
+	TwoFactorFilter         *string `json:"two-factor-filter,omitempty"`
 	TwoFactorNotification   *string `json:"two-factor-notification,omitempty"`
 	Type                    *string `json:"type,omitempty"`
 	UserInfoExchangeServer  *string `json:"user-info-exchange-server,omitempty"`

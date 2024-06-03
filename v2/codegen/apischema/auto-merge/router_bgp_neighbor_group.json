@@ -1,10 +1,10 @@
 {
 	"addedIn": "v6.2.7",
-	"build": 1157,
+	"build": 1639,
 	"child_path": "neighbor-group",
 	"http_method": "GET",
 	"http_status": 200,
-	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3,v7.0.4,v7.2.0",
+	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3,v7.0.4,v7.0.5,v7.0.6,v7.2.0,v7.2.1,v7.2.8",
 	"name": "bgp",
 	"path": "router",
 	"results": {
@@ -188,7 +188,7 @@
 			},
 			"allowas-in": {
 				"category": "unitary",
-				"default": 0,
+				"default": 3,
 				"help": "IPv4 The maximum number of occurrence of my AS number allowed.",
 				"max-value": 10,
 				"min-value": 1,
@@ -235,7 +235,7 @@
 			"allowas-in-vpnv4": {
 				"addedIn": "v7.2.0",
 				"category": "unitary",
-				"default": 0,
+				"default": 3,
 				"help": "The maximum number of occurrence of my AS number allowed for VPNv4 route.",
 				"max-value": 10,
 				"min-value": 1,
@@ -245,7 +245,7 @@
 			},
 			"allowas-in6": {
 				"category": "unitary",
-				"default": 0,
+				"default": 3,
 				"help": "IPv6 The maximum number of occurrence of my AS number allowed.",
 				"max-value": 10,
 				"min-value": 1,
@@ -558,7 +558,7 @@
 				"default": 4294967295,
 				"help": "Interval (sec) for connect timer.",
 				"max-value": 65535,
-				"min-value": 0,
+				"min-value": 1,
 				"multiple_values": false,
 				"name": "connect-timer",
 				"type": "integer"
@@ -816,13 +816,13 @@
 			},
 			"local-as": {
 				"category": "unitary",
-				"default": 0,
+				"default": "",
 				"help": "Local AS number of neighbor.",
 				"max-value": 4294967295,
 				"min-value": 0,
 				"multiple_values": false,
 				"name": "local-as",
-				"type": "integer"
+				"type": "user"
 			},
 			"local-as-no-prepend": {
 				"category": "unitary",
@@ -1116,6 +1116,15 @@
 				],
 				"type": "option"
 			},
+			"password": {
+				"addedIn": "v7.2.8",
+				"category": "unitary",
+				"help": "Password used in MD5 authentication.",
+				"multiple_values": false,
+				"name": "password",
+				"size": 128,
+				"type": "password"
+			},
 			"prefix-list-in": {
 				"category": "unitary",
 				"datasource": [
@@ -1192,14 +1201,14 @@
 			},
 			"remote-as": {
 				"category": "unitary",
-				"default": 0,
+				"default": "",
 				"help": "AS number of neighbor.",
 				"max-value": 4294967295,
 				"min-value": 1,
 				"multiple_values": false,
 				"name": "remote-as",
 				"required": true,
-				"type": "integer"
+				"type": "user"
 			},
 			"remove-private-as": {
 				"category": "unitary",
@@ -1739,12 +1748,13 @@
 		"mkey": "name",
 		"mkey_type": "string",
 		"name": "neighbor-group",
+		"object_range": "vdom",
 		"path": "router",
-		"q_type": 131
+		"q_type": 136
 	},
-	"revision": "8023aeaaa301ccda902574ef2a3a0973",
-	"serial": "FGTAZRIPD-OKNB34",
+	"revision": "b8ec676a3fd5e3bcd4f76f0b75087987",
+	"serial": "FG180FTK20900788",
 	"status": "success",
 	"vdom": "root",
-	"version": "v7.2.0"
+	"version": "v7.2.8"
 }

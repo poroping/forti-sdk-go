@@ -45,6 +45,7 @@ type FirewallShapingPolicy struct {
 	TrafficShaperReverse          *string                                               `json:"traffic-shaper-reverse,omitempty"`
 	UrlCategory                   *[]FirewallShapingPolicyUrlCategory                   `json:"url-category,omitempty"`
 	Users                         *[]FirewallShapingPolicyUsers                         `json:"users,omitempty"`
+	Uuid                          *string                                               `json:"uuid,omitempty"`
 }
 
 type FirewallShapingPolicyAppCategory struct {

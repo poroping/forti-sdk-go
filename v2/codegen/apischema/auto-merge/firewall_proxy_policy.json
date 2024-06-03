@@ -1,9 +1,9 @@
 {
 	"addedIn": "v6.2.7",
-	"build": 1157,
+	"build": 1639,
 	"http_method": "GET",
 	"http_status": 200,
-	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3,v7.0.4,v7.2.0",
+	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3,v7.0.4,v7.0.5,v7.0.6,v7.2.0,v7.2.1,v7.2.8",
 	"name": "proxy-policy",
 	"path": "firewall",
 	"results": {
@@ -587,6 +587,151 @@
 				],
 				"type": "option"
 			},
+			"internet-service6": {
+				"addedIn": "v7.2.8",
+				"category": "unitary",
+				"default": "disable",
+				"help": "Enable/disable use of Internet Services IPv6 for this policy. If enabled, destination IPv6 address and service are not used.",
+				"multiple_values": false,
+				"name": "internet-service6",
+				"options": [
+					{
+						"help": "Enable use of IPv6 Internet Services in policy.",
+						"name": "enable"
+					},
+					{
+						"help": "Disable use of IPv6 Internet Services in policy.",
+						"name": "disable"
+					}
+				],
+				"type": "option"
+			},
+			"internet-service6-custom": {
+				"addedIn": "v7.2.8",
+				"category": "table",
+				"children": {
+					"name": {
+						"category": "unitary",
+						"datasource": [
+							"firewall.internet-service-custom.name"
+						],
+						"default": "",
+						"help": "Custom Internet Service IPv6 name.",
+						"multiple_values": false,
+						"name": "name",
+						"required": true,
+						"size": 79,
+						"type": "string"
+					}
+				},
+				"help": "Custom Internet Service IPv6 name.",
+				"max_table_size_global": 0,
+				"max_table_size_item": 0,
+				"max_table_size_vdom": 0,
+				"member_table": true,
+				"mkey": "name",
+				"mkey_type": "string",
+				"name": "internet-service6-custom"
+			},
+			"internet-service6-custom-group": {
+				"addedIn": "v7.2.8",
+				"category": "table",
+				"children": {
+					"name": {
+						"category": "unitary",
+						"datasource": [
+							"firewall.internet-service-custom-group.name"
+						],
+						"default": "",
+						"help": "Custom Internet Service IPv6 group name.",
+						"multiple_values": false,
+						"name": "name",
+						"required": true,
+						"size": 79,
+						"type": "string"
+					}
+				},
+				"help": "Custom Internet Service IPv6 group name.",
+				"max_table_size_global": 0,
+				"max_table_size_item": 0,
+				"max_table_size_vdom": 0,
+				"member_table": true,
+				"mkey": "name",
+				"mkey_type": "string",
+				"name": "internet-service6-custom-group"
+			},
+			"internet-service6-group": {
+				"addedIn": "v7.2.8",
+				"category": "table",
+				"children": {
+					"name": {
+						"category": "unitary",
+						"datasource": [
+							"firewall.internet-service-group.name"
+						],
+						"default": "",
+						"help": "Internet Service IPv6 group name.",
+						"multiple_values": false,
+						"name": "name",
+						"required": true,
+						"size": 79,
+						"type": "string"
+					}
+				},
+				"help": "Internet Service IPv6 group name.",
+				"max_table_size_global": 0,
+				"max_table_size_item": 0,
+				"max_table_size_vdom": 0,
+				"member_table": true,
+				"mkey": "name",
+				"mkey_type": "string",
+				"name": "internet-service6-group"
+			},
+			"internet-service6-name": {
+				"addedIn": "v7.2.8",
+				"category": "table",
+				"children": {
+					"name": {
+						"category": "unitary",
+						"datasource": [
+							"firewall.internet-service-name.name"
+						],
+						"default": "",
+						"help": "Internet Service IPv6 name.",
+						"multiple_values": false,
+						"name": "name",
+						"size": 79,
+						"type": "string"
+					}
+				},
+				"help": "Internet Service IPv6 name.",
+				"max_table_size_global": 0,
+				"max_table_size_item": 0,
+				"max_table_size_vdom": 0,
+				"member_table": true,
+				"mkey": "name",
+				"mkey_type": "string",
+				"name": "internet-service6-name"
+			},
+			"internet-service6-negate": {
+				"addedIn": "v7.2.8",
+				"category": "unitary",
+				"default": "disable",
+				"help": "When enabled, Internet Services match against any internet service IPv6 EXCEPT the selected Internet Service IPv6.",
+				"multiple_values": false,
+				"name": "internet-service6-negate",
+				"options": [
+					{
+						"help": "Enable negated IPv6 Internet Service match.",
+						"name": "enable"
+					},
+					{
+						"help": "Disable negated IPv6 Internet Service match.",
+						"name": "disable"
+					}
+				],
+				"type": "option"
+			},
 			"ips-sensor": {
 				"category": "unitary",
 				"datasource": [
@@ -596,6 +741,19 @@
 				"help": "Name of an existing IPS sensor.",
 				"multiple_values": false,
 				"name": "ips-sensor",
+				"size": 35,
+				"type": "string"
+			},
+			"ips-voip-filter": {
+				"addedIn": "v7.2.8",
+				"category": "unitary",
+				"datasource": [
+					"voip.profile.name"
+				],
+				"default": "",
+				"help": "Name of an existing VoIP (ips) profile.",
+				"multiple_values": false,
+				"name": "ips-voip-filter",
 				"size": 35,
 				"type": "string"
 			},
@@ -757,10 +915,6 @@
 					{
 						"help": "Access Proxy",
 						"name": "access-proxy"
-					},
-					{
-						"help": "WANopt Tunnel",
-						"name": "wanopt"
 					}
 				],
 				"required": true,
@@ -1121,13 +1275,12 @@
 			"voip-profile": {
 				"addedIn": "v7.0.0",
 				"category": "unitary",
-				"datasource": [
-					"voip.profile.name"
-				],
+				"datasource": [],
 				"default": "",
 				"help": "Name of an existing VoIP profile.",
 				"multiple_values": false,
 				"name": "voip-profile",
+				"removedIn": "v7.2.8",
 				"size": 35,
 				"type": "string"
 			},
@@ -1159,6 +1312,7 @@
 						"name": "disable"
 					}
 				],
+				"removedIn": "v7.2.8",
 				"type": "option"
 			},
 			"webcache-https": {
@@ -1177,6 +1331,7 @@
 						"name": "enable"
 					}
 				],
+				"removedIn": "v7.2.8",
 				"type": "option"
 			},
 			"webfilter-profile": {
@@ -1265,18 +1420,19 @@
 			}
 		},
 		"help": "Configure proxy policies.",
-		"max_table_size_global": 200000,
+		"max_table_size_global": 100000,
 		"max_table_size_item": 0,
-		"max_table_size_vdom": 200000,
+		"max_table_size_vdom": 100000,
 		"mkey": "policyid",
 		"mkey_type": "integer",
 		"name": "proxy-policy",
+		"object_range": "vdom",
 		"path": "firewall",
-		"q_type": 481
+		"q_type": 486
 	},
-	"revision": "f7f9f0c7010a0528b972ed831ae64831",
-	"serial": "FGTAZRIPD-OKNB34",
+	"revision": "2131c48edd53df0aa10b0be32545dfe1",
+	"serial": "FG180FTK20900788",
 	"status": "success",
 	"vdom": "root",
-	"version": "v7.2.0"
+	"version": "v7.2.8"
 }

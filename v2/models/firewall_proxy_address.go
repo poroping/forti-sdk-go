@@ -3,6 +3,7 @@ package models
 const FirewallProxyAddressPath = "firewall/proxy-address/"
 
 type FirewallProxyAddress struct {
+	Application     *[]FirewallProxyAddressApplication `json:"application,omitempty"`
 	CaseSensitivity *string                            `json:"case-sensitivity,omitempty"`
 	Category        *[]FirewallProxyAddressCategory    `json:"category,omitempty"`
 	Color           *int64                             `json:"color,omitempty"`
@@ -20,8 +21,14 @@ type FirewallProxyAddress struct {
 	Tagging         *[]FirewallProxyAddressTagging     `json:"tagging,omitempty"`
 	Type            *string                            `json:"type,omitempty"`
 	Ua              *string                            `json:"ua,omitempty"`
+	UaMaxVer        *string                            `json:"ua-max-ver,omitempty"`
+	UaMinVer        *string                            `json:"ua-min-ver,omitempty"`
 	Uuid            *string                            `json:"uuid,omitempty"`
 	Visibility      *string                            `json:"visibility,omitempty"`
+}
+
+type FirewallProxyAddressApplication struct {
+	Name *string `json:"name,omitempty"`
 }
 
 type FirewallProxyAddressCategory struct {

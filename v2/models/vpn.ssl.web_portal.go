@@ -6,11 +6,15 @@ type VpnSslWebPortal struct {
 	AllowUserAccess                  *string                                            `json:"allow-user-access,omitempty"`
 	AutoConnect                      *string                                            `json:"auto-connect,omitempty"`
 	BookmarkGroup                    *[]VpnSslWebPortalBookmarkGroup                    `json:"bookmark-group,omitempty"`
+	ClientSrcRange                   *string                                            `json:"client-src-range,omitempty"`
 	Clipboard                        *string                                            `json:"clipboard,omitempty"`
 	CustomLang                       *string                                            `json:"custom-lang,omitempty"`
 	CustomizeForticlientDownloadUrl  *string                                            `json:"customize-forticlient-download-url,omitempty"`
 	DefaultWindowHeight              *int64                                             `json:"default-window-height,omitempty"`
 	DefaultWindowWidth               *int64                                             `json:"default-window-width,omitempty"`
+	DhcpIpOverlap                    *string                                            `json:"dhcp-ip-overlap,omitempty"`
+	DhcpRaGiaddr                     *string                                            `json:"dhcp-ra-giaddr,omitempty"`
+	Dhcp6RaLinkaddr                  *string                                            `json:"dhcp6-ra-linkaddr,omitempty"`
 	DisplayBookmark                  *string                                            `json:"display-bookmark,omitempty"`
 	DisplayConnectionTools           *string                                            `json:"display-connection-tools,omitempty"`
 	DisplayHistory                   *string                                            `json:"display-history,omitempty"`
@@ -111,6 +115,7 @@ type VpnSslWebPortalBookmarkGroupBookmarks struct {
 	SsoPassword           *string                                          `json:"sso-password,omitempty"`
 	SsoUsername           *string                                          `json:"sso-username,omitempty"`
 	Url                   *string                                          `json:"url,omitempty"`
+	VncKeyboardLayout     *string                                          `json:"vnc-keyboard-layout,omitempty"`
 	Width                 *int64                                           `json:"width,omitempty"`
 }
 

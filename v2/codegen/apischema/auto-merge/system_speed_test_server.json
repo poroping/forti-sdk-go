@@ -1,9 +1,9 @@
 {
 	"addedIn": "v6.2.7",
-	"build": 1157,
+	"build": 1639,
 	"http_method": "GET",
 	"http_status": 200,
-	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3,v7.0.4,v7.2.0",
+	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3,v7.0.4,v7.0.5,v7.0.6,v7.2.0,v7.2.1,v7.2.8",
 	"name": "speed-test-server",
 	"path": "system",
 	"results": {
@@ -13,6 +13,17 @@
 			"host": {
 				"category": "table",
 				"children": {
+					"distance": {
+						"addedIn": "v7.2.8",
+						"category": "unitary",
+						"default": 0,
+						"help": "Speed test host distance.",
+						"max-value": 4294967295,
+						"min-value": 0,
+						"multiple_values": false,
+						"name": "distance",
+						"type": "integer"
+					},
 					"id": {
 						"category": "unitary",
 						"default": 0,
@@ -30,6 +41,26 @@
 						"multiple_values": false,
 						"name": "ip",
 						"type": "ipv4-address"
+					},
+					"latitude": {
+						"addedIn": "v7.2.8",
+						"category": "unitary",
+						"default": "",
+						"help": "Speed test host latitude.",
+						"multiple_values": false,
+						"name": "latitude",
+						"size": 7,
+						"type": "string"
+					},
+					"longitude": {
+						"addedIn": "v7.2.8",
+						"category": "unitary",
+						"default": "",
+						"help": "Speed test host longitude.",
+						"multiple_values": false,
+						"name": "longitude",
+						"size": 7,
+						"type": "string"
 					},
 					"password": {
 						"category": "unitary",
@@ -94,12 +125,13 @@
 		"mkey": "name",
 		"mkey_type": "string",
 		"name": "speed-test-server",
+		"object_range": "vdom",
 		"path": "system",
-		"q_type": 390
+		"q_type": 394
 	},
-	"revision": "f7f9f0c7010a0528b972ed831ae64831",
-	"serial": "FGTAZRIPD-OKNB34",
+	"revision": "2131c48edd53df0aa10b0be32545dfe1",
+	"serial": "FG180FTK20900788",
 	"status": "success",
 	"vdom": "root",
-	"version": "v7.2.0"
+	"version": "v7.2.8"
 }

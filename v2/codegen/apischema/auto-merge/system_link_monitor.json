@@ -1,9 +1,9 @@
 {
 	"addedIn": "v6.2.7",
-	"build": 1157,
+	"build": 1639,
 	"http_method": "GET",
 	"http_status": 200,
-	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3,v7.0.4,v7.2.0",
+	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3,v7.0.4,v7.0.5,v7.0.6,v7.2.0,v7.2.1,v7.2.8",
 	"name": "link-monitor",
 	"path": "system",
 	"results": {
@@ -129,9 +129,9 @@
 			"interval": {
 				"category": "unitary",
 				"default": 500,
-				"help": "Detection interval in milliseconds (500 - 3600 * 1000 msec, default = 500).",
+				"help": "Detection interval in milliseconds (20 - 3600 * 1000 msec, default = 500).",
 				"max-value": 3600000,
-				"min-value": 500,
+				"min-value": 20,
 				"multiple_values": false,
 				"name": "interval",
 				"type": "integer"
@@ -187,9 +187,9 @@
 			"probe-timeout": {
 				"category": "unitary",
 				"default": 500,
-				"help": "Time to wait before a probe packet is considered lost (500 - 5000 msec, default = 500).",
+				"help": "Time to wait before a probe packet is considered lost (20 - 5000 msec, default = 500).",
 				"max-value": 5000,
-				"min-value": 500,
+				"min-value": 20,
 				"multiple_values": false,
 				"name": "probe-timeout",
 				"type": "integer"
@@ -549,12 +549,13 @@
 		"mkey": "name",
 		"mkey_type": "string",
 		"name": "link-monitor",
+		"object_range": "vdom",
 		"path": "system",
-		"q_type": 392
+		"q_type": 397
 	},
-	"revision": "f7f9f0c7010a0528b972ed831ae64831",
-	"serial": "FGTAZRIPD-OKNB34",
+	"revision": "2131c48edd53df0aa10b0be32545dfe1",
+	"serial": "FG180FTK20900788",
 	"status": "success",
 	"vdom": "root",
-	"version": "v7.2.0"
+	"version": "v7.2.8"
 }

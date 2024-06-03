@@ -1,9 +1,9 @@
 {
 	"addedIn": "v6.2.7",
-	"build": 1157,
+	"build": 1639,
 	"http_method": "GET",
 	"http_status": 200,
-	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3,v7.0.4,v7.2.0",
+	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3,v7.0.4,v7.0.5,v7.0.6,v7.2.0,v7.2.1,v7.2.8",
 	"name": "automation-trigger",
 	"path": "system",
 	"results": {
@@ -49,6 +49,10 @@
 					{
 						"help": "License near expiration date.",
 						"name": "license-near-expiry"
+					},
+					{
+						"help": "The local certificate near expiration date.",
+						"name": "local-cert-near-expiry"
 					},
 					{
 						"help": "HA failover.",
@@ -204,6 +208,7 @@
 						"name": "high"
 					}
 				],
+				"removedIn": "v7.2.8",
 				"type": "option"
 			},
 			"license-type": {
@@ -322,6 +327,15 @@
 				"size": 255,
 				"type": "var-string"
 			},
+			"trigger-datetime": {
+				"addedIn": "v7.2.1",
+				"category": "unitary",
+				"default": "0000-00-00 00:00:00",
+				"help": "Trigger date and time (YYYY-MM-DD HH:MM:SS).",
+				"multiple_values": false,
+				"name": "trigger-datetime",
+				"type": "datetime"
+			},
 			"trigger-day": {
 				"category": "unitary",
 				"default": 1,
@@ -354,6 +368,10 @@
 					{
 						"help": "Run monthly.",
 						"name": "monthly"
+					},
+					{
+						"help": "Run once at specified date time.",
+						"name": "once"
 					}
 				],
 				"type": "option"
@@ -468,12 +486,13 @@
 		"mkey": "name",
 		"mkey_type": "string",
 		"name": "automation-trigger",
+		"object_range": "global",
 		"path": "system",
-		"q_type": 502
+		"q_type": 513
 	},
-	"revision": "2b1e6fd28fbb39308ad921f6c0c296e4",
-	"serial": "FGTAZRIPD-OKNB34",
+	"revision": "d225672df5340989bef6e5e06925f6de",
+	"serial": "FG180FTK20900788",
 	"status": "success",
 	"vdom": "root",
-	"version": "v7.2.0"
+	"version": "v7.2.8"
 }

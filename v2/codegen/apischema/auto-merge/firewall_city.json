@@ -1,9 +1,9 @@
 {
 	"addedIn": "v6.4.0",
-	"build": 1157,
+	"build": 1639,
 	"http_method": "GET",
 	"http_status": 200,
-	"mergedVersions": "v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3,v7.0.4,v7.2.0",
+	"mergedVersions": "v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3,v7.0.4,v7.0.5,v7.0.6,v7.2.0,v7.2.1,v7.2.8",
 	"name": "city",
 	"path": "firewall",
 	"results": {
@@ -39,13 +39,14 @@
 		"mkey": "id",
 		"mkey_type": "integer",
 		"name": "city",
+		"object_range": "global",
 		"path": "firewall",
-		"q_type": 365,
+		"q_type": 367,
 		"readonly": true
 	},
-	"revision": "049ad6cdb33eca1c83d54aadc7829df9",
-	"serial": "FGTAZRIPD-OKNB34",
+	"revision": "1bf2dc8b4569a2297c7daf2e4fd7e521",
+	"serial": "FG180FTK20900788",
 	"status": "success",
 	"vdom": "root",
-	"version": "v7.2.0"
+	"version": "v7.2.8"
 }

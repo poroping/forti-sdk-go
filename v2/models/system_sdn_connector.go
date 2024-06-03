@@ -4,6 +4,7 @@ const SystemSdnConnectorPath = "system/sdn-connector/"
 
 type SystemSdnConnector struct {
 	AccessKey           *string                                  `json:"access-key,omitempty"`
+	AltResourceIp       *string                                  `json:"alt-resource-ip,omitempty"`
 	ApiKey              *string                                  `json:"api-key,omitempty"`
 	AzureRegion         *string                                  `json:"azure-region,omitempty"`
 	ClientId            *string                                  `json:"client-id,omitempty"`
@@ -36,6 +37,8 @@ type SystemSdnConnector struct {
 	SecretKey           *string                                  `json:"secret-key,omitempty"`
 	SecretToken         *string                                  `json:"secret-token,omitempty"`
 	Server              *string                                  `json:"server,omitempty"`
+	ServerCaCert        *string                                  `json:"server-ca-cert,omitempty"`
+	ServerCert          *string                                  `json:"server-cert,omitempty"`
 	ServerList          *[]SystemSdnConnectorServerList          `json:"server-list,omitempty"`
 	ServerPort          *int64                                   `json:"server-port,omitempty"`
 	ServiceAccount      *string                                  `json:"service-account,omitempty"`
@@ -55,6 +58,7 @@ type SystemSdnConnector struct {
 }
 
 type SystemSdnConnectorExternalAccountList struct {
+	ExternalId *string                                            `json:"external-id,omitempty"`
 	RegionList *[]SystemSdnConnectorExternalAccountListRegionList `json:"region-list,omitempty"`
 	RoleArn    *string                                            `json:"role-arn,omitempty"`
 }

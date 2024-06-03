@@ -1,9 +1,9 @@
 {
 	"addedIn": "v6.2.7",
-	"build": 1157,
+	"build": 1639,
 	"http_method": "GET",
 	"http_status": 200,
-	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3,v7.0.4,v7.2.0",
+	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3,v7.0.4,v7.0.5,v7.0.6,v7.2.0,v7.2.1,v7.2.8",
 	"name": "profile-protocol-options",
 	"path": "firewall",
 	"results": {
@@ -47,8 +47,8 @@
 						"addedIn": "v6.4.0",
 						"category": "unitary",
 						"default": 10,
-						"help": "Maximum in-memory file size that can be scanned (1 - 383 MB, default = 10).",
-						"max-value": 26214,
+						"help": "Maximum in-memory file size that can be scanned (MB).",
+						"max-value": 2414,
 						"min-value": 1,
 						"multiple_values": false,
 						"name": "oversize-limit",
@@ -199,13 +199,17 @@
 					"tcp-window-type": {
 						"addedIn": "v6.4.0",
 						"category": "unitary",
-						"default": "system",
+						"default": "auto-tuning",
 						"help": "TCP window type to use for this protocol.",
 						"multiple_values": false,
 						"name": "tcp-window-type",
 						"options": [
 							{
-								"help": "Use system default TCP window size for this protocol (default).",
+								"help": "Allow system to auto-tune TCP window size (default).",
+								"name": "auto-tuning"
+							},
+							{
+								"help": "Use system default TCP window size for this protocol.",
 								"name": "system"
 							},
 							{
@@ -215,10 +219,6 @@
 							{
 								"help": "Vary TCP window size based on available memory and within limits of tcp-window-minimum and tcp-window-maximum.",
 								"name": "dynamic"
-							},
-							{
-								"help": "Allow system to auto-tune TCP window size.",
-								"name": "auto-tuning"
 							}
 						],
 						"type": "option"
@@ -238,8 +238,8 @@
 						"addedIn": "v6.4.0",
 						"category": "unitary",
 						"default": 10,
-						"help": "Maximum in-memory uncompressed file size that can be scanned (1 - 383 MB, default = 10).",
-						"max-value": 26214,
+						"help": "Maximum in-memory uncompressed file size that can be scanned.",
+						"max-value": 2414,
 						"min-value": 1,
 						"multiple_values": false,
 						"name": "uncompressed-oversize-limit",
@@ -321,7 +321,7 @@
 					"comfort-amount": {
 						"category": "unitary",
 						"default": 1,
-						"help": "Amount of data to send in a transmission for client comforting (1 - 65535 bytes, default = 1).",
+						"help": "Number of bytes to send in each transmission for client comforting (bytes).",
 						"max-value": 65535,
 						"min-value": 1,
 						"multiple_values": false,
@@ -331,12 +331,31 @@
 					"comfort-interval": {
 						"category": "unitary",
 						"default": 10,
-						"help": "Period of time between start, or last transmission, and the next client comfort transmission of data (1 - 900 sec, default = 10).",
+						"help": "Interval between successive transmissions of data for client comforting (seconds).",
 						"max-value": 900,
 						"min-value": 1,
 						"multiple_values": false,
 						"name": "comfort-interval",
 						"type": "integer"
+					},
+					"explicit-ftp-tls": {
+						"addedIn": "v7.2.1",
+						"category": "unitary",
+						"default": "disable",
+						"help": "Enable/disable FTP redirection for explicit FTPS.",
+						"multiple_values": false,
+						"name": "explicit-ftp-tls",
+						"options": [
+							{
+								"help": "Enable setting.",
+								"name": "enable"
+							},
+							{
+								"help": "Disable setting.",
+								"name": "disable"
+							}
+						],
+						"type": "option"
 					},
 					"inspect-all": {
 						"category": "unitary",
@@ -389,8 +408,8 @@
 					"oversize-limit": {
 						"category": "unitary",
 						"default": 10,
-						"help": "Maximum in-memory file size that can be scanned (1 - 383 MB, default = 10).",
-						"max-value": 26214,
+						"help": "Maximum in-memory file size that can be scanned (MB).",
+						"max-value": 2414,
 						"min-value": 1,
 						"multiple_values": false,
 						"name": "oversize-limit",
@@ -509,13 +528,17 @@
 					"tcp-window-type": {
 						"addedIn": "v7.0.0",
 						"category": "unitary",
-						"default": "system",
+						"default": "auto-tuning",
 						"help": "TCP window type to use for this protocol.",
 						"multiple_values": false,
 						"name": "tcp-window-type",
 						"options": [
 							{
-								"help": "Use system default TCP window size for this protocol (default).",
+								"help": "Allow system to auto-tune TCP window size (default).",
+								"name": "auto-tuning"
+							},
+							{
+								"help": "Use system default TCP window size for this protocol.",
 								"name": "system"
 							},
 							{
@@ -525,10 +548,6 @@
 							{
 								"help": "Vary TCP window size based on available memory and within limits of tcp-window-minimum and tcp-window-maximum.",
 								"name": "dynamic"
-							},
-							{
-								"help": "Allow system to auto-tune TCP window size.",
-								"name": "auto-tuning"
 							}
 						],
 						"type": "option"
@@ -546,8 +565,8 @@
 					"uncompressed-oversize-limit": {
 						"category": "unitary",
 						"default": 10,
-						"help": "Maximum in-memory uncompressed file size that can be scanned (1 - 383 MB, default = 10).",
-						"max-value": 26214,
+						"help": "Maximum in-memory uncompressed file size that can be scanned.",
+						"max-value": 2414,
 						"min-value": 1,
 						"multiple_values": false,
 						"name": "uncompressed-oversize-limit",
@@ -562,7 +581,7 @@
 				"category": "complex",
 				"children": {
 					"address-ip-rating": {
-						"addedIn": "v7.2.0",
+						"addedIn": "v7.0.6",
 						"category": "unitary",
 						"default": "enable",
 						"help": "Enable/disable IP based URL rating.",
@@ -593,7 +612,7 @@
 					"comfort-amount": {
 						"category": "unitary",
 						"default": 1,
-						"help": "Amount of data to send in a transmission for client comforting (1 - 65535 bytes, default = 1).",
+						"help": "Number of bytes to send in each transmission for client comforting (bytes).",
 						"max-value": 65535,
 						"min-value": 1,
 						"multiple_values": false,
@@ -603,7 +622,7 @@
 					"comfort-interval": {
 						"category": "unitary",
 						"default": 10,
-						"help": "Period of time between start, or last transmission, and the next client comfort transmission of data (1 - 900 sec, default = 10).",
+						"help": "Interval between successive transmissions of data for client comforting (seconds).",
 						"max-value": 900,
 						"min-value": 1,
 						"multiple_values": false,
@@ -703,8 +722,8 @@
 					"oversize-limit": {
 						"category": "unitary",
 						"default": 10,
-						"help": "Maximum in-memory file size that can be scanned (1 - 383 MB, default = 10).",
-						"max-value": 26214,
+						"help": "Maximum in-memory file size that can be scanned (MB).",
+						"max-value": 2414,
 						"min-value": 1,
 						"multiple_values": false,
 						"name": "oversize-limit",
@@ -935,11 +954,11 @@
 						"name": "streaming-content-bypass",
 						"options": [
 							{
-								"help": "Enable setting.",
+								"help": "Enable bypassing of streaming content from buffering",
 								"name": "enable"
 							},
 							{
-								"help": "Disable setting.",
+								"help": "Disable bypassing of streaming content from buffering",
 								"name": "disable"
 							}
 						],
@@ -1013,13 +1032,17 @@
 					},
 					"tcp-window-type": {
 						"category": "unitary",
-						"default": "system",
+						"default": "auto-tuning",
 						"help": "TCP window type to use for this protocol.",
 						"multiple_values": false,
 						"name": "tcp-window-type",
 						"options": [
 							{
-								"help": "Use system default TCP window size for this protocol (default).",
+								"help": "Allow system to auto-tune TCP window size (default).",
+								"name": "auto-tuning"
+							},
+							{
+								"help": "Use system default TCP window size for this protocol.",
 								"name": "system"
 							},
 							{
@@ -1029,10 +1052,6 @@
 							{
 								"help": "Vary TCP window size based on available memory and within limits of tcp-window-minimum and tcp-window-maximum.",
 								"name": "dynamic"
-							},
-							{
-								"help": "Allow system to auto-tune TCP window size.",
-								"name": "auto-tuning"
 							}
 						],
 						"type": "option"
@@ -1069,12 +1088,35 @@
 					"uncompressed-oversize-limit": {
 						"category": "unitary",
 						"default": 10,
-						"help": "Maximum in-memory uncompressed file size that can be scanned (1 - 383 MB, default = 10).",
-						"max-value": 26214,
+						"help": "Maximum in-memory uncompressed file size that can be scanned.",
+						"max-value": 2414,
 						"min-value": 1,
 						"multiple_values": false,
 						"name": "uncompressed-oversize-limit",
 						"type": "integer"
+					},
+					"unknown-content-encoding": {
+						"addedIn": "v7.2.8",
+						"category": "unitary",
+						"default": "block",
+						"help": "Configure the action the FortiGate unit will take on unknown content-encoding.",
+						"multiple_values": false,
+						"name": "unknown-content-encoding",
+						"options": [
+							{
+								"help": "Block HTTP session when unknown content-encoding is detected.",
+								"name": "block"
+							},
+							{
+								"help": "Scan HTTP traffic as plain-text when unknown content-encoding is detected.",
+								"name": "inspect"
+							},
+							{
+								"help": "Bypass scan when unknown content-encoding is detected.",
+								"name": "bypass"
+							}
+						],
+						"type": "option"
 					},
 					"unknown-http-version": {
 						"addedIn": "v6.4.0",
@@ -1095,6 +1137,25 @@
 							{
 								"help": "Assume all HTTP sessions comply with HTTP 0.9, 1.0, or 1.1. If a session uses a different HTTP version, it may not parse correctly and the connection may be lost.",
 								"name": "best-effort"
+							}
+						],
+						"type": "option"
+					},
+					"verify-dns-for-policy-matching": {
+						"addedIn": "v7.2.1",
+						"category": "unitary",
+						"default": "enable",
+						"help": "Enable/disable verification of DNS for policy matching.",
+						"multiple_values": false,
+						"name": "verify-dns-for-policy-matching",
+						"options": [
+							{
+								"help": "Enable setting.",
+								"name": "enable"
+							},
+							{
+								"help": "Disable setting.",
+								"name": "disable"
 							}
 						],
 						"type": "option"
@@ -1146,8 +1207,8 @@
 					"oversize-limit": {
 						"category": "unitary",
 						"default": 10,
-						"help": "Maximum in-memory file size that can be scanned (1 - 383 MB, default = 10).",
-						"max-value": 26214,
+						"help": "Maximum in-memory file size that can be scanned (MB).",
+						"max-value": 2414,
 						"min-value": 1,
 						"multiple_values": false,
 						"name": "oversize-limit",
@@ -1251,8 +1312,8 @@
 					"uncompressed-oversize-limit": {
 						"category": "unitary",
 						"default": 10,
-						"help": "Maximum in-memory uncompressed file size that can be scanned (1 - 383 MB, default = 10).",
-						"max-value": 26214,
+						"help": "Maximum in-memory uncompressed file size that can be scanned.",
+						"max-value": 2414,
 						"min-value": 1,
 						"multiple_values": false,
 						"name": "uncompressed-oversize-limit",
@@ -1322,8 +1383,8 @@
 					"oversize-limit": {
 						"category": "unitary",
 						"default": 10,
-						"help": "Maximum in-memory file size that can be scanned (1 - 383 MB, default = 10).",
-						"max-value": 26214,
+						"help": "Maximum in-memory file size that can be scanned (MB).",
+						"max-value": 2414,
 						"min-value": 1,
 						"multiple_values": false,
 						"name": "oversize-limit",
@@ -1390,8 +1451,8 @@
 					"uncompressed-oversize-limit": {
 						"category": "unitary",
 						"default": 10,
-						"help": "Maximum in-memory uncompressed file size that can be scanned (1 - 383 MB, default = 10).",
-						"max-value": 26214,
+						"help": "Maximum in-memory uncompressed file size that can be scanned.",
+						"max-value": 2414,
 						"min-value": 1,
 						"multiple_values": false,
 						"name": "uncompressed-oversize-limit",
@@ -1454,8 +1515,8 @@
 					"oversize-limit": {
 						"category": "unitary",
 						"default": 10,
-						"help": "Maximum in-memory file size that can be scanned (1 - 383 MB, default = 10).",
-						"max-value": 26214,
+						"help": "Maximum in-memory file size that can be scanned (MB).",
+						"max-value": 2414,
 						"min-value": 1,
 						"multiple_values": false,
 						"name": "oversize-limit",
@@ -1541,8 +1602,8 @@
 					"uncompressed-oversize-limit": {
 						"category": "unitary",
 						"default": 10,
-						"help": "Maximum in-memory uncompressed file size that can be scanned (1 - 383 MB, default = 10).",
-						"max-value": 26214,
+						"help": "Maximum in-memory uncompressed file size that can be scanned.",
+						"max-value": 2414,
 						"min-value": 1,
 						"multiple_values": false,
 						"name": "uncompressed-oversize-limit",
@@ -1613,8 +1674,8 @@
 					"oversize-limit": {
 						"category": "unitary",
 						"default": 10,
-						"help": "Maximum in-memory file size that can be scanned (1 - 383 MB, default = 10).",
-						"max-value": 26214,
+						"help": "Maximum in-memory file size that can be scanned (MB).",
+						"max-value": 2414,
 						"min-value": 1,
 						"multiple_values": false,
 						"name": "oversize-limit",
@@ -1718,8 +1779,8 @@
 					"uncompressed-oversize-limit": {
 						"category": "unitary",
 						"default": 10,
-						"help": "Maximum in-memory uncompressed file size that can be scanned (1 - 383 MB, default = 10).",
-						"max-value": 26214,
+						"help": "Maximum in-memory uncompressed file size that can be scanned.",
+						"max-value": 2414,
 						"min-value": 1,
 						"multiple_values": false,
 						"name": "uncompressed-oversize-limit",
@@ -1806,8 +1867,8 @@
 					"oversize-limit": {
 						"category": "unitary",
 						"default": 10,
-						"help": "Maximum in-memory file size that can be scanned (1 - 383 MB, default = 10).",
-						"max-value": 26214,
+						"help": "Maximum in-memory file size that can be scanned (MB).",
+						"max-value": 2414,
 						"min-value": 1,
 						"multiple_values": false,
 						"name": "oversize-limit",
@@ -1929,8 +1990,8 @@
 					"uncompressed-oversize-limit": {
 						"category": "unitary",
 						"default": 10,
-						"help": "Maximum in-memory uncompressed file size that can be scanned (1 - 383 MB, default = 10).",
-						"max-value": 26214,
+						"help": "Maximum in-memory uncompressed file size that can be scanned.",
+						"max-value": 2414,
 						"min-value": 1,
 						"multiple_values": false,
 						"name": "uncompressed-oversize-limit",
@@ -1947,7 +2008,7 @@
 					"comfort-amount": {
 						"category": "unitary",
 						"default": 1,
-						"help": "Amount of data to send in a transmission for client comforting (1 - 65535 bytes, default = 1).",
+						"help": "Number of bytes to send in each transmission for client comforting (bytes).",
 						"max-value": 65535,
 						"min-value": 1,
 						"multiple_values": false,
@@ -1957,7 +2018,7 @@
 					"comfort-interval": {
 						"category": "unitary",
 						"default": 10,
-						"help": "Period of time between start, or last transmission, and the next client comfort transmission of data (1 - 900 sec, default = 10).",
+						"help": "Interval between successive transmissions of data for client comforting (seconds).",
 						"max-value": 900,
 						"min-value": 1,
 						"multiple_values": false,
@@ -1989,8 +2050,8 @@
 					"oversize-limit": {
 						"category": "unitary",
 						"default": 10,
-						"help": "Maximum in-memory file size that can be scanned (1 - 383 MB, default = 10).",
-						"max-value": 26214,
+						"help": "Maximum in-memory file size that can be scanned (MB).",
+						"max-value": 2414,
 						"min-value": 1,
 						"multiple_values": false,
 						"name": "oversize-limit",
@@ -2080,13 +2141,17 @@
 					"tcp-window-type": {
 						"addedIn": "v7.0.0",
 						"category": "unitary",
-						"default": "system",
+						"default": "auto-tuning",
 						"help": "TCP window type to use for this protocol.",
 						"multiple_values": false,
 						"name": "tcp-window-type",
 						"options": [
 							{
-								"help": "Use system default TCP window size for this protocol (default).",
+								"help": "Allow system to auto-tune TCP window size (default).",
+								"name": "auto-tuning"
+							},
+							{
+								"help": "Use system default TCP window size for this protocol.",
 								"name": "system"
 							},
 							{
@@ -2096,10 +2161,6 @@
 							{
 								"help": "Vary TCP window size based on available memory and within limits of tcp-window-minimum and tcp-window-maximum.",
 								"name": "dynamic"
-							},
-							{
-								"help": "Allow system to auto-tune TCP window size.",
-								"name": "auto-tuning"
 							}
 						],
 						"type": "option"
@@ -2117,8 +2178,8 @@
 					"uncompressed-oversize-limit": {
 						"category": "unitary",
 						"default": 10,
-						"help": "Maximum in-memory uncompressed file size that can be scanned (1 - 383 MB, default = 10).",
-						"max-value": 26214,
+						"help": "Maximum in-memory uncompressed file size that can be scanned.",
+						"max-value": 2414,
 						"min-value": 1,
 						"multiple_values": false,
 						"name": "uncompressed-oversize-limit",
@@ -2155,12 +2216,13 @@
 		"mkey": "name",
 		"mkey_type": "string",
 		"name": "profile-protocol-options",
+		"object_range": "vdom",
 		"path": "firewall",
-		"q_type": 433
+		"q_type": 436
 	},
-	"revision": "5a182f244b10d5ed10e7c4a536d9f7dd",
-	"serial": "FGTAZRIPD-OKNB34",
+	"revision": "6e543a20674b4703a7e7f21d85a62b4a",
+	"serial": "FG180FTK20900788",
 	"status": "success",
 	"vdom": "root",
-	"version": "v7.2.0"
+	"version": "v7.2.8"
 }

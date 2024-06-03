@@ -5,6 +5,7 @@ const VpnSslWebUserBookmarkPath = "vpn.ssl.web/user-bookmark/"
 type VpnSslWebUserBookmark struct {
 	Bookmarks  *[]VpnSslWebUserBookmarkBookmarks `json:"bookmarks,omitempty"`
 	CustomLang *string                           `json:"custom-lang,omitempty"`
+	List       *string                           `json:"list,omitempty"`
 	Name       *string                           `json:"name,omitempty"`
 }
 
@@ -39,6 +40,7 @@ type VpnSslWebUserBookmarkBookmarks struct {
 	SsoPassword           *string                                   `json:"sso-password,omitempty"`
 	SsoUsername           *string                                   `json:"sso-username,omitempty"`
 	Url                   *string                                   `json:"url,omitempty"`
+	VncKeyboardLayout     *string                                   `json:"vnc-keyboard-layout,omitempty"`
 	Width                 *int64                                    `json:"width,omitempty"`
 }
 

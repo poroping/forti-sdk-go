@@ -131,6 +131,7 @@ type WirelessControllerWtpProfilePlatform struct {
 }
 
 type WirelessControllerWtpProfileRadio1 struct {
+	The80211d                 *string                                      `json:"80211d,omitempty"`
 	AirtimeFairness           *string                                      `json:"airtime-fairness,omitempty"`
 	Amsdu                     *string                                      `json:"amsdu,omitempty"`
 	ApHandoff                 *string                                      `json:"ap-handoff,omitempty"`
@@ -171,6 +172,7 @@ type WirelessControllerWtpProfileRadio1 struct {
 	MaxClients                *int64                                       `json:"max-clients,omitempty"`
 	MaxDistance               *int64                                       `json:"max-distance,omitempty"`
 	Mode                      *string                                      `json:"mode,omitempty"`
+	OptionalAntenna           *string                                      `json:"optional-antenna,omitempty"`
 	PowerLevel                *int64                                       `json:"power-level,omitempty"`
 	PowerMode                 *string                                      `json:"power-mode,omitempty"`
 	PowerValue                *int64                                       `json:"power-value,omitempty"`
@@ -213,6 +215,7 @@ type WirelessControllerWtpProfileRadio1Vaps struct {
 }
 
 type WirelessControllerWtpProfileRadio2 struct {
+	The80211d                 *string                                      `json:"80211d,omitempty"`
 	AirtimeFairness           *string                                      `json:"airtime-fairness,omitempty"`
 	Amsdu                     *string                                      `json:"amsdu,omitempty"`
 	ApHandoff                 *string                                      `json:"ap-handoff,omitempty"`
@@ -253,6 +256,7 @@ type WirelessControllerWtpProfileRadio2 struct {
 	MaxClients                *int64                                       `json:"max-clients,omitempty"`
 	MaxDistance               *int64                                       `json:"max-distance,omitempty"`
 	Mode                      *string                                      `json:"mode,omitempty"`
+	OptionalAntenna           *string                                      `json:"optional-antenna,omitempty"`
 	PowerLevel                *int64                                       `json:"power-level,omitempty"`
 	PowerMode                 *string                                      `json:"power-mode,omitempty"`
 	PowerValue                *int64                                       `json:"power-value,omitempty"`
@@ -295,6 +299,7 @@ type WirelessControllerWtpProfileRadio2Vaps struct {
 }
 
 type WirelessControllerWtpProfileRadio3 struct {
+	The80211d                 *string                                      `json:"80211d,omitempty"`
 	AirtimeFairness           *string                                      `json:"airtime-fairness,omitempty"`
 	Amsdu                     *string                                      `json:"amsdu,omitempty"`
 	ApHandoff                 *string                                      `json:"ap-handoff,omitempty"`
@@ -335,6 +340,7 @@ type WirelessControllerWtpProfileRadio3 struct {
 	MaxClients                *int64                                       `json:"max-clients,omitempty"`
 	MaxDistance               *int64                                       `json:"max-distance,omitempty"`
 	Mode                      *string                                      `json:"mode,omitempty"`
+	OptionalAntenna           *string                                      `json:"optional-antenna,omitempty"`
 	PowerLevel                *int64                                       `json:"power-level,omitempty"`
 	PowerMode                 *string                                      `json:"power-mode,omitempty"`
 	PowerValue                *int64                                       `json:"power-value,omitempty"`
@@ -377,6 +383,7 @@ type WirelessControllerWtpProfileRadio3Vaps struct {
 }
 
 type WirelessControllerWtpProfileRadio4 struct {
+	The80211d                 *string                                      `json:"80211d,omitempty"`
 	AirtimeFairness           *string                                      `json:"airtime-fairness,omitempty"`
 	Amsdu                     *string                                      `json:"amsdu,omitempty"`
 	ApHandoff                 *string                                      `json:"ap-handoff,omitempty"`
@@ -417,6 +424,7 @@ type WirelessControllerWtpProfileRadio4 struct {
 	MaxClients                *int64                                       `json:"max-clients,omitempty"`
 	MaxDistance               *int64                                       `json:"max-distance,omitempty"`
 	Mode                      *string                                      `json:"mode,omitempty"`
+	OptionalAntenna           *string                                      `json:"optional-antenna,omitempty"`
 	PowerLevel                *int64                                       `json:"power-level,omitempty"`
 	PowerMode                 *string                                      `json:"power-mode,omitempty"`
 	PowerValue                *int64                                       `json:"power-value,omitempty"`

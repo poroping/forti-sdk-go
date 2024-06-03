@@ -4,10 +4,12 @@ const LogFortianalyzer2SettingPath = "log.fortianalyzer2/setting/"
 
 type LogFortianalyzer2Setting struct {
 	AccessConfig              *string                           `json:"access-config,omitempty"`
+	AltServer                 *string                           `json:"alt-server,omitempty"`
 	Certificate               *string                           `json:"certificate,omitempty"`
 	CertificateVerification   *string                           `json:"certificate-verification,omitempty"`
 	ConnTimeout               *int64                            `json:"conn-timeout,omitempty"`
 	EncAlgorithm              *string                           `json:"enc-algorithm,omitempty"`
+	FallbackToPrimary         *string                           `json:"fallback-to-primary,omitempty"`
 	HmacAlgorithm             *string                           `json:"hmac-algorithm,omitempty"`
 	Interface                 *string                           `json:"interface,omitempty"`
 	InterfaceSelectMethod     *string                           `json:"interface-select-method,omitempty"`
@@ -20,6 +22,7 @@ type LogFortianalyzer2Setting struct {
 	Reliable                  *string                           `json:"reliable,omitempty"`
 	Serial                    *[]LogFortianalyzer2SettingSerial `json:"serial,omitempty"`
 	Server                    *string                           `json:"server,omitempty"`
+	ServerCertCa              *string                           `json:"server-cert-ca,omitempty"`
 	SourceIp                  *string                           `json:"source-ip,omitempty"`
 	SslMinProtoVersion        *string                           `json:"ssl-min-proto-version,omitempty"`
 	Status                    *string                           `json:"status,omitempty"`

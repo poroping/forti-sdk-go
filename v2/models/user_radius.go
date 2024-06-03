@@ -14,7 +14,12 @@ type UserRadius struct {
 	H3cCompatibility                       *string                       `json:"h3c-compatibility,omitempty"`
 	Interface                              *string                       `json:"interface,omitempty"`
 	InterfaceSelectMethod                  *string                       `json:"interface-select-method,omitempty"`
+	MacCase                                *string                       `json:"mac-case,omitempty"`
+	MacPasswordDelimiter                   *string                       `json:"mac-password-delimiter,omitempty"`
+	MacUsernameDelimiter                   *string                       `json:"mac-username-delimiter,omitempty"`
 	Name                                   *string                       `json:"name,omitempty"`
+	NasId                                  *string                       `json:"nas-id,omitempty"`
+	NasIdType                              *string                       `json:"nas-id-type,omitempty"`
 	NasIp                                  *string                       `json:"nas-ip,omitempty"`
 	PasswordEncoding                       *string                       `json:"password-encoding,omitempty"`
 	PasswordRenewal                        *string                       `json:"password-renewal,omitempty"`

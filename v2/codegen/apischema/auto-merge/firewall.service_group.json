@@ -1,9 +1,9 @@
 {
 	"addedIn": "v6.2.7",
-	"build": 1157,
+	"build": 1639,
 	"http_method": "GET",
 	"http_status": 200,
-	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3,v7.0.4,v7.2.0",
+	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3,v7.0.4,v7.0.5,v7.0.6,v7.2.0,v7.2.1,v7.2.8",
 	"name": "group",
 	"path": "firewall.service",
 	"results": {
@@ -57,7 +57,7 @@
 							"firewall.service.group.name"
 						],
 						"default": "",
-						"help": "Address name.",
+						"help": "Service or service group name.",
 						"multiple_values": false,
 						"name": "name",
 						"required": true,
@@ -77,7 +77,7 @@
 			"name": {
 				"category": "unitary",
 				"default": "",
-				"help": "Address group name.",
+				"help": "Service group name.",
 				"multiple_values": false,
 				"name": "name",
 				"required": true,
@@ -106,16 +106,17 @@
 		"help": "Configure service groups.",
 		"max_table_size_global": 0,
 		"max_table_size_item": 0,
-		"max_table_size_vdom": 10000,
+		"max_table_size_vdom": 4000,
 		"mkey": "name",
 		"mkey_type": "string",
 		"name": "group",
+		"object_range": "vdom",
 		"path": "firewall.service",
-		"q_type": 37
+		"q_type": 38
 	},
-	"revision": "f630b963c3adb6ef4097659835a72d7d",
-	"serial": "FGTAZRIPD-OKNB34",
+	"revision": "d8fd69889e48e8791b36d043951660f6",
+	"serial": "FG180FTK20900788",
 	"status": "success",
 	"vdom": "root",
-	"version": "v7.2.0"
+	"version": "v7.2.8"
 }

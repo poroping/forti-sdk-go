@@ -1,10 +1,10 @@
 {
 	"addedIn": "v7.0.1",
-	"build": 301,
+	"build": 366,
 	"child_path": "vrf-leak6",
 	"http_method": "GET",
 	"http_status": 200,
-	"mergedVersions": "v7.0.1,v7.0.2,v7.0.3,v7.0.4",
+	"mergedVersions": "v7.0.1,v7.0.2,v7.0.3,v7.0.4,v7.0.5,v7.0.6",
 	"name": "bgp",
 	"path": "router",
 	"removedIn": "v7.2.0",
@@ -79,9 +79,9 @@
 		"path": "router",
 		"q_type": 131
 	},
-	"revision": "2300bf664b13ba20500ed3ee8809bf7f",
-	"serial": "FGTAZRI5HXAAGI90",
+	"revision": "7a547e23ec5b30a34bdf18ad061f86c1",
+	"serial": "FGTAZR4MNDF43H88",
 	"status": "success",
 	"vdom": "root",
-	"version": "v7.0.4"
+	"version": "v7.0.6"
 }

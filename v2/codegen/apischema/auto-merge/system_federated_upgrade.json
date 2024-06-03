@@ -1,9 +1,9 @@
 {
 	"addedIn": "v7.0.0",
-	"build": 1157,
+	"build": 1639,
 	"http_method": "GET",
 	"http_status": 200,
-	"mergedVersions": "v7.0.0,v7.0.1,v7.0.2,v7.0.3,v7.0.4,v7.2.0",
+	"mergedVersions": "v7.0.0,v7.0.1,v7.0.2,v7.0.3,v7.0.4,v7.0.5,v7.0.6,v7.2.0,v7.2.1,v7.2.8",
 	"name": "federated-upgrade",
 	"path": "system",
 	"results": {
@@ -69,7 +69,7 @@
 						"name": "device-not-reconnected"
 					},
 					{
-						"help": "A device in the CSF tree was not ready.",
+						"help": "A device in the Security Fabric tree was not ready.",
 						"name": "node-not-ready"
 					},
 					{
@@ -79,9 +79,27 @@
 					{
 						"help": "A downstream FortiGate did not initiate final confirmation.",
 						"name": "no-confirmation-query"
+					},
+					{
+						"help": "Configuration errors encountered during the upgrade.",
+						"name": "config-error-log-nonempty"
+					},
+					{
+						"help": "A device in the Security Fabric tree failed.",
+						"name": "node-failed"
 					}
 				],
 				"type": "option"
+			},
+			"ha-reboot-controller": {
+				"addedIn": "v7.2.8",
+				"category": "unitary",
+				"default": "",
+				"help": "Serial number of the FortiGate unit that will control the reboot process for the federated upgrade of the HA cluster.",
+				"multiple_values": false,
+				"name": "ha-reboot-controller",
+				"size": 79,
+				"type": "string"
 			},
 			"next-path-index": {
 				"addedIn": "v7.0.4",
@@ -110,7 +128,7 @@
 					"device-type": {
 						"category": "unitary",
 						"default": "fortigate",
-						"help": "What type of device this node represents.",
+						"help": "Fortinet device type.",
 						"multiple_values": false,
 						"name": "device-type",
 						"options": [
@@ -125,10 +143,26 @@
 							{
 								"help": "This device is a FortiAP.",
 								"name": "fortiap"
+							},
+							{
+								"help": "This device is a FortiExtender.",
+								"name": "fortiextender"
 							}
 						],
 						"required": true,
 						"type": "option"
+					},
+					"maximum-minutes": {
+						"addedIn": "v7.2.8",
+						"category": "unitary",
+						"default": 15,
+						"help": "Maximum number of minutes to allow for immediate upgrade preparation.",
+						"max-value": 10080,
+						"min-value": 5,
+						"multiple_values": false,
+						"name": "maximum-minutes",
+						"required": true,
+						"type": "integer"
 					},
 					"serial": {
 						"category": "unitary",
@@ -143,7 +177,7 @@
 					"setup-time": {
 						"category": "unitary",
 						"default": "",
-						"help": "When the upgrade was configured. Format hh:mm yyyy/mm/dd UTC.",
+						"help": "Upgrade preparation start time in UTC (hh:mm yyyy/mm/dd UTC).",
 						"multiple_values": false,
 						"name": "setup-time",
 						"required": true,
@@ -152,7 +186,7 @@
 					"time": {
 						"category": "unitary",
 						"default": "",
-						"help": "Scheduled time for the upgrade. Format hh:mm yyyy/mm/dd UTC.",
+						"help": "Scheduled upgrade execution time in UTC (hh:mm yyyy/mm/dd UTC).",
 						"multiple_values": false,
 						"name": "time",
 						"required": true,
@@ -161,7 +195,7 @@
 					"timing": {
 						"category": "unitary",
 						"default": "immediate",
-						"help": "Whether the upgrade should be run immediately, or at a scheduled time.",
+						"help": "Run immediately or at a scheduled time.",
 						"multiple_values": false,
 						"name": "timing",
 						"options": [
@@ -180,7 +214,7 @@
 					"upgrade-path": {
 						"category": "unitary",
 						"default": "",
-						"help": "Image IDs to upgrade through.",
+						"help": "Fortinet OS image versions to upgrade through in major-minor-patch format, such as 7-0-4.",
 						"multiple_values": false,
 						"name": "upgrade-path",
 						"required": true,
@@ -221,6 +255,10 @@
 					{
 						"help": "The image download finished and the upgrade is pending.",
 						"name": "ready"
+					},
+					{
+						"help": "The upgrade is coordinating with other running upgrades.",
+						"name": "coordinating"
 					},
 					{
 						"help": "The upgrade is confirmed and images are being staged.",
@@ -268,12 +306,13 @@
 		"help": "Coordinate federated upgrades within the Security Fabric.",
 		"multiple_values": false,
 		"name": "federated-upgrade",
+		"object_range": "global",
 		"path": "system",
-		"q_type": 538
+		"q_type": 553
 	},
-	"revision": "5aaca7175b5b74c5babe5981f58baa16",
-	"serial": "FGTAZRIPD-OKNB34",
+	"revision": "b710b2b12541ab8e88b17ae1823bdf1a",
+	"serial": "FG180FTK20900788",
 	"status": "success",
 	"vdom": "root",
-	"version": "v7.2.0"
+	"version": "v7.2.8"
 }

@@ -1,9 +1,9 @@
 {
 	"addedIn": "v6.2.7",
-	"build": 1157,
+	"build": 1639,
 	"http_method": "GET",
 	"http_status": 200,
-	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3,v7.0.4,v7.2.0",
+	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3,v7.0.4,v7.0.5,v7.0.6,v7.2.0,v7.2.1,v7.2.8",
 	"name": "fctems",
 	"path": "endpoint-control",
 	"results": {
@@ -68,6 +68,10 @@
 					{
 						"help": "Can recieve tag information from New Common Tags API from EMS.",
 						"name": "common-tags-api"
+					},
+					{
+						"help": "Allow this FortiGate to retrieve Tenant-ID from EMS.",
+						"name": "tenant-id"
 					}
 				],
 				"type": "option"
@@ -108,6 +112,36 @@
 				],
 				"type": "option"
 			},
+			"dirty-reason": {
+				"addedIn": "v7.2.1",
+				"category": "unitary",
+				"default": "none",
+				"help": "Dirty Reason for FortiClient EMS.",
+				"multiple_values": false,
+				"name": "dirty-reason",
+				"options": [
+					{
+						"help": "FortiClient EMS entry not dirty.",
+						"name": "none"
+					},
+					{
+						"help": "FortiClient EMS entry dirty because EMS SN is mismatched with configured SN.",
+						"name": "mismatched-ems-sn"
+					}
+				],
+				"type": "option"
+			},
+			"ems-id": {
+				"addedIn": "v7.2.1",
+				"category": "unitary",
+				"default": 0,
+				"help": "EMS ID in order (1 - 7).",
+				"max-value": 7,
+				"min-value": 1,
+				"multiple_values": false,
+				"name": "ems-id",
+				"type": "integer"
+			},
 			"fortinetone-cloud-authentication": {
 				"category": "unitary",
 				"default": "disable",
@@ -135,6 +169,45 @@
 				"multiple_values": false,
 				"name": "https-port",
 				"type": "integer"
+			},
+			"interface": {
+				"addedIn": "v7.0.6",
+				"category": "unitary",
+				"datasource": [
+					"system.interface.name"
+				],
+				"default": "",
+				"help": "Specify outgoing interface to reach server.",
+				"multiple_values": false,
+				"name": "interface",
+				"removedIn": "v7.2.0",
+				"required": true,
+				"size": 15,
+				"type": "string"
+			},
+			"interface-select-method": {
+				"addedIn": "v7.0.6",
+				"category": "unitary",
+				"default": "auto",
+				"help": "Specify how to select outgoing interface to reach server.",
+				"multiple_values": false,
+				"name": "interface-select-method",
+				"options": [
+					{
+						"help": "Set outgoing interface automatically.",
+						"name": "auto"
+					},
+					{
+						"help": "Set outgoing interface by SD-WAN or policy routing rules.",
+						"name": "sdwan"
+					},
+					{
+						"help": "Set outgoing interface manually.",
+						"name": "specify"
+					}
+				],
+				"removedIn": "v7.2.0",
+				"type": "option"
 			},
 			"name": {
 				"category": "unitary",
@@ -272,7 +345,9 @@
 			},
 			"serial-number": {
 				"category": "unitary",
-				"help": "FortiClient EMS Serial Number.",
+				"default": "",
+				"help": "EMS Serial Number.",
+				"multiple_values": false,
 				"name": "serial-number",
 				"removedIn": "v6.4.0",
 				"size": 16,
@@ -296,6 +371,25 @@
 				"name": "source-ip",
 				"type": "ipv4-address-any"
 			},
+			"status": {
+				"addedIn": "v7.2.1",
+				"category": "unitary",
+				"default": "disable",
+				"help": "Enable or disable this EMS configuration.",
+				"multiple_values": false,
+				"name": "status",
+				"options": [
+					{
+						"help": "Enable EMS configuration and operation.",
+						"name": "enable"
+					},
+					{
+						"help": "Disable EMS configuration and operation.",
+						"name": "disable"
+					}
+				],
+				"type": "option"
+			},
 			"status-check-interval": {
 				"addedIn": "v6.4.5",
 				"category": "unitary",
@@ -306,6 +400,35 @@
 				"name": "status-check-interval",
 				"removedIn": "v7.0.0",
 				"type": "integer"
+			},
+			"tenant-id": {
+				"addedIn": "v7.2.1",
+				"category": "unitary",
+				"default": "",
+				"help": "EMS Tenant ID.",
+				"multiple_values": false,
+				"name": "tenant-id",
+				"size": 32,
+				"type": "string"
+			},
+			"trust-ca-cn": {
+				"addedIn": "v7.2.8",
+				"category": "unitary",
+				"default": "enable",
+				"help": "Enable/disable trust of the EMS certificate issuer(CA) and common name(CN) for certificate auto-renewal.",
+				"multiple_values": false,
+				"name": "trust-ca-cn",
+				"options": [
+					{
+						"help": "Trust EMS certificate CA \u0026 CN to automatically renew certificate.",
+						"name": "enable"
+					},
+					{
+						"help": "Do not trust EMS certificate CA \u0026 CN to automatically renew certificate.",
+						"name": "disable"
+					}
+				],
+				"type": "option"
 			},
 			"websocket-override": {
 				"addedIn": "v7.0.0",
@@ -328,18 +451,19 @@
 			}
 		},
 		"help": "Configure FortiClient Enterprise Management Server (EMS) entries.",
-		"max_table_size_global": 5,
+		"max_table_size_global": 0,
 		"max_table_size_item": 0,
 		"max_table_size_vdom": 0,
-		"mkey": "name",
-		"mkey_type": "string",
+		"mkey": "ems-id",
+		"mkey_type": "integer",
 		"name": "fctems",
+		"object_range": "global",
 		"path": "endpoint-control",
-		"q_type": 400
+		"q_type": 405
 	},
-	"revision": "f7f9f0c7010a0528b972ed831ae64831",
-	"serial": "FGTAZRIPD-OKNB34",
+	"revision": "8a8956c3d7817bc1250082f650c49786",
+	"serial": "FG180FTK20900788",
 	"status": "success",
 	"vdom": "root",
-	"version": "v7.2.0"
+	"version": "v7.2.8"
 }

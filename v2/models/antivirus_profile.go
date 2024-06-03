@@ -101,18 +101,19 @@ type AntivirusProfileFtp struct {
 }
 
 type AntivirusProfileHttp struct {
-	ArchiveBlock       *string `json:"archive-block,omitempty"`
-	ArchiveLog         *string `json:"archive-log,omitempty"`
-	AvScan             *string `json:"av-scan,omitempty"`
-	ContentDisarm      *string `json:"content-disarm,omitempty"`
-	Emulator           *string `json:"emulator,omitempty"`
-	ExternalBlocklist  *string `json:"external-blocklist,omitempty"`
-	Fortiai            *string `json:"fortiai,omitempty"`
-	Fortindr           *string `json:"fortindr,omitempty"`
-	Fortisandbox       *string `json:"fortisandbox,omitempty"`
-	Options            *string `json:"options,omitempty"`
-	OutbreakPrevention *string `json:"outbreak-prevention,omitempty"`
-	Quarantine         *string `json:"quarantine,omitempty"`
+	ArchiveBlock           *string `json:"archive-block,omitempty"`
+	ArchiveLog             *string `json:"archive-log,omitempty"`
+	AvScan                 *string `json:"av-scan,omitempty"`
+	ContentDisarm          *string `json:"content-disarm,omitempty"`
+	Emulator               *string `json:"emulator,omitempty"`
+	ExternalBlocklist      *string `json:"external-blocklist,omitempty"`
+	Fortiai                *string `json:"fortiai,omitempty"`
+	Fortindr               *string `json:"fortindr,omitempty"`
+	Fortisandbox           *string `json:"fortisandbox,omitempty"`
+	Options                *string `json:"options,omitempty"`
+	OutbreakPrevention     *string `json:"outbreak-prevention,omitempty"`
+	Quarantine             *string `json:"quarantine,omitempty"`
+	UnknownContentEncoding *string `json:"unknown-content-encoding,omitempty"`
 }
 
 type AntivirusProfileImap struct {

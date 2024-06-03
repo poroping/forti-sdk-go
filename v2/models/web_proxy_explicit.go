@@ -5,6 +5,7 @@ const WebProxyExplicitPath = "web-proxy/explicit/"
 type WebProxyExplicit struct {
 	FtpIncomingPort         *string                      `json:"ftp-incoming-port,omitempty"`
 	FtpOverHttp             *string                      `json:"ftp-over-http,omitempty"`
+	HttpConnectionMode      *string                      `json:"http-connection-mode,omitempty"`
 	HttpIncomingPort        *string                      `json:"http-incoming-port,omitempty"`
 	HttpsIncomingPort       *string                      `json:"https-incoming-port,omitempty"`
 	HttpsReplacementMessage *string                      `json:"https-replacement-message,omitempty"`
@@ -18,6 +19,7 @@ type WebProxyExplicit struct {
 	PacFileName             *string                      `json:"pac-file-name,omitempty"`
 	PacFileServerPort       *string                      `json:"pac-file-server-port,omitempty"`
 	PacFileServerStatus     *string                      `json:"pac-file-server-status,omitempty"`
+	PacFileThroughHttps     *string                      `json:"pac-file-through-https,omitempty"`
 	PacFileUrl              *string                      `json:"pac-file-url,omitempty"`
 	PacPolicy               *[]WebProxyExplicitPacPolicy `json:"pac-policy,omitempty"`
 	PrefDnsResult           *string                      `json:"pref-dns-result,omitempty"`

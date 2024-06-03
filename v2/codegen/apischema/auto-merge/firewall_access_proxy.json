@@ -1,18 +1,61 @@
 {
 	"addedIn": "v7.0.0",
-	"build": 1157,
+	"build": 1639,
 	"http_method": "GET",
 	"http_status": 200,
-	"mergedVersions": "v7.0.0,v7.0.1,v7.0.2,v7.0.3,v7.0.4,v7.2.0",
+	"mergedVersions": "v7.0.0,v7.0.1,v7.0.2,v7.0.3,v7.0.4,v7.0.5,v7.0.6,v7.2.0,v7.2.1,v7.2.8",
 	"name": "access-proxy",
 	"path": "firewall",
 	"results": {
 		"access_group": "fwgrp",
 		"category": "table",
 		"children": {
+			"add-vhost-domain-to-dnsdb": {
+				"addedIn": "v7.2.1",
+				"category": "unitary",
+				"default": "disable",
+				"help": "Enable/disable adding vhost/domain to dnsdb for ztna dox tunnel.",
+				"multiple_values": false,
+				"name": "add-vhost-domain-to-dnsdb",
+				"options": [
+					{
+						"help": "add dns entry for all vhosts used by access proxy.",
+						"name": "enable"
+					},
+					{
+						"help": "Do not add dns entry for all vhosts used by access proxy.",
+						"name": "disable"
+					}
+				],
+				"type": "option"
+			},
 			"api-gateway": {
 				"category": "table",
 				"children": {
+					"application": {
+						"addedIn": "v7.2.1",
+						"category": "table",
+						"children": {
+							"name": {
+								"category": "unitary",
+								"default": "",
+								"help": "SaaS application name.",
+								"multiple_values": false,
+								"name": "name",
+								"size": 79,
+								"type": "string"
+							}
+						},
+						"help": "SaaS application controlled by this Access Proxy.",
+						"max_table_size_global": 0,
+						"max_table_size_item": 0,
+						"max_table_size_vdom": 0,
+						"member_table": true,
+						"mkey": "name",
+						"mkey_type": "string",
+						"name": "application",
+						"required": true
+					},
 					"http-cookie-age": {
 						"category": "unitary",
 						"default": 60,
@@ -395,6 +438,25 @@
 								],
 								"type": "option"
 							},
+							"translate-host": {
+								"addedIn": "v7.2.8",
+								"category": "unitary",
+								"default": "enable",
+								"help": "Enable/disable translation of hostname/IP from virtual server to real server.",
+								"multiple_values": false,
+								"name": "translate-host",
+								"options": [
+									{
+										"help": "Enable virtual hostname/IP translation.",
+										"name": "enable"
+									},
+									{
+										"help": "Disable virtual hostname/IP translation.",
+										"name": "disable"
+									}
+								],
+								"type": "option"
+							},
 							"type": {
 								"addedIn": "v7.0.1",
 								"category": "unitary",
@@ -472,24 +534,28 @@
 						"name": "service",
 						"options": [
 							{
-								"help": "HTTP",
+								"help": "HTTP.",
 								"name": "http"
 							},
 							{
-								"help": "HTTPS",
+								"help": "HTTPS.",
 								"name": "https"
 							},
 							{
-								"help": "TCP-FORWARDING",
+								"help": "TCP-FORWARDING.",
 								"name": "tcp-forwarding"
 							},
 							{
-								"help": "SAML-SP",
+								"help": "SAML-SP.",
 								"name": "samlsp"
 							},
 							{
-								"help": "VPN-SSL-WEB-PORTAL",
+								"help": "VPN-SSL-WEB-PORTAL.",
 								"name": "web-portal"
+							},
+							{
+								"help": "SAAS.",
+								"name": "saas"
 							}
 						],
 						"required": true,
@@ -946,6 +1012,25 @@
 						],
 						"type": "option"
 					},
+					"ssl-renegotiation": {
+						"addedIn": "v7.2.8",
+						"category": "unitary",
+						"default": "enable",
+						"help": "Enable/disable secure renegotiation to comply with RFC 5746.",
+						"multiple_values": false,
+						"name": "ssl-renegotiation",
+						"options": [
+							{
+								"help": "Enable secure renegotiation.",
+								"name": "enable"
+							},
+							{
+								"help": "Disable secure renegotiation.",
+								"name": "disable"
+							}
+						],
+						"type": "option"
+					},
 					"ssl-vpn-web-portal": {
 						"addedIn": "v7.0.4",
 						"category": "unitary",
@@ -1017,6 +1102,30 @@
 				"addedIn": "v7.0.1",
 				"category": "table",
 				"children": {
+					"application": {
+						"addedIn": "v7.2.1",
+						"category": "table",
+						"children": {
+							"name": {
+								"category": "unitary",
+								"default": "",
+								"help": "SaaS application name.",
+								"multiple_values": false,
+								"name": "name",
+								"size": 79,
+								"type": "string"
+							}
+						},
+						"help": "SaaS application controlled by this Access Proxy.",
+						"max_table_size_global": 0,
+						"max_table_size_item": 0,
+						"max_table_size_vdom": 0,
+						"member_table": true,
+						"mkey": "name",
+						"mkey_type": "string",
+						"name": "application",
+						"required": true
+					},
 					"http-cookie-age": {
 						"category": "unitary",
 						"default": 60,
@@ -1395,6 +1504,25 @@
 								],
 								"type": "option"
 							},
+							"translate-host": {
+								"addedIn": "v7.2.8",
+								"category": "unitary",
+								"default": "enable",
+								"help": "Enable/disable translation of hostname/IP from virtual server to real server.",
+								"multiple_values": false,
+								"name": "translate-host",
+								"options": [
+									{
+										"help": "Enable virtual hostname/IP translation.",
+										"name": "enable"
+									},
+									{
+										"help": "Disable virtual hostname/IP translation.",
+										"name": "disable"
+									}
+								],
+								"type": "option"
+							},
 							"type": {
 								"category": "unitary",
 								"default": "tcp-forwarding",
@@ -1471,24 +1599,28 @@
 						"name": "service",
 						"options": [
 							{
-								"help": "HTTP",
+								"help": "HTTP.",
 								"name": "http"
 							},
 							{
-								"help": "HTTPS",
+								"help": "HTTPS.",
 								"name": "https"
 							},
 							{
-								"help": "TCP-FORWARDING",
+								"help": "TCP-FORWARDING.",
 								"name": "tcp-forwarding"
 							},
 							{
-								"help": "SAML-SP",
+								"help": "SAML-SP.",
 								"name": "samlsp"
 							},
 							{
-								"help": "VPN-SSL-WEB-PORTAL",
+								"help": "VPN-SSL-WEB-PORTAL.",
 								"name": "web-portal"
+							},
+							{
+								"help": "SAAS.",
+								"name": "saas"
 							}
 						],
 						"required": true,
@@ -1945,6 +2077,25 @@
 						],
 						"type": "option"
 					},
+					"ssl-renegotiation": {
+						"addedIn": "v7.2.8",
+						"category": "unitary",
+						"default": "enable",
+						"help": "Enable/disable secure renegotiation to comply with RFC 5746.",
+						"multiple_values": false,
+						"name": "ssl-renegotiation",
+						"options": [
+							{
+								"help": "Enable secure renegotiation.",
+								"name": "enable"
+							},
+							{
+								"help": "Disable secure renegotiation.",
+								"name": "disable"
+							}
+						],
+						"type": "option"
+					},
 					"ssl-vpn-web-portal": {
 						"addedIn": "v7.0.4",
 						"category": "unitary",
@@ -2046,7 +2197,7 @@
 			},
 			"client-cert": {
 				"category": "unitary",
-				"default": "disable",
+				"default": "enable",
 				"help": "Enable/disable to request client certificate.",
 				"multiple_values": false,
 				"name": "client-cert",
@@ -2089,6 +2240,29 @@
 					{
 						"help": "Block the SSL handshake if the client certificate is empty.",
 						"name": "block"
+					},
+					{
+						"help": "Accept the SSL handshake only if the end-point is unmanageable.",
+						"name": "accept-unmanageable"
+					}
+				],
+				"type": "option"
+			},
+			"http-supported-max-version": {
+				"addedIn": "v7.2.8",
+				"category": "unitary",
+				"default": "http2",
+				"help": "Maximum supported HTTP versions. default = HTTP2",
+				"multiple_values": false,
+				"name": "http-supported-max-version",
+				"options": [
+					{
+						"help": "Support HTTP 1.1 and HTTP1.",
+						"name": "http1"
+					},
+					{
+						"help": "Support HTTP2, HTTP 1.1, and HTTP1.",
+						"name": "http2"
 					}
 				],
 				"type": "option"
@@ -2131,7 +2305,7 @@
 			"log-blocked-traffic": {
 				"addedIn": "v7.0.2",
 				"category": "unitary",
-				"default": "disable",
+				"default": "enable",
 				"help": "Enable/disable logging of blocked traffic.",
 				"multiple_values": false,
 				"name": "log-blocked-traffic",
@@ -2438,6 +2612,66 @@
 				"name": "server-pubkey-auth-settings",
 				"removedIn": "v7.0.1"
 			},
+			"svr-pool-multiplex": {
+				"addedIn": "v7.2.8",
+				"category": "unitary",
+				"default": "enable",
+				"help": "Enable/disable server pool multiplexing. Share connected server in HTTP, HTTPS, and web-portal api-gateway.",
+				"multiple_values": false,
+				"name": "svr-pool-multiplex",
+				"options": [
+					{
+						"help": "Enable server pool multiplexing.  Share connected server.",
+						"name": "enable"
+					},
+					{
+						"help": "Disable server pool multiplexing.  Do not share connected server.",
+						"name": "disable"
+					}
+				],
+				"type": "option"
+			},
+			"svr-pool-server-max-request": {
+				"addedIn": "v7.2.8",
+				"category": "unitary",
+				"default": 0,
+				"help": "Maximum number of requests that servers in server pool handle before disconnecting (default = unlimited).",
+				"max-value": 2147483647,
+				"min-value": 0,
+				"multiple_values": false,
+				"name": "svr-pool-server-max-request",
+				"type": "integer"
+			},
+			"svr-pool-ttl": {
+				"addedIn": "v7.2.8",
+				"category": "unitary",
+				"default": 15,
+				"help": "Time-to-live in the server pool for idle connections to servers.",
+				"max-value": 2147483647,
+				"min-value": 0,
+				"multiple_values": false,
+				"name": "svr-pool-ttl",
+				"type": "integer"
+			},
+			"user-agent-detect": {
+				"addedIn": "v7.2.1",
+				"category": "unitary",
+				"default": "enable",
+				"help": "Enable/disable to detect device type by HTTP user-agent if no client certificate provided.",
+				"multiple_values": false,
+				"name": "user-agent-detect",
+				"options": [
+					{
+						"help": "Disable to detect unknown device by HTTP user-agent if no client certificate provided.",
+						"name": "disable"
+					},
+					{
+						"help": "Enable to detect unknown device by HTTP user-agent if no client certificate provided.",
+						"name": "enable"
+					}
+				],
+				"type": "option"
+			},
 			"vip": {
 				"category": "unitary",
 				"datasource": [
@@ -2459,12 +2693,13 @@
 		"mkey": "name",
 		"mkey_type": "string",
 		"name": "access-proxy",
+		"object_range": "vdom",
 		"path": "firewall",
-		"q_type": 44
+		"q_type": 46
 	},
-	"revision": "f7f9f0c7010a0528b972ed831ae64831",
-	"serial": "FGTAZRIPD-OKNB34",
+	"revision": "2131c48edd53df0aa10b0be32545dfe1",
+	"serial": "FG180FTK20900788",
 	"status": "success",
 	"vdom": "root",
-	"version": "v7.2.0"
+	"version": "v7.2.8"
 }

@@ -17,6 +17,7 @@ type FirewallLocalInPolicy struct {
 	SrcaddrNegate  *string                         `json:"srcaddr-negate,omitempty"`
 	Status         *string                         `json:"status,omitempty"`
 	Uuid           *string                         `json:"uuid,omitempty"`
+	VirtualPatch   *string                         `json:"virtual-patch,omitempty"`
 }
 
 type FirewallLocalInPolicyDstaddr struct {

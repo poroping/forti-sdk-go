@@ -1,9 +1,9 @@
 {
 	"addedIn": "v6.2.7",
-	"build": 1157,
+	"build": 1639,
 	"http_method": "GET",
 	"http_status": 200,
-	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3,v7.0.4,v7.2.0",
+	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3,v7.0.4,v7.0.5,v7.0.6,v7.2.0,v7.2.1,v7.2.8",
 	"name": "phase1-interface",
 	"path": "vpn.ipsec",
 	"results": {
@@ -204,6 +204,25 @@
 				"size": 35,
 				"type": "string"
 			},
+			"auto-discovery-crossover": {
+				"addedIn": "v7.2.8",
+				"category": "unitary",
+				"default": "allow",
+				"help": "Allow/block set-up of short-cut tunnels between different network IDs.",
+				"multiple_values": false,
+				"name": "auto-discovery-crossover",
+				"options": [
+					{
+						"help": "Allow set-up of short-cut tunnels between different network IDs.",
+						"name": "allow"
+					},
+					{
+						"help": "Block set-up of short-cut tunnels between different network IDs.",
+						"name": "block"
+					}
+				],
+				"type": "option"
+			},
 			"auto-discovery-forwarder": {
 				"category": "unitary",
 				"default": "disable",
@@ -324,6 +343,25 @@
 				],
 				"type": "option"
 			},
+			"azure-ad-autoconnect": {
+				"addedIn": "v7.2.8",
+				"category": "unitary",
+				"default": "disable",
+				"help": "Enable/disable Azure AD Auto-Connect for FortiClient.",
+				"multiple_values": false,
+				"name": "azure-ad-autoconnect",
+				"options": [
+					{
+						"help": "Enable Azure AD Auto-Connect for FortiClient.",
+						"name": "enable"
+					},
+					{
+						"help": "Disable Azure AD Auto-Connect for FortiClient.",
+						"name": "disable"
+					}
+				],
+				"type": "option"
+			},
 			"backup-gateway": {
 				"category": "table",
 				"children": {
@@ -369,6 +407,25 @@
 					{
 						"help": "Disable cross validation of peer ID and the identity in the peer's certificate as specified in RFC 4945.",
 						"name": "disable"
+					}
+				],
+				"type": "option"
+			},
+			"cert-trust-store": {
+				"addedIn": "v7.2.8",
+				"category": "unitary",
+				"default": "local",
+				"help": "CA certificate trust store.",
+				"multiple_values": false,
+				"name": "cert-trust-store",
+				"options": [
+					{
+						"help": "Use local CA certificate.",
+						"name": "local"
+					},
+					{
+						"help": "Use EMS CA certificate.",
+						"name": "ems"
 					}
 				],
 				"type": "option"
@@ -479,6 +536,36 @@
 				"multiple_values": false,
 				"name": "default-gw-priority",
 				"type": "integer"
+			},
+			"dev-id": {
+				"addedIn": "v7.2.8",
+				"category": "unitary",
+				"default": "",
+				"help": "Device ID carried by the device ID notification.",
+				"multiple_values": false,
+				"name": "dev-id",
+				"required": true,
+				"size": 63,
+				"type": "string"
+			},
+			"dev-id-notification": {
+				"addedIn": "v7.2.8",
+				"category": "unitary",
+				"default": "disable",
+				"help": "Enable/disable device ID notification.",
+				"multiple_values": false,
+				"name": "dev-id-notification",
+				"options": [
+					{
+						"help": "Disable device ID notification.",
+						"name": "disable"
+					},
+					{
+						"help": "Enable device ID notification.",
+						"name": "enable"
+					}
+				],
+				"type": "option"
 			},
 			"dhcp-ra-giaddr": {
 				"category": "unitary",
@@ -718,6 +805,25 @@
 				],
 				"type": "option"
 			},
+			"ems-sn-check": {
+				"addedIn": "v7.2.8",
+				"category": "unitary",
+				"default": "disable",
+				"help": "Enable/disable verification of EMS serial number.",
+				"multiple_values": false,
+				"name": "ems-sn-check",
+				"options": [
+					{
+						"help": "Enable EMS serial number verification.",
+						"name": "enable"
+					},
+					{
+						"help": "Disable EMS serial number verification.",
+						"name": "disable"
+					}
+				],
+				"type": "option"
+			},
 			"encap-local-gw4": {
 				"category": "unitary",
 				"default": "0.0.0.0",
@@ -826,6 +932,7 @@
 			},
 			"esn": {
 				"category": "unitary",
+				"default": "disable",
 				"help": "Extended sequence number (ESN) negotiation.",
 				"multiple_values": false,
 				"name": "esn",
@@ -844,6 +951,25 @@
 					}
 				],
 				"removedIn": "v6.4.0",
+				"type": "option"
+			},
+			"exchange-fgt-device-id": {
+				"addedIn": "v7.2.8",
+				"category": "unitary",
+				"default": "disable",
+				"help": "Enable/disable device identifier exchange with peer FortiGate units for use of VPN monitor data by FortiManager.",
+				"multiple_values": false,
+				"name": "exchange-fgt-device-id",
+				"options": [
+					{
+						"help": "Enable exchange of FortiGate device identifier.",
+						"name": "enable"
+					},
+					{
+						"help": "Disable exchange of FortiGate device identifier.",
+						"name": "disable"
+					}
+				],
 				"type": "option"
 			},
 			"exchange-interface-ip": {
@@ -1003,6 +1129,25 @@
 				"name": "fec-send-timeout",
 				"type": "integer"
 			},
+			"fgsp-sync": {
+				"addedIn": "v7.2.1",
+				"category": "unitary",
+				"default": "disable",
+				"help": "Enable/disable IPsec syncing of tunnels for FGSP IPsec.",
+				"multiple_values": false,
+				"name": "fgsp-sync",
+				"options": [
+					{
+						"help": "Enable IPsec syncing of tunnels to other cluster members.",
+						"name": "enable"
+					},
+					{
+						"help": "Disable IPsec syncing of tunnels to other cluster members.",
+						"name": "disable"
+					}
+				],
+				"type": "option"
+			},
 			"forticlient-enforcement": {
 				"category": "unitary",
 				"default": "disable",
@@ -1139,6 +1284,26 @@
 				],
 				"type": "option"
 			},
+			"inbound-dscp-copy": {
+				"addedIn": "v7.0.6",
+				"category": "unitary",
+				"default": "disable",
+				"help": "Enable/disable copy the dscp in the ESP header to the inner IP Header.",
+				"multiple_values": false,
+				"name": "inbound-dscp-copy",
+				"options": [
+					{
+						"help": "Enable copy the dscp in the ESP header to the inner IP Header.",
+						"name": "enable"
+					},
+					{
+						"help": "Disable copy the dscp in the ESP header to the inner IP Header.",
+						"name": "disable"
+					}
+				],
+				"removedIn": "v7.2.0",
+				"type": "option"
+			},
 			"include-local-lan": {
 				"category": "unitary",
 				"default": "disable",
@@ -1169,6 +1334,30 @@
 				"required": true,
 				"size": 35,
 				"type": "string"
+			},
+			"internal-domain-list": {
+				"addedIn": "v7.2.8",
+				"category": "table",
+				"children": {
+					"domain-name": {
+						"category": "unitary",
+						"default": "",
+						"help": "Domain name.",
+						"multiple_values": false,
+						"name": "domain-name",
+						"required": true,
+						"size": 79,
+						"type": "string"
+					}
+				},
+				"help": "List of domains for which the client directs DNS queries to the internal DNS servers for resolution.  DNS servers are configured in the mode-cfg settings.  One or more internal domain names in quotes separated by spaces, like \"abc.com xyz.com 123.com\"",
+				"max_table_size_global": 0,
+				"max_table_size_item": 0,
+				"max_table_size_vdom": 0,
+				"member_table": true,
+				"mkey": "domain-name",
+				"mkey_type": "string",
+				"name": "internal-domain-list"
 			},
 			"ip-delay-interval": {
 				"addedIn": "v7.0.1",
@@ -1513,6 +1702,17 @@
 				"min-value": 120,
 				"multiple_values": false,
 				"name": "keylife",
+				"type": "integer"
+			},
+			"link-cost": {
+				"addedIn": "v7.2.1",
+				"category": "unitary",
+				"default": 0,
+				"help": "VPN tunnel underlay link cost.",
+				"max-value": 255,
+				"min-value": 0,
+				"multiple_values": false,
+				"name": "link-cost",
 				"type": "integer"
 			},
 			"local-gw": {
@@ -1873,6 +2073,25 @@
 					}
 				],
 				"removedIn": "v6.4.0",
+				"type": "option"
+			},
+			"packet-redistribution": {
+				"addedIn": "v7.2.1",
+				"category": "unitary",
+				"default": "disable",
+				"help": "Enable/disable packet distribution (RPS) on the IPsec interface.",
+				"multiple_values": false,
+				"name": "packet-redistribution",
+				"options": [
+					{
+						"help": "Enable packet redistribution.",
+						"name": "enable"
+					},
+					{
+						"help": "Disable packet redistribution.",
+						"name": "disable"
+					}
+				],
 				"type": "option"
 			},
 			"passive-mode": {
@@ -2309,6 +2528,70 @@
 				"required": true,
 				"type": "ipv4-address"
 			},
+			"remote-gw-country": {
+				"addedIn": "v7.2.8",
+				"category": "unitary",
+				"default": "",
+				"help": "IPv4 addresses associated to a specific country.",
+				"multiple_values": false,
+				"name": "remote-gw-country",
+				"size": 2,
+				"type": "string"
+			},
+			"remote-gw-end-ip": {
+				"addedIn": "v7.2.8",
+				"category": "unitary",
+				"default": "0.0.0.0",
+				"help": "Last IPv4 address in the range.",
+				"multiple_values": false,
+				"name": "remote-gw-end-ip",
+				"type": "ipv4-address-any"
+			},
+			"remote-gw-match": {
+				"addedIn": "v7.2.8",
+				"category": "unitary",
+				"default": "any",
+				"help": "Set type of IPv4 remote gateway address matching.",
+				"multiple_values": false,
+				"name": "remote-gw-match",
+				"options": [
+					{
+						"help": "Match any IPv4 gateway address.",
+						"name": "any"
+					},
+					{
+						"help": "Match IPv4 gateway address and mask.",
+						"name": "ipmask"
+					},
+					{
+						"help": "Match IPv4 gateway address range.",
+						"name": "iprange"
+					},
+					{
+						"help": "Match IPv4 gateway address from a specified country.",
+						"name": "geography"
+					}
+				],
+				"type": "option"
+			},
+			"remote-gw-start-ip": {
+				"addedIn": "v7.2.8",
+				"category": "unitary",
+				"default": "0.0.0.0",
+				"help": "First IPv4 address in the range.",
+				"multiple_values": false,
+				"name": "remote-gw-start-ip",
+				"type": "ipv4-address-any"
+			},
+			"remote-gw-subnet": {
+				"addedIn": "v7.2.8",
+				"category": "unitary",
+				"default": "0.0.0.0 0.0.0.0",
+				"help": "IPv4 address and subnet mask.",
+				"multiple_values": false,
+				"name": "remote-gw-subnet",
+				"type": "ipv4-classnet-any"
+			},
 			"remote-gw6": {
 				"category": "unitary",
 				"default": "::",
@@ -2317,6 +2600,70 @@
 				"name": "remote-gw6",
 				"required": true,
 				"type": "ipv6-address"
+			},
+			"remote-gw6-country": {
+				"addedIn": "v7.2.8",
+				"category": "unitary",
+				"default": "",
+				"help": "IPv6 addresses associated to a specific country.",
+				"multiple_values": false,
+				"name": "remote-gw6-country",
+				"size": 2,
+				"type": "string"
+			},
+			"remote-gw6-end-ip": {
+				"addedIn": "v7.2.8",
+				"category": "unitary",
+				"default": "::",
+				"help": "Last IPv6 address in the range.",
+				"multiple_values": false,
+				"name": "remote-gw6-end-ip",
+				"type": "ipv6-address"
+			},
+			"remote-gw6-match": {
+				"addedIn": "v7.2.8",
+				"category": "unitary",
+				"default": "any",
+				"help": "Set type of IPv6 remote gateway address matching.",
+				"multiple_values": false,
+				"name": "remote-gw6-match",
+				"options": [
+					{
+						"help": "Match any IPv6 gateway address.",
+						"name": "any"
+					},
+					{
+						"help": "Match IPv6 gateway address and prefix.",
+						"name": "ipprefix"
+					},
+					{
+						"help": "Match IPv6 gateway address range.",
+						"name": "iprange"
+					},
+					{
+						"help": "Match IPv6 gateway address from a specified country.",
+						"name": "geography"
+					}
+				],
+				"type": "option"
+			},
+			"remote-gw6-start-ip": {
+				"addedIn": "v7.2.8",
+				"category": "unitary",
+				"default": "::",
+				"help": "First IPv6 address in the range.",
+				"multiple_values": false,
+				"name": "remote-gw6-start-ip",
+				"type": "ipv6-address"
+			},
+			"remote-gw6-subnet": {
+				"addedIn": "v7.2.8",
+				"category": "unitary",
+				"default": "::/0",
+				"help": "IPv6 address and prefix.",
+				"multiple_values": false,
+				"name": "remote-gw6-subnet",
+				"type": "ipv6-network"
 			},
 			"remotegw-ddns": {
 				"category": "unitary",
@@ -2342,6 +2689,25 @@
 					{
 						"help": "RSASSA Probabilistic Signature Scheme (PSS).",
 						"name": "pss"
+					}
+				],
+				"type": "option"
+			},
+			"rsa-signature-hash-override": {
+				"addedIn": "v7.2.1",
+				"category": "unitary",
+				"default": "disable",
+				"help": "Enable/disable IKEv2 RSA signature hash algorithm override.",
+				"multiple_values": false,
+				"name": "rsa-signature-hash-override",
+				"options": [
+					{
+						"help": "Enable IKEv2 RSA signature hash algorithm override.",
+						"name": "enable"
+					},
+					{
+						"help": "Disable IKEv2 RSA signature hash algorithm override.",
+						"name": "disable"
 					}
 				],
 				"type": "option"
@@ -2627,12 +2993,13 @@
 		"mkey": "name",
 		"mkey_type": "string",
 		"name": "phase1-interface",
+		"object_range": "vdom",
 		"path": "vpn.ipsec",
-		"q_type": 181
+		"q_type": 188
 	},
-	"revision": "f7f9f0c7010a0528b972ed831ae64831",
-	"serial": "FGTAZRIPD-OKNB34",
+	"revision": "2131c48edd53df0aa10b0be32545dfe1",
+	"serial": "FG180FTK20900788",
 	"status": "success",
 	"vdom": "root",
-	"version": "v7.2.0"
+	"version": "v7.2.8"
 }

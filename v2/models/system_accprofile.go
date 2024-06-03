@@ -20,6 +20,8 @@ type SystemAccprofile struct {
 	Sysgrp               *string                           `json:"sysgrp,omitempty"`
 	SysgrpPermission     *SystemAccprofileSysgrpPermission `json:"sysgrp-permission,omitempty"`
 	SystemDiagnostics    *string                           `json:"system-diagnostics,omitempty"`
+	SystemExecuteSsh     *string                           `json:"system-execute-ssh,omitempty"`
+	SystemExecuteTelnet  *string                           `json:"system-execute-telnet,omitempty"`
 	Utmgrp               *string                           `json:"utmgrp,omitempty"`
 	UtmgrpPermission     *SystemAccprofileUtmgrpPermission `json:"utmgrp-permission,omitempty"`
 	Vpngrp               *string                           `json:"vpngrp,omitempty"`
@@ -58,6 +60,7 @@ type SystemAccprofileSysgrpPermission struct {
 type SystemAccprofileUtmgrpPermission struct {
 	Antivirus          *string `json:"antivirus,omitempty"`
 	ApplicationControl *string `json:"application-control,omitempty"`
+	DataLeakPrevention *string `json:"data-leak-prevention,omitempty"`
 	DataLossPrevention *string `json:"data-loss-prevention,omitempty"`
 	Dnsfilter          *string `json:"dnsfilter,omitempty"`
 	Emailfilter        *string `json:"emailfilter,omitempty"`

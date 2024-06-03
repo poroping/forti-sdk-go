@@ -1,9 +1,9 @@
 {
 	"addedIn": "v6.2.7",
-	"build": 1157,
+	"build": 1639,
 	"http_method": "GET",
 	"http_status": 200,
-	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3,v7.0.4,v7.2.0",
+	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3,v7.0.4,v7.0.5,v7.0.6,v7.2.0,v7.2.1,v7.2.8",
 	"name": "admin",
 	"path": "system",
 	"results": {
@@ -235,6 +235,13 @@
 				"name": "ip6-trusthost9",
 				"type": "ipv6-prefix"
 			},
+			"list": {
+				"addedIn": "v7.2.1",
+				"category": "info-read-only",
+				"help": "print admin list information",
+				"name": "list",
+				"type": "key"
+			},
 			"name": {
 				"category": "unitary",
 				"default": "",
@@ -305,6 +312,7 @@
 						"name": "disable"
 					}
 				],
+				"removedIn": "v7.2.1",
 				"type": "option"
 			},
 			"remote-auth": {
@@ -418,6 +426,13 @@
 				"multiple_values": false,
 				"name": "ssh-public-key3",
 				"type": "user"
+			},
+			"status": {
+				"addedIn": "v7.2.1",
+				"category": "info-read-only",
+				"help": "print admin status information",
+				"name": "status",
+				"type": "key"
 			},
 			"trusthost1": {
 				"category": "unitary",
@@ -595,6 +610,25 @@
 				"mkey_type": "string",
 				"name": "vdom"
 			},
+			"vdom-override": {
+				"addedIn": "v7.2.1",
+				"category": "unitary",
+				"default": "disable",
+				"help": "Enable to use the names of VDOMs provided by the remote authentication server to control the VDOMs that this administrator can access.",
+				"multiple_values": false,
+				"name": "vdom-override",
+				"options": [
+					{
+						"help": "Enable VDOM override.",
+						"name": "enable"
+					},
+					{
+						"help": "Disable VDOM override.",
+						"name": "disable"
+					}
+				],
+				"type": "option"
+			},
 			"wildcard": {
 				"category": "unitary",
 				"default": "disable",
@@ -615,18 +649,19 @@
 			}
 		},
 		"help": "Configure admin users.",
-		"max_table_size_global": 550,
+		"max_table_size_global": 300,
 		"max_table_size_item": 0,
 		"max_table_size_vdom": 0,
 		"mkey": "name",
 		"mkey_type": "string",
 		"name": "admin",
+		"object_range": "both",
 		"path": "system",
 		"q_type": 9
 	},
-	"revision": "5368673825b8859067e2dbc50d688862",
-	"serial": "FGTAZRIPD-OKNB34",
+	"revision": "90892cdc7a19c0650f22b39d30f7d2e6",
+	"serial": "FG180FTK20900788",
 	"status": "success",
 	"vdom": "root",
-	"version": "v7.2.0"
+	"version": "v7.2.8"
 }

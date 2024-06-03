@@ -1,9 +1,9 @@
 {
 	"addedIn": "v6.2.7",
-	"build": 1157,
+	"build": 1639,
 	"http_method": "GET",
 	"http_status": 200,
-	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3,v7.0.4,v7.2.0",
+	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3,v7.0.4,v7.0.5,v7.0.6,v7.2.0,v7.2.1,v7.2.8",
 	"name": "phase1",
 	"path": "vpn.ipsec",
 	"results": {
@@ -188,6 +188,25 @@
 					},
 					{
 						"help": "Disable automatic initiation of IKE SA negotiation.",
+						"name": "disable"
+					}
+				],
+				"type": "option"
+			},
+			"azure-ad-autoconnect": {
+				"addedIn": "v7.2.8",
+				"category": "unitary",
+				"default": "disable",
+				"help": "Enable/disable Azure AD Auto-Connect for FortiClient.",
+				"multiple_values": false,
+				"name": "azure-ad-autoconnect",
+				"options": [
+					{
+						"help": "Enable Azure AD Auto-Connect for FortiClient.",
+						"name": "enable"
+					},
+					{
+						"help": "Disable Azure AD Auto-Connect for FortiClient.",
 						"name": "disable"
 					}
 				],
@@ -593,6 +612,7 @@
 			},
 			"esn": {
 				"category": "unitary",
+				"default": "disable",
 				"help": "Extended sequence number (ESN) negotiation.",
 				"multiple_values": false,
 				"name": "esn",
@@ -733,6 +753,25 @@
 				"name": "fec-send-timeout",
 				"type": "integer"
 			},
+			"fgsp-sync": {
+				"addedIn": "v7.2.1",
+				"category": "unitary",
+				"default": "disable",
+				"help": "Enable/disable IPsec syncing of tunnels for FGSP IPsec.",
+				"multiple_values": false,
+				"name": "fgsp-sync",
+				"options": [
+					{
+						"help": "Enable IPsec syncing of tunnels to other cluster members.",
+						"name": "enable"
+					},
+					{
+						"help": "Disable IPsec syncing of tunnels to other cluster members.",
+						"name": "disable"
+					}
+				],
+				"type": "option"
+			},
 			"forticlient-enforcement": {
 				"category": "unitary",
 				"default": "disable",
@@ -869,6 +908,26 @@
 				],
 				"type": "option"
 			},
+			"inbound-dscp-copy": {
+				"addedIn": "v7.0.6",
+				"category": "unitary",
+				"default": "disable",
+				"help": "Enable/disable copy the dscp in the ESP header to the inner IP Header.",
+				"multiple_values": false,
+				"name": "inbound-dscp-copy",
+				"options": [
+					{
+						"help": "Enable copy the dscp in the ESP header to the inner IP Header.",
+						"name": "enable"
+					},
+					{
+						"help": "Disable copy the dscp in the ESP header to the inner IP Header.",
+						"name": "disable"
+					}
+				],
+				"removedIn": "v7.2.0",
+				"type": "option"
+			},
 			"include-local-lan": {
 				"category": "unitary",
 				"default": "disable",
@@ -899,6 +958,30 @@
 				"required": true,
 				"size": 35,
 				"type": "string"
+			},
+			"internal-domain-list": {
+				"addedIn": "v7.2.8",
+				"category": "table",
+				"children": {
+					"domain-name": {
+						"category": "unitary",
+						"default": "",
+						"help": "Domain name.",
+						"multiple_values": false,
+						"name": "domain-name",
+						"required": true,
+						"size": 79,
+						"type": "string"
+					}
+				},
+				"help": "List of domains for which the client directs DNS queries to the internal DNS servers for resolution.  DNS servers are configured in the mode-cfg settings.  One or more internal domain names in quotes separated by spaces, like \"abc.com xyz.com 123.com\"",
+				"max_table_size_global": 0,
+				"max_table_size_item": 0,
+				"max_table_size_vdom": 0,
+				"member_table": true,
+				"mkey": "domain-name",
+				"mkey_type": "string",
+				"name": "internal-domain-list"
 			},
 			"ip-delay-interval": {
 				"addedIn": "v7.0.1",
@@ -1891,6 +1974,25 @@
 				],
 				"type": "option"
 			},
+			"rsa-signature-hash-override": {
+				"addedIn": "v7.2.1",
+				"category": "unitary",
+				"default": "disable",
+				"help": "Enable/disable IKEv2 RSA signature hash algorithm override.",
+				"multiple_values": false,
+				"name": "rsa-signature-hash-override",
+				"options": [
+					{
+						"help": "Enable IKEv2 RSA signature hash algorithm override.",
+						"name": "enable"
+					},
+					{
+						"help": "Disable IKEv2 RSA signature hash algorithm override.",
+						"name": "disable"
+					}
+				],
+				"type": "option"
+			},
 			"save-password": {
 				"category": "unitary",
 				"default": "disable",
@@ -2137,18 +2239,19 @@
 			}
 		},
 		"help": "Configure VPN remote gateway.",
-		"max_table_size_global": 40000,
+		"max_table_size_global": 20000,
 		"max_table_size_item": 0,
-		"max_table_size_vdom": 40000,
+		"max_table_size_vdom": 20000,
 		"mkey": "name",
 		"mkey_type": "string",
 		"name": "phase1",
+		"object_range": "vdom",
 		"path": "vpn.ipsec",
-		"q_type": 57
+		"q_type": 64
 	},
-	"revision": "f7f9f0c7010a0528b972ed831ae64831",
-	"serial": "FGTAZRIPD-OKNB34",
+	"revision": "2131c48edd53df0aa10b0be32545dfe1",
+	"serial": "FG180FTK20900788",
 	"status": "success",
 	"vdom": "root",
-	"version": "v7.2.0"
+	"version": "v7.2.8"
 }

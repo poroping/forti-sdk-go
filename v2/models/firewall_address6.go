@@ -9,6 +9,7 @@ type FirewallAddress6 struct {
 	Country       *string                          `json:"country,omitempty"`
 	EndIp         *string                          `json:"end-ip,omitempty"`
 	EndMac        *string                          `json:"end-mac,omitempty"`
+	EpgName       *string                          `json:"epg-name,omitempty"`
 	FabricObject  *string                          `json:"fabric-object,omitempty"`
 	Fqdn          *string                          `json:"fqdn,omitempty"`
 	Host          *string                          `json:"host,omitempty"`
@@ -19,11 +20,13 @@ type FirewallAddress6 struct {
 	Name          *string                          `json:"name,omitempty"`
 	ObjId         *string                          `json:"obj-id,omitempty"`
 	Sdn           *string                          `json:"sdn,omitempty"`
+	SdnTag        *string                          `json:"sdn-tag,omitempty"`
 	StartIp       *string                          `json:"start-ip,omitempty"`
 	StartMac      *string                          `json:"start-mac,omitempty"`
 	SubnetSegment *[]FirewallAddress6SubnetSegment `json:"subnet-segment,omitempty"`
 	Tagging       *[]FirewallAddress6Tagging       `json:"tagging,omitempty"`
 	Template      *string                          `json:"template,omitempty"`
+	Tenant        *string                          `json:"tenant,omitempty"`
 	Type          *string                          `json:"type,omitempty"`
 	Uuid          *string                          `json:"uuid,omitempty"`
 	Visibility    *string                          `json:"visibility,omitempty"`

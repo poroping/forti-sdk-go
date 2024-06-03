@@ -1,9 +1,9 @@
 {
 	"addedIn": "v6.2.7",
-	"build": 1157,
+	"build": 1639,
 	"http_method": "GET",
 	"http_status": 200,
-	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3,v7.0.4,v7.2.0",
+	"mergedVersions": "v6.2.7,v6.4.0,v6.4.2,v6.4.3,v6.4.5,v6.4.6,v6.4.7,v6.4.8,v7.0.0,v7.0.1,v7.0.2,v7.0.3,v7.0.4,v7.0.5,v7.0.6,v7.2.0,v7.2.1,v7.2.8",
 	"name": "vap",
 	"path": "wireless-controller",
 	"results": {
@@ -110,6 +110,25 @@
 					},
 					{
 						"help": "Disable application detection engine.",
+						"name": "disable"
+					}
+				],
+				"type": "option"
+			},
+			"application-dscp-marking": {
+				"addedIn": "v7.2.1",
+				"category": "unitary",
+				"default": "disable",
+				"help": "Enable/disable application attribute based DSCP marking (default = disable).",
+				"multiple_values": false,
+				"name": "application-dscp-marking",
+				"options": [
+					{
+						"help": "Enable application based DSCP marking.",
+						"name": "enable"
+					},
+					{
+						"help": "Disable application based DSCP marking.",
 						"name": "disable"
 					}
 				],
@@ -380,6 +399,25 @@
 				"multiple_values": false,
 				"name": "captive-portal-auth-timeout",
 				"type": "integer"
+			},
+			"captive-portal-fw-accounting": {
+				"addedIn": "v7.2.8",
+				"category": "unitary",
+				"default": "disable",
+				"help": "Enable/disable RADIUS accounting for captive portal firewall authentication session.",
+				"multiple_values": false,
+				"name": "captive-portal-fw-accounting",
+				"options": [
+					{
+						"help": "Enable RADIUS accounting for captive portal firewall authentication session.",
+						"name": "enable"
+					},
+					{
+						"help": "Disable RADIUS accounting for captive portal firewall authentication session.",
+						"name": "disable"
+					}
+				],
+				"type": "option"
 			},
 			"captive-portal-macauth-radius-secret": {
 				"category": "unitary",
@@ -968,6 +1006,25 @@
 					{
 						"help": "Disable layer 3 roaming.",
 						"name": "disable"
+					}
+				],
+				"type": "option"
+			},
+			"l3-roaming-mode": {
+				"addedIn": "v7.2.1",
+				"category": "unitary",
+				"default": "direct",
+				"help": "Select the way that layer 3 roaming traffic is passed (default = direct).",
+				"multiple_values": false,
+				"name": "l3-roaming-mode",
+				"options": [
+					{
+						"help": "Layer 3 roaming traffic is passed between home AP and guest AP directly.",
+						"name": "direct"
+					},
+					{
+						"help": "Layer 3 roaming traffic is passed between home AP and guest AP through controllers.",
+						"name": "indirect"
 					}
 				],
 				"type": "option"
@@ -2102,6 +2159,17 @@
 				],
 				"type": "option"
 			},
+			"radius-mac-auth-block-interval": {
+				"addedIn": "v7.2.8",
+				"category": "unitary",
+				"default": 0,
+				"help": "Don't send RADIUS MAC auth request again if the client has been rejected within specific interval (0 or 30 - 864000 seconds, default = 0, 0 to disable blocking).",
+				"max-value": 864000,
+				"min-value": 30,
+				"multiple_values": false,
+				"name": "radius-mac-auth-block-interval",
+				"type": "integer"
+			},
 			"radius-mac-auth-server": {
 				"category": "unitary",
 				"datasource": [
@@ -2160,9 +2228,9 @@
 				"addedIn": "v7.0.2",
 				"category": "unitary",
 				"default": 86400,
-				"help": "RADIUS MAC MPSK cache timeout interval (1800 - 864000, default = 86400).",
+				"help": "RADIUS MAC MPSK cache timeout interval (0 or 300 - 864000, default = 86400, 0 to disable caching).",
 				"max-value": 864000,
-				"min-value": 1800,
+				"min-value": 300,
 				"multiple_values": false,
 				"name": "radius-mac-mpsk-timeout",
 				"type": "integer"
@@ -2285,6 +2353,16 @@
 				],
 				"type": "option"
 			},
+			"rates-11ac-mcs-map": {
+				"addedIn": "v7.2.1",
+				"category": "unitary",
+				"default": "",
+				"help": "Comma separated list of max supported VHT MCS for spatial streams 1 through 8.",
+				"multiple_values": false,
+				"name": "rates-11ac-mcs-map",
+				"size": 63,
+				"type": "string"
+			},
 			"rates-11ac-ss12": {
 				"category": "unitary",
 				"default": "",
@@ -2389,6 +2467,7 @@
 						"name": "mcs11/2"
 					}
 				],
+				"removedIn": "v7.2.1",
 				"type": "option"
 			},
 			"rates-11ac-ss34": {
@@ -2495,7 +2574,18 @@
 						"name": "mcs11/4"
 					}
 				],
+				"removedIn": "v7.2.1",
 				"type": "option"
+			},
+			"rates-11ax-mcs-map": {
+				"addedIn": "v7.2.1",
+				"category": "unitary",
+				"default": "",
+				"help": "Comma separated list of max supported HE MCS for spatial streams 1 through 8.",
+				"multiple_values": false,
+				"name": "rates-11ax-mcs-map",
+				"size": 63,
+				"type": "string"
 			},
 			"rates-11ax-ss12": {
 				"addedIn": "v7.0.2",
@@ -2602,6 +2692,7 @@
 						"name": "mcs11/2"
 					}
 				],
+				"removedIn": "v7.2.1",
 				"type": "option"
 			},
 			"rates-11ax-ss34": {
@@ -2709,6 +2800,7 @@
 						"name": "mcs11/4"
 					}
 				],
+				"removedIn": "v7.2.1",
 				"type": "option"
 			},
 			"rates-11bg": {
@@ -2988,6 +3080,25 @@
 				],
 				"type": "option"
 			},
+			"sae-h2e-only": {
+				"addedIn": "v7.2.1",
+				"category": "unitary",
+				"default": "disable",
+				"help": "Use hash-to-element-only mechanism for PWE derivation (default = disable).",
+				"multiple_values": false,
+				"name": "sae-h2e-only",
+				"options": [
+					{
+						"help": "Enable WAP3 SAE-H2E-only.",
+						"name": "enable"
+					},
+					{
+						"help": "Disable WPA3 SAE-H2E-only.",
+						"name": "disable"
+					}
+				],
+				"type": "option"
+			},
 			"sae-password": {
 				"category": "unitary",
 				"help": "WPA3 SAE password to be used to authenticate WiFi users.",
@@ -2995,6 +3106,35 @@
 				"name": "sae-password",
 				"size": 128,
 				"type": "password"
+			},
+			"sae-pk": {
+				"addedIn": "v7.2.1",
+				"category": "unitary",
+				"default": "disable",
+				"help": "Enable/disable WPA3 SAE-PK (default = disable).",
+				"multiple_values": false,
+				"name": "sae-pk",
+				"options": [
+					{
+						"help": "Enable WAP3 SAE-PK.",
+						"name": "enable"
+					},
+					{
+						"help": "Disable WPA3 SAE-PK.",
+						"name": "disable"
+					}
+				],
+				"type": "option"
+			},
+			"sae-private-key": {
+				"addedIn": "v7.2.1",
+				"category": "unitary",
+				"default": "",
+				"help": "Private key used for WPA3 SAE-PK authentication.",
+				"multiple_values": false,
+				"name": "sae-private-key",
+				"size": 359,
+				"type": "string"
 			},
 			"scan-botnet-connections": {
 				"addedIn": "v7.0.1",
@@ -3262,6 +3402,16 @@
 				"size": 7,
 				"type": "string"
 			},
+			"sticky-client-threshold-6g": {
+				"addedIn": "v7.2.1",
+				"category": "unitary",
+				"default": "-76",
+				"help": "Minimum signal level/threshold in dBm required for the 6G client to be serviced by the AP (-95 to -20, default = -76).",
+				"multiple_values": false,
+				"name": "sticky-client-threshold-6g",
+				"size": 7,
+				"type": "string"
+			},
 			"target-wake-time": {
 				"category": "unitary",
 				"default": "enable",
@@ -3517,7 +3667,7 @@
 			},
 			"voice-enterprise": {
 				"category": "unitary",
-				"default": "disable",
+				"default": "enable",
 				"help": "Enable/disable 802.11k and 802.11v assisted Voice-Enterprise roaming (default = disable).",
 				"multiple_values": false,
 				"name": "voice-enterprise",
@@ -3554,12 +3704,13 @@
 		"mkey": "name",
 		"mkey_type": "string",
 		"name": "vap",
+		"object_range": "vdom",
 		"path": "wireless-controller",
-		"q_type": 277
+		"q_type": 284
 	},
-	"revision": "f7f9f0c7010a0528b972ed831ae64831",
-	"serial": "FGTAZRIPD-OKNB34",
+	"revision": "bedfd3f80f3087d27ce07db40b4e7beb",
+	"serial": "FG180FTK20900788",
 	"status": "success",
 	"vdom": "root",
-	"version": "v7.2.0"
+	"version": "v7.2.8"
 }
